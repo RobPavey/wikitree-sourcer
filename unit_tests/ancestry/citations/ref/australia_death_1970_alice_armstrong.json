@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Australia, Death Index, 1787-1985\"<br/>\nDeath Index Victoria 1921-1985; Registration Number: 11307<br/>\n{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Australia, Death Index, 1787-1985\"<br/>\nDeath Index Victoria 1921-1985; Registration Number: 11307<br/>\n{{Ancestry Record|1779|1732471}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Alice, child of Thomas W Lloyd & Emma Folkes, died (age 85) in about 1970 in Brunswick, Victoria.<ref>\n'''Death''':\n\"Australia, Death Index, 1787-1985\"<br/>\nDeath Index Victoria 1921-1985; Registration Number: 11307<br/>\n{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Alice, child of Thomas W Lloyd & Emma Folkes, died (age 85) in about 1970 in Brunswick, Victoria.<ref>\n'''Death''':\n\"Australia, Death Index, 1787-1985\"<br/>\nDeath Index Victoria 1921-1985; Registration Number: 11307<br/>\n{{Ancestry Record|1779|1732471}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Death''': \"Australia, Death Index, 1787-1985\"<br/>Death Index Victoria 1921-1985; Registration Number: 11307<br/>{{Ancestry Record|1779|1732471}} (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"Australia, Death Index, 1787-1985\"<br/>Death Index Victoria 1921-1985; Registration Number: 11307<br/>{{Ancestry Record|1779|1732471}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

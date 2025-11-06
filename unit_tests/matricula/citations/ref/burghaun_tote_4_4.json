@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Matricula Online, Deutschland, Fulda, r.k. Bistum, Burghaun, Mariae Himmelfahrt\"<br/>\nTotenbuch - 4-03; Section: 2; Page: 4<br/>\n[https://data.matricula-online.eu/de/deutschland/fulda/DE-Ful3_JBK/4-03/?pg=5 Matricula Image] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Matricula Online, Deutschland, Fulda, r.k. Bistum, Burghaun, Mariae Himmelfahrt\"<br/>\nTotenbuch - 4-03; Section: 2; Page: 4<br/>\n[https://data.matricula-online.eu/de/deutschland/fulda/DE-Ful3_JBK/4-03/?pg=5 Matricula Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Death''':\n\"Matricula Online, Deutschland, Fulda, r.k. Bistum, Burghaun, Mariae Himmelfahrt\"<br/>\nTotenbuch - 4-03; Section: 2; Page: 4<br/>\n[https://data.matricula-online.eu/de/deutschland/fulda/DE-Ful3_JBK/4-03/?pg=5 Matricula Image] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Death''':\n\"Matricula Online, Deutschland, Fulda, r.k. Bistum, Burghaun, Mariae Himmelfahrt\"<br/>\nTotenbuch - 4-03; Section: 2; Page: 4<br/>\n[https://data.matricula-online.eu/de/deutschland/fulda/DE-Ful3_JBK/4-03/?pg=5 Matricula Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death''': \"Matricula Online, Deutschland, Fulda, r.k. Bistum, Burghaun, Mariae Himmelfahrt\"<br/>Totenbuch - 4-03; Section: 2; Page: 4<br/>[https://data.matricula-online.eu/de/deutschland/fulda/DE-Ful3_JBK/4-03/?pg=5 Matricula Image] (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"Matricula Online, Deutschland, Fulda, r.k. Bistum, Burghaun, Mariae Himmelfahrt\"<br/>Totenbuch - 4-03; Section: 2; Page: 4<br/>[https://data.matricula-online.eu/de/deutschland/fulda/DE-Ful3_JBK/4-03/?pg=5 Matricula Image] (accessed 6 May 2021).",
     "type": "source"
   }
 }

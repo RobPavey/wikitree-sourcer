@@ -82,5 +82,6 @@
   "sourceCitation": "The National Archives of the UK (TNA); Kew, Surrey, England; 1921 Census Returns; Reference: RG 15/11709, ED 41, Sch 244; Book: 11709",
   "sourceInformation": "Ancestry.com. 1921 England Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2025. Original data: Census Returns of England and Wales, 1921. Kew, Surrey, England: The National Archives of the UK (TNA) Series RG15, 1921. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
   "originalData": "Census Returns of England and Wales, 1921. Kew, Surrey, England: The National Archives of the UK (TNA) Series RG15, 1921.",
-  "sourceDescription": "This collection provides census information for every individual residing in England on 19 June 1921. Learn more..."
+  "sourceDescription": "This collection provides census information for every individual residing in England on 19 June 1921. Learn more...",
+  "hasCommentTextArea": true
 }

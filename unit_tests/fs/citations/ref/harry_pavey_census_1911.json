@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1911 Census''':\n\"England and Wales Census, 1911\"<br/>\nciting The National Archives of the UK Class: 10; Piece/Folio: 395; Page: 1; Line: 1<br/>\n{{FamilySearch Record|XWLP-S75}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"England and Wales Census, 1911\"<br/>\nciting The National Archives of the UK Class: 10; Piece/Folio: 395; Page: 1; Line: 1<br/>\n{{FamilySearch Record|XWLP-S75}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1911 census Harry (age 58), Picture Frame Maker, was the married head of household in Islington, London, England, United Kingdom.<ref>\n'''1911 Census''':\n\"England and Wales Census, 1911\"<br/>\nciting The National Archives of the UK Class: 10; Piece/Folio: 395; Page: 1; Line: 1<br/>\n{{FamilySearch Record|XWLP-S75}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1911 census Harry (age 58), Picture Frame Maker, was the married head of household in Islington, London, England, United Kingdom.<ref>\n'''1911 Census''':\n\"England and Wales Census, 1911\"<br/>\nciting The National Archives of the UK Class: 10; Piece/Folio: 395; Page: 1; Line: 1<br/>\n{{FamilySearch Record|XWLP-S75}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1911 Census''': \"England and Wales Census, 1911\"<br/>citing The National Archives of the UK Class: 10; Piece/Folio: 395; Page: 1; Line: 1<br/>{{FamilySearch Record|XWLP-S75}} (accessed 6 May 2021)",
+    "citation": "* '''1911 Census''': \"England and Wales Census, 1911\"<br/>citing The National Archives of the UK Class: 10; Piece/Folio: 395; Page: 1; Line: 1<br/>{{FamilySearch Record|XWLP-S75}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

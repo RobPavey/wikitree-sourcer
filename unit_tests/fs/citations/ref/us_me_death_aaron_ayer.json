@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Maine Deaths and Burials, 1841-1910\"<br/>\nciting Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>\n{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Maine Deaths and Burials, 1841-1910\"<br/>\nciting Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>\n{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Aaron died in Buxton, York, Maine, United States.<ref>\n'''Death''':\n\"Maine Deaths and Burials, 1841-1910\"<br/>\nciting Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>\n{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Aaron died in Buxton, York, Maine, United States.<ref>\n'''Death''':\n\"Maine Deaths and Burials, 1841-1910\"<br/>\nciting Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>\n{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Death''': \"Maine Deaths and Burials, 1841-1910\"<br/>citing Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"Maine Deaths and Burials, 1841-1910\"<br/>citing Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Teresa died on 23 July 2002 in Canterbury, Kent, England, United Kingdom.<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Teresa died on 23 July 2002 in Canterbury, Kent, England, United Kingdom.<ref>\n'''Death''':\n\"England Death Records, 1998-2015\"<br/>\n{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Death''': \"England Death Records, 1998-2015\"<br/>{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"England Death Records, 1998-2015\"<br/>{{FamilySearch Record|CGGS-5YZM}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

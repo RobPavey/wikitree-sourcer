@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>\n[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>\n[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1891 census Louisa (age 15) was the unmarried daughter of Samuel Hockridge at 13 Looe Street, Plymouth Charles, Plymouth, Devon, England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>\n[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1891 census Louisa (age 15) was the unmarried daughter of Samuel Hockridge at 13 Looe Street, Plymouth Charles, Plymouth, Devon, England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>\n[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1891 Census''': \"1891 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021)",
+    "citation": "* '''1891 Census''': \"1891 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

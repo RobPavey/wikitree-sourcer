@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 4307/1911; District: Granville<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 4307/1911; District: Granville<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Frederick's birth was registered in 1911 in New South Wales, Australia. He was the son of Frederick J & Jessie W.<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 4307/1911; District: Granville<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)\n</ref>",
+    "citation": "Frederick's birth was registered in 1911 in New South Wales, Australia. He was the son of Frederick J & Jessie W.<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 4307/1911; District: Granville<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Birth Registration Number: 4307/1911; District: Granville<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)",
+    "citation": "* '''Birth Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Birth Registration Number: 4307/1911; District: Granville<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_listCurated_inline": {

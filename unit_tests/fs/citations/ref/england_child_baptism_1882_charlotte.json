@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Baptism of son Charles Plume''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>\n{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism of son Charles Plume''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>\n{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Charlotte's son Charles Plume was baptised on 28 May 1882 in Enfield, Middlesex, England, United Kingdom.<ref>\n'''Baptism of son Charles Plume''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>\n{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Charlotte's son Charles Plume was baptised on 28 May 1882 in Enfield, Middlesex, England, United Kingdom.<ref>\n'''Baptism of son Charles Plume''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>\n{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Baptism of son Charles Plume''': \"England Births and Christenings, 1538-1975\"<br/>citing Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021)",
+    "citation": "* '''Baptism of son Charles Plume''': \"England Births and Christenings, 1538-1975\"<br/>citing Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

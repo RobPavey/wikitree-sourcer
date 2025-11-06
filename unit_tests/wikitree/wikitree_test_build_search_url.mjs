@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { buildSearchData } from "../../extension/site/wikitree/core/wikitree_build_search_data.mjs";
 import { buildSearchUrl } from "../../extension/site/wikitree/core/wikitree_plus_build_search_url.mjs";
-import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
+import { runBuildSearchUrlTests, runBuildSearchDataTests } from "../test_utils/test_build_search_utils.mjs";
 
 const regressionDataWikitreeData = [
   {
@@ -46,7 +46,7 @@ const regressionDataWikitreePlusUrl = [
 
 async function runTests(testManager) {
   await runBuildSearchUrlTests("wikitree", buildSearchUrl, regressionDataWikitreePlusUrl, testManager);
-  await runBuildSearchUrlTests("wikitree", buildSearchData, regressionDataWikitreeData, testManager);
+  await runBuildSearchDataTests("wikitree", buildSearchData, regressionDataWikitreeData, testManager);
 }
 
 export { runTests };

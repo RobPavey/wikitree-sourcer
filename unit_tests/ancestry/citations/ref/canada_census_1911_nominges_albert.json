@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of Canada\"<br/>\nYear: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>\n{{Ancestry Record|8947|442578}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of Canada\"<br/>\nYear: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>\n{{Ancestry Record|8947|442578}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1911 census Nominiges (age 29), Labourer, was the married head of household in Newport Point, Quebec.<ref>\n'''1911 Census''':\n\"1911 Census of Canada\"<br/>\nYear: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>\n{{Ancestry Record|8947|442578}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1911 census Nominiges (age 29), Labourer, was the married head of household in Newport Point, Quebec.<ref>\n'''1911 Census''':\n\"1911 Census of Canada\"<br/>\nYear: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>\n{{Ancestry Record|8947|442578}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1911 Census''': \"1911 Census of Canada\"<br/>Year: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>{{Ancestry Record|8947|442578}} (accessed 6 May 2021)",
+    "citation": "* '''1911 Census''': \"1911 Census of Canada\"<br/>Year: 1911; Census Place: 35 - Newport, Gaspé, Quebec; Page: 9; Family No: 75<br/>{{Ancestry Record|8947|442578}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

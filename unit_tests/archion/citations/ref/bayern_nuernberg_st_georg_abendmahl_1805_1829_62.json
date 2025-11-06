@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Communion''':\n\"Bayern, Landeskirchliches Archiv der Evangelisch-Lutherischen Kirche in Bayern, Dekanat Nürnberg, Nürnberg-St. Georg (Kraftshof)\"<br/>\nAbendmahl 1805 - 1829<br/>\n[https://www.archion.de/p/86eed83835/ Archion Image] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Communion''':\n\"Bayern, Landeskirchliches Archiv der Evangelisch-Lutherischen Kirche in Bayern, Dekanat Nürnberg, Nürnberg-St. Georg (Kraftshof)\"<br/>\nAbendmahl 1805 - 1829<br/>\n[https://www.archion.de/p/86eed83835/ Archion Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Communion''':\n\"Bayern, Landeskirchliches Archiv der Evangelisch-Lutherischen Kirche in Bayern, Dekanat Nürnberg, Nürnberg-St. Georg (Kraftshof)\"<br/>\nAbendmahl 1805 - 1829<br/>\n[https://www.archion.de/p/86eed83835/ Archion Image] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Communion''':\n\"Bayern, Landeskirchliches Archiv der Evangelisch-Lutherischen Kirche in Bayern, Dekanat Nürnberg, Nürnberg-St. Georg (Kraftshof)\"<br/>\nAbendmahl 1805 - 1829<br/>\n[https://www.archion.de/p/86eed83835/ Archion Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Communion''': \"Bayern, Landeskirchliches Archiv der Evangelisch-Lutherischen Kirche in Bayern, Dekanat Nürnberg, Nürnberg-St. Georg (Kraftshof)\"<br/>Abendmahl 1805 - 1829<br/>[https://www.archion.de/p/86eed83835/ Archion Image] (accessed 6 May 2021)",
+    "citation": "* '''Communion''': \"Bayern, Landeskirchliches Archiv der Evangelisch-Lutherischen Kirche in Bayern, Dekanat Nürnberg, Nürnberg-St. Georg (Kraftshof)\"<br/>Abendmahl 1805 - 1829<br/>[https://www.archion.de/p/86eed83835/ Archion Image] (accessed 6 May 2021).",
     "type": "source"
   }
 }

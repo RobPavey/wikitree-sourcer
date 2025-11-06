@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1936 Electoral Register''':\n\"Australia, Electoral Rolls, 1903-1980\"<br/>\nAustralian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>\n{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1936 Electoral Register''':\n\"Australia, Electoral Rolls, 1903-1980\"<br/>\nAustralian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>\n{{Ancestry Record|1207|2135557}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "George was registered to vote in 1936 in Chinchilla, Maranoa, Queensland, Australia.<ref>\n'''1936 Electoral Register''':\n\"Australia, Electoral Rolls, 1903-1980\"<br/>\nAustralian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>\n{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)\n</ref>",
+    "citation": "George was registered to vote in 1936 in Chinchilla, Maranoa, Queensland, Australia.<ref>\n'''1936 Electoral Register''':\n\"Australia, Electoral Rolls, 1903-1980\"<br/>\nAustralian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>\n{{Ancestry Record|1207|2135557}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1936 Electoral Register''': \"Australia, Electoral Rolls, 1903-1980\"<br/>Australian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>{{Ancestry Record|1207|2135557}} (accessed 6 May 2021)",
+    "citation": "* '''1936 Electoral Register''': \"Australia, Electoral Rolls, 1903-1980\"<br/>Australian Electoral Commission; Canberra, Australia; Electoral Rolls<br/>{{Ancestry Record|1207|2135557}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

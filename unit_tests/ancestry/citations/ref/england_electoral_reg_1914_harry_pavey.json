@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1914 Electoral Register''':\n\"London, England, Electoral Registers, 1832-1965\"<br/>\nLondon Metropolitan Archives; London, England; Electoral Registers<br/>\n{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1914 Electoral Register''':\n\"London, England, Electoral Registers, 1832-1965\"<br/>\nLondon Metropolitan Archives; London, England; Electoral Registers<br/>\n{{Ancestry Record|1795|54921469}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Harry was registered to vote in 1914 at 110 Highgate hill, Islington North, Islington, England.<ref>\n'''1914 Electoral Register''':\n\"London, England, Electoral Registers, 1832-1965\"<br/>\nLondon Metropolitan Archives; London, England; Electoral Registers<br/>\n{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Harry was registered to vote in 1914 at 110 Highgate hill, Islington North, Islington, England.<ref>\n'''1914 Electoral Register''':\n\"London, England, Electoral Registers, 1832-1965\"<br/>\nLondon Metropolitan Archives; London, England; Electoral Registers<br/>\n{{Ancestry Record|1795|54921469}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1914 Electoral Register''': \"London, England, Electoral Registers, 1832-1965\"<br/>London Metropolitan Archives; London, England; Electoral Registers<br/>{{Ancestry Record|1795|54921469}} (accessed 6 May 2021)",
+    "citation": "* '''1914 Electoral Register''': \"London, England, Electoral Registers, 1832-1965\"<br/>London Metropolitan Archives; London, England; Electoral Registers<br/>{{Ancestry Record|1795|54921469}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

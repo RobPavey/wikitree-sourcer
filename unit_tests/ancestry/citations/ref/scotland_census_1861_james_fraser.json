@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1861 Census''':\n\"1861 Scotland Census\"<br/>\nParish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69<br/>\n{{Ancestry Record|1080|165755}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 Scotland Census\"<br/>\nParish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69<br/>\n{{Ancestry Record|1080|165755}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1861 census James (age 31), Stone Cutter, was the head of household at 20 Maitland St, Glasgow Barony, Lanarkshire.<ref>\n'''1861 Census''':\n\"1861 Scotland Census\"<br/>\nParish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69<br/>\n{{Ancestry Record|1080|165755}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1861 census James (age 31), Stone Cutter, was the head of household at 20 Maitland St, Glasgow Barony, Lanarkshire.<ref>\n'''1861 Census''':\n\"1861 Scotland Census\"<br/>\nParish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69<br/>\n{{Ancestry Record|1080|165755}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1861 Census''': \"1861 Scotland Census\"<br/>Parish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69<br/>{{Ancestry Record|1080|165755}} (accessed 6 May 2021)",
+    "citation": "* '''1861 Census''': \"1861 Scotland Census\"<br/>Parish: Glasgow Barony; ED: 3; Page: 14; Line: 17; Roll: CSSCT1861_106; Registration Number: 644/7; Household schedule number: 69<br/>{{Ancestry Record|1080|165755}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

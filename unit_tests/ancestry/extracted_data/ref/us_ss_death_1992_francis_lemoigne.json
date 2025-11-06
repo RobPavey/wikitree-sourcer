@@ -25,5 +25,6 @@
   },
   "sourceInformation": "Ancestry.com. U.S., Social Security Applications and Claims Index, 1936-2007 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2015. Original data: Social Security Applications and Claims, 1936-2007.",
   "originalData": "Social Security Applications and Claims, 1936-2007.",
-  "sourceDescription": "This database picks up where the SSDI leaves off, with details such as birth date and parents’ names extracted from information filed with the Social Security Administration through the application or claims process. Learn more..."
+  "sourceDescription": "This database picks up where the SSDI leaves off, with details such as birth date and parents’ names extracted from information filed with the Social Security Administration through the application or claims process. Learn more...",
+  "hasCommentTextArea": true
 }

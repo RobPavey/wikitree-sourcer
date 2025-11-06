@@ -92,9 +92,55 @@ function setFields(fieldData) {
   }
 }
 
-function additionalMessageHandler(request, sender, sendResponse) {
+function addComment(fieldData) {
+  console.log("addComment, fieldData is:");
+  console.log(fieldData);
+
+  // this is complicated because there is a textArea field but also a div that acts as a text area
+  // We have to hide one and show the other
+
+  let commentText = fieldData.commentText;
+  let commentPlaceHolderTextArea = document.querySelector("#mainContent div.input div.addCommentArea textArea");
+  if (!commentPlaceHolderTextArea) {
+    return;
+  }
+  let commentAddCommentTextAreaDiv = document.querySelector(
+    "#mainContent div.input div.addCommentArea div.commentTextAreaWrapper div.addCommentTextArea"
+  );
+  if (!commentAddCommentTextAreaDiv) {
+    return;
+  }
+  let commentActionArea = document.querySelector("#mainContent div.commentWebPart_addComment div.input div.actionArea");
+  if (!commentActionArea) {
+    return;
+  }
+  let commentSubmitButton = document.querySelector(
+    "#mainContent div.commentWebPart_addComment div.input button.submitBtn"
+  );
+  if (!commentSubmitButton) {
+    return;
+  }
+
+  if (commentText) {
+    console.log("commentText is: " + commentText);
+    commentPlaceHolderTextArea.focus();
+    commentAddCommentTextAreaDiv.textContent = commentText;
+    commentPlaceHolderTextArea.classList.add("noDisplay");
+    commentAddCommentTextAreaDiv.classList.remove("noDisplay");
+    commentActionArea.classList.remove("noDisplay");
+    commentSubmitButton.classList.remove("disabled");
+    commentSubmitButton.disabled = false;
+    commentSubmitButton.click();
+  }
+}
+
+async function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "setFields") {
     setFields(request.fieldData);
+    sendResponse({ success: true });
+    return { wasHandled: true, returnValue: false };
+  } else if (request.type == "addComment") {
+    addComment(request.fieldData);
     sendResponse({ success: true });
     return { wasHandled: true, returnValue: false };
   }

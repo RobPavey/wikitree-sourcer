@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Military''':\n\"United States Civil War Soldiers Index, 1861-1865\"<br/>\nciting Affiliate Publication Title: Index to Compiled Service Records of Volunteer Union Soldiers Who Served in Organizations From the State of Indiana.; Affiliate Publication Number: M540; Affiliate Film Number: 59; FHL microfilm: 881780; Record number: 143; Packet letter: A<br/>\n{{FamilySearch Record|FSR5-DJ4}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Military''':\n\"United States Civil War Soldiers Index, 1861-1865\"<br/>\nciting Affiliate Publication Title: Index to Compiled Service Records of Volunteer Union Soldiers Who Served in Organizations From the State of Indiana.; Affiliate Publication Number: M540; Affiliate Film Number: 59; FHL microfilm: 881780; Record number: 143; Packet letter: A<br/>\n{{FamilySearch Record|FSR5-DJ4}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Charles was in a military record (United States Civil War Soldiers Index, 1861-1865) in 1861-1865 in Indiana, United States.<ref>\n'''Military''':\n\"United States Civil War Soldiers Index, 1861-1865\"<br/>\nciting Affiliate Publication Title: Index to Compiled Service Records of Volunteer Union Soldiers Who Served in Organizations From the State of Indiana.; Affiliate Publication Number: M540; Affiliate Film Number: 59; FHL microfilm: 881780; Record number: 143; Packet letter: A<br/>\n{{FamilySearch Record|FSR5-DJ4}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Charles was in a military record (United States Civil War Soldiers Index, 1861-1865) in 1861-1865 in Indiana, United States.<ref>\n'''Military''':\n\"United States Civil War Soldiers Index, 1861-1865\"<br/>\nciting Affiliate Publication Title: Index to Compiled Service Records of Volunteer Union Soldiers Who Served in Organizations From the State of Indiana.; Affiliate Publication Number: M540; Affiliate Film Number: 59; FHL microfilm: 881780; Record number: 143; Packet letter: A<br/>\n{{FamilySearch Record|FSR5-DJ4}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Military''': \"United States Civil War Soldiers Index, 1861-1865\"<br/>citing Affiliate Publication Title: Index to Compiled Service Records of Volunteer Union Soldiers Who Served in Organizations From the State of Indiana.; Affiliate Publication Number: M540; Affiliate Film Number: 59; FHL microfilm: 881780; Record number: 143; Packet letter: A<br/>{{FamilySearch Record|FSR5-DJ4}} (accessed 6 May 2021)",
+    "citation": "* '''Military''': \"United States Civil War Soldiers Index, 1861-1865\"<br/>citing Affiliate Publication Title: Index to Compiled Service Records of Volunteer Union Soldiers Who Served in Organizations From the State of Indiana.; Affiliate Publication Number: M540; Affiliate Film Number: 59; FHL microfilm: 881780; Record number: 143; Packet letter: A<br/>{{FamilySearch Record|FSR5-DJ4}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

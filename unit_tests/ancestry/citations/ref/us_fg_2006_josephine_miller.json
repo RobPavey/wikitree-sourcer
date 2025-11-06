@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Josephine died on 11 July 2006 and was buried at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Josephine died on 11 July 2006 and was buried at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Burial''': \"U.S., Find a Grave® Index, 1600s-Current\"<br/>{{FindAGrave|18816950}}<br/>{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)",
+    "citation": "* '''Burial''': \"U.S., Find a Grave® Index, 1600s-Current\"<br/>{{FindAGrave|18816950}}<br/>{{Ancestry Record|60525|83153657}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {
@@ -48,15 +48,15 @@
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"U.S., Find a Grave® Index, 1600s-Current,\" database, ({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), Josephine Ann Miller burial (died on 11 Jul 2006) at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925; citing {{FindAGrave|18816950}}</ref>",
+    "citation": "<ref>\"U.S., Find a Grave® Index, 1600s-Current,\" database, ({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), Josephine Ann Miller burial (died on 11 Jul 2006) at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925; citing {{FindAGrave|18816950}}.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "Josephine died on 11 July 2006 and was buried at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\"U.S., Find a Grave® Index, 1600s-Current,\" database, ({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), Josephine Ann Miller burial (died on 11 Jul 2006) at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925; citing {{FindAGrave|18816950}}</ref>",
+    "citation": "Josephine died on 11 July 2006 and was buried at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\"U.S., Find a Grave® Index, 1600s-Current,\" database, ({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), Josephine Ann Miller burial (died on 11 Jul 2006) at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925; citing {{FindAGrave|18816950}}.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"U.S., Find a Grave® Index, 1600s-Current,\" database, ({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), Josephine Ann Miller burial (died on 11 Jul 2006) at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925; citing {{FindAGrave|18816950}}",
+    "citation": "* \"U.S., Find a Grave® Index, 1600s-Current,\" database, ({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), Josephine Ann Miller burial (died on 11 Jul 2006) at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925; citing {{FindAGrave|18816950}}.",
     "type": "source"
   },
   "partial_ee_style_inline": {

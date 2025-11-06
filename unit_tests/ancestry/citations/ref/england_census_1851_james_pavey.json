@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"1851 England Census\"<br/>\nClass: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>\n{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 England Census\"<br/>\nClass: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>\n{{Ancestry Record|8860|5626136}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1851 census James (age 83) was the head of household in Town, Axminster, Devon, England.<ref>\n'''1851 Census''':\n\"1851 England Census\"<br/>\nClass: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>\n{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1851 census James (age 83) was the head of household in Town, Axminster, Devon, England.<ref>\n'''1851 Census''':\n\"1851 England Census\"<br/>\nClass: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>\n{{Ancestry Record|8860|5626136}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1851 Census''': \"1851 England Census\"<br/>Class: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)",
+    "citation": "* '''1851 Census''': \"1851 England Census\"<br/>Class: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>{{Ancestry Record|8860|5626136}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1861 Census''':\n\"Scotland Census, 1861\"<br/>\nciting Page: 22; Line: 24; Source Schedule Number: 112; Source Folio Number: 2; Digital film/folder number: 004548765_006_M93P-DRX; FHL microfilm: 103866; Image number: 115<br/>\n{{FamilySearch Record|VB4X-MPP}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9398-Z21H-J}}\n</ref>",
+    "citation": "<ref>\n'''1861 Census''':\n\"Scotland Census, 1861\"<br/>\nciting Page: 22; Line: 24; Source Schedule Number: 112; Source Folio Number: 2; Digital film/folder number: 004548765_006_M93P-DRX; FHL microfilm: 103866; Image number: 115<br/>\n{{FamilySearch Record|VB4X-MPP}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9398-Z21H-J}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1861 census Margaret (age 33) was recorded as married in Govan, Lanarkshire, Scotland, United Kingdom.<ref>\n'''1861 Census''':\n\"Scotland Census, 1861\"<br/>\nciting Page: 22; Line: 24; Source Schedule Number: 112; Source Folio Number: 2; Digital film/folder number: 004548765_006_M93P-DRX; FHL microfilm: 103866; Image number: 115<br/>\n{{FamilySearch Record|VB4X-MPP}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9398-Z21H-J}}\n</ref>",
+    "citation": "In the 1861 census Margaret (age 33) was recorded as married in Govan, Lanarkshire, Scotland, United Kingdom.<ref>\n'''1861 Census''':\n\"Scotland Census, 1861\"<br/>\nciting Page: 22; Line: 24; Source Schedule Number: 112; Source Folio Number: 2; Digital film/folder number: 004548765_006_M93P-DRX; FHL microfilm: 103866; Image number: 115<br/>\n{{FamilySearch Record|VB4X-MPP}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9398-Z21H-J}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1861 Census''': \"Scotland Census, 1861\"<br/>citing Page: 22; Line: 24; Source Schedule Number: 112; Source Folio Number: 2; Digital film/folder number: 004548765_006_M93P-DRX; FHL microfilm: 103866; Image number: 115<br/>{{FamilySearch Record|VB4X-MPP}} (accessed 6 May 2021)<br/>{{FamilySearch Image|9398-Z21H-J}}",
+    "citation": "* '''1861 Census''': \"Scotland Census, 1861\"<br/>citing Page: 22; Line: 24; Source Schedule Number: 112; Source Folio Number: 2; Digital film/folder number: 004548765_006_M93P-DRX; FHL microfilm: 103866; Image number: 115<br/>{{FamilySearch Record|VB4X-MPP}} (accessed 6 May 2021)<br/>{{FamilySearch Image|9398-Z21H-J}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

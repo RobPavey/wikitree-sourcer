@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1820 Census''':\n\"1820 United States Federal Census\"<br/>\n1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>\n{{Ancestry Record|7734|132041}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1820 Census''':\n\"1820 United States Federal Census\"<br/>\n1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>\n{{Ancestry Record|7734|132041}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1820 census Willm was in Blue Hill, Hancock, Maine.<ref>\n'''1820 Census''':\n\"1820 United States Federal Census\"<br/>\n1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>\n{{Ancestry Record|7734|132041}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1820 census Willm was in Blue Hill, Hancock, Maine.<ref>\n'''1820 Census''':\n\"1820 United States Federal Census\"<br/>\n1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>\n{{Ancestry Record|7734|132041}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1820 Census''': \"1820 United States Federal Census\"<br/>1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>{{Ancestry Record|7734|132041}} (accessed 6 May 2021)",
+    "citation": "* '''1820 Census''': \"1820 United States Federal Census\"<br/>1820 U S Census; Census Place: Blue Hill, Hancock, Maine; Page: 583; NARA Roll: M33_34; Image: 7<br/>{{Ancestry Record|7734|132041}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

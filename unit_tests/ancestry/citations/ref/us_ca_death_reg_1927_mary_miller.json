@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Mary died (age 71) on 10 December 1927 in Kern, California, USA.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1905-1939\"<br/>\nOriginal data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>\n{{Ancestry Record|5187|1511274}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Death''': \"California, U.S., Death Index, 1905-1939\"<br/>Original data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>{{Ancestry Record|5187|1511274}} (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"California, U.S., Death Index, 1905-1939\"<br/>Original data: California Department of Health and Welfare. California Vital Records-Vitalsearch<br/>{{Ancestry Record|5187|1511274}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

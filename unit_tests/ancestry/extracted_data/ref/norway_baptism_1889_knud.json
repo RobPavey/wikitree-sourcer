@@ -23,5 +23,6 @@
   },
   "sourceInformation": "Ancestry.com. Norway, Births and Christenings, 1648-1903 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2008. Original data: Genealogical Society of Utah. Western Europe Vital Records Index. Salt Lake City, Utah: Intellectual Reserve, copyright 2000. Used by permission.",
   "originalData": "Genealogical Society of Utah. Western Europe Vital Records Index. Salt Lake City, Utah: Intellectual Reserve, copyright 2000. Used by permission.",
-  "sourceDescription": "This database contains information extracted from birth and christening records from selected localities in Norway. Learn more..."
+  "sourceDescription": "This database contains information extracted from birth and christening records from selected localities in Norway. Learn more...",
+  "hasCommentTextArea": true
 }

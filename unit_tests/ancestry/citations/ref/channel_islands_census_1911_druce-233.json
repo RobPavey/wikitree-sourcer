@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1911 Census''':\n\"1911 Channel Islands Census\"<br/>\nClass: RG14; Piece: 34787; Schedule Number: 185; Registration District Number: 636; ED, institution, or vessel: 3/2<br/>\n{{Ancestry Record|2355|188915}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Channel Islands Census\"<br/>\nClass: RG14; Piece: 34787; Schedule Number: 185; Registration District Number: 636; ED, institution, or vessel: 3/2<br/>\n{{Ancestry Record|2355|188915}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1911 census Cecil (age 14) was the brother-in-law of Walter John Salmon at Sutherland House Victoria Terrace St Peter Port, St Peter Port, Guernsey, Channel Islands.<ref>\n'''1911 Census''':\n\"1911 Channel Islands Census\"<br/>\nClass: RG14; Piece: 34787; Schedule Number: 185; Registration District Number: 636; ED, institution, or vessel: 3/2<br/>\n{{Ancestry Record|2355|188915}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1911 census Cecil (age 14) was the brother-in-law of Walter John Salmon at Sutherland House Victoria Terrace St Peter Port, St Peter Port, Guernsey, Channel Islands.<ref>\n'''1911 Census''':\n\"1911 Channel Islands Census\"<br/>\nClass: RG14; Piece: 34787; Schedule Number: 185; Registration District Number: 636; ED, institution, or vessel: 3/2<br/>\n{{Ancestry Record|2355|188915}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1911 Census''': \"1911 Channel Islands Census\"<br/>Class: RG14; Piece: 34787; Schedule Number: 185; Registration District Number: 636; ED, institution, or vessel: 3/2<br/>{{Ancestry Record|2355|188915}} (accessed 6 May 2021)",
+    "citation": "* '''1911 Census''': \"1911 Channel Islands Census\"<br/>Class: RG14; Piece: 34787; Schedule Number: 185; Registration District Number: 636; ED, institution, or vessel: 3/2<br/>{{Ancestry Record|2355|188915}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

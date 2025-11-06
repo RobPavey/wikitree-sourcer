@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Will of parent John Warren''':\n\"Massachusetts, U.S., Wills and Probate Records, 1635-1991\"<br/>\nProbate Records (Worcester County, Massachusetts); Index 1731-1881; Author: Massachusetts. Probate Court (Worcester County)<br/>\n{{Ancestry Record|9069|7967038}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Will of parent John Warren''':\n\"Massachusetts, U.S., Wills and Probate Records, 1635-1991\"<br/>\nProbate Records (Worcester County, Massachusetts); Index 1731-1881; Author: Massachusetts. Probate Court (Worcester County)<br/>\n{{Ancestry Record|9069|7967038}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "John's parent's will passed probate or was recorded.<ref>\n'''Will of parent John Warren''':\n\"Massachusetts, U.S., Wills and Probate Records, 1635-1991\"<br/>\nProbate Records (Worcester County, Massachusetts); Index 1731-1881; Author: Massachusetts. Probate Court (Worcester County)<br/>\n{{Ancestry Record|9069|7967038}} (accessed 6 May 2021)\n</ref>",
+    "citation": "John's parent's will passed probate or was recorded.<ref>\n'''Will of parent John Warren''':\n\"Massachusetts, U.S., Wills and Probate Records, 1635-1991\"<br/>\nProbate Records (Worcester County, Massachusetts); Index 1731-1881; Author: Massachusetts. Probate Court (Worcester County)<br/>\n{{Ancestry Record|9069|7967038}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Will of parent John Warren''': \"Massachusetts, U.S., Wills and Probate Records, 1635-1991\"<br/>Probate Records (Worcester County, Massachusetts); Index 1731-1881; Author: Massachusetts. Probate Court (Worcester County)<br/>{{Ancestry Record|9069|7967038}} (accessed 6 May 2021)",
+    "citation": "* '''Will of parent John Warren''': \"Massachusetts, U.S., Wills and Probate Records, 1635-1991\"<br/>Probate Records (Worcester County, Massachusetts); Index 1731-1881; Author: Massachusetts. Probate Court (Worcester County)<br/>{{Ancestry Record|9069|7967038}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

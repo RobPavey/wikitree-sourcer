@@ -3563,6 +3563,7 @@ const femaleGivenNames = [
   "Lara",
   "Larsine",
   "Larue",
+  "Larissa",
   "Lassie",
   "Latha",
   "Laticia",

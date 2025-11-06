@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>\n[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>\n[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Robert, son of Rychard Jones, was baptised on 13 June 1568 in Warehorne, Kent, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>\n[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "Robert, son of Rychard Jones, was baptised on 13 June 1568 in Warehorne, Kent, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>\n[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Kent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Kent; Warehorne; St Matthew; Archdeacon's Transcript; File line number: 34<br/>[https://www.freereg.org.uk/search_records/58185f38e93790ec8b4b6afa FreeReg Transcription] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

@@ -155,7 +155,7 @@ async function makeApiRequests(extractedData) {
   } else {
     timeApiRequestMade = Date.now();
     const fields =
-      "Id,Gender,Name,FirstName,MiddleName,LastNameAtBirth,LastNameCurrent,RealName,Nicknames,BirthDate,DeathDate";
+      "Id,Gender,Name,FirstName,MiddleName,LastNameAtBirth,LastNameCurrent,RealName,Nicknames,BirthDate,DeathDate,DataStatus";
     wtApiGetRelatives(extractedData.wikiId, fields, true, true, true, true).then(
       function handleResolve(jsonData) {
         if (jsonData && jsonData.length > 0) {
@@ -361,8 +361,8 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
           }
           person.marriageDate.dateString = dateString;
         }
-        if (apiInfo.data_status) {
-          person.marriageDate.qualifier = apiDataStatusToQualifier(apiInfo.data_status.marriage_date);
+        if (apiInfo.dataStatus) {
+          person.marriageDate.qualifier = apiDataStatusToQualifier(apiInfo.dataStatus.marriageDate);
         }
       }
     }
@@ -407,6 +407,26 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
 
   //console.log("updateGeneralizedDataUsingApiResponse: apiPerson is:");
   //console.log(apiPerson);
+
+  // add any detail we can for this person
+  if (apiPerson.DataStatus) {
+    let birthDate = apiPerson.BirthDate;
+    let birthDateStatus = apiPerson.DataStatus.BirthDate;
+    if (birthDate && birthDateStatus) {
+      if (gd.birthDate) {
+        gd.birthDate.qualifier = apiDataStatusToQualifier(birthDateStatus);
+      }
+    }
+    let deathDate = apiPerson.DeathDate;
+    let deathDateStatus = apiPerson.DataStatus.DeathDate;
+    if (deathDate && deathDateStatus) {
+      if (gd.deathDate) {
+        gd.deathDate.qualifier = apiDataStatusToQualifier(deathDateStatus);
+      }
+    }
+  }
+
+  // Add detail for spouses
 
   let wikiIdToGdSpouseMap = {};
   if (ed.spouses && gd.spouses && ed.spouses.length == gd.spouses.length) {
@@ -484,34 +504,36 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
         // currently we only add children when the other parent is known
         // find this spouse
         let apiSpouse = apiPerson.Spouses[apiOtherParentId];
-        let matchingSpouse = wikiIdToGdSpouseMap[apiSpouse.Name];
+        if (apiSpouse) {
+          let matchingSpouse = wikiIdToGdSpouseMap[apiSpouse.Name];
 
-        if (matchingSpouse) {
-          if (!matchingSpouse.children) {
-            matchingSpouse.children = [];
-          }
-
-          let child = {};
-          child.name = new NameObj();
-          child.name.setFirstName(apiChild.FirstName);
-          child.name.setMiddleName(apiChild.MiddleName);
-          child.name.setLastName(apiChild.LastNameAtBirth);
-
-          if (apiChild.BirthDate) {
-            let parsedDate = DateUtils.parseDateString(apiChild.BirthDate);
-            if (parsedDate.isValid && parsedDate.yearNum) {
-              child.birthDate = new DateObj();
-              child.birthDate.yearString = parsedDate.yearNum.toString();
+          if (matchingSpouse) {
+            if (!matchingSpouse.children) {
+              matchingSpouse.children = [];
             }
-          }
-          if (apiChild.DeathDate) {
-            let parsedDate = DateUtils.parseDateString(apiChild.DeathDate);
-            if (parsedDate.isValid && parsedDate.yearNum) {
-              child.deathDate = new DateObj();
-              child.deathDate.yearString = parsedDate.yearNum.toString();
+
+            let child = {};
+            child.name = new NameObj();
+            child.name.setFirstName(apiChild.FirstName);
+            child.name.setMiddleName(apiChild.MiddleName);
+            child.name.setLastName(apiChild.LastNameAtBirth);
+
+            if (apiChild.BirthDate) {
+              let parsedDate = DateUtils.parseDateString(apiChild.BirthDate);
+              if (parsedDate.isValid && parsedDate.yearNum) {
+                child.birthDate = new DateObj();
+                child.birthDate.yearString = parsedDate.yearNum.toString();
+              }
             }
+            if (apiChild.DeathDate) {
+              let parsedDate = DateUtils.parseDateString(apiChild.DeathDate);
+              if (parsedDate.isValid && parsedDate.yearNum) {
+                child.deathDate = new DateObj();
+                child.deathDate.yearString = parsedDate.yearNum.toString();
+              }
+            }
+            matchingSpouse.children.push(child);
           }
-          matchingSpouse.children.push(child);
         }
       }
     }

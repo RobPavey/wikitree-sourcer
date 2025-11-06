@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Passenger List''':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>\nThe National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>\n{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Passenger List''':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>\nThe National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>\n{{Ancestry Record|8745|3941667}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Honor (age 17) arrived on the ship Chariot of Fame on 1 December 1854 in Boston, Massachusetts, USA, having departed from Liverpool, England.<ref>\n'''Passenger List''':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>\nThe National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>\n{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Honor (age 17) arrived on the ship Chariot of Fame on 1 December 1854 in Boston, Massachusetts, USA, having departed from Liverpool, England.<ref>\n'''Passenger List''':\n\"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>\nThe National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>\n{{Ancestry Record|8745|3941667}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Passenger List''': \"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>The National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>{{Ancestry Record|8745|3941667}} (accessed 6 May 2021)",
+    "citation": "* '''Passenger List''': \"Massachusetts, U.S., Arriving Passenger and Crew Lists, 1820-1963\"<br/>The National Archives at Washington, D.C.; Washington, D.C.; Series Title: Passenger Lists of Vessels Arriving at Boston, Massachusetts, 1820-1891; Record Group Title: Records of the U.S. Customs Service; Record Group Number: 36; Series Number: M277; NARA Roll Number: 049<br/>{{Ancestry Record|8745|3941667}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

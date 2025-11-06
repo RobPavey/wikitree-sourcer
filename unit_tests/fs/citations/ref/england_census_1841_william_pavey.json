@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 22<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CS3H-D9KT-8}}\n</ref>",
+    "citation": "<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 22<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CS3H-D9KT-8}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1841 census William (age 30) was on Union St, East Stonehouse, Devon, England, United Kingdom.<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 22<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CS3H-D9KT-8}}\n</ref>",
+    "citation": "In the 1841 census William (age 30) was on Union St, East Stonehouse, Devon, England, United Kingdom.<ref>\n'''1841 Census''':\n\"England and Wales Census, 1841\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 22<br/>\n{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CS3H-D9KT-8}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1841 Census''': \"England and Wales Census, 1841\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 22<br/>{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CS3H-D9KT-8}}",
+    "citation": "* '''1841 Census''': \"England and Wales Census, 1841\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 276/21; Page: 37; Line: 22<br/>{{FamilySearch Record|MQTV-YYP}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CS3H-D9KT-8}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

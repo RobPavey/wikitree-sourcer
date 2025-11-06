@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Michigan Death Index, 1971-1996\"<br/>\n{{FamilySearch Record|VZ14-WHX}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Michigan Death Index, 1971-1996\"<br/>\n{{FamilySearch Record|VZ14-WHX}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Lula died on 1 February 1978 in Battle Creek, Calhoun, Michigan.<ref>\n'''Death''':\n\"Michigan Death Index, 1971-1996\"<br/>\n{{FamilySearch Record|VZ14-WHX}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Lula died on 1 February 1978 in Battle Creek, Calhoun, Michigan.<ref>\n'''Death''':\n\"Michigan Death Index, 1971-1996\"<br/>\n{{FamilySearch Record|VZ14-WHX}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Death''': \"Michigan Death Index, 1971-1996\"<br/>{{FamilySearch Record|VZ14-WHX}} (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"Michigan Death Index, 1971-1996\"<br/>{{FamilySearch Record|VZ14-WHX}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

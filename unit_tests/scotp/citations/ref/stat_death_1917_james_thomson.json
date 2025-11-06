@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF/203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF/203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "James's death (age 19) was registered in 1917 in the Service Returns district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF/203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "James's death (age 19) was registered in 1917 in the Service Returns district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 117/AF/203<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 117/AF/203<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 117/AF/203<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

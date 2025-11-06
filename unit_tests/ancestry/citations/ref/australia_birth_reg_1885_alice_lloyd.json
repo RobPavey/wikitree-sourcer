@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Victoria, Australia, Birth Index, 1837-1917\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>\n{{Ancestry Record|61648|250322}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Victoria, Australia, Birth Index, 1837-1917\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>\n{{Ancestry Record|61648|250322}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Alice's birth was registered in 1885 in Victoria, Australia. They were the child of Thomas William Lloyd.<ref>\n'''Birth Registration''':\n\"Victoria, Australia, Birth Index, 1837-1917\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>\n{{Ancestry Record|61648|250322}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Alice's birth was registered in 1885 in Victoria, Australia. They were the child of Thomas William Lloyd.<ref>\n'''Birth Registration''':\n\"Victoria, Australia, Birth Index, 1837-1917\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>\n{{Ancestry Record|61648|250322}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth Registration''': \"Victoria, Australia, Birth Index, 1837-1917\"<br/>The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>{{Ancestry Record|61648|250322}} (accessed 6 May 2021)",
+    "citation": "* '''Birth Registration''': \"Victoria, Australia, Birth Index, 1837-1917\"<br/>The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Birth Records; Reference Number: 4275<br/>{{Ancestry Record|61648|250322}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

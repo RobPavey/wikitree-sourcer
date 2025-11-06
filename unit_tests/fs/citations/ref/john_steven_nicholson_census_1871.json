@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1871 census John (age 0) was the son of William Nicholson in Warrington, Lancashire, England, United Kingdom.<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1871 census John (age 0) was the son of William Nicholson in Warrington, Lancashire, England, United Kingdom.<ref>\n'''1871 Census''':\n\"England and Wales Census, 1871\"<br/>\nciting The National Archives of the UK<br/>\n{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1871 Census''': \"England and Wales Census, 1871\"<br/>citing The National Archives of the UK<br/>{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021)",
+    "citation": "* '''1871 Census''': \"England and Wales Census, 1871\"<br/>citing The National Archives of the UK<br/>{{FamilySearch Record|VBN2-36Z}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

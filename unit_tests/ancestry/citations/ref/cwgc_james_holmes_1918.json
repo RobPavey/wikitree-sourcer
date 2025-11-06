@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Memorial''':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>\nCommonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>\n{{Ancestry Record|2706|66407}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Memorial''':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>\nCommonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>\n{{Ancestry Record|2706|66407}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "James was mentioned on a memorial at Cairo War Memorial Cemetery with a death date of 15 September 1918.<ref>\n'''Memorial''':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>\nCommonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>\n{{Ancestry Record|2706|66407}} (accessed 6 May 2021)\n</ref>",
+    "citation": "James was mentioned on a memorial at Cairo War Memorial Cemetery with a death date of 15 September 1918.<ref>\n'''Memorial''':\n\"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>\nCommonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>\n{{Ancestry Record|2706|66407}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Memorial''': \"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>Commonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>{{Ancestry Record|2706|66407}} (accessed 6 May 2021)",
+    "citation": "* '''Memorial''': \"UK, Commonwealth War Graves, 1914-1921 and 1939-1947\"<br/>Commonwealth War Graves Commission; Author: Peter Singlehurst; Series Title: British Commonwealth War Graves Registers, 1914-1918; Archive Name: London, United Kingdom<br/>{{Ancestry Record|2706|66407}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

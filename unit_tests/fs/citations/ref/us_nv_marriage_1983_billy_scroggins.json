@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Billy married Joan Frances Rowsey on 6 April 1983 in Clark, Nevada, United States.<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Billy married Joan Frances Rowsey on 6 April 1983 in Clark, Nevada, United States.<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage Registration''': \"Nevada Marriage Index, 1956-2005\"<br/>citing Page: B434671; Affiliate Film Number: 519706<br/>{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage Registration''': \"Nevada Marriage Index, 1956-2005\"<br/>citing Page: B434671; Affiliate Film Number: 519706<br/>{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

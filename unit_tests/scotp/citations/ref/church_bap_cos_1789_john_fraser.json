@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth or Baptism''':\n\"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth or Baptism''':\n\"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "John, son of Donald Fraser & Mary Fraser, was born or baptised on 6 April 1789 in Urquhart and Glenmoriston, Inverness-shire, Scotland.<ref>\n'''Birth or Baptism''':\n\"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "John, son of Donald Fraser & Mary Fraser, was born or baptised on 6 April 1789 in Urquhart and Glenmoriston, Inverness-shire, Scotland.<ref>\n'''Birth or Baptism''':\n\"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth or Baptism''': \"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>National Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Birth or Baptism''': \"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>National Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

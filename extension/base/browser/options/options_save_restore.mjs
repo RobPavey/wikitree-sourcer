@@ -64,6 +64,11 @@ function restoreSiteListDraggable(element, fullOptionName, optionsRegistry) {
     }
   }
 
+  // empty the existing list - there can be children if we are doing reset to defauls
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+
   for (let site of siteList) {
     let listItem = document.createElement("li");
     listItem.draggable = true;

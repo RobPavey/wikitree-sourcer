@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1939 Census''':\n\"England and Wales National Register, 1939\"<br/>\nciting District: West Ham C.B.; Line: 15; Entry: 011; Reference: RG101/1041C/011/15; Source Schedule Number: 137; Source Sub-schedule Number: 2; Digital film/folder number: DI0001004<br/>\n{{FamilySearch Record|728V-TTT2}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1939 Census''':\n\"England and Wales National Register, 1939\"<br/>\nciting District: West Ham C.B.; Line: 15; Entry: 011; Reference: RG101/1041C/011/15; Source Schedule Number: 137; Source Sub-schedule Number: 2; Digital film/folder number: DI0001004<br/>\n{{FamilySearch Record|728V-TTT2}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1939 register Ellen (age 39), Unpaid Domestic Duties, was recorded as married in West Ham, Essex, England, United Kingdom.<ref>\n'''1939 Census''':\n\"England and Wales National Register, 1939\"<br/>\nciting District: West Ham C.B.; Line: 15; Entry: 011; Reference: RG101/1041C/011/15; Source Schedule Number: 137; Source Sub-schedule Number: 2; Digital film/folder number: DI0001004<br/>\n{{FamilySearch Record|728V-TTT2}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1939 register Ellen (age 39), Unpaid Domestic Duties, was recorded as married in West Ham, Essex, England, United Kingdom.<ref>\n'''1939 Census''':\n\"England and Wales National Register, 1939\"<br/>\nciting District: West Ham C.B.; Line: 15; Entry: 011; Reference: RG101/1041C/011/15; Source Schedule Number: 137; Source Sub-schedule Number: 2; Digital film/folder number: DI0001004<br/>\n{{FamilySearch Record|728V-TTT2}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1939 Census''': \"England and Wales National Register, 1939\"<br/>citing District: West Ham C.B.; Line: 15; Entry: 011; Reference: RG101/1041C/011/15; Source Schedule Number: 137; Source Sub-schedule Number: 2; Digital film/folder number: DI0001004<br/>{{FamilySearch Record|728V-TTT2}} (accessed 6 May 2021)",
+    "citation": "* '''1939 Census''': \"England and Wales National Register, 1939\"<br/>citing District: West Ham C.B.; Line: 15; Entry: 011; Reference: RG101/1041C/011/15; Source Schedule Number: 137; Source Sub-schedule Number: 2; Digital film/folder number: DI0001004<br/>{{FamilySearch Record|728V-TTT2}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

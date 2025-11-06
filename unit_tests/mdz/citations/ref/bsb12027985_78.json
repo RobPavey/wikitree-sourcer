@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Ranglisten der Offiziere des aktiven Dienststandes der Königlich Bayerischen Armee. 12. 1899\"<br/>\nPage 74<br/>\n[https://www.digitale-sammlungen.de/en/view/bsb12027985?page=78,79 MDZ Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Ranglisten der Offiziere des aktiven Dienststandes der Königlich Bayerischen Armee. 12. 1899\"<br/>\nPage 74<br/>\n[https://www.digitale-sammlungen.de/en/view/bsb12027985?page=78,79 MDZ Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': \"Ranglisten der Offiziere des aktiven Dienststandes der Königlich Bayerischen Armee. 12. 1899\"<br/>Page 74<br/>[https://www.digitale-sammlungen.de/en/view/bsb12027985?page=78,79 MDZ Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

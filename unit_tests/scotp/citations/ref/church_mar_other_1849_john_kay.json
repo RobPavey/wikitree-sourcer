@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "John married Margaret Kay on 21 May 1840 at Leith Relief, Midlothian, Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "John married Margaret Kay on 21 May 1840 at Leith Relief, Midlothian, Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Marriage''': \"Other Church Registers - Marriages\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"Other Church Registers - Marriages\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

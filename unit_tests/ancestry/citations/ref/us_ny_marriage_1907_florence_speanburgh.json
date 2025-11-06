@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"New York State, Marriage Index, 1881-1967\"<br/>\nNew York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>\n{{Ancestry Record|61632|198847}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"New York State, Marriage Index, 1881-1967\"<br/>\nNew York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>\n{{Ancestry Record|61632|198847}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Florence married Arthur Wood on 25 September 1907 in Schaghticoke, New York, USA.<ref>\n'''Marriage''':\n\"New York State, Marriage Index, 1881-1967\"<br/>\nNew York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>\n{{Ancestry Record|61632|198847}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Florence married Arthur Wood on 25 September 1907 in Schaghticoke, New York, USA.<ref>\n'''Marriage''':\n\"New York State, Marriage Index, 1881-1967\"<br/>\nNew York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>\n{{Ancestry Record|61632|198847}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Marriage''': \"New York State, Marriage Index, 1881-1967\"<br/>New York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>{{Ancestry Record|61632|198847}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"New York State, Marriage Index, 1881-1967\"<br/>New York State Department of Health; Albany, NY, USA; New York State Marriage Index; Certificate Number: 21704<br/>{{Ancestry Record|61632|198847}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

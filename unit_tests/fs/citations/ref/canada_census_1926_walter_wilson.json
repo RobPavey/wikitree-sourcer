@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 8; Line: 38; Digital film/folder number: 105519966; Image number: 624; Record number: 35<br/>\n{{FamilySearch Record|QP2W-DC3N}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-G94R-Q}}\n</ref>",
+    "citation": "<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 8; Line: 38; Digital film/folder number: 105519966; Image number: 624; Record number: 35<br/>\n{{FamilySearch Record|QP2W-DC3N}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-G94R-Q}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1926 census Walter (age 10) was the son of William Wilson at Prince Albert No. 461, Saskatchewan, Canada.<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 8; Line: 38; Digital film/folder number: 105519966; Image number: 624; Record number: 35<br/>\n{{FamilySearch Record|QP2W-DC3N}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-G94R-Q}}\n</ref>",
+    "citation": "In the 1926 census Walter (age 10) was the son of William Wilson at Prince Albert No. 461, Saskatchewan, Canada.<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 8; Line: 38; Digital film/folder number: 105519966; Image number: 624; Record number: 35<br/>\n{{FamilySearch Record|QP2W-DC3N}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-G94R-Q}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1926 Census''': \"Canada, Prairie Provinces, Census, 1926\"<br/>citing Page: 8; Line: 38; Digital film/folder number: 105519966; Image number: 624; Record number: 35<br/>{{FamilySearch Record|QP2W-DC3N}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C395-G94R-Q}}",
+    "citation": "* '''1926 Census''': \"Canada, Prairie Provinces, Census, 1926\"<br/>citing Page: 8; Line: 38; Digital film/folder number: 105519966; Image number: 624; Record number: 35<br/>{{FamilySearch Record|QP2W-DC3N}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C395-G94R-Q}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

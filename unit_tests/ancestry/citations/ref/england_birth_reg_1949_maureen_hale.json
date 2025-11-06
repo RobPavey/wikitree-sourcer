@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>\n{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>\n{{Ancestry Record|8782|22191988}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Maureen's birth was registered in the Apr-May-Jun quarter of 1949 in the Brentwood district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>\n{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Maureen's birth was registered in the Apr-May-Jun quarter of 1949 in the Brentwood district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>\nGeneral Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>\n{{Ancestry Record|8782|22191988}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>General Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>{{Ancestry Record|8782|22191988}} (accessed 6 May 2021)",
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1916-2007\"<br/>General Register Office; United Kingdom; Reference: Volume 4a, Page 550; Volume Number: 4a; Page Number: 550<br/>{{Ancestry Record|8782|22191988}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

@@ -1,0 +1,40 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "van der Poll",
+    "forenames": "Hendrik"
+  },
+  "eventDate": {
+    "yearString": "1894"
+  },
+  "eventPlace": {
+    "placeString": "Cape Town, Western Cape, South Africa"
+  },
+  "lastNameAtDeath": "van der Poll",
+  "birthDate": {
+    "yearString": "1817"
+  },
+  "deathDate": {
+    "yearString": "1894"
+  },
+  "ageAtEvent": 77,
+  "ageAtDeath": 77,
+  "primaryPersonOptions": [
+    "Hendrik van der Poll",
+    "Johanna Jacomina van der Poll",
+    "Hendrik Van Der Poll Kirsten",
+    "Johanna Catherina Kirsten",
+    "William Ferdinand Kirsten",
+    "Johanna Jacoba Kirsten",
+    "William Ferdinand Kirsten",
+    "Edith Kirsten",
+    "Hendrik van der Poll Kirsten",
+    "John Frederick Kirsten",
+    "Friederike W E Kirsten",
+    "Alfred Walter Kirsten",
+    "John Peter Kirsten"
+  ],
+  "hasValidData": true
+}

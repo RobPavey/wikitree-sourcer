@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1911 Census''':\n\"1911 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1911; Registration District Number: 10; ED, institution, or vessel: 14; Piece: 789<br/>\n{{Ancestry Record|1911England|51208}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1911; Registration District Number: 10; ED, institution, or vessel: 14; Piece: 789<br/>\n{{Ancestry Record|1911England|51208}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1911 census Francis (age 36), Surgical Scientific Instrument Maker, was the married head of household at 15 Tytherton Road, Holloway N, Islington, England.<ref>\n'''1911 Census''':\n\"1911 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1911; Registration District Number: 10; ED, institution, or vessel: 14; Piece: 789<br/>\n{{Ancestry Record|1911England|51208}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1911 census Francis (age 36), Surgical Scientific Instrument Maker, was the married head of household at 15 Tytherton Road, Holloway N, Islington, England.<ref>\n'''1911 Census''':\n\"1911 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1911; Registration District Number: 10; ED, institution, or vessel: 14; Piece: 789<br/>\n{{Ancestry Record|1911England|51208}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1911 Census''': \"1911 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1911; Registration District Number: 10; ED, institution, or vessel: 14; Piece: 789<br/>{{Ancestry Record|1911England|51208}} (accessed 6 May 2021)",
+    "citation": "* '''1911 Census''': \"1911 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; Census Returns of England and Wales, 1911; Registration District Number: 10; ED, institution, or vessel: 14; Piece: 789<br/>{{Ancestry Record|1911England|51208}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

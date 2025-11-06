@@ -235,6 +235,53 @@ function getDateStatus(document, selector) {
   return status;
 }
 
+function getDateStatus2025(document, selector) {
+  // the selector points to a div that has children for the sentence
+  // Typically there are thse children:
+  // Text node: "Born " or "Born before " or "Born after "
+  // time element
+  // a (optional) : for "uncertain" which takes you to edit mode
+  // text node: " in "
+  // strong > span : birth place
+  // a : link to location
+
+  // There is no difference in the HTML between "none" and exact/certain
+  // Example with "none" : https://www.wikitree.com/wiki/Brewster-4798
+  // Example with "certain": https://www.wikitree.com/wiki/Raymond-3037
+  // So those will get set to none. The API could be used to get the
+  // real status.
+
+  let status = "none";
+  let dateNode = document.querySelector(selector);
+  if (dateNode) {
+    let text = dateNode.textContent;
+    if (text) {
+      let lcText = text.toLowerCase();
+      lcText = lcText.replace(/\s+/g, " ");
+      //console.log("lcText = " + lcText);
+      if (lcText.startsWith("born")) {
+        if (lcText.startsWith("born before")) {
+          status = "before";
+        } else if (lcText.startsWith("born after")) {
+          status = "after";
+        } else if (lcText.startsWith("born about")) {
+          status = "about";
+        }
+      } else if (lcText.startsWith("died")) {
+        if (lcText.startsWith("died before")) {
+          status = "before";
+        } else if (lcText.startsWith("died after")) {
+          status = "after";
+        } else if (lcText.startsWith("died about")) {
+          status = "about";
+        }
+      }
+    }
+  }
+
+  return status;
+}
+
 function getCurrentLastNameInNonEditMode(document, isPrivate) {
   let currentLastName = "";
   let metaNode = document.querySelector(".VITALS meta[itemprop=familyName]");
@@ -1334,9 +1381,9 @@ function extractVitalsDataInNonEditMode2025(document, result, privacyLevel) {
     result.deathDate = getTextBySelector(document, ".VITALS span[data-cy=death-date]");
   } else {
     result.birthDate = getTextBySelector(document, ".VITALS time[itemprop=birthDate]");
-    result.birthDateStatus = getDateStatus(document, ".VITALS time[itemprop=birthDate]");
+    result.birthDateStatus = getDateStatus2025(document, "#Birth");
     result.deathDate = getTextBySelector(document, ".VITALS time[itemprop=deathDate]");
-    result.deathDateStatus = getDateStatus(document, ".VITALS time[itemprop=deathDate]");
+    result.deathDateStatus = getDateStatus2025(document, "#Death");
 
     result.birthLocation = getTextBySelector(document, ".VITALS span[itemprop=birthPlace]");
     result.deathLocation = getTextBySelector(document, ".VITALS span[itemprop=deathPlace]");

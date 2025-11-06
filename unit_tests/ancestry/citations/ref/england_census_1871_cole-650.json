@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>\n{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>\n{{Ancestry Record|7619|11291260}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1871 census Sophia (age 30) was the wife of William Handford in Penstone, Colebrooke, Devon, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>\n{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1871 census Sophia (age 30) was the wife of William Handford in Penstone, Colebrooke, Devon, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>\n{{Ancestry Record|7619|11291260}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>{{Ancestry Record|7619|11291260}} (accessed 6 May 2021)",
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2162; Folio: 92; Page: 10; GSU roll: 832042; ED, institution, or vessel: 12; Household schedule number: 51<br/>{{Ancestry Record|7619|11291260}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

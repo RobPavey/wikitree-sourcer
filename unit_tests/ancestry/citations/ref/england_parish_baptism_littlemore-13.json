@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"London, England, Church of England Births and Baptisms, 1813-1920\"<br/>\nLondon Metropolitan Archives; London, England; London Church of England Parish Registers; Reference Number: P90/PAN1/027<br/>\n{{Ancestry Record|1558|1579851}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"London, England, Church of England Births and Baptisms, 1813-1920\"<br/>\nLondon Metropolitan Archives; London, England; London Church of England Parish Registers; Reference Number: P90/PAN1/027<br/>\n{{Ancestry Record|1558|1579851}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Amelia, daughter of John Littlemore & Mary Littlemore, was baptised on 14 June 1850 in Old St Pancras, St Pancras, Camden, England.<ref>\n'''Baptism''':\n\"London, England, Church of England Births and Baptisms, 1813-1920\"<br/>\nLondon Metropolitan Archives; London, England; London Church of England Parish Registers; Reference Number: P90/PAN1/027<br/>\n{{Ancestry Record|1558|1579851}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Amelia, daughter of John Littlemore & Mary Littlemore, was baptised on 14 June 1850 in Old St Pancras, St Pancras, Camden, England.<ref>\n'''Baptism''':\n\"London, England, Church of England Births and Baptisms, 1813-1920\"<br/>\nLondon Metropolitan Archives; London, England; London Church of England Parish Registers; Reference Number: P90/PAN1/027<br/>\n{{Ancestry Record|1558|1579851}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Baptism''': \"London, England, Church of England Births and Baptisms, 1813-1920\"<br/>London Metropolitan Archives; London, England; London Church of England Parish Registers; Reference Number: P90/PAN1/027<br/>{{Ancestry Record|1558|1579851}} (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"London, England, Church of England Births and Baptisms, 1813-1920\"<br/>London Metropolitan Archives; London, England; London Church of England Parish Registers; Reference Number: P90/PAN1/027<br/>{{Ancestry Record|1558|1579851}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

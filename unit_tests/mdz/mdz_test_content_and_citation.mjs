@@ -43,6 +43,10 @@ const regressionData = [
     caseName: "bsb11873875_20",
     url: "https://www.digitale-sammlungen.de/de/view/bsb11873875?page=20,21",
   },
+  {
+    caseName: "bsb12027985_78",
+    url: "https://www.digitale-sammlungen.de/en/view/bsb12027985?page=78,79",
+  },
 ];
 
 async function runTests(testManager) {
