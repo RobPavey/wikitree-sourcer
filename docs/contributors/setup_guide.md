@@ -34,6 +34,14 @@ It is best to be up to date with the latest work in the develop branch of the ma
 
 `git checkout develop`
 
+### Setup your editor/IDE ###
+
+I use Visual Studio Code (vscode). I have it setup to run `prettier` to format the code whenever I save.
+
+There is a .prettier file in the project that controls the formatting/indentation of the files. It is important that we all use the same formatting rules so that the files to not keep changing formatting each time a different person edits them.
+
+I beleive there is a rule setup using `husky` that means it automatically runs prettier upon commit. But this doesn't seem to work for everyone.
+
 ### Install node.js
 
 It can be downloaded here: https://nodejs.org/en/download/
