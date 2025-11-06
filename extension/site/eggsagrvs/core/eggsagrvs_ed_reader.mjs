@@ -360,7 +360,11 @@ class EggsagrvsEdReader extends ExtractedDataReader {
       } else {
         place = [parts[0].trim(), this.ed.country].join(", ");
       }
-      return this.makePlaceObjFromFullPlaceName(StringUtils.toInitialCapsEachWord(place));
+      place = place
+        .split("-")
+        .map((part) => StringUtils.toInitialCapsEachWord(part))
+        .join("-");
+      return this.makePlaceObjFromFullPlaceName(place);
     }
   }
 
