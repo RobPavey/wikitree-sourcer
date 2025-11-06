@@ -46,10 +46,7 @@ function getSelectedRow(document) {
 }
 
 function monthName2Number(month_name) {
-  const month_names = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-  ];
+  const month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   return month_names.indexOf(month_name) + 1;
 }
@@ -64,7 +61,7 @@ function extractData(document, url) {
 
   // only allow extract from documents for now
   if (!url.match("/document/") && !url.match("/archive/")) {
-    return;
+    return result;
   }
 
   result.doc_id = url.substring(url.lastIndexOf("/") + 1);
@@ -74,7 +71,7 @@ function extractData(document, url) {
   for (let breadcrum of breadcrum_item.querySelectorAll('a[class="ng-star-inserted"]')) {
     breadcrum_string += ", " + breadcrum.textContent.trim();
   }
-  let title = document.querySelector('yv-its-full-details-metadata')?.querySelector("h1");
+  let title = document.querySelector("yv-its-full-details-metadata")?.querySelector("h1");
   if (title != null) {
     breadcrum_string += ", " + title.textContent.trim();
   }
@@ -85,8 +82,7 @@ function extractData(document, url) {
     if (selected_index != null) {
       result.person_index = selected_index;
     }
-  }
-  else if (url.match("/archive/") && title) {
+  } else if (url.match("/archive/") && title) {
     let title_text = title.textContent.trim();
     let last_name = null;
     let first_name = null;
@@ -99,11 +95,15 @@ function extractData(document, url) {
       title_text = title_text.substring(title_text.indexOf("Personal file of ") + "Personal file of ".length);
       last_name = title_text.substring(0, title_text.indexOf(",")).trim();
       title_text = title_text.substring(title_text.indexOf(",") + 1).trim();
-      first_name = title_text.substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") : title_text.length).trim();
+      first_name = title_text
+        .substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") : title_text.length)
+        .trim();
       title_text = title_text.substring(title_text.indexOf(first_name) + first_name.length + 1).trim();
       if (title_text.startsWith("born on ")) {
         title_text = title_text.substring("born on ".length).trim();
-        date_of_birth = title_text.substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") + 1 : title_text.length).trim();
+        date_of_birth = title_text
+          .substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") + 1 : title_text.length)
+          .trim();
         title_text = title_text.substring(title_text.indexOf(date_of_birth) + date_of_birth.length + 1).trim();
         const month = date_of_birth.split("-")[1];
         date_of_birth = date_of_birth.replace(month, ("0" + monthName2Number(month).toString()).slice(-2));
@@ -119,11 +119,15 @@ function extractData(document, url) {
       title_text = title_text.substring(title_text.indexOf("Akte von ") + "Akte von ".length);
       last_name = title_text.substring(0, title_text.indexOf(",")).trim();
       title_text = title_text.substring(title_text.indexOf(",") + 1).trim();
-      first_name = title_text.substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") : title_text.length).trim();
+      first_name = title_text
+        .substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") : title_text.length)
+        .trim();
       title_text = title_text.substring(title_text.indexOf(first_name) + first_name.length + 1).trim();
       if (title_text.startsWith("geboren am ")) {
         title_text = title_text.substring("geboren am ".length).trim();
-        date_of_birth = title_text.substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") + 1 : title_text.length).trim();
+        date_of_birth = title_text
+          .substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") + 1 : title_text.length)
+          .trim();
         title_text = title_text.substring(title_text.indexOf(date_of_birth) + date_of_birth.length + 1).trim();
         const month = date_of_birth.split("-")[1];
         date_of_birth = date_of_birth.replace(month, ("0" + monthName2Number(month).toString()).slice(-2));
@@ -138,11 +142,15 @@ function extractData(document, url) {
       title_text = title_text.substring(title_text.indexOf("Unterlagen von ") + "Unterlagen von ".length);
       last_name = title_text.substring(0, title_text.indexOf(",")).trim();
       title_text = title_text.substring(title_text.indexOf(",") + 1).trim();
-      first_name = title_text.substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") : title_text.length).trim();
+      first_name = title_text
+        .substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") : title_text.length)
+        .trim();
       title_text = title_text.substring(title_text.indexOf(first_name) + first_name.length + 1).trim();
       if (title_text.startsWith("geboren am ")) {
         title_text = title_text.substring("geboren am ".length).trim();
-        date_of_birth = title_text.substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") + 1 : title_text.length).trim();
+        date_of_birth = title_text
+          .substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") + 1 : title_text.length)
+          .trim();
         title_text = title_text.substring(title_text.indexOf(date_of_birth) + date_of_birth.length + 1).trim();
         const month = date_of_birth.split("-")[1];
         date_of_birth = date_of_birth.replace(month, ("0" + monthName2Number(month).toString()).slice(-2));
