@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "image",
+  "recordType": "Census",
+  "eventPlace": {
+    "placeString": "Norway",
+    "country": "Norway"
+  },
+  "hasValidData": true
+}

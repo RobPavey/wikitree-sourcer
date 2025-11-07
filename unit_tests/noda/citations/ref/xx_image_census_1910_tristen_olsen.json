@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Census''':\nRA, Folketelling 1910 for 1266 Masfjorden herred, 1910, s. 59<br/>\n[https://www.digitalarkivet.no/ft60145213000022 Digitalarkivet Image] (accessed 6 May 2021)<br/>\nUnknown in Norway.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record in Norway.<ref>\n'''Census''':\nRA, Folketelling 1910 for 1266 Masfjorden herred, 1910, s. 59<br/>\n[https://www.digitalarkivet.no/ft60145213000022 Digitalarkivet Image] (accessed 6 May 2021)<br/>\nUnknown in Norway.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Census''': RA, Folketelling 1910 for 1266 Masfjorden herred, 1910, s. 59<br/>[https://www.digitalarkivet.no/ft60145213000022 Digitalarkivet Image] (accessed 6 May 2021)<br/>Unknown in Norway.",
+    "type": "source"
+  }
+}
