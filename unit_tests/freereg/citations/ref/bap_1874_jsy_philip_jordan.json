@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nJersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>\n[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nJersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>\n[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Philip, child of Robert Edward Jordan & Mary Ann Marrett, was born on 25 February 1674 and baptised on 14 June 1874 in St Helier, Jersey.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nJersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>\n[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "Philip, child of Robert Edward Jordan & Mary Ann Marrett, was born on 25 February 1674 and baptised on 14 June 1874 in St Helier, Jersey.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nJersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>\n[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Jersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Jersey; St Helier; Blank; Register of unspecified type; File line number: 1416<br/>[https://www.freereg.org.uk/search_records/5817d04fe93790ec8b31442f FreeReg Transcription] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

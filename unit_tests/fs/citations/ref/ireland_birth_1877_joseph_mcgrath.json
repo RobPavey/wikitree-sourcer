@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Ireland Civil Registration, 1845-1913\"<br/>\nciting Digital film/folder number: 007720461; Record number: 13<br/>\n{{FamilySearch Record|QPR9-YZH4}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Ireland Civil Registration, 1845-1913\"<br/>\nciting Digital film/folder number: 007720461; Record number: 13<br/>\n{{FamilySearch Record|QPR9-YZH4}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Joseph, son of John McGrath & Isabella Devlin McGrath, was born on 14 December 1877 in Omagh, County Tyrone, Ireland.<ref>\n'''Birth Registration''':\n\"Ireland Civil Registration, 1845-1913\"<br/>\nciting Digital film/folder number: 007720461; Record number: 13<br/>\n{{FamilySearch Record|QPR9-YZH4}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Joseph, son of John McGrath & Isabella Devlin McGrath, was born on 14 December 1877 in Omagh, County Tyrone, Ireland.<ref>\n'''Birth Registration''':\n\"Ireland Civil Registration, 1845-1913\"<br/>\nciting Digital film/folder number: 007720461; Record number: 13<br/>\n{{FamilySearch Record|QPR9-YZH4}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Birth Registration''': \"Ireland Civil Registration, 1845-1913\"<br/>citing Digital film/folder number: 007720461; Record number: 13<br/>{{FamilySearch Record|QPR9-YZH4}} (accessed 6 May 2021)",
+    "citation": "* '''Birth Registration''': \"Ireland Civil Registration, 1845-1913\"<br/>citing Digital film/folder number: 007720461; Record number: 13<br/>{{FamilySearch Record|QPR9-YZH4}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

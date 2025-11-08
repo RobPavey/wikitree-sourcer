@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { buildSearchData } from "../../extension/site/eggsagrvs/core/eggsagrvs_build_search_data.mjs";
-import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
+import { runBuildSearchDataTests } from "../test_utils/test_build_search_utils.mjs";
 
 const regressionData = [
   {
@@ -50,7 +50,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runBuildSearchUrlTests("eggsagrvs", buildSearchData, regressionData, testManager);
+  await runBuildSearchDataTests("eggsagrvs", buildSearchData, regressionData, testManager);
 }
 
 export { runTests };

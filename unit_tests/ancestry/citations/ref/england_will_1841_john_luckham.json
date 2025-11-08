@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Will''':\n\"Dorset, England, Wills and Probates, 1565-1858\"<br/>\nDorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>\n{{Ancestry Record|2119|37801}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Will''':\n\"Dorset, England, Wills and Probates, 1565-1858\"<br/>\nDorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>\n{{Ancestry Record|2119|37801}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "John's will passed probate or was recorded. Residence in 1841 in Broadway, Dorset, England.<ref>\n'''Will''':\n\"Dorset, England, Wills and Probates, 1565-1858\"<br/>\nDorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>\n{{Ancestry Record|2119|37801}} (accessed 6 May 2021)\n</ref>",
+    "citation": "John's will passed probate or was recorded. Residence in 1841 in Broadway, Dorset, England.<ref>\n'''Will''':\n\"Dorset, England, Wills and Probates, 1565-1858\"<br/>\nDorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>\n{{Ancestry Record|2119|37801}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Will''': \"Dorset, England, Wills and Probates, 1565-1858\"<br/>Dorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>{{Ancestry Record|2119|37801}} (accessed 6 May 2021)",
+    "citation": "* '''Will''': \"Dorset, England, Wills and Probates, 1565-1858\"<br/>Dorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>{{Ancestry Record|2119|37801}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

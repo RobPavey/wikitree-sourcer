@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 004007124; FHL microfilm: 1545745; Record number: 92; Packet letter: I<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 004007124; FHL microfilm: 1545745; Record number: 92; Packet letter: I<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Mary's daughter Sally Wolstenholme was baptised on 27 March 1831 in Radcliffe, Lancashire, England, United Kingdom.<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 004007124; FHL microfilm: 1545745; Record number: 92; Packet letter: I<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Mary's daughter Sally Wolstenholme was baptised on 27 March 1831 in Radcliffe, Lancashire, England, United Kingdom.<ref>\n'''Baptism of daughter Sally Wolstenholme''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 004007124; FHL microfilm: 1545745; Record number: 92; Packet letter: I<br/>\n{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Baptism of daughter Sally Wolstenholme''': \"England Births and Christenings, 1538-1975\"<br/>citing Digital film/folder number: 004007124; FHL microfilm: 1545745; Record number: 92; Packet letter: I<br/>{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021)",
+    "citation": "* '''Baptism of daughter Sally Wolstenholme''': \"England Births and Christenings, 1538-1975\"<br/>citing Digital film/folder number: 004007124; FHL microfilm: 1545745; Record number: 92; Packet letter: I<br/>{{FamilySearch Record|NFJQ-3Z5}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

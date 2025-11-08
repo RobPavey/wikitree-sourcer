@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1895 Census''':\n\"Minnesota State Census, 1895\"<br/>\nciting Line: 35; Digital film/folder number: 4360316; FHL microfilm: 000565806; Image number: 00806; Record number: 31577; Packet letter: A<br/>\n{{FamilySearch Record|MQ6G-CR3}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-DZ43-FFP}}\n</ref>",
+    "citation": "<ref>\n'''1895 Census''':\n\"Minnesota State Census, 1895\"<br/>\nciting Line: 35; Digital film/folder number: 4360316; FHL microfilm: 000565806; Image number: 00806; Record number: 31577; Packet letter: A<br/>\n{{FamilySearch Record|MQ6G-CR3}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-DZ43-FFP}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1895 census David (age 8y) was in Township 160N, Range 40W, Roseau, Minnesota.<ref>\n'''1895 Census''':\n\"Minnesota State Census, 1895\"<br/>\nciting Line: 35; Digital film/folder number: 4360316; FHL microfilm: 000565806; Image number: 00806; Record number: 31577; Packet letter: A<br/>\n{{FamilySearch Record|MQ6G-CR3}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-DZ43-FFP}}\n</ref>",
+    "citation": "In the 1895 census David (age 8y) was in Township 160N, Range 40W, Roseau, Minnesota.<ref>\n'''1895 Census''':\n\"Minnesota State Census, 1895\"<br/>\nciting Line: 35; Digital film/folder number: 4360316; FHL microfilm: 000565806; Image number: 00806; Record number: 31577; Packet letter: A<br/>\n{{FamilySearch Record|MQ6G-CR3}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-DZ43-FFP}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1895 Census''': \"Minnesota State Census, 1895\"<br/>citing Line: 35; Digital film/folder number: 4360316; FHL microfilm: 000565806; Image number: 00806; Record number: 31577; Packet letter: A<br/>{{FamilySearch Record|MQ6G-CR3}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-DZ43-FFP}}",
+    "citation": "* '''1895 Census''': \"Minnesota State Census, 1895\"<br/>citing Line: 35; Digital film/folder number: 4360316; FHL microfilm: 000565806; Image number: 00806; Record number: 31577; Packet letter: A<br/>{{FamilySearch Record|MQ6G-CR3}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-DZ43-FFP}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

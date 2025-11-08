@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1967 Newspaper''':\n\"Obituary for Pauline Bnrrego CHAVEZ\" Newspapers.com<br/>\nAlbuquerque Journal (Albuquerque, New Mexico) Sat, May 20, 1967, page 2<br/>\n{{Newspapers.com|121970302}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1967 Newspaper''':\n\"Obituary for Pauline Bnrrego CHAVEZ\" Newspapers.com<br/>\nAlbuquerque Journal (Albuquerque, New Mexico) Sat, May 20, 1967, page 2<br/>\n{{Newspapers.com|121970302}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was mentioned in the Albuquerque Journal on 20 May 1967 in Albuquerque, New Mexico.<ref>\n'''1967 Newspaper''':\n\"Obituary for Pauline Bnrrego CHAVEZ\" Newspapers.com<br/>\nAlbuquerque Journal (Albuquerque, New Mexico) Sat, May 20, 1967, page 2<br/>\n{{Newspapers.com|121970302}} (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the Albuquerque Journal on 20 May 1967 in Albuquerque, New Mexico.<ref>\n'''1967 Newspaper''':\n\"Obituary for Pauline Bnrrego CHAVEZ\" Newspapers.com<br/>\nAlbuquerque Journal (Albuquerque, New Mexico) Sat, May 20, 1967, page 2<br/>\n{{Newspapers.com|121970302}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1967 Newspaper''': \"Obituary for Pauline Bnrrego CHAVEZ\" Newspapers.com<br/>Albuquerque Journal (Albuquerque, New Mexico) Sat, May 20, 1967, page 2<br/>{{Newspapers.com|121970302}} (accessed 6 May 2021)",
+    "citation": "* '''1967 Newspaper''': \"Obituary for Pauline Bnrrego CHAVEZ\" Newspapers.com<br/>Albuquerque Journal (Albuquerque, New Mexico) Sat, May 20, 1967, page 2<br/>{{Newspapers.com|121970302}} (accessed 6 May 2021).",
     "type": "source"
   }
 }

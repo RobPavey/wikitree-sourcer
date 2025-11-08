@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1855 Census''':\n\"Massachusetts, U.S., State Census, 1855\"<br/>\nOriginal data: Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>\n{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1855 Census''':\n\"Massachusetts, U.S., State Census, 1855\"<br/>\nOriginal data: Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>\n{{Ancestry Record|4472|2609994}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1855 census Avis (age 69) was in Canton, Norfolk, Massachusetts, USA.<ref>\n'''1855 Census''':\n\"Massachusetts, U.S., State Census, 1855\"<br/>\nOriginal data: Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>\n{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1855 census Avis (age 69) was in Canton, Norfolk, Massachusetts, USA.<ref>\n'''1855 Census''':\n\"Massachusetts, U.S., State Census, 1855\"<br/>\nOriginal data: Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>\n{{Ancestry Record|4472|2609994}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1855 Census''': \"Massachusetts, U.S., State Census, 1855\"<br/>Original data: Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>{{Ancestry Record|4472|2609994}} (accessed 6 May 2021)",
+    "citation": "* '''1855 Census''': \"Massachusetts, U.S., State Census, 1855\"<br/>Original data: Massachusetts. 1855-1865 Massachusetts State Census [microform]. New England Historic Genealogical Society, Boston, Massachusetts; Household Number: 186; Reel Number: 19; Volume Number: 26<br/>{{Ancestry Record|4472|2609994}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

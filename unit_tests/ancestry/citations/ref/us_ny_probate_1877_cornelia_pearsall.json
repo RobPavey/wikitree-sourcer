@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Probate''':\n\"New York, U.S., Wills and Probate Records, 1659-1999\"<br/>\nNew York, Queens County, Accounting Records; Author: New York. Supreme Court (Kings County); Probate Place: Queens, New York<br/>\n{{Ancestry Record|8800|10725078}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Probate''':\n\"New York, U.S., Wills and Probate Records, 1659-1999\"<br/>\nNew York, Queens County, Accounting Records; Author: New York. Supreme Court (Kings County); Probate Place: Queens, New York<br/>\n{{Ancestry Record|8800|10725078}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Cornelia's estate passed probate in 1877 in Queens, New York, USA.<ref>\n'''Probate''':\n\"New York, U.S., Wills and Probate Records, 1659-1999\"<br/>\nNew York, Queens County, Accounting Records; Author: New York. Supreme Court (Kings County); Probate Place: Queens, New York<br/>\n{{Ancestry Record|8800|10725078}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Cornelia's estate passed probate in 1877 in Queens, New York, USA.<ref>\n'''Probate''':\n\"New York, U.S., Wills and Probate Records, 1659-1999\"<br/>\nNew York, Queens County, Accounting Records; Author: New York. Supreme Court (Kings County); Probate Place: Queens, New York<br/>\n{{Ancestry Record|8800|10725078}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Probate''': \"New York, U.S., Wills and Probate Records, 1659-1999\"<br/>New York, Queens County, Accounting Records; Author: New York. Supreme Court (Kings County); Probate Place: Queens, New York<br/>{{Ancestry Record|8800|10725078}} (accessed 6 May 2021)",
+    "citation": "* '''Probate''': \"New York, U.S., Wills and Probate Records, 1659-1999\"<br/>New York, Queens County, Accounting Records; Author: New York. Supreme Court (Kings County); Probate Place: Queens, New York<br/>{{Ancestry Record|8800|10725078}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>\n{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>\n{{Ancestry Record|8767|5941797}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1861 census John (age 3) was the son of Susanha Lago in Bromley St Leonard, Middlesex, England.<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>\n{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1861 census John (age 3) was the son of Susanha Lago in Bromley St Leonard, Middlesex, England.<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>\n{{Ancestry Record|8767|5941797}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1861 Census''': \"1861 England Census\"<br/>Class: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>{{Ancestry Record|8767|5941797}} (accessed 6 May 2021)",
+    "citation": "* '''1861 Census''': \"1861 England Census\"<br/>Class: RG 9; Piece: 300; Folio: 96; Page: 37; GSU roll: 542610; ED, institution, or vessel: 4; Household schedule number: 32<br/>{{Ancestry Record|8767|5941797}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

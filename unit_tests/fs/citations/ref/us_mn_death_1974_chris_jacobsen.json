@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Chris, child of Jacobson, died (age 84) on 19 September 1974 in Hennepin, Minnesota.<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Chris, child of Jacobson, died (age 84) on 19 September 1974 in Hennepin, Minnesota.<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Death''': \"Minnesota, Death Index, 1908-2002\"<br/>citing Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"Minnesota, Death Index, 1908-2002\"<br/>citing Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

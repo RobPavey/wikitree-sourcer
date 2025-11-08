@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\nciting Digital film/folder number: 007909297; FHL microfilm: 1067956<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\nciting Digital film/folder number: 007909297; FHL microfilm: 1067956<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Archbald married on 22 April 1764 in Applegarth Town, Dumfriesshire, Scotland.<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\nciting Digital film/folder number: 007909297; FHL microfilm: 1067956<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Archbald married on 22 April 1764 in Applegarth Town, Dumfriesshire, Scotland.<ref>\n'''Marriage''':\n\"Scotland Marriages, 1561-1910\"<br/>\nciting Digital film/folder number: 007909297; FHL microfilm: 1067956<br/>\n{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage''': \"Scotland Marriages, 1561-1910\"<br/>citing Digital film/folder number: 007909297; FHL microfilm: 1067956<br/>{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"Scotland Marriages, 1561-1910\"<br/>citing Digital film/folder number: 007909297; FHL microfilm: 1067956<br/>{{FamilySearch Record|XTLR-ZX5}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

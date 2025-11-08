@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1911 Census''':\n\"England and Wales Census, 1911\"<br/>\nciting The National Archives of the UK Class: RG14; Piece/Folio: 31; Page: 1; Line: 2<br/>\n{{FamilySearch Record|X7RW-H55}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"England and Wales Census, 1911\"<br/>\nciting The National Archives of the UK Class: RG14; Piece/Folio: 31; Page: 1; Line: 2<br/>\n{{FamilySearch Record|X7RW-H55}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1911 census Elizabeth (age 69) was the wife of Richard Taylor in Luxborough, Somerset, England, United Kingdom.<ref>\n'''1911 Census''':\n\"England and Wales Census, 1911\"<br/>\nciting The National Archives of the UK Class: RG14; Piece/Folio: 31; Page: 1; Line: 2<br/>\n{{FamilySearch Record|X7RW-H55}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1911 census Elizabeth (age 69) was the wife of Richard Taylor in Luxborough, Somerset, England, United Kingdom.<ref>\n'''1911 Census''':\n\"England and Wales Census, 1911\"<br/>\nciting The National Archives of the UK Class: RG14; Piece/Folio: 31; Page: 1; Line: 2<br/>\n{{FamilySearch Record|X7RW-H55}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1911 Census''': \"England and Wales Census, 1911\"<br/>citing The National Archives of the UK Class: RG14; Piece/Folio: 31; Page: 1; Line: 2<br/>{{FamilySearch Record|X7RW-H55}} (accessed 6 May 2021)",
+    "citation": "* '''1911 Census''': \"England and Wales Census, 1911\"<br/>citing The National Archives of the UK Class: RG14; Piece/Folio: 31; Page: 1; Line: 2<br/>{{FamilySearch Record|X7RW-H55}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

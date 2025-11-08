@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1992 Social Security record''':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>\nOriginal data: Social Security Applications and Claims, 1936-2007<br/>\n{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1992 Social Security record''':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>\nOriginal data: Social Security Applications and Claims, 1936-2007<br/>\n{{Ancestry Record|60901|49201494}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Francis was in a Social Security record in November 1992.<ref>\n'''1992 Social Security record''':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>\nOriginal data: Social Security Applications and Claims, 1936-2007<br/>\n{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Francis was in a Social Security record in November 1992.<ref>\n'''1992 Social Security record''':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>\nOriginal data: Social Security Applications and Claims, 1936-2007<br/>\n{{Ancestry Record|60901|49201494}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1992 Social Security record''': \"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>Original data: Social Security Applications and Claims, 1936-2007<br/>{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)",
+    "citation": "* '''1992 Social Security record''': \"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>Original data: Social Security Applications and Claims, 1936-2007<br/>{{Ancestry Record|60901|49201494}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

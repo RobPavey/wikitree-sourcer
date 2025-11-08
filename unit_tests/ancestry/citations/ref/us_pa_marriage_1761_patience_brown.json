@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>\nOriginal data: Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>\n{{Ancestry Record|7830|19685}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>\nOriginal data: Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>\n{{Ancestry Record|7830|19685}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Patience married William Morrison on 17 November 1761 in Lancaster Co., PA.<ref>\n'''Marriage''':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>\nOriginal data: Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>\n{{Ancestry Record|7830|19685}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Patience married William Morrison on 17 November 1761 in Lancaster Co., PA.<ref>\n'''Marriage''':\n\"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>\nOriginal data: Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>\n{{Ancestry Record|7830|19685}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Marriage''': \"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>Original data: Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>{{Ancestry Record|7830|19685}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"Pennsylvania, Church Records - Adams, Berks, and Lancaster Counties, 1729-1881\"<br/>Original data: Extracted from microfilmed transcriptions of the original church records. The microfilmed records are located at the Family History Library<br/>{{Ancestry Record|7830|19685}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

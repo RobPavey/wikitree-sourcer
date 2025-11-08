@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1810 Census''':\n\"1810 United States Federal Census\"<br/>\nYear: 1810; Census Place: Abbeville, Abbeville, South Carolina; Roll: 60; Page: 76; Image: 00044; Family History Library Film: 0181419<br/>\n{{Ancestry Record|7613|568306}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1810 Census''':\n\"1810 United States Federal Census\"<br/>\nYear: 1810; Census Place: Abbeville, Abbeville, South Carolina; Roll: 60; Page: 76; Image: 00044; Family History Library Film: 0181419<br/>\n{{Ancestry Record|7613|568306}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Steven was in a record in 1810.<ref>\n'''1810 Census''':\n\"1810 United States Federal Census\"<br/>\nYear: 1810; Census Place: Abbeville, Abbeville, South Carolina; Roll: 60; Page: 76; Image: 00044; Family History Library Film: 0181419<br/>\n{{Ancestry Record|7613|568306}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Steven was in a record in 1810.<ref>\n'''1810 Census''':\n\"1810 United States Federal Census\"<br/>\nYear: 1810; Census Place: Abbeville, Abbeville, South Carolina; Roll: 60; Page: 76; Image: 00044; Family History Library Film: 0181419<br/>\n{{Ancestry Record|7613|568306}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1810 Census''': \"1810 United States Federal Census\"<br/>Year: 1810; Census Place: Abbeville, Abbeville, South Carolina; Roll: 60; Page: 76; Image: 00044; Family History Library Film: 0181419<br/>{{Ancestry Record|7613|568306}} (accessed 6 May 2021)",
+    "citation": "* '''1810 Census''': \"1810 United States Federal Census\"<br/>Year: 1810; Census Place: Abbeville, Abbeville, South Carolina; Roll: 60; Page: 76; Image: 00044; Family History Library Film: 0181419<br/>{{Ancestry Record|7613|568306}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

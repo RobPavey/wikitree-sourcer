@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\nciting Reference: Items 3-8; Digital film/folder number: 004484303; FHL microfilm: 1546076; Record number: 828823<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\nciting Reference: Items 3-8; Digital film/folder number: 004484303; FHL microfilm: 1546076; Record number: 828823<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Beatrice (age 28), daughter of Ebenezer George Fairchild, married Matthew Walling (age 32), son of Matthew Walling, on 19 February 1902 in Liverpool, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\nciting Reference: Items 3-8; Digital film/folder number: 004484303; FHL microfilm: 1546076; Record number: 828823<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Beatrice (age 28), daughter of Ebenezer George Fairchild, married Matthew Walling (age 32), son of Matthew Walling, on 19 February 1902 in Liverpool, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\nciting Reference: Items 3-8; Digital film/folder number: 004484303; FHL microfilm: 1546076; Record number: 828823<br/>\n{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>citing Reference: Items 3-8; Digital film/folder number: 004484303; FHL microfilm: 1546076; Record number: 828823<br/>{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>citing Reference: Items 3-8; Digital film/folder number: 004484303; FHL microfilm: 1546076; Record number: 828823<br/>{{FamilySearch Record|NFFD-HZB}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

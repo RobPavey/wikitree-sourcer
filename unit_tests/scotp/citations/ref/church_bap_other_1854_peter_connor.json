@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"Other Church Registers - Births and Baptisms\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"Other Church Registers - Births and Baptisms\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Peter, child of Peter Conner & Jean Sneddon, was born on 23 February 1854 and baptised on 16 March 1854 at Wellwynd Associate, Airdrie, Lanarkshire, Scotland.<ref>\n'''Baptism''':\n\"Other Church Registers - Births and Baptisms\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Peter, child of Peter Conner & Jean Sneddon, was born on 23 February 1854 and baptised on 16 March 1854 at Wellwynd Associate, Airdrie, Lanarkshire, Scotland.<ref>\n'''Baptism''':\n\"Other Church Registers - Births and Baptisms\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Baptism''': \"Other Church Registers - Births and Baptisms\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"Other Church Registers - Births and Baptisms\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

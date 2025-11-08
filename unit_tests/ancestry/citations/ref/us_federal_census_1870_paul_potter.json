@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>\n{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>\n{{Ancestry Record|7163|10410782}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1870 census Paul (age 48), Farm Laborer, was in District 15, Jefferson, Tennessee.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>\n{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1870 census Paul (age 48), Farm Laborer, was in District 15, Jefferson, Tennessee.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>\n{{Ancestry Record|7163|10410782}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>{{Ancestry Record|7163|10410782}} (accessed 6 May 2021)",
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: District 15, Jefferson, Tennessee; Roll: M593_1540; Page: 537A<br/>{{Ancestry Record|7163|10410782}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

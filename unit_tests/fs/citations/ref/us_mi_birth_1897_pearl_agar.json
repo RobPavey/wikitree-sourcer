@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Michigan Births, 1867-1902\"<br/>\nciting Reference: item 1 p 171 rn 787; Digital film/folder number: 4207534; FHL microfilm: 2322715; Image number: 52; Record number: 28; Packet letter: C<br/>\n{{FamilySearch Record|NQXX-QLZ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-6737-3CW}}\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Michigan Births, 1867-1902\"<br/>\nciting Reference: item 1 p 171 rn 787; Digital film/folder number: 4207534; FHL microfilm: 2322715; Image number: 52; Record number: 28; Packet letter: C<br/>\n{{FamilySearch Record|NQXX-QLZ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-6737-3CW}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Pearl, daughter of Robert Agar & Mary Agar, was born on 17 March 1897 in Evergreen Township, Sanilac, Michigan.<ref>\n'''Birth''':\n\"Michigan Births, 1867-1902\"<br/>\nciting Reference: item 1 p 171 rn 787; Digital film/folder number: 4207534; FHL microfilm: 2322715; Image number: 52; Record number: 28; Packet letter: C<br/>\n{{FamilySearch Record|NQXX-QLZ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-6737-3CW}}\n</ref>",
+    "citation": "Pearl, daughter of Robert Agar & Mary Agar, was born on 17 March 1897 in Evergreen Township, Sanilac, Michigan.<ref>\n'''Birth''':\n\"Michigan Births, 1867-1902\"<br/>\nciting Reference: item 1 p 171 rn 787; Digital film/folder number: 4207534; FHL microfilm: 2322715; Image number: 52; Record number: 28; Packet letter: C<br/>\n{{FamilySearch Record|NQXX-QLZ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-6737-3CW}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Birth''': \"Michigan Births, 1867-1902\"<br/>citing Reference: item 1 p 171 rn 787; Digital film/folder number: 4207534; FHL microfilm: 2322715; Image number: 52; Record number: 28; Packet letter: C<br/>{{FamilySearch Record|NQXX-QLZ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-6737-3CW}}",
+    "citation": "* '''Birth''': \"Michigan Births, 1867-1902\"<br/>citing Reference: item 1 p 171 rn 787; Digital film/folder number: 4207534; FHL microfilm: 2322715; Image number: 52; Record number: 28; Packet letter: C<br/>{{FamilySearch Record|NQXX-QLZ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-6737-3CW}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

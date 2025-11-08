@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nThe National Archives in Washington, DC; Record Group: Records of the Bureau of the Census; Record Group Number: 29; Series Number: M432; Residence Date: 1850; Home in 1850: New Milford, Litchfield, Connecticut; Roll: 43; Page: 151a; Line Number: 25<br/>\n{{Ancestry Record|8054|18187958}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nThe National Archives in Washington, DC; Record Group: Records of the Bureau of the Census; Record Group Number: 29; Series Number: M432; Residence Date: 1850; Home in 1850: New Milford, Litchfield, Connecticut; Roll: 43; Page: 151a; Line Number: 25<br/>\n{{Ancestry Record|8054|18187958}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1850 census Polly was in New Milford, Litchfield, Connecticut, USA.<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nThe National Archives in Washington, DC; Record Group: Records of the Bureau of the Census; Record Group Number: 29; Series Number: M432; Residence Date: 1850; Home in 1850: New Milford, Litchfield, Connecticut; Roll: 43; Page: 151a; Line Number: 25<br/>\n{{Ancestry Record|8054|18187958}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1850 census Polly was in New Milford, Litchfield, Connecticut, USA.<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nThe National Archives in Washington, DC; Record Group: Records of the Bureau of the Census; Record Group Number: 29; Series Number: M432; Residence Date: 1850; Home in 1850: New Milford, Litchfield, Connecticut; Roll: 43; Page: 151a; Line Number: 25<br/>\n{{Ancestry Record|8054|18187958}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1850 Census''': \"1850 United States Federal Census\"<br/>The National Archives in Washington, DC; Record Group: Records of the Bureau of the Census; Record Group Number: 29; Series Number: M432; Residence Date: 1850; Home in 1850: New Milford, Litchfield, Connecticut; Roll: 43; Page: 151a; Line Number: 25<br/>{{Ancestry Record|8054|18187958}} (accessed 6 May 2021)",
+    "citation": "* '''1850 Census''': \"1850 United States Federal Census\"<br/>The National Archives in Washington, DC; Record Group: Records of the Bureau of the Census; Record Group Number: 29; Series Number: M432; Residence Date: 1850; Home in 1850: New Milford, Litchfield, Connecticut; Roll: 43; Page: 151a; Line Number: 25<br/>{{Ancestry Record|8054|18187958}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

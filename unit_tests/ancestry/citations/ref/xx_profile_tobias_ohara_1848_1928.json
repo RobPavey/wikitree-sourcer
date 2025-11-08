@@ -1,10 +1,10 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n</ref>",
+    "citation": "<ref>.\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "<ref>\n</ref>",
+    "citation": "<ref>.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -12,11 +12,11 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n</ref>",
+    "citation": "<ref>.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "<ref>\n</ref>",
+    "citation": "<ref>.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
@@ -24,11 +24,11 @@
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n</ref>",
+    "citation": "<ref>.\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "<ref>\n</ref>",
+    "citation": "<ref>.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
@@ -36,11 +36,11 @@
     "type": "source"
   },
   "dataStyle_table_inline": {
-    "citation": "<ref>\n</ref>",
+    "citation": "<ref>.\n</ref>",
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "<ref>\n</ref>",
+    "citation": "<ref>.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
@@ -48,11 +48,11 @@
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref></ref>",
+    "citation": "<ref>.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "<ref></ref>",
+    "citation": "<ref>.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
@@ -60,11 +60,11 @@
     "type": "source"
   },
   "partial_ee_style_inline": {
-    "citation": "<ref>\n</ref>",
+    "citation": "<ref>.\n</ref>",
     "type": "inline"
   },
   "partial_ee_style_narrative": {
-    "citation": "<ref>\n</ref>",
+    "citation": "<ref>.\n</ref>",
     "type": "narrative"
   },
   "partial_ee_style_source": {

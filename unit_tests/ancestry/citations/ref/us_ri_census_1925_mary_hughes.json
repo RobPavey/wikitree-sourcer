@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1925 Census''':\n\"Rhode Island, U.S., State Censuses, 1865-1935\"<br/>\nOriginal data: Rhode Island State Census, 1865. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts; Enumeration District or Census Tract: 57; Line Number: 11; Household Number: 244; Volume Number: 17; Page Number: 27<br/>\n{{Ancestry Record|4721|2697241}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1925 Census''':\n\"Rhode Island, U.S., State Censuses, 1865-1935\"<br/>\nOriginal data: Rhode Island State Census, 1865. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts; Enumeration District or Census Tract: 57; Line Number: 11; Household Number: 244; Volume Number: 17; Page Number: 27<br/>\n{{Ancestry Record|4721|2697241}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1925 census Mary (age 58) was the head of household in Newport.<ref>\n'''1925 Census''':\n\"Rhode Island, U.S., State Censuses, 1865-1935\"<br/>\nOriginal data: Rhode Island State Census, 1865. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts; Enumeration District or Census Tract: 57; Line Number: 11; Household Number: 244; Volume Number: 17; Page Number: 27<br/>\n{{Ancestry Record|4721|2697241}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1925 census Mary (age 58) was the head of household in Newport.<ref>\n'''1925 Census''':\n\"Rhode Island, U.S., State Censuses, 1865-1935\"<br/>\nOriginal data: Rhode Island State Census, 1865. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts; Enumeration District or Census Tract: 57; Line Number: 11; Household Number: 244; Volume Number: 17; Page Number: 27<br/>\n{{Ancestry Record|4721|2697241}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1925 Census''': \"Rhode Island, U.S., State Censuses, 1865-1935\"<br/>Original data: Rhode Island State Census, 1865. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts; Enumeration District or Census Tract: 57; Line Number: 11; Household Number: 244; Volume Number: 17; Page Number: 27<br/>{{Ancestry Record|4721|2697241}} (accessed 6 May 2021)",
+    "citation": "* '''1925 Census''': \"Rhode Island, U.S., State Censuses, 1865-1935\"<br/>Original data: Rhode Island State Census, 1865. Microfilm. New England Historic Genealogical Society, Boston, Massachusetts; Enumeration District or Census Tract: 57; Line Number: 11; Household Number: 244; Volume Number: 17; Page Number: 27<br/>{{Ancestry Record|4721|2697241}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

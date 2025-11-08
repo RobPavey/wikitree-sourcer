@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Sarah (age 80) was buried on 26 February 1825 in Whittlebury, Northamptonshire, England.<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Sarah (age 80) was buried on 26 February 1825 in Whittlebury, Northamptonshire, England.<ref>\n'''Burial''':\n\"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>\nNorthamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>\n{{Ancestry Record|9201|797866}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Burial''': \"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>Northamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>{{Ancestry Record|9201|797866}} (accessed 6 May 2021)",
+    "citation": "* '''Burial''': \"Northamptonshire, England, Church of England Burials, 1813-1912\"<br/>Northamptonshire Record Office; Northampton, England; Register Type: Parish Registers; Reference Numbers: 363P/10<br/>{{Ancestry Record|9201|797866}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

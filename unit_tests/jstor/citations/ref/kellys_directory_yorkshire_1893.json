@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Book''':\n''Kelly's Directory of N & E Ridings of Yorkshire, 1893. [Part 1: Places]''<br/>\nKelly; 1893<br/>\n[https://www.jstor.org/stable/community.30136203?seq=7 JSTOR] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Book''':\n''Kelly's Directory of N & E Ridings of Yorkshire, 1893. [Part 1: Places]''<br/>\nKelly; 1893<br/>\n[https://www.jstor.org/stable/community.30136203?seq=7 JSTOR] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was mentioned in the book ''Kelly's Directory of N & E Ridings of Yorkshire, 1893. [Part 1: Places]'' in 1893.<ref>\n'''Book''':\n''Kelly's Directory of N & E Ridings of Yorkshire, 1893. [Part 1: Places]''<br/>\nKelly; 1893<br/>\n[https://www.jstor.org/stable/community.30136203?seq=7 JSTOR] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the book ''Kelly's Directory of N & E Ridings of Yorkshire, 1893. [Part 1: Places]'' in 1893.<ref>\n'''Book''':\n''Kelly's Directory of N & E Ridings of Yorkshire, 1893. [Part 1: Places]''<br/>\nKelly; 1893<br/>\n[https://www.jstor.org/stable/community.30136203?seq=7 JSTOR] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Book''': ''Kelly's Directory of N & E Ridings of Yorkshire, 1893. [Part 1: Places]''<br/>Kelly; 1893<br/>[https://www.jstor.org/stable/community.30136203?seq=7 JSTOR] (accessed 6 May 2021)",
+    "citation": "* '''Book''': ''Kelly's Directory of N & E Ridings of Yorkshire, 1893. [Part 1: Places]''<br/>Kelly; 1893<br/>[https://www.jstor.org/stable/community.30136203?seq=7 JSTOR] (accessed 6 May 2021).",
     "type": "source"
   }
 }

@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Kriminalitätsberichte\"<br/>\nHStAD Q 4 8/155-2/16, Hessisches Staatsarchiv Darmstadt; Image: 1<br/>\n[https://dfg-viewer.de/show/?set[mets]=https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934 DFG Viewer] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"Kriminalitätsberichte\"<br/>\nHStAD Q 4 8/155-2/16, Hessisches Staatsarchiv Darmstadt; Image: 1<br/>\n[https://dfg-viewer.de/show/?set[mets]=https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934 DFG Viewer] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Kriminalitätsberichte\"<br/>\nHStAD Q 4 8/155-2/16, Hessisches Staatsarchiv Darmstadt; Image: 1<br/>\n[https://dfg-viewer.de/show/?set[mets]=https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934 DFG Viewer] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Kriminalitätsberichte\"<br/>\nHStAD Q 4 8/155-2/16, Hessisches Staatsarchiv Darmstadt; Image: 1<br/>\n[https://dfg-viewer.de/show/?set[mets]=https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934 DFG Viewer] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Kriminalitätsberichte\"<br/>HStAD Q 4 8/155-2/16, Hessisches Staatsarchiv Darmstadt; Image: 1<br/>[https://dfg-viewer.de/show/?set[mets]=https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934 DFG Viewer] (accessed 6 May 2021)",
+    "citation": "* '''Record''': \"Kriminalitätsberichte\"<br/>HStAD Q 4 8/155-2/16, Hessisches Staatsarchiv Darmstadt; Image: 1<br/>[https://dfg-viewer.de/show/?set[mets]=https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934 DFG Viewer] (accessed 6 May 2021).",
     "type": "source"
   }
 }

@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"U.S., Quaker Meeting Records, 1681-1935\"<br/>\nSwarthmore College; Swarthmore, Pennsylvania<br/>\n{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"U.S., Quaker Meeting Records, 1681-1935\"<br/>\nSwarthmore College; Swarthmore, Pennsylvania<br/>\n{{Ancestry Record|2189|2035846}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "James, child of Isaac Broomal & Lydia Broomal, was born on 18 October 1799 in Chester, Pennsylvania.<ref>\n'''Birth''':\n\"U.S., Quaker Meeting Records, 1681-1935\"<br/>\nSwarthmore College; Swarthmore, Pennsylvania<br/>\n{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)\n</ref>",
+    "citation": "James, child of Isaac Broomal & Lydia Broomal, was born on 18 October 1799 in Chester, Pennsylvania.<ref>\n'''Birth''':\n\"U.S., Quaker Meeting Records, 1681-1935\"<br/>\nSwarthmore College; Swarthmore, Pennsylvania<br/>\n{{Ancestry Record|2189|2035846}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth''': \"U.S., Quaker Meeting Records, 1681-1935\"<br/>Swarthmore College; Swarthmore, Pennsylvania<br/>{{Ancestry Record|2189|2035846}} (accessed 6 May 2021)",
+    "citation": "* '''Birth''': \"U.S., Quaker Meeting Records, 1681-1935\"<br/>Swarthmore College; Swarthmore, Pennsylvania<br/>{{Ancestry Record|2189|2035846}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

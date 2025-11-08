@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Will or Testament''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: CC8/8/13<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Will or Testament''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: CC8/8/13<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Confirmation was granted on Bessie's estate on 27 May 1584 at Edinburgh Commissary Court.<ref>\n'''Will or Testament''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: CC8/8/13<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Confirmation was granted on Bessie's estate on 27 May 1584 at Edinburgh Commissary Court.<ref>\n'''Will or Testament''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: CC8/8/13<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Will or Testament''': \"Wills and Testaments\"<br/>National Records of Scotland, Reference Number: CC8/8/13<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Will or Testament''': \"Wills and Testaments\"<br/>National Records of Scotland, Reference Number: CC8/8/13<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

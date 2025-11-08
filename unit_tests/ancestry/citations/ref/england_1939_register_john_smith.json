@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>\n{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>\n{{Ancestry Record|61596|10027090}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1939 register John (age 3), Under School Age, was at 29, Enfield, Middlesex, England.<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>\n{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1939 register John (age 3), Under School Age, was at 29, Enfield, Middlesex, England.<ref>\n'''1939 Register''':\n\"1939 England and Wales Register\"<br/>\nThe National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>\n{{Ancestry Record|61596|10027090}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1939 Register''': \"1939 England and Wales Register\"<br/>The National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>{{Ancestry Record|61596|10027090}} (accessed 6 May 2021)",
+    "citation": "* '''1939 Register''': \"1939 England and Wales Register\"<br/>The National Archives; Kew, London, England; 1939 Register; Reference: Rg 101/750h; Line Number: 32; Schedule Number: 126; Sub Schedule Number: 7<br/>{{Ancestry Record|61596|10027090}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

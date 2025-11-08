@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>\nPulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>\n{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>\nPulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>\n{{Ancestry Record|61797|90165864}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Dorothy (age 18) married Elbert T. Orr on 1 March 1942 in Pulaski, Arkansas, USA.<ref>\n'''Marriage''':\n\"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>\nPulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>\n{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Dorothy (age 18) married Elbert T. Orr on 1 March 1942 in Pulaski, Arkansas, USA.<ref>\n'''Marriage''':\n\"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>\nPulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>\n{{Ancestry Record|61797|90165864}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Marriage''': \"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>Pulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>Pulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>{{Ancestry Record|61797|90165864}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

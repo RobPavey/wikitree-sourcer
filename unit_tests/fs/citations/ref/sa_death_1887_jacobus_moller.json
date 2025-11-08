@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Death''':\n\"South Africa, Cape, Probate Records of the Master of the High Court, 1822-1990\"<br/>\nciting Digital film/folder number: 007734677; Image number: 343; Record number: 0<br/>\n{{FamilySearch Record|QG56-M6K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91S-T9S5-T}}\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"South Africa, Cape, Probate Records of the Master of the High Court, 1822-1990\"<br/>\nciting Digital film/folder number: 007734677; Image number: 343; Record number: 0<br/>\n{{FamilySearch Record|QG56-M6K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91S-T9S5-T}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Jacobus died (age 63) on 28 June 1950 in Paarl, Cape Province, South Africa.<ref>\n'''Death''':\n\"South Africa, Cape, Probate Records of the Master of the High Court, 1822-1990\"<br/>\nciting Digital film/folder number: 007734677; Image number: 343; Record number: 0<br/>\n{{FamilySearch Record|QG56-M6K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91S-T9S5-T}}\n</ref>",
+    "citation": "Jacobus died (age 63) on 28 June 1950 in Paarl, Cape Province, South Africa.<ref>\n'''Death''':\n\"South Africa, Cape, Probate Records of the Master of the High Court, 1822-1990\"<br/>\nciting Digital film/folder number: 007734677; Image number: 343; Record number: 0<br/>\n{{FamilySearch Record|QG56-M6K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91S-T9S5-T}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Death''': \"South Africa, Cape, Probate Records of the Master of the High Court, 1822-1990\"<br/>citing Digital film/folder number: 007734677; Image number: 343; Record number: 0<br/>{{FamilySearch Record|QG56-M6K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91S-T9S5-T}}",
+    "citation": "* '''Death''': \"South Africa, Cape, Probate Records of the Master of the High Court, 1822-1990\"<br/>citing Digital film/folder number: 007734677; Image number: 343; Record number: 0<br/>{{FamilySearch Record|QG56-M6K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91S-T9S5-T}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

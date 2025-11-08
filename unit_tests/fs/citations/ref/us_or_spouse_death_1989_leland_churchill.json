@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Death of spouse Maxine Velva Churchill''':\n\"Oregon Death Index, 1903-1998\"<br/>\n{{FamilySearch Record|VZ4P-PBP}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death of spouse Maxine Velva Churchill''':\n\"Oregon Death Index, 1903-1998\"<br/>\n{{FamilySearch Record|VZ4P-PBP}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Leland's spouse Maxine Velva Churchill died on 21 May 1989 in Lane, Oregon.<ref>\n'''Death of spouse Maxine Velva Churchill''':\n\"Oregon Death Index, 1903-1998\"<br/>\n{{FamilySearch Record|VZ4P-PBP}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Leland's spouse Maxine Velva Churchill died on 21 May 1989 in Lane, Oregon.<ref>\n'''Death of spouse Maxine Velva Churchill''':\n\"Oregon Death Index, 1903-1998\"<br/>\n{{FamilySearch Record|VZ4P-PBP}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Death of spouse Maxine Velva Churchill''': \"Oregon Death Index, 1903-1998\"<br/>{{FamilySearch Record|VZ4P-PBP}} (accessed 6 May 2021)",
+    "citation": "* '''Death of spouse Maxine Velva Churchill''': \"Oregon Death Index, 1903-1998\"<br/>{{FamilySearch Record|VZ4P-PBP}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

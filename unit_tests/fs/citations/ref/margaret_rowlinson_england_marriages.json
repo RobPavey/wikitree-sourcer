@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\nciting Digital film/folder number: 004027888; FHL microfilm: 2068609; Record number: 97; Packet letter: A<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\nciting Digital film/folder number: 004027888; FHL microfilm: 2068609; Record number: 97; Packet letter: A<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Margaret married Joseph Walmsley on 28 October 1855 in Padgate, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\nciting Digital film/folder number: 004027888; FHL microfilm: 2068609; Record number: 97; Packet letter: A<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Margaret married Joseph Walmsley on 28 October 1855 in Padgate, Lancashire, England, United Kingdom.<ref>\n'''Marriage''':\n\"England Marriages, 1538–1973\"<br/>\nciting Digital film/folder number: 004027888; FHL microfilm: 2068609; Record number: 97; Packet letter: A<br/>\n{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>citing Digital film/folder number: 004027888; FHL microfilm: 2068609; Record number: 97; Packet letter: A<br/>{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"England Marriages, 1538–1973\"<br/>citing Digital film/folder number: 004027888; FHL microfilm: 2068609; Record number: 97; Packet letter: A<br/>{{FamilySearch Record|NN5C-1XR}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

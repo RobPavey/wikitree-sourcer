@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"United States Western States Marriage Index\"<br/>\nciting Page: 371; Volume number: 5<br/>\n{{FamilySearch Record|XZJC-SH7}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"United States Western States Marriage Index\"<br/>\nciting Page: 371; Volume number: 5<br/>\n{{FamilySearch Record|XZJC-SH7}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Parker married Joannah Elizabeth Coats on 4 March 1873 in Springville, Utah, Utah, United States.<ref>\n'''Marriage''':\n\"United States Western States Marriage Index\"<br/>\nciting Page: 371; Volume number: 5<br/>\n{{FamilySearch Record|XZJC-SH7}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Parker married Joannah Elizabeth Coats on 4 March 1873 in Springville, Utah, Utah, United States.<ref>\n'''Marriage''':\n\"United States Western States Marriage Index\"<br/>\nciting Page: 371; Volume number: 5<br/>\n{{FamilySearch Record|XZJC-SH7}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage''': \"United States Western States Marriage Index\"<br/>citing Page: 371; Volume number: 5<br/>{{FamilySearch Record|XZJC-SH7}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"United States Western States Marriage Index\"<br/>citing Page: 371; Volume number: 5<br/>{{FamilySearch Record|XZJC-SH7}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

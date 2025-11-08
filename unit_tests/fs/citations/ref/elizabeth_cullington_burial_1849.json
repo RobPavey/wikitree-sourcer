@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"England, Norfolk Bishop's Transcripts, 1685-1941\"<br/>\nciting Digital film/folder number: 004143448; FHL microfilm: 1526560; Image number: 1560; Record number: 616; Packet letter: C<br/>\n{{FamilySearch Record|27CB-J49}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939F-RXKT-R}}\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"England, Norfolk Bishop's Transcripts, 1685-1941\"<br/>\nciting Digital film/folder number: 004143448; FHL microfilm: 1526560; Image number: 1560; Record number: 616; Packet letter: C<br/>\n{{FamilySearch Record|27CB-J49}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939F-RXKT-R}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Elizabeth (age 5) was buried on 27 August 1849 in Norwich, Norfolk, England.<ref>\n'''Burial''':\n\"England, Norfolk Bishop's Transcripts, 1685-1941\"<br/>\nciting Digital film/folder number: 004143448; FHL microfilm: 1526560; Image number: 1560; Record number: 616; Packet letter: C<br/>\n{{FamilySearch Record|27CB-J49}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939F-RXKT-R}}\n</ref>",
+    "citation": "Elizabeth (age 5) was buried on 27 August 1849 in Norwich, Norfolk, England.<ref>\n'''Burial''':\n\"England, Norfolk Bishop's Transcripts, 1685-1941\"<br/>\nciting Digital film/folder number: 004143448; FHL microfilm: 1526560; Image number: 1560; Record number: 616; Packet letter: C<br/>\n{{FamilySearch Record|27CB-J49}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939F-RXKT-R}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Burial''': \"England, Norfolk Bishop's Transcripts, 1685-1941\"<br/>citing Digital film/folder number: 004143448; FHL microfilm: 1526560; Image number: 1560; Record number: 616; Packet letter: C<br/>{{FamilySearch Record|27CB-J49}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939F-RXKT-R}}",
+    "citation": "* '''Burial''': \"England, Norfolk Bishop's Transcripts, 1685-1941\"<br/>citing Digital film/folder number: 004143448; FHL microfilm: 1526560; Image number: 1560; Record number: 616; Packet letter: C<br/>{{FamilySearch Record|27CB-J49}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939F-RXKT-R}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

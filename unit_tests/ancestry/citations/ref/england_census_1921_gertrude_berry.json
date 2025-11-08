@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1921 Census''':\n\"1921 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; 1921 Census Returns; Reference: RG 15/11709, ED 41, Sch 244; Book: 11709; Registration District Number: 319; Schedule: 244<br/>\n{{Ancestry Record|63150|16913134}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1921 Census''':\n\"1921 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; 1921 Census Returns; Reference: RG 15/11709, ED 41, Sch 244; Book: 11709; Registration District Number: 319; Schedule: 244<br/>\n{{Ancestry Record|63150|16913134}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1921 census Gertrude (age 20), Shorthand Typist, was the unmarried daughter of J G Berry at 30 Birch Rd, Southville, Bristol, Gloucestershire, England.<ref>\n'''1921 Census''':\n\"1921 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; 1921 Census Returns; Reference: RG 15/11709, ED 41, Sch 244; Book: 11709; Registration District Number: 319; Schedule: 244<br/>\n{{Ancestry Record|63150|16913134}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1921 census Gertrude (age 20), Shorthand Typist, was the unmarried daughter of J G Berry at 30 Birch Rd, Southville, Bristol, Gloucestershire, England.<ref>\n'''1921 Census''':\n\"1921 England Census\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; 1921 Census Returns; Reference: RG 15/11709, ED 41, Sch 244; Book: 11709; Registration District Number: 319; Schedule: 244<br/>\n{{Ancestry Record|63150|16913134}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1921 Census''': \"1921 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; 1921 Census Returns; Reference: RG 15/11709, ED 41, Sch 244; Book: 11709; Registration District Number: 319; Schedule: 244<br/>{{Ancestry Record|63150|16913134}} (accessed 6 May 2021)",
+    "citation": "* '''1921 Census''': \"1921 England Census\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; 1921 Census Returns; Reference: RG 15/11709, ED 41, Sch 244; Book: 11709; Registration District Number: 319; Schedule: 244<br/>{{Ancestry Record|63150|16913134}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

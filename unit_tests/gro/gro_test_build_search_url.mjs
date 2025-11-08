@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { buildSearchUrl } from "../../extension/site/gro/core/gro_build_search_url.mjs";
-import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
+import { runBuildSearchUrlTests } from "../test_utils/test_build_search_utils.mjs";
 
 const regressionData = [
   {

@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "John was divorced from Pollock in 1987 in Hamilton, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "John was divorced from Pollock in 1987 in Hamilton, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Divorces\"<br/>\nNational Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Divorce''': \"Statutory Register of Divorces\"<br/>National Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Divorce''': \"Statutory Register of Divorces\"<br/>National Records of Scotland, Court Code: 9772; Serial Number: 28439<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

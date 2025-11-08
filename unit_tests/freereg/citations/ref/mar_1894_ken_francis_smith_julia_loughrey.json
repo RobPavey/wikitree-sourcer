@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>\n[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>\n[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Francis (age 32) married Julia Loughrey (age 30) on 1 September 1894 in Rochester, Kent, England.<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>\n[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "Francis (age 32) married Julia Loughrey (age 30) on 1 September 1894 in Rochester, Kent, England.<ref>\n'''Marriage''':\n\"FreeReg UK Parish Register database\"<br/>\nKent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>\n[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Marriage''': \"FreeReg UK Parish Register database\"<br/>Kent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"FreeReg UK Parish Register database\"<br/>Kent; Rochester; St Nicholas of Myra; Parish Register; File line number: 3<br/>[https://www.freereg.org.uk/search_records/5e406233f493fd3d68efb541 FreeReg Transcription] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

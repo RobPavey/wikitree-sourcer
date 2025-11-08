@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nOriginal data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nOriginal data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nOriginal data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Blanche's birth was registered in the Jul-Aug-Sep quarter of 1867 in the Pancras district.<ref>\n'''Birth Registration''':\n\"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>\nOriginal data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>\n{{Ancestry Record|8912|37047757}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>Original data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>{{Ancestry Record|8912|37047757}} (accessed 6 May 2021)",
+    "citation": "* '''Birth Registration''': \"England & Wales, Civil Registration Birth Index, 1837-1915\"<br/>Original data: England and Wales Civil Registration Indexes. London, England: General Register Office; Volume: 1b; Page: 164<br/>{{Ancestry Record|8912|37047757}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

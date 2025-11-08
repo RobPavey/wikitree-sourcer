@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"1851 Scotland Census\"<br/>\nParish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>\n{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 Scotland Census\"<br/>\nParish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>\n{{Ancestry Record|1076|1085977}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1851 census George (age 23), Hand Loom Weaver Linen, was the son of Thomas Page in Dunshelt, Auchtermuchty, Fife.<ref>\n'''1851 Census''':\n\"1851 Scotland Census\"<br/>\nParish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>\n{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1851 census George (age 23), Hand Loom Weaver Linen, was the son of Thomas Page in Dunshelt, Auchtermuchty, Fife.<ref>\n'''1851 Census''':\n\"1851 Scotland Census\"<br/>\nParish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>\n{{Ancestry Record|1076|1085977}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1851 Census''': \"1851 Scotland Census\"<br/>Parish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)",
+    "citation": "* '''1851 Census''': \"1851 Scotland Census\"<br/>Parish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>{{Ancestry Record|1076|1085977}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

@@ -220,9 +220,7 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
           popupState.progress = progressState.sitePopupDisplayError;
           displayMessageWithIcon("warning", message);
         }
-      } else if (response.success) {
-        var type = response.contentType;
-
+      } else if (response.success && response.extractedData) {
         // if the extractedData is not valid it could be that the tab status is "complete" but the
         // page data hasn't been filled out in the document. Some sites (like FMP) are like this.
         // For sites like that they will set the dataMayBeIncomplete flag in the extractedData when the

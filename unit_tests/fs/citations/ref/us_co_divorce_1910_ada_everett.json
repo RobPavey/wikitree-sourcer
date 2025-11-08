@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"Colorado Statewide Divorce Index, 1900-1939\"<br/>\nciting Source docket number: 2669; Digital film/folder number: 007192059; Image number: 4127; Record number: 0<br/>\n{{FamilySearch Record|QPTF-216V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9WB-CGLL}}\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"Colorado Statewide Divorce Index, 1900-1939\"<br/>\nciting Source docket number: 2669; Digital film/folder number: 007192059; Image number: 4127; Record number: 0<br/>\n{{FamilySearch Record|QPTF-216V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9WB-CGLL}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Ada was divorced from Charles E Everett on 3 October 1910 in Teller, Colorado, United States.<ref>\n'''Divorce''':\n\"Colorado Statewide Divorce Index, 1900-1939\"<br/>\nciting Source docket number: 2669; Digital film/folder number: 007192059; Image number: 4127; Record number: 0<br/>\n{{FamilySearch Record|QPTF-216V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9WB-CGLL}}\n</ref>",
+    "citation": "Ada was divorced from Charles E Everett on 3 October 1910 in Teller, Colorado, United States.<ref>\n'''Divorce''':\n\"Colorado Statewide Divorce Index, 1900-1939\"<br/>\nciting Source docket number: 2669; Digital film/folder number: 007192059; Image number: 4127; Record number: 0<br/>\n{{FamilySearch Record|QPTF-216V}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9WB-CGLL}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Divorce''': \"Colorado Statewide Divorce Index, 1900-1939\"<br/>citing Source docket number: 2669; Digital film/folder number: 007192059; Image number: 4127; Record number: 0<br/>{{FamilySearch Record|QPTF-216V}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9WB-CGLL}}",
+    "citation": "* '''Divorce''': \"Colorado Statewide Divorce Index, 1900-1939\"<br/>citing Source docket number: 2669; Digital film/folder number: 007192059; Image number: 4127; Record number: 0<br/>{{FamilySearch Record|QPTF-216V}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9WB-CGLL}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

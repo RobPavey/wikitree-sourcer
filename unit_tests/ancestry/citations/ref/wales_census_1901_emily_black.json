@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1901 Census''':\n\"1901 Wales Census\"<br/>\nClass: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>\n{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Wales Census\"<br/>\nClass: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>\n{{Ancestry Record|7815|33333435}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1901 census Emily (age 74) was the mother of Emily Kimberlin in Llandrillo yn Rhos, Caernarvonshire, Wales.<ref>\n'''1901 Census''':\n\"1901 Wales Census\"<br/>\nClass: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>\n{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1901 census Emily (age 74) was the mother of Emily Kimberlin in Llandrillo yn Rhos, Caernarvonshire, Wales.<ref>\n'''1901 Census''':\n\"1901 Wales Census\"<br/>\nClass: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>\n{{Ancestry Record|7815|33333435}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1901 Census''': \"1901 Wales Census\"<br/>Class: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>{{Ancestry Record|7815|33333435}} (accessed 6 May 2021)",
+    "citation": "* '''1901 Census''': \"1901 Wales Census\"<br/>Class: RG13; Piece: 5290; Folio: 28; Page: 47; ED, institution, or vessel: 14; Household Schedule Number: 285<br/>{{Ancestry Record|7815|33333435}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {
