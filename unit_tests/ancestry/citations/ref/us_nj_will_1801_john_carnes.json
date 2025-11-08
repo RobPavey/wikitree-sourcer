@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Will''':\n\"New Jersey, U.S., Abstract of Wills, 1670-1817\"<br/>\nNew Jersey, Published Archives Series, First Series; John L. Murphy Publishing Company; New Jersey State Archives<br/>\n{{Ancestry Record|2793|401}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Will''':\n\"New Jersey, U.S., Abstract of Wills, 1670-1817\"<br/>\nNew Jersey, Published Archives Series, First Series; John L. Murphy Publishing Company; New Jersey State Archives<br/>\n{{Ancestry Record|2793|401}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "John's will written on 8 Jan 1801 and passed probate on 2 May 1801 in New Jersey, USA.<ref>\n'''Will''':\n\"New Jersey, U.S., Abstract of Wills, 1670-1817\"<br/>\nNew Jersey, Published Archives Series, First Series; John L. Murphy Publishing Company; New Jersey State Archives<br/>\n{{Ancestry Record|2793|401}} (accessed 6 May 2021)\n</ref>",
+    "citation": "John's will written on 8 Jan 1801 and passed probate on 2 May 1801 in New Jersey, USA.<ref>\n'''Will''':\n\"New Jersey, U.S., Abstract of Wills, 1670-1817\"<br/>\nNew Jersey, Published Archives Series, First Series; John L. Murphy Publishing Company; New Jersey State Archives<br/>\n{{Ancestry Record|2793|401}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Will''': \"New Jersey, U.S., Abstract of Wills, 1670-1817\"<br/>New Jersey, Published Archives Series, First Series; John L. Murphy Publishing Company; New Jersey State Archives<br/>{{Ancestry Record|2793|401}} (accessed 6 May 2021)",
+    "citation": "* '''Will''': \"New Jersey, U.S., Abstract of Wills, 1670-1817\"<br/>New Jersey, Published Archives Series, First Series; John L. Murphy Publishing Company; New Jersey State Archives<br/>{{Ancestry Record|2793|401}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

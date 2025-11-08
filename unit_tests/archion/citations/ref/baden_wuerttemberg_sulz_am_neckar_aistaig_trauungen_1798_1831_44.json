@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Name Register''':\n\"All Archives, Baden-Württemberg, Landeskirchliches Archiv Stuttgart, Dekanat Sulz am Neckar, Aistaig\"<br/>\nEheregister 1798-1831<br/>\n[https://www.archion.de/p/1aa1b9ba8e/ Archion Image] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Name Register''':\n\"All Archives, Baden-Württemberg, Landeskirchliches Archiv Stuttgart, Dekanat Sulz am Neckar, Aistaig\"<br/>\nEheregister 1798-1831<br/>\n[https://www.archion.de/p/1aa1b9ba8e/ Archion Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Name Register''':\n\"All Archives, Baden-Württemberg, Landeskirchliches Archiv Stuttgart, Dekanat Sulz am Neckar, Aistaig\"<br/>\nEheregister 1798-1831<br/>\n[https://www.archion.de/p/1aa1b9ba8e/ Archion Image] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Name Register''':\n\"All Archives, Baden-Württemberg, Landeskirchliches Archiv Stuttgart, Dekanat Sulz am Neckar, Aistaig\"<br/>\nEheregister 1798-1831<br/>\n[https://www.archion.de/p/1aa1b9ba8e/ Archion Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Name Register''': \"All Archives, Baden-Württemberg, Landeskirchliches Archiv Stuttgart, Dekanat Sulz am Neckar, Aistaig\"<br/>Eheregister 1798-1831<br/>[https://www.archion.de/p/1aa1b9ba8e/ Archion Image] (accessed 6 May 2021)",
+    "citation": "* '''Name Register''': \"All Archives, Baden-Württemberg, Landeskirchliches Archiv Stuttgart, Dekanat Sulz am Neckar, Aistaig\"<br/>Eheregister 1798-1831<br/>[https://www.archion.de/p/1aa1b9ba8e/ Archion Image] (accessed 6 May 2021).",
     "type": "source"
   }
 }

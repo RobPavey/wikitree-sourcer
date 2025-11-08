@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1790 Census''':\n\"U.S., Census Reconstructed Records, 1660-1820\"<br/>\nDocument: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>\n{{Ancestry Record|2234|111792}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1790 Census''':\n\"U.S., Census Reconstructed Records, 1660-1820\"<br/>\nDocument: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>\n{{Ancestry Record|2234|111792}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1790 census Claborn was in Franklin County, Georgia.<ref>\n'''1790 Census''':\n\"U.S., Census Reconstructed Records, 1660-1820\"<br/>\nDocument: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>\n{{Ancestry Record|2234|111792}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1790 census Claborn was in Franklin County, Georgia.<ref>\n'''1790 Census''':\n\"U.S., Census Reconstructed Records, 1660-1820\"<br/>\nDocument: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>\n{{Ancestry Record|2234|111792}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1790 Census''': \"U.S., Census Reconstructed Records, 1660-1820\"<br/>Document: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>{{Ancestry Record|2234|111792}} (accessed 6 May 2021)",
+    "citation": "* '''1790 Census''': \"U.S., Census Reconstructed Records, 1660-1820\"<br/>Document: Telamon Cuyler Collection, Manuscript #1170 [Hargrett Library, University of Georgia]; Call Number: Box 42, Folder 2; Page Number: 2; Family Number: 7<br/>{{Ancestry Record|2234|111792}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

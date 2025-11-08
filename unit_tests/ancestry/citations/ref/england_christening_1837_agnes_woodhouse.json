@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nOriginal data: Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nOriginal data: Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Agnes, daughter of George Woodhouse & Mary Hunt, was born on 16 December 1837 and baptised on 17 December 1837 in Hemsby, Norfolk, England.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nOriginal data: Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Agnes, daughter of George Woodhouse & Mary Hunt, was born on 16 December 1837 and baptised on 17 December 1837 in Hemsby, Norfolk, England.<ref>\n'''Baptism''':\n\"England & Wales, Christening Index, 1530-1980\"<br/>\nOriginal data: Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>\n{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Baptism''': \"England & Wales, Christening Index, 1530-1980\"<br/>Original data: Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"England & Wales, Christening Index, 1530-1980\"<br/>Original data: Genealogical Society of Utah. British Isles Vital Records Index, 2nd Edition<br/>{{Ancestry Record|1351|2249655|uk}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

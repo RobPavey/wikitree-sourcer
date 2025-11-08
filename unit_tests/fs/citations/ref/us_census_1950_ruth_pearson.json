@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15; Digital film/folder number: 108923927; Image number: 9<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}\n</ref>",
+    "citation": "<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15; Digital film/folder number: 108923927; Image number: 9<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1950 census Ruth (age 40), Typist, was the unmarried sister of Eleanor Pearson in Chicago, Cook, Illinois, United States.<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15; Digital film/folder number: 108923927; Image number: 9<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}\n</ref>",
+    "citation": "In the 1950 census Ruth (age 40), Typist, was the unmarried sister of Eleanor Pearson in Chicago, Cook, Illinois, United States.<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 10; Line: 15; Digital film/folder number: 108923927; Image number: 9<br/>\n{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHK-9QHW-N9QW-7}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1950 Census''': \"United States 1950 Census\"<br/>citing Page: 10; Line: 15; Digital film/folder number: 108923927; Image number: 9<br/>{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHK-9QHW-N9QW-7}}",
+    "citation": "* '''1950 Census''': \"United States 1950 Census\"<br/>citing Page: 10; Line: 15; Digital film/folder number: 108923927; Image number: 9<br/>{{FamilySearch Record|6X12-6VV7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHK-9QHW-N9QW-7}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

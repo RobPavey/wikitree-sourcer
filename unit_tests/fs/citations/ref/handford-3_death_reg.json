@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "William's death (age 69) was registered in the Jan-Feb-Mar quarter of 1913 in the Middlesbrough district.<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)\n</ref>",
+    "citation": "William's death (age 69) was registered in the Jan-Feb-Mar quarter of 1913 in the Middlesbrough district.<ref>\n'''Death Registration''':\n\"England and Wales Death Registration Index 1837-2007\"<br/>\nciting UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710<br/>\n{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Death Registration''': \"England and Wales Death Registration Index 1837-2007\"<br/>citing UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710<br/>{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021)",
+    "citation": "* '''Death Registration''': \"England and Wales Death Registration Index 1837-2007\"<br/>citing UK General Register Office. District: Middlesbrough; Volume: 9D; Page: 710<br/>{{FamilySearch Record|2N1J-673}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

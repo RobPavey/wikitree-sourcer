@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1885 census James (age 10) was in Jefferson, Davis, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1885 census James (age 10) was in Jefferson, Davis, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>{{Ancestry Record|1088|76967}} (accessed 6 May 2021)",
+    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>{{Ancestry Record|1088|76967}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

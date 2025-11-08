@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1925 census Leroy (age 43) was the head of household in Schenectady Ward 02, Schenectady.<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1925 census Leroy (age 43) was the head of household in Schenectady Ward 02, Schenectady.<ref>\n'''1925 Census''':\n\"New York, U.S., State Census, 1925\"<br/>\nNew York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>\n{{Ancestry Record|2704|24992583}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1925 Census''': \"New York, U.S., State Census, 1925\"<br/>New York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>{{Ancestry Record|2704|24992583}} (accessed 6 May 2021)",
+    "citation": "* '''1925 Census''': \"New York, U.S., State Census, 1925\"<br/>New York State Archives; Albany, New York; State Population Census Schedules, 1925; Election District: 01; Assembly District: 02; City: Schenectady Ward 02; County: Schenectady; Page: 21; Line Number: 46<br/>{{Ancestry Record|2704|24992583}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

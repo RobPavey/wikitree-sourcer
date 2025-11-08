@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Probate''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC70/4/302<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Probate''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC70/4/302<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Probate of Agnes's estate endorsed on 31 December 1897 at Edinburgh Sheriff Court.<ref>\n'''Probate''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC70/4/302<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Probate of Agnes's estate endorsed on 31 December 1897 at Edinburgh Sheriff Court.<ref>\n'''Probate''':\n\"Wills and Testaments\"<br/>\nNational Records of Scotland, Reference Number: SC70/4/302<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Probate''': \"Wills and Testaments\"<br/>National Records of Scotland, Reference Number: SC70/4/302<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Probate''': \"Wills and Testaments\"<br/>National Records of Scotland, Reference Number: SC70/4/302<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

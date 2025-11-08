@@ -111,29 +111,8 @@ function getRefTitle(ed, gd) {
   return refTitle;
 }
 
-function endCitationWithPeriod(inputCitation) {
-  // ensure that the actual citation text (not including a close ref tag with/without preceding newline char) ends with a period (.)
-  let newCitation = inputCitation;
-  if (inputCitation.endsWith("\n</ref>")) {
-    if (!inputCitation.endsWith(".\n</ref>")) {
-      newCitation = inputCitation.replace("\n</ref>", ".\n</ref>");
-    }
-  } else if (inputCitation.endsWith("</ref>")) {
-    if (!inputCitation.endsWith(".</ref>")) {
-      newCitation = inputCitation.replace("</ref>", ".</ref>");
-    }
-  } else {
-    if (!inputCitation.endsWith(".")) {
-      newCitation = inputCitation + ".";
-    }
-  }
-  return newCitation;
-}
-
 function buildCitation(input) {
-  let citationObject = simpleBuildCitationWrapper(input, buildCoreCitation, getRefTitle);
-  citationObject.citation = endCitationWithPeriod(citationObject.citation);
-  return citationObject;
+  return simpleBuildCitationWrapper(input, buildCoreCitation, getRefTitle);
 }
 
 export { buildCitation };

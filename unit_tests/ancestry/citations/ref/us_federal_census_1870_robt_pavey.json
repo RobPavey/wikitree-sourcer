@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>\n{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>\n{{Ancestry Record|7163|15894073}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1870 census Robt (age 19) was in Walnut, Bureau, Illinois.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>\n{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1870 census Robt (age 19) was in Walnut, Bureau, Illinois.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>\n{{Ancestry Record|7163|15894073}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)",
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>{{Ancestry Record|7163|15894073}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

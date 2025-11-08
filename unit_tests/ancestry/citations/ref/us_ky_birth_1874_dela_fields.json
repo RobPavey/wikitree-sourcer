@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Kentucky, U.S., Birth Records, 1847-1911\"<br/>\nOriginal data: Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>\n{{Ancestry Record|1213|69475}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Kentucky, U.S., Birth Records, 1847-1911\"<br/>\nOriginal data: Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>\n{{Ancestry Record|1213|69475}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Dela, daughter of Lewis Fields & Angeline Slans, was born on 31 January 1874 in Martin, Kentucky, USA.<ref>\n'''Birth''':\n\"Kentucky, U.S., Birth Records, 1847-1911\"<br/>\nOriginal data: Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>\n{{Ancestry Record|1213|69475}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Dela, daughter of Lewis Fields & Angeline Slans, was born on 31 January 1874 in Martin, Kentucky, USA.<ref>\n'''Birth''':\n\"Kentucky, U.S., Birth Records, 1847-1911\"<br/>\nOriginal data: Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>\n{{Ancestry Record|1213|69475}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth''': \"Kentucky, U.S., Birth Records, 1847-1911\"<br/>Original data: Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>{{Ancestry Record|1213|69475}} (accessed 6 May 2021)",
+    "citation": "* '''Birth''': \"Kentucky, U.S., Birth Records, 1847-1911\"<br/>Original data: Kentucky. Kentucky Birth, Marriage and Death Records - Microfilm (1852-1910). Microfilm rolls #994027-994058. Kentucky Department for Libraries and Archives, Frankfort, Kentucky<br/>{{Ancestry Record|1213|69475}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

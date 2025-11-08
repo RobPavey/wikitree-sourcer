@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: F09<br/>\n{{FamilySearch Record|VVVW-XS7}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: F09<br/>\n{{FamilySearch Record|VVVW-XS7}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "John married Elsie Margaret Tibbils on 30 April 1965 in Clark, Nevada, United States.<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: F09<br/>\n{{FamilySearch Record|VVVW-XS7}} (accessed 6 May 2021)\n</ref>",
+    "citation": "John married Elsie Margaret Tibbils on 30 April 1965 in Clark, Nevada, United States.<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: F09<br/>\n{{FamilySearch Record|VVVW-XS7}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage Registration''': \"Nevada Marriage Index, 1956-2005\"<br/>citing Page: F09<br/>{{FamilySearch Record|VVVW-XS7}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage Registration''': \"Nevada Marriage Index, 1956-2005\"<br/>citing Page: F09<br/>{{FamilySearch Record|VVVW-XS7}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

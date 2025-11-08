@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1830 Census''':\n\"1830 United States Federal Census\"<br/>\nYear: 1830; Census Place: Pomfret, Chautauqua, New York; Series: M19; Roll: 86; Family History Library Film: 0017146<br/>\n{{Ancestry Record|8058|1494711}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1830 Census''':\n\"1830 United States Federal Census\"<br/>\nYear: 1830; Census Place: Pomfret, Chautauqua, New York; Series: M19; Roll: 86; Family History Library Film: 0017146<br/>\n{{Ancestry Record|8058|1494711}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1830 census Joshua was in Pomfret, Chautauqua, New York.<ref>\n'''1830 Census''':\n\"1830 United States Federal Census\"<br/>\nYear: 1830; Census Place: Pomfret, Chautauqua, New York; Series: M19; Roll: 86; Family History Library Film: 0017146<br/>\n{{Ancestry Record|8058|1494711}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1830 census Joshua was in Pomfret, Chautauqua, New York.<ref>\n'''1830 Census''':\n\"1830 United States Federal Census\"<br/>\nYear: 1830; Census Place: Pomfret, Chautauqua, New York; Series: M19; Roll: 86; Family History Library Film: 0017146<br/>\n{{Ancestry Record|8058|1494711}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1830 Census''': \"1830 United States Federal Census\"<br/>Year: 1830; Census Place: Pomfret, Chautauqua, New York; Series: M19; Roll: 86; Family History Library Film: 0017146<br/>{{Ancestry Record|8058|1494711}} (accessed 6 May 2021)",
+    "citation": "* '''1830 Census''': \"1830 United States Federal Census\"<br/>Year: 1830; Census Place: Pomfret, Chautauqua, New York; Series: M19; Roll: 86; Family History Library Film: 0017146<br/>{{Ancestry Record|8058|1494711}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

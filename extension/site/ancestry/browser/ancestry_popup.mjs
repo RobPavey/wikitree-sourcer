@@ -700,10 +700,12 @@ async function ancestryAddLinkBuilderComment(data, personData, tabId) {
 
   let personEd = personData.extractedData;
   if (!personEd) {
+    displayMessageWithIcon("error", "No extracted data found.");
     return;
   }
   let wikiId = personEd.wikiId;
   if (!wikiId) {
+    displayMessageWithIcon("error", "No wikiId found.");
     return;
   }
 
@@ -1287,7 +1289,7 @@ async function addAncestryAddCommentMenuItem(menu, data, tabId) {
       return;
     }
 
-    if (personData.generalizedData) {
+    if (personData.generalizedData && personData.generalizedData.sourceOfData == "wikitree") {
       let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
       personData.generalizedData = gd;
       let menuText = "Add link builder comment referencing:";

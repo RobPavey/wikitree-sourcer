@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nMarriage Registration Number: 113/1873; District: Sydney<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/marriages Marriages search page] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nMarriage Registration Number: 113/1873; District: Sydney<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/marriages Marriages search page] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Stephen's marriage to Agnes O'Brien was registered in 1873 in New South Wales, Australia.<ref>\n'''Marriage Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nMarriage Registration Number: 113/1873; District: Sydney<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/marriages Marriages search page] (accessed 6 May 2021)\n</ref>",
+    "citation": "Stephen's marriage to Agnes O'Brien was registered in 1873 in New South Wales, Australia.<ref>\n'''Marriage Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nMarriage Registration Number: 113/1873; District: Sydney<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/marriages Marriages search page] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Marriage Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Marriage Registration Number: 113/1873; District: Sydney<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/marriages Marriages search page] (accessed 6 May 2021)",
+    "citation": "* '''Marriage Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Marriage Registration Number: 113/1873; District: Sydney<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/marriages Marriages search page] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_listCurated_inline": {

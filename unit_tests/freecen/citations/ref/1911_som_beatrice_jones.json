@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>\n[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>\n[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1911 census Beatrice (age 32), Private Means, was the married boarder of Mary Tarr at 23 Blenheim Gardens, Minehead, Somerset, England.<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>\n[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1911 census Beatrice (age 32), Private Means, was the married boarder of Mary Tarr at 23 Blenheim Gardens, Minehead, Somerset, England.<ref>\n'''1911 Census''':\n\"1911 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>\n[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1911 Census''': \"1911 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021)",
+    "citation": "* '''1911 Census''': \"1911 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13339 RG 14]; Piece: 14114; Schedule: 96<br/>[https://www.freecen.org.uk/search_records/5ff99b0ef493fdf2b5504fc1 FreeCen Transcription] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

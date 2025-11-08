@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1940 Census''':\n\"United States Census, 1940\"<br/>\nciting Affiliate Publication Number: T627; Line: 56; Digital film/folder number: 005449684; Sheet number: 2; Sheet letter: B<br/>\n{{FamilySearch Record|VB3M-FG7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9MR-F72B}}\n</ref>",
+    "citation": "<ref>\n'''1940 Census''':\n\"United States Census, 1940\"<br/>\nciting Affiliate Publication Number: T627; Line: 56; Digital film/folder number: 005449684; Sheet number: 2; Sheet letter: B<br/>\n{{FamilySearch Record|VB3M-FG7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9MR-F72B}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1940 census Addie (age 31) was the married head of household in Pearl, Rankin, Mississippi, United States.<ref>\n'''1940 Census''':\n\"United States Census, 1940\"<br/>\nciting Affiliate Publication Number: T627; Line: 56; Digital film/folder number: 005449684; Sheet number: 2; Sheet letter: B<br/>\n{{FamilySearch Record|VB3M-FG7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9MR-F72B}}\n</ref>",
+    "citation": "In the 1940 census Addie (age 31) was the married head of household in Pearl, Rankin, Mississippi, United States.<ref>\n'''1940 Census''':\n\"United States Census, 1940\"<br/>\nciting Affiliate Publication Number: T627; Line: 56; Digital film/folder number: 005449684; Sheet number: 2; Sheet letter: B<br/>\n{{FamilySearch Record|VB3M-FG7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9MR-F72B}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1940 Census''': \"United States Census, 1940\"<br/>citing Affiliate Publication Number: T627; Line: 56; Digital film/folder number: 005449684; Sheet number: 2; Sheet letter: B<br/>{{FamilySearch Record|VB3M-FG7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9MR-F72B}}",
+    "citation": "* '''1940 Census''': \"United States Census, 1940\"<br/>citing Affiliate Publication Number: T627; Line: 56; Digital film/folder number: 005449684; Sheet number: 2; Sheet letter: B<br/>{{FamilySearch Record|VB3M-FG7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9MR-F72B}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

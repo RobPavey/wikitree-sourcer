@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Death''':\n\"U.S., Social Security Death Index, 1935-2014\"<br/>\nSocial Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>\n{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"U.S., Social Security Death Index, 1935-2014\"<br/>\nSocial Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>\n{{Ancestry Record|3693|14641755}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "John died (age 77) on 30 August 1996 residing at 92562, Murrieta, Riverside, California, USA.<ref>\n'''Death''':\n\"U.S., Social Security Death Index, 1935-2014\"<br/>\nSocial Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>\n{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)\n</ref>",
+    "citation": "John died (age 77) on 30 August 1996 residing at 92562, Murrieta, Riverside, California, USA.<ref>\n'''Death''':\n\"U.S., Social Security Death Index, 1935-2014\"<br/>\nSocial Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>\n{{Ancestry Record|3693|14641755}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Death''': \"U.S., Social Security Death Index, 1935-2014\"<br/>Social Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>{{Ancestry Record|3693|14641755}} (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"U.S., Social Security Death Index, 1935-2014\"<br/>Social Security Administration; Washington D.C., USA; Social Security Death Index, Master File<br/>{{Ancestry Record|3693|14641755}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

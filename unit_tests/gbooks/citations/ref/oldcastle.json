@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Book''':\nSir John Oldcastle, ''The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham: As it Hath Been Lately Acted by the Right Honorable the Earle of Notingham, Lord High Admirall of England His Seruants''<br/>\nUnited Kingdom: V.S., 1600<br/>\n[https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover Google Books] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Book''':\nSir John Oldcastle, ''The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham: As it Hath Been Lately Acted by the Right Honorable the Earle of Notingham, Lord High Admirall of England His Seruants''<br/>\nUnited Kingdom: V.S., 1600<br/>\n[https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover Google Books] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was mentioned in the book ''The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham'' in 1600.<ref>\n'''Book''':\nSir John Oldcastle, ''The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham: As it Hath Been Lately Acted by the Right Honorable the Earle of Notingham, Lord High Admirall of England His Seruants''<br/>\nUnited Kingdom: V.S., 1600<br/>\n[https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover Google Books] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the book ''The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham'' in 1600.<ref>\n'''Book''':\nSir John Oldcastle, ''The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham: As it Hath Been Lately Acted by the Right Honorable the Earle of Notingham, Lord High Admirall of England His Seruants''<br/>\nUnited Kingdom: V.S., 1600<br/>\n[https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover Google Books] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Book''': Sir John Oldcastle, ''The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham: As it Hath Been Lately Acted by the Right Honorable the Earle of Notingham, Lord High Admirall of England His Seruants''<br/>United Kingdom: V.S., 1600<br/>[https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover Google Books] (accessed 6 May 2021)",
+    "citation": "* '''Book''': Sir John Oldcastle, ''The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham: As it Hath Been Lately Acted by the Right Honorable the Earle of Notingham, Lord High Admirall of England His Seruants''<br/>United Kingdom: V.S., 1600<br/>[https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover Google Books] (accessed 6 May 2021).",
     "type": "source"
   }
 }

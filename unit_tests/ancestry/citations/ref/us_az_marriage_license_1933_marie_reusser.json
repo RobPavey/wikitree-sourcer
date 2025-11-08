@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>\n{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>\n{{Ancestry Record|60873|900142519}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Marie married Ellis E. Royat on 9 October 1943 in Maricopa, Arizona, USA.<ref>\n'''Marriage''':\n\"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>\n{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Marie married Ellis E. Royat on 9 October 1943 in Maricopa, Arizona, USA.<ref>\n'''Marriage''':\n\"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>\n{{Ancestry Record|60873|900142519}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Marriage''': \"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>{{Ancestry Record|60873|900142519}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

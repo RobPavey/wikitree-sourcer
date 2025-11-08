@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Military''':\n\"U.S., Department of Veterans Affairs BIRLS Death File, 1850-2010\"<br/>\nOriginal data: Beneficiary Identification Records Locator Subsystem (BIRLS) Death File. Washington, D.C.: U.S. Department of Veterans Affairs; Page number: 1<br/>\n{{Ancestry Record|2441|1562948}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Military''':\n\"U.S., Department of Veterans Affairs BIRLS Death File, 1850-2010\"<br/>\nOriginal data: Beneficiary Identification Records Locator Subsystem (BIRLS) Death File. Washington, D.C.: U.S. Department of Veterans Affairs; Page number: 1<br/>\n{{Ancestry Record|2441|1562948}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "William was in the navy and died on 3 May 2005.<ref>\n'''Military''':\n\"U.S., Department of Veterans Affairs BIRLS Death File, 1850-2010\"<br/>\nOriginal data: Beneficiary Identification Records Locator Subsystem (BIRLS) Death File. Washington, D.C.: U.S. Department of Veterans Affairs; Page number: 1<br/>\n{{Ancestry Record|2441|1562948}} (accessed 6 May 2021)\n</ref>",
+    "citation": "William was in the navy and died on 3 May 2005.<ref>\n'''Military''':\n\"U.S., Department of Veterans Affairs BIRLS Death File, 1850-2010\"<br/>\nOriginal data: Beneficiary Identification Records Locator Subsystem (BIRLS) Death File. Washington, D.C.: U.S. Department of Veterans Affairs; Page number: 1<br/>\n{{Ancestry Record|2441|1562948}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Military''': \"U.S., Department of Veterans Affairs BIRLS Death File, 1850-2010\"<br/>Original data: Beneficiary Identification Records Locator Subsystem (BIRLS) Death File. Washington, D.C.: U.S. Department of Veterans Affairs; Page number: 1<br/>{{Ancestry Record|2441|1562948}} (accessed 6 May 2021)",
+    "citation": "* '''Military''': \"U.S., Department of Veterans Affairs BIRLS Death File, 1850-2010\"<br/>Original data: Beneficiary Identification Records Locator Subsystem (BIRLS) Death File. Washington, D.C.: U.S. Department of Veterans Affairs; Page number: 1<br/>{{Ancestry Record|2441|1562948}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

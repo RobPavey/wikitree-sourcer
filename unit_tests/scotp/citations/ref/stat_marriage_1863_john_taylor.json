@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"Statutory Register of Marriages\"<br/>\nNational Records of Scotland, Ref: 644/9/110<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Statutory Register of Marriages\"<br/>\nNational Records of Scotland, Ref: 644/9/110<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "John's marriage to Jessie Ann Corn Ferguson was registered in 1863 in the Tradeston district.<ref>\n'''Marriage Registration''':\n\"Statutory Register of Marriages\"<br/>\nNational Records of Scotland, Ref: 644/9/110<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "John's marriage to Jessie Ann Corn Ferguson was registered in 1863 in the Tradeston district.<ref>\n'''Marriage Registration''':\n\"Statutory Register of Marriages\"<br/>\nNational Records of Scotland, Ref: 644/9/110<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Marriage Registration''': \"Statutory Register of Marriages\"<br/>National Records of Scotland, Ref: 644/9/110<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Marriage Registration''': \"Statutory Register of Marriages\"<br/>National Records of Scotland, Ref: 644/9/110<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

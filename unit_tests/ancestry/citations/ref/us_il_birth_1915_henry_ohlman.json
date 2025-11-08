@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Henry, son of Harry A Ohlman & Ethel W Ohlman, was born on 7 February 1915 in Chillicothe, Illinois.<ref>\n'''Birth''':\n\"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>\nPeoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>\n{{Ancestry Record|62361|38163}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth''': \"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>Peoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>{{Ancestry Record|62361|38163}} (accessed 6 May 2021)",
+    "citation": "* '''Birth''': \"Peoria County, Illinois, U.S., Births 1878-1915\"<br/>Peoria County Courthouse; Peoria, IL, USA; Peoria County Births, 1878-1915; Certificate Number: 288<br/>{{Ancestry Record|62361|38163}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

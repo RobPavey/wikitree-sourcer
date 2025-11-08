@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Catherine died (age 83) on 1 September 2004 residing in Columbus, Bartholomew, Indiana.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Catherine died (age 83) on 1 September 2004 residing in Columbus, Bartholomew, Indiana.<ref>\n'''Death''':\n\"United States Social Security Death Index\"<br/>\n{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"United States Social Security Death Index\"<br/>{{FamilySearch Record|VMSB-3WR}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

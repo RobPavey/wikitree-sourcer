@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nGloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>\n[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nGloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>\n[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Elizabeth, child of John Pavey & Sarah, was baptised on 28 September 1713 in Dursley, Gloucestershire, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nGloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>\n[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "Elizabeth, child of John Pavey & Sarah, was baptised on 28 September 1713 in Dursley, Gloucestershire, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nGloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>\n[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Gloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Gloucestershire; Dursley; St James; Register of unspecified type; File line number: 1875<br/>[https://www.freereg.org.uk/search_records/581832b7e93790ec8be6619e FreeReg Transcription] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

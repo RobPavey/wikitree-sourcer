@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Kentucky, County Marriages, 1797-1954\"<br/>\nciting Digital film/folder number: 007719410; FHL microfilm: 000459915; Image number: 341<br/>\n{{FamilySearch Record|Q28C-26MQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C9BX-SDLL}}\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Kentucky, County Marriages, 1797-1954\"<br/>\nciting Digital film/folder number: 007719410; FHL microfilm: 000459915; Image number: 341<br/>\n{{FamilySearch Record|Q28C-26MQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C9BX-SDLL}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Ida (age 21) married Oliver O Howard (age 21) on 5 June 1891 in Campbell, Kentucky, United States.<ref>\n'''Marriage''':\n\"Kentucky, County Marriages, 1797-1954\"<br/>\nciting Digital film/folder number: 007719410; FHL microfilm: 000459915; Image number: 341<br/>\n{{FamilySearch Record|Q28C-26MQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C9BX-SDLL}}\n</ref>",
+    "citation": "Ida (age 21) married Oliver O Howard (age 21) on 5 June 1891 in Campbell, Kentucky, United States.<ref>\n'''Marriage''':\n\"Kentucky, County Marriages, 1797-1954\"<br/>\nciting Digital film/folder number: 007719410; FHL microfilm: 000459915; Image number: 341<br/>\n{{FamilySearch Record|Q28C-26MQ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C9BX-SDLL}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage''': \"Kentucky, County Marriages, 1797-1954\"<br/>citing Digital film/folder number: 007719410; FHL microfilm: 000459915; Image number: 341<br/>{{FamilySearch Record|Q28C-26MQ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C9BX-SDLL}}",
+    "citation": "* '''Marriage''': \"Kentucky, County Marriages, 1797-1954\"<br/>citing Digital film/folder number: 007719410; FHL microfilm: 000459915; Image number: 341<br/>{{FamilySearch Record|Q28C-26MQ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C9BX-SDLL}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

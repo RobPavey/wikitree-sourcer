@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1850 Non-population Census''':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>\nCensus Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>\n{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1850 Non-population Census''':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>\nCensus Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>\n{{Ancestry Record|1276|4001446}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "C was enumerated in a non-population schedule on 26 August 1850 in Coldwater, Branch, Michigan, USA.<ref>\n'''1850 Non-population Census''':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>\nCensus Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>\n{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)\n</ref>",
+    "citation": "C was enumerated in a non-population schedule on 26 August 1850 in Coldwater, Branch, Michigan, USA.<ref>\n'''1850 Non-population Census''':\n\"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>\nCensus Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>\n{{Ancestry Record|1276|4001446}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1850 Non-population Census''': \"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>Census Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>{{Ancestry Record|1276|4001446}} (accessed 6 May 2021)",
+    "citation": "* '''1850 Non-population Census''': \"U.S., Selected Federal Census Non-Population Schedules, 1850-1880\"<br/>Census Year: 1850; Census Place: Coldwater, Branch, Michigan; Archive Collection Number: T1164; Roll: 1; Page: 195; Line: 40; Schedule Type: Agriculture<br/>{{Ancestry Record|1276|4001446}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

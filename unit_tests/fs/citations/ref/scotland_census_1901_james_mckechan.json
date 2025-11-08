@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Source Schedule Number: 142; Source Folio Suffix: 18; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Source Schedule Number: 142; Source Folio Suffix: 18; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1901 census James (age 52), Coal Miner, was the married head of household in Stevenston, Ayrshire, Scotland, United Kingdom.<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Source Schedule Number: 142; Source Folio Suffix: 18; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1901 census James (age 52), Coal Miner, was the married head of household in Stevenston, Ayrshire, Scotland, United Kingdom.<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Source Schedule Number: 142; Source Folio Suffix: 18; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1901 Census''': \"Scotland Census, 1901\"<br/>citing Piece/Folio: 3; Page: 33; Line: 9; Source Schedule Number: 142; Source Folio Suffix: 18; Digital film/folder number: DI0001028<br/>{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)",
+    "citation": "* '''1901 Census''': \"Scotland Census, 1901\"<br/>citing Piece/Folio: 3; Page: 33; Line: 9; Source Schedule Number: 142; Source Folio Suffix: 18; Digital film/folder number: DI0001028<br/>{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

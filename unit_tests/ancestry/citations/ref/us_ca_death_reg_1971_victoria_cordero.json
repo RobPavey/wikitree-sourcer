@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1940-1997\"<br/>\nPlace: Santa Barbara; Date: 20 Jul 1971<br/>\n{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"California, U.S., Death Index, 1940-1997\"<br/>\nPlace: Santa Barbara; Date: 20 Jul 1971<br/>\n{{Ancestry Record|5180|4405640}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Victoria died (age 82) on 20 July 1971 in Santa Barbara.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1940-1997\"<br/>\nPlace: Santa Barbara; Date: 20 Jul 1971<br/>\n{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Victoria died (age 82) on 20 July 1971 in Santa Barbara.<ref>\n'''Death''':\n\"California, U.S., Death Index, 1940-1997\"<br/>\nPlace: Santa Barbara; Date: 20 Jul 1971<br/>\n{{Ancestry Record|5180|4405640}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Death''': \"California, U.S., Death Index, 1940-1997\"<br/>Place: Santa Barbara; Date: 20 Jul 1971<br/>{{Ancestry Record|5180|4405640}} (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"California, U.S., Death Index, 1940-1997\"<br/>Place: Santa Barbara; Date: 20 Jul 1971<br/>{{Ancestry Record|5180|4405640}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

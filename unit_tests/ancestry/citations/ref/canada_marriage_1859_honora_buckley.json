@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Honora (age 22), child of Michael Buckley & Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Honora (age 22), child of Michael Buckley & Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Marriage''': \"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>{{Ancestry Record|8510|17179}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>{{Ancestry Record|8510|17179}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

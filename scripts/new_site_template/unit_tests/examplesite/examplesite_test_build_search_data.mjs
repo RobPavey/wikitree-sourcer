@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { buildSearchData } from "../../extension/site/examplesite/core/examplesite_build_search_data.mjs";
-import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
+import { runBuildSearchDataTests } from "../test_utils/test_build_search_utils.mjs";
 
 const regressionData = [
   /*
@@ -37,7 +37,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runBuildSearchUrlTests("examplesite", buildSearchData, regressionData, testManager);
+  await runBuildSearchDataTests("examplesite", buildSearchData, regressionData, testManager);
 }
 
 export { runTests };

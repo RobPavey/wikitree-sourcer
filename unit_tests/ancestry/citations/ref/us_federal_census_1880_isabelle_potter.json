@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1880 Census''':\n\"1880 United States Federal Census\"<br/>\nYear: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>\n{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1880 Census''':\n\"1880 United States Federal Census\"<br/>\nYear: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>\n{{Ancestry Record|6742|10577665}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1880 census Isabelle (age 56), Keeping House, was the wife of Paul Potter in Hartmans, Hamblen, Tennessee, USA.<ref>\n'''1880 Census''':\n\"1880 United States Federal Census\"<br/>\nYear: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>\n{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1880 census Isabelle (age 56), Keeping House, was the wife of Paul Potter in Hartmans, Hamblen, Tennessee, USA.<ref>\n'''1880 Census''':\n\"1880 United States Federal Census\"<br/>\nYear: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>\n{{Ancestry Record|6742|10577665}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1880 Census''': \"1880 United States Federal Census\"<br/>Year: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>{{Ancestry Record|6742|10577665}} (accessed 6 May 2021)",
+    "citation": "* '''1880 Census''': \"1880 United States Federal Census\"<br/>Year: 1880; Census Place: Hartmans, Hamblen, Tennessee; Roll: 1258; Page: 423D; Enumeration District: 074<br/>{{Ancestry Record|6742|10577665}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

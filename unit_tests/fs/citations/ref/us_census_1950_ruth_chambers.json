@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 15; Line: 28; Digital film/folder number: 108863151; Image number: 16<br/>\n{{FamilySearch Record|6XPH-GLS7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHN-GQHW-QD49}}\n</ref>",
+    "citation": "<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 15; Line: 28; Digital film/folder number: 108863151; Image number: 16<br/>\n{{FamilySearch Record|6XPH-GLS7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHN-GQHW-QD49}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1950 census Ruth (age 45) was the wife of Dunbar N Chambers in Houston, Harris, Texas, United States.<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 15; Line: 28; Digital film/folder number: 108863151; Image number: 16<br/>\n{{FamilySearch Record|6XPH-GLS7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHN-GQHW-QD49}}\n</ref>",
+    "citation": "In the 1950 census Ruth (age 45) was the wife of Dunbar N Chambers in Houston, Harris, Texas, United States.<ref>\n'''1950 Census''':\n\"United States 1950 Census\"<br/>\nciting Page: 15; Line: 28; Digital film/folder number: 108863151; Image number: 16<br/>\n{{FamilySearch Record|6XPH-GLS7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHN-GQHW-QD49}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1950 Census''': \"United States 1950 Census\"<br/>citing Page: 15; Line: 28; Digital film/folder number: 108863151; Image number: 16<br/>{{FamilySearch Record|6XPH-GLS7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHN-GQHW-QD49}}",
+    "citation": "* '''1950 Census''': \"United States 1950 Census\"<br/>citing Page: 15; Line: 28; Digital film/folder number: 108863151; Image number: 16<br/>{{FamilySearch Record|6XPH-GLS7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHN-GQHW-QD49}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}\n</ref>",
+    "citation": "<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1926 census Ellen (age 44) was the widowed head of household in Calgary, Alberta, Canada.<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}\n</ref>",
+    "citation": "In the 1926 census Ellen (age 44) was the widowed head of household in Calgary, Alberta, Canada.<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1926 Census''': \"Canada, Prairie Provinces, Census, 1926\"<br/>citing Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C395-GSC3-J}}",
+    "citation": "* '''1926 Census''': \"Canada, Prairie Provinces, Census, 1926\"<br/>citing Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C395-GSC3-J}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

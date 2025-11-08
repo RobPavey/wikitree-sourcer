@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { writeTestOutputFile, readInputFile, readFile } from "../test_utils/ref_file_utils.mjs";
-import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
-import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
+import { writeTestOutputFile, readInputFile, readFile } from "./ref_file_utils.mjs";
+import { LocalErrorLogger } from "./error_log_utils.mjs";
+import { compareOrReplaceRefFileWithResult } from "./helper_utils.mjs";
 
 import { GeneralizedData } from "../../extension/base/core/generalize_data_utils.mjs";
 
@@ -68,9 +68,10 @@ function testEnabled(parameters, testName) {
 }
 
 // The regressionData passed in must be an array of objects.
-// Each object having the keys: "PageFile" and "extractedData"
-async function runBuildSearchUrlTests(
+// Each object having the keys: "caseName" and "inputPath"
+async function runBuildSearchTests(
   siteName,
+  testName,
   buildSearchUrlFunction,
   regressionData,
   testManager,
@@ -79,8 +80,6 @@ async function runBuildSearchUrlTests(
   if (!testEnabled(testManager.parameters, "search")) {
     return;
   }
-
-  let testName = siteName + "_build_search_url";
 
   console.log("=== Starting test : " + testName + " ===");
 
@@ -185,4 +184,45 @@ async function runBuildSearchUrlTests(
   }
 }
 
-export { runBuildSearchUrlTests };
+// The regressionData passed in must be an array of objects.
+// Each object having the keys: "caseName" and "inputPath"
+async function runBuildSearchUrlTests(
+  siteName,
+  buildSearchUrlFunction,
+  regressionData,
+  testManager,
+  optionVariants = undefined
+) {
+  let testName = siteName + "_build_search_url";
+
+  runBuildSearchTests(
+    siteName,
+    testName,
+    buildSearchUrlFunction,
+    regressionData,
+    testManager,
+    (optionVariants = undefined)
+  );
+}
+
+// The regressionData passed in must be an array of objects.
+// Each object having the keys: "caseName" and "inputPath"
+async function runBuildSearchDataTests(
+  siteName,
+  buildSearchUrlFunction,
+  regressionData,
+  testManager,
+  optionVariants = undefined
+) {
+  let testName = siteName + "_build_search_data";
+
+  runBuildSearchTests(
+    siteName,
+    testName,
+    buildSearchUrlFunction,
+    regressionData,
+    testManager,
+    (optionVariants = undefined)
+  );
+}
+export { runBuildSearchUrlTests, runBuildSearchDataTests };

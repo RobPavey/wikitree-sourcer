@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"England, Cheshire Parish Registers, 1538-2000\"<br/>\nciting Reference: item 3; Digital film/folder number: 004018913; FHL microfilm: 2094417; Image number: 00441; Record number: 950; Packet letter: A<br/>\n{{FamilySearch Record|F3VH-9VV}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"England, Cheshire Parish Registers, 1538-2000\"<br/>\nciting Reference: item 3; Digital film/folder number: 004018913; FHL microfilm: 2094417; Image number: 00441; Record number: 950; Packet letter: A<br/>\n{{FamilySearch Record|F3VH-9VV}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Ann, daughter of Thomas Wyatt & Sarah, was born on 24 March 1838 and baptised on 29 April 1838 in Witton-cum-Twambrooks, Cheshire, England.<ref>\n'''Baptism''':\n\"England, Cheshire Parish Registers, 1538-2000\"<br/>\nciting Reference: item 3; Digital film/folder number: 004018913; FHL microfilm: 2094417; Image number: 00441; Record number: 950; Packet letter: A<br/>\n{{FamilySearch Record|F3VH-9VV}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Ann, daughter of Thomas Wyatt & Sarah, was born on 24 March 1838 and baptised on 29 April 1838 in Witton-cum-Twambrooks, Cheshire, England.<ref>\n'''Baptism''':\n\"England, Cheshire Parish Registers, 1538-2000\"<br/>\nciting Reference: item 3; Digital film/folder number: 004018913; FHL microfilm: 2094417; Image number: 00441; Record number: 950; Packet letter: A<br/>\n{{FamilySearch Record|F3VH-9VV}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Baptism''': \"England, Cheshire Parish Registers, 1538-2000\"<br/>citing Reference: item 3; Digital film/folder number: 004018913; FHL microfilm: 2094417; Image number: 00441; Record number: 950; Packet letter: A<br/>{{FamilySearch Record|F3VH-9VV}} (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"England, Cheshire Parish Registers, 1538-2000\"<br/>citing Reference: item 3; Digital film/folder number: 004018913; FHL microfilm: 2094417; Image number: 00441; Record number: 950; Packet letter: A<br/>{{FamilySearch Record|F3VH-9VV}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

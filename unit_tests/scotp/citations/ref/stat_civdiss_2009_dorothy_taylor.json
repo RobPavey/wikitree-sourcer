@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Dissolutions\"<br/>\nNational Records of Scotland, Court Code: 9704; Serial Number: 30<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"Statutory Register of Dissolutions\"<br/>\nNational Records of Scotland, Court Code: 9704; Serial Number: 30<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Dorothy was divorced from Simm in 2009 in Ayr, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Dissolutions\"<br/>\nNational Records of Scotland, Court Code: 9704; Serial Number: 30<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Dorothy was divorced from Simm in 2009 in Ayr, Scotland.<ref>\n'''Divorce''':\n\"Statutory Register of Dissolutions\"<br/>\nNational Records of Scotland, Court Code: 9704; Serial Number: 30<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Divorce''': \"Statutory Register of Dissolutions\"<br/>National Records of Scotland, Court Code: 9704; Serial Number: 30<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Divorce''': \"Statutory Register of Dissolutions\"<br/>National Records of Scotland, Court Code: 9704; Serial Number: 30<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

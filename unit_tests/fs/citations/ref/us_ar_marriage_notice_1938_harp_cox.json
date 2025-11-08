@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Arkansas Marriage Index, 1933-1939\"<br/>\nciting Affiliate Film Number: 0001; Certificate number: 30230; Volume number: 151<br/>\n{{FamilySearch Record|VJTW-F19}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Arkansas Marriage Index, 1933-1939\"<br/>\nciting Affiliate Film Number: 0001; Certificate number: 30230; Volume number: 151<br/>\n{{FamilySearch Record|VJTW-F19}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Harp married Ora Thacker on 23 April 1938 in Baxter, Arkansas, United States.<ref>\n'''Marriage''':\n\"Arkansas Marriage Index, 1933-1939\"<br/>\nciting Affiliate Film Number: 0001; Certificate number: 30230; Volume number: 151<br/>\n{{FamilySearch Record|VJTW-F19}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Harp married Ora Thacker on 23 April 1938 in Baxter, Arkansas, United States.<ref>\n'''Marriage''':\n\"Arkansas Marriage Index, 1933-1939\"<br/>\nciting Affiliate Film Number: 0001; Certificate number: 30230; Volume number: 151<br/>\n{{FamilySearch Record|VJTW-F19}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage''': \"Arkansas Marriage Index, 1933-1939\"<br/>citing Affiliate Film Number: 0001; Certificate number: 30230; Volume number: 151<br/>{{FamilySearch Record|VJTW-F19}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"Arkansas Marriage Index, 1933-1939\"<br/>citing Affiliate Film Number: 0001; Certificate number: 30230; Volume number: 151<br/>{{FamilySearch Record|VJTW-F19}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {
