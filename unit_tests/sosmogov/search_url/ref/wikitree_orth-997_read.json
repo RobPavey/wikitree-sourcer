@@ -4,14 +4,17 @@
       "LastName": "Harrison",
       "FirstName": "Louise",
       "MiddleName": "",
-      "BeginYear": "",
-      "EndYear": ""
+      "BeginYear": "1866",
+      "EndYear": "1986"
     },
     "selectData": {
       "DeathCertNameSearchType_0": true,
       "LNSearchMethod_0": true,
       "FNSearchMethod_0": true,
-      "MNSearchMethod_0": true
+      "MNSearchMethod_0": true,
+      "BeginMonth": 0,
+      "EndMonth": 0,
+      "CountyName": 0
     }
   }
 }

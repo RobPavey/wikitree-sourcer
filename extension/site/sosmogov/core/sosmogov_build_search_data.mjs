@@ -26,8 +26,8 @@ import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 
-function getDateRangeFromWtsQualifier(yearNum, wtsQualifier) {
-  //console.log("getDateRangeFromWtsQualifier:");
+function getDateRangeBasedOnWtsQualifier(yearNum, wtsQualifier) {
+  //console.log("getDateRangeBasedOnWtsQualifier:");
   //console.log("yearNum = " + yearNum);
   //console.log("wtsQualifier = " + wtsQualifier);
   var fromYear = yearNum;
@@ -75,12 +75,14 @@ function getDateRange(yearString, wtsQualifier) {
   if (isNaN(yearNum) || yearNum < 500) {
     return null;
   } else {
-    return getDateRangeFromWtsQualifier(yearNum, wtsQualifier);
+    return getDateRangeBasedOnWtsQualifier(yearNum, wtsQualifier);
   }
 }
 
 function buildSearchData(input) {
   const gd = input.generalizedData;
+
+  const options = input.options;
 
   let fieldData = {};
   let selectData = {};
@@ -113,7 +115,6 @@ function buildSearchData(input) {
   //  let county = gd.inferCounty();
 
   let middleName = "";
-  let countyName = "";
 
   if (lastNameAtDeath) {
     fieldData["LastName"] = lastNameAtDeath;
@@ -132,11 +133,20 @@ function buildSearchData(input) {
 
   let deathDateRange = getDateRange(gd.inferDeathYear(), gd.inferDeathDateQualifier());
 
+  let birthYearString = gd.inferBirthYear();
+
   if (deathDateRange) {
     //console.log("deathDateRange.fromYear = " + deathDateRange.fromYear);
     //console.log("deathDateRange.toYear = " + deathDateRange.toYear);
     fieldData["BeginYear"] = deathDateRange.fromYear;
     fieldData["EndYear"] = deathDateRange.toYear;
+  } else if (birthYearString) {
+    // otherwise, use birth year and max life span as range
+    fieldData["BeginYear"] = birthYearString;
+    let birthYearNum = parseInt(birthYearString);
+    let maxLifespan = Number(options.search_general_maxLifespan);
+    let maxDeathYearNum = birthYearNum + maxLifespan;
+    fieldData["EndYear"] = maxDeathYearNum.toString();
   } else {
     fieldData["BeginYear"] = "";
     fieldData["EndYear"] = "";
@@ -147,6 +157,11 @@ function buildSearchData(input) {
   selectData["LNSearchMethod_0"] = true;
   selectData["FNSearchMethod_0"] = true;
   selectData["MNSearchMethod_0"] = true;
+
+  // reset select elements
+  selectData["BeginMonth"] = 0;
+  selectData["EndMonth"] = 0;
+  selectData["CountyName"] = 0;
 
   var result = {
     fieldData: fieldData,

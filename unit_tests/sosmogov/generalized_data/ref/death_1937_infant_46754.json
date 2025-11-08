@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "sosmogov",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "name": "Infant"
+  },
+  "eventDate": {
+    "dateString": "_ _, 1937"
+  },
+  "deathDate": {
+    "dateString": "_ _, 1937"
+  },
+  "hasValidData": true
+}

@@ -70,6 +70,11 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Ellacott-59",
   },
   {
+    // To test MO death cert search on sosmogov
+    caseName: "gibson-24132_read",
+    url: "https://www.wikitree.com/wiki/Gibson-24132",
+  },
+  {
     // has death date and place but no birth details
     caseName: "gooch-1376_read",
     url: "https://www.wikitree.com/wiki/Gooch-1376",

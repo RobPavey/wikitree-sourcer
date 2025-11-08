@@ -89,12 +89,6 @@ class SosmogovEdReader extends ExtractedDataReader {
     //  ** chgd "Deceased" to role **
     let nameParts = [];
     if (this.ed.recordData[role]) {
-      /*
-      console.log('this.ed.recordData['+role+'] = ' + this.ed.recordData[role]);
-      console.log('this.ed.recordData['+role+'].indexOf("  ") = ' + this.ed.recordData[role].indexOf("  "));
-      console.log('this.ed.recordData['+role+'].split(" ") = ' + this.ed.recordData[role].split(" "));
-      console.log('this.ed.recordData['+role+'].split(" ").length = ' + this.ed.recordData[role].split(" ").length);
-      */
       if (this.ed.recordData[role].indexOf("  ") >= 0) {
         // if 2 consecutive spaces exist, that means there is no middle name, and it's a delimiter for the first and last name strings
         nameParts = this.ed.recordData[role].split("  ");

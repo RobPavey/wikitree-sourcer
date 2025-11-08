@@ -34,8 +34,10 @@ import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mj
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const sosmogovStartYear = 1910;
-const sosmogovEndYear = 1974;
+const sosmogovStartYear = 1910; // earliest year for death records in the collection
+let today = new Date();
+let thisYear = today.getFullYear();
+const sosmogovEndYear = thisYear - 51; // a death certificate can be available in the year following 50 years after the death date
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {

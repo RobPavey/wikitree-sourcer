@@ -23,12 +23,28 @@ SOFTWARE.
 */
 
 import { buildSearchData } from "../../extension/site/sosmogov/core/sosmogov_build_search_data.mjs";
-import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
+import { runBuildSearchDataTests } from "../test_utils/test_build_search_utils.mjs";
 
 const regressionData = [
   {
+    caseName: "death_1937_infant_46754",
+    inputPath: "sosmogov/generalized_data/ref/death_1937_infant_46754",
+  },
+  {
+    caseName: "fg_laura_e_buchert_d_1957",
+    inputPath: "fg/generalized_data/ref/laura_e_buchert_d_1957",
+  },
+  {
+    caseName: "wikitree_gibson-24132_read",
+    inputPath: "wikitree/generalized_data/ref/gibson-24132_read",
+  },
+  {
     caseName: "wikitree_haff-272_edit",
     inputPath: "wikitree/generalized_data/ref/haff-272_edit",
+  },
+  {
+    caseName: "wikitree_haff-272_read",
+    inputPath: "wikitree/generalized_data/ref/haff-272_read",
   },
   {
     caseName: "wikitree_hall-4352_read",
@@ -45,7 +61,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runBuildSearchUrlTests("sosmogov", buildSearchData, regressionData, testManager);
+  await runBuildSearchDataTests("sosmogov", buildSearchData, regressionData, testManager);
 }
 
 export { runTests };

@@ -171,24 +171,15 @@ async function getPendingSearch() {
   });
 }
 
-var pleaseWaitDotCounter = 3;
 function setSearchingBanner() {
-  // Modify the page to say it is a WikiTree Sourcer search
+  // Modify the page to say that WikiTree Sourcer filled the search fields
   let mainElement = document.querySelector("#main");
   let containerElement = document.querySelector("#main > div#crumbs");
   if (mainElement && containerElement) {
-    // let message = "WikiTree Sourcer search. Please wait for form to be populated and submitted";
     let message =
-      "WikiTree Sourcer filled in the search fields. Please make any desired changes and click the Search button";
-    for (let i = 0; i < pleaseWaitDotCounter; i++) {
-      message += ".";
-    }
-
+      "WikiTree Sourcer filled in the search fields. Please make any desired changes and click the Search button.";
     let existingSpan = mainElement.querySelector("#sourcerWaitMessage");
-    if (existingSpan) {
-      pleaseWaitDotCounter = (pleaseWaitDotCounter + 1) % 3;
-      existingSpan.textContent = message;
-    } else {
+    if (!existingSpan) {
       let fragment = document.createDocumentFragment();
 
       let pageTitle = document.createElement("div");
@@ -215,64 +206,19 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-var inputElementsAwaitingMutation = [];
-
-function addMutationObserver(inputElement) {
-  // I added this because it was getting errors if the form was submitted too fast.
-  // It seemed like each input field that was changed sent a POST and the response was some HTML that
-  // was used to update the element sibling next to the input field.
-  // However the next data I tested it on the normal search it was no longer sending posts for
-  // every field.
-  // It still seems to work for the context menu search though and shortens the wait time.
-
-  //console.log("addMutationObserver on inputElement parent:");
-  //console.log(inputElement);
-
-  let parentElement = inputElement.closest("div");
-  if (!parentElement) {
-    console.log("addMutationObserver: parentElement not found.");
-    return;
-  }
-
-  //console.log("addMutationObserver: main element found");
-
-  let id = inputElement.id;
-
-  const callback = (mutationList, observer) => {
-    //console.log("Mutation observer callback for " + id + ", mutationList is:");
-    //console.log(mutationList);
-    //console.log(observer);
-
-    const index = inputElementsAwaitingMutation.indexOf(inputElement);
-    if (index != -1) {
-      inputElementsAwaitingMutation.splice(index, 1);
-      //console.log("addMutationObserver: removed element " + id);
-      //console.log("list.length is now: " + inputElementsAwaitingMutation.length);
-      //console.log(inputElementsAwaitingMutation);
-    }
-  };
-
-  inputElementsAwaitingMutation.push(inputElement);
-  //console.log("addMutationObserver: added element " + id);
-  //console.log("list.length is now: " + inputElementsAwaitingMutation.length);
-  //console.log(inputElementsAwaitingMutation);
-
-  const observer = new MutationObserver(callback);
-  const config = { attributes: false, childList: true, subtree: false };
-  observer.observe(parentElement, config);
-}
-
 function getCollectionDateRange() {
-  // get the date range for this collection from the page title
-  var sosmogovStartYear = 1910; // earliest death records in the collection
-  const documentTitle = document.querySelector("title"); // date range is at end of title text
+  // get the date range for this collection
+  var sosmogovStartYear = 1910; // earliest year for death records in the collection
+  // get the end year for this collection from the page title
+  const documentTitle = document.querySelector("title"); // the end year is at end of title text
   const textContentLast4 = documentTitle.textContent.trim().slice(-4);
   var sosmogovEndYear = parseInt(textContentLast4);
+  // in case  unexpected result from the page title text
   if (isNaN(sosmogovEndYear) || sosmogovEndYear < 1974) {
     // 1974 death certificates are already available
     let today = new Date();
     let thisYear = today.getFullYear();
-    sosmogovEndYear = thisYear - 50; // a death certificate can be available 50 years after the death
+    sosmogovEndYear = thisYear - 51; // a death certificate can be available in the year following 50 years after the death date
   }
   return { sosmogovStartYear: sosmogovStartYear, sosmogovEndYear: sosmogovEndYear };
 }
@@ -322,7 +268,8 @@ async function doPendingSearch() {
     //   LastName, FirstName, and MiddleName,
     //   BeginYear, BeginMonth (selectable options), EndYear, and EndMonth (selectable options),
     //   CountyName (selectable options),
-    //   and input id=btnSearch click will submit the search
+    //   and input id=btnSearch submits the search
+
     if (formElement) {
       let searchButtonElement = document.querySelector("input[id='btnSearch']");
 
@@ -362,8 +309,6 @@ async function doPendingSearch() {
                 searchButtonElement.focus();
               }
               mainElement.scrollIntoView(); // so user can see the "WikiTree Sourcer" message
-              addMutationObserver(inputElement);
-              setSearchingBanner();
               await sleep(100);
               //console.log("after update: inputElement is:");
               //console.log(inputElement);
@@ -394,10 +339,14 @@ async function doPendingSearch() {
             if (inputElement) {
               // just setting the value sometimes does not seem to register with the form
               inputElement.focus();
-              inputElement.checked = value;
+              if (inputElement.tagName == "SELECT") {
+                // select element
+                inputElement.selectedIndex = value;
+              } else {
+                // radio button
+                inputElement.checked = value;
+              }
               mainElement.scrollIntoView(); // so user can see the "WikiTree Sourcer" message
-              addMutationObserver(inputElement);
-              setSearchingBanner();
               await sleep(100);
               //console.log("after update: inputElement is:");
               //console.log(inputElement);
@@ -409,21 +358,11 @@ async function doPendingSearch() {
         }
       }
 
+      console.log("inputNotFound is:");
+      console.log(inputNotFound);
+
       if (!inputNotFound) {
-        // A long sleep seems to be required sometimes,
-        // otherwise it can say the family name or given names need to be filled out.
-        // 1000 is not always enough here.
-        // Test case - search for death from https://www.wikitree.com/wiki/Clarke-15954
-        // This was happening consistently for a while on 27 Aug 2024. I added the mutationObserver
-        // code then and it seems to work but the next day the mutationObserver was not getting updates.
-        // Ao it always seems to wait 2000 here.
-        let waitTime = 0;
-        while (inputElementsAwaitingMutation.length > 0 && waitTime < 2000) {
-          await sleep(200);
-          waitTime += 200;
-          setSearchingBanner();
-        }
-        //console.log("doPendingSearch: completed wait for mutations, waitTime is: " + waitTime);
+        setSearchingBanner();
 
         // update this in case the HTML changed
         searchButtonElement = document.querySelector("input[id='btnSearch']");
@@ -431,7 +370,8 @@ async function doPendingSearch() {
         //console.log("doPendingSearch: searchButtonElement is:");
         //console.log(searchButtonElement);
 
-        /* If we let the user click the Search button, the browser back arrow works, in case the user wants to refine the search criteria.
+        /* We let the user click the Search button, so that the browser back arrow works, in case the user wants to refine the search criteria.
+
         // try to submit form
         if (searchButtonElement) {
           //console.log("about to click button");
@@ -441,17 +381,18 @@ async function doPendingSearch() {
 
           submitted = true;
         }
+        
         */
       }
       searchButtonElement.focus();
     }
-
+    /* 
     if (!submitted) {
       //console.log("not submitted");
     } else {
       //console.log("submitted");
     }
-
+ */
     // clear the pending data so that we don't use it again on refine search
     pendingSearchData = undefined;
   }
@@ -460,20 +401,6 @@ async function doPendingSearch() {
 async function checkForPendingSearch() {
   //console.log("checkForPendingSearch: called");
   //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
-
-  /*
-  // changed to match nswbdm
-  if (document.referrer) {
-    // when this page was opened by the extension referrer is an empty string
-    return;
-  }
-  */
-
-  if (document.referrer) {
-    // when this page was opened by the extension referrer is an empty string
-    // but when we call window.open to reuse the tab it will not be empty so do not return here
-    //return false;
-  }
 
   //console.log("checkForPendingSearch: URL is");
   //console.log(document.URL);
@@ -508,7 +435,7 @@ async function checkForPendingSearch() {
       doPendingSearch();
     }
 
-    // clear the search data no that we have set pendingSearchData
+    // clear the search data now that we have set pendingSearchData
     chrome.storage.local.remove(["searchData"], function () {
       //console.log("cleared searchData");
     });

@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "9 Jun 1957"
+  },
+  "eventPlace": {
+    "placeString": "Affton, St. Louis County, Missouri, USA",
+    "streetAddress": "Sunset Memorial Park and Mausoleum"
+  },
+  "name": {
+    "firstNames": "Laura",
+    "lastName": "Buchert",
+    "middleNames": "E"
+  },
+  "lastNameAtBirth": "Voelkel",
+  "lastNameAtDeath": "Buchert",
+  "deathDate": {
+    "dateString": "9 Jun 1957"
+  },
+  "deathPlace": {
+    "placeString": "City of St. Louis, Missouri, USA"
+  },
+  "ageAtDeath": "64",
+  "birthDate": {
+    "dateString": "8 Dec 1892"
+  },
+  "birthPlace": {
+    "placeString": "Belleville, St. Clair County, Illinois, USA"
+  },
+  "wtSearchTemplates": [
+    "{{FindAGrave|118913956}}"
+  ],
+  "hasValidData": true
+}
