@@ -26,14 +26,12 @@ import { buildSearchData } from "../../extension/site/itcadgg/core/itcadgg_build
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*
   {
     // has pref name
     caseName: "wikitree_stanway-252_read",
     inputPath: "wikitree/generalized_data/ref/stanway-252_read",
     typeOfSearch: "Births",
   },
-  */
 ];
 
 async function runTests(testManager) {

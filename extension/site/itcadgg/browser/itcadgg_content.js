@@ -142,7 +142,16 @@ async function doPendingSearch() {
     //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
     // insert code here to do the search by filling out the form and submitting it
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+    // Fill the last name field
+    const tNomeEl = document.querySelector('input[name="tNome"]');
+    if (tNomeEl) {
+      tNomeEl.value = fieldData.tNome;
+      //console.log('Filled tNome with:', fieldData.tNome);
+    }
+    const tAnnoNascEl = document.querySelector('input[name="tAnnoNasc"]');
+    if (tAnnoNascEl) {
+      tAnnoNascEl.value = fieldData["tAnnoNasc"];
+    }
     // clear the pending data so that we don't use it again on refine search
     pendingSearchData = undefined;
   }
@@ -203,9 +212,9 @@ async function checkForPendingSearch() {
 
 async function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
-    //console.log("nswbdm: additionalMessageHandler, request is:");
+    //console.log("itcadgg: additionalMessageHandler, request is:");
     //console.log(request);
-    //console.log("nswbdm: additionalMessageHandler, document.URL is:");
+    //console.log("itcadgg: additionalMessageHandler, document.URL is:");
     //console.log(document.URL);
 
     // We could try to check if this is the correct type of page (Births, Deaths etc)

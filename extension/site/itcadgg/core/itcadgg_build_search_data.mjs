@@ -22,10 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
+
 function buildSearchData(input) {
   const gd = input.generalizedData;
 
   let fieldData = {};
+
+  let firstName = gd.inferFirstName();
+  let lastName = gd.inferLastName();
+  let birthYear = gd.inferBirthYear();
+
+  fieldData["tNome"] = lastName;
+  fieldData["tAnnoNasc"] = birthYear;
+
   let selectData = {};
 
   //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!

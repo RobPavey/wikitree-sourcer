@@ -78,7 +78,7 @@ async function itcadggSearch(generalizedData) {
       //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
       // put URL of this site's search page here
       //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      let searchUrl = "https://www.itcadgg.org/search";
+      let searchUrl = "https://www.cadutigrandeguerra.it/CercaNome.aspx";
 
       const searchData = {
         timeStamp: Date.now(),
