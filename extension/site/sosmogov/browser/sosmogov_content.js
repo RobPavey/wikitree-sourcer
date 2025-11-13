@@ -213,7 +213,7 @@ function getCollectionDateRange() {
   const documentTitle = document.querySelector("title"); // the end year is at end of title text
   const textContentLast4 = documentTitle.textContent.trim().slice(-4);
   var sosmogovEndYear = parseInt(textContentLast4);
-  // in case  unexpected result from the page title text
+  // in case unexpected result from the page title text
   if (isNaN(sosmogovEndYear) || sosmogovEndYear < 1974) {
     // 1974 death certificates are already available
     let today = new Date();
@@ -293,22 +293,18 @@ async function doPendingSearch() {
             let id = key;
             //console.log("doPendingSearch: id is: " + id);
 
-            let inputElement = document.querySelector("input[id='" + id + "']");
+            let inputElement = document.querySelector("#" + id);
             //console.log("doPendingSearch: inputElement is:");
             //console.log(inputElement);
 
             if (inputElement) {
-              //inputElement.value = value;
-
-              // just setting the value sometimes does not seem to register with the form
               inputElement.focus();
-              document.execCommand("selectAll", false);
-              document.execCommand("insertText", false, value);
+              // just setting the value sometimes does not seem to register with the form
+              inputElement.value = value;
               if (searchButtonElement) {
                 // moves to another input so that this field gets processed
                 searchButtonElement.focus();
               }
-              mainElement.scrollIntoView(); // so user can see the "WikiTree Sourcer" message
               await sleep(100);
               //console.log("after update: inputElement is:");
               //console.log(inputElement);
@@ -320,7 +316,7 @@ async function doPendingSearch() {
         }
       }
 
-      // process the radio button element values
+      // process the select and radio button elements
       for (var key in selectData) {
         //console.log("doPendingSearch: selectData key is: " + key);
 
@@ -346,7 +342,6 @@ async function doPendingSearch() {
                 // radio button
                 inputElement.checked = value;
               }
-              mainElement.scrollIntoView(); // so user can see the "WikiTree Sourcer" message
               await sleep(100);
               //console.log("after update: inputElement is:");
               //console.log(inputElement);
@@ -363,6 +358,8 @@ async function doPendingSearch() {
 
       if (!inputNotFound) {
         setSearchingBanner();
+
+        mainElement.scrollIntoView(); // so user can see the "WikiTree Sourcer" message
 
         // update this in case the HTML changed
         searchButtonElement = document.querySelector("input[id='btnSearch']");
