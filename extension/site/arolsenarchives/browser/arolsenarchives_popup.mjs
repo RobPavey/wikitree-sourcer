@@ -59,8 +59,8 @@ async function getPersonData(extractData) {
 
   if (extractData.person_data_list.length == 1) {
     extractData.person_data = extractData.person_data_list[0];
-  } else if (extractData.person_index != null) {
-    extractData.person_data = extractData.person_data_list[extractData.person_index];
+  } else if (extractData.primaryPersonIndex != null) {
+    extractData.person_data = extractData.person_data_list[extractData.primaryPersonIndex];
   }
 }
 
