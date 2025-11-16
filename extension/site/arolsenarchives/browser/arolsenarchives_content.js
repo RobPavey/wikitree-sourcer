@@ -53,7 +53,11 @@ function getClickedRow() {
 }
 
 function addClickedRowListener() {
-  const resultsTable = document.querySelector("yv-its-person-simple-grid").querySelector('tbody[role="rowgroup"]');
+  const grid = document.querySelector("yv-its-person-simple-grid");
+  if (grid != null) {
+    return;
+  }
+  const resultsTable = grid.querySelector('tbody[role="rowgroup"]');
   if (resultsTable && !resultsTable.hasAttribute("listenerOnClick")) {
     resultsTable.setAttribute("listenerOnClick", "true");
     resultsTable.addEventListener("click", function (ev) {

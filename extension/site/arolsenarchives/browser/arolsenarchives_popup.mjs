@@ -26,29 +26,17 @@ import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs"
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/arolsenarchives_generalize_data.mjs";
 import { buildCitation } from "../core/arolsenarchives_build_citation.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 async function getPersonData(extractData) {
-  // if (extractData.doc_internal_id == null) {
-  //   let request = await fetch("https://collections-server.arolsen-archives.org/ITS-WS.asmx/GetTreeNodeByDocId", {
-  //     "credentials": "include",
-  //     "headers": {
-  //       "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
-  //       "Accept": "application/json, text/plain, */*",
-  //       "Accept-Language": "de,en-US;q=0.7,en;q=0.3",
-  //       "Content-Type": "application/json",
-  //       "Sec-Fetch-Dest": "empty",
-  //       "Sec-Fetch-Mode": "cors",
-  //       "Sec-Fetch-Site": "same-site",
-  //       "Sec-GPC": "1"
-  //     },
-  //     "referrer": "https://collections.arolsen-archives.org/",
-  //     "body": JSON.stringify({"id": extractData.doc_id}),
-  //     "method": "POST",
-  //     "mode": "cors"
-  //   });
-  //   let data = await request.json();
-  //   extractData.doc_internal_id = data["d"];
-  // }
+  const checkPermissionsOptions = {
+    reason: "To extract all personal data, a content script needs to be loaded on the archion.de page.",
+  };
+  let allowed = await checkPermissionForSite("*://collections-server.arolsen-archives.org/*", checkPermissionsOptions);
+  if (!allowed) {
+    closePopup();
+    return;
+  }
 
   let request = await fetch("https://collections-server.arolsen-archives.org/ITS-WS.asmx/GetPersonListByDocId", {
     credentials: "include",
