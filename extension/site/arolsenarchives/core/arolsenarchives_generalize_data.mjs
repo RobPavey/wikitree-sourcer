@@ -27,7 +27,7 @@ import { ArolsenarchivesEdReader } from "./arolsenarchives_ed_reader.mjs";
 
 // This function generalizes the data extracted from the page content.
 function generalizeData(input) {
-  let edReader = new ArolsenarchivesEdReader(input.extractedData);
+  let edReader = new ArolsenarchivesEdReader(input.extractedData, input.primaryPersonIndex ? input.primaryPersonIndex : 0);
   return commonGeneralizeData("arolsenarchives", edReader);
 }
 

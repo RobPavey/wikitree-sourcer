@@ -16,5 +16,8 @@
   "deathDate": {
     "dateString": "20 Nov 1944"
   },
+  "primaryPersonOptions": [
+    "MANSURKIN, ABDULMANOW, born on 1905"
+  ],
   "hasValidData": true
 }
