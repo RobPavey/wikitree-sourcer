@@ -1633,6 +1633,15 @@ function extractDataInReadMode2025(document, result) {
   getParentsFromDocumentInNonEditMode2025(document, result);
 
   getSpousesFromDocumentInNonEditMode2025(false, document, result);
+
+  // Get Wiki Citation from the "Cite" button
+  let citeButton = document.querySelector("button[aria-label='Copy Citation']");
+  if (citeButton) {
+    const citation = citeButton.getAttribute("data-copy-text");
+    if (citation) {
+      result.citation = citation;
+    }
+  }
 }
 
 function extractDataForNonPerson2025(document, result) {
@@ -1783,6 +1792,15 @@ function extractDataInEditMode2025(document, result) {
     const profileWikiId = copyIdButton.getAttribute("data-copy-text");
     result.wikiId = profileWikiId;
     result.lnab = profileWikiId.replace(/^(.+)\-\d+$/, "$1");
+  }
+
+  // Get Wiki Citation from the "Cite" button
+  let citeButton = document.querySelector("button[aria-label='Copy Citation']");
+  if (citeButton) {
+    const citation = citeButton.getAttribute("data-copy-text");
+    if (citation) {
+      result.citation = citation;
+    }
   }
 }
 
