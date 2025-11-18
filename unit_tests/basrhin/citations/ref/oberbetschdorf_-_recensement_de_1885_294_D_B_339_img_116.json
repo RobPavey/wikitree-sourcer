@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nArchives d'Alsace Site de Strasbourg; 294 D/B 339 - Oberbetschdorf - Recensement de 1885 - 1885; Image 116 sur 271; Commune: Oberbetschdorf; Dates: 1871-1918 (annexion allemande)<br/>\n[https://archives67.alsace.eu/ark:/78665/950775/dao/0/116 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nArchives d'Alsace Site de Strasbourg; 294 D/B 339 - Oberbetschdorf - Recensement de 1885 - 1885; Image 116 sur 271; Commune: Oberbetschdorf; Dates: 1871-1918 (annexion allemande)<br/>\n[https://archives67.alsace.eu/ark:/78665/950775/dao/0/116 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Recensement''': \"Recensements de population\"<br/>Archives d'Alsace Site de Strasbourg; 294 D/B 339 - Oberbetschdorf - Recensement de 1885 - 1885; Image 116 sur 271; Commune: Oberbetschdorf; Dates: 1871-1918 (annexion allemande)<br/>[https://archives67.alsace.eu/ark:/78665/950775/dao/0/116 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nArchives d'Alsace Site de Strasbourg, 294 D/B 339 - Oberbetschdorf - Recensement de 1885 - 1885, Image 116 sur 271, Commune Oberbetschdorf, Dates 1871-1918 (annexion allemande)<br/>\n[https://archives67.alsace.eu/ark:/78665/950775/dao/0/116 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nArchives d'Alsace Site de Strasbourg, 294 D/B 339 - Oberbetschdorf - Recensement de 1885 - 1885, Image 116 sur 271, Commune Oberbetschdorf, Dates 1871-1918 (annexion allemande)<br/>\n[https://archives67.alsace.eu/ark:/78665/950775/dao/0/116 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Recensement''': \"Recensements de population\"<br/>Archives d'Alsace Site de Strasbourg, 294 D/B 339 - Oberbetschdorf - Recensement de 1885 - 1885, Image 116 sur 271, Commune Oberbetschdorf, Dates 1871-1918 (annexion allemande)<br/>[https://archives67.alsace.eu/ark:/78665/950775/dao/0/116 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

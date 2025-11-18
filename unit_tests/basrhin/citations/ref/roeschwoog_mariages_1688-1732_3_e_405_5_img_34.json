@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg; 3 E 405 /5 - Mariages - 1688-1732; Image 34 sur 73; Présentation du contenu: Avec index.; Lieu: ROESCHWOOG<br/>\n[https://archives67.alsace.eu/ark:/78665/2035165/dao/0/34 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg; 3 E 405 /5 - Mariages - 1688-1732; Image 34 sur 73; Présentation du contenu: Avec index.; Lieu: ROESCHWOOG<br/>\n[https://archives67.alsace.eu/ark:/78665/2035165/dao/0/34 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Mariage''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives d'Alsace Site de Strasbourg; 3 E 405 /5 - Mariages - 1688-1732; Image 34 sur 73; Présentation du contenu: Avec index.; Lieu: ROESCHWOOG<br/>[https://archives67.alsace.eu/ark:/78665/2035165/dao/0/34 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg, 3 E 405 /5 - Mariages - 1688-1732, Image 34 sur 73, Présentation du contenu Avec index., Lieu ROESCHWOOG<br/>\n[https://archives67.alsace.eu/ark:/78665/2035165/dao/0/34 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg, 3 E 405 /5 - Mariages - 1688-1732, Image 34 sur 73, Présentation du contenu Avec index., Lieu ROESCHWOOG<br/>\n[https://archives67.alsace.eu/ark:/78665/2035165/dao/0/34 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Mariage''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives d'Alsace Site de Strasbourg, 3 E 405 /5 - Mariages - 1688-1732, Image 34 sur 73, Présentation du contenu Avec index., Lieu ROESCHWOOG<br/>[https://archives67.alsace.eu/ark:/78665/2035165/dao/0/34 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

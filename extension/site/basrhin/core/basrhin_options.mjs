@@ -36,8 +36,8 @@ const citationOptionsGroup = {
   options: [],
 };
 
-registerSubsectionForOptions("search", "basrhin", "Bas-Rhin Archives");
+registerSubsectionForOptions("search", "basrhin", "Archives d'Alsace Site de Strasbourg");
 registerSiteSearchPopupOptionsGroup("basrhin");
 
-registerSubsectionForOptions("citation", "basrhin", "Bas-Rhin Archives");
+registerSubsectionForOptions("citation", "basrhin", "Archives d'Alsace Site de Strasbourg");
 registerOptionsGroup(citationOptionsGroup);

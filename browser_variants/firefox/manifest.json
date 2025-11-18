@@ -119,9 +119,7 @@
     },
     {
       "matches": [
-        "*://archives.bas-rhin.fr/detail-document/ETAT-CIVIL*",
-        "*://archives.bas-rhin.fr/detail-document/REC-POP*",
-        "*://archives.bas-rhin.fr/detail-document/LIGEO*"
+        "*://archives67.alsace.eu/ark:/*"
       ],
       "run_at": "document_idle",
       "js": [
@@ -660,7 +658,7 @@
         "site/basrhin/core/basrhin_extract_data.mjs"
       ],
       "matches": [
-        "*://archives.bas-rhin.fr/*"
+        "*://archives67.alsace.eu/*"
       ]
     },
     {
