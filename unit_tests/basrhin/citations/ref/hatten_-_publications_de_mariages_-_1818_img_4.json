@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Publication de mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg; Publications de Mariages - 1818 - 1818; Image 4 sur 9; Lieu: HATTEN<br/>\n[https://archives67.alsace.eu/ark:/78665/1928043/dao/0/4 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Publication de mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg; Publications de Mariages - 1818 - 1818; Image 4 sur 9; Lieu: HATTEN<br/>\n[https://archives67.alsace.eu/ark:/78665/1928043/dao/0/4 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Publication de mariage''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives d'Alsace Site de Strasbourg; Publications de Mariages - 1818 - 1818; Image 4 sur 9; Lieu: HATTEN<br/>[https://archives67.alsace.eu/ark:/78665/1928043/dao/0/4 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "meaningfulNames_normal_inline": {
+    "citation": "<ref>\nPublication de mariage:\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg, Publications de Mariages - 1818 - 1818, Image 4 sur 9, Lieu HATTEN<br/>\n[https://archives67.alsace.eu/ark:/78665/1928043/dao/0/4 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "meaningfulNames_normal_narrative": {
+    "citation": "This person was in a record.<ref>\nPublication de mariage:\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg, Publications de Mariages - 1818 - 1818, Image 4 sur 9, Lieu HATTEN<br/>\n[https://archives67.alsace.eu/ark:/78665/1928043/dao/0/4 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "meaningfulNames_normal_source": {
+    "citation": "* Publication de mariage: \"Registres paroissiaux et documents d'état civil\"<br/>Archives d'Alsace Site de Strasbourg, Publications de Mariages - 1818 - 1818, Image 4 sur 9, Lieu HATTEN<br/>[https://archives67.alsace.eu/ark:/78665/1928043/dao/0/4 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

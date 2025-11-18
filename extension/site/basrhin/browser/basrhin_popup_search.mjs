@@ -28,7 +28,7 @@ import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const basrhinStartYear = 1800;
+const basrhinStartYear = 1600;
 const basrhinEndYear = 2000;
 
 function shouldShowSearchMenuItem(data, filter) {
@@ -63,7 +63,7 @@ async function basrhinSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addBasrhinDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search Bas-Rhin Archives", function (element) {
+  addMenuItem(menu, "Search Archives d'Alsace Site de Strasbourg", function (element) {
     basrhinSearch(data.generalizedData);
   });
 
@@ -80,7 +80,7 @@ function addBasrhinDefaultSearchMenuItem(menu, data, backFunction, filter) {
 
 registerSearchMenuItemFunction(
   "basrhin",
-  "Bas-Rhin Archives",
+  "Archives d'Alsace Site de Strasbourg",
   addBasrhinDefaultSearchMenuItem,
   shouldShowSearchMenuItem
 );

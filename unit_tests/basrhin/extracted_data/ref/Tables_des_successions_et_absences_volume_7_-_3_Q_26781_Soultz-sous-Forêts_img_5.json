@@ -1,9 +1,13 @@
 {
-  "url": "https://archives.bas-rhin.fr/detail-document/LIGEO-1196658#visio/page:LIGEO-1196658-196103",
+  "url": "https://archives67.alsace.eu/ark:/78665/1186916.1196658/dao/0/1/idsearch:RECH_b9e48e86e4223c0d0593f601ffed8483?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F1186916.1196658%2Fcanvas%2F0%2F5",
   "success": true,
-  "repository": "Archives départementales du Bas-Rhin",
-  "bureauPlace": "Bureau de l'enregistrement de Soultz-sous-Forêts",
-  "sourceReference": "Tables des successions et absences, [volume 7] - 3 Q 26781",
-  "imageNo": "5",
-  "imageMax": "204"
+  "repository": "Archives d'Alsace Site de Strasbourg",
+  "ogTitle": "3 Q 26781 - Tables des successions et absences, [volume 7] - 1er janvier 1856 - 18 octobre 1864",
+  "description": "3 Q 26781 Tables des successions et absences, [volume 7] 1856-01-01/1864-10-18 1er janvier 1856 - 18 octobre 1864 table des successions et...",
+  "imageNumPhrase": "Image 5 sur 205",
+  "imageNumNow": "5",
+  "imageNumMax": "205",
+  "keyValueData": {
+    "Lieu": "Soultz-sous-Forêts"
+  }
 }

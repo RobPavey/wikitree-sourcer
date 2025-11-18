@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptême''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg; 3 E 231 /2 - Baptêmes - 1775-1787; Image 31 sur 39; Réfèrence des originaux: Cote du microfilm : 5 Mi 231 /1; Sujet: 18e siècle; Lieu: KEFFENACH<br/>\n[https://archives67.alsace.eu/ark:/78665/1950629/dao/0/31 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Baptême''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg; 3 E 231 /2 - Baptêmes - 1775-1787; Image 31 sur 39; Réfèrence des originaux: Cote du microfilm : 5 Mi 231 /1; Sujet: 18e siècle; Lieu: KEFFENACH<br/>\n[https://archives67.alsace.eu/ark:/78665/1950629/dao/0/31 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptême''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives d'Alsace Site de Strasbourg; 3 E 231 /2 - Baptêmes - 1775-1787; Image 31 sur 39; Réfèrence des originaux: Cote du microfilm : 5 Mi 231 /1; Sujet: 18e siècle; Lieu: KEFFENACH<br/>[https://archives67.alsace.eu/ark:/78665/1950629/dao/0/31 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Baptême''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg, 3 E 231 /2 - Baptêmes - 1775-1787, Image 31 sur 39, Réfèrence des originaux Cote du microfilm : 5 Mi 231 /1, Sujet 18e siècle, Lieu KEFFENACH<br/>\n[https://archives67.alsace.eu/ark:/78665/1950629/dao/0/31 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Baptême''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg, 3 E 231 /2 - Baptêmes - 1775-1787, Image 31 sur 39, Réfèrence des originaux Cote du microfilm : 5 Mi 231 /1, Sujet 18e siècle, Lieu KEFFENACH<br/>\n[https://archives67.alsace.eu/ark:/78665/1950629/dao/0/31 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Baptême''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives d'Alsace Site de Strasbourg, 3 E 231 /2 - Baptêmes - 1775-1787, Image 31 sur 39, Réfèrence des originaux Cote du microfilm : 5 Mi 231 /1, Sujet 18e siècle, Lieu KEFFENACH<br/>[https://archives67.alsace.eu/ark:/78665/1950629/dao/0/31 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

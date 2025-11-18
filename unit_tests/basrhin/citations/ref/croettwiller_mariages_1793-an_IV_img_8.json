@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg; Mariages - 1793-An IV - 1793-An IV; Image 8 sur 11; Présentation du contenu: An III en déficit ; registres partiellement tenus en double.; Lieu: CROETTWILLER<br/>\n[https://archives67.alsace.eu/ark:/78665/1877641/dao/0/8 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg; Mariages - 1793-An IV - 1793-An IV; Image 8 sur 11; Présentation du contenu: An III en déficit ; registres partiellement tenus en double.; Lieu: CROETTWILLER<br/>\n[https://archives67.alsace.eu/ark:/78665/1877641/dao/0/8 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Mariage''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives d'Alsace Site de Strasbourg; Mariages - 1793-An IV - 1793-An IV; Image 8 sur 11; Présentation du contenu: An III en déficit ; registres partiellement tenus en double.; Lieu: CROETTWILLER<br/>[https://archives67.alsace.eu/ark:/78665/1877641/dao/0/8 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg, Mariages - 1793-An IV - 1793-An IV, Image 8 sur 11, Présentation du contenu An III en déficit ; registres partiellement tenus en double., Lieu CROETTWILLER<br/>\n[https://archives67.alsace.eu/ark:/78665/1877641/dao/0/8 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg, Mariages - 1793-An IV - 1793-An IV, Image 8 sur 11, Présentation du contenu An III en déficit ; registres partiellement tenus en double., Lieu CROETTWILLER<br/>\n[https://archives67.alsace.eu/ark:/78665/1877641/dao/0/8 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Mariage''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives d'Alsace Site de Strasbourg, Mariages - 1793-An IV - 1793-An IV, Image 8 sur 11, Présentation du contenu An III en déficit ; registres partiellement tenus en double., Lieu CROETTWILLER<br/>[https://archives67.alsace.eu/ark:/78665/1877641/dao/0/8 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

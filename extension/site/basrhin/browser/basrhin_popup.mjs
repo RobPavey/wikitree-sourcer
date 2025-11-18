@@ -30,8 +30,9 @@ import { buildCitation } from "../core/basrhin_build_citation.mjs";
 async function setupBasrhinPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage: "It looks like a Bas-Rhin Archives page but not a record page.",
-    generalizeFailedMessage: "It looks like a Bas-Rhin Archives page but does not contain the required data.",
+    extractFailedMessage: "It looks like a Archives d'Alsace Site de Strasbourg page but not a record page.",
+    generalizeFailedMessage:
+      "It looks like a Archives d'Alsace Site de Strasbourg page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "basrhin",

@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Registre paroissial''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg; 3 E 183 /1 - Baptêmes, Mariages, Sépultures - 1707-1730; Image 1 sur 178; Présentation du contenu: B (1707-1726), M (1707-1730), S (1707-1729) ; avec abjurations.; Lieu: HATTEN<br/>\n[https://archives67.alsace.eu/ark:/78665/1927865/dao/0/1 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Registre paroissial''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg; 3 E 183 /1 - Baptêmes, Mariages, Sépultures - 1707-1730; Image 1 sur 178; Présentation du contenu: B (1707-1726), M (1707-1730), S (1707-1729) ; avec abjurations.; Lieu: HATTEN<br/>\n[https://archives67.alsace.eu/ark:/78665/1927865/dao/0/1 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Registre paroissial''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives d'Alsace Site de Strasbourg; 3 E 183 /1 - Baptêmes, Mariages, Sépultures - 1707-1730; Image 1 sur 178; Présentation du contenu: B (1707-1726), M (1707-1730), S (1707-1729) ; avec abjurations.; Lieu: HATTEN<br/>[https://archives67.alsace.eu/ark:/78665/1927865/dao/0/1 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "meaningfulNames_italics_inline": {
+    "citation": "<ref>\nRegistre paroissial:\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg, 3 E 183 /1 - Baptêmes, Mariages, Sépultures - 1707-1730, Image 1 sur 178, Présentation du contenu B (1707-1726), M (1707-1730), S (1707-1729) ; avec abjurations., Lieu HATTEN<br/>\n[https://archives67.alsace.eu/ark:/78665/1927865/dao/0/1 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "meaningfulNames_italics_narrative": {
+    "citation": "This person was in a record.<ref>\nRegistre paroissial:\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg, 3 E 183 /1 - Baptêmes, Mariages, Sépultures - 1707-1730, Image 1 sur 178, Présentation du contenu B (1707-1726), M (1707-1730), S (1707-1729) ; avec abjurations., Lieu HATTEN<br/>\n[https://archives67.alsace.eu/ark:/78665/1927865/dao/0/1 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "meaningfulNames_italics_source": {
+    "citation": "* Registre paroissial: \"Registres paroissiaux et documents d'état civil\"<br/>Archives d'Alsace Site de Strasbourg, 3 E 183 /1 - Baptêmes, Mariages, Sépultures - 1707-1730, Image 1 sur 178, Présentation du contenu B (1707-1726), M (1707-1730), S (1707-1729) ; avec abjurations., Lieu HATTEN<br/>[https://archives67.alsace.eu/ark:/78665/1927865/dao/0/1 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}
