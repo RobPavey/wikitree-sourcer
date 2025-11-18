@@ -609,6 +609,12 @@ function buildAncestrySharingTemplateFromSharingDataObj(options, dataObj) {
   }
 }
 
+function buildPlainAncestrySharingLinkFromSharingDataObj(dataObj) {
+  if (dataObj.v2 && dataObj.v2.share_url) {
+    return dataObj.v2.share_url;
+  }
+}
+
 function cleanOriginalData(text) {
   text = text.replace(/^Crown copyright images reproduced [^.]*\./, "");
   text = text.trim();
@@ -706,6 +712,8 @@ function buildCoreCitation(ed, gd, options, sharingDataObj, builder) {
     let template = buildAncestrySharingTemplateFromSharingDataObj(options, sharingDataObj);
     builder.sharingLinkOrTemplate = template;
     builder.databaseHasImages = true;
+
+    builder.plainSharingLink = buildPlainAncestrySharingLinkFromSharingDataObj(sharingDataObj);
   }
 
   builder.recordLinkOrTemplate = buildAncestryRecordTemplate(ed, options);

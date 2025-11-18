@@ -66,11 +66,22 @@ import { options } from "/base/browser/options/options_loader.mjs";
 import { writeToClipboard, clearClipboard } from "/base/browser/popup/popup_clipboard.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 
+import { RT } from "/base/core//record_type.mjs";
 import { generalizeData, generalizeDataGivenRecordType } from "../core/fs_generalize_data.mjs";
 import { buildCitation } from "../core/fs_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
 import { fsGetAllCitations } from "./fs_get_all_citations.mjs";
+
+import { GeneralizedData, dateQualifiers, NameObj, DateObj } from "/base/core/generalize_data_utils.mjs";
+
+import {
+  convertTimestampDiffToText,
+  getPersonDataSubtitleText,
+  getCitationObjectSubtitleText,
+} from "/base/browser/popup/popup_utils.mjs";
+import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
+import { getLatestCitation } from "/base/browser/popup/popup_citation.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -343,6 +354,114 @@ async function fsGetAllCitationsForSavePersonData(data) {
   }
 }
 
+async function setCreateSourceFieldsFromPersonData(data, personData, tabId, citationObject, backFunction) {
+  displayBusyMessage("Setting fields ...");
+
+  let fieldData = {};
+  let ed = undefined;
+  let gd = undefined;
+
+  if (personData) {
+    ed = personData.extractedData;
+    gd = personData.generalizedData;
+  } else if (citationObject) {
+    gd = citationObject.generalizedData;
+  }
+
+  if (gd) {
+    if (personData) {
+      if (ed && gd.sourceOfData == "wikitree") {
+        if (ed.wikiId) {
+          fieldData.sourceTitle = ed.wikiId + " on WikiTree";
+          fieldData.webPageUrl = "https://www.wikitree.com/wiki/" + ed.wikiId;
+        }
+
+        if (ed.citation) {
+          fieldData.citation = ed.citation;
+        }
+      }
+    } else if (citationObject) {
+      if (gd.eventDate) {
+        fieldData.eventDate = gd.eventDate.getDateString();
+      }
+      fieldData.sourceTitle = citationObject.sourceTitle;
+      fieldData.webPageUrl = citationObject.url;
+      fieldData.citation = citationObject.sourceReference;
+      fieldData.notes = citationObject.standardDataString;
+
+      if (citationObject.plainSharingLink) {
+        fieldData.notes += "\n\nSharing link:\n" + citationObject.plainSharingLink;
+      }
+    }
+
+    if (gd.name) {
+      fieldData.hasNameEvent = true;
+    }
+    if (gd.personGender) {
+      fieldData.hasSexEvent = true;
+    }
+    if (gd.birthDate) {
+      fieldData.hasBirthEvent = true;
+    } else if (gd.recordType == RT.Birth || gd.recordType == RT.BirthRegistration) {
+      fieldData.hasBirthEvent = true;
+    }
+
+    if (gd.recordType == RT.Baptism) {
+      fieldData.hasBaptismEvent = true;
+    }
+
+    if (gd.deathDate) {
+      fieldData.hasDeathEvent = true;
+    } else if (gd.recordType == RT.Death || gd.recordType == RT.DeathRegistration) {
+      fieldData.hasDeathEvent = true;
+    }
+
+    if (gd.recordType == RT.Burial) {
+      fieldData.hasBurialEvent = true;
+    }
+  }
+
+  // send a message to content script
+  try {
+    //console.log("setCreateSourceFieldsFromPersonData");
+    //console.log(tabId);
+    //console.log(fieldData);
+
+    chrome.tabs.sendMessage(tabId, { type: "setFields", fieldData: fieldData }, function (response) {
+      displayBusyMessage("Setting fields ...");
+
+      //console.log("setCreateSourceFieldsFromPersonData, chrome.runtime.lastError is:");
+      //console.log(chrome.runtime.lastError);
+      //console.log("setCreateSourceFieldsFromPersonData, response is:");
+      //console.log(response);
+
+      // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
+      if (chrome.runtime.lastError || !response) {
+        // possibly there is no content script loaded, this could be an error that should be reported
+        // By testing edge cases I have found the if you reload the page and immediately click the
+        // extension button sometimes this will happen. Presumably because the content script
+        // just got unloaded prior to the reload but we got here because the popup had not been reset.
+        // In this case we are seeing the response being undefined.
+        // What to do in this case? Don't want to leave the "Initializing menu..." up.
+        let message = "setCreateSourceFieldsFromPersonData failed";
+        if (chrome.runtime.lastError && chrome.runtime.lastError.message) {
+          message += ": " + chrome.runtime.lastError.message;
+        }
+        displayMessageWithIcon("warning", message);
+      } else if (response.success) {
+        // Used to display a message on success but that meant an extra click to close popup
+        //displayMessageWithIconThenClosePopup("check", "Fields updated");
+        closePopup();
+      } else {
+        let message = response.errorMessage;
+        console.log(message);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -392,6 +511,79 @@ function addBuildBookCitationMenuItems(menu, data) {
     displayBusyMessage("Building citation...");
     fsBuildCitation(input);
   });
+}
+
+async function addSetCreateSourceFieldsFromPersonDataMenuItem(menu, data, tabId, backFunction) {
+  console.log("addSetCreateSourceFieldsFromPersonDataMenuItem");
+
+  let personData = await getLatestPersonData();
+  if (!personData) {
+    return; // no saved data, do not add menu item
+  }
+
+  let timeText = convertTimestampDiffToText(personData.timeStamp);
+  if (!timeText) {
+    return;
+  }
+
+  console.log("addSetCreateSourceFieldsFromPersonDataMenuItem: personData is:");
+  console.log(personData);
+
+  if (personData.generalizedData) {
+    let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
+    personData.generalizedData = gd;
+    let menuText = "Set Fields from Person Data for:";
+    let subtitleText = getPersonDataSubtitleText(gd, timeText);
+
+    addMenuItemWithSubtitle(
+      menu,
+      menuText,
+      function (element) {
+        setCreateSourceFieldsFromPersonData(data, personData, tabId, null, backFunction);
+      },
+      subtitleText
+    );
+  }
+}
+
+async function addSetCreateSourceFieldsFromCitationMenuItem(menu, data, tabId, backFunction) {
+  let storedObject = await getLatestCitation();
+  if (!storedObject) {
+    return; // no saved data, do not add menu item
+  }
+
+  let citationObject = storedObject.latestCitation;
+  if (!citationObject) {
+    return;
+  }
+
+  let timeText = convertTimestampDiffToText(citationObject.timeStamp);
+  if (!timeText) {
+    return;
+  }
+
+  if (citationObject && citationObject.generalizedData) {
+    let gd = GeneralizedData.createFromPlainObject(citationObject.generalizedData);
+    citationObject.generalizedData = gd;
+
+    let menuText = "Set Fields from Citation Data for:";
+    let subtitleText = getCitationObjectSubtitleText(gd, timeText);
+
+    addMenuItemWithSubtitle(
+      menu,
+      menuText,
+      function (element) {
+        setCreateSourceFieldsFromPersonData(data, null, tabId, citationObject, backFunction);
+      },
+      subtitleText
+    );
+  }
+}
+
+async function addCreateSourceMenuItems(menu, data, tabId, backFunction) {
+  await addSetCreateSourceFieldsFromPersonDataMenuItem(menu, data, tabId, backFunction);
+
+  await addSetCreateSourceFieldsFromCitationMenuItem(menu, data, tabId, backFunction);
 }
 
 function addBuildAllCitationsMenuItem(menu, data, backFunction) {
@@ -461,7 +653,7 @@ function setupBuildAllCitationsSubMenu(data, backFunction) {
 // Main Menu
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupFsPopupMenu(extractedData) {
+async function setupFsPopupMenu(extractedData, tabId) {
   let backFunction = function () {
     setupFsPopupMenu(extractedData);
   };
@@ -474,7 +666,8 @@ async function setupFsPopupMenu(extractedData) {
     (extractedData.pageType != "record" &&
       extractedData.pageType != "image" &&
       extractedData.pageType != "person" &&
-      extractedData.pageType != "book")
+      extractedData.pageType != "book" &&
+      extractedData.pageType != "createSource")
   ) {
     let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
     message += "\n\nIt looks like a FamilySearch page but not a record, image or person page.";
@@ -498,8 +691,8 @@ async function setupFsPopupMenu(extractedData) {
     return;
   }
 
-  //console.log("generalizedData is");
-  //console.log(generalizedData);
+  console.log("generalizedData is");
+  console.log(generalizedData);
 
   // do async prefetches
   loadDataCache();
@@ -524,6 +717,8 @@ async function setupFsPopupMenu(extractedData) {
     addBuildFsTemplateMenuItem(menu, data);
   } else if (extractedData.pageType == "book") {
     addBuildBookCitationMenuItems(menu, data);
+  } else if (extractedData.pageType == "createSource") {
+    await addCreateSourceMenuItems(menu, data, tabId, backFunction);
   } else {
     addMenuDivider(menu);
     addShowCitationAssistantMenuItem(menu);
