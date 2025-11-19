@@ -51,6 +51,10 @@ const regressionData = [
     inputPath: "wikitree/generalized_data/ref/hall-4352_read",
   },
   {
+    caseName: "wikitree_hooten-280_read",
+    inputPath: "wikitree/generalized_data/ref/hooten-280_read",
+  },
+  {
     caseName: "wikitree_orth-997_read",
     inputPath: "wikitree/generalized_data/ref/orth-997_read",
   },
