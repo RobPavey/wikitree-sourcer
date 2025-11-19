@@ -10,5 +10,8 @@
   "birthDate": {
     "dateString": "26 Mar 1923"
   },
+  "primaryPersonOptions": [
+    "Vaino, AAB, born on 03/26/1923"
+  ],
   "hasValidData": true
 }

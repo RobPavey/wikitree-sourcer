@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Succession ou absence''':\n\"Tables des successions et absences\"<br/>\nArchives d'Alsace Site de Strasbourg; 3 Q 38237 - Tables des successions et absences, Volume 27 - 1898 - 1901; Image 72 sur 107; Lieu: Illkirch-Graffenstaden<br/>\n[https://archives67.alsace.eu/ark:/78665/1111715.1151817/dao/0/72 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Succession ou absence''':\n\"Tables des successions et absences\"<br/>\nArchives d'Alsace Site de Strasbourg; 3 Q 38237 - Tables des successions et absences, Volume 27 - 1898 - 1901; Image 72 sur 107; Lieu: Illkirch-Graffenstaden<br/>\n[https://archives67.alsace.eu/ark:/78665/1111715.1151817/dao/0/72 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Succession ou absence''': \"Tables des successions et absences\"<br/>Archives d'Alsace Site de Strasbourg; 3 Q 38237 - Tables des successions et absences, Volume 27 - 1898 - 1901; Image 72 sur 107; Lieu: Illkirch-Graffenstaden<br/>[https://archives67.alsace.eu/ark:/78665/1111715.1151817/dao/0/72 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Succession ou absence''':\n\"Tables des successions et absences\"<br/>\nArchives d'Alsace Site de Strasbourg, 3 Q 38237 - Tables des successions et absences, Volume 27 - 1898 - 1901, Image 72 sur 107, Lieu Illkirch-Graffenstaden<br/>\n[https://archives67.alsace.eu/ark:/78665/1111715.1151817/dao/0/72 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Succession ou absence''':\n\"Tables des successions et absences\"<br/>\nArchives d'Alsace Site de Strasbourg, 3 Q 38237 - Tables des successions et absences, Volume 27 - 1898 - 1901, Image 72 sur 107, Lieu Illkirch-Graffenstaden<br/>\n[https://archives67.alsace.eu/ark:/78665/1111715.1151817/dao/0/72 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Succession ou absence''': \"Tables des successions et absences\"<br/>Archives d'Alsace Site de Strasbourg, 3 Q 38237 - Tables des successions et absences, Volume 27 - 1898 - 1901, Image 72 sur 107, Lieu Illkirch-Graffenstaden<br/>[https://archives67.alsace.eu/ark:/78665/1111715.1151817/dao/0/72 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

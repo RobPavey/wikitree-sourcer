@@ -22,29 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function getSelectedRow(document) {
-  if (document.querySelector("yv-its-person-simple-grid") == null) {
-    return null;
-  }
-
-  const highlightStyle = "font-weight: bold; font-style: italic";
-  const resultsTable = document.querySelector("yv-its-person-simple-grid").querySelector('tbody[role="rowgroup"]');
-  if (resultsTable) {
-    const selectedRow = resultsTable.querySelector("mat-row[style='" + highlightStyle + "']");
-
-    if (selectedRow == null) {
-      return null;
-    }
-
-    let children = selectedRow.parentNode.children;
-    for (let i = 0; i < children.length; i++) {
-      if (children[i.toString()] == selectedRow) {
-        return i;
-      }
-    }
-  }
-}
-
 function monthName2Number(month_name) {
   const month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -80,10 +57,6 @@ function extractData(document, url) {
   result.breadcrum = breadcrum_string.substring(2);
 
   if (url.match("/document/")) {
-    const selected_index = getSelectedRow(document);
-    if (selected_index != null) {
-      result.person_index = selected_index;
-    }
   } else if (url.match("/archive/") && title) {
     let title_text = title.textContent.trim();
     let last_name = null;

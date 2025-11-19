@@ -651,6 +651,7 @@ class CitationBuilder {
       referenceWithinRepository: this.referenceWithinRepository,
       standardDataString: standardDataString,
       url: url,
+      plainSharingLink: this.plainSharingLink,
     };
 
     return citationObject;

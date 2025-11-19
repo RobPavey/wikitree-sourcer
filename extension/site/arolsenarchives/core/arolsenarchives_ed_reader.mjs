@@ -62,13 +62,50 @@ import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mj
  */
 
 class ArolsenarchivesEdReader extends ExtractedDataReader {
-  constructor(ed) {
+  constructor(ed, primaryPersonIndex = 0) {
     super(ed);
+    this.primaryPersonIndex = primaryPersonIndex;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  getPrimaryPersonOptions() {
+    let options = [];
+    if (this.ed.person_data_list === undefined) return options;
+
+    for (let entry of this.ed.person_data_list) {
+      let text = "";
+      if (entry["FirstName"]) {
+        text += ", " + entry["FirstName"];
+      }
+      if (entry["LastName"]) {
+        text += ", " + entry["LastName"];
+      }
+      if (entry["MaidanName"]) {
+        text += ", born " + entry["MaidanName"];
+      }
+      if (entry["Dob"]) {
+        text += ", born on " + entry["Dob"];
+      }
+      options.push(text.substring(2));
+    }
+    return options;
+  }
+
+  getSelectedRecord() {
+    if (this.ed.person_data) {
+      return this.ed.person_data;
+    }
+    if (this.ed.person_data_list === undefined || this.primaryPersonIndex === undefined) {
+      return null;
+    }
+    if (this.ed.person_data_list.length == 1) {
+      return this.ed.person_data_list[0];
+    }
+    return this.ed.person_data_list[this.primaryPersonIndex];
+  }
 
   hasValidData() {
     if (!this.ed.success) {
@@ -83,8 +120,9 @@ class ArolsenarchivesEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    if (this.ed.person_data == null) return undefined;
-    return this.makeNameObjFromForenamesAndLastName(this.ed.person_data["FirstName"], this.ed.person_data["LastName"]);
+    let person_data = this.getSelectedRecord();
+    if (person_data == null) return undefined;
+    return this.makeNameObjFromForenamesAndLastName(person_data["FirstName"], person_data["LastName"]);
   }
 
   getGender() {
@@ -100,11 +138,12 @@ class ArolsenarchivesEdReader extends ExtractedDataReader {
   }
 
   getLastNameAtBirth() {
-    if (this.ed.person_data == null) return "";
+    let person_data = this.getSelectedRecord();
+    if (person_data == null) return "";
 
-    let name = this.ed.person_data["MaidanName"];
+    let name = person_data["MaidanName"];
     if (name == null) {
-      name = this.ed.person_data["MaidenName"];
+      name = person_data["MaidenName"];
     }
     if (name == null) {
       return "";
@@ -113,9 +152,10 @@ class ArolsenarchivesEdReader extends ExtractedDataReader {
   }
 
   getLastNameAtDeath() {
-    if (this.ed.person_data == null) return "";
+    let person_data = this.getSelectedRecord();
+    if (person_data == null) return "";
 
-    let name = this.ed.person_data["LastName"];
+    let name = person_data["LastName"];
     if (name == null) {
       return "";
     }
@@ -127,20 +167,23 @@ class ArolsenarchivesEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
-    if (this.ed.person_data == null) return undefined;
-    return this.makeDateObjFromMmddyyyyDate(this.ed.person_data["Dob"], this.ed.date_sep ? this.ed.date_sep : "/");
+    let person_data = this.getSelectedRecord();
+    if (person_data == null) return undefined;
+    return this.makeDateObjFromMmddyyyyDate(person_data["Dob"], this.ed.date_sep ? this.ed.date_sep : "/");
   }
 
   getBirthPlaceObj() {
-    if (this.ed.person_data == null) return undefined;
-    return this.makePlaceObjFromFullPlaceName(this.ed.person_data["PlaceBirth"]);
+    let person_data = this.getSelectedRecord();
+    if (person_data == null) return undefined;
+    return this.makePlaceObjFromFullPlaceName(person_data["PlaceBirth"]);
   }
 
   getDeathDateObj() {
     // "Date_of_decease": "19441120",
-    if (this.ed.person_data == null) return undefined;
-    if (!this.ed.person_data["Date_of_decease"]) return undefined;
-    const date = this.ed.person_data["Date_of_decease"];
+    let person_data = this.getSelectedRecord();
+    if (person_data == null) return undefined;
+    if (!person_data["Date_of_decease"]) return undefined;
+    const date = person_data["Date_of_decease"];
     const year = date.substring(0, 4);
     const month = date.substring(4, 6);
     const day = date.substring(6, 8);

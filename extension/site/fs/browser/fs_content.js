@@ -322,7 +322,14 @@ function shouldUseFetch() {
   if (personDetailsRegex.test(location.href)) {
     useFetch = true;
   } else if (personSourcesRegex.test(location.href)) {
-    useFetch = true;
+    let createSourceDialog = document.querySelector(
+      "div[aria-modal='true'][role='dialog'][aria-label='Create Source']"
+    );
+    if (createSourceDialog) {
+      useFetch = false;
+    } else {
+      useFetch = true;
+    }
   } else if (imageWithSidebarUrlRegEx.test(location.href)) {
     // This is an image with a person details selected
     useFetch = true;
@@ -375,4 +382,93 @@ function extractHandler(request, sendResponse) {
   }
 }
 
-siteContentInit(`fs`, `site/fs/core/fs_extract_data.mjs`, extractHandler);
+async function setFields(fieldData) {
+  //console.log("setFields, fieldData is:");
+  //console.log(fieldData);
+
+  let createSourceDialog = document.querySelector("div[aria-modal='true'][role='dialog'][aria-label='Create Source']");
+
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async function setTextValue(selector, value, useListBox) {
+    let inputElement = createSourceDialog.querySelector(selector);
+
+    if (inputElement && value) {
+      inputElement.focus();
+      document.execCommand("selectAll", false);
+      document.execCommand("insertText", false, value);
+      if (useListBox) {
+        await sleep(300);
+        let overlays = document.querySelector("div[portal='overlays']");
+        //console.log(overlays);
+
+        if (overlays) {
+          //let childrenOverlaysDivs = overlays.querySelectorAll("div[data-portal='children-overlays']");
+          //console.log("number of children-overlays = " + childrenOverlaysDivs.length);
+
+          let childrenOverlaysListBox = document.querySelector(
+            "div[data-portal='children-overlays'] div[role='listbox']"
+          );
+
+          if (childrenOverlaysListBox) {
+            //console.log("num children of childrenOverlays is: " + childrenOverlaysListBox.childElementCount);
+            if (childrenOverlaysListBox.childElementCount) {
+              let firstListItem = childrenOverlaysListBox.children[0];
+              let interactable = firstListItem.querySelector("div[interactable]");
+              if (interactable) {
+                //console.log("Found interactable");
+                interactable.click();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  function setEventButton(selector, value) {
+    let buttonElement = createSourceDialog.querySelector(selector);
+
+    if (buttonElement) {
+      if (value) {
+        if (buttonElement.classList.contains("grayTheme_gucfp3a")) {
+          buttonElement.click();
+        }
+      } else {
+        if (buttonElement.classList.contains("blueTheme_b1udqlrf")) {
+          buttonElement.click();
+        }
+      }
+    }
+  }
+
+  if (createSourceDialog) {
+    await setTextValue("input[data-testid='source-date-field']", fieldData.eventDate, true);
+    await setTextValue("input[data-testid='source-title-field']", fieldData.sourceTitle);
+    await setTextValue("input[data-testid='source-web-page-field']", fieldData.webPageUrl);
+    await setTextValue("textarea[data-testid='source-citation-field']", fieldData.citation);
+    await setTextValue("textarea[data-testid='source-notes-field']", fieldData.notes);
+    await setTextValue("textarea[data-testid='source-change-reason-field']", fieldData.reason);
+
+    setEventButton("button[data-testid='source-vital-tag-chip-Name']", fieldData.hasNameEvent);
+    setEventButton("button[data-testid='source-vital-tag-chip-Gender']", fieldData.hasSexEvent);
+    setEventButton("button[data-testid='source-vital-tag-chip-Birth']", fieldData.hasBirthEvent);
+    setEventButton("button[data-testid='source-vital-tag-chip-Christening']", fieldData.hasBaptismEvent);
+    setEventButton("button[data-testid='source-vital-tag-chip-Death']", fieldData.hasDeathEvent);
+    setEventButton("button[data-testid='source-vital-tag-chip-Burial']", fieldData.hasBurialEvent);
+  }
+}
+
+function additionalMessageHandler(request, sender, sendResponse) {
+  if (request.type == "setFields") {
+    setFields(request.fieldData);
+    sendResponse({ success: true });
+    return { wasHandled: true, returnValue: false };
+  }
+
+  return { wasHandled: false };
+}
+
+siteContentInit(`fs`, `site/fs/core/fs_extract_data.mjs`, extractHandler, additionalMessageHandler);

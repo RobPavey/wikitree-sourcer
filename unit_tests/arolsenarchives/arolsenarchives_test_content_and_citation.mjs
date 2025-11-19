@@ -219,8 +219,8 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
     }
 
     result.person_data_list = metadata?.d;
-    if (testData.index) {
-      result.person_data = result.person_data_list[testData.index];
+    if (testData.primaryPersonIndex) {
+      result.primaryPersonIndex = testData.primaryPersonIndex;
     }
     else if (result.person_data_list && result.person_data_list.length == 1) {
       result.person_data = result.person_data_list[0];
@@ -256,7 +256,7 @@ const regressionData = [
   {
     caseName: "71022005",
     url: "https://collections.arolsen-archives.org/de/document/71022005",
-    index: 2,
+    primaryPersonIndex: 2,
   },
   {
     caseName: "84594847",

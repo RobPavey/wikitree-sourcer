@@ -40,43 +40,53 @@ function extractData(document, url) {
   }
   result.success = false;
 
-  const repository = document.querySelector("meta[name='description']");
+  const repository = document.querySelector("meta[property='og:site_name']");
   if (repository) {
     result.repository = repository.content;
+  } else {
+    result.repository = "Archives d'Alsace Site de Strasbourg";
   }
 
-  let bureauPlace = "";
-  const rattachement = document.querySelector("ul[class='rattachement']");
-  if (rattachement) {
-    const rattachementAnchors = rattachement.querySelectorAll("a");
-    for (let rattachementAnchor of rattachementAnchors) {
-      if (
-        rattachementAnchor.href &&
-        rattachementAnchor.href.includes("detail-document") &&
-        rattachementAnchor.title &&
-        rattachementAnchor.title.includes("Bureau")
-      ) {
-        bureauPlace = rattachementAnchor.textContent;
+  const ogTitle = document.querySelector("meta[property='og:title']");
+  if (ogTitle) {
+    result.ogTitle = cleanText(ogTitle.content);
+  }
+
+  const description = document.querySelector("meta[name='Description']");
+  if (description) {
+    result.description = cleanText(description.content);
+  }
+
+  const imageNumPhrase = document.querySelector(".monocle-isActive");
+  if (imageNumPhrase) {
+    result.imageNumPhrase = imageNumPhrase.title;
+  }
+  const imageNumInput = document.querySelector("input#rea11y-0");
+  if (imageNumInput) {
+    result.imageNumNow = imageNumInput.getAttribute("aria-valuenow");
+    result.imageNumMax = imageNumInput.getAttribute("aria-valuemax");
+  }
+
+  let keyValueData = {};
+  const metadataKeys = document.querySelectorAll(".monocle-Metadata-key");
+  const metadataValues = document.querySelectorAll(".monocle-Metadata-value");
+  const childP = document.querySelector(".arc_firstp");
+  if (metadataKeys && metadataValues) {
+    for (let i = 0; i < metadataKeys.length; i++) {
+      //console.log("metadataKeys["+i+"].textContent="+metadataKeys[i].textContent);
+      //console.log("metadataValues["+i+"].textContent="+metadataValues[i].textContent);
+      if (metadataValues[i].textContent == "") {
+        //console.log("using childP.textContent: "+childP.textContent);
+        if (childP) {
+          keyValueData[metadataKeys[i].textContent] = cleanText(childP.textContent);
+          //console.log("using childP.textContent: "+childP.textContent);
+        }
+      } else {
+        //console.log("not using childP");
+        keyValueData[metadataKeys[i].textContent] = cleanText(metadataValues[i].textContent);
       }
     }
-  }
-  if (bureauPlace != "") {
-    result.bureauPlace = bureauPlace;
-  }
-
-  const sourceReference = document.querySelector("h1[class='titre_rubrique no-print']");
-  if (sourceReference) {
-    result.sourceReference = cleanText(sourceReference.textContent);
-  }
-
-  const imageNo = document.querySelector("div[class='pagination-min']");
-  if (imageNo) {
-    result.imageNo = imageNo.textContent;
-  }
-
-  const imageMax = document.querySelector("div[class='pagination-max']");
-  if (imageMax) {
-    result.imageMax = imageMax.textContent;
+    result.keyValueData = keyValueData;
   }
 
   result.success = true;

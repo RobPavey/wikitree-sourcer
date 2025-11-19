@@ -25,7 +25,7 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
-  repositoryName: "Bas-Rhin Archives",
+  repositoryName: "Archives d'Alsace Site de Strasbourg",
   usPhoneNumber: "",
   email: "",
   address: "",
