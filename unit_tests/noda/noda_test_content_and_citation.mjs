@@ -228,6 +228,10 @@ const regressionData = [
     ],
   },
   {
+    caseName: "xx_image_census_1910_tristen_olsen",
+    url: "https://media.digitalarkivet.no/view/36706/59",
+  },
+  {
     // this one has no transcription
     caseName: "xx_image_marriage_1792_frans_gutormsen_welsvig",
     url: "https://media.digitalarkivet.no/view/15957/43",
