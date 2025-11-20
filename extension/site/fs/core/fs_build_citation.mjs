@@ -561,6 +561,7 @@ function getImageRefTitle(catalogRecordName, filmTitle, filmDigitalNote) {
     { title: "Marriage Bond", matches: ["Marriage Bond,"] },
     { title: "Deed record", matches: ["Deeds"] },
     { title: "Land record", matches: ["Land Records,"] },
+    { title: "Military", matches: ["Military"] },
   ];
 
   const filmDigitalNoteTightMatches = [{ title: "Marriage", matches: ["Indice (matrimoni)"] }];
@@ -658,8 +659,26 @@ function buildImageCitation(ed, gd, builder) {
 
   builder.databaseHasImages = true;
 
-  if (ed.filmTitle) {
-    builder.sourceTitle = ed.filmTitle;
+  let filmTitle = ed.filmTitle;
+  let imageBrowsePath = ed.imageBrowsePath;
+
+  // sometimes (for example for free text search results)
+  // the filmNumber and filmTitle are the same and the real film title is in ed.heading
+  if (ed.heading) {
+    if (!filmTitle) {
+      filmTitle = ed.heading;
+    } else if (ed.filmNumber) {
+      if (filmTitle == "#" + ed.filmNumber) {
+        if (!imageBrowsePath.startsWith(filmTitle)) {
+          imageBrowsePath = filmTitle + " > " + imageBrowsePath;
+        }
+        filmTitle = ed.heading;
+      }
+    }
+  }
+
+  if (filmTitle) {
+    builder.sourceTitle = filmTitle;
   } else {
     builder.sourceTitle = ed.catalogRecordName;
   }
@@ -707,7 +726,7 @@ function buildImageCitation(ed, gd, builder) {
     }
   }
 
-  if (ed.filmNumber || ed.imageBrowsePath || ed.totalImages) {
+  if (ed.filmNumber || imageBrowsePath || ed.totalImages) {
     if (newSourceReference) {
       if (builder.options.citation_general_addBreaksWithinBody) {
         newSourceReference += "<br/>";
@@ -718,8 +737,8 @@ function buildImageCitation(ed, gd, builder) {
         newSourceReference += "\n";
       }
     }
-    if (ed.imageBrowsePath) {
-      newSourceReference += "Image path: " + ed.imageBrowsePath;
+    if (imageBrowsePath) {
+      newSourceReference += "Image path: " + imageBrowsePath;
     } else if (ed.filmNumber) {
       newSourceReference += "Film number: " + ed.filmNumber;
     }
