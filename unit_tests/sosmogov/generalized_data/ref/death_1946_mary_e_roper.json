@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "sosmogov",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Roper",
+    "middleName": "E",
+    "firstName": "Mary"
+  },
+  "eventDate": {
+    "dateString": "November _, 1946"
+  },
+  "deathDate": {
+    "dateString": "November _, 1946"
+  },
+  "deathPlace": {
+    "placeString": "Greene County, Missouri, United States of America"
+  },
+  "hasValidData": true
+}

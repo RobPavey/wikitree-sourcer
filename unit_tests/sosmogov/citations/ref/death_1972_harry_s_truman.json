@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''DeathRegistration''':\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Harry S. Truman; Date of Death: December 26, 1972; County: Jackson<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1972/1972_00106612.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nSpouse: Elizabeth Virginia Wallace; Father: John Anderson Truman; Mother: Martha Ellen Young; Age: 88; Certificate Number: 106612; Last Four SSN: 6969.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Harry, child of John Anderson Truman & Martha Ellen Young, died (age 88) on 26 December 1972 in Jackson County, Missouri, United States of America.<ref>\n'''DeathRegistration''':\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Harry S. Truman; Date of Death: December 26, 1972; County: Jackson<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1972/1972_00106612.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nSpouse: Elizabeth Virginia Wallace; Father: John Anderson Truman; Mother: Martha Ellen Young; Age: 88; Certificate Number: 106612; Last Four SSN: 6969.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''DeathRegistration''': \"Missouri Death Certificates, 1910 - 1974\"<br/>Missouri State Archives; Deceased: Harry S. Truman; Date of Death: December 26, 1972; County: Jackson<br/>[https://www.sos.mo.gov/images/archives/deathcerts/1972/1972_00106612.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>Spouse: Elizabeth Virginia Wallace; Father: John Anderson Truman; Mother: Martha Ellen Young; Age: 88; Certificate Number: 106612; Last Four SSN: 6969.",
+    "type": "source"
+  }
+}

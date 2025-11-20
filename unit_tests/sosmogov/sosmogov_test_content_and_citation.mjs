@@ -36,12 +36,29 @@ const regressionData = [
     url: "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
   },
   {
+    caseName: "death_1946_mary_e_roper",
+    url: "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
+  },
+  {
     caseName: "death_1965_alice_peterson",
+    url: "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
+  },
+  {
+    caseName: "death_1972_harry_s_truman",
     url: "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
   },
   {
     caseName: "death_1974_alice_ursula_peterson",
     url: "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
+    optionVariants: [
+      {
+        variantName: "meaningfulNames_bold",
+        optionOverrides: {
+          citation_general_meaningfulNames: "bold",
+          citation_general_sourceReferenceSeparator: "commaSpace",
+        },
+      },
+    ],
   },
 ];
 

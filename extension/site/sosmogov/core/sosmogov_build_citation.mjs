@@ -87,8 +87,8 @@ function buildCoreCitation(ed, gd, builder) {
 
 function getRefTitle(ed, gd) {
   // this is also referred to as label
-  if (ed.recordType) {
-    const refTitle = ed.recordType;
+  if (gd.recordType) {
+    const refTitle = gd.recordType;
     return refTitle;
   } else {
     return undefined;

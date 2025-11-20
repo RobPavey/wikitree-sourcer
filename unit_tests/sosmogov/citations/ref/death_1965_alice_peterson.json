@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Alice Peterson; Date of Death: April 23, 1965; County: Jasper<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1965/1965_00016112.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nSpouse: Wm. E. Peterson; Father: John Appleby; Mother: Dorothy Peckett; Age: 80; Certificate Number: 16112.\n</ref>",
+    "citation": "<ref>\n'''DeathRegistration''':\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Alice Peterson; Date of Death: April 23, 1965; County: Jasper<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1965/1965_00016112.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nSpouse: Wm. E. Peterson; Father: John Appleby; Mother: Dorothy Peckett; Age: 80; Certificate Number: 16112.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Alice, child of John Appleby & Dorothy Peckett, died (age 80) on 23 April 1965 in Jasper County, Missouri, United States of America.<ref>\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Alice Peterson; Date of Death: April 23, 1965; County: Jasper<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1965/1965_00016112.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nSpouse: Wm. E. Peterson; Father: John Appleby; Mother: Dorothy Peckett; Age: 80; Certificate Number: 16112.\n</ref>",
+    "citation": "Alice, child of John Appleby & Dorothy Peckett, died (age 80) on 23 April 1965 in Jasper County, Missouri, United States of America.<ref>\n'''DeathRegistration''':\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Alice Peterson; Date of Death: April 23, 1965; County: Jasper<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1965/1965_00016112.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nSpouse: Wm. E. Peterson; Father: John Appleby; Mother: Dorothy Peckett; Age: 80; Certificate Number: 16112.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* \"Missouri Death Certificates, 1910 - 1974\"<br/>Missouri State Archives; Deceased: Alice Peterson; Date of Death: April 23, 1965; County: Jasper<br/>[https://www.sos.mo.gov/images/archives/deathcerts/1965/1965_00016112.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>Spouse: Wm. E. Peterson; Father: John Appleby; Mother: Dorothy Peckett; Age: 80; Certificate Number: 16112.",
+    "citation": "* '''DeathRegistration''': \"Missouri Death Certificates, 1910 - 1974\"<br/>Missouri State Archives; Deceased: Alice Peterson; Date of Death: April 23, 1965; County: Jasper<br/>[https://www.sos.mo.gov/images/archives/deathcerts/1965/1965_00016112.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>Spouse: Wm. E. Peterson; Father: John Appleby; Mother: Dorothy Peckett; Age: 80; Certificate Number: 16112.",
     "type": "source"
   }
 }
