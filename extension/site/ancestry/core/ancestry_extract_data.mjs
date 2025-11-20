@@ -1272,8 +1272,11 @@ function detectPageType(document, result, url) {
     result.pageType = "personFacts";
 
     let citationRecord = document.querySelector(".modalContents #FactEditComponent section.citationRecord");
+    let webLinkForm = document.querySelector(".modalContents #webLinkForm");
     if (citationRecord) {
       result.pageType = "personSourceCitation";
+    } else if (webLinkForm) {
+      result.pageType = "personAddWebLink";
     }
   } else if (url.includes("/discoveries") || url.includes("matchdbid=")) {
     result.pageType = "sharingImageOrRecord";
