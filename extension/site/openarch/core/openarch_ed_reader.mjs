@@ -63,7 +63,7 @@ const typeData = {
     enDocumentType: "Church records baptisms",
     recordType: RT.Baptism,
     relation: {
-      primary: ["Dopeling"],
+      primary: ["Dopeling", "Kind"],
     },
   },
   "DTB Trouwen": {
