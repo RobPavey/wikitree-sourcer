@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|118913956}} (accessed 6 May 2021)<br/>\nMemorial page for Laura E. ''Voelkel'' Buchert (8 Dec 1892-9 Jun 1957), citing Sunset Memorial Park and Mausoleum, Affton, St. Louis County, Missouri, USA (plot: Section 17); Maintained by frankseyffardt (contributor 48184022).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Laura was mentioned on a memorial at Sunset Memorial Park and Mausoleum, Affton, St. Louis County, Missouri, USA, with a death date of 9 June 1957.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|118913956}} (accessed 6 May 2021)<br/>\nMemorial page for Laura E. ''Voelkel'' Buchert (8 Dec 1892-9 Jun 1957), citing Sunset Memorial Park and Mausoleum, Affton, St. Louis County, Missouri, USA (plot: Section 17); Maintained by frankseyffardt (contributor 48184022).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': Find a Grave (has image)<br/>{{FindAGrave|118913956}} (accessed 6 May 2021)<br/>Memorial page for Laura E. ''Voelkel'' Buchert (8 Dec 1892-9 Jun 1957), citing Sunset Memorial Park and Mausoleum, Affton, St. Louis County, Missouri, USA (plot: Section 17); Maintained by frankseyffardt (contributor 48184022).",
+    "type": "source"
+  }
+}

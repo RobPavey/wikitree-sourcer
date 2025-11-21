@@ -1,0 +1,27 @@
+{
+  "hasValidData": true,
+  "firstNames": "Henry",
+  "prefNames": "Henry",
+  "middleNames": "B.",
+  "lnab": "Haff",
+  "currentLastName": "Huff",
+  "mothersMaidenName": "",
+  "birthDate": "May 1838",
+  "birthDateStatus": "guess",
+  "deathDate": "1910",
+  "deathDateStatus": "after",
+  "birthLocation": "Ohio, United States",
+  "deathLocation": "Springfield, Greene, Missouri, United States",
+  "personGender": "Male",
+  "spouses": [],
+  "url": "https://www.wikitree.com/index.php?title=Special:EditPerson&u=44579833",
+  "pageType": "edit",
+  "parents": {
+    "father": {
+      "name": "Lawrence Haff",
+      "wikiId": "Haff-271"
+    }
+  },
+  "wikiId": "Haff-272",
+  "citation": "WikiTree contributors, \"Henry B. (Haff) Huff (abt.1838-aft.1910),\" WikiTree: The Free Family Tree, (https://www.wikitree.com/wiki/Haff-272 : accessed 01 November 2025)."
+}

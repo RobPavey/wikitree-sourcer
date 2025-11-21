@@ -1,0 +1,29 @@
+{
+  "hasValidData": true,
+  "firstNames": "Mary E",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Hooton",
+  "currentLastName": "Roper",
+  "mothersMaidenName": "",
+  "birthDate": "",
+  "birthDateStatus": "none",
+  "deathDate": "1951",
+  "deathDateStatus": "about",
+  "birthLocation": "",
+  "deathLocation": "Springfield Greene Missouri",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Roper-1749",
+      "name": "Albert Deer Roper",
+      "marriageDate": "1 Mar 1899",
+      "marriagePlace": "Bolivar, Missouri"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Hooton-280",
+  "pageType": "read",
+  "wikiId": "Hooton-280",
+  "name": "Mary E (Hooton) Roper",
+  "citation": "WikiTree contributors, \"Mary E (Hooton) Roper (-abt.1951),\" WikiTree: The Free Family Tree, (https://www.wikitree.com/wiki/Hooton-280 : accessed 01 November 2025)."
+}

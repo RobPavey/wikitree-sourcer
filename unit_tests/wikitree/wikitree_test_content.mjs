@@ -70,6 +70,11 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Ellacott-59",
   },
   {
+    // To test MO death cert search on sosmogov
+    caseName: "gibson-24132_read",
+    url: "https://www.wikitree.com/wiki/Gibson-24132",
+  },
+  {
     // has death date and place but no birth details
     caseName: "gooch-1376_read",
     url: "https://www.wikitree.com/wiki/Gooch-1376",
@@ -80,12 +85,32 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Gow-822",
   },
   {
+    // To test MO death cert search on sosmogov
+    caseName: "haff-272_edit",
+    url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=44579833",
+  },
+  {
+    // To test MO death cert search on sosmogov
+    caseName: "haff-272_read",
+    url: "https://www.wikitree.com/wiki/Haff-272",
+  },
+  {
+    // To test MO death cert search on sosmogov
+    caseName: "hall-4352_read",
+    url: "https://www.wikitree.com/wiki/Hall-4352",
+  },
+  {
     caseName: "handford-3_read",
     url: "https://www.wikitree.com/wiki/Handford-3",
   },
   {
     caseName: "harrington-1500_private_with_pub_bio",
     url: "https://www.wikitree.com/index.php?title=Harrington-1500",
+  },
+  {
+    // To test MO death cert search on sosmogov
+    caseName: "hooten-280_read",
+    url: "https://www.wikitree.com/wiki/Hooton-280",
   },
   {
     // Ireland example
@@ -132,6 +157,11 @@ const regressionData = [
   {
     caseName: "nz_sowerby-41_read",
     url: "https://www.wikitree.com/wiki/Sowerby-41",
+  },
+  {
+    // To test MO death cert search on sosmogov
+    caseName: "orth-997_read",
+    url: "https://www.wikitree.com/wiki/Orth-997",
   },
   {
     caseName: "pavey-342_edit",
@@ -186,6 +216,11 @@ const regressionData = [
     // To test search on cwgc
     caseName: "peffers-436_read",
     url: "https://www.wikitree.com/wiki/Peffers-436",
+  },
+  {
+    // To test MO death cert search on sosmogov
+    caseName: "raymond-3037_edit",
+    url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=19021974",
   },
   {
     // Has no mother which cased a bug extracting mother

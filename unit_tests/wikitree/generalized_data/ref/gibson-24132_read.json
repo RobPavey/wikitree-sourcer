@@ -1,0 +1,60 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Mary",
+    "middleNames": "Adeline",
+    "otherLastNames": "Boone",
+    "lastName": "Gibson"
+  },
+  "lastNameAtBirth": "Gibson",
+  "lastNameAtDeath": "Webb",
+  "mothersMaidenName": "Martin",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "30 Nov 1914",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Cass, Minnesota, United States"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Edward Gibson",
+        "lastName": "Gibson",
+        "forenames": "William Edward"
+      },
+      "lastNameAtBirth": "Gibson",
+      "lastNameAtDeath": "Gibson"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Kate",
+        "lastName": "Martin",
+        "name": "Kate Martin"
+      },
+      "lastNameAtBirth": "Martin",
+      "lastNameAtDeath": "Gibson"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Herbert Arnold Webb",
+        "lastName": "Webb",
+        "forenames": "Herbert Arnold"
+      },
+      "lastNameAtBirth": "Webb",
+      "lastNameAtDeath": "Webb",
+      "marriageDate": {
+        "dateString": "1940"
+      },
+      "marriagePlace": {
+        "placeString": "Kansas City, Jackson, Missouri, United States"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Gibson-24132"
+}

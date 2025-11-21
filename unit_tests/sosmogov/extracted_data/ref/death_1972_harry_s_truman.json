@@ -1,0 +1,17 @@
+{
+  "url": "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
+  "success": true,
+  "collectionName": "Missouri Death Certificates, 1910 - 1974",
+  "recordData": {
+    "Deceased": "Harry S. Truman",
+    "Spouse": "Elizabeth Virginia Wallace",
+    "Father": "John Anderson Truman",
+    "Mother": "Martha Ellen Young",
+    "Age": "88",
+    "Date of Death": "December 26, 1972",
+    "County": "Jackson",
+    "Certificate Number": "106612",
+    "Last Four SSN": "6969",
+    "Image": "https://www.sos.mo.gov/images/archives/deathcerts/1972/1972_00106612.PDF"
+  }
+}

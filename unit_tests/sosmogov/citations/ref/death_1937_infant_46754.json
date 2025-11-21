@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''DeathRegistration''':\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Infant; Date of Death: _ _, 1937<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1937/1937_00046753.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nCertificate Number: 46754.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Infant died on _ _, 1937.<ref>\n'''DeathRegistration''':\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Infant; Date of Death: _ _, 1937<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1937/1937_00046753.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nCertificate Number: 46754.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''DeathRegistration''': \"Missouri Death Certificates, 1910 - 1974\"<br/>Missouri State Archives; Deceased: Infant; Date of Death: _ _, 1937<br/>[https://www.sos.mo.gov/images/archives/deathcerts/1937/1937_00046753.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>Certificate Number: 46754.",
+    "type": "source"
+  }
+}

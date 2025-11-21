@@ -1,0 +1,37 @@
+{
+  "hasValidData": true,
+  "firstNames": "Louise",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Orth",
+  "currentLastName": "Harrison",
+  "mothersMaidenName": "Warenburg",
+  "birthDate": "1866",
+  "birthDateStatus": "about",
+  "deathDate": "",
+  "deathDateStatus": "none",
+  "birthLocation": "Missouri, United States",
+  "deathLocation": "",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Harrison-24201",
+      "name": "Oscar B. Harrison"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Orth-997",
+  "pageType": "read",
+  "wikiId": "Orth-997",
+  "name": "Louise (Orth) Harrison",
+  "parents": {
+    "father": {
+      "wikiId": "Orth-995",
+      "name": "Frederick Orth"
+    },
+    "mother": {
+      "wikiId": "Warenburg-1",
+      "name": "Mary Louise (Warenburg) Orth"
+    }
+  },
+  "citation": "WikiTree contributors, \"Louise (Orth) Harrison (abt.1866-),\" WikiTree: The Free Family Tree, (https://www.wikitree.com/wiki/Orth-997 : accessed 31 October 2025)."
+}

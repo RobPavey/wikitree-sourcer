@@ -1,0 +1,29 @@
+{
+  "hasValidData": true,
+  "firstNames": "Eugene",
+  "prefNames": "",
+  "middleNames": "Cecil",
+  "lnab": "Hall",
+  "currentLastName": "Hall",
+  "mothersMaidenName": "",
+  "birthDate": "1891",
+  "birthDateStatus": "about",
+  "deathDate": "1944",
+  "deathDateStatus": "before",
+  "birthLocation": "Kansas, United States",
+  "deathLocation": "Kansas City, Jackson, Missouri, United States",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Barber-1015",
+      "name": "Grace Ridder (Barber) Hall",
+      "marriageDate": "1 Nov 1910",
+      "marriagePlace": "Kansas City, MO"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Hall-4352",
+  "pageType": "read",
+  "wikiId": "Hall-4352",
+  "name": "Eugene Cecil Hall",
+  "citation": "WikiTree contributors, \"Eugene Cecil Hall (abt.1891-bef.1944),\" WikiTree: The Free Family Tree, (https://www.wikitree.com/wiki/Hall-4352 : accessed 03 November 2025)."
+}

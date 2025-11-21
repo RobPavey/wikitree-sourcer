@@ -1,0 +1,65 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Alice",
+    "middleNames": "Alberta Ursula",
+    "prefNames": "Alice",
+    "otherLastNames": "Watson",
+    "lastName": "Raymond"
+  },
+  "lastNameAtBirth": "Raymond",
+  "lastNameAtDeath": "Peterson",
+  "mothersMaidenName": "Poirier",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "26 Nov 1910",
+    "qualifier": 1
+  },
+  "deathDate": {
+    "dateString": "28 May 1974",
+    "qualifier": 1
+  },
+  "birthPlace": {
+    "placeString": "St Francois County, Missouri, United States of America"
+  },
+  "deathPlace": {
+    "placeString": "St Louis City, Missouri, United States of America"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "James Albert Davis",
+        "lastName": "Davis",
+        "forenames": "James Albert"
+      },
+      "lastNameAtBirth": "Davis",
+      "lastNameAtDeath": "Davis"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Helen Elisabeth",
+        "lastName": "Poirier",
+        "name": "Helen Elisabeth Poirier"
+      },
+      "lastNameAtBirth": "Poirier",
+      "lastNameAtDeath": "Newman"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Courtney Charles Alexander Peterson",
+        "lastName": "Peterson",
+        "forenames": "Courtney Charles Alexander"
+      },
+      "lastNameAtBirth": "Peterson",
+      "lastNameAtDeath": "Peterson",
+      "marriageDate": {
+        "dateString": "1925"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Raymond-3037"
+}

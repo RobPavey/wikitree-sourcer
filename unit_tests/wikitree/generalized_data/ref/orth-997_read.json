@@ -1,0 +1,52 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Louise",
+    "lastName": "Orth"
+  },
+  "lastNameAtBirth": "Orth",
+  "lastNameAtDeath": "Harrison",
+  "mothersMaidenName": "Warenburg",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "1866",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Missouri, United States"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Frederick Orth",
+        "lastName": "Orth",
+        "forenames": "Frederick"
+      },
+      "lastNameAtBirth": "Orth",
+      "lastNameAtDeath": "Orth"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Mary Louise",
+        "lastName": "Warenburg",
+        "name": "Mary Louise Warenburg"
+      },
+      "lastNameAtBirth": "Warenburg",
+      "lastNameAtDeath": "Orth"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Oscar B. Harrison",
+        "lastName": "Harrison",
+        "forenames": "Oscar B."
+      },
+      "lastNameAtBirth": "Harrison",
+      "lastNameAtDeath": "Harrison"
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Orth-997"
+}

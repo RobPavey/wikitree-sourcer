@@ -552,6 +552,17 @@
         "base/browser/content/content_common.js",
         "site/wikipedia/browser/wikipedia_content.js"
       ]
+    },
+    {
+      "matches": [
+        "*://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/*",
+        "*://s1.sos.mo.gov/records/archives/archivesmvc/deathcertificates*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/sosmogov/browser/sosmogov_content.js"
+      ]
     }
   ],
   "options_ui": {
@@ -998,6 +1009,14 @@
       "matches": [
         "*://*.wikipedia.org/*"
       ]
+    },
+    {
+      "resources": [
+        "site/sosmogov/core/sosmogov_extract_data.mjs"
+      ],
+      "matches": [
+        "*://s1.sos.mo.gov/*"
+    ]
     }
   ],
   "browser_specific_settings": {

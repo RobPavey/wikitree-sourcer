@@ -1,0 +1,46 @@
+{
+  "sourceOfData": "sosmogov",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Truman",
+    "middleName": "S",
+    "firstName": "Harry"
+  },
+  "eventDate": {
+    "dateString": "December 26, 1972"
+  },
+  "deathDate": {
+    "dateString": "December 26, 1972"
+  },
+  "deathPlace": {
+    "placeString": "Jackson County, Missouri, United States of America"
+  },
+  "ageAtDeath": "88",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Wallace",
+        "middleName": "Virginia",
+        "firstName": "Elizabeth"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Truman",
+        "middleName": "Anderson",
+        "firstName": "John"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Young",
+        "middleName": "Ellen",
+        "firstName": "Martha"
+      }
+    }
+  },
+  "hasValidData": true
+}

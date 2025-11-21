@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "Mary",
+  "prefNames": "",
+  "middleNames": "Adeline",
+  "lnab": "Gibson",
+  "currentLastName": "Webb",
+  "mothersMaidenName": "Martin",
+  "birthDate": "30 Nov 1914",
+  "birthDateStatus": "none",
+  "deathDate": "",
+  "deathDateStatus": "none",
+  "birthLocation": "Cass, Minnesota, United States",
+  "deathLocation": "",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Webb-23610",
+      "name": "Herbert Arnold Webb",
+      "marriageDate": "1940",
+      "marriagePlace": "Kansas City, Jackson, Missouri, United States"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Gibson-24132",
+  "pageType": "read",
+  "wikiId": "Gibson-24132",
+  "name": "Mary Adeline (Gibson) Webb",
+  "otherLastNames": "Boone",
+  "parents": {
+    "father": {
+      "wikiId": "Gibson-15796",
+      "name": "William Edward Gibson"
+    },
+    "mother": {
+      "wikiId": "Martin-52568",
+      "name": "Kate (Martin) Gibson"
+    }
+  },
+  "citation": "WikiTree contributors, \"Mary Adeline (Gibson) Webb (1914-),\" WikiTree: The Free Family Tree, (https://www.wikitree.com/wiki/Gibson-24132 : accessed 06 November 2025)."
+}

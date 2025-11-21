@@ -1,0 +1,45 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Eugene",
+    "middleNames": "Cecil",
+    "lastName": "Hall"
+  },
+  "lastNameAtBirth": "Hall",
+  "lastNameAtDeath": "Hall",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "1891",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "1944",
+    "qualifier": 3
+  },
+  "birthPlace": {
+    "placeString": "Kansas, United States"
+  },
+  "deathPlace": {
+    "placeString": "Kansas City, Jackson, Missouri, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Grace Ridder",
+        "lastName": "Barber",
+        "name": "Grace Ridder Barber"
+      },
+      "lastNameAtBirth": "Barber",
+      "lastNameAtDeath": "Hall",
+      "marriageDate": {
+        "dateString": "1 Nov 1910"
+      },
+      "marriagePlace": {
+        "placeString": "Kansas City, MO"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Hall-4352"
+}

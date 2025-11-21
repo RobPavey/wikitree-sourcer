@@ -1,0 +1,20 @@
+{
+  "std": {
+    "fieldData": {
+      "LastName": "",
+      "FirstName": "Infant",
+      "MiddleName": "",
+      "BeginYear": "1937",
+      "EndYear": "1937"
+    },
+    "selectData": {
+      "DeathCertNameSearchType_0": true,
+      "LNSearchMethod_0": true,
+      "FNSearchMethod_0": true,
+      "MNSearchMethod_0": true,
+      "BeginMonth": 0,
+      "EndMonth": 0,
+      "CountyName": 0
+    }
+  }
+}

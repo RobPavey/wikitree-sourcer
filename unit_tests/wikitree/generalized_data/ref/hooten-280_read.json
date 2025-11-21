@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Mary E",
+    "lastName": "Hooton"
+  },
+  "lastNameAtBirth": "Hooton",
+  "lastNameAtDeath": "Roper",
+  "personGender": "female",
+  "deathDate": {
+    "dateString": "1951",
+    "qualifier": 0
+  },
+  "deathPlace": {
+    "placeString": "Springfield Greene Missouri"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Albert Deer Roper",
+        "lastName": "Roper",
+        "forenames": "Albert Deer"
+      },
+      "lastNameAtBirth": "Roper",
+      "lastNameAtDeath": "Roper",
+      "marriageDate": {
+        "dateString": "1 Mar 1899"
+      },
+      "marriagePlace": {
+        "placeString": "Bolivar, Missouri"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Hooton-280"
+}

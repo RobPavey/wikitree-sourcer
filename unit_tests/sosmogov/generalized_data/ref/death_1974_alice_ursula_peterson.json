@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "sosmogov",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Peterson",
+    "middleName": "Ursula",
+    "firstName": "Alice"
+  },
+  "eventDate": {
+    "dateString": "May 28, 1974"
+  },
+  "deathDate": {
+    "dateString": "May 28, 1974"
+  },
+  "deathPlace": {
+    "placeString": "St. Louis City, Missouri, United States of America"
+  },
+  "ageAtDeath": "63",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Watson",
+        "firstNames": "Harry"
+      }
+    }
+  },
+  "hasValidData": true
+}
