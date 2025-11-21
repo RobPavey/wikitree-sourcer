@@ -312,6 +312,7 @@ function buildSourceReferenceFromRecord(ed, gd, options) {
       if (refData) {
         addValue("Class", refData.sourceRegNbr);
         addValue("Piece/Folio", refData.sourcePieceFolio);
+        addValue("Book", refData.sourceBookNbr);
         addValue("Page", refData.sourcePageNbr);
         addValue("Line", refData.sourceLineNbr);
       }
@@ -327,6 +328,7 @@ function buildSourceReferenceFromRecord(ed, gd, options) {
       addValue("District", ed.registrationDistrict);
       if (refData) {
         addValue("Volume", refData.sourceVolume);
+        addValue("Book", refData.sourceBookNbr);
         addValue("Page", refData.sourcePageNbr);
         // there can be a line number but we don't want that as it is line num on FMP printout
         addValue("Entry", refData.sourceEntryNbr);
@@ -347,6 +349,7 @@ function buildSourceReferenceFromRecord(ed, gd, options) {
   if (refData) {
     addValue("Volume", refData.sourceVolume);
     addValue("Piece/Folio", refData.sourcePieceFolio);
+    addValue("Book", refData.sourceBookNbr);
     addValue("Page", refData.sourcePageNbr);
 
     addValue("Affiliate Name", refData.externalRepositoryName);
