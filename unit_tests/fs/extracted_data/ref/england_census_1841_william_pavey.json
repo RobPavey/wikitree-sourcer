@@ -26,6 +26,7 @@
   "residenceOriginal": "Union St",
   "externalRecordType": "Household",
   "referenceData": {
+    "sourceBookNbr": "6",
     "sourcePageNbr": "37",
     "sourceRegNbr": "HO107",
     "sourcePieceFolio": "276/21",
