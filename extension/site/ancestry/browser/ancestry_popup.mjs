@@ -1169,6 +1169,42 @@ async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citati
       fieldData.email = otherSiteData.email;
       fieldData.note = "Base URL is " + otherSiteData.baseUrl;
     }
+  } else if (pageType == "personAddWebLink") {
+    if (citationObject) {
+      fieldData.linkName = citationObject.sourceTitle;
+      fieldData.webAddress = citationObject.url;
+    } else if (personData && gd) {
+      let ed = personData.extractedData;
+      if (ed) {
+        if (ed.url) {
+          fieldData.webAddress = ed.url;
+        }
+      }
+      // generate some text showing name, birth data and death date
+      let text = "";
+      if (gd.sourceOfData == "wikitree") {
+        text = ed.wikiId + " on WikiTree";
+      } else {
+        text += gd.inferFullName();
+        let birthDate = gd.inferBirthDate();
+        let deathDate = gd.inferDeathDate();
+        if (birthDate || deathDate) {
+          text += " (";
+          if (birthDate) {
+            text += birthDate;
+          }
+          text += " - ";
+          if (deathDate) {
+            text += deathDate;
+          }
+          text += ")";
+        }
+        if (otherSiteData.repositoryName) {
+          text += " on " + otherSiteData.repositoryName;
+        }
+      }
+      fieldData.linkName = text;
+    }
   }
 
   // send a message to content script
@@ -1549,7 +1585,8 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
   } else if (
     extractedData.pageType == "createCitation" ||
     extractedData.pageType == "createSource" ||
-    extractedData.pageType == "createRepository"
+    extractedData.pageType == "createRepository" ||
+    extractedData.pageType == "personAddWebLink"
   ) {
     await addFillCreateCitationMenuItems(menu, data, tabId, backFunction);
   } else {

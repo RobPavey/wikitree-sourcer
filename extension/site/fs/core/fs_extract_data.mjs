@@ -254,12 +254,22 @@ function extractDataForImageInNewViewer(document, result) {
       }
     }
 
+    // for results from free text search the real film title is in a separate heading
+    let h1 = mainNode.querySelector("h1");
+    if (h1) {
+      result.heading = h1.textContent.trim();
+    }
+
     let browsePathElements = mainNode.querySelectorAll(
       "nav[aria-label='Waypoints'] > div > div > div > div > div > div > div > div > p"
     );
     if (browsePathElements.length == 0) {
       // can't rely on aria-label as it changes with language
       browsePathElements = mainNode.querySelectorAll("nav > div > div > div > div > div > div > div > div > p");
+    }
+    if (browsePathElements.length == 0) {
+      // free text search pages are different
+      browsePathElements = mainNode.querySelectorAll("nav > ol > li");
     }
     if (browsePathElements.length > 1) {
       let browsePath = "";
@@ -328,6 +338,9 @@ function extractDataForImageInNewViewer(document, result) {
   let filmNumberLink = undefined;
   let possibleFilmNumberLinks = mainNode.querySelectorAll("div header div nav span a");
   //console.log("possibleFilmNumberLinks.length = " + possibleFilmNumberLinks.length);
+  if (possibleFilmNumberLinks.length == 0) {
+    possibleFilmNumberLinks = mainNode.querySelectorAll("nav ol li a");
+  }
   for (let link of possibleFilmNumberLinks) {
     let text = link.textContent;
     //console.log("text = " + text);

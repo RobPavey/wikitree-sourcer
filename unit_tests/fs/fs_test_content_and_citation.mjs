@@ -582,6 +582,11 @@ const imageRegressionData = [
     url: "https://www.familysearch.org/ark:/61903/3:1:S3HT-DR17-4Y9?i=5&wc=M8VJ-GZ9%3A160750101%2C160953901%2C161035601&cc=1824690",
   },
   {
+    // saved Nov 2025 - result of free text search
+    caseName: "image_free_text_deed_book_1834_1836",
+    url: "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSLD-1QMP-P?view=fullText&keywords=William%20Knight%2CSusan%2CUnited%20States%2CVirginia%2CAmherst&lang=en&groupId=M9NB-2B1",
+  },
+  {
     // saved Nov 2024
     caseName: "image_italy_marriage_1941",
     url: "https://www.familysearch.org/ark:/61903/3:1:33S7-9583-P2C?i=0",

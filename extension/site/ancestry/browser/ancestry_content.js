@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function setFields(fieldData) {
+async function setFields(fieldData, sendResponse) {
   console.log("setFields, fieldData is:");
   console.log(fieldData);
 
@@ -73,6 +73,18 @@ function setFields(fieldData) {
     }
   }
 
+  function setValueExec(nodeSelector, fieldName) {
+    if (fieldData[fieldName]) {
+      let node = document.querySelector(nodeSelector);
+      if (node) {
+        node.value = fieldData[fieldName];
+        node.focus();
+        document.execCommand("selectAll", false);
+        document.execCommand("insertText", false, fieldData[fieldName]);
+      }
+    }
+  }
+
   if (fieldData.pageType == "createCitation") {
     setSourceSelect(fieldData.sourceName);
     setValue("#citationTitle", "detail");
@@ -89,7 +101,12 @@ function setFields(fieldData) {
     setValue("#RepositoryPhone", "phoneNumber");
     setValue("#RepositoryEmail", "email");
     setValue("#RepositoryNote", "note");
+  } else if (fieldData.pageType == "personAddWebLink") {
+    setValueExec("#webLink", "webAddress");
+    setValueExec("#webLinkName", "linkName");
   }
+
+  sendResponse({ success: true });
 }
 
 function addComment(fieldData) {
@@ -136,9 +153,8 @@ function addComment(fieldData) {
 
 async function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "setFields") {
-    setFields(request.fieldData);
-    sendResponse({ success: true });
-    return { wasHandled: true, returnValue: false };
+    setFields(request.fieldData, sendResponse);
+    return { wasHandled: true, returnValue: true };
   } else if (request.type == "addComment") {
     addComment(request.fieldData);
     sendResponse({ success: true });

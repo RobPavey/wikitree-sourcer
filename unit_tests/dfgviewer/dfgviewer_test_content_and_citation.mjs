@@ -30,7 +30,7 @@ import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
 
 import { extractData } from "../../extension/site/dfgviewer/core/dfgviewer_extract_data.mjs";
-import { parseMetadata } from "../../extension/site/dfgviewer/core/dfgviewer_metadata_parser.mjs";
+import { parseMetadata } from "../../extension/site/dfgviewer/browser/dfgviewer_popup.mjs";
 import { generalizeData } from "../../extension/site/dfgviewer/core/dfgviewer_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/dfgviewer/core/dfgviewer_build_citation.mjs";
 

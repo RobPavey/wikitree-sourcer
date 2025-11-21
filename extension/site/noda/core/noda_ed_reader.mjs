@@ -1248,7 +1248,7 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getParishNameFromSourceInformation() {
-    if (this.eventType.sourceInfoToParishNameType) {
+    if (this.eventType && this.eventType.sourceInfoToParishNameType) {
       if (this.eventType.sourceInfoToParishNameType == "churchBook") {
         return this.getParishNameFromSourceInformationForChurchBook();
       }
