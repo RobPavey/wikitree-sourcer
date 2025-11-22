@@ -92,9 +92,11 @@ function setupDefaultPopupMenuWhenNoResponseFromContent() {
   };
 
   let message = "WikiTree Sourcer has not yet been able to extract the required data from this page.";
+  message += "\n\nThis may be an unsupported site.";
   message +=
-    "\n\nThe extension appears to have permissions for this page but the page type could not be identified and the content script is not responding.";
-  message += "\n\nPlease check that you are logged into this site (if required) and on a record page and try again.";
+    "\n\nIf this is a supported site the page type could not be identified and the content script is not responding.";
+  message +=
+    "\n\nIf you think that this site is supported then please check that you are logged into this site (if required) and on a record page and try again.";
   message +=
     "\n\nIf it still doesn't work try reloading the page. This can happen if this page was open when the extension was installed, updated or enabled.";
 
