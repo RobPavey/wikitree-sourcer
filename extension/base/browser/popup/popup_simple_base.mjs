@@ -353,9 +353,9 @@ async function setupSimplePopupMenu(input) {
 
   if (input.customMenuFunction) {
     if (input.isCustomMenuFunctionAsync) {
-      await input.customMenuFunction(menu, data);
+      await input.customMenuFunction(menu, data, input.tabId);
     } else {
-      input.customMenuFunction(menu, data);
+      input.customMenuFunction(menu, data, input.tabId);
     }
   }
 

@@ -36,8 +36,18 @@ function extractData(document, url) {
   }
   result.success = false;
 
+  const disqusIframe = document.querySelector("disqus iframe");
+  if (disqusIframe) {
+    result.has_disqus = true;
+  }
+
   // only allow extract from documents for now
+  // but also detect a search person page where comments can be added
   if (!url.match("/document/") && !url.match("/archive/")) {
+    if (url.match("/search/person/") && result.has_disqus) {
+      result.page_type = "searchPerson";
+      result.success = true;
+    }
     return result;
   }
 
