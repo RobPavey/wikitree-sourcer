@@ -61,6 +61,9 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
     shared_page_url: url,
   };
 
+  //console.log("postData is");
+  //console.log(postData);
+
   let response = await fetch(fetchUrl, {
     headers: {
       accept: "*/*",
@@ -142,7 +145,11 @@ async function fetchAncestrySharingDataObj(ed) {
   } else if (ed.pageType == "image") {
     sharingData.dbId = ed.dbId;
     sharingData.recordId = ed.recordId;
-    sharingData.personId = ed.pid;
+    // Don't include PID. The user can page through a document and the pages changes
+    // but the PID doesn't. If the PID is included as recordId in the fetch of the
+    // sharing object it gets a link to the wrong page.
+    // See: https://github.com/RobPavey/wikitree-sourcer/issues/308
+    //sharingData.personId = ed.pid;
   }
 
   //console.log("sharingData is:");
