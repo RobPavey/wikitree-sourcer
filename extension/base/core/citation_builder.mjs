@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { buildNarrative } from "./narrative_builder.mjs";
 import { DataString } from "./data_string.mjs";
+import { DateObj } from "./generalize_data_utils.mjs";
 
 // The different parts of a citation are:
 //
@@ -57,7 +58,7 @@ class CitationBuilder {
     return this.options;
   }
 
-  getDateString(date) {
+  getDateString(generalizedData, date) {
     const monthStrings = [
       "January",
       "February",
@@ -73,7 +74,18 @@ class CitationBuilder {
       "December",
     ];
 
-    const dateString = "" + date.getDate() + " " + monthStrings[date.getMonth()] + " " + date.getFullYear();
+    let dateString = "" + date.getDate() + " " + monthStrings[date.getMonth()] + " " + date.getFullYear();
+
+    let format = this.options.citation_general_accessedDateFormat;
+    if (format != "long") {
+      let dateObj = new DateObj();
+      dateObj.dateString = dateString;
+      if (generalizedData) {
+        dateString = generalizedData.getNarrativeDateFormat(dateObj, format, "none", false);
+      } else {
+        dateString = dateObj.getFormattedStringForCitationOrNarrative(format, "none", false);
+      }
+    }
 
     return dateString;
   }
@@ -192,7 +204,7 @@ class CitationBuilder {
 
     if (!dataString) {
       // Some sites would default to a list or table in this case but for site using
-      // addStandardDataString we try to genarate a default string with name, date, place
+      // addStandardDataString we try to generate a default string with name, date, place
       dataString = DataString.buildDefaultDataString(input);
     }
 
@@ -358,12 +370,12 @@ class CitationBuilder {
     return dataListString;
   }
 
-  getCitationString() {
+  getCitationString(generalizedData = null) {
     let options = this.options;
     let target = options.citation_general_target;
     let autoTableOpt = options.table_general_autoGenerate;
 
-    let accessedDate = this.getDateString(this.runDate);
+    let accessedDate = this.getDateString(generalizedData, this.runDate);
     let subReqString = this.getSubReqString(this.includeSubscriptionRequired);
 
     let citation = "";
@@ -635,7 +647,7 @@ class CitationBuilder {
   }
 
   getCitationObject(generalizedData, url) {
-    let citationString = this.getCitationString();
+    let citationString = this.getCitationString(generalizedData);
 
     //console.log(fullCitation);
 

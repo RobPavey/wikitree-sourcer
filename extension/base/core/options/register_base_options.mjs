@@ -29,6 +29,39 @@ import {
 } from "./options_registry.mjs";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+// Shared option lists
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var sharedDateFormatValues = [
+  { value: "long", text: "dd Month yyyy (e.g. '12 September 1845')" },
+  { value: "short", text: "dd Mmm yyyy (e.g. '12 Sep 1845')" },
+  {
+    value: "theNth",
+    text: "the ddth of Month yyyy (e.g. 'the 12th of September 1845')",
+  },
+  {
+    value: "monthComma",
+    text: "Month dd, yyyy (e.g. 'September 12, 1845')",
+  },
+  {
+    value: "monthCommaNth",
+    text: "Month ddth, yyyy (e.g. 'September 12th, 1845')",
+  },
+  {
+    value: "unix",
+    text: "yyyy-mm-dd (e.g. '1845-09-12')",
+  },
+  {
+    value: "country",
+    text: "Country specific (e.g. 'September 12, 1845' in US, '12 September 1845' elsewhere)",
+  },
+  {
+    value: "countryNth",
+    text: "Country specific, long (e.g. 'September 12th, 1845' in US, 'the 12th of September 1845' elsewhere)",
+  },
+];
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 // Search options groups
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -288,6 +321,13 @@ const citationStyleOptionsGroup = {
       defaultValue: "parenAfterLink",
     },
     {
+      optionName: "accessedDateFormat",
+      type: "select",
+      label: "Date format to use for accessed date",
+      values: sharedDateFormatValues,
+      defaultValue: "long",
+    },
+    {
       optionName: "sourceReferenceSeparator",
       type: "select",
       label: "Separators to use between parts of the source reference data",
@@ -355,6 +395,13 @@ const citationStyleOptionsGroup = {
       type: "checkbox",
       label: "Indent the 'data string' part of the citation (inline citations only)",
       defaultValue: false,
+    },
+    {
+      optionName: "dataStringDateFormat",
+      type: "select",
+      label: "Date format in standard data string",
+      values: sharedDateFormatValues,
+      defaultValue: "short",
     },
   ],
 };
@@ -444,30 +491,7 @@ const narrativeOptionsGroup = {
       optionName: "dateFormat",
       type: "select",
       label: "Date format in narrative string",
-      values: [
-        { value: "long", text: "dd Month yyyy (e.g. '12 September 1845')" },
-        { value: "short", text: "dd Mmm yyyy (e.g. '12 Sep 1845')" },
-        {
-          value: "theNth",
-          text: "the ddth of Month yyyy (e.g. 'the 12th of September 1845')",
-        },
-        {
-          value: "monthComma",
-          text: "Month dd, yyyy (e.g. 'September 12, 1845')",
-        },
-        {
-          value: "monthCommaNth",
-          text: "Month ddth, yyyy (e.g. 'September 12th, 1845')",
-        },
-        {
-          value: "country",
-          text: "Country specific (e.g. 'September 12, 1845' in US, '12 September 1845' elsewhere)",
-        },
-        {
-          value: "countryNth",
-          text: "Country specific, long (e.g. 'September 12th, 1845' in US, 'the 12th of September 1845' elsewhere)",
-        },
-      ],
+      values: sharedDateFormatValues,
       defaultValue: "long",
     },
     {

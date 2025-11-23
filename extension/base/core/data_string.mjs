@@ -97,11 +97,20 @@ function addEventPlaceTermWithPrepositionOrRd(dataString, gd) {
   return dataString;
 }
 
-function cleanDateObj(dateObj) {
+function getFormatedDate(dateObj, options, gd, addPreposition = false, prepSuffix = "") {
   if (dateObj) {
-    return dateObj.getDataStringFormat(false);
+    const format = options.citation_general_dataStringDateFormat;
+    if (gd) {
+      return gd.getNarrativeDateFormat(dateObj, format, false, addPreposition, prepSuffix);
+    } else {
+      return dateObj.getDataStringFormat(format, addPreposition, prepSuffix);
+    }
   }
   return "";
+}
+
+function cleanDateObj(dateObj, options, gd) {
+  return getFormatedDate(dateObj, options, gd);
 }
 
 function cleanAge(age) {
@@ -114,19 +123,18 @@ function cleanAge(age) {
   return result;
 }
 
-function getDateWithPreposition(dateObj, prepSuffix = "") {
+function getDateWithPreposition(dateObj, options, gd, prepSuffix = "") {
   if (dateObj) {
-    return dateObj.getDataStringFormat(true, prepSuffix);
+    return getFormatedDate(dateObj, options, gd, true, prepSuffix);
   }
   return "";
 }
 
-function getDateFromStringWithPreposition(dateString, prepSuffix = "") {
+function getDateFromStringWithPreposition(dateString, options, gd, prepSuffix = "") {
   if (dateString) {
     let dateObj = new DateObj();
     dateObj.dateString = dateString;
-
-    return dateObj.getDataStringFormat(true, prepSuffix);
+    return getFormatedDate(dateObj, options, gd, true, prepSuffix);
   }
   return "";
 }
@@ -376,7 +384,7 @@ function get1939RegisterString(gd, options) {
 
   let birthDate = gd.inferBirthDateObj();
   if (birthDate) {
-    dataString += " (born " + cleanDateObj(birthDate) + ")";
+    dataString += " (born " + cleanDateObj(birthDate, options, gd) + ")";
   }
   let maritalStatus = gd.maritalStatus;
   if (maritalStatus) {
@@ -570,11 +578,11 @@ function getPopulationRegisterString(gd, options) {
     if (eventDateObj.fromDate && eventDateObj.toDate) {
       dataString +=
         " between " +
-        eventDateObj.fromDate.getDataStringFormat(false, "") +
+        cleanDateObj(eventDateObj.fromDate, options, gd) +
         " and " +
-        eventDateObj.toDate.getDataStringFormat(false, "");
+        cleanDateObj(eventDateObj.toDate, options, gd);
     } else {
-      dataString += " " + getDateWithPreposition(eventDateObj);
+      dataString += " " + getDateWithPreposition(eventDateObj, options, gd);
     }
   }
 
@@ -583,7 +591,7 @@ function getPopulationRegisterString(gd, options) {
   let birthDateObj = gd.birthDate;
   let birthPlace = gd.inferBirthPlace();
   if (birthDateObj) {
-    dataString += ". Born " + getDateWithPreposition(birthDateObj);
+    dataString += ". Born " + getDateWithPreposition(birthDateObj, options, gd);
     if (birthPlace) {
       dataString += " " + getPlaceWithPreposition(birthPlace);
     }
@@ -627,7 +635,7 @@ function getSlaveScheduleString(gd, options) {
 
   let eventDateObj = gd.inferEventDateObj();
   if (eventDateObj) {
-    dataString += " " + getDateWithPreposition(eventDateObj);
+    dataString += " " + getDateWithPreposition(eventDateObj, options, gd);
   }
 
   dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
@@ -679,7 +687,7 @@ function getUkRegistrationString(gd, options, type) {
   } else {
     let eventDate = gd.inferEventDateObj();
     if (eventDate) {
-      dataString += " " + cleanDateObj(eventDate);
+      dataString += " " + cleanDateObj(eventDate, options, gd);
     }
   }
 
@@ -710,7 +718,7 @@ function getUkRegistrationString(gd, options, type) {
     if (gd.birthDate && gd.birthDate.dateString && gd.birthDate.dateString.length > 8) {
       // later UK death registrations include full birth date (available after June quarter 1969)
       let birthDate = gd.inferBirthDateObj();
-      bornOrAgeText = "born " + cleanDateObj(birthDate);
+      bornOrAgeText = "born " + cleanDateObj(birthDate, options, gd);
     } else {
       let age = cleanAge(gd.ageAtDeath);
       if (!age) {
@@ -766,7 +774,7 @@ function getValuationRollString(gd, options) {
 
   let date = gd.inferEventDateObj();
   if (date) {
-    dataString += " " + getDateWithPreposition(date);
+    dataString += " " + getDateWithPreposition(date, options, gd);
   }
 
   dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
@@ -829,7 +837,7 @@ function getBirthRegistrationString(gd, options) {
 
     let date = gd.inferEventDateObj();
     if (date) {
-      dataString += " " + getDateWithPreposition(date);
+      dataString += " " + getDateWithPreposition(date, options, gd);
     }
 
     dataString += addRegistrationPlace(gd, options);
@@ -901,11 +909,11 @@ function getDeathRegistrationString(gd, options) {
     deathDate = gd.inferEventDateObj();
 
     if (deathDate) {
-      dataString += " " + cleanDateObj(deathDate);
+      dataString += " " + cleanDateObj(deathDate, options, gd);
     }
   } else {
-    let deathDateString = cleanDateObj(deathDate);
-    let eventDateString = cleanDateObj(gd.inferEventDateObj());
+    let deathDateString = cleanDateObj(deathDate, options, gd);
+    let eventDateString = cleanDateObj(gd.inferEventDateObj(), options, gd);
     let age = cleanAge(gd.ageAtDeath);
 
     if (isDateTheRegistrationDate) {
@@ -1034,7 +1042,7 @@ function getMarriageRegistrationString(gd, options) {
     date.dateString = gd.marriageDate;
   }
   if (date) {
-    dataString += " " + getDateWithPreposition(date);
+    dataString += " " + getDateWithPreposition(date, options, gd);
   }
 
   dataString += addRegistrationPlace(gd, options);
@@ -1071,7 +1079,7 @@ function getBirthString(gd, options) {
     }
 
     if (eventDateObj) {
-      dataString += " " + getDateWithPreposition(eventDateObj);
+      dataString += " " + getDateWithPreposition(eventDateObj, options, gd);
     }
   } else {
     dataString += getFullName(gd);
@@ -1084,18 +1092,18 @@ function getBirthString(gd, options) {
     if (gd.recordType == RT.Birth) {
       dataString += " born";
       if (birthDateObj) {
-        dataString += " " + getDateWithPreposition(birthDateObj);
+        dataString += " " + getDateWithPreposition(birthDateObj, options, gd);
       } else if (eventDateObj) {
-        dataString += " " + getDateWithPreposition(eventDateObj);
+        dataString += " " + getDateWithPreposition(eventDateObj, options, gd);
       }
     } else {
       if (twoDates) {
         dataString += " born";
-        dataString += " " + getDateWithPreposition(birthDateObj);
-        dataString += " and baptised or registered " + getDateWithPreposition(eventDateObj);
+        dataString += " " + getDateWithPreposition(birthDateObj, options, gd);
+        dataString += " and baptised or registered " + getDateWithPreposition(eventDateObj, options, gd);
       } else {
         dataString += " born or baptised";
-        dataString += " " + getDateWithPreposition(eventDateObj);
+        dataString += " " + getDateWithPreposition(eventDateObj, options, gd);
       }
     }
 
@@ -1162,7 +1170,7 @@ function getDeathString(gd, options) {
   }
 
   if (deathDate) {
-    dataString += " " + cleanDateObj(deathDate);
+    dataString += " " + cleanDateObj(deathDate, options, gd);
   }
 
   let birthDateObj = gd.birthDate;
@@ -1241,7 +1249,7 @@ function getBaptismString(gd, options) {
 
   let date = gd.inferEventDateObj();
   if (date) {
-    dataString += " " + getDateWithPreposition(date);
+    dataString += " " + getDateWithPreposition(date, options, gd);
   }
 
   let birthDateObj = gd.birthDate;
@@ -1250,7 +1258,7 @@ function getBaptismString(gd, options) {
   }
 
   if (birthDateObj) {
-    dataString += " (born " + cleanDateObj(birthDateObj) + ")";
+    dataString += " (born " + cleanDateObj(birthDateObj, options, gd) + ")";
   }
 
   let place = gd.inferFullEventPlace();
@@ -1268,7 +1276,7 @@ function getBaptismString(gd, options) {
   // sometimes a baptism has a death date. (e.g. germany_baptism_1840_johanna_hartmann)
   let deathDate = gd.inferDeathDateObj();
   if (deathDate) {
-    dataString += " and died " + getDateWithPreposition(deathDate);
+    dataString += " and died " + getDateWithPreposition(deathDate, options, gd);
   }
 
   return dataString;
@@ -1285,7 +1293,7 @@ function getConfirmationString(gd, options) {
 
   let date = gd.inferEventDateObj();
   if (date) {
-    dataString += " " + getDateWithPreposition(date);
+    dataString += " " + getDateWithPreposition(date, options, gd);
   }
 
   let birthDateObj = gd.birthDate;
@@ -1294,7 +1302,7 @@ function getConfirmationString(gd, options) {
   }
 
   if (birthDateObj) {
-    dataString += " (born " + cleanDateObj(birthDateObj) + ")";
+    dataString += " (born " + cleanDateObj(birthDateObj, options, gd) + ")";
   }
 
   let place = gd.inferFullEventPlace();
@@ -1380,7 +1388,7 @@ function getMarriageString(gd, options) {
   if (gd.marriageDate) {
     let date = new DateObj();
     date.dateString = gd.marriageDate;
-    dataString += " " + getDateWithPreposition(date);
+    dataString += " " + getDateWithPreposition(date, options, gd);
   } else {
     let date = gd.inferEventDateObj();
     if (date) {
@@ -1388,7 +1396,7 @@ function getMarriageString(gd, options) {
       if (gd.recordSubtype && gd.recordSubtype == RecordSubtype.MarriageOrBanns) {
         prepSuffix = "or after";
       }
-      dataString += " " + getDateWithPreposition(date, prepSuffix);
+      dataString += " " + getDateWithPreposition(date, options, gd, prepSuffix);
     }
   }
 
@@ -1435,16 +1443,16 @@ function getBurialString(gd, options) {
     age = cleanAge(gd.ageAtEvent);
   }
   if (deathDate && age) {
-    dataString += " (died " + getDateWithPreposition(deathDate) + " at age " + age + ")";
+    dataString += " (died " + getDateWithPreposition(deathDate, options, gd) + " at age " + age + ")";
   } else if (deathDate) {
-    dataString += " (died " + getDateWithPreposition(deathDate) + ")";
+    dataString += " (died " + getDateWithPreposition(deathDate, options, gd) + ")";
   } else if (age) {
     dataString += " (died age " + age + ")";
   }
 
   let burialDate = gd.inferEventDateObj();
   if (burialDate) {
-    dataString += " " + getDateWithPreposition(burialDate);
+    dataString += " " + getDateWithPreposition(burialDate, options, gd);
   }
 
   dataString = addEventPlaceTermWithPrepositionOrRd(dataString, gd);
@@ -1478,7 +1486,7 @@ function getBurialString(gd, options) {
     }
 
     if (includeBirthDate) {
-      dataString += ". Born " + getDateWithPreposition(birthDateObj);
+      dataString += ". Born " + getDateWithPreposition(birthDateObj, options, gd);
     }
   }
 
@@ -1492,16 +1500,16 @@ function getCremationString(gd, options) {
   let deathDate = gd.inferDeathDateObj();
   let age = cleanAge(gd.ageAtDeath);
   if (deathDate && age) {
-    dataString += " (died " + getDateWithPreposition(deathDate) + " at age " + age + ")";
+    dataString += " (died " + getDateWithPreposition(deathDate, options, gd) + " at age " + age + ")";
   } else if (deathDate) {
-    dataString += " (died " + getDateWithPreposition(deathDate) + ")";
+    dataString += " (died " + getDateWithPreposition(deathDate, options, gd) + ")";
   } else if (age) {
     dataString += " (died age " + age + ")";
   }
 
   let cremationDate = gd.inferEventDateObj();
   if (cremationDate) {
-    dataString += " " + getDateWithPreposition(cremationDate);
+    dataString += " " + getDateWithPreposition(cremationDate, options, gd);
   }
 
   dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
@@ -1520,14 +1528,14 @@ function getProbateString(gd, options) {
 
   let date = gd.inferEventDateObj();
   if (date) {
-    dataString += " " + getDateWithPreposition(date);
+    dataString += " " + getDateWithPreposition(date, options, gd);
   }
 
   dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   let deathDate = gd.inferDeathDateObj();
   if (deathDate) {
-    dataString += ". Died " + cleanDateObj(deathDate);
+    dataString += ". Died " + cleanDateObj(deathDate, options, gd);
 
     let deathPlace = gd.inferDeathPlace();
     if (deathPlace) {
@@ -1596,19 +1604,19 @@ function getScottishWillString(gd, options) {
 
   if (eventDate) {
     if (grantedDate) {
-      dataString += " " + getDateFromStringWithPreposition(grantedDate);
-      dataString += " (original confirmation " + getDateWithPreposition(eventDate) + ")";
+      dataString += " " + getDateFromStringWithPreposition(grantedDate, options, gd);
+      dataString += " (original confirmation " + getDateWithPreposition(eventDate, options, gd) + ")";
     } else if (origDate) {
-      dataString += " " + getDateWithPreposition(eventDate);
-      dataString += " (original confirmation " + getDateFromStringWithPreposition(origDate) + ")";
+      dataString += " " + getDateWithPreposition(eventDate, options, gd);
+      dataString += " (original confirmation " + getDateFromStringWithPreposition(origDate, options, gd) + ")";
     } else {
-      dataString += " " + getDateWithPreposition(eventDate);
+      dataString += " " + getDateWithPreposition(eventDate, options, gd);
     }
   }
 
   let deathDate = gd.inferDeathDateObj();
   if (deathDate) {
-    dataString += ". Died " + cleanDateObj(deathDate);
+    dataString += ". Died " + cleanDateObj(deathDate, options, gd);
 
     let deathPlace = gd.inferDeathPlace();
     if (deathPlace && deathPlace != place) {
@@ -1659,12 +1667,12 @@ function getWillString(gd, options) {
 
   if (hasProbateDate) {
     dataString += ", granted probate";
-    dataString += " " + getDateWithPreposition(dateObj);
+    dataString += " " + getDateWithPreposition(dateObj, options, gd);
   }
 
   let deathDate = gd.inferDeathDateObj();
   if (deathDate) {
-    dataString += ". Died " + cleanDateObj(deathDate);
+    dataString += ". Died " + cleanDateObj(deathDate, options, gd);
     if (deathPlace) {
       dataString += " " + getPlaceWithPreposition(deathPlace);
     } else if (!usedResidence && residencePlace) {
@@ -1690,7 +1698,7 @@ function getDivorceString(gd, options) {
 
   let date = gd.inferEventDateObj();
   if (date) {
-    dataString += " " + getDateWithPreposition(date);
+    dataString += " " + getDateWithPreposition(date, options, gd);
   }
 
   dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
@@ -1703,7 +1711,7 @@ function getDefaultString(gd, options) {
 
   let date = gd.inferEventDateObj();
   if (date) {
-    dataString += " " + getDateWithPreposition(date);
+    dataString += " " + getDateWithPreposition(date, options, gd);
   }
 
   dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());

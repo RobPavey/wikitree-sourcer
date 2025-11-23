@@ -564,6 +564,37 @@ const DateUtils = {
     return string;
   },
 
+  getUnixFormDateString: function (parsedDate) {
+    let string = "";
+    if (!parsedDate.isValid) {
+      return string;
+    }
+
+    if (!parsedDate.yearNum) {
+      return string;
+    }
+
+    function numToPaddedString(number, length) {
+      let numString = number.toString();
+      numString = numString.padStart(length, "0");
+      return numString;
+    }
+
+    if (parsedDate.isRange) {
+      return parsedDate.startYearNum.toString() + "-" + parsedDate.endYearNum.toString();
+    }
+
+    string += numToPaddedString(parsedDate.yearNum, 4);
+    if (parsedDate.hasMonth) {
+      string += "-" + numToPaddedString(parsedDate.monthNum, 2);
+
+      if (parsedDate.hasDay) {
+        string += "-" + numToPaddedString(parsedDate.dayNum, 2);
+      }
+    }
+    return string;
+  },
+
   getParsedDateInDays: function (parsedDate) {
     if (!parsedDate.isValid) {
       return 0;

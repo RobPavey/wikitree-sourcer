@@ -824,6 +824,8 @@ class DateObj {
       newString = DateUtils.getUsLongFormDateString(parsedDate);
     } else if (format == "monthCommaNth") {
       newString = DateUtils.getUsNthFormDateString(parsedDate);
+    } else if (format == "unix") {
+      newString = DateUtils.getUnixFormDateString(parsedDate);
     } else {
       console.log("unknown date format: " + format);
       newString = DateUtils.getStdLongFormDateString(parsedDate);
@@ -851,8 +853,8 @@ class DateObj {
     return this.getFormattedStringForCitationOrNarrative(format, highlightOption, addPreposition, prepSuffix);
   }
 
-  getDataStringFormat(addPreposition, prepSuffix = "") {
-    return this.getFormattedStringForCitationOrNarrative("short", "none", addPreposition, prepSuffix);
+  getDataStringFormat(format, addPreposition, prepSuffix = "") {
+    return this.getFormattedStringForCitationOrNarrative(format, "none", addPreposition, prepSuffix);
   }
 }
 

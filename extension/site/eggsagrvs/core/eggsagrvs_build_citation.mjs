@@ -107,7 +107,7 @@ function buildDataString(ed, gd) {
 
   const deathDate = gd.inferDeathDateObj();
   if (deathDate) {
-    dataString += " death in " + (deathDate.getDataStringFormat(false) || "");
+    dataString += " death in " + (deathDate.getDataStringFormat("short", false) || "");
   }
 
   const birthDateObj = gd.birthDate;
