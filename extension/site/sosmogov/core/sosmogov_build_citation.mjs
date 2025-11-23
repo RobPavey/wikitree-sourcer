@@ -63,7 +63,7 @@ function buildSourceTitle(ed, gd, builder) {
 function buildSourceReference(ed, gd, builder) {
   builder.sourceReference = "Missouri State Archives";
   builder.addSourceReferenceField("Deceased", cleanText(ed.recordData["Deceased"]));
-  builder.addSourceReferenceField("Date of Death", ed.recordData["Date of Death"]);
+  builder.addSourceReferenceField("Date of Death", gd.deathDate.dateString);
   builder.addSourceReferenceField("County", ed.recordData["County"]);
 }
 

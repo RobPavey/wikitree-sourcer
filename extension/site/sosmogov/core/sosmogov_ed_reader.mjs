@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
@@ -55,6 +57,12 @@ class SosmogovEdReader extends ExtractedDataReader {
       nameObj.setMiddleName(middleName);
       nameObj.setFirstName(firstName);
       return nameObj;
+    }
+  }
+
+  cleanDateString(dateString) {
+    if (dateString) {
+      return dateString.replace("_ _, ", "").replace(" _, ", " ");
     }
   }
 
@@ -115,7 +123,9 @@ class SosmogovEdReader extends ExtractedDataReader {
 
   getEventDateObj() {
     if (this.ed.recordData["Date of Death"]) {
-      return this.makeDateObjFromDateString(this.ed.recordData["Date of Death"]);
+      let dateObj = this.makeDateObjFromDateString(this.cleanDateString(this.ed.recordData["Date of Death"]));
+      dateObj.qualifier = dateQualifiers.EXACT;
+      return dateObj;
     } else {
       return undefined;
     }
@@ -130,7 +140,10 @@ class SosmogovEdReader extends ExtractedDataReader {
   }
 
   getLastNameAtDeath() {
-    return "";
+    let nameAtDeathObj = this.getNameObj();
+    if (nameAtDeathObj && nameAtDeathObj.lastName) {
+      return nameAtDeathObj.lastName;
+    }
   }
 
   getMothersMaidenName() {
@@ -147,7 +160,9 @@ class SosmogovEdReader extends ExtractedDataReader {
 
   getDeathDateObj() {
     if (this.ed.recordData["Date of Death"]) {
-      return this.makeDateObjFromDateString(this.ed.recordData["Date of Death"]);
+      let dateObj = this.makeDateObjFromDateString(this.cleanDateString(this.ed.recordData["Date of Death"]));
+      dateObj.qualifier = dateQualifiers.EXACT;
+      return dateObj;
     } else {
       return undefined;
     }

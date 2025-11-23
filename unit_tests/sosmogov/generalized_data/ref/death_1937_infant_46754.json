@@ -6,10 +6,12 @@
     "name": "Infant"
   },
   "eventDate": {
-    "dateString": "_ _, 1937"
+    "dateString": "1937",
+    "qualifier": 1
   },
   "deathDate": {
-    "dateString": "_ _, 1937"
+    "dateString": "1937",
+    "qualifier": 1
   },
   "hasValidData": true
 }

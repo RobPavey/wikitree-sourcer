@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''DeathRegistration''':\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Mary E. Roper; Date of Death: November _, 1946; County: Greene<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1946/1946_00040280.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nCertificate Number: 40259.\n</ref>",
+    "citation": "<ref>\n'''DeathRegistration''':\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Mary E. Roper; Date of Death: November 1946; County: Greene<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1946/1946_00040280.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nCertificate Number: 40259.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Mary died in November _, 1946, in Greene County, Missouri, United States of America.<ref>\n'''DeathRegistration''':\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Mary E. Roper; Date of Death: November _, 1946; County: Greene<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1946/1946_00040280.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nCertificate Number: 40259.\n</ref>",
+    "citation": "Mary died in November 1946 in Greene County, Missouri, United States of America.<ref>\n'''DeathRegistration''':\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Mary E. Roper; Date of Death: November 1946; County: Greene<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1946/1946_00040280.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nCertificate Number: 40259.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''DeathRegistration''': \"Missouri Death Certificates, 1910 - 1974\"<br/>Missouri State Archives; Deceased: Mary E. Roper; Date of Death: November _, 1946; County: Greene<br/>[https://www.sos.mo.gov/images/archives/deathcerts/1946/1946_00040280.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>Certificate Number: 40259.",
+    "citation": "* '''DeathRegistration''': \"Missouri Death Certificates, 1910 - 1974\"<br/>Missouri State Archives; Deceased: Mary E. Roper; Date of Death: November 1946; County: Greene<br/>[https://www.sos.mo.gov/images/archives/deathcerts/1946/1946_00040280.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>Certificate Number: 40259.",
     "type": "source"
   }
 }
