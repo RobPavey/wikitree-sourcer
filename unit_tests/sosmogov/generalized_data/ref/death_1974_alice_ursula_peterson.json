@@ -8,10 +8,13 @@
     "firstName": "Alice"
   },
   "eventDate": {
-    "dateString": "May 28, 1974"
+    "dateString": "May 28, 1974",
+    "qualifier": 1
   },
+  "lastNameAtDeath": "Peterson",
   "deathDate": {
-    "dateString": "May 28, 1974"
+    "dateString": "May 28, 1974",
+    "qualifier": 1
   },
   "deathPlace": {
     "placeString": "St. Louis City, Missouri, United States of America"

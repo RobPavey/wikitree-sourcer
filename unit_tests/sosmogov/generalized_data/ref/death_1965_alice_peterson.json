@@ -7,10 +7,13 @@
     "firstNames": "Alice"
   },
   "eventDate": {
-    "dateString": "April 23, 1965"
+    "dateString": "April 23, 1965",
+    "qualifier": 1
   },
+  "lastNameAtDeath": "Peterson",
   "deathDate": {
-    "dateString": "April 23, 1965"
+    "dateString": "April 23, 1965",
+    "qualifier": 1
   },
   "deathPlace": {
     "placeString": "Jasper County, Missouri, United States of America"

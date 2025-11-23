@@ -8,10 +8,13 @@
     "firstName": "Mary"
   },
   "eventDate": {
-    "dateString": "November _, 1946"
+    "dateString": "November 1946",
+    "qualifier": 1
   },
+  "lastNameAtDeath": "Roper",
   "deathDate": {
-    "dateString": "November _, 1946"
+    "dateString": "November 1946",
+    "qualifier": 1
   },
   "deathPlace": {
     "placeString": "Greene County, Missouri, United States of America"

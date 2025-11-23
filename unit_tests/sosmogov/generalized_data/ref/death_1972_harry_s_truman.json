@@ -8,10 +8,13 @@
     "firstName": "Harry"
   },
   "eventDate": {
-    "dateString": "December 26, 1972"
+    "dateString": "December 26, 1972",
+    "qualifier": 1
   },
+  "lastNameAtDeath": "Truman",
   "deathDate": {
-    "dateString": "December 26, 1972"
+    "dateString": "December 26, 1972",
+    "qualifier": 1
   },
   "deathPlace": {
     "placeString": "Jackson County, Missouri, United States of America"
