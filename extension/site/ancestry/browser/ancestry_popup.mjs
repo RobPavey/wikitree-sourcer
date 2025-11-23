@@ -728,9 +728,9 @@ async function ancestryAddLinkBuilderComment(data, personData, tabId) {
     chrome.tabs.sendMessage(tabId, { type: "addComment", fieldData: fieldData }, function (response) {
       displayBusyMessage("Adding comment ...");
 
-      //console.log("doSetFieldsFromPersonData, chrome.runtime.lastError is:");
+      //console.log("ancestryAddLinkBuilderComment, chrome.runtime.lastError is:");
       //console.log(chrome.runtime.lastError);
-      //console.log("doSetFieldsFromPersonData, response is:");
+      //console.log("ancestryAddLinkBuilderComment, response is:");
       //console.log(response);
 
       // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
@@ -741,7 +741,7 @@ async function ancestryAddLinkBuilderComment(data, personData, tabId) {
         // just got unloaded prior to the reload but we got here because the popup had not been reset.
         // In this case we are seeing the response being undefined.
         // What to do in this case? Don't want to leave the "Initializing menu..." up.
-        let message = "doSetFieldsFromPersonData failed";
+        let message = "ancestryAddLinkBuilderComment failed";
         if (chrome.runtime.lastError && chrome.runtime.lastError.message) {
           message += ": " + chrome.runtime.lastError.message;
         }

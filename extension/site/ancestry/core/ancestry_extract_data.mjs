@@ -865,6 +865,10 @@ function extractImageNumberAndTotal(document, result) {
     "div.image-viewer-wrapper > div.container-space > div.bottom-container > div.paging-panel.panelTopHeight > div > div.imageNum.pageCountWrapInner"
   );
 
+  if (!pageCountWrap) {
+    pageCountWrap = document.querySelector("div.imageNum.pageCountWrapInner");
+  }
+
   if (pageCountWrap) {
     let pageNum = pageCountWrap.querySelector("input.page-input");
     if (pageNum) {

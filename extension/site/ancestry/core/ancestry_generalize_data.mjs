@@ -118,6 +118,7 @@ const recordTypeByFields = [
   { type: RT.Burial, labels: ["Burial Year", "Burial Place"] },
   { type: RT.Burial, labels: ["Death Date", "Burial Place"] },
   { type: RT.Burial, labels: ["Cemetery", "Cemetery Location", "Death Date"] },
+  { type: RT.Burial, labels: ["Burial Date", "Cemetery Name"] },
   { type: RT.Marriage, labels: ["Marriage Date", "Marriage Place"] },
   { type: RT.Marriage, labels: ["Marriage Date on Image", "Marriage Place"] },
   { type: RT.Marriage, labels: ["Marriage Year", "Marriage Place"] },

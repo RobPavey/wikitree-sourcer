@@ -728,7 +728,10 @@ function buildImageCitation(ed, options, sharingDataObj, builder) {
   builder.sourceTitle = ed.titleCollection;
   builder.databaseHasImages = true;
 
-  let sourceReference = ed.imageBrowsePath;
+  let sourceReference = "";
+  if (ed.imageBrowsePath) {
+    sourceReference = ed.imageBrowsePath;
+  }
   if (ed.totalImages && ed.imageNumber) {
     if (sourceReference) {
       sourceReference += " > ";

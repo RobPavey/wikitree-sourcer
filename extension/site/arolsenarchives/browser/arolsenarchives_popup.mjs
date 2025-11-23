@@ -24,9 +24,26 @@ SOFTWARE.
 
 import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+
+import {
+  addMenuItemWithSubtitle,
+  beginMainMenu,
+  displayBusyMessage,
+  closePopup,
+  doAsyncActionWithCatch,
+} from "/base/browser/popup/popup_menu_building.mjs";
+
+import { addStandardMenuEnd } from "/base/browser/popup/popup_menu_blocks.mjs";
+
+import { GeneralizedData } from "/base/core/generalize_data_utils.mjs";
+import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
+import { writeToClipboard } from "/base/browser/popup/popup_clipboard.mjs";
+
+import { convertTimestampDiffToText, getPersonDataSubtitleText } from "/base/browser/popup/popup_utils.mjs";
+
 import { generalizeData } from "../core/arolsenarchives_generalize_data.mjs";
 import { buildCitation } from "../core/arolsenarchives_build_citation.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 async function getPersonData(extractData) {
   const checkPermissionsOptions = {
@@ -64,7 +81,116 @@ async function getPersonData(extractData) {
   }
 }
 
-async function setupArolsenarchivesPopupMenu(extractedData) {
+async function buildLinkBuilderComment(data, personData, tabId) {
+  displayBusyMessage("Adding comment ...");
+
+  let personEd = personData.extractedData;
+  if (!personEd) {
+    displayMessageWithIcon("error", "No extracted data found.");
+    return;
+  }
+  let personGd = personData.generalizedData;
+  if (!personGd) {
+    displayMessageWithIcon("error", "No generalized data found.");
+    return;
+  }
+  let wikiId = personEd.wikiId;
+  if (!wikiId) {
+    displayMessageWithIcon("error", "No wikiId found.");
+    return;
+  }
+
+  let fullName = "";
+  if (personGd.name) {
+    let nameObj = personGd.name;
+    let forenames = nameObj.inferForenames();
+    let lnab = personGd.inferLastNameAtBirth();
+    let cln = personGd.inferLastNameAtDeath();
+    if (forenames) {
+      fullName = forenames + " ";
+    }
+    if (lnab) {
+      if (cln && cln != lnab) {
+        fullName += "(" + cln + ") ";
+      }
+      fullName += lnab;
+    }
+    fullName = fullName.trim();
+  }
+  if (!fullName) {
+    displayMessageWithIcon("error", "No full name could be built.");
+    return;
+  }
+
+  // We want to add a comment like:
+  // Find a biography, more records, and genealogy of <full name>
+  // https://www.wikitree.com/wiki/<wikiId>
+  // Part of the Holocaust Project on WikiTree where volunteer genealogists are collaborating
+  // on adding sourced profiles of all victims, connecting them to the free global family tree.
+  let commentText = "Find a biography, more records, and genealogy of ";
+  commentText += fullName + "\n";
+  commentText += "https://www.wikitree.com/wiki/" + wikiId + "\n";
+  commentText += "Part of the Holocaust Project on WikiTree ";
+  commentText += "where volunteer genealogists are collaborating ";
+  commentText += "on adding sourced profiles of all victims, ";
+  commentText += "connecting them to the free global family tree.";
+
+  doAsyncActionWithCatch("Building Link Builders comment", commentText, async function () {
+    writeToClipboard(commentText, "Link Builders comment");
+  });
+}
+
+async function addWikiTreeBacklinkMenuItem(menu, data, tabId) {
+  let ed = data.extractedData;
+  if (ed.has_disqus) {
+    let personData = await getLatestPersonData();
+    if (!personData) {
+      return; // no saved data, do not add menu item
+    }
+
+    let personDataTimeText = convertTimestampDiffToText(personData.timeStamp);
+    if (!personDataTimeText) {
+      return;
+    }
+
+    if (personData.generalizedData && personData.generalizedData.sourceOfData == "wikitree") {
+      let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
+      personData.generalizedData = gd;
+      let menuText = "Build link builder comment referencing:";
+      let subtitleText = getPersonDataSubtitleText(gd, personDataTimeText);
+
+      addMenuItemWithSubtitle(
+        menu,
+        menuText,
+        function (element) {
+          buildLinkBuilderComment(data, personData, tabId);
+        },
+        subtitleText
+      );
+    }
+  }
+}
+
+async function setupSearchPersonPopupMenu(extractedData, tabId) {
+  let backFunction = function () {
+    setupSearchPersonPopupMenu(extractedData, tabId);
+  };
+
+  let menu = beginMainMenu();
+
+  let data = { extractedData: extractedData, generalizedData: null };
+
+  await addWikiTreeBacklinkMenuItem(menu, data, tabId);
+
+  addStandardMenuEnd(menu, data, backFunction);
+}
+
+async function setupArolsenarchivesPopupMenu(extractedData, tabId) {
+  if (extractedData.page_type == "searchPerson") {
+    setupSearchPersonPopupMenu(extractedData, tabId);
+    return;
+  }
+
   if (extractedData.person_data == null && extractedData.url.match("/document/")) {
     await getPersonData(extractedData);
   }
@@ -77,6 +203,13 @@ async function setupArolsenarchivesPopupMenu(extractedData) {
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "arolsenarchives",
   };
+
+  if (extractedData.has_disqus) {
+    input.tabId = tabId;
+    input.customMenuFunction = addWikiTreeBacklinkMenuItem;
+    input.isCustomMenuFunctionAsync = true;
+  }
+
   setupSimplePopupMenu(input);
 }
 
