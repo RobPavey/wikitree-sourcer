@@ -822,9 +822,9 @@ function extractImageHasIndex(document, result) {
 
 function extractImageIndex(document, result) {
   // During dev only do this for a certain collection (England 1881 census)
-  if (result.dbId != "7572") {
-    return;
-  }
+  //if (result.dbId != "7572") {
+  //return;
+  //}
 
   let indexPanelContent = document.querySelector("div.image-viewer-wrapper div.index-panel div.index-panel-content");
 

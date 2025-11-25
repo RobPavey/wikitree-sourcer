@@ -455,29 +455,139 @@ async function ancestryBuildHouseholdTable(data) {
   getDataForLinkedHouseholdRecords(data, ancestryBuildHouseholdTableWithLinkedRecords, options);
 }
 
+async function ancestryWriteImageIndexTable(data, fieldNames, objectArray, options) {
+  //console.log("ancestryBuildCensusPageTable");
+
+  console.log("objectArray is");
+  console.log(objectArray);
+
+  let usedFieldsNames = [];
+  for (let fieldName of fieldNames) {
+    let used = false;
+    for (let row of objectArray) {
+      if (row[fieldName]) {
+        used = true;
+        break;
+      }
+    }
+    if (used) {
+      usedFieldsNames.push(fieldName);
+    }
+  }
+
+  doAsyncActionWithCatch("Building Census Page Table", data, async function () {
+    const input = {
+      extractedData: data.extractedData,
+      generalizedData: data.generalizedData,
+      fieldNames: usedFieldsNames,
+      objectArray: objectArray,
+      options: options,
+    };
+
+    // attempt to add the sharing link for the image as a caption
+    let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
+    if (dataObj) {
+      // V1 versions
+      // https://www.ancestry.com/sharing/24274440?h=95cf5c
+      let num1 = dataObj.id;
+      let num2 = dataObj.hmac_id;
+
+      // V2 versions
+      if (dataObj.v2 && dataObj.v2.share_id && dataObj.v2.share_token) {
+        num1 = dataObj.v2.share_id;
+        num2 = dataObj.v2.share_token;
+      }
+
+      if (num1 && num2) {
+        input.captionString = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
+      } else {
+        displayMessageWithIcon("warning", "Error building sharing template.");
+        return;
+      }
+    }
+
+    const tableObject = buildCustomTable(input);
+
+    writeToClipboard(tableObject.tableString, "Image Index Table");
+  });
+}
+
 async function ancestryBuildCensusPageTable(data) {
   //console.log("ancestryBuildCensusPageTable");
 
-  clearClipboard();
+  let ed = data.extractedData;
 
-  if (!ancestryPrefetch.areBuildSharingDependenciesReady) {
-    // dependencies not ready, wait a few milliseconds and try again
-    console.log("ancestryBuildSharingTemplate, waiting another 10ms");
-    if (ancestryPrefetch.timeoutCount < prefetchTimeoutMax) {
-      setTimeout(function () {
-        ancestryBuildCensusPageTable(data);
-      }, prefetchTimeoutDelay);
-      ancestryPrefetch.timeoutCount++;
-      displayPrefetchWaitingMessage("Building Census Page Table", true);
-    } else {
-      displayPrefetchErrorForSharingData();
+  let isVessel = false;
+  if (ed.imageBrowsePath && ed.imageBrowsePath.includes("> Vessels >")) {
+    isVessel = true;
+  }
+  let houseLabel = isVessel ? "Vessel" : "House";
+
+  const headingMappings = {
+    7572: {
+      // England 1881 census
+      "No.": {},
+      House: {
+        heading: "Address",
+      },
+      Name: {
+        headings: ["Given Name", "Surname"],
+        separator: " ",
+      },
+      Relation: {
+        heading: "Relationship to Head",
+      },
+      MS: {
+        heading: "Marital Status",
+      },
+      Age: {
+        heading: "Age",
+      },
+      Sex: {
+        heading: "Gender",
+      },
+      Occupation: {
+        heading: "Occupation",
+      },
+      "Where Born": {
+        headings: ["Birth Country", "Birth County", "Birth City"],
+        separator: ", ",
+        exclude: "England",
+      },
+    },
+  };
+
+  function getMappedValue(headingMapping, row, fieldName) {
+    let value = "";
+    let mappingObj = headingMapping[fieldName];
+    if (mappingObj) {
+      if (mappingObj.heading) {
+        let rowValue = row[mappingObj.heading];
+        if (rowValue) {
+          value = rowValue;
+        }
+      } else if (mappingObj.headings) {
+        for (let heading of mappingObj.headings) {
+          let rowValue = row[heading];
+          if (rowValue && rowValue != mappingObj.exclude) {
+            if (value) {
+              value += mappingObj.separator;
+            }
+            value += rowValue;
+          }
+        }
+      }
     }
-    return;
+    return value;
   }
 
-  let ed = data.extractedData;
   if (ed.indexHeadings && ed.indexRows) {
-    let fieldNames = ["No.", "House", "Name", "Relation", "MS", "Age", "Sex", "Occupation", "Where Born"];
+    let fieldNames = ["No.", houseLabel, "Name", "Relation", "MS", "Age", "Sex", "Occupation", "Where Born"];
+    let headingMapping = headingMappings[ed.dbId];
+    if (!headingMapping) {
+      return false;
+    }
+
     let objectArray = [];
 
     let lastHouse = "";
@@ -486,32 +596,25 @@ async function ancestryBuildCensusPageTable(data) {
     let isFirstRow = true;
     for (let row of ed.indexRows) {
       let rowObject = {};
-      rowObject["No."] = "";
-      let house = row["Address"];
-      rowObject["House"] = house;
 
-      let givenName = row["Given Name"];
-      let surname = row["Surname"];
-      let name = givenName;
-      if (surname) {
-        if (name) {
-          name += " ";
-        }
-        name += surname;
-      }
-      rowObject["Name"] = name;
+      rowObject["No."] = getMappedValue(headingMapping, row, "No.");
 
-      let relation = row["Relationship to Head"];
+      let house = getMappedValue(headingMapping, row, "House");
+      rowObject[houseLabel] = house;
 
-      let ageString = row["Age"];
+      rowObject["Name"] = getMappedValue(headingMapping, row, "Name");
+
+      let relation = getMappedValue(headingMapping, row, "Relation");
+
+      let ageString = getMappedValue(headingMapping, row, "Age");
       let ageNum = Number(ageString);
-      if (!ageString && rowObject["Name"] && rowObject["Address"] != "Uninhabited") {
+      if (!ageString && rowObject["Name"] && house != "Uninhabited") {
         // age is blank in transcription is months, weeks etc
         ageString = "age?";
       }
       rowObject["Age"] = ageString;
 
-      let maritalStatus = row["Marital Status"];
+      let maritalStatus = getMappedValue(headingMapping, row, "MS");
       if (maritalStatus == "Married") {
         maritalStatus = "M";
       } else if (maritalStatus == "Unmarried") {
@@ -523,39 +626,18 @@ async function ancestryBuildCensusPageTable(data) {
           maritalStatus = "U";
         }
       }
-
       rowObject["MS"] = maritalStatus;
-      let sex = row["Gender"];
+
+      let sex = getMappedValue(headingMapping, row, "Sex");
       if (sex == "Male") {
         sex = "M";
       } else if (sex == "Female") {
         sex = "F";
       }
       rowObject["Sex"] = sex;
-      rowObject["Occupation"] = row["Occupation"];
-      let birthPlace = "";
-      let birthCity = row["Birth City"];
-      let birthCounty = row["Birth County"];
-      let birthCountry = row["Birth Country"];
 
-      function addPart(part) {
-        if (part) {
-          if (birthPlace) {
-            birthPlace += ", ";
-          }
-          birthPlace += part;
-        }
-      }
-
-      if (birthCountry == "England") {
-        addPart(birthCounty);
-        addPart(birthCity);
-      } else {
-        addPart(birthCountry);
-        addPart(birthCounty);
-        addPart(birthCity);
-      }
-      rowObject["Where Born"] = birthPlace;
+      rowObject["Occupation"] = getMappedValue(headingMapping, row, "Occupation");
+      rowObject["Where Born"] = getMappedValue(headingMapping, row, "Where Born");
 
       rowObject.includeInTable = true;
 
@@ -575,18 +657,22 @@ async function ancestryBuildCensusPageTable(data) {
       }
 
       if (!isNewHouse) {
-        rowObject["House"] = "";
+        rowObject[houseLabel] = "";
       }
 
-      if (isNewHouse || relation == "Lodger") {
-        rowObject["No."] = "#";
+      if (!isVessel) {
+        if (isNewHouse || relation == "Lodger") {
+          rowObject["No."] = "#";
+        }
       }
 
       const headHeadString = " (Head) (Head)";
       if (relation.includes(headHeadString)) {
         relation = relation.replace(headHeadString, "");
       }
-      rowObject["Relation"] = relation;
+      if (relation) {
+        rowObject["Relation"] = relation;
+      }
 
       lastHouse = house;
       lastRelation = relation;
@@ -596,44 +682,74 @@ async function ancestryBuildCensusPageTable(data) {
       isFirstRow = false;
     }
 
+    await ancestryWriteImageIndexTable(data, fieldNames, objectArray, options);
+  }
+
+  return true;
+}
+
+async function ancestryBuildImageIndexTable(data) {
+  //console.log("ancestryBuildImageIndexTable");
+
+  clearClipboard();
+
+  if (!ancestryPrefetch.areBuildSharingDependenciesReady) {
+    // dependencies not ready, wait a few milliseconds and try again
+    console.log("ancestryBuildSharingTemplate, waiting another 10ms");
+    if (ancestryPrefetch.timeoutCount < prefetchTimeoutMax) {
+      setTimeout(function () {
+        ancestryBuildImageIndexTable(data);
+      }, prefetchTimeoutDelay);
+      ancestryPrefetch.timeoutCount++;
+      displayPrefetchWaitingMessage("Building Image Index Table", true);
+    } else {
+      displayPrefetchErrorForSharingData();
+    }
+    return;
+  }
+
+  let ed = data.extractedData;
+
+  if (ed.titleCollection.includes("Census")) {
+    let success = await ancestryBuildCensusPageTable(data);
+    if (success) {
+      return;
+    }
+  }
+
+  if (ed.indexHeadings && ed.indexRows) {
+    let fieldNames = ed.indexHeadings;
+    let objectArray = [];
+
+    for (let row of ed.indexRows) {
+      let rowObject = {};
+
+      for (let fieldName of fieldNames) {
+        rowObject[fieldName] = row[fieldName];
+      }
+
+      rowObject.includeInTable = true;
+      objectArray.push(rowObject);
+    }
+
     console.log("objectArray is");
     console.log(objectArray);
 
-    doAsyncActionWithCatch("Building Census Page Table", data, async function () {
-      const input = {
-        extractedData: data.extractedData,
-        generalizedData: data.generalizedData,
-        fieldNames: fieldNames,
-        objectArray: objectArray,
-        options: options,
-      };
-
-      // attempt to add the sharing link for the image as a caption
-      let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
-      if (dataObj) {
-        // V1 versions
-        // https://www.ancestry.com/sharing/24274440?h=95cf5c
-        let num1 = dataObj.id;
-        let num2 = dataObj.hmac_id;
-
-        // V2 versions
-        if (dataObj.v2 && dataObj.v2.share_id && dataObj.v2.share_token) {
-          num1 = dataObj.v2.share_id;
-          num2 = dataObj.v2.share_token;
-        }
-
-        if (num1 && num2) {
-          input.captionString = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
-        } else {
-          displayMessageWithIcon("warning", "Error building sharing template.");
-          return;
+    let usedFieldsNames = [];
+    for (let fieldName of fieldNames) {
+      let used = false;
+      for (let row of objectArray) {
+        if (row[fieldName]) {
+          used = true;
+          break;
         }
       }
+      if (used) {
+        usedFieldsNames.push(fieldName);
+      }
+    }
 
-      const tableObject = buildCustomTable(input);
-
-      writeToClipboard(tableObject.tableString, "Census PageTable");
-    });
+    await ancestryWriteImageIndexTable(data, fieldNames, objectArray, options);
   }
 }
 
@@ -1281,12 +1397,12 @@ function addAncestryBuildHouseholdTableMenuItem(menu, data) {
   }
 }
 
-function addAncestryBuildCensusTable(menu, data) {
+function addAncestryBuildImageIndexTable(menu, data) {
   let ed = data.extractedData;
   if (ed.indexHeadings && ed.indexRows) {
-    addMenuItem(menu, "Build Census Page Table", function (element) {
-      displayBusyMessage("Building census table...");
-      ancestryBuildCensusPageTable(data);
+    addMenuItem(menu, "Build Image Index Table", function (element) {
+      displayBusyMessage("Building image index table...");
+      ancestryBuildImageIndexTable(data);
     });
   }
 }
@@ -1574,8 +1690,8 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
     addAncestryBuildSharingUrlMenuItem(menu, data);
     addAncestryGoToRecordMenuItem(menu, data);
 
-    if (data.extractedData.dbId == "7572") {
-      addAncestryBuildCensusTable(menu, data);
+    if (data.extractedData.indexHeadings && data.extractedData.indexHeadings) {
+      addAncestryBuildImageIndexTable(menu, data);
     }
   } else if (extractedData.pageType == "sharingImageOrRecord") {
     addAncestrySharingPageBuildCitationMenuItems(menu, data);
