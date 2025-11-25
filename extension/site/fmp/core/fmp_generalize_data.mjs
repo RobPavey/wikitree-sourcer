@@ -1284,6 +1284,12 @@ function generalizeData(input) {
     generalizeDataGivenRecordType(ed, result);
   }
 
+  // Linked persons
+  let linkedPersons = getCleanRecordDataValue(ed, "Linked persons");
+  if (linkedPersons) {
+    result.otherPeopleNames = linkedPersons;
+  }
+
   // Collection
   if (ed.collection) {
     let collectionId = ed.collection;

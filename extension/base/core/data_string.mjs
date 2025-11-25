@@ -1557,6 +1557,10 @@ function getProbateString(gd, options) {
     dataString += ". Occupation: " + gd.occupation;
   }
 
+  if (gd.otherPeopleNames) {
+    dataString += ". Other people named in record: " + gd.otherPeopleNames;
+  }
+
   return dataString;
 }
 
