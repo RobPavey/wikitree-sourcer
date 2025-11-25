@@ -16,6 +16,7 @@
   "eventPlace": {
     "placeString": "Östra Torsås, Kronoberg, Sverige (Sweden)"
   },
+  "ageAtEvent": "18",
   "relationshipToHead": "daughter",
   "householdArrayFields": [
     "name",
@@ -51,6 +52,7 @@
       "name": "Helena",
       "relationship": "daughter",
       "isSelected": true,
+      "age": "18",
       "gender": "female",
       "birthDate": "17 dec. 1853 (17 Dec 1853)",
       "birthPlace": "Torsås"

@@ -1586,7 +1586,7 @@ function generalizeDataGivenRecordType(ed, result) {
           stdName: "name",
           siteHeadings: ["Name", "Household Members", "Household Member(s)", "Household Members (Name)"],
         },
-        { stdName: "age", siteHeadings: ["Age"] },
+        { stdName: "age", siteHeadings: ["Age", "Residence Age"] },
         { stdName: "relationship", siteHeadings: ["Relationship"] },
         { stdName: "race", siteHeadings: ["Race"] },
       ];
@@ -1772,7 +1772,7 @@ function generalizeDataGivenRecordType(ed, result) {
         result.occupation = occupation;
       }
 
-      let age = getCleanValueForRecordDataList(ed, ["Age"]);
+      let age = getCleanValueForRecordDataList(ed, ["Age", "Residence Age"]);
       if (!age) {
         if (result.eventDate && result.eventDate.yearString) {
           let label = "Age in " + result.eventDate.yearString;
@@ -3102,7 +3102,7 @@ function setExtraGdHouseholdFields(extractedData, generalizedMember, fieldNames)
     setMemberData("name", ["Name"]);
   }
 
-  setMemberData("age", ["Age"]);
+  setMemberData("age", ["Age", "Residence Age"]);
   setMemberData("race", ["Race"]);
   setMemberData(
     "relationship",

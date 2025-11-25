@@ -15,6 +15,7 @@
   "eventPlace": {
     "placeString": "New Milford, Litchfield, Connecticut, USA"
   },
+  "ageAtEvent": "65",
   "householdArrayFields": [
     "name",
     "age"
