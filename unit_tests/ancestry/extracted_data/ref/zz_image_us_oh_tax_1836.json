@@ -8,5 +8,162 @@
   "ancestryTemplate": "{{Ancestry Image|60104|MM9.3.1_2FTH-267-11831-94311-26}}",
   "domain": "ancestry.com",
   "imageNumber": "5",
-  "totalImages": "15"
+  "totalImages": "15",
+  "indexHeadings": [
+    "Name",
+    "Civil Date",
+    "Civil Place"
+  ],
+  "indexRows": [
+    {
+      "Name": "Arthur G Hayden",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "John Hoke",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "John Hoke",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "John Hoke",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Samuel Heckland",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Benj Hanna",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "David Hardman",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Jonathan Haines Junior",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Jonathan Haines Junior",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Abraham Haines",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Abraham Haines",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Joel Johnson",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Nancy Jones",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Simeon Jennings",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "S Jennings",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "S Wheland",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Simeon Kerns",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Frederick Keash",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Daniel Keck",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Daniel Keck",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Daniel Keck",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Patrick Kelley",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Alexander Kelly",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Alexander Kelly",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Samuel Kerns",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Samuel Kerns",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Solomon Kempf",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Daniel Longenecker",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Daniel Longenecker",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    },
+    {
+      "Name": "Jonathan Lodge",
+      "Civil Date": "1836",
+      "Civil Place": "Salem Township, Columbiana, Ohio"
+    }
+  ]
 }

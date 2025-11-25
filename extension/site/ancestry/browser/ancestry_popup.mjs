@@ -106,6 +106,7 @@ import {
 } from "../core/ancestry_generalize_data.mjs";
 import { buildCitation } from "../core/ancestry_build_citation.mjs";
 import { buildHouseholdTable, buildCustomTable } from "/base/core/table_builder.mjs";
+import { buildImageIndexTable } from "../core/ancestry_image_index.mjs";
 
 import { fetchAncestrySharingDataObj } from "./ancestry_fetch.mjs";
 
@@ -455,239 +456,6 @@ async function ancestryBuildHouseholdTable(data) {
   getDataForLinkedHouseholdRecords(data, ancestryBuildHouseholdTableWithLinkedRecords, options);
 }
 
-async function ancestryWriteImageIndexTable(data, fieldNames, objectArray, options) {
-  //console.log("ancestryBuildCensusPageTable");
-
-  console.log("objectArray is");
-  console.log(objectArray);
-
-  let usedFieldsNames = [];
-  for (let fieldName of fieldNames) {
-    let used = false;
-    for (let row of objectArray) {
-      if (row[fieldName]) {
-        used = true;
-        break;
-      }
-    }
-    if (used) {
-      usedFieldsNames.push(fieldName);
-    }
-  }
-
-  doAsyncActionWithCatch("Building Census Page Table", data, async function () {
-    const input = {
-      extractedData: data.extractedData,
-      generalizedData: data.generalizedData,
-      fieldNames: usedFieldsNames,
-      objectArray: objectArray,
-      options: options,
-    };
-
-    // attempt to add the sharing link for the image as a caption
-    let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
-    if (dataObj) {
-      // V1 versions
-      // https://www.ancestry.com/sharing/24274440?h=95cf5c
-      let num1 = dataObj.id;
-      let num2 = dataObj.hmac_id;
-
-      // V2 versions
-      if (dataObj.v2 && dataObj.v2.share_id && dataObj.v2.share_token) {
-        num1 = dataObj.v2.share_id;
-        num2 = dataObj.v2.share_token;
-      }
-
-      if (num1 && num2) {
-        input.captionString = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
-      } else {
-        displayMessageWithIcon("warning", "Error building sharing template.");
-        return;
-      }
-    }
-
-    const tableObject = buildCustomTable(input);
-
-    writeToClipboard(tableObject.tableString, "Image Index Table");
-  });
-}
-
-async function ancestryBuildCensusPageTable(data) {
-  //console.log("ancestryBuildCensusPageTable");
-
-  let ed = data.extractedData;
-
-  let isVessel = false;
-  if (ed.imageBrowsePath && ed.imageBrowsePath.includes("> Vessels >")) {
-    isVessel = true;
-  }
-  let houseLabel = isVessel ? "Vessel" : "House";
-
-  const headingMappings = {
-    7572: {
-      // England 1881 census
-      "No.": {},
-      House: {
-        heading: "Address",
-      },
-      Name: {
-        headings: ["Given Name", "Surname"],
-        separator: " ",
-      },
-      Relation: {
-        heading: "Relationship to Head",
-      },
-      MS: {
-        heading: "Marital Status",
-      },
-      Age: {
-        heading: "Age",
-      },
-      Sex: {
-        heading: "Gender",
-      },
-      Occupation: {
-        heading: "Occupation",
-      },
-      "Where Born": {
-        headings: ["Birth Country", "Birth County", "Birth City"],
-        separator: ", ",
-        exclude: "England",
-      },
-    },
-  };
-
-  function getMappedValue(headingMapping, row, fieldName) {
-    let value = "";
-    let mappingObj = headingMapping[fieldName];
-    if (mappingObj) {
-      if (mappingObj.heading) {
-        let rowValue = row[mappingObj.heading];
-        if (rowValue) {
-          value = rowValue;
-        }
-      } else if (mappingObj.headings) {
-        for (let heading of mappingObj.headings) {
-          let rowValue = row[heading];
-          if (rowValue && rowValue != mappingObj.exclude) {
-            if (value) {
-              value += mappingObj.separator;
-            }
-            value += rowValue;
-          }
-        }
-      }
-    }
-    return value;
-  }
-
-  if (ed.indexHeadings && ed.indexRows) {
-    let fieldNames = ["No.", houseLabel, "Name", "Relation", "MS", "Age", "Sex", "Occupation", "Where Born"];
-    let headingMapping = headingMappings[ed.dbId];
-    if (!headingMapping) {
-      return false;
-    }
-
-    let objectArray = [];
-
-    let lastHouse = "";
-    let lastRelation = "";
-
-    let isFirstRow = true;
-    for (let row of ed.indexRows) {
-      let rowObject = {};
-
-      rowObject["No."] = getMappedValue(headingMapping, row, "No.");
-
-      let house = getMappedValue(headingMapping, row, "House");
-      rowObject[houseLabel] = house;
-
-      rowObject["Name"] = getMappedValue(headingMapping, row, "Name");
-
-      let relation = getMappedValue(headingMapping, row, "Relation");
-
-      let ageString = getMappedValue(headingMapping, row, "Age");
-      let ageNum = Number(ageString);
-      if (!ageString && rowObject["Name"] && house != "Uninhabited") {
-        // age is blank in transcription is months, weeks etc
-        ageString = "age?";
-      }
-      rowObject["Age"] = ageString;
-
-      let maritalStatus = getMappedValue(headingMapping, row, "MS");
-      if (maritalStatus == "Married") {
-        maritalStatus = "M";
-      } else if (maritalStatus == "Unmarried") {
-        maritalStatus = "U";
-      } else if (maritalStatus == "Widow" || maritalStatus == "Widower") {
-        maritalStatus = "W";
-      } else if (maritalStatus == "") {
-        if (!isNaN(ageNum) && ageNum >= 16) {
-          maritalStatus = "U";
-        }
-      }
-      rowObject["MS"] = maritalStatus;
-
-      let sex = getMappedValue(headingMapping, row, "Sex");
-      if (sex == "Male") {
-        sex = "M";
-      } else if (sex == "Female") {
-        sex = "F";
-      }
-      rowObject["Sex"] = sex;
-
-      rowObject["Occupation"] = getMappedValue(headingMapping, row, "Occupation");
-      rowObject["Where Born"] = getMappedValue(headingMapping, row, "Where Born");
-
-      rowObject.includeInTable = true;
-
-      // decide if this is a new household
-      let isNewHouse = false;
-      if (house != lastHouse) {
-        isNewHouse = true;
-      } else if (relation == "Head") {
-        isNewHouse = true;
-      } else if (relation.includes("(Head)")) {
-        isNewHouse = true;
-      } else if (relation == "Wife" && lastRelation != "Head") {
-        isNewHouse = true;
-      }
-      if (!isFirstRow && isNewHouse) {
-        rowObject.addDividerBefore = true;
-      }
-
-      if (!isNewHouse) {
-        rowObject[houseLabel] = "";
-      }
-
-      if (!isVessel) {
-        if (isNewHouse || relation == "Lodger") {
-          rowObject["No."] = "#";
-        }
-      }
-
-      const headHeadString = " (Head) (Head)";
-      if (relation.includes(headHeadString)) {
-        relation = relation.replace(headHeadString, "");
-      }
-      if (relation) {
-        rowObject["Relation"] = relation;
-      }
-
-      lastHouse = house;
-      lastRelation = relation;
-
-      objectArray.push(rowObject);
-
-      isFirstRow = false;
-    }
-
-    await ancestryWriteImageIndexTable(data, fieldNames, objectArray, options);
-  }
-
-  return true;
-}
-
 async function ancestryBuildImageIndexTable(data) {
   //console.log("ancestryBuildImageIndexTable");
 
@@ -708,48 +476,15 @@ async function ancestryBuildImageIndexTable(data) {
     return;
   }
 
-  let ed = data.extractedData;
+  let dataObj = ancestryPrefetch.prefetchedSharingDataObj;
 
-  if (ed.titleCollection.includes("Census")) {
-    let success = await ancestryBuildCensusPageTable(data);
-    if (success) {
-      return;
-    }
-  }
+  let tableObject = buildImageIndexTable(data, dataObj, options);
 
-  if (ed.indexHeadings && ed.indexRows) {
-    let fieldNames = ed.indexHeadings;
-    let objectArray = [];
-
-    for (let row of ed.indexRows) {
-      let rowObject = {};
-
-      for (let fieldName of fieldNames) {
-        rowObject[fieldName] = row[fieldName];
-      }
-
-      rowObject.includeInTable = true;
-      objectArray.push(rowObject);
-    }
-
-    console.log("objectArray is");
-    console.log(objectArray);
-
-    let usedFieldsNames = [];
-    for (let fieldName of fieldNames) {
-      let used = false;
-      for (let row of objectArray) {
-        if (row[fieldName]) {
-          used = true;
-          break;
-        }
-      }
-      if (used) {
-        usedFieldsNames.push(fieldName);
-      }
-    }
-
-    await ancestryWriteImageIndexTable(data, fieldNames, objectArray, options);
+  if (tableObject) {
+    writeToClipboard(tableObject.tableString, "Image Index Table");
+  } else {
+    displayMessageWithIcon("warning", "Error building image index table.");
+    return;
   }
 }
 
