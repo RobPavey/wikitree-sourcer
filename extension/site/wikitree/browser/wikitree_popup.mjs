@@ -66,6 +66,7 @@ import { options } from "/base/browser/options/options_loader.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { GenderUtils } from "../../../base/core/gender_utils.mjs";
 
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
@@ -588,7 +589,12 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
   buildMenu(data, tabId);
 }
 
-function getPersonNameOrPronoun(gd, options) {
+function inferGenderForAddPerson(personGd) {
+  let allowPrediction = options.addMerge_addPerson_allowGenderPrediction == "yes";
+  return GenderUtils.getOrPredictGender(personGd, allowPrediction, null);
+}
+
+function getPersonNameOrPronoun(gd, options, isAdd) {
   let nameOption = options["narrative_general_nameOrPronoun"];
 
   let nameOrPronoun = "";
@@ -622,6 +628,10 @@ function getPersonNameOrPronoun(gd, options) {
 
   function tryPronoun() {
     let gender = gd.inferPersonGender();
+    if (isAdd && !gender) {
+      gender = inferGenderForAddPerson(gd);
+    }
+
     if (gender == "male") {
       nameOrPronoun = "He";
       return true;
@@ -659,7 +669,7 @@ function getPersonNameOrPronoun(gd, options) {
   return nameOrPronoun;
 }
 
-function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
+function getWikiTreeAddMergeData(isAdd, data, personEd, personGd, citationObject) {
   function qualifierToStatus(qualifier) {
     switch (qualifier) {
       case dateQualifiers.NONE:
@@ -815,9 +825,14 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
   result.birthLocation = standardizePlace(personGd.inferBirthPlace(), result.birthDate);
   result.deathLocation = standardizePlace(personGd.inferDeathPlace(), result.deathDate);
 
-  if (personGd.personGender == "male") {
+  let personGender = personGd.inferPersonGender();
+  if (isAdd && !personGender) {
+    personGender = inferGenderForAddPerson(personGd);
+  }
+
+  if (personGender == "male") {
     result.gender = "Male";
-  } else if (personGd.personGender == "female") {
+  } else if (personGender == "female") {
     result.gender = "Female";
   }
 
@@ -1016,7 +1031,7 @@ async function getWikiTreeMergeEditData(data, personData, citationObject) {
 
   let personEd = personData.extractedData;
   let personGd = personData.generalizedData;
-  let result = getWikiTreeAddMergeData(data, personEd, personGd, citationObject);
+  let result = getWikiTreeAddMergeData(false, data, personEd, personGd, citationObject);
   result.bio = "";
   result.sources = "";
 
@@ -1064,7 +1079,7 @@ async function getWikiTreeMergeEditData(data, personData, citationObject) {
       }
     }
 
-    let nameOrPronoun = getPersonNameOrPronoun(personGd, options);
+    let nameOrPronoun = getPersonNameOrPronoun(personGd, options, false);
 
     if (nameOrPronoun) {
       // we want to follow some of the narrative options here but can't use NarrativeBuilder because
@@ -1182,6 +1197,7 @@ function getBirthLine(personGd) {
 
     if (fatherName || motherName) {
       parentsLine += ", ";
+
       if (personGd.personGender == "male") {
         parentsLine += "son";
       } else if (personGd.personGender == "female") {
@@ -1568,10 +1584,12 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
       }
 
       if (fatherName || motherName) {
+        let personGender = inferGenderForAddPerson(personGd);
+
         parentsLine += ", ";
-        if (personGd.personGender == "male") {
+        if (personGender == "male") {
           parentsLine += "son";
-        } else if (personGd.personGender == "female") {
+        } else if (personGender == "female") {
           parentsLine += "daughter";
         } else {
           parentsLine += "child";
@@ -1668,7 +1686,7 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
   //console.log("getWikiTreeEditFamilyData, personGd is: ");
   //console.log(personGd);
 
-  let result = getWikiTreeAddMergeData(data, personEd, personGd, citationObject);
+  let result = getWikiTreeAddMergeData(true, data, personEd, personGd, citationObject);
 
   // Check whether to add {{Died Young}} sticker.
   let addDiedYoung = false;
@@ -1770,7 +1788,7 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
   }
 
   if (canIncludeMarriageAndDeathLines) {
-    let nameOrPronoun = getPersonNameOrPronoun(personGd, options);
+    let nameOrPronoun = getPersonNameOrPronoun(personGd, options, true);
 
     if (nameOrPronoun) {
       // we want to follow some of the narrative options here but can't use NarrativeBuilder because
@@ -1926,7 +1944,7 @@ async function doMergeEditFromPersonData(data, wtPersonData) {
       //console.log(wikitreeMergeEditData);
     });
   } catch (ex) {
-    console.log("mergeEditFromPersonData: storeDataCache failed");
+    console.log("mergeEditFromPersonData: save local storage failed");
   }
 
   chrome.tabs.create({ url: mergeUrl });

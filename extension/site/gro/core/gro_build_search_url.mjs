@@ -25,21 +25,7 @@ SOFTWARE.
 import { GroUriBuilder } from "./gro_uri_builder.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
-import { DataCache } from "../../../base/core/data_cache.mjs";
-
-function getPersonGenderFromGeneralizedDataOrDataCache(generalizedData, dataCache, isBirth) {
-  let personGender = generalizedData.inferPersonGender();
-
-  if (!personGender) {
-    // search the data cache for the person
-    let entry = DataCache.findClosestWikiTreeProfilePrioritizingFirstName(generalizedData, dataCache, isBirth);
-    if (entry) {
-      personGender = entry.generalizedData.personGender;
-    }
-  }
-
-  return personGender;
-}
+import { GenderUtils } from "../../../base/core/gender_utils.mjs";
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
@@ -130,11 +116,8 @@ function buildSearchUrl(buildUrlInput) {
     }
   }
 
-  let personGender = getPersonGenderFromGeneralizedDataOrDataCache(
-    gd,
-    dataCache,
-    buildUrlInput.typeOfSearch == "births"
-  );
+  let isBirth = buildUrlInput.typeOfSearch == "births";
+  let personGender = GenderUtils.getOrPredictGender(gd, true, dataCache, isBirth);
   if (personGender) {
     if (personGender.toLowerCase() == "male") {
       builder.addGenderMale();

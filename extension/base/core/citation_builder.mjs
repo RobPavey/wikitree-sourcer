@@ -273,6 +273,7 @@ class CitationBuilder {
       eventGeneralizedData: gd,
       wtExtractedData: wtExtractedData,
       wtGeneralizedData: wtGeneralizedData,
+      dataCache: dataCache,
       options: options,
     };
     let narrative = buildNarrative(narrativeInput);

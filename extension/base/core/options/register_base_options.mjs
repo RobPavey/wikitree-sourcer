@@ -539,6 +539,16 @@ const narrativeOptionsGroup = {
       ],
       defaultValue: "no",
     },
+    {
+      optionName: "allowGenderPrediction",
+      type: "select",
+      label: "If gender is not known for the event use gender prediction from the name or other records",
+      values: [
+        { value: "no", text: "No" },
+        { value: "yes", text: "Yes" },
+      ],
+      defaultValue: "no",
+    },
   ],
 };
 
@@ -1678,6 +1688,16 @@ const addMergeAddPersonOptionsGroup = {
       type: "checkbox",
       label: 'Always put Add Person final page in "Advanced Sourcing" mode, even if nothing generated for biography',
       defaultValue: true,
+    },
+    {
+      optionName: "allowGenderPrediction",
+      type: "select",
+      label: "If gender is not known from the saved person data or citation use gender prediction from the name",
+      values: [
+        { value: "no", text: "No" },
+        { value: "yes", text: "Yes" },
+      ],
+      defaultValue: "no",
     },
   ],
 };

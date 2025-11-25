@@ -34,6 +34,7 @@ import {
 } from "./narrative_or_sentence_utils.mjs";
 import { RC } from "./record_collections.mjs";
 import { buildStructuredHousehold } from "./structured_household.mjs";
+import { GenderUtils } from "./gender_utils.mjs";
 
 class NarrativeBuilder {
   constructor(options) {
@@ -3458,6 +3459,22 @@ class NarrativeBuilder {
 
     return fieldsUsed;
   }
+
+  inferPersonGenderForNarrative() {
+    if (this.profileGd && this.profileGd.personGender) {
+      this.personGender = this.profileGd.personGender;
+    } else if (this.eventGd.personGender) {
+      this.personGender = this.eventGd.personGender;
+    } else {
+      this.personGender = this.eventGd.inferPersonGender();
+    }
+
+    if (!this.personGender) {
+      let allowPrediction = this.options.narrative_general_allowGenderPrediction == "yes";
+
+      this.personGender = GenderUtils.getOrPredictGender(this.eventGd, allowPrediction, this.dataCache);
+    }
+  }
 }
 
 function buildNarrative(input) {
@@ -3477,14 +3494,9 @@ function buildNarrative(input) {
   let builder = new NarrativeBuilder(options);
   builder.profileGd = wtGeneralizedData;
   builder.eventGd = eventGeneralizedData;
+  builder.dataCache = input.dataCache;
 
-  if (wtGeneralizedData && wtGeneralizedData.personGender) {
-    builder.personGender = wtGeneralizedData.personGender;
-  } else if (eventGeneralizedData.personGender) {
-    builder.personGender = eventGeneralizedData.personGender;
-  } else {
-    builder.personGender = eventGeneralizedData.inferPersonGender();
-  }
+  builder.inferPersonGenderForNarrative();
 
   builder.buildNarrativeString();
 
@@ -3494,11 +3506,8 @@ function buildNarrative(input) {
 function getFieldsUsedInNarrative(eventGd, options) {
   let builder = new NarrativeBuilder(options);
   builder.eventGd = eventGd;
-  if (eventGd.personGender) {
-    builder.personGender = eventGd.personGender;
-  } else {
-    builder.personGender = eventGd.inferPersonGender();
-  }
+
+  builder.inferPersonGenderForNarrative();
 
   return builder.getFieldsUsed();
 }
