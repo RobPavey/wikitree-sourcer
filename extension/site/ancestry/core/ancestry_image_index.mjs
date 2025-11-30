@@ -73,6 +73,60 @@ function buildCensusPageTable(data, dataObj, options) {
   let houseLabel = isVessel ? "Vessel" : "House";
 
   const headingMappings = {
+    8978: {
+      // England 1841 census
+      Place: {},
+      Name: {
+        headings: ["Given Name", "Surname"],
+        separator: " ",
+      },
+      Age: {
+        heading: "Age",
+      },
+      Sex: {
+        heading: "Gender",
+      },
+      Occupation: {
+        heading: "Occupation",
+      },
+      "Where Born": {
+        headings: ["Birth Country", "Birth County"],
+        separator: ", ",
+        exclude: "England",
+      },
+    },
+    8860: {
+      // England 1851 census
+      "House Number": {
+        heading: "Household schedule number",
+      },
+      House: {},
+      Name: {
+        headings: ["Given Name", "Surname"],
+        separator: " ",
+      },
+      Relation: {
+        heading: "Relationship",
+      },
+      MS: {
+        heading: "Marital Status",
+      },
+      Age: {
+        heading: "Age",
+      },
+      Sex: {
+        heading: "Gender",
+      },
+      Occupation: {
+        heading: "Occupation",
+      },
+      "Where Born": {
+        heading: "Birth Place",
+        excludeEnding: ", England",
+        reverseElements: true,
+        separator: ", ",
+      },
+    },
     8767: {
       // England 1861 census
       "No.": {
@@ -171,10 +225,135 @@ function buildCensusPageTable(data, dataObj, options) {
         exclude: "England",
       },
     },
+    6598: {
+      // England 1891 census
+      "No.": {},
+      House: {},
+      Name: {
+        heading: "Name",
+      },
+      Relation: {
+        heading: "Relationship",
+      },
+      MS: {
+        heading: "Marital Status",
+      },
+      Age: {
+        heading: "Age",
+      },
+      Sex: {
+        heading: "Gender",
+      },
+      Occupation: {
+        heading: "Occupation",
+      },
+      "Where Born": {
+        heading: "Birth Place",
+        excludeEnding: ", England",
+        reverseElements: true,
+        separator: ", ",
+      },
+    },
+    7814: {
+      // England 1901 census
+      "No.": {
+        heading: "Household Number",
+      },
+
+      House: {},
+      Name: {
+        heading: "Name",
+      },
+      Relation: {
+        heading: "Relation to Head",
+      },
+      MS: {
+        heading: "Marital Status",
+      },
+      Age: {
+        heading: "Age",
+      },
+      Sex: {
+        heading: "Gender",
+      },
+      Occupation: {
+        heading: "Occupation",
+      },
+      "Where Born": {
+        heading: "Birth Place",
+        excludeEnding: ", England",
+        reverseElements: true,
+        separator: ", ",
+      },
+    },
+    2352: {
+      // England 1911 census
+      House: {
+        heading: "Address",
+        skipIfSameAsLast: true,
+      },
+
+      Name: {
+        heading: "Name",
+      },
+      Relation: {
+        heading: "Relation to Head",
+      },
+      MS: {
+        heading: "Marital Status",
+      },
+      Age: {
+        heading: "Age",
+      },
+      Sex: {
+        heading: "Gender",
+      },
+      Occupation: {
+        heading: "Occupation",
+      },
+      "Where Born": {
+        heading: "Birth Place",
+        excludeEnding: ", England",
+        reverseElements: true,
+        separator: ", ",
+      },
+    },
+    63150: {
+      // England 1921 census
+      House: {
+        heading: "Residence Street Address",
+        skipIfSameAsLast: true,
+      },
+
+      Name: {
+        heading: "Name",
+      },
+      Relation: {
+        heading: "Relation to Head",
+      },
+      MS: {
+        heading: "Marital Status",
+      },
+      Age: {
+        heading: "Age",
+      },
+      Sex: {
+        heading: "Gender",
+      },
+      Occupation: {
+        heading: "Occupation",
+      },
+      "Where Born": {
+        heading: "Birth Place",
+        excludeEnding: ", England",
+        separator: ", ",
+      },
+    },
   };
 
   function getMappedValue(headingMapping, row, fieldName) {
-    let value = "";
+    let value = null;
+
     let mappingObj = headingMapping[fieldName];
     if (mappingObj) {
       if (mappingObj.heading) {
@@ -191,6 +370,8 @@ function buildCensusPageTable(data, dataObj, options) {
           if (rowValue && rowValue != mappingObj.exclude) {
             if (value) {
               value += mappingObj.separator;
+            } else {
+              value = "";
             }
             value += rowValue;
           }
@@ -209,7 +390,15 @@ function buildCensusPageTable(data, dataObj, options) {
         }
       }
     }
+
     return value;
+  }
+
+  function setRowField(rowObject, fieldName, value) {
+    if (!value) {
+      value = "";
+    }
+    rowObject[fieldName] = value;
   }
 
   let fieldNames = ["No.", houseLabel, "Name", "Relation", "MS", "Age", "Sex", "Occupation", "Where Born"];
@@ -230,13 +419,22 @@ function buildCensusPageTable(data, dataObj, options) {
 
     let scheduleNumber = getMappedValue(headingMapping, row, "No.");
     if (scheduleNumber != lastScheduleNumber) {
-      rowObject["No."] = scheduleNumber;
+      setRowField(rowObject, "No.", scheduleNumber);
     }
 
     let house = getMappedValue(headingMapping, row, "House");
-    rowObject[houseLabel] = house;
+    if (house) {
+      let mappingObj = headingMapping["House"];
+      if (mappingObj.skipIfSameAsLast) {
+        if (house != lastHouse) {
+          setRowField(rowObject, houseLabel, house);
+        }
+      } else {
+        setRowField(rowObject, houseLabel, house);
+      }
+    }
 
-    rowObject["Name"] = getMappedValue(headingMapping, row, "Name");
+    setRowField(rowObject, "Name", getMappedValue(headingMapping, row, "Name"));
 
     let relation = getMappedValue(headingMapping, row, "Relation");
 
@@ -245,8 +443,13 @@ function buildCensusPageTable(data, dataObj, options) {
     if (!ageString && rowObject["Name"] && house != "Uninhabited") {
       // age is blank in transcription is months, weeks etc
       ageString = "age?";
+    } else {
+      const yearsAndMonthsRegex = /^(\d+) Years (\d+) Months$/;
+      if (yearsAndMonthsRegex.test(ageString)) {
+        ageString = ageString.replace(yearsAndMonthsRegex, "$1y $2m");
+      }
     }
-    rowObject["Age"] = ageString;
+    setRowField(rowObject, "Age", ageString);
 
     let maritalStatus = getMappedValue(headingMapping, row, "MS");
     if (maritalStatus == "Married") {
@@ -256,11 +459,14 @@ function buildCensusPageTable(data, dataObj, options) {
     } else if (maritalStatus == "Widow" || maritalStatus == "Widower") {
       maritalStatus = "W";
     } else if (maritalStatus == "") {
-      if (!isNaN(ageNum) && ageNum >= 16) {
-        maritalStatus = "U";
+      // if there is no matching heading in table then don't fill this field
+      if (getMappedValue(headingMapping, row, "MS") != null) {
+        if (!isNaN(ageNum) && ageNum >= 16) {
+          maritalStatus = "U";
+        }
       }
     }
-    rowObject["MS"] = maritalStatus;
+    setRowField(rowObject, "MS", maritalStatus);
 
     let sex = getMappedValue(headingMapping, row, "Sex");
     if (sex == "Male") {
@@ -268,10 +474,10 @@ function buildCensusPageTable(data, dataObj, options) {
     } else if (sex == "Female") {
       sex = "F";
     }
-    rowObject["Sex"] = sex;
+    setRowField(rowObject, "Sex", sex);
 
-    rowObject["Occupation"] = getMappedValue(headingMapping, row, "Occupation");
-    rowObject["Where Born"] = getMappedValue(headingMapping, row, "Where Born");
+    setRowField(rowObject, "Occupation", getMappedValue(headingMapping, row, "Occupation"));
+    setRowField(rowObject, "Where Born", getMappedValue(headingMapping, row, "Where Born"));
 
     rowObject.includeInTable = true;
 
@@ -284,12 +490,14 @@ function buildCensusPageTable(data, dataObj, options) {
     } else {
       if (house != lastHouse) {
         isNewHouse = true;
-      } else if (relation == "Head") {
-        isNewHouse = true;
-      } else if (relation.includes("(Head)")) {
-        isNewHouse = true;
-      } else if (relation == "Wife" && lastRelation != "Head") {
-        isNewHouse = true;
+      } else if (relation) {
+        if (relation == "Head") {
+          isNewHouse = true;
+        } else if (relation.includes("(Head)")) {
+          isNewHouse = true;
+        } else if (relation == "Wife" && lastRelation != "Head") {
+          isNewHouse = true;
+        }
       }
     }
 
@@ -310,7 +518,7 @@ function buildCensusPageTable(data, dataObj, options) {
     }
 
     const headHeadString = " (Head) (Head)";
-    if (relation.includes(headHeadString)) {
+    if (relation && relation.includes(headHeadString)) {
       relation = relation.replace(headHeadString, "");
     }
     if (relation) {
