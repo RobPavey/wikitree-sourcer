@@ -123,6 +123,7 @@ const factTypeToRecordType = [
       { recordType: RT.LandTax, matches: ["Land Tax"] },
       { recordType: RT.SchoolRecords, matches: ["School Records"] },
       { recordType: RT.Census, matches: ["Census"] },
+      { recordType: RT.LandAssessment, matches: ["Land Assessment"] },
     ],
   },
   {
@@ -190,6 +191,10 @@ const factTypeToRecordType = [
       { recordType: RT.Death, matches: ["Death Date"] },
       { recordType: RT.Birth, matches: ["Birth Date"] },
     ],
+  },
+  {
+    type: "LandAssessment",
+    defaultRT: RT.LandAssessment,
   },
 ];
 
