@@ -47,10 +47,16 @@ class UshmmEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
+    if (this.ed.name) {
+      return this.makeNameObjFromFullName(this.ed.name);
+    }
     return undefined;
   }
 
   getGender() {
+    if (this.ed.fields["sex"]) {
+      return this.ed.fields["sex"].toLowerCase();
+    }
     return "";
   }
 
@@ -75,18 +81,30 @@ class UshmmEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
+    if (this.ed.fields["date of birth"]) {
+      return this.makeDateObjFromDateString(this.ed.fields["date of birth"]);
+    }
     return undefined;
   }
 
   getBirthPlaceObj() {
+    if (this.ed.fields["place of birth"]) {
+      return this.makePlaceObjFromFullPlaceName(this.ed.fields["place of birth"]);
+    }
     return undefined;
   }
 
   getDeathDateObj() {
+    if (this.ed.fields["date of death"]) {
+      return this.makeDateObjFromDateString(this.ed.fields["date of death"]);
+    }
     return undefined;
   }
 
   getDeathPlaceObj() {
+    if (this.ed.fields["place of death"]) {
+      return this.makePlaceObjFromFullPlaceName(this.ed.fields["place of death"]);
+    }
     return undefined;
   }
 
@@ -119,6 +137,9 @@ class UshmmEdReader extends ExtractedDataReader {
   }
 
   getParents() {
+    if (this.ed.fields["father's name"] && this.ed.fields["mother's name"]) {
+      return this.makeParentsFromFullNames(this.ed.fields["father's name"], this.ed.fields["mother's name"])
+    }
     return undefined;
   }
 

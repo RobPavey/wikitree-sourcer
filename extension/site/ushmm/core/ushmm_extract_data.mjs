@@ -31,7 +31,7 @@ function extractData(document, url) {
   result.success = false;
 
   if (url.match("www.ushmm.org/online/hsv/person_view.php")) {
-    const main = document.querySelector(".main");
+    const main = document.querySelector(".main[role=\"main\"]");
     result.name = main.querySelector('h1')?.textContent.trim();
 
     let fields = {};
@@ -44,7 +44,7 @@ function extractData(document, url) {
 
       let key = elements[0].textContent.trim();
       if (key[key.length-1] == ":") {
-        key = key.substring(0, key.length-1).trim();
+        key = key.substring(0, key.length-1).trim().toLowerCase();
       }
       fields[key] = elements[1].textContent.trim();
     }
