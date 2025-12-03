@@ -53,6 +53,51 @@ function extractData(document, url) {
 
     result.success = true;
   }
+  else if (url.match("collections.ushmm.org/search/catalog")) {
+    const nameElement = document.querySelector("h2[class=\"MuiTypography-root mirador18 MuiTypography-h2 MuiTypography-colorInherit MuiTypography-noWrap\"]");
+    if (nameElement) {
+      result.name = nameElement.textContent.trim();
+    }
+
+    result.fields = {};
+    const overview = document.querySelector("#overview");
+    if (overview) {
+      for (const element of overview.querySelector("dl").children) {
+        result.fields[element.querySelector("dt").textContent.trim().toLowerCase()] = element.querySelector("dd").textContent.trim();
+      }
+    }
+
+    if (!result.name && result.fields["brief narrative"]) {
+      result.name = result.fields["brief narrative"];
+    }
+
+    const u = new URL(url);
+    let params = new URLSearchParams(u.search);
+    if (params.get("cv")) {
+      let pagenum = parseInt(params.get("cv"));
+      result.pageNumber = (pagenum + 1).toString();
+    }
+
+    const identifiers = document.querySelector("#record-identifiers");
+    if (identifiers) {
+      const identifier_string = identifiers.textContent;
+      if (identifier_string.match("Oral History")) {
+        result.recordKind = "Oral History";
+      }
+      else if (identifier_string.match("Object")) {
+        result.recordKind = "Object";
+      }
+      else if (identifier_string.match("Document")) {
+        result.recordKind = "Document";
+      }
+    }
+
+    if (result.recordKind == "Oral History" && !result.name && result.fields["interviewee"]) {
+      result.name = "Interview with " + result.fields["interviewee"];
+    }
+
+    result.success = true;
+  }
 
   /*
   const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");

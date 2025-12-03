@@ -570,7 +570,7 @@
     },
     {
       "matches": [
-        "*://www.ushmm.org/*"
+        "*://*.ushmm.org/*"
       ],
       "run_at": "document_idle",
       "js": [
@@ -1034,7 +1034,7 @@
         "site/ushmm/core/ushmm_extract_data.mjs"
       ],
       "matches": [
-        "*://www.ushmm.org/*"
+        "*://*.ushmm.org/*"
       ]
     }
   ],

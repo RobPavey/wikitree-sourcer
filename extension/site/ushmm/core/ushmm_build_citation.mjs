@@ -41,12 +41,19 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder) {
+  if (ed.pageNumber) {
+    builder.sourceReference = "Page " + ed.pageNumber;
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
   var ushmmUrl = buildUshmmUrl(ed, builder);
 
-  let recordLink = "[" + ushmmUrl + " United States Holocaust Memorial Museum Record]";
+  let recordKind = ed.recordKind;
+  if (!recordKind) {
+    recordKind = "Record";
+  }
+  let recordLink = "[" + ushmmUrl + " United States Holocaust Memorial Museum ("+recordKind+")]";
   builder.recordLinkOrTemplate = recordLink;
 }
 
