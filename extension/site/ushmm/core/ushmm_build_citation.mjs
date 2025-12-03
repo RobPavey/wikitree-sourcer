@@ -29,11 +29,18 @@ function buildUshmmUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  if (ed.fields["title"] && ed.fields["description"]) {
+    builder.sourceTitle += ed.fields["title"] + " - " + ed.fields["description"];
+  }
+  else if (ed.fields["title"]) {
+    builder.sourceTitle += ed.fields["title"];
+  }
+  else if (ed.fields["description"]) {
+    builder.sourceTitle += ed.fields["description"];
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
 }
 
 function buildRecordLink(ed, gd, builder) {
