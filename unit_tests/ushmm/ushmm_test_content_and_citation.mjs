@@ -31,12 +31,18 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.ushmm.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+    caseName: "3771499",
+    url: "https://www.ushmm.org/online/hsv/person_view.php?PersonId=3771499"
   },
-  */
+  {
+    caseName: "4946809",
+    url: "https://www.ushmm.org/online/hsv/person_view.php?PersonId=4946809"
+  },
+  {
+    caseName: "5244993",
+    url: "https://www.ushmm.org/online/hsv/person_view.php?PersonId=5244993"
+  },
 ];
 
 async function runTests(testManager) {

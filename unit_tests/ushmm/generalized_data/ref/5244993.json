@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "ushmm",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "MINA MILSTEIN"
+  },
+  "birthDate": {
+    "dateString": "1 Mar 1924"
+  },
+  "birthPlace": {
+    "placeString": "BELFORT"
+  },
+  "hasValidData": true
+}
