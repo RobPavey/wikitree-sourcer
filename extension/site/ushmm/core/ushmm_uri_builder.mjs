@@ -29,7 +29,7 @@ class UshmmUriBuilder {
     //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
     // Change the URL below to the start of the search URL for your site
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    this.uri = "https://www.ushmm.org/search";
+    this.uri = "https://www.ushmm.org/online/hsv/person_advance_search.php";
     this.searchTermAdded = false;
   }
 
@@ -60,44 +60,24 @@ class UshmmUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
-  }
-
   addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("NameSearch__lname", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("NameSearch__lname_accuracy", "Fuzzy");
   }
 
   addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("NameSearch__fname", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("NameSearch__fname_accuracy", "Fuzzy");
   }
 
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
+  addBirthYear(year) {
+    this.addSearchParameter("NameSearch__year_birth", year);
+    this.addSearchParameter("NameSearch__year_birth_accuracy", "5");
   }
 
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addStartYear(string) {
-    this.addSearchParameter("start", string);
-  }
-
-  addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+  addDeathYear(year) {
+    this.addSearchParameter("NameSearch__year_death", year);
+    this.addSearchParameter("NameSearch__year_death_accuracy", "5");
   }
 
   getUri() {

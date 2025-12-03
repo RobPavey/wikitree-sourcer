@@ -29,6 +29,26 @@ function buildSearchUrl(buildUrlInput) {
 
   var builder = new UshmmUriBuilder();
 
+  const lastName = gd.inferLastName();
+  if (lastName) {
+    builder.addSurname(lastName);
+  }
+
+  const givenNames = gd.inferForenames();
+  if (givenNames) {
+    builder.addGivenNames(givenNames);
+  }
+
+  const birthYear = gd.inferBirthYear();
+  if (birthYear) {
+    builder.addBirthYear(birthYear);
+  }
+
+  const deathYear = gd.inferDeathYear();
+  if (deathYear) {
+    builder.addDeathYear(deathYear);
+  }
+
   // call methods on builder here
 
   const url = builder.getUri();
