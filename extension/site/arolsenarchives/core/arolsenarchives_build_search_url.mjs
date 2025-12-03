@@ -32,17 +32,20 @@ function buildSearchUrl(buildUrlInput) {
   // call methods on builder here
 
   let text = "";
-  if (gd.name && gd.name.forenames) {
-    text += " " + gd.name.forenames;
+
+  const lastName = gd.inferLastName();
+  if (lastName) {
+    text += " " + lastName;
   }
-  if (gd.name && gd.name.firstNames) {
-    text += " " + gd.name.firstNames;
+
+  const givenNames = gd.inferForenames();
+  if (givenNames) {
+    text += " " + givenNames;
   }
-  if (gd.name && gd.name.lastName) {
-    text += " " + gd.name.lastName;
-  }
-  if (gd.birthDate && gd.birthDate.dateString) {
-    text += " " + gd.birthDate.dateString.substring(gd.birthDate.dateString.lastIndexOf(" ") + 1);
+
+  const birthYear = gd.inferBirthYear();
+  if (birthYear) {
+    text += " " + birthYear;
   }
 
   if (text) {
