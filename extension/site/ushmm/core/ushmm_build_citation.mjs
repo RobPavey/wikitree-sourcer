@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,62 +22,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-// The order should not matter since user facing lists are sorted
+function buildUshmmUrl(ed, builder) {
+  return ed.url;
+}
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archion",
-  "archive",
-  "baclac",
-  "basrhin",
-  "bg",
-  "cwgc",
-  "eggsabdm",
-  "eggsagrvs",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nsvr",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "mdz",
-  "dfgviewer",
-  "arolsenarchives",
-  "sosmogov",
-  "ushmm",
-];
+function buildSourceTitle(ed, gd, builder) {
+  builder.sourceTitle += "Put Source Title here";
+}
 
-export { siteNames };
+function buildSourceReference(ed, gd, builder) {
+  builder.sourceReference = "Put Source Reference here";
+}
+
+function buildRecordLink(ed, gd, builder) {
+  var ushmmUrl = buildUshmmUrl(ed, builder);
+
+  let recordLink = "[" + ushmmUrl + " United States Holocaust Memorial Museum Record]";
+  builder.recordLinkOrTemplate = recordLink;
+}
+
+function buildCoreCitation(ed, gd, builder) {
+  buildSourceTitle(ed, gd, builder);
+  buildSourceReference(ed, gd, builder);
+  buildRecordLink(ed, gd, builder);
+  builder.addStandardDataString(gd);
+}
+
+function buildCitation(input) {
+  return simpleBuildCitationWrapper(input, buildCoreCitation);
+}
+
+export { buildCitation };
