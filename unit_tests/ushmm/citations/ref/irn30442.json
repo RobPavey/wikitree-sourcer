@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Drawing created by interpreter during the Nuremberg trials''':\n[https://collections.ushmm.org/search/catalog/irn30442 United States Holocaust Memorial Museum (Object)] (accessed 6 May 2021)<br/>\nDrawing created by interpreter during the Nuremberg trials.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Drawing was in a record.<ref>\n'''Record of Drawing created by interpreter during the Nuremberg trials''':\n[https://collections.ushmm.org/search/catalog/irn30442 United States Holocaust Memorial Museum (Object)] (accessed 6 May 2021)<br/>\nDrawing created by interpreter during the Nuremberg trials.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Drawing created by interpreter during the Nuremberg trials''': [https://collections.ushmm.org/search/catalog/irn30442 United States Holocaust Memorial Museum (Object)] (accessed 6 May 2021)<br/>Drawing created by interpreter during the Nuremberg trials.",
+    "type": "source"
+  }
+}

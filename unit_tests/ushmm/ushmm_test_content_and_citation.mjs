@@ -43,6 +43,18 @@ const regressionData = [
     caseName: "5244993",
     url: "https://www.ushmm.org/online/hsv/person_view.php?PersonId=5244993"
   },
+  {
+    caseName: "irn612234",
+    url: "https://collections.ushmm.org/search/catalog/irn612234"
+  },
+  {
+    caseName: "irn30442",
+    url: "https://collections.ushmm.org/search/catalog/irn30442"
+  },
+  {
+    caseName: "irn768384",
+    url: "https://collections.ushmm.org/search/catalog/irn768384"
+  },
 ];
 
 async function runTests(testManager) {
