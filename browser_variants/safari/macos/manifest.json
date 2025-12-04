@@ -396,9 +396,14 @@
       ]
     },
     {
-      "matches": ["*://www.digitale-sammlungen.de/*"],
+      "matches": [
+        "*://www.digitale-sammlungen.de/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/mdz/browser/mdz_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/mdz/browser/mdz_content.js"
+      ]
     },
     {
       "matches": [
@@ -560,6 +565,16 @@
       "js": [
         "base/browser/content/content_common.js",
         "site/sosmogov/browser/sosmogov_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://www.doew.at/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/doew/browser/doew_content.js"
       ]
     }
   ],
@@ -884,8 +899,12 @@
       ]
     },
     {
-      "resources": ["site/mdz/core/mdz_extract_data.mjs"],
-      "matches": ["*://www.digitale-sammlungen.de/*"]
+      "resources": [
+        "site/mdz/core/mdz_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.digitale-sammlungen.de/*"
+      ]
     },
     {
       "resources": [
@@ -1014,6 +1033,14 @@
       ],
       "matches": [
         "*://s1.sos.mo.gov/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/doew/core/doew_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.doew.at/*"
       ]
     }
   ],

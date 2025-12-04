@@ -79,3 +79,4 @@ import "../../basrhin/core/basrhin_options.mjs";
 import "../../dfgviewer/core/dfgviewer_options.mjs";
 import "../../arolsenarchives/core/arolsenarchives_options.mjs";
 import "../../sosmogov/core/sosmogov_options.mjs";
+import "../../doew/core/doew_options.mjs";
