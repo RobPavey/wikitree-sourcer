@@ -1,0 +1,15 @@
+{
+  "url": "https://www.doew.at/result",
+  "success": true,
+  "fields": {
+    "first name": "Adolf",
+    "last name": "Meier",
+    "date of birth": "23.06.1883",
+    "place of birth": "Wien",
+    "wohnort": "Wien 1, Stoß im Himmel 3/12a",
+    "sterbedatum": "29.01.1944",
+    "sterbeort": "Theresienstadt",
+    "deportation": "Wien/Theresienstadt",
+    "deportationsdatum": "01.10.1942"
+  }
+}

@@ -588,7 +588,17 @@
         "base/browser/content/content_common.js",
         "site/yadvashem/browser/yadvashem_content.js"
       ]
-    }
+    },
+    {
+      "matches": [
+        "*://www.doew.at/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/doew/browser/doew_content.js"
+      ]
+    },
   ],
   "options_ui": {
     "page": "base/browser/options/options.html",
@@ -1053,7 +1063,6 @@
       ],
       "matches": [
         "*://*.ushmm.org/*"
-        
       ]
     },
     {
@@ -1062,6 +1071,19 @@
       ],
       "matches": [
         "*://*.yadvashem.org/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/doew/core/doew_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.doew.at/*"
+        "site/ushmm/core/ushmm_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.ushmm.org/*"
+        
       ]
     }
   ],

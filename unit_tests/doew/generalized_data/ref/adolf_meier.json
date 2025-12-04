@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "doew",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "Meier",
+    "forenames": "Adolf"
+  },
+  "birthDate": {
+    "dateString": "23 Jun 1883"
+  },
+  "birthPlace": {
+    "placeString": "Wien"
+  },
+  "hasValidData": true
+}
