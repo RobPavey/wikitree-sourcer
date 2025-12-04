@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "2.11.0",
+  "version": "2.12.1",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": [
     "storage",
@@ -570,11 +570,13 @@
     {
       "matches": [
         "*://*.yadvashem.org/*"
+        "*://*.ushmm.org/*"
       ],
       "run_at": "document_idle",
       "js": [
         "base/browser/content/content_common.js",
         "site/yadvashem/browser/yadvashem_content.js"
+        "site/ushmm/browser/ushmm_content.js"
       ]
     }
   ],
@@ -1033,6 +1035,14 @@
       ],
       "matches": [
         "*://s1.sos.mo.gov/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/ushmm/core/ushmm_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.ushmm.org/*"
       ]
     },
     {

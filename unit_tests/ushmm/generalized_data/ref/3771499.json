@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "ushmm",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Ruth BILDSTEIN"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "29 Sep 1906"
+  },
+  "birthPlace": {
+    "placeString": "Obbach"
+  },
+  "hasValidData": true
+}

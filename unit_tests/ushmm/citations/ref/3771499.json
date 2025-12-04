@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Ruth BILDSTEIN''':\n\"North Bavarian Jews - Electronic data containing information gathered to document the fate of Bavarian Jews; data includes names and places and dates of birth, and death and emigration\"<br/>\n[https://www.ushmm.org/online/hsv/person_view.php?PersonId=3771499 United States Holocaust Memorial Museum (Record)] (accessed 6 May 2021)<br/>\nRuth BILDSTEIN.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ruth was in a record.<ref>\n'''Record of Ruth BILDSTEIN''':\n\"North Bavarian Jews - Electronic data containing information gathered to document the fate of Bavarian Jews; data includes names and places and dates of birth, and death and emigration\"<br/>\n[https://www.ushmm.org/online/hsv/person_view.php?PersonId=3771499 United States Holocaust Memorial Museum (Record)] (accessed 6 May 2021)<br/>\nRuth BILDSTEIN.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Ruth BILDSTEIN''': \"North Bavarian Jews - Electronic data containing information gathered to document the fate of Bavarian Jews; data includes names and places and dates of birth, and death and emigration\"<br/>[https://www.ushmm.org/online/hsv/person_view.php?PersonId=3771499 United States Holocaust Memorial Museum (Record)] (accessed 6 May 2021)<br/>Ruth BILDSTEIN.",
+    "type": "source"
+  }
+}

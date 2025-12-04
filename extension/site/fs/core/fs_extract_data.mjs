@@ -1178,6 +1178,8 @@ function extractData(document, url) {
       let unknown = true;
       // could be a book
       if (url.startsWith("https://www.familysearch.org/library/books/")) {
+        //console.log("page looks like a book page");
+
         let content = document.querySelector("#content");
         if (content) {
           let heading = content.querySelector("div.p_right > h1");
@@ -1187,15 +1189,51 @@ function extractData(document, url) {
             result.pageType = "book";
             result.title = heading.textContent;
             let rows = table.querySelectorAll("dl");
-            result.recordData = {};
-            for (let row of rows) {
-              let dt = row.querySelector("dt");
-              let dd = row.querySelector("dd");
-              if (dt && dd) {
-                let key = dt.textContent;
-                let value = dd.textContent;
-                if (key && value) {
-                  result.recordData[key] = value;
+
+            if (rows) {
+              result.recordData = {};
+              for (let row of rows) {
+                let dt = row.querySelector("dt");
+                let dd = row.querySelector("dd");
+                if (dt && dd) {
+                  let key = dt.textContent;
+                  let value = dd.textContent;
+                  if (key && value) {
+                    result.recordData[key] = value;
+                  }
+                }
+              }
+            }
+          } else {
+            let heading = content.querySelector("h1.title");
+            let viewerInfo = document.querySelector("#viewer_info");
+            if (viewerInfo) {
+              unknown = false;
+              result.pageType = "book";
+              result.title = heading.textContent;
+              result.recordData = {};
+              let dls = viewerInfo.querySelectorAll("dl");
+              for (let dl of dls) {
+                // there are a series of dt and dd elements that are children of the dl
+                // but it is not like a table
+                let dts = dl.querySelectorAll("dt");
+                for (let dt of dts) {
+                  let key = dt.textContent.trim();
+                  if (key) {
+                    let combinedString = "";
+                    let dd = dt.nextElementSibling;
+                    while (dd && dd.tagName == "DD") {
+                      let value = dd.textContent.trim();
+                      if (combinedString) {
+                        combinedString += ", ";
+                      }
+                      combinedString += value;
+                      dd = dd.nextElementSibling;
+                    }
+                    if (combinedString) {
+                      result.recordData[key] = combinedString;
+                    }
+                  }
                 }
               }
             }

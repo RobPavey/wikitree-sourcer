@@ -78,6 +78,7 @@ const siteNames = [
   "arolsenarchives",
   "sosmogov",
   "yadvashem",
+  "ushmm",
 ];
 
 export { siteNames };

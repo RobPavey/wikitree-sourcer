@@ -80,3 +80,4 @@ import "../../dfgviewer/core/dfgviewer_options.mjs";
 import "../../arolsenarchives/core/arolsenarchives_options.mjs";
 import "../../sosmogov/core/sosmogov_options.mjs";
 import "../../yadvashem/core/yadvashem_options.mjs";
+import "../../ushmm/core/ushmm_options.mjs";

@@ -3207,6 +3207,7 @@ class NarrativeBuilder {
       { recordType: RT.QuarterSession, string: "was in quarter session" },
       { recordType: RT.Tax, string: "was in a tax record" },
       { recordType: RT.ValuationRoll, string: "was in a valuation roll" },
+      { recordType: RT.LandAssessment, string: "was in a land assessment record" },
       { recordType: RT.LandTax, string: "was in a land tax record" },
       { recordType: RT.LandPetition, string: "was in a land petition record" },
       { recordType: RT.LandGrant, string: "was in a land grant record" },
