@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "yadvashem",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "Bilstein",
+    "forenames": "Eleonore Sophie"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "29 Dec 1909"
+  },
+  "hasValidData": true
+}

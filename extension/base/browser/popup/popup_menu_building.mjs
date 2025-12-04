@@ -1332,6 +1332,7 @@ function setupBuildCitationSubMenu(
     Imprisonment: `Imprisonment`,
     Inquest: `Inquest`,
     InstitutionInmate: `InstitutionInmate`,
+    LandAssessment: `Land Assessment`,
     LandTax: `Land Tax`,
     LandPetition: `Land Petition`,
     LandGrant: `Land Grant`,

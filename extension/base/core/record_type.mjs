@@ -63,6 +63,7 @@ const RT = {
   MedicalPatient: `MedicalPatient`,
   QuarterSession: `QuarterSession`,
   LandTax: `LandTax`,
+  LandAssessment: `LandAssessment`,
   LandPetition: `LandPetition`,
   LandGrant: `LandGrant`,
   MetisScrip: `MetisScrip`,

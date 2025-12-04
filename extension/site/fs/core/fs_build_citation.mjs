@@ -772,9 +772,20 @@ function buildBookCitation(ed, gd, builder) {
 
   builder.sourceTitle = ed.title;
 
+  const pageNumberRegEx = /^.*\&q\=\#page\=(\d+)\&.*$/;
+  if (ed.url && pageNumberRegEx.test(ed.url)) {
+    let pageNum = ed.url.replace(pageNumberRegEx, "$1");
+    if (pageNum) {
+      builder.addSourceReferenceField("Page", pageNum);
+    }
+  }
+
   builder.recordLinkOrTemplate = ed.url;
 
-  builder.dataString = builder.buildDataList(ed.recordData, removeUnwantedKeysForDataString);
+  let dataString = builder.buildDataList(ed.recordData, removeUnwantedKeysForDataString);
+  if (dataString) {
+    builder.dataString = "Search result data: " + dataString;
+  }
 
   builder.meaningfulTitle = "Book";
 }

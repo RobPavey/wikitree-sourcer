@@ -66,7 +66,7 @@ import { options } from "/base/browser/options/options_loader.mjs";
 import { writeToClipboard, clearClipboard } from "/base/browser/popup/popup_clipboard.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 
-import { RT } from "/base/core//record_type.mjs";
+import { RT } from "/base/core/record_type.mjs";
 import { generalizeData, generalizeDataGivenRecordType } from "../core/fs_generalize_data.mjs";
 import { buildCitation } from "../core/fs_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";

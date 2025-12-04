@@ -564,7 +564,6 @@ const regressionData = [
 
 const imageRegressionData = [
   // images
-
   {
     // Note: I had to edit the saved .html file for many errors.
     caseName: "image_canada_church_1866_sarnia_lambton",
@@ -717,6 +716,12 @@ const personRegressionData = [
 ];
 
 const bookRegressionData = [
+  {
+    // Saved Dec 2025, note that the page in the sidebar and first page in URL is wrong
+    // real page is =#page
+    caseName: "book_us_ca_sb_presidio_p44",
+    url: "https://www.familysearch.org/library/books/viewer/870506/?page=42&viewer=picture&o=info&n=0&q=#page=44&viewer=picture&o=info&n=0&q=",
+  },
   {
     // had to edit HTML to remove stylesheet stuff
     caseName: "book_ca_ontario_essex",

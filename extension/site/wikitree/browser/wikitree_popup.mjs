@@ -2017,14 +2017,16 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
       }
 
       // check for suffix in lnab
-      const problemLastNameEndings = ["Sr", "Sr.", "Jr", "Jr.", "Senior", "Junior", "III"];
-      for (let ending of problemLastNameEndings) {
-        if (wtPersonData.lnab.endsWith(" " + ending) || wtPersonData.lnab == ending) {
-          hasProblem = true;
-          problemMessages.push(
-            "Last name at birth ends with '" + ending + "'. This should probably be moved to the suffix."
-          );
-          break;
+      if (wtPersonData.lnab) {
+        const problemLastNameEndings = ["Sr", "Sr.", "Jr", "Jr.", "Senior", "Junior", "III"];
+        for (let ending of problemLastNameEndings) {
+          if (wtPersonData.lnab.endsWith(" " + ending) || wtPersonData.lnab == ending) {
+            hasProblem = true;
+            problemMessages.push(
+              "Last name at birth ends with '" + ending + "'. This should probably be moved to the suffix."
+            );
+            break;
+          }
         }
       }
 

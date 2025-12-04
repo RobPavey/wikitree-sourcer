@@ -4201,6 +4201,10 @@ class GeneralizedData {
         defaultTitle: "Quarter Session",
       },
       {
+        type: RT.LandAssessment,
+        defaultTitle: "Land Assessment",
+      },
+      {
         type: RT.LandTax,
         defaultTitle: "Land Tax",
       },

@@ -76,6 +76,8 @@ const siteNames = [
   "arolsenarchives",
   "sosmogov",
   "doew",
+  "yadvashem",
+  "ushmm",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {
