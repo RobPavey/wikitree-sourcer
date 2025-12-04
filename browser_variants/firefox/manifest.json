@@ -598,7 +598,7 @@
         "base/browser/content/content_common.js",
         "site/doew/browser/doew_content.js"
       ]
-    },
+    }
   ],
   "options_ui": {
     "page": "base/browser/options/options.html",
@@ -1079,11 +1079,6 @@
       ],
       "matches": [
         "*://www.doew.at/*"
-        "site/ushmm/core/ushmm_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.ushmm.org/*"
-        
       ]
     }
   ],
