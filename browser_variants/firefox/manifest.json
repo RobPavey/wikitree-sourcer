@@ -1062,7 +1062,7 @@
       ],
       "matches": [
         "*://*.yadvashem.org/*"
-      ],
+      ]
     }
   ],
   "browser_specific_settings": {
