@@ -572,11 +572,13 @@
     },
     {
       "matches": [
+        "*://*.yadvashem.org/*"
         "*://*.ushmm.org/*"
       ],
       "run_at": "document_idle",
       "js": [
         "base/browser/content/content_common.js",
+        "site/yadvashem/browser/yadvashem_content.js"
         "site/ushmm/browser/ushmm_content.js"
       ]
     }
@@ -1044,6 +1046,14 @@
       ],
       "matches": [
         "*://*.ushmm.org/*"
+      ]
+    },
+      {
+      "resources": [
+        "site/yadvashem/core/yadvashem_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.yadvashem.org/*"
       ]
     }
   ],

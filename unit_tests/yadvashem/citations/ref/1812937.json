@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Manya Mania Bilshteyn Bilstein''':\n\"Yad Vashem - Pages of Testimony Names Memorial Collection\"<br/>\nRecord 1<br/>\n[https://collections.yadvashem.org/en/names/1812937 Yad Vashem Record] (accessed 6 May 2021)<br/>\nManya Mania Bilshteyn Bilstein.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Manya was in a record.<ref>\n'''Record of Manya Mania Bilshteyn Bilstein''':\n\"Yad Vashem - Pages of Testimony Names Memorial Collection\"<br/>\nRecord 1<br/>\n[https://collections.yadvashem.org/en/names/1812937 Yad Vashem Record] (accessed 6 May 2021)<br/>\nManya Mania Bilshteyn Bilstein.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Manya Mania Bilshteyn Bilstein''': \"Yad Vashem - Pages of Testimony Names Memorial Collection\"<br/>Record 1<br/>[https://collections.yadvashem.org/en/names/1812937 Yad Vashem Record] (accessed 6 May 2021)<br/>Manya Mania Bilshteyn Bilstein.",
+    "type": "source"
+  }
+}

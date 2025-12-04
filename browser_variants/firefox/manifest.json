@@ -578,6 +578,16 @@
         "base/browser/content/content_common.js",
         "site/ushmm/browser/ushmm_content.js"
       ]
+    },
+      {
+      "matches": [
+        "*://*.yadvashem.org/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/yadvashem/browser/yadvashem_content.js"
+      ]
     }
   ],
   "options_ui": {
@@ -1043,7 +1053,16 @@
       ],
       "matches": [
         "*://*.ushmm.org/*"
+        
       ]
+    },
+    {
+      "resources": [
+        "site/yadvashem/core/yadvashem_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.yadvashem.org/*"
+      ],
     }
   ],
   "browser_specific_settings": {

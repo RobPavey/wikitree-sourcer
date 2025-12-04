@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Eleonore Sophie Bilstein''':\n\"List of Jewish victims from the Memorial book \"Victims of the Persecution of Jews under the National Socialist Tyranny in Germany 1933 - 1945\" prepared by the German Federal Archives\"<br/>\nRecord 1<br/>\n[https://collections.yadvashem.org/en/names/16214105 Yad Vashem Record] (accessed 6 May 2021)<br/>\nEleonore Sophie Bilstein.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Eleonore was in a record.<ref>\n'''Record of Eleonore Sophie Bilstein''':\n\"List of Jewish victims from the Memorial book \"Victims of the Persecution of Jews under the National Socialist Tyranny in Germany 1933 - 1945\" prepared by the German Federal Archives\"<br/>\nRecord 1<br/>\n[https://collections.yadvashem.org/en/names/16214105 Yad Vashem Record] (accessed 6 May 2021)<br/>\nEleonore Sophie Bilstein.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Eleonore Sophie Bilstein''': \"List of Jewish victims from the Memorial book \"Victims of the Persecution of Jews under the National Socialist Tyranny in Germany 1933 - 1945\" prepared by the German Federal Archives\"<br/>Record 1<br/>[https://collections.yadvashem.org/en/names/16214105 Yad Vashem Record] (accessed 6 May 2021)<br/>Eleonore Sophie Bilstein.",
+    "type": "source"
+  }
+}
