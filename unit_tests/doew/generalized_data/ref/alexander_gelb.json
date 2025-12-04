@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "doew",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "Gelb",
+    "forenames": "Alexander"
+  },
+  "birthDate": {
+    "dateString": "20 Dec 1915"
+  },
+  "hasValidData": true
+}

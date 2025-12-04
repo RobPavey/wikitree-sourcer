@@ -31,12 +31,18 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.doew.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+    caseName: "adolf_meier",
+    url: "https://www.doew.at/result"
   },
-  */
+  {
+    caseName: "alexander_gelb",
+    url: "https://www.doew.at/result"
+  },
+  {
+    caseName: "gustav_friedenreich",
+    url: "https://www.doew.at/result?id=939558&cat=1"
+  },
 ];
 
 async function runTests(testManager) {

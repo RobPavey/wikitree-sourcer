@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "doew",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "Friedenreich",
+    "forenames": "Gustav"
+  },
+  "birthDate": {
+    "dateString": "5 Apr 1912"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Gustav Friedenreich''':\n\"Dokumentationsarchiv des österreichischen Widerstandes\"<br/>\n[https://www.doew.at/result?id=939558&cat=1 Dokumentationsarchiv des österreichischen Widerstandes Record] (accessed 6 May 2021)<br/>\nGustav Friedenreich.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Gustav was in a record.<ref>\n'''Record of Gustav Friedenreich''':\n\"Dokumentationsarchiv des österreichischen Widerstandes\"<br/>\n[https://www.doew.at/result?id=939558&cat=1 Dokumentationsarchiv des österreichischen Widerstandes Record] (accessed 6 May 2021)<br/>\nGustav Friedenreich.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Gustav Friedenreich''': \"Dokumentationsarchiv des österreichischen Widerstandes\"<br/>[https://www.doew.at/result?id=939558&cat=1 Dokumentationsarchiv des österreichischen Widerstandes Record] (accessed 6 May 2021)<br/>Gustav Friedenreich.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Adolf Meier''':\n\"Dokumentationsarchiv des österreichischen Widerstandes\"<br/>\nAdolf Meier.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Adolf was in a record.<ref>\n'''Record of Adolf Meier''':\n\"Dokumentationsarchiv des österreichischen Widerstandes\"<br/>\nAdolf Meier.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Adolf Meier''': \"Dokumentationsarchiv des österreichischen Widerstandes\"<br/>Adolf Meier.",
+    "type": "source"
+  }
+}

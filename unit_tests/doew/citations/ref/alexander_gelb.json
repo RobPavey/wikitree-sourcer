@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Alexander Gelb''':\n\"Dokumentationsarchiv des österreichischen Widerstandes\"<br/>\nAlexander Gelb.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Alexander was in a record.<ref>\n'''Record of Alexander Gelb''':\n\"Dokumentationsarchiv des österreichischen Widerstandes\"<br/>\nAlexander Gelb.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Alexander Gelb''': \"Dokumentationsarchiv des österreichischen Widerstandes\"<br/>Alexander Gelb.",
+    "type": "source"
+  }
+}
