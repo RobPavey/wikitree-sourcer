@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,45 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { ArolsenarchivesUriBuilder } from "./arolsenarchives_uri_builder.mjs";
-
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
-
-  var builder = new ArolsenarchivesUriBuilder();
-
-  // call methods on builder here
-
-  let text = "";
-
-  const lastName = gd.inferLastName();
-  if (lastName) {
-    text += " " + lastName;
-  }
-
-  const givenNames = gd.inferForenames();
-  if (givenNames) {
-    text += " " + givenNames;
-  }
-
-  const birthYear = gd.inferBirthYear();
-  if (birthYear) {
-    text += " " + birthYear;
-  }
-
-  if (text) {
-    builder.addSearchTerm("s=" + text.substring(1));
-  }
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
-
-  return result;
-}
-
-export { buildSearchUrl };
+siteContentInit(`ushmm`, `site/ushmm/core/ushmm_extract_data.mjs`);

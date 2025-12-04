@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,45 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { ArolsenarchivesUriBuilder } from "./arolsenarchives_uri_builder.mjs";
+import * as test_content_and_citation from "./ushmm_test_content_and_citation.mjs";
+import * as test_build_search_url from "./ushmm_test_build_search_url.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
-
-  var builder = new ArolsenarchivesUriBuilder();
-
-  // call methods on builder here
-
-  let text = "";
-
-  const lastName = gd.inferLastName();
-  if (lastName) {
-    text += " " + lastName;
-  }
-
-  const givenNames = gd.inferForenames();
-  if (givenNames) {
-    text += " " + givenNames;
-  }
-
-  const birthYear = gd.inferBirthYear();
-  if (birthYear) {
-    text += " " + birthYear;
-  }
-
-  if (text) {
-    builder.addSearchTerm("s=" + text.substring(1));
-  }
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
-
-  return result;
+async function runTests(testManager) {
+  await test_content_and_citation.runTests(testManager);
+  await test_build_search_url.runTests(testManager);
 }
 
-export { buildSearchUrl };
+export { runTests };

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of MINA MILSTEIN''':\n\"[Names from French deportation lists research project] - Electronic data created from original French transport lists from the Mémorial de la Shoah, Musée, Centre de documentation juive contemporaine (CDJC) in Paris, France, and occasionally other sources; data includes names, places and dates of birth, nationalities, and convoy, page and line numbers\"<br/>\n[https://www.ushmm.org/online/hsv/person_view.php?PersonId=5244993 United States Holocaust Memorial Museum (Record)] (accessed 6 May 2021)<br/>\nMINA MILSTEIN.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mina was in a record.<ref>\n'''Record of MINA MILSTEIN''':\n\"[Names from French deportation lists research project] - Electronic data created from original French transport lists from the Mémorial de la Shoah, Musée, Centre de documentation juive contemporaine (CDJC) in Paris, France, and occasionally other sources; data includes names, places and dates of birth, nationalities, and convoy, page and line numbers\"<br/>\n[https://www.ushmm.org/online/hsv/person_view.php?PersonId=5244993 United States Holocaust Memorial Museum (Record)] (accessed 6 May 2021)<br/>\nMINA MILSTEIN.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of MINA MILSTEIN''': \"[Names from French deportation lists research project] - Electronic data created from original French transport lists from the Mémorial de la Shoah, Musée, Centre de documentation juive contemporaine (CDJC) in Paris, France, and occasionally other sources; data includes names, places and dates of birth, nationalities, and convoy, page and line numbers\"<br/>[https://www.ushmm.org/online/hsv/person_view.php?PersonId=5244993 United States Holocaust Memorial Museum (Record)] (accessed 6 May 2021)<br/>MINA MILSTEIN.",
+    "type": "source"
+  }
+}

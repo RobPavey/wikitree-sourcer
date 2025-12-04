@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Interview with Galina Kogan''':\n[https://collections.ushmm.org/search/catalog/irn768384 United States Holocaust Memorial Museum (Oral History)] (accessed 6 May 2021)<br/>\nInterview with Galina Kogan.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Interview was in a record.<ref>\n'''Record of Interview with Galina Kogan''':\n[https://collections.ushmm.org/search/catalog/irn768384 United States Holocaust Memorial Museum (Oral History)] (accessed 6 May 2021)<br/>\nInterview with Galina Kogan.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Interview with Galina Kogan''': [https://collections.ushmm.org/search/catalog/irn768384 United States Holocaust Memorial Museum (Oral History)] (accessed 6 May 2021)<br/>Interview with Galina Kogan.",
+    "type": "source"
+  }
+}
