@@ -77,6 +77,7 @@ const siteNames = [
   "dfgviewer",
   "arolsenarchives",
   "sosmogov",
+  "yadvashem",
 ];
 
 export { siteNames };

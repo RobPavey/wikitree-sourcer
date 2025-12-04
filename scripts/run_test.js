@@ -75,6 +75,7 @@ const siteNames = [
   "basrhin",
   "arolsenarchives",
   "sosmogov",
+  "yadvashem",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {

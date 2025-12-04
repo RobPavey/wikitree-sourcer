@@ -1,0 +1,33 @@
+{
+  "sourceOfData": "yadvashem",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "Bilshteyn Bilstein",
+    "forenames": "Manya Mania"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "yearString": "1900"
+  },
+  "deathDate": {
+    "yearString": "1941"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Bilshteyn Bilstein",
+        "forenames": "Gersh Hersh"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Bilshteyn Bilstein",
+        "forenames": "Iosif Yosef"
+      }
+    }
+  },
+  "hasValidData": true
+}
