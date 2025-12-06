@@ -1,0 +1,299 @@
+{
+  "url": "https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/144",
+  "success": true,
+  "heading": "Maria Antonia de Jesus XimenezBaptismal Date: 15 Jun 1796",
+  "fields": {
+    "mission": {
+      "label": "Mission",
+      "value": "",
+      "id": "mission",
+      "name": "mission"
+    },
+    "number": {
+      "label": "Number",
+      "value": "",
+      "id": "number",
+      "name": "number"
+    },
+    "date": {
+      "label": "Date",
+      "value": "",
+      "id": "date",
+      "name": "baptismDate"
+    },
+    "date-alt": {
+      "label": "MM/DD/YYYY",
+      "value": "",
+      "id": "date-alt",
+      "name": "baptismDateFormatted"
+    },
+    "spanish-name": {
+      "label": "Ego's Spanish Name",
+      "value": "",
+      "id": "spanish-name",
+      "name": "spanishName"
+    },
+    "native-name": {
+      "label": "Ego's Native Name",
+      "value": "",
+      "id": "native-name",
+      "name": "nativeName"
+    },
+    "surname": {
+      "label": "Ego's Surname",
+      "value": "",
+      "id": "surname",
+      "name": "surname"
+    },
+    "eOrigin": {
+      "label": "Ego's Origin",
+      "value": "",
+      "id": "eOrigin",
+      "name": "origin"
+    },
+    "eEthnicity": {
+      "label": "Ego's Ethnicitiy",
+      "value": "",
+      "id": "eEthnicity",
+      "name": "ethnicity"
+    },
+    "religion-status": {
+      "label": "Ego's Religious Status",
+      "value": "",
+      "id": "religion-status",
+      "name": "religiousStatus"
+    },
+    "derived-origin": {
+      "label": "Ego's Derived Origin",
+      "value": "",
+      "id": "derived-origin",
+      "name": "derivedOrigin"
+    },
+    "legitimacy": {
+      "label": "Ego's Legitimacy",
+      "value": "",
+      "id": "legitimacy",
+      "name": "legitimacy"
+    },
+    "birthdate": {
+      "label": "Ego's Birth Date",
+      "value": "",
+      "id": "birthdate",
+      "name": "birthdate"
+    },
+    "supli-ceremonia-date": {
+      "label": "Supli Ceremonia Date",
+      "value": "",
+      "id": "supli-ceremonia-date",
+      "name": "supliCeremoniaDate"
+    },
+    "type": {
+      "label": "Type",
+      "value": "",
+      "id": "type",
+      "name": "baptismalType"
+    },
+    "type-phrase": {
+      "label": "Type Phrase",
+      "value": "",
+      "id": "type-phrase",
+      "name": "baptismalTypePhrase"
+    },
+    "sex": {
+      "label": "Sex",
+      "value": "",
+      "id": "sex",
+      "name": "gender"
+    },
+    "eMarital-status": {
+      "label": "Marital Status",
+      "value": "",
+      "id": "eMarital-status",
+      "name": "maritalStatus"
+    },
+    "place": {
+      "label": "Place",
+      "value": "",
+      "id": "place",
+      "name": "place"
+    },
+    "age": {
+      "label": "Age",
+      "value": "",
+      "id": "age",
+      "name": "age"
+    },
+    "unit": {
+      "label": "Unit",
+      "value": "",
+      "id": "unit",
+      "name": "ageUnit"
+    },
+    "level": {
+      "label": "Level",
+      "value": "",
+      "id": "level",
+      "name": "ageLevel"
+    },
+    "f_mission": {
+      "label": "Mission",
+      "value": "",
+      "id": "f_mission",
+      "name": "fBirthMission"
+    },
+    "f_number": {
+      "label": "Number",
+      "value": "",
+      "id": "f_number",
+      "name": "fBirthNumber"
+    },
+    "f_spanish-name": {
+      "label": "Spanish Name",
+      "value": "",
+      "id": "f_spanish-name",
+      "name": "fSpanishName"
+    },
+    "f_native-name": {
+      "label": "Native Name",
+      "value": "",
+      "id": "f_native-name",
+      "name": "fNativeName"
+    },
+    "f_surname": {
+      "label": "Surname",
+      "value": "",
+      "id": "f_surname",
+      "name": "fSurname"
+    },
+    "f_origin": {
+      "label": "Origin",
+      "value": "",
+      "id": "f_origin",
+      "name": "fOrigin"
+    },
+    "f_ethnicity": {
+      "label": "Ethnicitiy",
+      "value": "",
+      "id": "f_ethnicity",
+      "name": "fEthnicity"
+    },
+    "f_religion-status": {
+      "label": "Religious Status",
+      "value": "",
+      "id": "f_religion-status",
+      "name": "fReligiousStatus"
+    },
+    "f_militiary-status": {
+      "label": "Military Status",
+      "value": "",
+      "id": "f_militiary-status",
+      "name": "fMilitaryStatus"
+    },
+    "m_mission": {
+      "label": "Mission",
+      "value": "",
+      "id": "m_mission",
+      "name": "mBirthMission"
+    },
+    "m_number": {
+      "label": "Number",
+      "value": "",
+      "id": "m_number",
+      "name": "mBirthNumber"
+    },
+    "m_spanish-name": {
+      "label": "Spanish Name",
+      "value": "",
+      "id": "m_spanish-name",
+      "name": "mSpanishName"
+    },
+    "m_native-name": {
+      "label": "Native Name",
+      "value": "",
+      "id": "m_native-name",
+      "name": "mNativeName"
+    },
+    "m_surname": {
+      "label": "Surname",
+      "value": "",
+      "id": "m_surname",
+      "name": "mSurname"
+    },
+    "m_origin": {
+      "label": "Origin",
+      "value": "",
+      "id": "m_origin",
+      "name": "mOrigin"
+    },
+    "m_ethnicity": {
+      "label": "Ethnicitiy",
+      "value": "",
+      "id": "m_ethnicity",
+      "name": "mEthnicity"
+    },
+    "m_religion-status": {
+      "label": "Religious Status",
+      "value": "",
+      "id": "m_religion-status",
+      "name": "mReligiousStatus"
+    },
+    "officiant": {
+      "label": "Officiant",
+      "value": "",
+      "id": "officiant",
+      "name": "officiant"
+    },
+    "recorder": {
+      "label": "Recorder",
+      "value": "",
+      "id": "recorder",
+      "name": "recorder"
+    },
+    "sc-officiant": {
+      "label": "SC Officiant",
+      "value": "",
+      "id": "sc-officiant",
+      "name": "scOfficiant"
+    },
+    "death-mission": {
+      "label": "Death Mission",
+      "value": "",
+      "id": "death-mission",
+      "name": "deathMission"
+    },
+    "death-number": {
+      "label": "Death Number",
+      "value": "",
+      "id": "death-number",
+      "name": "deathNumber"
+    },
+    "burial-date": {
+      "label": "Burial Date",
+      "value": "",
+      "id": "burial-date",
+      "name": "burialDate"
+    },
+    "death-link-basis": {
+      "label": "Death Link Basis",
+      "value": "",
+      "id": "death-link-basis",
+      "name": "deathLinkSource"
+    }
+  },
+  "sections": {
+    "baptismalData": {},
+    "parents": {},
+    "godparents": {
+      "listItems": [
+        "Maria Rosalia (Madrina)",
+        "Espinosa, Tomas (Padrino)"
+      ]
+    },
+    "relatives": {
+      "listItems": [
+        "Escolastica Maria (Abuelo/a Paterno/a)"
+      ]
+    },
+    "miscellaneous": {}
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/144 Early California Population Project Record] (accessed 6 May 2021)<br/>\nUnknown baptism in Nueva España.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Unknown was baptised in Nueva España.<ref>\n'''Baptism''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/144 Early California Population Project Record] (accessed 6 May 2021)<br/>\nUnknown baptism in Nueva España.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/144 Early California Population Project Record] (accessed 6 May 2021)<br/>Unknown baptism in Nueva España.",
+    "type": "source"
+  }
+}
