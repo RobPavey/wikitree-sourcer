@@ -64,9 +64,9 @@ const citationOptionsGroup = {
           text: "Standard sentence from generalized data",
         },
         { value: "flatList", text: "Flat list of field names/values" },
-        { value: "structuredList", text: "Strutured list of field names/values" },
+        { value: "structuredList", text: "Structured list of field names/values" },
       ],
-      defaultValue: "list",
+      defaultValue: "flatList",
     },
   ],
 };

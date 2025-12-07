@@ -184,6 +184,207 @@ function buildFlatDataList(ed, gd, builder) {
   builder.dataString = dataString;
 }
 
+function buildStructuredDataList(ed, gd, builder) {
+  // convert section fields and section listItems into a structured list
+  let dataString = "";
+  let startedSectionName = "";
+
+  function startDataStringSection(sectionName) {
+    if (dataString) {
+      dataString += "<br/>\n";
+    }
+    dataString += "'''" + sectionName + "''':";
+  }
+
+  function addDataStringFieldTerm(label, value, id, sectionName) {
+    const idsToExclude = [];
+
+    const labelsToExclude = [
+      "MM/DD/YYYY",
+      "Link MMIS",
+      "Link MBAP",
+      "MBASIS",
+      "Type",
+      "Death Link Basis",
+      "Link Basis",
+      "Penitencia",
+      "Eucaristia",
+      "Ex Uncion",
+    ];
+
+    const labelMap = {
+      Ethnicitiy: "Ethnicity",
+    };
+
+    if (label && value) {
+      // check for ones we want to exclude
+      if (labelsToExclude.includes(label)) {
+        return;
+      }
+
+      if (StringUtils.isAllLowercase(label)) {
+        label = StringUtils.toInitialCapsEachWord(label);
+      }
+
+      if (label.startsWith("Ego's ")) {
+        label = label.substring(6);
+      }
+
+      if (id.includes("Checkbox")) {
+        if (value == "on") {
+          value = "Yes";
+        } else if (value == "off") {
+          value = "No";
+        }
+      }
+
+      let newLabel = labelMap[label];
+      if (newLabel) {
+        label = newLabel;
+      }
+
+      if (sectionName != startedSectionName) {
+        startDataStringSection(sectionName);
+        startedSectionName = sectionName;
+      }
+
+      dataString += " " + label + ": " + value + ";";
+    }
+  }
+
+  function addDataStringListTerm(value) {
+    let lastChar = dataString[dataString.length - 1];
+    if (lastChar != ":") {
+      dataString += ",";
+    }
+    dataString += " " + value;
+  }
+
+  function getSectionName(gd, sectionKey, fieldId = "") {
+    if (gd.recordType == RT.Baptism) {
+      const idMap = {
+        baptismalData: "Baptism Data",
+        parents: "Parents",
+        godparents: "Godparents",
+        relatives: "Relatives",
+        miscellaneous: "Miscellaneous",
+      };
+      if (sectionKey == "parents") {
+        if (fieldId) {
+          if (fieldId.startsWith("f_")) {
+            return "Father's Data";
+          } else if (fieldId.startsWith("m_")) {
+            return "Mother's Data";
+          }
+        }
+      }
+      return idMap[sectionKey];
+    } else if (gd.recordType == RT.Burial) {
+      const idMap = {
+        burialData: "Burial Data",
+        parents: "Spouse Data",
+        godparents: "Parents",
+        relatives: "Relatives",
+        miscellaneous: "Miscellaneous",
+      };
+      if (sectionKey == "godparents") {
+        if (fieldId) {
+          if (fieldId.startsWith("f_")) {
+            return "Father's Data";
+          } else if (fieldId.startsWith("m_")) {
+            return "Mother's Data";
+          }
+        }
+      }
+      return idMap[sectionKey];
+    } else if (gd.recordType == RT.Marriage) {
+      const idMap = {
+        main: "Marriage Data",
+        baptismalData: "Groom's Data",
+        parents: "Groom's Parents Data",
+        godparents: "Bride's Data",
+        relatives: "Bride's Parents Data",
+        witnesses: "Witnesses",
+        miscellaneous: "Miscellaneous",
+      };
+      if (sectionKey == "parents") {
+        if (fieldId) {
+          if (fieldId.startsWith("gf_")) {
+            return "Groom's Father's Data";
+          } else if (fieldId.startsWith("gm_")) {
+            return "Groom's Mother's Data";
+          }
+        }
+      } else if (sectionKey == "relatives") {
+        if (fieldId) {
+          if (fieldId.startsWith("bf_")) {
+            return "Bride's Father's Data";
+          } else if (fieldId.startsWith("bm_")) {
+            return "Bride's Mother's Data";
+          }
+        }
+      } else {
+        if (sectionKey == "baptismalData") {
+          if (fieldId) {
+            if (fieldId.startsWith("prev-wife_")) {
+              return "Previous Wife's Data";
+            }
+          }
+        } else if (sectionKey == "godparents") {
+          if (fieldId) {
+            if (fieldId.startsWith("prev-husband-")) {
+              return "Previous Husbands's Data";
+            }
+          }
+        }
+      }
+      return idMap[sectionKey];
+    }
+  }
+
+  for (let sectionKey of Object.keys(ed.sections)) {
+    let section = ed.sections[sectionKey];
+    let sectionName = sectionKey;
+    if (section.fields) {
+      let keys = Object.keys(section.fields);
+      if (keys.length > 0) {
+        for (let key of keys) {
+          let newSectionName = getSectionName(gd, sectionKey, key);
+          if (newSectionName) {
+            sectionName = newSectionName;
+          }
+
+          let field = section.fields[key];
+          let label = field.label;
+          let value = field.value;
+
+          addDataStringFieldTerm(label, value, key, sectionName);
+        }
+      }
+    }
+    if (section.listItems) {
+      let list = section.listItems;
+      if (list && list.length > 0) {
+        let newSectionName = getSectionName(gd, sectionKey);
+        if (newSectionName) {
+          sectionName = newSectionName;
+        }
+
+        if (sectionName != startedSectionName) {
+          startDataStringSection(sectionName);
+          startedSectionName = sectionName;
+        }
+
+        for (let listItem of list) {
+          addDataStringListTerm(listItem);
+        }
+      }
+    }
+  }
+
+  builder.dataString = dataString;
+}
+
 function addAdditionalData(ed, gd, builder) {
   let dataStyle = builder.options.citation_ecpp_dataStyle;
 
@@ -192,7 +393,7 @@ function addAdditionalData(ed, gd, builder) {
   } else if (dataStyle == "flatList") {
     buildFlatDataList(ed, gd, builder);
   } else if (dataStyle == "structuredList") {
-    buildFlatDataList(ed, gd, builder);
+    buildStructuredDataList(ed, gd, builder);
   }
 }
 
