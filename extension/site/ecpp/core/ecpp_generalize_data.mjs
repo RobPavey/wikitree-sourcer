@@ -27,7 +27,7 @@ import { EcppEdReader } from "./ecpp_ed_reader.mjs";
 
 // This function generalizes the data extracted from the page content.
 function generalizeData(input) {
-  let edReader = new EcppEdReader(input.extractedData);
+  let edReader = new EcppEdReader(input.extractedData, input.primaryPersonIndex);
   return commonGeneralizeData("ecpp", edReader);
 }
 

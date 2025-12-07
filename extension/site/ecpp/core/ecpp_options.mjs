@@ -36,12 +36,14 @@ const searchBehaviorOptionsGroup = {
   subsection: "ecpp",
   subheading: "behavior",
   options: [
+    /*
     {
       optionName: "reuseExistingTab",
       type: "checkbox",
       label: "Do search in existing Early California Population Project tab if present",
       defaultValue: true,
     },
+    */
   ],
 };
 
@@ -50,7 +52,23 @@ const citationOptionsGroup = {
   subcategory: "ecpp",
   tab: "citation",
   subsection: "ecpp",
-  options: [],
+  options: [
+    {
+      optionName: "dataStyle",
+      type: "select",
+      label: "Include record data at end of citation as",
+      values: [
+        { value: "none", text: "Do not include data" },
+        {
+          value: "stdSentence",
+          text: "Standard sentence from generalized data",
+        },
+        { value: "flatList", text: "Flat list of field names/values" },
+        { value: "structuredList", text: "Strutured list of field names/values" },
+      ],
+      defaultValue: "list",
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "ecpp", "Early California Population Project");

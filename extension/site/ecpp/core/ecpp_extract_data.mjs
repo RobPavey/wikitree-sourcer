@@ -36,11 +36,16 @@ function extractData(document, url) {
   }
 
   result.fields = {};
+  result.sections = {};
 
   let mainFormRow = document.querySelector("app-edit > form > div.form-row");
   if (mainFormRow) {
+    let section = {};
+    result.sections.main = section;
+    section.fields = {};
+
     let dataFields = mainFormRow.querySelectorAll("div");
-    let fields = result.fields;
+    let fields = section.fields;
     for (let dataField of dataFields) {
       let label = dataField.querySelector("label");
       let input = dataField.querySelector("input");
@@ -68,7 +73,6 @@ function extractData(document, url) {
     return result;
   }
 
-  result.sections = {};
   for (let tabPanel of tabPanels) {
     let id = tabPanel.id;
     if (!id) {
@@ -77,35 +81,83 @@ function extractData(document, url) {
 
     let section = {};
     result.sections[id] = section;
+    let fields = {};
+    section.fields = fields;
+    section.listItems = [];
 
     let dataFields = tabPanel.querySelectorAll("form > div");
     if (dataFields.length) {
-      //let fields = {};
-      //section.fields = fields;
-      let fields = result.fields;
       for (let dataField of dataFields) {
-        let label = dataField.querySelector("label");
-        let input = dataField.querySelector("input");
-        if (label && input) {
-          let field = {};
-          field.label = label.textContent.trim();
-          // Note that saved page doesn't have value
-          field.value = input.value;
-          field.id = input.id;
-          field.name = input.getAttribute("name");
-          if (field.id) {
-            fields[field.id] = field;
+        let subInputs = dataField.querySelectorAll("div > input");
+        if (subInputs.length > 0) {
+          let subLabels = dataField.querySelectorAll("div > label");
+          if (subInputs.length == subLabels.length) {
+            for (let index = 0; index < subInputs.length; index++) {
+              let field = {};
+              let label = subLabels[index];
+              let input = subInputs[index];
+              field.label = label.textContent.trim();
+              field.value = input.value;
+              field.id = input.id;
+              field.name = input.getAttribute("name");
+              if (field.id) {
+                fields[field.id] = field;
+              }
+            }
+          }
+        } else {
+          let label = dataField.querySelector("label");
+          let input = dataField.querySelector("input");
+          if (label && input) {
+            let field = {};
+            field.label = label.textContent.trim();
+            // Note that saved page doesn't have value
+            field.value = input.value;
+            field.id = input.id;
+            field.name = input.getAttribute("name");
+            if (field.id) {
+              fields[field.id] = field;
+            }
           }
         }
       }
     } else {
       // may be a list
       let listItems = tabPanel.querySelectorAll("ul > li");
-      section.listItems = [];
       for (let listItem of listItems) {
         let text = listItem.textContent.trim();
         if (text) {
           section.listItems.push(text);
+        }
+      }
+    }
+
+    // The misc tab can also have a table
+    if (tabPanel.id == "miscellaneous") {
+      let headings = tabPanel.querySelectorAll("table > thead > tr > th");
+      let rows = tabPanel.querySelectorAll("table > tbody > tr");
+      //console.log("headings.length = " + headings.length);
+      //console.log("rows.length = " + rows.length);
+      for (let row of rows) {
+        let cells = row.querySelectorAll("td");
+        //console.log("cells.length = " + cells.length);
+        if (headings.length == cells.length) {
+          if (headings.length == 2) {
+            let heading1 = headings[0].textContent.trim();
+            let heading2 = headings[1].textContent.trim();
+            //console.log("heading1 = " + heading1);
+            //console.log("heading2 = " + heading2);
+            if (heading1 == "Variable Name" && heading2 == "Attribute") {
+              let field = {};
+              field.label = cells[0].textContent.trim();
+              // Note that saved page doesn't have value
+              field.value = cells[1].textContent.trim();
+              field.id = field.label;
+              if (field.id) {
+                fields[field.id] = field;
+              }
+            }
+          }
         }
       }
     }

@@ -28,8 +28,14 @@ import { PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 class EcppEdReader extends ExtractedDataReader {
-  constructor(ed) {
+  constructor(ed, primaryPersonIndex) {
     super(ed);
+
+    //console.log("primaryPersonIndex = " + primaryPersonIndex);
+    if (!primaryPersonIndex) {
+      primaryPersonIndex = 0;
+    }
+    this.primaryPersonIndex = primaryPersonIndex;
 
     if (ed.url.includes("/baptismal/")) {
       this.recordType = RT.Baptism;
@@ -40,14 +46,66 @@ class EcppEdReader extends ExtractedDataReader {
     }
   }
 
-  getFieldValue(id) {
-    if (this.ed && this.ed.fields) {
-      let field = this.ed.fields[id];
+  getFieldValueFromSection(section, fieldId) {
+    if (section && section.fields) {
+      let fields = section.fields;
+      let field = fields[fieldId];
       if (field && field.value) {
         return field.value;
       }
     }
     return "";
+  }
+
+  getFieldValueFromSectionId(sectionId, fieldId) {
+    if (this.ed && this.ed.sections) {
+      let section = this.ed.sections[sectionId];
+      return this.getFieldValueFromSection(section, fieldId);
+    }
+    return "";
+  }
+
+  getFieldValue(fieldId) {
+    if (this.ed && this.ed.sections) {
+      for (let sectionKey of Object.keys(this.ed.sections)) {
+        let section = this.ed.sections[sectionKey];
+        let value = this.getFieldValueFromSection(section, fieldId);
+        if (value) {
+          return value;
+        }
+      }
+    }
+    return "";
+  }
+
+  makeNameObjFromKeys(spanishNameKey, nativeNameKey, surnameKey) {
+    let forenames = this.getFieldValue(spanishNameKey);
+    let nativeName = this.getFieldValue(nativeNameKey);
+    let surname = this.getFieldValue(surnameKey);
+
+    if (nativeName && surname) {
+      let nameObj = this.makeNameObjFromForenamesAndLastName(nativeName, surname);
+      if (forenames) {
+        nameObj.prefNames = forenames;
+      }
+      return nameObj;
+    } else if (forenames && surname) {
+      let nameObj = this.makeNameObjFromForenamesAndLastName(forenames, surname);
+      return nameObj;
+    } else if (nativeName) {
+      let nameObj = this.makeNameObjFromForenames(nativeName);
+      if (forenames) {
+        nameObj.prefNames = forenames;
+      }
+      return nameObj;
+    } else if (forenames) {
+      let nameObj = this.makeNameObjFromForenames(forenames);
+      return nameObj;
+    } else if (surname) {
+      let nameObj = this.makeNameObjFromFullName(surname);
+      return nameObj;
+    }
+    return undefined;
   }
 
   makePlaceObjFromMissionCode(missionCode) {
@@ -203,30 +261,23 @@ class EcppEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    let forenames = this.getFieldValue("spanish-name");
-    let nativeName = this.getFieldValue("native-name");
-    let surname = this.getFieldValue("surname");
+    let spanishNameKey = "spanish-name";
+    let nativeNameKey = "native-name";
+    let surnameKey = "surname";
 
-    if (nativeName && surname) {
-      let nameObj = this.makeNameObjFromForenamesAndLastName(nativeName, surname);
-      if (forenames) {
-        nameObj.prefNames = forenames;
+    if (this.recordType == RT.Marriage) {
+      if (this.primaryPersonIndex == 0) {
+        spanishNameKey = "groom_spanish-name";
+        nativeNameKey = "groom_native-name";
+        surnameKey = "groom_surname";
+      } else if (this.primaryPersonIndex == 1) {
+        spanishNameKey = "bride_spanish-name";
+        nativeNameKey = "bride_native-name";
+        surnameKey = "bride_surname";
       }
-      return nameObj;
-    } else if (forenames && surname) {
-      let nameObj = this.makeNameObjFromForenamesAndLastName(forenames, surname);
-      return nameObj;
-    } else if (nativeName) {
-      let nameObj = this.makeNameObjFromForenames(nativeName);
-      return nameObj;
-    } else if (forenames) {
-      let nameObj = this.makeNameObjFromForenames(forenames);
-      return nameObj;
-    } else if (surname) {
-      let nameObj = this.makeNameObjFromFullName(surname);
-      return nameObj;
     }
-    return undefined;
+
+    return this.makeNameObjFromKeys(spanishNameKey, nativeNameKey, surnameKey);
   }
 
   getGender() {
@@ -293,8 +344,26 @@ class EcppEdReader extends ExtractedDataReader {
 
   getAgeAtEvent() {
     let age = this.getFieldValue("age");
+    let ageUnits = this.getFieldValue("unit");
+    if (this.recordType == RT.Marriage) {
+      if (this.primaryPersonIndex == 0) {
+        age = this.getFieldValue("groom_age");
+      } else if (this.primaryPersonIndex == 1) {
+        age = this.getFieldValue("bride_age");
+      }
+    }
     if (age) {
-      return age;
+      if (ageUnits) {
+        if (ageUnits == "a") {
+          return age;
+        } else if (ageUnits == "m") {
+          return age + " months";
+        } else if (ageUnits == "d") {
+          return age + " days";
+        }
+      } else {
+        return age;
+      }
     }
     return "";
   }
@@ -332,6 +401,24 @@ class EcppEdReader extends ExtractedDataReader {
   }
 
   getCollectionData() {
+    return undefined;
+  }
+
+  getPrimaryPersonOptions() {
+    if (this.recordType == RT.Marriage) {
+      let groomNameObj = this.makeNameObjFromKeys("groom_spanish-name", "groom_native-name", "groom_surname");
+      let brideNameObj = this.makeNameObjFromKeys("bride_spanish-name", "bride_native-name", "bride_surname");
+
+      if (groomNameObj && brideNameObj) {
+        let groomName = groomNameObj.inferFullName();
+        let brideName = brideNameObj.inferFullName();
+        if (brideName && groomName) {
+          let options = [groomName + " (groom)", brideName + " (bride)"];
+          return options;
+        }
+      }
+    }
+
     return undefined;
   }
 }

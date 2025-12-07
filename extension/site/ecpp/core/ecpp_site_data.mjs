@@ -28,8 +28,9 @@ const siteData = {
   repositoryName: "Early California Population Project",
   usPhoneNumber: "",
   email: "",
-  address: "",
-  baseUrl: "",
+  address:
+    "University of California, Riverside and The Huntington Library, Art Museum, and Botanical Gardens, San Marino, California",
+  baseUrl: "https://ecpp.ucr.edu/",
 };
 
 function register() {
