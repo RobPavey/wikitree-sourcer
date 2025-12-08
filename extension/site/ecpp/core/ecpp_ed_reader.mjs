@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
-import { dateQualifiers, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
+import { dateQualifiers, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 class EcppEdReader extends ExtractedDataReader {
@@ -106,6 +106,17 @@ class EcppEdReader extends ExtractedDataReader {
       return nameObj;
     }
     return undefined;
+  }
+
+  makeDateObjFromEcppDate(dateString) {
+    const slashDateRegex = /^\d\d?\/\d\d?\/\d\d\d\d$/;
+    if (dateString) {
+      if (slashDateRegex.test(dateString)) {
+        return this.makeDateObjFromMmddyyyyDate(dateString, "/");
+      } else {
+        return this.makeDateObjFromDateString(dateString);
+      }
+    }
   }
 
   makePlaceObjFromMissionCode(missionCode) {
@@ -244,6 +255,21 @@ class EcppEdReader extends ExtractedDataReader {
     return placeObj;
   }
 
+  makePlaceObjFromOrigin(originString) {
+    let placeObj = new PlaceObj();
+
+    if (originString && originString != "[Unstated]") {
+      const endingsToRemove = [", rancheria de", ", Rancheria de", ", pueblo de", ", Pueblo de"];
+      for (let ending of endingsToRemove) {
+        if (originString.endsWith(ending)) {
+          originString = originString.substring(0, originString.length - ending.length);
+        }
+      }
+      placeObj.placeString = originString;
+      return placeObj;
+    }
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -306,7 +332,7 @@ class EcppEdReader extends ExtractedDataReader {
     }
 
     if (eventDate) {
-      return this.makeDateObjFromDateString(eventDate);
+      return this.makeDateObjFromEcppDate(eventDate);
     }
     return undefined;
   }
@@ -329,11 +355,62 @@ class EcppEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
+    if (this.recordType == RT.Baptism) {
+      let baptismDate = this.getFieldValue("date");
+      let age = this.getFieldValue("age");
+      let ageUnits = this.getFieldValue("unit");
+
+      let baptismDateObj = this.makeDateObjFromEcppDate(baptismDate);
+      if (!age) {
+        if (baptismDateObj) {
+          baptismDateObj.qualifier = dateQualifiers.BEFORE;
+          return baptismDateObj;
+        }
+      }
+
+      // there is an age - we can try to work out birth date
+      if (baptismDate && age && ageUnits) {
+        if (ageUnits == "d") {
+          let numDays = age.toString();
+          let birthDateString = DateUtils.subtractDaysFromDateString(baptismDate, numDays);
+          if (birthDateString) {
+            let birthDateObj = new DateObj();
+            birthDateObj.dateString = birthDateString;
+            birthDateObj.qualifier = dateQualifiers.EXACT;
+            return birthDateObj;
+          }
+        } else if (ageUnits == "a") {
+          let numYears = age.toString();
+          let birthDateString = DateUtils.subtractYearsFromDateString(baptismDate, numYears);
+          if (birthDateString) {
+            let birthDateObj = new DateObj();
+            birthDateObj.dateString = birthDateString;
+            birthDateObj.qualifier = dateQualifiers.ABOUT;
+            return birthDateObj;
+          }
+        }
+      }
+    }
+
     return undefined;
   }
 
   getBirthPlaceObj() {
-    return undefined;
+    let originString = "";
+
+    if (this.recordType == RT.Baptism) {
+      originString = this.getFieldValue("eOrigin");
+    } else if (this.recordType == RT.Burial) {
+      originString = this.getFieldValue("origin");
+    } else if (this.recordType == RT.Marriage) {
+      if (this.primaryPersonIndex == 0) {
+        originString = this.getFieldValue("groom_origin");
+      } else if (this.primaryPersonIndex == 1) {
+        originString = this.getFieldValue("bride_origin");
+      }
+    }
+
+    return this.makePlaceObjFromOrigin(originString);
   }
 
   getDeathDateObj() {
@@ -341,12 +418,13 @@ class EcppEdReader extends ExtractedDataReader {
 
     let deathDate = this.getFieldValue("death-date");
 
+    const slashDateRegex = /^\d\d?\/\d\d?\/\d\d\d\d$/;
     if (deathDate) {
-      return this.makeDateObjFromDateString(deathDate);
+      return this.makeDateObjFromEcppDate(deathDate);
     }
 
     if (burialDate) {
-      let dateObj = this.makeDateObjFromDateString(burialDate);
+      let dateObj = this.makeDateObjFromEcppDate(burialDate);
       dateObj.qualifier = dateQualifiers.BEFORE;
       return dateObj;
     }
@@ -477,7 +555,7 @@ class EcppEdReader extends ExtractedDataReader {
         motherSpanishNameKey = "gm_spanish-name";
         motherNativeNameKey = "gm_native-name";
         motherSurnameKey = "gm_surname";
-      } else if (this.primaryPersonIndex == 0) {
+      } else if (this.primaryPersonIndex == 1) {
         fatherSpanishNameKey = "bf_spanish-name";
         fatherNativeNameKey = "bf_native-name";
         fatherSurnameKey = "bf_surname";
