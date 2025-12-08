@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
-import { PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
+import { dateQualifiers, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 class EcppEdReader extends ExtractedDataReader {
@@ -300,6 +300,8 @@ class EcppEdReader extends ExtractedDataReader {
         if (!eventDate) {
           eventDate = this.getFieldValue("death-date");
         }
+      } else if (this.recordType == RT.Marriage) {
+        eventDate = this.getFieldValue("marriage-date");
       }
     }
 
@@ -335,6 +337,20 @@ class EcppEdReader extends ExtractedDataReader {
   }
 
   getDeathDateObj() {
+    let burialDate = this.getFieldValue("burial-date");
+
+    let deathDate = this.getFieldValue("death-date");
+
+    if (deathDate) {
+      return this.makeDateObjFromDateString(deathDate);
+    }
+
+    if (burialDate) {
+      let dateObj = this.makeDateObjFromDateString(burialDate);
+      dateObj.qualifier = dateQualifiers.BEFORE;
+      return dateObj;
+    }
+
     return undefined;
   }
 
@@ -369,14 +385,10 @@ class EcppEdReader extends ExtractedDataReader {
   }
 
   getAgeAtDeath() {
-    return "";
-  }
+    if (this.recordType == RT.Burial) {
+      return this.getAgeAtEvent();
+    }
 
-  getRegistrationDistrict() {
-    return "";
-  }
-
-  getRelationshipToHead() {
     return "";
   }
 
@@ -389,14 +401,112 @@ class EcppEdReader extends ExtractedDataReader {
   }
 
   getSpouses() {
+    if (this.recordType == RT.Burial) {
+      let spouseName = this.getFieldValue("spouse-name");
+      let spouseNameObj = this.makeNameObjFromLastNameCommaForenames(spouseName);
+      if (spouseNameObj) {
+        let spouse = { name: spouseNameObj };
+        let thisPersonGender = this.getGender();
+        if (thisPersonGender) {
+          if (thisPersonGender == "male") {
+            spouse.personGender = "female";
+          } else {
+            spouse.personGender = "fale";
+          }
+        }
+        return [spouse];
+      }
+    } else if (this.recordType == RT.Marriage) {
+      let spanishNameKey = "";
+      let nativeNameKey = "";
+      let surnameKey = "";
+      let gender = "";
+      if (this.primaryPersonIndex == 1) {
+        spanishNameKey = "groom_spanish-name";
+        nativeNameKey = "groom_native-name";
+        surnameKey = "groom_surname";
+        gender = "male";
+      } else if (this.primaryPersonIndex == 0) {
+        spanishNameKey = "bride_spanish-name";
+        nativeNameKey = "bride_native-name";
+        surnameKey = "bride_surname";
+        gender = "female";
+      }
+
+      let spouseNameObj = this.makeNameObjFromKeys(spanishNameKey, nativeNameKey, surnameKey);
+      if (spouseNameObj) {
+        let spouse = { name: spouseNameObj };
+        if (gender) {
+          spouse.personGender = gender;
+        }
+        let marriageDateObj = this.getEventDateObj();
+        if (marriageDateObj) {
+          spouse.marriageDate = marriageDateObj;
+        }
+        return [spouse];
+      }
+    }
+
     return undefined;
   }
 
   getParents() {
-    return undefined;
-  }
+    let fatherNameObj = null;
+    let motherNameObj = null;
 
-  getHousehold() {
+    if (this.recordType == RT.Baptism) {
+      let fatherSpanishNameKey = "f_spanish-name";
+      let fatherNativeNameKey = "f_native-name";
+      let fatherSurnameKey = "f_surname";
+      let motherSpanishNameKey = "m_spanish-name";
+      let motherNativeNameKey = "m_native-name";
+      let motherSurnameKey = "m_surname";
+      fatherNameObj = this.makeNameObjFromKeys(fatherSpanishNameKey, fatherNativeNameKey, fatherSurnameKey);
+      motherNameObj = this.makeNameObjFromKeys(motherSpanishNameKey, motherNativeNameKey, motherSurnameKey);
+    } else if (this.recordType == RT.Marriage) {
+      let fatherSpanishNameKey = "";
+      let fatherNativeNameKey = "";
+      let fatherSurnameKey = "";
+      let motherSpanishNameKey = "";
+      let motherNativeNameKey = "";
+      let motherSurnameKey = "";
+      if (this.primaryPersonIndex == 0) {
+        fatherSpanishNameKey = "gf_spanish-name";
+        fatherNativeNameKey = "gf_native-name";
+        fatherSurnameKey = "gf_surname";
+        motherSpanishNameKey = "gm_spanish-name";
+        motherNativeNameKey = "gm_native-name";
+        motherSurnameKey = "gm_surname";
+      } else if (this.primaryPersonIndex == 0) {
+        fatherSpanishNameKey = "bf_spanish-name";
+        fatherNativeNameKey = "bf_native-name";
+        fatherSurnameKey = "bf_surname";
+        motherSpanishNameKey = "bm_spanish-name";
+        motherNativeNameKey = "bm_native-name";
+        motherSurnameKey = "bm_surname";
+      }
+
+      fatherNameObj = this.makeNameObjFromKeys(fatherSpanishNameKey, fatherNativeNameKey, fatherSurnameKey);
+      motherNameObj = this.makeNameObjFromKeys(motherSpanishNameKey, motherNativeNameKey, motherSurnameKey);
+    } else if (this.recordType == RT.Burial) {
+      let fatherName = this.getFieldValue("f_name");
+      fatherNameObj = this.makeNameObjFromLastNameCommaForenames(fatherName);
+
+      let motherName = this.getFieldValue("m_name");
+      motherNameObj = this.makeNameObjFromLastNameCommaForenames(motherName);
+    }
+
+    if (fatherNameObj || motherNameObj) {
+      let parents = {};
+      if (fatherNameObj) {
+        parents.father = { name: fatherNameObj };
+      }
+      if (motherNameObj) {
+        parents.mother = { name: motherNameObj };
+      }
+      return parents;
+    }
+
     return undefined;
   }
 

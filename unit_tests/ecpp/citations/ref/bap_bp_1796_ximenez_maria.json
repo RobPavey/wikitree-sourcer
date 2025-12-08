@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/144 Early California Population Project Record] (accessed 6 May 2021)<br/>\nUnknown baptism in Nueva España.\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"The Early California Population Project. Edition 1.1\"<br/>\nGeneral Editor, Steven W. Hackel, Lead Compiler, Anne M. Reid. (The University of California, Riverside, and the Henry E. Huntington Library, San Marino, California, 2022.)<br/>\n[https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/144 ECPP Baptism Record] (accessed 6 May 2021)<br/>\nGodparents: Maria Rosalia (Madrina) and Espinosa, Tomas (Padrino); Relatives: Escolastica Maria (Abuelo/a Paterno/a).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Unknown was baptised in Nueva España.<ref>\n'''Baptism''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/144 Early California Population Project Record] (accessed 6 May 2021)<br/>\nUnknown baptism in Nueva España.\n</ref>",
+    "citation": "Unknown was baptised in Las Californias, Nueva España.<ref>\n'''Baptism''':\n\"The Early California Population Project. Edition 1.1\"<br/>\nGeneral Editor, Steven W. Hackel, Lead Compiler, Anne M. Reid. (The University of California, Riverside, and the Henry E. Huntington Library, San Marino, California, 2022.)<br/>\n[https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/144 ECPP Baptism Record] (accessed 6 May 2021)<br/>\nGodparents: Maria Rosalia (Madrina) and Espinosa, Tomas (Padrino); Relatives: Escolastica Maria (Abuelo/a Paterno/a).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Baptism''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/144 Early California Population Project Record] (accessed 6 May 2021)<br/>Unknown baptism in Nueva España.",
+    "citation": "* '''Baptism''': \"The Early California Population Project. Edition 1.1\"<br/>General Editor, Steven W. Hackel, Lead Compiler, Anne M. Reid. (The University of California, Riverside, and the Henry E. Huntington Library, San Marino, California, 2022.)<br/>[https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/144 ECPP Baptism Record] (accessed 6 May 2021)<br/>Godparents: Maria Rosalia (Madrina) and Espinosa, Tomas (Padrino); Relatives: Escolastica Maria (Abuelo/a Paterno/a).",
     "type": "source"
   }
 }
