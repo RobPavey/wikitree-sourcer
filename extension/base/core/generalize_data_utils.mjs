@@ -1075,6 +1075,7 @@ class PlaceObj {
     }
     let placeString = "";
     addTerm(this.county);
+    addTerm(this.state);
     addTerm(this.country);
     return placeString;
   }

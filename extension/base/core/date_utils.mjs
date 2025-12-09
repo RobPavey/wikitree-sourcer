@@ -806,6 +806,47 @@ const DateUtils = {
 
     return DateUtils.compareParsedDates(parsedDateA, parsedDateB);
   },
+
+  subtractMsFromDateString: function (dateString, msToSubtract) {
+    let parsedDate = DateUtils.parseDateString(dateString);
+
+    let unixDateString = this.getUnixFormDateString(parsedDate);
+
+    let jsDate = new Date(unixDateString);
+
+    let ms = jsDate.getTime();
+    ms -= msToSubtract;
+    let nwJsDate = new Date();
+    nwJsDate.setTime(ms);
+
+    let parsedResult = {
+      dayNum: nwJsDate.getUTCDate(),
+      monthNum: nwJsDate.getUTCMonth() + 1,
+      yearNum: nwJsDate.getUTCFullYear(),
+      hasDay: true,
+      hasMonth: true,
+      isValid: true,
+    };
+
+    let newDateString = this.getStdShortFormDateString(parsedResult);
+
+    return newDateString;
+  },
+
+  subtractDaysFromDateString: function (dateString, daysToSubtract) {
+    const msInDay = 1000 * 60 * 60 * 24;
+    const msToSubtract = daysToSubtract * msInDay;
+
+    return this.subtractMsFromDateString(dateString, msToSubtract);
+  },
+
+  subtractYearsFromDateString: function (dateString, yearsToSubtract) {
+    let parsedDate = DateUtils.parseDateString(dateString);
+
+    parsedDate.yearNum -= yearsToSubtract;
+
+    return parsedDate.yearNum.toString();
+  },
 };
 
 export { DateUtils };

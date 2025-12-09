@@ -30,6 +30,13 @@ const StringUtils = {
     return string.toUpperCase() == string;
   },
 
+  isWordAllLowerCase: function (string) {
+    if (!string) {
+      return false;
+    }
+    return string.toLowerCase() == string;
+  },
+
   toInitialCapsEachWord: function (string, isName = false) {
     if (!string || string.length == 0) {
       return;

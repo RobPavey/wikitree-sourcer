@@ -780,7 +780,12 @@ function buildBookCitation(ed, gd, builder) {
     }
   }
 
-  builder.recordLinkOrTemplate = ed.url;
+  let target = builder.getOptions().citation_general_target;
+  if (target == "wikitree") {
+    builder.recordLinkOrTemplate = "[" + ed.url + " FamilySearch book page]";
+  } else {
+    builder.recordLinkOrTemplate = ed.url;
+  }
 
   let dataString = builder.buildDataList(ed.recordData, removeUnwantedKeysForDataString);
   if (dataString) {

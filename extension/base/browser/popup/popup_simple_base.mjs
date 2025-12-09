@@ -266,8 +266,8 @@ async function setupSimplePopupMenu(input) {
 
   let extractedData = input.extractedData;
 
-  //console.log("setupSimplePopupMenu, input is:");
-  //console.log(input);
+  console.log("setupSimplePopupMenu, input is:");
+  console.log(input);
 
   if (!extractedData || !extractedData.success) {
     let message = "WikiTree Sourcer doesn't know how to extract data from this page.";

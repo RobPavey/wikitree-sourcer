@@ -600,6 +600,16 @@
     },
     {
       "matches": [
+        "*://ecpp.ucr.edu/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/ecpp/browser/ecpp_content.js"
+      ]
+    },
+    {
+      "matches": [
         "*://rechercher.patrimoines-archives.morbihan.fr/ark:/*"
       ],
       "run_at": "document_idle",
@@ -1081,6 +1091,14 @@
       ],
       "matches": [
         "*://www.doew.at/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/ecpp/core/ecpp_extract_data.mjs"
+      ],
+      "matches": [
+        "*://ecpp.ucr.edu/*"
       ]
     },
     {

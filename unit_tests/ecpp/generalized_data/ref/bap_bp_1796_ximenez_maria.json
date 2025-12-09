@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "ecpp",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "eventPlace": {
+    "country": "Nueva España",
+    "state": "Las Californias",
+    "county": ""
+  },
+  "hasValidData": true
+}
