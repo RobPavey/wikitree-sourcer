@@ -82,3 +82,4 @@ import "../../sosmogov/core/sosmogov_options.mjs";
 import "../../doew/core/doew_options.mjs";
 import "../../yadvashem/core/yadvashem_options.mjs";
 import "../../ushmm/core/ushmm_options.mjs";
+import "../../morbihan/core/morbihan_options.mjs";

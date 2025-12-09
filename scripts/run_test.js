@@ -78,6 +78,7 @@ const siteNames = [
   "doew",
   "yadvashem",
   "ushmm",
+  "morbihan",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {

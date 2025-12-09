@@ -599,6 +599,16 @@
         "base/browser/content/content_common.js",
         "site/doew/browser/doew_content.js"
       ]
+    },
+    {
+      "matches": [
+        "*://rechercher.patrimoines-archives.morbihan.fr/ark:/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/morbihan/browser/morbihan_content.js"
+      ]
     }
   ],
   "options_ui": {
@@ -1080,6 +1090,14 @@
       ],
       "matches": [
         "*://www.doew.at/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/morbihan/core/morbihan_extract_data.mjs"
+      ],
+      "matches": [
+        "*://rechercher.patrimoines-archives.morbihan.fr/*"
       ]
     }
   ],
