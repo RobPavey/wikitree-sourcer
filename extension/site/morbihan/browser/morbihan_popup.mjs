@@ -36,6 +36,7 @@ async function setupMorbihanPopupMenu(extractedData) {
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "morbihan",
+    doNotIncludeSearch: true,
   };
   setupSimplePopupMenu(input);
 }

@@ -28,7 +28,7 @@ import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const morbihanStartYear = 1800;
+const morbihanStartYear = 1600;
 const morbihanEndYear = 2000;
 
 function shouldShowSearchMenuItem(data, filter) {
@@ -36,7 +36,7 @@ function shouldShowSearchMenuItem(data, filter) {
     startYear: morbihanStartYear,
     endYear: morbihanEndYear,
     dateTestType: "bmd",
-    countryList: [],
+    countryList: ["France"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
