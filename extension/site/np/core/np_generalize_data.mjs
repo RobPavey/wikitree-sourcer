@@ -40,7 +40,11 @@ function generalizeData(input) {
 
   result.recordType = RT.Newspaper;
 
-  result.setEventDate(ed.eventDate);
+  if (ed.eventDate) {
+    result.setEventDate(ed.eventDate);
+  } else {
+    result.setEventDate(ed.publicationDate);
+  }
   result.setEventPlace(ed.location);
 
   if (ed.newspaperTitle) {

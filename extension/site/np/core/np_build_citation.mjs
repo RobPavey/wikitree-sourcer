@@ -75,13 +75,17 @@ function buildCoreCitation(ed, gd, builder) {
     builder.recordLinkOrTemplate = "Newspapers.com Link: " + ed.url;
   }
 
-  builder.sourceReference = ed.newspaperTitle;
+  if (ed.newspaperTitle) {
+    builder.sourceReference = ed.newspaperTitle;
+  }
 
-  if (options.citation_np_includeLocation) {
+  if (options.citation_np_includeLocation && ed.location) {
     builder.sourceReference += " (" + ed.location + ")";
   }
 
-  builder.sourceReference += " " + ed.publicationDate + ", page " + ed.pageNumber;
+  if (ed.publicationDate && ed.pageNumber) {
+    builder.sourceReference += " " + ed.publicationDate + ", page " + ed.pageNumber;
+  }
 }
 
 function buildCitation(input) {
