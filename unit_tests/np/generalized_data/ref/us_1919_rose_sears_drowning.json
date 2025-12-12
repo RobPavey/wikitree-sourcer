@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "np",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "23 Oct 1919"
+  },
+  "eventPlace": {
+    "placeString": "Vergennes, Vermont, United States"
+  },
+  "newspaperName": "The Enterprise and Vermonter",
+  "hasValidData": true
+}
