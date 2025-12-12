@@ -969,12 +969,11 @@ async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citati
     // details is a required field, of there is no sourceReference then the site's buildCitation must
     // provide a referenceWithinRepository
     if (citationObject) {
-      if (citationObject.sourceReference) {
-        fieldData.detail = citationObject.sourceReference;
-      } else {
+      if (citationObject.referenceWithinRepository) {
         fieldData.detail = citationObject.referenceWithinRepository;
-      }
-      fieldData.otherInfo = citationObject.standardDataString;
+      } else if (citationObject.sourceReference) {
+        fieldData.detail = citationObject.sourceReference;
+      } else fieldData.otherInfo = citationObject.standardDataString;
       fieldData.webAddress = citationObject.url;
       if (gd) {
         fieldData.date = gd.inferEventDate();
@@ -1018,7 +1017,16 @@ async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citati
       fieldData.address = otherSiteData.address;
       fieldData.phoneNumber = otherSiteData.usPhoneNumber;
       fieldData.email = otherSiteData.email;
-      fieldData.note = "Base URL is " + otherSiteData.baseUrl;
+      if (otherSiteData.note) {
+        fieldData.note = otherSiteData.note;
+      }
+
+      if (otherSiteData.baseUrl) {
+        if (fieldData.note) {
+          fieldData.note += ". ";
+        }
+        fieldData.note += "Base URL is " + otherSiteData.baseUrl;
+      }
     }
   } else if (pageType == "personAddWebLink") {
     if (citationObject) {
@@ -1060,9 +1068,9 @@ async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citati
 
   // send a message to content script
   try {
-    //console.log("doSetFieldsFromPersonData");
+    console.log("setFieldsFromPersonDataOrCitation");
     //console.log(tabId);
-    //console.log(wtPersonData);
+    console.log(fieldData);
 
     chrome.tabs.sendMessage(tabId, { type: "setFields", fieldData: fieldData }, function (response) {
       displayBusyMessage("Setting fields ...");

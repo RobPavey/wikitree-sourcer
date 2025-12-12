@@ -420,12 +420,20 @@ function addSourceAndRepositoryData(ed, gd, builder) {
   let referenceString = mission + " " + number;
   builder.referenceWithinRepository = referenceString;
 
+  if (builder.sourceReference) {
+  }
+
+  // Note that this sourceNameWithinRepository when added to the repositoryName
+  // in site data with " at " in between has to be less than 55 chars of the match will fail
+  // Because of truncation/ e.g.:
+  // Baptisms (Mission SFD) at Early California Po...Project
+
   if (gd.recordType == RT.Baptism) {
-    builder.sourceNameWithinRepository = "Early California Population Project - Baptisms";
+    builder.sourceNameWithinRepository = "Baptisms";
   } else if (gd.recordType == RT.Marriage) {
-    builder.sourceNameWithinRepository = "Early California Population Project - Baptisms";
+    builder.sourceNameWithinRepository = "Marriages";
   } else if (gd.recordType == RT.Burial) {
-    builder.sourceNameWithinRepository = "Early California Population Project - Baptisms";
+    builder.sourceNameWithinRepository = "Burials";
   }
 }
 

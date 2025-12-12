@@ -27,6 +27,9 @@ async function setFields(fieldData, sendResponse) {
   console.log(fieldData);
 
   function setSourceSelect(sourceName) {
+    console.log("setSourceSelect, sourceName is:");
+    console.log(sourceName);
+
     if (!sourceName) {
       return;
     }
@@ -35,9 +38,15 @@ async function setFields(fieldData, sendResponse) {
       return;
     }
 
+    console.log("setSourceSelect, selectNode is:");
+    console.log(selectNode);
+
     let optionNodes = selectNode.querySelectorAll("option");
     for (let optionNode of optionNodes) {
       let optionText = optionNode.textContent.trim();
+      console.log("setSourceSelect, optionText is:");
+      console.log(optionText);
+
       if (optionText == sourceName) {
         selectNode.value = optionNode.value;
         return;
