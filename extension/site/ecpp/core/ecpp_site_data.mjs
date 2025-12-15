@@ -25,12 +25,13 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
-  repositoryName: "Early California Population Project",
+  repositoryName: "ECPP",
   usPhoneNumber: "",
   email: "",
   address:
     "University of California, Riverside and The Huntington Library, Art Museum, and Botanical Gardens, San Marino, California",
   baseUrl: "https://ecpp.ucr.edu/",
+  note: "General Editor, Steven W. Hackel, Lead Compiler, Anne M. Reid. (The University of California, Riverside, and the Henry E. Huntington Library, San Marino, California, 2022.)",
 };
 
 function register() {

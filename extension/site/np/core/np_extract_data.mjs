@@ -104,6 +104,64 @@ function extractData(document, url) {
         extractFromNeededNodes(result, publisherNode, locationNode, dateNode, pageNode, titleNode);
       }
 
+      // format changed in December 2025
+      if (!result.success) {
+        // #mainContent > div > div.page_Container__q8aOX > div > div.d-flex.flex-column.flex-md-row.justify-content-md-between.gap-3.p-3.pt-4.position-relative.overflow-hidden.ClippingFooter_Container__4KTsX > span > span:nth-child(1)
+
+        let navNode = mainContentNode.querySelector("nav[aria-label='Breadcrumb']");
+        if (navNode) {
+          let listItems = navNode.querySelectorAll("ol > li");
+          if (listItems.length > 0) {
+            // the breadcrumbs can be:
+            // country, state, place, newspaper name, year, month, day, page, "arcticle clipped..."
+            // But that is probably not always true.
+            if (listItems.length == 9) {
+              let year = listItems[4].textContent.trim();
+              let day = listItems[6].textContent.trim();
+              const yearRegex = /^\d\d\d\d$/;
+              const dayRegex = /^\d\d?$/;
+              if (yearRegex.test(year) && dayRegex.test(day)) {
+                let month = listItems[5].textContent.trim();
+                let date = day + " " + month + " " + year;
+                result.publicationDate = date;
+
+                result.newspaperTitle = listItems[3].textContent.trim();
+
+                let country = listItems[0].textContent.trim();
+                let state = listItems[1].textContent.trim();
+                let town = listItems[2].textContent.trim();
+                if (country && state && town) {
+                  result.location = town + ", " + state + ", " + country;
+                }
+
+                let pageString = listItems[7].textContent.trim();
+                if (pageString) {
+                  pageString = pageString.replace(/^page\s*/i, ""); // remove "Page " from start
+                  result.pageNumber = pageString;
+                }
+
+                let articleTitleFromBreadCrumbs = listItems[8].textContent.trim();
+                if (!articleTitleFromBreadCrumbs.startsWith("Article clipped from")) {
+                  result.articleTitle = articleTitleFromBreadCrumbs;
+                }
+
+                result.success = true;
+              }
+            }
+          }
+        }
+
+        if (!result.articleTitle) {
+          let headingNode = mainContentNode.querySelector("h1[data-cy='articleTitle']");
+          if (headingNode) {
+            let title = headingNode.textContent.trim();
+            if (title && !title.startsWith("Article clipped from")) {
+              result.articleTitle = title;
+            }
+          }
+        }
+      }
+
       // backup code in case layout changes again, this uses class names, which didn't used to
       // exist when this was first written
       if (!result.success) {
@@ -117,6 +175,20 @@ function extractData(document, url) {
           let titleNode = mainContentNode.querySelector("h1");
 
           extractFromNeededNodes(result, publisherNode, locationNode, dateNode, pageNode, titleNode);
+        }
+      }
+
+      // Still failing, if the URL looks like a clipping set success to true and the build citation can at
+      // least create the template
+      if (!result.success) {
+        // Can be of various forms:
+        // https://www.newspapers.com/article/116219279/tom-turners-sons-visit/
+        // https://www.newspapers.com/article/daily-gazette/121899396/
+        // https://www.newspapers.com/article/111420722/
+
+        let regex1 = /^.*newspapers\.com\/article\/.*$/;
+        if (regex1.test(url)) {
+          result.success = true;
         }
       }
     }

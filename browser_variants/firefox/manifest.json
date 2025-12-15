@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "2.12.1",
+  "version": "2.12.2",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": [
     "storage",
@@ -1121,7 +1121,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "{9c98db38-a25c-475a-bdb9-48f6ec303214}",
-      "strict_min_version": "128.0"
+      "strict_min_version": "128.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     },
     "gecko_android": {
       "strict_min_version": "128.0"

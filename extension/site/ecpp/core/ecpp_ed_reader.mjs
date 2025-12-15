@@ -50,7 +50,7 @@ class EcppEdReader extends ExtractedDataReader {
     if (section && section.fields) {
       let fields = section.fields;
       let field = fields[fieldId];
-      if (field && field.value) {
+      if (field && field.value && field.value != "[Unstated]") {
         return field.value;
       }
     }
@@ -258,7 +258,7 @@ class EcppEdReader extends ExtractedDataReader {
   makePlaceObjFromOrigin(originString) {
     let placeObj = new PlaceObj();
 
-    if (originString && originString != "[Unstated]") {
+    if (originString) {
       const endingsToRemove = [", rancheria de", ", Rancheria de", ", pueblo de", ", Pueblo de"];
       for (let ending of endingsToRemove) {
         if (originString.endsWith(ending)) {
@@ -360,6 +360,10 @@ class EcppEdReader extends ExtractedDataReader {
       let age = this.getFieldValue("age");
       let ageUnits = this.getFieldValue("unit");
 
+      if (age.startsWith("como ")) {
+        age = age.substring(5);
+      }
+
       let baptismDateObj = this.makeDateObjFromEcppDate(baptismDate);
       if (!age) {
         if (baptismDateObj) {
@@ -371,22 +375,26 @@ class EcppEdReader extends ExtractedDataReader {
       // there is an age - we can try to work out birth date
       if (baptismDate && age && ageUnits) {
         if (ageUnits == "d") {
-          let numDays = age.toString();
-          let birthDateString = DateUtils.subtractDaysFromDateString(baptismDate, numDays);
-          if (birthDateString) {
-            let birthDateObj = new DateObj();
-            birthDateObj.dateString = birthDateString;
-            birthDateObj.qualifier = dateQualifiers.EXACT;
-            return birthDateObj;
+          let numDays = Number(age);
+          if (!isNaN(numDays)) {
+            let birthDateString = DateUtils.subtractDaysFromDateString(baptismDate, numDays);
+            if (birthDateString) {
+              let birthDateObj = new DateObj();
+              birthDateObj.dateString = birthDateString;
+              birthDateObj.qualifier = dateQualifiers.EXACT;
+              return birthDateObj;
+            }
           }
         } else if (ageUnits == "a") {
-          let numYears = age.toString();
-          let birthDateString = DateUtils.subtractYearsFromDateString(baptismDate, numYears);
-          if (birthDateString) {
-            let birthDateObj = new DateObj();
-            birthDateObj.dateString = birthDateString;
-            birthDateObj.qualifier = dateQualifiers.ABOUT;
-            return birthDateObj;
+          let numYears = Number(age);
+          if (!isNaN(numYears)) {
+            let birthDateString = DateUtils.subtractYearsFromDateString(baptismDate, numYears);
+            if (birthDateString) {
+              let birthDateObj = new DateObj();
+              birthDateObj.dateString = birthDateString;
+              birthDateObj.qualifier = dateQualifiers.ABOUT;
+              return birthDateObj;
+            }
           }
         }
       }
@@ -439,6 +447,11 @@ class EcppEdReader extends ExtractedDataReader {
   getAgeAtEvent() {
     let age = this.getFieldValue("age");
     let ageUnits = this.getFieldValue("unit");
+
+    if (age.startsWith("como ")) {
+      age = age.substring(5);
+    }
+
     if (this.recordType == RT.Marriage) {
       if (this.primaryPersonIndex == 0) {
         age = this.getFieldValue("groom_age");

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1919 Newspaper''':\n\"Rose (Garrapy) Sears Drowning\" Newspapers.com<br/>\nThe Enterprise and Vermonter (Vergennes, Vermont, United States) 23 Oct 1919, page 1<br/>\n{{Newspapers.com|186692258}} (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the The Enterprise and Vermonter on 23 October 1919 in Vergennes, Vermont, United States.<ref>\n'''1919 Newspaper''':\n\"Rose (Garrapy) Sears Drowning\" Newspapers.com<br/>\nThe Enterprise and Vermonter (Vergennes, Vermont, United States) 23 Oct 1919, page 1<br/>\n{{Newspapers.com|186692258}} (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1919 Newspaper''': \"Rose (Garrapy) Sears Drowning\" Newspapers.com<br/>The Enterprise and Vermonter (Vergennes, Vermont, United States) 23 Oct 1919, page 1<br/>{{Newspapers.com|186692258}} (accessed 6 May 2021).",
+    "type": "source"
+  }
+}
