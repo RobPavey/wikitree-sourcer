@@ -143,6 +143,78 @@ class EcppEdReader extends ExtractedDataReader {
         placeString: "Mission Santa Barbara",
         usCounty: "Santa Barbara",
       },
+      SBV: {
+        placeString: "Mission San Buenaventura",
+        usCounty: "Santa Barbara",
+      },
+      SC: {
+        placeString: "Mission San Carlos Borromeo",
+        usCounty: "Monterey",
+      },
+      SCL: {
+        placeString: "Mission Santa Clara",
+        usCounty: "Santa Clara",
+      },
+      SCZ: {
+        placeString: "Mission Santa Cruz",
+        usCounty: "Santa Cruz",
+      },
+      SD: {
+        placeString: "Mission San Diego",
+        usCounty: "San Diego",
+      },
+      SFD: {
+        placeString: "Mission San Francisco de Asís",
+        usCounty: "Santa Francisco",
+      },
+      SFR: {
+        placeString: "Mission San Fernando",
+        usCounty: "San Fernando",
+      },
+      SFS: {
+        placeString: "Mission San Francisco Solano",
+        usCounty: "Sonoma",
+      },
+      SG: {
+        placeString: "Mission San Gabriel Arcángel",
+        usCounty: "Los Angeles",
+      },
+      SI: {
+        placeString: "Mission Santa Inés",
+        usCounty: "Santa Barbara",
+      },
+      SJB: {
+        placeString: "Mission San Juan Bautista",
+        usCounty: "San Benito",
+      },
+      SJC: {
+        placeString: "Mission San Juan Capistrano",
+        usCounty: "Orange",
+      },
+      SJS: {
+        placeString: "Mission San Jose",
+        usCounty: "Santa Clara",
+      },
+      SLD: {
+        placeString: "Mission Nuestra Señora de la Soledad",
+        usCounty: "Monterey",
+      },
+      SLO: {
+        placeString: "Mission San Luis Obispo",
+        usCounty: "San Luis Obispo",
+      },
+      SLR: {
+        placeString: "Mission San Luis Rey",
+        usCounty: "San Diego",
+      },
+      SMA: {
+        placeString: "Mission San Miguel Arcángel",
+        usCounty: "San Luis Obispo",
+      },
+      SRA: {
+        placeString: "Mission San Rafael",
+        usCounty: "Marin",
+      },
     };
 
     const datesForPlaceNames = [
