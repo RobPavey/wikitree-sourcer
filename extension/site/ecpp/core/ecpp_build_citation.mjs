@@ -27,7 +27,15 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 function buildEcppUrl(ed, builder) {
-  return ed.url;
+  // The URL is often like this:
+  // https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/89093?defaultTab=baptism
+  // and we do not want the query part on the end.
+  let url = ed.url;
+  let queryIndex = url.indexOf("?");
+  if (queryIndex != -1) {
+    url = url.substring(0, queryIndex);
+  }
+  return url;
 }
 
 function buildSourceTitle(ed, gd, builder) {
@@ -430,7 +438,15 @@ function addSourceAndRepositoryData(ed, gd, builder) {
   let referenceString = mission + " " + number;
   builder.referenceWithinRepository = referenceString;
 
+  // If the data string is not including the mission and number then we should
+  // add it to the sourceReference
   if (builder.sourceReference) {
+    let dataStyle = builder.options.citation_ecpp_dataStyle;
+    if (dataStyle == "stdSentence" || dataStyle == "none") {
+      if (mission && number) {
+        builder.sourceReference += " " + mission + " " + number;
+      }
+    }
   }
 
   // Note that this sourceNameWithinRepository when added to the repositoryName

@@ -500,6 +500,10 @@ class EcppEdReader extends ExtractedDataReader {
 
     const slashDateRegex = /^\d\d?\/\d\d?\/\d\d\d\d$/;
     if (deathDate) {
+      let elDiaIndex = deathDate.indexOf(" el dia");
+      if (elDiaIndex != -1) {
+        deathDate = deathDate.substring(0, elDiaIndex);
+      }
       return this.makeDateObjFromEcppDate(deathDate);
     }
 
