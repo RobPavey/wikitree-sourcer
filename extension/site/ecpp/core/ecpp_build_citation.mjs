@@ -128,6 +128,10 @@ function buildFlatDataList(ed, gd, builder) {
             label = "Bride's Father's " + label;
           } else if (key.startsWith("bm_") && !label.startsWith("Bride")) {
             label = "Bride's Mother's " + label;
+          } else if (key.startsWith("prev-wife_") && !label.includes("Previous")) {
+            label = "Groom's Previous Wife's " + label;
+          } else if (key.startsWith("prev-husband_") && !label.includes("Previous")) {
+            label = "Bride's Previous Husband's " + label;
           }
 
           if (key.includes("Checkbox")) {
@@ -228,6 +232,12 @@ function buildStructuredDataList(ed, gd, builder) {
 
       if (label.startsWith("Ego's ")) {
         label = label.substring(6);
+      }
+
+      if (id.startsWith("prev-wife_") && !label.includes("Previous")) {
+        label = "Groom's Previous Wife's " + label;
+      } else if (id.startsWith("prev-husband_") && !label.includes("Previous")) {
+        label = "Bride's Previous Husband's " + label;
       }
 
       if (id.includes("Checkbox")) {
