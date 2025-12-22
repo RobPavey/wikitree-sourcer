@@ -132,16 +132,88 @@ class EcppEdReader extends ExtractedDataReader {
         usCounty: "Santa Barbara",
       },
       LPC: {
-        placeString: "Mission La Purísima Concepcion",
+        placeString: "Misión La Purísima Concepcion",
         usCounty: "Santa Barbara",
       },
       SAP: {
-        placeString: "Mission San Antonio de Padua",
+        placeString: "Misión San Antonio de Padua",
         usCounty: "Santa Barbara",
       },
       SB: {
-        placeString: "Mission Santa Barbara",
+        placeString: "Misión Santa Barbara",
         usCounty: "Santa Barbara",
+      },
+      SBV: {
+        placeString: "Misión San Buenaventura",
+        usCounty: "Santa Barbara",
+      },
+      SC: {
+        placeString: "Misión San Carlos Borromeo",
+        usCounty: "Monterey",
+      },
+      SCL: {
+        placeString: "Misión Santa Clara",
+        usCounty: "Santa Clara",
+      },
+      SCZ: {
+        placeString: "Misión Santa Cruz",
+        usCounty: "Santa Cruz",
+      },
+      SD: {
+        placeString: "Misión San Diego",
+        usCounty: "San Diego",
+      },
+      SFD: {
+        placeString: "Misión San Francisco de Asís",
+        usCounty: "Santa Francisco",
+      },
+      SFR: {
+        placeString: "Misión San Fernando",
+        usCounty: "San Fernando",
+      },
+      SFS: {
+        placeString: "Misión San Francisco Solano",
+        usCounty: "Sonoma",
+      },
+      SG: {
+        placeString: "Misión San Gabriel Arcángel",
+        usCounty: "Los Angeles",
+      },
+      SI: {
+        placeString: "Misión Santa Inés",
+        usCounty: "Santa Barbara",
+      },
+      SJB: {
+        placeString: "Misión San Juan Bautista",
+        usCounty: "San Benito",
+      },
+      SJC: {
+        placeString: "Misión San Juan Capistrano",
+        usCounty: "Orange",
+      },
+      SJS: {
+        placeString: "Misión San Jose",
+        usCounty: "Santa Clara",
+      },
+      SLD: {
+        placeString: "Misión Nuestra Señora de la Soledad",
+        usCounty: "Monterey",
+      },
+      SLO: {
+        placeString: "Misión San Luis Obispo",
+        usCounty: "San Luis Obispo",
+      },
+      SLR: {
+        placeString: "Misión San Luis Rey",
+        usCounty: "San Diego",
+      },
+      SMA: {
+        placeString: "Misión San Miguel Arcángel",
+        usCounty: "San Luis Obispo",
+      },
+      SRA: {
+        placeString: "Misión San Rafael",
+        usCounty: "Marin",
       },
     };
 
@@ -428,6 +500,10 @@ class EcppEdReader extends ExtractedDataReader {
 
     const slashDateRegex = /^\d\d?\/\d\d?\/\d\d\d\d$/;
     if (deathDate) {
+      let elDiaIndex = deathDate.indexOf(" el dia");
+      if (elDiaIndex != -1) {
+        deathDate = deathDate.substring(0, elDiaIndex);
+      }
       return this.makeDateObjFromEcppDate(deathDate);
     }
 
