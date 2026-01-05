@@ -60,7 +60,7 @@ function shouldAddSearchTerm(collection, termName, defaultResult, options) {
   return result;
 }
 
-function getDateRangeFromWtsQualifier(yearNum, wtsQualifier, sameCollection) {
+function getDateRangeFromWtsQualifier(runDate, yearNum, wtsQualifier, sameCollection) {
   var fromYear = yearNum;
   var toYear = yearNum;
 
@@ -96,8 +96,7 @@ function getDateRangeFromWtsQualifier(yearNum, wtsQualifier, sameCollection) {
   fromYear = fromYear - 2;
   toYear = toYear + 2;
 
-  let today = new Date();
-  let thisYear = today.getFullYear();
+  let thisYear = runDate.getFullYear();
   if (toYear > thisYear) {
     toYear = thisYear;
   }
@@ -105,7 +104,7 @@ function getDateRangeFromWtsQualifier(yearNum, wtsQualifier, sameCollection) {
   return { fromYear: fromYear.toString(), toYear: toYear.toString() };
 }
 
-function getDateRange(yearString, exactnessOption, wtsQualifier, sameCollection) {
+function getDateRange(runDate, yearString, exactnessOption, wtsQualifier, sameCollection) {
   if (!yearString || yearString == "") {
     return null;
   }
@@ -121,7 +120,7 @@ function getDateRange(yearString, exactnessOption, wtsQualifier, sameCollection)
   }
 
   if (exactnessOption == "auto") {
-    return getDateRangeFromWtsQualifier(yearNum, wtsQualifier, sameCollection);
+    return getDateRangeFromWtsQualifier(runDate, yearNum, wtsQualifier, sameCollection);
   }
 
   var fromYear = yearNum;
@@ -146,8 +145,7 @@ function getDateRange(yearString, exactnessOption, wtsQualifier, sameCollection)
     toYear = toYear + plusOrMinus;
   }
 
-  let today = new Date();
-  let thisYear = today.getFullYear();
+  let thisYear = runDate.getFullYear();
   if (toYear > thisYear) {
     toYear = thisYear;
   }
@@ -159,6 +157,7 @@ function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
   let typeOfSearch = buildUrlInput.typeOfSearch;
+  const runDate = buildUrlInput.runDate;
 
   //console.log("buildSearchUrl, generalizedData is ");
   //console.log(gd);
@@ -238,6 +237,7 @@ function buildSearchUrl(buildUrlInput) {
 
     if (shouldAddSearchTerm(collection, "birth", true, options)) {
       let birthYearRangeRange = getDateRange(
+        runDate,
         gd.inferBirthYear(),
         options.search_fs_birthYearExactness,
         birthDateQualifier,
@@ -247,6 +247,7 @@ function buildSearchUrl(buildUrlInput) {
     }
     if (shouldAddSearchTerm(collection, "death", true, options)) {
       let deathYearRangeRange = getDateRange(
+        runDate,
         gd.inferDeathYear(),
         options.search_fs_deathYearExactness,
         gd.inferDeathDateQualifier(),
@@ -292,6 +293,7 @@ function buildSearchUrl(buildUrlInput) {
               marriagePlace = spouse.marriagePlace.placeString;
             }
             let marriageYearRange = getDateRange(
+              runDate,
               marriageYear,
               options.search_fs_marriageYearExactness,
               dateQualifiers.NONE,
@@ -322,6 +324,7 @@ function buildSearchUrl(buildUrlInput) {
     if (gd.recordType == RT.Census) {
       if (gd.eventPlace || gd.eventDate) {
         let residenceYearRange = getDateRange(
+          runDate,
           gd.inferEventYear(),
           options.search_fs_residenceYearExactness,
           dateQualifiers.NONE,

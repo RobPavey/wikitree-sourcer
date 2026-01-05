@@ -61,6 +61,7 @@ async function familySearchSearch(generalizedData, typeOfSearch) {
     typeOfSearch: typeOfSearch,
     generalizedData: generalizedData,
     options: options,
+    runDate: new Date(),
   };
   familySearchDoSearch(input);
 }
@@ -74,6 +75,7 @@ async function familySearchSearchCollection(generalizedData, collectionWtsId) {
     searchParameters: searchParams,
     generalizedData: generalizedData,
     options: options,
+    runDate: new Date(),
   };
   familySearchDoSearch(input);
 }
@@ -84,6 +86,7 @@ async function familySearchSearchWithParameters(generalizedData, parameters) {
     searchParameters: parameters,
     generalizedData: generalizedData,
     options: options,
+    runDate: new Date(),
   };
   familySearchDoSearch(input);
 }
