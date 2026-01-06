@@ -52,6 +52,17 @@ function extractDataForImage(document, url, result) {
   let fileTitleSpan = viewerContainer.querySelector("#file-title-text");
   if (fileTitleSpan) {
     let fileTitle = fileTitleSpan.textContent.trim();
+
+    // if there is a narrow browser window it does a special truncation with a different span
+    // they each have the same text
+    let afterTruncationSpan = fileTitleSpan.querySelector("span.after-truncation");
+    if (afterTruncationSpan) {
+      let afterTruncationText = afterTruncationSpan.textContent.trim();
+      if (afterTruncationText && fileTitle.startsWith(afterTruncationText)) {
+        fileTitle = afterTruncationText;
+      }
+    }
+
     if (fileTitle) {
       result.fileTitle = fileTitle;
     }

@@ -201,6 +201,15 @@ const regressionData = [
 
   // images
   {
+    // This is with a narrow window - it affects how the fileTitle is extracted
+    caseName: "xx_image_cb_bap_1794_voss_narrow",
+    url: "https://media.digitalarkivet.no/en/view/11769/132",
+  },
+  {
+    caseName: "xx_image_cb_bap_1794_voss",
+    url: "https://media.digitalarkivet.no/en/view/11769/132",
+  },
+  {
     caseName: "xx_image_cb_bap_1888_knut",
     url: "https://media.digitalarkivet.no/view/1953/30",
     optionVariants: [
