@@ -175,6 +175,10 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/view/387/pc00000001290505",
   },
   {
+    caseName: "death_1974_gurid_stalheim",
+    url: "https://www.digitalarkivet.no/en/view/387/pc00000002196295",
+  },
+  {
     caseName: "emigrant_1872_ole_anders",
     url: "https://www.digitalarkivet.no/en/view/8/pe00000000917949",
   },
