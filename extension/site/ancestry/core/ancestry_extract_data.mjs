@@ -1788,6 +1788,9 @@ function getPersonCardScriptText(document) {
 }
 
 function extractPersonCardSimpleValue(result, text, pcKey, resultKey) {
+  if (result[resultKey]) {
+    return;
+  }
   let startString = pcKey + ": '";
   let keyIndex = text.indexOf(startString);
   if (keyIndex != -1) {
@@ -1804,8 +1807,11 @@ function extractPersonCardSimpleValue(result, text, pcKey, resultKey) {
 }
 
 function handlePersonFactsJune2024(document, result) {
+  //console.log("handlePersonFactsJune2024");
   let personCardScript = getPersonCardScriptText(document);
   if (personCardScript) {
+    //console.log("handlePersonFactsJune2024, personCardScript is:");
+    //console.log(personCardScript);
     // There is no way that I have found to find the given name and surname separated in the
     // HTML elements. But it can be found in a script.
 
@@ -1833,6 +1839,33 @@ function handlePersonFactsJune2024(document, result) {
       }
     }
 
+    // The values below do not get updated in the person card script if the user
+    // edits them. So it is better to get them from the HTML
+
+    function setDetail(para, selector, resultKey) {
+      let detail = para.querySelector(selector);
+      if (detail) {
+        let text = detail.textContent.trim();
+        if (text) {
+          result[resultKey] = text;
+        }
+      }
+    }
+
+    let detailsFound = false;
+    let userCardEvents = document.querySelector("div.personCardContainer div.userCardEvents");
+    if (userCardEvents) {
+      let paras = userCardEvents.querySelectorAll("p");
+      if (paras.length == 2) {
+        detailsFound = true;
+
+        setDetail(paras[0], "span.dateDetail", "birthDate");
+        setDetail(paras[0], "span.placeDetail", "birthPlace");
+        setDetail(paras[1], "span.dateDetail", "deathDate");
+        setDetail(paras[1], "span.placeDetail", "deathPlace");
+      }
+    }
+
     extractPersonCardSimpleValue(result, personCardScript, "birthDate", "birthDate");
     extractPersonCardSimpleValue(result, personCardScript, "birthPlace", "birthPlace");
     extractPersonCardSimpleValue(result, personCardScript, "deathDate", "deathDate");
@@ -1847,27 +1880,6 @@ function handlePersonFactsJune2024(document, result) {
       let fullName = userCardTitle.textContent;
       if (fullName) {
         result.titleName = fullName;
-      }
-    }
-
-    let userCardEvents = personCardContainer.querySelector(".userCardEvents");
-    if (userCardEvents) {
-      let birthDateSpan = userCardEvents.querySelector("span.birthDate");
-      if (birthDateSpan) {
-        result.birthDate = birthDateSpan.textContent;
-      }
-      let birthPlaceSpan = userCardEvents.querySelector("span.birthPlace");
-      if (birthPlaceSpan && birthPlaceSpan.textContent) {
-        result.birthPlace = cleanPlaceName(birthPlaceSpan.textContent);
-      }
-
-      let deathDateSpan = userCardEvents.querySelector("span.deathDate");
-      if (deathDateSpan) {
-        result.deathDate = deathDateSpan.textContent;
-      }
-      let deathPlaceSpan = userCardEvents.querySelector("span.deathPlace");
-      if (deathPlaceSpan && deathPlaceSpan.textContent) {
-        result.deathPlace = cleanPlaceName(deathPlaceSpan.textContent);
       }
     }
   }
