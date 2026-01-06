@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Stalheim",
+    "forenames": "Gurid"
+  },
+  "personGender": "female",
+  "eventPlace": {
+    "placeString": "Voss, Hele Norge, Norway",
+    "county": "Hele Norge",
+    "country": "Norway"
+  },
+  "birthDate": {
+    "dateString": "18 Jun 1889"
+  },
+  "deathDate": {
+    "dateString": "11 Nov 1974"
+  },
+  "deathPlace": {
+    "placeString": "Hordaland, Hele Norge, Norway",
+    "county": "Hele Norge",
+    "country": "Norway"
+  },
+  "ageAtEvent": "85",
+  "hasValidData": true
+}

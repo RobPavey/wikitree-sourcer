@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Probate''':\n\"Bristol County, MA: Probate File Papers, 1686-1880\"<br/>\nVolume: Bristol 1-1999<br/>\n[https://www.americanancestors.org/DB2724/t/48299/1396-co3/68078058 American Ancestors Record] (accessed 6 May 2021)<br/>\nUnknown probate.\n</ref>",
+    "citation": "<ref>\n'''Probate''':\n\"Bristol County, MA: Probate File Papers, 1686-1880\"<br/>\nVolume: Bristol 1-1999<br/>\n[https://www.americanancestors.org/DB2724/t/48299/1396-co3/68078058 American Ancestors Record] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Unknown was in a probate record.<ref>\n'''Probate''':\n\"Bristol County, MA: Probate File Papers, 1686-1880\"<br/>\nVolume: Bristol 1-1999<br/>\n[https://www.americanancestors.org/DB2724/t/48299/1396-co3/68078058 American Ancestors Record] (accessed 6 May 2021)<br/>\nUnknown probate.\n</ref>",
+    "citation": "Unknown was in a probate record.<ref>\n'''Probate''':\n\"Bristol County, MA: Probate File Papers, 1686-1880\"<br/>\nVolume: Bristol 1-1999<br/>\n[https://www.americanancestors.org/DB2724/t/48299/1396-co3/68078058 American Ancestors Record] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Probate''': \"Bristol County, MA: Probate File Papers, 1686-1880\"<br/>Volume: Bristol 1-1999<br/>[https://www.americanancestors.org/DB2724/t/48299/1396-co3/68078058 American Ancestors Record] (accessed 6 May 2021)<br/>Unknown probate.",
+    "citation": "* '''Probate''': \"Bristol County, MA: Probate File Papers, 1686-1880\"<br/>Volume: Bristol 1-1999<br/>[https://www.americanancestors.org/DB2724/t/48299/1396-co3/68078058 American Ancestors Record] (accessed 6 May 2021).",
     "type": "source"
   }
 }

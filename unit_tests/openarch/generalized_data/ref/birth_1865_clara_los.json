@@ -1,0 +1,43 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "forenames": "Klara",
+    "lastName": "Los"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "19 May 1865"
+  },
+  "eventPlace": {
+    "placeString": "Alkemade, Nederland",
+    "country": "Nederland"
+  },
+  "birthDate": {
+    "dateString": "19 May 1865"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Dirk",
+        "lastName": "Los"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Johanna Maria",
+        "lastName": "Bek"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "BS Geboorte",
+    "nameParts": {
+      "forenames": "Klara",
+      "lastName": "Los"
+    },
+    "place": "Alkemade"
+  },
+  "hasValidData": true
+}

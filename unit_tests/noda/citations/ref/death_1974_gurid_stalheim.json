@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Deaths 1951-2017\"<br/>\nSurrounding area in the source: 1974-11-11<br/>\n[https://www.digitalarkivet.no/en/view/387/pc00000002196295 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nGurid Stalheim death 11 Nov 1974 (born 18 Jun 1889) in Hordaland, Hele Norge, Norway.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Gurid died (age 85) on 11 November 1974 in Hordaland, Hele Norge, Norway.<ref>\n'''Death''':\n\"Deaths 1951-2017\"<br/>\nSurrounding area in the source: 1974-11-11<br/>\n[https://www.digitalarkivet.no/en/view/387/pc00000002196295 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nGurid Stalheim death 11 Nov 1974 (born 18 Jun 1889) in Hordaland, Hele Norge, Norway.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Deaths 1951-2017\"<br/>Surrounding area in the source: 1974-11-11<br/>[https://www.digitalarkivet.no/en/view/387/pc00000002196295 Digitalarkivet Record] (accessed 6 May 2021)<br/>Gurid Stalheim death 11 Nov 1974 (born 18 Jun 1889) in Hordaland, Hele Norge, Norway.",
+    "type": "source"
+  }
+}

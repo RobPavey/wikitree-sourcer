@@ -219,6 +219,11 @@ class EcppEdReader extends ExtractedDataReader {
 
     const datesForPlaceNames = [
       {
+        startDate: "1 Jan 1804",
+        state: "Nueva California",
+        country: "Nueva España",
+      },
+      {
         startDate: "28 Sep 1821",
         state: "Alta California",
         country: "Imperio Mexicano",
@@ -503,6 +508,12 @@ class EcppEdReader extends ExtractedDataReader {
       let elDiaIndex = deathDate.indexOf(" el dia");
       if (elDiaIndex != -1) {
         deathDate = deathDate.substring(0, elDiaIndex);
+      } else if (deathDate.startsWith("el dia")) {
+        if (deathDate.startsWith("el dia antecedente")) {
+          if (burialDate) {
+            deathDate = DateUtils.subtractDaysFromDateString(burialDate, 1);
+          }
+        }
       }
       return this.makeDateObjFromEcppDate(deathDate);
     }

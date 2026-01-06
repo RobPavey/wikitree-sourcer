@@ -401,19 +401,6 @@ function get1939RegisterString(gd, options) {
   return dataString;
 }
 
-function getHeadOfHouseholdIndex(householdArray) {
-  for (let index = 0; index < householdArray.length; index++) {
-    let member = householdArray[index];
-    if (member.relationship) {
-      let relationshipLc = member.relationship.toLowerCase();
-      if (relationshipLc == "head" || relationshipLc.includes("head")) {
-        return index;
-      }
-    }
-  }
-  return 0;
-}
-
 function getOtherCensusString(gd, options) {
   let dataString = getFullName(gd);
 
@@ -657,6 +644,11 @@ function getSocialSecurityString(gd, options) {
     dataString += " Social Security record";
   }
 
+  if (dataString == "Unknown Social Security record") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
+  }
+
   return dataString;
 }
 
@@ -758,6 +750,11 @@ function getUkRegistrationString(gd, options, type) {
   // GRO and FreeBMD are special cases.
   if (gd.sourceOfData == "gro" || gd.sourceOfData == "freebmd") {
     dataString += getReferenceString(gd, options);
+  }
+
+  if (dataString == "Unknown " + type + " registered") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
   }
 
   return dataString;
@@ -863,7 +860,7 @@ function getBirthRegistrationString(gd, options) {
       dataString += " birth";
       if (birthDate) {
         dataString += " " + birthDate;
-      } else {
+      } else if (eventDate) {
         dataString += " " + eventDate;
       }
     }
@@ -888,6 +885,11 @@ function getBirthRegistrationString(gd, options) {
     if (gd.mothersMaidenName) {
       dataString += ", mother's maiden name " + gd.mothersMaidenName;
     }
+  }
+
+  if (dataString == "Unknown birth") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
   }
 
   return dataString;
@@ -926,7 +928,9 @@ function getDeathRegistrationString(gd, options) {
         dataString += " registered"; // because place is registration place
       } else {
         dataString += " death registered";
-        dataString += " " + eventDateString;
+        if (eventDateString) {
+          dataString += " " + eventDateString;
+        }
         if (deathDateString && deathDateString != eventDateString) {
           if (age) {
             dataString += " (died " + deathDateString + ", age " + age + ")";
@@ -943,7 +947,7 @@ function getDeathRegistrationString(gd, options) {
       dataString += " death";
       if (deathDateString) {
         dataString += " " + deathDateString;
-      } else {
+      } else if (eventDateString) {
         dataString += " " + eventDateString;
       }
       if (age) {
@@ -967,6 +971,11 @@ function getDeathRegistrationString(gd, options) {
     if (parentNames.fatherName || parentNames.motherName) {
       dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
     }
+  }
+
+  if (dataString == "Unknown death") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
   }
 
   return dataString;
@@ -1047,6 +1056,11 @@ function getMarriageRegistrationString(gd, options) {
 
   dataString += addRegistrationPlace(gd, options);
 
+  if (dataString == "Unknown marriage") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
+  }
+
   return dataString;
 }
 
@@ -1103,7 +1117,9 @@ function getBirthString(gd, options) {
         dataString += " and baptised or registered " + getDateWithPreposition(eventDateObj, options, gd);
       } else {
         dataString += " born or baptised";
-        dataString += " " + getDateWithPreposition(eventDateObj, options, gd);
+        if (eventDateObj) {
+          dataString += " " + getDateWithPreposition(eventDateObj, options, gd);
+        }
       }
     }
 
@@ -1139,6 +1155,11 @@ function getBirthString(gd, options) {
 
   if (dataString.endsWith(",")) {
     dataString = dataString.substring(0, dataString.length - 1);
+  }
+
+  if (dataString == "Unknown born" || dataString == "Unknown born or baptised") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
   }
 
   return dataString;
@@ -1235,6 +1256,11 @@ function getDeathString(gd, options) {
     dataString += ". Cause of death: " + gd.causeOfDeath;
   }
 
+  if (dataString == "Unknown death") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
+  }
+
   return dataString;
 }
 
@@ -1279,6 +1305,11 @@ function getBaptismString(gd, options) {
     dataString += " and died " + getDateWithPreposition(deathDate, options, gd);
   }
 
+  if (dataString == "Unknown baptism") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
+  }
+
   return dataString;
 }
 
@@ -1316,6 +1347,11 @@ function getConfirmationString(gd, options) {
   }
 
   dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
+
+  if (dataString == "Unknown confirmation") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
+  }
 
   return dataString;
 }
@@ -1401,6 +1437,11 @@ function getMarriageString(gd, options) {
   }
 
   dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
+
+  if (dataString == "Unknown marriage") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
+  }
 
   return dataString;
 }
@@ -1490,6 +1531,11 @@ function getBurialString(gd, options) {
     }
   }
 
+  if (dataString == "Unknown burial") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
+  }
+
   return dataString;
 }
 
@@ -1559,6 +1605,11 @@ function getProbateString(gd, options) {
 
   if (gd.otherPeopleNames) {
     dataString += ". Other people named in record: " + gd.otherPeopleNames;
+  }
+
+  if (dataString == "Unknown probate") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
   }
 
   return dataString;
@@ -1688,6 +1739,11 @@ function getWillString(gd, options) {
     dataString += ". Occupation: " + gd.occupation;
   }
 
+  if (dataString == "Will of Unknown") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
+  }
+
   return dataString;
 }
 
@@ -1706,6 +1762,11 @@ function getDivorceString(gd, options) {
   }
 
   dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
+
+  if (dataString == "Unknown divorce") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
+  }
 
   return dataString;
 }
@@ -1814,6 +1875,11 @@ const DataString = {
         dataString = getValuationRollString(gd, options);
         break;
       }
+    }
+
+    if (dataString == "Unknown") {
+      // the only thing is the unknown name - no use for anything.
+      dataString = "";
     }
 
     if (dataString) {

@@ -120,9 +120,10 @@ const eventTypes = [
   {
     recordType: RT.Death,
     breadcrumbText: {
-      en: "Deaths 1951-2014",
-      bo: "Døde 1951-2014",
-      nn: "Døde 1951-2014",
+      en: "Deaths 1951-",
+      bo: "Døde 1951-",
+      nn: "Døde 1951-",
+      matchType: "startsWith",
     },
     panelTitleKey: "",
     eventPlace: [{ section: "record", keys: ["municipality"] }],

@@ -175,6 +175,10 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/view/387/pc00000001290505",
   },
   {
+    caseName: "death_1974_gurid_stalheim",
+    url: "https://www.digitalarkivet.no/en/view/387/pc00000002196295",
+  },
+  {
     caseName: "emigrant_1872_ole_anders",
     url: "https://www.digitalarkivet.no/en/view/8/pe00000000917949",
   },
@@ -200,6 +204,15 @@ const regressionData = [
   },
 
   // images
+  {
+    // This is with a narrow window - it affects how the fileTitle is extracted
+    caseName: "xx_image_cb_bap_1794_voss_narrow",
+    url: "https://media.digitalarkivet.no/en/view/11769/132",
+  },
+  {
+    caseName: "xx_image_cb_bap_1794_voss",
+    url: "https://media.digitalarkivet.no/en/view/11769/132",
+  },
   {
     caseName: "xx_image_cb_bap_1888_knut",
     url: "https://media.digitalarkivet.no/view/1953/30",

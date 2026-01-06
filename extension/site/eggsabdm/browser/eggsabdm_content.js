@@ -333,7 +333,9 @@ function addClickedRowListener() {
 
 function getForm() {
   const submitButton = document.querySelector('input[type="submit"][name="Search"]');
-  return submitButton.closest("form"); // gets the enclosing form
+  if (submitButton) {
+    return submitButton.closest("form"); // gets the enclosing form
+  }
 }
 
 // Add a listener that will save all the form fields so we can restore them after the search.
@@ -372,15 +374,17 @@ async function restorePreviousSubmit() {
   // console.log("previous submit", saved);
 
   const form = getForm();
-  Array.from(form.elements).forEach((el) => {
-    if (!el.name || !(el.name in saved)) return;
+  if (form) {
+    Array.from(form.elements).forEach((el) => {
+      if (!el.name || !(el.name in saved)) return;
 
-    if (el.type === "radio" || el.type === "checkbox") {
-      el.checked = el.value === saved[el.name];
-    } else {
-      el.value = saved[el.name];
-    }
-  });
+      if (el.type === "radio" || el.type === "checkbox") {
+        el.checked = el.value === saved[el.name];
+      } else {
+        el.value = saved[el.name];
+      }
+    });
+  }
   clearSearchData(PREVIOUS_SUBMIT);
 }
 

@@ -183,6 +183,19 @@ class OpenarchEdReader extends ExtractedDataReader {
       this.a2aSourceType = this.extractSourceFieldByKey("SourceType");
       this.a2aEventType = this.extractEventFieldByKey("EventType");
 
+      if (this.a2aSourceType == "other:") {
+        let eventType = this.a2aEventType;
+        if (eventType) {
+          if (eventType.startsWith("other:")) {
+            eventType = eventType.substring(6);
+            if (eventType) {
+              this.a2aEventType = eventType;
+            }
+          }
+          this.a2aSourceType = eventType;
+        }
+      }
+
       if (this.a2aSourceType) {
         this.typeData = typeData[this.a2aSourceType];
         if (this.typeData) {

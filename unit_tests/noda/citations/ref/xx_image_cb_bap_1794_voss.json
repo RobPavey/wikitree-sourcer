@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\nVoss sokneprestembete, AV/SAB-A-79001/H/Haa: Parish register (official) no. A 9, 1780-1810, p. 131<br/>\n[https://www.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\nVoss sokneprestembete, AV/SAB-A-79001/H/Haa: Parish register (official) no. A 9, 1780-1810, p. 131<br/>\n[https://www.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': Voss sokneprestembete, AV/SAB-A-79001/H/Haa: Parish register (official) no. A 9, 1780-1810, p. 131<br/>[https://www.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

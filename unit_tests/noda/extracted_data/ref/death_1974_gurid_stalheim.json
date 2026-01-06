@@ -1,0 +1,86 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/387/pc00000002196295",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Deaths 1951-2017",
+    "Surrounding area in the source",
+    "Gurid Stalheim"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Surrounding area in the source: 1974-11-11",
+      "collectionNameParts": [
+        "Surrounding area in the source",
+        "1974-11-11"
+      ]
+    }
+  ],
+  "heading": "Person: Gurid Stalheim",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Gurid Stalheim"
+  ],
+  "recordData": {
+    "Given name": {
+      "textString": "Gurid"
+    },
+    "Surname": {
+      "textString": "Stalheim"
+    },
+    "Gender": {
+      "textString": "k"
+    },
+    "Age": {
+      "textString": "85"
+    },
+    "Year of birth": {
+      "textString": "1889"
+    },
+    "Date of birth": {
+      "textString": "06-18"
+    },
+    "Date of death": {
+      "textString": "1974-11-11"
+    },
+    "Municipality number": {
+      "textString": "1235"
+    },
+    "Municipality": {
+      "textString": "Voss"
+    },
+    "Death municipality number": {
+      "textString": "1200"
+    },
+    "Death municipality": {
+      "textString": "Hordaland"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "Surrounding area in the source",
+      "Date": {
+        "textString": "1974-11-11"
+      }
+    }
+  ],
+  "permanentId": "pc00000002196295",
+  "sourceInformation": "Deaths 1951-2017",
+  "sourceData": {
+    "County": {
+      "textString": "Hele Norge"
+    },
+    "Municipality (1947)": {
+      "textString": "Hele Norge"
+    },
+    "Start year": {
+      "textString": "1951"
+    },
+    "End year": {
+      "textString": "2017"
+    }
+  }
+}

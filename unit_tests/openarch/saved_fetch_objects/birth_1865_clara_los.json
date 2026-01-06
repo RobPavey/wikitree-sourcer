@@ -1,0 +1,111 @@
+{
+    "Person": [
+        {
+            "@pid": "Person:190e034b-771f-6aef-fd7b-4bcd0b16ebad",
+            "PersonName": {
+                "PersonNameFirstName": "Klara",
+                "PersonNameLastName": "Los"
+            },
+            "Gender": "Vrouw",
+            "BirthDate": {
+                "Year": "1865",
+                "Month": "5",
+                "Day": "19"
+            }
+        },
+        {
+            "@pid": "Person:96754933-324e-3ea6-64e6-4df8bcf6d353",
+            "PersonName": {
+                "PersonNameFirstName": "Dirk",
+                "PersonNameLastName": "Los"
+            },
+            "Gender": "Man"
+        },
+        {
+            "@pid": "Person:6ba2ac68-c29c-8873-96ab-2c2bb5778be1",
+            "PersonName": {
+                "PersonNameFirstName": "Johanna Maria",
+                "PersonNameLastName": "Bek"
+            },
+            "Gender": "Vrouw"
+        }
+    ],
+    "Event": {
+        "@eid": "Event1",
+        "EventType": "other:BS Geboorte",
+        "EventDate": {
+            "Year": "1865",
+            "Month": "5",
+            "Day": "19"
+        }
+    },
+    "RelationEP": [
+        {
+            "PersonKeyRef": "Person:190e034b-771f-6aef-fd7b-4bcd0b16ebad",
+            "EventKeyRef": "Event1",
+            "RelationType": "Kind"
+        },
+        {
+            "PersonKeyRef": "Person:96754933-324e-3ea6-64e6-4df8bcf6d353",
+            "EventKeyRef": "Event1",
+            "RelationType": "Vader"
+        },
+        {
+            "PersonKeyRef": "Person:6ba2ac68-c29c-8873-96ab-2c2bb5778be1",
+            "EventKeyRef": "Event1",
+            "RelationType": "Moeder"
+        }
+    ],
+    "Source": {
+        "SourcePlace": {
+            "Place": "Alkemade"
+        },
+        "SourceIndexDate": {
+            "From": "1862-01-01",
+            "To": "1871-12-31"
+        },
+        "SourceType": "other:",
+        "SourceReference": {
+            "Place": "Leiden",
+            "InstitutionName": "Erfgoed Leiden",
+            "Archive": "170.1.18",
+            "Collection": "Archiefnaam: Ambtenaar van de Burgerlijke Stand van Alkemade, Deel: 7, Periode: 1862-1871",
+            "Book": "Geboorteregister van Alkemade, 1862 - 1871;",
+            "RegistryNumber": "7",
+            "DocumentNumber": "76"
+        },
+        "SourceAvailableScans": {
+            "Scan": {
+                "OrderSequenceNumber": "1",
+                "Uri": "https:\/\/elo.memorix.io\/resources\/records\/media\/fcece40a-7b94-be44-6749-70f6068011cf\/iiif\/3\/1847640\/info.json",
+                "UriViewer": "https:\/\/www.erfgoedleiden.nl\/collecties\/personen\/zoek-op-personen\/deeds\/fcece40a-7b94-be44-6749-70f6068011cf",
+                "UriPreview": "https:\/\/elo.memorix.io\/resources\/records\/media\/fcece40a-7b94-be44-6749-70f6068011cf\/iiif\/3\/1847640\/full\/!250,250\/0\/default.jpg"
+            }
+        },
+        "SourceLastChangeDate": "1970-01-01",
+        "SourceDigitalOriginal": "https:\/\/www.erfgoedleiden.nl\/collecties\/personen\/zoek-op-personen\/deeds\/fcece40a-7b94-be44-6749-70f6068011cf",
+        "RecordGUID": "{fcece40a-7b94-be44-6749-70f6068011cf}",
+        "SourceRemark": [
+            {
+                "@Key": "Opmerking",
+                "Value": "Jaar akte: 1865<br\/><br\/><a href=\"\/collecties\/archieven\/archievenoverzicht\/search\/list\/findingaid\/170.1.18\/file\/7\">Inventarisnummer 7 van archiefnummer 170.1.18 in Archieven<\/a>"
+            },
+            {
+                "@Key": "archiefnaam",
+                "Value": "Ambtenaar van de Burgerlijke Stand van Alkemade"
+            },
+            {
+                "@Key": "deel",
+                "Value": "7"
+            },
+            {
+                "@Key": "register_periode",
+                "Value": "1862-1871"
+            },
+            {
+                "@Key": "Provenance",
+                "Value": "A2Acollection oai-pmh_20251116_8875_00008875.xml van ELO"
+            }
+        ]
+    }
+}
