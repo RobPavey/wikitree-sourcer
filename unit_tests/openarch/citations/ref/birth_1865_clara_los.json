@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Burgerlijke Stand Geboorte (Civil registration births)\"<br/>\nErfgoed Leiden, Collection: Ambtenaar van de Burgerlijke Stand van Alkemade, Archive: 170.1.18, Inventory number: 7, Record number: 76, Book: Geboorteregister van Alkemade, 1862 - 1871<br/>\n[https://www.openarchieven.nl/elo:fcece40a-7b94-be44-6749-70f6068011cf OpenArch Record] (accessed 6 May 2021)<br/>\n[https://www.erfgoedleiden.nl/collecties/personen/zoek-op-personen/deeds/fcece40a-7b94-be44-6749-70f6068011cf Erfgoed Leiden Record]<br/>\nKlara Los born on 19 May 1865, daughter of Dirk Los & Johanna Maria Bek, in Alkemade, Nederland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Klara, daughter of Dirk Los & Johanna Maria Bek, was born on 19 May 1865 in Alkemade, Nederland.<ref>\n'''Birth''':\n\"Burgerlijke Stand Geboorte (Civil registration births)\"<br/>\nErfgoed Leiden, Collection: Ambtenaar van de Burgerlijke Stand van Alkemade, Archive: 170.1.18, Inventory number: 7, Record number: 76, Book: Geboorteregister van Alkemade, 1862 - 1871<br/>\n[https://www.openarchieven.nl/elo:fcece40a-7b94-be44-6749-70f6068011cf OpenArch Record] (accessed 6 May 2021)<br/>\n[https://www.erfgoedleiden.nl/collecties/personen/zoek-op-personen/deeds/fcece40a-7b94-be44-6749-70f6068011cf Erfgoed Leiden Record]<br/>\nKlara Los born on 19 May 1865, daughter of Dirk Los & Johanna Maria Bek, in Alkemade, Nederland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth''': \"Burgerlijke Stand Geboorte (Civil registration births)\"<br/>Erfgoed Leiden, Collection: Ambtenaar van de Burgerlijke Stand van Alkemade, Archive: 170.1.18, Inventory number: 7, Record number: 76, Book: Geboorteregister van Alkemade, 1862 - 1871<br/>[https://www.openarchieven.nl/elo:fcece40a-7b94-be44-6749-70f6068011cf OpenArch Record] (accessed 6 May 2021)<br/>[https://www.erfgoedleiden.nl/collecties/personen/zoek-op-personen/deeds/fcece40a-7b94-be44-6749-70f6068011cf Erfgoed Leiden Record]<br/>Klara Los born on 19 May 1865, daughter of Dirk Los & Johanna Maria Bek, in Alkemade, Nederland.",
+    "type": "source"
+  }
+}

@@ -58,6 +58,11 @@ const regressionData = [
     url: "https://www.openarchieven.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf",
   },
   {
+    // has source type of "other:", have to use event type
+    caseName: "birth_1865_clara_los",
+    url: "https://www.openarchieven.nl/elo:fcece40a-7b94-be44-6749-70f6068011cf",
+  },
+  {
     caseName: "birth_cert_1811_jan_van_der_wijk",
     url: "https://www.openarchieven.nl/frl:920ffe70-6378-e93b-71a0-58a1e1237e3f",
   },

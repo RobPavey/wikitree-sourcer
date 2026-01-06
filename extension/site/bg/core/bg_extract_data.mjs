@@ -280,7 +280,7 @@ function extractData(document, url) {
 
     const dataTableNode = document.querySelector("table");
     if (dataTableNode) {
-      const dataRowNodes = dataTable.querySelectorAll("tr");
+      const dataRowNodes = dataTableNode.querySelectorAll("tr");
       if (dataRowNodes.length > 0) {
         const cemeteryRowNode = dataRowNodes[dataRowNodes.length - 1];
         let cemetery = cleanText(cemeteryRowNode.querySelector("td").textContent);
