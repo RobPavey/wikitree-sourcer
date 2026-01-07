@@ -293,8 +293,8 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
   }
 
   function updatePersonWithApiInfo(person, apiInfo, relation) {
-    console.log("updatePersonWithApiInfo. apiInfo is:");
-    console.log(apiInfo);
+    //console.log("updatePersonWithApiInfo. apiInfo is:");
+    //console.log(apiInfo);
     function updateValueIfNeeded(object, fieldName, apiValue) {
       if (apiValue && object[fieldName] != apiValue) {
         //console.log("updatePersonWithApiInfo: person is:");
@@ -412,8 +412,8 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
     return;
   }
 
-  console.log("updateGeneralizedDataUsingApiResponse: apiPerson is:");
-  console.log(apiPerson);
+  //console.log("updateGeneralizedDataUsingApiResponse: apiPerson is:");
+  //console.log(apiPerson);
 
   // add any detail we can for this person
   if (apiPerson.DataStatus) {
@@ -2631,8 +2631,8 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
   };
 
   let compareResult = compareCensusTables(data, biography, jsonData);
-  console.log("compareCensusTables returned:");
-  console.log(compareResult);
+  //console.log("compareCensusTables returned:");
+  //console.log(compareResult);
 
   let fragment = document.createDocumentFragment();
 
