@@ -29,11 +29,21 @@ function buildSearchUrl(buildUrlInput) {
 
   var builder = new AusmemUriBuilder();
 
-  // call methods on builder here
+  let text = "";
+
+  const lastName = gd.inferLastName();
+  if (lastName) {
+    text += " " + lastName;
+  }
+
+  const givenNames = gd.inferForenames();
+  if (givenNames) {
+    text += " " + givenNames;
+  }
+
+  builder.addPattern(text.substring(1));
 
   const url = builder.getUri();
-
-  //console.log("URL is " + url);
 
   var result = {
     url: url,
