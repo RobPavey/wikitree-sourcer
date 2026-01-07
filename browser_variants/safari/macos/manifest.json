@@ -606,6 +606,16 @@
         "base/browser/content/content_common.js",
         "site/ecpp/browser/ecpp_content.js"
       ]
+    },
+    {
+      "matches": [
+        "*://*.auschwitz.org/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/ausmem/browser/ausmem_content.js"
+      ]
     }
   ],
   "options_ui": {
@@ -1095,6 +1105,14 @@
       ],
       "matches": [
         "*://ecpp.ucr.edu/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/ausmem/core/ausmem_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.auschwitz.org/*"
       ]
     }
   ],
