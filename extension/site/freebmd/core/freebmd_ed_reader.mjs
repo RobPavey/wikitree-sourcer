@@ -32,6 +32,9 @@ function freebmdQuarterToGdQuarter(quarter) {
     return 0; // deaths 1984 and later do not have a quarter
   }
   let string = quarter.toLowerCase();
+  if (string.length > 3) {
+    string = string.substring(0, 3);
+  }
   switch (string) {
     case "mar":
       return 1;
@@ -62,17 +65,34 @@ class FreebmdEdReader extends ExtractedDataReader {
     super(ed);
 
     if (ed.format == "v2025") {
-      let recordType = getRecordDataText(ed, "Record Type");
-      switch (recordType) {
-        case "Birth":
-          this.recordType = RT.BirthRegistration;
-          break;
-        case "Marriage":
-          this.recordType = RT.MarriageRegistration;
-          break;
-        case "Death":
-          this.recordType = RT.DeathRegistration;
-          break;
+      let metaValue = this.getMetadataValue("RecordType");
+      if (metaValue) {
+        switch (metaValue) {
+          case "Births":
+            this.recordType = RT.BirthRegistration;
+            break;
+          case "Marriages":
+            this.recordType = RT.MarriageRegistration;
+            break;
+          case "Deaths":
+            this.recordType = RT.DeathRegistration;
+            break;
+        }
+      }
+
+      if (this.recordType == RT.Unclassified) {
+        let recordType = getRecordDataText(ed, "Record Type");
+        switch (recordType) {
+          case "Birth":
+            this.recordType = RT.BirthRegistration;
+            break;
+          case "Marriage":
+            this.recordType = RT.MarriageRegistration;
+            break;
+          case "Death":
+            this.recordType = RT.DeathRegistration;
+            break;
+        }
       }
     } else {
       switch (ed.eventType) {
@@ -87,6 +107,14 @@ class FreebmdEdReader extends ExtractedDataReader {
           break;
       }
     }
+  }
+
+  getMetadataValue(label) {
+    let name = "freebmd." + label;
+    if (this.ed.metadata) {
+      return this.ed.metadata[name];
+    }
+    return "";
   }
 
   getSurnameAndGivenNames(convertToMixedCase = true) {
@@ -139,16 +167,34 @@ class FreebmdEdReader extends ExtractedDataReader {
   }
 
   getCorrectlyCasedSurname() {
+    let metaValue = this.getMetadataValue("Surname");
+    if (metaValue) {
+      return metaValue;
+    }
+
     let parts = this.getSurnameAndGivenNames();
     return parts.surname;
   }
 
   getCorrectlyCasedGivenNames() {
+    let metaValue = this.getMetadataValue("GivenName");
+    if (metaValue) {
+      return metaValue;
+    }
+
     let parts = this.getSurnameAndGivenNames();
     return parts.givenNames;
   }
 
   getCorrectlyCasedRegistrationDistrict() {
+    let metaValue = this.getMetadataValue("OfficialDistrict");
+    if (!metaValue) {
+      metaValue = this.getMetadataValue("DistrictInSource");
+    }
+    if (metaValue) {
+      return metaValue;
+    }
+
     let rd = this.ed.registrationDistrict;
     if (rd) {
       rd = NameUtils.convertNameFromAllCapsToMixedCase(rd);
@@ -194,7 +240,14 @@ class FreebmdEdReader extends ExtractedDataReader {
       return this.makeDateObjFromYearAndQuarter(this.ed.eventYear, freebmdQuarterToGdQuarter(this.ed.eventQuarter));
     }
 
-    let registrationDate = getRecordDataText(this.ed, "Registration Date");
+    let registrationDate = this.getMetadataValue("Quarter");
+    let quarterRegex = /^([A-Z][a-z]+\s+to\s+[A-Z][a-z]+)\s+(\d\d\d\d)/;
+    if (!registrationDate || !quarterRegex.test(registrationDate)) {
+      let altRegistrationDate = getRecordDataText(this.ed, "Registration Date");
+      if (altRegistrationDate) {
+        registrationDate = altRegistrationDate;
+      }
+    }
     let registered = getRecordDataText(this.ed, "Registered");
 
     if (registered && registered.endsWith(registrationDate)) {
@@ -306,11 +359,17 @@ class FreebmdEdReader extends ExtractedDataReader {
         id: collectionId,
       };
       if (this.ed.format == "v2025") {
-        let referenceVolume = getRecordDataText(this.ed, "Volume");
+        let referenceVolume = this.getMetadataValue("Volume");
+        if (!referenceVolume) {
+          referenceVolume = getRecordDataText(this.ed, "Volume");
+        }
         if (referenceVolume) {
           collectionData.volume = referenceVolume;
         }
-        let referencePage = getRecordDataText(this.ed, "Page");
+        let referencePage = this.getMetadataValue("Page");
+        if (!referencePage) {
+          referencePage = getRecordDataText(this.ed, "Page");
+        }
         if (referencePage) {
           collectionData.page = referencePage;
         }

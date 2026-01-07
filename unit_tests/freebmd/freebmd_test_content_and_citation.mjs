@@ -71,6 +71,10 @@ const regressionData = [
     caseName: "m_1870_pavey_henry_alfred",
     url: "https://www.freebmd.org.uk/cgi/information.pl?r=48088197:8889&d=bmd_1627336144",
   },
+  {
+    caseName: "m_1906_kerridge_frederick_v2026",
+    url: "https://dev.freebmd2.org.uk/695da40fbd30f24b671c1bf0/entry-information/116242858/frederick-charles-kerridge-marriage-lancashire-prestwich-v8d-p803?locale=en&search_entry=116242858",
+  },
 ];
 
 async function runTests(testManager) {

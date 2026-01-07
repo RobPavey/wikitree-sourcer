@@ -44,7 +44,7 @@ function extractData2025(document, url) {
     return result;
   }
 
-  const headingRegEx = /^(.+)\'s\s+record$/;
+  const headingRegEx = /^(.+)\'s\s+(?:\w+\s)?record$/;
   if (!headingRegEx.test(headingText)) {
     return result;
   }
@@ -111,6 +111,16 @@ function extractData2025(document, url) {
       }
 
       result.recordData[label] = value;
+    }
+  }
+
+  let metas = document.querySelectorAll("meta[name^='freebmd.']");
+  if (metas.length) {
+    result.metadata = {};
+    for (let meta of metas) {
+      let name = meta.getAttribute("name");
+      let content = meta.getAttribute("content");
+      result.metadata[name] = content;
     }
   }
 
