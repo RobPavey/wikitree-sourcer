@@ -100,6 +100,8 @@ function getPartsOfCitationString(ed, type, builder) {
       return result;
     }
   }
+
+  return {};
 }
 
 function getPartsOfChicagoCitation(ed, builder) {
