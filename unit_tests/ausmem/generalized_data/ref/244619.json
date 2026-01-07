@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "ausmem",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "Weisbart Weissbaum",
+    "forenames": "Paul"
+  },
+  "birthDate": {
+    "dateString": "10 Feb 1900"
+  },
+  "birthPlace": {
+    "placeString": "HermannstÃ¤dtl"
+  },
+  "hasValidData": true
+}
