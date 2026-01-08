@@ -180,9 +180,25 @@ function getYearRanges(type, startYear, endYear, startBirthYear, endBirthYear) {
   return yearRanges;
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function getRandomInt(min, max) {
+  // Ensure min and max are numbers and max is greater than or equal to min
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  // The value is no lower than min, and is less than or equal to max.
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchParameters, gender) {
   //console.log("doSearchForGivenYearAndGender, singleSearchParameters is:");
   //console.log(singleSearchParameters);
+
+  // wait some time to avoid hammering the server
+  const waitTime = getRandomInt(2000, 4000);
+  await sleep(waitTime);
 
   function pruneResultRows(result) {
     // if singleSearchParameters.mmm
