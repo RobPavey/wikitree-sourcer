@@ -26,7 +26,7 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class DfgviewerUriBuilder {
   constructor() {
-    this.uri = "https://www.dfgviewer.org.uk/cgi/search.pl";
+    this.uri = "UNSUPPORTED";
     this.searchTermAdded = false;
   }
 
