@@ -239,6 +239,12 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
             if (spouse.DeathDate && !spouse.DeathDate.startsWith("0000")) {
               result.deathDate = spouse.DeathDate;
             }
+            if (spouse.marriage_date && !spouse.marriage_date.startsWith("0000")) {
+              result.marriageDate = spouse.marriage_date;
+            }
+            if (spouse.marriage_location) {
+              result.marriagePlace = spouse.marriage_location;
+            }
             return result;
           }
         }
@@ -353,8 +359,8 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
         }
       }
     }
-    if (apiInfo.marriage_date) {
-      let dateString = DateUtils.getStdShortDateStringFromYearMonthDayString(apiInfo.marriage_date);
+    if (apiInfo.marriageDate) {
+      let dateString = DateUtils.getStdShortDateStringFromYearMonthDayString(apiInfo.marriageDate);
       if (dateString) {
         if (!person.marriageDate || !person.marriageDate.dateString || person.marriageDate.dateString != dateString) {
           if (!person.marriageDate) {
@@ -367,16 +373,16 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
         }
       }
     }
-    if (apiInfo.marriage_place) {
+    if (apiInfo.marriagePlace) {
       if (
         !person.marriagePlace ||
         !person.marriagePlace.placeString ||
-        person.marriagePlace.placeString != apiInfo.marriage_place
+        person.marriagePlace.placeString != apiInfo.marriagePlace
       ) {
         if (!person.marriagePlace) {
           person.marriagePlace = new PlaceObj();
         }
-        person.marriagePlace.placeString = apiInfo.marriage_place;
+        person.marriagePlace.placeString = apiInfo.marriagePlace;
       }
     }
   }
@@ -438,6 +444,9 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
       if (apiInfo) {
         updatePersonWithApiInfo(gdSpouse, apiInfo, "spouse");
       }
+
+      // the marriage date/place is in the API response for this person (not the spouse)
+
       wikiIdToGdSpouseMap[edSpouse.wikiId] = gdSpouse;
     }
   }
@@ -2622,8 +2631,8 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
   };
 
   let compareResult = compareCensusTables(data, biography, jsonData);
-  console.log("compareCensusTables returned:");
-  console.log(compareResult);
+  //console.log("compareCensusTables returned:");
+  //console.log(compareResult);
 
   let fragment = document.createDocumentFragment();
 
