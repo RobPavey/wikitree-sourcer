@@ -1,0 +1,31 @@
+{
+  "sourceOfData": "freebmd",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "Kerridge",
+    "forenames": "Frederick Charles"
+  },
+  "eventDate": {
+    "quarter": 3,
+    "yearString": "1906"
+  },
+  "registrationDistrict": "Prestwich",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "See Page link for possible spouses"
+      },
+      "marriageDate": {
+        "quarter": 3,
+        "yearString": "1906"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "marriages",
+    "volume": "8d",
+    "page": "803"
+  },
+  "hasValidData": true
+}

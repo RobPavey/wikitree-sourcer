@@ -57,6 +57,10 @@ function buildFreebmdUrl(ed, builder) {
       }
     }
   }
+
+  if (ed.url) {
+    return ed.url;
+  }
 }
 
 function getQuarterName(dateObj) {
@@ -216,7 +220,13 @@ function buildDataString(ed, gd, builder) {
     let volume = gd.collectionData.volume;
     let page = gd.collectionData.page;
     if (volume) {
-      dataString += " Volume " + volume + " Page " + page + ".";
+      dataString += " Volume " + volume;
+    }
+    if (page) {
+      dataString += " Page " + page;
+    }
+    if (volume || page) {
+      dataString += ".";
     }
   }
 

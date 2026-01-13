@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "ausmem",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "Weiss",
+    "forenames": "Paul Pavel"
+  },
+  "birthDate": {
+    "dateString": "19 Sep 1925"
+  },
+  "birthPlace": {
+    "placeString": "Kuklov"
+  },
+  "hasValidData": true
+}

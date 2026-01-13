@@ -83,4 +83,5 @@ import "../../doew/core/doew_options.mjs";
 import "../../yadvashem/core/yadvashem_options.mjs";
 import "../../ushmm/core/ushmm_options.mjs";
 import "../../ecpp/core/ecpp_options.mjs";
+import "../../ausmem/core/ausmem_options.mjs";
 import "../../morbihan/core/morbihan_options.mjs";
