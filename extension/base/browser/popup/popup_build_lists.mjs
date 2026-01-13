@@ -31,6 +31,7 @@ import {
 } from "./popup_menu_building.mjs";
 
 import { writeToClipboard, clearClipboard } from "./popup_clipboard.mjs";
+import { options } from "/base/browser/options/options_loader.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Building lists
@@ -40,24 +41,70 @@ async function buildListAction(data, listType, spouse) {
   try {
     clearClipboard();
 
+    let optionPrefix = "table_";
+
     // build the list
     let gd = data.generalizedData;
     let listText = "";
     function buildList(personArray) {
+      let format = options[optionPrefix + "format"];
+      //console.log("option: " + optionPrefix + "format = " + format);
+
+      let type = "";
+      if (format == "list") {
+        let optionName = optionPrefix.substring(0, optionPrefix.length - 1);
+        optionName += "List_type";
+        type = options[optionName];
+        //console.log("option: " + optionName + " = " + type);
+      }
+
       if (personArray && personArray.length) {
         for (let index = 0; index < personArray.length; index++) {
-          if (index > 0) {
-            if (index < personArray.length - 1) {
-              listText += ", ";
-            } else {
-              listText += " and ";
+          if (format == "sentence") {
+            if (index > 0) {
+              if (index < personArray.length - 1) {
+                listText += ", ";
+              } else {
+                listText += " and ";
+              }
             }
+          } else if (format == "list") {
+            let lineStart = "* ";
+            switch (type) {
+              case "bullet":
+                lineStart = "* ";
+                break;
+              case "bullet2":
+                lineStart = "** ";
+                break;
+              case "number":
+                lineStart = "# ";
+                break;
+              case "bulletNumber":
+                lineStart = "*# ";
+                break;
+              case "indented1":
+                lineStart = ": ";
+                break;
+              case "indented2":
+                lineStart = ":: ";
+                break;
+            }
+            listText += "\n" + lineStart;
           }
           let person = personArray[index];
           if (person.name) {
-            let forenames = person.name.inferForenames();
-            if (forenames) {
-              listText += forenames;
+            let nameFormat = options[optionPrefix + "nameFormat"];
+            let name = "";
+            if (nameFormat == "first") {
+              name = person.name.inferFirstName();
+            } else if (nameFormat == "forenames") {
+              name = person.name.inferForenames();
+            } else if (nameFormat == "fullName") {
+              name = person.name.inferFullName();
+            }
+            if (name) {
+              listText += name;
             }
           } else {
             listText += "<unknown>";
@@ -74,21 +121,29 @@ async function buildListAction(data, listType, spouse) {
             listText += " (" + birthDate + "-" + deathDate + ")";
           }
         }
+        if (format == "list") {
+          listText += "\n";
+        }
       }
     }
 
     if (listType == "fullSiblings") {
+      optionPrefix += "siblingList_";
       buildList(gd.siblings);
     } else if (listType == "halfSiblings") {
+      optionPrefix += "siblingList_";
       buildList(gd.halfSiblings);
     } else if (listType == "allSiblings") {
+      optionPrefix += "siblingList_";
       if (gd.siblings && gd.halfSiblings) {
         buildList(gd.siblings.concat(gd.halfSiblings));
       }
     } else if (listType == "children") {
       if (spouse) {
+        optionPrefix += "childList_";
         buildList(spouse.children);
       } else {
+        optionPrefix += "childList_";
         // all children
         let childArray = [];
         for (let spouse of gd.spouses) {

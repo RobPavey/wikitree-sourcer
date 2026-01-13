@@ -1,0 +1,88 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Patsy Louise Neal"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "yearString": "1926",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Kentucky"
+  },
+  "eventDate": {
+    "yearString": "1930"
+  },
+  "eventPlace": {
+    "placeString": "Knoxville, Knox, Tennessee, USA",
+    "streetAddress": "2643 Linden Ave"
+  },
+  "ageAtEvent": "4",
+  "maritalStatus": "single",
+  "relationshipToHead": "daughter",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "W B Neal",
+      "age": "34",
+      "relationship": "head",
+      "uid": "http://www.ancestry.com/search/collections/6224/records/67238147"
+    },
+    {
+      "name": "Eura Neal",
+      "age": "29",
+      "relationship": "wife",
+      "uid": "http://www.ancestry.com/search/collections/6224/records/67238141"
+    },
+    {
+      "name": "Margarett Ann Neal",
+      "age": "6",
+      "relationship": "daughter",
+      "uid": "http://www.ancestry.com/search/collections/6224/records/67238126"
+    },
+    {
+      "name": "Patsy Louise Neal",
+      "age": "4",
+      "relationship": "daughter",
+      "isSelected": true,
+      "race": "White",
+      "maritalStatus": "single",
+      "gender": "female",
+      "birthPlace": "Kentucky",
+      "birthYear": "abt 1926"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "W B Neal"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Eura Neal"
+      }
+    }
+  },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|6224|67238097}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|6224|67238147}}",
+    "{{Ancestry Record|6224|67238141}}",
+    "{{Ancestry Record|6224|67238126}}"
+  ],
+  "collectionData": {
+    "id": "6224",
+    "collectionTitle": "1930 United States Federal Census",
+    "familyNumber": "598"
+  },
+  "hasValidData": true
+}

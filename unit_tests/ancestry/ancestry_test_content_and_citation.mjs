@@ -793,6 +793,11 @@ const regressionData = [
     url: "https://search.ancestry.co.uk/cgi-bin/sse.dll?indiv=1&db=61588&h=21143847",
   },
   {
+    // This is an example of a Jan 2026 format change. The file was saved by LizaGervais (Macklem-13)
+    caseName: "us_ky_census_1930_patsy_neal",
+    url: "https://www.ancestry.com/search/collections/6224/records/67238097?tid=199887663&pid=412611405111&ssrc=pt",
+  },
+  {
     caseName: "us_al_death_1969_mattie_bryant",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=2543&h=1504470",
     optionVariants: [

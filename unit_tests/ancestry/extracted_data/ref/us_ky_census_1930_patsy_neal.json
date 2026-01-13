@@ -1,0 +1,77 @@
+{
+  "url": "https://www.ancestry.com/search/collections/6224/records/67238097?tid=199887663&pid=412611405111&ssrc=pt",
+  "pageType": "record",
+  "dbId": "6224",
+  "recordId": "67238097",
+  "ancestryTemplate": "{{Ancestry Record|6224|67238097}}",
+  "domain": "ancestry.com",
+  "titleName": "Patsy Louise Neal",
+  "titleCollection": "1930 United States Federal Census",
+  "recordData": {
+    "Name": "Patsy Louise Neal [Betsy Louise Neal] [User-submitted-comment Neal] [Patricia] [Patsy Louise] [Patricia Neal]",
+    "Birth Year": "abt 1926 [abt 1926]",
+    "Gender": "Female",
+    "Race": "White",
+    "Age in 1930": "4",
+    "Birthplace": "Kentucky",
+    "Marital Status": "Single",
+    "Relation to Head of House": "Daughter",
+    "Home in 1930": "Knoxville, Knox, Tennessee, USA",
+    "Map of Home": "Knoxville, Knox, Tennessee",
+    "Street Address": "Linden Ave",
+    "Ward of City": "14 part of",
+    "House Number": "2643",
+    "Dwelling Number": "468",
+    "Family Number": "598",
+    "Attended School": "No",
+    "Able to Read and Write": "No",
+    "Father's Birthplace": "Virginia",
+    "Mother's Birthplace": "Kentucky",
+    "Household Members (Name)<br/>Age<br/>Relationship": "W B Neal 34 Head<br/>Eura Neal 29 Wife<br/>Margarett Ann Neal 6 Daughter<br/>Patsy Louise Neal 4 Daughter"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "W B Neal",
+        "dbId": "6224",
+        "recordId": "67238147",
+        "link": "http://www.ancestry.com/search/collections/6224/records/67238147",
+        "Age": "34",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members (Name)": "Eura Neal",
+        "dbId": "6224",
+        "recordId": "67238141",
+        "link": "http://www.ancestry.com/search/collections/6224/records/67238141",
+        "Age": "29",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members (Name)": "Margarett Ann Neal",
+        "dbId": "6224",
+        "recordId": "67238126",
+        "link": "http://www.ancestry.com/search/collections/6224/records/67238126",
+        "Age": "6",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members (Name)": "Patsy Louise Neal",
+        "Age": "4",
+        "Relationship": "Daughter"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/6224/images/4548172_00609?pid=67238097&ssrc=&usePUB=true",
+  "imageDbId": "6224",
+  "imageRecordId": "4548172_00609",
+  "sourceCitation": "Year: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992",
+  "sourceInformation": "Ancestry.com. 1930 United States Federal Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2002. Original data: United States of America, Bureau of the Census. Fifteenth Census of the United States, 1930. Washington, D.C.: National Archives and Records Administration, 1930. T626, 2,667 rolls.",
+  "originalData": "United States of America, Bureau of the Census. Fifteenth Census of the United States, 1930. Washington, D.C.: National Archives and Records Administration, 1930. T626, 2,667 rolls.",
+  "sourceDescription": "The 1930 Census contains records for approximately 123 million Americans. The census gives us a glimpse into the lives of Americans in 1930, and contains information about a householdâ€™s family members and occupants including: birthplaces, occupations, immigration, citizenship, and military service. The names of those listed in the census are linked to actual images of the 1930 Census. Learn more..."
+}
