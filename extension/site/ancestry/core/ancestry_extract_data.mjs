@@ -266,75 +266,85 @@ function extractRecordPageTitle(document, result) {
   let titleName = "";
   let titleCollection = "";
 
-  let pageTitle = document.querySelector("h1.pageTitle > span");
+  let pageTitle = document.querySelector("h1.title");
   if (pageTitle) {
-    // This is the normal case when there is a name and a title/link
+    // this is a new January 2026 format
     titleName = pageTitle.textContent;
-    let pageIntro = document.querySelector("h1.pageTitle > p.pageIntro > a");
-    titleCollection = pageIntro.textContent;
-  } else {
-    let pageTitleLink = document.querySelector("h1.pageTitle > a");
-
+    let pageTitleLink = document.querySelector("div.content > p.pageDescription > a.collectionTitle");
     if (pageTitleLink) {
       titleCollection = pageTitleLink.textContent;
+    }
+  } else {
+    pageTitle = document.querySelector("h1.pageTitle > span");
+    if (pageTitle) {
+      // This is the normal case when there is a name and a title/link
+      titleName = pageTitle.textContent;
+      let pageIntro = document.querySelector("h1.pageTitle > p.pageIntro > a");
+      titleCollection = pageIntro.textContent;
     } else {
-      // this is a case that only seems to happen when fetching the page rather than opening it
-      // in a tab.
-      // There is a script that generates the span node we try to read above.
-      // In the old style the script is the next sibling to the pageTitleNode but starting on
-      // 25 Apr 2023 there is a template = so use that iff possible
-      let pageTitleTemplate = document.querySelector("#pageTitleTemplate");
-      if (pageTitleTemplate) {
-        //console.log("pageTitleTemplate found, numChildren = " + pageTitleTemplate.children.length);
-        //console.log(pageTitleTemplate);
-        // It looks like this:
-        // 		<template id="pageTitleTemplate">
-        // 			<span id="pageNameTemplate">William H Pavey</span>
-        // 			<span id="collectionLearnMoreTemplate">Learn more about the 1871 England Census</span>
-        // 			<span id="collectionTitleTemplate">1871 England Census</span>
-        // 		</template>
-        let nameNode = pageTitleTemplate.content.querySelector("#pageNameTemplate");
-        if (nameNode) {
-          //console.log("nameNode found, textContent = " + nameNode.textContent);
-          titleName = nameNode.textContent;
-        }
-        let collectionNode = pageTitleTemplate.content.querySelector("#collectionTitleTemplate");
-        if (collectionNode) {
-          //console.log("collectionNode found, textContent = " + collectionNode.textContent);
-          titleCollection = collectionNode.textContent;
-        }
+      let pageTitleLink = document.querySelector("h1.pageTitle > a");
+
+      if (pageTitleLink) {
+        titleCollection = pageTitleLink.textContent;
       } else {
-        let pageTitleNode = document.querySelector("h1.pageTitle");
-        if (pageTitleNode) {
-          //console.log("pageTitle found, numChildren = " + pageTitleNode.children.length);
-          let nextNode = pageTitleNode.nextElementSibling;
-          if (nextNode && nextNode.tagName.toLowerCase() == "script") {
-            let scriptNode = nextNode;
-            // we could evaluate the script but that might has security risks.
-            // since we know what the script looks like we could just search it for the string we want.
-            let scriptText = scriptNode.textContent;
-            //console.log("scriptText = ");
-            //console.log(scriptText);
-            const titleNamePrefix = 'nameSpanEl.textContent = "';
-            let startIndex = scriptText.indexOf(titleNamePrefix);
-            if (startIndex != -1) {
-              startIndex += titleNamePrefix.length;
-              let endIndex = scriptText.indexOf('"', startIndex);
-              if (endIndex != -1) {
-                titleName = scriptText.substring(startIndex, endIndex);
+        // this is a case that only seems to happen when fetching the page rather than opening it
+        // in a tab.
+        // There is a script that generates the span node we try to read above.
+        // In the old style the script is the next sibling to the pageTitleNode but starting on
+        // 25 Apr 2023 there is a template = so use that iff possible
+        let pageTitleTemplate = document.querySelector("#pageTitleTemplate");
+        if (pageTitleTemplate) {
+          //console.log("pageTitleTemplate found, numChildren = " + pageTitleTemplate.children.length);
+          //console.log(pageTitleTemplate);
+          // It looks like this:
+          // 		<template id="pageTitleTemplate">
+          // 			<span id="pageNameTemplate">William H Pavey</span>
+          // 			<span id="collectionLearnMoreTemplate">Learn more about the 1871 England Census</span>
+          // 			<span id="collectionTitleTemplate">1871 England Census</span>
+          // 		</template>
+          let nameNode = pageTitleTemplate.content.querySelector("#pageNameTemplate");
+          if (nameNode) {
+            //console.log("nameNode found, textContent = " + nameNode.textContent);
+            titleName = nameNode.textContent;
+          }
+          let collectionNode = pageTitleTemplate.content.querySelector("#collectionTitleTemplate");
+          if (collectionNode) {
+            //console.log("collectionNode found, textContent = " + collectionNode.textContent);
+            titleCollection = collectionNode.textContent;
+          }
+        } else {
+          let pageTitleNode = document.querySelector("h1.pageTitle");
+          if (pageTitleNode) {
+            //console.log("pageTitle found, numChildren = " + pageTitleNode.children.length);
+            let nextNode = pageTitleNode.nextElementSibling;
+            if (nextNode && nextNode.tagName.toLowerCase() == "script") {
+              let scriptNode = nextNode;
+              // we could evaluate the script but that might has security risks.
+              // since we know what the script looks like we could just search it for the string we want.
+              let scriptText = scriptNode.textContent;
+              //console.log("scriptText = ");
+              //console.log(scriptText);
+              const titleNamePrefix = 'nameSpanEl.textContent = "';
+              let startIndex = scriptText.indexOf(titleNamePrefix);
+              if (startIndex != -1) {
+                startIndex += titleNamePrefix.length;
+                let endIndex = scriptText.indexOf('"', startIndex);
+                if (endIndex != -1) {
+                  titleName = scriptText.substring(startIndex, endIndex);
+                }
               }
-            }
-            const titleCollectionPrefix = 'collectionAnchorEl.textContent = "';
-            startIndex = scriptText.indexOf(titleCollectionPrefix);
-            if (startIndex != -1) {
-              startIndex += titleCollectionPrefix.length;
-              let endIndex = scriptText.indexOf('"', startIndex);
-              if (endIndex != -1) {
-                titleCollection = scriptText.substring(startIndex, endIndex);
+              const titleCollectionPrefix = 'collectionAnchorEl.textContent = "';
+              startIndex = scriptText.indexOf(titleCollectionPrefix);
+              if (startIndex != -1) {
+                startIndex += titleCollectionPrefix.length;
+                let endIndex = scriptText.indexOf('"', startIndex);
+                if (endIndex != -1) {
+                  titleCollection = scriptText.substring(startIndex, endIndex);
+                }
               }
+              //console.log("titleName = " + titleName);
+              //console.log("titleCollection = " + titleCollection);
             }
-            //console.log("titleName = " + titleName);
-            //console.log("titleCollection = " + titleCollection);
           }
         }
       }
@@ -348,7 +358,7 @@ function extractRecordPageTitle(document, result) {
 function extractRecordData(document, result) {
   result.recordData = Object.create(null);
 
-  var recordDataRows = document.querySelectorAll("#recordData > table > tbody > tr");
+  var recordDataRows = document.querySelectorAll("#recordData table > tbody > tr");
 
   for (let row of recordDataRows.values()) {
     // Get the label of the row (must be immediate child)
@@ -618,6 +628,26 @@ function extractRecordSourceCitation(document, result) {
           }
         }
       }
+    } else {
+      let sourceAreaSections = document.querySelectorAll("#sourceCitation > section.conSecond");
+
+      if (sourceAreaSections.length > 0) {
+        for (let index = 0; index < sourceAreaSections.length; index++) {
+          let section = sourceAreaSections[index];
+          let citationTitleNode = section.querySelector("h4.citationTitle");
+          let sourceTextNode = section.querySelector("div.sourceText");
+          if (citationTitleNode && sourceTextNode) {
+            let citationTitle = citationTitleNode.textContent;
+            if (citationTitle == "Source Citation") {
+              setSourceCitation(result, sourceTextNode);
+            } else if (citationTitle == "Source Information") {
+              setSourceInformation(result, sourceTextNode);
+            } else if (citationTitle == "Description") {
+              setSourceDescription(result, sourceTextNode);
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -674,6 +704,11 @@ function extractImageThumb(document, result) {
   let thumbNode = document.querySelector("#thumbnailTools > div.imageThumb");
   //console.log("extractImageThumb, thumbNode = ");
   //console.log(thumbNode);
+
+  if (!thumbNode) {
+    // could be new Jan 2026 format
+    thumbNode = document.querySelector("#mainContent > section.heroImageContainer");
+  }
 
   if (thumbNode) {
     let linkNode = thumbNode.querySelector("a");
