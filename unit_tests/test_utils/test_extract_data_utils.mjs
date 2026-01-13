@@ -59,6 +59,16 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
     removeStaleOutputFiles(siteName, resultDir, [regressionData], logger);
   }
 
+  // Override console.error to avoid console spam about
+  // 'Could not parse CSS stylesheet'
+  let originalConsoleError = console.error;
+  console.error = (message, ...optionalParams) => {
+    if (message.includes("Could not parse CSS stylesheet")) {
+      return;
+    }
+    originalConsoleError(message, ...optionalParams);
+  };
+
   for (var testData of regressionData) {
     if (testManager.parameters.testCaseName != "" && testManager.parameters.testCaseName != testData.caseName) {
       continue;
@@ -220,6 +230,8 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       console.log("Test passed (" + testName + ").");
     }
   }
+
+  console.error = originalConsoleError;
 }
 
 export { runExtractDataTests };
