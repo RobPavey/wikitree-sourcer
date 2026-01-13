@@ -78,17 +78,49 @@ function buildMorbihanUrl(ed, builder) {
 
 function buildSourceTitle(ed, gd, builder) {
   builder.sourceTitle = "Documents numérisés"; // default
-  if (ed.ogTitle.includes("MiEC")) {
+  if (
+    ed.ogTitle.includes("MiEC") ||
+    ed.ogTitle.includes("MIEC") ||
+    ed.ogTitle.startsWith("EC_") ||
+    ed.ogTitle.startsWith("4E_") ||
+    ed.ogTitle.startsWith("5E_")
+  ) {
     builder.sourceTitle = "Registres paroissiaux et documents d'état civil";
   }
-  if (ed.ogTitle.includes("3 ES ") || ed.ogTitle.includes("6 M ")) {
+  if (
+    ed.ogTitle.startsWith("3 ES ") ||
+    ed.ogTitle.startsWith("6 M ") ||
+    ed.ogTitle.startsWith("2 W ") ||
+    ed.ogTitle.startsWith("37 W ")
+  ) {
     builder.sourceTitle = "Recensements de population";
+  }
+}
+
+function removeDuplicateDateRangeIfExistsAtEnd(str) {
+  const segmentLength = 12; // date range segment length
+  // Check if the string is at least twice the segment length
+  if (str.length < segmentLength * 2) {
+    return false;
+  }
+
+  // Get the second-to-last string
+  const priorString = str.substring(str.length - segmentLength * 2, str.length - segmentLength);
+
+  // Get the last string
+  const lastString = str.substring(str.length - segmentLength);
+
+  // Compare the two segments and omit duplicated char string if exists
+  if (priorString === lastString) {
+    return str.substring(0, str.length - segmentLength);
+  } else {
+    return str;
   }
 }
 
 function buildSourceReference(ed, gd, builder) {
   builder.sourceReference = ed.repository;
-  builder.addSourceReferenceText(ed.ogTitle);
+  builder.addSourceReferenceText(removeDuplicateDateRangeIfExistsAtEnd(ed.ogTitle));
 
   //console.log("keyValueData="+ed.keyValueData);
   if (ed.keyValueData) {
@@ -125,12 +157,23 @@ function buildCoreCitation(ed, gd, builder) {
 
 function getRefTitle(ed, gd) {
   let refTitle = "Document d'archive"; // default
-  if (ed.ogTitle.includes("3 ES ") || ed.ogTitle.includes("6 M ")) {
+  if (
+    ed.ogTitle.startsWith("3 ES ") ||
+    ed.ogTitle.startsWith("6 M ") ||
+    ed.ogTitle.startsWith("2 W ") ||
+    ed.ogTitle.startsWith("37 W ")
+  ) {
     refTitle = "Recensement";
     return refTitle;
   }
 
-  if (ed.ogTitle.includes("MiEC")) {
+  if (
+    ed.ogTitle.includes("MiEC") ||
+    ed.ogTitle.includes("MIEC") ||
+    ed.ogTitle.startsWith("EC_") ||
+    ed.ogTitle.startsWith("4E_") ||
+    ed.ogTitle.startsWith("5E_")
+  ) {
     // parish/civil records
     refTitle = "Registre paroissial ou état civil";
     if (ed.keyValueData) {
