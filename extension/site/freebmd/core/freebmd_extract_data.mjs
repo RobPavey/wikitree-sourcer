@@ -82,14 +82,41 @@ function extractData2025(document, url) {
         // simple text value
         value.text = td.textContent.trim();
       } else if (link && divs.length == 0) {
-        value.text = link.textContent.trim();
-        value.href = link.getAttribute("href");
-        value.linkId = link.id;
+        if (label.startsWith("Entries")) {
+          let links = td.querySelectorAll("a");
+          if (links.length > 1) {
+            let strongs = td.querySelectorAll("strong");
+            value.subValues = [];
+            for (let strong of strongs) {
+              let subValue = {};
+              subValue.text = strong.textContent.trim();
+              value.subValues.push(subValue);
+              let dateNode = strong.nextSibling;
+              if (dateNode) {
+                subValue.date = dateNode.textContent.trim();
+                let sibLink = dateNode.nextSibling;
+                if (sibLink) {
+                  if (sibLink.tagName == "A") {
+                    subValue.district = sibLink.textContent.trim();
+                    subValue.href = sibLink.getAttribute("href");
+                  }
+                }
+              }
+            }
+          } else {
+            value.text = td.textContent.trim();
+            value.href = link.getAttribute("href");
+          }
+        } else {
+          value.text = link.textContent.trim();
+          value.href = link.getAttribute("href");
+          value.linkId = link.id;
+        }
       } else {
         if (label == "Page") {
           // there should be three links if there are previous and next pages
           let link = undefined;
-          let links = td.querySelectorAll("div > div > a");
+          let links = td.querySelectorAll("div > a");
           if (links.length == 3) {
             link = links[1];
           } else if (links.length == 2) {
