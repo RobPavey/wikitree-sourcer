@@ -1,0 +1,21 @@
+{
+  "url": "https://archives2.gnb.ca/Search/VISSE/141A1b.aspx?culture=en-CA&guid=436A96E4-9228-44F6-AE61-5051B00E8613",
+  "success": true,
+  "databaseID": "RS141A1b",
+  "tableTitle": "Index to Late Registration of Births",
+  "recordData": {
+    "Name": "WALLACE, JOHN LESLIE",
+    "Sex": "M",
+    "Date": "1864-08-19",
+    "Place": "CUMMINGS COVE",
+    "County": "CHARLOTTE",
+    "Father": "WALLACE, DAVID",
+    "Mother": "WALLACE, EMILY",
+    "Code": "1864-W-2",
+    "Microfilm": "F18759"
+  },
+  "hasImage": true,
+  "imageUrl": "https://archives2.gnb.ca/DigitizedDocuments/RS141/A1b/1864/436a96e4-9228-44f6-ae61-5051b00e8613.jpg",
+  "numberTableEntries": 9,
+  "recordType": "Birth"
+}

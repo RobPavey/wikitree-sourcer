@@ -1,0 +1,21 @@
+{
+  "url": "https://archives2.gnb.ca/Search/VISSE/141A1b.aspx?culture=en-CA&guid=D740BC74-0DEC-47C4-85E9-D5122DC81D96",
+  "success": true,
+  "databaseID": "RS141A1b",
+  "tableTitle": "Index to Late Registration of Births",
+  "recordData": {
+    "Name": "DUNFIELD, WALTER EARL",
+    "Sex": "M",
+    "Date": "1902-05-08",
+    "Place": "PENOBSQUIS",
+    "County": "KINGS",
+    "Father": "DUNFIELD, JOHN",
+    "Mother": "GODDARD, LUCY",
+    "Code": "1902-800565",
+    "Microfilm": "F18903"
+  },
+  "hasImage": true,
+  "imageUrl": "https://archives2.gnb.ca/DigitizedDocuments/RS141/A1b/1902/d740bc74-0dec-47c4-85e9-d5122dc81d96.jpg",
+  "numberTableEntries": 9,
+  "recordType": "Birth"
+}

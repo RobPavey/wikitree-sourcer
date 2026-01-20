@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "name": "John Walter Carr"
+  },
+  "eventDate": {
+    "dateString": "1974-03-15"
+  },
+  "eventPlace": {
+    "placeString": "Sussex Corner, Kings, New Brunswick, Canada"
+  },
+  "registrationDistrict": "Kings",
+  "spouses": [
+    {
+      "name": {
+        "name": "Dale Alice Wallace"
+      },
+      "personGender": "female",
+      "marriageDate": {
+        "dateString": "1974-03-15"
+      }
+    }
+  ],
+  "hasValidData": true
+}

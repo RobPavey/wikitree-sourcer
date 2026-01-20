@@ -606,6 +606,16 @@
         "base/browser/content/content_common.js",
         "site/ecpp/browser/ecpp_content.js"
       ]
+    },
+    {
+      "matches": [
+        "https://archives2.gnb.ca/Search/FEDS/Default.aspx?culture=en-CA"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/panb/browser/panb_content.js"
+      ]
     }
   ],
   "options_ui": {
@@ -1095,6 +1105,14 @@
       ],
       "matches": [
         "*://ecpp.ucr.edu/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/panb/core/panb_extract_data.mjs"
+      ],
+      "matches": [
+        "https://archives2.gnb.ca/Search/FEDS/Default.aspx?culture=en-CA"
       ]
     }
   ],

@@ -607,6 +607,16 @@
         "base/browser/content/content_common.js",
         "site/ecpp/browser/ecpp_content.js"
       ]
+    },
+    {
+      "matches": [
+        "*://archives2.gnb.ca/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/panb/browser/panb_content.js"
+      ]
     }
   ],
   "options_ui": {
@@ -1089,6 +1099,14 @@
       ],
       "matches": [
         "*://ecpp.ucr.edu/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/panb/core/panb_extract_data.mjs"
+      ],
+      "matches": [
+        "*://archives2.gnb.ca/*"
       ]
     }
   ],
