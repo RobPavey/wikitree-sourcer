@@ -27,7 +27,10 @@
     "Volume": {
       "text": "8d"
     },
-    "Page": {},
+    "Page": {
+      "text": "803",
+      "href": "https://dev.freebmd2.org.uk/695da40fbd30f24b671c1bf0/116242858/same_page_entries?district=Prestwich&locale=en&page=803&quarter=279&record=3&volume=8d"
+    },
     "Transcriber": {
       "text": "No data\n          (We are afraid, we do not have this information yet.)"
     }

@@ -61,8 +61,10 @@ function getRecordDataText(ed, label) {
 }
 
 class FreebmdEdReader extends ExtractedDataReader {
-  constructor(ed) {
+  constructor(ed, primaryPersonIndex, spousePersonIndex) {
     super(ed);
+
+    this.spousePersonIndex = spousePersonIndex;
 
     if (ed.format == "v2025") {
       let metaValue = this.getMetadataValue("RecordType");
@@ -329,7 +331,7 @@ class FreebmdEdReader extends ExtractedDataReader {
     } else {
       let spouseSurname = getRecordDataText(this.ed, "Spouse Surname");
       if (spouseSurname) {
-        if (!spouseSurname.startsWith("No data")) {
+        if (!spouseSurname.startsWith("No data") && !spouseSurname.startsWith("See Page")) {
           spouseName = this.makeNameObjFromForenamesAndLastName("", spouseSurname);
         }
       }
@@ -341,6 +343,117 @@ class FreebmdEdReader extends ExtractedDataReader {
       let spouse = this.makeSpouseObj(spouseName, marriageDateObj, marriagePlaceObj);
       return [spouse];
     }
+
+    if (this.recordType == RT.MarriageRegistration && this.ed.recordData) {
+      for (let key of Object.keys(this.ed.recordData)) {
+        if (key.startsWith("Entries on page ")) {
+          let data = this.ed.recordData[key];
+          if (data.text && data.href) {
+            // this should only happen if there is only one record on page (including this person)
+            // so do nothing
+          } else if (data.subValues && data.subValues.length == 2) {
+            let index = -1;
+            let givenNames = this.getCorrectlyCasedGivenNames();
+            let surname = this.getCorrectlyCasedSurname();
+            let testString = surname + " " + givenNames;
+            if (data.subValues[0].text == testString) {
+              index = 1;
+            } else if (data.subValues[1].text == testString) {
+              index = 0;
+            }
+            if (index != -1) {
+              if (
+                data.subValues[0].date == data.subValues[1].date &&
+                data.subValues[0].district == data.subValues[1].district
+              ) {
+                let spouseNameString = data.subValues[index].text;
+                if (spouseNameString) {
+                  let surname = StringUtils.getFirstWord(spouseNameString);
+                  let givenNames = StringUtils.getWordsAfterFirstWord(spouseNameString);
+                  if (surname && givenNames) {
+                    let spouseName = this.makeNameObjFromForenamesAndLastName(givenNames, surname);
+
+                    let marriageDateObj = this.getEventDateObj();
+                    let marriagePlaceObj = this.getEventPlaceObj();
+                    let spouse = this.makeSpouseObj(spouseName, marriageDateObj, marriagePlaceObj);
+                    return [spouse];
+                  }
+                }
+              }
+            }
+          } else {
+            if (this.spousePersonIndex !== undefined || this.spousePersonIndex != -1) {
+              // the index is into an array that is missing this person.
+              if (data.subValues && data.subValues.length > this.spousePersonIndex) {
+                // add a list of names, not including this person's name
+                let givenNames = this.getCorrectlyCasedGivenNames();
+                let surname = this.getCorrectlyCasedSurname();
+                let testString = surname + " " + givenNames;
+
+                let options = [];
+
+                let index = 0;
+                for (let subValue of data.subValues) {
+                  if (subValue.date == subValue.date && subValue.district == subValue.district) {
+                    let spouseNameString = subValue.text;
+                    if (spouseNameString && spouseNameString != testString) {
+                      if (index == this.spousePersonIndex) {
+                        let surname = StringUtils.getFirstWord(spouseNameString);
+                        let givenNames = StringUtils.getWordsAfterFirstWord(spouseNameString);
+
+                        if (surname && givenNames) {
+                          let spouseName = this.makeNameObjFromForenamesAndLastName(givenNames, surname);
+
+                          let marriageDateObj = this.getEventDateObj();
+                          let marriagePlaceObj = this.getEventPlaceObj();
+                          let spouse = this.makeSpouseObj(spouseName, marriageDateObj, marriagePlaceObj);
+                          return [spouse];
+                        }
+                        break;
+                      }
+                      index++;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          break;
+        }
+      }
+    }
+  }
+
+  getSpousePersonOptions() {
+    if (this.recordType == RT.MarriageRegistration) {
+      if (this.ed.recordData) {
+        for (let key of Object.keys(this.ed.recordData)) {
+          if (key.startsWith("Entries on page ")) {
+            let data = this.ed.recordData[key];
+            if (data.subValues && data.subValues.length > 2) {
+              // add a list of names, not including this person's name
+              let givenNames = this.getCorrectlyCasedGivenNames();
+              let surname = this.getCorrectlyCasedSurname();
+              let testString = surname + " " + givenNames;
+
+              let options = [];
+
+              for (let subValue of data.subValues) {
+                if (subValue.date == subValue.date && subValue.district == subValue.district) {
+                  let spouseNameString = subValue.text;
+                  if (spouseNameString && spouseNameString != testString) {
+                    options.push(spouseNameString);
+                  }
+                }
+              }
+              return options;
+            }
+          }
+        }
+      }
+    }
+
+    return undefined;
   }
 
   getCollectionData() {
