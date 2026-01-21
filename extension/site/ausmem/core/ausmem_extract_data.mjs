@@ -32,10 +32,10 @@ function extractData(document, url) {
 
   if (url.match("victims.auschwitz.org/victims/")) {
     result.values = {};
-    const table = document.querySelector("div[id=\"tabela\"]");
+    const table = document.querySelector('div[id="tabela"]');
     if (!table) return result;
 
-    const nameElement = document.querySelector("div[class=\"hidden lg:block lg:text-xl lg:font-bold\"]");
+    const nameElement = document.querySelector('div[class="hidden lg:block lg:text-xl lg:font-bold"]');
     if (nameElement) {
       result.values["full name"] = nameElement.textContent.trim();
     }

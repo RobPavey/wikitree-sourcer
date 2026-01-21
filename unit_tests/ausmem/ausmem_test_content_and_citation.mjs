@@ -33,12 +33,12 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 const regressionData = [
   {
     caseName: "244619",
-    url: "https://victims.auschwitz.org/victims/244619"
+    url: "https://victims.auschwitz.org/victims/244619",
   },
   {
     caseName: "245644",
-    url: "https://victims.auschwitz.org/victims/245644"
-  }
+    url: "https://victims.auschwitz.org/victims/245644",
+  },
 ];
 
 async function runTests(testManager) {

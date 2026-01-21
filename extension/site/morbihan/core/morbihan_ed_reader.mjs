@@ -25,7 +25,7 @@ SOFTWARE.
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
-class AusmemEdReader extends ExtractedDataReader {
+class MorbihanEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
   }
@@ -47,14 +47,6 @@ class AusmemEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    if (this.ed.values["full name"]) {
-      let name_split = this.ed.values["full name"].trim().split(" ");
-      let last_name = name_split[0];
-      last_name = last_name.replaceAll(";", " ");
-      let first_names = name_split.slice(1).join(" ");
-      first_names = first_names.replaceAll(";", " ");
-      return this.makeNameObjFromForenamesAndLastName(first_names, last_name);
-    }
     return undefined;
   }
 
@@ -83,16 +75,10 @@ class AusmemEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
-    if (this.ed.values["date of birth"]) {
-      return this.makeDateObjFromDdmmyyyyDate(this.ed.values["date of birth"], "-");
-    }
     return undefined;
   }
 
   getBirthPlaceObj() {
-    if (this.ed.values["place of birth"]) {
-      return this.makePlaceObjFromFullPlaceName(this.ed.values["place of birth"]);
-    }
     return undefined;
   }
 
@@ -145,4 +131,4 @@ class AusmemEdReader extends ExtractedDataReader {
   }
 }
 
-export { AusmemEdReader };
+export { MorbihanEdReader };

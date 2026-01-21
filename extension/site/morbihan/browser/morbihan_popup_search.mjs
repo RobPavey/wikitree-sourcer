@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -28,18 +28,16 @@ import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const dfgviewerStartYear = 1000;
-const dfgviewerEndYear = 2000;
+const morbihanStartYear = 1600;
+const morbihanEndYear = 2000;
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
-    startYear: dfgviewerStartYear,
-    endYear: dfgviewerEndYear,
+    startYear: morbihanStartYear,
+    endYear: morbihanEndYear,
     dateTestType: "bmd",
-    countryList: ["Germany"],
+    countryList: ["France"],
   };
-
-  return false; // Disable all serach functionality for now
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
     return false;
@@ -52,10 +50,10 @@ function shouldShowSearchMenuItem(data, filter) {
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function dfgviewerSearch(generalizedData) {
+async function morbihanSearch(generalizedData) {
   const input = { generalizedData: generalizedData, options: options };
-  doAsyncActionWithCatch("DFG Viewer Search", input, async function () {
-    let loadedModule = await import(`../core/dfgviewer_build_search_url.mjs`);
+  doAsyncActionWithCatch("Archives Départementales du Morbihan Search", input, async function () {
+    let loadedModule = await import(`../core/morbihan_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
 }
@@ -64,12 +62,10 @@ async function dfgviewerSearch(generalizedData) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addDfgviewerDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  // addMenuItem(menu, "Search DFG Viewer", function (element) {
-  //   dfgviewerSearch(data.generalizedData);
-  // });
-
-  // TODO: add search menus for each archive instead
+function addMorbihanDefaultSearchMenuItem(menu, data, backFunction, filter) {
+  addMenuItem(menu, "Search Archives Départementales du Morbihan", function (element) {
+    morbihanSearch(data.generalizedData);
+  });
 
   return true;
 }
@@ -82,4 +78,9 @@ function addDfgviewerDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("dfgviewer", "DFG Viewer", addDfgviewerDefaultSearchMenuItem, shouldShowSearchMenuItem);
+registerSearchMenuItemFunction(
+  "morbihan",
+  "Archives Départementales du Morbihan",
+  addMorbihanDefaultSearchMenuItem,
+  shouldShowSearchMenuItem
+);

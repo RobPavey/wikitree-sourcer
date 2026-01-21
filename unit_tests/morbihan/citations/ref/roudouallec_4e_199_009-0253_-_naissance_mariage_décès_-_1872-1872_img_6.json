@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''État civil''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nPatrimoines & Archives départementales du Morbihan; 4E_199_009-0253 - 1872-1872; Image 6 sur 38; naissance / mariage / décès; Lieu: Roudouallec (Morbihan, France)<br/>\n[https://rechercher.patrimoines-archives.morbihan.fr/ark:/15049/vta54488725a1b86/daogrp/0/6 Archives Départementales du Morbihan Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''État civil''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nPatrimoines & Archives départementales du Morbihan; 4E_199_009-0253 - 1872-1872; Image 6 sur 38; naissance / mariage / décès; Lieu: Roudouallec (Morbihan, France)<br/>\n[https://rechercher.patrimoines-archives.morbihan.fr/ark:/15049/vta54488725a1b86/daogrp/0/6 Archives Départementales du Morbihan Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''État civil''': \"Registres paroissiaux et documents d'état civil\"<br/>Patrimoines & Archives départementales du Morbihan; 4E_199_009-0253 - 1872-1872; Image 6 sur 38; naissance / mariage / décès; Lieu: Roudouallec (Morbihan, France)<br/>[https://rechercher.patrimoines-archives.morbihan.fr/ark:/15049/vta54488725a1b86/daogrp/0/6 Archives Départementales du Morbihan Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}
