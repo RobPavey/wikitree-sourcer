@@ -30,24 +30,20 @@ function buildPanbUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-   builder.sourceTitle = ed.databaseID + ": " + ed.tableTitle + ", online database";
+  builder.sourceTitle = ed.databaseID + ": " + ed.tableTitle + ", online database";
   if(ed.hasImage) {
-	builder.sourceTitle += " with digital images.";
+	  builder.sourceTitle += " with digital images.";
   }
   else {
 	builder.sourceTitle += ".";
   }
-  console.log
 }
 
 function buildSourceReference(ed, gd, builder) {
-  
   let recordSourceReference = "";
   let srCode = ed.recordData["Code"];
-  console.log(srCode);
   let hasMicrofilm = true;
   let needsFinishing = true;
-
 
   if(ed.eventType == "Birth") {
     if(ed.databaseID == "RS141A5") {
@@ -61,9 +57,9 @@ function buildSourceReference(ed, gd, builder) {
   
   else if(ed.eventType == "Marriage") {
     let regNumberString = ed.recordData["Number"];
-      if (regNumberString && regNumberString != "" && regNumberString.slice(0,1) != "-") {
-        recordSourceReference = "Registration Number: " + regNumberString + ", Code: " + srCode;
-      }
+    if (regNumberString && regNumberString != "" && regNumberString.slice(0,1) != "-") {
+      recordSourceReference = "Registration Number: " + regNumberString + ", Code: " + srCode;
+    }
     else {
       recordSourceReference = "Code: " + srCode;
     }
@@ -126,7 +122,6 @@ function buildRecordLink(ed, gd, builder) {
 }
 
 function buildCoreCitation(ed, gd, builder) {
-  //let edReader = new PanbEdReader(ed);
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);

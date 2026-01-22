@@ -57,11 +57,13 @@ function constrainDate(date, runDate, allowedDateRange) {
         date.year = from.year;
         date.month = from.month;
         date.day = from.day;
-      } else if (date.year == from.year) {
+      }
+      else if (date.year == from.year) {
         if (date.month < from.month) {
           date.month = from.month;
           date.day = from.day;
-        } else if (date.month == from.month) {
+        }
+        else if (date.month == from.month) {
           if (date.day < from.day) {
             date.day = from.day;
           }
@@ -85,11 +87,13 @@ function constrainDate(date, runDate, allowedDateRange) {
         date.year = to.year;
         date.month = to.month;
         date.day = to.day;
-      } else if (date.year == to.year) {
+      }
+      else if (date.year == to.year) {
         if (date.month > to.month) {
           date.month = to.month;
           date.day = to.day;
-        } else if (date.month == to.month) {
+        }
+        else if (date.month == to.month) {
           if (date.day > to.day) {
             date.day = to.day;
           }
@@ -108,7 +112,8 @@ function addDateRange(gd, dateString, runDate, options, allowedDateRange) {
   const exactnessOption = options.search_nzbdm_dateExactness;
   if (exactnessOption == "exact") {
     exactness = 0;
-  } else if (/^\d+$/.test(exactnessOption)) {
+  }
+  else if (/^\d+$/.test(exactnessOption)) {
     exactness = Number(exactnessOption);
   }
 
@@ -132,10 +137,12 @@ function addDateRange(gd, dateString, runDate, options, allowedDateRange) {
         toMonth = parsedDate.monthNum;
         if (parsedDate.hasDay) {
           toDay = parsedDate.dayNum;
-        } else {
+        }
+        else {
           toDay = lastDayOfMonth[parsedDate.monthNum - 1];
         }
-      } else {
+      }
+      else {
         toDay = 31;
         toMonth = 12;
       }
@@ -171,9 +178,6 @@ function addDateRange(gd, dateString, runDate, options, allowedDateRange) {
 
 
 function buildSearchData(input) {
-  console.log("buildSearchData, input is:");
-  console.log(input);
-
   const gd = input.generalizedData;
   const options = input.options;
   const typeOfSearch = "General";
@@ -196,40 +200,32 @@ function buildSearchData(input) {
   // For examples see:
   // - extension/site/vicbdm/core/vicbdm_build_search_data.mjs
   // - extension/site/nswbdm/core/nswbdm_build_search_data.mjs
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   let lastName = gd.inferLastName();
-  //console.log("buildSearchData, lastName is:", lastName);
-  //console.log(lastName);
   if (lastName) {
     fieldData["ContentPlaceHolder1_ContentPlaceHolder1_textboxFamilyName"] = lastName;
   }
- let forenames = gd.inferForenames();
+  let forenames = gd.inferForenames();
   if (forenames) {
     fieldData["ContentPlaceHolder1_ContentPlaceHolder1_textboxGivenNames"] = forenames;
   }
  // addStartAndEndYearFromBirthAndDeath(gd, options, fieldData, 0);
  
   let panbBirthYear = gd.inferBirthYear();
-  //console.log("buildSearchData, panbBirthYear is:");
-  //console.log(panbBirthYear);
   if  (panbBirthYear) {
     panbBirthYear = Number(panbBirthYear) -2;
     if(panbBirthYear > 1658) {
-     fieldData["ContentPlaceHolder1_ContentPlaceHolder1_textboxYearFrom"] = panbBirthYear;
+      fieldData["ContentPlaceHolder1_ContentPlaceHolder1_textboxYearFrom"] = panbBirthYear;
     }
   }
 
   let panbDeathYear = gd.inferDeathYear();
-  //console.log("buildSearchData, panbDeathYear is:");
-  //console.log(panbDeathYear);
   if  (panbDeathYear) {
     panbDeathYear = Number(panbDeathYear) + 10;
     if( /*panbDeathYear > 1700 &&*/ panbDeathYear < 2014) {
-     fieldData["ContentPlaceHolder1_ContentPlaceHolder1_textboxYearTo"] = panbDeathYear;
+      fieldData["ContentPlaceHolder1_ContentPlaceHolder1_textboxYearTo"] = panbDeathYear;
     }
   }
-  // console.log("fieldData is:");
-  //console.log(fieldData);
 
   var result = {
     fieldData: fieldData,

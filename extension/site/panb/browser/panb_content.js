@@ -33,7 +33,7 @@ async function getPendingSearch() {
         resolve(value.panbSearchData);
       });
     } catch (ex) {
-      console.log("getPendingSearch catch");
+      //console.log("getPendingSearch catch");
       reject(ex);
     }
   });
