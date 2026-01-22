@@ -3,7 +3,9 @@
     "fieldData": {
       "utf8": true,
       "ContentPlaceHolder1_ContentPlaceHolder1_textboxFamilyName": "Ellacott",
-      "ContentPlaceHolder1_ContentPlaceHolder1_textboxGivenNames": "Elizabeth"
+      "ContentPlaceHolder1_ContentPlaceHolder1_textboxGivenNames": "Elizabeth",
+      "ContentPlaceHolder1_ContentPlaceHolder1_textboxYearFrom": 1806,
+      "ContentPlaceHolder1_ContentPlaceHolder1_textboxYearTo": 1895
     },
     "selectData": {}
   }

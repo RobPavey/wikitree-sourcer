@@ -3,33 +3,33 @@
   "sourceType": "record",
   "recordType": "MarriageRegistration",
   "name": {
-    "name": "John Walter Carr"
+    "name": "Herbert Adair"
   },
   "personGender": "male",
   "eventDate": {
-    "dateString": "1974-03-15"
+    "dateString": "1899-12-27"
   },
   "eventPlace": {
-    "placeString": "Sussex Corner, Kings, New Brunswick, Canada"
+    "placeString": "Carleton, New Brunswick, Canada"
   },
-  "registrationDistrict": "Kings",
+  "registrationDistrict": "Carleton",
   "spouses": [
     {
       "name": {
-        "name": "Dale Alice Wallace"
+        "name": "Minnie Crabb"
       },
       "personGender": "female",
       "marriageDate": {
-        "dateString": "1974-03-15"
+        "dateString": "1899-12-27"
       },
       "marriagePlace": {
-        "placeString": "Sussex Corner, Kings, New Brunswick, Canada"
+        "placeString": "Carleton, New Brunswick, Canada"
       }
     }
   ],
   "primaryPersonOptions": [
-    "John Walter Carr",
-    "Dale Alice Wallace"
+    "Herbert Adair (groom)",
+    "Minnie Crabb (bride)"
   ],
   "hasValidData": true
 }

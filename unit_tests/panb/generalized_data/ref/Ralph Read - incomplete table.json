@@ -3,25 +3,25 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "name": {
-    "name": "Walter Earl Dunfield"
+    "name": "Ralph Russell Reade"
   },
   "personGender": "male",
   "eventDate": {
-    "dateString": "1902-05-08"
+    "dateString": "1928-05-02"
   },
   "eventPlace": {
-    "placeString": "Penobsquis, Kings, New Brunswick, Canada"
+    "placeString": "Moncton, Westmorland, New Brunswick, Canada"
   },
-  "registrationDistrict": "Kings",
+  "registrationDistrict": "Westmorland",
   "parents": {
     "father": {
       "name": {
-        "name": "John Dunfield"
+        "name": "Russell Richey Reade"
       }
     },
     "mother": {
       "name": {
-        "name": "Lucy Goddard"
+        "name": "Ena Marion Mitton"
       }
     }
   },

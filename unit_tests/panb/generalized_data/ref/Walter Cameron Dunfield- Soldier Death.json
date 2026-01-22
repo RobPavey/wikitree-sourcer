@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "name": "Walter Cameron Mitton"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1944-07-04"
+  },
+  "eventPlace": {
+    "placeString": "service in France"
+  },
+  "ageAtEvent": "21",
+  "ageAtDeath": "21",
+  "hasValidData": true
+}

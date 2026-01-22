@@ -3,25 +3,20 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "name": {
-    "name": "Walter Earl Dunfield"
+    "name": "Freda May Adair"
   },
-  "personGender": "male",
+  "personGender": "female",
   "eventDate": {
-    "dateString": "1902-05-08"
+    "dateString": "1925-08-30"
   },
   "eventPlace": {
-    "placeString": "Penobsquis, Kings, New Brunswick, Canada"
+    "placeString": "Sussex Parish, Kings, New Brunswick, Canada"
   },
   "registrationDistrict": "Kings",
   "parents": {
-    "father": {
-      "name": {
-        "name": "John Dunfield"
-      }
-    },
     "mother": {
       "name": {
-        "name": "Lucy Goddard"
+        "name": "Helen Adeline Adair"
       }
     }
   },

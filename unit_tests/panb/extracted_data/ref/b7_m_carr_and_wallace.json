@@ -10,10 +10,11 @@
     "County": "KINGS",
     "Parish": "SUSSEX CORNER",
     "Number": "1479",
-    "Code": "B4/1974"
+    "Code": "B4/1974",
+    "Sex": ""
   },
   "hasImage": true,
   "imageUrl": "https://archives2.gnb.ca/DigitizedDocuments/RS141/B7/1974/599b423b-6369-42c3-a475-537726f8a403.jpg",
   "numberTableEntries": 7,
-  "recordType": "Marriage"
+  "eventType": "Marriage"
 }

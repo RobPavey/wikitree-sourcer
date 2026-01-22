@@ -43,6 +43,36 @@ const regressionData = [
     url: "https://archives2.gnb.ca/Search/VISSE/141B7.aspx?culture=en-CA&guid=599B423B-6369-42C3-A475-537726F8A403",
   },
 
+	{
+    // has extended ASCII characters
+		caseName: "Eva Mitton -Gender Problem",
+		url: "https://archives2.gnb.ca/Search/VISSE/141B7.aspx?culture=en-CA&guid=1F5E726E-805B-4FE2-8244-A066BFDE0BA0",
+	},
+
+	{
+    // has extended ASCII characters
+		caseName: "Freda Mae Adair - no father",
+		url: "https://archives2.gnb.ca/Search/VISSE/141A5.aspx?culture=en-CA&guid=9B31BD24-7673-46D5-9299-0794C0CC577E",
+	},
+
+	{
+    // has extended ASCII characters
+		caseName: "Herbert Adair ---- in Parish field",
+		url: "https://archives2.gnb.ca/Search/VISSE/141B7.aspx?culture=en-CA&guid=ACF4DB10-1361-4280-836E-3400938EECD7",
+	},
+
+	{
+    // has extended ASCII characters
+		caseName: "Ralph Read - incomplete table",
+		url: "https://archives2.gnb.ca/Search/VISSE/141A5.aspx?culture=en-CA&guid=9AEBD1C0-E23F-4300-ADCB-84C6AAAB1D0B",
+	},
+
+	{
+    // has extended ASCII characters
+		caseName: "Walter Cameron Dunfield- Soldier Death",
+		url: "https://archives2.gnb.ca/Search/RS141C6/Details.aspx?culture=en-CA&record=751",
+	},
+
   {
     // has extended ASCII characters
     caseName: "walter_earl_dunfield_b_1902",

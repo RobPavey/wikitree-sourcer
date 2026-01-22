@@ -1,0 +1,21 @@
+{
+  "url": "https://archives2.gnb.ca/Search/VISSE/141B7.aspx?culture=en-CA&guid=1F5E726E-805B-4FE2-8244-A066BFDE0BA0",
+  "success": true,
+  "databaseID": "RS141B7",
+  "tableTitle": "Index to New Brunswick Marriages",
+  "recordData": {
+    "Name": "DUNFIELD, EVA",
+    "Married": "MITTON, OTTO",
+    "Date": "1922-09-06",
+    "County": "WESTMORLAND",
+    "Parish": "SALISBURY",
+    "Number": "3612",
+    "Code": "B4/1922",
+    "Microfilm": "F19682",
+    "Sex": ""
+  },
+  "hasImage": true,
+  "imageUrl": "https://archives2.gnb.ca/DigitizedDocuments/RS141/B7/1922/1f5e726e-805b-4fe2-8244-a066bfde0ba0.jpg",
+  "numberTableEntries": 8,
+  "eventType": "Marriage"
+}

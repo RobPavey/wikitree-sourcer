@@ -3,7 +3,9 @@
     "fieldData": {
       "utf8": true,
       "ContentPlaceHolder1_ContentPlaceHolder1_textboxFamilyName": "McNamara",
-      "ContentPlaceHolder1_ContentPlaceHolder1_textboxGivenNames": "Florence Agnes"
+      "ContentPlaceHolder1_ContentPlaceHolder1_textboxGivenNames": "Florence Agnes",
+      "ContentPlaceHolder1_ContentPlaceHolder1_textboxYearFrom": 1878,
+      "ContentPlaceHolder1_ContentPlaceHolder1_textboxYearTo": 1968
     },
     "selectData": {}
   }

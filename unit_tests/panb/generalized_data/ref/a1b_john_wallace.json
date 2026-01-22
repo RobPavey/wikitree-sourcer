@@ -1,7 +1,7 @@
 {
   "sourceOfData": "panb",
   "sourceType": "record",
-  "recordType": "Birth",
+  "recordType": "BirthRegistration",
   "name": {
     "name": "John Leslie Wallace"
   },

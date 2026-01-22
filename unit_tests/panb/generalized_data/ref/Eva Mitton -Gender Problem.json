@@ -3,33 +3,33 @@
   "sourceType": "record",
   "recordType": "MarriageRegistration",
   "name": {
-    "name": "John Walter Carr"
+    "name": "Otto Mitton"
   },
   "personGender": "male",
   "eventDate": {
-    "dateString": "1974-03-15"
+    "dateString": "1922-09-06"
   },
   "eventPlace": {
-    "placeString": "Sussex Corner, Kings, New Brunswick, Canada"
+    "placeString": "Salisbury, Westmorland, New Brunswick, Canada"
   },
-  "registrationDistrict": "Kings",
+  "registrationDistrict": "Westmorland",
   "spouses": [
     {
       "name": {
-        "name": "Dale Alice Wallace"
+        "name": "Eva Dunfield"
       },
       "personGender": "female",
       "marriageDate": {
-        "dateString": "1974-03-15"
+        "dateString": "1922-09-06"
       },
       "marriagePlace": {
-        "placeString": "Sussex Corner, Kings, New Brunswick, Canada"
+        "placeString": "Salisbury, Westmorland, New Brunswick, Canada"
       }
     }
   ],
   "primaryPersonOptions": [
-    "John Walter Carr",
-    "Dale Alice Wallace"
+    "Otto Mitton (groom)",
+    "Eva Dunfield (bride)"
   ],
   "hasValidData": true
 }
