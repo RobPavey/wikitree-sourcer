@@ -3205,6 +3205,8 @@ async function buildMenu(data, tabId) {
     addBuildListsMenuItem(menu, data, backFunction);
   } else if (extractedData.pageType == "edit") {
     addMenuDivider(menu);
+    addSavePersonDataMenuItem(menu, data);
+    addBuildListsMenuItem(menu, data, backFunction);
     await addImproveCensusTablesMenuItem(menu, data, tabId, backFunction);
   }
 
