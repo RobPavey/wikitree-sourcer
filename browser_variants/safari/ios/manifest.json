@@ -612,7 +612,7 @@
     },
     {
       "matches": [
-        "https://archives2.gnb.ca/Search/FEDS/Default.aspx?culture=en-CA"
+        "https://archives2.gnb.ca/*"
       ],
       "run_at": "document_idle",
       "js": [
@@ -1115,7 +1115,7 @@
         "site/panb/core/panb_extract_data.mjs"
       ],
       "matches": [
-        "https://archives2.gnb.ca/Search/FEDS/Default.aspx?culture=en-CA"
+        "https://archives2.gnb.ca/*"
       ]
     }
   ],
