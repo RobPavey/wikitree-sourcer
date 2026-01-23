@@ -50,6 +50,9 @@ import {
 } from "./gro_smart_search_results.mjs";
 
 const maxResultCount = 1000;
+const maxSearchCount = 100;
+
+var totalSearchesPerformed = 0;
 
 function adjustAgeRangesWhenSubdividing(singleSearchParameters) {
   if (singleSearchParameters.type == "deaths") {
@@ -197,8 +200,18 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
   //console.log(singleSearchParameters);
 
   // wait some time to avoid hammering the server
-  const waitTime = getRandomInt(2000, 4000);
-  await sleep(waitTime);
+  if (totalSearchesPerformed > 0) {
+    let waitTime = getRandomInt(2000, 4000);
+    if (totalSearchesPerformed > 16) {
+      waitTime = getRandomInt(4000, 8000);
+    }
+    await sleep(waitTime);
+  }
+  totalSearchesPerformed++;
+
+  if (totalSearchesPerformed > maxSearchCount) {
+    return true;
+  }
 
   function pruneResultRows(result) {
     // if singleSearchParameters.mmm
@@ -292,6 +305,7 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
             return false;
           }
           if (totalFetchResults.resultCount > maxResultCount) return true;
+          if (totalSearchesPerformed > maxSearchCount) return true;
         }
         return true;
       } else if (breakDownSmaller && singleSearchParameters.year < 1984 && !singleSearchParameters.quarter) {
@@ -303,6 +317,7 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
             return false;
           }
           if (totalFetchResults.resultCount > maxResultCount) return true;
+          if (totalSearchesPerformed > maxSearchCount) return true;
         }
         return true;
       } else if (breakDownSmaller && singleSearchParameters.year >= 1984 && !singleSearchParameters.month) {
@@ -314,6 +329,7 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
             return false;
           }
           if (totalFetchResults.resultCount > maxResultCount) return true;
+          if (totalSearchesPerformed > maxSearchCount) return true;
         }
         return true;
       } else if (breakDownToMonth && singleSearchParameters.year >= 1984 && monthNum > 12) {
@@ -335,6 +351,7 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
             return false;
           }
           if (totalFetchResults.resultCount > maxResultCount) return true;
+          if (totalSearchesPerformed > maxSearchCount) return true;
         }
         return true;
       } else {
@@ -356,6 +373,7 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
 
     addFetchResults(result, gender);
     if (totalFetchResults.resultCount > maxResultCount) return true;
+    if (totalSearchesPerformed > maxSearchCount) return true;
 
     if (result.resultsPageCount > 1 && result.resultsPageNumber == 1) {
       for (let pageNumber = 2; pageNumber <= result.resultsPageCount; pageNumber++) {
@@ -364,6 +382,7 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
         if (progressDialogResponse || !result.success) return false;
         addFetchResults(result, gender);
         if (totalFetchResults.resultCount > maxResultCount) return true;
+        if (totalSearchesPerformed > maxSearchCount) return true;
       }
     }
   }
@@ -383,6 +402,8 @@ async function doSmartSearch() {
   if (!success) {
     return;
   }
+
+  totalSearchesPerformed = 0;
 
   let singleSearchParameters = {
     type: searchParameters.type,
@@ -445,6 +466,14 @@ async function doSmartSearch() {
 
     if (totalFetchResults.resultCount > maxResultCount) {
       let message = "Exceeded " + maxResultCount + " search results. Stopping search.";
+      message += "\n\nThe search results will be incomplete.";
+      message += "\n\nTry doing a more specific search.";
+      await showErrorDialog(message);
+      break;
+    }
+
+    if (totalSearchesPerformed > maxSearchCount) {
+      let message = "Number of searches exceeded " + maxSearchCount + ". Stopping search.";
       message += "\n\nThe search results will be incomplete.";
       message += "\n\nTry doing a more specific search.";
       await showErrorDialog(message);

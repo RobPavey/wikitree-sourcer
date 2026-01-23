@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"1930 United States Federal Census\"<br/>\nYear: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992<br/>\n{{Ancestry Record|6224|67238097}} (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1930 census Patsy (age 4) was the daughter of W B Neal at 2643 Linden Ave, Knoxville, Knox, Tennessee, USA.<ref>\n'''1930 Census''':\n\"1930 United States Federal Census\"<br/>\nYear: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992<br/>\n{{Ancestry Record|6224|67238097}} (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1930 Census''': \"1930 United States Federal Census\"<br/>Year: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992<br/>{{Ancestry Record|6224|67238097}} (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"1930 United States Federal Census\"<br/>\nYear: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992<br/>\n{{Ancestry Record|6224|67238097}} (accessed 6 May 2021)<br/>\nPatsy Louise Neal (4), single daughter, in household of W B Neal (34) at 2643 Linden Ave, Knoxville, Knox, Tennessee, USA. Born in Kentucky.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1930 census Patsy (age 4) was the daughter of W B Neal at 2643 Linden Ave, Knoxville, Knox, Tennessee, USA.<ref>\n'''1930 Census''':\n\"1930 United States Federal Census\"<br/>\nYear: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992<br/>\n{{Ancestry Record|6224|67238097}} (accessed 6 May 2021)<br/>\nPatsy Louise Neal (4), single daughter, in household of W B Neal (34) at 2643 Linden Ave, Knoxville, Knox, Tennessee, USA. Born in Kentucky.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1930 Census''': \"1930 United States Federal Census\"<br/>Year: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992<br/>{{Ancestry Record|6224|67238097}} (accessed 6 May 2021)<br/>Patsy Louise Neal (4), single daughter, in household of W B Neal (34) at 2643 Linden Ave, Knoxville, Knox, Tennessee, USA. Born in Kentucky.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"1930 United States Federal Census\"<br/>\nYear: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992<br/>\n{{Ancestry Record|6224|67238097}} (accessed 6 May 2021)<br/>\nName: Patsy Louise Neal [Betsy Louise Neal] [User-submitted-comment Neal] [Patricia] [Patsy Louise] [Patricia Neal]; Birth Year: abt 1926 [abt 1926]; Gender: Female; Race: White; Age in 1930: 4; Birthplace: Kentucky; Marital Status: Single; Relation to Head of House: Daughter; Home in 1930: Knoxville, Knox, Tennessee, USA; Map of Home: Knoxville, Knox, Tennessee; Street Address: Linden Ave; Ward of City: 14 part of; House Number: 2643; Dwelling Number: 468; Family Number: 598; Attended School: No; Able to Read and Write: No; Father's Birthplace: Virginia; Mother's Birthplace: Kentucky; <br/>Household Members (Name) Age Relationship:<br/>W B Neal 34 Head<br/>Eura Neal 29 Wife<br/>Margarett Ann Neal 6 Daughter<br/>Patsy Louise Neal 4 Daughter.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1930 census Patsy (age 4) was the daughter of W B Neal at 2643 Linden Ave, Knoxville, Knox, Tennessee, USA.<ref>\n'''1930 Census''':\n\"1930 United States Federal Census\"<br/>\nYear: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992<br/>\n{{Ancestry Record|6224|67238097}} (accessed 6 May 2021)<br/>\nName: Patsy Louise Neal [Betsy Louise Neal] [User-submitted-comment Neal] [Patricia] [Patsy Louise] [Patricia Neal]; Birth Year: abt 1926 [abt 1926]; Gender: Female; Race: White; Age in 1930: 4; Birthplace: Kentucky; Marital Status: Single; Relation to Head of House: Daughter; Home in 1930: Knoxville, Knox, Tennessee, USA; Map of Home: Knoxville, Knox, Tennessee; Street Address: Linden Ave; Ward of City: 14 part of; House Number: 2643; Dwelling Number: 468; Family Number: 598; Attended School: No; Able to Read and Write: No; Father's Birthplace: Virginia; Mother's Birthplace: Kentucky; <br/>Household Members (Name) Age Relationship:<br/>W B Neal 34 Head<br/>Eura Neal 29 Wife<br/>Margarett Ann Neal 6 Daughter<br/>Patsy Louise Neal 4 Daughter.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1930 Census''': \"1930 United States Federal Census\"<br/>Year: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992<br/>{{Ancestry Record|6224|67238097}} (accessed 6 May 2021)<br/>Name: Patsy Louise Neal [Betsy Louise Neal] [User-submitted-comment Neal] [Patricia] [Patsy Louise] [Patricia Neal]; Birth Year: abt 1926 [abt 1926]; Gender: Female; Race: White; Age in 1930: 4; Birthplace: Kentucky; Marital Status: Single; Relation to Head of House: Daughter; Home in 1930: Knoxville, Knox, Tennessee, USA; Map of Home: Knoxville, Knox, Tennessee; Street Address: Linden Ave; Ward of City: 14 part of; House Number: 2643; Dwelling Number: 468; Family Number: 598; Attended School: No; Able to Read and Write: No; Father's Birthplace: Virginia; Mother's Birthplace: Kentucky; <br/>Household Members (Name) Age Relationship:<br/>W B Neal 34 Head<br/>Eura Neal 29 Wife<br/>Margarett Ann Neal 6 Daughter<br/>Patsy Louise Neal 4 Daughter.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"1930 United States Federal Census\"<br/>\nYear: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992<br/>\n{{Ancestry Record|6224|67238097}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Patsy Louise Neal [Betsy Louise Neal] [User-submitted-comment Neal] [Patricia] [Patsy Louise] [Patricia Neal]\n|-\n| Birth Year || abt 1926 [abt 1926]\n|-\n| Gender || Female\n|-\n| Race || White\n|-\n| Age in 1930 || 4\n|-\n| Birthplace || Kentucky\n|-\n| Marital Status || Single\n|-\n| Relation to Head of House || Daughter\n|-\n| Home in 1930 || Knoxville, Knox, Tennessee, USA\n|-\n| Map of Home || Knoxville, Knox, Tennessee\n|-\n| Street Address || Linden Ave\n|-\n| Ward of City || 14 part of\n|-\n| House Number || 2643\n|-\n| Dwelling Number || 468\n|-\n| Family Number || 598\n|-\n| Attended School || No\n|-\n| Able to Read and Write || No\n|-\n| Father's Birthplace || Virginia\n|-\n| Mother's Birthplace || Kentucky\n|-\n| Household Members (Name)<br/>Age<br/>Relationship || W B Neal 34 Head<br/>Eura Neal 29 Wife<br/>Margarett Ann Neal 6 Daughter<br/>Patsy Louise Neal 4 Daughter\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1930 census Patsy (age 4) was the daughter of W B Neal at 2643 Linden Ave, Knoxville, Knox, Tennessee, USA.<ref>\n'''1930 Census''':\n\"1930 United States Federal Census\"<br/>\nYear: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992<br/>\n{{Ancestry Record|6224|67238097}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Patsy Louise Neal [Betsy Louise Neal] [User-submitted-comment Neal] [Patricia] [Patsy Louise] [Patricia Neal]\n|-\n| Birth Year || abt 1926 [abt 1926]\n|-\n| Gender || Female\n|-\n| Race || White\n|-\n| Age in 1930 || 4\n|-\n| Birthplace || Kentucky\n|-\n| Marital Status || Single\n|-\n| Relation to Head of House || Daughter\n|-\n| Home in 1930 || Knoxville, Knox, Tennessee, USA\n|-\n| Map of Home || Knoxville, Knox, Tennessee\n|-\n| Street Address || Linden Ave\n|-\n| Ward of City || 14 part of\n|-\n| House Number || 2643\n|-\n| Dwelling Number || 468\n|-\n| Family Number || 598\n|-\n| Attended School || No\n|-\n| Able to Read and Write || No\n|-\n| Father's Birthplace || Virginia\n|-\n| Mother's Birthplace || Kentucky\n|-\n| Household Members (Name)<br/>Age<br/>Relationship || W B Neal 34 Head<br/>Eura Neal 29 Wife<br/>Margarett Ann Neal 6 Daughter<br/>Patsy Louise Neal 4 Daughter\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1930 Census''': \"1930 United States Federal Census\"<br/>Year: 1930; Census Place: Knoxville, Knox, Tennessee; Page: 22B; Enumeration District: 0034; FHL microfilm: 2341992<br/>{{Ancestry Record|6224|67238097}} (accessed 6 May 2021)<br/>Name: Patsy Louise Neal [Betsy Louise Neal] [User-submitted-comment Neal] [Patricia] [Patsy Louise] [Patricia Neal]; Birth Year: abt 1926 [abt 1926]; Gender: Female; Race: White; Age in 1930: 4; Birthplace: Kentucky; Marital Status: Single; Relation to Head of House: Daughter; Home in 1930: Knoxville, Knox, Tennessee, USA; Map of Home: Knoxville, Knox, Tennessee; Street Address: Linden Ave; Ward of City: 14 part of; House Number: 2643; Dwelling Number: 468; Family Number: 598; Attended School: No; Able to Read and Write: No; Father's Birthplace: Virginia; Mother's Birthplace: Kentucky; <br/>Household Members (Name) Age Relationship:<br/>W B Neal 34 Head<br/>Eura Neal 29 Wife<br/>Margarett Ann Neal 6 Daughter<br/>Patsy Louise Neal 4 Daughter.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1930 United States Federal Census,\" database, ({{Ancestry Record|6224|67238097}} : accessed 6 May 2021), Patsy Louise Neal (4), single daughter, in household of W B Neal (34) at 2643 Linden Ave, Knoxville, Knox, Tennessee, USA. Born in Kentucky; citing Year 1930, Census Place Knoxville, Knox, Tennessee, Page 22B, Enumeration District 0034, FHL microfilm 2341992.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1930 census Patsy (age 4) was the daughter of W B Neal at 2643 Linden Ave, Knoxville, Knox, Tennessee, USA.<ref>\"1930 United States Federal Census,\" database, ({{Ancestry Record|6224|67238097}} : accessed 6 May 2021), Patsy Louise Neal (4), single daughter, in household of W B Neal (34) at 2643 Linden Ave, Knoxville, Knox, Tennessee, USA. Born in Kentucky; citing Year 1930, Census Place Knoxville, Knox, Tennessee, Page 22B, Enumeration District 0034, FHL microfilm 2341992.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1930 United States Federal Census,\" database, ({{Ancestry Record|6224|67238097}} : accessed 6 May 2021), Patsy Louise Neal (4), single daughter, in household of W B Neal (34) at 2643 Linden Ave, Knoxville, Knox, Tennessee, USA. Born in Kentucky; citing Year 1930, Census Place Knoxville, Knox, Tennessee, Page 22B, Enumeration District 0034, FHL microfilm 2341992.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1930 Census'':\n\"1930 United States Federal Census\", database, \nYear 1930, Census Place Knoxville, Knox, Tennessee, Page 22B, Enumeration District 0034, FHL microfilm 2341992, \n({{Ancestry Record|6224|67238097}} : accessed 6 May 2021), \nName: Patsy Louise Neal [Betsy Louise Neal] [User-submitted-comment Neal] [Patricia] [Patsy Louise] [Patricia Neal]; Birth Year: abt 1926 [abt 1926]; Gender: Female; Race: White; Age in 1930: 4; Birthplace: Kentucky; Marital Status: Single; Relation to Head of House: Daughter; Home in 1930: Knoxville, Knox, Tennessee, USA; Map of Home: Knoxville, Knox, Tennessee; Street Address: Linden Ave; Ward of City: 14 part of; House Number: 2643; Dwelling Number: 468; Family Number: 598; Attended School: No; Able to Read and Write: No; Father's Birthplace: Virginia; Mother's Birthplace: Kentucky; Household Members (Name) Age Relationship: W B Neal 34 Head, Eura Neal 29 Wife, Margarett Ann Neal 6 Daughter, Patsy Louise Neal 4 Daughter.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1930 census Patsy (age 4) was the daughter of W B Neal at 2643 Linden Ave, Knoxville, Knox, Tennessee, USA.<ref>\n''1930 Census'':\n\"1930 United States Federal Census\", database, \nYear 1930, Census Place Knoxville, Knox, Tennessee, Page 22B, Enumeration District 0034, FHL microfilm 2341992, \n({{Ancestry Record|6224|67238097}} : accessed 6 May 2021), \nName: Patsy Louise Neal [Betsy Louise Neal] [User-submitted-comment Neal] [Patricia] [Patsy Louise] [Patricia Neal]; Birth Year: abt 1926 [abt 1926]; Gender: Female; Race: White; Age in 1930: 4; Birthplace: Kentucky; Marital Status: Single; Relation to Head of House: Daughter; Home in 1930: Knoxville, Knox, Tennessee, USA; Map of Home: Knoxville, Knox, Tennessee; Street Address: Linden Ave; Ward of City: 14 part of; House Number: 2643; Dwelling Number: 468; Family Number: 598; Attended School: No; Able to Read and Write: No; Father's Birthplace: Virginia; Mother's Birthplace: Kentucky; Household Members (Name) Age Relationship: W B Neal 34 Head, Eura Neal 29 Wife, Margarett Ann Neal 6 Daughter, Patsy Louise Neal 4 Daughter.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1930 Census'': \"1930 United States Federal Census\", database, Year 1930, Census Place Knoxville, Knox, Tennessee, Page 22B, Enumeration District 0034, FHL microfilm 2341992, ({{Ancestry Record|6224|67238097}} : accessed 6 May 2021), Name: Patsy Louise Neal [Betsy Louise Neal] [User-submitted-comment Neal] [Patricia] [Patsy Louise] [Patricia Neal]; Birth Year: abt 1926 [abt 1926]; Gender: Female; Race: White; Age in 1930: 4; Birthplace: Kentucky; Marital Status: Single; Relation to Head of House: Daughter; Home in 1930: Knoxville, Knox, Tennessee, USA; Map of Home: Knoxville, Knox, Tennessee; Street Address: Linden Ave; Ward of City: 14 part of; House Number: 2643; Dwelling Number: 468; Family Number: 598; Attended School: No; Able to Read and Write: No; Father's Birthplace: Virginia; Mother's Birthplace: Kentucky; Household Members (Name) Age Relationship: W B Neal 34 Head, Eura Neal 29 Wife, Margarett Ann Neal 6 Daughter, Patsy Louise Neal 4 Daughter.",
+    "type": "source"
+  }
+}

@@ -1503,6 +1503,126 @@ const tableSentenceOptionsGroup = {
   ],
 };
 
+const tableChildListOptionsGroup = {
+  category: "table",
+  subcategory: "childList",
+  tab: "table",
+  subsection: "childList",
+  options: [
+    {
+      optionName: "format",
+      type: "select",
+      label: "How to layout the list of people",
+      values: [
+        { value: "list", text: "List" },
+        { value: "sentence", text: "Sentence" },
+      ],
+      defaultValue: "sentence",
+    },
+    {
+      optionName: "nameFormat",
+      type: "select",
+      label: "Format for names",
+      values: [
+        { value: "first", text: "First name only" },
+        {
+          value: "forenames",
+          text: "All given names",
+        },
+        {
+          value: "fullName",
+          text: "Full name",
+        },
+      ],
+      defaultValue: "first",
+    },
+  ],
+};
+
+const tableChildListListOptionsGroup = {
+  category: "table",
+  subcategory: "childListList",
+  tab: "table",
+  subsection: "childList",
+  subheading: "list",
+  options: [
+    {
+      optionName: "type",
+      type: "select",
+      label: "Type of list",
+      values: [
+        { value: "bullet", text: "Bulleted list (*)" },
+        { value: "bullet2", text: "Bulleted inner list (**)" },
+        { value: "number", text: "Numbered list (#)" },
+        { value: "bulletNumber", text: "Numbered inner list (*#)" },
+        { value: "indented1", text: "Indented lines (:)" },
+        { value: "indented2", text: "Twice indented lines (::)" },
+      ],
+      defaultValue: "bullet",
+    },
+  ],
+};
+
+const tableSiblingListOptionsGroup = {
+  category: "table",
+  subcategory: "siblingList",
+  tab: "table",
+  subsection: "siblingList",
+  options: [
+    {
+      optionName: "format",
+      type: "select",
+      label: "How to layout the list of people",
+      values: [
+        { value: "list", text: "List" },
+        { value: "sentence", text: "Sentence" },
+      ],
+      defaultValue: "sentence",
+    },
+    {
+      optionName: "nameFormat",
+      type: "select",
+      label: "Format for names",
+      values: [
+        { value: "first", text: "First name only" },
+        {
+          value: "forenames",
+          text: "All given names",
+        },
+        {
+          value: "fullName",
+          text: "Full name",
+        },
+      ],
+      defaultValue: "first",
+    },
+  ],
+};
+
+const tableSiblingListListOptionsGroup = {
+  category: "table",
+  subcategory: "siblingListList",
+  tab: "table",
+  subsection: "siblingList",
+  subheading: "list",
+  options: [
+    {
+      optionName: "type",
+      type: "select",
+      label: "Type of list",
+      values: [
+        { value: "bullet", text: "Bulleted list (*)" },
+        { value: "bullet2", text: "Bulleted inner list (**)" },
+        { value: "number", text: "Numbered list (#)" },
+        { value: "bulletNumber", text: "Numbered inner list (*#)" },
+        { value: "indented1", text: "Indented lines (:)" },
+        { value: "indented2", text: "Twice indented lines (::)" },
+      ],
+      defaultValue: "bullet",
+    },
+  ],
+};
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Add/Merge options groups
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1817,6 +1937,12 @@ registerSubheadingForOptions("table", "general", "table", "When using a table");
 registerSubheadingForOptions("table", "general", "list", "When using a list");
 registerSubheadingForOptions("table", "general", "sentence", "When using a sentence");
 
+registerSubsectionForOptions("table", "childList", "Child Lists", "", 1);
+registerSubheadingForOptions("table", "childList", "list", "When using a list layout");
+
+registerSubsectionForOptions("table", "siblingList", "Sibling Lists", "", 1);
+registerSubheadingForOptions("table", "siblingList", "list", "When using a list layout");
+
 registerSubsectionForOptions("buildAll", "general", "General", "", 1);
 
 registerSubsectionForOptions("addMerge", "general", "General", "", 1);
@@ -1857,6 +1983,12 @@ registerOptionsGroup(tableGeneralOptionsGroup);
 registerOptionsGroup(tableTableOptionsGroup);
 registerOptionsGroup(tableListOptionsGroup);
 registerOptionsGroup(tableSentenceOptionsGroup);
+
+registerOptionsGroup(tableChildListOptionsGroup);
+registerOptionsGroup(tableChildListListOptionsGroup);
+
+registerOptionsGroup(tableSiblingListOptionsGroup);
+registerOptionsGroup(tableSiblingListListOptionsGroup);
 
 registerOptionsGroup(buildAllGeneralOptionsGroup);
 
