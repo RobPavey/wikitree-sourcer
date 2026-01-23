@@ -31,7 +31,8 @@ async function setupEcppPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
     extractFailedMessage: "It looks like a Early California Population Project page but not a record page.",
-    generalizeFailedMessage: "It looks like a Early California Population Project page but does not contain the required data.",
+    generalizeFailedMessage:
+      "It looks like a Early California Population Project page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "ecpp",

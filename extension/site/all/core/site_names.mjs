@@ -82,6 +82,8 @@ const siteNames = [
   "ushmm",
   "ecpp",
   "panb",
+  "ausmem",
+  "morbihan",
 ];
 
 export { siteNames };

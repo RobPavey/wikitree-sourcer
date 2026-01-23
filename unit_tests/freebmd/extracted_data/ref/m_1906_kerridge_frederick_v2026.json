@@ -1,0 +1,50 @@
+{
+  "url": "https://dev.freebmd2.org.uk/695da40fbd30f24b671c1bf0/entry-information/116242858/frederick-charles-kerridge-marriage-lancashire-prestwich-v8d-p803?locale=en&search_entry=116242858",
+  "success": true,
+  "name": "Frederick Charles KERRIDGE",
+  "inlineCitationText": "<ref>\"FreeBMD Search\", online database. GRO Index of Marriages,\n    Jul to Sept 1906, Prestwich Registration District, Volume 8d Page 803\n    [https://www.freebmd.org.uk/entry-information/3ajVCdVNBG60SXNnVCyHkA/hash \n    Marriage of Frederick Charles Kerridge\n    ]. Viewed  7 Jan 2026\n    </ref>",
+  "recordData": {
+    "Surname": {
+      "text": "Kerridge"
+    },
+    "Given Name": {
+      "text": "Frederick Charles"
+    },
+    "Record Type": {
+      "text": "Marriage"
+    },
+    "Registration Date": {
+      "text": "Jul to Sept 1906"
+    },
+    "District": {
+      "text": "Prestwich",
+      "href": "https://dev.freebmd2.org.uk/districts/993/details-of-prestwich-district?entry_id=116242858&locale=en&search_id=695da40fbd30f24b671c1bf0",
+      "linkId": ""
+    },
+    "Spouse Surname": {
+      "text": "See Page link for possible spouses"
+    },
+    "Volume": {
+      "text": "8d"
+    },
+    "Page": {
+      "text": "803",
+      "href": "https://dev.freebmd2.org.uk/695da40fbd30f24b671c1bf0/116242858/same_page_entries?district=Prestwich&locale=en&page=803&quarter=279&record=3&volume=8d"
+    },
+    "Transcriber": {
+      "text": "No data\n          (We are afraid, we do not have this information yet.)"
+    }
+  },
+  "metadata": {
+    "freebmd.Surname": "Kerridge",
+    "freebmd.GivenName": "Frederick Charles",
+    "freebmd.OtherNames": "Charles",
+    "freebmd.DistrictInSource": "Prestwich",
+    "freebmd.OfficialDistrict": "Prestwich",
+    "freebmd.Volume": "8d",
+    "freebmd.Page": "803",
+    "freebmd.RecordType": "Marriages",
+    "freebmd.Quarter": "Jul to Sept 1906"
+  },
+  "format": "v2025"
+}

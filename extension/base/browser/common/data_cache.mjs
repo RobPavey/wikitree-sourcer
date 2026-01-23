@@ -122,9 +122,9 @@ async function loadDataCache(listenerFunction) {
   if (!isCachedDataCacheReady) {
     cachedDataCache = await readDataCache();
     isCachedDataCacheReady = true;
-    if (listenerFunction) {
-      listenerFunction();
-    }
+  }
+  if (listenerFunction) {
+    listenerFunction();
   }
 }
 

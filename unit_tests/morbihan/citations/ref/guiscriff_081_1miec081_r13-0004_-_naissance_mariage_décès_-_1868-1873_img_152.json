@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''État civil''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nPatrimoines & Archives départementales du Morbihan; 081_1MiEC081_R13-0004 - 1868-1873; Image 152 sur 550; naissance / mariage / décès; Lieu: Guiscriff (Morbihan, France)<br/>\n[https://rechercher.patrimoines-archives.morbihan.fr/ark:/15049/vta54487e7f49ee3/daogrp/0/152 Archives Départementales du Morbihan Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''État civil''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nPatrimoines & Archives départementales du Morbihan; 081_1MiEC081_R13-0004 - 1868-1873; Image 152 sur 550; naissance / mariage / décès; Lieu: Guiscriff (Morbihan, France)<br/>\n[https://rechercher.patrimoines-archives.morbihan.fr/ark:/15049/vta54487e7f49ee3/daogrp/0/152 Archives Départementales du Morbihan Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''État civil''': \"Registres paroissiaux et documents d'état civil\"<br/>Patrimoines & Archives départementales du Morbihan; 081_1MiEC081_R13-0004 - 1868-1873; Image 152 sur 550; naissance / mariage / décès; Lieu: Guiscriff (Morbihan, France)<br/>[https://rechercher.patrimoines-archives.morbihan.fr/ark:/15049/vta54487e7f49ee3/daogrp/0/152 Archives Départementales du Morbihan Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

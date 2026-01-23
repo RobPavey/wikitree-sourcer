@@ -80,6 +80,8 @@ const siteNames = [
   "ushmm",
   "ecpp",
   "panb",
+  "ausmem",
+  "morbihan",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {

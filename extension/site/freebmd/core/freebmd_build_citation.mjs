@@ -35,6 +35,11 @@ function buildFreebmdUrl(ed, builder) {
     return ed.citationUrl;
   }
 
+  if (ed.metadata && ed.metadata["freebmd.PersistentURL"]) {
+    let url = ed.metadata["freebmd.PersistentURL"];
+    return url;
+  }
+
   if (ed.recordData) {
     let persistentUrlEntry = ed.recordData["Persistent URL for entry"];
     if (persistentUrlEntry) {
@@ -56,6 +61,10 @@ function buildFreebmdUrl(ed, builder) {
         return url;
       }
     }
+  }
+
+  if (ed.url) {
+    return ed.url;
   }
 }
 
@@ -174,6 +183,18 @@ function buildDataString(ed, gd, builder) {
       dataString += " (Date of birth: ";
       dataString += gd.birthDate.getDateString() + ")";
     }
+  } else if (gd.recordType == RT.MarriageRegistration) {
+    if (gd.spouses && gd.spouses.length == 1) {
+      let spouse = gd.spouses[0];
+      if (spouse && spouse.name) {
+        let spouseSurname = spouse.name.inferLastName();
+        let spouseGivenNames = spouse.name.inferForenames();
+        if (spouseSurname && spouseGivenNames) {
+          let spouseName = spouseSurname + ", " + spouseGivenNames;
+          dataString += " marriage to " + spouseName;
+        }
+      }
+    }
   }
   if (!dataString.endsWith(".")) {
     dataString += ".";
@@ -216,7 +237,13 @@ function buildDataString(ed, gd, builder) {
     let volume = gd.collectionData.volume;
     let page = gd.collectionData.page;
     if (volume) {
-      dataString += " Volume " + volume + " Page " + page + ".";
+      dataString += " Volume " + volume;
+    }
+    if (page) {
+      dataString += " Page " + page;
+    }
+    if (volume || page) {
+      dataString += ".";
     }
   }
 

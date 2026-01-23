@@ -27,7 +27,7 @@ import { FreebmdEdReader } from "./freebmd_ed_reader.mjs";
 
 // This function generalizes the data extracted from the page content.
 function generalizeData(input) {
-  let edReader = new FreebmdEdReader(input.extractedData);
+  let edReader = new FreebmdEdReader(input.extractedData, input.primaryPersonIndex, input.spousePersonIndex);
   return commonGeneralizeData("freebmd", edReader);
 }
 
