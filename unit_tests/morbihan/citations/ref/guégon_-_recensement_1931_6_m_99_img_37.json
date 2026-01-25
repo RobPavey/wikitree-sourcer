@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nPatrimoines & Archives départementales du Morbihan; 6 M 99/1931 - Guégon - 1931; Image 37 sur 49; Lieu: Guégon (Morbihan, France)<br/>\n[https://rechercher.patrimoines-archives.morbihan.fr/ark:/15049/3541873/daogrp/0/37 Archives Départementales du Morbihan Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nPatrimoines & Archives départementales du Morbihan; 6 M 99/1931 - Guégon - 1931; Image 37 sur 49; Lieu: Guégon (Morbihan, France)<br/>\n[https://rechercher.patrimoines-archives.morbihan.fr/ark:/15049/3541873/daogrp/0/37 Archives Départementales du Morbihan Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Recensement''': \"Recensements de population\"<br/>Patrimoines & Archives départementales du Morbihan; 6 M 99/1931 - Guégon - 1931; Image 37 sur 49; Lieu: Guégon (Morbihan, France)<br/>[https://rechercher.patrimoines-archives.morbihan.fr/ark:/15049/3541873/daogrp/0/37 Archives Départementales du Morbihan Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

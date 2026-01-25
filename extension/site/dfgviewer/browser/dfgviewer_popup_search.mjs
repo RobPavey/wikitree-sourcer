@@ -28,7 +28,7 @@ import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const dfgviewerStartYear = 1800;
+const dfgviewerStartYear = 1000;
 const dfgviewerEndYear = 2000;
 
 function shouldShowSearchMenuItem(data, filter) {
@@ -36,8 +36,10 @@ function shouldShowSearchMenuItem(data, filter) {
     startYear: dfgviewerStartYear,
     endYear: dfgviewerEndYear,
     dateTestType: "bmd",
-    countryList: [],
+    countryList: ["Germany"],
   };
+
+  return false; // Disable all serach functionality for now
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
     return false;
@@ -63,9 +65,11 @@ async function dfgviewerSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addDfgviewerDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search DFG Viewer", function (element) {
-    dfgviewerSearch(data.generalizedData);
-  });
+  // addMenuItem(menu, "Search DFG Viewer", function (element) {
+  //   dfgviewerSearch(data.generalizedData);
+  // });
+
+  // TODO: add search menus for each archive instead
 
   return true;
 }

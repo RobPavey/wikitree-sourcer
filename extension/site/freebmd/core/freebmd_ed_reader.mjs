@@ -32,6 +32,9 @@ function freebmdQuarterToGdQuarter(quarter) {
     return 0; // deaths 1984 and later do not have a quarter
   }
   let string = quarter.toLowerCase();
+  if (string.length > 3) {
+    string = string.substring(0, 3);
+  }
   switch (string) {
     case "mar":
       return 1;
@@ -58,21 +61,40 @@ function getRecordDataText(ed, label) {
 }
 
 class FreebmdEdReader extends ExtractedDataReader {
-  constructor(ed) {
+  constructor(ed, primaryPersonIndex, spousePersonIndex) {
     super(ed);
 
+    this.spousePersonIndex = spousePersonIndex;
+
     if (ed.format == "v2025") {
-      let recordType = getRecordDataText(ed, "Record Type");
-      switch (recordType) {
-        case "Birth":
-          this.recordType = RT.BirthRegistration;
-          break;
-        case "Marriage":
-          this.recordType = RT.MarriageRegistration;
-          break;
-        case "Death":
-          this.recordType = RT.DeathRegistration;
-          break;
+      let metaValue = this.getMetadataValue("RecordType");
+      if (metaValue) {
+        switch (metaValue) {
+          case "Births":
+            this.recordType = RT.BirthRegistration;
+            break;
+          case "Marriages":
+            this.recordType = RT.MarriageRegistration;
+            break;
+          case "Deaths":
+            this.recordType = RT.DeathRegistration;
+            break;
+        }
+      }
+
+      if (this.recordType == RT.Unclassified) {
+        let recordType = getRecordDataText(ed, "Record Type");
+        switch (recordType) {
+          case "Birth":
+            this.recordType = RT.BirthRegistration;
+            break;
+          case "Marriage":
+            this.recordType = RT.MarriageRegistration;
+            break;
+          case "Death":
+            this.recordType = RT.DeathRegistration;
+            break;
+        }
       }
     } else {
       switch (ed.eventType) {
@@ -87,6 +109,14 @@ class FreebmdEdReader extends ExtractedDataReader {
           break;
       }
     }
+  }
+
+  getMetadataValue(label) {
+    let name = "freebmd." + label;
+    if (this.ed.metadata) {
+      return this.ed.metadata[name];
+    }
+    return "";
   }
 
   getSurnameAndGivenNames(convertToMixedCase = true) {
@@ -139,16 +169,34 @@ class FreebmdEdReader extends ExtractedDataReader {
   }
 
   getCorrectlyCasedSurname() {
+    let metaValue = this.getMetadataValue("Surname");
+    if (metaValue) {
+      return metaValue;
+    }
+
     let parts = this.getSurnameAndGivenNames();
     return parts.surname;
   }
 
   getCorrectlyCasedGivenNames() {
+    let metaValue = this.getMetadataValue("GivenName");
+    if (metaValue) {
+      return metaValue;
+    }
+
     let parts = this.getSurnameAndGivenNames();
     return parts.givenNames;
   }
 
   getCorrectlyCasedRegistrationDistrict() {
+    let metaValue = this.getMetadataValue("OfficialDistrict");
+    if (!metaValue) {
+      metaValue = this.getMetadataValue("DistrictInSource");
+    }
+    if (metaValue) {
+      return metaValue;
+    }
+
     let rd = this.ed.registrationDistrict;
     if (rd) {
       rd = NameUtils.convertNameFromAllCapsToMixedCase(rd);
@@ -194,7 +242,14 @@ class FreebmdEdReader extends ExtractedDataReader {
       return this.makeDateObjFromYearAndQuarter(this.ed.eventYear, freebmdQuarterToGdQuarter(this.ed.eventQuarter));
     }
 
-    let registrationDate = getRecordDataText(this.ed, "Registration Date");
+    let registrationDate = this.getMetadataValue("Quarter");
+    let quarterRegex = /^([A-Z][a-z]+\s+to\s+[A-Z][a-z]+)\s+(\d\d\d\d)/;
+    if (!registrationDate || !quarterRegex.test(registrationDate)) {
+      let altRegistrationDate = getRecordDataText(this.ed, "Registration Date");
+      if (altRegistrationDate) {
+        registrationDate = altRegistrationDate;
+      }
+    }
     let registered = getRecordDataText(this.ed, "Registered");
 
     if (registered && registered.endsWith(registrationDate)) {
@@ -276,7 +331,7 @@ class FreebmdEdReader extends ExtractedDataReader {
     } else {
       let spouseSurname = getRecordDataText(this.ed, "Spouse Surname");
       if (spouseSurname) {
-        if (!spouseSurname.startsWith("No data")) {
+        if (!spouseSurname.startsWith("No data") && !spouseSurname.startsWith("See Page")) {
           spouseName = this.makeNameObjFromForenamesAndLastName("", spouseSurname);
         }
       }
@@ -288,6 +343,117 @@ class FreebmdEdReader extends ExtractedDataReader {
       let spouse = this.makeSpouseObj(spouseName, marriageDateObj, marriagePlaceObj);
       return [spouse];
     }
+
+    if (this.recordType == RT.MarriageRegistration && this.ed.recordData) {
+      for (let key of Object.keys(this.ed.recordData)) {
+        if (key.startsWith("Entries on page ")) {
+          let data = this.ed.recordData[key];
+          if (data.text && data.href) {
+            // this should only happen if there is only one record on page (including this person)
+            // so do nothing
+          } else if (data.subValues && data.subValues.length == 2) {
+            let index = -1;
+            let givenNames = this.getCorrectlyCasedGivenNames();
+            let surname = this.getCorrectlyCasedSurname();
+            let testString = surname + " " + givenNames;
+            if (data.subValues[0].text == testString) {
+              index = 1;
+            } else if (data.subValues[1].text == testString) {
+              index = 0;
+            }
+            if (index != -1) {
+              if (
+                data.subValues[0].date == data.subValues[1].date &&
+                data.subValues[0].district == data.subValues[1].district
+              ) {
+                let spouseNameString = data.subValues[index].text;
+                if (spouseNameString) {
+                  let surname = StringUtils.getFirstWord(spouseNameString);
+                  let givenNames = StringUtils.getWordsAfterFirstWord(spouseNameString);
+                  if (surname && givenNames) {
+                    let spouseName = this.makeNameObjFromForenamesAndLastName(givenNames, surname);
+
+                    let marriageDateObj = this.getEventDateObj();
+                    let marriagePlaceObj = this.getEventPlaceObj();
+                    let spouse = this.makeSpouseObj(spouseName, marriageDateObj, marriagePlaceObj);
+                    return [spouse];
+                  }
+                }
+              }
+            }
+          } else {
+            if (this.spousePersonIndex !== undefined || this.spousePersonIndex != -1) {
+              // the index is into an array that is missing this person.
+              if (data.subValues && data.subValues.length > this.spousePersonIndex) {
+                // add a list of names, not including this person's name
+                let givenNames = this.getCorrectlyCasedGivenNames();
+                let surname = this.getCorrectlyCasedSurname();
+                let testString = surname + " " + givenNames;
+
+                let options = [];
+
+                let index = 0;
+                for (let subValue of data.subValues) {
+                  if (subValue.date == subValue.date && subValue.district == subValue.district) {
+                    let spouseNameString = subValue.text;
+                    if (spouseNameString && spouseNameString != testString) {
+                      if (index == this.spousePersonIndex) {
+                        let surname = StringUtils.getFirstWord(spouseNameString);
+                        let givenNames = StringUtils.getWordsAfterFirstWord(spouseNameString);
+
+                        if (surname && givenNames) {
+                          let spouseName = this.makeNameObjFromForenamesAndLastName(givenNames, surname);
+
+                          let marriageDateObj = this.getEventDateObj();
+                          let marriagePlaceObj = this.getEventPlaceObj();
+                          let spouse = this.makeSpouseObj(spouseName, marriageDateObj, marriagePlaceObj);
+                          return [spouse];
+                        }
+                        break;
+                      }
+                      index++;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          break;
+        }
+      }
+    }
+  }
+
+  getSpousePersonOptions() {
+    if (this.recordType == RT.MarriageRegistration) {
+      if (this.ed.recordData) {
+        for (let key of Object.keys(this.ed.recordData)) {
+          if (key.startsWith("Entries on page ")) {
+            let data = this.ed.recordData[key];
+            if (data.subValues && data.subValues.length > 2) {
+              // add a list of names, not including this person's name
+              let givenNames = this.getCorrectlyCasedGivenNames();
+              let surname = this.getCorrectlyCasedSurname();
+              let testString = surname + " " + givenNames;
+
+              let options = [];
+
+              for (let subValue of data.subValues) {
+                if (subValue.date == subValue.date && subValue.district == subValue.district) {
+                  let spouseNameString = subValue.text;
+                  if (spouseNameString && spouseNameString != testString) {
+                    options.push(spouseNameString);
+                  }
+                }
+              }
+              return options;
+            }
+          }
+        }
+      }
+    }
+
+    return undefined;
   }
 
   getCollectionData() {
@@ -306,11 +472,17 @@ class FreebmdEdReader extends ExtractedDataReader {
         id: collectionId,
       };
       if (this.ed.format == "v2025") {
-        let referenceVolume = getRecordDataText(this.ed, "Volume");
+        let referenceVolume = this.getMetadataValue("Volume");
+        if (!referenceVolume) {
+          referenceVolume = getRecordDataText(this.ed, "Volume");
+        }
         if (referenceVolume) {
           collectionData.volume = referenceVolume;
         }
-        let referencePage = getRecordDataText(this.ed, "Page");
+        let referencePage = this.getMetadataValue("Page");
+        if (!referencePage) {
+          referencePage = getRecordDataText(this.ed, "Page");
+        }
         if (referencePage) {
           collectionData.page = referencePage;
         }

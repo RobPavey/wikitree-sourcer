@@ -612,11 +612,23 @@
     {
       "matches": [
         "https://archives2.gnb.ca/*"
+        "*://*.auschwitz.org/*"
       ],
       "run_at": "document_idle",
       "js": [
         "base/browser/content/content_common.js",
         "site/panb/browser/panb_content.js"
+        "site/ausmem/browser/ausmem_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://rechercher.patrimoines-archives.morbihan.fr/ark:/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/morbihan/browser/morbihan_content.js"
       ]
     }
   ],
@@ -1115,6 +1127,18 @@
       ],
       "matches": [
         "https://archives2.gnb.ca/*"
+        "site/ausmem/core/ausmem_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.auschwitz.org/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/morbihan/core/morbihan_extract_data.mjs"
+      ],
+      "matches": [
+        "*://rechercher.patrimoines-archives.morbihan.fr/*"
       ]
     }
   ],
@@ -1123,7 +1147,9 @@
       "id": "{9c98db38-a25c-475a-bdb9-48f6ec303214}",
       "strict_min_version": "128.0",
       "data_collection_permissions": {
-        "required": ["none"]
+        "required": [
+          "none"
+        ]
       }
     },
     "gecko_android": {

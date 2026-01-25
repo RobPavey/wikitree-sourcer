@@ -303,6 +303,16 @@ class ExtractedDataReader {
             "Oct to Dec": 4,
           };
           quarterString = quarterString.replace(/\s+/g, " ");
+          const quarterSepRegEx = /^([A-Z][a-z]+)\s+to\s+([A-Z][a-z]+)$/;
+          let month1 = quarterString.replace(quarterSepRegEx, "$1");
+          let month2 = quarterString.replace(quarterSepRegEx, "$2");
+          if (month1.length > 3) {
+            month1 = month1.substring(0, 3);
+          }
+          if (month2.length > 3) {
+            month2 = month2.substring(0, 3);
+          }
+          quarterString = month1 + " to " + month2;
           let quarter = quarterStringToQuarter[quarterString];
           if (quarter) {
             dateObj.quarter = quarter;
