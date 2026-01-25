@@ -31,11 +31,11 @@ function buildPanbUrl(ed, builder) {
 
 function buildSourceTitle(ed, gd, builder) {
   builder.sourceTitle = ed.databaseID + ": " + ed.tableTitle + ", online database";
-  if(ed.hasImage) {
-	  builder.sourceTitle += " with digital images.";
+  if (ed.hasImage) {
+    builder.sourceTitle += " with digital images.";
   }
   else {
-	builder.sourceTitle += ".";
+    builder.sourceTitle += ".";
   }
 }
 
@@ -44,9 +44,8 @@ function buildSourceReference(ed, gd, builder) {
   let srCode = ed.recordData["Code"];
   let hasMicrofilm = true;
   let needsFinishing = true;
-
-  if(ed.eventType == "Birth") {
-    if(ed.databaseID == "RS141A5") {
+  if (ed.eventType == "Birth") {
+    if (ed.databaseID == "RS141A5") {
       let regBirthNumberString = ed.recordData["Number"];
       recordSourceReference = "Registration Number: " + regBirthNumberString + ", Code: " + srCode;
     }
@@ -54,25 +53,22 @@ function buildSourceReference(ed, gd, builder) {
       recordSourceReference = "Registration Code: " + srCode;
     }
   }
-  
-  else if(ed.eventType == "Marriage") {
+  else if (ed.eventType == "Marriage") {
     let regNumberString = ed.recordData["Number"];
-    if (regNumberString && regNumberString != "" && regNumberString.slice(0,1) != "-") {
+    if (regNumberString && regNumberString != "" && regNumberString.slice(0, 1) != "-") {
       recordSourceReference = "Registration Number: " + regNumberString + ", Code: " + srCode;
     }
     else {
       recordSourceReference = "Code: " + srCode;
     }
   }
-
-  if(ed.eventType == "Death") {
-  // Each type of RS141 death record has a different format for "Builder.sourceReference"
-    if(ed.databaseID == "RS141C1") {
+  if (ed.eventType == "Death") {
+    // Each type of RS141 death record has a different format for "Builder.sourceReference"
+    if (ed.databaseID == "RS141C1") {
       let referenceString = ed.recordData["Reference"];
       recordSourceReference = "Registration Code " + srCode;
     }
-
-    else if(ed.databaseID == "RS141C4") {
+    else if (ed.databaseID == "RS141C4") {
       let referenceString = ed.recordData["Reference"];
       recordSourceReference = "Registration Code " + srCode + ", Reference: " + referenceString;
       let volumeString = ed.recordData["Volume"];
@@ -80,13 +76,11 @@ function buildSourceReference(ed, gd, builder) {
         recordSourceReference += ",  Volume: " + volumeString;
       }
     }
-  
     else if (ed.databaseID == "RS141C5") {
       let srRegCode = ed.recordData["Registration"];
       let volumeString = ed.recordData["Volume"];
-      recordSourceReference = "Registration Code " + srRegCode  + ", Volume: " + volumeString;
+      recordSourceReference = "Registration Code " + srRegCode + ", Volume: " + volumeString;
     }
-
     else if (ed.databaseID == "RS141C6") {
       let deathDateString = ed.recordData["Date of Death"];
       //let dateString = eventDateString;
@@ -96,7 +90,6 @@ function buildSourceReference(ed, gd, builder) {
       needsFinishing = false;
     }
   }
-
   let gdMicrofilmString = "";
   if (hasMicrofilm) {
     gdMicrofilmString = ed.recordData["Microfilm"];
@@ -104,19 +97,18 @@ function buildSourceReference(ed, gd, builder) {
       recordSourceReference += ", Microfilm " + gdMicrofilmString;
     }
   }
- 
-	if (needsFinishing) {
+
+  if (needsFinishing) {
     let edReader = new PanbEdReader(ed);
     let eventDateString = ed.recordData["Date"];
     let dateString = eventDateString;
     let placeString = edReader.getEventPlaceObj().placeString;
     builder.sourceReference = recordSourceReference + ", " + dateString + ", " + placeString;
-  }  
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var panbUrl =  buildPanbUrl(ed, builder);
-
+  var panbUrl = buildPanbUrl(ed, builder);
   let recordLink = "[" + panbUrl + " New Brunswick Provincial Archives:]" + " Vital Statistics from Government Records (RS141)";
   builder.recordLinkOrTemplate = recordLink;
 }

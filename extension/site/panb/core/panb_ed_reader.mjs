@@ -24,27 +24,24 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
-//import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
-//import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 
 class PanbEdReader extends ExtractedDataReader {
   constructor(ed, primaryPersonIndex) {
     super(ed);
 
-    //this.ed = ed;
     this.primaryPersonIndex = primaryPersonIndex;
-    this.recordData   = this.ed.recordData;
-    this.codeString   = this.recordData["Code"];
+    this.recordData = this.ed.recordData;
+    this.codeString = this.recordData["Code"];
     this.regNumberString = this.recordData["Number"];
     this.volumeString = this.recordData["Volume"];
     this.referenceString = this.recordData["Reference"];
     this.tableTitle = ed.tableTitle;		
     this.eventType = ed.eventType;
     this.databaseID = ed.databaseID;
-    this.hasImage   = ed.hasImage;
-    this.imageURL   = ed.imageURL;
+    this.hasImage = ed.hasImage;
+    this.imageURL = ed.imageURL;
   
     switch (this.eventType) {
       case "Birth":
@@ -59,7 +56,7 @@ class PanbEdReader extends ExtractedDataReader {
         break;
       default:
         this.recordType = RT.Unclassified;
-      }
+    }
  
   }
 
@@ -69,7 +66,6 @@ class PanbEdReader extends ExtractedDataReader {
 
   isPrimaryTheSecond() {
     let result = false;
-
     if (this.primaryPersonIndex == 1) {
       result = true;
     }
@@ -84,11 +80,10 @@ class PanbEdReader extends ExtractedDataReader {
 		return reCasedWord;
 	}
 
+  // PANB index names are stored as "Last, First" so we need to reformat them to "First Last" as well as removing any "-----" place holders
  	reformatName(inputName) {
-// PANB index names are stored as "Last, First" so we need to reformat them to "First Last" as well as removing any "-----" place holders
 	  const [last, first] = inputName.split(",");
 	  if (!last || !first) return inputName;
-
 	  const words = (first.trim() + " " + last.trim())
       .replaceAll("-----", "")
       .toLowerCase()
@@ -133,17 +128,18 @@ class PanbEdReader extends ExtractedDataReader {
     return this.hasImage;
   }
 
+  // PANB marriage index records can have bride or groom fullName in the "Name" field. The index name is always the alphabetically first of the two surnames.
   getRecordedIndexedName() {
-// PANB marriage index records can have bride or groom fullName in the "Name" field. The index name is always the alphabetically first of the two surnames.
-
-// This routine is only called from getGroomsName and getBridesName
+  // This routine is only called from getGroomsName and getBridesName
     let tempString = this.recordData["Name"];  
-    if( !tempString ) return undefined;
+    if ( !tempString ) {
+      return undefined;
+    }
     let indexNameString = this.reformatName(tempString);
     let indexNameFullString = this.toLeadingCase(indexNameString);
 
-// we need gender to determine bothbride and groom names
-// if gender was not recorded then we must infer it
+    // we need gender to determine bothbride and groom names
+    // if gender was not recorded then we must infer it
     let recordedGender = this.recordData["Sex"];
     let primaryGender = "";
     if (recordedGender == "") {
@@ -156,7 +152,7 @@ class PanbEdReader extends ExtractedDataReader {
         this.recordData["Sex"] = "F";
       }
 
-// we must always test the secondary name in case of gender duplication
+      // we must always test the secondary name in case of gender duplication
       tempString = this.recordData["Married"];  
       if (tempString) { 
         let spouseNameString = this.reformatName(tempString);
@@ -171,22 +167,23 @@ class PanbEdReader extends ExtractedDataReader {
             this.recordData["Sex"] = "M";
           }
         } 
-// if both names predicted the same gender so me must treat it as gender unknown
+        // if both names predicted the same gender then we must treat it as gender unknown
         if (secondaryGender == primaryGender) {
           this.recordData["Sex"] = "";
         }
       }
     }   
-// if we still can't determine gender we leave it blank as unknown
+    // if we still can't determine gender we leave it blank as unknown
     return indexNameFullString;
   }
    
   getRecordedSpouseName() {
-// This routine is only called from getGroomsName and getBridesName
-// Only PANB marriage index records have a spouse name field
+  // This routine is only called from getGroomsName and getBridesName
+  // Only PANB marriage index records have a spouse name field
     let tempString = this.recordData["Married"];  
-    if( !tempString ) return undefined;
-
+    if ( !tempString ) {
+      return undefined;
+    }
     let spouseFullString = this.reformatName(tempString);
     let spouseNameString = this.toLeadingCase(spouseFullString);
     return spouseNameString;
@@ -196,17 +193,17 @@ class PanbEdReader extends ExtractedDataReader {
     if ( this.recordType != RT.MarriageRegistration ) {
       return "";
     }
-// It is important to get the primary name first
+    // It is important to get the primary name first
     let namePrimary = this.getRecordedIndexedName();
     let nameSecondary = this.getRecordedSpouseName();
    
-// we use recorded gender to determine bride and grooom names
+    // we use recorded gender to determine bride and groom names
     let recordedGender = this.recordData["Sex"];
-    if(recordedGender == "F") {
+    if (recordedGender == "F") {
       return nameSecondary;
     }
     else {
-// if we dont know gender we assume the marriage record had the groom's name first
+      // if we dont know gender we assume the marriage record had the groom's name first
       return namePrimary;
     }
     return
@@ -216,31 +213,27 @@ class PanbEdReader extends ExtractedDataReader {
     if ( this.recordType != RT.MarriageRegistration ) {
       return "";
     }
-// It is important to get the primary name first
+    // It is important to get the primary name first
     let namePrimary = this.getRecordedIndexedName();
     let nameSecondary = this.getRecordedSpouseName();
 
-// if gender was recorded then we use that to determine both bride and groom names
+    // if gender was recorded then we use that to determine both bride and groom names
     let recordedGender = this.recordData["Sex"];
     if (recordedGender == "F") {
       return namePrimary;
     }
     else {
-// if we decided the indexedd name was male
-// if we dont know gender we assume the marriage record had the groom's name first and we will be right about half the time
+      // if we decided the indexedd name was male or if we dont know gender we assume the marriage record had the groom's name first and we will be right about half the time
       return nameSecondary;
     }
-  return
-  }
+  return;
+ }
 	  
   getNameObj() {
-// We would always expect to have a recordData["Name"]
-// but we have to guard against returning an undefined variable
     if ( this.recordType == RT.MarriageRegistration ) {
-// Marriage case handles drop-down control for picking the spouse to be the principle personshown on the citation
+    // Marriage case handles drop-down control for picking the spouse to be the principle personshown on the citation
       let groomName = this.getGroomsName();
-      let brideName = this.getBridesName();
-      
+      let brideName = this.getBridesName();      
       if (this.isPrimaryTheSecond()) {
         if (brideName != "") {
           return this.makeNameObjFromFullName(brideName);
@@ -259,10 +252,11 @@ class PanbEdReader extends ExtractedDataReader {
       } 
     }
     else {
-// PANB Birth and Death index records have only one name shown
+    // PANB Birth and Death index records have only one name shown
       let tempNameString = this.recordData["Name"];
-      if (!tempNameString) return undefined;
-
+      if (!tempNameString) {
+        return undefined;
+      }
       let tempString = this.reformatName(tempNameString);
       tempNameString = this.toLeadingCase(tempString);
       return this.makeNameObjFromFullName(tempNameString);
@@ -270,36 +264,31 @@ class PanbEdReader extends ExtractedDataReader {
   }
 
   getGender() {
-//   This might have to be changed when we include gender set
-//   during search or by Sourcer Base codebase	 
-  if (this.recordType == RT.MarriageRegistration ) {
-    if (this.isPrimaryTheSecond()) {
-      return "female";
+    if (this.recordType == RT.MarriageRegistration ) {
+      if (this.isPrimaryTheSecond()) {
+        return "female";
+      }
+      else {
+        return "male";
+      }
     }
     else {
-      return "male";
+      let recordedGender = this.recordData["Sex"];
+      if (recordedGender == "M") {
+        return "male";
+      }
+      else if ( recordedGender == "F") {
+        return "female";
+      }
+
+      // if gender is not defined we will use prediction routine
+      let firstName = this.getNameObj().name.split(" ")[0];
+      return NameUtils.predictGenderFromGivenNames(firstName);
     }
   }
-  else {
-    let recordedGender = this.recordData["Sex"];
-    if (recordedGender == "M") {
-      return "male";
-    }
-    else if( recordedGender == "F") {
-      return "female";
-    }
 
-// if gender is not defined we will use prediction routine
-    let firstName = this.getNameObj().name.split(" ")[0];
-    return NameUtils.predictGenderFromGivenNames(firstName);
-  }
-
-  }
-
-	// We would always expect to have a recordData["Date"]
-	// but we have to guard against returning an undefined variable
   getEventDateObj() {
-    if( this.ed.databaseID == "RS141C6") {
+    if ( this.ed.databaseID == "RS141C6") {
       let tempString = this.recordData["Date of Death"];
       return this.makeDateObjFromDateString(tempString);
     }
@@ -335,22 +324,21 @@ class PanbEdReader extends ExtractedDataReader {
 
   getEventPlaceObj() {
     let placeString = "";
-    if(this.ed.eventType == "Birth" || this.ed.databaseID == "RS141C1") {
+    if (this.ed.eventType == "Birth" || this.ed.databaseID == "RS141C1") {
       let tempString = this.recordData["Place"];
       placeString = this.toLeadingCase(tempString) + ", ";
     }
-    else if(this.ed.eventType == "Marriage" ) {
+    else if (this.ed.eventType == "Marriage" ) {
       let tempString = this.recordData["Parish"];
       if (tempString && tempString.slice(0,1) != "-") {
         placeString = this.toLeadingCase(tempString) + ", ";
       }
     }
-    else if( this.ed.databaseID == "RS141C6") {
+    else if ( this.ed.databaseID == "RS141C6") {
       let tempString = this.recordData["Killed"];
       placeString = "service in " + this.toLeadingCase(tempString);
       return this.makePlaceObjFromFullPlaceName(placeString);
     }
-
     let countyString = "";
     if (this.ed.databaseID == "RS141C1") {
       countyString = this.recordData["County of Death"];
@@ -363,7 +351,7 @@ class PanbEdReader extends ExtractedDataReader {
     }
     else {
       let countryString = ", New Brunswick, Canada";
-      if( DateUtils.compareDateStrings( "1867-07-01", this.recordData["Date"] ) > 0 ) {
+      if ( DateUtils.compareDateStrings( "1867-07-01", this.recordData["Date"] ) > 0 ) {
         countryString = ", New Brunswick Colony";
       }
       placeString += this.toLeadingCase(countyString) + countryString;
@@ -371,7 +359,6 @@ class PanbEdReader extends ExtractedDataReader {
       return placeObj;
     }
   }
-
 
   getLastNameAtBirth() {
     return "";
@@ -386,7 +373,9 @@ class PanbEdReader extends ExtractedDataReader {
   }
 
   getBirthPlaceObj() {
-    if ( this.ed.databaseID != "RS141C1" ) return undefined;
+    if ( this.ed.databaseID != "RS141C1" ) {
+      return undefined;
+    }
     let tempString = this.recordData["Place of Birth"];
     if (!tempString) {
       return undefined;
@@ -406,14 +395,16 @@ class PanbEdReader extends ExtractedDataReader {
   }
 
   getDeathPlaceObj() {
-    if (  this.ed.databaseID == "RS141C6" ) return undefined;
+    if (  this.ed.databaseID == "RS141C6" ) {
+      return undefined;
+    }
     let deathPlaceObj = this.getEventPlaceObj();
     return this.deathPlaceObj;
   }
 
   getAgeAtEvent() {
     let age = this.recordData["Age"];
-    if(age && !isNaN(age)) {
+    if (age && !isNaN(age)) {
       return age;
     }
     else {
@@ -422,7 +413,7 @@ class PanbEdReader extends ExtractedDataReader {
  }
 
   getAgeAtDeath() {
-    if(this.ed.databaseID == "RS141C4" || this.ed.databaseID == "RS141C1" || this.ed.databaseID == "RS141C6") {
+    if (this.ed.databaseID == "RS141C4" || this.ed.databaseID == "RS141C1" || this.ed.databaseID == "RS141C6") {
       return this.getAgeAtEvent();
     }
     else {
@@ -443,7 +434,7 @@ class PanbEdReader extends ExtractedDataReader {
     else return "";
   }
 
-    getReference() {
+  getReference() {
   	let tempString = this.recordData["Reference"];
     if (tempString) {
       return tempString;
@@ -478,7 +469,7 @@ class PanbEdReader extends ExtractedDataReader {
   getMicrofilm() {
   	let tempString = this.recordData["Microfilm"];
     if (tempString) {
-	//Check for empty field as some records are not on microfilm
+	    //Check for empty field as some records are not on microfilm
       if (tempString != "-----") {
         return tempString;	
       }
@@ -506,7 +497,6 @@ class PanbEdReader extends ExtractedDataReader {
         spouseFullName = this.getGroomsName();
       } 
       let spouseNameObj = this.makeNameObjFromFullName(spouseFullName);
-
       if (spouseNameObj) {
         let spouse = { name: spouseNameObj };
         spouse.personGender = "female";
@@ -529,27 +519,28 @@ class PanbEdReader extends ExtractedDataReader {
  
   getMothersName() {
     let tempString = this.recordData["Mother"];
-    if( !tempString ) {
+    if ( !tempString ) {
       return "";
     }
-// Some PANB birth index records have a comma in the mother field to indicate no name given
-    if( tempString == ",") return "";
-
+    // Some PANB birth index records have a comma in the mother field to indicate no name given
+    if ( tempString == ",") {
+      return "";
+    }
     let mothersName = this.reformatName(tempString);
     return this.toLeadingCase(mothersName);
   }
 
   getFathersName() {
     let tempString = this.recordData["Father"];
-    if( !tempString ) {
+    if ( !tempString ) {
       return "";
     }
-// Some PANB birth index records have a comma in the mother field to indicate no name given
-    if( tempString == ",") return "";
-
+    // Some PANB birth index records have a comma in the mother field to indicate no name given
+    if ( tempString == ",") {
+      return "";
+    }
     let fathersName = this.reformatName(tempString);
     return this.toLeadingCase(fathersName);
-
   }
 
   getParents() {
@@ -560,13 +551,12 @@ class PanbEdReader extends ExtractedDataReader {
   }
   
   getPrimaryPersonOptions() {
-    if(this.recordType == RT.MarriageRegistration ) {
+    if (this.recordType == RT.MarriageRegistration ) {
       let groomName = this.getGroomsName();
       let brideName = this.getBridesName();
-
       if (groomName && brideName) {
         let options = [groomName + " (groom)", brideName + " (bride)"];
-        if(this.recordData["Sex"] == "") {
+        if (this.recordData["Sex"] == "") {
           options = [groomName, brideName];
         }
         return options;

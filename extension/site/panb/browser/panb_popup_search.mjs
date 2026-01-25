@@ -25,14 +25,12 @@ SOFTWARE.
 import {
   beginMainMenu,
   addMenuItem,
-  //addBackMenuItem,
   endMainMenu,
   doAsyncActionWithCatch,
   closePopup,
  } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
-  //doBackgroundSearchWithSearchData,
   registerSearchMenuItemFunction,
   shouldShowSiteSearch,
   openUrlInNewTab,
@@ -51,11 +49,9 @@ function shouldShowSearchMenuItem(data, filter) {
     dateTestType: "lived",
     countryList: ["New Brunswick","Canada"],
   };
-
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
     return false;
   }
-
   return true;
 }
 
@@ -67,10 +63,8 @@ async function panbDoSearch(input) {
   doAsyncActionWithCatch("New Brunswick Provincial Archives Search", input, async function () {
     let loadedModule = await import(`../core/panb_build_search_data.mjs`);
     let buildResult = loadedModule.buildSearchData(input);
-
     let fieldData = buildResult.fieldData;
- 
-    const checkPermissionsOptions = {
+     const checkPermissionsOptions = {
       reason:
         "To perform a search on New Brunswick Provincial Archives a content script needs to be loaded on the New Brunswick Provincial Archives search page.",
     };
@@ -82,10 +76,6 @@ async function panbDoSearch(input) {
       closePopup();
       return;
     }
-
-    //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-    // put URL of this site's search page here
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     let searchUrl = "https://archives2.gnb.ca/Search/FEDS/Default.aspx?culture=en-CA";
     try {
       const panbSearchData = {
@@ -93,22 +83,8 @@ async function panbDoSearch(input) {
         url: searchUrl,
         fieldData: fieldData,
       }
-      //   selectData: buildResult.selectData,
-      //   searchType: typeOfSearch,
-      // };
-
-    //console.log("panbSearch, panbSearchData is:");
-    //console.log(panbSearchData);
-
-/*     let reuseTabIfPossible = options.search_panb_reuseExistingTab;
-
-    doBackgroundSearchWithSearchData("panb", panbSearchData, reuseTabIfPossible);
-*/
       // this stores the search data in local storage which is then picked up by the content script in the new tab/window
-      chrome.storage.local.set({ panbSearchData: panbSearchData }, function () {
-        //console.log('saved panbSearchData, panbSearchData is:');
-        //console.log(panbSearchData);
-      });
+      chrome.storage.local.set({ panbSearchData: panbSearchData }, function () {});
     } catch (ex) {
       console.log("storeDataCache failed");
     }
@@ -116,7 +92,6 @@ async function panbDoSearch(input) {
     openUrlInNewTab(searchUrl);
     closePopup();
   });
-
 }
 
 async function panbSearch(generalizedData) {

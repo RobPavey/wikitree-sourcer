@@ -26,6 +26,8 @@ SOFTWARE.
 // insert code here to do detect the selected row by looking for the styling that
 // was added in the content script when the row was clicked. Code below is an example.
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// Support of additional PANB databases will likely require this function
 function getSelectedRow(document) {
   const highlightStyle = "font-weight: bold; font-style: italic";
   const elResultsTable = document.querySelector("table.Details");
@@ -37,18 +39,17 @@ function getSelectedRow(document) {
 
 function extractData(document, url) {
   var result = {};
-
   if (url) {
     result.url = url;
   }
   result.success = false;
 
-// At this time we will restrict data extraction to NB Vital Statistics from Government Records (RS141)
+  // At this time we will restrict data extraction to NB Vital Statistics from Government Records (RS141)
   let indexName = "";
   result.databaseID = "this is not";
   let startIndexName = url.indexOf("141");
-  if(startIndexName < 0) {
-//alert("This is not a New Brunswick Provincial Archives Vital Statistics Database.");
+  if (startIndexName < 0) {
+    //  This is not a New Brunswick Provincial Archives Vital Statistics Database.
     return result;
   }
   else {
@@ -59,17 +60,17 @@ function extractData(document, url) {
   const choices = new Set(["A1b","A5","A2/2","A2_2","B5","B7","C4","C5", "C1","C6"]);  // more to be added later
   let suffix = indexName.slice(5);
  
-  if(suffix == "A2_2") {
+  if (suffix == "A2_2") {
 	  suffix = "A2/2" 
   }
 
-// RS141C6 has a different structure for its Url
-  if(suffix == "C6/Details") {
+  // RS141C6 has a different structure for its Url
+  if (suffix == "C6/Details") {
 	  suffix = "C6" 
   }
 
   if (!choices.has(suffix)) {
-//    alert(indexName +" not yet a supported New Brunswick Provincial Archives Federated Database site.");
+    // not yet a supported New Brunswick Provincial Archives Federated Database site.
     result.databaseID = indexName +" is not yet a supported";
     return result;
   }
@@ -108,19 +109,14 @@ function extractData(document, url) {
   }
   result.tableTitle = recordTableTitle;
 
-// We expect to find a single table of 2 to 3 columns and up to 12 rows
+  // We expect to find a single table of 2 to 3 columns and up to 12 rows
   let directTables = document.querySelector("table.Details");
 
   if (!directTables) {
-//    alert("No record tables were found.\nNB Provincial Archive may have been changed.");
+  // No record tables were found.\nNB Provincial Archive may have been changed.
     result.databaseID = indexName +"has lack of required table stucture and is no longer a supported";
     return result;
   }
-//   const tableCount = directTables.length + 1;
-//   if (tableCount > 1) {
-// //    alert("Unexpected number of record tables were found.\nNB Provincial Archive may have been changed, will still attempt to use first table.");
-//     result.databaseID = indexName +" table structure is not";
-//   }
 
   const tables = Array.from(document.body.querySelectorAll("table"));
 	const embededTable = tables[0];
@@ -129,13 +125,13 @@ function extractData(document, url) {
 	const firstRow = embededTable.rows[0];
 	const tableRowLength = firstRow.cells.length;
 	const firstCell = firstRow.cells[0].textContent.trim();
- 	if( firstCell !="Name") {
-//	  alert("This table does not have the expected RS141 record construction.\nNB Provincial Archive may have been changed.");
-    result.databaseID = indexName +"table stucture was changedand is no longer a supported"
+ 	if (firstCell != "Name") {
+  // This table does not have the expected RS141 record construction. NB Provincial Archive may have been changed.;
+    result.databaseID = indexName +"table stucture was changed and is no longer a supported"
 	  return result;
 	}
 
-//  Here we use approach of the working table being created as a pair of arrays of length equal to the number of rows in the first 2 columns in the table on the web page
+  //  Here we use approach of the working table being created as a pair of arrays of length equal to the number of rows in the first 2 columns in the table on the web page
   const columnLength = embededTable.rows.length;
   result.recordData = {};
 
@@ -145,14 +141,12 @@ function extractData(document, url) {
     let valueNode = nextRow.cells[1];
     let heading = headingNode.textContent.trim();
     let value = valueNode.textContent.trim();
-
     if (heading) {
       result.recordData[heading] = value;
     }
   }
   
   // finally check if an image is attached
-
   const elems = Array.from(document.body.querySelectorAll('a[href$="jpg"]'));  
   result.hasImage = false;
   for (let elem of elems) {
@@ -165,27 +159,27 @@ function extractData(document, url) {
     }
   }
   
- //			This is where we load the return results 
-  if(!result.hasImage) result.imageUrl = "";
+  // This is where we load the return results 
+  if (!result.hasImage) {
+    result.imageUrl = "";
+  }
   result.numberTableEntries = columnLength;
   result.databaseID = "RS141"+suffix;
   const suffixType = suffix.slice(0,1);
-  if(suffixType == "A") {
+  if (suffixType == "A") {
 	  result.eventType = "Birth";
   }
-  else
-    if(suffixType == "B") {
+  else if (suffixType == "B") {
 	  result.eventType = "Marriage";
     result.recordData["Sex"] = "";
   }
-  else if(suffixType == "C") {
+  else if (suffixType == "C") {
 	  result.eventType = "Death";
   }
-  else  {
+  else {
 	  result.eventType = "Unclassified";
   }	  
   result.success = true;
-
   return result;
 }
 

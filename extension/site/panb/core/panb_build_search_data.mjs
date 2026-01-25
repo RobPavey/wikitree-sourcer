@@ -214,7 +214,7 @@ function buildSearchData(input) {
   let panbBirthYear = gd.inferBirthYear();
   if  (panbBirthYear) {
     panbBirthYear = Number(panbBirthYear) -2;
-    if(panbBirthYear > 1658) {
+    if (panbBirthYear > 1658) {
       fieldData["ContentPlaceHolder1_ContentPlaceHolder1_textboxYearFrom"] = panbBirthYear;
     }
   }
@@ -222,7 +222,7 @@ function buildSearchData(input) {
   let panbDeathYear = gd.inferDeathYear();
   if  (panbDeathYear) {
     panbDeathYear = Number(panbDeathYear) + 10;
-    if( /*panbDeathYear > 1700 &&*/ panbDeathYear < 2014) {
+    if (panbDeathYear < 2014) {
       fieldData["ContentPlaceHolder1_ContentPlaceHolder1_textboxYearTo"] = panbDeathYear;
     }
   }
