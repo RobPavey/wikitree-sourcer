@@ -841,27 +841,29 @@ function getBirthRegistrationString(gd, options) {
   } else {
     dataString = getFullName(gd);
 
-    let birthDate = gd.inferBirthDate();
-    let eventDate = gd.inferEventDate();
+    let birthDate = gd.inferBirthDateObj();
+    let eventDate = gd.inferEventDateObj();
+    let birthDateString = cleanDateObj(birthDate, options, gd);
+    let eventDateString = cleanDateObj(eventDate, options, gd);
     if (isDateTheRegistrationDate) {
-      if (birthDate && birthDate != eventDate && birthDate.endsWith(eventDate)) {
+      if (birthDateString && birthDateString != eventDateString && birthDateString.endsWith(eventDateString)) {
         dataString += " birth";
-        dataString += " " + birthDate;
+        dataString += " " + birthDateString;
         dataString += " registered"; // because place is registration place
       } else {
         dataString += " birth registered";
-        dataString += " " + eventDate;
-        if (birthDate && birthDate != eventDate) {
-          dataString += " (born " + birthDate + ")";
+        dataString += " " + eventDateString;
+        if (birthDateString && birthDateString != eventDateString) {
+          dataString += " (born " + birthDateString + ")";
         }
       }
     } else {
       //console.log("birthDate is " + birthDate + ", eventDate is " + eventDate);
       dataString += " birth";
-      if (birthDate) {
-        dataString += " " + birthDate;
-      } else if (eventDate) {
-        dataString += " " + eventDate;
+      if (birthDateString) {
+        dataString += " " + birthDateString;
+      } else if (eventDateString) {
+        dataString += " " + eventDateString;
       }
     }
 
