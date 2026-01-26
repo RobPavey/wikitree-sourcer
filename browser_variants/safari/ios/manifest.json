@@ -612,11 +612,13 @@
     },
     {
       "matches": [
+        "https://archives2.gnb.ca/*"
         "*://*.auschwitz.org/*"
       ],
       "run_at": "document_idle",
       "js": [
         "base/browser/content/content_common.js",
+        "site/panb/browser/panb_content.js"
         "site/ausmem/browser/ausmem_content.js"
       ]
     },
@@ -1122,6 +1124,10 @@
     },
     {
       "resources": [
+        "site/panb/core/panb_extract_data.mjs"
+      ],
+      "matches": [
+        "https://archives2.gnb.ca/*"
         "site/ausmem/core/ausmem_extract_data.mjs"
       ],
       "matches": [

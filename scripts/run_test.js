@@ -79,6 +79,7 @@ const siteNames = [
   "yadvashem",
   "ushmm",
   "ecpp",
+  "panb",
   "ausmem",
   "morbihan",
 ];

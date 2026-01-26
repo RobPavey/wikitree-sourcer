@@ -1,0 +1,20 @@
+{
+  "url": "https://archives2.gnb.ca/Search/VISSE/141B7.aspx?culture=en-CA&guid=599B423B-6369-42C3-A475-537726F8A403",
+  "success": true,
+  "databaseID": "RS141B7",
+  "tableTitle": "Index to New Brunswick Marriages",
+  "recordData": {
+    "Name": "CARR, JOHN WALTER",
+    "Married": "WALLACE, DALE ALICE",
+    "Date": "1974-03-15",
+    "County": "KINGS",
+    "Parish": "SUSSEX CORNER",
+    "Number": "1479",
+    "Code": "B4/1974",
+    "Sex": ""
+  },
+  "hasImage": true,
+  "imageUrl": "https://archives2.gnb.ca/DigitizedDocuments/RS141/B7/1974/599b423b-6369-42c3-a475-537726f8a403.jpg",
+  "numberTableEntries": 7,
+  "eventType": "Marriage"
+}

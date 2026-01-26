@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "Freda May Adair"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1925-08-30"
+  },
+  "eventPlace": {
+    "placeString": "Sussex Parish, Kings, New Brunswick, Canada"
+  },
+  "registrationDistrict": "Kings",
+  "parents": {
+    "mother": {
+      "name": {
+        "name": "Helen Adeline Adair"
+      }
+    }
+  },
+  "hasValidData": true
+}

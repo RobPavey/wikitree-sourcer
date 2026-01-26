@@ -1,0 +1,21 @@
+{
+  "url": "https://archives2.gnb.ca/Search/VISSE/141A5.aspx?culture=en-CA&guid=9B31BD24-7673-46D5-9299-0794C0CC577E",
+  "success": true,
+  "databaseID": "RS141A5",
+  "tableTitle": "Index to Provincial Registrations of Births",
+  "recordData": {
+    "Name": "ADAIR, FREDA MAY",
+    "Sex": "F",
+    "Date": "1925-08-30",
+    "Place": "SUSSEX PARISH",
+    "County": "KINGS",
+    "Father": ",",
+    "Mother": "ADAIR, HELEN ADELINE",
+    "Number": "39660",
+    "Code": "A5/1925"
+  },
+  "hasImage": true,
+  "imageUrl": "https://archives2.gnb.ca/DigitizedDocuments/RS141/A5/1925/9b31bd24-7673-46d5-9299-0794c0cc577e.jpg",
+  "numberTableEntries": 9,
+  "eventType": "Birth"
+}

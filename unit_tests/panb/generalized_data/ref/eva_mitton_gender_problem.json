@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "name": "Otto Mitton"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1922-09-06"
+  },
+  "eventPlace": {
+    "placeString": "Salisbury, Westmorland, New Brunswick, Canada"
+  },
+  "registrationDistrict": "Westmorland",
+  "spouses": [
+    {
+      "name": {
+        "name": "Eva Dunfield"
+      },
+      "personGender": "female",
+      "marriageDate": {
+        "dateString": "1922-09-06"
+      },
+      "marriagePlace": {
+        "placeString": "Salisbury, Westmorland, New Brunswick, Canada"
+      }
+    }
+  ],
+  "primaryPersonOptions": [
+    "Otto Mitton (groom)",
+    "Eva Dunfield (bride)"
+  ],
+  "hasValidData": true
+}

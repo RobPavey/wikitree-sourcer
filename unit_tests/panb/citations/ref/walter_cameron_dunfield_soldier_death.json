@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"RS141C6: Index to Death registration of soldiers, 1941-1947, online database.\"<br/>\n, 1944-07-04, combat death in FRANCE<br/>\n[https://archives2.gnb.ca/Search/RS141C6/Details.aspx?culture=en-CA&record=751 New Brunswick Provincial Archives:] Vital Statistics from Government Records (RS141) (accessed 6 May 2021)<br/>\nWalter Cameron Mitton death 4 Jul 1944 (age 21) in service in France.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Walter died (age 21) on 4 July 1944 in service in France.<ref>\n'''Death Registration''':\n\"RS141C6: Index to Death registration of soldiers, 1941-1947, online database.\"<br/>\n, 1944-07-04, combat death in FRANCE<br/>\n[https://archives2.gnb.ca/Search/RS141C6/Details.aspx?culture=en-CA&record=751 New Brunswick Provincial Archives:] Vital Statistics from Government Records (RS141) (accessed 6 May 2021)<br/>\nWalter Cameron Mitton death 4 Jul 1944 (age 21) in service in France.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"RS141C6: Index to Death registration of soldiers, 1941-1947, online database.\"<br/>, 1944-07-04, combat death in FRANCE<br/>[https://archives2.gnb.ca/Search/RS141C6/Details.aspx?culture=en-CA&record=751 New Brunswick Provincial Archives:] Vital Statistics from Government Records (RS141) (accessed 6 May 2021)<br/>Walter Cameron Mitton death 4 Jul 1944 (age 21) in service in France.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"RS141B7: Index to New Brunswick Marriages, online database with digital images.\"<br/>\nRegistration Number: 1006, Code: B4/1899, Microfilm F15588, 1899-12-27, Carleton, New Brunswick, Canada<br/>\n[https://archives2.gnb.ca/Search/VISSE/141B7.aspx?culture=en-CA&guid=ACF4DB10-1361-4280-836E-3400938EECD7 New Brunswick Provincial Archives:] Vital Statistics from Government Records (RS141) (accessed 6 May 2021)<br/>\nHerbert Adair marriage to Minnie Crabb on 27 Dec 1899 in Carleton, New Brunswick, Canada.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Herbert married Minnie Crabb on 27 December 1899 in Carleton, New Brunswick, Canada.<ref>\n'''Marriage Registration''':\n\"RS141B7: Index to New Brunswick Marriages, online database with digital images.\"<br/>\nRegistration Number: 1006, Code: B4/1899, Microfilm F15588, 1899-12-27, Carleton, New Brunswick, Canada<br/>\n[https://archives2.gnb.ca/Search/VISSE/141B7.aspx?culture=en-CA&guid=ACF4DB10-1361-4280-836E-3400938EECD7 New Brunswick Provincial Archives:] Vital Statistics from Government Records (RS141) (accessed 6 May 2021)<br/>\nHerbert Adair marriage to Minnie Crabb on 27 Dec 1899 in Carleton, New Brunswick, Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"RS141B7: Index to New Brunswick Marriages, online database with digital images.\"<br/>Registration Number: 1006, Code: B4/1899, Microfilm F15588, 1899-12-27, Carleton, New Brunswick, Canada<br/>[https://archives2.gnb.ca/Search/VISSE/141B7.aspx?culture=en-CA&guid=ACF4DB10-1361-4280-836E-3400938EECD7 New Brunswick Provincial Archives:] Vital Statistics from Government Records (RS141) (accessed 6 May 2021)<br/>Herbert Adair marriage to Minnie Crabb on 27 Dec 1899 in Carleton, New Brunswick, Canada.",
+    "type": "source"
+  }
+}

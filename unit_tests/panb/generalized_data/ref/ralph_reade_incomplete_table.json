@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "Ralph Russell Reade"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1928-05-02"
+  },
+  "eventPlace": {
+    "placeString": "Moncton, Westmorland, New Brunswick, Canada"
+  },
+  "registrationDistrict": "Westmorland",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Russell Richey Reade"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ena Marion Mitton"
+      }
+    }
+  },
+  "hasValidData": true
+}

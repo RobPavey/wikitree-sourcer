@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "John Leslie Wallace"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1864-08-19"
+  },
+  "eventPlace": {
+    "placeString": "Cummings Cove, Charlotte, New Brunswick Colony"
+  },
+  "registrationDistrict": "Charlotte",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "David Wallace"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Emily Wallace"
+      }
+    }
+  },
+  "hasValidData": true
+}

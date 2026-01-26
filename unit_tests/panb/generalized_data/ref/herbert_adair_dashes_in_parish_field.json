@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "name": "Herbert Adair"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1899-12-27"
+  },
+  "eventPlace": {
+    "placeString": "Carleton, New Brunswick, Canada"
+  },
+  "registrationDistrict": "Carleton",
+  "spouses": [
+    {
+      "name": {
+        "name": "Minnie Crabb"
+      },
+      "personGender": "female",
+      "marriageDate": {
+        "dateString": "1899-12-27"
+      },
+      "marriagePlace": {
+        "placeString": "Carleton, New Brunswick, Canada"
+      }
+    }
+  ],
+  "primaryPersonOptions": [
+    "Herbert Adair (groom)",
+    "Minnie Crabb (bride)"
+  ],
+  "hasValidData": true
+}

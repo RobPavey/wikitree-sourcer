@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "Walter Earl Dunfield"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1902-05-08"
+  },
+  "eventPlace": {
+    "placeString": "Penobsquis, Kings, New Brunswick, Canada"
+  },
+  "registrationDistrict": "Kings",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Dunfield"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Lucy Goddard"
+      }
+    }
+  },
+  "hasValidData": true
+}
