@@ -78,7 +78,7 @@ class PanbEdReader extends ExtractedDataReader {
     .map(word => word.charAt(0).toUpperCase() + word.slice(1));
     const reCasedWord = words.join(" ");
     return reCasedWord;
-	}
+  }
 
   // PANB index names are stored as "Last, First" so we need to reformat them to "First Last" as well as removing any "-----" place holders
  	reformatName(inputName) {
@@ -92,8 +92,8 @@ class PanbEdReader extends ExtractedDataReader {
       .split(/\s+/)
       .map(word => word.charAt(0).toUpperCase() + word.slice(1));
     const reformatedName = words.join(" ");
-	  return reformatedName;
-	};
+    return reformatedName;
+  };
  
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
@@ -537,7 +537,7 @@ class PanbEdReader extends ExtractedDataReader {
     if ( !tempString ) {
       return "";
     }
-    // Some PANB birth index records have a comma in the mother field to indicate no name given
+    // Some PANB birth index records have a comma in the father field to indicate no name given
     if ( tempString == ",") {
       return "";
     }
