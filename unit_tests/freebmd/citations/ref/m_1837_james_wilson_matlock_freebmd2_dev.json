@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England & Wales Marriage Index\"<br/>\n[https://dev.freebmd2.org.uk:443/entry-information/hash?id=fnur9ryHF1rLClPzD%252BX00A&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nWilson, James marriage to Higginson, Barbara.<br/>\n''GRO Reference:'' 1837 Oct-Nov-Dec in Matlock (1837-8) Volume 19 Page 435.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "James's marriage to Barbara Higginson was registered in the Oct-Nov-Dec quarter of 1837 in the Matlock (1837-8) district.<ref>\n'''Marriage Registration''':\n\"England & Wales Marriage Index\"<br/>\n[https://dev.freebmd2.org.uk:443/entry-information/hash?id=fnur9ryHF1rLClPzD%252BX00A&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nWilson, James marriage to Higginson, Barbara.<br/>\n''GRO Reference:'' 1837 Oct-Nov-Dec in Matlock (1837-8) Volume 19 Page 435.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"England & Wales Marriage Index\"<br/>[https://dev.freebmd2.org.uk:443/entry-information/hash?id=fnur9ryHF1rLClPzD%252BX00A&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>Wilson, James marriage to Higginson, Barbara.<br/>''GRO Reference:'' 1837 Oct-Nov-Dec in Matlock (1837-8) Volume 19 Page 435.",
+    "type": "source"
+  }
+}

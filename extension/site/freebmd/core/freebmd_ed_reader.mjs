@@ -344,6 +344,33 @@ class FreebmdEdReader extends ExtractedDataReader {
       return [spouse];
     }
 
+    // explicit spouse, see if there is OtherNamesOnPage in metadata
+    let otherNamesOnPage = this.getMetadataValue("OtherNamesOnPage");
+    if (otherNamesOnPage) {
+      let semicolonIndex = otherNamesOnPage.indexOf(";");
+      if (semicolonIndex != -1) {
+        return; // there is more than one other name
+      }
+
+      let nameParts = otherNamesOnPage.split(",");
+      if (nameParts && nameParts.length == 2) {
+        let surname = nameParts[0];
+        let givenNames = nameParts[1];
+        if (surname && givenNames) {
+          if (StringUtils.isWordAllUpperCase(surname)) {
+            surname = NameUtils.convertNameFromAllCapsToMixedCase(surname);
+          }
+
+          let spouseName = this.makeNameObjFromForenamesAndLastName(givenNames, surname);
+
+          let marriageDateObj = this.getEventDateObj();
+          let marriagePlaceObj = this.getEventPlaceObj();
+          let spouse = this.makeSpouseObj(spouseName, marriageDateObj, marriagePlaceObj);
+          return [spouse];
+        }
+      }
+    }
+
     if (this.recordType == RT.MarriageRegistration && this.ed.recordData) {
       for (let key of Object.keys(this.ed.recordData)) {
         if (key.startsWith("Entries on page ")) {
@@ -371,6 +398,10 @@ class FreebmdEdReader extends ExtractedDataReader {
                   let surname = StringUtils.getFirstWord(spouseNameString);
                   let givenNames = StringUtils.getWordsAfterFirstWord(spouseNameString);
                   if (surname && givenNames) {
+                    if (StringUtils.isWordAllUpperCase(surname)) {
+                      surname = NameUtils.convertNameFromAllCapsToMixedCase(surname);
+                    }
+
                     let spouseName = this.makeNameObjFromForenamesAndLastName(givenNames, surname);
 
                     let marriageDateObj = this.getEventDateObj();
@@ -389,8 +420,6 @@ class FreebmdEdReader extends ExtractedDataReader {
                 let givenNames = this.getCorrectlyCasedGivenNames();
                 let surname = this.getCorrectlyCasedSurname();
                 let testString = surname + " " + givenNames;
-
-                let options = [];
 
                 let index = 0;
                 for (let subValue of data.subValues) {

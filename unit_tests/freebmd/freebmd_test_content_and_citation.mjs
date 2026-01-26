@@ -64,6 +64,15 @@ const regressionData = [
     url: "https://www.freebmd.org.uk/cgi/information.pl?r=176279640:9239&d=bmd_1630353886",
   },
   {
+    caseName: "m_1837_james_wilson_freebmd2_dev",
+    url: "https://dev.freebmd2.org.uk/6977ae3abd30f25ea61e52b1/entry-information/207198/james-wilson-marriage-lancashire-chorley-v21-p153?locale=en&search_entry=207198",
+  },
+  {
+    // has only one other name on page
+    caseName: "m_1837_james_wilson_matlock_freebmd2_dev",
+    url: "https://dev.freebmd2.org.uk/6977ae3abd30f25ea61e52b1/entry-information/460735/james-wilson-marriage-derbyshire-matlock-v19-p435?locale=en&search_entry=460735",
+  },
+  {
     caseName: "m_1870_pavey_henry_alfred_v2025",
     url: "https://www.freebmd2.org.uk/68fbb74b8655740ff9b81be5/entry-information/48070378/henry-alfred-pavey-marriage-london-to-mar1965-pancras-v1b-p263?locale=en&search_entry=48070378",
   },

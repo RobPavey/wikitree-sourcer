@@ -1,0 +1,106 @@
+{
+  "url": "https://dev.freebmd2.org.uk/6977ae3abd30f25ea61e52b1/entry-information/207198/james-wilson-marriage-lancashire-chorley-v21-p153?locale=en&search_entry=207198",
+  "success": true,
+  "name": "James WILSON",
+  "inlineCitationText": "<ref>\"FreeBMD Search\", online database. GRO Index of Marriages,\n    Jul to Sep 1837, Chorley Registration District, Volume 21 Page 153\n    [https://www.freebmd.org.uk/entry-information/1hs4rxksfXgDX+Q2HEEqvQ/hash \n    Marriage of James WILSON\n    ]. Viewed 26 Jan 2026\n    </ref>",
+  "recordData": {
+    "Surname": {
+      "text": "WILSON"
+    },
+    "Given Name": {
+      "text": "James"
+    },
+    "Record Type": {
+      "text": "Marriage"
+    },
+    "Registration Date": {
+      "text": "Jul to Sep 1837"
+    },
+    "District": {
+      "text": "Chorley",
+      "href": "https://dev.freebmd2.org.uk/districts/543/details-of-chorley-district?entry_id=207198&locale=en&search_id=6977ae3abd30f25ea61e52b1",
+      "linkId": ""
+    },
+    "Volume": {
+      "text": "21"
+    },
+    "Page": {
+      "text": "153",
+      "href": "https://dev.freebmd2.org.uk/6977ae3abd30f25ea61e52b1/207198/same_page_entries?district=Chorley&locale=en&page=153&quarter=3&record=3&volume=21"
+    },
+    "Entries on page 153": {
+      "subValues": [
+        {
+          "text": "BREWER Ann",
+          "date": "SEPTEMBER 1837",
+          "district": "Chorley",
+          "href": "http://www.ukbmd.org.uk/reg/districts/chorley.html"
+        },
+        {
+          "text": "COPPOCK Catherine",
+          "date": "SEPTEMBER 1837",
+          "district": "Chorley",
+          "href": "http://www.ukbmd.org.uk/reg/districts/chorley.html"
+        },
+        {
+          "text": "DITCHFIELD Esther",
+          "date": "SEPTEMBER 1837",
+          "district": "Chorley",
+          "href": "http://www.ukbmd.org.uk/reg/districts/chorley.html"
+        },
+        {
+          "text": "DITCHFISLD Esther",
+          "date": "SEPTEMBER 1837",
+          "district": "Chorley",
+          "href": "http://www.ukbmd.org.uk/reg/districts/chorley.html"
+        },
+        {
+          "text": "LONGTON Mary",
+          "date": "SEPTEMBER 1837",
+          "district": "Chorley",
+          "href": "http://www.ukbmd.org.uk/reg/districts/chorley.html"
+        },
+        {
+          "text": "PARKINSON Francis",
+          "date": "SEPTEMBER 1837",
+          "district": "Chorley",
+          "href": "http://www.ukbmd.org.uk/reg/districts/chorley.html"
+        },
+        {
+          "text": "TOOTELL John",
+          "date": "SEPTEMBER 1837",
+          "district": "Chorley",
+          "href": "http://www.ukbmd.org.uk/reg/districts/chorley.html"
+        },
+        {
+          "text": "WAREING Thomas",
+          "date": "SEPTEMBER 1837",
+          "district": "Chorley",
+          "href": "http://www.ukbmd.org.uk/reg/districts/chorley.html"
+        },
+        {
+          "text": "WILSON James",
+          "date": "SEPTEMBER 1837",
+          "district": "Chorley",
+          "href": "http://www.ukbmd.org.uk/reg/districts/chorley.html"
+        }
+      ]
+    },
+    "Transcriber": {
+      "text": "No data\n          (We are afraid, we do not have this information yet.)"
+    }
+  },
+  "metadata": {
+    "freebmd.Surname": "WILSON",
+    "freebmd.GivenName": "James",
+    "freebmd.OtherNamesOnPage": "BREWER, Ann; COPPOCK, Catherine; DITCHFIELD, Esther; DITCHFISLD, Esther; LONGTON, Mary; PARKINSON, Francis; TOOTELL, John; WAREING, Thomas",
+    "freebmd.DistrictInSource": "Chorley",
+    "freebmd.OfficialDistrict": "Chorley",
+    "freebmd.Volume": "21",
+    "freebmd.Page": "153",
+    "freebmd.RecordType": "Marriages",
+    "freebmd.Quarter": "Jul to Sep 1837",
+    "freebmd.PersistentURL": "https://dev.freebmd2.org.uk:443/entry-information/hash?id=1hs4rxksfXgDX%252BQ2HEEqvQ&locale=en"
+  },
+  "format": "v2025"
+}

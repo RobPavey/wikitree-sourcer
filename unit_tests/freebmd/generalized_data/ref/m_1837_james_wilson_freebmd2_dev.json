@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "freebmd",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "WILSON",
+    "forenames": "James"
+  },
+  "eventDate": {
+    "quarter": 3,
+    "yearString": "1837"
+  },
+  "registrationDistrict": "Chorley",
+  "spousePersonOptions": [
+    "BREWER Ann",
+    "COPPOCK Catherine",
+    "DITCHFIELD Esther",
+    "DITCHFISLD Esther",
+    "LONGTON Mary",
+    "PARKINSON Francis",
+    "TOOTELL John",
+    "WAREING Thomas"
+  ],
+  "collectionData": {
+    "id": "marriages",
+    "volume": "21",
+    "page": "153"
+  },
+  "hasValidData": true
+}

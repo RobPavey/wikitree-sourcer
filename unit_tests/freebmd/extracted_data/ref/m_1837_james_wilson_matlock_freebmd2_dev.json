@@ -1,0 +1,64 @@
+{
+  "url": "https://dev.freebmd2.org.uk/6977ae3abd30f25ea61e52b1/entry-information/460735/james-wilson-marriage-derbyshire-matlock-v19-p435?locale=en&search_entry=460735",
+  "success": true,
+  "name": "James WILSON",
+  "inlineCitationText": "<ref>\"FreeBMD Search\", online database. GRO Index of Marriages,\n    Oct to Dec 1837, Matlock Registration District, Volume 19 Page 435\n    [https://www.freebmd.org.uk/entry-information/fnur9ryHF1rLClPzD+X00A/hash \n    Marriage of James WILSON\n    ]. Viewed 26 Jan 2026\n    </ref>",
+  "recordData": {
+    "Surname": {
+      "text": "WILSON"
+    },
+    "Given Name": {
+      "text": "James"
+    },
+    "Record Type": {
+      "text": "Marriage"
+    },
+    "Registration Date": {
+      "text": "Oct to Dec 1837"
+    },
+    "District": {
+      "text": "Matlock",
+      "href": "https://dev.freebmd2.org.uk/districts/665/details-of-matlock-1837-8-district?entry_id=460735&locale=en&search_id=6977ae3abd30f25ea61e52b1",
+      "linkId": ""
+    },
+    "Volume": {
+      "text": "19"
+    },
+    "Page": {
+      "text": "435",
+      "href": "https://dev.freebmd2.org.uk/6977ae3abd30f25ea61e52b1/460735/same_page_entries?district=Matlock&locale=en&page=435&quarter=4&record=3&volume=19"
+    },
+    "Entries on page 435": {
+      "subValues": [
+        {
+          "text": "HIGGINSON Barbara",
+          "date": "DECEMBER 1837",
+          "district": "Matlock",
+          "href": "http://www.ukbmd.org.uk/reg/districts/matlock.html"
+        },
+        {
+          "text": "WILSON James",
+          "date": "DECEMBER 1837",
+          "district": "Matlock",
+          "href": "http://www.ukbmd.org.uk/reg/districts/matlock.html"
+        }
+      ]
+    },
+    "Transcriber": {
+      "text": "No data\n          (We are afraid, we do not have this information yet.)"
+    }
+  },
+  "metadata": {
+    "freebmd.Surname": "WILSON",
+    "freebmd.GivenName": "James",
+    "freebmd.OtherNamesOnPage": "HIGGINSON, Barbara",
+    "freebmd.DistrictInSource": "Matlock",
+    "freebmd.OfficialDistrict": "Matlock (1837-8)",
+    "freebmd.Volume": "19",
+    "freebmd.Page": "435",
+    "freebmd.RecordType": "Marriages",
+    "freebmd.Quarter": "Oct to Dec 1837",
+    "freebmd.PersistentURL": "https://dev.freebmd2.org.uk:443/entry-information/hash?id=fnur9ryHF1rLClPzD%252BX00A&locale=en"
+  },
+  "format": "v2025"
+}

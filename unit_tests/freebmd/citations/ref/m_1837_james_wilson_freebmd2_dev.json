@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England & Wales Marriage Index\"<br/>\n[https://dev.freebmd2.org.uk:443/entry-information/hash?id=1hs4rxksfXgDX%252BQ2HEEqvQ&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nWilson, James.<br/>\n''GRO Reference:'' 1837 Jul-Aug-Sep in Chorley Volume 21 Page 153.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "James's marriage was registered in the Jul-Aug-Sep quarter of 1837 in the Chorley district.<ref>\n'''Marriage Registration''':\n\"England & Wales Marriage Index\"<br/>\n[https://dev.freebmd2.org.uk:443/entry-information/hash?id=1hs4rxksfXgDX%252BQ2HEEqvQ&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nWilson, James.<br/>\n''GRO Reference:'' 1837 Jul-Aug-Sep in Chorley Volume 21 Page 153.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"England & Wales Marriage Index\"<br/>[https://dev.freebmd2.org.uk:443/entry-information/hash?id=1hs4rxksfXgDX%252BQ2HEEqvQ&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>Wilson, James.<br/>''GRO Reference:'' 1837 Jul-Aug-Sep in Chorley Volume 21 Page 153.",
+    "type": "source"
+  }
+}
