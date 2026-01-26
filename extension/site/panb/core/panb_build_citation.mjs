@@ -30,13 +30,11 @@ function buildPanbUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = ed.databaseID + ": " + ed.tableTitle + ", online database";
+  let options = builder.getOptions();
   if (ed.hasImage) {
-    builder.sourceTitle += " with digital images.";
+    builder.databaseHasImages = true;
   }
-  else {
-    builder.sourceTitle += ".";
-  }
+  builder.sourceTitle = ed.tableTitle
 }
 
 function buildSourceReference(ed, gd, builder) {

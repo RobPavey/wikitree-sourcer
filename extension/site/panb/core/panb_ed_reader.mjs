@@ -73,17 +73,19 @@ class PanbEdReader extends ExtractedDataReader {
   }
 
   toLeadingCase(inputName) {
-		const words = (inputName.toLowerCase())
-		.split(/\s+/)
-		.map(word => word.charAt(0).toUpperCase() + word.slice(1));
-		const reCasedWord = words.join(" ");
-		return reCasedWord;
+    const words = (inputName.toLowerCase())
+    .split(/\s+/)
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1));
+    const reCasedWord = words.join(" ");
+    return reCasedWord;
 	}
 
   // PANB index names are stored as "Last, First" so we need to reformat them to "First Last" as well as removing any "-----" place holders
  	reformatName(inputName) {
 	  const [last, first] = inputName.split(",");
-	  if (!last || !first) return inputName;
+	  if (!last || !first) {
+      return inputName;
+    }
 	  const words = (first.trim() + " " + last.trim())
       .replaceAll("-----", "")
       .toLowerCase()
