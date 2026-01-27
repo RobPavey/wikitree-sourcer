@@ -30,7 +30,6 @@ function buildPanbUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  let options = builder.getOptions();
   if (ed.hasImage) {
     builder.databaseHasImages = true;
   }
@@ -41,6 +40,10 @@ function buildSourceReference(ed, gd, builder) {
   let srCode = ed.recordData["Code"];
   let hasMicrofilm = true;
   let needsFinishing = true;
+
+  builder.addSourceReferenceText("New Brunswick Provincial Archives");
+  builder.addSourceReferenceText("Vital Statistics from Government Records (RS141)");
+
   if (ed.eventType == "Birth") {
     if (ed.databaseID == "RS141A5") {
       let regBirthNumberString = ed.recordData["Number"];
@@ -105,8 +108,7 @@ function buildSourceReference(ed, gd, builder) {
 
 function buildRecordLink(ed, gd, builder) {
   var panbUrl = buildPanbUrl(ed, builder);
-  let recordLink =
-    "[" + panbUrl + " New Brunswick Provincial Archives:]" + " Vital Statistics from Government Records (RS141)";
+  let recordLink = "[" + panbUrl + " New Brunswick Provincial Archives]";
   builder.recordLinkOrTemplate = recordLink;
 }
 
