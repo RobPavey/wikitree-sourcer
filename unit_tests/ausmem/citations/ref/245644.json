@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record of Paul Pavel Weiss''':\n\"Auschwitz Memorial - Victim Database\"<br/>\n[https://victims.auschwitz.org/victims/245644 Auschwitz Memorial Database Record] (accessed 6 May 2021)<br/>\nPaul Pavel Weiss.\n</ref>",
+    "citation": "<ref>\n'''Record of Paul Pavel Weiss''':\n\"Auschwitz Memorial - Victim Database\"<br/>\n[https://victims.auschwitz.org/victims/245644 Auschwitz Memorial Database Record] (accessed 6 May 2021)<br/>\nPaul Pavel Weiss. Born on 19 Sep 1925 in Kuklov.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Paul was in a record.<ref>\n'''Record of Paul Pavel Weiss''':\n\"Auschwitz Memorial - Victim Database\"<br/>\n[https://victims.auschwitz.org/victims/245644 Auschwitz Memorial Database Record] (accessed 6 May 2021)<br/>\nPaul Pavel Weiss.\n</ref>",
+    "citation": "Paul was in a record.<ref>\n'''Record of Paul Pavel Weiss''':\n\"Auschwitz Memorial - Victim Database\"<br/>\n[https://victims.auschwitz.org/victims/245644 Auschwitz Memorial Database Record] (accessed 6 May 2021)<br/>\nPaul Pavel Weiss. Born on 19 Sep 1925 in Kuklov.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record of Paul Pavel Weiss''': \"Auschwitz Memorial - Victim Database\"<br/>[https://victims.auschwitz.org/victims/245644 Auschwitz Memorial Database Record] (accessed 6 May 2021)<br/>Paul Pavel Weiss.",
+    "citation": "* '''Record of Paul Pavel Weiss''': \"Auschwitz Memorial - Victim Database\"<br/>[https://victims.auschwitz.org/victims/245644 Auschwitz Memorial Database Record] (accessed 6 May 2021)<br/>Paul Pavel Weiss. Born on 19 Sep 1925 in Kuklov.",
     "type": "source"
   }
 }

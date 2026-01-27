@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Medical Patient''':\n\"Patients at Reknes pleiestiftelse in Molde 1839-1877\"<br/>\nSurrounding area in the source: 11<br/>\n[https://www.digitalarkivet.no/en/view/20/pc00000000192712 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nIngeborg Thoresdtr Aasbø on 4 Feb 1863 in Reknæs kur, Reknes pleiestiftelse, Møre og Romsdal, Norway.\n</ref>",
+    "citation": "<ref>\n'''Medical Patient''':\n\"Patients at Reknes pleiestiftelse in Molde 1839-1877\"<br/>\nSurrounding area in the source: 11<br/>\n[https://www.digitalarkivet.no/en/view/20/pc00000000192712 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nIngeborg Thoresdtr Aasbø on 4 Feb 1863 in Reknæs kur, Reknes pleiestiftelse, Møre og Romsdal, Norway. Born in Stangvig, Halse sogn..\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Ingeborg was a patient on 4 February 1863 in Reknæs kur, Reknes pleiestiftelse, Møre og Romsdal, Norway.<ref>\n'''Medical Patient''':\n\"Patients at Reknes pleiestiftelse in Molde 1839-1877\"<br/>\nSurrounding area in the source: 11<br/>\n[https://www.digitalarkivet.no/en/view/20/pc00000000192712 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nIngeborg Thoresdtr Aasbø on 4 Feb 1863 in Reknæs kur, Reknes pleiestiftelse, Møre og Romsdal, Norway.\n</ref>",
+    "citation": "Ingeborg was a patient on 4 February 1863 in Reknæs kur, Reknes pleiestiftelse, Møre og Romsdal, Norway.<ref>\n'''Medical Patient''':\n\"Patients at Reknes pleiestiftelse in Molde 1839-1877\"<br/>\nSurrounding area in the source: 11<br/>\n[https://www.digitalarkivet.no/en/view/20/pc00000000192712 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nIngeborg Thoresdtr Aasbø on 4 Feb 1863 in Reknæs kur, Reknes pleiestiftelse, Møre og Romsdal, Norway. Born in Stangvig, Halse sogn..\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Medical Patient''': \"Patients at Reknes pleiestiftelse in Molde 1839-1877\"<br/>Surrounding area in the source: 11<br/>[https://www.digitalarkivet.no/en/view/20/pc00000000192712 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ingeborg Thoresdtr Aasbø on 4 Feb 1863 in Reknæs kur, Reknes pleiestiftelse, Møre og Romsdal, Norway.",
+    "citation": "* '''Medical Patient''': \"Patients at Reknes pleiestiftelse in Molde 1839-1877\"<br/>Surrounding area in the source: 11<br/>[https://www.digitalarkivet.no/en/view/20/pc00000000192712 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ingeborg Thoresdtr Aasbø on 4 Feb 1863 in Reknæs kur, Reknes pleiestiftelse, Møre og Romsdal, Norway. Born in Stangvig, Halse sogn..",
     "type": "source"
   }
 }

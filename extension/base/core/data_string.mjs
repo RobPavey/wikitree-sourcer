@@ -1776,12 +1776,54 @@ function getDivorceString(gd, options) {
 function getDefaultString(gd, options) {
   let dataString = getFullName(gd);
 
-  let date = gd.inferEventDateObj();
-  if (date) {
-    dataString += " " + getDateWithPreposition(date, options, gd);
+  let eventDate = gd.inferEventDateObj();
+  if (eventDate) {
+    dataString += " " + getDateWithPreposition(eventDate, options, gd);
   }
 
   dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
+
+  // birth
+  if (gd.birthDate || gd.birthPlace) {
+    let addedBorn = false;
+    if (gd.birthDate) {
+      let birthDate = gd.inferBirthDateObj();
+      if (birthDate && !birthDate.isSubsetOf(eventDate)) {
+        dataString += ". Born " + getDateWithPreposition(birthDate, options, gd);
+        addedBorn = true;
+      }
+    }
+    if (gd.birthPlace) {
+      let birthPlace = gd.inferBirthPlaceObj();
+      if (birthPlace) {
+        if (!addedBorn) {
+          dataString += ". Born";
+        }
+        dataString += getFullPlaceTermWithPreposition(birthPlace);
+      }
+    }
+  }
+
+  // death
+  if (gd.deathDate || gd.deathPlace) {
+    let addedDied = false;
+    if (gd.deathDate) {
+      let deathDate = gd.inferDeathDateObj();
+      if (deathDate && !deathDate.isSubsetOf(eventDate)) {
+        dataString += ". Died " + getDateWithPreposition(deathDate, options, gd);
+        addedDied = true;
+      }
+    }
+    if (gd.deathPlace) {
+      let deathPlace = gd.inferDeathPlaceObj();
+      if (deathPlace) {
+        if (!addedDied) {
+          dataString += ". Died";
+        }
+        dataString += getFullPlaceTermWithPreposition(deathPlace);
+      }
+    }
+  }
 
   if (dataString == "Unknown") {
     // the only thing is the unknown name - no use for anything.

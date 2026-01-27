@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record of Charles Kimberlin''':\n\"undefined\"<br/>\n[https://www.myheritage.com/person-1508888_451433851_451433851/charles-kimberlin#!info MyHeritage Record] (accessed 6 May 2021)<br/>\nCharles Kimberlin.\n</ref>",
+    "citation": "<ref>\n'''Record of Charles Kimberlin''':\n\"undefined\"<br/>\n[https://www.myheritage.com/person-1508888_451433851_451433851/charles-kimberlin#!info MyHeritage Record] (accessed 6 May 2021)<br/>\nCharles Kimberlin. Born on 15 Dec 1825 in Atherstone, Warwickshire, England.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Charles was in a record.<ref>\n'''Record of Charles Kimberlin''':\n\"undefined\"<br/>\n[https://www.myheritage.com/person-1508888_451433851_451433851/charles-kimberlin#!info MyHeritage Record] (accessed 6 May 2021)<br/>\nCharles Kimberlin.\n</ref>",
+    "citation": "Charles was in a record.<ref>\n'''Record of Charles Kimberlin''':\n\"undefined\"<br/>\n[https://www.myheritage.com/person-1508888_451433851_451433851/charles-kimberlin#!info MyHeritage Record] (accessed 6 May 2021)<br/>\nCharles Kimberlin. Born on 15 Dec 1825 in Atherstone, Warwickshire, England.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record of Charles Kimberlin''': \"undefined\"<br/>[https://www.myheritage.com/person-1508888_451433851_451433851/charles-kimberlin#!info MyHeritage Record] (accessed 6 May 2021)<br/>Charles Kimberlin.",
+    "citation": "* '''Record of Charles Kimberlin''': \"undefined\"<br/>[https://www.myheritage.com/person-1508888_451433851_451433851/charles-kimberlin#!info MyHeritage Record] (accessed 6 May 2021)<br/>Charles Kimberlin. Born on 15 Dec 1825 in Atherstone, Warwickshire, England.",
     "type": "source"
   }
 }

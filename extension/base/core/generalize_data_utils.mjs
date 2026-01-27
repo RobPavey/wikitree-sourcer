@@ -720,6 +720,47 @@ class DateObj {
     }
   }
 
+  isSubsetOf(otherDateObj) {
+    if (!otherDateObj) {
+      return false;
+    }
+
+    if (!otherDateObj.dateString && !otherDateObj.yearString) {
+      return false;
+    }
+
+    if (this.dateString && otherDateObj.dateString) {
+      if (this.dateString == otherDateObj.dateString) {
+        return true;
+      }
+
+      let parsedDate = DateUtils.parseDateString(this.dateString);
+      let otherParsedDate = DateUtils.parseDateString(otherDateObj.dateString);
+
+      if (parsedDate.yearNum == otherParsedDate.yearNum) {
+        if (!parsedDate.hasMonth || parsedDate.monthNum == otherParsedDate.monthNum) {
+          if (!parsedDate.hasDay || parsedDate.dayNum == otherParsedDate.dayNum) {
+            return true;
+          }
+        }
+      }
+    } else if (this.dateString && otherDateObj.yearString) {
+      if (this.dateString == otherDateObj.yearString) {
+        return true;
+      }
+    } else if (this.yearString && otherDateObj.dateString) {
+      let otherParsedDate = DateUtils.parseDateString(otherDateObj.dateString);
+      if (this.yearString == otherParsedDate.year) {
+        return true;
+      }
+    } else if (this.yearString && otherDateObj.yearString) {
+      if (this.yearString == otherDateObj.yearString) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   setDateAndQualifierFromString(dateString, isYearString = false) {
     const prefixes = [
       { prefix: "about", qualifier: dateQualifiers.ABOUT },
