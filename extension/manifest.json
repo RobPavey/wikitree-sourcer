@@ -1123,7 +1123,7 @@
     },
     {
       "resources": [
-        "site/panb/core/ausmem_extract_data.mjs"
+        "site/ausmem/core/ausmem_extract_data.mjs"
       ],
       "matches": [
         "*://*.auschwitz.org/*"
