@@ -309,7 +309,7 @@ function determineRecordType(extractedData) {
     { type: RT.Probate, matches: ["Probate"] },
     {
       type: RT.MarriageRegistration,
-      matches: ["Civil Registration Marriage Index"],
+      matches: ["Civil Registration Marriage Index", "Civil Registration Marriages Index"],
     },
     {
       type: RT.CriminalRegister,
