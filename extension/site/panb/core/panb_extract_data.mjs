@@ -74,7 +74,8 @@ function extractData(document, url) {
     result.databaseID = indexName +" is not yet a supported";
     return result;
   }
-  
+
+  result.databaseID = "RS141"+suffix;
   let recordTableTitle = "";
   switch (suffix) {
     case "A5":
@@ -107,7 +108,7 @@ function extractData(document, url) {
     case "C6":
       recordTableTitle = "Index to Death registration of soldiers, 1941-1947";
   }
-  result.tableTitle = recordTableTitle;
+  result.tableTitle = "Vital Statistics from Government Records (" +indexName + "): " + recordTableTitle;
 
   // We expect to find a single table of 2 to 3 columns and up to 12 rows
   let directTables = document.querySelector("table.Details");
@@ -164,7 +165,6 @@ function extractData(document, url) {
     result.imageUrl = "";
   }
   result.numberTableEntries = columnLength;
-  result.databaseID = "RS141"+suffix;
   const suffixType = suffix.slice(0,1);
   if (suffixType == "A") {
 	  result.eventType = "Birth";
