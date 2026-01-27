@@ -39,7 +39,6 @@ function buildSourceTitle(ed, gd, builder) {
 function buildSourceReference(ed, gd, builder) {
   let srCode = ed.recordData["Code"];
   let hasMicrofilm = true;
-  let needsFinishing = true;
 
   builder.addSourceReferenceText("New Brunswick Provincial Archives");
   builder.addSourceReferenceText("Vital Statistics from Government Records (RS141)");
@@ -79,13 +78,7 @@ function buildSourceReference(ed, gd, builder) {
       builder.addSourceReferenceField("Registration Code", srRegCode);
       builder.addSourceReferenceField("Volume", volumeString);
     } else if (ed.databaseID == "RS141C6") {
-      let deathDateString = ed.recordData["Date of Death"];
-      //let dateString = eventDateString;
-      let killedString = ed.recordData["Killed"];
-      builder.addSourceReferenceText(deathDateString);
-      builder.addSourceReferenceField("Combat death in", killedString);
-      hasMicrofilm = false;
-      needsFinishing = false;
+      // everything will be in the dataString, no reference data
     }
   }
   let gdMicrofilmString = "";
@@ -94,15 +87,6 @@ function buildSourceReference(ed, gd, builder) {
     if (gdMicrofilmString && gdMicrofilmString != "") {
       builder.addSourceReferenceField("Microfilm", gdMicrofilmString);
     }
-  }
-
-  if (needsFinishing) {
-    let edReader = new PanbEdReader(ed);
-    let eventDateString = ed.recordData["Date"];
-    let dateString = eventDateString;
-    let placeString = edReader.getEventPlaceObj().placeString;
-    builder.addSourceReferenceText(dateString);
-    builder.addSourceReferenceText(placeString);
   }
 }
 
