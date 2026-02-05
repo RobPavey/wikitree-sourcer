@@ -6,8 +6,8 @@ node_modules
 *.zip
 
 # Mac Time Machine files
-"* 2.*"
-"* 2"
+* 2.*
+* 2
 
 # VSCode files
 .vscode/*
