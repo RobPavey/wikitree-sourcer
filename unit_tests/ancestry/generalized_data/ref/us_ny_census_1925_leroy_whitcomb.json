@@ -2,6 +2,12 @@
   "sourceType": "record",
   "recordType": "Census",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Leroy A Whitcomb",
+      "Leroy A Gleason"
+    ]
+  },
   "name": {
     "name": "Leroy A Whitcomb"
   },

@@ -8,7 +8,7 @@
   "titleName": "Carol Sharp Kohler",
   "titleCollection": "U.S., Public Records Index, 1950-1993, Volume 1",
   "recordData": {
-    "Name": "Carol Sharp Kohler [Carol Bonnewell]",
+    "Name": "Carol Sharp Kohler",
     "Birth Date": "7 Jun 1948",
     "Residence Date": "1993",
     "Phone Number": "647-1932",
@@ -20,6 +20,11 @@
     "Second Address": "143 Leopard St # 9d",
     "Second Residence": "Rochester, NY",
     "Second Postal Code": "14615-3105"
+  },
+  "recordDataAltValues": {
+    "Name": [
+      "Carol Bonnewell"
+    ]
   },
   "sourceInformation": "Ancestry.com. U.S., Public Records Index, 1950-1993, Volume 1 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings.",
   "originalData": "Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings.",

@@ -8,6 +8,12 @@
     }
   },
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Sandra Bowman",
+      "Sandra Baldner"
+    ]
+  },
   "name": {
     "name": "Sandra Bowman"
   },

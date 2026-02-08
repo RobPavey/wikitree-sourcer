@@ -10,12 +10,18 @@
   "recordData": {
     "Name": "Ernst Reinhold Skopp",
     "Birth Date": "17 Nov 1833",
-    "Residence Place": "Frankenberg, Sachsen (Saxony), Deutschland (Germany)",
+    "Residence Place": "Frankenberg, Sachsen",
     "Father": "Michael Sk.",
     "Spouse": "Marie Auguste Skopp",
     "Child": "Ernst Hermann Skopp Marie Helene Skopp",
     "Signatur": "B6aI Bd 17",
     "Laufende Nummer": "17"
+  },
+  "recordDataUserValues": {
+    "Residence Place": [
+      "(Saxony)",
+      "(Germany)"
+    ]
   },
   "linkData": {
     "Father": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=FrankenbergFamilySheets&indiv=try&h=1050002913",

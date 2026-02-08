@@ -31,6 +31,7 @@ import {
   getTestTextFilePath,
   writeTestOutputTextFile,
   readRefTextFile,
+  createRefTextFile,
 } from "../test_utils/ref_file_utils.mjs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { reportStringDiff } from "../test_utils/compare_result_utils.mjs";
@@ -360,12 +361,18 @@ async function runBuildAllCitationsTests(siteName, regressionData, testManager, 
       }
 
       if (refText != result.citationsString) {
-        reportStringDiff(refText, result.citationsString);
-        console.log("Result differs from reference. Result is:");
-        console.log(result);
-        let refFile = getRefTextFilePath(siteName, resultDir, testData, variantName);
-        let testFile = getTestTextFilePath(siteName, resultDir, testData, variantName);
-        logger.logError(testData, "Result differs from reference", refFile, testFile);
+        if (testManager.parameters.forceReplaceRefs) {
+          let refPath = getRefTextFilePath(siteName, resultDir, testData);
+          console.log("Force replacing ref file: " + refPath);
+          createRefTextFile(result.citationsString, siteName, resultDir, testData, variantName, logger);
+        } else {
+          reportStringDiff(refText, result.citationsString);
+          console.log("Result differs from reference. Result is:");
+          console.log(result);
+          let refFile = getRefTextFilePath(siteName, resultDir, testData, variantName);
+          let testFile = getTestTextFilePath(siteName, resultDir, testData, variantName);
+          logger.logError(testData, "Result differs from reference", refFile, testFile);
+        }
       }
     }
   }

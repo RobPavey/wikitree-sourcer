@@ -32,7 +32,7 @@
     "Religion": "Presbyterian",
     "Can Read?": "Yes",
     "Can Write?": "Yes",
-    "Occupation": "Doctor [Factor for HBC]",
+    "Occupation": "Doctor",
     "Employment Type": "Wage Earner",
     "Income": "1350",
     "Out of Work?": "No",
@@ -49,6 +49,11 @@
     "Line Number": "1",
     "Family Number": "50",
     "Household Members<br/>Age<br/>Relationship": "Frank W Beaton 57 Head<br/>Emma S Beaton 56 Wife<br/>Margaret Beaton 21 Daughter<br/>Frank Beaton 16 Son<br/>Duncan Beaton 15 Son<br/>Frederick Beaton 13 Son<br/>William Beaton 11 Son"
+  },
+  "recordDataUserValues": {
+    "Occupation": [
+      "Factor for HBC"
+    ]
   },
   "household": {
     "headings": [

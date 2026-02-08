@@ -2,6 +2,12 @@
   "sourceType": "record",
   "recordType": "Death",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "I N McGee",
+      "J N McGee"
+    ]
+  },
   "name": {
     "name": "I N McGee"
   },

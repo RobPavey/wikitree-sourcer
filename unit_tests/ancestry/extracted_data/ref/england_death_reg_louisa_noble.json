@@ -11,12 +11,18 @@
     "Name": "Louisa Noble",
     "Death Age": "89",
     "Birth Date": "23 Jul 1882",
-    "Registration Date": "Jul 1971 [Aug 1971] [Sep 1971]",
+    "Registration Date": "Jul 1971",
     "Registration Quarter": "Jul-Aug-Sep",
     "Registration District": "Nottingham",
     "Inferred County": "Nottinghamshire",
     "Volume": "3c",
     "Page": "976"
+  },
+  "recordDataUserValues": {
+    "Registration Date": [
+      "Aug 1971",
+      "Sep 1971"
+    ]
   },
   "imageUrl": "https://www.ancestry.com/imageviewer/collections/7579/images/ons_d19713az-0782?pid=40560790&backurl=https://search.ancestry.com/cgi-bin/sse.dll?indiv%3D1%26db%3D7579%26h%3D40560790&treeid=&personid=&hintid=&usePUB=true&usePUBJs=true",
   "imageDbId": "7579",

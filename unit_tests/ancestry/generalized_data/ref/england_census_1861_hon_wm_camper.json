@@ -2,6 +2,23 @@
   "sourceType": "record",
   "recordType": "Census",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Rt Honbm Wm Camper",
+      "Rt Hon W[illia]m [Francis] Cowper",
+      "Cowper",
+      "Rt Honbm Wm Cowper",
+      "Rt Hon. William Cowper"
+    ],
+    "Age": [
+      "90",
+      "40"
+    ],
+    "Estimated Birth Year": [
+      "1771",
+      "1811"
+    ]
+  },
   "name": {
     "name": "Rt Honbm Wm Camper"
   },

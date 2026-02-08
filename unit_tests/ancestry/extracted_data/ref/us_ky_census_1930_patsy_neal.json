@@ -8,8 +8,8 @@
   "titleName": "Patsy Louise Neal",
   "titleCollection": "1930 United States Federal Census",
   "recordData": {
-    "Name": "Patsy Louise Neal [Betsy Louise Neal] [User-submitted-comment Neal] [Patricia] [Patsy Louise] [Patricia Neal]",
-    "Birth Year": "abt 1926 [abt 1926]",
+    "Name": "Patsy Louise Neal",
+    "Birth Year": "abt 1926",
     "Gender": "Female",
     "Race": "White",
     "Age in 1930": "4",
@@ -28,6 +28,22 @@
     "Father's Birthplace": "Virginia",
     "Mother's Birthplace": "Kentucky",
     "Household Members (Name)<br/>Age<br/>Relationship": "W B Neal 34 Head<br/>Eura Neal 29 Wife<br/>Margarett Ann Neal 6 Daughter<br/>Patsy Louise Neal 4 Daughter"
+  },
+  "recordDataAltValues": {
+    "Name": [
+      "Betsy Louise Neal",
+      "Neal",
+      "Patricia"
+    ],
+    "Birth Year": [
+      "abt 1926"
+    ]
+  },
+  "recordDataUserValues": {
+    "Name": [
+      "Patsy Louise",
+      "Patricia Neal"
+    ]
   },
   "household": {
     "headings": [

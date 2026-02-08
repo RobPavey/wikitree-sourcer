@@ -2,6 +2,12 @@
   "sourceType": "record",
   "recordType": "Census",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Occupation": [
+      "Doctor",
+      "Factor for HBC"
+    ]
+  },
   "name": {
     "name": "Frank W Beaton"
   },

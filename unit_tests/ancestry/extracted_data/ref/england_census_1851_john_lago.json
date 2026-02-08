@@ -8,7 +8,7 @@
   "titleName": "John Lago",
   "titleCollection": "1861 England Census",
   "recordData": {
-    "Name": "John Lago [Jago]",
+    "Name": "John Lago",
     "Age": "3",
     "Estimated Birth Year": "1858",
     "Relation": "Son",
@@ -26,6 +26,11 @@
     "Folio": "96",
     "Page number": "37",
     "Household Members<br/>Age<br/>Relationship": "Susanha Lago 28 Wife<br/>Emma Lago 5 Daughter<br/>John Lago 3 Son<br/>Waller Lago 3/12 Son"
+  },
+  "recordDataUserValues": {
+    "Name": [
+      "Jago"
+    ]
   },
   "household": {
     "headings": [

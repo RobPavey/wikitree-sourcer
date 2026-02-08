@@ -156,17 +156,12 @@ function addBuildHouseholdTableMenuItem(menu, data) {
   }
 }
 
-function addPrimaryPersonMenuItem(menu, data, input) {
-  let options = data.generalizedData.primaryPersonOptions;
-  if (!options || options.length <= 1) {
-    return;
-  }
-  let currentIndex = input.primaryPersonIndex;
-  if (!currentIndex) {
+function addSelectorMenuItem(menu, label, options, currentIndex, selectFunc) {
+  let text = label + ": ";
+
+  if (currentIndex == -1) {
     currentIndex = 0;
   }
-
-  let text = "Person: ";
 
   // create a list item and add it to the list
   let listItem = document.createElement("li");
@@ -191,14 +186,27 @@ function addPrimaryPersonMenuItem(menu, data, input) {
   }
   select.value = currentIndex;
 
-  select.addEventListener("change", function (event) {
-    input.primaryPersonIndex = event.target.value;
-    setupSimplePopupMenu(input);
-  });
+  select.addEventListener("change", selectFunc);
 
   divElement.appendChild(select);
 
   menu.list.appendChild(listItem);
+}
+
+function addPrimaryPersonMenuItem(menu, data, input) {
+  let options = data.generalizedData.primaryPersonOptions;
+  if (!options || options.length <= 1) {
+    return;
+  }
+  let currentIndex = input.primaryPersonIndex;
+  if (!currentIndex) {
+    currentIndex = 0;
+  }
+
+  addSelectorMenuItem(menu, "Person", options, currentIndex, function (event) {
+    input.primaryPersonIndex = event.target.value;
+    setupSimplePopupMenu(input);
+  });
 }
 
 function addSpousePersonMenuItem(menu, data, input) {
@@ -211,44 +219,46 @@ function addSpousePersonMenuItem(menu, data, input) {
     currentIndex = -1;
   }
 
-  let text = "Spouse: ";
-
-  // create a list item and add it to the list
-  let listItem = document.createElement("li");
-  listItem.className = "menuItem dividerBelow yellowBackground";
-
-  let divElement = document.createElement("div");
-  listItem.appendChild(divElement);
-
-  let labelElement = document.createElement("label");
-  labelElement.innerText = text;
-  divElement.appendChild(labelElement);
-
-  let select = document.createElement("select");
-  select.className = "yellowBackground";
-
-  let optionElement = document.createElement("option");
-  optionElement.value = -1;
-  optionElement.text = "None";
-  select.appendChild(optionElement);
-
-  for (let index = 0; index < options.length; index++) {
-    let option = options[index];
-    optionElement = document.createElement("option");
-    optionElement.value = index;
-    optionElement.text = option;
-    select.appendChild(optionElement);
-  }
-  select.value = currentIndex;
-
-  select.addEventListener("change", function (event) {
+  addSelectorMenuItem(menu, "Spouse", options, currentIndex, function (event) {
     input.spousePersonIndex = event.target.value;
     setupSimplePopupMenu(input);
   });
+}
 
-  divElement.appendChild(select);
+function addAlternateFieldValuesMenuItem(menu, data, fieldName, input) {
+  console.log("addAlternateFieldValuesMenuItem");
 
-  menu.list.appendChild(listItem);
+  let options = data.generalizedData.alternateFieldValues[fieldName];
+  if (!options || options.length <= 1) {
+    return;
+  }
+
+  let currentIndex = undefined;
+  if (input.alternateFieldIndices) {
+    currentIndex = input.alternateFieldIndices[fieldName];
+  }
+  if (currentIndex === undefined) {
+    currentIndex = -1;
+  }
+
+  addSelectorMenuItem(menu, fieldName, options, currentIndex, function (event) {
+    if (!input.alternateFieldIndices) {
+      input.alternateFieldIndices = {};
+    }
+    input.alternateFieldIndices[fieldName] = event.target.value;
+    setupSimplePopupMenu(input);
+  });
+}
+
+function addAlternateFieldValuesMenuItems(menu, data, input) {
+  let alternateFieldValues = data.generalizedData.alternateFieldValues;
+  if (!alternateFieldValues) {
+    return;
+  }
+
+  for (let fieldName of Object.keys(alternateFieldValues)) {
+    addAlternateFieldValuesMenuItem(menu, data, fieldName, input);
+  }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -326,6 +336,10 @@ async function setupSimplePopupMenu(input) {
 
   if (generalizedData.spousePersonOptions && generalizedData.spousePersonOptions.length > 1) {
     addSpousePersonMenuItem(menu, data, input);
+  }
+
+  if (generalizedData.alternateFieldValues) {
+    addAlternateFieldValuesMenuItems(menu, data, input);
   }
 
   if (input.doNotIncludeSearch != true) {

@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Record of Ernst Reinhold Skopp''':\n\"Frankenberg, Germany, Family Registers, 1717-1938\"<br/>\nSignatur: B6aI Bd 17; Laufende Nummer: 17<br/>\n{{Ancestry Record|61311|2913}} (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Ernst was in a record in Frankenberg, Sachsen (Saxony), Deutschland (Germany).<ref>\n'''Record of Ernst Reinhold Skopp''':\n\"Frankenberg, Germany, Family Registers, 1717-1938\"<br/>\nSignatur: B6aI Bd 17; Laufende Nummer: 17<br/>\n{{Ancestry Record|61311|2913}} (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Record of Ernst Reinhold Skopp''': \"Frankenberg, Germany, Family Registers, 1717-1938\"<br/>Signatur: B6aI Bd 17; Laufende Nummer: 17<br/>{{Ancestry Record|61311|2913}} (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Record of Ernst Reinhold Skopp''':\n\"Frankenberg, Germany, Family Registers, 1717-1938\"<br/>\nSignatur: B6aI Bd 17; Laufende Nummer: 17<br/>\n{{Ancestry Record|61311|2913}} (accessed 6 May 2021)<br/>\nName: Ernst Reinhold Skopp; Gender: Male; Birth Date: 17 Nov 1833; Residence Place: Frankenberg, Sachsen (Saxony), Deutschland (Germany); Father: Michael Sk.; Spouse: Marie Auguste Skopp; Child: Ernst Hermann Skopp Marie Helene Skopp.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Ernst was in a record in Frankenberg, Sachsen (Saxony), Deutschland (Germany).<ref>\n'''Record of Ernst Reinhold Skopp''':\n\"Frankenberg, Germany, Family Registers, 1717-1938\"<br/>\nSignatur: B6aI Bd 17; Laufende Nummer: 17<br/>\n{{Ancestry Record|61311|2913}} (accessed 6 May 2021)<br/>\nName: Ernst Reinhold Skopp; Gender: Male; Birth Date: 17 Nov 1833; Residence Place: Frankenberg, Sachsen (Saxony), Deutschland (Germany); Father: Michael Sk.; Spouse: Marie Auguste Skopp; Child: Ernst Hermann Skopp Marie Helene Skopp.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Record of Ernst Reinhold Skopp''': \"Frankenberg, Germany, Family Registers, 1717-1938\"<br/>Signatur: B6aI Bd 17; Laufende Nummer: 17<br/>{{Ancestry Record|61311|2913}} (accessed 6 May 2021)<br/>Name: Ernst Reinhold Skopp; Gender: Male; Birth Date: 17 Nov 1833; Residence Place: Frankenberg, Sachsen (Saxony), Deutschland (Germany); Father: Michael Sk.; Spouse: Marie Auguste Skopp; Child: Ernst Hermann Skopp Marie Helene Skopp.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Record of Ernst Reinhold Skopp''':\n\"Frankenberg, Germany, Family Registers, 1717-1938\"<br/>\nSignatur: B6aI Bd 17; Laufende Nummer: 17<br/>\n{{Ancestry Record|61311|2913}} (accessed 6 May 2021)<br/>\nName: Ernst Reinhold Skopp; Gender: Male; Birth Date: 17 Nov 1833; Residence Place: Frankenberg, Sachsen (Saxony), Deutschland (Germany); Father: Michael Sk.; Spouse: Marie Auguste Skopp; Child: Ernst Hermann Skopp Marie Helene Skopp.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Ernst was in a record in Frankenberg, Sachsen (Saxony), Deutschland (Germany).<ref>\n'''Record of Ernst Reinhold Skopp''':\n\"Frankenberg, Germany, Family Registers, 1717-1938\"<br/>\nSignatur: B6aI Bd 17; Laufende Nummer: 17<br/>\n{{Ancestry Record|61311|2913}} (accessed 6 May 2021)<br/>\nName: Ernst Reinhold Skopp; Gender: Male; Birth Date: 17 Nov 1833; Residence Place: Frankenberg, Sachsen (Saxony), Deutschland (Germany); Father: Michael Sk.; Spouse: Marie Auguste Skopp; Child: Ernst Hermann Skopp Marie Helene Skopp.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Record of Ernst Reinhold Skopp''': \"Frankenberg, Germany, Family Registers, 1717-1938\"<br/>Signatur: B6aI Bd 17; Laufende Nummer: 17<br/>{{Ancestry Record|61311|2913}} (accessed 6 May 2021)<br/>Name: Ernst Reinhold Skopp; Gender: Male; Birth Date: 17 Nov 1833; Residence Place: Frankenberg, Sachsen (Saxony), Deutschland (Germany); Father: Michael Sk.; Spouse: Marie Auguste Skopp; Child: Ernst Hermann Skopp Marie Helene Skopp.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Record of Ernst Reinhold Skopp''':\n\"Frankenberg, Germany, Family Registers, 1717-1938\"<br/>\nSignatur: B6aI Bd 17; Laufende Nummer: 17<br/>\n{{Ancestry Record|61311|2913}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Ernst Reinhold Skopp\n|-\n| Gender || Male\n|-\n| Birth Date || 17 Nov 1833\n|-\n| Residence Place || Frankenberg, Sachsen (Saxony), Deutschland (Germany)\n|-\n| Father || Michael Sk.\n|-\n| Spouse || Marie Auguste Skopp\n|-\n| Child || Ernst Hermann Skopp Marie Helene Skopp\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Ernst was in a record in Frankenberg, Sachsen (Saxony), Deutschland (Germany).<ref>\n'''Record of Ernst Reinhold Skopp''':\n\"Frankenberg, Germany, Family Registers, 1717-1938\"<br/>\nSignatur: B6aI Bd 17; Laufende Nummer: 17<br/>\n{{Ancestry Record|61311|2913}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Ernst Reinhold Skopp\n|-\n| Gender || Male\n|-\n| Birth Date || 17 Nov 1833\n|-\n| Residence Place || Frankenberg, Sachsen (Saxony), Deutschland (Germany)\n|-\n| Father || Michael Sk.\n|-\n| Spouse || Marie Auguste Skopp\n|-\n| Child || Ernst Hermann Skopp Marie Helene Skopp\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Record of Ernst Reinhold Skopp''': \"Frankenberg, Germany, Family Registers, 1717-1938\"<br/>Signatur: B6aI Bd 17; Laufende Nummer: 17<br/>{{Ancestry Record|61311|2913}} (accessed 6 May 2021)<br/>Name: Ernst Reinhold Skopp; Gender: Male; Birth Date: 17 Nov 1833; Residence Place: Frankenberg, Sachsen (Saxony), Deutschland (Germany); Father: Michael Sk.; Spouse: Marie Auguste Skopp; Child: Ernst Hermann Skopp Marie Helene Skopp.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Frankenberg, Germany, Family Registers, 1717-1938,\" database, ({{Ancestry Record|61311|2913}} : accessed 6 May 2021), Name Ernst Reinhold Skopp, Gender Male, Birth Date 17 Nov 1833, Residence Place Frankenberg, Sachsen (Saxony), Deutschland (Germany), Father Michael Sk., Spouse Marie Auguste Skopp, Child Ernst Hermann Skopp Marie Helene Skopp; citing Signatur B6aI Bd 17, Laufende Nummer 17.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Ernst was in a record in Frankenberg, Sachsen (Saxony), Deutschland (Germany).<ref>\"Frankenberg, Germany, Family Registers, 1717-1938,\" database, ({{Ancestry Record|61311|2913}} : accessed 6 May 2021), Name Ernst Reinhold Skopp, Gender Male, Birth Date 17 Nov 1833, Residence Place Frankenberg, Sachsen (Saxony), Deutschland (Germany), Father Michael Sk., Spouse Marie Auguste Skopp, Child Ernst Hermann Skopp Marie Helene Skopp; citing Signatur B6aI Bd 17, Laufende Nummer 17.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Frankenberg, Germany, Family Registers, 1717-1938,\" database, ({{Ancestry Record|61311|2913}} : accessed 6 May 2021), Name Ernst Reinhold Skopp, Gender Male, Birth Date 17 Nov 1833, Residence Place Frankenberg, Sachsen (Saxony), Deutschland (Germany), Father Michael Sk., Spouse Marie Auguste Skopp, Child Ernst Hermann Skopp Marie Helene Skopp; citing Signatur B6aI Bd 17, Laufende Nummer 17.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Record of Ernst Reinhold Skopp'':\n\"Frankenberg, Germany, Family Registers, 1717-1938\", database, \nSignatur B6aI Bd 17, Laufende Nummer 17, \n({{Ancestry Record|61311|2913}} : accessed 6 May 2021), \nName: Ernst Reinhold Skopp; Gender: Male; Birth Date: 17 Nov 1833; Residence Place: Frankenberg, Sachsen (Saxony), Deutschland (Germany); Father: Michael Sk.; Spouse: Marie Auguste Skopp; Child: Ernst Hermann Skopp Marie Helene Skopp.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Ernst was in a record in Frankenberg, Sachsen (Saxony), Deutschland (Germany).<ref>\n''Record of Ernst Reinhold Skopp'':\n\"Frankenberg, Germany, Family Registers, 1717-1938\", database, \nSignatur B6aI Bd 17, Laufende Nummer 17, \n({{Ancestry Record|61311|2913}} : accessed 6 May 2021), \nName: Ernst Reinhold Skopp; Gender: Male; Birth Date: 17 Nov 1833; Residence Place: Frankenberg, Sachsen (Saxony), Deutschland (Germany); Father: Michael Sk.; Spouse: Marie Auguste Skopp; Child: Ernst Hermann Skopp Marie Helene Skopp.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Record of Ernst Reinhold Skopp'': \"Frankenberg, Germany, Family Registers, 1717-1938\", database, Signatur B6aI Bd 17, Laufende Nummer 17, ({{Ancestry Record|61311|2913}} : accessed 6 May 2021), Name: Ernst Reinhold Skopp; Gender: Male; Birth Date: 17 Nov 1833; Residence Place: Frankenberg, Sachsen (Saxony), Deutschland (Germany); Father: Michael Sk.; Spouse: Marie Auguste Skopp; Child: Ernst Hermann Skopp Marie Helene Skopp.",
+    "type": "source"
+  }
+}

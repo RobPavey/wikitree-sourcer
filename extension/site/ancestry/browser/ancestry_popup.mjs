@@ -41,7 +41,6 @@ import {
   keepPopupOpenForDebug,
   closePopup,
   saveUnitTestData,
-  clearCachedFetchData,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
@@ -60,6 +59,7 @@ import {
   addStandardMenuEnd,
   addShowCitationAssistantMenuItem,
   buildMinimalMenuWithMessage,
+  addAlternateSelectorMenuItems,
 } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import { addBuildListsMenuItem } from "/base/browser/popup/popup_build_lists.mjs";
@@ -1399,6 +1399,12 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
 
   let extractedData = data.extractedData;
 
+  /*
+  if (extractedData.pageType == "record") {
+    regeneralizeDataWIthAlternatesSelected(data);
+  }
+    */
+
   let backFunction = function () {
     setupAncestryPopupMenuWithLinkData(data, tabId);
   };
@@ -1419,6 +1425,10 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
       subMessage += " Only limited information could be extracted.";
       addItalicMessageMenuItem(menu, subMessage, "yellowBackground");
     }
+
+    addAlternateSelectorMenuItems(menu, data.generalizedData, data, function () {
+      setupAncestryPopupMenuWithLinkData(data, tabId);
+    });
 
     await addSearchMenus(menu, data, backFunction, "ancestry");
     addMenuDivider(menu);
@@ -1502,6 +1512,7 @@ async function setupAncestryPopupMenu(extractedData, tabId) {
 
   // do async prefetches
   loadDataCache(ancestryDependencyListener);
+
   if (extractedData.pageType == "record" || extractedData.pageType == "image") {
     // will get an error if we try to do this for pageType == "sharingImageOrRecord" for example
     getAncestrySharingDataObj(data, ancestryDependencyListener);
