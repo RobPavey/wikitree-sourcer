@@ -291,6 +291,10 @@ const regressionData = [
     ],
   },
   {
+    caseName: "kc88_qcp_vito_mastrangelo",
+    url: "https://www.familysearch.org/en/tree/person/details/KC88-QCP",
+  },
+  {
     caseName: "kd7t_dzy_john_baird",
     url: "https://www.familysearch.org/en/tree/person/details/KD7T-DZY",
   },

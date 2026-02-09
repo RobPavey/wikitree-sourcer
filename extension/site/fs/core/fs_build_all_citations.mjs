@@ -281,6 +281,34 @@ function inferBestEventDateForCompare(gd) {
   return eventDate;
 }
 
+function pickBestDateForCompare(recordDate, sourceDate, sourceYear) {
+  let parsedRecordDate = DateUtils.parseDateString(recordDate);
+  let parsedSourceDate = DateUtils.parseDateString(sourceDate);
+  let parsedSourceYear = DateUtils.parseDateString(sourceYear);
+
+  if (parsedRecordDate.isValid) {
+    if (parsedRecordDate.isRange) {
+      if (parsedSourceDate.isValid && !parsedSourceDate.isRange) {
+        return sourceDate;
+      } else if (parsedSourceYear.isValid && !parsedSourceYear.isRange) {
+        return sourceYear;
+      }
+    }
+    return recordDate;
+  } else if (parsedSourceDate.isValid) {
+    if (parsedSourceDate.isRange) {
+      if (parsedSourceYear.isValid && !parsedSourceYear.isRange) {
+        return sourceYear;
+      }
+    }
+    return sourceDate;
+  } else if (parsedSourceYear.isValid) {
+    return sourceYear;
+  }
+
+  return "";
+}
+
 // this can be used both for sorting sources and facts
 function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
   let recordTypeSortPriority = {};
@@ -314,19 +342,10 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
     eventDateB = inferBestEventDateForCompare(gdB);
   }
 
-  if (!eventDateA) {
-    eventDateA = sourceA.eventDate;
-  }
-  if (!eventDateB) {
-    eventDateB = sourceB.eventDate;
-  }
-
-  if (!eventDateA) {
-    eventDateA = sourceA.sortYear;
-  }
-  if (!eventDateB) {
-    eventDateB = sourceB.sortYear;
-  }
+  // It is possible that we have an event date from the source record but it cannot be parsed
+  // while the event date from the source can be.
+  eventDateA = pickBestDateForCompare(eventDateA, sourceA.eventDate, sourceA.sortYear);
+  eventDateB = pickBestDateForCompare(eventDateB, sourceB.eventDate, sourceB.sortYear);
 
   if (eventDateA && eventDateB) {
     let result = DateUtils.compareDateStrings(eventDateA, eventDateB);

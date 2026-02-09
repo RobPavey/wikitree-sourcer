@@ -1836,7 +1836,7 @@ function setupDebugSubmenuMenu(data, backFunction) {
   }
 
   if (!saveUnitTestData) {
-    addMenuItem(menu, "Save unit test data", function (element) {
+    addMenuItem(menu, "Enable save of unit test data", function (element) {
       enableSaveUnitTestData();
     });
   }

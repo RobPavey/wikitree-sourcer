@@ -39,21 +39,96 @@ const fullMonths = [
   "December",
 ];
 
+const globalMonthNames = [
+  {
+    lcMatches: ["jan", "january", "ene", "enero", "gen", "gennaio", "janv", "janvier"],
+    standardShortName: "Jan",
+    standardLongName: "January",
+    monthNum: 1,
+  },
+  {
+    lcMatches: ["feb", "february", "febrero", "febbraio", "févr", "fevr", "fév", "fev", "février", "fevrier"],
+    standardShortName: "Feb",
+    standardLongName: "February",
+    monthNum: 2,
+  },
+  {
+    lcMatches: ["mar", "march", "marzo", "mars"],
+    standardShortName: "Mar",
+    standardLongName: "March",
+    monthNum: 3,
+  },
+  {
+    lcMatches: ["apr", "april", "abr", "abril", "aprile", "avr", "avril"],
+    standardShortName: "Apr",
+    standardLongName: "April",
+    monthNum: 4,
+  },
+  {
+    lcMatches: ["may", "may", "mayo", "mag", "maggio", "mai"],
+    standardShortName: "May",
+    standardLongName: "May",
+    monthNum: 5,
+  },
+  {
+    lcMatches: ["jun", "june", "junio", "gui", "giugno", "juin"],
+    standardShortName: "Jun",
+    standardLongName: "June",
+    monthNum: 6,
+  },
+  {
+    lcMatches: ["jul", "july", "julio", "lug", "luglio", "juil", "juill", "juillet"],
+    standardShortName: "Jul",
+    standardLongName: "July",
+    monthNum: 7,
+  },
+  {
+    lcMatches: ["aug", "august", "ago", "agosto", "août", "aout"],
+    standardShortName: "Aug",
+    standardLongName: "August",
+    monthNum: 8,
+  },
+  {
+    lcMatches: ["sep", "september", "set", "sept", "septiembre", "settembre", "septembre"],
+    standardShortName: "Sep",
+    standardLongName: "September",
+    monthNum: 9,
+  },
+  {
+    lcMatches: ["oct", "october", "octubre", "ott", "ottobre", "octobre"],
+    standardShortName: "Oct",
+    standardLongName: "October",
+    monthNum: 10,
+  },
+  {
+    lcMatches: ["nov", "november", "noviembre", "novembre"],
+    standardShortName: "Nov",
+    standardLongName: "November",
+    monthNum: 11,
+  },
+  {
+    lcMatches: ["dec", "december", "dic", "diciembre", "dicembre", "déc", "décembre", "decembre"],
+    standardShortName: "Dec",
+    standardLongName: "December",
+    monthNum: 12,
+  },
+];
+
 const DateUtils = {
   monthStringToMonthNum: function (string) {
     if (!string || string.length < 1) {
       return 0;
     }
 
-    let months = fullMonths;
-    if (string.length == 3) {
-      months = threeLetterMonths;
-    }
-
     let lcString = string.toLowerCase();
-    for (let monthIndex = 0; monthIndex < threeLetterMonths.length; monthIndex++) {
-      if (lcString == months[monthIndex].toLowerCase()) {
-        return monthIndex + 1;
+    let lcStringPlusPeriod = lcString + ".";
+
+    for (let month of globalMonthNames) {
+      if (month.lcMatches.includes(lcString)) {
+        return month.monthNum;
+      }
+      if (month.lcMatches.includes(lcStringPlusPeriod)) {
+        return month.monthNum;
       }
     }
 
