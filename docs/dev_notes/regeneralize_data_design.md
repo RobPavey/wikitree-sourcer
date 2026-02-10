@@ -1,16 +1,19 @@
 # Re-generalize design
 
-In some cases, after doing generalizeData, it is necessary to update the generatiled data.
+In some cases, after doing generalizeData, it is necessary to update the generalized data.
 
-There are three main cases currently:
+There are four main cases currently:
 
+* During building menu:
 1. When the main Sourcer menu has yellow selectors at the top. Examples are for selecting the primary person, the spouse or multiple options for data fields in the original record.
-2. Then the record doesn't have enough information to build a good citation and a popup comes up when a build citation menu item is used. The most common case is if the record type cannot be determined. But there are some sites that ask the user to type in more information at this point (nli and psuk for example)
-3. In Ancestry, after the first generalize it can fetch linked records and then regeneralize with the linked record information
+2. In Ancestry, after the first generalize it can fetch linked records and then regeneralize with the linked record information
+* During build citation:
+3. Then the record doesn't have enough information to build a good citation and a popup comes up when a build citation menu item is used. The most common case is if the record type cannot be determined. But there are some sites that ask the user to type in more information at this point (nli and psuk for example)
+4. If the recordType after first generalize is Unclassified then the user can be asked to select a recordType when build citation is done
 
-The first two cases involve user input. The data from this user input needs to be passed to a regeneralize function. One question is whether this data should be an extra parameter to the regeneralize (in addition to ed and gd) or if it should be added to the gd in a `userInput` subobject.
+Cases 1, 3 and 4 involve user input. The data from this user input needs to be passed to a regeneralize function. One question is whether this data should be an extra parameter to the regeneralize (in addition to ed and gd) or if it should be added to the gd in a `userInput` subobject.
 
-In theory, both of these user input could happen for a single record. E.g in the main Sourcer menu the user can select the primary person and then, when they build a citation, a popup could ask for more information. In each case the generalizedData is updated using some kind of regeneralize function (or by constructing a new generalizedData from scratch). It is up to the site what this function is and whether the same function is used in both cases. But if this did happen it is possible that, in the second regeneralize, it will need access to the selections from the main popup - e.g. the primaryPerson index. This could be an argument for storing the `userInput` in the gd object.
+In theory, several of these user inputs could happen for a single record. E.g in the main Sourcer menu the user can select the primary person and then, when they build a citation, a popup could ask for more information. In each case the generalizedData is updated using some kind of regeneralize function (or by constructing a new generalizedData from scratch). It is up to the site what this function is and whether the same function is used in both cases. But if this did happen it is possible that, in the second regeneralize, it will need access to the selections from the main popup - e.g. the primaryPerson index. This could be an argument for storing the `userInput` in the gd object.
 
 Work in progress:
 
@@ -23,14 +26,13 @@ Work in progress:
       - newData could be renamed userInput or something like that
   - If not it takes:
     - regeneralizeFunction(data.extractedData, gd);
+    - so in this case the user input is set in the gd before calling the regeneralizeFunction
+    - Only MH uses this currently and I'm not sure if `gd.overrideRefTitle` would work in this case
   - To make it consistent I need to find all the uses:
     - popupSimpleBase clients:
       - mh: no userInputFunction, fn called generalizeDataGivenRecordType (uses edReader, edReader constructor has record type param)
       - nli: HAS userInputFunction, fn called regeneralizeData (does NOT use edReader)
-      - noda: no userInputFunction, fn called regeneralizeData (uses edReader, NOTE: regeneralizeData does nothing currently)
-      - openarch: no userInputFunction, fn called regeneralizeData (uses edReader, NOTE: regeneralizeData does nothing currently)
       - psuk: HAS userInputFunction, fn called regeneralizeData (does NOT use edReader)
-      - wiewaswie: no userInputFunction, fn called regeneralizeData (uses edReader, NOTE: regeneralizeData does nothing currently)
     - other clients:
       - ancestry: no userInputFunction, fn called generalizeDataGivenRecordType
       - fmp: no userInputFunction, fn called generalizeDataGivenRecordType
@@ -54,6 +56,11 @@ Also, other code like buildCitation can get data from ed directly currently. If 
 
 ### Ancestry
 
+- Has a `generalizeDataGivenRecordType` function used after user selects record type
+- This is passed into `addBuildCitationMenuItems`
+- This `generalizeDataGivenRecordType` seems to duplicate a lot of `generalizeData`
+
+
 - https://www.ancestry.com/search/collections/61311/records/2913
   - Prompts for record type, does have an alternate value for gender but it is identical to main value
 - https://www.ancestry.com/search/collections/7163/records/39054256
@@ -67,11 +74,31 @@ Also, other code like buildCitation can get data from ed directly currently. If 
   - Has square brackets actually in names so breaks my parsing code
 - https://www.ancestry.com/search/collections/7667/records/40917603
   - 7 name variants, 4 unique
+ 
+### arolsenarchives
+
+- Has `getPrimaryPersonOptions`
+
+### ecpp
+
+- Has `getPrimaryPersonOptions`
+
+### eggsabdm
+
+- Has `getPrimaryPersonOptions`
+
+### eggsagrvs
+
+- Has `getPrimaryPersonOptions`
 
 ### FMP
 
 - Has a `generalizeDataGivenRecordType` function used after user selects record type
 - This is passed into `addBuildCitationMenuItems`
+
+### freebmd
+
+- Has `getSpousePersonOptions`
 
 ### FS
 
@@ -81,30 +108,38 @@ Also, other code like buildCitation can get data from ed directly currently. If 
 ## MyHeritage
 
 - User can select a record type and it then regeneralizes by calling `generalizeDataGivenRecordType`
+- This `generalizeDataGivenRecordType` is passed into `setupSimplePopupMenu` as `regeneralizeFunction`
 - I no longer have a subscription
+
 - https://www.myheritage.com/research/record-30261-278584/james-johnson-in-jamaica-church-of-england-parish-register-transcripts
   - Can't access to see if it is classified
 
 ### nli
 
 - Has a `regeneralizeData` function which is passed as the `regeneralizeFunction` into `setupSimplePopupMenu`
+- Passes a `userInputFunction` into `setupSimplePopupMenu`
 
-### noda
+### nsvr
 
-- Has a `regeneralizeData` function which is passed as the `regeneralizeFunction` into `setupSimplePopupMenu`
-- **BUT it does nothing (must have been a copy/paste)**
+- Has `getPrimaryPersonOptions`
 
-### openarch
+### nzbdm
 
-- Has a `regeneralizeData` function which is passed as the `regeneralizeFunction` into `setupSimplePopupMenu`
-- **BUT it does nothing (must have been a copy/paste)**
+- Has `getPrimaryPersonOptions`
+
+### panb
+
+- Has `getPrimaryPersonOptions`
 
 ### psuk
 
 - Has a `regeneralizeData` function which is passed as the `regeneralizeFunction` into `setupSimplePopupMenu`
+- Passes a `userInputFunction` into `setupSimplePopupMenu`
 
-### wiewaswie
+### thegen
 
-- Has a `regeneralizeData` function which is passed as the `regeneralizeFunction` into `setupSimplePopupMenu`
-- **BUT it does nothing (must have been a copy/paste)**
+- I no longer have a subscription
+- Has `getPrimaryPersonOptions`
+- Has `getSpousePersonOptions`
+
 
