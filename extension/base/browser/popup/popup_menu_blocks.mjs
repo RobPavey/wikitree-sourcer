@@ -139,7 +139,7 @@ function addPrimaryPersonMenuItem(menu, gd, input, updateFunction) {
   }
 
   addSelectorMenuItem(menu, "Person", options, currentIndex, function (event) {
-    input.primaryPersonIndex = event.target.value;
+    input.primaryPersonIndex = Number(event.target.value);
     updateFunction();
   });
 }
@@ -155,13 +155,13 @@ function addSpousePersonMenuItem(menu, gd, input, updateFunction) {
   }
 
   addSelectorMenuItem(menu, "Spouse", options, currentIndex, function (event) {
-    input.spousePersonIndex = event.target.value;
+    input.spousePersonIndex = Number(event.target.value);
     updateFunction();
   });
 }
 
 function addAlternateFieldValuesMenuItem(menu, gd, fieldName, input, updateFunction) {
-  console.log("addAlternateFieldValuesMenuItem");
+  //console.log("addAlternateFieldValuesMenuItem");
 
   let options = gd.alternateFieldValues[fieldName];
   if (!options || options.length <= 1) {
@@ -180,7 +180,7 @@ function addAlternateFieldValuesMenuItem(menu, gd, fieldName, input, updateFunct
     if (!input.alternateFieldIndices) {
       input.alternateFieldIndices = {};
     }
-    input.alternateFieldIndices[fieldName] = event.target.value;
+    input.alternateFieldIndices[fieldName] = Number(event.target.value);
     updateFunction();
   });
 }

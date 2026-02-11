@@ -204,7 +204,7 @@ function addPrimaryPersonMenuItem(menu, data, input) {
   }
 
   addSelectorMenuItem(menu, "Person", options, currentIndex, function (event) {
-    input.primaryPersonIndex = event.target.value;
+    input.primaryPersonIndex = Number(event.target.value);
     setupSimplePopupMenu(input);
   });
 }
@@ -220,13 +220,13 @@ function addSpousePersonMenuItem(menu, data, input) {
   }
 
   addSelectorMenuItem(menu, "Spouse", options, currentIndex, function (event) {
-    input.spousePersonIndex = event.target.value;
+    input.spousePersonIndex = Number(event.target.value);
     setupSimplePopupMenu(input);
   });
 }
 
 function addAlternateFieldValuesMenuItem(menu, data, fieldName, input) {
-  console.log("addAlternateFieldValuesMenuItem");
+  //console.log("addAlternateFieldValuesMenuItem");
 
   let options = data.generalizedData.alternateFieldValues[fieldName];
   if (!options || options.length <= 1) {
@@ -245,7 +245,7 @@ function addAlternateFieldValuesMenuItem(menu, data, fieldName, input) {
     if (!input.alternateFieldIndices) {
       input.alternateFieldIndices = {};
     }
-    input.alternateFieldIndices[fieldName] = event.target.value;
+    input.alternateFieldIndices[fieldName] = Number(event.target.value);
     setupSimplePopupMenu(input);
   });
 }
@@ -276,8 +276,8 @@ async function setupSimplePopupMenu(input) {
 
   let extractedData = input.extractedData;
 
-  console.log("setupSimplePopupMenu, input is:");
-  console.log(input);
+  //console.log("setupSimplePopupMenu, input is:");
+  //console.log(input);
 
   if (!extractedData || !extractedData.success) {
     let message = "WikiTree Sourcer doesn't know how to extract data from this page.";

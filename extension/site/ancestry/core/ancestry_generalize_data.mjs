@@ -932,6 +932,23 @@ function possiblyChooseUserCorrectedValue(ed, gd, fieldName, type = "", includeA
   }
 
   if (gd.alternateFieldIndices) {
+    if (gd.alternateFieldIndices[fieldName] !== undefined) {
+      //console.log("Found alternate index for fieldName: " + fieldName);
+      //console.log("valueWithCorrections is: ");
+      //console.log(valueWithCorrections);
+
+      let index = gd.alternateFieldIndices[fieldName];
+      //console.log("Alternate index is: " + index);
+
+      // Could use gd.alternateFieldValues instead but this works
+      if (index > 0) {
+        index = index - 1;
+        if (index < valueWithCorrections.userCorrections.length) {
+          //console.log("selected value is: " + valueWithCorrections.userCorrections[index]);
+          return valueWithCorrections.userCorrections[index];
+        }
+      }
+    }
   } else {
     // now consider if any of the corrections are an improvement
     if (fieldName == "Name") {
@@ -2809,6 +2826,9 @@ function generalizeDataGivenRecordType(ed, result) {
 function findUserCorrectedValuesInRecordData(ed, result) {
   if (!ed.recordData) return;
 
+  // return if we have already built this
+  if (result.alternateFieldValues) return;
+
   for (let fieldName of Object.keys(ed.recordData)) {
     // user corrected
     let valueWithCorrections = getUserCorrectedValues(ed, fieldName);
@@ -3466,7 +3486,11 @@ function regeneralizeDataWithLinkedRecords(input) {
 }
 
 function regeneralizeDataWIthAlternatesSelected(input) {
+  //console.log("regeneralizeDataWIthAlternatesSelected, input is:");
+  //console.log(input);
+
   let gd = input.generalizedData;
+  gd.alternateFieldIndices = input.alternateFieldIndices;
 
   if (gd.alternateFieldIndices) {
     generalizeRecordData(input, gd);

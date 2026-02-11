@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
-import { generalizeData, regeneralizeData } from "../core/wiewaswie_generalize_data.mjs";
+import { generalizeData } from "../core/wiewaswie_generalize_data.mjs";
 import { buildCitation } from "../core/wiewaswie_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
@@ -35,7 +35,6 @@ async function setupWiewaswiePopupMenu(extractedData) {
       "It looks like a WieWasWie page but either not a detail page or not a search results page with an entry expanded.\n\nOn the search results page it will use the first expanded result.",
     generalizeFailedMessage: "It looks like a WieWasWie page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
-    regeneralizeFunction: regeneralizeData,
     buildCitationFunction: buildCitation,
     buildHouseholdTableFunction: buildHouseholdTable,
     siteNameToExcludeFromSearch: "wiewaswie",
