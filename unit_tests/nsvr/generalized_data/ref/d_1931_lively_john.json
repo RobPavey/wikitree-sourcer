@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "nsvr",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "collectionData": {
+    "id": "deaths",
+    "number": "88-00431"
+  },
+  "hasValidData": true
+}

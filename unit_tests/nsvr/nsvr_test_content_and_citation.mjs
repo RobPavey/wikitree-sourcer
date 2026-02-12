@@ -40,6 +40,12 @@ const regressionData = [
     url: "https://archives.novascotia.ca/vital-statistics/marriage/?ID=106485",
   },
   {
+    // This is a different type of URL for the image that does not have transcribed data
+    // The corresponding transcribed URL is: https://archives.novascotia.ca/vital-statistics/death/?ID=189503
+    caseName: "d_1931_lively_john",
+    url: "https://archives.novascotia.ca/vital-statistics/ItemView/?ImageFile=88-431&Event=death&ID=168930",
+  },
+  {
     caseName: "d_1958_mcnamara_florence",
     url: "https://archives.novascotia.ca/vital-statistics/death/?ID=411306",
   },

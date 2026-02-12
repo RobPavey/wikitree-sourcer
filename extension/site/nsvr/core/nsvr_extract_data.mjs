@@ -37,7 +37,11 @@ function extractData(document, url) {
     let eventText = h5Element.textContent.replace(re, " ").trim();
 
     // find the p element immediately following the h5 element, which contains the citation text
-    let citeText = h5Element.nextElementSibling.textContent.replace(re, " ").trim();
+    let citePara = h5Element.nextElementSibling;
+    let citeText = "";
+    if (citePara && citePara.tagName == "P") {
+      citeText = citePara.textContent.replace(re, " ").trim();
+    }
 
     // parse the citation text
     if (citeText) {
@@ -61,43 +65,66 @@ function extractData(document, url) {
       if (eventText.includes(birthStr)) {
         // the current birth record syntax is: [name] [birthStr] [location] [in/on] [date/year]
         result.eventType = "birth";
-        result.childName = eventText.substring(0, eventText.indexOf(birthStr)).trim();
-        // some records contain an exact date, designated by "on" - others just have a year, designated by "in"
-        // birth records omit the "at" designator for locations for some reason
-        if (eventText.includes(" on ")) {
-          eventLoc = eventText
-            .substring(eventText.indexOf(birthStr) + birthStr.length + 1, eventText.indexOf(" on "))
-            .trim();
-          result.eventDate = eventText.substring(eventText.indexOf(" on ") + 4).trim();
+
+        if (!citeText && eventText.includes("birth number:")) {
+          const re = /^birth number\:\s+(.+)$/;
+          if (re.test(eventText)) {
+            result.regNumber = eventText.replace(re, "$1");
+          }
         } else {
-          eventLoc = eventText
-            .substring(eventText.indexOf(birthStr) + birthStr.length + 1, eventText.indexOf(" in "))
-            .trim();
-          result.eventYear = eventText.substring(eventText.indexOf(" in ") + 4).trim();
+          result.childName = eventText.substring(0, eventText.indexOf(birthStr)).trim();
+          // some records contain an exact date, designated by "on" - others just have a year, designated by "in"
+          // birth records omit the "at" designator for locations for some reason
+          if (eventText.includes(" on ")) {
+            eventLoc = eventText
+              .substring(eventText.indexOf(birthStr) + birthStr.length + 1, eventText.indexOf(" on "))
+              .trim();
+            result.eventDate = eventText.substring(eventText.indexOf(" on ") + 4).trim();
+          } else {
+            eventLoc = eventText
+              .substring(eventText.indexOf(birthStr) + birthStr.length + 1, eventText.indexOf(" in "))
+              .trim();
+            result.eventYear = eventText.substring(eventText.indexOf(" in ") + 4).trim();
+          }
         }
       } else if (eventText.includes(marriageStr)) {
         // the current marriage record syntax is: [groom] and [bride] [marriageStr] [in/on] [date/year] at [location]
         result.eventType = "marriage";
-        result.groomName = eventText.substring(0, eventText.indexOf(" and ")).trim();
-        result.brideName = eventText.substring(eventText.indexOf(" and ") + 5, eventText.indexOf(marriageStr)).trim();
-        // some records contain an exact date, designated by "on" - others just have a year, designated by "in"
-        if (eventText.includes(" on ")) {
-          result.eventDate = eventText.substring(eventText.indexOf(" on ") + 4, eventText.indexOf(" at ")).trim();
+        if (!citeText && eventText.includes("marriage number:")) {
+          const re = /^marriage number\:\s+(.+)$/;
+          if (re.test(eventText)) {
+            result.regNumber = eventText.replace(re, "$1");
+          }
         } else {
-          result.eventYear = eventText.substring(eventText.indexOf(" in ") + 4, eventText.indexOf(" in ") + 8).trim();
+          result.groomName = eventText.substring(0, eventText.indexOf(" and ")).trim();
+          result.brideName = eventText.substring(eventText.indexOf(" and ") + 5, eventText.indexOf(marriageStr)).trim();
+          // some records contain an exact date, designated by "on" - others just have a year, designated by "in"
+          if (eventText.includes(" on ")) {
+            result.eventDate = eventText.substring(eventText.indexOf(" on ") + 4, eventText.indexOf(" at ")).trim();
+          } else {
+            result.eventYear = eventText.substring(eventText.indexOf(" in ") + 4, eventText.indexOf(" in ") + 8).trim();
+          }
+          eventLoc = eventText.substring(eventText.indexOf(" at ") + 4).trim();
         }
-        eventLoc = eventText.substring(eventText.indexOf(" at ") + 4).trim();
       } else if (eventText.includes(deathStr)) {
         // the current death record syntax is: [name] [deathStr] at [location] [in/on] [date/year]
         result.eventType = "death";
-        result.deceasedName = eventText.substring(0, eventText.indexOf(deathStr)).trim();
-        // some records contain an exact date, designated by "on" - others just have a year, designated by "in"
-        if (eventText.includes(" on ")) {
-          eventLoc = eventText.substring(eventText.indexOf(" at ") + 4, eventText.indexOf(" on ")).trim();
-          result.eventDate = eventText.substring(eventText.indexOf(" on ") + 4).trim();
+
+        if (!citeText && eventText.includes("death number:")) {
+          const re = /^death number\:\s+(.+)$/;
+          if (re.test(eventText)) {
+            result.regNumber = eventText.replace(re, "$1");
+          }
         } else {
-          eventLoc = eventText.substring(eventText.indexOf(" at ") + 4, eventText.indexOf(" in ")).trim();
-          result.eventYear = eventText.substring(eventText.indexOf(" in ") + 4).trim();
+          result.deceasedName = eventText.substring(0, eventText.indexOf(deathStr)).trim();
+          // some records contain an exact date, designated by "on" - others just have a year, designated by "in"
+          if (eventText.includes(" on ")) {
+            eventLoc = eventText.substring(eventText.indexOf(" at ") + 4, eventText.indexOf(" on ")).trim();
+            result.eventDate = eventText.substring(eventText.indexOf(" on ") + 4).trim();
+          } else {
+            eventLoc = eventText.substring(eventText.indexOf(" at ") + 4, eventText.indexOf(" in ")).trim();
+            result.eventYear = eventText.substring(eventText.indexOf(" in ") + 4).trim();
+          }
         }
       }
 
