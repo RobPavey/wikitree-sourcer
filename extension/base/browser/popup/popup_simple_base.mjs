@@ -34,7 +34,11 @@ import {
   openExceptionPage,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
+import {
+  addStandardMenuEnd,
+  addAlternateSelectorMenuItems,
+  buildMinimalMenuWithMessage,
+} from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import {
   clearCitation,
@@ -156,111 +160,6 @@ function addBuildHouseholdTableMenuItem(menu, data) {
   }
 }
 
-function addSelectorMenuItem(menu, label, options, currentIndex, selectFunc) {
-  let text = label + ": ";
-
-  if (currentIndex == -1) {
-    currentIndex = 0;
-  }
-
-  // create a list item and add it to the list
-  let listItem = document.createElement("li");
-  listItem.className = "menuItem dividerBelow yellowBackground";
-
-  let divElement = document.createElement("div");
-  listItem.appendChild(divElement);
-
-  let labelElement = document.createElement("label");
-  labelElement.innerText = text;
-  divElement.appendChild(labelElement);
-
-  let select = document.createElement("select");
-  select.className = "yellowBackground";
-
-  for (let index = 0; index < options.length; index++) {
-    let option = options[index];
-    let optionElement = document.createElement("option");
-    optionElement.value = index;
-    optionElement.text = option;
-    select.appendChild(optionElement);
-  }
-  select.value = currentIndex;
-
-  select.addEventListener("change", selectFunc);
-
-  divElement.appendChild(select);
-
-  menu.list.appendChild(listItem);
-}
-
-function addPrimaryPersonMenuItem(menu, data, input) {
-  let options = data.generalizedData.primaryPersonOptions;
-  if (!options || options.length <= 1) {
-    return;
-  }
-  let currentIndex = input.primaryPersonIndex;
-  if (!currentIndex) {
-    currentIndex = 0;
-  }
-
-  addSelectorMenuItem(menu, "Person", options, currentIndex, function (event) {
-    input.primaryPersonIndex = Number(event.target.value);
-    setupSimplePopupMenu(input);
-  });
-}
-
-function addSpousePersonMenuItem(menu, data, input) {
-  let options = data.generalizedData.spousePersonOptions;
-  if (!options || options.length <= 1) {
-    return;
-  }
-  let currentIndex = input.spousePersonIndex;
-  if (currentIndex === undefined) {
-    currentIndex = -1;
-  }
-
-  addSelectorMenuItem(menu, "Spouse", options, currentIndex, function (event) {
-    input.spousePersonIndex = Number(event.target.value);
-    setupSimplePopupMenu(input);
-  });
-}
-
-function addAlternateFieldValuesMenuItem(menu, data, fieldName, input) {
-  //console.log("addAlternateFieldValuesMenuItem");
-
-  let options = data.generalizedData.alternateFieldValues[fieldName];
-  if (!options || options.length <= 1) {
-    return;
-  }
-
-  let currentIndex = undefined;
-  if (input.alternateFieldIndices) {
-    currentIndex = input.alternateFieldIndices[fieldName];
-  }
-  if (currentIndex === undefined) {
-    currentIndex = -1;
-  }
-
-  addSelectorMenuItem(menu, fieldName, options, currentIndex, function (event) {
-    if (!input.alternateFieldIndices) {
-      input.alternateFieldIndices = {};
-    }
-    input.alternateFieldIndices[fieldName] = Number(event.target.value);
-    setupSimplePopupMenu(input);
-  });
-}
-
-function addAlternateFieldValuesMenuItems(menu, data, input) {
-  let alternateFieldValues = data.generalizedData.alternateFieldValues;
-  if (!alternateFieldValues) {
-    return;
-  }
-
-  for (let fieldName of Object.keys(alternateFieldValues)) {
-    addAlternateFieldValuesMenuItem(menu, data, fieldName, input);
-  }
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -330,17 +229,9 @@ async function setupSimplePopupMenu(input) {
 
   let menu = beginMainMenu();
 
-  if (generalizedData.primaryPersonOptions && generalizedData.primaryPersonOptions.length > 1) {
-    addPrimaryPersonMenuItem(menu, data, input);
-  }
-
-  if (generalizedData.spousePersonOptions && generalizedData.spousePersonOptions.length > 1) {
-    addSpousePersonMenuItem(menu, data, input);
-  }
-
-  if (generalizedData.alternateFieldValues) {
-    addAlternateFieldValuesMenuItems(menu, data, input);
-  }
+  addAlternateSelectorMenuItems(menu, data.generalizedData, input, function (userSelections) {
+    setupSimplePopupMenu(input);
+  });
 
   if (input.doNotIncludeSearch != true) {
     await addSearchMenus(menu, data, backFunction, input.siteNameToExcludeFromSearch);

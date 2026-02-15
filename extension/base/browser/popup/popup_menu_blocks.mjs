@@ -128,39 +128,39 @@ function addSelectorMenuItem(menu, label, options, currentIndex, selectFunc) {
   menu.list.appendChild(listItem);
 }
 
-function addPrimaryPersonMenuItem(menu, gd, input, updateFunction) {
+function addPrimaryPersonMenuItem(menu, gd, userSelections, updateFunction) {
   let options = gd.primaryPersonOptions;
   if (!options || options.length <= 1) {
     return;
   }
-  let currentIndex = input.primaryPersonIndex;
+  let currentIndex = userSelections.primaryPersonIndex;
   if (!currentIndex) {
     currentIndex = 0;
   }
 
   addSelectorMenuItem(menu, "Person", options, currentIndex, function (event) {
-    input.primaryPersonIndex = Number(event.target.value);
-    updateFunction();
+    userSelections.primaryPersonIndex = Number(event.target.value);
+    updateFunction(userSelections);
   });
 }
 
-function addSpousePersonMenuItem(menu, gd, input, updateFunction) {
+function addSpousePersonMenuItem(menu, gd, userSelections, updateFunction) {
   let options = gd.spousePersonOptions;
   if (!options || options.length <= 1) {
     return;
   }
-  let currentIndex = input.spousePersonIndex;
+  let currentIndex = userSelections.spousePersonIndex;
   if (currentIndex === undefined) {
     currentIndex = -1;
   }
 
   addSelectorMenuItem(menu, "Spouse", options, currentIndex, function (event) {
-    input.spousePersonIndex = Number(event.target.value);
-    updateFunction();
+    userSelections.spousePersonIndex = Number(event.target.value);
+    updateFunction(userSelections);
   });
 }
 
-function addAlternateFieldValuesMenuItem(menu, gd, fieldName, input, updateFunction) {
+function addAlternateFieldValuesMenuItem(menu, gd, fieldName, userSelections, updateFunction) {
   //console.log("addAlternateFieldValuesMenuItem");
 
   let options = gd.alternateFieldValues[fieldName];
@@ -169,44 +169,44 @@ function addAlternateFieldValuesMenuItem(menu, gd, fieldName, input, updateFunct
   }
 
   let currentIndex = undefined;
-  if (input.alternateFieldIndices) {
-    currentIndex = input.alternateFieldIndices[fieldName];
+  if (userSelections.alternateFieldIndices) {
+    currentIndex = userSelections.alternateFieldIndices[fieldName];
   }
   if (currentIndex === undefined) {
     currentIndex = -1;
   }
 
   addSelectorMenuItem(menu, fieldName, options, currentIndex, function (event) {
-    if (!input.alternateFieldIndices) {
-      input.alternateFieldIndices = {};
+    if (!userSelections.alternateFieldIndices) {
+      userSelections.alternateFieldIndices = {};
     }
-    input.alternateFieldIndices[fieldName] = Number(event.target.value);
-    updateFunction();
+    userSelections.alternateFieldIndices[fieldName] = Number(event.target.value);
+    updateFunction(userSelections);
   });
 }
 
-function addAlternateFieldValuesMenuItems(menu, gd, input, updateFunction) {
+function addAlternateFieldValuesMenuItems(menu, gd, userSelections, updateFunction) {
   let alternateFieldValues = gd.alternateFieldValues;
   if (!alternateFieldValues) {
     return;
   }
 
   for (let fieldName of Object.keys(alternateFieldValues)) {
-    addAlternateFieldValuesMenuItem(menu, gd, fieldName, input, updateFunction);
+    addAlternateFieldValuesMenuItem(menu, gd, fieldName, userSelections, updateFunction);
   }
 }
 
-function addAlternateSelectorMenuItems(menu, gd, input, updateFunction) {
+function addAlternateSelectorMenuItems(menu, gd, userSelections, updateFunction) {
   if (gd.primaryPersonOptions && gd.primaryPersonOptions.length > 1) {
-    addPrimaryPersonMenuItem(menu, gd, input, updateFunction);
+    addPrimaryPersonMenuItem(menu, gd, userSelections, updateFunction);
   }
 
   if (gd.spousePersonOptions && gd.spousePersonOptions.length > 1) {
-    addSpousePersonMenuItem(menu, gd, input, updateFunction);
+    addSpousePersonMenuItem(menu, gd, userSelections, updateFunction);
   }
 
   if (gd.alternateFieldValues) {
-    addAlternateFieldValuesMenuItems(menu, gd, input, updateFunction);
+    addAlternateFieldValuesMenuItems(menu, gd, userSelections, updateFunction);
   }
 }
 
