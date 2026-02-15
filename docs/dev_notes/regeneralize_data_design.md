@@ -78,10 +78,15 @@ Also, other code like buildCitation can get data from ed directly currently. If 
 ### arolsenarchives
 
 - Has `getPrimaryPersonOptions`
+- There can be a large number of people to chose from
+
+- https://collections.arolsen-archives.org/de/document/71022005
 
 ### ecpp
 
-- Has `getPrimaryPersonOptions`
+- Has `getPrimaryPersonOptions` to select between bride or groom in a marriage
+
+- https://ecpp.ucr.edu/ecpp/app/user/view/records/marriage/121?defaultTab=groom
 
 ### eggsabdm
 
@@ -119,6 +124,8 @@ Also, other code like buildCitation can get data from ed directly currently. If 
 - Has a `regeneralizeData` function which is passed as the `regeneralizeFunction` into `setupSimplePopupMenu`
 - Passes a `userInputFunction` into `setupSimplePopupMenu`
 
+- https://registers.nli.ie/registers/vtls000632197#page/22/mode/1up
+
 ### nsvr
 
 - Has `getPrimaryPersonOptions`
@@ -126,6 +133,8 @@ Also, other code like buildCitation can get data from ed directly currently. If 
 ### nzbdm
 
 - Has `getPrimaryPersonOptions`
+
+- https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dMarriageSearch%26recordsPP%3d30#SearchResults
 
 ### panb
 
