@@ -2,6 +2,12 @@
   "sourceType": "record",
   "recordType": "Pension",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "D Holle",
+      "Dallas C Holler"
+    ]
+  },
   "name": {
     "name": "D Holle"
   },

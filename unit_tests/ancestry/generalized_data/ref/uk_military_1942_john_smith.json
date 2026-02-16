@@ -2,6 +2,12 @@
   "sourceType": "record",
   "recordType": "Military",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "John M. M. Smith",
+      "J. McF McK Smith"
+    ]
+  },
   "name": {
     "name": "John M M Smith"
   },

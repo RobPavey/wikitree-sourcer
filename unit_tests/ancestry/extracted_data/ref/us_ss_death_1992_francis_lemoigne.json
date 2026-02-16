@@ -8,16 +8,26 @@
   "titleName": "Francis Lewis Lemoigne",
   "titleCollection": "U.S., Social Security Applications and Claims Index, 1936-2007",
   "recordData": {
-    "Name": "Francis Lewis Lemoigne [Francis Louis Lemoigne] [Francis Lemoigne]",
+    "Name": "Francis Lewis Lemoigne",
     "Gender": "Male",
     "Race": "White",
     "Birth Date": "27 Apr 1918",
-    "Birth Place": "Kalispell FL??, Montana [Kalispell FL??] [Montana]",
+    "Birth Place": "Kalispell FL??, Montana",
     "Death Date": "Nov 1992",
     "Father": "Jean L Lemoigne",
     "Mother": "Bertha J Dieu",
     "SSN": "533093575",
     "Notes": "Dec 1936: Name listed as FRANCIS LEWIS LEMOIGNE; Apr 1971: Name listed as FRANCIS LOUIS LEMOIGNE; 19 Dec 1992: Name listed as FRANCIS L LEMOIGNE"
+  },
+  "recordDataAltValues": {
+    "Name": [
+      "Francis Louis Lemoigne",
+      "Francis Lemoigne"
+    ],
+    "Birth Place": [
+      "Kalispell FL??",
+      "Montana"
+    ]
   },
   "linkData": {
     "Father": "https://www.ancestry.com/discoveryui-content/view/649201494:60901",

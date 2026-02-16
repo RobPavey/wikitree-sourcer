@@ -2,6 +2,12 @@
   "sourceType": "record",
   "recordType": "Military",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Albert Braccini",
+      "A Braccini"
+    ]
+  },
   "name": {
     "name": "Albert Braccini"
   },

@@ -8,7 +8,7 @@
   "titleName": "Albert Braccini",
   "titleCollection": "UK, Army Roll of Honour, 1939-1945",
   "recordData": {
-    "Name": "Albert Braccini [A Braccini]",
+    "Name": "Albert Braccini",
     "Rank": "Serjeant",
     "Birth Place": "Fife",
     "Residence Date": "1941",
@@ -20,6 +20,11 @@
     "Theatre of War": "Italy",
     "Casualty Regiment": "London Scottish (Donside)",
     "Casualty Unit": "Infantry"
+  },
+  "recordDataAltValues": {
+    "Name": [
+      "A Braccini"
+    ]
   },
   "sourceCitation": "The National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press",
   "sourceInformation": "Ancestry.com. UK, Army Roll of Honour, 1939-1945 [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc, 2009. Original data: England. The National Archives. “War Office: Roll of Honour, Second World War.” Database. Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304). CD Rom. Naval & Military Press.",

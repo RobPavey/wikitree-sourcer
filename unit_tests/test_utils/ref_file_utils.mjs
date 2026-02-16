@@ -269,5 +269,6 @@ export {
   writeTestOutputTextFile,
   readRefTextFile,
   createRefFile,
+  createRefTextFile,
   removeStaleOutputFiles,
 };

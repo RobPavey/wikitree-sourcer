@@ -8,11 +8,11 @@
   "titleName": "Rt Honbm Wm Camper",
   "titleCollection": "1861 England Census",
   "recordData": {
-    "Name": "Rt Honbm Wm Camper [Rt Hon W [illia]m [Francis] Cowper] [Cowper] [Rt Honbm Wm Cowper] [Rt Hon. William Cowper]",
+    "Name": "Rt Honbm Wm Camper",
     "Gender": "Male",
-    "Age": "90 [40]",
+    "Age": "90",
     "Relation": "Son-in-law",
-    "Estimated Birth Year": "1771 [1811]",
+    "Estimated Birth Year": "1771",
     "Where born": "St George Hanover Square, London, England",
     "Civil parish": "Romsey Extra",
     "Ecclesiastical parish": "Romsey",
@@ -26,6 +26,20 @@
     "Folio": "88",
     "Page number": "23",
     "Household Members (Name)<br/>Age<br/>Relationship": "Viscount Palmerston 76 Head<br/>Vicountiss Palmerston 72 Wife<br/>Honbm Wm Ashley 37 Visitor<br/>Maria Ashley 49 Visitor<br/>Honbm Ralf Dutton 39 Visitor<br/>Honbm Arthur Kinnard 44 Visitor<br/>Arthur [Fitzgerald] Kinnard 14 Visitor<br/>Rt Honbm Sammie Sulivan 71 Brother-in-law<br/>Mary Sulivan 41 Niece<br/>Charlotte Sulivan 36 Niece<br/>Rt Honbm Wm Camper 90 Son-in-law<br/>[Georgina] Camper 39 Daughter-in-law<br/>Honbm Evelyn Ashley 24 Grandson<br/>Anne Paris 48 Servant<br/>Jane Brown 44 Servant<br/>Susan Lancaster 36 Servant<br/>Emma Lyle 33 Servant<br/>Catherine Klsbert 36 Servant<br/>Sarah Young 33 Servant<br/>Elizabeth Forster 34 Servant<br/>Louisa Timms 27 Servant<br/>Ann Thould 33 Servant<br/>Betsey Powell 24 Servant<br/>Ann Hatt 18 Servant<br/>Josiah Dauston 38 Servant<br/>Alexander Fairm 69 Servant<br/>Henry Bird 21 Servant<br/>William Harvey 21 Servant<br/>Thomas Atkinson 24 Servant<br/>Joseph Grower 25 Servant<br/>William H Pleasant 26 Servant<br/>Frederick Hawkins 27 Servant<br/>Walter Reed 17 Servant<br/>Agnes Yotman 17 Servant<br/>George Rowe 21 Servant<br/>John Barber 36 Servant<br/>George Doe 45"
+  },
+  "recordDataUserValues": {
+    "Name": [
+      "Rt Hon W[illia]m [Francis] Cowper",
+      "Cowper",
+      "Rt Honbm Wm Cowper",
+      "Rt Hon. William Cowper"
+    ],
+    "Age": [
+      "40"
+    ],
+    "Estimated Birth Year": [
+      "1811"
+    ]
   },
   "household": {
     "headings": [

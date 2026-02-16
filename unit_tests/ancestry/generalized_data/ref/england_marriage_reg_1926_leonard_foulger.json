@@ -2,6 +2,17 @@
   "sourceType": "record",
   "recordType": "MarriageRegistration",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Leonard J Foulger",
+      "Leonard James Foulger"
+    ],
+    "Registration Date": [
+      "Jul 1926",
+      "Aug 1926",
+      "Sep 1926"
+    ]
+  },
   "name": {
     "name": "Leonard J Foulger"
   },

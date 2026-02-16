@@ -8,10 +8,15 @@
   "titleName": "Sandra Bowman",
   "titleCollection": "Canada, Newspapers.com Obituary Index, 1800s-current",
   "recordData": {
-    "Name": "Sandra Bowman [Sandra Baldner]",
+    "Name": "Sandra Bowman",
     "Gender": "Female",
     "Newspaper Title": "Times Colonist",
     "Father": "Leslie A. Baldner"
+  },
+  "recordDataAltValues": {
+    "Name": [
+      "Sandra Baldner"
+    ]
   },
   "linkData": {
     "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=62226&h=648692355&indiv=try&viewrecord=1&r=an"

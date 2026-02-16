@@ -8,7 +8,7 @@
   "titleName": "Jas Willson",
   "titleCollection": "1850 United States Federal Census",
   "recordData": {
-    "Name": "Jas Willson [James] [James Wilson] [Wilson]",
+    "Name": "Jas Willson",
     "Gender": "Male",
     "Race": "White",
     "Age": "47",
@@ -22,6 +22,13 @@
     "Dwelling Number": "154",
     "Family Number": "154",
     "Household Members<br/>Age": "Jas Willson 47<br/>Katharine Willson 40<br/>Abner Willson 22<br/>John Willson 17<br/>Sam Willson 13<br/>Caroline Willson 12<br/>Nancy Willson 11<br/>Frances Willson 8<br/>Katharine Willson 4<br/>Cirus Willson 2"
+  },
+  "recordDataUserValues": {
+    "Name": [
+      "James",
+      "James Wilson",
+      "Wilson"
+    ]
   },
   "household": {
     "headings": [

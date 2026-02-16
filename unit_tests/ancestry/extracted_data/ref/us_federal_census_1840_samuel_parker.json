@@ -8,7 +8,7 @@
   "titleName": "Samuel Parker",
   "titleCollection": "1840 United States Federal Census",
   "recordData": {
-    "Name": "Samuel Parker [Samul Parker]",
+    "Name": "Samuel Parker",
     "Home in 1840 (City, County, State)": "Gaines, Orleans, New York",
     "Free White Persons - Males - 5 thru 9": "1",
     "Free White Persons - Males - 20 thru 29": "1",
@@ -20,6 +20,11 @@
     "Free White Persons - 20 thru 49": "3",
     "Total Free White Persons": "6",
     "Total All Persons - Free White, Free Colored, Slaves": "6"
+  },
+  "recordDataAltValues": {
+    "Name": [
+      "Samul Parker"
+    ]
   },
   "imageUrl": "https://www.ancestry.com/imageviewer/collections/8057/images/4410632_00751?pid=2464636&usePUB=true&_phsrc=Vww4230&_phstart=successSource&usePUBJs=true",
   "imageDbId": "8057",

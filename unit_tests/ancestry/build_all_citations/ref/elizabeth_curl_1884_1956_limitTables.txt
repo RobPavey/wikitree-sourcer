@@ -33,7 +33,7 @@ Elizabeth Curl (6) granddaughter in household of Eliza Thompson (73) in Wimbledo
 |-
 | Charles Curl || Grandson ||  || M || 13 ||  || Wandsworth, Surrey, England
 |-
-| Daniel Thompson || Son ||  ||  || 11 ||  || Edmonton, Middlesex, England
+| Daniel Thompson || Son ||  || M || 11 ||  || Edmonton, Middlesex, England
 |-
 | '''Elizabeth Curl''' || '''Granddaughter''' ||  || '''F''' || '''6''' ||  || '''Wimbledon, Surrey, England'''
 |-

@@ -2,6 +2,12 @@
   "sourceType": "record",
   "recordType": "Residence",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Carol Sharp Kohler",
+      "Carol Bonnewell"
+    ]
+  },
   "name": {
     "name": "Carol Sharp Kohler"
   },

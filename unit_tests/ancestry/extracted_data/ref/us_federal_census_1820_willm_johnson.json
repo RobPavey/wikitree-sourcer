@@ -8,7 +8,7 @@
   "titleName": "Willm Johnson",
   "titleCollection": "1820 United States Federal Census",
   "recordData": {
-    "Name": "Willm Johnson [William Johnson]",
+    "Name": "Willm Johnson",
     "Home in 1820 (City, County, State)": "Blue Hill, Hancock, Maine",
     "Enumeration Date": "August 7, 1820",
     "Free White Persons - Males - Under 10": "1",
@@ -20,6 +20,11 @@
     "Free White Persons - Over 25": "2",
     "Total Free White Persons": "4",
     "Total All Persons - White, Slaves, Colored, Other": "4"
+  },
+  "recordDataUserValues": {
+    "Name": [
+      "William Johnson"
+    ]
   },
   "imageUrl": "https://www.ancestry.com/imageviewer/collections/7734/images/4433471_00007?pid=132041&usePUB=true&_phsrc=Vww4224&_phstart=successSource&usePUBJs=true",
   "imageDbId": "7734",

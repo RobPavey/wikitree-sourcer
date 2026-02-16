@@ -2,6 +2,14 @@
   "sourceType": "record",
   "recordType": "Census",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "James Pavey",
+      "Pavey",
+      "Jane",
+      "jane Pavey"
+    ]
+  },
   "name": {
     "name": "James Pavey"
   },

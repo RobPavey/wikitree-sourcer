@@ -34,7 +34,11 @@ import {
   openExceptionPage,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
+import {
+  addStandardMenuEnd,
+  addAlternateSelectorMenuItems,
+  buildMinimalMenuWithMessage,
+} from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import {
   clearCitation,
@@ -156,101 +160,6 @@ function addBuildHouseholdTableMenuItem(menu, data) {
   }
 }
 
-function addPrimaryPersonMenuItem(menu, data, input) {
-  let options = data.generalizedData.primaryPersonOptions;
-  if (!options || options.length <= 1) {
-    return;
-  }
-  let currentIndex = input.primaryPersonIndex;
-  if (!currentIndex) {
-    currentIndex = 0;
-  }
-
-  let text = "Person: ";
-
-  // create a list item and add it to the list
-  let listItem = document.createElement("li");
-  listItem.className = "menuItem dividerBelow yellowBackground";
-
-  let divElement = document.createElement("div");
-  listItem.appendChild(divElement);
-
-  let labelElement = document.createElement("label");
-  labelElement.innerText = text;
-  divElement.appendChild(labelElement);
-
-  let select = document.createElement("select");
-  select.className = "yellowBackground";
-
-  for (let index = 0; index < options.length; index++) {
-    let option = options[index];
-    let optionElement = document.createElement("option");
-    optionElement.value = index;
-    optionElement.text = option;
-    select.appendChild(optionElement);
-  }
-  select.value = currentIndex;
-
-  select.addEventListener("change", function (event) {
-    input.primaryPersonIndex = event.target.value;
-    setupSimplePopupMenu(input);
-  });
-
-  divElement.appendChild(select);
-
-  menu.list.appendChild(listItem);
-}
-
-function addSpousePersonMenuItem(menu, data, input) {
-  let options = data.generalizedData.spousePersonOptions;
-  if (!options || options.length <= 1) {
-    return;
-  }
-  let currentIndex = input.spousePersonIndex;
-  if (currentIndex === undefined) {
-    currentIndex = -1;
-  }
-
-  let text = "Spouse: ";
-
-  // create a list item and add it to the list
-  let listItem = document.createElement("li");
-  listItem.className = "menuItem dividerBelow yellowBackground";
-
-  let divElement = document.createElement("div");
-  listItem.appendChild(divElement);
-
-  let labelElement = document.createElement("label");
-  labelElement.innerText = text;
-  divElement.appendChild(labelElement);
-
-  let select = document.createElement("select");
-  select.className = "yellowBackground";
-
-  let optionElement = document.createElement("option");
-  optionElement.value = -1;
-  optionElement.text = "None";
-  select.appendChild(optionElement);
-
-  for (let index = 0; index < options.length; index++) {
-    let option = options[index];
-    optionElement = document.createElement("option");
-    optionElement.value = index;
-    optionElement.text = option;
-    select.appendChild(optionElement);
-  }
-  select.value = currentIndex;
-
-  select.addEventListener("change", function (event) {
-    input.spousePersonIndex = event.target.value;
-    setupSimplePopupMenu(input);
-  });
-
-  divElement.appendChild(select);
-
-  menu.list.appendChild(listItem);
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -266,8 +175,8 @@ async function setupSimplePopupMenu(input) {
 
   let extractedData = input.extractedData;
 
-  console.log("setupSimplePopupMenu, input is:");
-  console.log(input);
+  //console.log("setupSimplePopupMenu, input is:");
+  //console.log(input);
 
   if (!extractedData || !extractedData.success) {
     let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
@@ -320,13 +229,9 @@ async function setupSimplePopupMenu(input) {
 
   let menu = beginMainMenu();
 
-  if (generalizedData.primaryPersonOptions && generalizedData.primaryPersonOptions.length > 1) {
-    addPrimaryPersonMenuItem(menu, data, input);
-  }
-
-  if (generalizedData.spousePersonOptions && generalizedData.spousePersonOptions.length > 1) {
-    addSpousePersonMenuItem(menu, data, input);
-  }
+  addAlternateSelectorMenuItems(menu, data.generalizedData, input, function (userSelections) {
+    setupSimplePopupMenu(input);
+  });
 
   if (input.doNotIncludeSearch != true) {
     await addSearchMenus(menu, data, backFunction, input.siteNameToExcludeFromSearch);

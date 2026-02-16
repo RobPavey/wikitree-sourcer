@@ -8,12 +8,17 @@
   "titleName": "D Holle",
   "titleCollection": "U.S., Railroad Retirement Pension Index, 1934-1987",
   "recordData": {
-    "Name": "D Holle [Dallas C Holler]",
+    "Name": "D Holle",
     "Birth Date": "Aug 1879",
     "Death Date": "Jul 1973",
     "Claim ID": "A267087",
     "SSN": "702121645",
     "Industry": "Railroad"
+  },
+  "recordDataAltValues": {
+    "Name": [
+      "Dallas C Holler"
+    ]
   },
   "sourceCitation": "The National Archives at Atlanta; Morrow, Georgia; Records of the Railroad Retirement Board, 1934 - 1987; Record Group Number: 184",
   "sourceInformation": "Ancestry.com. U.S., Railroad Retirement Pension Index, 1934-1987 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2017. Original data: Records of the Railroad Retirement Board, 1934-1987. Record Group 184. The National Archives at Atlanta, Morrow, Georgia.",

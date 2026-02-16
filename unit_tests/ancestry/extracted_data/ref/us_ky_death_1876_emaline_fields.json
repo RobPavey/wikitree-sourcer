@@ -8,7 +8,7 @@
   "titleName": "Emaline Fields",
   "titleCollection": "Kentucky, U.S., Death Records, 1852-1965",
   "recordData": {
-    "Name": "Emaline Fields [Anceline Fields] [Anceline Sloas]",
+    "Name": "Emaline Fields",
     "Maiden Name": "Slans",
     "Gender": "Female",
     "Race": "White",
@@ -18,6 +18,12 @@
     "Death Date": "15 Sep 1876",
     "Death Place": "Martin, Kentucky, USA",
     "Father": "Noah Slans"
+  },
+  "recordDataUserValues": {
+    "Name": [
+      "Anceline Fields",
+      "Anceline Sloas"
+    ]
   },
   "linkData": {
     "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1222&h=600210223&indiv=try&viewrecord=1&r=an"

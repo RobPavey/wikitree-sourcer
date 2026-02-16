@@ -355,6 +355,57 @@ function extractRecordPageTitle(document, result) {
   result.titleCollection = titleCollection;
 }
 
+function cleanAltOrUserValue(value) {
+  if (!value) {
+    return "";
+  }
+  let newValue = value.trim();
+  if (newValue.startsWith("[")) {
+    newValue = newValue.substring(1);
+  }
+  if (newValue.endsWith("]")) {
+    newValue = newValue.substring(0, newValue.length - 1);
+  }
+
+  const prefix = "User-submitted-comment ";
+  if (newValue.startsWith(prefix)) {
+    newValue = newValue.substring(prefix.length);
+  }
+
+  newValue = newValue.replace(/\s+/g, " ");
+
+  return newValue;
+}
+
+function addRecordDataAltValue(result, key, value) {
+  value = cleanAltOrUserValue(value);
+  if (!value) {
+    return;
+  }
+
+  if (!result.recordDataAltValues) {
+    result.recordDataAltValues = {};
+  }
+  if (!result.recordDataAltValues[key]) {
+    result.recordDataAltValues[key] = [];
+  }
+  result.recordDataAltValues[key].push(value);
+}
+
+function addRecordDataUserValue(result, key, value) {
+  value = cleanAltOrUserValue(value);
+  if (!value) {
+    return;
+  }
+  if (!result.recordDataUserValues) {
+    result.recordDataUserValues = {};
+  }
+  if (!result.recordDataUserValues[key]) {
+    result.recordDataUserValues[key] = [];
+  }
+  result.recordDataUserValues[key].push(value);
+}
+
 function extractRecordData(document, result) {
   result.recordData = Object.create(null);
 
@@ -458,7 +509,10 @@ function extractRecordData(document, result) {
                 // If this is a link we also store the link - this is case we need to read that
                 // additional record (e.g. for a child baptism)
                 let linkNode = rowData.querySelector("a");
-                if (linkNode) {
+
+                // in some old files there could ba a link for an alternate value
+                let altSpan = rowData.querySelector("span[title='Click to see details about alternate names']");
+                if (linkNode && !altSpan) {
                   // there are some links that are for viewing maps or ordering copies
                   // It seems that these links have 'class="link"' so if that is there ignore
                   // this row
@@ -477,7 +531,37 @@ function extractRecordData(document, result) {
                   }
                 } else {
                   // no link just use all child text
-                  result.recordData[label] = value;
+                  let spans = rowData.querySelectorAll("span");
+                  if (spans.length > 0) {
+                    let mainSpan = rowData.querySelector("span.srchHit");
+                    if (mainSpan) {
+                      let firstNode = mainSpan.childNodes[0];
+                      let mainText = firstNode.textContent;
+                      result.recordData[label] = mainText.trim();
+
+                      let altSpans = mainSpan.querySelectorAll("span");
+                      for (let altSpan of altSpans) {
+                        let altText = altSpan.textContent;
+                        addRecordDataAltValue(result, label, altText);
+                      }
+                      let userSpans = rowData.querySelectorAll("span[title^='This value was member submitted'");
+                      for (let userSpan of userSpans) {
+                        let userText = userSpan.textContent;
+                        addRecordDataUserValue(result, label, userText);
+                      }
+                    } else {
+                      let firstNode = rowData.childNodes[0];
+                      let mainText = firstNode.textContent;
+                      result.recordData[label] = mainText.trim();
+                      let userSpans = rowData.querySelectorAll("span");
+                      for (let userSpan of userSpans) {
+                        let userText = userSpan.textContent;
+                        addRecordDataUserValue(result, label, userText);
+                      }
+                    }
+                  } else {
+                    result.recordData[label] = value;
+                  }
                 }
               }
             }

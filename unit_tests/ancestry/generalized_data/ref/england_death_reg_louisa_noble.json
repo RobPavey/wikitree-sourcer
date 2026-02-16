@@ -2,6 +2,13 @@
   "sourceType": "record",
   "recordType": "DeathRegistration",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Registration Date": [
+      "Jul 1971",
+      "Aug 1971",
+      "Sep 1971"
+    ]
+  },
   "name": {
     "name": "Louisa Noble"
   },

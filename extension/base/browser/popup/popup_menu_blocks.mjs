@@ -91,4 +91,128 @@ function buildMinimalMenuWithMessage(message, data, backFunction) {
   addStandardMenuEnd(menu, data, backFunction);
 }
 
-export { addStandardMenuEnd, addShowCitationAssistantMenuItem, buildMinimalMenuWithMessage };
+function addSelectorMenuItem(menu, label, options, currentIndex, selectFunc) {
+  let text = label + ": ";
+
+  if (currentIndex == -1) {
+    currentIndex = 0;
+  }
+
+  // create a list item and add it to the list
+  let listItem = document.createElement("li");
+  listItem.className = "menuItem dividerBelow yellowBackground";
+
+  let divElement = document.createElement("div");
+  listItem.appendChild(divElement);
+
+  let labelElement = document.createElement("label");
+  labelElement.innerText = text;
+  divElement.appendChild(labelElement);
+
+  let select = document.createElement("select");
+  select.className = "yellowBackground";
+
+  for (let index = 0; index < options.length; index++) {
+    let option = options[index];
+    let optionElement = document.createElement("option");
+    optionElement.value = index;
+    optionElement.text = option;
+    select.appendChild(optionElement);
+  }
+  select.value = currentIndex;
+
+  select.addEventListener("change", selectFunc);
+
+  divElement.appendChild(select);
+
+  menu.list.appendChild(listItem);
+}
+
+function addPrimaryPersonMenuItem(menu, gd, userSelections, updateFunction) {
+  let options = gd.primaryPersonOptions;
+  if (!options || options.length <= 1) {
+    return;
+  }
+  let currentIndex = userSelections.primaryPersonIndex;
+  if (!currentIndex) {
+    currentIndex = 0;
+  }
+
+  addSelectorMenuItem(menu, "Person", options, currentIndex, function (event) {
+    userSelections.primaryPersonIndex = Number(event.target.value);
+    updateFunction(userSelections);
+  });
+}
+
+function addSpousePersonMenuItem(menu, gd, userSelections, updateFunction) {
+  let options = gd.spousePersonOptions;
+  if (!options || options.length <= 1) {
+    return;
+  }
+  let currentIndex = userSelections.spousePersonIndex;
+  if (currentIndex === undefined) {
+    currentIndex = -1;
+  }
+
+  addSelectorMenuItem(menu, "Spouse", options, currentIndex, function (event) {
+    userSelections.spousePersonIndex = Number(event.target.value);
+    updateFunction(userSelections);
+  });
+}
+
+function addAlternateFieldValuesMenuItem(menu, gd, fieldName, userSelections, updateFunction) {
+  //console.log("addAlternateFieldValuesMenuItem");
+
+  let options = gd.alternateFieldValues[fieldName];
+  if (!options || options.length <= 1) {
+    return;
+  }
+
+  let currentIndex = undefined;
+  if (userSelections.alternateFieldIndices) {
+    currentIndex = userSelections.alternateFieldIndices[fieldName];
+  }
+  if (currentIndex === undefined) {
+    currentIndex = -1;
+  }
+
+  addSelectorMenuItem(menu, fieldName, options, currentIndex, function (event) {
+    if (!userSelections.alternateFieldIndices) {
+      userSelections.alternateFieldIndices = {};
+    }
+    userSelections.alternateFieldIndices[fieldName] = Number(event.target.value);
+    updateFunction(userSelections);
+  });
+}
+
+function addAlternateFieldValuesMenuItems(menu, gd, userSelections, updateFunction) {
+  let alternateFieldValues = gd.alternateFieldValues;
+  if (!alternateFieldValues) {
+    return;
+  }
+
+  for (let fieldName of Object.keys(alternateFieldValues)) {
+    addAlternateFieldValuesMenuItem(menu, gd, fieldName, userSelections, updateFunction);
+  }
+}
+
+function addAlternateSelectorMenuItems(menu, gd, userSelections, updateFunction) {
+  if (gd.primaryPersonOptions && gd.primaryPersonOptions.length > 1) {
+    addPrimaryPersonMenuItem(menu, gd, userSelections, updateFunction);
+  }
+
+  if (gd.spousePersonOptions && gd.spousePersonOptions.length > 1) {
+    addSpousePersonMenuItem(menu, gd, userSelections, updateFunction);
+  }
+
+  if (gd.alternateFieldValues) {
+    addAlternateFieldValuesMenuItems(menu, gd, userSelections, updateFunction);
+  }
+}
+
+export {
+  addStandardMenuEnd,
+  addShowCitationAssistantMenuItem,
+  buildMinimalMenuWithMessage,
+  addAlternateSelectorMenuItems,
+};
