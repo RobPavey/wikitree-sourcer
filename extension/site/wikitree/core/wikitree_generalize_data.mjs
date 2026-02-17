@@ -340,6 +340,15 @@ function generalizeData(input) {
           result.parents.father.name.lastName = ed.parents.father.lastName;
         }
       }
+
+      if (name && ed.bioParents) {
+        if (result.alternateFieldValues === undefined) {
+          result.alternateFieldValues = {};
+        }
+        if (ed.bioParents.father && ed.bioParents.father.name) {
+          result.alternateFieldValues["Father"] = [name, ed.bioParents.father.name];
+        }
+      }
     }
     if (ed.parents.mother) {
       let name = ed.parents.mother.name;
@@ -360,6 +369,15 @@ function generalizeData(input) {
         }
         if (ed.parents.mother.lastName) {
           result.parents.mother.name.lastName = ed.parents.mother.lastName;
+        }
+      }
+
+      if (name && ed.bioParents) {
+        if (result.alternateFieldValues === undefined) {
+          result.alternateFieldValues = {};
+        }
+        if (ed.bioParents.mother && ed.bioParents.mother.name) {
+          result.alternateFieldValues["Mother"] = [name, ed.bioParents.mother.name];
         }
       }
     }
@@ -397,4 +415,66 @@ function generalizeData(input) {
   return result;
 }
 
-export { generalizeData };
+function regeneralizeDataWithAlternatesSelected(input) {
+  console.log("regeneralizeDataWithAlternatesSelected, input is:");
+  console.log(input);
+
+  let ed = input.extractedData;
+
+  let result = input.generalizedData;
+
+  if (!input.alternateFieldIndices || !result.alternateFieldValues) {
+    return;
+  }
+
+  // parents
+  if (result.parents) {
+    if (result.parents.father) {
+      let fatherNameIndex = input.alternateFieldIndices["Father"];
+
+      if (fatherNameIndex !== undefined && result.alternateFieldValues["Father"]) {
+        let name = result.alternateFieldValues["Father"][fatherNameIndex];
+        if (name) {
+          let obj = getPartsFromWikiTreeName(name, ed.parents.father.wikiId);
+          // we know index 0 is parent and 1 is bioParent
+          if (fatherNameIndex > 0 && ed.bioParents && ed.bioParents.father) {
+            obj = getPartsFromWikiTreeName(name, ed.parents.father.wikiId);
+          }
+
+          result.parents.father = { name: obj.nameObj };
+          if (obj.lastNameAtBirth && obj.lastNameAtBirth.toLowerCase() != "unknown") {
+            result.parents.father.lastNameAtBirth = obj.lastNameAtBirth;
+          }
+          if (obj.lastNameAtDeath && obj.lastNameAtDeath.toLowerCase() != "unknown") {
+            result.parents.father.lastNameAtDeath = obj.lastNameAtDeath;
+          }
+        }
+      }
+    }
+    if (ed.parents.mother) {
+      let motherNameIndex = input.alternateFieldIndices["Mother"];
+
+      if (motherNameIndex !== undefined && result.alternateFieldValues["Mother"]) {
+        let name = result.alternateFieldValues["Mother"][motherNameIndex];
+
+        if (name) {
+          let obj = getPartsFromWikiTreeName(name, ed.parents.mother.wikiId);
+          // we know index 0 is parent and 1 is bioParent
+          if (motherNameIndex > 0 && ed.bioParents && ed.bioParents.mother) {
+            obj = getPartsFromWikiTreeName(name, ed.parents.mother.wikiId);
+          }
+
+          result.parents.mother = { name: obj.nameObj };
+          if (obj.lastNameAtBirth && obj.lastNameAtBirth.toLowerCase() != "unknown") {
+            result.parents.mother.lastNameAtBirth = obj.lastNameAtBirth;
+          }
+          if (obj.lastNameAtDeath && obj.lastNameAtDeath.toLowerCase() != "unknown") {
+            result.parents.mother.lastNameAtDeath = obj.lastNameAtDeath;
+          }
+        }
+      }
+    }
+  }
+}
+
+export { generalizeData, regeneralizeDataWithAlternatesSelected };

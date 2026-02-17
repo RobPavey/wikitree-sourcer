@@ -1501,6 +1501,54 @@ function getParentsFromDocumentInNonEditMode2025(document, result) {
   }
 }
 
+function getBioParentsFromDocumentInNonEditMode2025(document, result) {
+  // there is no easy way to distinguish the parents, there could be 0, 1 or 2 and they don't say if they are mother
+  // or father. So we have to compare the lnab - if it matches this person then it is the father.
+  // Actually this is not safe - there can be only a mother and the lnab can be hers
+  // So we look at the text to see if it says
+  // "[father unknown]" (public view) or "[father?]" (private view)
+
+  let fatherLink = document.querySelector("#BioFather a[itemprop=url]");
+  if (!fatherLink) {
+    // WBE Change Family Lists can cause it to be somewhere else
+    fatherLink = document.querySelector("#bioParentList span[itemprop=parent] a[data-gender=Male]");
+  }
+
+  let motherLink = document.querySelector("#BioMother a[itemprop=url]");
+  if (!motherLink) {
+    // WBE Change Family Lists can cause it to be somewhere else
+    motherLink = document.querySelector("#bioParentList span[itemprop=parent] a[data-gender=Female]");
+  }
+
+  if (fatherLink) {
+    if (result.bioParents == undefined) {
+      result.bioParents = {};
+    }
+
+    var pathName = fatherLink.getAttribute("href");
+    const wikiId = pathName.replace(/(?:https?\:\/\/[^\.]+\.wikitree\.com)?\/wiki\//, "");
+    var fullName = getTextBySelector(fatherLink, "span[itemprop=name]");
+    if (!fullName) {
+      fullName = fatherLink.textContent.trim();
+    }
+    result.bioParents.father = { wikiId: wikiId, name: fullName };
+  }
+
+  if (motherLink) {
+    if (result.bioParents == undefined) {
+      result.bioParents = {};
+    }
+
+    var pathName = motherLink.getAttribute("href");
+    const wikiId = pathName.replace(/(?:https?\:\/\/[^\.]+\.wikitree\.com)?\/wiki\//, "");
+    var fullName = getTextBySelector(motherLink, "span[itemprop=name]");
+    if (!fullName) {
+      fullName = motherLink.textContent.trim();
+    }
+    result.bioParents.mother = { wikiId: wikiId, name: fullName };
+  }
+}
+
 function getSpousesFromDocumentInNonEditMode2025(isPrivate, document, result) {
   // used to check for things like:
   //  [marriage date?]
@@ -1631,6 +1679,7 @@ function extractDataInReadMode2025(document, result) {
   extractVitalsDataInNonEditMode2025(document, result, privacyLevel);
 
   getParentsFromDocumentInNonEditMode2025(document, result);
+  getBioParentsFromDocumentInNonEditMode2025(document, result);
 
   getSpousesFromDocumentInNonEditMode2025(false, document, result);
 
@@ -1683,6 +1732,39 @@ function getParentsFromDocumentInEditMode2025(document, result) {
     if (lastName != result.lnab) {
       result.mothersMaidenName = lastName;
     }
+  }
+}
+
+function getBioParentsFromDocumentInEditMode2025(document, result) {
+  // there is no easy way to distinguish the parents, there could be 0, 1 or 2 and they don't say if they are mother
+  // or father. So we have to compare the lnab - if it matches this person then it is the father.
+  // Actually this is not safe - there can be only a mother and the lnab can be hers
+  // So we look at the text to see if it says
+  // "[father unknown]" (public view) or "[father?]" (private view)
+
+  let fatherLink = document.querySelector("#biological-father-section div.tree--person a");
+  let motherLink = document.querySelector("#biological-mother-section div.tree--person a");
+
+  if (fatherLink) {
+    if (result.bioParents == undefined) {
+      result.bioParents = {};
+    }
+
+    var pathName = fatherLink.getAttribute("href");
+    const wikiId = pathName.replace(/(?:https?\:\/\/[^\.]+\.wikitree\.com)?\/wiki\//, "");
+    var fullName = fatherLink.textContent.trim();
+    result.bioParents.father = { name: fullName, wikiId: wikiId };
+  }
+
+  if (motherLink) {
+    if (result.bioParents == undefined) {
+      result.bioParents = {};
+    }
+
+    var pathName = motherLink.getAttribute("href");
+    const wikiId = pathName.replace(/(?:https?\:\/\/[^\.]+\.wikitree\.com)?\/wiki\//, "");
+    var fullName = motherLink.textContent.trim();
+    result.bioParents.mother = { name: fullName, wikiId: wikiId };
   }
 }
 
@@ -1780,6 +1862,7 @@ function extractDataInEditMode2025(document, result) {
   result.personGender = getValueBySelector(document, "select[name=mGender]");
 
   getParentsFromDocumentInEditMode2025(document, result);
+  getBioParentsFromDocumentInEditMode2025(document, result);
 
   getSpousesFromDocumentInEditMode2025(document, result);
 

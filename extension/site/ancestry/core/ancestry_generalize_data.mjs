@@ -3485,8 +3485,8 @@ function regeneralizeDataWithLinkedRecords(input) {
   //console.log(result);
 }
 
-function regeneralizeDataWIthAlternatesSelected(input) {
-  //console.log("regeneralizeDataWIthAlternatesSelected, input is:");
+function regeneralizeDataWithAlternatesSelected(input) {
+  //console.log("regeneralizeDataWithAlternatesSelected, input is:");
   //console.log(input);
 
   let gd = input.generalizedData;
@@ -3501,7 +3501,7 @@ export {
   generalizeData,
   generalizeDataGivenRecordType,
   regeneralizeDataWithLinkedRecords,
-  regeneralizeDataWIthAlternatesSelected,
+  regeneralizeDataWithAlternatesSelected,
   getRecordDataValue,
   GeneralizedData,
   dateQualifiers,

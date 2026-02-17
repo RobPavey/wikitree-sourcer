@@ -24,7 +24,6 @@ SOFTWARE.
 
 import { updateDataCacheWithWikiTreeExtract } from "/base/browser/common/data_cache.mjs";
 import {
-  emptyMenu,
   beginMainMenu,
   endMainMenu,
   addMenuItem,
@@ -42,7 +41,11 @@ import {
 
 import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
 
-import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
+import {
+  addStandardMenuEnd,
+  addAlternateSelectorMenuItems,
+  buildMinimalMenuWithMessage,
+} from "/base/browser/popup/popup_menu_blocks.mjs";
 import {
   convertTimestampDiffToText,
   getPersonDataSubtitleText,
@@ -56,7 +59,7 @@ import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 
-import { generalizeData } from "../core/wikitree_generalize_data.mjs";
+import { generalizeData, regeneralizeDataWithAlternatesSelected } from "../core/wikitree_generalize_data.mjs";
 import { wtApiGetRelatives, wtApiGetPeople, wtApiGetBio } from "./wikitree_api.mjs";
 import { compareCensusTables, updateBiography } from "../core/wikitree_bio_tools.mjs";
 
@@ -203,8 +206,8 @@ function waitForAPIResponse() {
 
 async function updateGeneralizedDataUsingApiResponse(data, tabId) {
   function getApiPersonFromGetRelatives(wikiId) {
-    //console.log("getApiPersonFromGetRelatives, apiResponse is");
-    //console.log(apiResponse);
+    console.log("getApiPersonFromGetRelatives, apiResponse is");
+    console.log(apiResponse);
     let items = apiResponse[0].items;
     if (items && items.length) {
       for (let item of items) {
@@ -3174,6 +3177,10 @@ async function reportLoggedOut() {
 async function buildMenu(data, tabId) {
   let extractedData = data.extractedData;
 
+  if (data.alternateFieldIndices) {
+    regeneralizeDataWithAlternatesSelected(data);
+  }
+
   let backFunction = function () {
     buildMenu(data, tabId);
   };
@@ -3183,6 +3190,8 @@ async function buildMenu(data, tabId) {
   if (extractedData.pageType == "loggedOut") {
     reportLoggedOut();
   }
+
+  addAlternateSelectorMenuItems(menu, data.generalizedData, data, backFunction);
 
   await addSearchMenus(menu, data, backFunction, "wikitree");
   addMenuDivider(menu);

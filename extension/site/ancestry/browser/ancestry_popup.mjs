@@ -103,7 +103,7 @@ import {
   generalizeData,
   generalizeDataGivenRecordType,
   regeneralizeDataWithLinkedRecords,
-  regeneralizeDataWIthAlternatesSelected,
+  regeneralizeDataWithAlternatesSelected,
 } from "../core/ancestry_generalize_data.mjs";
 import { buildCitation } from "../core/ancestry_build_citation.mjs";
 import { buildHouseholdTable, buildCustomTable } from "/base/core/table_builder.mjs";
@@ -1401,7 +1401,7 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
   let extractedData = data.extractedData;
 
   if (extractedData.pageType == "record" && data.alternateFieldIndices) {
-    regeneralizeDataWIthAlternatesSelected(data);
+    regeneralizeDataWithAlternatesSelected(data);
   }
 
   let backFunction = function () {
