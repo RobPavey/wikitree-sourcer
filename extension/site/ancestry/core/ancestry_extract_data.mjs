@@ -1595,7 +1595,15 @@ function parseHtmlEscapeCodes(str) {
     return String.fromCharCode(num);
   });
 
-  str = str.replace(/\\u([0-9a-f]+)/gi, function (match, numStr) {
+  const jsUnicodeCodePointRe = /\\u\{([0-9a-f]+\})/gi;
+  const jsUnicodeFourDigitRe = /\\u([0-9a-f]{4})/gi;
+
+  str = str.replace(jsUnicodeCodePointRe, function (match, numStr) {
+    var num = parseInt(numStr, 16); // read num as normal number
+    return String.fromCharCode(num);
+  });
+
+  str = str.replace(jsUnicodeFourDigitRe, function (match, numStr) {
     var num = parseInt(numStr, 16); // read num as normal number
     return String.fromCharCode(num);
   });

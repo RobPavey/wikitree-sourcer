@@ -1,0 +1,32 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "lastName": "O'Brien",
+    "forenames": "Loretta"
+  },
+  "deathDate": {
+    "dateString": "16 MAY 2025"
+  },
+  "deathPlace": {
+    "placeString": "Eagleville, Montgomery, Pennsylvania, USA"
+  },
+  "personGender": "female",
+  "spouses": [
+    {
+      "name": {
+        "name": "Regis W Allen"
+      },
+      "marriageDate": {},
+      "marriagePlace": {},
+      "children": [
+        {
+          "name": {
+            "name": "Private"
+          }
+        }
+      ]
+    }
+  ],
+  "hasValidData": true
+}

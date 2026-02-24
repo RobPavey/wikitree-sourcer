@@ -1323,6 +1323,11 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46591661544/facts",
   },
   {
+    // 2026 format. The name O'Briend is causing issues.
+    caseName: "xx_profile_loretta_obrien_u_2025_us",
+    url: "https://www.ancestry.com/family-tree/person/tree/208562775/person/192735105415/facts",
+  },
+  {
     // June 2024 format. Has "Van Wye" as surname
     caseName: "xx_profile_margarete_van_wye_1889_1974_us",
     url: "https://www.ancestry.com/family-tree/person/tree/71402081/person/32242536573/facts",
