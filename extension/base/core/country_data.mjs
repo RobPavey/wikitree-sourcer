@@ -513,11 +513,11 @@ const CountyData = {
     { stdName: "Cumberland", matches: ["Cumberland"] },
     { stdName: "Cumbria", matches: ["Cumbria"] },
     { stdName: "Derbyshire", matches: ["Derbyshire"] },
-    { stdName: "Devon", matches: ["Devon"] },
+    { stdName: "Devon", matches: ["Devon", "Devonshire"] },
     { stdName: "Dorset", matches: ["Dorset"] },
     { stdName: "Durham", matches: ["County Durham", "Durham"] },
     { stdName: "Essex", matches: ["Essex"] },
-    { stdName: "Gloucestershire", matches: ["Gloucestershire", "Glos"] },
+    { stdName: "Gloucestershire", matches: ["Gloucestershire", "Glos", "Glostershire", "Gloster"] },
     { stdName: "Hampshire", matches: ["Hampshire", "Isle of Wight"] },
     { stdName: "Herefordshire", matches: ["Herefordshire"] },
     { stdName: "Hertfordshire", matches: ["Hertfordshire"] },
@@ -572,7 +572,7 @@ const CountyData = {
     { stdName: "Caernarvonshire", matches: ["Caernarvonshire"] },
     { stdName: "Cardiganshire", matches: ["Cardiganshire"] },
     { stdName: "Carmarthenshire", matches: ["Carmarthenshire"] },
-    { stdName: "Denbighshire", matches: ["Denbighshire"] },
+    { stdName: "Denbighshire", matches: ["Denbighshire", "Denbyshire"] },
     { stdName: "Flintshire", matches: ["Flintshire"] },
     { stdName: "Glamorgan", matches: ["Glamorgan"] },
     { stdName: "Merionethshire", matches: ["Merionethshire"] },
@@ -1117,6 +1117,25 @@ const CD = {
       }
     }
     return true;
+  },
+
+  getCountryEndingNoSeparators: function (placeName) {
+    for (let country of CountryData) {
+      for (let match of country.matches) {
+        let noSepMatch = match.replace(", ", " ");
+        if (placeName.endsWith(" " + noSepMatch)) {
+          return {
+            stdCountryName: country.stdName,
+            noSepMatch: noSepMatch,
+            remainder: placeName.substring(0, placeName.length - noSepMatch.length - 1),
+          };
+        }
+      }
+    }
+  },
+
+  getCountiesForCountry: function (stdCountryName) {
+    return CountyData[stdCountryName];
   },
 };
 

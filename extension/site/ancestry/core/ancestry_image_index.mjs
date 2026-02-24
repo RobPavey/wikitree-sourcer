@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { buildCustomTable } from "/base/core/table_builder.mjs";
+import { CD } from "/base/core/country_data.mjs";
 
 function buildTableObject(data, dataObj, fieldNames, objectArray, options) {
   console.log("buildTableObject");
@@ -72,6 +73,9 @@ function buildCensusPageTable(data, dataObj, options) {
   }
   let houseLabel = isVessel ? "Vessel" : "House";
 
+  const ukCounytCountyNames = ["Kent", "Somerset", "Sussex"];
+  const englandCountyNames = ["Kent", "Somerset", "Sussex"];
+
   const headingMappings = {
     8978: {
       // England 1841 census
@@ -97,8 +101,8 @@ function buildCensusPageTable(data, dataObj, options) {
     },
     8860: {
       // England 1851 census
-      "House Number": {
-        heading: "Household schedule number",
+      "No.": {
+        heading: "House Number",
       },
       House: {},
       Name: {
@@ -122,7 +126,7 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Birth Place",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
         reverseElements: true,
         separator: ", ",
       },
@@ -153,7 +157,7 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Where born",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
         reverseElements: true,
         separator: ", ",
       },
@@ -185,12 +189,15 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Birth Place",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
+        exclude: "England",
         reverseElements: true,
         separator: ", ",
         replacements: {
           Nk: "N.K.",
+          Nnk: "N.K.",
         },
+        checkUkCountyCountry: true,
       },
     },
     7572: {
@@ -249,7 +256,7 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Birth Place",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
         reverseElements: true,
         separator: ", ",
       },
@@ -281,7 +288,7 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Birth Place",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
         reverseElements: true,
         separator: ", ",
       },
@@ -313,7 +320,7 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Birth Place",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
         reverseElements: true,
         separator: ", ",
       },
@@ -345,7 +352,7 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Birth Place",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
         separator: ", ",
       },
     },
@@ -359,8 +366,12 @@ function buildCensusPageTable(data, dataObj, options) {
       if (mappingObj.heading) {
         let rowValue = row[mappingObj.heading];
         if (rowValue) {
-          if (mappingObj.excludeEnding && rowValue.endsWith(mappingObj.excludeEnding)) {
-            rowValue = rowValue.substring(0, rowValue.length - mappingObj.excludeEnding.length).trim();
+          if (mappingObj.excludeEndings) {
+            for (let ending of mappingObj.excludeEndings) {
+              if (rowValue.endsWith(ending)) {
+                rowValue = rowValue.substring(0, rowValue.length - ending.length).trim();
+              }
+            }
           }
           value = rowValue;
         }
@@ -378,15 +389,72 @@ function buildCensusPageTable(data, dataObj, options) {
         }
       }
 
-      if (mappingObj.reverseElements && mappingObj.separator) {
-        let elements = value.split(mappingObj.separator);
-        elements.reverse();
-        value = elements.join(mappingObj.separator);
-      }
+      if (value) {
+        if (mappingObj.reverseElements && mappingObj.separator) {
+          let elements = value.split(mappingObj.separator);
+          if (elements.length > 1) {
+            elements.reverse();
+            value = elements.join(mappingObj.separator);
+          } else {
+            //console.log("No separator found, value is: " + value);
+            //console.log("mappingObj is:");
+            //console.log(mappingObj);
+            // no separator found, could be something like
+            // "Brompton Kent England"
+            if (mappingObj.checkUkCountyCountry) {
+              let countryInfo = CD.getCountryEndingNoSeparators(value);
+              //console.log("countryInfo is:");
+              //console.log(countryInfo);
+              if (countryInfo) {
+                value = countryInfo.remainder;
+                let countyName = "";
+                let counties = CD.getCountiesForCountry(countryInfo.stdCountryName);
+                //console.log("counties is:");
+                //console.log(counties);
+                if (counties) {
+                  for (let county of counties) {
+                    for (let match of county.matches) {
+                      if (value.endsWith(" " + match)) {
+                        value = value.substring(0, value.length - match.length - 1);
+                        countyName = match;
+                        break;
+                      }
+                    }
+                    if (countyName) {
+                      break;
+                    }
+                  }
+                }
 
-      if (mappingObj.replacements) {
-        for (let key of Object.keys(mappingObj.replacements)) {
-          value = value.replace(key, mappingObj.replacements[key]);
+                if (countyName) {
+                  value = countyName + ", " + value;
+                }
+
+                if (mappingObj.excludeEndings) {
+                  let exclude = false;
+                  for (let ending of mappingObj.excludeEndings) {
+                    if (ending == ", " + countryInfo.noSepMatch) {
+                      exclude = true;
+                    }
+                  }
+                  if (!exclude) {
+                    value = countryInfo.noSepMatch + ", " + value;
+                  }
+                } else {
+                  value = countryInfo.noSepMatch + ", " + value;
+                }
+
+                //console.log("new value is:");
+                //console.log(value);
+              }
+            }
+          }
+        }
+
+        if (mappingObj.replacements) {
+          for (let key of Object.keys(mappingObj.replacements)) {
+            value = value.replace(key, mappingObj.replacements[key]);
+          }
         }
       }
     }
