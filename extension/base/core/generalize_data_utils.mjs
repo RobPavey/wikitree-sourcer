@@ -375,6 +375,8 @@ const GD = {
       { standard: "son", starts: ["s."] },
     ];
 
+    const ignoreList = [{ starts: ["private", "<private"] }];
+
     let lc = string.toLowerCase();
 
     let exactValue = exactMap[lc];
@@ -439,6 +441,42 @@ const GD = {
 
       if (match) {
         return match;
+      }
+    }
+
+    let ignore = false;
+    for (let ignoreEntry of ignoreList) {
+      if (ignoreEntry.starts) {
+        for (let start of ignoreEntry.starts) {
+          if (lc.startsWith(start)) {
+            ignore = true;
+            break;
+          }
+        }
+      }
+      if (ignore && ignoreEntry.notContains) {
+        for (let cont of ignoreEntry.notContains) {
+          if (lc.includes(cont)) {
+            ignore = false;
+            break;
+          }
+        }
+      }
+      if (ignore && ignoreEntry.andContains) {
+        let doesContainOne = false;
+        for (let cont of ignoreEntry.andContains) {
+          if (lc.includes(cont)) {
+            doesContainOne = true;
+            break;
+          }
+        }
+        if (!doesContainOne) {
+          ignore = false;
+        }
+      }
+
+      if (ignore) {
+        return "";
       }
     }
 
