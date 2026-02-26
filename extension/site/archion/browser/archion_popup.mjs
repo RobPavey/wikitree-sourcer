@@ -40,37 +40,48 @@ import { generalizeData } from "../core/archion_generalize_data.mjs";
 import { buildCitation } from "../core/archion_build_citation.mjs";
 
 async function extractPageDataFromDocument(uid, url, page_index) {
-  let fetch_result = await (
-    await fetch(
-      "https://www.archion.de/de/ajax?tx_sparchiondocuments_spdocumentviewer[action]=getViewerDocumentPages&uid=" +
-        uid +
-        "&type=churchRegister",
-      {
-        headers: {
-          accept: "application/json, text/javascript, */*; q=0.01",
-          "accept-language": "en-US,en;q=0.9",
-          "sec-ch-ua": '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
-          "sec-ch-ua-mobile": "?0",
-          "sec-ch-ua-platform": '"Windows"',
-          "sec-fetch-dest": "empty",
-          "sec-fetch-mode": "cors",
-          "sec-fetch-site": "same-origin",
-          "x-requested-with": "XMLHttpRequest",
-        },
-        referrer: url,
-        referrerPolicy: "strict-origin-when-cross-origin",
-        body: null,
-        method: "GET",
-        mode: "cors",
-        credentials: "include",
-      }
-    )
-  ).text();
+  let req = await fetch(
+    "https://www.archion.de/de/ajax?tx_sparchiondocuments_spdocumentviewer[action]=getViewerDocumentPages&uid=" +
+      uid +
+      "&type=churchRegister",
+    {
+      headers: {
+        accept: "application/json, text/javascript, */*; q=0.01",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"Windows"',
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "x-requested-with": "XMLHttpRequest",
+      },
+      referrer: url,
+      referrerPolicy: "strict-origin-when-cross-origin",
+      body: null,
+      method: "GET",
+      mode: "cors",
+      credentials: "include",
+    }
+  );
+  if (!req.ok) {
+    alert("failed to request page data");
+    return -1;
+  }
 
-  const pages = JSON.parse(fetch_result);
-  const page = pages[page_index];
+  let fetch_result = await req.text();
 
-  return page.id;
+  try {
+    const pages = JSON.parse(fetch_result);
+    const page = pages[page_index];
+
+    return page.id;
+  }
+  catch {
+    alert("error during parsing response");
+    console.log(fetch_result);
+    return -1;
+  }
 }
 
 async function extractPermalinkBaseUrl(url) {
@@ -142,14 +153,20 @@ async function generatePermaLink(ed) {
     const checkPermissionsOptions = {
       reason: "To generate a permalink a content script needs to be loaded on the archion.de page.",
     };
-    let allowed = await checkPermissionForSite("*://archion.de/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSite("*://www.archion.de/*", checkPermissionsOptions);
     if (!allowed) {
+      console.log("Permalink generation not allowed!");
       closePopup();
       return;
     }
 
     ed.pageData.pageId = await extractPageDataFromDocument(ed.uid, ed.url, ed.pageData.page);
     ed.permalinkBase = await extractPermalinkBaseUrl(ed.url);
+
+    if (ed.pageData.pageId == -1 || ed.permalinkBase == null) {
+      alert("xy");
+      return ed.url;
+    }
 
     let response = await fetch(ed.permalinkBase, {
       headers: {
@@ -171,6 +188,11 @@ async function generatePermaLink(ed) {
       mode: "cors",
       credentials: "include",
     });
+    if (!response.ok) {
+      alert("Bad permalink response");
+      return ed.url;
+    }
+
     let text = await response.text();
 
     // Check for erros from the server, e.g. user has no active pass and cannot generate permalinks
