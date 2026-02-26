@@ -29,7 +29,6 @@ function buildArchionUrl(ed, builder) {
   if (ed.permalink && ed.permalink != "<<NOT YET GENERATED>>") {
     return ed.permalink;
   }
-  alert("No Permalink!");
   return ed.url;
 }
 
