@@ -87,3 +87,4 @@ import "../../panb/core/panb_options.mjs";
 
 import "../../ausmem/core/ausmem_options.mjs";
 import "../../morbihan/core/morbihan_options.mjs";
+import "../../szukaj/core/szukaj_options.mjs";
