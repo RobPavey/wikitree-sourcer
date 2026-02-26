@@ -65,7 +65,6 @@ async function extractPageDataFromDocument(uid, url, page_index) {
     }
   );
   if (!req.ok) {
-    alert("failed to request page data");
     return -1;
   }
 
@@ -77,9 +76,10 @@ async function extractPageDataFromDocument(uid, url, page_index) {
 
     return page.id;
   }
-  catch {
-    alert("error during parsing response");
+  catch (e) {
     console.log(fetch_result);
+    console.log("Error parsing page data from Archion response.");
+    console.log(e);
     return -1;
   }
 }
@@ -164,7 +164,6 @@ async function generatePermaLink(ed) {
     ed.permalinkBase = await extractPermalinkBaseUrl(ed.url);
 
     if (ed.pageData.pageId == -1 || ed.permalinkBase == null) {
-      alert("xy");
       return ed.url;
     }
 
@@ -189,7 +188,7 @@ async function generatePermaLink(ed) {
       credentials: "include",
     });
     if (!response.ok) {
-      alert("Bad permalink response");
+      console.log("Error during permalink generation, response not ok.");
       return ed.url;
     }
 
@@ -197,6 +196,7 @@ async function generatePermaLink(ed) {
 
     // Check for erros from the server, e.g. user has no active pass and cannot generate permalinks
     if (text.indexOf("alert alert-warning") != -1) {
+      console.log("Error during permalink generation, server returned an error message.");
       return ed.url;
     }
 
