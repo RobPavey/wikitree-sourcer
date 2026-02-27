@@ -22,6 +22,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+const ATTRIBUTE_TRANSLATIONS = {
+  "sygnatura": "reference code",
+  "signatur": "reference code",
+  "daty": "dates",
+  "daten": "dates",
+  "archiwum": "archives",
+  "archiv": "archives",
+  "zespół": "fonds",
+  "bestand": "fonds",
+};
+
 function extractData(document, url) {
   var result = {};
 
@@ -29,6 +40,45 @@ function extractData(document, url) {
     result.url = url;
   }
   result.success = false;
+
+  if (!url || !url.match("/jednostka/")) {
+    return result;
+  }
+
+  let field = document.querySelector("#portlet_Jednostka > div > div > div > div.row > div");
+  result.title = field.querySelector("div.row > div > h2").textContent.trim();
+
+  result.attributes = {};
+  let attributes = field.querySelector("div[class=\"metadaneJednostki row\"]");
+  for (let attribute of attributes.querySelectorAll("div[class=\"border-left col-md-2 col-sm-12\"]")) {
+    let title = attribute.querySelector("div.title").textContent.trim().toLowerCase();
+    title = ATTRIBUTE_TRANSLATIONS[title] || title;
+    let value = attribute.querySelector("div.value").textContent.trim();
+    result.attributes[title] = value;
+  }
+  for (let attribute of attributes.querySelectorAll("div[class=\"border-left col-md-3 col-sm-12\"]")) {
+    let title = attribute.querySelector("div.title").textContent.trim().toLowerCase();
+    title = ATTRIBUTE_TRANSLATIONS[title] || title;
+    let value = attribute.querySelector("div.value").textContent.trim();
+    result.attributes[title] = value;
+  }
+
+  let viewer_frame = document.querySelector("iframe.ps-iframe");
+  if (viewer_frame) {
+
+    let page_selector = viewer_frame.contentDocument.querySelector("span.name").textContent.trim();
+    let current = parseInt(page_selector.split(" ")[1]);
+    let total = parseInt(page_selector.split(" ")[3]);
+    result.selected_page = current;
+    result.total_pages = total;
+
+    let get_link_button = viewer_frame.contentDocument.querySelector("a[class=\"tab link\"]");
+    get_link_button.click();
+    let permalink = viewer_frame.contentDocument.querySelector("input[readonly=\"readonly\"]").value;
+    result.permalink = permalink;
+    let close_button = viewer_frame.contentDocument.querySelector("div[class=\"hide\"] > a");
+    close_button.click();
+  }
 
   /*
   const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
