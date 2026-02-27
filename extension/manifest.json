@@ -618,7 +618,7 @@
         "site/ausmem/browser/ausmem_content.js"
       ]
     },
-        {
+    {
       "matches": [
         "*://archives2.gnb.ca/*"
       ],
@@ -636,6 +636,16 @@
       "js": [
         "base/browser/content/content_common.js",
         "site/morbihan/browser/morbihan_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://www.szukajwarchiwach.gov.pl/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/szukaj/browser/szukaj_content.js"
       ]
     }
   ],
@@ -1143,6 +1153,14 @@
       ],
       "matches": [
         "*://rechercher.patrimoines-archives.morbihan.fr/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/szukaj/core/szukaj_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.szukajwarchiwach.gov.pl/*"
       ]
     }
   ],
