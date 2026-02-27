@@ -53,9 +53,9 @@ const citationOptionsGroup = {
   options: [],
 };
 
-registerSubsectionForOptions("search", "szukaj", "Szukaj w Archiwach");
+// registerSubsectionForOptions("search", "szukaj", "Szukaj w Archiwach");
 registerSiteSearchPopupOptionsGroup("szukaj");
-registerSubheadingForOptions("search", "szukaj", "behavior", "Search Behavior");
+// registerSubheadingForOptions("search", "szukaj", "behavior", "Search Behavior");
 registerOptionsGroup(searchBehaviorOptionsGroup);
 
 registerSubsectionForOptions("citation", "szukaj", "Szukaj w Archiwach");

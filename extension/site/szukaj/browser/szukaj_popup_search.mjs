@@ -71,10 +71,7 @@ async function szukajSearch(generalizedData) {
       return;
     }
 
-    //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-    // put URL of this site's search page here
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    let searchUrl = "https://www.szukaj.org/search";
+    let searchUrl = "https://www.szukajwarchiwach.gov.pl/en/strona_glowna";
 
     const searchData = {
       timeStamp: Date.now(),
