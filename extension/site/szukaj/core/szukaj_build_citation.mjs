@@ -25,15 +25,27 @@ SOFTWARE.
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildSzukajUrl(ed, builder) {
-  return ed.url;
+  return ed.permalink || ed.url;
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle += ed.title;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  builder.sourceReference = ed.attributes["reference code"];
+  if (ed.attributes["archives"]) {
+    builder.addSourceReferenceField("Archive", ed.attributes["archives"]);
+  }
+  if (ed.attributes["fonds"]) {
+    builder.addSourceReferenceField("Fond", ed.attributes["fonds"]);
+  }
+  if (ed.attributes["dates"]) {
+    builder.addSourceReferenceField("Dates", ed.attributes["dates"]);
+  }
+  if (ed.selected_page) {
+    builder.addSourceReferenceField("Image", ed.selected_page);
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {

@@ -54,13 +54,13 @@ function extractData(document, url) {
     let title = attribute.querySelector("div.title").textContent.trim().toLowerCase();
     title = ATTRIBUTE_TRANSLATIONS[title] || title;
     let value = attribute.querySelector("div.value").textContent.trim();
-    result.attributes[title] = value;
+    result.attributes[title] = value.replace("Expand", "").replace("Collapse", "").trim();
   }
   for (let attribute of attributes.querySelectorAll("div[class=\"border-left col-md-3 col-sm-12\"]")) {
     let title = attribute.querySelector("div.title").textContent.trim().toLowerCase();
     title = ATTRIBUTE_TRANSLATIONS[title] || title;
     let value = attribute.querySelector("div.value").textContent.trim();
-    result.attributes[title] = value;
+    result.attributes[title] = value.replace("Expand", "").replace("Collapse", "").trim();
   }
 
   let viewer_frame = document.querySelector("iframe.ps-iframe");
@@ -73,11 +73,13 @@ function extractData(document, url) {
     result.total_pages = total;
 
     let get_link_button = viewer_frame.contentDocument.querySelector("a[class=\"tab link\"]");
-    get_link_button.click();
-    let permalink = viewer_frame.contentDocument.querySelector("input[readonly=\"readonly\"]").value;
-    result.permalink = permalink;
-    let close_button = viewer_frame.contentDocument.querySelector("div[class=\"hide\"] > a");
-    close_button.click();
+    if (get_link_button) {
+      get_link_button.click();
+      let permalink = viewer_frame.contentDocument.querySelector("input[readonly=\"readonly\"]").value;
+      result.permalink = permalink;
+      let close_button = viewer_frame.contentDocument.querySelector("div[class=\"hide\"] > a");
+      close_button.click();
+    }
   }
 
   /*
