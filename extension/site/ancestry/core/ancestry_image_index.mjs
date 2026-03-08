@@ -67,22 +67,25 @@ function buildCensusPageTable(data, dataObj, options) {
 
   let ed = data.extractedData;
 
-  let isVessel = false;
-  if (ed.imageBrowsePath && ed.imageBrowsePath.includes("> Vessels >")) {
-    isVessel = true;
-  }
-  let houseLabel = isVessel ? "Vessel" : "House";
-
-  const ukCounytCountyNames = ["Kent", "Somerset", "Sussex"];
-  const englandCountyNames = ["Kent", "Somerset", "Sussex"];
-
   const headingMappings = {
     8978: {
       // England 1841 census
-      Place: {},
+      "No.": {
+        excludeColumn: true,
+      },
+      House: {
+        label: "Place",
+      },
       Name: {
         headings: ["Given Name", "Surname"],
         separator: " ",
+      },
+      Relation: {
+        excludeColumn: true,
+      },
+
+      MS: {
+        excludeColumn: true,
       },
       Age: {
         heading: "Age",
@@ -469,11 +472,26 @@ function buildCensusPageTable(data, dataObj, options) {
     rowObject[fieldName] = value;
   }
 
-  let fieldNames = ["No.", houseLabel, "Name", "Relation", "MS", "Age", "Sex", "Occupation", "Where Born"];
   let headingMapping = headingMappings[ed.dbId];
   if (!headingMapping) {
     return false;
   }
+
+  let isVessel = false;
+  if (ed.imageBrowsePath && ed.imageBrowsePath.includes("> Vessels >")) {
+    isVessel = true;
+  }
+  let houseLabel = "House";
+  if (isVessel) {
+    houseLabel = "Vessel";
+  } else {
+    let mappingObj = headingMapping["House"];
+    if (mappingObj && mappingObj.label) {
+      houseLabel = mappingObj.label;
+    }
+  }
+
+  let fieldNames = ["No.", houseLabel, "Name", "Relation", "MS", "Age", "Sex", "Occupation", "Where Born"];
 
   let objectArray = [];
 
@@ -513,8 +531,11 @@ function buildCensusPageTable(data, dataObj, options) {
       ageString = "age?";
     } else {
       const yearsAndMonthsRegex = /^(\d+) Years (\d+) Months$/;
+      const monthsRegex1 = /^(\d+) Mo$/;
       if (yearsAndMonthsRegex.test(ageString)) {
         ageString = ageString.replace(yearsAndMonthsRegex, "$1y $2m");
+      } else if (monthsRegex1.test(ageString)) {
+        ageString = ageString.replace(monthsRegex1, "$1m");
       }
     }
     setRowField(rowObject, "Age", ageString);
@@ -617,6 +638,10 @@ function buildCensusPageTable(data, dataObj, options) {
       if (!used) {
         useField = false;
       }
+    }
+
+    if (mappingObj && mappingObj.excludeColumn) {
+      useField = false;
     }
     if (useField) {
       usedFieldsNames.push(fieldName);

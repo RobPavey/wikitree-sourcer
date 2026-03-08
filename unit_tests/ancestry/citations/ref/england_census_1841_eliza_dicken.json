@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603<br/>\n{{Ancestry Record|8978|13492512}} (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1841 census Eliza (age 6) was in St George, Somerset, England.<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603<br/>\n{{Ancestry Record|8978|13492512}} (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1841 Census''': \"1841 England Census\"<br/>Class: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603<br/>{{Ancestry Record|8978|13492512}} (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603<br/>\n{{Ancestry Record|8978|13492512}} (accessed 6 May 2021)<br/>\nEliza Dickens (6) in St George in Bedminster registration district in Somerset, England. Born in Somerset, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1841 census Eliza (age 6) was in St George, Somerset, England.<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603<br/>\n{{Ancestry Record|8978|13492512}} (accessed 6 May 2021)<br/>\nEliza Dickens (6) in St George in Bedminster registration district in Somerset, England. Born in Somerset, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1841 Census''': \"1841 England Census\"<br/>Class: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603<br/>{{Ancestry Record|8978|13492512}} (accessed 6 May 2021)<br/>Eliza Dickens (6) in St George in Bedminster registration district in Somerset, England. Born in Somerset, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603<br/>\n{{Ancestry Record|8978|13492512}} (accessed 6 May 2021)<br/>\nName: Eliza Dicken [Eliza Dickens]; Age: 6; Estimated Birth Year: abt 1835; Gender: Female; Where born: Somerset, England; Civil parish: St George; Hundred: Portbury; County/Island: Somerset; Country: England; Registration District: Bedminster; Sub-registration district: St George; <br/>Household Members (Name) Age:<br/>John Dicken 26<br/>Elizabeth Dicken 28<br/>Eliza Dicken 6<br/>Thomas Dicken 4<br/>John Dicken 2<br/>Thomas Dicken 23.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1841 census Eliza (age 6) was in St George, Somerset, England.<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603<br/>\n{{Ancestry Record|8978|13492512}} (accessed 6 May 2021)<br/>\nName: Eliza Dicken [Eliza Dickens]; Age: 6; Estimated Birth Year: abt 1835; Gender: Female; Where born: Somerset, England; Civil parish: St George; Hundred: Portbury; County/Island: Somerset; Country: England; Registration District: Bedminster; Sub-registration district: St George; <br/>Household Members (Name) Age:<br/>John Dicken 26<br/>Elizabeth Dicken 28<br/>Eliza Dicken 6<br/>Thomas Dicken 4<br/>John Dicken 2<br/>Thomas Dicken 23.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1841 Census''': \"1841 England Census\"<br/>Class: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603<br/>{{Ancestry Record|8978|13492512}} (accessed 6 May 2021)<br/>Name: Eliza Dicken [Eliza Dickens]; Age: 6; Estimated Birth Year: abt 1835; Gender: Female; Where born: Somerset, England; Civil parish: St George; Hundred: Portbury; County/Island: Somerset; Country: England; Registration District: Bedminster; Sub-registration district: St George; <br/>Household Members (Name) Age:<br/>John Dicken 26<br/>Elizabeth Dicken 28<br/>Eliza Dicken 6<br/>Thomas Dicken 4<br/>John Dicken 2<br/>Thomas Dicken 23.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603<br/>\n{{Ancestry Record|8978|13492512}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Eliza Dicken [Eliza Dickens]\n|-\n| Age || 6\n|-\n| Estimated Birth Year || abt 1835\n|-\n| Gender || Female\n|-\n| Where born || Somerset, England\n|-\n| Civil parish || St George\n|-\n| Hundred || Portbury\n|-\n| County/Island || Somerset\n|-\n| Country || England\n|-\n| Registration District || Bedminster\n|-\n| Sub-registration district || St George\n|-\n| Household Members (Name)<br/>Age || John Dicken 26<br/>Elizabeth Dicken 28<br/>Eliza Dicken 6<br/>Thomas Dicken 4<br/>John Dicken 2<br/>Thomas Dicken 23\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1841 census Eliza (age 6) was in St George, Somerset, England.<ref>\n'''1841 Census''':\n\"1841 England Census\"<br/>\nClass: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603<br/>\n{{Ancestry Record|8978|13492512}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Eliza Dicken [Eliza Dickens]\n|-\n| Age || 6\n|-\n| Estimated Birth Year || abt 1835\n|-\n| Gender || Female\n|-\n| Where born || Somerset, England\n|-\n| Civil parish || St George\n|-\n| Hundred || Portbury\n|-\n| County/Island || Somerset\n|-\n| Country || England\n|-\n| Registration District || Bedminster\n|-\n| Sub-registration district || St George\n|-\n| Household Members (Name)<br/>Age || John Dicken 26<br/>Elizabeth Dicken 28<br/>Eliza Dicken 6<br/>Thomas Dicken 4<br/>John Dicken 2<br/>Thomas Dicken 23\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1841 Census''': \"1841 England Census\"<br/>Class: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603<br/>{{Ancestry Record|8978|13492512}} (accessed 6 May 2021)<br/>Name: Eliza Dicken [Eliza Dickens]; Age: 6; Estimated Birth Year: abt 1835; Gender: Female; Where born: Somerset, England; Civil parish: St George; Hundred: Portbury; County/Island: Somerset; Country: England; Registration District: Bedminster; Sub-registration district: St George; <br/>Household Members (Name) Age:<br/>John Dicken 26<br/>Elizabeth Dicken 28<br/>Eliza Dicken 6<br/>Thomas Dicken 4<br/>John Dicken 2<br/>Thomas Dicken 23.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1841 England Census,\" database, ({{Ancestry Record|8978|13492512}} : accessed 6 May 2021), Eliza Dickens (6) in St George in Bedminster registration district in Somerset, England. Born in Somerset, England; citing Class HO107, Piece 956, Book 5, Civil Parish St George, County Somerset, Enumeration District 4, Folio 34, Page 23, Line 16, GSU roll 474603.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1841 census Eliza (age 6) was in St George, Somerset, England.<ref>\"1841 England Census,\" database, ({{Ancestry Record|8978|13492512}} : accessed 6 May 2021), Eliza Dickens (6) in St George in Bedminster registration district in Somerset, England. Born in Somerset, England; citing Class HO107, Piece 956, Book 5, Civil Parish St George, County Somerset, Enumeration District 4, Folio 34, Page 23, Line 16, GSU roll 474603.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1841 England Census,\" database, ({{Ancestry Record|8978|13492512}} : accessed 6 May 2021), Eliza Dickens (6) in St George in Bedminster registration district in Somerset, England. Born in Somerset, England; citing Class HO107, Piece 956, Book 5, Civil Parish St George, County Somerset, Enumeration District 4, Folio 34, Page 23, Line 16, GSU roll 474603.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1841 Census'':\n\"1841 England Census\", database, \nClass HO107, Piece 956, Book 5, Civil Parish St George, County Somerset, Enumeration District 4, Folio 34, Page 23, Line 16, GSU roll 474603, \n({{Ancestry Record|8978|13492512}} : accessed 6 May 2021), \nName: Eliza Dicken [Eliza Dickens]; Age: 6; Estimated Birth Year: abt 1835; Gender: Female; Where born: Somerset, England; Civil parish: St George; Hundred: Portbury; County/Island: Somerset; Country: England; Registration District: Bedminster; Sub-registration district: St George; Household Members (Name) Age: John Dicken 26, Elizabeth Dicken 28, Eliza Dicken 6, Thomas Dicken 4, John Dicken 2, Thomas Dicken 23.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1841 census Eliza (age 6) was in St George, Somerset, England.<ref>\n''1841 Census'':\n\"1841 England Census\", database, \nClass HO107, Piece 956, Book 5, Civil Parish St George, County Somerset, Enumeration District 4, Folio 34, Page 23, Line 16, GSU roll 474603, \n({{Ancestry Record|8978|13492512}} : accessed 6 May 2021), \nName: Eliza Dicken [Eliza Dickens]; Age: 6; Estimated Birth Year: abt 1835; Gender: Female; Where born: Somerset, England; Civil parish: St George; Hundred: Portbury; County/Island: Somerset; Country: England; Registration District: Bedminster; Sub-registration district: St George; Household Members (Name) Age: John Dicken 26, Elizabeth Dicken 28, Eliza Dicken 6, Thomas Dicken 4, John Dicken 2, Thomas Dicken 23.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1841 Census'': \"1841 England Census\", database, Class HO107, Piece 956, Book 5, Civil Parish St George, County Somerset, Enumeration District 4, Folio 34, Page 23, Line 16, GSU roll 474603, ({{Ancestry Record|8978|13492512}} : accessed 6 May 2021), Name: Eliza Dicken [Eliza Dickens]; Age: 6; Estimated Birth Year: abt 1835; Gender: Female; Where born: Somerset, England; Civil parish: St George; Hundred: Portbury; County/Island: Somerset; Country: England; Registration District: Bedminster; Sub-registration district: St George; Household Members (Name) Age: John Dicken 26, Elizabeth Dicken 28, Eliza Dicken 6, Thomas Dicken 4, John Dicken 2, Thomas Dicken 23.",
+    "type": "source"
+  }
+}

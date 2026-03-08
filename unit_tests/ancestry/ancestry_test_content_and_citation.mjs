@@ -236,6 +236,11 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8978&h=16161242&tid=&pid=&queryId=1452d1df2d23a3ad7af1da515159f4bf&usePUB=true&_phsrc=ywU8297&_phstart=successSource",
   },
   {
+    // Saved 2026. I was curious where the ED number came from - it is from the Ancstry Source citation.
+    caseName: "england_census_1841_eliza_dicken",
+    url: "https://www.ancestry.com/search/collections/8978/records/13492512?tid=86808578&pid=262157331689&ssrc=pt",
+  },
+  {
     // all of names are user submitted but there is a titleName
     caseName: "england_census_1851_james_pavey",
     url: "https://www.ancestry.com/search/collections/8860/records/5626136?tid=&pid=&queryId=bab4f926-478e-4678-a210-2dc321fba07b&_phsrc=Zqm20883&_phstart=successSource",
