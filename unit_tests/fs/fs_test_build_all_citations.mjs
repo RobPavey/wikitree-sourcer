@@ -361,8 +361,12 @@ const regressionData = [
     ],
   },
   {
-    caseName: "m4qy_n7x_walter_leeke",
-    url: "https://www.familysearch.org/tree/person/details/LJJH-F8B",
+    caseName: "lkbm_zx9_randolph_marsh",
+    url: "https://www.familysearch.org/tree/person/details/LKBM-ZX9",
+  },
+  {
+    caseName: "lr97_hcc_dunmore_dameron",
+    url: "https://www.familysearch.org/en/tree/person/sources/LR97-HCC",
     optionVariants: [
       {
         variantName: "exclude_non_fs_sources",
@@ -373,8 +377,28 @@ const regressionData = [
     ],
   },
   {
-    caseName: "lkbm_zx9_randolph_marsh",
-    url: "https://www.familysearch.org/tree/person/details/LKBM-ZX9",
+    caseName: "lrgq_hdv_rebecca_anglin",
+    url: "https://www.familysearch.org/en/tree/person/sources/LRGQ-HDV",
+    optionVariants: [
+      {
+        variantName: "exclude_non_fs_sources",
+        optionOverrides: {
+          buildAll_fs_excludeNonFsSources: true,
+        },
+      },
+    ],
+  },
+  {
+    caseName: "m4qy_n7x_walter_leeke",
+    url: "https://www.familysearch.org/tree/person/details/LJJH-F8B",
+    optionVariants: [
+      {
+        variantName: "exclude_non_fs_sources",
+        optionOverrides: {
+          buildAll_fs_excludeNonFsSources: true,
+        },
+      },
+    ],
   },
 ];
 

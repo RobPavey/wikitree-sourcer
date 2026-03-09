@@ -146,8 +146,13 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
       }
       let validLinkIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/1\:1\:/);
       if (validLinkIndex == -1) {
-        result.numExcludedNonFsSources++;
-        continue;
+        // it could have a link to an FS image like:
+        // https://www.familysearch.org/ark:/61903/3:1:3Q9M-C37R-S33S-M
+        let validImageIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/3\:1\:/);
+        if (validImageIndex == -1) {
+          result.numExcludedNonFsSources++;
+          continue;
+        }
       }
     }
 
