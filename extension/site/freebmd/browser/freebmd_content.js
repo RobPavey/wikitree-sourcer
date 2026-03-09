@@ -176,10 +176,52 @@ async function doPendingSearch() {
     if (formElement) {
       let searchButtonElement = formElement.querySelector("#search_form_submit");
 
+      // we want to set the type checkbox first so that the fields that appear depending
+      // on the type are visible, so first loop just sets the record type
+
       for (var key in fieldData) {
         //console.log("doPendingSearch: key is: " + key);
 
-        if (key) {
+        if (key && key.startsWith("search_query_bmd_record_type")) {
+          let value = fieldData[key];
+          //console.log("doPendingSearch: value is: " + value);
+
+          if (value !== undefined && value !== "") {
+            let id = key;
+
+            let inputElement = formElement.querySelector("#" + id);
+            //console.log("doPendingSearch: inputElement is:");
+            //console.log(inputElement);
+
+            if (inputElement) {
+              // just setting the value sometimes does not seem to register with the form
+              inputElement.focus();
+
+              if (inputElement.type == "checkbox") {
+                inputElement.checked = value;
+
+                const event = new Event("change", { bubbles: true, cancelable: true });
+                inputElement.dispatchEvent(event);
+              }
+              if (searchButtonElement) {
+                // moves to another input so that this field gets processed
+                searchButtonElement.focus();
+              }
+              mainElement.scrollIntoView(); // so user can see the "please wait" message
+              setSearchingBanner();
+              await sleep(100);
+            } else {
+              inputNotFound = true;
+              break;
+            }
+          }
+        }
+      }
+
+      for (var key in fieldData) {
+        //console.log("doPendingSearch: key is: " + key);
+
+        if (key && !key.startsWith("search_query_bmd_record_type")) {
           let value = fieldData[key];
           //console.log("doPendingSearch: value is: " + value);
 
@@ -199,6 +241,8 @@ async function doPendingSearch() {
                 document.execCommand("insertText", false, value);
               } else if (inputElement.type == "checkbox") {
                 inputElement.checked = value;
+                const event = new Event("change", { bubbles: true, cancelable: true });
+                inputElement.dispatchEvent(event);
               }
               if (searchButtonElement) {
                 // moves to another input so that this field gets processed
