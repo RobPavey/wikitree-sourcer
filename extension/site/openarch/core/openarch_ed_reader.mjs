@@ -419,10 +419,10 @@ class OpenarchEdReader extends ExtractedDataReader {
         age = this.extractA2aFieldByKey(a2aAge, "PersonAgeLiteral");
       }
       if (age) {
-        age = age.replace(/ jaar$/, "");
-        age = age.replace(/\s+jaar/, " years");
-        age = age.replace(/\s+weken/, " weeks");
-        age = age.replace(/\s+dagen/, " days");
+        age = age.replace(/ jaar$/i, "");
+        age = age.replace(/\s+jaar/i, " years");
+        age = age.replace(/\s+weken/i, " weeks");
+        age = age.replace(/\s+dagen/i, " days");
       }
 
       return age;
