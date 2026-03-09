@@ -1499,6 +1499,7 @@ function generalizeData(input) {
     // For example for US SS Death Index it is the last residence place
     if (
       ed.collectionTitle == "United States Social Security Death Index" ||
+      ed.collectionTitle == "United States, Social Security Death Index" ||
       ed.collectionTitle == "United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007" ||
       ed.factType == "SocialProgramCorrespondence"
     ) {
