@@ -1396,10 +1396,14 @@ function detectPageType(document, result, url) {
 
     let citationRecord = document.querySelector(".modalContents #FactEditComponent section.citationRecord");
     let webLinkForm = document.querySelector(".modalContents #webLinkForm");
+    let addSourceCitationForm = document.querySelector(".modalContents #form_AddCitation");
     if (citationRecord) {
       result.pageType = "personSourceCitation";
     } else if (webLinkForm) {
       result.pageType = "personAddWebLink";
+    } else if (addSourceCitationForm) {
+      // this replaces the old way of adding a source - rolled out in February/March 2026
+      result.pageType = "personAddSourceCitation";
     }
   } else if (url.includes("/discoveries") || url.includes("matchdbid=")) {
     result.pageType = "sharingImageOrRecord";

@@ -22,6 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 async function setFields(fieldData, sendResponse) {
   console.log("setFields, fieldData is:");
   console.log(fieldData);
@@ -73,13 +77,111 @@ async function setFields(fieldData, sendResponse) {
     }
   }
 
-  function setValue(nodeSelector, fieldName) {
-    if (fieldData[fieldName]) {
-      let node = document.querySelector(nodeSelector);
-      if (node) {
-        node.value = fieldData[fieldName];
+  async function setSourceSelectOrValue(sourceName) {
+    //console.log("setSourceSelectOrValue, sourceName is:");
+    //console.log(sourceName);
+
+    if (!sourceName) {
+      return;
+    }
+
+    let formElement = document.querySelector("#form_AddCitation");
+    if (!formElement) {
+      return;
+    }
+
+    let activeTab = formElement.querySelector("div.tabContent.active");
+    let selectNode = activeTab.querySelector("#addCitationSourceSelectorId");
+    let isExistingSourceTabActive = false;
+    if (selectNode) {
+      isExistingSourceTabActive = true;
+    } else {
+      selectNode = formElement.querySelector("#addCitationSourceSelectorId");
+      if (!selectNode) {
+        return;
       }
     }
+
+    //console.log("setSourceSelectOrValue, isExistingSourceTabActive = " + isExistingSourceTabActive + ", selectNode is:");
+    //console.log(selectNode);
+
+    if (!isExistingSourceTabActive) {
+      let existingSourceTab = activeTab.nextElementSibling;
+      if (existingSourceTab && existingSourceTab.classList.contains("tabContent")) {
+        let tabButtons = formElement.querySelectorAll("div.tabs > button.tab");
+        if (tabButtons.length == 2) {
+          //console.log("setSourceSelectOrValue, clicking 2nd tab");
+
+          tabButtons[1].click();
+          await sleep(50);
+          selectNode = formElement.querySelector("#addCitationSourceSelectorId");
+        }
+      }
+    }
+
+    let optionNodes = selectNode.querySelectorAll("option");
+    //console.log("setSourceSelectOrValue, optionNodes.length = " + optionNodes.length);
+    let count = 0;
+    while (optionNodes.length == 1 && count < 100) {
+      await sleep(50);
+      selectNode = formElement.querySelector("#addCitationSourceSelectorId");
+      if (selectNode) {
+        optionNodes = selectNode.querySelectorAll("option");
+
+        //console.log("setSourceSelectOrValue, optionNodes.length = " + optionNodes.length);
+      }
+      count++;
+    }
+
+    let matchingOptionNode = null;
+    for (let optionNode of optionNodes) {
+      let optionText = optionNode.textContent.trim();
+      //console.log("setSourceSelectOrValue, optionText is:");
+      //console.log(optionText);
+
+      if (optionText == sourceName) {
+        //console.log("setSourceSelectOrValue, found matching option, value is: " + optionText);
+
+        matchingOptionNode = optionNode;
+        break;
+      }
+    }
+
+    if (matchingOptionNode) {
+      //console.log("setSourceSelectOrValue, setting selectNode value to: " + matchingOptionNode.value);
+      selectNode.value = matchingOptionNode.value;
+      const event = new Event("change", { bubbles: true, cancelable: true });
+      selectNode.dispatchEvent(event);
+    } else {
+      // if we are not on the "Create a new source" tab then switch to it
+      let tabButtons = formElement.querySelectorAll("div.tabs > button.tab");
+      if (tabButtons.length == 2) {
+        let firstTab = tabButtons[0];
+        if (!firstTab.classList.contains("active")) {
+          //console.log("setSourceSelectOrValue, clicking 1st tab");
+          firstTab.click();
+          await sleep(50);
+        }
+      }
+
+      let sourceTitleNode = document.querySelector("#addCitationSourceTitle");
+      if (sourceTitleNode) {
+        sourceTitleNode.value = sourceName;
+      }
+    }
+  }
+
+  function setValueText(nodeSelector, text) {
+    if (text) {
+      let node = document.querySelector(nodeSelector);
+      if (node) {
+        node.value = text;
+      }
+    }
+  }
+
+  function setValue(nodeSelector, fieldName) {
+    setValueText(nodeSelector, fieldData[fieldName]);
   }
 
   function setValueExec(nodeSelector, fieldName) {
@@ -91,6 +193,19 @@ async function setFields(fieldData, sendResponse) {
         document.execCommand("selectAll", false);
         document.execCommand("insertText", false, fieldData[fieldName]);
       }
+    }
+  }
+
+  function setFocusOnSaveButton() {
+    let formElement = document.querySelector("#form_AddCitation");
+    if (!formElement) {
+      return;
+    }
+
+    // set focus on the save button to avoid the help text on the web address being displayed
+    let saveButton = formElement.querySelector("button[name='save']");
+    if (saveButton) {
+      saveButton.focus();
     }
   }
 
@@ -110,6 +225,23 @@ async function setFields(fieldData, sendResponse) {
     setValue("#RepositoryPhone", "phoneNumber");
     setValue("#RepositoryEmail", "email");
     setValue("#RepositoryNote", "note");
+  } else if (fieldData.pageType == "personAddSourceCitation") {
+    console.log("setFields: is new person add source citation");
+    await setSourceSelectOrValue(fieldData.sourceName);
+    let detail = "";
+    if (fieldData.detail) {
+      detail += " " + fieldData.detail;
+    }
+    if (fieldData.text) {
+      detail += " " + fieldData.text;
+    }
+    if (fieldData.date) {
+      detail += " " + fieldData.date;
+    }
+    detail = detail.trim();
+    setValueText("#addCitationDetail", detail);
+    setValueExec("#addCitationUrl", "webAddress");
+    setFocusOnSaveButton();
   } else if (fieldData.pageType == "personAddWebLink") {
     setValueExec("#webLink", "webAddress");
     setValueExec("#webLinkName", "linkName");

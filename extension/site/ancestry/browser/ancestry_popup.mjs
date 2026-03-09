@@ -1029,6 +1029,49 @@ async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citati
         fieldData.note += "Base URL is " + otherSiteData.baseUrl;
       }
     }
+  } else if (pageType == "personAddSourceCitation") {
+    // this is like createCitation but replaced it when Ancestry changed thier site on Feb 2026
+    fieldData.sourceName = getSourceName(gd, otherSiteData);
+    // details is a required field, of there is no sourceReference then the site's buildCitation must
+    // provide a referenceWithinRepository
+    if (citationObject) {
+      if (citationObject.referenceWithinRepository) {
+        fieldData.detail = citationObject.referenceWithinRepository;
+      } else if (citationObject.sourceReference) {
+        fieldData.detail = citationObject.sourceReference;
+      } else fieldData.otherInfo = citationObject.standardDataString;
+      fieldData.webAddress = citationObject.url;
+      if (gd) {
+        fieldData.date = gd.inferEventDate();
+      }
+    } else if (personData && gd) {
+      if (gd.personRepoRef) {
+        fieldData.detail = gd.personRepoRef;
+      }
+      let ed = personData.extractedData;
+      if (ed) {
+        if (ed.url) {
+          fieldData.webAddress = ed.url;
+        }
+      }
+      // generate some text showing name, birth data and death date
+      let text = "";
+      text += gd.inferFullName();
+      let birthDate = gd.inferBirthDate();
+      let deathDate = gd.inferDeathDate();
+      if (birthDate || deathDate) {
+        text += " (";
+        if (birthDate) {
+          text += birthDate;
+        }
+        text += " - ";
+        if (deathDate) {
+          text += deathDate;
+        }
+        text += ")";
+      }
+      fieldData.text = text;
+    }
   } else if (pageType == "personAddWebLink") {
     if (citationObject) {
       fieldData.linkName = citationObject.sourceTitle;
@@ -1454,6 +1497,7 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
     extractedData.pageType == "createCitation" ||
     extractedData.pageType == "createSource" ||
     extractedData.pageType == "createRepository" ||
+    extractedData.pageType == "personAddSourceCitation" ||
     extractedData.pageType == "personAddWebLink"
   ) {
     await addFillCreateCitationMenuItems(menu, data, tabId, backFunction);
