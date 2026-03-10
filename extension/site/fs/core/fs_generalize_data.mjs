@@ -647,13 +647,24 @@ function generalizeDataGivenRecordType(ed, result) {
     result.recordType == RT.DeathRegistration
   ) {
     if (result.role != Role.Parent) {
-      if (ed.father) {
-        let father = result.addFather();
-        setParentFields(father, ed.father);
-      }
-      if (ed.mother) {
-        let mother = result.addMother();
-        setParentFields(mother, ed.mother);
+      if (
+        result.recordType == RT.BirthRegistration &&
+        !ed.father &&
+        ed.mother &&
+        ed.mother.surname &&
+        ed.mother.fullName == ed.mother.surname
+      ) {
+        // special case for birth registration where the mother's maiden name has been used as the mother's name
+        result.mothersMaidenName = ed.mother.surname;
+      } else {
+        if (ed.father) {
+          let father = result.addFather();
+          setParentFields(father, ed.father);
+        }
+        if (ed.mother) {
+          let mother = result.addMother();
+          setParentFields(mother, ed.mother);
+        }
       }
 
       // spouse can be specified on a death record for example
