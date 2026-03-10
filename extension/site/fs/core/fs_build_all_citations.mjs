@@ -37,7 +37,7 @@ import { buildCitation } from "./fs_build_citation.mjs";
 import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
 
 function inferEventDate(source) {
-  // there is no date, this can cause sort issues. Sometime we can infer one
+  // there is no date, this can cause sort issues. Sometimes we can infer one
 
   if (source.notes && source.notes == "Source created by RecordSeek.com") {
     if (source.citation) {
@@ -144,15 +144,19 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
         result.numExcludedNonFsSources++;
         continue;
       }
-      let validLinkIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/1\:1\:/);
+      // records or images are valid
+      let validLinkIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/[13]\:1\:/);
       if (validLinkIndex == -1) {
-        // it could have a link to an FS image like:
-        // https://www.familysearch.org/ark:/61903/3:1:3Q9M-C37R-S33S-M
-        let validImageIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/3\:1\:/);
-        if (validImageIndex == -1) {
-          result.numExcludedNonFsSources++;
-          continue;
-        }
+        result.numExcludedNonFsSources++;
+        continue;
+      }
+    }
+
+    if (options.buildAll_fs_excludeFsImageSources) {
+      let validImageIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/3\:1\:/);
+      if (validImageIndex != -1) {
+        result.numExcludedFsImageSources++;
+        continue;
       }
     }
 

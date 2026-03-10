@@ -386,6 +386,12 @@ const regressionData = [
           buildAll_fs_excludeNonFsSources: true,
         },
       },
+      {
+        variantName: "exclude_fs_image_sources",
+        optionOverrides: {
+          buildAll_fs_excludeFsImageSources: true,
+        },
+      },
     ],
   },
   {

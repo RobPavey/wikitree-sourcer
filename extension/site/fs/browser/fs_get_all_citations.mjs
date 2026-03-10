@@ -108,6 +108,7 @@ async function fsGetAllCitations(input) {
   result.numExcludedOtherRoleSources = 0;
   result.numExcludedDuplicateSources = 0;
   result.numExcludedNonFsSources = 0;
+  result.numExcludedFsImageSources = 0;
   result.numExcludedTreeSources = 0;
 
   // request permission if needed

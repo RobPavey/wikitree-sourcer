@@ -231,7 +231,12 @@ function getExcludedSourcesString(response) {
 
   addMessage(
     response.numExcludedNonFsSources,
-    "due to option settings because there was no valid link to a FamilySearch record."
+    "due to option settings because there was no valid link to a FamilySearch page."
+  );
+
+  addMessage(
+    response.numExcludedFsImageSources,
+    "due to option settings because the link was to a FamilySearch image."
   );
 
   addMessage(
@@ -262,6 +267,7 @@ async function fsBuildAllCitationsAction(data, citationType) {
       let testOptions = await getDefaultOptions();
       testOptions.buildAll_fs_excludeRetiredSources = "never";
       testOptions.buildAll_fs_excludeNonFsSources = false;
+      testOptions.buildAll_fs_excludeFsImageSources = false;
       testOptions.buildAll_fs_excludeOtherRoleSources = false;
       input.options = testOptions;
     }

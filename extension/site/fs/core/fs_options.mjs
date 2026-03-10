@@ -214,7 +214,13 @@ const buildAllCitationsOptionsGroup = {
     {
       optionName: "excludeNonFsSources",
       type: "checkbox",
-      label: "Exclude sources that do not have a valid link to a FamilySearch record",
+      label: "Exclude sources that do not have a valid link to a FamilySearch page",
+      defaultValue: false,
+    },
+    {
+      optionName: "excludeFsImageSources",
+      type: "checkbox",
+      label: "Exclude sources that reference a FamilySearch image page",
       defaultValue: false,
     },
     {
