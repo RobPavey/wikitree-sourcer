@@ -68,7 +68,7 @@ function buildFsRecordLinkOrTemplate(recordUrl) {
   return recordLinkOrTemplate;
 }
 
-function buildFsImageLinkOrTemplate(imageUrl) {
+function buildFsImageLinkOrTemplate(imageUrl, alwaysUseTemplateIfPossible = false) {
   if (!imageUrl) {
     return "";
   }
@@ -76,20 +76,40 @@ function buildFsImageLinkOrTemplate(imageUrl) {
   // start with the old format link and then try to replace with template
   let imageLinkOrTemplate = "[" + imageUrl + " FamilySearch Image]";
 
-  // the recordUrl should look like one of these:
-  // https://www.familysearch.org/ark:/61903/3:1:33S7-9BSH-9W9B?i=7&cc=1473181
-  // https://www.familysearch.org/ark:/61903/3:1:33S7-9P2P-9D2F?i=1179&cc=1307272&personaUrl=%2Fark%3A%2F61903%2F1%3A1%3AXZDY-NHM
-  let imageId = extractIdFromFsUrl(imageUrl, ["ark:/61903/3:1:"], ["/", "?"]);
+  let useTemplateIfPossible = true;
 
-  if (imageId.length > 5) {
-    imageLinkOrTemplate = "{{FamilySearch Image|" + imageId + "}}";
-  } else {
-    // There are also examples like: https://www.familysearch.org/ark:/61903/3:2:77T2-KFDJ
-    imageId = extractIdFromFsUrl(imageUrl, ["ark:/61903/3:2:", "ark:/61903/3:3:", "ark:/61903/3:4:"], ["/", "?"]);
+  if (!alwaysUseTemplateIfPossible) {
+    let urlObj = new URL(imageUrl);
+    if (urlObj.search) {
+      let searchParams = urlObj.searchParams;
+      if (searchParams) {
+        const paramsToKeep = ["groupId", "fullText"];
+        for (let param of paramsToKeep) {
+          if (searchParams.has(param)) {
+            useTemplateIfPossible = false;
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  if (useTemplateIfPossible) {
+    // the recordUrl should look like one of these:
+    // https://www.familysearch.org/ark:/61903/3:1:33S7-9BSH-9W9B?i=7&cc=1473181
+    // https://www.familysearch.org/ark:/61903/3:1:33S7-9P2P-9D2F?i=1179&cc=1307272&personaUrl=%2Fark%3A%2F61903%2F1%3A1%3AXZDY-NHM
+    let imageId = extractIdFromFsUrl(imageUrl, ["ark:/61903/3:1:"], ["/", "?"]);
+
     if (imageId.length > 5) {
-      let secondNumber = imageUrl.replace(/^.*ark:\/61903\/3:(\d):.*$/, "$1");
-      if (secondNumber && secondNumber.length == 1) {
-        imageLinkOrTemplate = "{{FamilySearch Image|" + imageId + "|" + secondNumber + "}}";
+      imageLinkOrTemplate = "{{FamilySearch Image|" + imageId + "}}";
+    } else {
+      // There are also examples like: https://www.familysearch.org/ark:/61903/3:2:77T2-KFDJ
+      imageId = extractIdFromFsUrl(imageUrl, ["ark:/61903/3:2:", "ark:/61903/3:3:", "ark:/61903/3:4:"], ["/", "?"]);
+      if (imageId.length > 5) {
+        let secondNumber = imageUrl.replace(/^.*ark:\/61903\/3:(\d):.*$/, "$1");
+        if (secondNumber && secondNumber.length == 1) {
+          imageLinkOrTemplate = "{{FamilySearch Image|" + imageId + "|" + secondNumber + "}}";
+        }
       }
     }
   }

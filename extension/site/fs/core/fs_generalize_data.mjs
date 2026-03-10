@@ -1074,7 +1074,7 @@ function addWtSearchTemplates(ed, result) {
     }
     addLinkOrTemplate(wtTemplates, buildFsRecordLinkOrTemplate(recordUrl));
 
-    addLinkOrTemplate(wtTemplatesRelated, buildFsImageLinkOrTemplate(ed.fsImageUrl));
+    addLinkOrTemplate(wtTemplatesRelated, buildFsImageLinkOrTemplate(ed.fsImageUrl, true));
 
     if (ed.collectionTitle == "Find A Grave Index") {
       let memorialId = ed.externalRecordId;
@@ -1083,7 +1083,7 @@ function addWtSearchTemplates(ed, result) {
       }
     }
   } else if (ed.pageType == "image") {
-    addLinkOrTemplate(wtTemplates, buildFsImageLinkOrTemplate(ed.url));
+    addLinkOrTemplate(wtTemplates, buildFsImageLinkOrTemplate(ed.url, true));
   }
 
   if (ed.digitalArtifact) {
