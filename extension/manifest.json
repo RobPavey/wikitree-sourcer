@@ -67,7 +67,8 @@
         "*://*.ancestrylibraryedition.co.uk/*",
         "*://*.ancestrylibrary.ca/*",
         "*://*.ancestrylibrary.com.au/*",
-        "*://*.ancestryheritagequest.com/*"
+        "*://*.ancestryheritagequest.com/*",
+        "*://www-ancestryinstitution-com.wikipedialibrary.idm.oclc.org/*"
       ],
       "run_at": "document_idle",
       "js": [
@@ -705,7 +706,8 @@
         "*://*.ancestrylibraryedition.co.uk/*",
         "*://*.ancestrylibrary.ca/*",
         "*://*.ancestrylibrary.com.au/*",
-        "*://*.ancestryheritagequest.com/*"
+        "*://*.ancestryheritagequest.com/*",
+        "*://www-ancestryinstitution-com.wikipedialibrary.idm.oclc.org/*"
       ]
     },
     {
