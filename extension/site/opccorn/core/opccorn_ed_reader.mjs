@@ -187,8 +187,11 @@ const typeData = {
 };
 
 class OpccornEdReader extends ExtractedDataReader {
-  constructor(ed) {
+  constructor(ed, primaryPersonIndex) {
     super(ed);
+
+    this.primaryPersonIndex = primaryPersonIndex;
+
     this.urlRecordType = "unknown";
     this.typeData = typeData[this.urlRecordType];
 
@@ -243,6 +246,16 @@ class OpccornEdReader extends ExtractedDataReader {
   // Helper functions
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  isPrimaryTheSecond() {
+    let result = false;
+
+    if (this.primaryPersonIndex == 1) {
+      result = true;
+    }
+
+    return result;
+  }
+
   cleanLastName(nameString) {
     let cleanName = nameString;
 
@@ -293,8 +306,13 @@ class OpccornEdReader extends ExtractedDataReader {
     let surname = "";
 
     if (this.recordType == RT.Marriage) {
-      forename = this.ed.recordData["Groom Fn"];
-      surname = this.ed.recordData["Groom Sn"];
+      if (this.isPrimaryTheSecond()) {
+        forename = this.ed.recordData["Bride Fn"];
+        surname = this.ed.recordData["Bride Sn"];
+      } else {
+        forename = this.ed.recordData["Groom Fn"];
+        surname = this.ed.recordData["Groom Sn"];
+      }
     } else {
       forename = this.ed.recordData["Forename"];
       surname = this.ed.recordData["Surname"];
@@ -310,8 +328,8 @@ class OpccornEdReader extends ExtractedDataReader {
   getGender() {
     let gender = "";
 
-    switch (this.urlRecordType) {
-      case "baptisms":
+    switch (this.recordType) {
+      case RT.Baptism:
         {
           let sex = this.ed.recordData["Sex"];
           if (sex) {
@@ -321,6 +339,15 @@ class OpccornEdReader extends ExtractedDataReader {
             } else if (lcSex == "dau") {
               gender == "female";
             }
+          }
+        }
+        break;
+      case RT.Marriage:
+        {
+          if (this.isPrimaryTheSecond()) {
+            return "female";
+          } else {
+            return "male";
           }
         }
         break;
@@ -562,7 +589,11 @@ class OpccornEdReader extends ExtractedDataReader {
     let age = "";
 
     if (this.recordType == RT.Marriage) {
-      age = this.ed.recordData["Groom Age"];
+      if (this.isPrimaryTheSecond()) {
+        age = this.ed.recordData["Bride Age"];
+      } else {
+        age = this.ed.recordData["Groom Age"];
+      }
     } else {
       age = this.ed.recordData["Age"];
     }
@@ -594,8 +625,29 @@ class OpccornEdReader extends ExtractedDataReader {
       let eventDateObj = this.getEventDateObj();
       let eventPlaceObj = this.getEventPlaceObj();
 
+      let parents = undefined;
+      let age = this.ed.recordData["Bride Age"];
+      if (this.isPrimaryTheSecond()) {
+        forename = this.ed.recordData["Groom Fn"];
+        surname = this.ed.recordData["Groom Sn"];
+        age = this.ed.recordData["Groom Age"];
+        let fatherNameObj = this.makeNameObjFromFullName(this.ed.recordData["Groom Father Name"]);
+        if (fatherNameObj) {
+          parents = { father: { name: fatherNameObj } };
+        }
+      } else {
+        let fatherNameObj = this.makeNameObjFromFullName(this.ed.recordData["Bride Father Name"]);
+        if (fatherNameObj) {
+          parents = { father: { name: fatherNameObj } };
+        }
+      }
+
       let nameObj = this.makeNameObjFromForenamesAndLastName(forename, this.cleanLastName(surname));
-      let spouseObj = this.makeSpouseObj(nameObj, eventDateObj, eventPlaceObj, this.ed.recordData["Bride Age"]);
+
+      let spouseObj = this.makeSpouseObj(nameObj, eventDateObj, eventPlaceObj, age);
+      if (parents) {
+        spouseObj.parents = parents;
+      }
       if (spouseObj) {
         spouses = [spouseObj];
       }
@@ -606,9 +658,14 @@ class OpccornEdReader extends ExtractedDataReader {
   getParents() {
     let parents = undefined;
 
-    if (this.urlRecordType == "marriages") {
-      let fatherName = this.ed.recordData["Groom Father Name"];
-      parents = this.makeParentsFromFatherFullName(fatherName);
+    if (this.recordType == RT.Marriage) {
+      if (this.isPrimaryTheSecond()) {
+        let fatherName = this.ed.recordData["Bride Father Name"];
+        parents = this.makeParentsFromFatherFullName(fatherName);
+      } else {
+        let fatherName = this.ed.recordData["Groom Father Name"];
+        parents = this.makeParentsFromFatherFullName(fatherName);
+      }
     } else {
       let fatherForename = this.ed.recordData["Father Forename"];
       let fatherSurname = this.ed.recordData["Father Surname"];
@@ -617,6 +674,39 @@ class OpccornEdReader extends ExtractedDataReader {
       parents = this.makeParentsFromForenamesAndLastNames(fatherForename, fatherSurname, motherForename, motherSurname);
     }
     return parents;
+  }
+
+  getPrimaryPersonOptions() {
+    if (this.recordType == RT.Marriage) {
+      let groomForename = this.ed.recordData["Groom Fn"];
+      let groomSurname = this.cleanLastName(this.ed.recordData["Groom Sn"]);
+      let brideForename = this.ed.recordData["Bride Fn"];
+      let brideSurname = this.cleanLastName(this.ed.recordData["Bride Sn"]);
+
+      function makeFullName(givenName, familyName) {
+        let fullName = "";
+        if (givenName) {
+          fullName += givenName;
+        }
+        if (familyName) {
+          if (fullName) {
+            fullName += " ";
+          }
+          fullName += familyName;
+        }
+        return fullName;
+      }
+
+      let groomName = makeFullName(groomForename, groomSurname);
+      let brideName = makeFullName(brideForename, brideSurname);
+
+      if (brideName && groomName) {
+        let options = [groomName + " (groom)", brideName + " (bride)"];
+        return options;
+      }
+    }
+
+    return undefined;
   }
 
   setCustomFields(gd) {

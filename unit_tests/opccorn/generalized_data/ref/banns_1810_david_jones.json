@@ -7,6 +7,7 @@
     "lastName": "Jones",
     "forenames": "David"
   },
+  "personGender": "male",
   "eventDate": {
     "yearString": "1810",
     "dateString": "23 Dec 1810"
@@ -32,6 +33,10 @@
         "country": "England"
       }
     }
+  ],
+  "primaryPersonOptions": [
+    "David Jones (groom)",
+    "Ann Tucker (bride)"
   ],
   "hasValidData": true
 }
