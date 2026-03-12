@@ -62,6 +62,12 @@ function putNewLoadedOptionsSetInOptions(options, optionsSet, prefix) {
   }
 }
 
+// With radix 16 total estimatedBytes is: 13711
+// With radix 36 total estimatedBytes is: 13463
+// So it is not that significant but every bit helps!
+const compressedKeyPartIndexRadix = 36;
+const compressedValueIndexRadix = 36;
+
 function loadCompressedOptions(items) {
   let loadedOptions = {};
 
@@ -86,7 +92,7 @@ function loadCompressedOptions(items) {
       let compressedKeyParts = compressedKey.split("_");
       let key = prefix;
       for (let compressedPart of compressedKeyParts) {
-        let keyLookupIndex = parseInt(compressedPart, 16);
+        let keyLookupIndex = parseInt(compressedPart, compressedKeyPartIndexRadix);
         let part = keyLookupTable[keyLookupIndex];
         if (part === undefined) {
           console.log("ERROR: key part not found in lookup table: " + compressedValue);
@@ -94,7 +100,7 @@ function loadCompressedOptions(items) {
           key += "_" + part;
         }
       }
-      let valueLookupIndex = parseInt(compressedValue, 16);
+      let valueLookupIndex = parseInt(compressedValue, compressedValueIndexRadix);
       let jsonValue = valueLookupTable[valueLookupIndex];
       if (jsonValue === undefined) {
         console.log("ERROR: value not found in lookup table: " + compressedValue);
@@ -205,7 +211,7 @@ function convertOptionsObjectToSaveFormatCompressed(options) {
       if (newKey) {
         newKey += "_";
       }
-      newKey += partNum.toString(16);
+      newKey += partNum.toString(compressedKeyPartIndexRadix);
     }
     return newKey;
   }
@@ -219,7 +225,7 @@ function convertOptionsObjectToSaveFormatCompressed(options) {
       lookupIndex = valueLookupTable.length;
       valueLookupTable.push(value);
     }
-    let newValue = lookupIndex.toString(16);
+    let newValue = lookupIndex.toString(compressedValueIndexRadix);
     return newValue;
   }
 
