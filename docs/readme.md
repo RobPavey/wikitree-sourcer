@@ -35,7 +35,7 @@ The [Google Javascript Style Guide](https://google.github.io/styleguide/jsguide.
 There are three variants of the extension:
 
 - Chrome, this is the main development version
-- Firefox, there is a separate folder browser_variants/firefox. The only file that is different is the manifest. There is a script `build_firefox.js` that copies all the extension files here for local testing and builds a .zip file for releasing.
+- Firefox, there is a separate folder browser_variants/firefox. The only file that is different is the manifest. There is a script `build_firefox.js` that copies all the extension files here for local testing and builds a .zip file for releasing. On Windows, you might need to call `build_firefox.js` with 7z as command line parameter after making sure that the 7zip program folder is in your PATH.
 - Safari, there is an App that points to the same extension source as the Chrome version. Except for the manifest file which is different.
 
 ## Guides for developers

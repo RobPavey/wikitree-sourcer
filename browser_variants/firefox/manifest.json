@@ -68,7 +68,8 @@
         "*://*.ancestrylibraryedition.co.uk/*",
         "*://*.ancestrylibrary.ca/*",
         "*://*.ancestrylibrary.com.au/*",
-        "*://*.ancestryheritagequest.com/*"
+        "*://*.ancestryheritagequest.com/*",
+        "*://www-ancestryinstitution-com.wikipedialibrary.idm.oclc.org/*"
       ],
       "run_at": "document_idle",
       "js": [
@@ -230,7 +231,8 @@
         "*://*.findmypast.co.uk/*",
         "*://*.findmypast.ie/*",
         "*://*.findmypast.com.au/*",
-        "*://www-findmypast-co-uk.nls.idm.oclc.org/*"
+        "*://www-findmypast-co-uk.nls.idm.oclc.org/*",
+        "*://www-findmypast-com.wikipedialibrary.idm.oclc.org/*"
       ],
       "run_at": "document_idle",
       "js": [
@@ -713,7 +715,8 @@
         "*://*.ancestrylibraryedition.co.uk/*",
         "*://*.ancestrylibrary.ca/*",
         "*://*.ancestrylibrary.com.au/*",
-        "*://*.ancestryheritagequest.com/*"
+        "*://*.ancestryheritagequest.com/*",
+        "*://www-ancestryinstitution-com.wikipedialibrary.idm.oclc.org/*"
       ]
     },
     {
@@ -862,7 +865,8 @@
         "*://*.findmypast.co.uk/*",
         "*://*.findmypast.ie/*",
         "*://*.findmypast.com.au/*",
-        "*://www-findmypast-co-uk.nls.idm.oclc.org/*"
+        "*://www-findmypast-co-uk.nls.idm.oclc.org/*",
+        "*://www-findmypast-com.wikipedialibrary.idm.oclc.org/*"
       ]
     },
     {
