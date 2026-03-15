@@ -12,7 +12,8 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "test": "node scripts/run_test.js"
+    "test": "node scripts/run_test.js",
+	  "zip-n-run-firefox (Windows)": "node ./scripts/build_firefox.js 7z && \"C:\\Program Files\\Mozilla Firefox\\firefox.exe\" \"about:debugging#/runtime/this-firefox\""
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
