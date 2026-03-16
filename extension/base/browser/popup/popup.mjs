@@ -25,11 +25,11 @@ SOFTWARE.
 import { popupState, progressState } from "./popup_state.mjs";
 import { separateUrlIntoParts } from "./popup_utils.mjs";
 import { isSafari } from "/base/browser/common/browser_check.mjs";
+import { checkPermissionForSites } from "./popup_permissions.mjs";
 
 import {
   setPopupMenuWidth,
   beginMainMenu,
-  addMenuItem,
   endMainMenu,
   addItalicMessageMenuItem,
   addMenuDivider,
@@ -40,7 +40,6 @@ import {
   addOptionsMenuItem,
   addHelpMenuItem,
   addBuyMeACoffeeMenuItem,
-  closePopup,
 } from "./popup_menu_building.mjs";
 
 import { addStandardMenuEnd, addShowCitationAssistantMenuItem } from "/base/browser/popup/popup_menu_blocks.mjs";
@@ -211,7 +210,7 @@ function doesUrlMatchPattern(urlParts, patternParts) {
   }
 }
 
-function determineSiteNameForTab(activeTab) {
+async function determineSiteNameForTab(activeTab) {
   let manifest = chrome.runtime.getManifest();
 
   // Note: the url and pendingUrl properties will be ignored unless the extsnion has the "tabs" permission
@@ -235,8 +234,8 @@ function determineSiteNameForTab(activeTab) {
   let contentScripts = manifest.content_scripts;
 
   for (let contentScript of contentScripts) {
-    //console.log("contentScript.matches = ")
-    //console.log(contentScript.matches)
+    //console.log("contentScript.matches = ");
+    //console.log(contentScript.matches);
 
     for (let match of contentScript.matches) {
       let matchParts = separateUrlIntoParts(match);
@@ -256,6 +255,65 @@ function determineSiteNameForTab(activeTab) {
             if (suffixIndex != -1) {
               let siteName = lastScript.substring(lastSlashIndex + 1, suffixIndex);
               return siteName;
+            }
+          }
+        }
+
+        console.log(
+          "WikiTree Sourcer: determineSiteNameForTab. Tab matches content script but could not get site name. Content script is:"
+        );
+        console.log("match pattern is: " + match);
+        return "unknown";
+      }
+    }
+  }
+
+  let dynamicScripts = await chrome.scripting.getRegisteredContentScripts();
+  for (let contentScript of dynamicScripts) {
+    //console.log("contentScript.matches = ");
+    //console.log(contentScript.matches);
+
+    for (let match of contentScript.matches) {
+      let matchParts = separateUrlIntoParts(match);
+
+      let doesTabMatch = doesUrlMatchPattern(urlParts, matchParts);
+
+      if (doesTabMatch) {
+        // found match, get siteName from the last script name
+        let scripts = contentScript.js;
+        if (scripts && scripts.length > 0) {
+          let lastScript = scripts[scripts.length - 1];
+          // example: "site/fs/browser/fs_content.js"
+          let lastSlashIndex = lastScript.lastIndexOf("/");
+          if (lastSlashIndex != -1) {
+            const suffix = "_content.js";
+            let suffixIndex = lastScript.indexOf(suffix, lastSlashIndex);
+            if (suffixIndex != -1) {
+              let siteName = lastScript.substring(lastSlashIndex + 1, suffixIndex);
+
+              // we have a content script dynamically registered for the site.
+
+              if (await chrome.permissions.contains({ origins: contentScript.matches })) {
+                // extension already has permission, no need to ask user
+                return siteName;
+              }
+
+              // ask user for permission
+              const checkPermissionsOptions = {
+                reason: "The extension needs to load a content script.",
+                needsPopupDisplayed: true,
+              };
+              if (await checkPermissionForSites(contentScript.matches, checkPermissionsOptions)) {
+                // permission was granted but the content script will not be retroactively loaded
+                // so we load it manually
+
+                await chrome.scripting.executeScript({
+                  target: { tabId: activeTab.id },
+                  files: scripts,
+                });
+
+                return siteName;
+              }
             }
           }
         }
@@ -397,7 +455,7 @@ async function initPopupGivenActiveTab(activeTab) {
   }
 
   // this will be empty string if not a supported page
-  let siteName = determineSiteNameForTab(activeTab);
+  let siteName = await determineSiteNameForTab(activeTab);
 
   if (!siteName) {
     // the url will be blank if we don't have permission to the tab so we can't get site name

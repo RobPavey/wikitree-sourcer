@@ -24,6 +24,8 @@ SOFTWARE.
 
 import { setupContextMenu } from "./background_context_menu.mjs";
 import { messageHandler } from "./background_common.mjs";
+import { registerContentScripts } from "./background_content_scripts.mjs";
 
 chrome.runtime.onMessage.addListener(messageHandler);
+chrome.runtime.onInstalled.addListener(registerContentScripts);
 setupContextMenu();
