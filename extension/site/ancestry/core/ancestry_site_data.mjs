@@ -25,6 +25,35 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "ancestry",
+  matches: [
+    "*://*.ancestry.com/*",
+    "*://*.ancestry.co.uk/*",
+    "*://*.ancestry.ca/*",
+    "*://*.ancestry.com.au/*",
+    "*://*.ancestry.de/*",
+    "*://*.ancestry.it/*",
+    "*://*.ancestry.fr/*",
+    "*://*.ancestry.se/*",
+    "*://*.ancestry.mx/*",
+    "*://*.ancestryclassroom.com/*",
+    "*://*.ancestryclassroom.co.uk/*",
+    "*://*.ancestryclassroom.ca/*",
+    "*://*.ancestryclassroom.com.au/*",
+    "*://*.ancestryinstitution.com/*",
+    "*://*.ancestryinstitution.co.uk/*",
+    "*://*.ancestryinstitution.ca/*",
+    "*://*.ancestryinstitution.com.au/*",
+    "*://*.ancestryinstitution.de/*",
+    "*://*.ancestryinstitution.fr/*",
+    "*://*.ancestryinstitution.se/*",
+    "*://*.ancestrylibrary.com/*",
+    "*://*.ancestrylibraryedition.co.uk/*",
+    "*://*.ancestrylibrary.ca/*",
+    "*://*.ancestrylibrary.com.au/*",
+    "*://*.ancestryheritagequest.com/*",
+    "*://www-ancestryinstitution-com.wikipedialibrary.idm.oclc.org/*",
+  ],
   repositoryName: "Ancestry",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +62,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("ancestry", siteData);
+  registerSite(siteData);
 }
 
 register();

@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "ppnz",
+  matches: ["*://paperspast.natlib.govt.nz/*"],
   repositoryName: "Papers Past (NZ)",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("ppnz", siteData);
+  registerSite(siteData);
 }
 
 register();

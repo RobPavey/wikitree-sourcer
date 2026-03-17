@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "openarch",
+  matches: ["*://*.openarchieven.nl/*"],
+  runAt: "document_end",
   repositoryName: "Open Archives (Netherlands)",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("openarch", siteData);
+  registerSite(siteData);
 }
 
 register();

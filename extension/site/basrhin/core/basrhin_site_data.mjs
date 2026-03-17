@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "basrhin",
+  matches: ["*://archives67.alsace.eu/ark:/*"],
   repositoryName: "Archives d'Alsace Site de Strasbourg",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("basrhin", siteData);
+  registerSite(siteData);
 }
 
 register();

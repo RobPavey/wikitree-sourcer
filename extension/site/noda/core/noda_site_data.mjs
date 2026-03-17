@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "noda",
+  matches: ["*://*.digitalarkivet.no/*"],
+  runAt: "document_end",
   repositoryName: "Digitalarkivet (Norway)",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("noda", siteData);
+  registerSite(siteData);
 }
 
 register();

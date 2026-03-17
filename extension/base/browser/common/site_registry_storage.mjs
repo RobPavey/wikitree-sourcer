@@ -22,6 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// This handles access to the siteRegistry.
+// Because the siteRegistry is created i the background context, but also accesed in the popup
+// context we store it in extension local storage.
+
 import { getSiteRegistry, setSiteRegistry } from "../../core/site_registry.mjs";
 
 async function storeSiteRegistry() {

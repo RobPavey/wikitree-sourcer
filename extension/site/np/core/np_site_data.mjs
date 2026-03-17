@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "np",
+  matches: ["*://*.newspapers.com/*"],
+  runAt: "document_end",
   repositoryName: "Newspapers.com",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("np", siteData);
+  registerSite(siteData);
 }
 
 register();

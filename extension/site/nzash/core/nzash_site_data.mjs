@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "nzash",
+  matches: ["*://*.howison.co.nz/*"],
   repositoryName: "NZ Ancestor Search Helper",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("nzash", siteData);
+  registerSite(siteData);
 }
 
 register();

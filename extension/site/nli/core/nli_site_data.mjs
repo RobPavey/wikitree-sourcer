@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "nli",
+  matches: ["*://*.nli.ie/*"],
+  runAt: "document_end",
   repositoryName: "The National Library of Ireland",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("nli", siteData);
+  registerSite(siteData);
 }
 
 register();

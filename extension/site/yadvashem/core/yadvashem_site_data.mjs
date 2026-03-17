@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "yadvashem",
+  matches: ["*://*.yadvashem.org/*"],
   repositoryName: "Yad Vashem",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("yadvashem", siteData);
+  registerSite(siteData);
 }
 
 register();

@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "vicbdm",
+  matches: ["*://*.bdm.vic.gov.au/*"],
   repositoryName: "Births Deaths and Marriages Victoria (Australia)",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("vicbdm", siteData);
+  registerSite(siteData);
 }
 
 register();

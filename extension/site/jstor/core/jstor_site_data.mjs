@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "jstor",
+  matches: ["*://*.jstor.org/*"],
   repositoryName: "JSTOR",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("jstor", siteData);
+  registerSite(siteData);
 }
 
 register();

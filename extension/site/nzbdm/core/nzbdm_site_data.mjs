@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "nzbdm",
+  matches: ["*://*.bdmhistoricalrecords.dia.govt.nz/*"],
   repositoryName: "New Zealand BDM",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("nzbdm", siteData);
+  registerSite(siteData);
 }
 
 register();

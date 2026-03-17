@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// We tried making these dynamic imports using the siteNames list.
+// We tried making these dynamic imports using a siteNames list.
 // But dynamic imports throw an error when used from a service worker.
 // The options are used in the background script - there is a "getOptions"
 // message that can be sent to the background from a content script.

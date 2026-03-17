@@ -25,12 +25,22 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "dfgviewer",
+  matches: [
+    "*://dfg-viewer.de/*",
+    "*://digitales-archiv.erzbistum-muenchen.de/*",
+    "*://www.gda.bayern.de/*",
+    "*://www.arcinsys.niedersachsen.de/*",
+    "*://arcinsys.hessen.de/*",
+    "*://www.landesarchiv-nrw.de/*",
+  ],
+  runAt: "document_end",
   repositoryName: "DFG Viewer",
   baseUrl: "https://dfg-viewer.de",
 };
 
 function register() {
-  registerSite("dfgviewer", siteData);
+  registerSite(siteData);
 }
 
 register();

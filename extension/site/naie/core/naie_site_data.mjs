@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "naie",
+  matches: ["*://*.nationalarchives.ie/*"],
+  runAt: "document_end",
   repositoryName: "The National Archives of Ireland",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("naie", siteData);
+  registerSite(siteData);
 }
 
 register();

@@ -25,6 +25,15 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "fmp",
+  matches: [
+    "*://*.findmypast.com/*",
+    "*://*.findmypast.co.uk/*",
+    "*://*.findmypast.ie/*",
+    "*://*.findmypast.com.au/*",
+    "*://www-findmypast-co-uk.nls.idm.oclc.org/*",
+    "*://www-findmypast-com.wikipedialibrary.idm.oclc.org/*",
+  ],
   repositoryName: "Findmypast",
   usPhoneNumber: "(855)246-8234",
   email: "support@findmypast.co.uk",
@@ -33,7 +42,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("fmp", siteData);
+  registerSite(siteData);
 }
 
 register();

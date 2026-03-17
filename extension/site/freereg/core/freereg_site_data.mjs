@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "freereg",
+  matches: ["*://www.freereg.org.uk/*"],
+  runAt: "document_end",
   repositoryName: "FreeReg",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("freereg", siteData);
+  registerSite(siteData);
 }
 
 register();

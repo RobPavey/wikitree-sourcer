@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "fg",
+  matches: ["*://www.findagrave.com/*"],
+  runAt: "document_end",
   repositoryName: "Find a Grave",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("fg", siteData);
+  registerSite(siteData);
 }
 
 register();

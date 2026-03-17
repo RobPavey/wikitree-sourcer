@@ -25,6 +25,7 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "wikitree",
   matches: ["*://*.wikitree.com/*"],
   repositoryName: "WikiTree",
   usPhoneNumber: "",
@@ -35,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("wikitree", siteData);
+  registerSite(siteData);
 }
 
 register();

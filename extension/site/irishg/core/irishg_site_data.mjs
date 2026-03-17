@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "irishg",
+  matches: ["*://*.irishgenealogy.ie/*"],
+  runAt: "document_end",
   repositoryName: "IrishGenealogy.ie",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("irishg", siteData);
+  registerSite(siteData);
 }
 
 register();

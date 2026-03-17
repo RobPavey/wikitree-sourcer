@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "taslib",
+  matches: ["*://librariestas.ent.sirsidynix.net.au/*"],
   repositoryName: "Libraries Tasmania",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("taslib", siteData);
+  registerSite(siteData);
 }
 
 register();

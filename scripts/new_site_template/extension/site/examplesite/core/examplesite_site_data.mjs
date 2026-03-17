@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "examplesite",
+  matches: [exampleSiteUrlMatchString],
   repositoryName: "ExampleSite",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("examplesite", siteData);
+  registerSite(siteData);
 }
 
 register();

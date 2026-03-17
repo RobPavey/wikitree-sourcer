@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "ushmm",
+  matches: ["*://*.ushmm.org/*"],
   repositoryName: "United States Holocaust Memorial Museum",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("ushmm", siteData);
+  registerSite(siteData);
 }
 
 register();

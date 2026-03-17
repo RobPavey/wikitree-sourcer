@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "scotp",
+  matches: ["*://www.scotlandspeople.gov.uk/*"],
+  runAt: "document_end",
   repositoryName: "ScotlandsPeople",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("scotp", siteData);
+  registerSite(siteData);
 }
 
 register();

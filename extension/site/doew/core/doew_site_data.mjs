@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "doew",
+  matches: ["*://www.doew.at/*"],
   repositoryName: "Dokumentationsarchiv des österreichischen Widerstandes",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("doew", siteData);
+  registerSite(siteData);
 }
 
 register();

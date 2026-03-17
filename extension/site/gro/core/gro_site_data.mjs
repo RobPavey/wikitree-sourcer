@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "gro",
+  matches: ["*://www.gro.gov.uk/gro/content/certificates/*"],
   repositoryName: "UK General Registry Office",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("gro", siteData);
+  registerSite(siteData);
 }
 
 register();

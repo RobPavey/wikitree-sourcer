@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "arolsenarchives",
+  matches: ["*://collections.arolsen-archives.org/*", "*://collections-server.arolsen-archives.org/*"],
   repositoryName: "Arolsen Archives",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("arolsenarchives", siteData);
+  registerSite(siteData);
 }
 
 register();

@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "hathi",
+  matches: ["*://*.hathitrust.org/*"],
   repositoryName: "HathiTrust Digital Library",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("hathi", siteData);
+  registerSite(siteData);
 }
 
 register();

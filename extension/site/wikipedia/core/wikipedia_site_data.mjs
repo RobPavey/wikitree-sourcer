@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "wikipedia",
+  matches: ["*://*.wikipedia.org/*"],
   repositoryName: "Wikipedia",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("wikipedia", siteData);
+  registerSite(siteData);
 }
 
 register();

@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "trove",
+  matches: ["*://trove.nla.gov.au/*"],
   repositoryName: "Trove (National Library of Australia)",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("trove", siteData);
+  registerSite(siteData);
 }
 
 register();

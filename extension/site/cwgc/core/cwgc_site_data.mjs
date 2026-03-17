@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "cwgc",
+  matches: ["*://*.cwgc.org/*"],
+  runAt: "document_end",
   repositoryName: "Commonwealth War Graves Commission",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("cwgc", siteData);
+  registerSite(siteData);
 }
 
 register();

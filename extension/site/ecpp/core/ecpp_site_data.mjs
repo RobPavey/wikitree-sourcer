@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "ecpp",
+  matches: ["*://ecpp.ucr.edu/*"],
   repositoryName: "ECPP",
   usPhoneNumber: "",
   email: "",
@@ -35,7 +37,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("ecpp", siteData);
+  registerSite(siteData);
 }
 
 register();

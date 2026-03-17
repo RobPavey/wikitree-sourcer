@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "nswbdm",
+  matches: ["*://*.bdm.nsw.gov.au/*"],
   repositoryName: "New South Wales BDM (Aus)",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("nswbdm", siteData);
+  registerSite(siteData);
 }
 
 register();

@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "szukaj",
+  matches: ["*://www.szukajwarchiwach.gov.pl/*"],
   repositoryName: "Szukaj w Archiwach",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("szukaj", siteData);
+  registerSite(siteData);
 }
 
 register();

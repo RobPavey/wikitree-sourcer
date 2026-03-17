@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "opccorn",
+  matches: ["*://*.cornwall-opc-database.org/*"],
+  runAt: "document_end",
   repositoryName: "Cornwall OPC Database",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("opccorn", siteData);
+  registerSite(siteData);
 }
 
 register();

@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "baclac",
+  matches: ["*://*.bac-lac.gc.ca/*"],
   repositoryName: "Canada Library and Archives",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("baclac", siteData);
+  registerSite(siteData);
 }
 
 register();

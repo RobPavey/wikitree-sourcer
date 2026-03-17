@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "matricula",
+  matches: ["*://data.matricula-online.eu/*"],
   repositoryName: "Matricula",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("matricula", siteData);
+  registerSite(siteData);
 }
 
 register();

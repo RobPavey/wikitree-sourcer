@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "panb",
+  matches: ["*://archives2.gnb.ca/*"],
   repositoryName: "New Brunswick Provincial Archives",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("panb", siteData);
+  registerSite(siteData);
 }
 
 register();

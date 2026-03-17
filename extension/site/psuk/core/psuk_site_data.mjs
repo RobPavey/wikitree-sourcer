@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "psuk",
+  matches: ["*://probatesearch.service.gov.uk/*"],
   repositoryName: "Probate Search/Find a will (UK)",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("psuk", siteData);
+  registerSite(siteData);
 }
 
 register();

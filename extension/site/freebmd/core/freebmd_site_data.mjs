@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "freebmd",
+  matches: ["*://*.freebmd.org.uk/*", "*://*.freebmd2.org.uk/*"],
+  runAt: "document_end",
   repositoryName: "FreeBMD",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("freebmd", siteData);
+  registerSite(siteData);
 }
 
 register();

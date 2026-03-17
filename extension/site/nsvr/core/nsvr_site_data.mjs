@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "nsvr",
+  matches: ["*://archives.novascotia.ca/vital-statistics/*"],
+  runAt: "document_end",
   repositoryName: "Nova Scotia Vital Records",
   usPhoneNumber: "(902) 424-6060",
   email: "archives$novascotia.ca",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("nsvr", siteData);
+  registerSite(siteData);
 }
 
 register();

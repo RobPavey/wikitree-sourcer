@@ -25,6 +25,11 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "sosmogov",
+  matches: [
+    "*://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/*",
+    "*://s1.sos.mo.gov/records/archives/archivesmvc/deathcertificates*",
+  ],
   repositoryName: "Missouri State Archives",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +38,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("sosmogov", siteData);
+  registerSite(siteData);
 }
 
 register();

@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "morbihan",
+  matches: ["*://rechercher.patrimoines-archives.morbihan.fr/ark:/*"],
   repositoryName: "Archives Départementales du Morbihan",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("morbihan", siteData);
+  registerSite(siteData);
 }
 
 register();

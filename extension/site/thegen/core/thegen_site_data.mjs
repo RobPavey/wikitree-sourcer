@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "thegen",
+  matches: ["*://*.thegenealogist.com/*", "*://*.thegenealogist.co.uk/*"],
   repositoryName: "The Genealogist",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("thegen", siteData);
+  registerSite(siteData);
 }
 
 register();

@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "fs",
+  matches: ["*://www.familysearch.org/*"],
   repositoryName: "FamilySearch",
   usPhoneNumber: "(866)406-1830",
   email: "nasupport@familysearch.org",
@@ -34,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("fs", siteData);
+  registerSite(siteData);
 }
 
 register();

@@ -329,6 +329,9 @@ function contentMessageListener(
     // All content scripts implement this so that the popup script can print to the content console
     console.log(request.message);
     sendResponse();
+  } else if (request.type == "ping") {
+    // can be used to test if the content script is loaded
+    sendResponse();
   }
 
   // if we were going to respond async we would return true here. But in current design

@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "bg",
+  matches: ["*://*.billiongraves.com/*"],
   repositoryName: "BillionGraves",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("bg", siteData);
+  registerSite(siteData);
 }
 
 register();

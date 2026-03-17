@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "archive",
+  matches: ["*://archive.org/*"],
   repositoryName: "Internet Archive",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("archive", siteData);
+  registerSite(siteData);
 }
 
 register();

@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "ausmem",
+  matches: ["*://*.auschwitz.org/*"],
   repositoryName: "Auschwitz Memorial",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("ausmem", siteData);
+  registerSite(siteData);
 }
 
 register();

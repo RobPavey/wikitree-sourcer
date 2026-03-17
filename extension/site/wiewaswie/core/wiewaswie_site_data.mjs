@@ -25,6 +25,8 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "wiewaswie",
+  matches: ["*://www.wiewaswie.nl/*"],
   repositoryName: "WieWasWie (Netherlands)",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +35,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("wiewaswie", siteData);
+  registerSite(siteData);
 }
 
 register();

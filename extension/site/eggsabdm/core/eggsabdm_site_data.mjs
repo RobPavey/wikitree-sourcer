@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "eggsabdm",
+  matches: ["*://*.eggsa.org/bdms/*", "*://www.eggsa.org/cgi-bin/*"],
+  runAt: "document_end",
   repositoryName: "eGGSA BDM",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("eggsabdm", siteData);
+  registerSite(siteData);
 }
 
 register();

@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "freecen",
+  matches: ["*://www.freecen.org.uk/*"],
+  runAt: "document_end",
   repositoryName: "FreeCen",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("freecen", siteData);
+  registerSite(siteData);
 }
 
 register();

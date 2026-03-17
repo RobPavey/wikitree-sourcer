@@ -25,6 +25,9 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "eggsagrvs",
+  matches: ["*://graves.eggsa.org/*", "*://www.graves.eggsa.org/*"],
+  runAt: "document_end",
   repositoryName: "eGGSA Graves",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +36,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("eggsagrvs", siteData);
+  registerSite(siteData);
 }
 
 register();
