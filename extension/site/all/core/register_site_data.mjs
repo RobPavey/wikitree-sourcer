@@ -32,6 +32,7 @@ import { siteNames } from "./site_names.mjs";
 
 var isSiteDataRegistered = false;
 async function registerSiteData() {
+  console.log("registerSiteData: isSiteDataRegistered = " + isSiteDataRegistered);
   if (isSiteDataRegistered) {
     return;
   }
@@ -40,12 +41,17 @@ async function registerSiteData() {
     try {
       // Note: Using chrome.runtime.getURL is considered "sanitizing" the pathName
       // so it avoids a validation warning for Firefox
+      console.log("registerSiteData: full pathname = " + chrome.runtime.getURL(pathName));
+
       let module = await import(chrome.runtime.getURL(pathName));
       if (module) {
         module.register();
       }
     } catch (error) {
-      //console.log("registerSiteData: error importing site data for " + siteName);
+      console.log("registerSiteData: error importing site data for " + siteName);
+      console.log("registerSiteData: full pathname = " + chrome.runtime.getURL(pathName));
+      console.log("registerSiteData: error is:");
+      console.log(error);
     }
   }
 

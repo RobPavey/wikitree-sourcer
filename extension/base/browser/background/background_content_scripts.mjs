@@ -22,6 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { siteNames } from "../../../site/all/core/site_names.mjs";
+import { getSiteDataForSite } from "../../core/site_registry.mjs";
+
 // Note this could be defined in <site>_site_data
 var siteDetails = [
   {
@@ -35,25 +38,31 @@ async function registerContentScripts() {
 
   let scripts = [];
 
-  for (let site of siteDetails) {
-    let id = site.id;
-    let contentScriptPath = "site/" + id + "/browser/" + id + "_content.js";
-    let js = [commonPath, contentScriptPath];
-    let runAt = "document_idle";
-    if (site.runAt) {
-      runAt = site.runAt;
-    }
+  for (const siteName of siteNames) {
+    let siteData = await getSiteDataForSite(siteName);
 
-    let script = { id: id, matches: site.matches, js: js, runAt };
-    scripts.push(script);
+    if (siteData) {
+      let matches = siteData.matches;
+      if (matches) {
+        let id = siteName;
+        let contentScriptPath = "site/" + id + "/browser/" + id + "_content.js";
+        let js = [commonPath, contentScriptPath];
+        let runAt = "document_idle";
+        if (siteData.runAt) {
+          runAt = siteData.runAt;
+        }
+
+        let script = { id: id, matches: matches, js: js, runAt };
+        scripts.push(script);
+      }
+    }
   }
-  //console.log("registerContentScripts: about to call chrome.scripting.registerContentScripts, scripts is:");
-  //console.log(scripts);
+
+  console.log("registerContentScripts: about to call chrome.scripting.registerContentScripts, scripts is:");
+  console.log(scripts);
 
   try {
-    let result = await chrome.scripting.registerContentScripts(scripts);
-    //console.log("registerContentScripts: result is:");
-    //console.log(result);
+    await chrome.scripting.registerContentScripts(scripts);
   } catch (error) {
     console.log("registerContentScripts: chrome.scripting.registerContentScripts, caught exception. error is:");
     console.log(error);

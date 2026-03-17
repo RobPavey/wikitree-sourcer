@@ -25,6 +25,7 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  matches: ["*://*.wikitree.com/*"],
   repositoryName: "WikiTree",
   usPhoneNumber: "",
   email: "",

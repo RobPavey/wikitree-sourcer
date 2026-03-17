@@ -37,19 +37,30 @@ var siteRegistry = {};
 var areSitesRegistered = false;
 
 function registerSite(siteName, siteData) {
-  //console.log("registerSite: siteData is:");
-  //console.log(siteData);
+  console.log("registerSite: siteData is:");
+  console.log(siteData);
 
   siteRegistry[siteName] = siteData;
+
+  console.log("registerSite: siteRegistry is:");
+  console.log(siteRegistry);
 }
 
 async function getSiteDataForSite(siteName) {
-  await registerSiteData();
+  console.log("getSiteDataForSite: areSitesRegistered is: " + areSitesRegistered);
 
-  areSitesRegistered = true;
+  if (!areSitesRegistered) {
+    await registerSiteData();
 
-  //console.log("getSiteDataForSite: siteRegistry is:");
-  //console.log(siteRegistry);
+    areSitesRegistered = true;
+
+    console.log("getSiteDataForSite: siteRegistry is:");
+    console.log(siteRegistry);
+  }
+
+  if (!siteRegistry[siteName]) {
+    console.log("getSiteDataForSite: not siteData found for site " + siteName);
+  }
 
   return siteRegistry[siteName];
 }

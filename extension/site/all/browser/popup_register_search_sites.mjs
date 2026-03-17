@@ -30,7 +30,7 @@ import { siteNames } from "../core/site_names.mjs";
 // so the order of imports here does not affect that - unless two sites have the same
 // priority set, in that case the order of import would probably control their order
 
-async function importOptions() {
+async function importSearchPopups() {
   for (const siteName of siteNames) {
     const pathName = "site/" + siteName + "/browser/" + siteName + "_popup_search.mjs";
     // Note: Using chrome.runtime.getURL is considered "sanitizing" the pathName
@@ -39,4 +39,4 @@ async function importOptions() {
   }
 }
 
-await importOptions();
+await importSearchPopups();
