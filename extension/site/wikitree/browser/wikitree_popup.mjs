@@ -73,7 +73,7 @@ import { GenderUtils } from "../../../base/core/gender_utils.mjs";
 
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
-import { getSiteDataForSite } from "/base/core/site_registry.mjs";
+import { getSiteDataForSite } from "/base/browser/common/site_registry_storage.mjs";
 
 async function checkIfWeHavePermissionsToUseApi(checkOnly) {
   const checkPermissionsOptions = {

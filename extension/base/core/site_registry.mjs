@@ -30,26 +30,31 @@ SOFTWARE.
 // get more info about the site. This was initially added so that we can create
 // a repository on Ancestry and fill out the fields in the form.
 
-var siteRegistry = {};
+var siteRegistry = undefined;
 
 function registerSite(siteName, siteData) {
-  console.log("registerSite: siteData is:");
-  console.log(siteData);
-  console.log("registerSite: siteRegistry is:");
-  console.log(siteRegistry);
+  //console.log("registerSite: siteData is:");
+  //console.log(siteData);
+
+  //console.log("registerSite: siteRegistry is:");
+  //console.log(siteRegistry);
+
+  if (!siteRegistry) {
+    siteRegistry = {};
+  }
 
   siteRegistry[siteName] = siteData;
 
-  console.log("registerSite: siteRegistry is:");
-  console.log(siteRegistry);
+  //console.log("registerSite: siteRegistry is:");
+  //console.log(siteRegistry);
 }
 
-async function getSiteDataForSite(siteName) {
-  if (!siteRegistry[siteName]) {
-    console.log("getSiteDataForSite: not siteData found for site " + siteName);
-  }
-
-  return siteRegistry[siteName];
+function getSiteRegistry() {
+  return siteRegistry;
 }
 
-export { registerSite, getSiteDataForSite };
+function setSiteRegistry(newSiteRegistry) {
+  siteRegistry = newSiteRegistry;
+}
+
+export { registerSite, getSiteRegistry, setSiteRegistry };

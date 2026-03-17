@@ -36,6 +36,9 @@ import { clearCitation } from "/base/browser/popup/popup_citation.mjs";
 
 import { addShowCitationAssistantMenuItem } from "/base/browser/popup/popup_menu_blocks.mjs";
 
+import { siteNames } from "/site/all/core/site_names.mjs";
+import { getSiteDataForSite } from "/base/browser/common/site_registry_storage.mjs";
+
 /**
  * Temporary workaround for secondary monitors on MacOS where redraws don't happen
  * @See https://bugs.chromium.org/p/chromium/issues/detail?id=971701
@@ -1782,6 +1785,39 @@ async function clearLocalStorage() {
   chrome.storage.local.clear();
 }
 
+async function removeAllSitePermissions() {
+  let oldPermissions = await chrome.permissions.getAll();
+  console.log("removeAllSitePermissions: oldPermissions is:");
+  console.log(oldPermissions);
+
+  for (const siteName of siteNames) {
+    let siteData = await getSiteDataForSite(siteName);
+
+    if (siteData) {
+      if (siteData.matches) {
+        let permission = {
+          origins: siteData.matches,
+        };
+
+        let hasPermission = await chrome.permissions.contains(permission);
+        if (hasPermission) {
+          console.log("removeAllSitePermissions: site " + siteName + " has permission, removing.");
+          await chrome.permissions.remove(permission);
+
+          hasPermission = await chrome.permissions.contains(permission);
+          console.log("removeAllSitePermissions: site " + siteName + " now hasPermission = " + hasPermission);
+        }
+      }
+    } else {
+      console.log("removeAllSitePermissions: site " + siteName + " has no siteData.");
+    }
+  }
+
+  let newPermissions = await chrome.permissions.getAll();
+  console.log("removeAllSitePermissions: newPermissions is:");
+  console.log(newPermissions);
+}
+
 function keepPopupOpenForDebug() {
   keepPopupOpen = true;
 }
@@ -1827,6 +1863,10 @@ function setupDebugSubmenuMenu(data, backFunction) {
   });
   addMenuItem(menu, "Clear ALL local storage for extension", function (element) {
     clearLocalStorage();
+  });
+
+  addMenuItem(menu, "Remove all site permissions", function (element) {
+    removeAllSitePermissions();
   });
 
   if (!keepPopupOpen) {

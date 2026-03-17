@@ -95,7 +95,7 @@ import { RT } from "../../../base/core/record_type.mjs";
 
 import { GeneralizedData } from "/base/core/generalize_data_utils.mjs";
 
-import { getSiteDataForSite } from "/base/core/site_registry.mjs";
+import { getSiteDataForSite } from "/base/browser/common/site_registry_storage.mjs";
 
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 
