@@ -36,4 +36,4 @@ function register() {
   registerSite("wikipedia", siteData);
 }
 
-export { register };
+register();

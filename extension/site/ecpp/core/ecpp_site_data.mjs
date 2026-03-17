@@ -38,4 +38,4 @@ function register() {
   registerSite("ecpp", siteData);
 }
 
-export { register };
+register();

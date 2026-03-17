@@ -36,4 +36,4 @@ function register() {
   registerSite("panb", siteData);
 }
 
-export { register };
+register();

@@ -36,4 +36,4 @@ function register() {
   registerSite("basrhin", siteData);
 }
 
-export { register };
+register();

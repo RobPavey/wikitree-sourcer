@@ -36,4 +36,4 @@ function register() {
   registerSite("ancestry", siteData);
 }
 
-export { register };
+register();

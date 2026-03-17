@@ -36,4 +36,4 @@ function register() {
   registerSite("trove", siteData);
 }
 
-export { register };
+register();

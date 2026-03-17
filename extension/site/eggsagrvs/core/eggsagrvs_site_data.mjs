@@ -36,4 +36,4 @@ function register() {
   registerSite("eggsagrvs", siteData);
 }
 
-export { register };
+register();

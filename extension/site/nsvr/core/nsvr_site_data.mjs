@@ -36,4 +36,4 @@ function register() {
   registerSite("nsvr", siteData);
 }
 
-export { register };
+register();

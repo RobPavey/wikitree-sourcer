@@ -36,4 +36,4 @@ function register() {
   registerSite("morbihan", siteData);
 }
 
-export { register };
+register();

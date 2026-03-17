@@ -36,4 +36,4 @@ function register() {
   registerSite("bg", siteData);
 }
 
-export { register };
+register();

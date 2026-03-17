@@ -36,4 +36,4 @@ function register() {
   registerSite("jstor", siteData);
 }
 
-export { register };
+register();

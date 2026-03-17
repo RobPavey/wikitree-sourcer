@@ -38,4 +38,4 @@ function register() {
   registerSite("wikitree", siteData);
 }
 
-export { register };
+register();

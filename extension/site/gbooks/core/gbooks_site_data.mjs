@@ -36,4 +36,4 @@ function register() {
   registerSite("gbooks", siteData);
 }
 
-export { register };
+register();

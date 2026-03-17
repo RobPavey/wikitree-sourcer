@@ -36,4 +36,4 @@ function register() {
   registerSite("freecen", siteData);
 }
 
-export { register };
+register();

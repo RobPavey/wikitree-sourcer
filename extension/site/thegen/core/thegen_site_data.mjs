@@ -36,4 +36,4 @@ function register() {
   registerSite("thegen", siteData);
 }
 
-export { register };
+register();

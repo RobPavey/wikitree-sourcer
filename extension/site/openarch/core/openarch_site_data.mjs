@@ -36,4 +36,4 @@ function register() {
   registerSite("openarch", siteData);
 }
 
-export { register };
+register();

@@ -36,4 +36,4 @@ function register() {
   registerSite("nswbdm", siteData);
 }
 
-export { register };
+register();

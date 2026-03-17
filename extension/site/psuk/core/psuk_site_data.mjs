@@ -36,4 +36,4 @@ function register() {
   registerSite("psuk", siteData);
 }
 
-export { register };
+register();

@@ -36,4 +36,4 @@ function register() {
   registerSite("ameranc", siteData);
 }
 
-export { register };
+register();

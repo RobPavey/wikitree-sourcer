@@ -36,4 +36,4 @@ function register() {
   registerSite("freereg", siteData);
 }
 
-export { register };
+register();

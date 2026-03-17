@@ -36,4 +36,4 @@ function register() {
   registerSite("ausmem", siteData);
 }
 
-export { register };
+register();

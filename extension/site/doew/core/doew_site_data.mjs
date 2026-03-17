@@ -36,4 +36,4 @@ function register() {
   registerSite("doew", siteData);
 }
 
-export { register };
+register();

@@ -33,4 +33,4 @@ function register() {
   registerSite("dfgviewer", siteData);
 }
 
-export { register };
+register();

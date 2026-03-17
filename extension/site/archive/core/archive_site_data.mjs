@@ -36,4 +36,4 @@ function register() {
   registerSite("archive", siteData);
 }
 
-export { register };
+register();

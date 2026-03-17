@@ -36,4 +36,4 @@ function register() {
   registerSite("gro", siteData);
 }
 
-export { register };
+register();

@@ -36,4 +36,4 @@ function register() {
   registerSite("archion", siteData);
 }
 
-export { register };
+register();

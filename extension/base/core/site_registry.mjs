@@ -30,15 +30,13 @@ SOFTWARE.
 // get more info about the site. This was initially added so that we can create
 // a repository on Ancestry and fill out the fields in the form.
 
-import { registerSiteData } from "../../site/all/core/register_site_data.mjs";
-
 var siteRegistry = {};
-
-var areSitesRegistered = false;
 
 function registerSite(siteName, siteData) {
   console.log("registerSite: siteData is:");
   console.log(siteData);
+  console.log("registerSite: siteRegistry is:");
+  console.log(siteRegistry);
 
   siteRegistry[siteName] = siteData;
 
@@ -47,17 +45,6 @@ function registerSite(siteName, siteData) {
 }
 
 async function getSiteDataForSite(siteName) {
-  console.log("getSiteDataForSite: areSitesRegistered is: " + areSitesRegistered);
-
-  if (!areSitesRegistered) {
-    await registerSiteData();
-
-    areSitesRegistered = true;
-
-    console.log("getSiteDataForSite: siteRegistry is:");
-    console.log(siteRegistry);
-  }
-
   if (!siteRegistry[siteName]) {
     console.log("getSiteDataForSite: not siteData found for site " + siteName);
   }

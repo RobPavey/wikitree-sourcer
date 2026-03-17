@@ -36,4 +36,4 @@ function register() {
   registerSite("taslib", siteData);
 }
 
-export { register };
+register();

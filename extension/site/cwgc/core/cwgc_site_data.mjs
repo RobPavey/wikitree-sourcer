@@ -36,4 +36,4 @@ function register() {
   registerSite("cwgc", siteData);
 }
 
-export { register };
+register();

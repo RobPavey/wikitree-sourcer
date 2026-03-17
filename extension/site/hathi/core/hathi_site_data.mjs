@@ -36,4 +36,4 @@ function register() {
   registerSite("hathi", siteData);
 }
 
-export { register };
+register();

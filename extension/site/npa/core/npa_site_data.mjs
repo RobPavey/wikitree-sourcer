@@ -36,4 +36,4 @@ function register() {
   registerSite("npa", siteData);
 }
 
-export { register };
+register();

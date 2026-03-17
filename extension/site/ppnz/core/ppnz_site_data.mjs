@@ -36,4 +36,4 @@ function register() {
   registerSite("ppnz", siteData);
 }
 
-export { register };
+register();

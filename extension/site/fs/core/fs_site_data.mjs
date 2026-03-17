@@ -37,4 +37,4 @@ function register() {
   registerSite("fs", siteData);
 }
 
-export { register };
+register();

@@ -36,4 +36,4 @@ function register() {
   registerSite("irishg", siteData);
 }
 
-export { register };
+register();

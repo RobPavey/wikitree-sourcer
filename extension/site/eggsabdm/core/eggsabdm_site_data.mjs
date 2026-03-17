@@ -36,4 +36,4 @@ function register() {
   registerSite("eggsabdm", siteData);
 }
 
-export { register };
+register();

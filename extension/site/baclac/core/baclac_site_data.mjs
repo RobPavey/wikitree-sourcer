@@ -36,4 +36,4 @@ function register() {
   registerSite("baclac", siteData);
 }
 
-export { register };
+register();

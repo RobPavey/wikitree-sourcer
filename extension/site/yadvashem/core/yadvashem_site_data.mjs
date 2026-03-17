@@ -36,4 +36,4 @@ function register() {
   registerSite("yadvashem", siteData);
 }
 
-export { register };
+register();

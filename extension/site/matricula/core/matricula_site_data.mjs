@@ -36,4 +36,4 @@ function register() {
   registerSite("matricula", siteData);
 }
 
-export { register };
+register();

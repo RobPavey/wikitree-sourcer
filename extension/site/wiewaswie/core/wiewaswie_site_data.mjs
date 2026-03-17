@@ -36,4 +36,4 @@ function register() {
   registerSite("wiewaswie", siteData);
 }
 
-export { register };
+register();

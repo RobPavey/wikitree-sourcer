@@ -36,4 +36,4 @@ function register() {
   registerSite("noda", siteData);
 }
 
-export { register };
+register();

@@ -36,4 +36,4 @@ function register() {
   registerSite("freebmd", siteData);
 }
 
-export { register };
+register();

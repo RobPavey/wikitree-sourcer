@@ -36,4 +36,4 @@ function register() {
   registerSite("nzash", siteData);
 }
 
-export { register };
+register();

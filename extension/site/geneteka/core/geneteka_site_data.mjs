@@ -36,4 +36,4 @@ function register() {
   registerSite("geneteka", siteData);
 }
 
-export { register };
+register();

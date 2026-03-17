@@ -36,4 +36,4 @@ function register() {
   registerSite("arolsenarchives", siteData);
 }
 
-export { register };
+register();

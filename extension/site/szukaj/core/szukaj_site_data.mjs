@@ -36,4 +36,4 @@ function register() {
   registerSite("szukaj", siteData);
 }
 
-export { register };
+register();

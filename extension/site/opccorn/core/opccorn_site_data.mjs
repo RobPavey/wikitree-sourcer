@@ -36,4 +36,4 @@ function register() {
   registerSite("opccorn", siteData);
 }
 
-export { register };
+register();

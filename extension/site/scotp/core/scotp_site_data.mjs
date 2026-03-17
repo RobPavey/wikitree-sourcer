@@ -36,4 +36,4 @@ function register() {
   registerSite("scotp", siteData);
 }
 
-export { register };
+register();

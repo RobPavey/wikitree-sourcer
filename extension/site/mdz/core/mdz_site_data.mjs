@@ -36,4 +36,4 @@ function register() {
   registerSite("mdz", siteData);
 }
 
-export { register };
+register();

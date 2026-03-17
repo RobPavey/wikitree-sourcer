@@ -36,4 +36,4 @@ function register() {
   registerSite("nzbdm", siteData);
 }
 
-export { register };
+register();

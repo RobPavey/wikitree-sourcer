@@ -36,4 +36,4 @@ function register() {
   registerSite("nli", siteData);
 }
 
-export { register };
+register();

@@ -36,4 +36,4 @@ function register() {
   registerSite("sosmogov", siteData);
 }
 
-export { register };
+register();
