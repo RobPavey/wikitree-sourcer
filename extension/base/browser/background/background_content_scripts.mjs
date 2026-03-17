@@ -22,16 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import "../../../site/all/core/register_site_data.mjs";
 import { siteNames } from "../../../site/all/core/site_names.mjs";
 import { getSiteDataForSite } from "../../core/site_registry.mjs";
-
-// Note this could be defined in <site>_site_data
-var siteDetails = [
-  {
-    id: "wikitree",
-    matches: ["*://*.wikitree.com/*"],
-  },
-];
 
 async function registerContentScripts() {
   let commonPath = "base/browser/content/content_common.js";
