@@ -42,7 +42,6 @@ import {
   generalizeData,
   regeneralizeDataWithLinkedRecords,
 } from "../../extension/site/ancestry/core/ancestry_generalize_data.mjs";
-import { extractData } from "../../extension/site/ancestry/core/ancestry_extract_data.mjs";
 
 import {
   buildSourcerCitation,
@@ -50,6 +49,8 @@ import {
   filterSourceIdsToSources,
   setUrlStart,
 } from "../../extension/site/ancestry/core/ancestry_build_all_citations.mjs";
+
+import { loadExtractDataInWrapper } from "../test_utils/test_extract_data_utils.mjs";
 
 function testLinkedHouseholdRecords(source, savedData, options) {
   let gd = source.generalizedData;
@@ -181,6 +182,7 @@ function extractDataFromHtml(htmlText, url) {
 
   let result = undefined;
   try {
+    let extractData = loadExtractDataInWrapper("./extension/site/ancestry/core/ancestry_extract_data.mjs");
     result = extractData(doc, url);
   } catch (e) {
     console.log("Error:", e.stack);

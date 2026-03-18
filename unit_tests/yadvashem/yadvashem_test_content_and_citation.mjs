@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/yadvashem/core/yadvashem_extract_data.mjs";
 import { generalizeData } from "../../extension/site/yadvashem/core/yadvashem_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/yadvashem/core/yadvashem_build_citation.mjs";
 
@@ -33,20 +32,20 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 const regressionData = [
   {
     caseName: "16214105_01",
-    url: "https://collections.yadvashem.org/en/names/16214105"
+    url: "https://collections.yadvashem.org/en/names/16214105",
   },
   {
     caseName: "16214105_02",
-    url: "https://collections.yadvashem.org/en/names/16214105"
+    url: "https://collections.yadvashem.org/en/names/16214105",
   },
   {
     caseName: "1812937",
-    url: "https://collections.yadvashem.org/en/names/1812937"
-  }
+    url: "https://collections.yadvashem.org/en/names/1812937",
+  },
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("yadvashem", extractData, regressionData, testManager);
+  await runExtractDataTests("yadvashem", regressionData, testManager);
 
   await runGeneralizeDataTests("yadvashem", generalizeData, regressionData, testManager);
 

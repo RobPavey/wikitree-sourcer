@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/basrhin/core/basrhin_extract_data.mjs";
 import { generalizeData } from "../../extension/site/basrhin/core/basrhin_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/basrhin/core/basrhin_build_citation.mjs";
 
@@ -345,7 +344,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("basrhin", extractData, regressionData, testManager);
+  await runExtractDataTests("basrhin", regressionData, testManager);
 
   await runGeneralizeDataTests("basrhin", generalizeData, regressionData, testManager);
 

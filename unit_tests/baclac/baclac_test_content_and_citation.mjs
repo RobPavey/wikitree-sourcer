@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/baclac/core/baclac_extract_data.mjs";
 import { generalizeData } from "../../extension/site/baclac/core/baclac_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/baclac/core/baclac_build_citation.mjs";
 
@@ -216,7 +215,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("baclac", extractData, regressionData, testManager);
+  await runExtractDataTests("baclac", regressionData, testManager);
 
   await runGeneralizeDataTests("baclac", generalizeData, regressionData, testManager);
 

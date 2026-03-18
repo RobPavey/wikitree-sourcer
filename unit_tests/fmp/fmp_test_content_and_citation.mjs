@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/fmp/core/fmp_extract_data.mjs";
 import { generalizeData } from "../../extension/site/fmp/core/fmp_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/fmp/core/fmp_build_citation.mjs";
 import { buildHouseholdTable } from "../../extension/base/core/table_builder.mjs";
@@ -512,7 +511,7 @@ const optionVariants = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("fmp", extractData, regressionData, testManager);
+  await runExtractDataTests("fmp", regressionData, testManager);
 
   await runGeneralizeDataTests("fmp", generalizeData, regressionData, testManager);
 

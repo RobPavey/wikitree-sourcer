@@ -30,10 +30,10 @@ import { writeTestOutputFile, removeStaleOutputFiles } from "../test_utils/ref_f
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
 
-import { extractData } from "../../extension/site/arolsenarchives/core/arolsenarchives_extract_data.mjs";
 import { generalizeData } from "../../extension/site/arolsenarchives/core/arolsenarchives_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/arolsenarchives/core/arolsenarchives_build_citation.mjs";
 
+import { loadExtractDataInWrapper } from "../test_utils/test_extract_data_utils.mjs";
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 import { url } from "inspector";
@@ -42,10 +42,13 @@ function testEnabled(parameters, testName) {
   return parameters.testName == "" || parameters.testName == testName;
 }
 
-async function runExtractDataTests(siteName, extractDataFunction, regressionData, testManager, cleanStaleFiles = true) {
+async function runExtractDataTests(siteName, regressionData, testManager, cleanStaleFiles = true) {
   if (!testEnabled(testManager.parameters, "extract")) {
     return;
   }
+
+  const extractDataFile = "./extension/site/" + siteName + "/core/" + siteName + "_extract_data.mjs";
+  const extractDataFunction = loadExtractDataInWrapper(extractDataFile);
 
   let testName = siteName + "_extract_data";
 
@@ -221,8 +224,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
     result.person_data_list = metadata?.d;
     if (testData.primaryPersonIndex) {
       result.primaryPersonIndex = testData.primaryPersonIndex;
-    }
-    else if (result.person_data_list && result.person_data_list.length == 1) {
+    } else if (result.person_data_list && result.person_data_list.length == 1) {
       result.person_data = result.person_data_list[0];
     }
 
@@ -281,7 +283,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("arolsenarchives", extractData, regressionData, testManager);
+  await runExtractDataTests("arolsenarchives", regressionData, testManager);
 
   await runGeneralizeDataTests("arolsenarchives", generalizeData, regressionData, testManager);
 

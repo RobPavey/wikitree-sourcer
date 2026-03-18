@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/wikitree/core/wikitree_extract_data.mjs";
 import { generalizeData } from "../../extension/site/wikitree/core/wikitree_generalize_data.mjs";
 
 import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
@@ -279,7 +278,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("wikitree", extractData, regressionData, testManager);
+  await runExtractDataTests("wikitree", regressionData, testManager);
 
   await runGeneralizeDataTests("wikitree", generalizeData, regressionData, testManager);
 }

@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/np/core/np_extract_data.mjs";
 import { generalizeData } from "../../extension/site/np/core/np_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/np/core/np_build_citation.mjs";
 
@@ -67,7 +66,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("np", extractData, regressionData, testManager);
+  await runExtractDataTests("np", regressionData, testManager);
   await runGeneralizeDataTests("np", generalizeData, regressionData, testManager);
 
   const functions = { buildCitation: buildCitation };

@@ -111,4 +111,4 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
   return result;
 }
 
-export { extractDataFromFetch };
+// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper

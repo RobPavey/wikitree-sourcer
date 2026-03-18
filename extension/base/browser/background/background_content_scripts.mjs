@@ -43,8 +43,9 @@ async function registerContentScripts() {
       let matches = siteData.matches;
       if (matches) {
         let id = siteName;
+        let extractPath = "site/" + id + "/core/" + id + "_extract_data.mjs";
         let contentScriptPath = "site/" + id + "/browser/" + id + "_content.js";
-        let js = [commonPath, contentScriptPath];
+        let js = [extractPath, commonPath, contentScriptPath];
         let runAt = "document_idle";
         if (siteData.runAt) {
           runAt = siteData.runAt;
@@ -135,6 +136,8 @@ async function registerContentScripts() {
             } catch (error) {
               if (error.message.includes("error page")) {
                 console.warn(`Tab ${tab.id} is showing a browser error/resubmit page. Skipping injection.`);
+                console.log("tab is:");
+                console.log(tab);
               } else {
                 console.error(`Actual injection error on tab ${tab.id}:`, error);
                 console.log("tab is:");

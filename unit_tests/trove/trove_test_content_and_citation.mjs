@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/trove/core/trove_extract_data.mjs";
 import { generalizeData } from "../../extension/site/trove/core/trove_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/trove/core/trove_build_citation.mjs";
 
@@ -57,7 +56,7 @@ const optionVariants = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("trove", extractData, regressionData, testManager);
+  await runExtractDataTests("trove", regressionData, testManager);
 
   await runGeneralizeDataTests("trove", generalizeData, regressionData, testManager);
 

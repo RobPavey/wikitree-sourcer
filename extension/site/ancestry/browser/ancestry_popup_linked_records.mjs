@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractRecord } from "../core/ancestry_extract_data.mjs";
+import { extractRecordWrapper } from "../core/ancestry_extract_data_wrapper.mjs";
 
 import { getExtractedDataFromRecordUrl } from "./ancestry_url_to_ed.mjs";
 
@@ -46,7 +46,9 @@ function extractDataFromHtml(htmlText, recordUrl) {
   extractedData.url = recordUrl;
   extractedData.pageType = "record";
 
-  extractRecord(document, recordUrl, extractedData);
+  let filePath = "site/ancestry/core/ancestry_extract_data.mjs";
+  let extensionPath = chrome.runtime.getURL(filePath);
+  extractRecordWrapper(extensionPath, document, recordUrl, extractedData);
   return extractedData;
 }
 

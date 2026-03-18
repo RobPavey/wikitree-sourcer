@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractDataFromFetch } from "../../extension/site/openarch/core/openarch_extract_data.mjs";
 import { generalizeData } from "../../extension/site/openarch/core/openarch_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/openarch/core/openarch_build_citation.mjs";
 
@@ -114,7 +113,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("openarch", extractDataFromFetch, regressionData, testManager);
+  await runExtractDataTests("openarch", regressionData, testManager, true);
 
   await runGeneralizeDataTests("openarch", generalizeData, regressionData, testManager);
 

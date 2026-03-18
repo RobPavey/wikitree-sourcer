@@ -34,7 +34,7 @@ function extractData(document, url) {
   if (url.match("collections.yadvashem.org/[a-z]{2}/names/")) {
     result.success = true;
     result.fields = {};
-    
+
     const record_rows = document.querySelectorAll(".record_row");
     for (const record of record_rows) {
       let key = record.querySelector(".names_details_title");
@@ -43,8 +43,7 @@ function extractData(document, url) {
         key = key.textContent.toLowerCase().trim();
         if (!result.fields[key]) {
           result.fields[key] = value.textContent.trim();
-        }
-        else {
+        } else {
           result.fields[key] += " " + value.textContent.trim();
         }
       }
@@ -72,4 +71,4 @@ function extractData(document, url) {
   return result;
 }
 
-export { extractData };
+// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper

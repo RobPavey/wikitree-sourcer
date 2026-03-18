@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/nzash/core/nzash_extract_data.mjs";
 import { generalizeData } from "../../extension/site/nzash/core/nzash_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/nzash/core/nzash_build_citation.mjs";
 
@@ -38,7 +37,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("nzash", extractData, regressionData, testManager);
+  await runExtractDataTests("nzash", regressionData, testManager);
 
   await runGeneralizeDataTests("nzash", generalizeData, regressionData, testManager);
 

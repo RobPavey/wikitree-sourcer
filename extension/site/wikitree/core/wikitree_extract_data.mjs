@@ -1999,4 +1999,4 @@ function extractData(document, url) {
 
 //console.log("extract_data_wikitree loaded");
 
-export { extractData };
+// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper

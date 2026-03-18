@@ -23,13 +23,13 @@ SOFTWARE.
 */
 
 const keyTranslation = {
-  "vorname": "first name",
-  "nachname": "last name",
-  "geburtstag": "date of birth",
-  "geburtsort": "place of birth",
-  "todestag": "date of death",
-  "todesort": "place of death",
-}
+  vorname: "first name",
+  nachname: "last name",
+  geburtstag: "date of birth",
+  geburtsort: "place of birth",
+  todestag: "date of death",
+  todesort: "place of death",
+};
 
 function extractData(document, url) {
   var result = {};
@@ -61,4 +61,4 @@ function extractData(document, url) {
   return result;
 }
 
-export { extractData };
+// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper

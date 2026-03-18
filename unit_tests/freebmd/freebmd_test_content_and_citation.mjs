@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/freebmd/core/freebmd_extract_data.mjs";
 import { generalizeData } from "../../extension/site/freebmd/core/freebmd_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/freebmd/core/freebmd_build_citation.mjs";
 
@@ -87,7 +86,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("freebmd", extractData, regressionData, testManager);
+  await runExtractDataTests("freebmd", regressionData, testManager);
 
   await runGeneralizeDataTests("freebmd", generalizeData, regressionData, testManager);
 

@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/opccorn/core/opccorn_extract_data.mjs";
 import { generalizeData } from "../../extension/site/opccorn/core/opccorn_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/opccorn/core/opccorn_build_citation.mjs";
 
@@ -98,7 +97,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("opccorn", extractData, regressionData, testManager);
+  await runExtractDataTests("opccorn", regressionData, testManager);
 
   await runGeneralizeDataTests("opccorn", generalizeData, regressionData, testManager);
 

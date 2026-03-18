@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/jstor/core/jstor_extract_data.mjs";
 import { generalizeData } from "../../extension/site/jstor/core/jstor_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/jstor/core/jstor_build_citation.mjs";
 
@@ -59,7 +58,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("jstor", extractData, regressionData, testManager);
+  await runExtractDataTests("jstor", regressionData, testManager);
 
   await runGeneralizeDataTests("jstor", generalizeData, regressionData, testManager);
 

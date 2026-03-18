@@ -102,4 +102,4 @@ function setClickedRowData(rowData) {
   lastClickedRowData = rowData;
 }
 
-export { extractData, setClickedRowData };
+// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper

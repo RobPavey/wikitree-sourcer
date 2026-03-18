@@ -135,48 +135,6 @@ function cleanDateStr(dateStr) {
   return dateStr;
 }
 
-function getHighlightStyle() {
-  return "background-color: palegoldenrod";
-}
-
-function getPageType(document) {
-  let pageType = "";
-  const titleElement = document.querySelector("#content h2");
-  let sourceTitle;
-  if (titleElement) {
-    sourceTitle = titleElement.textContent.replaceAll(/\s+/g, " ").trim();
-    pageType = sourceTitle.split(/[, ]/)[0];
-  }
-  if (!["Baptism", "Marriage", "Burial"].includes(pageType)) {
-    pageType = "Unknown";
-  }
-  return [pageType, sourceTitle];
-}
-
-function getRowSelector(pageType) {
-  return ".record-start";
-}
-
-function getSelectedRow(document) {
-  const selectedRows = document.querySelector("[style*='" + getHighlightStyle() + "']");
-  return selectedRows;
-}
-
-function isRecordOfType(row, type) {
-  if (row.id == "content") return false;
-  // console.log(`isRecordOfType ${type}: ${row.textContent}`);
-  switch (type) {
-    case "Baptism":
-      // return row.textContent.includes("Baptised");
-      return /baptised/i.test(row.textContent);
-    case "Marriage":
-      // return row.textContent.includes("marriage");
-      return /marriage/i.test(row.textContent);
-    case "Burial":
-      return /buried:|death:|died:|grave/i.test(row.textContent);
-  }
-}
-
 // Standard HTML5 tags
 const allowedHtmlTags = new Set([
   "A",
@@ -292,15 +250,6 @@ const allowedHtmlTags = new Set([
   "WBR",
 ]);
 
-function stripUnknownTags(root) {
-  root.querySelectorAll("*").forEach((el) => {
-    if (!allowedHtmlTags.has(el.tagName)) {
-      // unwrap the element but keep its children
-      el.replaceWith(...el.childNodes);
-    }
-  });
-}
-
 const Role = {
   BRIDE: "bride",
   CHILD: "child",
@@ -312,13 +261,4 @@ const Role = {
   WITNESS: "witness",
 };
 
-export {
-  cleanDateStr,
-  getHighlightStyle,
-  getPageType,
-  getRowSelector,
-  getSelectedRow,
-  isRecordOfType,
-  Role,
-  stripUnknownTags,
-};
+export { cleanDateStr, Role };

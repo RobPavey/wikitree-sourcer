@@ -31,6 +31,7 @@ import {
 } from "../test_utils/ref_file_utils.mjs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { reportStringDiff } from "../test_utils/compare_result_utils.mjs";
+import { loadExtractDataFromFetchInWrapper } from "../test_utils/test_extract_data_utils.mjs";
 
 import {
   filterAndEnhanceFsSourcesIntoSources,
@@ -39,15 +40,25 @@ import {
   buildFsPlainCitations,
 } from "../../extension/site/fs/core/fs_build_all_citations.mjs";
 
-async function testGetSourcerCitation(runDate, savedData, source, type, options) {
+async function testGetSourcerCitation(runDate, savedData, source, type, options, extractDataFromFetch) {
   let uri = source.uri;
 
   let sourceDataObjects = savedData.sourceData[uri];
 
-  buildSourcerCitation(runDate, sourceDataObjects, source, type, options);
+  if (sourceDataObjects) {
+    source.dataObjects = sourceDataObjects;
+
+    let sessionId = "";
+    let extractedData = extractDataFromFetch(undefined, "", source.dataObjects, "record", sessionId, options);
+    if (extractedData) {
+      source.extractedData = extractedData;
+    }
+  }
+
+  buildSourcerCitation(runDate, source, type, options);
 }
 
-async function testGetSourcerCitations(runDate, savedData, result, type, options) {
+async function testGetSourcerCitations(runDate, savedData, result, type, options, extractDataFromFetch) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
@@ -55,13 +66,13 @@ async function testGetSourcerCitations(runDate, savedData, result, type, options
   }
 
   for (let source of result.sources) {
-    await testGetSourcerCitation(runDate, savedData, source, type, options);
+    await testGetSourcerCitation(runDate, savedData, source, type, options, extractDataFromFetch);
   }
 
   buildSourcerCitations(result, type, options);
 }
 
-async function fsTestGetAllCitations(input) {
+async function fsTestGetAllCitations(input, extractDataFromFetch) {
   let savedData = input.savedData;
   let options = input.options;
   let runDate = input.runDate;
@@ -85,7 +96,7 @@ async function fsTestGetAllCitations(input) {
       case "narrative":
       case "inline":
       case "source":
-        await testGetSourcerCitations(runDate, savedData, result, citationType, options);
+        await testGetSourcerCitations(runDate, savedData, result, citationType, options, extractDataFromFetch);
         break;
     }
   }
@@ -102,6 +113,9 @@ async function runBuildAllCitationsTests(siteName, regressionData, testManager, 
   if (!testEnabled(testManager.parameters, "build_all_citations")) {
     return;
   }
+
+  const extractDataFile = "./extension/site/" + siteName + "/core/" + siteName + "_extract_data.mjs";
+  const extractDataFromFetchFunction = loadExtractDataFromFetchInWrapper(extractDataFile);
 
   let testName = siteName + "_build_all_citations";
 
@@ -161,7 +175,7 @@ async function runBuildAllCitationsTests(siteName, regressionData, testManager, 
       input.options = { ...userOptions, ...variant.optionOverrides };
 
       try {
-        result = await fsTestGetAllCitations(input);
+        result = await fsTestGetAllCitations(input, extractDataFromFetchFunction);
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");

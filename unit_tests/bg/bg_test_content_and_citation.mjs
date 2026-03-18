@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/bg/core/bg_extract_data.mjs";
 import { generalizeData } from "../../extension/site/bg/core/bg_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/bg/core/bg_build_citation.mjs";
 
@@ -94,7 +93,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("bg", extractData, regressionData, testManager);
+  await runExtractDataTests("bg", regressionData, testManager);
 
   await runGeneralizeDataTests("bg", generalizeData, regressionData, testManager);
 

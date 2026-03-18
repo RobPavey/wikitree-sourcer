@@ -31,8 +31,8 @@ function extractData(document, url) {
   result.success = false;
 
   if (url.match("www.ushmm.org/online/hsv/person_view.php")) {
-    const main = document.querySelector(".main[role=\"main\"]");
-    result.name = main.querySelector('h1')?.textContent.trim();
+    const main = document.querySelector('.main[role="main"]');
+    result.name = main.querySelector("h1")?.textContent.trim();
 
     let fields = {};
 
@@ -43,8 +43,11 @@ function extractData(document, url) {
       if (elements.length != 2) continue;
 
       let key = elements[0].textContent.trim();
-      if (key[key.length-1] == ":") {
-        key = key.substring(0, key.length-1).trim().toLowerCase();
+      if (key[key.length - 1] == ":") {
+        key = key
+          .substring(0, key.length - 1)
+          .trim()
+          .toLowerCase();
       }
       fields[key] = elements[1].textContent.trim();
     }
@@ -52,9 +55,10 @@ function extractData(document, url) {
     result.fields = fields;
 
     result.success = true;
-  }
-  else if (url.match("collections.ushmm.org/search/catalog")) {
-    const nameElement = document.querySelector("h2[class=\"MuiTypography-root mirador18 MuiTypography-h2 MuiTypography-colorInherit MuiTypography-noWrap\"]");
+  } else if (url.match("collections.ushmm.org/search/catalog")) {
+    const nameElement = document.querySelector(
+      'h2[class="MuiTypography-root mirador18 MuiTypography-h2 MuiTypography-colorInherit MuiTypography-noWrap"]'
+    );
     if (nameElement) {
       result.name = nameElement.textContent.trim();
     }
@@ -63,7 +67,9 @@ function extractData(document, url) {
     const overview = document.querySelector("#overview");
     if (overview) {
       for (const element of overview.querySelector("dl").children) {
-        result.fields[element.querySelector("dt").textContent.trim().toLowerCase()] = element.querySelector("dd").textContent.trim();
+        result.fields[element.querySelector("dt").textContent.trim().toLowerCase()] = element
+          .querySelector("dd")
+          .textContent.trim();
       }
     }
 
@@ -83,11 +89,9 @@ function extractData(document, url) {
       const identifier_string = identifiers.textContent;
       if (identifier_string.match("Oral History")) {
         result.recordKind = "Oral History";
-      }
-      else if (identifier_string.match("Object")) {
+      } else if (identifier_string.match("Object")) {
         result.recordKind = "Object";
-      }
-      else if (identifier_string.match("Document")) {
+      } else if (identifier_string.match("Document")) {
         result.recordKind = "Document";
       }
     }
@@ -112,4 +116,4 @@ function extractData(document, url) {
   return result;
 }
 
-export { extractData };
+// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper

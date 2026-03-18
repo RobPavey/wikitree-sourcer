@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/examplesite/core/examplesite_extract_data.mjs";
 import { generalizeData } from "../../extension/site/examplesite/core/examplesite_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/examplesite/core/examplesite_build_citation.mjs";
 

@@ -31,7 +31,6 @@ import { buildNarrative } from "../../../base/core/narrative_builder.mjs";
 
 import { groupSourcesIntoFacts } from "../../../base/core/group_sources_into_facts.mjs";
 
-import { extractDataFromFetch } from "./fs_extract_data.mjs";
 import { generalizeData } from "./fs_generalize_data.mjs";
 import { buildCitation } from "./fs_build_citation.mjs";
 import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
@@ -822,12 +821,10 @@ function doesCitationWantHouseholdTable(citationType, generalizedData, options) 
   return false;
 }
 
-function buildSourcerCitation(runDate, sourceDataObjects, source, type, options) {
-  if (sourceDataObjects) {
-    source.dataObjects = sourceDataObjects;
-    let sessionId = "";
+function buildSourcerCitation(runDate, source, type, options) {
+  if (source.dataObjects) {
+    let extractedData = source.extractedData;
 
-    let extractedData = extractDataFromFetch(undefined, "", source.dataObjects, "record", sessionId, options);
     if (extractedData && extractedData.pageType) {
       source.extractedData = extractedData;
 

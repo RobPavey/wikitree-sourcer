@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/hathi/core/hathi_extract_data.mjs";
 import { generalizeData } from "../../extension/site/hathi/core/hathi_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/hathi/core/hathi_build_citation.mjs";
 
@@ -44,7 +43,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("hathi", extractData, regressionData, testManager);
+  await runExtractDataTests("hathi", regressionData, testManager);
 
   await runGeneralizeDataTests("hathi", generalizeData, regressionData, testManager);
 

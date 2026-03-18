@@ -2503,5 +2503,3 @@ function extractData(document, url) {
 
   return result;
 }
-
-export { extractData, detectPageType, extractRecord };

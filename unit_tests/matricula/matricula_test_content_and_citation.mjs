@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/matricula/core/matricula_extract_data.mjs";
 import { generalizeData } from "../../extension/site/matricula/core/matricula_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/matricula/core/matricula_build_citation.mjs";
 
@@ -90,7 +89,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("matricula", extractData, regressionData, testManager);
+  await runExtractDataTests("matricula", regressionData, testManager);
 
   await runGeneralizeDataTests("matricula", generalizeData, regressionData, testManager);
 

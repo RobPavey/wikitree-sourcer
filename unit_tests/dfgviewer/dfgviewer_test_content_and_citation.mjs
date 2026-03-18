@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 import fs from "fs";
+import path from "path";
 import jsdom from "jsdom";
 const { JSDOM } = jsdom;
 
@@ -29,11 +30,11 @@ import { writeTestOutputFile, removeStaleOutputFiles } from "../test_utils/ref_f
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
 
-import { extractData } from "../../extension/site/dfgviewer/core/dfgviewer_extract_data.mjs";
 import { parseMetadata } from "../../extension/site/dfgviewer/browser/dfgviewer_popup.mjs";
 import { generalizeData } from "../../extension/site/dfgviewer/core/dfgviewer_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/dfgviewer/core/dfgviewer_build_citation.mjs";
 
+import { loadExtractDataInWrapper } from "../test_utils/test_extract_data_utils.mjs";
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
@@ -41,10 +42,13 @@ function testEnabled(parameters, testName) {
   return parameters.testName == "" || parameters.testName == testName;
 }
 
-async function runExtractDataTests(siteName, extractDataFunction, regressionData, testManager, cleanStaleFiles = true) {
+async function runExtractDataTests(siteName, regressionData, testManager, cleanStaleFiles = true) {
   if (!testEnabled(testManager.parameters, "extract")) {
     return;
   }
+
+  const extractDataFile = "./extension/site/" + siteName + "/core/" + siteName + "_extract_data.mjs";
+  const extractDataFunction = loadExtractDataInWrapper(extractDataFile);
 
   let testName = siteName + "_extract_data";
 
@@ -254,7 +258,8 @@ const regressionData = [
   {
     caseName: "erzbistum_muenchen_Abens-Mariae Geburt",
     url: "https://dfg-viewer.de/show?tx_dlf%5Bdouble%5D=0&tx_dlf%5Bid%5D=https%3A%2F%2Fdigitales-archiv.erzbistum-muenchen.de%2Factaproweb%2Fmets%3Fid%3DRep_7eba57ab-0512-4667-9c13-faf2efd08133_mets_actapro.xml&tx_dlf%5Bpage%5D=11&cHash=c023852b77a6571263faaa7b98c7e609",
-    metadata_url: "https://digitales-archiv.erzbistum-muenchen.de/actaproweb/mets?id=Rep_7eba57ab-0512-4667-9c13-faf2efd08133_mets_actapro.xml",
+    metadata_url:
+      "https://digitales-archiv.erzbistum-muenchen.de/actaproweb/mets?id=Rep_7eba57ab-0512-4667-9c13-faf2efd08133_mets_actapro.xml",
   },
   {
     caseName: "staatsarchiv_bayern_StAN, Reichsstadt Nürnberg, Handschriften 1",
@@ -274,7 +279,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("dfgviewer", extractData, regressionData, testManager);
+  await runExtractDataTests("dfgviewer", regressionData, testManager);
 
   await runGeneralizeDataTests("dfgviewer", generalizeData, regressionData, testManager);
 

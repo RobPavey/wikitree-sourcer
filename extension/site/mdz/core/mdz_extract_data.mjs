@@ -34,11 +34,15 @@ function extractData(document, url) {
     return result;
   }
 
-  const title = document.querySelector('h2[class="MuiTypography-root mirador32 MuiTypography-h2 MuiTypography-colorInherit MuiTypography-noWrap"]');
+  const title = document.querySelector(
+    'h2[class="MuiTypography-root mirador32 MuiTypography-h2 MuiTypography-colorInherit MuiTypography-noWrap"]'
+  );
   result.title = title ? title.textContent.trim() : "";
 
-  const pageDiv = document.querySelector('div[class*="mirador"]:not([class*="mirador-companion"]):not([class*="mirador-osd"]):not([class*="mirador-canvas"]):not([class*="mirador-window"])');
-  const pageDivs = document.querySelectorAll('div');
+  const pageDiv = document.querySelector(
+    'div[class*="mirador"]:not([class*="mirador-companion"]):not([class*="mirador-osd"]):not([class*="mirador-canvas"]):not([class*="mirador-window"])'
+  );
+  const pageDivs = document.querySelectorAll("div");
   let page_number = null;
   for (let div of pageDivs) {
     if (div.textContent && div.textContent.match(/^Seite:\s*\d+$/)) {
@@ -82,4 +86,4 @@ function extractData(document, url) {
   return result;
 }
 
-export { extractData };
+// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper

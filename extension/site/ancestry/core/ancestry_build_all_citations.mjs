@@ -31,8 +31,6 @@ import { buildNarrative } from "../../../base/core/narrative_builder.mjs";
 
 import { groupSourcesIntoFacts } from "../../../base/core/group_sources_into_facts.mjs";
 
-import { extractRecord } from "./ancestry_extract_data.mjs";
-import { generalizeData } from "./ancestry_generalize_data.mjs";
 import { buildCitation } from "./ancestry_build_citation.mjs";
 import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
 

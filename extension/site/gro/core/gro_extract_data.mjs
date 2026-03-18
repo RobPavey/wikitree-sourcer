@@ -351,4 +351,4 @@ function extractData(document, url) {
   return result;
 }
 
-export { extractData, extractFirstRowForBirth, extractFirstRowForDeath, extractSecondRow };
+// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper

@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/psuk/core/psuk_extract_data.mjs";
 import { generalizeData, regeneralizeData } from "../../extension/site/psuk/core/psuk_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/psuk/core/psuk_build_citation.mjs";
 
@@ -161,7 +160,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("psuk", extractData, regressionData, testManager);
+  await runExtractDataTests("psuk", regressionData, testManager);
 
   await runGeneralizeDataTests("psuk", generalizeData, regressionData, testManager);
 

@@ -230,10 +230,8 @@ function populateForm(searchData) {
 // We use the Row terminology here like elsewhere, but eGSSA BMD search results do not have
 // tables and rows, just paragraphs
 
-let EggsaBdmCommon;
-
 function highlightRow(selectedRow) {
-  selectedRow.setAttribute("style", EggsaBdmCommon.getHighlightStyle());
+  selectedRow.setAttribute("style", getHighlightStyle());
 }
 
 function unHighlightRow(selectedRows) {
@@ -297,12 +295,36 @@ function wrapSectionsUpToFirstHR(content) {
   }
 }
 
+function stripUnknownTags(root) {
+  root.querySelectorAll("*").forEach((el) => {
+    if (!allowedHtmlTags.has(el.tagName)) {
+      // unwrap the element but keep its children
+      el.replaceWith(...el.childNodes);
+    }
+  });
+}
+
+function isRecordOfType(row, type) {
+  if (row.id == "content") return false;
+  // console.log(`isRecordOfType ${type}: ${row.textContent}`);
+  switch (type) {
+    case "Baptism":
+      // return row.textContent.includes("Baptised");
+      return /baptised/i.test(row.textContent);
+    case "Marriage":
+      // return row.textContent.includes("marriage");
+      return /marriage/i.test(row.textContent);
+    case "Burial":
+      return /buried:|death:|died:|grave/i.test(row.textContent);
+  }
+}
+
 function addClickedRowListener() {
   //console.log("addClickedRowListener");
 
   const resultContainer = document.querySelector("#content");
   if (resultContainer && !resultContainer.hasAttribute("sourcerOnClick")) {
-    EggsaBdmCommon.stripUnknownTags(resultContainer);
+    stripUnknownTags(resultContainer);
 
     resultContainer.setAttribute("sourcerOnClick", "true");
 
@@ -311,18 +333,18 @@ function addClickedRowListener() {
       //console.log(ev);
 
       // clear existing selected row if any
-      let selectedRow = EggsaBdmCommon.getSelectedRow(document);
+      let selectedRow = getSelectedRow(document);
       if (selectedRow) {
         unHighlightRow(selectedRow);
       }
       selectedRow = ev.target;
       if (selectedRow) {
-        const [pageType] = EggsaBdmCommon.getPageType(document);
+        const [pageType] = getPageType(document);
         // const rowSelector = pageType === "Marriage" ? ".wrapped-block" : "p";
-        const rowSelector = EggsaBdmCommon.getRowSelector(pageType);
+        const rowSelector = getRowSelector(pageType);
         if (rowSelector) {
           selectedRow = selectedRow.closest(rowSelector);
-          if (selectedRow && EggsaBdmCommon.isRecordOfType(selectedRow, pageType)) {
+          if (selectedRow && isRecordOfType(selectedRow, pageType)) {
             highlightRow(selectedRow);
           }
         }
@@ -407,7 +429,6 @@ async function checkForSearchThenInit() {
   } else {
     await restorePreviousSubmit();
   }
-  EggsaBdmCommon = await import(chrome.runtime.getURL("site/eggsabdm/core/eggsabdm_common.mjs"));
   addClickedRowListener();
   addFormSaveListener();
 }

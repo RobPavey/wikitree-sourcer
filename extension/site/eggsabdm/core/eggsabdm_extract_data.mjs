@@ -22,12 +22,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// import { RT } from "../../../base/core/record_type.mjs";
-import * as EggsaBdmCommon from "./eggsabdm_common.mjs";
+function getHighlightStyle() {
+  return "background-color: palegoldenrod";
+}
+
+function getRowSelector(pageType) {
+  return ".record-start";
+}
+
+function getSelectedRow(document) {
+  const selectedRows = document.querySelector("[style*='" + getHighlightStyle() + "']");
+  return selectedRows;
+}
+
+function getPageType(document) {
+  let pageType = "";
+  const titleElement = document.querySelector("#content h2");
+  let sourceTitle;
+  if (titleElement) {
+    sourceTitle = titleElement.textContent.replaceAll(/\s+/g, " ").trim();
+    pageType = sourceTitle.split(/[, ]/)[0];
+  }
+  if (!["Baptism", "Marriage", "Burial"].includes(pageType)) {
+    pageType = "Unknown";
+  }
+  return [pageType, sourceTitle];
+}
 
 function findPossibleRecords(document, pageType) {
   let records = [];
-  const rowSelector = EggsaBdmCommon.getRowSelector(pageType);
+  const rowSelector = getRowSelector(pageType);
   if (rowSelector) {
     records = document.querySelectorAll(rowSelector);
   }
@@ -141,13 +165,13 @@ function extractData(document, url) {
     result.url = url;
   }
   result.success = false;
-  const [pageType, sourceTitle] = EggsaBdmCommon.getPageType(document);
+  const [pageType, sourceTitle] = getPageType(document);
   if (pageType == "Unkown") {
     // result.overrideFailureMessage = `This page does not contain any ${pageType} record we could find.`;
     return result;
   }
 
-  let selectedRow = EggsaBdmCommon.getSelectedRow(document);
+  let selectedRow = getSelectedRow(document);
   // console.log(selectedRow);
   if (!selectedRow) {
     const possibleRecords = findPossibleRecords(document, pageType);
@@ -218,4 +242,4 @@ function extractData(document, url) {
   return result;
 }
 
-export { extractData };
+// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper

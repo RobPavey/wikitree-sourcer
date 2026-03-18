@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/npa/core/npa_extract_data.mjs";
 import { generalizeData } from "../../extension/site/npa/core/npa_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/npa/core/npa_build_citation.mjs";
 
@@ -38,7 +37,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("npa", extractData, regressionData, testManager);
+  await runExtractDataTests("npa", regressionData, testManager);
 
   await runGeneralizeDataTests("npa", generalizeData, regressionData, testManager);
 

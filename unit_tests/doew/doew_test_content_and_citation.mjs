@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/doew/core/doew_extract_data.mjs";
 import { generalizeData } from "../../extension/site/doew/core/doew_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/doew/core/doew_build_citation.mjs";
 
@@ -33,20 +32,20 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 const regressionData = [
   {
     caseName: "adolf_meier",
-    url: "https://www.doew.at/result"
+    url: "https://www.doew.at/result",
   },
   {
     caseName: "alexander_gelb",
-    url: "https://www.doew.at/result"
+    url: "https://www.doew.at/result",
   },
   {
     caseName: "gustav_friedenreich",
-    url: "https://www.doew.at/result?id=939558&cat=1"
+    url: "https://www.doew.at/result?id=939558&cat=1",
   },
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("doew", extractData, regressionData, testManager);
+  await runExtractDataTests("doew", regressionData, testManager);
 
   await runGeneralizeDataTests("doew", generalizeData, regressionData, testManager);
 

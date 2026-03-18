@@ -22,34 +22,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function extractData(document, url) {
-  var result = {};
-
-  if (url) {
-    result.url = url;
-  }
-
-  result.success = false;
-
-  if (url.match("digitalMediaViewer")) {
-    alert("Please use the dfg-viewer page instead of the arcinsys page!");
-    return;
-  }
-
-  const page_selector = document.querySelector('select[name="tx_dlf[page]"]');
-  let page_selected = page_selector.querySelector('option[selected="selected"]').text;
-
-  if (page_selected[0] == "[") {
-    page_selected = page_selected.substring(1, page_selected.length - 1);
-  }
-
-  result.page_number = page_selected;
-
-  result.success = true;
-
-  //console.log(result);
-
-  return result;
+// this is used because the <site>_extract_data.mjs files are not actually ESM modules
+// this is because they are loaded in the content scripts
+// This was done as part of the speedy_review refactor
+function loadExtractRecordInWrapper(filePath) {
+  const code = fs.readFileSync(filePath, "utf8");
+  // Wrap the code in a function that returns the extractData function
+  const wrapper = new Function("document", "url", "result", `${code}; return extractRecord(document, url, result);`);
+  return wrapper;
 }
 
-// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper
+// Used by background for extracting a referenced record
+function extractRecordWrapper(filePath, document, url, result) {
+  let extractRecord = loadExtractRecordInWrapper(filePath);
+  return extractRecord(document, url, result);
+}
+
+export { extractRecordWrapper };

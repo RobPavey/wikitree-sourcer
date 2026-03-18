@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/nsvr/core/nsvr_extract_data.mjs";
 import { generalizeData } from "../../extension/site/nsvr/core/nsvr_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/nsvr/core/nsvr_build_citation.mjs";
 
@@ -52,7 +51,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("nsvr", extractData, regressionData, testManager);
+  await runExtractDataTests("nsvr", regressionData, testManager);
 
   await runGeneralizeDataTests("nsvr", generalizeData, regressionData, testManager);
 

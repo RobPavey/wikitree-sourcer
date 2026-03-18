@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/szukaj/core/szukaj_extract_data.mjs";
 import { generalizeData } from "../../extension/site/szukaj/core/szukaj_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/szukaj/core/szukaj_build_citation.mjs";
 
@@ -33,12 +32,12 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 const regressionData = [
   {
     caseName: "3370044",
-    url: "https://www.szukajwarchiwach.gov.pl/en/jednostka/-/jednostka/3370044"
-  }
+    url: "https://www.szukajwarchiwach.gov.pl/en/jednostka/-/jednostka/3370044",
+  },
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("szukaj", extractData, regressionData, testManager);
+  await runExtractDataTests("szukaj", regressionData, testManager);
 
   await runGeneralizeDataTests("szukaj", generalizeData, regressionData, testManager);
 

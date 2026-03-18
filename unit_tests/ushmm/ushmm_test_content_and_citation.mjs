@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/ushmm/core/ushmm_extract_data.mjs";
 import { generalizeData } from "../../extension/site/ushmm/core/ushmm_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/ushmm/core/ushmm_build_citation.mjs";
 
@@ -33,32 +32,32 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 const regressionData = [
   {
     caseName: "3771499",
-    url: "https://www.ushmm.org/online/hsv/person_view.php?PersonId=3771499"
+    url: "https://www.ushmm.org/online/hsv/person_view.php?PersonId=3771499",
   },
   {
     caseName: "4946809",
-    url: "https://www.ushmm.org/online/hsv/person_view.php?PersonId=4946809"
+    url: "https://www.ushmm.org/online/hsv/person_view.php?PersonId=4946809",
   },
   {
     caseName: "5244993",
-    url: "https://www.ushmm.org/online/hsv/person_view.php?PersonId=5244993"
+    url: "https://www.ushmm.org/online/hsv/person_view.php?PersonId=5244993",
   },
   {
     caseName: "irn612234",
-    url: "https://collections.ushmm.org/search/catalog/irn612234"
+    url: "https://collections.ushmm.org/search/catalog/irn612234",
   },
   {
     caseName: "irn30442",
-    url: "https://collections.ushmm.org/search/catalog/irn30442"
+    url: "https://collections.ushmm.org/search/catalog/irn30442",
   },
   {
     caseName: "irn768384",
-    url: "https://collections.ushmm.org/search/catalog/irn768384"
+    url: "https://collections.ushmm.org/search/catalog/irn768384",
   },
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("ushmm", extractData, regressionData, testManager);
+  await runExtractDataTests("ushmm", regressionData, testManager);
 
   await runGeneralizeDataTests("ushmm", generalizeData, regressionData, testManager);
 

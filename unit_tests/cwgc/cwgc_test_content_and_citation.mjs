@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/cwgc/core/cwgc_extract_data.mjs";
 import { generalizeData } from "../../extension/site/cwgc/core/cwgc_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/cwgc/core/cwgc_build_citation.mjs";
 
@@ -53,7 +52,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("cwgc", extractData, regressionData, testManager);
+  await runExtractDataTests("cwgc", regressionData, testManager);
 
   await runGeneralizeDataTests("cwgc", generalizeData, regressionData, testManager);
 

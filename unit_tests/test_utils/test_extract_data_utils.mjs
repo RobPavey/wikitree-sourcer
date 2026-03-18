@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import fs from "fs";
+import path from "path";
 import jsdom from "jsdom";
 const { JSDOM } = jsdom;
 
@@ -34,15 +35,61 @@ function testEnabled(parameters, testName) {
   return parameters.testName == "" || parameters.testName == testName;
 }
 
+// this is used because the <site>_extract_data.mjs files are not actually ESM modules
+// this is because they are loaded in the content scripts
+function loadExtractDataInWrapper(filePath) {
+  const absolutePath = path.resolve(filePath);
+  const code = fs.readFileSync(absolutePath, "utf8");
+  const sourceMapComment = `\n//# sourceURL=${absolutePath}\n`;
+  // Wrap the code in a function that returns the extractData function
+  const wrapper = new Function(
+    "document",
+    "url",
+    "siteSpecificInput",
+    `${code} ${sourceMapComment}; return extractData(document, url, siteSpecificInput);`
+  );
+  return wrapper;
+}
+function loadExtractDataFromFetchInWrapper(filePath) {
+  const absolutePath = path.resolve(filePath);
+  const code = fs.readFileSync(absolutePath, "utf8");
+  const sourceMapComment = `\n//# sourceURL=${absolutePath}\n`;
+  // Wrap the code in a function that returns the extractDataFromFetch function
+  const wrapper = new Function(
+    "document",
+    "url",
+    "dataObjects",
+    "sessionId",
+    "options",
+    `${code} ${sourceMapComment}; return extractDataFromFetch(document, url, dataObjects, sessionId, options);`
+  );
+  return wrapper;
+}
+
 // The regressionData passed in must be an array of testData objects.
 // Each testDataobject having the keys:
 // caseName - the caseName is used to build the name of the saved page and the output files
 // url - The URL of the record
 // pageFile - optional override of the saved page file name - can be used to make two testCases use the
 //    same saved page file.
-async function runExtractDataTests(siteName, extractDataFunction, regressionData, testManager, cleanStaleFiles = true) {
+async function runExtractDataTests(
+  siteName,
+  regressionData,
+  testManager,
+  extractFromFetch = false,
+  cleanStaleFiles = true
+) {
   if (!testEnabled(testManager.parameters, "extract")) {
     return;
+  }
+
+  const extractDataFile = "./extension/site/" + siteName + "/core/" + siteName + "_extract_data.mjs";
+  let extractDataFromFetchFunction = undefined;
+  let extractDataFunction = undefined;
+  if (extractFromFetch) {
+    extractDataFromFetchFunction = loadExtractDataFromFetchInWrapper(extractDataFile);
+  } else {
+    extractDataFunction = loadExtractDataInWrapper(extractDataFile);
   }
 
   let testName = siteName + "_extract_data";
@@ -106,6 +153,20 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
     fs.existsSync();
 
+    if (fetchObjPath) {
+      if (!extractFromFetch) {
+        console.log("Error: fetchObjPath in testData but extractFromFetch parameter is false, testData is:");
+        console.log(testData);
+        continue;
+      }
+    } else {
+      if (extractFromFetch) {
+        console.log("Error: no fetchObjPath in testData but extractFromFetch parameter is true, testData is:");
+        console.log(testData);
+        continue;
+      }
+    }
+
     if (fetchObjPath && pageFile) {
       let dom = undefined;
       try {
@@ -131,7 +192,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       let dataObjects = { dataObj: fetchObj };
 
       try {
-        result = extractDataFunction(doc, testData.url, dataObjects, fetchType, "", testManager.options);
+        result = extractDataFromFetchFunction(doc, testData.url, dataObjects, fetchType, "", testManager.options);
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
@@ -185,7 +246,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       let dataObjects = { dataObj: fetchObj };
 
       try {
-        result = extractDataFunction(undefined, testData.url, dataObjects, fetchType, "", testManager.options);
+        result = extractDataFromFetchFunction(undefined, testData.url, dataObjects, fetchType, "", testManager.options);
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
@@ -234,4 +295,4 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
   console.error = originalConsoleError;
 }
 
-export { runExtractDataTests };
+export { runExtractDataTests, loadExtractDataInWrapper, loadExtractDataFromFetchInWrapper };

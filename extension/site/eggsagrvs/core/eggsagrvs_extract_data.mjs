@@ -64,4 +64,4 @@ function extractData(document, url, siteSpecificInput) {
   return result;
 }
 
-export { extractData };
+// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper

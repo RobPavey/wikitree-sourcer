@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractDataFromFetch, extractData } from "../../extension/site/fs/core/fs_extract_data.mjs";
 import { generalizeData } from "../../extension/site/fs/core/fs_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/fs/core/fs_build_citation.mjs";
 import { buildHouseholdTable } from "../../extension/base/core/table_builder.mjs";
@@ -803,21 +802,21 @@ async function runTests(testManager) {
   // gets of regressionData that output into the same folders we have to do it here.
   cleanStaleOutputFiles(testManager);
 
-  await runExtractDataTests("fs", extractDataFromFetch, regressionData, testManager, false);
+  await runExtractDataTests("fs", regressionData, testManager, true, false);
   await runGeneralizeDataTests("fs", generalizeData, regressionData, testManager, false);
 
   const functions = { buildCitation: buildCitation, buildTable: buildHouseholdTable };
 
   await runBuildCitationTests("fs", functions, regressionData, testManager, optionVariants, false);
 
-  await runExtractDataTests("fs", extractData, imageRegressionData, testManager, false);
+  await runExtractDataTests("fs", imageRegressionData, testManager, false, false);
   await runGeneralizeDataTests("fs", generalizeData, imageRegressionData, testManager, false);
   await runBuildCitationTests("fs", functions, imageRegressionData, testManager, optionVariants, false);
 
-  await runExtractDataTests("fs", extractDataFromFetch, personRegressionData, testManager, false);
+  await runExtractDataTests("fs", personRegressionData, testManager, true, false);
   await runGeneralizeDataTests("fs", generalizeData, personRegressionData, testManager, false);
 
-  await runExtractDataTests("fs", extractData, bookRegressionData, testManager, false);
+  await runExtractDataTests("fs", bookRegressionData, testManager, false, false);
   await runGeneralizeDataTests("fs", generalizeData, bookRegressionData, testManager, false);
   await runBuildCitationTests("fs", functions, bookRegressionData, testManager, optionVariants, false);
 }

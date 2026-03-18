@@ -165,8 +165,9 @@ async function loadExtractDataModule(modulePath) {
 }
 
 function extractDataAndRespond(document, url, contentType, sendResponse, siteSpecificInput) {
-  //console.log('extractDataAndRespond. url: ' + url);
+  console.log("extractDataAndRespond. url: " + url);
 
+  /*
   if (!isLoadedExtractDataModuleReady) {
     if (loadedExtractDataModuleFailed) {
       let message = "Error when attempting use a dynamically imported extract data module in a content script.\n";
@@ -215,10 +216,12 @@ function extractDataAndRespond(document, url, contentType, sendResponse, siteSpe
   }
 
   //console.log('extractDataAndRespond. calling : loadedExtractDataModule.extractData');
+  */
 
   // Extract the data.
   try {
-    let extractedData = loadedExtractDataModule.extractData(document, url, siteSpecificInput);
+    //let extractedData = loadedExtractDataModule.extractData(document, url, siteSpecificInput);
+    let extractedData = extractData(document, url, siteSpecificInput);
     // respond with the type of content and the extracted data
     sendResponse({
       success: true,
@@ -350,7 +353,7 @@ function siteContentInit(siteName, extractModulePath, overrideExtractHandler, ad
 
   setPopupAndIcon(siteName);
 
-  loadExtractDataModule(extractModulePath);
+  //loadExtractDataModule(extractModulePath);
 
   // Listen for messages (from the popup script mostly)
   chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {

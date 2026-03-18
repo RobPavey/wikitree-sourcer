@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/freereg/core/freereg_extract_data.mjs";
 import { generalizeData } from "../../extension/site/freereg/core/freereg_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/freereg/core/freereg_build_citation.mjs";
 
@@ -92,7 +91,7 @@ const optionVariants = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("freereg", extractData, regressionData, testManager);
+  await runExtractDataTests("freereg", regressionData, testManager);
 
   await runGeneralizeDataTests("freereg", generalizeData, regressionData, testManager);
 

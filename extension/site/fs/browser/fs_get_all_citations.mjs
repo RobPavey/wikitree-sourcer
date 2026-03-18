@@ -35,6 +35,8 @@ import {
   buildFsPlainCitations,
 } from "../core/fs_build_all_citations.mjs";
 
+import { extractDataFromFetchWrapper } from "../core/fs_extract_data_wrapper.mjs";
+
 async function getSourcerCitation(runDate, source, type, sessionId, options, updateStatusFunction) {
   let uri = source.uri;
 
@@ -58,7 +60,26 @@ async function getSourcerCitation(runDate, source, type, sessionId, options, upd
     sourceDataObjects = fetchResult.dataObjects;
   }
 
-  buildSourcerCitation(runDate, sourceDataObjects, source, type, options);
+  if (sourceDataObjects) {
+    source.dataObjects = sourceDataObjects;
+    let filePath = "site/ancestry/core/ancestry_extract_data.mjs";
+    let extensionPath = chrome.runtime.getURL(filePath);
+    let sessionId = "";
+    let extractedData = extractDataFromFetchWrapper(
+      extensionPath,
+      undefined,
+      "",
+      source.dataObjects,
+      "record",
+      sessionId,
+      options
+    );
+    if (extractedData) {
+      source.extractedData = extractedData;
+    }
+  }
+
+  buildSourcerCitation(runDate, source, type, options);
 }
 
 async function getSourcerCitations(runDate, result, type, sessionId, options) {

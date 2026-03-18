@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/ancestry/core/ancestry_extract_data.mjs";
 import { generalizeData } from "../../extension/site/ancestry/core/ancestry_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/ancestry/core/ancestry_build_citation.mjs";
 import { buildHouseholdTable } from "../../extension/base/core/table_builder.mjs";
@@ -1475,7 +1474,7 @@ const optionVariants = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("ancestry", extractData, regressionData, testManager);
+  await runExtractDataTests("ancestry", regressionData, testManager);
 
   await runGeneralizeDataTests("ancestry", generalizeData, regressionData, testManager);
 

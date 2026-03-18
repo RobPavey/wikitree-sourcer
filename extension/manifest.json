@@ -143,14 +143,6 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "site/wikitree/core/wikitree_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.wikitree.com/*"
-      ]
-    },
-    {
-      "resources": [
         "site/ameranc/core/ameranc_extract_data.mjs"
       ],
       "matches": [
