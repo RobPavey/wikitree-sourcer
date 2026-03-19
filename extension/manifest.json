@@ -33,7 +33,7 @@
     "contextMenus"
   ],
   "optional_host_permissions": [
-"*://*.americanancestors.org/*",
+    "*://*.americanancestors.org/*",
     "*://*.ancestry.ca/*",
     "*://*.ancestry.co.uk/*",
     "*://*.ancestry.com.au/*",
