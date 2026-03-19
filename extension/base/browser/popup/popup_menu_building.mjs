@@ -36,8 +36,7 @@ import { clearCitation } from "/base/browser/popup/popup_citation.mjs";
 
 import { addShowCitationAssistantMenuItem } from "/base/browser/popup/popup_menu_blocks.mjs";
 
-import { siteNames } from "/site/all/core/site_names.mjs";
-import { getSiteDataForSite } from "/base/browser/common/site_registry_storage.mjs";
+import { getSites } from "/base/browser/common/site_registry_storage.mjs";
 
 /**
  * Temporary workaround for secondary monitors on MacOS where redraws don't happen
@@ -1015,7 +1014,7 @@ function isManualClassificationNeeded(data) {
   };
 
   // Note that we can't use RT.Unclassified because the RecordType module is not loaded.
-  if (data.generalizedData.recordType == `Unclassified`) {
+  if (data.generalizedData.recordType == "Unclassified") {
     result.isRecordTypeNeededForNarrative = true;
 
     if (options.citation_general_meaningfulNames != "none") {
@@ -1306,66 +1305,66 @@ function setupBuildCitationSubMenu(
   // This is used for submenu list - it is not as advanced as GeneraizedData.getRefTitle.
   // This isn't alphabetical order
   const rtToRefTitle = {
-    Unclassified: `Unknown`,
-    Apprenticeship: `Apprenticeship`,
-    Baptism: `Baptism`,
-    Birth: `Birth`,
-    BirthRegistration: `Birth Registration`,
-    Book: `Book`,
-    Burial: `Burial`,
-    Certificate: `Certificate`,
-    Census: `Census`,
-    ConvictTransportation: `Convict Transportation`,
-    CrewList: `Crew List`,
-    CriminalRegister: `Criminal Register`,
-    Death: `Death`,
-    DeathRegistration: `Death Registration`,
-    Deed: `Deed`,
-    Diary: `Diary`,
-    Directory: `Directory`,
-    Divorce: `Divorce`,
-    ElectoralRegister: `Electoral Register`,
-    Encyclopedia: `Encyclopedia`,
-    Employment: `Employment`,
-    FamHistOrPedigree: `Family History Or Pedigree`,
-    FamilyTree: `FamilyTree`,
-    FreemasonMembership: `Freemason Membership`,
-    GovernmentDocument: `Government Document`,
-    Heraldry: `Heraldic Record`,
-    Immigration: `Immigration`,
-    Imprisonment: `Imprisonment`,
-    Inquest: `Inquest`,
-    InstitutionInmate: `InstitutionInmate`,
-    LandAssessment: `Land Assessment`,
-    LandTax: `Land Tax`,
-    LandPetition: `Land Petition`,
-    LandGrant: `Land Grant`,
-    LegalRecord: `Legal Record`,
-    Marriage: `Marriage`,
-    MarriageRegistration: `Marriage Registration`,
-    MedicalPatient: `Medical Patient`,
-    MetisScrip: `MetisScrip`,
-    Military: `Military`,
-    Naturalization: `Naturalization`,
-    Newspaper: `Newspaper`,
-    NonpopulationCensus: `Nonpopulation Census`,
-    Obituary: `Obituary`,
-    OtherChurchEvent: `Other Church Event`,
-    ChurchRecords: `Church Records`,
-    PassengerList: `Passenger List`,
-    PassportApplication: `Passport Application`,
-    Pension: `Pension`,
-    PopulationRegister: `Population Register`,
-    Probate: `Probate`,
-    QuarterSession: `Quarter Session`,
-    RateBook: `Rate Book`,
-    Residence: `Residence`,
-    SchoolRecords: `School Records`,
-    SlaveSchedule: `Slave Schedule`,
-    SocialSecurity: `Social Security`,
-    Tax: `Tax`,
-    Will: `Will`,
-    WorkhouseRecord: `Workhouse Record`,
+    Unclassified: "Unknown",
+    Apprenticeship: "Apprenticeship",
+    Baptism: "Baptism",
+    Birth: "Birth",
+    BirthRegistration: "Birth Registration",
+    Book: "Book",
+    Burial: "Burial",
+    Certificate: "Certificate",
+    Census: "Census",
+    ConvictTransportation: "Convict Transportation",
+    CrewList: "Crew List",
+    CriminalRegister: "Criminal Register",
+    Death: "Death",
+    DeathRegistration: "Death Registration",
+    Deed: "Deed",
+    Diary: "Diary",
+    Directory: "Directory",
+    Divorce: "Divorce",
+    ElectoralRegister: "Electoral Register",
+    Encyclopedia: "Encyclopedia",
+    Employment: "Employment",
+    FamHistOrPedigree: "Family History Or Pedigree",
+    FamilyTree: "FamilyTree",
+    FreemasonMembership: "Freemason Membership",
+    GovernmentDocument: "Government Document",
+    Heraldry: "Heraldic Record",
+    Immigration: "Immigration",
+    Imprisonment: "Imprisonment",
+    Inquest: "Inquest",
+    InstitutionInmate: "InstitutionInmate",
+    LandAssessment: "Land Assessment",
+    LandTax: "Land Tax",
+    LandPetition: "Land Petition",
+    LandGrant: "Land Grant",
+    LegalRecord: "Legal Record",
+    Marriage: "Marriage",
+    MarriageRegistration: "Marriage Registration",
+    MedicalPatient: "Medical Patient",
+    MetisScrip: "MetisScrip",
+    Military: "Military",
+    Naturalization: "Naturalization",
+    Newspaper: "Newspaper",
+    NonpopulationCensus: "Nonpopulation Census",
+    Obituary: "Obituary",
+    OtherChurchEvent: "Other Church Event",
+    ChurchRecords: "Church Records",
+    PassengerList: "Passenger List",
+    PassportApplication: "Passport Application",
+    Pension: "Pension",
+    PopulationRegister: "Population Register",
+    Probate: "Probate",
+    QuarterSession: "Quarter Session",
+    RateBook: "Rate Book",
+    Residence: "Residence",
+    SchoolRecords: "School Records",
+    SlaveSchedule: "Slave Schedule",
+    SocialSecurity: "Social Security",
+    Tax: "Tax",
+    Will: "Will",
+    WorkhouseRecord: "Workhouse Record",
   };
 
   let menu = beginMainMenu();
@@ -1790,9 +1789,13 @@ async function removeAllSitePermissions() {
   console.log("removeAllSitePermissions: oldPermissions is:");
   console.log(oldPermissions);
 
-  for (const siteName of siteNames) {
-    let siteData = await getSiteDataForSite(siteName);
+  let sites = await getSites();
+  if (!sites) {
+    console.log("removeAllSitePermissions: no siteData found");
+  }
 
+  for (const siteName of Object.keys(sites)) {
+    let siteData = sites[siteName];
     if (siteData) {
       if (siteData.matches) {
         let permission = {
@@ -1808,8 +1811,6 @@ async function removeAllSitePermissions() {
           console.log("removeAllSitePermissions: site " + siteName + " now hasPermission = " + hasPermission);
         }
       }
-    } else {
-      console.log("removeAllSitePermissions: site " + siteName + " has no siteData.");
     }
   }
 

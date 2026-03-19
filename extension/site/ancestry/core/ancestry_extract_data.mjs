@@ -570,7 +570,7 @@ function extractRecordData(document, result) {
       }
     } else {
       // this row doesn't have a <th> label. Could be something like "Household members"
-      if (row.classList.contains(`tableContainerRow`)) {
+      if (row.classList.contains("tableContainerRow")) {
         let table = row.querySelector("table");
 
         // collect all the headings and put them in a string with line breaks between them

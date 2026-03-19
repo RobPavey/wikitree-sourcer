@@ -23,11 +23,10 @@ SOFTWARE.
 */
 
 import "../../../site/all/core/register_site_data.mjs";
-import { siteNames } from "../../../site/all/core/site_names.mjs";
-import { getSiteDataForSite, storeSiteRegistry } from "../common/site_registry_storage.mjs";
+import { getSites, storeSiteRegistry } from "../common/site_registry_storage.mjs";
 
 async function registerContentScripts() {
-  // including register_site_data.mhs above will have registered the site data in
+  // including register_site_data.mjs above will have registered the site data in
   // a siteRegistry var in site_registry.mjs. But this is only in the background context.
   // To make it available to other contexts we put the site registry in local storage.
   await storeSiteRegistry();
@@ -36,9 +35,9 @@ async function registerContentScripts() {
 
   let scripts = [];
 
-  for (const siteName of siteNames) {
-    let siteData = await getSiteDataForSite(siteName);
-
+  let sites = await getSites();
+  for (const siteName of Object.keys(sites)) {
+    let siteData = sites[siteName];
     if (siteData) {
       let matches = siteData.matches;
       if (matches) {

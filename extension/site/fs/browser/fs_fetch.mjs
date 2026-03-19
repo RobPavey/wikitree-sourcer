@@ -92,7 +92,7 @@ async function fetchFsSourcesJson(sourceIdList, sessionId) {
     //console.log("data is:");
     //console.log(data);
 
-    if (data.startsWith(`{`)) {
+    if (data.startsWith("{")) {
       const jsonData = data;
       const dataObj = JSON.parse(jsonData);
 
@@ -165,7 +165,7 @@ async function fetchRecord(fetchUrl, sessionId) {
     //console.log("doFetch: response text is:");
     //console.log(jsonData);
 
-    if (!jsonData || jsonData[0] != `{`) {
+    if (!jsonData || jsonData[0] != "{") {
       console.log("The response text does not look like JSON");
       //console.log(jsonData);
       return { success: false, errorCondition: "NotJSON" };

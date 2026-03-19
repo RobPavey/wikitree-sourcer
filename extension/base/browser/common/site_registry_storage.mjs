@@ -42,7 +42,7 @@ async function storeSiteRegistry() {
   }
 }
 
-async function getSiteDataForSite(siteName) {
+async function getSites() {
   let siteRegistry = getSiteRegistry();
 
   if (!siteRegistry) {
@@ -60,13 +60,19 @@ async function getSiteDataForSite(siteName) {
     setSiteRegistry(siteRegistry);
   }
 
-  if (!siteRegistry[siteName]) {
-    console.log("getSiteDataForSite: no siteData found for site " + siteName);
-    console.log("getSiteDataForSite: siteRegistry is:");
-    console.log(siteRegistry);
-  }
-
-  return siteRegistry[siteName];
+  return siteRegistry;
 }
 
-export { storeSiteRegistry, getSiteDataForSite };
+async function getSiteDataForSite(siteName) {
+  let sites = await getSites();
+
+  if (!sites[siteName]) {
+    console.log("getSiteDataForSite: no siteData found for site " + siteName);
+    console.log("getSiteDataForSite: siteRegistry is:");
+    console.log(sites);
+  }
+
+  return sites[siteName];
+}
+
+export { storeSiteRegistry, getSites, getSiteDataForSite };
