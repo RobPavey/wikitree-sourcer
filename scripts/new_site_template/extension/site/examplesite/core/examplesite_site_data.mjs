@@ -26,7 +26,7 @@ import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
   siteName: "examplesite",
-  matches: [exampleSiteUrlMatchString],
+  matches: ["exampleSiteUrlMatchString"],
   repositoryName: "ExampleSite",
   usPhoneNumber: "",
   email: "",

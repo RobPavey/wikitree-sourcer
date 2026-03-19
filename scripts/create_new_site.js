@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import fs from "fs";
+import path from "path";
 import readline from "node:readline/promises";
 
 const siteFiles = [
@@ -412,6 +413,79 @@ function addLineToFile(path, lineToAdd) {
   return true;
 }
 
+function sortOptionalHostPermissions(permissions) {
+  // this is suprisingly complicated and perhaps there is not correct answer.
+
+  // I worked on various solutions to try to get it to sory by the part of the domain name
+  // that is considered the "brand" e.g. "ancestry" or "geneteka" or "ecpp".
+  // But it didn't really look sorted at first glance. The main purpose of the
+  // sort is to make it look clearly sorted for a reviewer.
+
+  const sortByBrand = false;
+
+  if (sortByBrand) {
+    // These are "suffixes" that shouldn't be considered the brand name
+    const commonTlds = new Set([
+      "com",
+      "co",
+      "org",
+      "net",
+      "gov",
+      "edu",
+      "me",
+      "uk",
+      "ca",
+      "pl",
+      "gc",
+      "gnb",
+      "org",
+      "genealodzy",
+    ]);
+    permissions.sort((a, b) => {
+      const getSortKey = (str) => {
+        const match = str.match(/:\/\/(\*\.)?([^/]+)/);
+        if (!match) return { brand: str, full: str };
+
+        const host = match[2].toLowerCase();
+        const parts = host.split(".");
+
+        // Logic to find the brand:
+        // If the second-to-last part is a common TLD (like 'co' in 'co.uk'),
+        // the brand is the third-to-last part.
+        let brandIndex = parts.length - 2;
+        if (parts.length > 2 && commonTlds.has(parts[parts.length - 2])) {
+          brandIndex = parts.length - 3;
+        }
+
+        return {
+          brand: parts[brandIndex] || host,
+          full: host,
+          original: str,
+        };
+      };
+
+      const partA = getSortKey(a);
+      const partB = getSortKey(b);
+
+      // 1. Sort by Brand (ancestry vs billiongraves)
+      if (partA.brand !== partB.brand) {
+        return partA.brand.localeCompare(partB.brand);
+      }
+
+      // 2. Tie-breaker: Sort by the full host (e.g., .com vs .co.uk)
+      return partA.full.localeCompare(partB.full);
+    });
+  } else {
+    // simple obvious sort
+    permissions.sort((a, b) => {
+      return a.localeCompare(b, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      });
+    });
+  }
+}
+
 function updateManifestFile(siteName, urlMatch, path) {
   // read file
   let text = readFile(path);
@@ -423,7 +497,7 @@ function updateManifestFile(siteName, urlMatch, path) {
 
   // sanity checks
 
-  optionalHostPermissions = manifestData.optional_host_permissions;
+  let optionalHostPermissions = manifestData.optional_host_permissions;
 
   let alreadyExists = false;
   for (let entry of optionalHostPermissions) {
@@ -432,8 +506,10 @@ function updateManifestFile(siteName, urlMatch, path) {
     }
   }
   if (!alreadyExists) {
-    contentScripts.push(urlMatch);
+    optionalHostPermissions.push(urlMatch);
   }
+
+  sortOptionalHostPermissions(optionalHostPermissions);
 
   const newText = JSON.stringify(manifestData, null, 2);
 
