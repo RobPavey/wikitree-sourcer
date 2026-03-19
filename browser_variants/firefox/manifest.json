@@ -1,15 +1,16 @@
 {
+  "manifest_version": 3,
   "name": "WikiTree Sourcer",
   "version": "2.15.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
-  "permissions": [
-    "storage",
-    "contextMenus"
-  ],
+  "icons": {
+    "16": "images/wikitree_sourcer16.png",
+    "32": "images/wikitree_sourcer32.png",
+    "48": "images/wikitree_sourcer48.png",
+    "128": "images/wikitree_sourcer128.png"
+  },
   "background": {
-    "scripts": [
-      "base/browser/background/background_mv3.mjs"
-    ],
+    "scripts": ["base/browser/background/background.mjs"],
     "type": "module"
   },
   "action": {
@@ -25,18 +26,127 @@
     "page": "base/browser/options/options.html",
     "open_in_tab": true
   },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "contextMenus"
+  ],
+  "optional_host_permissions": [
+"*://*.americanancestors.org/*",
+    "*://*.ancestry.ca/*",
+    "*://*.ancestry.co.uk/*",
+    "*://*.ancestry.com.au/*",
+    "*://*.ancestry.com/*",
+    "*://*.ancestry.de/*",
+    "*://*.ancestry.fr/*",
+    "*://*.ancestry.it/*",
+    "*://*.ancestry.mx/*",
+    "*://*.ancestry.se/*",
+    "*://*.ancestryclassroom.ca/*",
+    "*://*.ancestryclassroom.co.uk/*",
+    "*://*.ancestryclassroom.com.au/*",
+    "*://*.ancestryclassroom.com/*",
+    "*://*.ancestryheritagequest.com/*",
+    "*://*.ancestryinstitution.ca/*",
+    "*://*.ancestryinstitution.co.uk/*",
+    "*://*.ancestryinstitution.com.au/*",
+    "*://*.ancestryinstitution.com/*",
+    "*://*.ancestryinstitution.de/*",
+    "*://*.ancestryinstitution.fr/*",
+    "*://*.ancestryinstitution.se/*",
+    "*://*.ancestrylibrary.ca/*",
+    "*://*.ancestrylibrary.com.au/*",
+    "*://*.ancestrylibrary.com/*",
+    "*://*.ancestrylibraryedition.co.uk/*",
+    "*://www-ancestryinstitution-com.wikipedialibrary.idm.oclc.org/*",
+    "*://www.archion.de/*",
+    "*://archive.org/*",
+    "*://archives2.gnb.ca/*",
+    "*://archives.novascotia.ca/vital-statistics/*",
+    "*://archives67.alsace.eu/ark:/*",
+    "*://arcinsys.hessen.de/*",
+    "*://www.arcinsys.niedersachsen.de/*",
+    "*://collections.arolsen-archives.org/*",
+    "*://collections-server.arolsen-archives.org/*",
+    "*://*.auschwitz.org/*",
+    "*://*.bac-lac.gc.ca/*",
+    "*://*.bdm.nsw.gov.au/*",
+    "*://*.bdm.vic.gov.au/*",
+    "*://*.bdmhistoricalrecords.dia.govt.nz/*",
+    "*://*.billiongraves.com/*",
+    "*://*.cornwall-opc-database.org/*",
+    "*://*.cwgc.org/*",
+    "*://dfg-viewer.de/*",
+    "*://*.digitalarkivet.no/*",
+    "*://digitales-archiv.erzbistum-muenchen.de/*",
+    "*://www.digitale-sammlungen.de/*",
+    "*://www.doew.at/*",
+    "*://ecpp.ucr.edu/*",
+    "*://*.eggsa.org/bdms/*",
+    "*://www.eggsa.org/cgi-bin/*",
+    "*://graves.eggsa.org/*",
+    "*://www.graves.eggsa.org/*",
+    "*://www.familysearch.org/*",
+    "*://www.findagrave.com/*",
+    "*://*.findmypast.co.uk/*",
+    "*://*.findmypast.com.au/*",
+    "*://*.findmypast.com/*",
+    "*://*.findmypast.ie/*",
+    "*://www-findmypast-co-uk.nls.idm.oclc.org/*",
+    "*://www-findmypast-com.wikipedialibrary.idm.oclc.org/*",
+    "*://*.freebmd.org.uk/*",
+    "*://*.freebmd2.org.uk/*",
+    "*://www.freecen.org.uk/*",
+    "*://www.freereg.org.uk/*",
+    "*://www.gda.bayern.de/*",
+    "*://geneteka.genealodzy.pl/*",
+    "*://books.google.com/books*",
+    "*://*.google.ca/books/*",
+    "*://*.google.co.uk/books/*",
+    "*://*.google.com.au/books/*",
+    "*://*.google.com/books/*",
+    "*://*.google.de/books/*",
+    "*://*.google.fr/books/*",
+    "*://*.google.it/books/*",
+    "*://*.google.mx/books/*",
+    "*://*.google.se/books/*",
+    "*://www.gro.gov.uk/gro/content/certificates/*",
+    "*://*.hathitrust.org/*",
+    "*://*.howison.co.nz/*",
+    "*://*.irishgenealogy.ie/*",
+    "*://*.jstor.org/*",
+    "*://www.landesarchiv-nrw.de/*",
+    "*://librariestas.ent.sirsidynix.net.au/*",
+    "*://data.matricula-online.eu/*",
+    "*://*.myheritage.com/*",
+    "*://*.nationalarchives.ie/*",
+    "*://*.nli.ie/*",
+    "*://*.newspaperarchive.com/*",
+    "*://*.newspapers.com/*",
+    "*://*.openarchieven.nl/*",
+    "*://paperspast.natlib.govt.nz/*",
+    "*://rechercher.patrimoines-archives.morbihan.fr/ark:/*",
+    "*://probatesearch.service.gov.uk/*",
+    "*://www.scotlandspeople.gov.uk/*",
+    "*://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/*",
+    "*://s1.sos.mo.gov/records/archives/archivesmvc/deathcertificates*",
+    "*://www.szukajwarchiwach.gov.pl/*",
+    "*://*.thegenealogist.co.uk/*",
+    "*://*.thegenealogist.com/*",
+    "*://trove.nla.gov.au/*",
+    "*://*.ushmm.org/*",
+    "*://*.wiewaswie.nl/*",
+    "*://*.wikipedia.org/*",
+    "*://*.wikitree.com/*",
+    "*://*.yadvashem.org/*"
+  ],
   "commands": {
     "_execute_action": {
       "suggested_key": {
         "default": "Ctrl+Shift+Y"
       }
     }
-  },
-  "icons": {
-    "16": "images/wikitree_sourcer16.png",
-    "32": "images/wikitree_sourcer32.png",
-    "48": "images/wikitree_sourcer48.png",
-    "128": "images/wikitree_sourcer128.png"
   },
   "browser_specific_settings": {
     "gecko": {
@@ -51,6 +161,5 @@
     "gecko_android": {
       "strict_min_version": "128.0"
     }
-  },
-  "manifest_version": 3
+  }
 }
