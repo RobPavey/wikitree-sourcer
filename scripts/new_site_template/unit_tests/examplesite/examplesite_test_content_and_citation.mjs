@@ -39,7 +39,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("examplesite", extractData, regressionData, testManager);
+  await runExtractDataTests("examplesite", regressionData, testManager);
 
   await runGeneralizeDataTests("examplesite", generalizeData, regressionData, testManager);
 

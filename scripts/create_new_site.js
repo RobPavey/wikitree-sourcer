@@ -52,6 +52,17 @@ const siteFiles = [
   {
     root: "extension/site",
     mid: "browser",
+    end: "_extract_data.js",
+    variants: [
+      {
+        needsHighlightRow: true,
+        templateFileEnd: "_extract_data_hr.js",
+      },
+    ],
+  },
+  {
+    root: "extension/site",
+    mid: "browser",
     end: "_popup_search.mjs",
     variants: [
       {
@@ -88,17 +99,6 @@ const siteFiles = [
     ],
   },
   { root: "extension/site", mid: "core", end: "_ed_reader.mjs" },
-  {
-    root: "extension/site",
-    mid: "core",
-    end: "_extract_data.mjs",
-    variants: [
-      {
-        needsHighlightRow: true,
-        templateFileEnd: "_extract_data_hr.mjs",
-      },
-    ],
-  },
   { root: "extension/site", mid: "core", end: "_generalize_data.mjs" },
   {
     root: "extension/site",
@@ -412,41 +412,6 @@ function addLineToFile(path, lineToAdd) {
   return true;
 }
 
-function updateSiteNamesFile(siteName) {
-  const path = "extension/site/all/core/site_names.mjs";
-  const lineToAdd = '  "' + siteName + '",';
-
-  // read file
-  let text = readFile(path);
-  if (!text) {
-    return false;
-  }
-
-  if (text.indexOf(lineToAdd) != -1) {
-    // already there
-    return false;
-  }
-
-  let closeParenIndex = text.indexOf("];");
-  if (closeParenIndex == -1) {
-    // array not found
-    return false;
-  }
-
-  let textBeforeInsert = text.substring(0, closeParenIndex);
-  let textAfterInsert = text.substring(closeParenIndex);
-  let textToInsert = lineToAdd + "\n";
-
-  let newText = textBeforeInsert + textToInsert + textAfterInsert;
-
-  // write site file
-  if (!writeFile(path, newText)) {
-    return false;
-  }
-
-  return true;
-}
-
 function updateManifestFile(siteName, urlMatch, path) {
   // read file
   let text = readFile(path);
@@ -457,78 +422,17 @@ function updateManifestFile(siteName, urlMatch, path) {
   let manifestData = JSON.parse(text);
 
   // sanity checks
-  let contentScripts = manifestData.content_scripts;
-  let webAccessibleResources = manifestData.web_accessible_resources;
 
-  if (!(contentScripts && Array.isArray(contentScripts))) {
-    return false;
-  }
-
-  if (!(webAccessibleResources && Array.isArray(webAccessibleResources))) {
-    return false;
-  }
-
-  /*
-    Example content script entry
-    {
-      "matches": ["*://www.wiewaswie.nl/*"],
-      "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/wiewaswie/browser/wiewaswie_content.js"]
-    },
-  */
-  const urlMatches = [urlMatch];
-  const siteContentPath = "site/" + siteName + "/browser/" + siteName + "_content.js";
-  let contentScriptsEntry = {
-    matches: urlMatches,
-    run_at: "document_idle",
-    js: ["base/browser/content/content_common.js", siteContentPath],
-  };
+  optionalHostPermissions = manifestData.optional_host_permissions;
 
   let alreadyExists = false;
-  for (let entry of contentScripts) {
-    if (entry.matches == urlMatches) {
-      alreadyExists = true;
-    } else if (entry.js.includes(siteContentPath)) {
+  for (let entry of optionalHostPermissions) {
+    if (entry == urlMatch) {
       alreadyExists = true;
     }
   }
   if (!alreadyExists) {
-    contentScripts.push(contentScriptsEntry);
-  }
-
-  /*
-    Example web_accessible_resources section:
-    {
-      "resources": ["site/vicbdm/core/vicbdm_extract_data.mjs"],
-      "matches": ["*://*.bdm.vic.gov.au/*"]
-    },
-  */
-
-  // if the urlMatches string cotains any path after the domain that should be removed in the
-  // match for the web_accessible_resources
-  const urlWithPathRegEx = /^([^\/]+\:\/\/[^\/]+)\/.*\/\*$/;
-  let domainMatch = urlMatch;
-  if (urlWithPathRegEx.test(domainMatch)) {
-    domainMatch = domainMatch.replace(urlWithPathRegEx, "$1/*");
-  }
-  const domainMatches = [domainMatch];
-
-  const siteExtractPath = "site/" + siteName + "/core/" + siteName + "_extract_data.mjs";
-  let warEntry = {
-    resources: [siteExtractPath],
-    matches: domainMatches,
-  };
-
-  alreadyExists = false;
-  for (let entry of webAccessibleResources) {
-    if (entry.resources.includes(siteExtractPath)) {
-      alreadyExists = true;
-    } else if (entry.matches == domainMatches) {
-      alreadyExists = true;
-    }
-  }
-  if (!alreadyExists) {
-    webAccessibleResources.push(warEntry);
+    contentScripts.push(urlMatch);
   }
 
   const newText = JSON.stringify(manifestData, null, 2);
@@ -547,6 +451,13 @@ function updateManifestFiles(siteName, urlMatch) {
   updateManifestFile(siteName, urlMatch, "browser_variants/safari/ios/manifest.json");
   updateManifestFile(siteName, urlMatch, "browser_variants/safari/macos/manifest.json");
   return true;
+}
+
+function updateRegisterSiteData(siteName) {
+  const path = "extension/site/all/core/register_site_data.mjs";
+  const lineToAdd = 'import "../../' + siteName + "/core/" + siteName + '_site_data.mjs";';
+
+  return addLineToFile(path, lineToAdd);
 }
 
 function updateRegisterSiteOptions(siteName) {
@@ -687,7 +598,7 @@ async function createNewSite() {
     return;
   }
 
-  updateSiteNamesFile(parameters.siteName);
+  updateRegisterSiteData(parameters.siteName);
   updateRegisterSiteOptions(parameters.siteName);
   updateRunTest(parameters.siteName);
 
