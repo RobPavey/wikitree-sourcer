@@ -63,21 +63,20 @@ async function checkForPendingSearch() {
     //console.log(searchData);
 
     if (panbSearchData) {
-   
-    //console.log("checkForPendingSearch: got formValues:");
-    //console.log(searchData);
+      //console.log("checkForPendingSearch: got formValues:");
+      //console.log(searchData);
 
-    let searchUrl = panbSearchData.url;
-    let timeStamp = panbSearchData.timeStamp;
-    let timeStampNow = Date.now();
-    let timeSinceSearch = timeStampNow - timeStamp;
+      let searchUrl = panbSearchData.url;
+      let timeStamp = panbSearchData.timeStamp;
+      let timeStampNow = Date.now();
+      let timeSinceSearch = timeStampNow - timeStamp;
 
-    //console.log("checkForPendingSearch: timeStamp is: " + timeStamp);
-    //console.log("checkForPendingSearch: timeStampNow is: " + timeStampNow);
-    //console.log("checkForPendingSearch: timeSinceSearch is: " + timeSinceSearch);
+      //console.log("checkForPendingSearch: timeStamp is: " + timeStamp);
+      //console.log("checkForPendingSearch: timeStampNow is: " + timeStampNow);
+      //console.log("checkForPendingSearch: timeSinceSearch is: " + timeSinceSearch);
 
-    // It can take a long time to populate the page with the input fields
-    if (timeSinceSearch < 10000 && searchUrl == document.URL) {
+      // It can take a long time to populate the page with the input fields
+      if (timeSinceSearch < 10000 && searchUrl == document.URL) {
         let fieldData = panbSearchData.fieldData;
 
         //console.log("checkForPendingSearch: fieldData is:");
@@ -136,10 +135,7 @@ async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
   await checkForPendingSearch();
 
-  siteContentInit(
-    `panb`,
-    `site/panb/core/panb_extract_data.mjs`);
-  
+  siteContentInit("panb");
 }
 
 checkForSearchThenInit();

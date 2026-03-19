@@ -85,5 +85,5 @@ function addClickedRowListener() {
   }
 }
 
-siteContentInit(`naie`, `site/naie/core/naie_extract_data.mjs`);
+siteContentInit("naie");
 addClickedRowListener();

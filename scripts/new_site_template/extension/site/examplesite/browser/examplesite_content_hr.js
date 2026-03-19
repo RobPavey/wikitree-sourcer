@@ -87,5 +87,5 @@ function addClickedRowListener() {
   }
 }
 
-siteContentInit(`examplesite`, `site/examplesite/core/examplesite_extract_data.mjs`);
+siteContentInit("examplesite");
 addClickedRowListener();

@@ -176,4 +176,4 @@ function extractHandler(request, sendResponse) {
   return true; // will respond async
 }
 
-siteContentInit(`openarch`, `site/openarch/core/openarch_extract_data.mjs`, extractHandler);
+siteContentInit("openarch", extractHandler);

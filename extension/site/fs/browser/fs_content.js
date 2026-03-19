@@ -438,4 +438,4 @@ function additionalMessageHandler(request, sender, sendResponse) {
   return { wasHandled: false };
 }
 
-siteContentInit(`fs`, `site/fs/core/fs_extract_data.mjs`, extractHandler, additionalMessageHandler);
+siteContentInit("fs", extractHandler, additionalMessageHandler);

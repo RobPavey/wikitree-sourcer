@@ -87,5 +87,5 @@ function addClickedRowListener() {
   }
 }
 
-siteContentInit(`nzash`, `site/nzash/core/nzash_extract_data.mjs`);
+siteContentInit("nzash");
 addClickedRowListener();

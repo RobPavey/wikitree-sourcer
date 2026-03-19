@@ -379,8 +379,7 @@ async function checkForSearchThenInit() {
   await checkForPendingSearch();
 
   siteContentInit(
-    `nzbdm`,
-    `site/nzbdm/core/nzbdm_extract_data.mjs`,
+    "nzbdm",
     undefined, // overrideExtractHandler
     additionalMessageHandler
   );

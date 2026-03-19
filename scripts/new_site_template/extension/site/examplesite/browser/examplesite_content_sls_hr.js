@@ -300,8 +300,7 @@ async function checkForSearchThenInit() {
   checkForPendingSearch();
 
   siteContentInit(
-    `examplesite`,
-    `site/examplesite/core/examplesite_extract_data.mjs`,
+    "examplesite",
     undefined, // overrideExtractHandler
     additionalMessageHandler
   );

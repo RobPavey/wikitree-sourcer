@@ -420,7 +420,7 @@ async function checkForSearchThenInit() {
   const hadPendingSearch = await checkForAndProcessPendingSearch();
   if (hadPendingSearch) return;
 
-  siteContentInit(`eggsabdm`, `site/eggsabdm/core/eggsabdm_extract_data.mjs`);
+  siteContentInit("eggsabdm");
   const prevSearch = await getSearchData(PREVIOUS_SEARCH);
   if (prevSearch) {
     // console.log("previous search", prevSearch);

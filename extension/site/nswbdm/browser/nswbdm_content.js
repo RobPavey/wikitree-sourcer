@@ -502,8 +502,7 @@ async function checkForSearchThenInit() {
   // it is possible this could interfere with filling out the form
   if (!isPendingSearch) {
     siteContentInit(
-      `nswbdm`,
-      `site/nswbdm/core/nswbdm_extract_data.mjs`,
+      "nswbdm",
       undefined, // overrideExtractHandler
       additionalMessageHandler
     );

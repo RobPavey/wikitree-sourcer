@@ -129,7 +129,9 @@ function retryMessageToBackground(siteName, prefersDark) {
     { type: "contentLoaded", siteName: siteName, prefersDark: prefersDark },
     function (response) {
       // nothing to do, the message needs to send a response though to avoid console error message
-      console.log("siteContentInit 2nd attempt, received response from contentLoaded message, siteName is " + siteName);
+      console.log(
+        "retryMessageToBackground 2nd attempt, received response from contentLoaded message, siteName is " + siteName
+      );
       console.log(response);
       if (chrome.runtime.lastError) {
         // possibly there is no background script loaded, this should never happen
@@ -151,7 +153,7 @@ function setPopupAndIcon(siteName) {
     { type: "contentLoaded", siteName: siteName, prefersDark: prefersDark },
     function (response) {
       // we need to be sure that the background script got the message and set the popup
-      //console.log("siteContentInit, received response from contentLoaded message, siteName is: " + siteName);
+      //console.log("setPopupAndIcon, received response from contentLoaded message, siteName is: " + siteName);
       //console.log("response is:");
       //console.log(response);
       //if (response) {
@@ -159,7 +161,7 @@ function setPopupAndIcon(siteName) {
       //}
       if (chrome.runtime.lastError) {
         // possibly there is no background script loaded, this should never happen
-        console.log("siteContentInit: No response from background script. lastError message is:");
+        console.log("setPopupAndIcon: No response from background script. lastError message is:");
         console.log(chrome.runtime.lastError.message);
       } else if (!response || !response.success) {
         // This typically means that the background script was not listening yet and did not set
@@ -169,7 +171,7 @@ function setPopupAndIcon(siteName) {
           retryMessageToBackground(siteName, prefersDark);
         }, contentLoadedTimeoutDelay);
       } else {
-        //console.log("siteContentInit, have response from bg, siteName is: " + siteName);
+        //console.log("setPopupAndIcon, have response from bg, siteName is: " + siteName);
       }
     }
   );
@@ -219,7 +221,7 @@ function contentMessageListener(
   return false; // no async
 }
 
-function siteContentInit(siteName, extractModulePath, overrideExtractHandler, additionalMessageHandler) {
+function siteContentInit(siteName, overrideExtractHandler, additionalMessageHandler) {
   console.log("siteContentInit, site name is: " + siteName);
 
   // In the case of Safari where the permission popup comes up when you click the extension icon,

@@ -170,8 +170,7 @@ async function additionalMessageHandler(request, sender, sendResponse) {
 
 async function doSetup() {
   siteContentInit(
-    `gro`,
-    `site/gro/core/gro_extract_data.mjs`,
+    "gro",
     undefined, // overrideExtractHandler
     additionalMessageHandler
   );

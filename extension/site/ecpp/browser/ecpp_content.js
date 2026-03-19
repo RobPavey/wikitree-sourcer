@@ -235,8 +235,7 @@ async function checkForSearchThenInit() {
   checkForPendingSearch();
 
   siteContentInit(
-    `ecpp`,
-    `site/ecpp/core/ecpp_extract_data.mjs`,
+    "ecpp",
     undefined, // overrideExtractHandler
     additionalMessageHandler
   );

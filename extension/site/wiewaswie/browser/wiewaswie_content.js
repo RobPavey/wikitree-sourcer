@@ -174,7 +174,7 @@ async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
   await checkForPendingSearch();
 
-  siteContentInit(`wiewaswie`, `site/wiewaswie/core/wiewaswie_extract_data.mjs`);
+  siteContentInit("wiewaswie");
 }
 
 checkForSearchThenInit();

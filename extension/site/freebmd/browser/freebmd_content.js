@@ -441,8 +441,7 @@ async function checkForSearchThenInit() {
     // it is possible this could interfere with filling out the form
     if (!isPendingSearch) {
       siteContentInit(
-        `freebmd`,
-        `site/freebmd/core/freebmd_extract_data.mjs`,
+        "freebmd",
         undefined, // overrideExtractHandler
         additionalMessageHandler
       );
@@ -450,7 +449,7 @@ async function checkForSearchThenInit() {
   } else {
     console.log("freebmd_content: is old page");
 
-    siteContentInit(`freebmd`, `site/freebmd/core/freebmd_extract_data.mjs`);
+    siteContentInit("freebmd");
   }
 }
 

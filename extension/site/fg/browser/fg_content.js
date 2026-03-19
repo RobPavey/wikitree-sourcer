@@ -43,8 +43,7 @@ async function additionalMessageHandler(request, sender, sendResponse) {
 }
 
 siteContentInit(
-  `fg`,
-  `site/fg/core/fg_extract_data.mjs`,
+  "fg",
   undefined, // overrideExtractHandler
   additionalMessageHandler
 );

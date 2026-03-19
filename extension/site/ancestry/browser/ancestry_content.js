@@ -306,8 +306,7 @@ async function additionalMessageHandler(request, sender, sendResponse) {
 }
 
 siteContentInit(
-  `ancestry`,
-  `site/ancestry/core/ancestry_extract_data.mjs`,
+  "ancestry",
   undefined, // overrideExtractHandler
   additionalMessageHandler
 );

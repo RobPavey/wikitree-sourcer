@@ -824,8 +824,7 @@ async function checkForSearchThenInit() {
   addMutationObserver();
 
   siteContentInit(
-    `vicbdm`,
-    `site/vicbdm/core/vicbdm_extract_data.mjs`,
+    "vicbdm",
     undefined, // overrideExtractHandler
     additionalMessageHandler
   );

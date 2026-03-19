@@ -211,7 +211,7 @@ async function checkForSearchThenInit() {
   const hadPendingSearch = await checkForAndProcessPendingSearch();
   if (hadPendingSearch) return;
 
-  siteContentInit(`eggsagrvs`, `site/eggsagrvs/core/eggsagrvs_extract_data.mjs`);
+  siteContentInit("eggsagrvs");
   const prevSearchData = await getSearchData(PREVIOUS_SEARCH);
   if (prevSearchData) {
     populateForm(prevSearchData);

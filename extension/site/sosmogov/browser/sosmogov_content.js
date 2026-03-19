@@ -482,8 +482,7 @@ async function checkForSearchThenInit() {
   // it is possible this could interfere with filling out the form
   if (!isPendingSearch) {
     siteContentInit(
-      `sosmogov`,
-      `site/sosmogov/core/sosmogov_extract_data.mjs`,
+      "sosmogov",
       undefined, // overrideExtractHandler
       additionalMessageHandler
     );

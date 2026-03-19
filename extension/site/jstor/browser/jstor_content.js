@@ -22,4 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`jstor`, `site/jstor/core/jstor_extract_data.mjs`);
+siteContentInit("jstor");

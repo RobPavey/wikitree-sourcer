@@ -121,7 +121,7 @@ async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
   await checkForPendingSearch();
 
-  siteContentInit(`freecen`, `site/freecen/core/freecen_extract_data.mjs`);
+  siteContentInit("freecen");
 }
 
 checkForSearchThenInit();

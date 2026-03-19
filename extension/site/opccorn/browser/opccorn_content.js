@@ -22,4 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`opccorn`, `site/opccorn/core/opccorn_extract_data.mjs`);
+siteContentInit("opccorn");
