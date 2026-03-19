@@ -44,9 +44,7 @@ function extractDataFromHtml(htmlText, recordUrl) {
   extractedData.url = recordUrl;
   extractedData.pageType = "record";
 
-  let filePath = "site/ancestry/core/ancestry_extract_data.mjs";
-  let extensionPath = chrome.runtime.getURL(filePath);
-  extractRecord(extensionPath, document, recordUrl, extractedData);
+  extractRecord(document, recordUrl, extractedData);
   return extractedData;
 }
 

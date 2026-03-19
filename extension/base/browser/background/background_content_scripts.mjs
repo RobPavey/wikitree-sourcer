@@ -42,7 +42,7 @@ async function registerContentScripts() {
       let matches = siteData.matches;
       if (matches) {
         let id = siteName;
-        let extractPath = "site/" + id + "/core/" + id + "_extract_data.mjs";
+        let extractPath = "site/" + id + "/browser/" + id + "_extract_data.js";
         let contentScriptPath = "site/" + id + "/browser/" + id + "_content.js";
         let js = [extractPath, commonPath, contentScriptPath];
         let runAt = "document_idle";

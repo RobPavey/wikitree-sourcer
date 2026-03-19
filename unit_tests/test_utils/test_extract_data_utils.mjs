@@ -35,7 +35,7 @@ function testEnabled(parameters, testName) {
   return parameters.testName == "" || parameters.testName == testName;
 }
 
-// this is used because the <site>_extract_data.mjs files are not actually ESM modules
+// this is used because the <site>_extract_data.js files are not actually ESM modules
 // this is because they are loaded in the content scripts
 function loadExtractDataInWrapper(filePath) {
   const absolutePath = path.resolve(filePath);
@@ -83,7 +83,7 @@ async function runExtractDataTests(
     return;
   }
 
-  const extractDataFile = "./extension/site/" + siteName + "/core/" + siteName + "_extract_data.mjs";
+  const extractDataFile = "./extension/site/" + siteName + "/browser/" + siteName + "_extract_data.js";
   let extractDataFromFetchFunction = undefined;
   let extractDataFunction = undefined;
   if (extractFromFetch) {

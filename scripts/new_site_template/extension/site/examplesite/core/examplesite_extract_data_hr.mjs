@@ -45,7 +45,7 @@ function extractData(document, url) {
 
   //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
   // insert code here to extract the data from the selected search result on the page.
-  // See extension/site/nswbdm/core/nswbdm_extract_data.mjs for an example.
+  // See extension/site/nswbdm/browser/nswbdm_extract_data.js for an example.
   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   result.success = true;

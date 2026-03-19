@@ -47,7 +47,7 @@ async function runExtractDataTests(siteName, regressionData, testManager, cleanS
     return;
   }
 
-  const extractDataFile = "./extension/site/" + siteName + "/core/" + siteName + "_extract_data.mjs";
+  const extractDataFile = "./extension/site/" + siteName + "/browser/" + siteName + "_extract_data.js";
   const extractDataFunction = loadExtractDataInWrapper(extractDataFile);
 
   let testName = siteName + "_extract_data";

@@ -182,7 +182,7 @@ function extractDataFromHtml(htmlText, url) {
 
   let result = undefined;
   try {
-    let extractData = loadExtractDataInWrapper("./extension/site/ancestry/core/ancestry_extract_data.mjs");
+    let extractData = loadExtractDataInWrapper("./extension/site/ancestry/browser/ancestry_extract_data.js");
     result = extractData(doc, url);
   } catch (e) {
     console.log("Error:", e.stack);

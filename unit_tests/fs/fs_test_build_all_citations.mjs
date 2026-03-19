@@ -114,7 +114,7 @@ async function runBuildAllCitationsTests(siteName, regressionData, testManager, 
     return;
   }
 
-  const extractDataFile = "./extension/site/" + siteName + "/core/" + siteName + "_extract_data.mjs";
+  const extractDataFile = "./extension/site/" + siteName + "/browser/" + siteName + "_extract_data.js";
   const extractDataFromFetchFunction = loadExtractDataFromFetchInWrapper(extractDataFile);
 
   let testName = siteName + "_build_all_citations";
