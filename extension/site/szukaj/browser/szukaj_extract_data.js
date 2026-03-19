@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// No imports or requires allowed. See docs/dev_notes/extract_data_design
+
 const ATTRIBUTE_TRANSLATIONS = {
   sygnatura: "reference code",
   signatur: "reference code",
@@ -96,4 +98,4 @@ function extractData(document, url) {
   return result;
 }
 
-// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper
+// No exports allowed. See docs/dev_notes/extract_data_design

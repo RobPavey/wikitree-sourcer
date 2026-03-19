@@ -45,4 +45,4 @@ function extractData(document, url) {
   return result;
 }
 
-// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper
+// No exports allowed. See docs/dev_notes/extract_data_design

@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// No imports or requires allowed. See docs/dev_notes/extract_data_design
+
 var lastClickedRowData;
 
 function extractData(document, url) {
@@ -102,4 +104,4 @@ function setClickedRowData(rowData) {
   lastClickedRowData = rowData;
 }
 
-// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper
+// No exports allowed. See docs/dev_notes/extract_data_design

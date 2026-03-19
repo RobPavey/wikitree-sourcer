@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// No imports or requires allowed. See docs/dev_notes/extract_data_design
+
 function cleanText(text) {
   if (!text) {
     return "";
@@ -2503,3 +2505,5 @@ function extractData(document, url) {
 
   return result;
 }
+
+// No exports allowed. See docs/dev_notes/extract_data_design

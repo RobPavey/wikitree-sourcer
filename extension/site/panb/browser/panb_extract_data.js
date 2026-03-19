@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// No imports or requires allowed. See docs/dev_notes/extract_data_design
+
 //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
 // insert code here to do detect the selected row by looking for the styling that
 // was added in the content script when the row was clicked. Code below is an example.
@@ -179,4 +181,4 @@ function extractData(document, url) {
   return result;
 }
 
-// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper
+// No exports allowed. See docs/dev_notes/extract_data_design

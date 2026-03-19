@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// No imports or requires allowed. See docs/dev_notes/extract_data_design
+
 function monthName2Number(month_name) {
   const month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -161,4 +163,4 @@ function extractData(document, url) {
   return result;
 }
 
-// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper
+// No exports allowed. See docs/dev_notes/extract_data_design

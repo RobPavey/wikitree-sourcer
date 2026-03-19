@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// No imports or requires allowed. See docs/dev_notes/extract_data_design
+
 function cleanText(text) {
   text = text.replace(/\s+/g, " "); // eliminate nbsp and multiple white space etc
   text = text.trim();
@@ -351,4 +353,4 @@ function extractData(document, url) {
   return result;
 }
 
-// no export since this is loaded with the content script, for unit_tests see loadExtractDataInWrapper
+// No exports allowed. See docs/dev_notes/extract_data_design
