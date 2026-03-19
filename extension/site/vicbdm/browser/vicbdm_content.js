@@ -612,11 +612,7 @@ function captureRowData(rowElement) {
     //console.log("rowData is:");
     //console.log(rowData);
 
-    if (loadedExtractDataModule) {
-      if (loadedExtractDataModule.setClickedRowData) {
-        loadedExtractDataModule.setClickedRowData(rowData);
-      }
-    }
+    setClickedRowData(rowData);
   }
 }
 

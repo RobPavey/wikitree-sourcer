@@ -1,13 +1,14 @@
 {
+  "manifest_version": 3,
   "name": "WikiTree Sourcer",
   "version": "2.15.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
-  "permissions": [
-    "activeTab",
-    "scripting",
-    "storage",
-    "contextMenus"
-  ],
+  "icons": {
+    "16": "images/wikitree_sourcer16.png",
+    "32": "images/wikitree_sourcer32.png",
+    "48": "images/wikitree_sourcer48.png",
+    "128": "images/wikitree_sourcer128.png"
+  },
   "background": {
     "service_worker": "base/browser/background/background_chrome.mjs",
     "type": "module"
@@ -21,623 +22,123 @@
       "128": "images/wts_inactive_128.png"
     }
   },
- "optional_host_permissions": [
-    "*://*.wikitree.com/*",
-    "*://*.americanancestors.org/*",
-    "*://*.ancestry.com/*",
-    "*://*.ancestry.co.uk/*",
+  "options_ui": {
+    "page": "base/browser/options/options.html",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "contextMenus"
+  ],
+  "optional_host_permissions": [
+"*://*.americanancestors.org/*",
     "*://*.ancestry.ca/*",
+    "*://*.ancestry.co.uk/*",
     "*://*.ancestry.com.au/*",
+    "*://*.ancestry.com/*",
     "*://*.ancestry.de/*",
-    "*://*.ancestry.it/*",
     "*://*.ancestry.fr/*",
-    "*://*.ancestry.se/*",
+    "*://*.ancestry.it/*",
     "*://*.ancestry.mx/*",
-    "*://*.ancestryclassroom.com/*",
-    "*://*.ancestryclassroom.co.uk/*",
+    "*://*.ancestry.se/*",
     "*://*.ancestryclassroom.ca/*",
+    "*://*.ancestryclassroom.co.uk/*",
     "*://*.ancestryclassroom.com.au/*",
-    "*://*.ancestryinstitution.com/*",
-    "*://*.ancestryinstitution.co.uk/*",
+    "*://*.ancestryclassroom.com/*",
+    "*://*.ancestryheritagequest.com/*",
     "*://*.ancestryinstitution.ca/*",
+    "*://*.ancestryinstitution.co.uk/*",
     "*://*.ancestryinstitution.com.au/*",
+    "*://*.ancestryinstitution.com/*",
     "*://*.ancestryinstitution.de/*",
     "*://*.ancestryinstitution.fr/*",
     "*://*.ancestryinstitution.se/*",
-    "*://*.ancestrylibrary.com/*",
-    "*://*.ancestrylibraryedition.co.uk/*",
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
-    "*://*.ancestryheritagequest.com/*",
+    "*://*.ancestrylibrary.com/*",
+    "*://*.ancestrylibraryedition.co.uk/*",
     "*://www-ancestryinstitution-com.wikipedialibrary.idm.oclc.org/*",
     "*://www.archion.de/*",
     "*://archive.org/*",
+    "*://archives2.gnb.ca/*",
+    "*://archives.novascotia.ca/vital-statistics/*",
+    "*://archives67.alsace.eu/ark:/*",
+    "*://arcinsys.hessen.de/*",
+    "*://www.arcinsys.niedersachsen.de/*",
     "*://collections.arolsen-archives.org/*",
     "*://collections-server.arolsen-archives.org/*",
+    "*://*.auschwitz.org/*",
     "*://*.bac-lac.gc.ca/*",
-    "*://archives67.alsace.eu/ark:/*",
     "*://*.bdm.nsw.gov.au/*",
+    "*://*.bdm.vic.gov.au/*",
     "*://*.bdmhistoricalrecords.dia.govt.nz/*",
     "*://*.billiongraves.com/*",
     "*://*.cornwall-opc-database.org/*",
     "*://*.cwgc.org/*",
     "*://dfg-viewer.de/*",
-    "*://digitales-archiv.erzbistum-muenchen.de/*",
-    "*://www.gda.bayern.de/*",
-    "*://www.arcinsys.niedersachsen.de/*",
-    "*://arcinsys.hessen.de/*",
-    "*://www.landesarchiv-nrw.de/*",
     "*://*.digitalarkivet.no/*",
+    "*://digitales-archiv.erzbistum-muenchen.de/*",
+    "*://www.digitale-sammlungen.de/*",
+    "*://www.doew.at/*",
+    "*://ecpp.ucr.edu/*",
     "*://*.eggsa.org/bdms/*",
     "*://www.eggsa.org/cgi-bin/*",
     "*://graves.eggsa.org/*",
     "*://www.graves.eggsa.org/*",
-    "*://*.findmypast.com/*",
+    "*://www.familysearch.org/*",
+    "*://www.findagrave.com/*",
     "*://*.findmypast.co.uk/*",
-    "*://*.findmypast.ie/*",
     "*://*.findmypast.com.au/*",
+    "*://*.findmypast.com/*",
+    "*://*.findmypast.ie/*",
     "*://www-findmypast-co-uk.nls.idm.oclc.org/*",
     "*://www-findmypast-com.wikipedialibrary.idm.oclc.org/*",
-    "*://www.findagrave.com/*",
-    "*://www.familysearch.org/*",
     "*://*.freebmd.org.uk/*",
     "*://*.freebmd2.org.uk/*",
     "*://www.freecen.org.uk/*",
     "*://www.freereg.org.uk/*",
+    "*://www.gda.bayern.de/*",
     "*://geneteka.genealodzy.pl/*",
-    "*://*.google.com/books/*",
-    "*://*.google.co.uk/books/*",
-    "*://*.google.ca/books/*",
-    "*://*.google.com.au/books/*",
-    "*://*.google.de/books/*",
-    "*://*.google.it/books/*",
-    "*://*.google.fr/books/*",
-    "*://*.google.se/books/*",
-    "*://*.google.mx/books/*",
     "*://books.google.com/books*",
+    "*://*.google.ca/books/*",
+    "*://*.google.co.uk/books/*",
+    "*://*.google.com.au/books/*",
+    "*://*.google.com/books/*",
+    "*://*.google.de/books/*",
+    "*://*.google.fr/books/*",
+    "*://*.google.it/books/*",
+    "*://*.google.mx/books/*",
+    "*://*.google.se/books/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://*.hathitrust.org/*",
     "*://*.howison.co.nz/*",
     "*://*.irishgenealogy.ie/*",
     "*://*.jstor.org/*",
+    "*://www.landesarchiv-nrw.de/*",
     "*://librariestas.ent.sirsidynix.net.au/*",
     "*://data.matricula-online.eu/*",
-    "*://www.digitale-sammlungen.de/*",
     "*://*.myheritage.com/*",
     "*://*.nationalarchives.ie/*",
     "*://*.nli.ie/*",
     "*://*.newspaperarchive.com/*",
     "*://*.newspapers.com/*",
-    "*://archives.novascotia.ca/vital-statistics/*",
     "*://*.openarchieven.nl/*",
     "*://paperspast.natlib.govt.nz/*",
+    "*://rechercher.patrimoines-archives.morbihan.fr/ark:/*",
     "*://probatesearch.service.gov.uk/*",
     "*://www.scotlandspeople.gov.uk/*",
-    "*://*.thegenealogist.com/*",
-    "*://*.thegenealogist.co.uk/*",
-    "*://trove.nla.gov.au/*",
-    "*://*.bdm.vic.gov.au/*",
-    "*://www.wiewaswie.nl/*",
-    "*://*.wikipedia.org/*",
     "*://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/*",
     "*://s1.sos.mo.gov/records/archives/archivesmvc/deathcertificates*",
+    "*://www.szukajwarchiwach.gov.pl/*",
+    "*://*.thegenealogist.co.uk/*",
+    "*://*.thegenealogist.com/*",
+    "*://trove.nla.gov.au/*",
     "*://*.ushmm.org/*",
-    "*://*.yadvashem.org/*",
-    "*://www.doew.at/*",
-    "*://ecpp.ucr.edu/*",
-    "*://*.auschwitz.org/*",
-    "*://archives2.gnb.ca/*",
-    "*://rechercher.patrimoines-archives.morbihan.fr/ark:/*",
-    "*://www.szukajwarchiwach.gov.pl/*"
- ],
-  "options_ui": {
-    "page": "base/browser/options/options.html",
-    "open_in_tab": true
-  },
-  "icons": {
-    "16": "images/wikitree_sourcer16.png",
-    "32": "images/wikitree_sourcer32.png",
-    "48": "images/wikitree_sourcer48.png",
-    "128": "images/wikitree_sourcer128.png"
-  },
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "site/ameranc/core/ameranc_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.americanancestors.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/ancestry/core/ancestry_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.ancestry.com/*",
-        "*://*.ancestry.co.uk/*",
-        "*://*.ancestry.ca/*",
-        "*://*.ancestry.com.au/*",
-        "*://*.ancestry.de/*",
-        "*://*.ancestry.it/*",
-        "*://*.ancestry.fr/*",
-        "*://*.ancestry.se/*",
-        "*://*.ancestry.mx/*",
-        "*://*.ancestryclassroom.com/*",
-        "*://*.ancestryclassroom.co.uk/*",
-        "*://*.ancestryclassroom.ca/*",
-        "*://*.ancestryclassroom.com.au/*",
-        "*://*.ancestryinstitution.com/*",
-        "*://*.ancestryinstitution.co.uk/*",
-        "*://*.ancestryinstitution.ca/*",
-        "*://*.ancestryinstitution.com.au/*",
-        "*://*.ancestryinstitution.de/*",
-        "*://*.ancestryinstitution.fr/*",
-        "*://*.ancestryinstitution.se/*",
-        "*://*.ancestrylibrary.com/*",
-        "*://*.ancestrylibraryedition.co.uk/*",
-        "*://*.ancestrylibrary.ca/*",
-        "*://*.ancestrylibrary.com.au/*",
-        "*://*.ancestryheritagequest.com/*",
-        "*://www-ancestryinstitution-com.wikipedialibrary.idm.oclc.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/archion/core/archion_extract_data.mjs"
-      ],
-      "matches": [
-        "*://www.archion.de/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/archive/core/archive_extract_data.mjs"
-      ],
-      "matches": [
-        "*://archive.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/arolsenarchives/core/arolsenarchives_extract_data.mjs"
-      ],
-      "matches": [
-        "*://collections.arolsen-archives.org/*",
-        "*://collections-server.arolsen-archives.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/baclac/core/baclac_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.bac-lac.gc.ca/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/basrhin/core/basrhin_extract_data.mjs"
-      ],
-      "matches": [
-        "*://archives67.alsace.eu/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/nswbdm/core/nswbdm_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.bdm.nsw.gov.au/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/nzash/core/nzash_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.howison.co.nz/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/nzbdm/core/nzbdm_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.bdmhistoricalrecords.dia.govt.nz/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/bg/core/bg_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.billiongraves.com/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/opccorn/core/opccorn_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.cornwall-opc-database.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/cwgc/core/cwgc_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.cwgc.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/dfgviewer/core/dfgviewer_extract_data.mjs"
-      ],
-      "matches": [
-        "*://dfg-viewer.de/*",
-        "*://digitales-archiv.erzbistum-muenchen.de/*",
-        "*://www.gda.bayern.de/*",
-        "*://www.arcinsys.niedersachsen.de/*",
-        "*://arcinsys.hessen.de/*",
-        "*://www.landesarchiv-nrw.de/*"
-      ]
-    },
-    {
-      "resources": [
-        "base/core/string_utils.mjs",
-        "site/eggsabdm/core/eggsabdm_common.mjs",
-        "site/eggsabdm/core/eggsabdm_extract_data.mjs"
-      ],
-      "matches": [
-        "*://www.eggsa.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/eggsagrvs/core/eggsagrvs_extract_data.mjs"
-      ],
-      "matches": [
-        "*://graves.eggsa.org/*",
-        "*://www.graves.eggsa.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/noda/core/noda_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.digitalarkivet.no/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/fg/core/fg_extract_data.mjs"
-      ],
-      "matches": [
-        "*://www.findagrave.com/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/fmp/core/fmp_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.findmypast.com/*",
-        "*://*.findmypast.co.uk/*",
-        "*://*.findmypast.ie/*",
-        "*://*.findmypast.com.au/*",
-        "*://www-findmypast-co-uk.nls.idm.oclc.org/*",
-        "*://www-findmypast-com.wikipedialibrary.idm.oclc.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/freebmd/core/freebmd_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.freebmd.org.uk/*",
-        "*://*.freebmd2.org.uk/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/freecen/core/freecen_extract_data.mjs"
-      ],
-      "matches": [
-        "*://www.freecen.org.uk/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/freereg/core/freereg_extract_data.mjs"
-      ],
-      "matches": [
-        "*://www.freereg.org.uk/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/fs/core/fs_extract_data.mjs"
-      ],
-      "matches": [
-        "*://www.familysearch.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/geneteka/core/geneteka_extract_data.mjs"
-      ],
-      "matches": [
-        "*://geneteka.genealodzy.pl/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/gbooks/core/gbooks_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.google.com/*",
-        "*://*.google.co.uk/*",
-        "*://*.google.ca/*",
-        "*://*.google.com.au/*",
-        "*://*.google.de/*",
-        "*://*.google.it/*",
-        "*://*.google.fr/*",
-        "*://*.google.se/*",
-        "*://*.google.mx/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/gro/core/gro_extract_data.mjs"
-      ],
-      "matches": [
-        "*://www.gro.gov.uk/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/hathi/core/hathi_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.hathitrust.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/irishg/core/irishg_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.irishgenealogy.ie/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/jstor/core/jstor_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.jstor.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/taslib/core/taslib_extract_data.mjs"
-      ],
-      "matches": [
-        "*://librariestas.ent.sirsidynix.net.au/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/matricula/core/matricula_extract_data.mjs"
-      ],
-      "matches": [
-        "*://data.matricula-online.eu/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/mdz/core/mdz_extract_data.mjs"
-      ],
-      "matches": [
-        "*://www.digitale-sammlungen.de/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/mh/core/mh_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.myheritage.com/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/naie/core/naie_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.nationalarchives.ie/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/nli/core/nli_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.nli.ie/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/npa/core/npa_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.newspaperarchive.com/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/np/core/np_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.newspapers.com/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/nsvr/core/nsvr_extract_data.mjs"
-      ],
-      "matches": [
-        "*://archives.novascotia.ca/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/openarch/core/openarch_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.openarchieven.nl/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/ppnz/core/ppnz_extract_data.mjs"
-      ],
-      "matches": [
-        "*://paperspast.natlib.govt.nz/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/psuk/core/psuk_extract_data.mjs"
-      ],
-      "matches": [
-        "*://probatesearch.service.gov.uk/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/scotp/core/scotp_extract_data.mjs"
-      ],
-      "matches": [
-        "*://www.scotlandspeople.gov.uk/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/thegen/core/thegen_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.thegenealogist.com/*",
-        "*://*.thegenealogist.co.uk/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/trove/core/trove_extract_data.mjs"
-      ],
-      "matches": [
-        "*://trove.nla.gov.au/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/vicbdm/core/vicbdm_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.bdm.vic.gov.au/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/wiewaswie/core/wiewaswie_extract_data.mjs"
-      ],
-      "matches": [
-        "*://www.wiewaswie.nl/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/wikipedia/core/wikipedia_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.wikipedia.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/sosmogov/core/sosmogov_extract_data.mjs"
-      ],
-      "matches": [
-        "*://s1.sos.mo.gov/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/ushmm/core/ushmm_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.ushmm.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/yadvashem/core/yadvashem_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.yadvashem.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/doew/core/doew_extract_data.mjs"
-      ],
-      "matches": [
-        "*://www.doew.at/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/ecpp/core/ecpp_extract_data.mjs"
-      ],
-      "matches": [
-        "*://ecpp.ucr.edu/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/ausmem/core/ausmem_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.auschwitz.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/panb/core/panb_extract_data.mjs"
-      ],
-      "matches": [
-        "*://archives2.gnb.ca/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/morbihan/core/morbihan_extract_data.mjs"
-      ],
-      "matches": [
-        "*://rechercher.patrimoines-archives.morbihan.fr/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/szukaj/core/szukaj_extract_data.mjs"
-      ],
-      "matches": [
-        "*://www.szukajwarchiwach.gov.pl/*"
-      ]
-    }
-  ],
-  "manifest_version": 3
+    "*://*.wiewaswie.nl/*",
+    "*://*.wikipedia.org/*",
+    "*://*.wikitree.com/*",
+    "*://*.yadvashem.org/*"
+  ]
 }

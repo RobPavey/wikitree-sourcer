@@ -207,41 +207,8 @@ async function doFetch() {
 async function extractDataFromFetchAndRespond(document, dataObjects, fetchType, sessionId, options, sendResponse) {
   //console.log('extractDataFromFetchAndRespond entered');
 
-  if (!isLoadedExtractDataModuleReady) {
-    if (loadedExtractDataModuleFailed) {
-      sendResponse({
-        success: false,
-        errorMessage: "Error loading extract data module",
-      });
-    }
-    // dependencies not ready, wait a few milliseconds and try again
-    else if (loadExtractDataModuleRetries < maxLoadModuleRetries) {
-      loadExtractDataModuleRetries++;
-      console.log("extractDataFromFetchAndRespond. Retry number: ", loadExtractDataModuleRetries);
-      setTimeout(function () {
-        extractDataFromFetchAndRespond(document, dataObjects, fetchType, sessionId, options, sendResponse);
-      }, 10);
-      return true;
-    } else {
-      console.log("extractDataFromFetchAndRespond. Too many retries");
-      sendResponse({
-        success: false,
-        errorMessage: "Extract data module never loaded, tried " + maxLoadModuleRetries + " times",
-        noException: true,
-      });
-    }
-    return false;
-  }
-
   // Extract the data.
-  let extractedData = loadedExtractDataModule.extractDataFromFetch(
-    document,
-    "",
-    dataObjects,
-    fetchType,
-    sessionId,
-    options
-  );
+  let extractedData = extractDataFromFetch(document, "", dataObjects, fetchType, sessionId, options);
 
   // respond with the type of content and the extracted data
   sendResponse({

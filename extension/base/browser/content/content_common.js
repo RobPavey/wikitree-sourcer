@@ -32,20 +32,6 @@ SOFTWARE.
 // popup menu.
 // It may get called as the menu comes up to determine what should be on the menu.
 
-var isLoadedExtractDataModuleReady = false;
-var isLoadedExtractDataModuleLoading = false;
-var loadedExtractDataModule;
-var loadedExtractDataModuleFailed = false;
-var loadExtractDataModuleRetries = 0;
-var extractDataAndRespondRetries = 0;
-
-// These could be const but that causes a syntax error if this content script gets reloaded again
-// in the same page. This can happen on Safari at least.
-var maxLoadModuleRetries = 4;
-var maxExtractDataAndRespondRetries = 3;
-var loadModuleWaitTimeout = 100;
-var loadModuleRetryTimeout = 200;
-
 // these are duplicates of functions used in the popup code
 function getBrowserName() {
   if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
@@ -109,118 +95,11 @@ async function openExceptionPageForContentScript(message, input, error, requestR
   }
 }
 
-async function loadExtractDataModule(modulePath) {
-  //console.log('WikiTree Sourcer: loadExtractDataModule. relative path is: ', modulePath);
-  if (!isLoadedExtractDataModuleReady && !isLoadedExtractDataModuleLoading) {
-    try {
-      //console.log('WikiTree Sourcer: loadExtractDataModule. About to import. modulePath is: ', modulePath);
-      isLoadedExtractDataModuleLoading = true;
-      // Note: Using chrome.runtime.getURL is considered "sanitizing" the pathName
-      // so it avoids a validation warning for Firefox
-      loadedExtractDataModule = await import(chrome.runtime.getURL(modulePath));
-      isLoadedExtractDataModuleReady = true;
-      isLoadedExtractDataModuleLoading = false;
-      //console.log('WikiTree Sourcer: loadExtractDataModule. Loaded. modulePath is: ', modulePath);
-    } catch (e) {
-      console.log("WikiTree Sourcer: error in loadExtractDataModule. Path is: " + modulePath + ", exception is:");
-      console.log(e);
-
-      // This can happen in the case of a FreeCen search for example, we are in the middle of loading
-      // the extract data module and we do a form.submit which switched to another page, killing this script.
-      // That has happened in Firefox at least and in that case the error object was undefined.
-
-      // I have had some reports of this exception occuring in Firefox and the exception is "TypeError"
-      // and the message is something like:
-      // "error loading dynamically imported module: moz-extension://56237436-bc30-47ed-b1f4-8b006c9cc8ad/site/wikitree/core/wikitree_extract_data.mjs"
-      // I can reproduce this in Firefox when I explcitly enable the permissions for wikitree.com
-      // (so content script loads on page load) and then load this page:
-      //  https://apps.wikitree.com/apps/straub620/wt_search.php?first_name=Florian&last_name=Straub
-      // I might have to try multiple times to get the error.
-      // So I added a retry and that seems to fix the issue.
-      if (loadExtractDataModuleRetries < maxLoadModuleRetries) {
-        loadExtractDataModuleRetries++;
-        isLoadedExtractDataModuleLoading = false;
-        setTimeout(function () {
-          loadExtractDataModule(modulePath);
-        }, loadModuleRetryTimeout);
-      } else {
-        if (e) {
-          let message = "Error when attempting a dynamic import of the extract data module in a content script.\n";
-          message +=
-            "This may occur in versions of Firefox prior to Firefox 89 and possibly in versions of Safari prior to version 15.\n";
-          message +=
-            "If you get this message it may indicate that the WikiTree Sourcer extension does not work in your browser.";
-
-          openExceptionPageForContentScript(message, modulePath, e, false);
-        }
-        loadedExtractDataModuleFailed = true;
-      }
-    }
-  } else if (isLoadedExtractDataModuleLoading) {
-    console.log("WikiTree Sourcer: loadExtractDataModule. Currently loading. relative path is: ", modulePath);
-  } else {
-    console.log("WikiTree Sourcer: loadExtractDataModule. Already loaded relative path is: ", modulePath);
-    console.log("WikiTree Sourcer: loadExtractDataModule. loadedExtractDataModule is: ", loadedExtractDataModule);
-  }
-}
-
 function extractDataAndRespond(document, url, contentType, sendResponse, siteSpecificInput) {
   console.log("extractDataAndRespond. url: " + url);
 
-  /*
-  if (!isLoadedExtractDataModuleReady) {
-    if (loadedExtractDataModuleFailed) {
-      let message = "Error when attempting use a dynamically imported extract data module in a content script.\n";
-      message +=
-        "This may occur in versions of Firefox prior to Firefox 89 and possibly in versions of Safari prior to version 15.\n";
-      message +=
-        "If you get this message it may indicate that the WikiTree Sourcer extension does not work in your browser.";
-      sendResponse({
-        success: false,
-        errorMessage: message,
-        requestReport: false,
-      });
-    } else if (isLoadedExtractDataModuleLoading) {
-      // dependencies not ready, wait a few milliseconds and try again
-      if (extractDataAndRespondRetries < maxExtractDataAndRespondRetries) {
-        extractDataAndRespondRetries++;
-        console.log("extractDataAndRespond. Retry number: ", extractDataAndRespondRetries);
-        setTimeout(function () {
-          extractDataAndRespond(document, url, contentType, sendResponse);
-        }, loadModuleWaitTimeout);
-        return true;
-      } else {
-        console.log("extractDataAndRespond. Too many retries");
-        sendResponse({
-          success: false,
-          errorMessage: "Extract data module never loaded, tried " + maxExtractDataAndRespondRetries + " times",
-          noException: true,
-        });
-      }
-    } else {
-      // module is not loaded and doesn't seem to be in the process of loading. This should never happen
-      // but it does in Firefox when the extension is reloaded. It appears that somehow the module
-      // gets loaded but then isLoadedExtractDataModuleReady gets set to false
-      console.log("extractDataAndRespond. extract module not loaded and not loading");
-      console.log("url is: " + url + ", contentType is: " + contentType);
-      console.log("loadedExtractDataModule is: ");
-      console.log(loadedExtractDataModule);
-      sendResponse({
-        success: false,
-        errorMessage: "Extract data module never loaded. Is not in process of loading.",
-        noException: true,
-      });
-    }
-
-    return false;
-  }
-
-  //console.log('extractDataAndRespond. calling : loadedExtractDataModule.extractData');
-  */
-
   // Extract the data.
   try {
-    //let extractedData = loadedExtractDataModule.extractData(document, url, siteSpecificInput);
     let extractedData = extractData(document, url, siteSpecificInput);
     // respond with the type of content and the extracted data
     sendResponse({
@@ -337,11 +216,7 @@ function contentMessageListener(
     sendResponse();
   }
 
-  // if we were going to respond async we would return true here. But in current design
-  // we always respond synchronously for most requests.
-  // However, because the overrideExtractHandler can *sometimes* be async
-  // we now always return true here.
-  return true;
+  return false; // no async
 }
 
 function siteContentInit(siteName, extractModulePath, overrideExtractHandler, additionalMessageHandler) {

@@ -23,7 +23,6 @@ SOFTWARE.
 */
 
 import { GroUriBuilder } from "../core/gro_uri_builder.mjs";
-import { extractFirstRowForBirth, extractFirstRowForDeath, extractSecondRow } from "../core/gro_extract_data.mjs";
 import { showErrorDialog } from "./gro_smart_search_dialog.mjs";
 import { checkPermissionForSite } from "/base/browser/background/background_permissions.mjs";
 
