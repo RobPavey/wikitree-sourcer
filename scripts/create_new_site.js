@@ -413,6 +413,75 @@ function addLineToFile(path, lineToAdd) {
   return true;
 }
 
+function addLineToFileAndSortAllLinesStartingwithString(path, lineToAdd, startString) {
+  // read file
+  let text = readFile(path);
+  if (!text) {
+    return false;
+  }
+  if (text.indexOf(lineToAdd) != -1) {
+    // already there
+    return false;
+  }
+
+  if (!text.endsWith("\n")) {
+    text += "\n";
+  }
+
+  text += lineToAdd + "\n";
+
+  // now do the sort
+
+  // first check that the new line starts with startString
+  if (lineToAdd.startsWith(startString)) {
+    // loop back a line at a time to find first line that does not start with startString
+
+    let indexOfNewLineBeforeStartOfLine = text.lastIndexOf("\n" + startString, text.length - 1);
+    if (indexOfNewLineBeforeStartOfLine != -1) {
+      let lineStartIndex = indexOfNewLineBeforeStartOfLine + 1;
+      let lineEndIndex = text.indexOf("\n", lineStartIndex);
+      if (lineEndIndex == -1) {
+        lineEndIndex - text.length;
+      }
+      let lines = [];
+      lines.push(text.substring(lineStartIndex, lineEndIndex));
+      let currentPos = indexOfNewLineBeforeStartOfLine - 1;
+      while (true) {
+        indexOfNewLineBeforeStartOfLine = text.lastIndexOf("\n" + startString, currentPos);
+        if (indexOfNewLineBeforeStartOfLine == -1) {
+          break;
+        }
+        let lineStartIndex = indexOfNewLineBeforeStartOfLine + 1;
+        let lineEndIndex = currentPos;
+        lines.push(text.substring(lineStartIndex, lineEndIndex));
+        currentPos = indexOfNewLineBeforeStartOfLine;
+        if (currentPos > 0) {
+          currentPos--; // move back one so lastIndexOf doesn't get the current line
+        }
+      }
+      if (lines.length > 1) {
+        // we have something to sort
+        lines.sort();
+        let newLinesText = "";
+        for (let line of lines) {
+          newLinesText += line + "\n";
+        }
+        let textBeforeLines = text.substring(0, currentPos + 2);
+        text = textBeforeLines + newLinesText;
+      }
+    }
+  } else {
+    console.log("Error: lineToAdd does not start with " + startString);
+  }
+
+  // write site file
+  if (!writeFile(path, text)) {
+    return false;
+  }
+
+  return true;
+}
+
 function sortOptionalHostPermissions(permissions) {
   // this is suprisingly complicated and perhaps there is not correct answer.
 
@@ -533,14 +602,14 @@ function updateRegisterSiteData(siteName) {
   const path = "extension/site/all/core/register_site_data.mjs";
   const lineToAdd = 'import "../../' + siteName + "/core/" + siteName + '_site_data.mjs";';
 
-  return addLineToFile(path, lineToAdd);
+  return addLineToFileAndSortAllLinesStartingwithString(path, lineToAdd, "import");
 }
 
 function updateRegisterSiteOptions(siteName) {
   const path = "extension/site/all/core/register_site_options.mjs";
   const lineToAdd = 'import "../../' + siteName + "/core/" + siteName + '_options.mjs";';
 
-  return addLineToFile(path, lineToAdd);
+  return addLineToFileAndSortAllLinesStartingwithString(path, lineToAdd, "import");
 }
 
 function updateRunTest(siteName) {
@@ -604,6 +673,15 @@ async function createNewSite() {
       parameters.siteDisplayName = process.argv[3];
       if (process.argv.length > 4) {
         parameters.siteUrlMatch = process.argv[4];
+        if (process.argv.length > 5) {
+          parameters.answers = process.argv[5];
+          if (process.argv.length > 6) {
+            let flags = process.argv[6];
+            if (flags.includes("-force")) {
+              parameters.force = true;
+            }
+          }
+        }
       }
     }
   }
@@ -618,49 +696,61 @@ async function createNewSite() {
     return;
   }
 
-  if (checkForExistingSite(parameters)) {
+  if (!parameters.force && checkForExistingSite(parameters)) {
     return;
   }
 
-  // Create a readline interface
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
+  if (parameters.answers) {
+    let answers = parameters.answers.split(",");
+    if (answers.length == 2) {
+      if (answers[0] == "n") {
+        parameters.searchUsingLocalStorage = true;
+      }
+      if (answers[1] == "y") {
+        parameters.needsHighlightRow = true;
+      }
+    }
+  } else {
+    // Create a readline interface
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
 
-  // Ask the user about search capabilities of site
-  let slsAnswer = await rl.question("Does this site support search using URL query? [y/n]: ");
-  //console.log("User entered: " + slsAnswer);
-  if (slsAnswer == "n") {
-    parameters.searchUsingLocalStorage = true;
-  }
+    // Ask the user about search capabilities of site
+    let slsAnswer = await rl.question("Does this site support search using URL query? [y/n]: ");
+    //console.log("User entered: " + slsAnswer);
+    if (slsAnswer == "n") {
+      parameters.searchUsingLocalStorage = true;
+    }
 
-  // Ask the user about search capabilities of site
-  let hrAnswer = await rl.question(
-    "Does this site lack record pages and require selecting a row to cite from search results? [y/n]: "
-  );
-  //console.log("User entered: " + hrAnswer);
-  if (hrAnswer == "y") {
-    parameters.needsHighlightRow = true;
-  }
+    // Ask the user about search capabilities of site
+    let hrAnswer = await rl.question(
+      "Does this site lack record pages and require selecting a row to cite from search results? [y/n]: "
+    );
+    //console.log("User entered: " + hrAnswer);
+    if (hrAnswer == "y") {
+      parameters.needsHighlightRow = true;
+    }
 
-  console.log("About to create the new site's folders and files.");
-  console.log("  siteName is '" + parameters.siteName + "'");
-  console.log("  siteDisplayName is '" + parameters.siteDisplayName + "'");
-  console.log("  siteUrlMatch is '" + parameters.siteUrlMatch + "'");
-  console.log("  searchUsingLocalStorage is '" + parameters.searchUsingLocalStorage + "'");
-  console.log("  needsHighlightRow is '" + parameters.needsHighlightRow + "'");
+    console.log("About to create the new site's folders and files.");
+    console.log("  siteName is '" + parameters.siteName + "'");
+    console.log("  siteDisplayName is '" + parameters.siteDisplayName + "'");
+    console.log("  siteUrlMatch is '" + parameters.siteUrlMatch + "'");
+    console.log("  searchUsingLocalStorage is '" + parameters.searchUsingLocalStorage + "'");
+    console.log("  needsHighlightRow is '" + parameters.needsHighlightRow + "'");
 
-  // Check with the user before continuing
-  let continueAnswer = await rl.question("Continue and create folders and files? [y/n]: ");
-  //console.log("User entered: " + continueAnswer);
-  if (continueAnswer != "y") {
+    // Check with the user before continuing
+    let continueAnswer = await rl.question("Continue and create folders and files? [y/n]: ");
+    //console.log("User entered: " + continueAnswer);
+    if (continueAnswer != "y") {
+      rl.close();
+      return;
+    }
+
+    // Close the readline interface after getting the input
     rl.close();
-    return;
   }
-
-  // Close the readline interface after getting the input
-  rl.close();
 
   // Now create all the folders for the new site
   if (!createSiteFolders(parameters.siteName)) {
