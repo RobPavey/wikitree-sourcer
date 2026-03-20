@@ -10,10 +10,15 @@ This is so that I can merge a PR to the main repo without affecting the next rel
 
 ## Pick a name
 
-The first decision is to choose a unique abbrevation for your new site. This will be all lower case with no spaces or underscores.
+The first decision is to choose a unique abbrevation for your new site. This will be all lower case with no spaces, underscores or extended characters.
 For example FindMyPast is `fmp` and Scotlands People is `scotp`. Try to keep it to 10 characters or less since this name will be part of many folder, file and class names.
 
 Also, pick the "display name" for the site. This is the name/description that shows up on the Sourcer menu for searching the site and also in the options page for the site. Examples are `FamilySearch` and `Probate Search/Find A Will (UK)`
+
+## Determine a URL match string for the pages you want Sourcer to work with on the site
+
+This should match all the pages that you want Sourcer to work with. Ideally both record/image pages and search pages. For example, for the Trove wite it could be `*://trove.nla.gov.au/*`.
+The script only takes one match string but you can edit the created files to have multiple math strings if needed.
 
 ## Use the create_new_site script to setup the files and folders for your new site
 
