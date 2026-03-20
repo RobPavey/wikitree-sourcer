@@ -25,6 +25,113 @@ SOFTWARE.
 import "../../../site/all/core/register_site_data.mjs";
 import { getSites, storeSiteRegistry } from "../common/site_registry_storage.mjs";
 
+async function injectContentScriptsIntoExistingTab(tab, scriptsToLoad) {
+  //console.log("injectContentScriptsIntoExistingTab, tab is:");
+  //console.log(tab);
+  //console.log("injectContentScriptsIntoExistingTab, scriptsToLoad is:");
+  //console.log(scriptsToLoad);
+
+  try {
+    // First, check if content script is already there to avoid double-loading
+    await chrome.tabs.sendMessage(tab.id, { ping: true });
+  } catch (e) {
+    // If the ping fails, the script isn't there, so inject it!
+    try {
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        files: scriptsToLoad,
+      });
+    } catch (error) {
+      if (error.message.includes("error page")) {
+        console.warn(`Tab ${tab.id} is showing a browser error/resubmit page. Skipping injection.`);
+        console.log("tab is:");
+        console.log(tab);
+      } else {
+        console.error(`Actual injection error on tab ${tab.id}:`, error);
+        console.log("tab is:");
+        console.log(tab);
+      }
+      // We don't need to do anything else; just move to the next tab.
+    }
+  }
+}
+
+async function injectContentScriptsIntoTabsThatMatch(matches) {
+  let dynamicScripts = await chrome.scripting.getRegisteredContentScripts();
+
+  for (const origin of matches) {
+    // Convert origin pattern (e.g., *://*.wikitree.com/*) to a query-friendly pattern
+
+    // 2. Find ALL tabs matching this site
+    const tabs = await chrome.tabs.query({
+      url: origin,
+      status: "complete", // Only target fully loaded pages
+      discarded: false, // Skip tabs suspended by Chrome's memory saver
+    });
+
+    if (tabs.length) {
+      //console.log("injectContentScriptsIntoTabsThatMatch, found " + tabs.length + " tabs, matching " + origin);
+
+      // Find the content scripts for that site
+      let scriptsToLoad = undefined;
+      for (let contentScript of dynamicScripts) {
+        //console.log("contentScript.matches is:");
+        //console.log(contentScript.matches);
+
+        for (let match of contentScript.matches) {
+          if (match == origin) {
+            scriptsToLoad = contentScript.js;
+          }
+        }
+      }
+
+      //console.log("scriptsToLoad is:");
+      //console.log(scriptsToLoad);
+
+      if (scriptsToLoad) {
+        // Inject the script into every matching tab
+        for (const tab of tabs) {
+          await injectContentScriptsIntoExistingTab(tab, scriptsToLoad);
+        }
+      }
+    }
+  }
+}
+
+async function injectContentScriptsIntoExistingTabs(contentScripts) {
+  for (let contentScript of contentScripts) {
+    //console.log("contentScript.matches is:");
+    //console.log(contentScript.matches);
+
+    for (let match of contentScript.matches) {
+      // Find ALL tabs matching this site, NOTE: this will only get tabs that we have permission
+      // to access, so if the user has not yet granted permission for a site then tabs on the site
+      // will not be returned by the query.
+      const tabs = await chrome.tabs.query({
+        url: match,
+        status: "complete", // Only target fully loaded pages
+        discarded: false, // Skip tabs suspended by Chrome's memory saver
+      });
+
+      if (tabs.length) {
+        //console.log("injectContentScriptsIntoExistingTabs, found " + tabs.length + " tabs, matching " + match);
+
+        let scriptsToLoad = contentScript.js;
+
+        if (scriptsToLoad) {
+          //console.log("scriptsToLoad is:");
+          //console.log(scriptsToLoad);
+
+          // Inject the scripts into every matching tab
+          for (const tab of tabs) {
+            await injectContentScriptsIntoExistingTab(tab, scriptsToLoad);
+          }
+        }
+      }
+    }
+  }
+}
+
 async function registerContentScripts() {
   // including register_site_data.mjs above will have registered the site data in
   // a siteRegistry var in site_registry.mjs. But this is only in the background context.
@@ -73,8 +180,8 @@ async function registerContentScripts() {
     }
   }
 
-  console.log("registerContentScripts: about to call chrome.scripting.registerContentScripts, scripts is:");
-  console.log(scripts);
+  //console.log("registerContentScripts: about to call chrome.scripting.registerContentScripts, scripts is:");
+  //console.log(scripts);
 
   try {
     await chrome.scripting.registerContentScripts(scripts);
@@ -83,71 +190,20 @@ async function registerContentScripts() {
     console.log(error);
   }
 
-  // if permissions are changed we may need to inject the content script into tabs
+  // There may be existing tabs open and the extension has just been installed so we want to load the
+  // content scripts into existing tabs that match
+  await injectContentScriptsIntoExistingTabs(scripts);
+
+  // if permissions are later granted by the user we want to inject the content script into existing tabs
   // that got the new permission
   chrome.permissions.onAdded.addListener(async (permissions) => {
-    // 1. Identify which site was just granted
+    // Identify which site was just granted
     const grantedOrigins = permissions.origins || [];
 
-    //console.log("permissions added, permissions is:");
-    //console.log(permissions);
+    console.log("permissions added, permissions is:");
+    console.log(permissions);
 
-    for (const origin of grantedOrigins) {
-      // Convert origin pattern (e.g., *://*.wikitree.com/*) to a query-friendly pattern
-
-      // 2. Find ALL tabs matching this site
-      const tabs = await chrome.tabs.query({
-        url: origin,
-        status: "complete", // Only target fully loaded pages
-        discarded: false, // Skip tabs suspended by Chrome's memory saver
-      });
-
-      // Find the content scripts for that site
-      let scriptsToLoad = undefined;
-      let dynamicScripts = await chrome.scripting.getRegisteredContentScripts();
-      for (let contentScript of dynamicScripts) {
-        //console.log("contentScript.matches is:");
-        //console.log(contentScript.matches);
-
-        for (let match of contentScript.matches) {
-          if (match == origin) {
-            scriptsToLoad = contentScript.js;
-          }
-        }
-      }
-
-      //console.log("scriptsToLoad is:");
-      //console.log(scriptsToLoad);
-
-      if (scriptsToLoad) {
-        // 3. Inject the script into every matching tab
-        for (const tab of tabs) {
-          try {
-            // First, check if content script is already there to avoid double-loading
-            await chrome.tabs.sendMessage(tab.id, { ping: true });
-          } catch (e) {
-            // If the ping fails, the script isn't there, so inject it!
-            try {
-              await chrome.scripting.executeScript({
-                target: { tabId: tab.id },
-                files: scriptsToLoad,
-              });
-            } catch (error) {
-              if (error.message.includes("error page")) {
-                console.warn(`Tab ${tab.id} is showing a browser error/resubmit page. Skipping injection.`);
-                console.log("tab is:");
-                console.log(tab);
-              } else {
-                console.error(`Actual injection error on tab ${tab.id}:`, error);
-                console.log("tab is:");
-                console.log(tab);
-              }
-              // We don't need to do anything else; just move to the next tab.
-            }
-          }
-        }
-      }
-    }
+    await injectContentScriptsIntoTabsThatMatch(grantedOrigins);
   });
 }
 
