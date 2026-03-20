@@ -643,12 +643,27 @@ function updateRunTest(siteName) {
     return false;
   }
 
-  const indexToAddLine = endOfArrayIndex;
+  const arrayStartIndex = text.indexOf("[", siteNamesIndex);
+  const arrayEndIndex = endOfArrayIndex + 1;
+  let arrayText = text.substring(arrayStartIndex, arrayEndIndex);
 
-  const textBefore = text.substring(0, indexToAddLine);
-  const textAfter = text.substring(indexToAddLine);
+  // if there is a comma after the last element of the array that it is not valid JSON
+  let regex = /(,[\s\n]*\])$/;
+  if (regex.test(arrayText)) {
+    arrayText = arrayText.replace(regex, "\n]");
+  }
+  let siteNamesArray = JSON.parse(arrayText);
 
-  text = textBefore + lineToAdd + textAfter;
+  siteNamesArray.push(siteName);
+
+  siteNamesArray.sort();
+
+  let newArrayText = JSON.stringify(siteNamesArray, null, 2);
+
+  const textBefore = text.substring(0, arrayStartIndex);
+  const textAfter = text.substring(arrayEndIndex);
+
+  text = textBefore + newArrayText + textAfter;
 
   // write site file
   if (!writeFile(path, text)) {
