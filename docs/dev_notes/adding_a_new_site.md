@@ -17,7 +17,7 @@ Also, pick the "display name" for the site. This is the name/description that sh
 
 ## Determine a URL match string for the pages you want Sourcer to work with on the site
 
-This should match all the pages that you want Sourcer to work with. Ideally both record/image pages and search pages. For example, for the Trove wite it could be `*://trove.nla.gov.au/*`.
+This should match all the pages that you want Sourcer to work with. Ideally both record/image pages and search pages. For example, for the Trove site it could be `*://trove.nla.gov.au/*`.
 The script only takes one match string but you can edit the created files to have multiple math strings if needed.
 
 ## Use the create_new_site script to setup the files and folders for your new site
