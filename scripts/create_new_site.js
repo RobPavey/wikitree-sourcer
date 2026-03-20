@@ -452,7 +452,7 @@ function addLineToFileAndSortAllLinesStartingwithString(path, lineToAdd, startSt
           break;
         }
         let lineStartIndex = indexOfNewLineBeforeStartOfLine + 1;
-        let lineEndIndex = currentPos;
+        let lineEndIndex = currentPos + 1;
         lines.push(text.substring(lineStartIndex, lineEndIndex));
         currentPos = indexOfNewLineBeforeStartOfLine;
         if (currentPos > 0) {
