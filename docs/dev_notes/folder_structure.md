@@ -27,5 +27,6 @@ The code is broken up into modules. It is separated in several ways:
 
 Within the base folder and within each site specific folder there are two folders:
 
-- browser: this contains code that relies on the browser APIs, it is not used in the unit tests
+- browser: this contains code that relies on the browser APIs, it is not used in the unit tests.<br>
+  The one exception to this is the _extract_data.js file see [Extract Data Design](./extract_data_design.md)
 - core: this contains the core code that can be tested in the unit tests, we keep as much code as we can in here
