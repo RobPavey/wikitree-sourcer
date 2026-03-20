@@ -58,12 +58,12 @@ You can see this [separate doc](what_the_create_new_site_script_does.md) for the
 
 The first step is to write the code to extract the data from the web site. For most sites this just involves extracting from one web page with no other fetches required.
 
-The code for this will be in the `extension/site/<site>/core/<site>_extract_data.mjs` file. You can look at other sites for examples.
+The code for this will be in the `extension/site/<site>/browser/<site>_extract_data.js` file. You can look at other sites for examples.
 
 This step will create an `extracted_data` structure that is used by the generalize step AND the build citation step. Unlike the `generalized_data` structure the `extracted_data` structure can have whatever fields you want but it is suggested that you keep it somewhat similar to other sites just to make maintenance easier.
 
 Key points about this file that make it different to the other steps:
-* the `<site>_extract_data.mjs` file cannot import any other modules
+* the `<site>_extract_data.js` file cannot import any other modules since it is treated like a content script
 * Sourcer does not use `jquery`. The built-in Javascript functions `querySelector` and `querySelectorAll` are used
 * You can save the web page locally and test this using the unit test framework or test in the browser. Testing locally allows you to implement this before doing any work on the popup code or the manifest.
 * See [this doc on the extract data design for more details](extract_data_design.md)
