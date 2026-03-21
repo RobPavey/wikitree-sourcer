@@ -7,6 +7,14 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Apply 350px width only on desktop-sized windows, this prevents a visble resize as the menu comes up */
+@media screen and (min-width: 600px) {
+  body {
+    width: 350px;
+  }
+}
+
 ul.list {
   list-style-type: none; /* Remove bullets */
   margin: 0;
