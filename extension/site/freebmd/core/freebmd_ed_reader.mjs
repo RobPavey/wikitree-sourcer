@@ -26,6 +26,7 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
+import { logDebug } from "../../../base/core/log_debug.mjs";
 
 function freebmdQuarterToGdQuarter(quarter) {
   if (!quarter) {
@@ -109,6 +110,8 @@ class FreebmdEdReader extends ExtractedDataReader {
           break;
       }
     }
+
+    logDebug("recordType is: " + this.recordType);
   }
 
   getMetadataValue(label) {

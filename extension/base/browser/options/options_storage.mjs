@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { logDebug } from "../../core/log_debug.mjs";
+
 // This module contains code to work around the size quota's on chrome.storage.sync
 // the chrome limit QUOTA_BYTES_PER_ITEM is 8192
 // As of 1 Sep 2022 the defaultOptions size was 8177 and it then went over
@@ -114,8 +116,8 @@ function loadCompressedOptions(items) {
     }
   }
 
-  //console.log("decompressed options are:");
-  //console.log(loadedOptions);
+  logDebug("decompressed options are:");
+  logDebug(loadedOptions);
 
   return loadedOptions;
 }
@@ -123,9 +125,12 @@ function loadCompressedOptions(items) {
 async function loadOptions() {
   let loadedOptions = undefined;
 
+  /*
+  Don't want to do this all the time as it slows down bringing up the popup
   chrome.storage.sync.getBytesInUse(null, function (bytesInUse) {
     console.log("loadOptions: total sync storage in use is : " + bytesInUse);
   });
+  */
 
   let itemsToLoad = [];
   for (let prefix of optionPrefixes) {
@@ -136,8 +141,9 @@ async function loadOptions() {
 
   let itemsNew = await chrome.storage.sync.get(itemsToLoad);
 
-  console.log("loadOptions: itemsNew is");
-  console.log(itemsNew);
+  // Don't want to do this all the time as it slows down bringing up the popup
+  //console.log("loadOptions: itemsNew is");
+  //console.log(itemsNew);
 
   if (itemsNew && itemsNew.options_options_KLUT) {
     // options are compressed (this was introduced in version 2.15.0)

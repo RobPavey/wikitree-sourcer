@@ -47,6 +47,8 @@ import {
   buildMinimalMenuWithMessage,
 } from "/base/browser/popup/popup_menu_blocks.mjs";
 
+import { logDebug } from "/base/core/log_debug.mjs";
+
 import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 
 import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
@@ -697,8 +699,7 @@ async function setupFsPopupMenu(extractedData, tabId) {
     return;
   }
 
-  console.log("generalizedData is");
-  console.log(generalizedData);
+  logDebug("generalizedData is ", generalizedData);
 
   // do async prefetches
   loadDataCache();

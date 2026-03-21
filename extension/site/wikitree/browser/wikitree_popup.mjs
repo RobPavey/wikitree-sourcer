@@ -70,6 +70,7 @@ import { CD } from "../../../base/core/country_data.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { GenderUtils } from "../../../base/core/gender_utils.mjs";
+import { logDebug } from "../../../base/core/log_debug.mjs";
 
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
@@ -206,8 +207,8 @@ function waitForAPIResponse() {
 
 async function updateGeneralizedDataUsingApiResponse(data, tabId) {
   function getApiPersonFromGetRelatives(wikiId) {
-    console.log("getApiPersonFromGetRelatives, apiResponse is");
-    console.log(apiResponse);
+    logDebug("getApiPersonFromGetRelatives, apiResponse is", apiResponse);
+
     let items = apiResponse[0].items;
     if (items && items.length) {
       for (let item of items) {

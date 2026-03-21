@@ -34,6 +34,7 @@ import { RT, Role, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
 import { addSpouseOrParentsForSelectedHouseholdMember } from "../../../base/core/structured_household.mjs";
+import { logDebug } from "../../../base/core/log_debug.mjs";
 
 import {
   buildFsRecordLinkOrTemplate,
@@ -219,8 +220,7 @@ function determineRecordType(extractedData) {
     { type: RT.Military, matches: ["World War I"] },
   ];
 
-  //console.log("in determineRecordType, factType is");
-  //console.log(extractedData.factType);
+  logDebug("in determineRecordType, factType is", extractedData.factType);
 
   function lookup(factType, collectionTitle, recordData, table) {
     for (let obj of table) {

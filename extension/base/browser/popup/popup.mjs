@@ -213,7 +213,7 @@ function doesUrlMatchPattern(urlParts, patternParts) {
 async function determineSiteNameForTab(activeTab) {
   let manifest = chrome.runtime.getManifest();
 
-  // Note: the url and pendingUrl properties will be ignored unless the extsnion has the "tabs" permission
+  // Note: the url and pendingUrl properties will be ignored unless the extension has the "tabs" permission
   // or "host_permission" for the site. Chrome has the latter currently.
   // Update: I removed the host_permissions on 19 May 2025 and people started seeing this fail (it would
   // bring up the default popup on wikitree profiles after they had been open a while).
