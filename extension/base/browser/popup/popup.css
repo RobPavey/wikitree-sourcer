@@ -1,16 +1,13 @@
 body {
-  /* width: 350px; we set programatically based on platform */
+  /* latest attempt for width - set it for all platforms and reset it for phones */
+  width: 350px; /* latest attempt - set it for all platforms and reset it for phones */
+
   height: auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
     sans-serif;
   font-size: 14px;
   margin: 0;
   padding: 0;
-}
-
-html,
-body {
-  width: 350px; /* latest attempt - set it for all platforms and reset it for phones */
 }
 
 /* Only remove the fixed width on smaller screens (iOS/Mobile) */
