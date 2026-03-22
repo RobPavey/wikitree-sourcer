@@ -24,8 +24,16 @@ SOFTWARE.
 
 import { setupContextMenu } from "./background_context_menu.mjs";
 import { messageHandler } from "./background_common.mjs";
-import { registerContentScripts } from "./background_content_scripts.mjs";
+import {
+  registerContentScripts,
+  injectContentScriptsIntoTabsOnPermissionsChange,
+} from "./background_content_scripts.mjs";
 
 chrome.runtime.onMessage.addListener(messageHandler);
 chrome.runtime.onInstalled.addListener(registerContentScripts);
+
+// if permissions are later granted by the user we want to inject the content script into existing tabs
+// that got the new permission
+chrome.permissions.onAdded.addListener(injectContentScriptsIntoTabsOnPermissionsChange);
+
 setupContextMenu();

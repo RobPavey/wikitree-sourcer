@@ -62,7 +62,9 @@ async function injectContentScriptsIntoTabsThatMatch(matches) {
   for (const origin of matches) {
     // Convert origin pattern (e.g., *://*.wikitree.com/*) to a query-friendly pattern
 
-    // 2. Find ALL tabs matching this site
+    // Find ALL tabs matching this site, NOTE: this will only get tabs that we have permission
+    // to access, so if the user has not yet granted permission for a site then tabs on the site
+    // will not be returned by the query.
     const tabs = await chrome.tabs.query({
       url: origin,
       status: "complete", // Only target fully loaded pages
@@ -70,7 +72,7 @@ async function injectContentScriptsIntoTabsThatMatch(matches) {
     });
 
     if (tabs.length) {
-      //console.log("injectContentScriptsIntoTabsThatMatch, found " + tabs.length + " tabs, matching " + origin);
+      console.log("injectContentScriptsIntoTabsThatMatch, found " + tabs.length + " tabs, matching " + origin);
 
       // Find the content scripts for that site
       let scriptsToLoad = undefined;
@@ -196,15 +198,17 @@ async function registerContentScripts() {
 
   // if permissions are later granted by the user we want to inject the content script into existing tabs
   // that got the new permission
-  chrome.permissions.onAdded.addListener(async (permissions) => {
-    // Identify which site was just granted
-    const grantedOrigins = permissions.origins || [];
-
-    console.log("permissions added, permissions is:");
-    console.log(permissions);
-
-    await injectContentScriptsIntoTabsThatMatch(grantedOrigins);
-  });
+  chrome.permissions.onAdded.addListener(async (permissions) => {});
 }
 
-export { registerContentScripts };
+async function injectContentScriptsIntoTabsOnPermissionsChange(permissions) {
+  // Identify which site was just granted
+  const grantedOrigins = permissions.origins || [];
+
+  console.log("permissions added, permissions is:");
+  console.log(permissions);
+
+  await injectContentScriptsIntoTabsThatMatch(grantedOrigins);
+}
+
+export { registerContentScripts, injectContentScriptsIntoTabsOnPermissionsChange };
