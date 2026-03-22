@@ -22,6 +22,12 @@ The `<sitename>_extract_data.js` file is a special case. It is used in 3 ways:
 
 This file used to be a module and loaded using import. But that required it being listed in the `manifest.json` files under `web_accessible_resources` for every site. A code refactor in March 2026 switched to the new design which does not require `web_accessible_resources`.
 
+## Do not have class, const, or let declarations at the top level of the file
+
+In JavaScript, class, const, and let declarations are block-scoped and do not allow re-declaration in the same scope. In some browsers (Safari for example) the content scripts can get loaded more than once (e.g. if the extension is disabled and then re-enabled). 
+
+So none of the content scripts (which include the _extract_data.js file) should have these at the top-level.
+
 ## Do not assume that the extract_data module is running within the content script enviroment
 
 The extract_data file is also loaded by the unit tests so it can't use APIs that are not available in the node.js environment.
