@@ -231,44 +231,6 @@ async function determineSiteNameForTab(activeTab) {
   }
 
   console.log("WikiTree Sourcer: determineSiteNameForTab");
-  let contentScripts = manifest.content_scripts;
-
-  if (contentScripts) {
-    for (let contentScript of contentScripts) {
-      console.log("contentScript.matches = ");
-      console.log(contentScript.matches);
-
-      for (let match of contentScript.matches) {
-        let matchParts = separateUrlIntoParts(match);
-
-        let doesTabMatch = doesUrlMatchPattern(urlParts, matchParts);
-
-        if (doesTabMatch) {
-          // found match, get siteName from the last script name
-          let scripts = contentScript.js;
-          if (scripts && scripts.length > 0) {
-            let lastScript = scripts[scripts.length - 1];
-            // example: "site/fs/browser/fs_content.js"
-            let lastSlashIndex = lastScript.lastIndexOf("/");
-            if (lastSlashIndex != -1) {
-              const suffix = "_content.js";
-              let suffixIndex = lastScript.indexOf(suffix, lastSlashIndex);
-              if (suffixIndex != -1) {
-                let siteName = lastScript.substring(lastSlashIndex + 1, suffixIndex);
-                return siteName;
-              }
-            }
-          }
-
-          console.log(
-            "WikiTree Sourcer: determineSiteNameForTab. Tab matches content script but could not get site name. Content script is:"
-          );
-          console.log("match pattern is: " + match);
-          return "unknown";
-        }
-      }
-    }
-  }
 
   let dynamicScripts = await chrome.scripting.getRegisteredContentScripts();
   for (let contentScript of dynamicScripts) {
@@ -297,6 +259,24 @@ async function determineSiteNameForTab(activeTab) {
 
               if (await chrome.permissions.contains({ origins: contentScript.matches })) {
                 // extension already has permission, no need to ask user
+                // However, sometimes the content script may not be loaded, it SHOULD get loaded
+                // when the user grants permission but sometimes does not for some tabs.
+                // So ping the tab and, if it does not respond, then inject the content scripts
+                try {
+                  // First, check if content script is already there to avoid double-loading
+                  await chrome.tabs.sendMessage(activeTab.id, { ping: true });
+                } catch (e) {
+                  // If the ping fails, the script isn't there, so inject it!
+                  try {
+                    await chrome.scripting.executeScript({
+                      target: { tabId: activeTab.id },
+                      files: contentScript.js,
+                    });
+                  } catch (error) {
+                    console.error(`Injection error on tab ${activeTab.id}:`, error);
+                  }
+                }
+
                 return siteName;
               }
 
