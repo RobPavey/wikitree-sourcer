@@ -24,6 +24,7 @@ SOFTWARE.
 
 import "../../../site/all/core/register_site_data.mjs";
 import { getSites, storeSiteRegistry } from "../common/site_registry_storage.mjs";
+import { isChrome } from "../common/browser_check.mjs";
 
 async function injectContentScriptsIntoExistingTab(tab, scriptsToLoad) {
   //console.log("injectContentScriptsIntoExistingTab, tab is:");
@@ -101,6 +102,11 @@ async function injectContentScriptsIntoTabsThatMatch(matches) {
 }
 
 async function injectContentScriptsIntoExistingTabs(contentScripts) {
+  // this is only needed on Chrome as FireFox and Safari seem to do it automatically
+  if (!isChrome()) {
+    return;
+  }
+
   for (let contentScript of contentScripts) {
     //console.log("contentScript.matches is:");
     //console.log(contentScript.matches);
@@ -202,13 +208,16 @@ async function registerContentScripts() {
 }
 
 async function injectContentScriptsIntoTabsOnPermissionsChange(permissions) {
-  // Identify which site was just granted
-  const grantedOrigins = permissions.origins || [];
+  // this is only needed on Chrome as FireFox and Safari seem to do it automatically
+  if (isChrome()) {
+    // Identify which site was just granted
+    const grantedOrigins = permissions.origins || [];
 
-  console.log("permissions added, permissions is:");
-  console.log(permissions);
+    console.log("permissions added, permissions is:");
+    console.log(permissions);
 
-  await injectContentScriptsIntoTabsThatMatch(grantedOrigins);
+    await injectContentScriptsIntoTabsThatMatch(grantedOrigins);
+  }
 }
 
 export { registerContentScripts, injectContentScriptsIntoTabsOnPermissionsChange };

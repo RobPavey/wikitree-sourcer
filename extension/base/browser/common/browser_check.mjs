@@ -88,4 +88,10 @@ function isFirefox() {
   return isFirefoxBrowser;
 }
 
-export { getBrowserName, isSafari, isSafariOnMacOs, isSafariOnIos, isFirefox };
+function isChrome() {
+  let browserName = getBrowserName();
+  const isChromeBrowser = browserName == "Chrome";
+  return isChromeBrowser;
+}
+
+export { getBrowserName, isSafari, isSafariOnMacOs, isSafariOnIos, isFirefox, isChrome };

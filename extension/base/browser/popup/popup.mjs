@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { popupState, progressState } from "./popup_state.mjs";
 import { separateUrlIntoParts } from "./popup_utils.mjs";
-import { isSafari } from "/base/browser/common/browser_check.mjs";
+import { isSafari, isChrome } from "/base/browser/common/browser_check.mjs";
 import { checkPermissionForSites } from "./popup_permissions.mjs";
 
 import {
@@ -44,6 +44,7 @@ import {
 
 import { addStandardMenuEnd, addShowCitationAssistantMenuItem } from "/base/browser/popup/popup_menu_blocks.mjs";
 import { addEditCitationMenuItem } from "/base/browser/popup/popup_citation.mjs";
+import { logDebug } from "/base/core/log_debug.mjs";
 
 var detectedSupportedSite = false;
 
@@ -256,24 +257,34 @@ async function determineSiteNameForTab(activeTab) {
               let siteName = lastScript.substring(lastSlashIndex + 1, suffixIndex);
 
               // we have a content script dynamically registered for the site.
+              logDebug("We have a content script dynamically registered for the site.");
 
               if (await chrome.permissions.contains({ origins: contentScript.matches })) {
+                logDebug("We have permissions for the site.");
+
                 // extension already has permission, no need to ask user
                 // However, sometimes the content script may not be loaded, it SHOULD get loaded
                 // when the user grants permission but sometimes does not for some tabs.
-                // So ping the tab and, if it does not respond, then inject the content scripts
-                try {
-                  // First, check if content script is already there to avoid double-loading
-                  await chrome.tabs.sendMessage(activeTab.id, { ping: true });
-                } catch (e) {
-                  // If the ping fails, the script isn't there, so inject it!
+                // So ping the tab and, if it does not respond, then inject the content scripts.
+                // NOTE: This also fixes the issue when a user can disable the extension and then
+                // re-enable it. In Chrome that results in the content script being missing.
+                if (isChrome()) {
                   try {
-                    await chrome.scripting.executeScript({
-                      target: { tabId: activeTab.id },
-                      files: contentScript.js,
-                    });
-                  } catch (error) {
-                    console.error(`Injection error on tab ${activeTab.id}:`, error);
+                    // First, check if content script is already there to avoid double-loading
+                    await chrome.tabs.sendMessage(activeTab.id, { ping: true });
+                    logDebug("ping to content script succeeded.");
+                  } catch (e) {
+                    logDebug("ping to content script failed, attempthing to inject content script.");
+                    // If the ping fails, the script isn't there, so inject it!
+                    try {
+                      await chrome.scripting.executeScript({
+                        target: { tabId: activeTab.id },
+                        files: contentScript.js,
+                      });
+                      logDebug("inject of content script succeeeded");
+                    } catch (error) {
+                      console.error(`Injection error on tab ${activeTab.id}:`, error);
+                    }
                   }
                 }
 

@@ -36,10 +36,11 @@ import {
   openExceptionPage,
   displayMessageWithIcon,
 } from "./popup_menu_building.mjs";
+import { logDebug } from "/base/core/log_debug.mjs";
 
 import "/site/all/browser/popup_register_search_sites.mjs";
 
-//console.log("Loaded popup script");
+logDebug("Loaded popup script");
 
 // This is used to override the console variable so that it logs by sending messages to content script
 class LoggerToTabConsole {
@@ -51,9 +52,9 @@ class LoggerToTabConsole {
     if (this.tabId) {
       chrome.tabs.sendMessage(this.tabId, { type: "log", message: message }, function (response) {
         if (chrome.runtime.lastError) {
-          console.log("logToTabConsole failed");
+          console.error("logToTabConsole failed");
         } else if (!response) {
-          console.log(message);
+          console.warn(message);
         } else {
           // no need to do anything
         }
@@ -67,12 +68,7 @@ var logger = new LoggerToTabConsole(undefined);
 function displaySiteNameChangedMessage(popupSiteName, contentSiteName) {
   popupState.progress = progressState.sitePopupDisplayError;
 
-  console.log(
-    "popup_init: displaySiteNameChangedMessage, siteName is: " +
-      popupSiteName +
-      " but content siteName is: " +
-      contentSiteName
-  );
+  logDebug("siteName is: " + popupSiteName + " but content siteName is: " + contentSiteName);
 
   displayMessageWithIcon(
     "warning",
@@ -87,7 +83,7 @@ function displaySiteNameChangedMessage(popupSiteName, contentSiteName) {
 function displayUrlChangedMessage(menuUrl, newUrl) {
   popupState.progress = progressState.sitePopupDisplayError;
 
-  console.log("popup_init: displayUrlChangedMessage, menu URL is: " + menuUrl + " but new tab url is: " + newUrl);
+  logDebug("menu URL is: " + menuUrl + " but new tab url is: " + newUrl);
 
   displayMessageWithIcon("warning", "The web page URL changed after the extension icon was clicked. Please try again.");
 }
@@ -95,7 +91,7 @@ function displayUrlChangedMessage(menuUrl, newUrl) {
 function displayUnexpectedErrorMessage(message) {
   popupState.progress = progressState.sitePopupDisplayError;
 
-  console.log("popup_init: displayUnexpectedErrorMessage, message is: " + message);
+  logDebug("message is: " + message);
 
   displayMessageWithIcon("warning", "Unexpected error: " + message + ".\n\nPlease try again.");
 }
@@ -130,8 +126,7 @@ var numRetriesToExtractContent = 0;
 var retryInProgress = false;
 
 async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFunction) {
-  //console.log("popup_init: setupMenuBasedOnContent, siteName is: " + siteName
-  //  + ", progress is: " + popupState.progress);
+  logDebug("siteName is: " + siteName + ", progress is: " + popupState.progress);
 
   if (popupState.progress >= progressState.sitePopupCalledMenuSetup) {
     return;
@@ -156,10 +151,8 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
 
       displayBusyMessageAfterDelay("WikiTree Sourcer initializing menu ...");
 
-      //console.log("setupMenuBasedOnContent, chrome.runtime.lastError is:");
-      //console.log(chrome.runtime.lastError);
-      //console.log("setupMenuBasedOnContent, response is:");
-      //console.log(response);
+      logDebug("chrome.runtime.lastError is:", chrome.runtime.lastError);
+      logDebug("setupMenuBasedOnContent, response is:", response);
 
       // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
       // NOTE: On FamilySearch I have recently been getting exceptions in the fetch the page has been inactive
@@ -176,7 +169,7 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
         if (numRetriesToMessageContent < 50) {
           if (!retryInProgress) {
             numRetriesToMessageContent++;
-            //console.log("popup_init: setupMenuBasedOnContent, extract failed, retry: " + numRetriesToMessageContent);
+            logDebug("extract failed, retry: " + numRetriesToMessageContent);
             let timeWaited = (numRetriesToMessageContent * retryDelay) / 1000;
             if (timeWaited > 1) {
               let timeWaitedString = timeWaited.toFixed(2) + " seconds";
@@ -201,8 +194,10 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
           let message = "The Sourcer content script did not respond. Cannot initialize the WikiTree Sourcer menu.";
 
           if (chrome.runtime.lastError) {
-            console.log("popup_init: setupMenuBasedOnContent, extract failed with error after all retries: ");
-            console.log(chrome.runtime.lastError);
+            logDebug(
+              "popup_init: setupMenuBasedOnContent, extract failed with error after all retries: ",
+              chrome.runtime.lastError
+            );
             let errorMessage = chrome.runtime.lastError.message;
             if (errorMessage) {
               message += "\n\nThe error was:\n" + '"' + errorMessage + '"';
@@ -231,7 +226,7 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
             const retryDelay = 200;
             numRetriesToExtractContent++;
             popupState.progress = progressState.sitePopupRetryExtractTimeout;
-            //console.log("popup_init: setupMenuBasedOnContent, data may be incomplete, retry: " + numRetriesToExtractContent);
+            chrome.runtime.lastError("data may be incomplete, retry: " + numRetriesToExtractContent);
             let timeWaited = (numRetriesToExtractContent * retryDelay) / 1000;
             if (timeWaited > 1) {
               let timeWaitedString = timeWaited.toFixed(2) + " seconds";
@@ -256,9 +251,7 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
             //logger.tabId = tabId;
             //console = logger;
 
-            //console.log("popup_init: setupMenuBasedOnContent, calling menuSetupFunction, url is: " + response.extractedData.url);
-            //console.log("popup_init: setupMenuBasedOnContent, data extracted is: ");
-            //console.log(response.extractedData);
+            logDebug("popup_init: setupMenuBasedOnContent, data extracted is: ", response.extractedData);
             popupState.progress = progressState.sitePopupCalledMenuSetup;
             popupState.extractedDocumentUrl = response.extractedData.url;
             setupMenuForExtractedData(menuSetupFunction, response.extractedData, tabId);
@@ -293,12 +286,12 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
     popupState.progress = progressState.sitePopupException;
     let message = "Error in setupMenuBasedOnContent";
     openExceptionPage(message, popupState, error, true);
-    console.log(error);
+    console.error(error);
   }
 }
 
 function contentLoadedNotification(tab, siteName) {
-  //console.log("popup_init: contentLoadedNotification called, siteName = " + siteName);
+  logDebug("siteName = " + siteName);
 
   if (popupState.progress < progressState.sitePopupCalledMenuSetup) {
     // check the siteName is what we expect
@@ -322,9 +315,8 @@ function contentLoadedNotification(tab, siteName) {
 }
 
 function tabChangeNotification(tabId, changeInfo, tab) {
-  //console.log("popup_init: tabChangeNotification called, tabId = " + tabId);
-  //console.log("popup_init: tabChangeNotification called, popupState is:");
-  //console.log(popupState);
+  logDebug("tabId = " + tabId);
+  logDebug("popupState is:", popupState);
 
   if (popupState.progress < progressState.sitePopupCalledMenuSetup) {
     // do we do some tests on what the change was here?
@@ -364,7 +356,7 @@ function tabChangeNotification(tabId, changeInfo, tab) {
 }
 
 function initialTimeoutEnd() {
-  //console.log("popup_init: initialTimeoutEnd, popupState.progress is: " + popupState.progress);
+  logDebug("popupState.progress is: " + popupState.progress);
 
   if (popupState.progress == progressState.sitePopupInitialTimeout) {
     // nothing else has happening during the timeout, go ahead and call setupMenuBasedOnContent
@@ -404,9 +396,9 @@ async function initPopupGivenActiveTab(activeTab, options, siteName, menuSetupFu
   // 2. call setupMenuBasedOnContent and monitor for messages
   // 3. wait a moment in case URL changes then call setupMenuBasedOnContent
 
-  //console.log("popup_init: initPopupGivenActiveTab, siteName is: " + siteName);
-  //console.log("popup_init: initPopupGivenActiveTab, activeTab is: " );
-  //console.log(activeTab);
+  logDebug("siteName is: " + siteName);
+  logDebug("activeTab is: ", activeTab);
+  logDebug("popupState is: ", popupState);
 
   popupState.progress = progressState.sitePopupHaveActiveTab;
   popupState.recordSitePopupActiveTab(activeTab, siteName, options, menuSetupFunction);
@@ -423,7 +415,7 @@ async function initPopupGivenActiveTab(activeTab, options, siteName, menuSetupFu
 
     // we have received contentLoaded since popup came up, we are good to go and don't
     // need to listen for any changes at this point.
-    //console.log("popup_init: initPopupGivenActiveTab, already got contentLoaded, calling setupMenuBasedOnContent");
+    logDebug("already got contentLoaded, calling setupMenuBasedOnContent");
     setupMenuBasedOnContent(activeTab.id, options, siteName, menuSetupFunction);
     return;
   } else {
@@ -442,24 +434,24 @@ async function initPopupGivenActiveTab(activeTab, options, siteName, menuSetupFu
   }
 
   if (waitForChange) {
-    //console.log("popup_init: initPopupGivenActiveTab, doing a timeout");
+    logDebug("doing a timeout");
     popupState.progress = progressState.sitePopupInitialTimeout;
     setTimeout(initialTimeoutEnd, 500);
     return;
   }
 
   // else we are not waiting
-  //console.log("popup_init: initPopupGivenActiveTab, calling setupMenuBasedOnContent");
+  logDebug("calling setupMenuBasedOnContent");
   setupMenuBasedOnContent(activeTab.id, options, siteName, menuSetupFunction);
 }
 
 async function callFunctionWithActiveTab(func) {
-  //console.log("callFunctionWithActiveTab");
+  logDebug("callFunctionWithActiveTab");
   //displayBusyMessage("WikiTree Sourcer initializing menu ...\ncallFunctionWithActiveTab");
 
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     //displayBusyMessage("WikiTree Sourcer initializing menu ...\ncallFunctionWithActiveTab, got tab");
-    //console.log("callFunctionWithActiveTab, got tab");
+    logDebug("got tab");
     if (tabs && tabs.length > 0 && tabs[0]) {
       func(tabs[0]);
     } else {
@@ -488,14 +480,13 @@ function initPopupInternal(siteName, menuSetupFunction) {
 async function initPopup(siteName, menuSetupFunction) {
   popupState.progress = progressState.sitePopupEntered;
 
-  //console.log("initPopup: recognised site popup, siteName is: " + siteName);
-  //console.log("initPopup: popupState.didStartFromDefaultPopup is: " + popupState.didStartFromDefaultPopup);
+  logDebug("recognised site popup, siteName is: " + siteName);
+  logDebug("popupState.didStartFromDefaultPopup is: " + popupState.didStartFromDefaultPopup);
 
   try {
     initPopupInternal(siteName, menuSetupFunction);
   } catch (e) {
-    console.log("WikiTree Sourcer: initPopup, exception occurred, e is:");
-    console.log(e);
+    console.error("WikiTree Sourcer: initPopup, exception occurred, e is:", e);
     openExceptionPage("Error during creating popup menu for content.", "", e, true);
   }
 }

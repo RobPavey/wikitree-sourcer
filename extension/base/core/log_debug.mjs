@@ -23,10 +23,10 @@ SOFTWARE.
 */
 
 const debugConfig = {
-  enabled: false,
+  enabled: true,
 
   // List function names here to only see their logs. Keep empty [] to show all.
-  allowedFunctions: ["getApiPersonFromGetRelatives", "setupFsPopupMenu", "anonymous"],
+  allowedFunctions: ["getApiPersonFromGetRelatives", "setupFsPopupMenu", "determineSiteNameForTab", "anonymous"],
   // List file names like 'freebmd_ed_reader.mjs" here to only see their logs. Keep empty [] to show all.
   allowedFiles: ["fs_generalize_data.mjs", "freebmd_ed_reader.mjs"],
 
@@ -73,11 +73,31 @@ function logDebug(...args) {
   //console.log("logDebug, callerName = " + callerName);
 
   // Regex to extract file name from callerLine
-  const fileMatch = callerLine.match(/file\:.+\/([a-z_]+\.m?js)\:(\d+)\:\d+/);
-  const callerFile = fileMatch ? fileMatch[1] : "unknown";
-  let callerLineNumber = fileMatch ? fileMatch[2] : "0";
+  const lineRegexForBrowser = /-extension\:.+\/([a-z_]+\.m?js)\:(\d+)\:\d+/;
+  const lineRegexForNodeJs = /file\:.+\/([a-z_]+\.m?js)\:(\d+)\:\d+/;
+  let callerFile = "unknown";
+  let callerLineNumber = "0";
+
+  if (lineRegexForBrowser.test(callerLine)) {
+    const fileMatch = callerLine.match(lineRegexForBrowser);
+    if (fileMatch.length == 3) {
+      callerFile = fileMatch[1];
+      callerLineNumber = fileMatch[2];
+    }
+  } else if (lineRegexForNodeJs.test(callerLine)) {
+    const fileMatch = callerLine.match(lineRegexForNodeJs);
+    if (fileMatch.length == 3) {
+      callerFile = fileMatch[1];
+      callerLineNumber = fileMatch[2];
+    }
+  }
 
   //console.log("logDebug, callerFile = " + callerFile);
+  //console.log("logDebug, callerLineNumber = " + callerLineNumber);
+
+  if (callerFile == "unknown") {
+    // console.log("unknown caller file, stack is:", stack);
+  }
 
   // 3. Filter and Log
   let isAllowed = debugConfig.allowedFunctions.length === 0 || debugConfig.allowedFunctions.includes(callerName);

@@ -23,10 +23,10 @@ SOFTWARE.
 */
 
 import { displayMessageThenClosePopup, emptyMenu, displayMessageWithIcon } from "./popup_menu_building.mjs";
+import { logDebug } from "/base/core/log_debug.mjs";
 
 async function requestPermissionsFromUser(permissions, options) {
-  //console.log("requestPermissionsFromUser, permissions is:");
-  //console.log(permissions);
+  logDebug("requestPermissionsFromUser, permissions is:", permissions);
 
   const reasonMessage = options.reason;
   const allowSkip = options.allowSkip;
@@ -116,11 +116,13 @@ async function requestPermissionsFromUser(permissions, options) {
 
   return new Promise(function (resolve, reject) {
     requestButton.onclick = async function (element) {
-      let savedMenuStyle = menu.style;
-      menu.style = "display:none";
+      //let savedMenuStyle = menu.style;
+      //menu.style = "display:none";
+      logDebug("request button pressed");
+
       try {
         let requestResult = await chrome.permissions.request(permissions);
-        menu.style = savedMenuStyle;
+        //menu.style = savedMenuStyle;
         if (!requestResult) {
           displayMessageWithIcon("warning", "Permission request failed");
           resolve(false);
@@ -131,9 +133,8 @@ async function requestPermissionsFromUser(permissions, options) {
           resolve(true);
         }
       } catch (error) {
-        console.log("Exception caught during chrome.permissions.request.");
-        console.log(error);
-        menu.style = savedMenuStyle;
+        console.error("Exception caught during chrome.permissions.request.", error);
+        //menu.style = savedMenuStyle;
         displayMessageThenClosePopup("Permission request failed.");
         resolve(false);
       }
@@ -150,8 +151,7 @@ async function requestPermissionsFromUser(permissions, options) {
 async function checkPermissionForSites(siteMatches, options) {
   let permissions = { origins: siteMatches };
 
-  //console.log("checkPermissionForSites, permissions is:");
-  //console.log(permissions);
+  logDebug("checkPermissionForSites, permissions is:", permissions);
 
   let hasPermission = await chrome.permissions.contains(permissions);
 
@@ -168,13 +168,14 @@ async function checkPermissionForSites(siteMatches, options) {
 }
 
 async function checkPermissionForSite(matchString, options) {
+  logDebug("checkPermissionForSite");
+
   let siteMatches = [matchString];
   return await checkPermissionForSites(siteMatches, options);
 }
 
 async function checkPermissionForSiteFromUrl(url, options) {
-  //console.log("checkPermissionForSiteFromUrl, url is:");
-  //console.log(url);
+  logDebug("checkPermissionForSiteFromUrl, url is:", url);
 
   let domain = url.replace(/https?\:\/\/[^\.]+\.([^\/]+)\/.*/, "$1");
   if (!domain || domain == url) {
@@ -184,8 +185,7 @@ async function checkPermissionForSiteFromUrl(url, options) {
     domain = options.defaultDomain;
   }
 
-  //console.log("checkPermissionForSites, domain is:");
-  //console.log(domain);
+  logDebug("checkPermissionForSites, domain is:", domain);
 
   // Note: it is best to use the scheme in the URL rather than "*" because the request
   // has to be a subset of what is in the manifest. On Safari if there is a content match
@@ -196,8 +196,7 @@ async function checkPermissionForSiteFromUrl(url, options) {
     scheme = "https";
   }
 
-  //console.log("checkPermissionForSites, scheme is:");
-  //console.log(scheme);
+  logDebug("checkPermissionForSites, scheme is:", scheme);
 
   // we want a match string like: "*://*.ancestry.com/*"
 
@@ -208,8 +207,7 @@ async function checkPermissionForSiteFromUrl(url, options) {
 
   let matchString = scheme + "://" + subDomain + "." + domain + "/*";
 
-  //console.log("checkPermissionForSites, matchString is:");
-  //console.log(matchString);
+  logDebug("checkPermissionForSites, matchString is:", matchString);
 
   return await checkPermissionForSite(matchString, options);
 }

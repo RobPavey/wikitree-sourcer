@@ -77,10 +77,12 @@ import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mj
 import { getSiteDataForSite } from "/base/browser/common/site_registry_storage.mjs";
 
 async function checkIfWeHavePermissionsToUseApi(checkOnly) {
+  logDebug("checkIfWeHavePermissionsToUseApi");
   const checkPermissionsOptions = {
     reason:
       "To get extra information for the WikiTree profile permission is needed to access api.wikitree.com to use API calls.",
     checkOnly: checkOnly,
+    allowSkip: true,
   };
   let allowed = await checkPermissionForSite("*://api.wikitree.com/*", checkPermissionsOptions);
   return allowed;
@@ -118,12 +120,13 @@ function apiDataStatusToQualifier(status) {
 }
 
 async function makeApiRequests(extractedData) {
-  //console.log("makeApiRequests called");
+  logDebug("makeApiRequests called");
   if (haveValidApiResponse) {
     return;
   }
 
-  let havePermission = await checkIfWeHavePermissionsToUseApi(true);
+  logDebug("makeApiRequests about to call checkIfWeHavePermissionsToUseApi");
+  let havePermission = await checkIfWeHavePermissionsToUseApi(false);
   if (!havePermission) {
     return;
   }
@@ -225,8 +228,7 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
       for (let spouseKey of Object.keys(apiPerson.Spouses)) {
         let spouse = apiPerson.Spouses[spouseKey];
         if (spouse) {
-          //console.log("WTAPI Spouse Info:");
-          //console.log(spouse);
+          logDebug("WTAPI Spouse Info:", spouse);
           let spouseWikiId = spouse.Name.replace(/\s/g, "_");
           if (spouseWikiId == wikiId) {
             let result = {
@@ -297,19 +299,17 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
   }
 
   function updatePersonWithApiInfo(person, apiInfo, relation) {
-    //console.log("updatePersonWithApiInfo. apiInfo is:");
-    //console.log(apiInfo);
+    logDebug("updatePersonWithApiInfo. apiInfo is:", apiInfo);
     function updateValueIfNeeded(object, fieldName, apiValue) {
       if (apiValue && object[fieldName] != apiValue) {
-        //console.log("updatePersonWithApiInfo: person is:");
-        //console.log(person);
+        logDebug("updatePersonWithApiInfo: person is:", person);
 
         let name = "";
         if (person.name) {
           name = person.name.inferFullName();
         }
 
-        console.log(
+        logDebug(
           "Due to WikiTree API, for " +
             relation +
             " " +
@@ -391,7 +391,7 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
     }
   }
 
-  let havePermission = await checkIfWeHavePermissionsToUseApi(false);
+  let havePermission = await checkIfWeHavePermissionsToUseApi(true);
   if (!havePermission) {
     return;
   }
@@ -416,8 +416,7 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
     return;
   }
 
-  //console.log("updateGeneralizedDataUsingApiResponse: apiPerson is:");
-  //console.log(apiPerson);
+  logDebug("updateGeneralizedDataUsingApiResponse: apiPerson is:", apiPerson);
 
   // add any detail we can for this person
   if (apiPerson.DataStatus) {
@@ -752,11 +751,8 @@ function getWikiTreeAddMergeData(isAdd, data, personEd, personGd, citationObject
     return newPlaceString;
   }
 
-  //console.log("getWikiTreeAddMergeData, personGd is: ");
-  //console.log(personGd);
-
-  //console.log("getWikiTreeAddMergeData, data is: ");
-  //console.log(data);
+  logDebug("getWikiTreeAddMergeData, personGd is: ", personGd);
+  logDebug("getWikiTreeAddMergeData, data is: ", data);
 
   let result = {};
 
@@ -863,9 +859,8 @@ function getWikiTreeAddMergeData(isAdd, data, personEd, personGd, citationObject
   }
 
   if (addMarriage) {
-    //console.log("getWikiTreeEditFamilyData spouses = ");
-    //console.log(personGd.spouses);
-    //console.log("getWikiTreeEditFamilyData familyMemberName = " + data.extractedData.familyMemberName);
+    logDebug("spouses = ", personGd.spouses);
+    logDebug("familyMemberName = " + data.extractedData.familyMemberName);
     if (personGd.spouses && marriageSpouse) {
       // we want to compare spouse names with data.familyMemberName
       // Can be messy because WT name can have maiden name in parens
@@ -908,8 +903,7 @@ function getWikiTreeAddMergeData(isAdd, data, personEd, personGd, citationObject
     }
   }
 
-  //console.log("getWikiTreeAddMergeData, result is: ");
-  //console.log(result);
+  logDebug("getWikiTreeAddMergeData, result is: ", result);
 
   return result;
 }
@@ -1363,11 +1357,10 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
 
     await waitForAPIResponse();
 
-    //console.log("getPageParentsForAddingChild ");
+    logDebug("getPageParentsForAddingChild");
 
     if (apiResponse) {
-      //console.log("getWikiTreeEditFamilyData, apiResponse is:");
-      //console.log(apiResponse);
+      logDebug("getWikiTreeEditFamilyData, apiResponse is:", apiResponse);
 
       let pageParent1Info = getGenderAndBirthNameFromApiResponse(pageParent1WikiId);
       if (pageParent1Info) {
@@ -1387,8 +1380,7 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
       }
     }
 
-    //console.log("getWikiTreeEditFamilyData, parents is:");
-    //console.log(parents);
+    logDebug("getWikiTreeEditFamilyData, parents is:", parents);
 
     if (!parents.genderKnown) {
       let parent1HasParen = false;
@@ -1415,8 +1407,8 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
       let p1MatchesLnab = pageParent1Name && pageParent1BirthName.endsWith(" " + childLnab);
       let p2MatchesLnab = pageParent2Name && pageParent2BirthName.endsWith(" " + childLnab);
 
-      //console.log("getPageParentsForAddingChild, p1MatchesLnab: " + p1MatchesLnab);
-      //console.log("getPageParentsForAddingChild, p2MatchesLnab: " + p2MatchesLnab);
+      logDebug("p1MatchesLnab: " + p1MatchesLnab);
+      logDebug("p2MatchesLnab: " + p2MatchesLnab);
 
       if (p1MatchesLnab && !p2MatchesLnab) {
         pageParent1Gender = "Male";
@@ -1506,8 +1498,7 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
       }
     }
 
-    //console.log("getWikiTreeEditFamilyData, returning parents:");
-    //console.log(parents);
+    logDebug("returning parents:", parents);
 
     return parents;
   }
@@ -1690,14 +1681,12 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
       parentsLine = generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, undefined);
     }
 
-    //console.log("generateParentsLine, returning parentsLine:");
-    //console.log(parentsLine);
+    logDebug("returning parentsLine:", parentsLine);
 
     return parentsLine;
   }
 
-  //console.log("getWikiTreeEditFamilyData, personGd is: ");
-  //console.log(personGd);
+  logDebug("personGd is: ", personGd);
 
   let result = getWikiTreeAddMergeData(true, data, personEd, personGd, citationObject);
 
@@ -1880,8 +1869,7 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
     result.changeExplanation = "Add using external data for " + fromString + " via WikiTree Sourcer";
   }
 
-  //console.log("getWikiTreeEditFamilyData, result is: ");
-  //console.log(result);
+  logDebug("getWikiTreeEditFamilyData, result is: ", result);
 
   return result;
 }
@@ -1889,17 +1877,13 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
 async function doSetFieldsFromPersonData(tabId, wtPersonData) {
   // send a message to content script
   try {
-    //console.log("doSetFieldsFromPersonData");
-    //console.log(tabId);
-    //console.log(wtPersonData);
+    logDebug(tabId, wtPersonData);
 
     chrome.tabs.sendMessage(tabId, { type: "setFields", personData: wtPersonData }, function (response) {
       displayBusyMessage("Setting fields ...");
 
-      //console.log("doSetFieldsFromPersonData, chrome.runtime.lastError is:");
-      //console.log(chrome.runtime.lastError);
-      //console.log("doSetFieldsFromPersonData, response is:");
-      //console.log(response);
+      logDebug("chrome.runtime.lastError is:", chrome.runtime.lastError);
+      logDebug("doSetFieldsFromPersonData, response is:", response);
 
       // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
       if (chrome.runtime.lastError || !response) {
@@ -1920,11 +1904,11 @@ async function doSetFieldsFromPersonData(tabId, wtPersonData) {
         closePopup();
       } else {
         let message = response.errorMessage;
-        console.log(message);
+        console.warn(message);
       }
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
@@ -1953,11 +1937,10 @@ async function doMergeEditFromPersonData(data, wtPersonData) {
     };
 
     chrome.storage.local.set({ wikitreeMergeEditData: wikitreeMergeEditData }, function () {
-      //console.log("saved wikitreeMergeEditData, wikitreeMergeEditData is:");
-      //console.log(wikitreeMergeEditData);
+      logDebug("saved wikitreeMergeEditData, wikitreeMergeEditData is:", wikitreeMergeEditData);
     });
   } catch (ex) {
-    console.log("mergeEditFromPersonData: save local storage failed");
+    console.error("mergeEditFromPersonData: save local storage failed");
   }
 
   chrome.tabs.create({ url: mergeUrl });
@@ -2217,11 +2200,11 @@ async function doShowAdditionalFields(tabId) {
         closePopup();
       } else {
         let message = response.errorMessage;
-        console.log(message);
+        console.warn(message);
       }
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
@@ -2252,8 +2235,7 @@ async function doCensusTablesImprovements(tabId, compareResult, biography) {
       displayMessageWithIconThenClosePopup("check", message1, message2);
     }
   } catch (error) {
-    console.log("caught error from sendMessage:");
-    console.log(error);
+    console.error("caught error from sendMessage:", error);
     displayMessageWithIcon("warning", "Failed to set biography in profile.");
   }
 }
@@ -2384,13 +2366,13 @@ async function addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction)
 async function addMergeEditFromPersonDataMenuItem(menu, data, tabId, backFunction) {
   let personData = await getLatestPersonData();
   if (!personData) {
-    console.log("addMergeEditFromPersonDataMenuItem, no person data");
+    console.warn("addMergeEditFromPersonDataMenuItem, no person data");
     return false; // no saved data, do not add menu item
   }
 
   let timeText = convertTimestampDiffToText(personData.timeStamp);
   if (!timeText) {
-    console.log("addMergeEditFromPersonDataMenuItem, no timeText");
+    console.warn("addMergeEditFromPersonDataMenuItem, no timeText");
     return false;
   }
 
@@ -2635,8 +2617,7 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
   };
 
   let compareResult = compareCensusTables(data, biography, jsonData);
-  //console.log("compareCensusTables returned:");
-  //console.log(compareResult);
+  logDebug("compareCensusTables returned:", compareResult);
 
   let fragment = document.createDocumentFragment();
 
@@ -2914,8 +2895,7 @@ async function setupImproveCensusTablesSubMenu(data, tabId, backFunction) {
       biography = response.biography;
     }
   } catch (error) {
-    console.log("caught error from sendMessage:");
-    console.log(error);
+    console.error("caught error from sendMessage:", error);
     displayMessageWithIcon("warning", "Failed to get biography from profile.");
   }
 
@@ -3224,7 +3204,7 @@ async function buildMenu(data, tabId) {
 }
 
 async function setupWikiTreePopupMenu(extractedData, tabId) {
-  //console.log("setupWikiTreePopupMenu: tabId is: " + tabId);
+  logDebug("tabId is: " + tabId);
 
   let backFunction = function () {
     setupWikiTreePopupMenu(extractedData, tabId);
@@ -3258,15 +3238,16 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
   }
 
   if (extractedData.pageType != "loggedOut") {
-    makeApiRequests(extractedData);
+    // we have to await here even though it slows the menu appearing because otherwise
+    // the request permission menu gets mushed with the regular menu
+    await makeApiRequests(extractedData);
   }
 
   // get generalized data
   let generalizedData = generalizeData({ extractedData: extractedData });
   let data = { extractedData: extractedData, generalizedData: generalizedData };
 
-  //console.log("setupWikiTreePopupMenu: generalizedData is:");
-  //console.log(generalizedData);
+  logDebug("setupWikiTreePopupMenu: generalizedData is:", generalizedData);
 
   if (!generalizedData || !generalizedData.hasValidData) {
     let message = "WikiTree Sourcer could not interpret the data on this page.";
