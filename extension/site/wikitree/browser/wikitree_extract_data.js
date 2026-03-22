@@ -24,30 +24,31 @@ SOFTWARE.
 
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
-class WikiTreeExtractedData {
-  constructor() {
-    this.hasValidData = false;
+function initResult() {
+  let result = {};
+  result.hasValidData = false;
 
-    this.firstNames = ""; // everything in the Proper First Name field in Edit mode
-    this.prefNames = "";
-    this.middleNames = "";
+  result.firstNames = ""; // everything in the Proper First Name field in Edit mode
+  result.prefNames = "";
+  result.middleNames = "";
 
-    this.lnab = "";
-    this.currentLastName = "";
-    this.mothersMaidenName = "";
+  result.lnab = "";
+  result.currentLastName = "";
+  result.mothersMaidenName = "";
 
-    this.birthDate = "";
-    this.birthDateStatus = "none";
+  result.birthDate = "";
+  result.birthDateStatus = "none";
 
-    (this.deathDate = ""), (this.deathDateStatus = "none");
+  result.deathDate = "";
+  result.deathDateStatus = "none";
 
-    this.birthLocation = "";
-    this.deathLocation = "";
+  result.birthLocation = "";
+  result.deathLocation = "";
 
-    this.personGender = "";
+  result.personGender = "";
 
-    this.spouses = [];
-  }
+  result.spouses = [];
+  return result;
 }
 
 function getTextBySelector(startNode, selector) {
@@ -1926,7 +1927,7 @@ function extractDataFor2025FormatPage(result, document, url) {
 function extractData(document, url) {
   //console.log("extractData");
 
-  let result = new WikiTreeExtractedData();
+  let result = initResult();
 
   result.url = url;
 
