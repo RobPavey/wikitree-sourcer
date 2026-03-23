@@ -40,7 +40,7 @@ import { logDebug } from "/base/core/log_debug.mjs";
 
 import "/site/all/browser/popup_register_search_sites.mjs";
 
-logDebug("Loaded popup script");
+logDebug("Loaded popup_init.mjs");
 
 // This is used to override the console variable so that it logs by sending messages to content script
 class LoggerToTabConsole {

@@ -269,11 +269,23 @@ async function determineSiteNameForTab(activeTab) {
                 // NOTE: This also fixes the issue when a user can disable the extension and then
                 // re-enable it. In Chrome that results in the content script being missing.
                 if (isChrome()) {
+                  let pingSucceeded = false;
                   try {
                     // First, check if content script is already there to avoid double-loading
-                    await chrome.tabs.sendMessage(activeTab.id, { ping: true });
-                    logDebug("ping to content script succeeded.");
+                    let response = await chrome.tabs.sendMessage(activeTab.id, { ping: true });
+                    if (chrome.runtime.lastError) {
+                      console.warn("ping to content script failed, lastError is", chrome.runtime.lastError);
+                    } else if (!response) {
+                      console.warn("ping to content script failed, response is", response);
+                    } else {
+                      logDebug("ping to content script succeeded.");
+                      pingSucceeded = true;
+                    }
                   } catch (e) {
+                    console.warn("ping to content script failed, error is", e);
+                  }
+
+                  if (!pingSucceeded) {
                     logDebug("ping to content script failed, attempthing to inject content script.");
                     // If the ping fails, the script isn't there, so inject it!
                     try {

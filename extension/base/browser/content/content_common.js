@@ -224,6 +224,12 @@ function contentMessageListener(
 function siteContentInit(siteName, overrideExtractHandler, additionalMessageHandler) {
   console.log("siteContentInit, site name is: " + siteName);
 
+  // in certain cases the content script can get loaded twice (e.g. in Safari after an update
+  // the existing tabs may have the old content script loaded and the new one gets loaded)
+  // Define a unique ID for this specific "load" of the script
+  const scriptInstanceId = Math.random().toString(36).substr(2, 9);
+  window.currentWikiTreeInstance = scriptInstanceId;
+
   // In the case of Safari where the permission popup comes up when you click the extension icon,
   // siteContentInit is called when the user responds but the response from the contentLoaded
   // message not received until the extension icon is clicked again (weird can be minutes later!).
@@ -234,6 +240,19 @@ function siteContentInit(siteName, overrideExtractHandler, additionalMessageHand
 
   // Listen for messages (from the popup script mostly)
   chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    // Check if the runtime is still alive
+    if (!chrome.runtime?.id) {
+      console.warn("WikiTree: Extension context invalidated. Cleaning up.");
+      chrome.runtime.onMessage.removeListener(messageHandler);
+      return;
+    }
+
+    // Check if this instance of the content script is still the "active" one
+    if (window.currentWikiTreeInstance !== scriptInstanceId) {
+      console.log("Old script instance ignored message.");
+      return false; // Stay silent and let the new instance handle it
+    }
+
     return contentMessageListener(
       request,
       sender,
