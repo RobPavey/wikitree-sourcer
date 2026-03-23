@@ -1676,7 +1676,7 @@ var widthBeforeDebugDisplay = "";
 // Special backFunction for leaving EditCitation
 async function resizeBackFunction(backFunction) {
   // Make the whole window the width it was before (not on iOS)
-  overrideMenuWidth(widthBeforeEditCitation);
+  overrideMenuWidth(widthBeforeDebugDisplay);
 
   backFunction();
 }

@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { displayMessageThenClosePopup, emptyMenu, displayMessageWithIcon } from "./popup_menu_building.mjs";
 import { logDebug } from "/base/core/log_debug.mjs";
+import { isFirefox } from "/base/browser/common/browser_check.mjs";
 
 async function requestPermissionsFromUser(permissions, options) {
   logDebug("requestPermissionsFromUser, permissions is:", permissions);
@@ -31,6 +32,7 @@ async function requestPermissionsFromUser(permissions, options) {
   const reasonMessage = options.reason;
   const allowSkip = options.allowSkip;
   const needsPopupDisplayed = options.needsPopupDisplayed;
+  const userClickedExtensionPopup = options.userClickedExtensionPopup;
 
   function addBreak(fragment) {
     let br = document.createElement("br");
@@ -65,6 +67,23 @@ async function requestPermissionsFromUser(permissions, options) {
     addBreak(messageDiv2);
 
     fragment.appendChild(messageDiv2);
+  }
+
+  if (userClickedExtensionPopup && isFirefox()) {
+    let messageDiv2a = document.createElement("div");
+    messageDiv2a.className = "flex-parent jc-center";
+    addBreak(messageDiv2a);
+
+    let label2 = document.createElement("label");
+    label2.className = "messageLabel";
+    label2.innerText =
+      "On Firefox just clicking the extension popup icon will have granted" +
+      " temporary permissions for this tab. Click the button below to grant non-temporary permission.";
+    messageDiv2a.appendChild(label2);
+
+    addBreak(messageDiv2a);
+
+    fragment.appendChild(messageDiv2a);
   }
 
   let messageDiv3 = document.createElement("div");

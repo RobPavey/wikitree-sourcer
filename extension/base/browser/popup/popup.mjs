@@ -309,6 +309,7 @@ async function determineSiteNameForTab(activeTab) {
               const checkPermissionsOptions = {
                 reason: "The extension needs to load a content script in order to extract data from the page.",
                 needsPopupDisplayed: true,
+                userClickedExtensionPopup: true,
               };
               if (await checkPermissionForSites(contentScript.matches, checkPermissionsOptions)) {
                 // permission was granted but the content script will not be retroactively loaded
