@@ -116,13 +116,15 @@ async function requestPermissionsFromUser(permissions, options) {
 
   return new Promise(function (resolve, reject) {
     requestButton.onclick = async function (element) {
-      //let savedMenuStyle = menu.style;
-      //menu.style = "display:none";
+      let savedMenuStyle = menu.style;
+      // needed on Firefox or the popup covers the system dialog asking for confirmation
+      menu.style = "display:none";
+
       logDebug("request button pressed");
 
       try {
         let requestResult = await chrome.permissions.request(permissions);
-        //menu.style = savedMenuStyle;
+        menu.style = savedMenuStyle;
         if (!requestResult) {
           displayMessageWithIcon("warning", "Permission request failed");
           resolve(false);

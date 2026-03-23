@@ -24,7 +24,7 @@ SOFTWARE.
 
 import "../../../site/all/core/register_site_data.mjs";
 import { getSites, storeSiteRegistry } from "../common/site_registry_storage.mjs";
-import { isChrome } from "../common/browser_check.mjs";
+import { isChrome, isSafari } from "../common/browser_check.mjs";
 
 async function injectContentScriptsIntoExistingTab(tab, scriptsToLoad) {
   //console.log("injectContentScriptsIntoExistingTab, tab is:");
@@ -103,7 +103,7 @@ async function injectContentScriptsIntoTabsThatMatch(matches) {
 
 async function injectContentScriptsIntoExistingTabs(contentScripts) {
   // this is only needed on Chrome as FireFox and Safari seem to do it automatically
-  if (!isChrome()) {
+  if (isSafari()) {
     return;
   }
 
@@ -209,7 +209,7 @@ async function registerContentScripts() {
 
 async function injectContentScriptsIntoTabsOnPermissionsChange(permissions) {
   // this is only needed on Chrome as FireFox and Safari seem to do it automatically
-  if (isChrome()) {
+  if (!isSafari()) {
     // Identify which site was just granted
     const grantedOrigins = permissions.origins || [];
 
