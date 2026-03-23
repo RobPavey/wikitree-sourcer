@@ -1,7 +1,4 @@
 body {
-  /* latest attempt for width - set it for all platforms and reset it for phones */
-  width: 350px; /* latest attempt - set it for all platforms and reset it for phones */
-
   height: auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
     sans-serif;
@@ -10,11 +7,21 @@ body {
   padding: 0;
 }
 
-/* Only remove the fixed width on smaller screens (iOS/Mobile) */
-@media screen and (max-width: 599px) {
+/* 1. THE LOCK: Chrome sees this and stays at 350px. Period. */
+html,
+body {
+  width: 350px;
+  min-width: 350px; /* Force Chrome to stay at this size */
+}
+
+/* 2. THE UNLOCK: This targets ONLY WebKit (Safari/iOS) */
+/* Chrome ignores this 'selector hack', so it stays locked at 350px */
+@supports (-webkit-hyphens: none) {
+  html,
   body {
-    width: auto;
-    min-width: 100vw; /* Ensure it fills the mobile screen */
+    width: 100vw;
+    min-width: 0; /* Remove the 350px lock for Safari/iOS */
+    max-width: 100vw;
   }
 }
 

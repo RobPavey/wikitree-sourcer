@@ -129,7 +129,7 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
   }
 
   if (shouldPopupWindowResize) {
-    document.body.style.width = "600px";
+    overrideMenuWidth("600px");
   }
 
   emptyMenu();
@@ -1676,9 +1676,7 @@ var widthBeforeDebugDisplay = "";
 // Special backFunction for leaving EditCitation
 async function resizeBackFunction(backFunction) {
   // Make the whole window the width it was before (not on iOS)
-  if (shouldPopupWindowResize && widthBeforeDebugDisplay) {
-    document.body.style.width = widthBeforeDebugDisplay;
-  }
+  overrideMenuWidth(widthBeforeEditCitation);
 
   backFunction();
 }
@@ -1714,10 +1712,7 @@ async function debugDisplayMenu(object, titleText, backFunction) {
   let displayString = JSON.stringify(object, null, 2); // 2 spaces of indentation
 
   // Make the whole window wider (if not on iOS)
-  if (shouldPopupWindowResize) {
-    widthBeforeDebugDisplay = document.body.style.width;
-    document.body.style.width = "600px";
-  }
+  widthBeforeDebugDisplay = overrideMenuWidth("600px");
 
   displayTextMenu(titleText, displayString, backFunction);
 }
@@ -2044,6 +2039,13 @@ function addSameEventMenuItem(menu, data, searchFunction, subtitle = "") {
 // it resizing back to the smaller size after Edit Citation does not work on iOS.
 var shouldPopupWindowResize = true;
 
+function applyWidthStyle(width) {
+  document.documentElement.style.width = width;
+  document.documentElement.style.minWidth = width;
+  document.body.style.width = width;
+  document.body.style.minWidth = width;
+}
+
 function setPopupMenuWidthForIosOnResize() {
   //console.log("setPopupMenuWidthForIosOnResize, window.innerWidth is:" + window.innerWidth);
   //console.log("setPopupMenuWidthForIosOnResize, window.outerWidth is:" + window.outerWidth);
@@ -2074,7 +2076,7 @@ function setPopupMenuWidthBasedOnPlatform(platformInfo) {
   } else {
     // on all other platforms the window should resize
     shouldPopupWindowResize = true;
-    document.body.style.width = "350px";
+    applyWidthStyle("350px");
   }
 }
 
@@ -2083,6 +2085,16 @@ function setPopupMenuWidth() {
   //console.log("setPopupMenuWidth, window.outerWidth is:" + window.outerWidth);
   // this uses a callback
   chrome.runtime.getPlatformInfo(setPopupMenuWidthBasedOnPlatform);
+}
+
+function overrideMenuWidth(width) {
+  // Make the whole window wider (if not on iOS)
+  let widthBeforeEditCitation = document.body.style.width;
+  if (width && shouldPopupWindowResize) {
+    widthBeforeEditCitation = document.body.style.width;
+    applyWidthStyle(width);
+  }
+  return widthBeforeEditCitation;
 }
 
 export {
@@ -2125,4 +2137,5 @@ export {
   enableSaveUnitTestData,
   clearCachedFetchData,
   displayTextMenu,
+  overrideMenuWidth,
 };

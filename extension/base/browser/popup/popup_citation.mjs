@@ -29,6 +29,7 @@ import {
   beginMainMenu,
   endMainMenu,
   shouldPopupWindowResize,
+  overrideMenuWidth,
 } from "./popup_menu_building.mjs";
 
 import { writeToClipboard, clearClipboard } from "./popup_clipboard.mjs";
@@ -68,9 +69,7 @@ async function saveCitation(citationObject) {
   });
 
   // Make the whole window the width it was before (not on iOS)
-  if (shouldPopupWindowResize && widthBeforeEditCitation) {
-    document.body.style.width = widthBeforeEditCitation;
-  }
+  overrideMenuWidth(widthBeforeEditCitation);
 
   let message2 = "";
   if (citationObject.type == "source") {
@@ -88,10 +87,7 @@ var widthBeforeEditCitation = "";
 // Special backFunction for leaving EditCitation
 async function resizeBackFunction(backFunction) {
   // Make the whole window the width it was before (not on iOS)
-  if (shouldPopupWindowResize && widthBeforeEditCitation) {
-    document.body.style.width = widthBeforeEditCitation;
-  }
-
+  overrideMenuWidth(widthBeforeEditCitation);
   backFunction();
 }
 
@@ -110,8 +106,7 @@ async function editCitation(backFunction) {
 
   // Make the whole window wider (if not on iOS)
   if (shouldPopupWindowResize) {
-    widthBeforeEditCitation = document.body.style.width;
-    document.body.style.width = "600px";
+    widthBeforeEditCitation = overrideMenuWidth("600px");
   }
 
   let menu = beginMainMenu();

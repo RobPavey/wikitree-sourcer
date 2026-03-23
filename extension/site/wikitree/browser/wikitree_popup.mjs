@@ -75,6 +75,7 @@ import { logDebug } from "../../../base/core/log_debug.mjs";
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 import { getSiteDataForSite } from "/base/browser/common/site_registry_storage.mjs";
+import { overrideMenuWidth } from "../../../base/browser/popup/popup_menu_building.mjs";
 
 async function checkIfWeHavePermissionsToUseApi(checkOnly) {
   logDebug("checkIfWeHavePermissionsToUseApi");
@@ -2225,9 +2226,7 @@ async function doCensusTablesImprovements(tabId, compareResult, biography) {
     } else if (!response.success) {
       displayMessageWithIcon("warning", "Failed to set biography in profile.");
     } else if (response.success) {
-      if (shouldPopupWindowResize && widthBeforeWidePopup) {
-        document.body.style.width = widthBeforeWidePopup;
-      }
+      overrideMenuWidth(widthBeforeWidePopup);
       let message1 = "Biography updated.";
       let message2 = "\nSave a draft and then do";
       message2 += "\n'compare draft with saved information'";
@@ -2861,20 +2860,14 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
 
 async function setupImproveCensusTablesSubMenu(data, tabId, backFunction) {
   // Make the whole window wider (if not on iOS)
-  if (shouldPopupWindowResize) {
-    widthBeforeWidePopup = document.body.style.width;
-    document.body.style.width = "600px";
-  }
+  widthBeforeWidePopup = overrideMenuWidth("600px");
 
   let menu = beginMainMenu();
 
   // Special backFunction for leaving wider menu
   async function resizeBackFunction() {
     // Make the whole window the width it was before (not on iOS)
-    if (shouldPopupWindowResize && widthBeforeWidePopup) {
-      document.body.style.width = widthBeforeWidePopup;
-    }
-
+    overrideMenuWidth(widthBeforeWidePopup);
     backFunction();
   }
 
