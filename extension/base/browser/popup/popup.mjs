@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { popupState, progressState } from "./popup_state.mjs";
 import { separateUrlIntoParts } from "./popup_utils.mjs";
-import { isSafari, isChrome } from "/base/browser/common/browser_check.mjs";
+import { isSafari, isChrome, isFirefox } from "/base/browser/common/browser_check.mjs";
 import { checkPermissionForSites } from "./popup_permissions.mjs";
 
 import {
@@ -244,6 +244,8 @@ async function determineSiteNameForTab(activeTab) {
       let doesTabMatch = doesUrlMatchPattern(urlParts, matchParts);
 
       if (doesTabMatch) {
+        //logDebug("This tab matches the pattern.");
+
         // found match, get siteName from the last script name
         let scripts = contentScript.js;
         if (scripts && scripts.length > 0) {
