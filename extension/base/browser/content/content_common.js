@@ -96,7 +96,7 @@ async function openExceptionPageForContentScript(message, input, error, requestR
 }
 
 function extractDataAndRespond(document, url, contentType, sendResponse, siteSpecificInput) {
-  console.log("extractDataAndRespond. url: " + url);
+  //console.log("extractDataAndRespond. url: " + url);
 
   // Extract the data.
   try {
@@ -221,6 +221,48 @@ function contentMessageListener(
   return false; // no async
 }
 
+function onMessageListener(
+  request,
+  sender,
+  sendResponse,
+  scriptInstanceId,
+  siteName,
+  overrideExtractHandler,
+  additionalMessageHandler
+) {
+  //console.log("onMessageListener, message arrived, request is : ");
+  //console.log(request);
+  //console.log(sender);
+
+  //console.log("chrome.runtime?.id is : " + chrome.runtime?.id);
+
+  // Check if the runtime is still alive
+  if (!chrome.runtime?.id) {
+    console.warn("WikiTree: Extension context invalidated. Cleaning up.");
+    chrome.runtime.onMessage.removeListener(messageHandler);
+    return false;
+  }
+
+  //console.log("window.currentWikiTreeInstance is : " + window.currentWikiTreeInstance);
+  //console.log("scriptInstanceId : " + scriptInstanceId);
+
+  // Check if this instance of the content script is still the "active" one
+  if (window.currentWikiTreeInstance !== scriptInstanceId) {
+    console.log("Old script instance - ignored message.");
+    return false; // Stay silent and let the new instance handle it
+  }
+
+  //console.log("content onMessageListener calling contentMessageListener");
+  return contentMessageListener(
+    request,
+    sender,
+    sendResponse,
+    siteName,
+    overrideExtractHandler,
+    additionalMessageHandler
+  );
+}
+
 function siteContentInit(siteName, overrideExtractHandler, additionalMessageHandler) {
   console.log("siteContentInit, site name is: " + siteName);
 
@@ -239,29 +281,24 @@ function siteContentInit(siteName, overrideExtractHandler, additionalMessageHand
   //loadExtractDataModule(extractModulePath);
 
   // Listen for messages (from the popup script mostly)
-  chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    console.log("content onMessage listener");
-
-    // Check if the runtime is still alive
-    if (!chrome.runtime?.id) {
-      console.warn("WikiTree: Extension context invalidated. Cleaning up.");
-      chrome.runtime.onMessage.removeListener(messageHandler);
-      return false;
+  try {
+    if (chrome.runtime && chrome.runtime.id) {
+      chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+        return onMessageListener(
+          request,
+          sender,
+          sendResponse,
+          scriptInstanceId,
+          siteName,
+          overrideExtractHandler,
+          additionalMessageHandler
+        );
+      });
+      //console.log("Listener registered successfully in context:", chrome.runtime.id);
+    } else {
+      console.warn("Registration skipped: No runtime ID available.");
     }
-
-    // Check if this instance of the content script is still the "active" one
-    if (window.currentWikiTreeInstance !== scriptInstanceId) {
-      console.log("Old script instance ignored message.");
-      return false; // Stay silent and let the new instance handle it
-    }
-
-    return contentMessageListener(
-      request,
-      sender,
-      sendResponse,
-      siteName,
-      overrideExtractHandler,
-      additionalMessageHandler
-    );
-  });
+  } catch (error) {
+    console.error("Critical failure during listener attachment:", e);
+  }
 }
