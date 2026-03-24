@@ -25,12 +25,11 @@ SOFTWARE.
 import "../../../site/all/core/register_site_data.mjs";
 import { getSites, storeSiteRegistry } from "../common/site_registry_storage.mjs";
 import { isChrome, isFirefox, isSafari } from "../common/browser_check.mjs";
+import { logDebug } from "/base/core/log_debug.mjs";
 
-async function injectContentScriptsIntoExistingTab(tab, scriptsToLoad) {
-  //console.log("injectContentScriptsIntoExistingTab, tab is:");
-  //console.log(tab);
-  //console.log("injectContentScriptsIntoExistingTab, scriptsToLoad is:");
-  //console.log(scriptsToLoad);
+async function injectContentScriptsIntoExistingTab(tab, contentScriptJs) {
+  logDebug("injectContentScriptsIntoExistingTab, tab is:", tab);
+  logDebug("injectContentScriptsIntoExistingTab, contentScriptJs is:", contentScriptJs);
 
   try {
     // First, check if content script is already there to avoid double-loading
@@ -40,17 +39,15 @@ async function injectContentScriptsIntoExistingTab(tab, scriptsToLoad) {
     try {
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        files: scriptsToLoad,
+        files: contentScriptJs,
       });
     } catch (error) {
       if (error.message.includes("error page")) {
         console.warn(`Tab ${tab.id} is showing a browser error/resubmit page. Skipping injection.`);
-        console.log("tab is:");
-        console.log(tab);
+        logDebug("tab is:", tab);
       } else {
         console.error(`Actual injection error on tab ${tab.id}:`, error);
-        console.log("tab is:");
-        console.log(tab);
+        logDebug("tab is:", tab);
       }
       // We don't need to do anything else; just move to the next tab.
     }
@@ -58,7 +55,7 @@ async function injectContentScriptsIntoExistingTab(tab, scriptsToLoad) {
 }
 
 async function injectContentScriptsIntoTabsThatMatch(matches) {
-  let dynamicScripts = await chrome.scripting.getRegisteredContentScripts();
+  let contentScripts = await chrome.scripting.getRegisteredContentScripts();
 
   for (const origin of matches) {
     // Convert origin pattern (e.g., *://*.wikitree.com/*) to a query-friendly pattern
@@ -73,28 +70,26 @@ async function injectContentScriptsIntoTabsThatMatch(matches) {
     });
 
     if (tabs.length) {
-      console.log("injectContentScriptsIntoTabsThatMatch, found " + tabs.length + " tabs, matching " + origin);
+      logDebug("injectContentScriptsIntoTabsThatMatch, found " + tabs.length + " tabs, matching " + origin);
 
       // Find the content scripts for that site
-      let scriptsToLoad = undefined;
-      for (let contentScript of dynamicScripts) {
-        //console.log("contentScript.matches is:");
-        //console.log(contentScript.matches);
+      let contentScriptJs = undefined;
+      for (let contentScript of contentScripts) {
+        logDebug("contentScript.matches is:", contentScript.matches);
 
         for (let match of contentScript.matches) {
           if (match == origin) {
-            scriptsToLoad = contentScript.js;
+            contentScriptJs = contentScript.js;
           }
         }
       }
 
-      //console.log("scriptsToLoad is:");
-      //console.log(scriptsToLoad);
+      logDebug("contentScriptJs is:", contentScriptJs);
 
-      if (scriptsToLoad) {
+      if (contentScriptJs) {
         // Inject the script into every matching tab
         for (const tab of tabs) {
-          await injectContentScriptsIntoExistingTab(tab, scriptsToLoad);
+          await injectContentScriptsIntoExistingTab(tab, contentScriptJs);
         }
       }
     }
@@ -108,8 +103,7 @@ async function injectContentScriptsIntoExistingTabs(contentScripts) {
   }
 
   for (let contentScript of contentScripts) {
-    //console.log("contentScript.matches is:");
-    //console.log(contentScript.matches);
+    logDebug("contentScript.matches is:", contentScript.matches);
 
     for (let match of contentScript.matches) {
       // Find ALL tabs matching this site, NOTE: this will only get tabs that we have permission
@@ -122,17 +116,16 @@ async function injectContentScriptsIntoExistingTabs(contentScripts) {
       });
 
       if (tabs.length) {
-        //console.log("injectContentScriptsIntoExistingTabs, found " + tabs.length + " tabs, matching " + match);
+        logDebug("injectContentScriptsIntoExistingTabs, found " + tabs.length + " tabs, matching " + match);
 
-        let scriptsToLoad = contentScript.js;
+        let contentScriptJs = contentScript.js;
 
-        if (scriptsToLoad) {
-          //console.log("scriptsToLoad is:");
-          //console.log(scriptsToLoad);
+        if (contentScriptJs) {
+          logDebug("contentScriptJs is:", contentScriptJs);
 
           // Inject the scripts into every matching tab
           for (const tab of tabs) {
-            await injectContentScriptsIntoExistingTab(tab, scriptsToLoad);
+            await injectContentScriptsIntoExistingTab(tab, contentScriptJs);
           }
         }
       }
@@ -188,14 +181,15 @@ async function registerContentScripts() {
     }
   }
 
-  //console.log("registerContentScripts: about to call chrome.scripting.registerContentScripts, scripts is:");
-  //console.log(scripts);
+  logDebug("registerContentScripts: about to call chrome.scripting.registerContentScripts, scripts is:", scripts);
 
   try {
     await chrome.scripting.registerContentScripts(scripts);
   } catch (error) {
-    console.log("registerContentScripts: chrome.scripting.registerContentScripts, caught exception. error is:");
-    console.log(error);
+    console.error(
+      "registerContentScripts: chrome.scripting.registerContentScripts, caught exception. error is:",
+      error
+    );
   }
 
   // There may be existing tabs open and the extension has just been installed so we want to load the
@@ -223,12 +217,11 @@ async function injectContentScriptsIntoTabsOnPermissionsChange(permissions) {
     });
 
     if (!actuallyHasPermissions) {
-      console.log("Broser fired onAdded, but user did not grant permission. Aborting injection.");
+      console.warn("Browser fired onAdded, but user did not grant permission. Aborting injection.");
       return;
     }
 
-    console.log("permissions added, permissions is:");
-    console.log(permissions);
+    logDebug("permissions added, permissions is:", permissions);
 
     await injectContentScriptsIntoTabsThatMatch(grantedOrigins);
   }
