@@ -102,14 +102,14 @@ function setSelectedFromUrl(url, householdMembers) {
   // If it is the latter we can work out who the selected person should be.
   let urlExtraData = url.replace(/https\:\/\/www.freecen.org.uk\/search_records\/[^\/]+\/(.*)$/, "$1");
   if (urlExtraData && urlExtraData != url) {
-    //console.log("urlExtraData is: " + urlExtraData);
+    logDebug("urlExtraData is: " + urlExtraData);
     // found the extra data that could identify the person.
     let personString = urlExtraData;
     let queryIndex = urlExtraData.indexOf("?");
     if (queryIndex != -1) {
       personString = urlExtraData.substring(0, queryIndex);
     }
-    //console.log("personString is: " + personString);
+    logDebug("personString is: " + personString);
     // the person string has a variable number of parts depending on how many forenames
     // e.g.: edith-annie-smith-1891-lincolnshire-louth-1880-
     // or    ann-gadsby-1891-lincolnshire-grantham-1882-
@@ -126,9 +126,9 @@ function setSelectedFromUrl(url, householdMembers) {
       censusDate &&
       censusDate != personString
     ) {
-      //console.log("namePart is: " + namePart);
-      //console.log("birthDate is: " + birthDate);
-      //console.log("censusDate is: " + censusDate);
+      logDebug("namePart is: " + namePart);
+      logDebug("birthDate is: " + birthDate);
+      logDebug("censusDate is: " + censusDate);
 
       namePart = namePart.toLowerCase(); // should be already
       while (namePart[namePart.length - 1] == "-") {
@@ -140,27 +140,27 @@ function setSelectedFromUrl(url, householdMembers) {
         let forenames = namePart.substring(0, lastDashIndex);
         forenames = forenames.replace(/\-/g, " ").trim();
 
-        //console.log("surname is: " + surname);
-        //console.log("forenames is: " + forenames);
+        logDebug("surname is: " + surname);
+        logDebug("forenames is: " + forenames);
 
         let censusYearNum = parseInt(censusDate);
         let birthYearNum = parseInt(birthDate);
         if (censusYearNum != NaN && birthYearNum != NaN) {
           let expectedAge = censusYearNum - birthYearNum;
           let expectedAgeString = expectedAge.toString();
-          //console.log("expectedAgeString is: " + expectedAgeString);
+          logDebug("expectedAgeString is: " + expectedAgeString);
 
           for (let member of householdMembers) {
-            //console.log("member.Surname is: " + member.Surname);
-            //console.log("member.Forenames is: " + member.Forenames);
-            //console.log("member.Age is: " + member.Age);
+            logDebug("member.Surname is: " + member.Surname);
+            logDebug("member.Forenames is: " + member.Forenames);
+            logDebug("member.Age is: " + member.Age);
             if (member.Surname && member.Forenames && member.Age) {
               if (
                 member.Surname.toLowerCase() == surname &&
                 member.Forenames.toLowerCase() == forenames &&
                 member.Age == expectedAgeString
               ) {
-                //console.log("Setting isSelected");
+                logDebug("Setting isSelected");
                 member.isSelected = true;
                 break;
               }
@@ -186,7 +186,7 @@ function extractData(document, url) {
   let censusTableNode2 = undefined;
   let houseHoldTableNode = undefined;
 
-  //console.log("freecen: extractData: tables.length is: " + tables.length);
+  logDebug("freecen: extractData: tables.length is: " + tables.length);
 
   if (tables.length == 2) {
     censusTableNode = tables[0];
@@ -199,25 +199,25 @@ function extractData(document, url) {
     return result;
   }
 
-  //console.log("freecen: extractData: censusTableNode is: " + censusTableNode);
-  //console.log("freecen: extractData: censusTableNode2 is: " + censusTableNode2);
-  //console.log("freecen: extractData: houseHoldTableNode is: " + houseHoldTableNode);
+  logDebug("freecen: extractData: censusTableNode is: " + censusTableNode);
+  logDebug("freecen: extractData: censusTableNode2 is: " + censusTableNode2);
+  logDebug("freecen: extractData: houseHoldTableNode is: " + houseHoldTableNode);
 
   // build a simple object from first table
   let censusTableObject = {};
   if (!convertTableToObjectProperties(censusTableNode, censusTableObject)) {
-    console.log("freecen: extractData: convertTableToObjectProperties on censusTableNode failed");
+    console.warn("freecen: extractData: convertTableToObjectProperties on censusTableNode failed");
     return result;
   }
 
   if (censusTableNode2) {
     if (!convertTableToObjectProperties(censusTableNode2, censusTableObject)) {
-      console.log("freecen: extractData: convertTableToObjectProperties on censusTableNode2 failed");
+      console.warn("freecen: extractData: convertTableToObjectProperties on censusTableNode2 failed");
       return result;
     }
   }
 
-  //console.log("freecen: extractData: converted tables");
+  logDebug("freecen: extractData: converted tables");
 
   result.censusDetails = censusTableObject;
 
@@ -227,7 +227,7 @@ function extractData(document, url) {
     householdHeaderNodes = houseHoldTableNode.querySelectorAll("thead > tr > td");
   }
 
-  //console.log("freecen: extractData: householdHeaderNodes.length is: " + householdHeaderNodes.length);
+  logDebug("freecen: extractData: householdHeaderNodes.length is: " + householdHeaderNodes.length);
 
   if (householdHeaderNodes.length == 0) return result;
 
@@ -276,7 +276,7 @@ function extractData(document, url) {
 
   result.success = true;
 
-  //console.log(result);
+  logDebug("result of extractData is: ", result);
 
   return result;
 }

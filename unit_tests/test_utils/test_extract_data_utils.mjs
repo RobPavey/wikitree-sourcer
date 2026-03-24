@@ -30,10 +30,14 @@ const { JSDOM } = jsdom;
 import { writeTestOutputFile, removeStaleOutputFiles } from "../test_utils/ref_file_utils.mjs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
+import { logDebug } from "../../extension/base/core/log_debug.mjs";
 
 function testEnabled(parameters, testName) {
   return parameters.testName == "" || parameters.testName == testName;
 }
+
+// this is so that extract data code can call logDebug without exceptions
+const logDebugCode = `function logDebug(...args) {}`;
 
 // this is used because the <site>_extract_data.js files are not actually ESM modules
 // this is because they are loaded in the content scripts
@@ -46,10 +50,11 @@ function loadExtractDataInWrapper(filePath) {
     "document",
     "url",
     "siteSpecificInput",
-    `${code} ${sourceMapComment}; return extractData(document, url, siteSpecificInput);`
+    `${logDebugCode} ${code} ${sourceMapComment}; return extractData(document, url, siteSpecificInput);`
   );
   return wrapper;
 }
+
 function loadExtractDataFromFetchInWrapper(filePath) {
   const absolutePath = path.resolve(filePath);
   const code = fs.readFileSync(absolutePath, "utf8");
@@ -61,7 +66,7 @@ function loadExtractDataFromFetchInWrapper(filePath) {
     "dataObjects",
     "sessionId",
     "options",
-    `${code} ${sourceMapComment}; return extractDataFromFetch(document, url, dataObjects, sessionId, options);`
+    `${logDebugCode} ${code} ${sourceMapComment}; return extractDataFromFetch(document, url, dataObjects, sessionId, options);`
   );
   return wrapper;
 }

@@ -33,6 +33,40 @@ SOFTWARE.
 // It may get called as the menu comes up to determine what should be on the menu.
 
 // these are duplicates of functions used in the popup code
+
+function logDebug(...args) {
+  const debugConfig = {
+    enabled: true,
+
+    showTimestamp: false,
+    showDebugText: false,
+  };
+  if (!debugConfig.enabled) return;
+
+  // check if we are in a production environment in the browser.
+  // (if not in browser we are NOT in production)
+  // NOTE: This is just a safety catch in case we forget to turn off debugConfig.enabled
+  if (typeof chrome === "object") {
+    // we are in browser
+    var manifest = chrome.runtime.getManifest();
+    if (!manifest) {
+      return; // not sure assume production
+    }
+
+    let isDev = typeof manifest.key == "undefined" && typeof manifest.update_url == "undefined";
+    if (!isDev) {
+      return;
+    }
+  }
+
+  let textString = debugConfig.showTimestamp ? `[${new Date().toISOString()}]` : "";
+  if (debugConfig.showDebugText) {
+    textString += " [DEBUG]";
+    textString.trim();
+  }
+  console.log(textString, ...args);
+}
+
 function getBrowserName() {
   if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
     return "Opera";
