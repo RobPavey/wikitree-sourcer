@@ -240,11 +240,13 @@ function siteContentInit(siteName, overrideExtractHandler, additionalMessageHand
 
   // Listen for messages (from the popup script mostly)
   chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    console.log("content onMessage listener");
+
     // Check if the runtime is still alive
     if (!chrome.runtime?.id) {
       console.warn("WikiTree: Extension context invalidated. Cleaning up.");
       chrome.runtime.onMessage.removeListener(messageHandler);
-      return;
+      return false;
     }
 
     // Check if this instance of the content script is still the "active" one
