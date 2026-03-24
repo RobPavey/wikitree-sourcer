@@ -25,6 +25,18 @@ SOFTWARE.
 import { GeneralizedData } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
+function parseDate(dateString) {
+  let newDateString = dateString;
+  // e.g. 1: "Tue, Jul 2, 1991"
+  const re1 = /^\s*\w\w\w\,?\s+(\w\w\w)\s+(\d+)\,?\s+(\d\d\d\d)\s*$/;
+
+  if (re1.test(dateString)) {
+    newDateString = dateString.replace(re1, "$2 $1 $3");
+  }
+
+  return newDateString;
+}
+
 function generalizeData(input) {
   let ed = input.extractedData;
 
@@ -41,9 +53,9 @@ function generalizeData(input) {
   result.recordType = RT.Newspaper;
 
   if (ed.eventDate) {
-    result.setEventDate(ed.eventDate);
+    result.setEventDate(parseDate(ed.eventDate));
   } else {
-    result.setEventDate(ed.publicationDate);
+    result.setEventDate(parseDate(ed.publicationDate));
   }
   result.setEventPlace(ed.location);
 

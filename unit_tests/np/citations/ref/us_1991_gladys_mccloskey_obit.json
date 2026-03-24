@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1991 Newspaper''':\n\"Obituary for Gladys T. McCloskey\" Newspapers.com<br/>\nThe Bangor Daily News (Bangor, Maine) Tue, Jul 2, 1991, page 4<br/>\n{{Newspapers.com|194000691}} (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the The Bangor Daily News on 2 July 1991 in Bangor, Maine.<ref>\n'''1991 Newspaper''':\n\"Obituary for Gladys T. McCloskey\" Newspapers.com<br/>\nThe Bangor Daily News (Bangor, Maine) Tue, Jul 2, 1991, page 4<br/>\n{{Newspapers.com|194000691}} (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1991 Newspaper''': \"Obituary for Gladys T. McCloskey\" Newspapers.com<br/>The Bangor Daily News (Bangor, Maine) Tue, Jul 2, 1991, page 4<br/>{{Newspapers.com|194000691}} (accessed 6 May 2021).",
+    "type": "source"
+  }
+}
