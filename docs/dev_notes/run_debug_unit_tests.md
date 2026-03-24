@@ -63,6 +63,8 @@ Look in the .vscode folder in the root folder of your project and see if there i
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
+      "smartStep": false,
+      "sourceMaps": true,
       "program": "${workspaceFolder}/scripts/run_test.js",
       "args": ["fs", "extract", "england_baptism_1838_george_newberry"]
     }
