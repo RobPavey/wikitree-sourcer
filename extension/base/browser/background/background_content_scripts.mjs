@@ -102,7 +102,7 @@ async function injectContentScriptsIntoTabsThatMatch(matches) {
 }
 
 async function injectContentScriptsIntoExistingTabs(contentScripts) {
-  // this is only needed on Chrome as FireFox and Safari seem to do it automatically
+  // this is only needed on Chrome and FireFox as Safari seems to do it automatically
   if (isSafari()) {
     return;
   }
