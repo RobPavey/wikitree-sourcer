@@ -65,11 +65,63 @@ function extractFromNeededNodes(result, publisherNode, locationNode, dateNode, p
   }
 }
 
+function extractMar2026Format(document, result) {
+  let metaDescription = document.querySelector("meta[name='description']");
+  let metaTitle = document.querySelector("meta[property='og:title']");
+  let pageNumberElement = document.querySelector("span[class^='PublicationInfo_Page']");
+  let publisherElement = document.querySelector("h2[class^='PublicationInfo_Publisher']");
+  let locationElement = document.querySelector("p[class^='PublicationInfo_Location']");
+  let dateTimeElement = document.querySelector("div.sticky-sm-top time");
+
+  if (!publisherElement || !dateTimeElement || !locationElement) {
+    return;
+  }
+
+  if (dateTimeElement) {
+    result.publicationDate = dateTimeElement.textContent;
+  }
+
+  if (publisherElement) {
+    result.newspaperTitle = cleanText(publisherElement.textContent);
+  }
+
+  // locationElement is tricky as it has child nmaes we want to ignore.
+  if (locationElement) {
+    if (locationElement.childNodes && locationElement.childNodes.length > 0) {
+      result.location = cleanText(locationElement.childNodes[0].textContent);
+    }
+  }
+
+  if (pageNumberElement) {
+    let text = pageNumberElement.textContent;
+    let parts = text.split(" ");
+    if (parts.length == 2) {
+      result.pageNumber = parts[1];
+    }
+  }
+
+  if (metaTitle) {
+    result.articleTitle = metaTitle.getAttribute("content");
+  }
+
+  if (metaDescription) {
+    result.articleDescription = metaDescription.getAttribute("content");
+  }
+
+  result.success = true;
+}
+
 function extractData(document, url) {
   var result = {};
   result.url = url;
 
   result.success = false;
+
+  // this format has changed a lot over time. First check for latest version
+  extractMar2026Format(document, result);
+  if (result.success) {
+    return result;
+  }
 
   let titleElement = document.querySelector("[itemprop='name']");
   let locationElement = document.querySelector("[itemprop='locationCreated']");
