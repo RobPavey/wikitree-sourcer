@@ -30,11 +30,17 @@
     }
   ],
   "marriageDate": "25 Dec 1799",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QGLH-FW1Z}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QGLH-FW1Z"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CSHR-P92R-N}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-CSHR-P92R-N"
+    }
   ],
   "collectionData": {
     "id": "2821293",

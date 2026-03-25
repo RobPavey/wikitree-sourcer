@@ -33,11 +33,17 @@
     }
   ],
   "marriageDate": "4 Nov 1860",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QJHB-239L}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QJHB-239L"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|33S7-9GFT-9FSX}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "33S7-9GFT-9FSX"
+    }
   ],
   "collectionData": {
     "id": "1769414",

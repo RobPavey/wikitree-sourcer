@@ -27,12 +27,21 @@
   "eventPlace": {
     "placeString": "Hillsborough, Florida, United States"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|FPWZ-8BN}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "FPWZ-8BN"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|S3HY-6LC9-V9R}}",
-    "{{FamilySearch Record|FPWZ-8BF}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "S3HY-6LC9-V9R"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "FPWZ-8BF"
+    }
   ],
   "collectionData": {
     "id": "1595003",

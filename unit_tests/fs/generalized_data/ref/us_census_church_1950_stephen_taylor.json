@@ -99,19 +99,49 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|ZY42-D8N2}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "ZY42-D8N2"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CS1Y-LQGY-N}}",
-    "{{FamilySearch Record|ZY42-DM3Z}}",
-    "{{FamilySearch Record|ZY42-DMW2}}",
-    "{{FamilySearch Record|ZY42-D86Z}}",
-    "{{FamilySearch Record|ZY42-D8N2}}",
-    "{{FamilySearch Record|ZY42-D82M}}",
-    "{{FamilySearch Record|ZY42-D8PZ}}",
-    "{{FamilySearch Record|ZY42-D8T2}}",
-    "{{FamilySearch Record|ZY42-DDMM}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-CS1Y-LQGY-N"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "ZY42-DM3Z"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "ZY42-DMW2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "ZY42-D86Z"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "ZY42-D8N2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "ZY42-D82M"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "ZY42-D8PZ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "ZY42-D8T2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "ZY42-DDMM"
+    }
   ],
   "collectionData": {
     "id": "3438701",

@@ -161,24 +161,69 @@
       "marriagePlace": {}
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|SG2X-CJX}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJX"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CSQ7-N377-W}}",
-    "{{FamilySearch Record|SG2X-CJX}}",
-    "{{FamilySearch Record|SG2X-CJF}}",
-    "{{FamilySearch Record|SG2X-CJN}}",
-    "{{FamilySearch Record|SG2X-CJJ}}",
-    "{{FamilySearch Record|SG2X-CJV}}",
-    "{{FamilySearch Record|SG2X-CJK}}",
-    "{{FamilySearch Record|SG2X-CJ2}}",
-    "{{FamilySearch Record|SG2X-CJL}}",
-    "{{FamilySearch Record|SG2X-CJG}}",
-    "{{FamilySearch Record|SG2X-CJP}}",
-    "{{FamilySearch Record|SG2X-CJ5}}",
-    "{{FamilySearch Record|SG2X-CJR}}",
-    "{{FamilySearch Record|SG2X-CNT}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-CSQ7-N377-W"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJX"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJF"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJN"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJJ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJV"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJK"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJ2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJL"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJG"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJP"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJ5"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CJR"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG2X-CNT"
+    }
   ],
   "collectionData": {
     "id": "2563939",

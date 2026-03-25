@@ -24,8 +24,11 @@
   "birthDate": {
     "dateString": "1884"
   },
-  "wtSearchTemplates": [
-    "{{FindAGrave|15373519}}"
+  "wtSearchIds": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem15373519"
+    }
   ],
   "hasValidData": true
 }

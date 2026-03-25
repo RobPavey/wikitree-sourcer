@@ -87,15 +87,33 @@
       "marriagePlace": {}
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|Q277-QXTG}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "Q277-QXTG"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CS31-Y7XK-5}}",
-    "{{FamilySearch Record|Q277-QXTS}}",
-    "{{FamilySearch Record|Q277-QXTG}}",
-    "{{FamilySearch Record|Q277-QXYJ}}",
-    "{{FamilySearch Record|Q277-QXB8}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-CS31-Y7XK-5"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "Q277-QXTS"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "Q277-QXTG"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "Q277-QXYJ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "Q277-QXB8"
+    }
   ],
   "collectionData": {
     "id": "2562194",

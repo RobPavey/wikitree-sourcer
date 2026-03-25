@@ -92,18 +92,45 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|8ZVW-2F3Z}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "8ZVW-2F3Z"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-C34G-L3ZM-7}}",
-    "{{FamilySearch Record|8ZVW-2XN2}}",
-    "{{FamilySearch Record|8ZVW-2X2M}}",
-    "{{FamilySearch Record|8ZVW-2XPZ}}",
-    "{{FamilySearch Record|8ZVW-2XT2}}",
-    "{{FamilySearch Record|8ZVW-2FMM}}",
-    "{{FamilySearch Record|8ZVW-2F3Z}}",
-    "{{FamilySearch Record|8ZVW-2FW2}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-C34G-L3ZM-7"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "8ZVW-2XN2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "8ZVW-2X2M"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "8ZVW-2XPZ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "8ZVW-2XT2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "8ZVW-2FMM"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "8ZVW-2F3Z"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "8ZVW-2FW2"
+    }
   ],
   "collectionData": {
     "id": "3438701",

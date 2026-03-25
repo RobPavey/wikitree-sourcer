@@ -23,12 +23,21 @@
   "eventPlace": {
     "placeString": "Plymouth, Devon, England, United Kingdom"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QPZ7-YXKC}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QPZ7-YXKC"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CSW5-H31L-9}}",
-    "{{FamilySearch Record|QPZ7-YXV1}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-CSW5-H31L-9"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QPZ7-YXV1"
+    }
   ],
   "collectionData": {
     "id": "2562514",

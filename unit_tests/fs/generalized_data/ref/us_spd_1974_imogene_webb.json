@@ -22,8 +22,11 @@
   "residencePlace": {
     "placeString": "Bolingbrook, Will, Illinois, United States"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|6KW3-12JP}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "6KW3-12JP"
+    }
   ],
   "collectionData": {
     "id": "5000016",

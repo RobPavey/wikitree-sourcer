@@ -36,13 +36,25 @@
     }
   },
   "race": "White",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|6ZGV-DXJ4}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "6ZGV-DXJ4"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QHN-T3YN-TCNB}}",
-    "{{FamilySearch Record|6ZGV-DXJH}}",
-    "{{FamilySearch Record|6ZGV-DXJC}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QHN-T3YN-TCNB"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6ZGV-DXJH"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6ZGV-DXJC"
+    }
   ],
   "collectionData": {
     "id": "4231103",

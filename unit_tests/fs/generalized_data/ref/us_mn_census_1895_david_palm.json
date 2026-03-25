@@ -94,20 +94,53 @@
     }
   ],
   "race": "W",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|MQ6G-CR3}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "MQ6G-CR3"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|S3HT-DZ43-FFP}}",
-    "{{FamilySearch Record|MQ6G-C5B}}",
-    "{{FamilySearch Record|MQ6G-C51}}",
-    "{{FamilySearch Record|MQ6G-CRM}}",
-    "{{FamilySearch Record|MQ6G-CR9}}",
-    "{{FamilySearch Record|MQ6G-CRS}}",
-    "{{FamilySearch Record|MQ6G-CR3}}",
-    "{{FamilySearch Record|MQ6G-CRQ}}",
-    "{{FamilySearch Record|MQ6G-CR7}}",
-    "{{FamilySearch Record|MQ6G-CRW}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "S3HT-DZ43-FFP"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "MQ6G-C5B"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "MQ6G-C51"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "MQ6G-CRM"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "MQ6G-CR9"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "MQ6G-CRS"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "MQ6G-CR3"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "MQ6G-CRQ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "MQ6G-CR7"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "MQ6G-CRW"
+    }
   ],
   "collectionData": {
     "id": "1503031",

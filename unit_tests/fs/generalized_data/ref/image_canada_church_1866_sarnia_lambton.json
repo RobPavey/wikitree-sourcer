@@ -2,8 +2,11 @@
   "sourceType": "record",
   "recordType": "Unclassified",
   "sourceOfData": "fs",
-  "wtSearchTemplates": [
-    "{{FamilySearch Image|33SQ-GYWJ-TMS}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "33SQ-GYWJ-TMS"
+    }
   ],
   "hasValidData": true
 }

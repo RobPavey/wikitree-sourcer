@@ -23,11 +23,17 @@
   },
   "ageAtEvent": "63",
   "race": "White",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|MMHS-3X7}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "MMHS-3X7"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|S3HY-6Q29-1XR}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "S3HY-6Q29-1XR"
+    }
   ],
   "collectionData": {
     "id": "1477737",

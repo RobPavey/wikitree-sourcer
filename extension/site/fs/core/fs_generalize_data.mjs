@@ -37,6 +37,9 @@ import { addSpouseOrParentsForSelectedHouseholdMember } from "../../../base/core
 import { logDebug } from "../../../base/core/log_debug.mjs";
 
 import {
+  extractFsRecordIdFromUrl,
+  extractFsImageIdFromUrl,
+  extractFindAGraveMemorialIdFromUrl,
   buildFsRecordLinkOrTemplate,
   buildFsImageLinkOrTemplate,
   buildExternalLinkOrTemplate,
@@ -1066,15 +1069,13 @@ function generalizeDataGivenRecordType(ed, result) {
   }
 }
 
-function addWtSearchTemplates(ed, result) {
-  let wtTemplates = [];
-  let wtTemplatesRelated = [];
+function addWtSearchIds(ed, result) {
+  let wtIds = [];
+  let wtIdsRelated = [];
 
-  function addLinkOrTemplate(templates, linkOrTemplate) {
-    if (linkOrTemplate && linkOrTemplate.startsWith("{{")) {
-      if (!templates.includes(linkOrTemplate)) {
-        templates.push(linkOrTemplate);
-      }
+  function addFsId(idList, fsId) {
+    if (fsId) {
+      idList.push({ key: "FamilySearch", value: fsId });
     }
   }
 
@@ -1083,44 +1084,47 @@ function addWtSearchTemplates(ed, result) {
     if (!recordUrl) {
       recordUrl = ed.url;
     }
-    addLinkOrTemplate(wtTemplates, buildFsRecordLinkOrTemplate(recordUrl));
-
-    addLinkOrTemplate(wtTemplatesRelated, buildFsImageLinkOrTemplate(ed.fsImageUrl, true));
+    addFsId(wtIds, extractFsRecordIdFromUrl(recordUrl));
+    addFsId(wtIdsRelated, extractFsImageIdFromUrl(ed.fsImageUrl));
 
     if (ed.collectionTitle == "Find A Grave Index") {
       let memorialId = ed.externalRecordId;
       if (memorialId) {
-        addLinkOrTemplate(wtTemplates, "{{FindAGrave|" + memorialId + "}}");
+        wtIds.push({ key: "FindAGrave", value: "fgmem" + memorialId });
       }
     }
   } else if (ed.pageType == "image") {
-    addLinkOrTemplate(wtTemplates, buildFsImageLinkOrTemplate(ed.url, true));
+    addFsId(wtIds, extractFsImageIdFromUrl(ed.url));
   }
 
   if (ed.digitalArtifact) {
-    addLinkOrTemplate(wtTemplatesRelated, buildExternalLinkOrTemplate(ed.digitalArtifact));
-  }
-
-  addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(ed.relatedPersonLink));
-  addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(ed.relatedPersonSpouseLink));
-  if (ed.father) {
-    addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(ed.father.link));
-  }
-  if (ed.mother) {
-    addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(ed.mother.link));
-  }
-  if (ed.household && ed.household.members) {
-    for (let member of ed.household.members) {
-      addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(member.link));
+    let fgMemorialId = extractFindAGraveMemorialIdFromUrl(ed.digitalArtifact);
+    if (fgMemorialId) {
+      wtIdsRelated.push({ key: "FindAGrave", value: "fgmem" + fgMemorialId });
     }
   }
 
-  // if there are templates add them to result
-  if (wtTemplates.length) {
-    result.wtSearchTemplates = wtTemplates;
+  addFsId(wtIdsRelated, extractFsRecordIdFromUrl(ed.relatedPersonLink));
+  addFsId(wtIdsRelated, extractFsRecordIdFromUrl(ed.relatedPersonSpouseLink));
+
+  if (ed.father) {
+    addFsId(wtIdsRelated, extractFsRecordIdFromUrl(ed.father.link));
   }
-  if (wtTemplatesRelated.length) {
-    result.wtSearchTemplatesRelated = wtTemplatesRelated;
+  if (ed.mother) {
+    addFsId(wtIdsRelated, extractFsRecordIdFromUrl(ed.mother.link));
+  }
+  if (ed.household && ed.household.members) {
+    for (let member of ed.household.members) {
+      addFsId(wtIdsRelated, extractFsRecordIdFromUrl(member.link));
+    }
+  }
+
+  // if there are ids add them to result
+  if (wtIds.length) {
+    result.wtSearchIds = wtIds;
+  }
+  if (wtIdsRelated.length) {
+    result.wtSearchIdsRelated = wtIdsRelated;
   }
 }
 
@@ -1584,7 +1588,7 @@ function generalizeData(input) {
   }
 
   // Template search data
-  addWtSearchTemplates(ed, result);
+  addWtSearchIds(ed, result);
 
   // Collection
   if (ed.fsCollectionId) {

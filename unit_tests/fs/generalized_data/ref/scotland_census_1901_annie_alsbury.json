@@ -110,17 +110,41 @@
       "marriagePlace": {}
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|7YN6-17PZ}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "7YN6-17PZ"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|7YV4-FPT2}}",
-    "{{FamilySearch Record|7YN6-17PZ}}",
-    "{{FamilySearch Record|7YN6-17T2}}",
-    "{{FamilySearch Record|7YN6-1WMM}}",
-    "{{FamilySearch Record|7YN6-1W3Z}}",
-    "{{FamilySearch Record|7YN6-1WW2}}",
-    "{{FamilySearch Record|7YN6-1WZM}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "7YV4-FPT2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "7YN6-17PZ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "7YN6-17T2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "7YN6-1WMM"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "7YN6-1W3Z"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "7YN6-1WW2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "7YN6-1WZM"
+    }
   ],
   "collectionData": {
     "id": "3212239",

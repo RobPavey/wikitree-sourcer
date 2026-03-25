@@ -113,18 +113,25 @@ async function wikitreePlusSearch(generalizedData) {
   wikitreePlusDoSearch(input);
 }
 
-async function wikitreePlusSearchForTemplateData(templateData, additionalTemplateData) {
-  if (additionalTemplateData) {
-    for (let addition of additionalTemplateData) {
-      if (!templateData.includes(addition)) {
-        templateData.push(addition);
+async function wikitreePlusSearchForIdData(idData, additionalIdData) {
+  let ids = idData;
+
+  if (additionalIdData) {
+    for (let id of idData) {
+      if (!ids.includes(id)) {
+        ids.push(id);
+      }
+    }
+    for (let addition of additionalIdData) {
+      if (!ids.includes(addition)) {
+        ids.push(addition);
       }
     }
   }
 
   const input = {
     typeOfSearch: "",
-    templateData: templateData,
+    idData: ids,
     options: options,
   };
 
@@ -172,8 +179,8 @@ function addWikitreeSearchUsingWtPlusMenuItem(menu, data, backFunction) {
 }
 
 function addWikitreeSearchForUsageMenuItem(menu, data, backFunction) {
-  let templateData = [];
-  let templateLinkedData = [];
+  let idData = [];
+  let idLinkedData = [];
   let typeString = "record";
   let gd = data.generalizedData;
 
@@ -181,19 +188,19 @@ function addWikitreeSearchForUsageMenuItem(menu, data, backFunction) {
     typeString = "person";
   }
 
-  templateData = gd.wtSearchTemplates;
-  templateLinkedData = gd.wtSearchTemplatesRelated;
+  idData = gd.wtSearchIds;
+  idLinkedData = gd.wtSearchIdsRelated;
 
-  if (templateData && templateData.length > 0) {
-    const text = "Search for WikiTree profiles with a template referencing this " + typeString;
+  if (idData && idData.length > 0) {
+    const text = "Search for WikiTree profiles with a template or link referencing this " + typeString;
     addMenuItem(menu, text, function (element) {
-      wikitreePlusSearchForTemplateData(templateData);
+      wikitreePlusSearchForIdData(idData);
     });
   }
-  if (templateLinkedData && templateLinkedData.length > 0) {
-    const text = "Search for WikiTree profiles with templates for this " + typeString + " or related records";
+  if (idLinkedData && idLinkedData.length > 0) {
+    const text = "Search for WikiTree profiles with templates of links for this " + typeString + " or related records";
     addMenuItem(menu, text, function (element) {
-      wikitreePlusSearchForTemplateData(templateData, templateLinkedData);
+      wikitreePlusSearchForIdData(idData, idLinkedData);
     });
   }
 }

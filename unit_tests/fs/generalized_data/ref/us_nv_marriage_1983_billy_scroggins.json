@@ -31,8 +31,11 @@
     }
   ],
   "marriageDate": "6 Apr 1983",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|VVQK-T88}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "VVQK-T88"
+    }
   ],
   "collectionData": {
     "id": "1949338",

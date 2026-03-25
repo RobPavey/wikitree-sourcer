@@ -38,12 +38,21 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|JWCM-S2G}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "JWCM-S2G"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|JWCM-S2P}}",
-    "{{FamilySearch Record|JWCM-S25}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "JWCM-S2P"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "JWCM-S25"
+    }
   ],
   "collectionData": {
     "id": "1473014",

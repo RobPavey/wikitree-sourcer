@@ -12,8 +12,11 @@
     "middleNames": "Lu---"
   },
   "lastNameAtDeath": "Sw---",
-  "wtSearchTemplates": [
-    "{{FindAGrave|55174407}}"
+  "wtSearchIds": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem55174407"
+    }
   ],
   "hasValidData": true
 }

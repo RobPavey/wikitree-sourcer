@@ -34,12 +34,21 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|F3VH-9VV}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "F3VH-9VV"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|F3VH-9VK}}",
-    "{{FamilySearch Record|F3VH-9V2}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "F3VH-9VK"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "F3VH-9V2"
+    }
   ],
   "collectionData": {
     "id": "1614792",

@@ -15,11 +15,17 @@
   "eventPlace": {
     "placeString": "Grahamstown, Albany, Cape Province, South Africa"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QLKL-3F9B}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QLKL-3F9B"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-C9BB-2SG1-M}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-C9BB-2SG1-M"
+    }
   ],
   "collectionData": {
     "id": "2517051",

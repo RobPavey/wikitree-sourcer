@@ -26,8 +26,11 @@
   "birthPlace": {
     "placeString": "Little Rock, Pulaski County, Arkansas, USA"
   },
-  "wtSearchTemplates": [
-    "{{FindAGrave|111269301}}"
+  "wtSearchIds": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem111269301"
+    }
   ],
   "hasValidData": true
 }

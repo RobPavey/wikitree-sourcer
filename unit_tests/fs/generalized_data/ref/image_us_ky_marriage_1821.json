@@ -2,8 +2,11 @@
   "sourceType": "record",
   "recordType": "Unclassified",
   "sourceOfData": "fs",
-  "wtSearchTemplates": [
-    "{{FamilySearch Image|3QS7-89SS-998T}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "3QS7-89SS-998T"
+    }
   ],
   "hasValidData": true
 }

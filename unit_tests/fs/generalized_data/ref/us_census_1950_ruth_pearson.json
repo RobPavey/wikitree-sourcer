@@ -55,13 +55,25 @@
   "maritalStatus": "single",
   "relationshipToHead": "sister",
   "race": "White",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|6X12-6VV7}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "6X12-6VV7"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QHK-9QHW-N9QW-7}}",
-    "{{FamilySearch Record|6X12-6VVQ}}",
-    "{{FamilySearch Record|6X12-6VV7}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QHK-9QHW-N9QW-7"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6X12-6VVQ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6X12-6VV7"
+    }
   ],
   "collectionData": {
     "id": "4464515",

@@ -74,15 +74,33 @@
   "maritalStatus": "widowed",
   "relationshipToHead": "head",
   "race": "English",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QP2H-P2B9}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QP2H-P2B9"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-C395-GSC3-J}}",
-    "{{FamilySearch Record|QP2H-P2B9}}",
-    "{{FamilySearch Record|QP2H-P2BS}}",
-    "{{FamilySearch Record|QP2H-P2B3}}",
-    "{{FamilySearch Record|QP2H-P2BQ}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-C395-GSC3-J"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QP2H-P2B9"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QP2H-P2BS"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QP2H-P2B3"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QP2H-P2BQ"
+    }
   ],
   "collectionData": {
     "id": "3005862",

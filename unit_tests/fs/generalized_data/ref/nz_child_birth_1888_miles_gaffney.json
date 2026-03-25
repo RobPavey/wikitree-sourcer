@@ -23,11 +23,17 @@
   "eventPlace": {
     "placeString": "New Zealand"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|Q24K-ZSB8}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "Q24K-ZSB8"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|Q24K-ZSB3}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "Q24K-ZSB3"
+    }
   ],
   "collectionData": {
     "id": "2697870",

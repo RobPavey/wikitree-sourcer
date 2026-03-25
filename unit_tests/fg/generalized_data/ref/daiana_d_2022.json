@@ -29,8 +29,11 @@
   "birthPlace": {
     "placeString": "Vyra, Leningrad Oblast, Russia"
   },
-  "wtSearchTemplates": [
-    "{{FindAGrave|241543775}}"
+  "wtSearchIds": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem241543775"
+    }
   ],
   "hasValidData": true
 }

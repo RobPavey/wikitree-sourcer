@@ -31,13 +31,25 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QPRD-KN2W}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QPRD-KN2W"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CSNW-41LX}}",
-    "{{FamilySearch Record|QPRD-KN24}}",
-    "{{FamilySearch Record|QPRD-KN2H}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-CSNW-41LX"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QPRD-KN24"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QPRD-KN2H"
+    }
   ],
   "collectionData": {
     "id": "2556014",

@@ -100,18 +100,45 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|K9V2-YCS}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "K9V2-YCS"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|K9V2-YHT}}",
-    "{{FamilySearch Record|K9V2-YHY}}",
-    "{{FamilySearch Record|K9V2-YHB}}",
-    "{{FamilySearch Record|K9V2-YH1}}",
-    "{{FamilySearch Record|K9V2-YCM}}",
-    "{{FamilySearch Record|K9V2-YC9}}",
-    "{{FamilySearch Record|K9V2-YCS}}",
-    "{{FamilySearch Record|K9V2-YC3}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "K9V2-YHT"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K9V2-YHY"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K9V2-YHB"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K9V2-YH1"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K9V2-YCM"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K9V2-YC9"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K9V2-YCS"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K9V2-YC3"
+    }
   ],
   "collectionData": {
     "id": "1937454",

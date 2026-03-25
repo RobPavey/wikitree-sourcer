@@ -21,12 +21,21 @@
   "eventPlace": {
     "placeString": "Peter Pender, Franklin, Arkansas, United States of America"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QVV5-53JY}}",
-    "{{FindAGrave|30569834}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QVV5-53JY"
+    },
+    {
+      "key": "FindAGrave",
+      "value": "fgmem30569834"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FindAGrave|30569834}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem30569834"
+    }
   ],
   "collectionData": {
     "id": "2221801",

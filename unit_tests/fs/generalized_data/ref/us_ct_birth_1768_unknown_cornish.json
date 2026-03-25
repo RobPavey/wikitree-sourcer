@@ -22,12 +22,21 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QP7Z-TGYP}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QP7Z-TGYP"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CS56-6WL1-6}}",
-    "{{FamilySearch Record|QP7Z-TGYG}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-CS56-6WL1-6"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QP7Z-TGYG"
+    }
   ],
   "collectionData": {
     "id": "2843390",

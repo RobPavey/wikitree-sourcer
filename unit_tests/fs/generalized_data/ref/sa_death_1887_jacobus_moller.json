@@ -36,11 +36,17 @@
       }
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QG56-M6K9}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QG56-M6K9"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-C91S-T9S5-T}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-C91S-T9S5-T"
+    }
   ],
   "collectionData": {
     "id": "2517051",

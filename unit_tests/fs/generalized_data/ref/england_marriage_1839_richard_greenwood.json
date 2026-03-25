@@ -27,8 +27,11 @@
     }
   ],
   "marriageDate": "1839",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|2DCB-21Q}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "2DCB-21Q"
+    }
   ],
   "collectionData": {
     "id": "2285732",

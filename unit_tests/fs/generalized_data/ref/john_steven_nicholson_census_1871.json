@@ -98,17 +98,41 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|VBN2-36Z}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "VBN2-36Z"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|939K-R33F-1R}}",
-    "{{FamilySearch Record|VBN2-367}}",
-    "{{FamilySearch Record|VBN2-36W}}",
-    "{{FamilySearch Record|VBN2-364}}",
-    "{{FamilySearch Record|VBN2-36H}}",
-    "{{FamilySearch Record|VBN2-36C}}",
-    "{{FamilySearch Record|VBN2-36Z}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "939K-R33F-1R"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VBN2-367"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VBN2-36W"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VBN2-364"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VBN2-36H"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VBN2-36C"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VBN2-36Z"
+    }
   ],
   "collectionData": {
     "id": "1538354",

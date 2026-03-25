@@ -41,13 +41,25 @@
     }
   },
   "race": "White",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QVR7-FDWT}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QVR7-FDWT"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QS7-89GL-5LHG}}",
-    "{{FamilySearch Record|QVR7-FDWY}}",
-    "{{FamilySearch Record|QVR7-FDWB}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QS7-89GL-5LHG"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QVR7-FDWY"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QVR7-FDWB"
+    }
   ],
   "collectionData": {
     "id": "2377565",

@@ -37,8 +37,11 @@
     }
   ],
   "divorceDate": "06 Oct 1988",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|VKSN-PTL}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "VKSN-PTL"
+    }
   ],
   "collectionData": {
     "id": "1967743",

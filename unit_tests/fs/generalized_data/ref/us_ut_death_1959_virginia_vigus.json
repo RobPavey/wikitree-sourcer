@@ -49,13 +49,25 @@
       }
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QKDV-CZRZ}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QKDV-CZRZ"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-C9T2-WSNS-B}}",
-    "{{FamilySearch Record|QKDV-CZR8}}",
-    "{{FamilySearch Record|QKDV-CZRD}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-C9T2-WSNS-B"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QKDV-CZR8"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QKDV-CZRD"
+    }
   ],
   "collectionData": {
     "id": "1747615",

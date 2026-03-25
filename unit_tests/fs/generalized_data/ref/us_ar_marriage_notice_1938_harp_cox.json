@@ -31,8 +31,11 @@
       }
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|VJTW-F19}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "VJTW-F19"
+    }
   ],
   "collectionData": {
     "id": "1940215",

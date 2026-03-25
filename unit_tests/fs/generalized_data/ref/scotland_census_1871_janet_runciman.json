@@ -71,15 +71,33 @@
     }
   ],
   "maritalStatus": "married",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|VBGD-YPR}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "VBGD-YPR"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|9398-69SJ-T}}",
-    "{{FamilySearch Record|VBGD-YP5}}",
-    "{{FamilySearch Record|VBGD-YPR}}",
-    "{{FamilySearch Record|VBGD-YPT}}",
-    "{{FamilySearch Record|VBGD-YPY}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "9398-69SJ-T"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VBGD-YP5"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VBGD-YPR"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VBGD-YPT"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VBGD-YPY"
+    }
   ],
   "collectionData": {
     "id": "2028678",

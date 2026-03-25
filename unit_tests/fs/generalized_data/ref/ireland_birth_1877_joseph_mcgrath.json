@@ -31,12 +31,21 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QPR9-YZH4}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QPR9-YZH4"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|QPR9-YZHH}}",
-    "{{FamilySearch Record|QPR9-YZHC}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "QPR9-YZHH"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QPR9-YZHC"
+    }
   ],
   "collectionData": {
     "id": "2659409",
