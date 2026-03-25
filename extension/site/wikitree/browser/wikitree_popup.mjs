@@ -72,7 +72,7 @@ import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { GenderUtils } from "../../../base/core/gender_utils.mjs";
 import { logDebug } from "../../../base/core/log_debug.mjs";
 
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSite, checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 import { getSiteDataForSite } from "/base/browser/common/site_registry_storage.mjs";
 import { overrideMenuWidth } from "../../../base/browser/popup/popup_menu_building.mjs";
@@ -1031,7 +1031,7 @@ async function getWikiTreeMergeEditData(data, personData, citationObject) {
   const checkPermissionsOptions = {
     reason: "To initiate a merge/edit the extension needs access to wikitree.com.",
   };
-  let allowed = await checkPermissionForSite("*://*.wikitree.com/*", checkPermissionsOptions);
+  let allowed = await checkPermissionForSiteMatches("wikitree", checkPermissionsOptions);
   if (!allowed) {
     closePopup();
     return;

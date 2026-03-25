@@ -46,7 +46,7 @@ import {
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 const freebmdStartYear = 1837;
 const freebmdEndYear = 1992;
@@ -106,7 +106,7 @@ async function doFreebmdSearchOnNewSite(generalizedData, typeOfSearch, parameter
     const checkPermissionsOptions = {
       reason: "To perform a search on FreeBMD a content script needs to be loaded on the freebmd2.org.uk search page.",
     };
-    let allowed = await checkPermissionForSite("*://www.freebmd2.org.uk/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("freebmd", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

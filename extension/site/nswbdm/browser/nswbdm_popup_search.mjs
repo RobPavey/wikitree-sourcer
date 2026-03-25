@@ -38,7 +38,7 @@ import {
 } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 const nswbdmStartYear = 1800;
 const nswbdmEndYear = 2000;
@@ -77,7 +77,7 @@ async function nswbdmSearch(generalizedData, typeOfSearch) {
       reason:
         "To perform a search on NSW BDM a content script needs to be loaded on the familyhistory.bdm.nsw.gov.au search page.",
     };
-    let allowed = await checkPermissionForSite("*://*.bdm.nsw.gov.au/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("nswbdm", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

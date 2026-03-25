@@ -42,7 +42,7 @@ import {
 
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 function getSupportedDates() {
   const recordStartYear = 1836;
@@ -95,7 +95,7 @@ async function doVicbdmSearch(input, isRetry = false) {
       reason:
         "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
     };
-    let allowed = await checkPermissionForSite("*://*.bdm.vic.gov.au/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("vicbdm", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { GroUriBuilder } from "../core/gro_uri_builder.mjs";
 import { showErrorDialog } from "./gro_smart_search_dialog.mjs";
-import { checkPermissionForSite } from "/base/browser/background/background_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/background/background_permissions.mjs";
 
 // Avoid creating this for every search
 var domParser = new DOMParser();
@@ -184,10 +184,7 @@ async function doPostOnGroPage(url, postData) {
       reason:
         "To perform a search on GRO a content script needs to be loaded on the https://www.gro.gov.uk/gro/content/ search page.",
     };
-    let allowed = await checkPermissionForSite(
-      "*://www.gro.gov.uk/gro/content/certificates/*",
-      checkPermissionsOptions
-    );
+    let allowed = await checkPermissionForSiteMatches("gro", checkPermissionsOptions);
     if (!allowed) {
       return {
         success: false,

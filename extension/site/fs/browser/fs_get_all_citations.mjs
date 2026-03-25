@@ -25,7 +25,7 @@ SOFTWARE.
 import { displayBusyMessage } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 import { fetchFsSourcesJson, fetchRecord } from "./fs_fetch.mjs";
 import {
@@ -125,7 +125,7 @@ async function fsGetAllCitations(input) {
     reason: "Sourcer needs to request the list of sources from FamilySearch.",
     needsPopupDisplayed: true,
   };
-  if (!(await checkPermissionForSite("*://www.familysearch.org/*", checkPermissionsOptions))) {
+  if (!(await checkPermissionForSiteMatches("fs", checkPermissionsOptions))) {
     return result;
   }
 

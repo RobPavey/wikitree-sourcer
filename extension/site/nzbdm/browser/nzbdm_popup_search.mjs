@@ -37,7 +37,7 @@ import {
 } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 const nzbdmStartYear = 1848;
 const nzbdmEndYear = 2025;
@@ -76,7 +76,7 @@ async function nzbdmSearch(generalizedData, typeOfSearch) {
       reason:
         "To perform a search on NZ BDM a content script needs to be loaded on the bdmhistoricalrecords.dia.govt.nz search page.",
     };
-    let allowed = await checkPermissionForSite("*://*.bdmhistoricalrecords.dia.govt.nz/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("nzbdm", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

@@ -39,7 +39,7 @@ import {
 } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 const eggsabdmStartYear = 1688;
@@ -77,7 +77,7 @@ function doEggsabdmSearch(input) {
       reason:
         "To perform a search on eGGSA BMD a content script needs to be loaded on the eggsa.org/bdms search pages.",
     };
-    const allowed = await checkPermissionForSite("*://*.eggsa.org/bdms/*", checkPermissionsOptions);
+    const allowed = await checkPermissionForSiteMatches("eggsabdm", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

@@ -33,7 +33,7 @@ import {
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 import { clearCitation, saveCitation } from "/base/browser/popup/popup_citation.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/archion_generalize_data.mjs";
@@ -75,8 +75,7 @@ async function extractPageDataFromDocument(uid, url, page_index) {
     const page = pages[page_index];
 
     return page.id;
-  }
-  catch (e) {
+  } catch (e) {
     console.log(fetch_result);
     console.log("Error parsing page data from Archion response.");
     console.log(e);
@@ -153,7 +152,7 @@ async function generatePermaLink(ed) {
     const checkPermissionsOptions = {
       reason: "To generate a permalink a content script needs to be loaded on the archion.de page.",
     };
-    let allowed = await checkPermissionForSite("*://www.archion.de/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("archion", checkPermissionsOptions);
     if (!allowed) {
       console.log("Permalink generation not allowed!");
       closePopup();

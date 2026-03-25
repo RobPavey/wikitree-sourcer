@@ -42,7 +42,7 @@ import {
 } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
@@ -77,7 +77,7 @@ function freecenDoSearch(input) {
     const checkPermissionsOptions = {
       reason: "To perform a search on FreeCen a content script needs to be loaded on the freecen.org.uk search page.",
     };
-    let allowed = await checkPermissionForSite("*://www.freecen.org.uk/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("freecen", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

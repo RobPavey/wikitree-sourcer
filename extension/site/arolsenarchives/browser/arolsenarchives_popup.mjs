@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 import {
   addMenuItemWithSubtitle,
@@ -49,7 +49,7 @@ async function getPersonData(extractData) {
   const checkPermissionsOptions = {
     reason: "To extract all personal data, a content script needs to be loaded on the archion.de page.",
   };
-  let allowed = await checkPermissionForSite("*://collections-server.arolsen-archives.org/*", checkPermissionsOptions);
+  let allowed = await checkPermissionForSiteMatches("arolsenarchives", checkPermissionsOptions);
   if (!allowed) {
     closePopup();
     return;

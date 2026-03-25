@@ -30,7 +30,7 @@ import {
   shouldShowSiteSearch,
 } from "/base/browser/popup/popup_search.mjs";
 
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -63,9 +63,10 @@ async function szukajSearch(generalizedData) {
     let buildResult = loadedModule.buildSearchData(input);
 
     const checkPermissionsOptions = {
-      reason: "To perform a search on Szukaj w Archiwach a content script needs to be loaded on the Szukaj w Archiwach search page.",
+      reason:
+        "To perform a search on Szukaj w Archiwach a content script needs to be loaded on the Szukaj w Archiwach search page.",
     };
-    let allowed = await checkPermissionForSite("*://www.szukajwarchiwach.gov.pl/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("szukaj", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

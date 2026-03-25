@@ -30,7 +30,7 @@ import {
   shouldShowSiteSearch,
 } from "/base/browser/popup/popup_search.mjs";
 
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -65,7 +65,7 @@ async function examplesiteSearch(generalizedData) {
     const checkPermissionsOptions = {
       reason: "To perform a search on ExampleSite a content script needs to be loaded on the ExampleSite search page.",
     };
-    let allowed = await checkPermissionForSite("exampleSiteUrlMatchString", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("exampleSite", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

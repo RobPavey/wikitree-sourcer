@@ -39,7 +39,7 @@ import {
 } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 const freeregStartYear = 1538;
 
@@ -74,7 +74,7 @@ function freeregDoSearch(input) {
     const checkPermissionsOptions = {
       reason: "To perform a search on FreeReg a content script needs to be loaded on the freereg.org.uk search page.",
     };
-    let allowed = await checkPermissionForSite("*://www.freereg.org.uk/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("freereg", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

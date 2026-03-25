@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 import {
   registerSearchMenuItemFunction,
@@ -62,7 +62,7 @@ async function scotpSearch(generalizedData, parameters) {
   const checkPermissionsOptions = {
     reason: "Sourcer needs to load a content script on the Scotlands People site to complete the search",
   };
-  if (!(await checkPermissionForSite("https://www.scotlandspeople.gov.uk/*", checkPermissionsOptions))) {
+  if (!(await checkPermissionForSiteMatches("scotp", checkPermissionsOptions))) {
     return;
   }
 

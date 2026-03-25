@@ -27,7 +27,7 @@ import { getRegisteredTab } from "./background_register_tab.mjs";
 import { openInNewTab } from "./background_common.mjs";
 
 import { doSearchGivenSearchData } from "./background_search.mjs";
-import { checkPermissionForSite } from "./background_permissions.mjs";
+import { checkPermissionForSiteMatches } from "./background_permissions.mjs";
 
 import { buildScotlandsPeopleContextSearchData } from "../../../site/scotp/core/scotp_context_menu.mjs";
 
@@ -713,7 +713,7 @@ async function openVicbdmGivenSearchData(tab, options, searchData) {
       reason:
         "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
     };
-    let allowed = await checkPermissionForSite("*://*.bdm.vic.gov.au/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("vicbdm", checkPermissionsOptions);
     if (!allowed) {
       return false;
     }
@@ -807,7 +807,7 @@ async function openNzbdmGivenSearchData(tab, options, searchData) {
       reason:
         "To perform a search on NZ BDM a content script needs to be loaded on the bdmhistoricalrecords.dia.govt.nz search page.",
     };
-    let allowed = await checkPermissionForSite("*://*.bdmhistoricalrecords.dia.govt.nz/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("nzbdm", checkPermissionsOptions);
     if (!allowed) {
       return false;
     }
@@ -909,7 +909,7 @@ async function openNswbdmGivenSearchData(tab, options, searchData) {
     const checkPermissionsOptions = {
       reason: "To perform a search on NSW BDM a content script needs to be loaded on the bdm.nsw.gov.au search page.",
     };
-    let allowed = await checkPermissionForSite("*://*.bdm.nsw.gov.au/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("nswbdm", checkPermissionsOptions);
     if (!allowed) {
       return false;
     }
@@ -932,7 +932,7 @@ async function openScotlandsPeopleGivenSearchData(tab, options, searchData) {
     const checkPermissionsOptions = {
       reason: "Sourcer needs to load a content script on the Scotlands People site to complete the search",
     };
-    let allowed = await checkPermissionForSite("https://www.scotlandspeople.gov.uk/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("scotp", checkPermissionsOptions);
     if (!allowed) {
       return false;
     }

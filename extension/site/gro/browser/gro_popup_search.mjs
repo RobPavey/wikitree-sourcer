@@ -45,7 +45,7 @@ import {
   getYearRangeAsText,
 } from "/base/browser/popup/popup_search.mjs";
 import { RT } from "/base/core/record_type.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 
 import { getOverallGroYearRange, getGroYearRanges } from "../core/gro_years.mjs";
@@ -170,7 +170,7 @@ async function groSmartSearch(gd, typeOfSearch, spouse) {
     needsPopupDisplayed: true,
   };
 
-  if (!(await checkPermissionForSite("*://www.gro.gov.uk/gro/content/certificates/*", checkPermissionsOptions))) {
+  if (!(await checkPermissionForSiteMatches("gro", checkPermissionsOptions))) {
     return result;
   }
 

@@ -25,7 +25,6 @@ SOFTWARE.
 import { generalizeData } from "../core/dfgviewer_generalize_data.mjs";
 import { buildCitation } from "../core/dfgviewer_build_citation.mjs";
 
-
 async function fetch_metadata_real(url, extractedData, hostname) {
   const checkPermissionsOptions = {
     reason: "To extract all information from the page, a content script needs to be loaded on the page.",
@@ -57,8 +56,7 @@ async function fetch_metadata_real(url, extractedData, hostname) {
     });
     if (request.ok) {
       extractedData.metadata = await request.text();
-    }
-    else {
+    } else {
       return false;
     }
   } catch {
@@ -82,7 +80,6 @@ async function fetch_metadata_real(url, extractedData, hostname) {
   extractedData.metadata = xmlDoc;
   return true;
 }
-
 
 let setupSimplePopupMenu;
 let initPopup;
@@ -222,7 +219,7 @@ const getAllTextsFallback = (data, xpathQuery) => {
 };
 
 async function parseErzbistumMunichMetadata(extractData) {
-  if (!await fetch_metadata(extractData.metadata_url, extractData, "*://digitales-archiv.erzbistum-muenchen.de/:")) {
+  if (!(await fetch_metadata(extractData.metadata_url, extractData, "*://digitales-archiv.erzbistum-muenchen.de/:"))) {
     alert("Failed to fetch metadata");
     return;
   }
@@ -231,7 +228,7 @@ async function parseErzbistumMunichMetadata(extractData) {
 }
 
 async function parseStaatsarchivBayernMetadata(extractData) {
-  if (!await fetch_metadata(extractData.metadata_url, extractData, "*://www.gda.bayern.de/:"))  {
+  if (!(await fetch_metadata(extractData.metadata_url, extractData, "*://www.gda.bayern.de/:"))) {
     alert("Failed to fetch metadata");
     return;
   }
@@ -252,7 +249,7 @@ async function parseArcinsysMetadata(extractData) {
     return;
   }
 
-  if (!await fetch_metadata(extractData.metadata_url, extractData, hostname)) {
+  if (!(await fetch_metadata(extractData.metadata_url, extractData, hostname))) {
     alert("Failed to fetch metadata");
     return;
   }
@@ -323,7 +320,7 @@ async function parseArchiveNrwApiMetadata(extractData, base_url) {
 }
 
 async function parseArchiveNrwMetadata(extractData) {
-  if (!await fetch_metadata(extractData.metadata_url, extractData, "*://www.landesarchiv-nrw.de/:"))  {
+  if (!(await fetch_metadata(extractData.metadata_url, extractData, "*://www.landesarchiv-nrw.de/:"))) {
     alert("Failed to fetch metadata");
     return;
   }

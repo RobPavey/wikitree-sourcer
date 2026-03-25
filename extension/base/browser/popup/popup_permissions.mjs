@@ -234,8 +234,6 @@ async function checkPermissionForSiteFromUrl(url, options) {
 }
 
 async function checkPermissionForSiteMatches(siteName, options) {
-  logDebug("checkPermissionForSite");
-
   let contentScripts = await chrome.scripting.getRegisteredContentScripts({
     ids: [siteName],
   });

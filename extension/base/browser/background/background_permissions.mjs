@@ -106,4 +106,18 @@ async function checkPermissionForSite(matchString, options) {
   return await checkPermissionForSites(siteMatches, options);
 }
 
-export { checkPermissionForSite };
+async function checkPermissionForSiteMatches(siteName, options) {
+  let contentScripts = await chrome.scripting.getRegisteredContentScripts({
+    ids: [siteName],
+  });
+
+  if (!contentScripts || !contentScripts.length) {
+    return;
+  }
+
+  // there should only be one registered content script with this id
+  let siteMatches = contentScripts[0].matches;
+  return await checkPermissionForSites(siteMatches, options);
+}
+
+export { checkPermissionForSite, checkPermissionForSiteMatches };
