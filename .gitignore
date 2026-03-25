@@ -6,8 +6,8 @@ node_modules
 *.zip
 
 # Mac Time Machine files
-* 2.*
-* 2
+* [0-9].*
+* [0-9]
 
 # VSCode files
 .vscode/launch.json
