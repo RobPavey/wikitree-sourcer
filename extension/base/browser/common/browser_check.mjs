@@ -23,6 +23,32 @@ SOFTWARE.
 */
 
 function getBrowserName() {
+  const url = (typeof browser !== "undefined" ? browser : chrome).runtime.getURL("");
+
+  // these checks should succeeded in most cases, but in case they don't
+  // we have the userAgent fallback at the end.
+  if (url.startsWith("moz-extension://")) return "Firefox";
+  if (url.startsWith("safari-web-extension://")) return "Safari";
+  if (url.startsWith("chrome-extension://")) return "Chrome"; // Also covers Edge/Brave
+
+  // URL checks did not work, so we will try some other checks.
+  // Note that these are not 100% reliable but should work in most cases.
+  // We will also check for Safari-specific legacy or global objects first
+  // to avoid false positives from userAgent checks.
+
+  // Check for Safari-specific legacy or global objects first
+  if (typeof safari !== "undefined") return "Safari";
+
+  // Check for Firefox via the 'browser' namespace
+  // and specific internal sources (Chrome/Safari don't use 'moz-extension')
+  if (typeof browser !== "undefined" && typeof chrome !== "undefined") {
+    if (browser.runtime && chrome.runtime && !navigator.userAgent.includes("Chrome")) {
+      return "Firefox";
+    }
+  }
+
+  // fallback to userAgent checks if the above checks did not work.
+  // Note that these are not 100% reliable but should work in most cases.
   if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
     return "Opera";
   } else if (navigator.userAgent.indexOf("Chrome") != -1) {

@@ -36,7 +36,7 @@ SOFTWARE.
 
 function logDebug(...args) {
   const debugConfig = {
-    enabled: true,
+    enabled: false,
 
     showTimestamp: false,
     showDebugText: false,
@@ -68,6 +68,32 @@ function logDebug(...args) {
 }
 
 function getBrowserName() {
+  const url = (typeof browser !== "undefined" ? browser : chrome).runtime.getURL("");
+
+  // these checks should succeeded in most cases, but in case they don't
+  // we have the userAgent fallback at the end.
+  if (url.startsWith("moz-extension://")) return "Firefox";
+  if (url.startsWith("safari-web-extension://")) return "Safari";
+  if (url.startsWith("chrome-extension://")) return "Chrome"; // Also covers Edge/Brave
+
+  // URL checks did not work, so we will try some other checks.
+  // Note that these are not 100% reliable but should work in most cases.
+  // We will also check for Safari-specific legacy or global objects first
+  // to avoid false positives from userAgent checks.
+
+  // Check for Safari-specific legacy or global objects first
+  if (typeof safari !== "undefined") return "Safari";
+
+  // Check for Firefox via the 'browser' namespace
+  // and specific internal sources (Chrome/Safari don't use 'moz-extension')
+  if (typeof browser !== "undefined" && typeof chrome !== "undefined") {
+    if (browser.runtime && chrome.runtime && !navigator.userAgent.includes("Chrome")) {
+      return "Firefox";
+    }
+  }
+
+  // fallback to userAgent checks if the above checks did not work.
+  // Note that these are not 100% reliable but should work in most cases.
   if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
     return "Opera";
   } else if (navigator.userAgent.indexOf("Chrome") != -1) {
@@ -85,11 +111,9 @@ function getBrowserName() {
 }
 
 function isSafari() {
-  //console.log("navigator.userAgent is:");
-  //console.log(navigator.userAgent);
+  logDebug("navigator.userAgent is:", navigator.userAgent);
   let browserName = getBrowserName();
-  //console.log("browserName is:");
-  //console.log(browserName);
+  logDebug("browserName is:", browserName);
   const isSafari = browserName == "Safari";
   return isSafari;
 }
@@ -109,28 +133,27 @@ async function openExceptionPageForContentScript(message, input, error, requestR
       },
       function (response) {
         // We get a detailed response for debugging this
-        //console.log("openExceptionPageForContentScript got response: ");
-        //console.log(response);
+        logDebug("openExceptionPageForContentScript got response: ", response);
 
         if (!response || !response.success) {
           // Note: In Safari it seems unable to send a message to the exception tab after
           // opening it. We can't use popup here in content, so log it.
-          console.log("WikiTree Sourcer: Unexpected error :");
-          console.log(message);
-          console.log(error.stack);
+          console.error("WikiTree Sourcer: Unexpected error :");
+          console.error(message);
+          console.error(error.stack);
         }
       }
     );
   } else {
     // lastest fallback for Safari
-    console.log("WikiTree Sourcer: Unexpected error :");
-    console.log(message);
-    console.log(error.stack);
+    console.error("WikiTree Sourcer: Unexpected error :");
+    console.error(message);
+    console.error(error.stack);
   }
 }
 
 function extractDataAndRespond(document, url, contentType, sendResponse, siteSpecificInput) {
-  //console.log("extractDataAndRespond. url: " + url);
+  logDebug("extractDataAndRespond. url: " + url);
 
   // Extract the data.
   try {
@@ -153,7 +176,7 @@ function extractDataAndRespond(document, url, contentType, sendResponse, siteSpe
 }
 
 function retryMessageToBackground(siteName, prefersDark) {
-  console.log("retryMessageToBackground, siteName is : " + siteName);
+  logDebug("retryMessageToBackground, siteName is : " + siteName);
 
   // Send the message a second time. Sometimes this is needed on Safari when the background script
   // has just started up. See notes in background_bootstrap.js
@@ -163,14 +186,16 @@ function retryMessageToBackground(siteName, prefersDark) {
     { type: "contentLoaded", siteName: siteName, prefersDark: prefersDark },
     function (response) {
       // nothing to do, the message needs to send a response though to avoid console error message
-      console.log(
+      logDebug(
         "retryMessageToBackground 2nd attempt, received response from contentLoaded message, siteName is " + siteName
       );
-      console.log(response);
+      logDebug(response);
       if (chrome.runtime.lastError) {
         // possibly there is no background script loaded, this should never happen
-        console.log("retryMessageToBackground: No response from background script, lastError message is:");
-        console.log(chrome.runtime.lastError.message);
+        logDebug(
+          "retryMessageToBackground: No response from background script, lastError message is:",
+          chrome.runtime.lastError.message
+        );
       }
     }
   );
@@ -187,16 +212,17 @@ function setPopupAndIcon(siteName) {
     { type: "contentLoaded", siteName: siteName, prefersDark: prefersDark },
     function (response) {
       // we need to be sure that the background script got the message and set the popup
-      //console.log("setPopupAndIcon, received response from contentLoaded message, siteName is: " + siteName);
-      //console.log("response is:");
-      //console.log(response);
-      //if (response) {
-      //  console.log("response.success is: " + response.success);
-      //}
+      logDebug("setPopupAndIcon, received response from contentLoaded message, siteName is: " + siteName);
+      logDebug("response is:", response);
+      if (response) {
+        logDebug("response.success is: " + response.success);
+      }
       if (chrome.runtime.lastError) {
         // possibly there is no background script loaded, this should never happen
-        console.log("setPopupAndIcon: No response from background script. lastError message is:");
-        console.log(chrome.runtime.lastError.message);
+        logDebug(
+          "setPopupAndIcon: No response from background script. lastError message is:",
+          chrome.runtime.lastError.message
+        );
       } else if (!response || !response.success) {
         // This typically means that the background script was not listening yet and did not set
         // the popup. It is critical that it does so we keep retrying
@@ -205,7 +231,7 @@ function setPopupAndIcon(siteName) {
           retryMessageToBackground(siteName, prefersDark);
         }, contentLoadedTimeoutDelay);
       } else {
-        //console.log("setPopupAndIcon, have response from bg, siteName is: " + siteName);
+        logDebug("setPopupAndIcon, have response from bg, siteName is: " + siteName);
       }
     }
   );
@@ -222,9 +248,8 @@ function contentMessageListener(
   // Request should have these fields
   // type = the message type, a string that defines the action to be performed
 
-  //console.log("contentMessageListener, message arrived, request is : ");
-  //console.log(request);
-  //console.log(sender);
+  logDebug("contentMessageListener, message arrived, request is : ", request);
+  logDebug(sender);
 
   if (additionalMessageHandler) {
     let handlerResult = additionalMessageHandler(request, sender, sendResponse);
@@ -245,7 +270,7 @@ function contentMessageListener(
     }
   } else if (request.type == "log") {
     // All content scripts implement this so that the popup script can print to the content console
-    console.log(request.message);
+    logDebug(request.message);
     sendResponse();
   } else if (request.type == "ping") {
     // can be used to test if the content script is loaded
@@ -255,50 +280,8 @@ function contentMessageListener(
   return false; // no async
 }
 
-function onMessageListener(
-  request,
-  sender,
-  sendResponse,
-  scriptInstanceId,
-  siteName,
-  overrideExtractHandler,
-  additionalMessageHandler
-) {
-  //console.log("onMessageListener, message arrived, request is : ");
-  //console.log(request);
-  //console.log(sender);
-
-  //console.log("chrome.runtime?.id is : " + chrome.runtime?.id);
-
-  // Check if the runtime is still alive
-  if (!chrome.runtime?.id) {
-    console.warn("WikiTree: Extension context invalidated. Cleaning up.");
-    chrome.runtime.onMessage.removeListener(messageHandler);
-    return false;
-  }
-
-  //console.log("window.currentWikiTreeInstance is : " + window.currentWikiTreeInstance);
-  //console.log("scriptInstanceId : " + scriptInstanceId);
-
-  // Check if this instance of the content script is still the "active" one
-  if (window.currentWikiTreeInstance !== scriptInstanceId) {
-    console.log("Old script instance - ignored message.");
-    return false; // Stay silent and let the new instance handle it
-  }
-
-  //console.log("content onMessageListener calling contentMessageListener");
-  return contentMessageListener(
-    request,
-    sender,
-    sendResponse,
-    siteName,
-    overrideExtractHandler,
-    additionalMessageHandler
-  );
-}
-
 function siteContentInit(siteName, overrideExtractHandler, additionalMessageHandler) {
-  console.log("siteContentInit, site name is: " + siteName);
+  logDebug("siteContentInit, site name is: " + siteName);
 
   // in certain cases the content script can get loaded twice (e.g. in Safari after an update
   // the existing tabs may have the old content script loaded and the new one gets loaded)
@@ -312,27 +295,48 @@ function siteContentInit(siteName, overrideExtractHandler, additionalMessageHand
 
   setPopupAndIcon(siteName);
 
-  //loadExtractDataModule(extractModulePath);
-
   // Listen for messages (from the popup script mostly)
   try {
     if (chrome.runtime && chrome.runtime.id) {
-      chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-        return onMessageListener(
+      function onMessageListener(request, sender, sendResponse) {
+        logDebug("onMessageListener, message arrived, request is : ", request);
+        logDebug(sender);
+
+        logDebug("chrome.runtime?.id is : " + chrome.runtime?.id);
+
+        // Check if the runtime is still alive
+        if (!chrome.runtime?.id) {
+          console.warn("WikiTree: Extension context invalidated. Cleaning up.");
+          chrome.runtime.onMessage.removeListener(onMessageListener);
+          return false;
+        }
+
+        logDebug("window.currentWikiTreeInstance is : " + window.currentWikiTreeInstance);
+        logDebug("scriptInstanceId : " + scriptInstanceId);
+
+        // Check if this instance of the content script is still the "active" one
+        if (window.currentWikiTreeInstance !== scriptInstanceId) {
+          console.warn("Old script instance - ignored message.");
+          return false; // Stay silent and let the new instance handle it
+        }
+
+        logDebug("content onMessageListener calling contentMessageListener");
+        return contentMessageListener(
           request,
           sender,
           sendResponse,
-          scriptInstanceId,
           siteName,
           overrideExtractHandler,
           additionalMessageHandler
         );
-      });
-      //console.log("Listener registered successfully in context:", chrome.runtime.id);
+      }
+
+      chrome.runtime.onMessage.addListener(onMessageListener);
+      logDebug("Listener registered successfully in context:", chrome.runtime.id);
     } else {
       console.warn("Registration skipped: No runtime ID available.");
     }
   } catch (error) {
-    console.error("Critical failure during listener attachment:", e);
+    console.error("Critical failure during listener attachment:", error.message);
   }
 }
