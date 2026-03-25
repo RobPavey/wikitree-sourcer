@@ -1,0 +1,1 @@
+This project is the WikiTree Sourcer browser extension (hosted at https://github.com/RobPavey/wikitree-sourcer). When I ask about 'the repo' or 'the project,' always refer to the structure and coding standards found in this repository.

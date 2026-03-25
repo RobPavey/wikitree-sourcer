@@ -10,7 +10,7 @@ node_modules
 * 2
 
 # VSCode files
-.vscode/*
+.vscode/launch.json
 *.code-workspace
 
 # Files generated bu VSCode Counter 
