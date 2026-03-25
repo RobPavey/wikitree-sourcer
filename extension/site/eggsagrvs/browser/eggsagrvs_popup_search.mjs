@@ -40,7 +40,7 @@ import {
 
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 import { EggsaGrvsCommon } from "../core/eggsagrvs_common.mjs";
 
 const eggsagrvsStartYear = 1600;
@@ -77,7 +77,7 @@ function eggsagrvsDoSearch(input) {
       reason:
         "To perform a search on eGGSA Graves a content script needs to be loaded on the graves.eggsa.org search page.",
     };
-    const allowed = await checkPermissionForSite("*://www.graves.eggsa.org/*", checkPermissionsOptions);
+    const allowed = await checkPermissionForSiteMatches("eggsagrvs", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

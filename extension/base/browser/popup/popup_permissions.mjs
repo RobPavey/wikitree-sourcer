@@ -233,4 +233,25 @@ async function checkPermissionForSiteFromUrl(url, options) {
   return await checkPermissionForSite(matchString, options);
 }
 
-export { checkPermissionForSite, checkPermissionForSites, checkPermissionForSiteFromUrl };
+async function checkPermissionForSiteMatches(siteName, options) {
+  logDebug("checkPermissionForSite");
+
+  let contentScripts = await chrome.scripting.getRegisteredContentScripts({
+    ids: [siteName],
+  });
+
+  if (!contentScripts || !contentScripts.length) {
+    return;
+  }
+
+  // there should only be one registered content script with this id
+  let siteMatches = contentScripts[0].matches;
+  return await checkPermissionForSites(siteMatches, options);
+}
+
+export {
+  checkPermissionForSite,
+  checkPermissionForSites,
+  checkPermissionForSiteFromUrl,
+  checkPermissionForSiteMatches,
+};
