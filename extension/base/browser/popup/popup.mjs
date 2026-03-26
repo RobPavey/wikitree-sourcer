@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { popupState, progressState } from "./popup_state.mjs";
 import { separateUrlIntoParts } from "./popup_utils.mjs";
-import { isSafari, isChrome, isFirefox } from "/base/browser/common/browser_check.mjs";
+import { isSafari, isChrome } from "/base/browser/common/browser_check.mjs";
 import { checkPermissionForSites } from "./popup_permissions.mjs";
 
 import {
@@ -269,7 +269,7 @@ async function determineSiteNameForTab(activeTab) {
                   let pingSucceeded = false;
                   try {
                     // First, check if content script is already there to avoid double-loading
-                    let response = await chrome.tabs.sendMessage(activeTab.id, { ping: true });
+                    let response = await chrome.tabs.sendMessage(activeTab.id, { type: "ping" });
                     if (chrome.runtime.lastError) {
                       console.warn("ping to content script failed, lastError is", chrome.runtime.lastError);
                     } else if (!response) {
@@ -283,7 +283,7 @@ async function determineSiteNameForTab(activeTab) {
                   }
 
                   if (!pingSucceeded) {
-                    logDebug("ping to content script failed, attempthing to inject content script.");
+                    logDebug("ping to content script failed, attempting to inject content script.");
                     // If the ping fails, the script isn't there, so inject it!
                     try {
                       await chrome.scripting.executeScript({
@@ -423,26 +423,7 @@ async function initPopupGivenActiveTab(activeTab) {
 
   // Check if this is an extension page
   let url = activeTab.pendingUrl ? activeTab.pendingUrl : activeTab.url;
-  let views = chrome.extension.getViews({ type: "tab" });
-  let isExtensionPage = false;
-  if (url) {
-    // Firefox will come thrugh here
-    for (let view of views) {
-      if (view.document.documentURI == url) {
-        isExtensionPage = true;
-        break;
-      }
-    }
-  } else {
-    // Chrome will come through here
-    for (let view of views) {
-      let extensionTab = await view.chrome.tabs.getCurrent();
-      if (extensionTab.id == activeTab.id) {
-        isExtensionPage = true;
-        url = view.document.documentURI;
-      }
-    }
-  }
+  let isExtensionPage = url?.startsWith(chrome.runtime.getURL(""));
   if (isExtensionPage) {
     setupExtensionPageMenu(url);
     return;

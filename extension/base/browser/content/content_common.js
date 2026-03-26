@@ -271,10 +271,10 @@ function contentMessageListener(
   } else if (request.type == "log") {
     // All content scripts implement this so that the popup script can print to the content console
     logDebug(request.message);
-    sendResponse();
+    sendResponse({ success: true });
   } else if (request.type == "ping") {
     // can be used to test if the content script is loaded
-    sendResponse();
+    sendResponse({ success: true });
   }
 
   return false; // no async

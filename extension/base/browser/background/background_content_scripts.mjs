@@ -33,7 +33,7 @@ async function injectContentScriptsIntoExistingTab(tab, contentScriptJs) {
 
   try {
     // First, check if content script is already there to avoid double-loading
-    await chrome.tabs.sendMessage(tab.id, { ping: true });
+    await chrome.tabs.sendMessage(tab.id, { type: "ping" });
   } catch (e) {
     // If the ping fails, the script isn't there, so inject it!
     try {
