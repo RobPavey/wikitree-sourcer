@@ -41,8 +41,7 @@ async function unregisterTabWithBackground() {
 
   if (chrome.runtime.lastError) {
     // possibly there is no background script loaded, this should never happen
-    console.log("gro: No response from background script, lastError message is:");
-    console.log(chrome.runtime.lastError.message);
+    console.warn("gro: No response from background script, lastError message is:", chrome.runtime.lastError.message);
   }
 }
 
@@ -67,8 +66,7 @@ async function registerTabWithBackground() {
 
     if (chrome.runtime.lastError) {
       // possibly there is no background script loaded, this should never happen
-      console.log("nzbdm: No response from background script, lastError message is:");
-      console.log(chrome.runtime.lastError.message);
+      console.warn("gro: No response from background script, lastError message is:", chrome.runtime.lastError.message);
     } else {
       //console.log("addng event listener for unregister");
 
@@ -84,8 +82,7 @@ async function registerTabWithBackground() {
   } catch (error) {
     // possibly there is no background script loaded, this should never happen
     // Could also be that the extension was just reloaded/updated
-    console.log("gro: No response from background script, error is:");
-    console.log(error);
+    console.warn("gro: No response from background script, error is:", error);
   }
 }
 
@@ -94,10 +91,10 @@ async function registerTabWithBackground() {
 ////////////////////////////////////////////////////////////////////////////////
 
 async function doPostHandler(request, sender, sendResponse) {
-  console.log("gro: additionalMessageHandler, request is:");
-  console.log(request);
-  console.log("gro: additionalMessageHandler, document.URL is:");
-  console.log(document.URL);
+  //console.log("gro: additionalMessageHandler, request is:");
+  //console.log(request);
+  //console.log("gro: additionalMessageHandler, document.URL is:");
+  //console.log(document.URL);
 
   // We could try to check if this is the correct type of page (Births, Deaths etc)
   // and clear the fields and refill them. But it is simply to just load the desired URL
@@ -107,9 +104,9 @@ async function doPostHandler(request, sender, sendResponse) {
 
   let fetchUrl = request.url;
 
-  console.log("additionalMessageHandler:doPost, fetchUrl is: " + fetchUrl);
-  console.log("additionalMessageHandler:doPost, postData is:");
-  console.log(postData);
+  //console.log("additionalMessageHandler:doPost, fetchUrl is: " + fetchUrl);
+  //console.log("additionalMessageHandler:doPost, postData is:");
+  //console.log(postData);
 
   let fetchOptionsHeaders = {
     accept:
@@ -132,8 +129,8 @@ async function doPostHandler(request, sender, sendResponse) {
     //console.log("doPost, response.status is: " + response.status);
 
     if (response.status !== 200) {
-      console.log("Looks like there was a problem. Status Code: " + response.status);
-      console.log("Fetch URL is: " + fetchUrl);
+      console.warn("Looks like there was a problem. Status Code: " + response.status);
+      console.warn("Fetch URL is: " + fetchUrl);
       result.errorCondition = "FetchError";
       result.status = response.status;
       sendResponse(result);
@@ -153,9 +150,8 @@ async function doPostHandler(request, sender, sendResponse) {
     //console.log("doSearchPost: sending success response");
     sendResponse(result);
   } catch (error) {
-    console.log("fetch failed, error is:");
-    console.log(error);
-    console.log("Fetch URL is: " + fetchUrl);
+    console.warn("fetch failed, error is:", error);
+    console.warn("Fetch URL is: " + fetchUrl);
 
     result.errorCondition = "Exception";
     result.error = error;

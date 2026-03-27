@@ -223,15 +223,15 @@ async function determineSiteNameForTab(activeTab) {
               // First, check if content script is already there to avoid double-loading
               let response = await chrome.tabs.sendMessage(activeTab.id, { type: "ping" });
               if (chrome.runtime.lastError) {
-                console.warn("ping to content script failed, lastError is", chrome.runtime.lastError);
+                logDebug("ping to content script failed, lastError is", chrome.runtime.lastError);
               } else if (!response) {
-                console.warn("ping to content script failed, response is", response);
+                logDebug("ping to content script failed, null response is", response);
               } else {
                 logDebug("ping to content script succeeded.");
                 pingSucceeded = true;
               }
             } catch (e) {
-              console.warn("ping to content script failed, error is", e);
+              logDebug("ping to content script failed, error is", e);
             }
 
             if (!pingSucceeded) {
