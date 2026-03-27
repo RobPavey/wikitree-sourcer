@@ -36,7 +36,7 @@ import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_sear
 import { doSearch, registerSearchMenuItemFunction, openUrlInNewTab } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -61,7 +61,7 @@ function wikitreeDoSearch(input) {
       reason:
         "To perform a search on wikitree.com a content script needs to be loaded on the wikitree.com search page.",
     };
-    let allowed = await checkPermissionForSiteFromUrl(searchUrl, checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("wikitree", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

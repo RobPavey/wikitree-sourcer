@@ -292,7 +292,7 @@ function addComment(fieldData) {
   }
 }
 
-async function additionalMessageHandler(request, sender, sendResponse) {
+function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "setFields") {
     setFields(request.fieldData, sendResponse);
     return { wasHandled: true, returnValue: true };

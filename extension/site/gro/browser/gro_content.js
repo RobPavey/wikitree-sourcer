@@ -93,77 +93,80 @@ async function registerTabWithBackground() {
 // Message hander to receive search message from background
 ////////////////////////////////////////////////////////////////////////////////
 
-async function additionalMessageHandler(request, sender, sendResponse) {
-  if (request.type == "doPost") {
-    //console.log("gro: additionalMessageHandler, request is:");
-    //console.log(request);
-    //console.log("gro: additionalMessageHandler, document.URL is:");
-    //console.log(document.URL);
+async function doPostHandler(request, sender, sendResponse) {
+  console.log("gro: additionalMessageHandler, request is:");
+  console.log(request);
+  console.log("gro: additionalMessageHandler, document.URL is:");
+  console.log(document.URL);
 
-    // We could try to check if this is the correct type of page (Births, Deaths etc)
-    // and clear the fields and refill them. But it is simply to just load the desired URL
-    // into this existing tab.
+  // We could try to check if this is the correct type of page (Births, Deaths etc)
+  // and clear the fields and refill them. But it is simply to just load the desired URL
+  // into this existing tab.
 
-    let postData = request.postData;
+  let postData = request.postData;
 
-    let fetchUrl = request.url;
+  let fetchUrl = request.url;
 
-    //console.log("additionalMessageHandler:doPost, fetchUrl is: " + fetchUrl);
-    //console.log("additionalMessageHandler:doPost, postData is:");
-    //console.log(postData);
+  console.log("additionalMessageHandler:doPost, fetchUrl is: " + fetchUrl);
+  console.log("additionalMessageHandler:doPost, postData is:");
+  console.log(postData);
 
-    let fetchOptionsHeaders = {
-      accept:
-        "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-      "accept-language": "en-US,en;q=0.9",
-      "Content-Type": "application/x-www-form-urlencoded",
-    };
+  let fetchOptionsHeaders = {
+    accept:
+      "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    "accept-language": "en-US,en;q=0.9",
+    "Content-Type": "application/x-www-form-urlencoded",
+  };
 
-    let fetchOptions = {
-      headers: fetchOptionsHeaders,
-      body: postData,
-      method: "POST",
-    };
+  let fetchOptions = {
+    headers: fetchOptionsHeaders,
+    body: postData,
+    method: "POST",
+  };
 
-    let result = { success: false };
+  let result = { success: false };
 
-    try {
-      let response = await fetch(fetchUrl, fetchOptions);
+  try {
+    let response = await fetch(fetchUrl, fetchOptions);
 
-      //console.log("doPost, response.status is: " + response.status);
+    //console.log("doPost, response.status is: " + response.status);
 
-      if (response.status !== 200) {
-        console.log("Looks like there was a problem. Status Code: " + response.status);
-        console.log("Fetch URL is: " + fetchUrl);
-        result.errorCondition = "FetchError";
-        result.status = response.status;
-        sendResponse(result);
-        return { wasHandled: true, returnValue: false };
-      }
-
-      //console.log("additionalMessageHandler:doPost: fetch response is:");
-      //console.log(response);
-
-      let htmlText = await response.text();
-
-      //console.log("doSearchPost: response text is:");
-      //console.log(htmlText);
-
-      result.success = true;
-      result.status = response.status;
-      result.htmlText = htmlText;
-      sendResponse(result);
-      return { wasHandled: true, returnValue: true };
-    } catch (error) {
-      console.log("fetch failed, error is:");
-      console.log(error);
+    if (response.status !== 200) {
+      console.log("Looks like there was a problem. Status Code: " + response.status);
       console.log("Fetch URL is: " + fetchUrl);
-
-      result.errorCondition = "Exception";
-      result.error = error;
+      result.errorCondition = "FetchError";
+      result.status = response.status;
       sendResponse(result);
-      return { wasHandled: true, returnValue: false };
     }
+
+    //console.log("additionalMessageHandler:doPost: fetch response is:");
+    //console.log(response);
+
+    let htmlText = await response.text();
+
+    //console.log("doSearchPost: response text is:");
+    //console.log(htmlText);
+
+    result.success = true;
+    result.status = response.status;
+    result.htmlText = htmlText;
+    //console.log("doSearchPost: sending success response");
+    sendResponse(result);
+  } catch (error) {
+    console.log("fetch failed, error is:");
+    console.log(error);
+    console.log("Fetch URL is: " + fetchUrl);
+
+    result.errorCondition = "Exception";
+    result.error = error;
+    sendResponse(result);
+  }
+}
+
+function additionalMessageHandler(request, sender, sendResponse) {
+  if (request.type == "doPost") {
+    doPostHandler(request, sender, sendResponse);
+    return { wasHandled: true, returnValue: true };
   }
   return { wasHandled: false };
 }

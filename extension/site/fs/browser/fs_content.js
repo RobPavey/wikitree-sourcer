@@ -432,7 +432,7 @@ function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "setFields") {
     setFields(request.fieldData);
     sendResponse({ success: true });
-    return { wasHandled: true, returnValue: false };
+    return { wasHandled: true, returnValue: true };
   }
 
   return { wasHandled: false };

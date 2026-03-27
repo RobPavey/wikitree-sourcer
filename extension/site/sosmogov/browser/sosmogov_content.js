@@ -445,27 +445,31 @@ async function checkForPendingSearch() {
 // Top level functions
 ////////////////////////////////////////////////////////////////////////////////
 
-async function additionalMessageHandler(request, sender, sendResponse) {
+async function doSearchInExistingTab(request, sender, sendResponse) {
+  //console.log("sosmogov: additionalMessageHandler, request is:");
+  //console.log(request);
+  //console.log("sosmogov: additionalMessageHandler, document.URL is:");
+  //console.log(document.URL);
+
+  try {
+    // this stores the search data in local storage which is then picked up by the
+    // content script in the new tab/window
+    await chrome.storage.local.set({ searchData: request.searchData }, function () {
+      //console.log("saved request.searchData, request.searchData is:");
+      //console.log(request.searchData);
+    });
+  } catch (ex) {
+    console.log("store of searchData failed");
+  }
+
+  window.open(request.searchData.url, "_self");
+  sendResponse({ success: true });
+}
+
+function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
-    //console.log("sosmogov: additionalMessageHandler, request is:");
-    //console.log(request);
-    //console.log("sosmogov: additionalMessageHandler, document.URL is:");
-    //console.log(document.URL);
-
-    try {
-      // this stores the search data in local storage which is then picked up by the
-      // content script in the new tab/window
-      await chrome.storage.local.set({ searchData: request.searchData }, function () {
-        //console.log("saved request.searchData, request.searchData is:");
-        //console.log(request.searchData);
-      });
-    } catch (ex) {
-      console.log("store of searchData failed");
-    }
-
-    window.open(request.searchData.url, "_self");
-    sendResponse({ success: true });
-    return { wasHandled: true, returnValue: false };
+    doSearchInExistingTab(request, sender, sendResponse);
+    return { wasHandled: true, returnValue: true };
   }
 
   return { wasHandled: false };

@@ -32,7 +32,7 @@ function addFlowerNote(fieldData) {
   }
 }
 
-async function additionalMessageHandler(request, sender, sendResponse) {
+function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "addFlowerNote") {
     addFlowerNote(request.fieldData);
     sendResponse({ success: true });

@@ -36,7 +36,7 @@ SOFTWARE.
 
 function logDebug(...args) {
   const debugConfig = {
-    enabled: false,
+    enabled: true,
 
     showTimestamp: false,
     showDebugText: false,
@@ -252,9 +252,17 @@ function contentMessageListener(
   logDebug(sender);
 
   if (additionalMessageHandler) {
+    // Note that additionalMessageHandler is NOT an async function
     let handlerResult = additionalMessageHandler(request, sender, sendResponse);
+    logDebug("return value of additionalMessageHandler is ", handlerResult);
+
     if (handlerResult.wasHandled) {
-      return handlerResult.returnValue;
+      // sometimes handlerResult.returnValue is not set, in which case it means false
+      let isAsync = false;
+      if (handlerResult.returnValue) {
+        isAsync = true;
+      }
+      return isAsync;
     }
   }
 
@@ -280,6 +288,7 @@ function contentMessageListener(
   return false; // no async
 }
 
+// NOTE: additionalMessageHandler MUST NOT be an async function
 function siteContentInit(siteName, overrideExtractHandler, additionalMessageHandler) {
   logDebug("siteContentInit, site name is: " + siteName);
 
@@ -321,7 +330,7 @@ function siteContentInit(siteName, overrideExtractHandler, additionalMessageHand
         }
 
         logDebug("content onMessageListener calling contentMessageListener");
-        return contentMessageListener(
+        let result = contentMessageListener(
           request,
           sender,
           sendResponse,
@@ -329,6 +338,10 @@ function siteContentInit(siteName, overrideExtractHandler, additionalMessageHand
           overrideExtractHandler,
           additionalMessageHandler
         );
+
+        logDebug("return value of contentMessageListener is ", result);
+
+        return result;
       }
 
       chrome.runtime.onMessage.addListener(onMessageListener);

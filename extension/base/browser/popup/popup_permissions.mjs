@@ -25,6 +25,12 @@ SOFTWARE.
 import { displayMessageThenClosePopup, emptyMenu, displayMessageWithIcon } from "./popup_menu_building.mjs";
 import { logDebug } from "/base/core/log_debug.mjs";
 import { isFirefox } from "/base/browser/common/browser_check.mjs";
+import {
+  commonCheckPermissionForSite,
+  commonCheckPermissionForSites,
+  commonCheckPermissionForSiteFromUrl,
+  commonCheckPermissionForSiteMatches,
+} from "/base/browser/common/permissions.mjs";
 
 async function requestPermissionsFromUser(permissions, options) {
   logDebug("requestPermissionsFromUser, permissions is:", permissions);
@@ -170,81 +176,19 @@ async function requestPermissionsFromUser(permissions, options) {
 }
 
 async function checkPermissionForSites(siteMatches, options) {
-  let permissions = { origins: siteMatches };
-
-  logDebug("checkPermissionForSites, permissions is:", permissions);
-
-  let hasPermission = await chrome.permissions.contains(permissions);
-
-  if (hasPermission) {
-    return true;
-  }
-
-  if (options.checkOnly) {
-    return false;
-  }
-
-  // request permission from browser
-  return await requestPermissionsFromUser(permissions, options);
+  return await commonCheckPermissionForSites(siteMatches, options, requestPermissionsFromUser);
 }
 
 async function checkPermissionForSite(matchString, options) {
-  logDebug("checkPermissionForSite");
-
-  let siteMatches = [matchString];
-  return await checkPermissionForSites(siteMatches, options);
+  return await commonCheckPermissionForSite(matchString, options, requestPermissionsFromUser);
 }
 
 async function checkPermissionForSiteFromUrl(url, options) {
-  logDebug("checkPermissionForSiteFromUrl, url is:", url);
-
-  let domain = url.replace(/https?\:\/\/[^\.]+\.([^\/]+)\/.*/, "$1");
-  if (!domain || domain == url) {
-    if (!options.defaultDomain) {
-      return false;
-    }
-    domain = options.defaultDomain;
-  }
-
-  logDebug("checkPermissionForSites, domain is:", domain);
-
-  // Note: it is best to use the scheme in the URL rather than "*" because the request
-  // has to be a subset of what is in the manifest. On Safari if there is a content match
-  // for, say, "https://*.wikitree.com/*" and we request "*://*.wikitree.com/*" it will get an
-  // exception.
-  let scheme = url.replace(/(https?)\:\/\/[^\.]+\.[^\/]+\/.*/, "$1");
-  if (!scheme || scheme == url) {
-    scheme = "https";
-  }
-
-  logDebug("checkPermissionForSites, scheme is:", scheme);
-
-  // we want a match string like: "*://*.ancestry.com/*"
-
-  let subDomain = "*";
-  if (options.overrideSubdomain) {
-    subDomain = options.overrideSubdomain;
-  }
-
-  let matchString = scheme + "://" + subDomain + "." + domain + "/*";
-
-  logDebug("checkPermissionForSites, matchString is:", matchString);
-
-  return await checkPermissionForSite(matchString, options);
+  return await commonCheckPermissionForSiteFromUrl(url, options, requestPermissionsFromUser);
 }
 
 async function checkPermissionForSiteMatches(siteName, options) {
-  let contentScripts = await chrome.scripting.getRegisteredContentScripts({
-    ids: [siteName],
-  });
-
-  if (!contentScripts || !contentScripts.length) {
-    return;
-  }
-
-  // there should only be one registered content script with this id
-  let siteMatches = contentScripts[0].matches;
-  return await checkPermissionForSites(siteMatches, options);
+  return await commonCheckPermissionForSiteMatches(siteName, options, requestPermissionsFromUser);
 }
 
 export {

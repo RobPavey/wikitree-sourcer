@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { commonCheckPermissionForSite, commonCheckPermissionForSiteMatches } from "../common/permissions.mjs";
+
 async function requestPermissionsFromUser(permissions, options) {
   //console.log("requestPermissionsFromUser, permissions is:");
   //console.log(permissions);
@@ -81,43 +83,12 @@ async function requestPermissionsFromUser(permissions, options) {
   return false;
 }
 
-async function checkPermissionForSites(siteMatches, options) {
-  let permissions = { origins: siteMatches };
-
-  //console.log("checkPermissionForSites, permissions is:");
-  //console.log(permissions);
-
-  let hasPermission = await chrome.permissions.contains(permissions);
-
-  if (hasPermission) {
-    return true;
-  }
-
-  if (options.checkOnly) {
-    return false;
-  }
-
-  // request permission from browser
-  return await requestPermissionsFromUser(permissions, options);
-}
-
 async function checkPermissionForSite(matchString, options) {
-  let siteMatches = [matchString];
-  return await checkPermissionForSites(siteMatches, options);
+  return await commonCheckPermissionForSite(matchString, options, requestPermissionsFromUser);
 }
 
 async function checkPermissionForSiteMatches(siteName, options) {
-  let contentScripts = await chrome.scripting.getRegisteredContentScripts({
-    ids: [siteName],
-  });
-
-  if (!contentScripts || !contentScripts.length) {
-    return;
-  }
-
-  // there should only be one registered content script with this id
-  let siteMatches = contentScripts[0].matches;
-  return await checkPermissionForSites(siteMatches, options);
+  return await commonCheckPermissionForSiteMatches(siteName, options, requestPermissionsFromUser);
 }
 
 export { checkPermissionForSite, checkPermissionForSiteMatches };

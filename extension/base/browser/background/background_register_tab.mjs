@@ -153,7 +153,7 @@ async function handleGetRegisteredTabMessage(request, sender, sendResponse) {
 }
 
 async function handleSendMessageToRegisteredTabMessage(request, sender, sendResponse) {
-  //console.log("handleSendMessageToRegisteredTabMessage, siteName is: " + request.siteName);
+  console.log("handleSendMessageToRegisteredTabMessage, siteName is: " + request.siteName);
 
   let siteName = request.siteName;
   let requestToSend = request.requestToSend;
@@ -208,33 +208,53 @@ async function handleSendMessageToRegisteredTabMessage(request, sender, sendResp
           // remove the listener now that we know the tab has completed loading
           chrome.tabs.onUpdated.removeListener(tabListener);
 
-          chrome.tabs.sendMessage(tabId, requestToSend, function (response) {
-            if (!response) {
-              console.log("Null response from sending message to tab");
-              sendResponse({
-                success: false,
-                createdTab: createdTab,
-                changeInfo: changeInfo,
-                tabId: tabId,
-                tab: tab,
-                lastError: chrome.runtime.lastError,
-              });
-            } else {
-              //console.log("Response from sending message to tab is:");
-              //console.log(response);
+          try {
+            chrome.tabs.sendMessage(tabId, requestToSend, function (response) {
+              if (chrome.runtime.lastError) {
+                console.log("Error from sending message to tab: ", chrome.runtime.lastError);
+                sendResponse({
+                  success: false,
+                  createdTab: createdTab,
+                  changeInfo: changeInfo,
+                  tabId: tabId,
+                  tab: tab,
+                  lastError: chrome.runtime.lastError,
+                });
+              } else if (!response) {
+                console.log("Null response from sending message to tab");
+                sendResponse({
+                  success: false,
+                  createdTab: createdTab,
+                  changeInfo: changeInfo,
+                  tabId: tabId,
+                  tab: tab,
+                });
+              } else {
+                //console.log("Response from sending message to tab is:");
+                //console.log(response);
 
-              // we send a detailed response back to the caller for debugging this mechanism
-              sendResponse({
-                success: true,
-                createdTab: createdTab,
-                changeInfo: changeInfo,
-                tabId: tabId,
-                tab: tab,
-                responseFromTab: response,
-                lastError: chrome.runtime.lastError,
-              });
-            }
-          });
+                // we send a detailed response back to the caller for debugging this mechanism
+                sendResponse({
+                  success: true,
+                  createdTab: createdTab,
+                  changeInfo: changeInfo,
+                  tabId: tabId,
+                  tab: tab,
+                  responseFromTab: response,
+                  lastError: chrome.runtime.lastError,
+                });
+              }
+            });
+          } catch (error) {
+            console.log("Exception from sending message to tab: ", error);
+            sendResponse({
+              success: false,
+              createdTab: createdTab,
+              changeInfo: changeInfo,
+              tabId: tabId,
+              tab: tab,
+            });
+          }
         }
       });
     }

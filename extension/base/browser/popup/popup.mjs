@@ -23,8 +23,8 @@ SOFTWARE.
 */
 
 import { popupState, progressState } from "./popup_state.mjs";
-import { separateUrlIntoParts } from "./popup_utils.mjs";
 import { isSafari, isChrome } from "/base/browser/common/browser_check.mjs";
+import { doesUrlMatchChromePattern } from "/base/browser/common/permissions.mjs";
 import { checkPermissionForSites } from "./popup_permissions.mjs";
 
 import {
@@ -177,38 +177,6 @@ function setupExtensionPageMenu(url) {
   endMainMenu(menu);
 }
 
-function doesUrlMatchPattern(urlParts, patternParts) {
-  if (!urlParts || !patternParts) {
-    return false;
-  }
-  // example url: https://www.ancestry.com/discoveryui-content/view/187423:1088
-  // example pattern: *://*.ancestry.com/*
-
-  if (patternParts.scheme != "*" && patternParts.scheme != urlParts.scheme) {
-    return false;
-  }
-
-  if (patternParts.subdomain != "*" && patternParts.subdomain != urlParts.subdomain) {
-    return false;
-  }
-
-  if (patternParts.domain != urlParts.domain) {
-    return false;
-  }
-
-  if (patternParts.subdirectory == "*") {
-    return true;
-  }
-
-  let starIndex = patternParts.subdirectory.indexOf("*");
-  if (starIndex != -1) {
-    let subDirectoryToMatch = patternParts.subdirectory.substring(0, starIndex);
-    return urlParts.subdirectory.startsWith(subDirectoryToMatch);
-  } else {
-    return urlParts.subdirectory == patternParts.subdirectory;
-  }
-}
-
 async function determineSiteNameForTab(activeTab) {
   let manifest = chrome.runtime.getManifest();
 
@@ -219,14 +187,9 @@ async function determineSiteNameForTab(activeTab) {
   // It appears that adding the activeTab permission fixes this. That seems easier to maintain than
   // having a host_permission for every site.
 
-  let urlParts = separateUrlIntoParts(activeTab.pendingUrl);
-  if (!urlParts) {
-    urlParts = separateUrlIntoParts(activeTab.url);
-  }
-
-  // for a non-supported site these will usually be empty because of permissions
-  if (!urlParts) {
-    return false;
+  let url = activeTab.pendingUrl;
+  if (!url) {
+    url = activeTab.url;
   }
 
   logDebug("WikiTree Sourcer: determineSiteNameForTab");
@@ -234,87 +197,73 @@ async function determineSiteNameForTab(activeTab) {
   let contentScripts = await chrome.scripting.getRegisteredContentScripts();
   for (let contentScript of contentScripts) {
     for (let match of contentScript.matches) {
-      let matchParts = separateUrlIntoParts(match);
-
-      let doesTabMatch = doesUrlMatchPattern(urlParts, matchParts);
+      let doesTabMatch = doesUrlMatchChromePattern(match, url);
 
       if (doesTabMatch) {
         logDebug("This tab matches the pattern.");
 
-        // found match, get siteName from the last script name
-        let scripts = contentScript.js;
-        if (scripts && scripts.length > 0) {
-          let lastScript = scripts[scripts.length - 1];
-          // example: "site/fs/browser/fs_content.js"
-          let lastSlashIndex = lastScript.lastIndexOf("/");
-          if (lastSlashIndex != -1) {
-            const suffix = "_content.js";
-            let suffixIndex = lastScript.indexOf(suffix, lastSlashIndex);
-            if (suffixIndex != -1) {
-              let siteName = lastScript.substring(lastSlashIndex + 1, suffixIndex);
+        // found match, get siteName from the content script id
+        let siteName = contentScript.id;
 
-              // we have a content script dynamically registered for the site.
-              logDebug("We have a content script dynamically registered for the site.");
+        // we have a content script dynamically registered for the site.
+        logDebug("We have a content script dynamically registered for the site.");
 
-              if (await chrome.permissions.contains({ origins: contentScript.matches })) {
-                logDebug("We have permissions for the site.");
+        if (await chrome.permissions.contains({ origins: [match] })) {
+          logDebug("We have permissions for the site.");
 
-                // extension already has permission, no need to ask user
-                // However, sometimes the content script may not be loaded, it SHOULD get loaded
-                // when the user grants permission but sometimes does not for some tabs.
-                // So ping the tab and, if it does not respond, then inject the content scripts.
-                // NOTE: This also fixes the issue when a user can disable the extension and then
-                // re-enable it. In Chrome that results in the content script being missing.
-                if (isChrome()) {
-                  let pingSucceeded = false;
-                  try {
-                    // First, check if content script is already there to avoid double-loading
-                    let response = await chrome.tabs.sendMessage(activeTab.id, { type: "ping" });
-                    if (chrome.runtime.lastError) {
-                      console.warn("ping to content script failed, lastError is", chrome.runtime.lastError);
-                    } else if (!response) {
-                      console.warn("ping to content script failed, response is", response);
-                    } else {
-                      logDebug("ping to content script succeeded.");
-                      pingSucceeded = true;
-                    }
-                  } catch (e) {
-                    console.warn("ping to content script failed, error is", e);
-                  }
-
-                  if (!pingSucceeded) {
-                    logDebug("ping to content script failed, attempting to inject content script.");
-                    // If the ping fails, the script isn't there, so inject it!
-                    try {
-                      await chrome.scripting.executeScript({
-                        target: { tabId: activeTab.id },
-                        files: contentScript.js,
-                      });
-                      logDebug("inject of content script succeeeded");
-                    } catch (error) {
-                      console.error(`Injection error on tab ${activeTab.id}:`, error);
-                    }
-                  }
-                }
-
-                return siteName;
+          // extension already has permission, no need to ask user
+          // However, sometimes the content script may not be loaded, it SHOULD get loaded
+          // when the user grants permission but sometimes does not for some tabs.
+          // So ping the tab and, if it does not respond, then inject the content scripts.
+          // NOTE: This also fixes the issue when a user can disable the extension and then
+          // re-enable it. In Chrome that results in the content script being missing.
+          if (isChrome()) {
+            let pingSucceeded = false;
+            try {
+              // First, check if content script is already there to avoid double-loading
+              let response = await chrome.tabs.sendMessage(activeTab.id, { type: "ping" });
+              if (chrome.runtime.lastError) {
+                console.warn("ping to content script failed, lastError is", chrome.runtime.lastError);
+              } else if (!response) {
+                console.warn("ping to content script failed, response is", response);
+              } else {
+                logDebug("ping to content script succeeded.");
+                pingSucceeded = true;
               }
+            } catch (e) {
+              console.warn("ping to content script failed, error is", e);
+            }
 
-              // ask user for permission
-              const checkPermissionsOptions = {
-                reason: "The extension needs to load a content script in order to extract data from the page.",
-                needsPopupDisplayed: true,
-                userClickedExtensionPopup: true,
-              };
-              if (await checkPermissionForSites(contentScript.matches, checkPermissionsOptions)) {
-                // permission was granted but the content script will not be retroactively loaded
-                // so we want to load it manually. However we can't rely on the code getting here
-                // because the chrome permission request dialog can kill the popup, so the
-                // script is injected in the background script using chrome.permissions.onAdded
-                return siteName;
+            if (!pingSucceeded) {
+              logDebug("ping to content script failed, attempting to inject content script.");
+              // If the ping fails, the script isn't there, so inject it!
+              try {
+                await chrome.scripting.executeScript({
+                  target: { tabId: activeTab.id },
+                  files: contentScript.js,
+                });
+                logDebug("inject of content script succeeeded");
+              } catch (error) {
+                console.error(`Injection error on tab ${activeTab.id}:`, error);
               }
             }
           }
+
+          return siteName;
+        }
+
+        // ask user for permission
+        const checkPermissionsOptions = {
+          reason: "The extension needs to load a content script in order to extract data from the page.",
+          needsPopupDisplayed: true,
+          userClickedExtensionPopup: true,
+        };
+        if (await checkPermissionForSites([match], checkPermissionsOptions)) {
+          // permission was granted but the content script will not be retroactively loaded
+          // so we want to load it manually. However we can't rely on the code getting here
+          // because the chrome permission request dialog can kill the popup, so the
+          // script is injected in the background script using chrome.permissions.onAdded
+          return siteName;
         }
 
         console.warn(
@@ -326,8 +275,9 @@ async function determineSiteNameForTab(activeTab) {
     }
   }
 
-  console.warn("WikiTree Sourcer: determineSiteNameForTab. Tab has URL but no content script match");
-  console.warn("activeTab.url is: " + activeTab.url);
+  // This is normal if extension icon is clicked on an unsupported page
+  logDebug("WikiTree Sourcer: determineSiteNameForTab. Tab has URL but no content script match");
+  logDebug("activeTab.url is: " + activeTab.url);
   return "unknown";
 }
 
@@ -448,11 +398,10 @@ async function initPopupGivenActiveTab(activeTab) {
     return;
   }
 
-  console.warn("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, UNKNOWN SITE NAME");
+  logDebug("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, unknown site name");
 
-  // We should hopefully never get here. It only happens if the tab has a url (so is supported)
-  // but we could not work out the site name.
-  // For now just bring up an error message popup.
+  // Now that we have the activeTab permission it will normally come through here
+  // when the extension popup is used on an unsupported page
   setupDefaultPopupMenuWhenNoResponseFromContent();
 }
 

@@ -344,31 +344,35 @@ async function checkForPendingSearch() {
 // Message hander to receive search message from background
 ////////////////////////////////////////////////////////////////////////////////
 
-async function additionalMessageHandler(request, sender, sendResponse) {
+async function doSearchInExistingTab(request, sender, sendResponse) {
+  //console.log("nzbdm: additionalMessageHandler, request is:");
+  //console.log(request);
+  //console.log("nzbdm: additionalMessageHandler, document.URL is:");
+  //console.log(document.URL);
+
+  // We could try to check if this is the correct type of page (Births, Deaths etc)
+  // and clear the fields and refill them. But it is simpley to just load the desired URL
+  // into this existing tab.
+
+  try {
+    // this stores the search data in local storage which is then picked up by the
+    // content script in the new tab/window
+    await chrome.storage.local.set({ searchData: request.searchData }, function () {
+      //console.log("saved request.searchData, request.searchData is:");
+      //console.log(request.searchData);
+    });
+  } catch (ex) {
+    console.log("store of searchData failed");
+  }
+
+  window.open(request.searchData.url, "_self");
+  sendResponse({ success: true });
+}
+
+function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
-    //console.log("nzbdm: additionalMessageHandler, request is:");
-    //console.log(request);
-    //console.log("nzbdm: additionalMessageHandler, document.URL is:");
-    //console.log(document.URL);
-
-    // We could try to check if this is the correct type of page (Births, Deaths etc)
-    // and clear the fields and refill them. But it is simpley to just load the desired URL
-    // into this existing tab.
-
-    try {
-      // this stores the search data in local storage which is then picked up by the
-      // content script in the new tab/window
-      await chrome.storage.local.set({ searchData: request.searchData }, function () {
-        //console.log("saved request.searchData, request.searchData is:");
-        //console.log(request.searchData);
-      });
-    } catch (ex) {
-      console.log("store of searchData failed");
-    }
-
-    window.open(request.searchData.url, "_self");
-    sendResponse({ success: true });
-    return { wasHandled: true, returnValue: false };
+    doSearchInExistingTab(request, sender, sendResponse);
+    return { wasHandled: true, returnValue: true };
   }
 
   return { wasHandled: false };

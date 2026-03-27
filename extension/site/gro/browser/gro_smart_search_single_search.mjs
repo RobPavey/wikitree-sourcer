@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { GroUriBuilder } from "../core/gro_uri_builder.mjs";
 import { showErrorDialog } from "./gro_smart_search_dialog.mjs";
+
 import { checkPermissionForSiteMatches } from "/base/browser/background/background_permissions.mjs";
 
 // Avoid creating this for every search
