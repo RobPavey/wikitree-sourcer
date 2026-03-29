@@ -30,6 +30,7 @@ import { doSearchGivenSearchData } from "./background_search.mjs";
 import { checkPermissionForSiteMatches } from "./background_permissions.mjs";
 
 import { buildScotlandsPeopleContextSearchData } from "../../../site/scotp/core/scotp_context_menu.mjs";
+import { logDebug } from "/base/core/log_debug.mjs";
 
 function openAncestryLink(tab, link, options) {
   // do not redirect sharing links when using library edition since that does not work
@@ -409,6 +410,28 @@ function openFindAGraveTemplate(tab, text) {
   }
 }
 
+function openNpTemplate(tab, text) {
+  logDebug("openNpTemplate, text is: ", text);
+
+  let link = "";
+
+  if (text.includes("Newspapers.com")) {
+    // {{Newspapers.com|194360652}}
+    let id = text.replace(/\{\{Newspapers.com\|([^}|]+)[^}]*\}\}/, "$1");
+    if (id && id != text) {
+      // https://www.newspapers.com/article/194360652
+      link = "https://www.newspapers.com/article/" + id;
+    }
+  }
+
+  if (link) {
+    callFunctionWithStoredOptions(function (options) {
+      const tabOption = options.context_general_newTabPos;
+      openInNewTab(link, tab, tabOption);
+    });
+  }
+}
+
 function openTemplate(info, tab) {
   let text = info.selectionText;
 
@@ -432,12 +455,10 @@ function openTemplate(info, tab) {
     openFamilySearchTemplate(tab, text);
   } else if (text.includes("FindAGrave")) {
     openFindAGraveTemplate(tab, text);
+  } else if (text.includes("Newspapers.com")) {
+    openNpTemplate(tab, text);
   } else {
-    // open unchanged link
-    callFunctionWithStoredOptions(function (options) {
-      const tabOption = options.context_general_newTabPos;
-      openInNewTab(text, tab, tabOption);
-    });
+    logDebug("openTemplate: template not supported: ", text);
   }
 }
 

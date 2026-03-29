@@ -24,6 +24,7 @@ SOFTWARE.
 
 import fs from "fs";
 import path from "path";
+import vm from "vm";
 import jsdom from "jsdom";
 const { JSDOM } = jsdom;
 
@@ -36,39 +37,53 @@ function testEnabled(parameters, testName) {
   return parameters.testName == "" || parameters.testName == testName;
 }
 
-// this is so that extract data code can call logDebug without exceptions
-const logDebugCode = `function logDebug(...args) {}`;
-
-// this is used because the <site>_extract_data.js files are not actually ESM modules
-// this is because they are loaded in the content scripts
-function loadExtractDataInWrapper(filePath) {
+function buildVmContext(filePath) {
   const absolutePath = path.resolve(filePath);
   const code = fs.readFileSync(absolutePath, "utf8");
-  const sourceMapComment = `\n//# sourceURL=${absolutePath}\n`;
-  // Wrap the code in a function that returns the extractData function
-  const wrapper = new Function(
-    "document",
-    "url",
-    "siteSpecificInput",
-    `${logDebugCode} ${code} ${sourceMapComment}; return extractData(document, url, siteSpecificInput);`
-  );
-  return wrapper;
+
+  // Create a context that includes your logDebugCode and any globals the script needs
+  const context = {
+    console: console,
+    // Add your logDebugCode logic here as actual functions/vars
+    URL: global.URL,
+    URLSearchParams: global.URLSearchParams,
+    TextEncoder: global.TextEncoder,
+    TextDecoder: global.TextDecoder,
+    logDebug: (...args) => {
+      /* your logic */
+    },
+  };
+  vm.createContext(context);
+
+  // Create the script object
+  const script = new vm.Script(code, {
+    filename: absolutePath,
+    lineOffset: 0, // This ensures line 1 of the file is line 1 in the debugger
+    columnOffset: 0,
+  });
+
+  // Run the code to define the functions in the context
+  script.runInContext(context);
+
+  return context;
+}
+
+function loadExtractDataInWrapper(filePath) {
+  let context = buildVmContext(filePath);
+
+  // Return a wrapper that calls the now-defined extractData
+  return function (document, url, siteSpecificInput) {
+    return context.extractData(document, url, siteSpecificInput);
+  };
 }
 
 function loadExtractDataFromFetchInWrapper(filePath) {
-  const absolutePath = path.resolve(filePath);
-  const code = fs.readFileSync(absolutePath, "utf8");
-  const sourceMapComment = `\n//# sourceURL=${absolutePath}\n`;
-  // Wrap the code in a function that returns the extractDataFromFetch function
-  const wrapper = new Function(
-    "document",
-    "url",
-    "dataObjects",
-    "sessionId",
-    "options",
-    `${logDebugCode} ${code} ${sourceMapComment}; return extractDataFromFetch(document, url, dataObjects, sessionId, options);`
-  );
-  return wrapper;
+  let context = buildVmContext(filePath);
+
+  // Return a wrapper that calls the now-defined extractData
+  return function (document, url, dataObjects, sessionId, options) {
+    return context.extractDataFromFetch(document, url, dataObjects, sessionId, options);
+  };
 }
 
 // The regressionData passed in must be an array of testData objects.
