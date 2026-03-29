@@ -965,6 +965,12 @@ function generalizeDataGivenRecordType(ed, result) {
           householdMember.isClosed = true;
         } else {
           let name = member.fullName;
+          if (!name && member.surname) {
+            name = member.surname;
+            if (member.givenName) {
+              name = member.givenName + " " + name;
+            }
+          }
           if (name) {
             householdMember.name = name;
             fieldsEncountered.name = true;

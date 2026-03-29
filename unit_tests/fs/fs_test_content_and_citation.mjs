@@ -333,6 +333,11 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:K438-8WS",
   },
   {
+    // not getting the persons name or the names for census table (saved Mar 2026)
+    caseName: "us_census_1950_barbara_laflame",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6F3R-CFVH?lang=en",
+  },
+  {
     caseName: "us_census_1950_robert_stanton",
     url: "https://www.familysearch.org/ark:/61903/1:1:6XVR-FRK3",
   },
