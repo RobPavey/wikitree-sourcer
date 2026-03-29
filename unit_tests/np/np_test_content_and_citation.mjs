@@ -67,6 +67,11 @@ const regressionData = [
     caseName: "us_1991_gladys_mccloskey_obit",
     url: "https://www.newspapers.com/article/the-bangor-daily-news-obituary-for-glady/194000691/",
   },
+  {
+    // Mar 2026 format
+    caseName: "us_2000_bill_lorts_death",
+    url: "https://www.newspapers.com/article/arizona-republic-bill-lorts-84-death/194360652/",
+  },
 ];
 
 async function runTests(testManager) {

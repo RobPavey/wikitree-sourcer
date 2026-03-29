@@ -96,7 +96,9 @@ function extractMar2026Format(document, result) {
 
   if (pageNumberElement) {
     let text = pageNumberElement.textContent;
-    let parts = text.split(" ");
+    // Can have multiple spaces. e.g.:
+    // Page  26
+    let parts = text.split(/\s+/);
     if (parts.length == 2) {
       result.pageNumber = parts[1];
     }
