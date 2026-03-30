@@ -10,9 +10,7 @@
     "128": "images/wikitree_sourcer128.png"
   },
   "background": {
-    "scripts": [
-      "base/browser/background/background.mjs"
-    ],
+    "service_worker": "base/browser/background/background.mjs",
     "type": "module"
   },
   "action": {
