@@ -62,6 +62,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "KWDZ-H37"
+    }
+  ],
   "personRepoRef": "KWDZ-H37",
   "hasValidData": true
 }

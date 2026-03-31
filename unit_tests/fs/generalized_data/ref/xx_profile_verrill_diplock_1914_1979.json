@@ -78,6 +78,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "LBGV-4TR"
+    }
+  ],
   "personRepoRef": "LBGV-4TR",
   "hasValidData": true
 }

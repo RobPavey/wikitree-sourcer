@@ -3687,6 +3687,8 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
     if (document) {
       result.url = document.URL;
     }
+  } else {
+    result.url = url;
   }
 
   if (fetchType == "person") {

@@ -107,6 +107,23 @@ function extractFsImageIdFromUrl(imageUrl) {
   return "";
 }
 
+function extractFsPersonIdFromUrl(personUrl) {
+  if (!personUrl) {
+    return "";
+  }
+
+  // the recordUrl should look like one of these:
+  // https://www.familysearch.org/en/tree/person/details/L62P-39Y
+  // https://www.familysearch.org/en/tree/person/sources/L62P-39Y
+  let personId = extractIdFromFsUrl(personUrl, ["tree/person/details/", "tree/person/sources/"], ["/", "?"]);
+
+  if (personId.length > 5) {
+    return personId;
+  }
+
+  return "";
+}
+
 function buildFsImageLinkOrTemplate(imageUrl, alwaysUseTemplateIfPossible = false) {
   if (!imageUrl) {
     return "";
@@ -189,6 +206,7 @@ function buildExternalLinkOrTemplate(digitalArtifact) {
 export {
   extractFsRecordIdFromUrl,
   extractFsImageIdFromUrl,
+  extractFsPersonIdFromUrl,
   extractFindAGraveMemorialIdFromUrl,
   buildFsRecordLinkOrTemplate,
   buildFsImageLinkOrTemplate,

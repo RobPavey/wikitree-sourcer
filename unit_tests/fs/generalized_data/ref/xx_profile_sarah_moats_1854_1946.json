@@ -132,6 +132,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "MQWP-4VQ"
+    }
+  ],
   "personRepoRef": "MQWP-4VQ",
   "hasValidData": true
 }

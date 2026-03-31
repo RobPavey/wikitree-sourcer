@@ -35,6 +35,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "KZKS-T46"
+    }
+  ],
   "personRepoRef": "KZKS-T46",
   "hasValidData": true
 }

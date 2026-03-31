@@ -39,6 +39,7 @@ import { logDebug } from "../../../base/core/log_debug.mjs";
 import {
   extractFsRecordIdFromUrl,
   extractFsImageIdFromUrl,
+  extractFsPersonIdFromUrl,
   extractFindAGraveMemorialIdFromUrl,
   buildFsRecordLinkOrTemplate,
   buildFsImageLinkOrTemplate,
@@ -1101,6 +1102,8 @@ function addWtSearchIds(ed, result) {
     }
   } else if (ed.pageType == "image") {
     addFsId(wtIds, extractFsImageIdFromUrl(ed.url));
+  } else if (ed.pageType == "person") {
+    addFsId(wtIds, extractFsPersonIdFromUrl(ed.url));
   }
 
   if (ed.digitalArtifact) {

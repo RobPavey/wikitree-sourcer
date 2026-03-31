@@ -146,6 +146,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "G3P6-NQB"
+    }
+  ],
   "personRepoRef": "G3P6-NQB",
   "hasValidData": true
 }

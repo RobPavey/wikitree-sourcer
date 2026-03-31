@@ -95,6 +95,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "L64W-R4Z"
+    }
+  ],
   "personRepoRef": "L64W-R4Z",
   "hasValidData": true
 }

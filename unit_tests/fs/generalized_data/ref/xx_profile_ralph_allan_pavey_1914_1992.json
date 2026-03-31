@@ -50,6 +50,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "GX7Z-VKW"
+    }
+  ],
   "personRepoRef": "GX7Z-VKW",
   "hasValidData": true
 }

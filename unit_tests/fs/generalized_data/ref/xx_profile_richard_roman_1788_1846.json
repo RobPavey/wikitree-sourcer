@@ -112,6 +112,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "LDQL-N2Q"
+    }
+  ],
   "personRepoRef": "LDQL-N2Q",
   "hasValidData": true
 }
