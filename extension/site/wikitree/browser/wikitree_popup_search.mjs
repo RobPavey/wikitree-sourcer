@@ -33,10 +33,31 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import { doSearch, registerSearchMenuItemFunction, openUrlInNewTab } from "/base/browser/popup/popup_search.mjs";
+import {
+  doSearch,
+  registerSearchMenuItemFunction,
+  openUrlInNewTab,
+  dataHasName,
+} from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
+
+function shouldShowSearchMenuItem(data, filter) {
+  if (data.generalizedData.wtSearchIds && data.generalizedData.wtSearchIds.length) {
+    return true;
+  }
+
+  if (data.generalizedData.wtSearchTemplates && data.generalizedData.wtSearchTemplates.length) {
+    return true;
+  }
+
+  if (!dataHasName(data)) {
+    return false;
+  }
+
+  return true;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -94,13 +115,27 @@ async function wikitreePlusDoSearch(input) {
   });
 }
 
-async function wikitreeSearch(generalizedData) {
-  const input = {
-    typeOfSearch: "",
-    generalizedData: generalizedData,
-    options: options,
-  };
-  wikitreeDoSearch(input);
+async function wikitreeSearch(gd) {
+  let useStandardWtSearch = true;
+
+  if (!gd.inferFullName() && (gd.wtSearchTemplates || gd.wtSearchIds)) {
+    useStandardWtSearch = false;
+  }
+
+  if (useStandardWtSearch) {
+    const input = {
+      typeOfSearch: "",
+      generalizedData: gd,
+      options: options,
+    };
+    wikitreeDoSearch(input);
+  } else {
+    if (gd.wtSearchIds) {
+      wikitreePlusSearchForIdData(gd.wtSearchIds);
+    } else {
+      wikitreePlusSearchForTemplateData(gd.wtSearchTemplates);
+    }
+  }
 }
 
 async function wikitreePlusSearch(generalizedData) {
@@ -266,9 +301,13 @@ async function setupWikitreeSearchSubMenu(data, backFunction) {
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
-  addWikitreeSearchUsingWtPlusMenuItem(menu, data, backToHereFunction);
+  if (dataHasName(data)) {
+    addWikitreeSearchUsingWtPlusMenuItem(menu, data, backToHereFunction);
+  }
   addWikitreeSearchForUsageMenuItem(menu, data, backToHereFunction);
-  addWikitreeSearchWithParametersMenuItem(menu, data, backToHereFunction);
+  if (dataHasName(data)) {
+    addWikitreeSearchWithParametersMenuItem(menu, data, backToHereFunction);
+  }
 
   endMainMenu(menu);
 }
@@ -282,4 +321,4 @@ async function setupWikitreeSearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("wikitree", "WikiTree", addWikitreeDefaultSearchMenuItem, undefined);
+registerSearchMenuItemFunction("wikitree", "WikiTree", addWikitreeDefaultSearchMenuItem, shouldShowSearchMenuItem);

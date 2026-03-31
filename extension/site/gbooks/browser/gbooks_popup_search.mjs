@@ -24,9 +24,26 @@ SOFTWARE.
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
+import {
+  doSearch,
+  registerSearchMenuItemFunction,
+  dataHasName,
+  dataHasDate,
+} from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
+
+function shouldShowSearchMenuItem(data, filter) {
+  let nameFlag = dataHasName(data);
+  let dateFlag = dataHasDate(data);
+  let titleFlag = data.generalizedData.bookTitle ? true : false;
+
+  if (!(nameFlag || dateFlag || titleFlag)) {
+    return false;
+  }
+
+  return true;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -63,4 +80,4 @@ function addGbooksDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("gbooks", "Google Books", addGbooksDefaultSearchMenuItem, undefined);
+registerSearchMenuItemFunction("gbooks", "Google Books", addGbooksDefaultSearchMenuItem, shouldShowSearchMenuItem);

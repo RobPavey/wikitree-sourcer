@@ -1000,12 +1000,6 @@ function addBackMenuItem(menu, backFunction) {
   menu.list.appendChild(listItem);
 }
 
-function hasBirthOrDeathYear(data) {
-  let birthYear = data.generalizedData.inferBirthYear();
-  let deathYear = data.generalizedData.inferDeathYear();
-  return birthYear != "" || deathYear == "";
-}
-
 function isManualClassificationNeeded(data) {
   let result = {
     isRefTitleNeeded: false,
@@ -2103,7 +2097,6 @@ export {
   addSameEventMenuItem,
   setPopupMenuWidth,
   setupSearchCollectionsSubMenu,
-  hasBirthOrDeathYear,
   addBackMenuItem,
   addHelpMenuItem,
   addBuyMeACoffeeMenuItem,

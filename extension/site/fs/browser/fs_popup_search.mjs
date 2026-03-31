@@ -25,7 +25,6 @@ SOFTWARE.
 import {
   setupSearchCollectionsSubMenu,
   addSameRecordMenuItem,
-  hasBirthOrDeathYear,
   addBackMenuItem,
   addMenuItemWithSubMenu,
   addMenuItemWithSubtitle,
@@ -35,11 +34,16 @@ import {
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
+import {
+  doSearch,
+  registerSearchMenuItemFunction,
+  dataHasName,
+  dataHasDate,
+} from "/base/browser/popup/popup_search.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 
 function shouldShowSearchMenuItem(data, filter) {
-  if (!hasBirthOrDeathYear(data)) {
+  if (!dataHasName(data)) {
     return false;
   }
   return true;

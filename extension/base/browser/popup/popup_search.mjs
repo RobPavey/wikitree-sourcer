@@ -94,6 +94,26 @@ async function doSearch(loadedModule, input) {
   closePopup();
 }
 
+function dataHasName(data) {
+  let name = data.generalizedData.inferFullName();
+  return name != "";
+}
+
+function dataHasDate(data) {
+  let birthYear = data.generalizedData.inferBirthYear();
+  let deathYear = data.generalizedData.inferDeathYear();
+  let eventYear = data.generalizedData.inferEventYear();
+  // years could be blank or undefined
+  return birthYear || deathYear || eventYear;
+}
+
+function dataHasBirthOrDeathDate(data) {
+  let birthYear = data.generalizedData.inferBirthYear();
+  let deathYear = data.generalizedData.inferDeathYear();
+  // years could be blank or undefined
+  return birthYear || deathYear;
+}
+
 function testFilterForDatesAndCountries(filter, siteConstraints) {
   let siteStartYear = siteConstraints.startYear;
   let siteEndYear = siteConstraints.endYear;
@@ -213,6 +233,11 @@ function testGeneralizedDataForDatesAndCountries(gd, siteConstraints) {
 }
 
 function shouldShowSiteSearch(gd, filter, siteConstraints) {
+  let name = gd.inferFullName();
+  if (!name) {
+    return false;
+  }
+
   if (filter) {
     if (!testFilterForDatesAndCountries(filter, siteConstraints)) {
       return false;
@@ -619,6 +644,8 @@ async function addSearchMenus(menu, data, backFunction, excludeSite) {
     }
   }
 
+  let countOfMenuItemsAdded = topMenuFunctionList.length;
+
   await restorePopupSearchFilterState();
 
   let gd = data.generalizedData;
@@ -637,14 +664,23 @@ async function addSearchMenus(menu, data, backFunction, excludeSite) {
     subMenuText = "Search...";
   }
 
-  // If the top level menu is showing every single search site option then there is no need for
-  // a submenu
-  if (topMenuFunctionList.length < registeredSearchMenuItemFunctions.length) {
-    // add the "All search sites.." submenu item
-    addMenuItem(menu, subMenuText, function (element) {
-      setupAllSitesSubmenu(data, filter, backFunction, excludeSite);
-    });
+  // If the top-level menu is showing as many items as the sub-menu could show with no filters
+  // then don't show the "Shaow All Search Sites" item
+  let subMenuFunctions = buildSubMenuItemFunctions(data, null, excludeSite);
+  console.log("subMenuFunctions is: ", subMenuFunctions);
+  if (subMenuFunctions.functionList.length > topMenuFunctionList.length) {
+    // If the top level menu is showing every single search site option then there is no need for
+    // a submenu
+    if (topMenuFunctionList.length < registeredSearchMenuItemFunctions.length) {
+      // add the "All search sites.." submenu item
+      addMenuItem(menu, subMenuText, function (element) {
+        setupAllSitesSubmenu(data, filter, backFunction, excludeSite);
+      });
+      countOfMenuItemsAdded++;
+    }
   }
+
+  return countOfMenuItemsAdded;
 }
 
 function registerSearchMenuItemFunction(siteName, siteTitle, menuItemFunction, shouldShowFunction) {
@@ -820,4 +856,7 @@ export {
   getReproductiveYearRangeForCouple,
   getPossibleDeathRange,
   getYearRangeAsText,
+  dataHasName,
+  dataHasDate,
+  dataHasBirthOrDeathDate,
 };

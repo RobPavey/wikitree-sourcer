@@ -12,6 +12,9 @@
     "placeString": "Eagleville, Montgomery, Pennsylvania, USA"
   },
   "personGender": "female",
+  "wtSearchTemplates": [
+    "{{Ancestry Tree|208562775|192735105415}}"
+  ],
   "spouses": [
     {
       "name": {

@@ -25,7 +25,6 @@ SOFTWARE.
 import {
   setupSearchCollectionsSubMenu,
   addSameRecordMenuItem,
-  hasBirthOrDeathYear,
   addBackMenuItem,
   addMenuItemWithSubMenu,
   addMenuItem,
@@ -35,7 +34,7 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, dataHasName } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -43,7 +42,7 @@ function shouldShowSearchMenuItem(data, filter) {
   if (options.search_ancestry_domain == "none") {
     return false;
   }
-  if (!hasBirthOrDeathYear(data)) {
+  if (!dataHasName(data)) {
     return false;
   }
   return true;

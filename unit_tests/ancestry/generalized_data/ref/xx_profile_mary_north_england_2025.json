@@ -59,5 +59,8 @@
       ]
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Tree|86808578|82009850755}}"
+  ],
   "hasValidData": true
 }

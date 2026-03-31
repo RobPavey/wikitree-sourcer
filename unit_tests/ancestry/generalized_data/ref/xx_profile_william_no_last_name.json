@@ -5,6 +5,9 @@
     "forenames": "William"
   },
   "personGender": "male",
+  "wtSearchTemplates": [
+    "{{Ancestry Tree|86808578|262544635265}}"
+  ],
   "parents": {
     "father": {
       "name": {

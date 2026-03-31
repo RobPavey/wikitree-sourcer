@@ -714,6 +714,11 @@ async function setupFsPopupMenu(extractedData, tabId) {
     addFsBuildHouseholdTableMenuItem(menu, data);
     addFsOpenExternalImageMenuItem(menu, data);
   } else if (extractedData.pageType == "image") {
+    let count = await addSearchMenus(menu, data, backFunction, "fs");
+    if (count) {
+      addMenuDivider(menu);
+    }
+
     addFsImageBuildCitationMenuItems(menu, data);
   } else if (extractedData.pageType == "person") {
     await addSearchMenus(menu, data, backFunction, "fs");

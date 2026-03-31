@@ -34,8 +34,23 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
-import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
+import {
+  doSearch,
+  registerSearchMenuItemFunction,
+  dataHasName,
+  dataHasDate,
+} from "/base/browser/popup/popup_search.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
+
+function shouldShowSearchMenuItem(data, filter) {
+  if (!dataHasName(data)) {
+    return false;
+  }
+  if (!dataHasDate(data)) {
+    return false;
+  }
+  return true;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -148,4 +163,4 @@ async function setupMhSearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("mh", "MyHeritage", addMhDefaultSearchMenuItem, undefined);
+registerSearchMenuItemFunction("mh", "MyHeritage", addMhDefaultSearchMenuItem, shouldShowSearchMenuItem);

@@ -3055,6 +3055,9 @@ function generalizeProfileData(input, result) {
     if (namesValid) {
       result.setLastNameAndForenames(surname, givenName);
     }
+
+    // Template search data
+    addWtSearchTemplates(ed, result);
   }
 
   function addBirthAndDeathDatesFromSubtitle(person, subtitle) {

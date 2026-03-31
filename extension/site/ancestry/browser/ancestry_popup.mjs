@@ -1480,6 +1480,11 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
     addAncestryGoToImageMenuItem(menu, data);
     await addAncestryAddCommentMenuItem(menu, data, tabId);
   } else if (extractedData.pageType == "image") {
+    let count = await addSearchMenus(menu, data, backFunction, "ancestry");
+    if (count) {
+      addMenuDivider(menu);
+    }
+
     addAncestryImageBuildCitationMenuItems(menu, data);
     addAncestryBuildSharingTemplateMenuItem(menu, data);
     addAncestryBuildSharingUrlMenuItem(menu, data);
