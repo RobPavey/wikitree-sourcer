@@ -1113,6 +1113,15 @@ function extractData(document, url) {
     }
   }
 
+  // Sometimes we get a URL like:
+  // https://familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&view=index&groupId=M9C5-PB5
+  // instead of:
+  // https://www.familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&view=index&groupId=M9C5-PB5
+  // This throws of the tests below. So modify the URL/
+  if (url.startsWith("https://familysearch.org")) {
+    url = url.replace("https://familysearch.org", "https://www.familysearch.org");
+  }
+
   result.url = url;
 
   // first determine what kind of page we are in.
