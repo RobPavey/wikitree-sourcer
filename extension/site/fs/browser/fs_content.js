@@ -469,28 +469,71 @@ function wtPlusApiGetProfilesUsingFsId(idString) {
   return wtPlusApiCall(url);
 }
 
-function addWikiTreeIcon(nameElement, profiles) {
-  // Define  SVG icons
-  const svgSingle = `data:image/svg+xml;utf8,
+function getSpanElementToAddIconTo(element) {
+  if (element.tagName == "SPAN") {
+    return element;
+  }
+
+  let enclosingDiv = element.closest("div");
+  if (enclosingDiv) {
+    let spanElement = enclosingDiv.querySelector("h1 span");
+    if (spanElement) {
+      return spanElement;
+    }
+  }
+
+  // for record pages the title is not actually a span, it is a div
+  if (element.tagName == "DIV") {
+    let enclosingH1 = element.closest("h1");
+    if (enclosingH1) {
+      return element;
+    }
+  }
+
+  // for other people on a record page
+  if (element.tagName == "A") {
+    let enclosingSpan = element.closest("span");
+    if (enclosingSpan) {
+      return enclosingSpan;
+    }
+  }
+}
+
+// Define  SVG icons
+const svgSingle = `data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
   <path d="M15 12H8M8 12L11 9M8 12L11 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>`;
 
-  const svgMultiple = `data:image/svg+xml;utf8,
+const svgMultiple = `data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
   <path d="M10 8L7 12L10 16M17 8L14 12L17 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>`;
 
-  const svgMultipleOverlap = `data:image/svg+xml;utf8,
+const svgMultipleOverlap = `data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <circle cx="14" cy="10" r="9" fill="%23ffaf02" stroke="white" stroke-width="1.5" opacity="0.6"/>
   <circle cx="10" cy="14" r="9" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
   <path d="M12 14H8M8 14L10 12M8 14L10 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>`;
 
-  if (profiles.length < 1) {
+function addWikiTreeIcon(element, wikiIds) {
+  console.log("addWikiTreeIcon", element);
+
+  let spanElement = getSpanElementToAddIconTo(element);
+  if (!spanElement) {
+    console.log("no span element found for element", element);
+    return;
+  }
+
+  if (spanElement.querySelector(".wt-sourcer-icon")) {
+    // already has icon
+    return;
+  }
+
+  if (wikiIds.length < 1) {
     console.log("addWikiTreeIcon, profiles length less than 1");
     return;
   }
@@ -498,48 +541,64 @@ function addWikiTreeIcon(nameElement, profiles) {
   let svgIcon = null;
   let titleText = "";
 
-  if (profiles.length > 1) {
+  if (wikiIds.length > 1) {
     svgIcon = svgMultipleOverlap;
-    titleText = `Referenced from ${profiles.length} WikiTree profiles`;
+    titleText = `Referenced from ${wikiIds.length} WikiTree profiles`;
   } else {
     svgIcon = svgSingle;
-    titleText = `Referenced from WikiTree profile: ${profiles[0].wikitreeID}`;
+    titleText = `Referenced from WikiTree profile: ${wikiIds[0].wikitreeID}`;
   }
 
-  if (nameElement) {
-    let div = nameElement.parentElement;
-    if (div) {
-      const img = document.createElement("img");
+  if (spanElement) {
+    const img = document.createElement("img");
 
-      // 3. Set the source to your SVG string
-      img.src = svgIcon;
+    // 3. Set the source to your SVG string
+    img.src = svgIcon;
 
-      // 4. Add styling for alignment and spacing
-      img.style.width = "24px";
-      img.style.height = "24px";
-      img.style.marginLeft = "12px";
-      img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
-      img.style.position = "relative";
-      img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
-      img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+    // 4. Add styling for alignment and spacing
+    img.style.width = "24px";
+    img.style.height = "24px";
+    img.style.marginLeft = "12px";
+    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
+    img.style.position = "relative";
+    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
+    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
 
-      img.style.cursor = "pointer";
-      img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
+    img.style.cursor = "pointer";
+    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
 
-      // 5. Add a tooltip for clarity
-      img.title = titleText;
+    // 5. Add a tooltip for clarity
+    img.title = titleText;
 
-      img.addEventListener("mouseenter", () => {
-        img.style.filter = "brightness(1.1)"; // Makes the orange pop more
-      });
+    // Set initial filter
+    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+    img.style.filter = normalFilter;
 
-      img.addEventListener("mouseleave", () => {
-        img.style.filter = "none";
-      });
+    img.addEventListener("mouseenter", () => {
+      img.style.filter = `${normalFilter} brightness(1.1)`;
+    });
 
-      // 6. Inject it next to the name
-      nameElement.appendChild(img);
+    img.addEventListener("mouseleave", () => {
+      img.style.filter = normalFilter;
+    });
+
+    // create an anchor element
+    const anchorElement = document.createElement("a");
+    if (wikiIds.length > 1) {
+      let fsId = extractFsIdFromElement(element);
+      let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
+      wtPlusUrl += "FamilySearch=" + fsId;
+      anchorElement.setAttribute("href", wtPlusUrl);
+    } else {
+      anchorElement.setAttribute("href", "https://www.wikitree.com/wiki/" + wikiIds[0]);
     }
+
+    anchorElement.target = "_blank";
+    anchorElement.style.textDecoration = "none";
+
+    // 6. Inject it next to the name
+    anchorElement.appendChild(img);
+    spanElement.appendChild(anchorElement);
   }
 }
 
@@ -596,6 +655,9 @@ async function processPendingIcons() {
         addWikiIdToElements(profile.records, profile.wikitreeID);
         addWikiIdToElements(profile.recordImages, profile.wikitreeID);
       });
+
+      //console.log("elementToWikiId is", elementToWikiId);
+
       // now add icons
       for (const [element, wikiIds] of elementToWikiId) {
         addWikiTreeIcon(element, wikiIds);
@@ -605,6 +667,7 @@ async function processPendingIcons() {
     console.error("Batch fetch failed", error);
   }
 }
+
 function getFsIdFromUrl(url) {
   //console.log("getFsIdFromUrl ", url);
 
@@ -662,6 +725,12 @@ function extractFsIdFromElement(element) {
       if (fsId) {
         return fsId;
       }
+    } else if (element.tagName == "OL") {
+      // this is the OL after a heading typically
+      let fsId = getFsIdFromUrl(document.URL);
+      if (fsId) {
+        return fsId;
+      }
     } else {
       console.log("no fsId found for element ", element);
     }
@@ -681,10 +750,11 @@ function initWtIconInjection() {
 
     // Find all possible ID containers (Names, Parents, Children)
     // FamilySearch often uses specific data-testids or classes for these
-    const candidates = document.querySelectorAll("[data-testid='fullName'], nav ol");
+    const candidates = document.querySelectorAll("[data-testid='fullName'], nav ol, main h1 > div, tr > th > span > a");
 
     candidates.forEach((el) => {
-      if (!el.querySelector(".wt-sourcer-icon")) {
+      let spanElement = getSpanElementToAddIconTo(el);
+      if (spanElement && !spanElement.querySelector(".wt-sourcer-icon")) {
         const fsId = extractFsIdFromElement(el); // Helper to get ID from href or text
         if (fsId) {
           if (!pendingFsIds.has(fsId)) pendingFsIds.set(fsId, []);
