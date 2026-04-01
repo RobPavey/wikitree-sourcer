@@ -441,9 +441,6 @@ function additionalMessageHandler(request, sender, sendResponse) {
 siteContentInit("fs", extractHandler, additionalMessageHandler);
 
 function wtPlusApiCall(url) {
-  //console.log("wtApiCall: body is:");
-  //console.log(body);
-
   return new Promise((resolve, reject) => {
     chrome.runtime.sendMessage(
       {
@@ -451,17 +448,16 @@ function wtPlusApiCall(url) {
         url: url,
       },
       (response) => {
-        if (chrome.runtime.lastError) {
-          console.log("wtPlusApiCall ERROR: lastError is:", chrome.runtime.lastError);
-          reject(chrome.runtime.lastError);
-          return;
-        }
-        if (response.success) {
-          console.log("wtPlusApiCall: response is:", response);
-          resolve(response.data);
+        if (response && response.success) {
+          resolve(JSON.parse(response.rawData));
         } else {
-          console.log("wtPlusApiCall ERROR: response is:", response);
-          reject(response.error);
+          if (chrome.runtime.lastError) {
+            reject(chrome.runtime.lastError);
+          } else if (response.error) {
+            reject(response.error);
+          } else {
+            reject("No response");
+          }
         }
       }
     );
@@ -510,9 +506,7 @@ function addWikiTreeIcon(nameElement, profiles) {
     titleText = `Referenced from WikiTree profile: ${profiles[0].wikitreeID}`;
   }
 
-  console.log("addTestIcon");
   if (nameElement) {
-    console.log("nameElement found");
     let div = nameElement.parentElement;
     if (div) {
       const img = document.createElement("img");
@@ -549,89 +543,193 @@ function addWikiTreeIcon(nameElement, profiles) {
   }
 }
 
-async function queryAndAddWikiTreeIcons(nameElement) {
-  let url = document.URL;
-  if (!url) {
+var pendingFsIds = new Map(); // Maps FS ID -> Array of DOM elements needing that icon
+var debounceTimer = null;
+
+async function processPendingIcons() {
+  // Check if the extension is still "alive"
+  if (!chrome.runtime?.id) {
+    console.log("WikiTree Sourcer: Context invalidated, stopping batch.");
     return;
   }
 
-  let idsString = "";
+  const idsToQuery = Array.from(pendingFsIds.keys()).join(",");
+  //console.log("processPendingIcons, idsToQuery is: ", idsToQuery);
+  if (!idsToQuery) return;
 
-  function addId(id) {
-    if (idsString) {
-      idsString += ",";
+  // Clear the map immediately so new mutations start a fresh batch
+  const currentBatch = new Map(pendingFsIds);
+  pendingFsIds.clear();
+
+  try {
+    const response = await wtPlusApiGetProfilesUsingFsId(idsToQuery);
+    //console.log("processPendingIcons, response is: ", response);
+    if (response.response?.profiles) {
+      // create a map of element to wtIds
+      let elementToWikiId = new Map();
+
+      function addWikiIdToElement(element, wikiId) {
+        let existingElementWikiIdList = elementToWikiId.get(element);
+        if (!existingElementWikiIdList) {
+          elementToWikiId.set(element, []);
+          existingElementWikiIdList = elementToWikiId.get(element);
+        }
+        if (!existingElementWikiIdList.includes(wikiId)) {
+          existingElementWikiIdList.push(wikiId);
+        }
+      }
+
+      function addWikiIdToElements(fsIdList, wikiId) {
+        for (let fsId of fsIdList) {
+          let elements = currentBatch.get(fsId);
+          if (elements) {
+            for (let element of elements) {
+              addWikiIdToElement(element, wikiId);
+            }
+          }
+        }
+      }
+
+      // record the profiles that reference the elements fsId for the currentBatch
+      response.response.profiles.forEach((profile) => {
+        addWikiIdToElements(profile.persons, profile.wikitreeID);
+        addWikiIdToElements(profile.records, profile.wikitreeID);
+        addWikiIdToElements(profile.recordImages, profile.wikitreeID);
+      });
+      // now add icons
+      for (const [element, wikiIds] of elementToWikiId) {
+        addWikiTreeIcon(element, wikiIds);
+      }
     }
-    idsString += id;
+  } catch (error) {
+    console.error("Batch fetch failed", error);
+  }
+}
+function getFsIdFromUrl(url) {
+  //console.log("getFsIdFromUrl ", url);
+
+  // strip the domain off so that this works for either a full URL or a relative HREF
+  const domainRegex = /^http.*familysearch\.org/;
+  if (domainRegex.test(url)) {
+    url = url.replace(domainRegex, "");
   }
 
   // A person url should look like one of these:
   // https://www.familysearch.org/en/tree/person/details/L62P-39Y
   // https://www.familysearch.org/en/tree/person/sources/L62P-39Y
-  const personRegex = /^http.*\/tree\/person\/[^\/]+\/([A-Z0-9\-]+).*$/;
+  // But an href can be:
+  // /en/tree/person/L62P-39Y
+  const personRegex = /^.*\/tree\/person\/(?:[^\/]+\/)?([A-Z0-9\-]+).*$/;
   // An image URL  should look like one of these:
   // https://familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&view=index&groupId=M9C5-PB5
-  const imageRegex = /^http.*\/ark\:\/\d+\/\d\:\d\:([A-Z0-9\-]+).*$/;
+  const imageRegex = /^.*\/ark\:\/\d+\/\d\:\d\:([A-Z0-9\-]+).*$/;
 
   if (personRegex.test(url)) {
     let personId = url.replace(personRegex, "$1");
-    console.log("personId is:", personId);
+    //console.log("personId is:", personId);
 
     if (personId.length > 5) {
-      addId(personId);
+      return personId;
     }
   } else if (imageRegex.test(url)) {
     let imageId = url.replace(imageRegex, "$1");
-    console.log("imageId is:", imageId);
+    //console.log("imageId is:", imageId);
 
     if (imageId.length > 5) {
-      addId(imageId);
+      return imageId;
     }
-  }
-
-  console.log("idsString is:", idsString);
-
-  try {
-    let response = await wtPlusApiGetProfilesUsingFsId(idsString);
-
-    console.log("API response is:", response);
-
-    if (response.response?.profiles) {
-      addWikiTreeIcon(nameElement, response.response?.profiles);
-    }
-  } catch (error) {
-    console.error("Error in queryAndAddWikiTreeIcons:", error);
+  } else {
+    console.log("getFsIdFromUrl no match for ", url);
   }
 }
 
-const observer = new MutationObserver((mutations, obs) => {
-  console.log("MutationObserver called", mutations);
-
-  let elementForIcon = document.querySelector("[data-testid='fullName']");
-
-  if (!elementForIcon) {
-    const breadcrumbs = document.querySelector("nav ol.breadcrumbsCss_b1m5heon");
-    // Even if 'breadcrumbsCss' changes, 'nav ol' is very specific.
-    if (breadcrumbs) {
-      console.log("breadcrumbs found");
-      const headerCell = breadcrumbs.closest("div");
-      elementForIcon = headerCell.querySelector("h1 span");
+function extractFsIdFromElement(element) {
+  // We found an element that could be a place where an icon could be added
+  let enclosingLinkElement = element.closest("a");
+  if (enclosingLinkElement) {
+    let href = enclosingLinkElement.getAttribute("href");
+    if (href) {
+      let fsId = getFsIdFromUrl(href);
+      if (fsId) {
+        return fsId;
+      }
+    }
+  } else {
+    // could be the top level heading
+    let enclosingH1Element = element.closest("h1");
+    if (enclosingH1Element) {
+      let fsId = getFsIdFromUrl(document.URL);
+      if (fsId) {
+        return fsId;
+      }
+    } else {
+      console.log("no fsId found for element ", element);
     }
   }
+}
 
-  if (elementForIcon) {
-    console.log("elementForIcon found:", elementForIcon);
+function initWtIconInjection() {
+  // Check if we've already initialized to prevent double-observers
+  if (window.hasWtIconInjectionStarted) return;
 
-    // Check if we already added the icon to avoid duplicates
-    if (!elementForIcon.querySelector(".wt-sourcer-icon")) {
-      queryAndAddWikiTreeIcons(elementForIcon);
+  window.hasWtIconInjectionStarted = true;
+
+  const observer = new MutationObserver((mutations) => {
+    //console.log("MutationObserver called", mutations);
+
+    let foundNew = false;
+
+    // Find all possible ID containers (Names, Parents, Children)
+    // FamilySearch often uses specific data-testids or classes for these
+    const candidates = document.querySelectorAll("[data-testid='fullName'], nav ol");
+
+    candidates.forEach((el) => {
+      if (!el.querySelector(".wt-sourcer-icon")) {
+        const fsId = extractFsIdFromElement(el); // Helper to get ID from href or text
+        if (fsId) {
+          if (!pendingFsIds.has(fsId)) pendingFsIds.set(fsId, []);
+          pendingFsIds.get(fsId).push(el);
+          foundNew = true;
+        }
+      }
+    });
+
+    if (foundNew) {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(processPendingIcons, 300); // Wait 300ms of "silence"
     }
-    // If you only need to do this once, you can stop observing:
-    obs.disconnect();
-  }
-});
+  });
 
-// Start watching the body for changes
-observer.observe(document.body, {
-  childList: true,
-  subtree: true,
-});
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+
+  //console.log("WikiTree Sourcer: Observer started.");
+}
+
+async function checkOptionsAndInitWtIconInjection() {
+  chrome.runtime.sendMessage(
+    {
+      type: "getOptions",
+    },
+    function (response) {
+      // We get a response with the loaded options
+      if (response && response.success) {
+        const options = response.options;
+        if (options) {
+          if (options.citation_ancestry_addEditCitationButton) {
+            initWtIconInjection();
+          }
+        }
+      }
+    }
+  );
+}
+
+// Only start once the window is fully loaded
+if (document.readyState === "complete") {
+  checkOptionsAndInitWtIconInjection();
+} else {
+  window.addEventListener("load", checkOptionsAndInitWtIconInjection);
+}
