@@ -36,7 +36,7 @@ SOFTWARE.
 
 function logDebug(...args) {
   const debugConfig = {
-    enabled: true,
+    enabled: false,
 
     showTimestamp: false,
     showDebugText: false,
