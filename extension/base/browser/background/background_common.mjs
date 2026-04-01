@@ -50,6 +50,19 @@ async function handleGetPlatformInfoMessage(request, sendResponse) {
   sendResponse(response);
 }
 
+async function doWtPlusApiCall(request, sendResponse) {
+  console.log("doWtPlusApiCall, request is:", request);
+
+  let fecthURL = request.url;
+
+  fetch(fecthURL)
+    .then((response) => response.json())
+    .then((data) => sendResponse({ success: true, data: data }))
+    .catch((error) => sendResponse({ success: false, error: error.message }));
+
+  return true; // Keep the message channel open for the async response
+}
+
 // Listen for messages (from the popup script mostly)
 function messageHandler(request, sender, sendResponse) {
   // Request should have these fields
@@ -93,6 +106,9 @@ function messageHandler(request, sender, sendResponse) {
     return true;
   } else if (request.type == "getPlatformInfo") {
     handleGetPlatformInfoMessage(request, sendResponse);
+    return true;
+  } else if (request.type == "doWtPlusApiCall") {
+    doWtPlusApiCall(request, sendResponse);
     return true;
   }
   //else if (request.type == "updateContextMenu") {

@@ -439,3 +439,202 @@ function additionalMessageHandler(request, sender, sendResponse) {
 }
 
 siteContentInit("fs", extractHandler, additionalMessageHandler);
+
+/*
+function wtPlusApiCall(url) {
+  //console.log("wtApiCall: body is:");
+  //console.log(body);
+
+  return new Promise((resolve, reject) => {
+    chrome.runtime.sendMessage(
+      {
+        type: "doWtPlusApiCall",
+        url: url,
+      },
+      (response) => {
+        if (chrome.runtime.lastError) {
+          console.log("wtPlusApiCall ERROR: lastError is:", chrome.runtime.lastError);
+          reject(chrome.runtime.lastError);
+          return;
+        }
+        if (response.success) {
+          console.log("wtPlusApiCall: response is:", response);
+          resolve(response.data);
+        } else {
+          console.log("wtPlusApiCall ERROR: response is:", response);
+          reject(response.error);
+        }
+      }
+    );
+  });
+}
+
+function wtPlusApiGetProfilesUsingFsId(idString) {
+  let url = `https://plus.wikitree.com/function/wtFamilySearch/Sourcer.json?query=${idString}`;
+  return wtPlusApiCall(url);
+}
+
+function addWikiTreeIcon(nameElement, profiles) {
+  // Define  SVG icons
+  const svgSingle = `data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
+  <path d="M15 12H8M8 12L11 9M8 12L11 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>`;
+
+  const svgMultiple = `data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
+  <path d="M10 8L7 12L10 16M17 8L14 12L17 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>`;
+
+  const svgMultipleOverlap = `data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <circle cx="14" cy="10" r="9" fill="%23ffaf02" stroke="white" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="10" cy="14" r="9" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
+  <path d="M12 14H8M8 14L10 12M8 14L10 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>`;
+
+  if (profiles.length < 1) {
+    console.log("addWikiTreeIcon, profiles length less than 1");
+    return;
+  }
+
+  let svgIcon = null;
+  let titleText = "";
+
+  if (profiles.length > 1) {
+    svgIcon = svgMultipleOverlap;
+    titleText = `Referenced from ${profiles.length} WikiTree profiles`;
+  } else {
+    svgIcon = svgSingle;
+    titleText = `Referenced from WikiTree profile: ${profiles[0].wikitreeID}`;
+  }
+
+  console.log("addTestIcon");
+  if (nameElement) {
+    console.log("nameElement found");
+    let div = nameElement.parentElement;
+    if (div) {
+      const img = document.createElement("img");
+
+      // 3. Set the source to your SVG string
+      img.src = svgIcon;
+
+      // 4. Add styling for alignment and spacing
+      img.style.width = "24px";
+      img.style.height = "24px";
+      img.style.marginLeft = "12px";
+      img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
+      img.style.position = "relative";
+      img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
+      img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+
+      img.style.cursor = "pointer";
+      img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
+
+      // 5. Add a tooltip for clarity
+      img.title = titleText;
+
+      img.addEventListener("mouseenter", () => {
+        img.style.filter = "brightness(1.1)"; // Makes the orange pop more
+      });
+
+      img.addEventListener("mouseleave", () => {
+        img.style.filter = "none";
+      });
+
+      // 6. Inject it next to the name
+      nameElement.appendChild(img);
+    }
+  }
+}
+
+async function queryAndAddWikiTreeIcons(nameElement) {
+  let url = document.URL;
+  if (!url) {
+    return;
+  }
+
+  let idsString = "";
+
+  function addId(id) {
+    if (idsString) {
+      idsString += ",";
+    }
+    idsString += id;
+  }
+
+  // A person url should look like one of these:
+  // https://www.familysearch.org/en/tree/person/details/L62P-39Y
+  // https://www.familysearch.org/en/tree/person/sources/L62P-39Y
+  const personRegex = /^http.*\/tree\/person\/[^\/]+\/([A-Z0-9\-]+).*$/;
+  // An image URL  should look like one of these:
+  // https://familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&view=index&groupId=M9C5-PB5
+  const imageRegex = /^http.*\/ark\:\/\d+\/\d\:\d\:([A-Z0-9\-]+).*$/;
+
+  if (personRegex.test(url)) {
+    let personId = url.replace(personRegex, "$1");
+    console.log("personId is:", personId);
+
+    if (personId.length > 5) {
+      addId(personId);
+    }
+  } else if (imageRegex.test(url)) {
+    let imageId = url.replace(imageRegex, "$1");
+    console.log("imageId is:", imageId);
+
+    if (imageId.length > 5) {
+      addId(imageId);
+    }
+  }
+
+  console.log("idsString is:", idsString);
+
+  try {
+    let response = await wtPlusApiGetProfilesUsingFsId(idsString);
+
+    console.log("API response is:", response);
+
+    if (response.response?.profiles) {
+      addWikiTreeIcon(nameElement, response.response?.profiles);
+    }
+  } catch (error) {
+    console.error("Error in queryAndAddWikiTreeIcons:", error);
+  }
+}
+
+const observer = new MutationObserver((mutations, obs) => {
+  console.log("MutationObserver called", mutations);
+
+  let elementForIcon = document.querySelector("[data-testid='fullName']");
+
+  if (!elementForIcon) {
+    const breadcrumbs = document.querySelector("nav ol.breadcrumbsCss_b1m5heon");
+    // Even if 'breadcrumbsCss' changes, 'nav ol' is very specific.
+    if (breadcrumbs) {
+      console.log("breadcrumbs found");
+      const headerCell = breadcrumbs.closest("div");
+      elementForIcon = headerCell.querySelector("h1");
+    }
+  }
+
+  if (elementForIcon) {
+    console.log("elementForIcon found:", elementForIcon);
+
+    // Check if we already added the icon to avoid duplicates
+    if (!elementForIcon.querySelector(".wt-sourcer-icon")) {
+      queryAndAddWikiTreeIcons(elementForIcon);
+    }
+    // If you only need to do this once, you can stop observing:
+    obs.disconnect();
+  }
+});
+
+// Start watching the body for changes
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
+});
+
+*/
