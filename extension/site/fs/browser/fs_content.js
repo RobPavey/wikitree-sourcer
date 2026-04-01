@@ -440,7 +440,6 @@ function additionalMessageHandler(request, sender, sendResponse) {
 
 siteContentInit("fs", extractHandler, additionalMessageHandler);
 
-/*
 function wtPlusApiCall(url) {
   //console.log("wtApiCall: body is:");
   //console.log(body);
@@ -615,7 +614,7 @@ const observer = new MutationObserver((mutations, obs) => {
     if (breadcrumbs) {
       console.log("breadcrumbs found");
       const headerCell = breadcrumbs.closest("div");
-      elementForIcon = headerCell.querySelector("h1");
+      elementForIcon = headerCell.querySelector("h1 span");
     }
   }
 
@@ -636,5 +635,3 @@ observer.observe(document.body, {
   childList: true,
   subtree: true,
 });
-
-*/
