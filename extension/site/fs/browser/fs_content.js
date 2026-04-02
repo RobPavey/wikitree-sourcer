@@ -532,6 +532,10 @@ function addWikiTreeIcon(element, wikiIds) {
     // already has icon
     return;
   }
+  if (spanElement.parentElement.querySelector(".wt-sourcer-icon")) {
+    // already has icon
+    return;
+  }
 
   if (wikiIds.length < 1) {
     console.log("addWikiTreeIcon, profiles length less than 1");
@@ -702,7 +706,7 @@ async function processPendingIcons() {
 const personRegex = /^.*\/tree\/person\/(?:[^\/]+\/)?([A-Z0-9\-]+).*$/;
 // A record URL  should look like one of these:
 // https://www.familysearch.org/ark:/61903/1:1:XLX7-TL7?lang=en
-const recordRegex = /^.*\/ark\:\/610903\/\d\:\d\:([A-Z0-9]+\-[A-Z0-9]+).*$/;
+const recordRegex = /^.*\/ark\:\/61903\/\d\:\d\:([A-Z0-9]+\-[A-Z0-9]+)\?.*$/;
 // An image URL  should look like one of these:
 // https://familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&view=index&groupId=M9C5-PB5
 const imageRegex = /^.*\/ark\:\/\d+\/\d\:\d\:([A-Z0-9\-]+).*$/;
@@ -795,6 +799,7 @@ function initWtIconInjection() {
     let foundNew = false;
 
     let pageType = determinePageType(document.URL);
+    console.log("pageType is: " + pageType);
 
     // Find all possible ID containers (Names, Parents, Children)
     // FamilySearch often uses specific data-testids or classes for these
