@@ -549,55 +549,81 @@ function addWikiTreeIcon(element, wikiIds) {
     titleText = `Referenced from WikiTree profile: ${wikiIds[0].wikitreeID}`;
   }
 
-  if (spanElement) {
-    const img = document.createElement("img");
+  const img = document.createElement("img");
 
-    // 3. Set the source to your SVG string
-    img.src = svgIcon;
+  // 3. Set the source to your SVG string
+  img.src = svgIcon;
 
-    // 4. Add styling for alignment and spacing
-    img.style.width = "24px";
-    img.style.height = "24px";
-    img.style.marginLeft = "12px";
-    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
-    img.style.position = "relative";
-    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
-    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+  // 4. Add styling for alignment and spacing
+  img.style.width = "24px";
+  img.style.height = "24px";
+  img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
+  img.style.position = "relative";
+  img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
+  img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
 
-    img.style.cursor = "pointer";
-    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
+  img.style.cursor = "pointer";
+  img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
 
-    // 5. Add a tooltip for clarity
-    img.title = titleText;
+  // 5. Add a tooltip for clarity
+  img.title = titleText;
 
-    // Set initial filter
-    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+  // Set initial filter
+  const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+  img.style.filter = normalFilter;
+
+  img.addEventListener("mouseenter", () => {
+    img.style.filter = `${normalFilter} brightness(1.1)`;
+  });
+
+  img.addEventListener("mouseleave", () => {
     img.style.filter = normalFilter;
+  });
 
-    img.addEventListener("mouseenter", () => {
-      img.style.filter = `${normalFilter} brightness(1.1)`;
-    });
+  // create an anchor element
+  const anchorElement = document.createElement("a");
+  if (wikiIds.length > 1) {
+    let fsId = extractFsIdFromElement(element);
+    let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
+    wtPlusUrl += "FamilySearch=" + fsId;
+    wtPlusUrl += "&render=1";
+    anchorElement.setAttribute("href", wtPlusUrl);
+  } else {
+    anchorElement.setAttribute("href", "https://www.wikitree.com/wiki/" + wikiIds[0]);
+  }
 
-    img.addEventListener("mouseleave", () => {
-      img.style.filter = normalFilter;
-    });
+  anchorElement.target = "_blank";
+  anchorElement.style.textDecoration = "none";
 
-    // create an anchor element
-    const anchorElement = document.createElement("a");
-    if (wikiIds.length > 1) {
-      let fsId = extractFsIdFromElement(element);
-      let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
-      wtPlusUrl += "FamilySearch=" + fsId;
-      anchorElement.setAttribute("href", wtPlusUrl);
-    } else {
-      anchorElement.setAttribute("href", "https://www.wikitree.com/wiki/" + wikiIds[0]);
-    }
+  // 6. Inject it next to the name
+  anchorElement.appendChild(img);
 
-    anchorElement.target = "_blank";
-    anchorElement.style.textDecoration = "none";
+  // if this span element is an ellipsis style then we need to avoid the icon disappearing
+  // when the ellipsis is shown
+  const isEllipsisSpan = Array.from(spanElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
 
-    // 6. Inject it next to the name
+  if (isEllipsisSpan) {
+    const container = spanElement.parentElement;
+
+    // Set container to flex so icon stays visible next to the span
+    container.style.display = "flex";
+    container.style.alignItems = "center";
+    container.style.flexDirection = "row";
+    container.style.width = "100%"; // Ensure it uses the full header width
+
+    // Allow the name to shrink, but keep the icon fixed
+    spanElement.style.flexShrink = "1";
+    spanElement.style.minWidth = "0"; // Firefox requirement for flex-shrink on text
+
+    anchorElement.style.flexShrink = "0";
+    anchorElement.style.display = "flex";
+    anchorElement.style.marginLeft = "8px";
+
+    // Append to PARENT so it's not clipped by the span
     anchorElement.appendChild(img);
+    container.appendChild(anchorElement);
+  } else {
+    img.style.marginLeft = "12px";
     spanElement.appendChild(anchorElement);
   }
 }
@@ -668,6 +694,29 @@ async function processPendingIcons() {
   }
 }
 
+// A person url should look like one of these:
+// https://www.familysearch.org/en/tree/person/details/L62P-39Y
+// https://www.familysearch.org/en/tree/person/sources/L62P-39Y
+// But an href can be:
+// /en/tree/person/L62P-39Y
+const personRegex = /^.*\/tree\/person\/(?:[^\/]+\/)?([A-Z0-9\-]+).*$/;
+// A record URL  should look like one of these:
+// https://www.familysearch.org/ark:/61903/1:1:XLX7-TL7?lang=en
+const recordRegex = /^.*\/ark\:\/610903\/\d\:\d\:([A-Z0-9]+\-[A-Z0-9]+).*$/;
+// An image URL  should look like one of these:
+// https://familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&view=index&groupId=M9C5-PB5
+const imageRegex = /^.*\/ark\:\/\d+\/\d\:\d\:([A-Z0-9\-]+).*$/;
+
+function determinePageType(url) {
+  if (personRegex.test(url)) {
+    return "person";
+  } else if (recordRegex.test(url)) {
+    return "record";
+  } else if (imageRegex.test(url)) {
+    return "image";
+  }
+}
+
 function getFsIdFromUrl(url) {
   //console.log("getFsIdFromUrl ", url);
 
@@ -677,22 +726,19 @@ function getFsIdFromUrl(url) {
     url = url.replace(domainRegex, "");
   }
 
-  // A person url should look like one of these:
-  // https://www.familysearch.org/en/tree/person/details/L62P-39Y
-  // https://www.familysearch.org/en/tree/person/sources/L62P-39Y
-  // But an href can be:
-  // /en/tree/person/L62P-39Y
-  const personRegex = /^.*\/tree\/person\/(?:[^\/]+\/)?([A-Z0-9\-]+).*$/;
-  // An image URL  should look like one of these:
-  // https://familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&view=index&groupId=M9C5-PB5
-  const imageRegex = /^.*\/ark\:\/\d+\/\d\:\d\:([A-Z0-9\-]+).*$/;
-
   if (personRegex.test(url)) {
     let personId = url.replace(personRegex, "$1");
     //console.log("personId is:", personId);
 
     if (personId.length > 5) {
       return personId;
+    }
+  } else if (recordRegex.test(url)) {
+    let recordId = url.replace(recordRegex, "$1");
+    //console.log("recordId is:", imageId);
+
+    if (recordId.length > 5) {
+      return recordId;
     }
   } else if (imageRegex.test(url)) {
     let imageId = url.replace(imageRegex, "$1");
@@ -748,18 +794,42 @@ function initWtIconInjection() {
 
     let foundNew = false;
 
+    let pageType = determinePageType(document.URL);
+
     // Find all possible ID containers (Names, Parents, Children)
     // FamilySearch often uses specific data-testids or classes for these
-    const candidates = document.querySelectorAll("[data-testid='fullName'], nav ol, main h1 > div, tr > th > span > a");
+    let candidates = [];
+    if (pageType == "person") {
+      candidates = document.querySelectorAll("[data-testid='fullName']");
+    } else if (pageType == "record") {
+      candidates = document.querySelectorAll("[data-testid='fullName'], main h1 > div, tr > th > span > a");
+    } else if (pageType == "image") {
+      candidates = document.querySelectorAll("nav ol");
+    }
 
     candidates.forEach((el) => {
+      if (el.querySelector(".wt-sourcer-icon")) {
+        return;
+      }
+
       let spanElement = getSpanElementToAddIconTo(el);
-      if (spanElement && !spanElement.querySelector(".wt-sourcer-icon")) {
-        const fsId = extractFsIdFromElement(el); // Helper to get ID from href or text
-        if (fsId) {
-          if (!pendingFsIds.has(fsId)) pendingFsIds.set(fsId, []);
-          pendingFsIds.get(fsId).push(el);
-          foundNew = true;
+      if (spanElement) {
+        let hasIconAlready = spanElement.querySelector(".wt-sourcer-icon");
+        if (!hasIconAlready) {
+          // in the case of the ellipsis the icon is a sibling of the span
+          const isEllipsisSpan = Array.from(spanElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
+          if (isEllipsisSpan) {
+            const container = spanElement.parentElement;
+            hasIconAlready = container.querySelector(".wt-sourcer-icon");
+          }
+        }
+        if (!hasIconAlready) {
+          const fsId = extractFsIdFromElement(el); // Helper to get ID from href or text
+          if (fsId) {
+            if (!pendingFsIds.has(fsId)) pendingFsIds.set(fsId, []);
+            pendingFsIds.get(fsId).push(el);
+            foundNew = true;
+          }
         }
       }
     });
