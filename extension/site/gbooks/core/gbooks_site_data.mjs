@@ -37,6 +37,8 @@ const siteData = {
     "*://*.google.se/books/*",
     "*://*.google.mx/books/*",
   ],
+  // Field to tell the popup: "If you grant one of the above, you MUST also grant this"
+  requiredAdditionalOrigins: ["*://books.google.com/books*"],
   additionalContentScripts: [
     {
       id: "gbooks_content_iframe",

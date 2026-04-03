@@ -237,6 +237,8 @@ function iframeMessageHandler(request, sender, sendResponse) {
       //console.log(response);
 
       sendResponse(response);
+    } else if (request.type == "framePing") {
+      sendResponse({ success: true });
     }
   }
   return false;

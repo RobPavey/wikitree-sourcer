@@ -28,7 +28,13 @@ const debugConfig = {
   // List function names here to only see their logs. Keep empty [] to show all.
   allowedFunctions: ["getApiPersonFromGetRelatives", "setupFsPopupMenu", "determineSiteNameForTab", "anonymous"],
   // List file names like 'freebmd_ed_reader.mjs" here to only see their logs. Keep empty [] to show all.
-  allowedFiles: ["popup_init.mjs", "popup.mjs", "popup_permissions.mjs", "background_context_menu.mjs"],
+  allowedFiles: [
+    "popup_init.mjs",
+    "popup.mjs",
+    "popup_permissions.mjs",
+    "background_context_menu.mjs",
+    "background_content_scripts.mjs",
+  ],
 
   showTimestamp: false,
   showDebugText: false,

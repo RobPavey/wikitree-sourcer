@@ -40,18 +40,12 @@ async function requestPermissionsFromUser(permissions, options) {
   const needsPopupDisplayed = options.needsPopupDisplayed;
   const userClickedExtensionPopup = options.userClickedExtensionPopup;
 
-  function addBreak(fragment) {
-    let br = document.createElement("br");
-    fragment.appendChild(br);
-  }
-
   emptyMenu();
 
   let fragment = document.createDocumentFragment();
 
   let messageDiv1 = document.createElement("div");
   messageDiv1.className = "flex-parent jc-center";
-  addBreak(messageDiv1);
 
   let label1 = document.createElement("label");
   label1.className = "messageLabel";
@@ -63,22 +57,40 @@ async function requestPermissionsFromUser(permissions, options) {
   if (reasonMessage) {
     let messageDiv2 = document.createElement("div");
     messageDiv2.className = "flex-parent jc-center";
-    addBreak(messageDiv2);
 
     let label2 = document.createElement("label");
     label2.className = "messageLabel";
     label2.innerText = reasonMessage;
     messageDiv2.appendChild(label2);
 
-    addBreak(messageDiv2);
-
     fragment.appendChild(messageDiv2);
+  }
+
+  if (permissions && permissions.origins) {
+    let messageDivPermissions = document.createElement("div");
+    messageDivPermissions.className = "permissions-div";
+
+    let labelPermissions = document.createElement("label");
+    labelPermissions.className = "messageLabel";
+    labelPermissions.innerText =
+      "The exact permissions requested are these (the browser dialog may simplify them in the UI):";
+    messageDivPermissions.appendChild(labelPermissions);
+
+    let permissionsList = document.createElement("ul");
+    permissionsList.className = "permissions-list";
+    for (let permission of permissions.origins) {
+      let permissionsListItem = document.createElement("li");
+      permissionsListItem.textContent = permission;
+      permissionsList.appendChild(permissionsListItem);
+    }
+    messageDivPermissions.appendChild(permissionsList);
+
+    fragment.appendChild(messageDivPermissions);
   }
 
   if (userClickedExtensionPopup && isFirefox()) {
     let messageDiv2a = document.createElement("div");
     messageDiv2a.className = "flex-parent jc-center";
-    addBreak(messageDiv2a);
 
     let label2 = document.createElement("label");
     label2.className = "messageLabel";
@@ -87,14 +99,11 @@ async function requestPermissionsFromUser(permissions, options) {
       " temporary permissions for this tab. Click the button below to grant non-temporary permission.";
     messageDiv2a.appendChild(label2);
 
-    addBreak(messageDiv2a);
-
     fragment.appendChild(messageDiv2a);
   }
 
   let messageDiv3 = document.createElement("div");
   messageDiv3.className = "flex-parent jc-center";
-  addBreak(messageDiv3);
 
   let label3 = document.createElement("label");
   label3.className = "messageLabel";
@@ -105,8 +114,6 @@ async function requestPermissionsFromUser(permissions, options) {
   }
   label3.innerText = label3Message;
   messageDiv3.appendChild(label3);
-
-  addBreak(messageDiv3);
 
   fragment.appendChild(messageDiv3);
 

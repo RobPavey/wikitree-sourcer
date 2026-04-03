@@ -392,3 +392,29 @@ li.dividerBelow {
     opacity: 1;
   }
 }
+
+.permissions-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.permissions-list {
+  margin: 4px 4px;
+  margin-left: 20px;
+  padding-left: 20px; /* Restores indentation for bullets */
+  list-style-type: disc; /* Ensures bullets are visible */
+  background: #f9f9f9; /* Light background to make it look like a 'code' block */
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.permissions-list li {
+  font-family: monospace; /* Makes URLs easier to read */
+  font-size: 0.9em;
+  color: #444;
+  margin-bottom: 2px;
+  word-break: break-all; /* Prevents long URLs from breaking the popup width */
+}
