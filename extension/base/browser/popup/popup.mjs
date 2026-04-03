@@ -26,6 +26,7 @@ import { popupState, progressState } from "./popup_state.mjs";
 import { isSafari, isChrome } from "/base/browser/common/browser_check.mjs";
 import { doesUrlMatchChromePattern } from "/base/browser/common/permissions.mjs";
 import { checkPermissionForSites } from "./popup_permissions.mjs";
+import { getSiteDataForSite } from "/base/browser/common/site_registry_storage.mjs";
 
 import {
   setPopupMenuWidth,
@@ -208,7 +209,13 @@ async function determineSiteNameForTab(activeTab) {
         // we have a content script dynamically registered for the site.
         logDebug("We have a content script dynamically registered for the site.");
 
-        if (await chrome.permissions.contains({ origins: [match] })) {
+        let originsToRequest = [match];
+        let siteData = await getSiteDataForSite(siteName);
+        if (siteData && siteData.requiredAdditionalOrigins) {
+          originsToRequest = [...originsToRequest, ...siteData.requiredAdditionalOrigins];
+        }
+
+        if (await chrome.permissions.contains({ origins: originsToRequest })) {
           logDebug("We have permissions for the site.");
 
           // extension already has permission, no need to ask user
@@ -226,9 +233,11 @@ async function determineSiteNameForTab(activeTab) {
                 logDebug("ping to content script failed, lastError is", chrome.runtime.lastError);
               } else if (!response) {
                 logDebug("ping to content script failed, null response is", response);
-              } else {
+              } else if (response.success) {
                 logDebug("ping to content script succeeded.");
                 pingSucceeded = true;
+              } else {
+                logDebug("ping to content script failed, success is false.");
               }
             } catch (e) {
               logDebug("ping to content script failed, error is", e);
@@ -246,6 +255,44 @@ async function determineSiteNameForTab(activeTab) {
               } catch (error) {
                 console.error(`Injection error on tab ${activeTab.id}:`, error);
               }
+
+              // these additional steps are to handle additional content scripts that get loaded in iFrames
+              if (siteData.additionalContentScripts) {
+                // since the script for the tab was not loaded we can assue that the additional scripts are not loaded
+                for (let additionalScript of siteData.additionalContentScripts) {
+                  if (additionalScript.allFrames) {
+                    const frameResults = await chrome.scripting.executeScript({
+                      target: { tabId: activeTab.id, allFrames: true },
+                      func: () => {
+                        return { url: window.location.href };
+                      },
+                    });
+
+                    for (const frame of frameResults) {
+                      // Check if frame.result exists and has a url property
+                      if (frame.result && frame.result.url) {
+                        const frameId = frame.frameId;
+                        const frameUrl = frame.result.url;
+                        for (let additionalMatch of additionalScript.matches) {
+                          if (doesUrlMatchChromePattern(additionalMatch, frameUrl)) {
+                            logDebug("attempting to inject additional content script.");
+                            // If the ping fails, the script isn't there, so inject it!
+                            try {
+                              await chrome.scripting.executeScript({
+                                target: { tabId: activeTab.id, frameIds: [frameId] },
+                                files: additionalScript.js,
+                              });
+                              logDebug("inject of additional content script succeeeded");
+                            } catch (error) {
+                              console.error(`Injection error on tab ${activeTab.id}:`, error);
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
 
@@ -258,7 +305,7 @@ async function determineSiteNameForTab(activeTab) {
           needsPopupDisplayed: true,
           userClickedExtensionPopup: true,
         };
-        if (await checkPermissionForSites([match], checkPermissionsOptions)) {
+        if (await checkPermissionForSites(originsToRequest, checkPermissionsOptions)) {
           // permission was granted but the content script will not be retroactively loaded
           // so we want to load it manually. However we can't rely on the code getting here
           // because the chrome permission request dialog can kill the popup, so the

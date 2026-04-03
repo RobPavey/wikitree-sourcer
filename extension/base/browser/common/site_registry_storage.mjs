@@ -31,14 +31,13 @@ import { getSiteRegistry, setSiteRegistry } from "../../core/site_registry.mjs";
 async function storeSiteRegistry() {
   let siteRegistry = getSiteRegistry();
 
-  console.log("storeSiteRegistry: siteRegistry is:");
-  console.log(siteRegistry);
+  //console.log("storeSiteRegistry: siteRegistry is:");
+  //console.log(siteRegistry);
   try {
     await chrome.storage.local.set({ siteRegistry: siteRegistry });
-    console.log("storeSiteRegistry: stored siteData");
+    //console.log("storeSiteRegistry: stored siteData");
   } catch (error) {
-    console.log("getSiteDataForSite: error storing siteRegistry");
-    console.log(error);
+    console.error("getSiteDataForSite: error storing siteRegistry", error);
   }
 }
 

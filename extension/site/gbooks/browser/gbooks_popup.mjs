@@ -26,9 +26,11 @@ import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs"
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/gbooks_generalize_data.mjs";
 import { buildCitation } from "../core/gbooks_build_citation.mjs";
-import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 async function setupGbooksPopupMenu(extractedData, tabId) {
+  //console.log("setupGbooksPopupMenu, tabId is: ", tabId);
+
   // if the pageviewer is active then attempt to get the page from that
   if (extractedData.url && extractedData.url.includes("gbpv=1")) {
     // request permission for if needed
@@ -40,27 +42,30 @@ async function setupGbooksPopupMenu(extractedData, tabId) {
     // the books link will be to google.com when the current url is google.co.uk
     // so don't use the page URL to check.
     // NOTE: On Firefox the page has to be reloaded after permission is granted.
-    let allowed = await checkPermissionForSiteMatches("gbooks", checkPermissionsOptions);
+    let allowed = await checkPermissionForSite("*://books.google.com/books*", checkPermissionsOptions);
 
     if (allowed) {
-      // send an additional message to attempt to get the pageLink from an iframe
-      chrome.tabs.sendMessage(tabId, { type: "getPageViewerInfo" }, function (response) {
-        console.log("response from getPageViewerInfo is:");
-        console.log(response);
-        if (chrome.runtime.lastError) {
-          console.log("getPageViewerInfo failed");
-          console.log(chrome.runtime.lastError);
-        } else {
-          if (response && response.success) {
-            extractedData.shareLink = response.shareLink;
-            extractedData.pageLink = response.pageLink;
-            extractedData.pageLabel = response.pageLabel;
-            extractedData.pageNumber = response.pageNumber;
-            extractedData.urlPageNumber = response.urlPageNumber;
-            extractedData.isShareLinkVisible = response.isShareLinkVisible;
+      try {
+        // send an additional message to attempt to get the pageLink from an iframe
+        chrome.tabs.sendMessage(tabId, { type: "getPageViewerInfo" }, function (response) {
+          console.log("response from getPageViewerInfo is:");
+          console.log(response);
+          if (chrome.runtime.lastError) {
+            console.warn("getPageViewerInfo failed. lastError is ", chrome.runtime.lastError);
+          } else {
+            if (response && response.success) {
+              extractedData.shareLink = response.shareLink;
+              extractedData.pageLink = response.pageLink;
+              extractedData.pageLabel = response.pageLabel;
+              extractedData.pageNumber = response.pageNumber;
+              extractedData.urlPageNumber = response.urlPageNumber;
+              extractedData.isShareLinkVisible = response.isShareLinkVisible;
+            }
           }
-        }
-      });
+        });
+      } catch (error) {
+        console.warn("getPageViewerInfo failed. error is ", error);
+      }
     }
   }
 
