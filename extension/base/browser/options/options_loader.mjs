@@ -389,12 +389,12 @@ function convertOptions(loadedOptions, defaultOptions, optionsRegistry) {
   let loadedVersion = loadedOptions.options_version;
   let currentVersion = defaultOptions.options_version;
 
-  console.log("convertOptions, loadedVersion is : " + loadedVersion + ", currentVersion is : " + currentVersion);
+  //console.log("convertOptions, loadedVersion is : " + loadedVersion + ", currentVersion is : " + currentVersion);
 
-  console.log("convertOptions, loadedOptions is : ");
-  console.log(loadedOptions);
-  console.log("convertOptions, optionsRegistry is : ");
-  console.log(optionsRegistry);
+  //console.log("convertOptions, loadedOptions is : ");
+  //console.log(loadedOptions);
+  //console.log("convertOptions, optionsRegistry is : ");
+  //console.log(optionsRegistry);
 
   if (loadedVersion >= currentVersion) {
     return loadedOptions;
@@ -453,7 +453,7 @@ function addNewDefaultsAndRemoveOldOptions(loadedOptions, defaultOptions) {
 }
 
 function updateOptionsToLatestVersion(loadedOptions, defaultOptions, optionsRegistry) {
-  console.log("updateOptionsToLatestVersion, loadedOptions.options_version is", loadedOptions.options_version);
+  //console.log("updateOptionsToLatestVersion, loadedOptions.options_version is", loadedOptions.options_version);
 
   let optionsObject = undefined;
   if (loadedOptions) {

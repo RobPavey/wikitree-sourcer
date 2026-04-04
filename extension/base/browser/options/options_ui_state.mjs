@@ -51,9 +51,19 @@ async function restoreOptionsUiState() {
     if (uiState.activeTab == "addPerson") {
       uiState.activeTab = "addMerge";
     }
+
     if (uiState.activeSubsectionForTab["addPerson"]) {
       uiState.activeSubsectionForTab["addMerge"] = uiState.activeSubsectionForTab["addPerson"];
       delete uiState.activeSubsectionForTab["addPerson"];
+    }
+
+    // conversion for change of tab name from context to ui
+    if (uiState.activeTab == "context") {
+      uiState.activeTab = "ui";
+    }
+
+    if (uiState.activeSubsectionForTab["context"]) {
+      delete uiState.activeSubsectionForTab["context"];
     }
   }
 }
