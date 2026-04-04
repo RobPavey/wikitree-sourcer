@@ -366,16 +366,35 @@ function convertOptionsFrom11To12(loadedOptions, optionsRegistry) {
   return convertedOptions;
 }
 
+function convertOptionsFrom12To13(loadedOptions, optionsRegistry) {
+  let convertedOptions = { ...loadedOptions };
+
+  console.log("convertOptionsFrom12To13, before:");
+  console.log(loadedOptions);
+
+  if (convertedOptions.context_general_newTabPos !== undefined) {
+    convertedOptions.ui_context_newTabPos = convertedOptions.context_general_newTabPos;
+    delete convertedOptions.context_general_newTabPos;
+  }
+
+  convertedOptions.options_version = 12;
+
+  console.log("convertOptionsFrom12To13, after:");
+  console.log(convertedOptions);
+
+  return convertedOptions;
+}
+
 function convertOptions(loadedOptions, defaultOptions, optionsRegistry) {
   let loadedVersion = loadedOptions.options_version;
   let currentVersion = defaultOptions.options_version;
 
-  //console.log("convertOptions, loadedVersion is : " + loadedVersion + ", currentVersion is : " + currentVersion);
+  console.log("convertOptions, loadedVersion is : " + loadedVersion + ", currentVersion is : " + currentVersion);
 
-  //console.log("convertOptions, loadedOptions is : ");
-  //console.log(loadedOptions);
-  //console.log("convertOptions, optionsRegistry is : ");
-  //console.log(optionsRegistry);
+  console.log("convertOptions, loadedOptions is : ");
+  console.log(loadedOptions);
+  console.log("convertOptions, optionsRegistry is : ");
+  console.log(optionsRegistry);
 
   if (loadedVersion >= currentVersion) {
     return loadedOptions;
@@ -411,6 +430,9 @@ function convertOptions(loadedOptions, defaultOptions, optionsRegistry) {
   if (loadedVersion < 12) {
     loadedOptions = convertOptionsFrom11To12(loadedOptions, optionsRegistry);
   }
+  if (loadedVersion < 13) {
+    loadedOptions = convertOptionsFrom12To13(loadedOptions, optionsRegistry);
+  }
 
   return loadedOptions;
 }
@@ -431,6 +453,8 @@ function addNewDefaultsAndRemoveOldOptions(loadedOptions, defaultOptions) {
 }
 
 function updateOptionsToLatestVersion(loadedOptions, defaultOptions, optionsRegistry) {
+  console.log("updateOptionsToLatestVersion, loadedOptions.options_version is", loadedOptions.options_version);
+
   let optionsObject = undefined;
   if (loadedOptions) {
     if (!loadedOptions.options_version) {

@@ -54,7 +54,17 @@ async function displayStatusMessage(message, ms) {
 
 // if an option is added that doesn't start with one of these prefixes followed by "_"
 // then a new prefix needs to be added here.
-const optionPrefixes = ["options", "search", "citation", "narrative", "table", "buildAll", "addMerge", "context"];
+const optionPrefixes = [
+  "options",
+  "search",
+  "citation",
+  "narrative",
+  "table",
+  "buildAll",
+  "addMerge",
+  "ui",
+  "context", // deprecated - replaced with "ui"
+];
 
 // Only used for loading older format
 function putNewLoadedOptionsSetInOptions(options, optionsSet, prefix) {
@@ -173,7 +183,7 @@ async function loadOptions() {
       putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_buildAll, "buildAll");
       putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_addPerson, "addPerson");
       putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_addMerge, "addMerge");
-      putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_context, "context");
+      putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_context, "ui");
       if (itemsNew.options) {
         loadedOptions.options_version = itemsNew.options.options_version;
       } else if (itemsNew.options_version) {
@@ -205,7 +215,7 @@ function convertOptionsObjectToSaveFormatCompressed(options) {
   //console.log("convertOptionsObjectToSaveFormat, options is:");
   //console.log(options);
 
-  const prefixes = ["options", "search", "citation", "narrative", "table", "buildAll", "addMerge", "context"];
+  const prefixes = ["options", "search", "citation", "narrative", "table", "buildAll", "addMerge", "ui"];
 
   let newOptions = {};
 
@@ -281,7 +291,7 @@ function convertOptionsObjectToSaveFormatCompressed(options) {
 }
 
 function convertOptionsObjectToOldSaveFormat(options) {
-  const prefixes = ["search", "citation", "narrative", "table", "buildAll", "addMerge", "context", "options_version"];
+  const prefixes = ["search", "citation", "narrative", "table", "buildAll", "addMerge", "ui", "options_version"];
 
   let newOptions = {};
 
@@ -342,19 +352,6 @@ async function saveOptions(options) {
     itemsToSave["options_" + prefix + "_KLUT"] = saveFormatOptions[prefix + "_KLUT"];
     itemsToSave["options_" + prefix + "_VLUT"] = saveFormatOptions[prefix + "_VLUT"];
   }
-
-  /*
-  let itemsToSave = {
-    options_search: saveFormatOptions.search,
-    options_citation: saveFormatOptions.citation,
-    options_narrative: saveFormatOptions.narrative,
-    options_table: saveFormatOptions.table,
-    options_buildAll: saveFormatOptions.buildAll,
-    options_addMerge: saveFormatOptions.addMerge,
-    options_context: saveFormatOptions.context,
-    options_version: saveFormatOptions.options_version,
-  };
-    */
 
   // set the values in the stored user options
   try {

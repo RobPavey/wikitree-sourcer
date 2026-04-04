@@ -33,7 +33,7 @@ var uiState = {
     table: "general",
     buildAll: "general",
     addMerge: "general",
-    context: "general",
+    ui: "context",
   },
 };
 

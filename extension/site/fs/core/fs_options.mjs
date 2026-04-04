@@ -246,6 +246,77 @@ const buildAllCitationsOptionsGroup = {
   ],
 };
 
+const uiOptionsGroup = {
+  category: "ui",
+  subcategory: "fs",
+  tab: "ui",
+  subsection: "fs",
+  subheading: "wtIconPageMods",
+
+  options: [
+    {
+      optionName: "personShowWtIconH1",
+      type: "checkbox",
+      label: "On person pages show icon next to top-level heading",
+      defaultValue: true,
+    },
+    {
+      optionName: "personDetailsShowWtIconFamily",
+      type: "checkbox",
+      label: "On person 'Details' pages show icons for family members",
+      defaultValue: true,
+    },
+    {
+      optionName: "personSourcesShowWtIconOnSourceRow",
+      type: "checkbox",
+      label: "On person 'Sources' pages show icons for source rows",
+      defaultValue: true,
+    },
+    {
+      optionName: "personAboutShowWtIconFamily",
+      type: "checkbox",
+      label: "On person 'About' pages show icons for family members",
+      defaultValue: true,
+    },
+    {
+      optionName: "recordShowWtIconH1",
+      type: "checkbox",
+      label: "On record pages show icon next to top-level heading",
+      defaultValue: true,
+    },
+    {
+      optionName: "recordShowWtIconOtherPeople",
+      type: "checkbox",
+      label: "On record pages show icon for other people in record",
+      defaultValue: true,
+    },
+    {
+      optionName: "recordShowWtIconAttached",
+      type: "checkbox",
+      label: "On record pages show icon for people record is attached to",
+      defaultValue: true,
+    },
+    {
+      optionName: "recordShowWtIconSimilarRecords",
+      type: "checkbox",
+      label: "On record pages show icon for 'Similar Records'",
+      defaultValue: true,
+    },
+    {
+      optionName: "recordShowWtIconSimilarRecordsAttached",
+      type: "checkbox",
+      label: "On record pages show icon for people 'Similar Records' are attached to",
+      defaultValue: true,
+    },
+    {
+      optionName: "searchResultsShowWtIconResultRow",
+      type: "checkbox",
+      label: "On search results pages show icons on result rows",
+      defaultValue: true,
+    },
+  ],
+};
+
 registerSubsectionForOptions("search", "fs", "FamilySearch");
 registerSiteSearchPopupOptionsGroup("fs");
 registerSubheadingForOptions("search", "fs", "parameters", "Search Parameters");
@@ -262,10 +333,6 @@ registerSubsectionForOptions(
 );
 registerOptionsGroup(buildAllCitationsOptionsGroup);
 
-// This is just for historical reasons and can be removed a few releases after 2.2.1
-registerSubsectionForOptions(
-  "addMerge",
-  "fsAllCitations",
-  "FamilySearch Build All Citations",
-  'These options have moved to the "Build All Citations" tab.'
-);
+registerSubsectionForOptions("ui", "fs", "FamilySearch");
+registerSubheadingForOptions("ui", "fs", "wtIconPageMods", "Page Modifications for WikiTree usage icons");
+registerOptionsGroup(uiOptionsGroup);

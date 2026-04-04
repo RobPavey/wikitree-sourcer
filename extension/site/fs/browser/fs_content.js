@@ -440,366 +440,372 @@ function additionalMessageHandler(request, sender, sendResponse) {
 
 siteContentInit("fs", extractHandler, additionalMessageHandler);
 
-function wtPlusApiCall(url) {
-  return new Promise((resolve, reject) => {
-    chrome.runtime.sendMessage(
-      {
-        type: "doWtPlusApiCall",
-        url: url,
-      },
-      (response) => {
-        if (response && response.success) {
-          resolve(JSON.parse(response.rawData));
-        } else {
-          if (chrome.runtime.lastError) {
-            reject(chrome.runtime.lastError);
-          } else if (response.error) {
-            reject(response.error);
+// Wrapper to put all icon injection in a scope and to prevent redefinition
+// if content script loaded twice
+if (!window.sourcerWtIconInjection) {
+  window.sourcerWtIconInjection = true;
+
+  function wtPlusApiCall(url) {
+    return new Promise((resolve, reject) => {
+      chrome.runtime.sendMessage(
+        {
+          type: "doWtPlusApiCall",
+          url: url,
+        },
+        (response) => {
+          if (response && response.success) {
+            resolve(JSON.parse(response.rawData));
           } else {
-            reject("No response");
+            if (chrome.runtime.lastError) {
+              reject(chrome.runtime.lastError);
+            } else if (response.error) {
+              reject(response.error);
+            } else {
+              reject("No response");
+            }
           }
         }
-      }
-    );
-  });
-}
-
-function wtPlusApiGetProfilesUsingFsId(idString) {
-  let url = `https://plus.wikitree.com/function/wtFamilySearch/Sourcer.json?query=${idString}`;
-  return wtPlusApiCall(url);
-}
-
-function getSpanElementToAddIconTo(element) {
-  if (element.tagName == "SPAN") {
-    return element;
+      );
+    });
   }
 
-  let enclosingDiv = element.closest("div");
-  if (enclosingDiv) {
-    let spanElement = enclosingDiv.querySelector("h1 span");
-    if (spanElement) {
-      return spanElement;
-    }
+  function wtPlusApiGetProfilesUsingFsId(idString) {
+    let url = `https://plus.wikitree.com/function/wtFamilySearch/Sourcer.json?query=${idString}`;
+    return wtPlusApiCall(url);
   }
 
-  // for record pages the title is not actually a span, it is a div
-  if (element.tagName == "DIV") {
-    let enclosingH1 = element.closest("h1");
-    if (enclosingH1) {
+  function getSpanElementToAddIconTo(element) {
+    if (element.tagName == "SPAN") {
       return element;
     }
-  }
 
-  // for other people on a record page
-  if (element.tagName == "A") {
-    let enclosingSpan = element.closest("span");
-    if (enclosingSpan) {
-      return enclosingSpan;
+    let enclosingDiv = element.closest("div");
+    if (enclosingDiv) {
+      let spanElement = enclosingDiv.querySelector("h1 span");
+      if (spanElement) {
+        return spanElement;
+      }
+    }
+
+    // for record pages the title is not actually a span, it is a div
+    if (element.tagName == "DIV") {
+      let enclosingH1 = element.closest("h1");
+      if (enclosingH1) {
+        return element;
+      }
+    }
+
+    // for other people on a record page
+    if (element.tagName == "A") {
+      let enclosingSpan = element.closest("span");
+      if (enclosingSpan) {
+        return enclosingSpan;
+      }
+      let enclosingStrong = element.closest("strong"); // for search results
+      if (enclosingStrong) {
+        return enclosingStrong;
+      }
     }
   }
-}
 
-// Define  SVG icons
-const svgSingle = `data:image/svg+xml;utf8,
+  // Define  SVG icons
+  const svgSingle = `data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
   <path d="M15 12H8M8 12L11 9M8 12L11 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>`;
 
-const svgMultiple = `data:image/svg+xml;utf8,
+  const svgMultiple = `data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
   <path d="M10 8L7 12L10 16M17 8L14 12L17 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>`;
 
-const svgMultipleOverlap = `data:image/svg+xml;utf8,
+  const svgMultipleOverlap = `data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <circle cx="14" cy="10" r="9" fill="%23ffaf02" stroke="white" stroke-width="1.5" opacity="0.6"/>
   <circle cx="10" cy="14" r="9" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
   <path d="M12 14H8M8 14L10 12M8 14L10 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>`;
 
-function addWikiTreeIcon(element, wikiIds) {
-  console.log("addWikiTreeIcon", element);
+  function addWikiTreeIcon(element, wikiIds) {
+    console.log("addWikiTreeIcon", element, wikiIds);
 
-  let spanElement = getSpanElementToAddIconTo(element);
-  if (!spanElement) {
-    console.log("no span element found for element", element);
-    return;
-  }
+    let spanElement = getSpanElementToAddIconTo(element);
+    if (!spanElement) {
+      console.log("no span element found for element", element);
+      return;
+    }
 
-  if (spanElement.querySelector(".wt-sourcer-icon")) {
-    // already has icon
-    return;
-  }
-  if (spanElement.parentElement.querySelector(".wt-sourcer-icon")) {
-    // already has icon
-    return;
-  }
+    if (spanElement.querySelector(".wt-sourcer-icon")) {
+      // already has icon
+      return;
+    }
+    if (spanElement.parentElement.querySelector(".wt-sourcer-icon")) {
+      // already has icon
+      return;
+    }
 
-  if (wikiIds.length < 1) {
-    console.log("addWikiTreeIcon, profiles length less than 1");
-    return;
-  }
+    if (wikiIds.length < 1) {
+      console.log("addWikiTreeIcon, profiles length less than 1");
+      return;
+    }
 
-  let svgIcon = null;
-  let titleText = "";
+    let svgIcon = null;
+    let titleText = "";
 
-  if (wikiIds.length > 1) {
-    svgIcon = svgMultipleOverlap;
-    titleText = `Referenced from ${wikiIds.length} WikiTree profiles`;
-  } else {
-    svgIcon = svgSingle;
-    titleText = `Referenced from WikiTree profile: ${wikiIds[0].wikitreeID}`;
-  }
+    if (wikiIds.length > 1) {
+      svgIcon = svgMultipleOverlap;
+      titleText = `Referenced from ${wikiIds.length} WikiTree profiles`;
+    } else {
+      svgIcon = svgSingle;
+      titleText = `Referenced from WikiTree profile: ${wikiIds[0]}`;
+    }
 
-  const img = document.createElement("img");
+    const img = document.createElement("img");
 
-  // 3. Set the source to your SVG string
-  img.src = svgIcon;
+    // 3. Set the source to your SVG string
+    img.src = svgIcon;
 
-  // 4. Add styling for alignment and spacing
-  img.style.width = "24px";
-  img.style.height = "24px";
-  img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
-  img.style.position = "relative";
-  img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
-  img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+    // 4. Add styling for alignment and spacing
+    img.style.width = "24px";
+    img.style.height = "24px";
+    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
+    img.style.position = "relative";
+    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
+    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
 
-  img.style.cursor = "pointer";
-  img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
+    img.style.cursor = "pointer";
+    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
 
-  // 5. Add a tooltip for clarity
-  img.title = titleText;
+    // 5. Add a tooltip for clarity
+    img.title = titleText;
 
-  // Set initial filter
-  const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-  img.style.filter = normalFilter;
-
-  img.addEventListener("mouseenter", () => {
-    img.style.filter = `${normalFilter} brightness(1.1)`;
-  });
-
-  img.addEventListener("mouseleave", () => {
+    // Set initial filter
+    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
     img.style.filter = normalFilter;
-  });
 
-  // create an anchor element
-  const anchorElement = document.createElement("a");
-  if (wikiIds.length > 1) {
-    let fsId = extractFsIdFromElement(element);
-    let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
-    wtPlusUrl += "FamilySearch=" + fsId;
-    wtPlusUrl += "&render=1";
-    anchorElement.setAttribute("href", wtPlusUrl);
-  } else {
-    anchorElement.setAttribute("href", "https://www.wikitree.com/wiki/" + wikiIds[0]);
-  }
+    img.addEventListener("mouseenter", () => {
+      img.style.filter = `${normalFilter} brightness(1.1)`;
+    });
 
-  anchorElement.target = "_blank";
-  anchorElement.style.textDecoration = "none";
+    img.addEventListener("mouseleave", () => {
+      img.style.filter = normalFilter;
+    });
 
-  // 6. Inject it next to the name
-  anchorElement.appendChild(img);
+    // create an anchor element
+    const anchorElement = document.createElement("a");
+    if (wikiIds.length > 1) {
+      let fsId = extractFsIdFromElement(element);
+      let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
+      wtPlusUrl += "FamilySearch=" + fsId;
+      wtPlusUrl += "&render=1";
+      anchorElement.setAttribute("href", wtPlusUrl);
+    } else {
+      anchorElement.setAttribute("href", "https://www.wikitree.com/wiki/" + wikiIds[0]);
+    }
 
-  // if this span element is an ellipsis style then we need to avoid the icon disappearing
-  // when the ellipsis is shown
-  const isEllipsisSpan = Array.from(spanElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
+    anchorElement.target = "_blank";
+    anchorElement.style.textDecoration = "none";
 
-  if (isEllipsisSpan) {
-    const container = spanElement.parentElement;
-
-    // Set container to flex so icon stays visible next to the span
-    container.style.display = "flex";
-    container.style.alignItems = "center";
-    container.style.flexDirection = "row";
-    container.style.width = "100%"; // Ensure it uses the full header width
-
-    // Allow the name to shrink, but keep the icon fixed
-    spanElement.style.flexShrink = "1";
-    spanElement.style.minWidth = "0"; // Firefox requirement for flex-shrink on text
-
-    anchorElement.style.flexShrink = "0";
-    anchorElement.style.display = "flex";
-    anchorElement.style.marginLeft = "8px";
-
-    // Append to PARENT so it's not clipped by the span
+    // 6. Inject it next to the name
     anchorElement.appendChild(img);
-    container.appendChild(anchorElement);
-  } else {
-    img.style.marginLeft = "12px";
-    spanElement.appendChild(anchorElement);
+
+    // if this span element is an ellipsis style then we need to avoid the icon disappearing
+    // when the ellipsis is shown
+    const isEllipsisSpan = Array.from(spanElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
+
+    if (isEllipsisSpan) {
+      const container = spanElement.parentElement;
+
+      // Set container to flex so icon stays visible next to the span
+      container.style.display = "flex";
+      container.style.alignItems = "center";
+      container.style.flexDirection = "row";
+      container.style.width = "100%"; // Ensure it uses the full header width
+
+      // Allow the name to shrink, but keep the icon fixed
+      spanElement.style.flexShrink = "1";
+      spanElement.style.minWidth = "0"; // Firefox requirement for flex-shrink on text
+
+      anchorElement.style.flexShrink = "0";
+      anchorElement.style.display = "flex";
+      anchorElement.style.marginLeft = "8px";
+
+      // Append to PARENT so it's not clipped by the span
+      anchorElement.appendChild(img);
+      container.appendChild(anchorElement);
+    } else {
+      img.style.marginLeft = "12px";
+      spanElement.appendChild(anchorElement);
+    }
   }
-}
 
-var pendingFsIds = new Map(); // Maps FS ID -> Array of DOM elements needing that icon
-var debounceTimer = null;
+  var pendingFsIds = new Map(); // Maps FS ID -> Array of DOM elements needing that icon
+  var debounceTimer = null;
 
-async function processPendingIcons() {
-  // Check if the extension is still "alive"
-  if (!chrome.runtime?.id) {
-    console.log("WikiTree Sourcer: Context invalidated, stopping batch.");
-    return;
-  }
+  async function processPendingIcons() {
+    console.log(`processPendingIcons, pendingFsIds size is ${pendingFsIds.size}`);
 
-  const idsToQuery = Array.from(pendingFsIds.keys()).join(",");
-  //console.log("processPendingIcons, idsToQuery is: ", idsToQuery);
-  if (!idsToQuery) return;
+    // Check if the extension is still "alive"
+    if (!chrome.runtime?.id) {
+      console.log("WikiTree Sourcer: Context invalidated, stopping batch.");
+      return;
+    }
 
-  // Clear the map immediately so new mutations start a fresh batch
-  const currentBatch = new Map(pendingFsIds);
-  pendingFsIds.clear();
+    const idsToQuery = Array.from(pendingFsIds.keys()).join(",");
+    //console.log("processPendingIcons, idsToQuery is: ", idsToQuery);
+    if (!idsToQuery) return;
 
-  try {
-    const response = await wtPlusApiGetProfilesUsingFsId(idsToQuery);
-    //console.log("processPendingIcons, response is: ", response);
-    if (response.response?.profiles) {
-      // create a map of element to wtIds
-      let elementToWikiId = new Map();
+    // Clear the map immediately so new mutations start a fresh batch
+    const currentBatch = new Map(pendingFsIds);
+    pendingFsIds.clear();
 
-      function addWikiIdToElement(element, wikiId) {
-        let existingElementWikiIdList = elementToWikiId.get(element);
-        if (!existingElementWikiIdList) {
-          elementToWikiId.set(element, []);
-          existingElementWikiIdList = elementToWikiId.get(element);
+    try {
+      const response = await wtPlusApiGetProfilesUsingFsId(idsToQuery);
+      console.log("processPendingIcons, response is: ", response);
+      if (response.response?.profiles) {
+        // create a map of element to wtIds
+        let elementToWikiId = new Map();
+
+        function addWikiIdToElement(element, wikiId) {
+          let existingElementWikiIdList = elementToWikiId.get(element);
+          if (!existingElementWikiIdList) {
+            elementToWikiId.set(element, []);
+            existingElementWikiIdList = elementToWikiId.get(element);
+          }
+          if (!existingElementWikiIdList.includes(wikiId)) {
+            existingElementWikiIdList.push(wikiId);
+          }
         }
-        if (!existingElementWikiIdList.includes(wikiId)) {
-          existingElementWikiIdList.push(wikiId);
-        }
-      }
 
-      function addWikiIdToElements(fsIdList, wikiId) {
-        for (let fsId of fsIdList) {
-          let elements = currentBatch.get(fsId);
-          if (elements) {
-            for (let element of elements) {
-              addWikiIdToElement(element, wikiId);
+        function addWikiIdToElements(fsIdList, wikiId) {
+          for (let fsId of fsIdList) {
+            let elements = currentBatch.get(fsId);
+            if (elements) {
+              for (let element of elements) {
+                addWikiIdToElement(element, wikiId);
+              }
             }
           }
         }
+
+        // record the profiles that reference the elements fsId for the currentBatch
+        response.response.profiles.forEach((profile) => {
+          addWikiIdToElements(profile.persons, profile.wikitreeID);
+          addWikiIdToElements(profile.records, profile.wikitreeID);
+          addWikiIdToElements(profile.recordImages, profile.wikitreeID);
+        });
+
+        //console.log("elementToWikiId is", elementToWikiId);
+
+        // now add icons
+        for (const [element, wikiIds] of elementToWikiId) {
+          addWikiTreeIcon(element, wikiIds);
+        }
       }
-
-      // record the profiles that reference the elements fsId for the currentBatch
-      response.response.profiles.forEach((profile) => {
-        addWikiIdToElements(profile.persons, profile.wikitreeID);
-        addWikiIdToElements(profile.records, profile.wikitreeID);
-        addWikiIdToElements(profile.recordImages, profile.wikitreeID);
-      });
-
-      //console.log("elementToWikiId is", elementToWikiId);
-
-      // now add icons
-      for (const [element, wikiIds] of elementToWikiId) {
-        addWikiTreeIcon(element, wikiIds);
-      }
+    } catch (error) {
+      console.error("WT+ API Batch fetch failed", error);
+      logDebug("idsToQuery is", idsToQuery);
     }
-  } catch (error) {
-    console.error("Batch fetch failed", error);
-  }
-}
-
-// A person url should look like one of these:
-// https://www.familysearch.org/en/tree/person/details/L62P-39Y
-// https://www.familysearch.org/en/tree/person/sources/L62P-39Y
-// But an href can be:
-// /en/tree/person/L62P-39Y
-const personRegex = /^.*\/tree\/person\/(?:[^\/]+\/)?([A-Z0-9\-]+).*$/;
-// A record URL  should look like one of these:
-// https://www.familysearch.org/ark:/61903/1:1:XLX7-TL7?lang=en
-const recordRegex = /^.*\/ark\:\/61903\/\d\:\d\:([A-Z0-9]+\-[A-Z0-9]+)\?.*$/;
-// An image URL  should look like one of these:
-// https://familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&view=index&groupId=M9C5-PB5
-const imageRegex = /^.*\/ark\:\/\d+\/\d\:\d\:([A-Z0-9\-]+).*$/;
-
-function determinePageType(url) {
-  if (personRegex.test(url)) {
-    return "person";
-  } else if (recordRegex.test(url)) {
-    return "record";
-  } else if (imageRegex.test(url)) {
-    return "image";
-  }
-}
-
-function getFsIdFromUrl(url) {
-  //console.log("getFsIdFromUrl ", url);
-
-  // strip the domain off so that this works for either a full URL or a relative HREF
-  const domainRegex = /^http.*familysearch\.org/;
-  if (domainRegex.test(url)) {
-    url = url.replace(domainRegex, "");
   }
 
-  if (personRegex.test(url)) {
-    let personId = url.replace(personRegex, "$1");
-    //console.log("personId is:", personId);
+  // A person url should look like one of these:
+  // https://www.familysearch.org/en/tree/person/details/L62P-39Y
+  // https://www.familysearch.org/en/tree/person/sources/L62P-39Y
+  // But an href can be:
+  // /en/tree/person/L62P-39Y
+  const personRegex = /^.*\/tree\/person\/(?:[^\/]+\/)?([A-Z0-9\-]+).*$/;
+  // A record URL  should look like one of these:
+  // https://www.familysearch.org/ark:/61903/1:1:XLX7-TL7?lang=en
+  const recordRegex = /^.*\/ark\:\/61903\/\d\:\d\:([A-Z0-9]+\-[A-Z0-9]+)\?.*$/;
+  // An image URL  should look like one of these:
+  // https://familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&view=index&groupId=M9C5-PB5
+  const imageRegex = /^.*\/ark\:\/\d+\/\d\:\d\:([A-Z0-9\-]+).*$/;
+  // A search results URL URL  should look like one of these:
+  // https://www.familysearch.org/en/search/record/results?count=20&treeref=G443-GML&q.givenName=Etienne&q.surname=Smit&q.birthLikeDate.from=1926&q.birthLikeDate.to=1930&q.deathLikeDate.from=2005&q.deathLikeDate.to=2009&q.marriageLikePlace=Paarl%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from=1949&q.marriageLikeDate.to=1957&q.spouseGivenName=Anna%20Jacoba&q.spouseSurname=de%20Villiers&q.marriageLikePlace.1=Wynberg%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from.1=1959&q.marriageLikeDate.to.1=1967&q.spouseGivenName.1=Helena&q.spouseSurname.1=Theron&q.recordCountry=South%20Africa
+  const searchRegex = /^https\:\/\/(?:www\.)?familysearch.org\/[^\/]+\/search\/.*$/;
 
-    if (personId.length > 5) {
-      return personId;
+  function determinePageType(url) {
+    if (personRegex.test(url)) {
+      return "person";
+    } else if (recordRegex.test(url)) {
+      return "record";
+    } else if (imageRegex.test(url)) {
+      return "image";
+    } else if (searchRegex.test(url)) {
+      return "search";
     }
-  } else if (recordRegex.test(url)) {
-    let recordId = url.replace(recordRegex, "$1");
-    //console.log("recordId is:", imageId);
-
-    if (recordId.length > 5) {
-      return recordId;
-    }
-  } else if (imageRegex.test(url)) {
-    let imageId = url.replace(imageRegex, "$1");
-    //console.log("imageId is:", imageId);
-
-    if (imageId.length > 5) {
-      return imageId;
-    }
-  } else {
-    console.log("getFsIdFromUrl no match for ", url);
   }
-}
 
-function extractFsIdFromElement(element) {
-  // We found an element that could be a place where an icon could be added
-  let enclosingLinkElement = element.closest("a");
-  if (enclosingLinkElement) {
-    let href = enclosingLinkElement.getAttribute("href");
-    if (href) {
-      let fsId = getFsIdFromUrl(href);
-      if (fsId) {
-        return fsId;
-      }
+  function getFsIdFromUrl(url) {
+    //console.log("getFsIdFromUrl ", url);
+
+    // strip the domain off so that this works for either a full URL or a relative HREF
+    const domainRegex = /^http.*familysearch\.org/;
+    if (domainRegex.test(url)) {
+      url = url.replace(domainRegex, "");
     }
-  } else {
-    // could be the top level heading
-    let enclosingH1Element = element.closest("h1");
-    if (enclosingH1Element) {
-      let fsId = getFsIdFromUrl(document.URL);
-      if (fsId) {
-        return fsId;
+
+    if (personRegex.test(url)) {
+      let personId = url.replace(personRegex, "$1");
+      //console.log("personId is:", personId);
+
+      if (personId.length > 5) {
+        return personId;
       }
-    } else if (element.tagName == "OL") {
-      // this is the OL after a heading typically
-      let fsId = getFsIdFromUrl(document.URL);
-      if (fsId) {
-        return fsId;
+    } else if (recordRegex.test(url)) {
+      let recordId = url.replace(recordRegex, "$1");
+      //console.log("recordId is:", imageId);
+
+      if (recordId.length > 5) {
+        return recordId;
+      }
+    } else if (imageRegex.test(url)) {
+      let imageId = url.replace(imageRegex, "$1");
+      //console.log("imageId is:", imageId);
+
+      if (imageId.length > 5) {
+        return imageId;
       }
     } else {
-      console.log("no fsId found for element ", element);
+      console.log("getFsIdFromUrl no match for ", url);
     }
   }
-}
 
-function initWtIconInjection() {
-  // Check if we've already initialized to prevent double-observers
-  if (window.hasWtIconInjectionStarted) return;
+  function extractFsIdFromElement(element) {
+    // We found an element that could be a place where an icon could be added
+    let enclosingLinkElement = element.closest("a");
+    if (enclosingLinkElement) {
+      let href = enclosingLinkElement.getAttribute("href");
+      if (href) {
+        let fsId = getFsIdFromUrl(href);
+        if (fsId) {
+          return fsId;
+        }
+      }
+    } else {
+      // could be the top level heading
+      let enclosingH1Element = element.closest("h1");
+      if (enclosingH1Element) {
+        let fsId = getFsIdFromUrl(document.URL);
+        if (fsId) {
+          return fsId;
+        }
+      } else if (element.tagName == "OL") {
+        // this is the OL after a heading typically
+        let fsId = getFsIdFromUrl(document.URL);
+        if (fsId) {
+          return fsId;
+        }
+      } else {
+        console.log("no fsId found for element ", element);
+      }
+    }
+  }
 
-  window.hasWtIconInjectionStarted = true;
-
-  const observer = new MutationObserver((mutations) => {
-    //console.log("MutationObserver called", mutations);
-
+  function onMutation(pageType, options, mutations) {
     let foundNew = false;
-
-    let pageType = determinePageType(document.URL);
-    console.log("pageType is: " + pageType);
 
     // Find all possible ID containers (Names, Parents, Children)
     // FamilySearch often uses specific data-testids or classes for these
@@ -810,7 +816,11 @@ function initWtIconInjection() {
       candidates = document.querySelectorAll("[data-testid='fullName'], main h1 > div, tr > th > span > a");
     } else if (pageType == "image") {
       candidates = document.querySelectorAll("nav ol");
+    } else if (pageType == "search") {
+      candidates = document.querySelectorAll("td > h2 > strong > a");
     }
+
+    console.log(`There are ${candidates.length} candidates`);
 
     candidates.forEach((el) => {
       if (el.querySelector(".wt-sourcer-icon")) {
@@ -843,38 +853,63 @@ function initWtIconInjection() {
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(processPendingIcons, 300); // Wait 300ms of "silence"
     }
-  });
+  }
 
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-  });
+  function initWtIconInjection(options) {
+    // Check if we've already initialized to prevent double-observers
+    if (window.hasSourcerWtIconInjectionStarted) return;
 
-  //console.log("WikiTree Sourcer: Observer started.");
-}
+    window.hasSourcerWtIconInjectionStarted = true;
 
-async function checkOptionsAndInitWtIconInjection() {
-  chrome.runtime.sendMessage(
-    {
-      type: "getOptions",
-    },
-    function (response) {
-      // We get a response with the loaded options
-      if (response && response.success) {
-        const options = response.options;
-        if (options) {
-          if (options.citation_ancestry_addEditCitationButton) {
-            initWtIconInjection();
+    let pageType = determinePageType(document.URL);
+    console.log("pageType is: " + pageType);
+
+    const observer = new MutationObserver((mutations) => {
+      // Check if the extension is still "alive"
+      if (!chrome || !chrome.runtime?.id) {
+        console.log("WikiTree Sourcer: Context invalidated, stopping observer.");
+        // Stop observing mutations
+        if (observer) {
+          observer.disconnect();
+        }
+        return;
+      }
+
+      logDebug("MutationObserver called", mutations);
+      onMutation(pageType, options, mutations);
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    logDebug("WikiTree Sourcer: Observer started.");
+  }
+
+  async function checkOptionsAndInitWtIconInjection() {
+    chrome.runtime.sendMessage(
+      {
+        type: "getOptions",
+      },
+      function (response) {
+        // We get a response with the loaded options
+        if (response && response.success) {
+          const options = response.options;
+          if (options) {
+            if (options.ui_pageMods_allowPageMods) {
+              initWtIconInjection(options);
+            }
           }
         }
       }
-    }
-  );
-}
+    );
+  }
 
-// Only start once the window is fully loaded
-if (document.readyState === "complete") {
-  checkOptionsAndInitWtIconInjection();
-} else {
-  window.addEventListener("load", checkOptionsAndInitWtIconInjection);
+  // Only start once the window is fully loaded
+  if (document.readyState === "complete") {
+    checkOptionsAndInitWtIconInjection();
+  } else {
+    window.addEventListener("load", checkOptionsAndInitWtIconInjection);
+  }
 }

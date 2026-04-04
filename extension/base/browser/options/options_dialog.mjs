@@ -84,6 +84,8 @@ function saveOptionsToFile() {
 }
 
 function doLoadOptionsFromFile(optionsRegistry) {
+  console.log("doLoadOptionsFromFile");
+
   return new Promise((resolve, reject) => {
     if (window.FileReader) {
       let chooser = document.createElement("input");

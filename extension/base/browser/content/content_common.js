@@ -48,13 +48,18 @@ function logDebug(...args) {
   // NOTE: This is just a safety catch in case we forget to turn off debugConfig.enabled
   if (typeof chrome === "object") {
     // we are in browser
-    var manifest = chrome.runtime.getManifest();
-    if (!manifest) {
-      return; // not sure assume production
-    }
+    try {
+      var manifest = chrome.runtime.getManifest();
+      if (!manifest) {
+        return; // not sure assume production
+      }
 
-    let isDev = typeof manifest.key == "undefined" && typeof manifest.update_url == "undefined";
-    if (!isDev) {
+      let isDev = typeof manifest.key == "undefined" && typeof manifest.update_url == "undefined";
+      if (!isDev) {
+        return;
+      }
+    } catch (error) {
+      // on non-extension supported pages (and the Sourcer options page) this can get an exception
       return;
     }
   }
