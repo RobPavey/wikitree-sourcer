@@ -335,6 +335,13 @@ async function registerContentScripts() {
         let extractPath = "site/" + id + "/browser/" + id + "_extract_data.js";
         let contentScriptPath = "site/" + id + "/browser/" + id + "_content.js";
         let js = [extractPath, commonPath, contentScriptPath];
+        if (siteData.additionalContentJsFiles) {
+          for (let addJs of siteData.additionalContentJsFiles) {
+            let addJsPath = "site/" + id + "/browser/" + addJs + ".js";
+            js.push(addJsPath);
+          }
+        }
+
         let runAt = "document_idle";
         if (siteData.runAt) {
           runAt = siteData.runAt;

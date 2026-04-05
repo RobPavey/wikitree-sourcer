@@ -309,6 +309,12 @@ const uiOptionsGroup = {
       defaultValue: true,
     },
     {
+      optionName: "imageShowWtIconH1",
+      type: "checkbox",
+      label: "On image pages show icon next to top-level heading",
+      defaultValue: true,
+    },
+    {
       optionName: "searchResultsShowWtIconResultRow",
       type: "checkbox",
       label: "On search results pages show icons on result rows",
