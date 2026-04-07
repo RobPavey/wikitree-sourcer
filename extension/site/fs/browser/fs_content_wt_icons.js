@@ -36,9 +36,11 @@ SOFTWARE.
 //
 // https://www.familysearch.org/ark:/61903/1:1:MWXN-JL5?lang=en
 //  US 1880 census with person, parents and siblings all having references
+//  No Similar Records
 //
 // https://www.familysearch.org/ark:/61903/1:1:MH4N-35W?lang=en
 //    Not referenced from any WT profiles but is attached to a profile that is
+//  Has lots of Similar Records
 //
 // Image:
 //
@@ -58,6 +60,41 @@ SOFTWARE.
 //
 // https://www.familysearch.org/en/search/record/results?count=20&&q.givenName=Casimiro%20Molina&q.surname=Lopez&q.birthLikePlace=Santa%20Fe%2C%20New%20Mexico%2C%20United%20States&q.birthLikeDate.from=1876&q.birthLikeDate.to=1880&q.deathLikePlace=Santa%20Barbara%2C%20Santa%20Barbara%2C%20California%2C%20United%20States&q.deathLikeDate.from=1938&q.deathLikeDate.to=1942&q.marriageLikePlace=Santa%20Barbara%2C%20California%2C%20United%20States&q.marriageLikeDate.from=1908&q.marriageLikeDate.to=1916&q.spouseGivenName=Victoria&q.spouseSurname=Cordero&q.recordCountry=United%20States
 //    1st and 5th are referenced from WT profiles
+
+const similarRecordsMap = new Map();
+
+window.addEventListener("message", (event) => {
+  if (event.source !== window || event.data?.type !== "FS_SIMILAR_RECORDS_DATA") return;
+
+  const payload = event.data.payload;
+  // Log the whole thing once to verify the structure
+  console.log("WikiTree Sourcer: Similar Records Data Received", payload);
+
+  let title = payload.title;
+  if (payload) {
+    let personaId = title.replace(/Matches for ark\:\/\d\/\d\:(.*)/, "$1");
+    console.log("WikiTree Sourcer: Similar Records Data personaId is ", personaId);
+
+    let similarRecordList = [];
+    if (payload.entries) {
+      payload.entries.forEach((entry) => {
+        // Typically the ID is in entry.content.persona.id
+        const recordId = entry.id;
+        const title = entry.title;
+        if (recordId && title) {
+          let similarRecord = {
+            recordId: recordId,
+            title: title,
+          };
+          similarRecordList.push(similarRecord);
+        }
+      });
+    }
+    similarRecordsMap.set(personaId, similarRecordList);
+    logDebug("Stored similarRecordList:", similarRecordList);
+  }
+  logDebug("Stored similarRecordsMap:", similarRecordsMap.size);
+});
 
 console.log("fs_content_wt_icons.js loaded");
 
@@ -104,6 +141,125 @@ if (runningExtensionId === currentExtensionId) {
   // A search results URL URL  should look like one of these:
   // https://www.familysearch.org/en/search/record/results?count=20&treeref=G443-GML&q.givenName=Etienne&q.surname=Smit&q.birthLikeDate.from=1926&q.birthLikeDate.to=1930&q.deathLikeDate.from=2005&q.deathLikeDate.to=2009&q.marriageLikePlace=Paarl%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from=1949&q.marriageLikeDate.to=1957&q.spouseGivenName=Anna%20Jacoba&q.spouseSurname=de%20Villiers&q.marriageLikePlace.1=Wynberg%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from.1=1959&q.marriageLikeDate.to.1=1967&q.spouseGivenName.1=Helena&q.spouseSurname.1=Theron&q.recordCountry=South%20Africa
   const searchRegex = /^https\:\/\/(?:www\.)?familysearch.org\/[^\/]+\/search\/.*$/;
+
+  function injectFsFetchInterceptor() {
+    // Check if already injected to prevent duplicates
+    if (document.getElementById("fs-sourcer-interceptor")) return;
+
+    const script = document.createElement("script");
+    script.id = "fs-sourcer-interceptor";
+    // Use getURL to reference a file inside your extension
+    script.src = chrome.runtime.getURL("site/fs/browser/fs_interceptor.js");
+
+    script.onload = function () {
+      this.remove(); // Clean up the tag once loaded
+    };
+
+    (document.head || document.documentElement).appendChild(script);
+  }
+
+  async function fetchFsSimilarRecordsJson(recordId, sessionId) {
+    console.log("fetchFsSimilarRecordsJson, sessionId is: " + sessionId);
+
+    if (!sessionId) {
+      sessionId = "";
+    }
+
+    if (!recordId) {
+      return { success: false };
+    }
+
+    // example sent by FS
+    // https://www.familysearch.org/platform/records/personas/MH4N-35W/matches?collection=records&includeSummary=true&count=10
+    let fetchUrl = "https://www.familysearch.org/platform/records/personas/";
+    fetchUrl += recordId;
+    fetchUrl += "/matches?collection=records&includeSummary=true&count=10";
+
+    console.log("fetchUrl is", fetchUrl);
+
+    let fetchOptionsHeaders = {
+      accept: "application/x-gedcomx-v1+json, application/json",
+      "accept-language": "en",
+      from: "fsSearch.record.getGedcomX@familysearch.org",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      authorization: "Bearer " + sessionId,
+    };
+
+    let fetchOptions = {
+      headers: fetchOptionsHeaders,
+      referrerPolicy: "strict-origin-when-cross-origin",
+      body: null,
+      method: "GET",
+      mode: "cors",
+      credentials: "include",
+    };
+
+    try {
+      let response = await fetch(fetchUrl, fetchOptions).catch((err) => {
+        console.log("Fetch threw an exception, message is: " + err.message);
+        console.log(err);
+        return { success: false };
+      });
+
+      console.log("response is");
+      console.log(response);
+
+      // On Firefox it may return zero any time you use "no-cors"
+      if (response.status !== 200) {
+        console.log("fetchFsSimilarRecordsJson: Looks like there was a problem. Status Code: " + response.status);
+        return {
+          success: false,
+          errorCondition: "FetchError",
+          status: response.status,
+          allowRetry: true,
+        };
+      }
+
+      // Examine the text in the response
+      let data = await response.text();
+
+      //console.log("data is:");
+      //console.log(data);
+
+      if (data.startsWith("{")) {
+        const jsonData = data;
+        const dataObj = JSON.parse(jsonData);
+
+        console.log("dataObj is:");
+        console.log(dataObj);
+
+        if (dataObj) {
+          return { success: true, dataObj: dataObj };
+        }
+      } else {
+        console.log("response does not look like JSON");
+      }
+    } catch (error) {
+      console.log("fetch failed, error is:");
+      console.log(error);
+      return { success: false };
+    }
+
+    return { success: false };
+  }
+
+  async function fetchSimilarRecords(locationBatch) {
+    let pageFsId = pageInfo.fsId;
+    if (!pageFsId) {
+      return;
+    }
+
+    logDebug("fetchSimilarRecords, pageFsId", pageFsId);
+
+    let result = await fetchFsSimilarRecordsJson(pageFsId);
+    if (result.success) {
+      logDebug("fetchFsIdsForSources, dataObj", result.dataObj);
+    } else {
+      logDebug("fetchFsIdsForSources, bad response from fetchFsSourcesJson", result);
+    }
+  }
 
   async function fetchFsSourcesJson(sourceIdList, sessionId) {
     //console.log("fetchFsSourcesJson, sessionId is: " + sessionId);
@@ -348,7 +504,7 @@ if (runningExtensionId === currentExtensionId) {
           locationTypeName: "similarRecord",
           selector: "li div[role='button'] span > span",
           needToFetchIds: true,
-          fetchFunction: fetchFsIdsForSources, // TBD: need to write a function
+          fetchFunction: fetchSimilarRecords,
           optionKey: "recordShowWtIconSimilarRecords",
         },
         {
@@ -892,7 +1048,7 @@ if (runningExtensionId === currentExtensionId) {
     return true;
   }
 
-  let pageProfile = undefined;
+  let pageInfo = {};
   let areOptionsForThisPageEnabled = false;
 
   function onMutation(options, mutations) {
@@ -901,17 +1057,23 @@ if (runningExtensionId === currentExtensionId) {
     if (window.sourcerWtIconsLastProcessedUrl !== document.URL) {
       window.sourcerWtIconsLastProcessedUrl = document.URL;
 
-      pageProfile = determinePageProfile(document.URL);
-      console.log("pageProfile is: ", pageProfile);
+      pageInfo.pageProfile = determinePageProfile(document.URL);
+      let fsIdData = getFsIdFromUrl(document.URL);
+      if (fsIdData) {
+        pageInfo.fsId = fsIdData.fsId;
+        pageInfo.fsIdType = fsIdData.fsIdType;
+      }
 
-      if (!pageProfile) {
+      console.log("pageProfile is: ", pageInfo.pageProfile);
+
+      if (!pageInfo.pageProfile) {
         console.log("initWtIconInjection could not identify pageProfile for URL:", document.URL);
         return;
       }
 
       // if none of the options for this profile are enabled return
       areOptionsForThisPageEnabled = false;
-      for (let locationType of pageProfile.locationTypes) {
+      for (let locationType of pageInfo.pageProfile.locationTypes) {
         if (isLocationTypeEnabled(locationType, options)) {
           areOptionsForThisPageEnabled = true;
           break;
@@ -919,7 +1081,7 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
 
-    if (!pageProfile || !areOptionsForThisPageEnabled) {
+    if (!pageInfo.pageProfile || !areOptionsForThisPageEnabled) {
       return;
     }
 
@@ -927,7 +1089,7 @@ if (runningExtensionId === currentExtensionId) {
 
     let candidateLocations = [];
 
-    for (let locationType of pageProfile.locationTypes) {
+    for (let locationType of pageInfo.pageProfile.locationTypes) {
       if (isLocationTypeEnabled(locationType, options)) {
         let candidateElements = document.querySelectorAll(locationType.selector);
         //logDebug("locationType ", locationType);
@@ -966,6 +1128,8 @@ if (runningExtensionId === currentExtensionId) {
     if (window.hasSourcerWtIconInjectionStarted) return;
 
     window.hasSourcerWtIconInjectionStarted = true;
+
+    injectFsFetchInterceptor();
 
     console.log("initWtIconInjection: document.URL is: " + document.URL);
 

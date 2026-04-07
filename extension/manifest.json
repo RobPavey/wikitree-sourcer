@@ -140,5 +140,11 @@
     "*://www.landesarchiv-nrw.de/*",
     "*://www.scotlandspeople.gov.uk/*",
     "*://www.szukajwarchiwach.gov.pl/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["site/fs/browser/fs_interceptor.js"],
+      "matches": ["https://*.familysearch.org/*"]
+    }
   ]
 }
