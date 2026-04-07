@@ -61,41 +61,6 @@ SOFTWARE.
 // https://www.familysearch.org/en/search/record/results?count=20&&q.givenName=Casimiro%20Molina&q.surname=Lopez&q.birthLikePlace=Santa%20Fe%2C%20New%20Mexico%2C%20United%20States&q.birthLikeDate.from=1876&q.birthLikeDate.to=1880&q.deathLikePlace=Santa%20Barbara%2C%20Santa%20Barbara%2C%20California%2C%20United%20States&q.deathLikeDate.from=1938&q.deathLikeDate.to=1942&q.marriageLikePlace=Santa%20Barbara%2C%20California%2C%20United%20States&q.marriageLikeDate.from=1908&q.marriageLikeDate.to=1916&q.spouseGivenName=Victoria&q.spouseSurname=Cordero&q.recordCountry=United%20States
 //    1st and 5th are referenced from WT profiles
 
-const similarRecordsMap = new Map();
-
-window.addEventListener("message", (event) => {
-  if (event.source !== window || event.data?.type !== "FS_SIMILAR_RECORDS_DATA") return;
-
-  const payload = event.data.payload;
-  // Log the whole thing once to verify the structure
-  console.log("WikiTree Sourcer: Similar Records Data Received", payload);
-
-  let title = payload.title;
-  if (payload) {
-    let personaId = title.replace(/Matches for ark\:\/\d\/\d\:(.*)/, "$1");
-    console.log("WikiTree Sourcer: Similar Records Data personaId is ", personaId);
-
-    let similarRecordList = [];
-    if (payload.entries) {
-      payload.entries.forEach((entry) => {
-        // Typically the ID is in entry.content.persona.id
-        const recordId = entry.id;
-        const title = entry.title;
-        if (recordId && title) {
-          let similarRecord = {
-            recordId: recordId,
-            title: title,
-          };
-          similarRecordList.push(similarRecord);
-        }
-      });
-    }
-    similarRecordsMap.set(personaId, similarRecordList);
-    logDebug("Stored similarRecordList:", similarRecordList);
-  }
-  logDebug("Stored similarRecordsMap:", similarRecordsMap.size);
-});
-
 console.log("fs_content_wt_icons.js loaded");
 
 // Get the ID of the current extension instance
@@ -142,31 +107,28 @@ if (runningExtensionId === currentExtensionId) {
   // https://www.familysearch.org/en/search/record/results?count=20&treeref=G443-GML&q.givenName=Etienne&q.surname=Smit&q.birthLikeDate.from=1926&q.birthLikeDate.to=1930&q.deathLikeDate.from=2005&q.deathLikeDate.to=2009&q.marriageLikePlace=Paarl%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from=1949&q.marriageLikeDate.to=1957&q.spouseGivenName=Anna%20Jacoba&q.spouseSurname=de%20Villiers&q.marriageLikePlace.1=Wynberg%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from.1=1959&q.marriageLikeDate.to.1=1967&q.spouseGivenName.1=Helena&q.spouseSurname.1=Theron&q.recordCountry=South%20Africa
   const searchRegex = /^https\:\/\/(?:www\.)?familysearch.org\/[^\/]+\/search\/.*$/;
 
-  function injectFsFetchInterceptor() {
-    // Check if already injected to prevent duplicates
-    if (document.getElementById("fs-sourcer-interceptor")) return;
-
-    const script = document.createElement("script");
-    script.id = "fs-sourcer-interceptor";
-    // Use getURL to reference a file inside your extension
-    script.src = chrome.runtime.getURL("site/fs/browser/fs_interceptor.js");
-
-    script.onload = function () {
-      this.remove(); // Clean up the tag once loaded
-    };
-
-    (document.head || document.documentElement).appendChild(script);
-  }
-
   async function fetchFsSimilarRecordsJson(recordId, sessionId) {
     console.log("fetchFsSimilarRecordsJson, sessionId is: " + sessionId);
 
-    if (!sessionId) {
-      sessionId = "";
-    }
-
     if (!recordId) {
       return { success: false };
+    }
+
+    if (!sessionId) {
+      sessionId = "";
+      if (document) {
+        let cookies = document.cookie;
+        if (cookies) {
+          let fssessionid = document.cookie
+            .split("; ")
+            .find((row) => row.startsWith("fssessionid="))
+            ?.split("=")[1];
+          if (fssessionid) {
+            sessionId = fssessionid;
+            console.log("fetchFsSimilarRecordsJson, sessionId from cookies is: " + sessionId);
+          }
+        }
+      }
     }
 
     // example sent by FS
@@ -252,12 +214,54 @@ if (runningExtensionId === currentExtensionId) {
     }
 
     logDebug("fetchSimilarRecords, pageFsId", pageFsId);
+    logDebug("fetchSimilarRecords, locationBatch", locationBatch);
 
     let result = await fetchFsSimilarRecordsJson(pageFsId);
     if (result.success) {
-      logDebug("fetchFsIdsForSources, dataObj", result.dataObj);
+      logDebug("fetchSimilarRecords, dataObj", result.dataObj);
     } else {
-      logDebug("fetchFsIdsForSources, bad response from fetchFsSourcesJson", result);
+      logDebug("fetchSimilarRecords, bad response from fetchFsSourcesJson", result);
+      return;
+    }
+
+    let similarRecordLocations = [];
+
+    // go through the locations and set the fsIds based on the results
+    for (let location of locationBatch.locations) {
+      if (location.locationType.locationTypeName == "similarRecord") {
+        similarRecordLocations.push(location);
+      }
+    }
+    logDebug("fetchSimilarRecords, similarRecordLocations: ", similarRecordLocations);
+
+    let entries = result.dataObj.entries;
+    logDebug("fetchSimilarRecords, entries: ", entries);
+
+    if (entries.length == similarRecordLocations.length) {
+      logDebug("fetchSimilarRecords, lengths match");
+      for (let i = 0; i < entries.length; i++) {
+        let entry = entries[i];
+        let location = similarRecordLocations[i];
+        let closestDiv = location.matchedElement.closest("div");
+        if (closestDiv) {
+          let titleDiv = closestDiv.querySelector("div");
+          if (titleDiv) {
+            let locationTitle = titleDiv.textContent;
+            logDebug("similar record entry title is :", entry.title);
+            logDebug("similar record location title is :", locationTitle);
+            if (entry.title == locationTitle) {
+              let fsUrl = entry.id;
+              let fsIdData = getFsIdDataFromUrl(fsUrl);
+              if (fsIdData) {
+                let fsId = fsIdData.fsId;
+                location.fsId = fsId;
+                location.fsIdType = fsIdData.fsIdType;
+                addLocationToPendingFsIds(locationBatch, fsId, location);
+              }
+            }
+          }
+        }
+      }
     }
   }
 
@@ -403,16 +407,13 @@ if (runningExtensionId === currentExtensionId) {
                 if (source.uri && source.uri.uri) {
                   // non-FS sources can be mising a uri
 
-                  let fsIdData = getFsIdFromUrl(source.uri.uri);
+                  let fsIdData = getFsIdDataFromUrl(source.uri.uri);
                   if (fsIdData) {
                     let fsId = fsIdData.fsId;
                     location.fsId = fsId;
                     location.fsIdType = fsIdData.fsIdType;
 
-                    if (!locationBatch.pendingFsIds.has(fsId)) {
-                      locationBatch.pendingFsIds.set(fsId, []);
-                    }
-                    locationBatch.pendingFsIds.get(fsId).push(location);
+                    addLocationToPendingFsIds(locationBatch, fsId, location);
                   }
                 }
                 break;
@@ -591,6 +592,11 @@ if (runningExtensionId === currentExtensionId) {
 
     if (locationType.locationTypeName == "imageNavBar") {
       return element;
+    }
+
+    if (locationType.locationTypeName == "similarRecord") {
+      // we want to add as a child of the parent span
+      return element.parentElement;
     }
 
     if (element.tagName == "SPAN") {
@@ -785,6 +791,10 @@ if (runningExtensionId === currentExtensionId) {
       anchorElement.style.marginLeft = "8px";
 
       spanElement.appendChild(anchorElement);
+    } else if (location.locationType.locationTypeName === "similarRecord") {
+      // the spanElement is a container that we want to append to
+      anchorElement.style.marginLeft = "0px";
+      spanElement.appendChild(anchorElement);
     } else {
       img.style.marginLeft = "12px";
       spanElement.appendChild(anchorElement);
@@ -795,6 +805,13 @@ if (runningExtensionId === currentExtensionId) {
 
   let pendingLocationsBatch = {};
   let debounceTimer = null;
+
+  function addLocationToPendingFsIds(locationBatch, fsId, location) {
+    if (!locationBatch.pendingFsIds.has(fsId)) {
+      locationBatch.pendingFsIds.set(fsId, []);
+    }
+    locationBatch.pendingFsIds.get(fsId).push(location);
+  }
 
   function addLocationToPendingBatch(location) {
     if (!pendingLocationsBatch.locations) {
@@ -808,10 +825,7 @@ if (runningExtensionId === currentExtensionId) {
 
     const fsId = location.fsId;
     if (fsId) {
-      if (!pendingLocationsBatch.pendingFsIds.has(fsId)) {
-        pendingLocationsBatch.pendingFsIds.set(fsId, []);
-      }
-      pendingLocationsBatch.pendingFsIds.get(fsId).push(location);
+      addLocationToPendingFsIds(pendingLocationsBatch, fsId, location);
     } else {
       let locationType = location.locationType;
       if (locationType.needToFetchIds) {
@@ -834,7 +848,12 @@ if (runningExtensionId === currentExtensionId) {
     // we cache all the fsIds that we have queried about
 
     let pendingFsIds = currentBatch.pendingFsIds;
-    console.log(`getWikiIdsForBatch, pendingFsIds size is ${pendingFsIds.size}`);
+    if (pendingFsIds) {
+      console.log(`getWikiIdsForBatch, pendingFsIds size is ${pendingFsIds.size}`);
+    } else {
+      console.log(`getWikiIdsForBatch, pendingFsIds undefined`);
+      return;
+    }
 
     const fsIdsToCheck = Array.from(pendingFsIds.keys());
     let fsIdsToQuery = [];
@@ -927,14 +946,14 @@ if (runningExtensionId === currentExtensionId) {
     }
   }
 
-  function getFsIdFromUrl(url) {
-    //console.log("getFsIdFromUrl ", url);
+  function getFsIdDataFromUrl(url) {
+    //console.log("getFsIdDataFromUrl ", url);
 
     // Remove the start and the domain, leaving the rest of the string untouched
     const domainRegex = /^https?:\/\/(?:www\.)?familysearch\.org/;
     url = url.replace(domainRegex, "");
 
-    //console.log("getFsIdFromUrl modified URL is ", url);
+    //console.log("getFsIdDataFromUrl modified URL is ", url);
 
     if (personRegex.test(url)) {
       let personId = url.replace(personRegex, "$1");
@@ -958,7 +977,7 @@ if (runningExtensionId === currentExtensionId) {
         return { fsIdType: "image", fsId: imageId };
       }
     } else {
-      console.log("getFsIdFromUrl no match for ", url);
+      console.log("getFsIdDataFromUrl no match for ", url);
     }
   }
 
@@ -967,7 +986,7 @@ if (runningExtensionId === currentExtensionId) {
 
     if (location.locationType.useFsIdFromPageUrl) {
       logDebug("extractFsIdFromLocation, using fsId from location");
-      let fsIdData = getFsIdFromUrl(document.URL);
+      let fsIdData = getFsIdDataFromUrl(document.URL);
       if (fsIdData) {
         return fsIdData;
       }
@@ -982,7 +1001,7 @@ if (runningExtensionId === currentExtensionId) {
       if (href) {
         logDebug("extractFsIdFromLocation, using fsId from href", href);
 
-        let fsIdData = getFsIdFromUrl(href);
+        let fsIdData = getFsIdDataFromUrl(href);
         if (fsIdData) {
           return fsIdData;
         }
@@ -1041,6 +1060,8 @@ if (runningExtensionId === currentExtensionId) {
         logDebug("location matched element has no fsId and does not require fetch");
         return false;
       }
+    } else {
+      logDebug("location has locationType.needToFetchIds", location);
     }
 
     el.dataset.wtIconProcessed = "true";
@@ -1058,7 +1079,7 @@ if (runningExtensionId === currentExtensionId) {
       window.sourcerWtIconsLastProcessedUrl = document.URL;
 
       pageInfo.pageProfile = determinePageProfile(document.URL);
-      let fsIdData = getFsIdFromUrl(document.URL);
+      let fsIdData = getFsIdDataFromUrl(document.URL);
       if (fsIdData) {
         pageInfo.fsId = fsIdData.fsId;
         pageInfo.fsIdType = fsIdData.fsIdType;
@@ -1128,8 +1149,6 @@ if (runningExtensionId === currentExtensionId) {
     if (window.hasSourcerWtIconInjectionStarted) return;
 
     window.hasSourcerWtIconInjectionStarted = true;
-
-    injectFsFetchInterceptor();
 
     console.log("initWtIconInjection: document.URL is: " + document.URL);
 
