@@ -61,9 +61,29 @@ SOFTWARE.
 
 console.log("fs_content_wt_icons.js loaded");
 
+// Get the ID of the current extension instance
+const currentExtensionId = chrome.runtime?.id;
+
+// Check what ID (if any) was stored by a previous injection
+const runningExtensionId = window.sourcerFsContentWtIconsId;
+
 // Wrapper to put all icon injection in a scope and to prevent redefinition
 // if content script loaded twice
-if (!window.sourcerFsContentWtIcons) {
+if (runningExtensionId === currentExtensionId) {
+  // This is a redundant injection of the SAME version.
+  // We can safely exit.
+  console.log("fs_content_wt_icons.js: Same version already running.");
+} else {
+  // 1. This is either the first run OR a new version being injected.
+  // 2. Kill the old observer if it exists to prevent "ghost" icons.
+  if (window.sourcerWtMutationObserver) {
+    window.sourcerWtMutationObserver.disconnect();
+    console.log("WikiTree Sourcer: Cleaned up old observer.");
+  }
+
+  // 3. Mark this window with the NEW ID so future redundant injections stop here.
+  window.sourcerFsContentWtIconsId = currentExtensionId;
+
   console.log("fs_content_wt_icons.js was not already loaded");
 
   // A person url should look like one of these:
@@ -84,8 +104,6 @@ if (!window.sourcerFsContentWtIcons) {
   // A search results URL URL  should look like one of these:
   // https://www.familysearch.org/en/search/record/results?count=20&treeref=G443-GML&q.givenName=Etienne&q.surname=Smit&q.birthLikeDate.from=1926&q.birthLikeDate.to=1930&q.deathLikeDate.from=2005&q.deathLikeDate.to=2009&q.marriageLikePlace=Paarl%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from=1949&q.marriageLikeDate.to=1957&q.spouseGivenName=Anna%20Jacoba&q.spouseSurname=de%20Villiers&q.marriageLikePlace.1=Wynberg%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from.1=1959&q.marriageLikeDate.to.1=1967&q.spouseGivenName.1=Helena&q.spouseSurname.1=Theron&q.recordCountry=South%20Africa
   const searchRegex = /^https\:\/\/(?:www\.)?familysearch.org\/[^\/]+\/search\/.*$/;
-
-  window.sourcerFsContentWtIcons = true;
 
   async function fetchFsSourcesJson(sourceIdList, sessionId) {
     //console.log("fetchFsSourcesJson, sessionId is: " + sessionId);
@@ -453,12 +471,6 @@ if (!window.sourcerFsContentWtIcons) {
   }
 
   // Define  SVG icons
-  const svgSingleOld = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
-  <path d="M15 12H8M8 12L11 9M8 12L11 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-</svg>`;
-
   const svgSingle = `data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
@@ -479,19 +491,6 @@ if (!window.sourcerFsContentWtIcons) {
 </svg>`;
 
   const svgMultiple = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
-  <path d="M10 8L7 12L10 16M17 8L14 12L17 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-</svg>`;
-
-  const svgMultipleOverlapOld = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <circle cx="14" cy="10" r="9" fill="%23ffaf02" stroke="white" stroke-width="1.5" opacity="0.6"/>
-  <circle cx="10" cy="14" r="9" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
-  <path d="M12 14H8M8 14L10 12M8 14L10 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-</svg>`;
-
-  const svgMultipleOverlap = `data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <circle cx="15" cy="9" r="8" fill="%23ffaf02" stroke="white" stroke-width="1.5" opacity="0.6"/>
   
@@ -526,7 +525,7 @@ if (!window.sourcerFsContentWtIcons) {
     let titleText = "FamilySearch " + location.fsIdType + " " + location.fsId + " is ";
 
     if (wikiIds.length > 1) {
-      svgIcon = svgMultipleOverlap;
+      svgIcon = svgMultiple;
       titleText += `referenced from ${wikiIds.length} WikiTree profiles`;
     } else {
       svgIcon = svgSingle;
@@ -570,7 +569,12 @@ if (!window.sourcerFsContentWtIcons) {
       let fsId = location.fsId;
       if (fsId) {
         let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
-        wtPlusUrl += "FamilySearch=" + fsId;
+        if (location.fsIdType == "image") {
+          wtPlusUrl += "FamilySearchImage=";
+        } else {
+          wtPlusUrl += "FamilySearch=";
+        }
+        wtPlusUrl += fsId;
         wtPlusUrl += "&render=1";
         anchorElement.setAttribute("href", wtPlusUrl);
       }
@@ -979,6 +983,8 @@ if (!window.sourcerFsContentWtIcons) {
       //logDebug("MutationObserver called", mutations);
       onMutation(options, mutations);
     });
+
+    window.sourcerWtMutationObserver = observer;
 
     observer.observe(document.body, {
       childList: true,

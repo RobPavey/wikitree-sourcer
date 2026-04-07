@@ -1086,6 +1086,12 @@ function addWtSearchIds(ed, result) {
     }
   }
 
+  function addImageFsId(idList, fsId) {
+    if (fsId) {
+      idList.push({ key: "FamilySearchImage", value: fsId });
+    }
+  }
+
   if (ed.pageType == "record") {
     var recordUrl = ed.personRecordUrl;
     if (!recordUrl) {
@@ -1101,7 +1107,7 @@ function addWtSearchIds(ed, result) {
       }
     }
   } else if (ed.pageType == "image") {
-    addFsId(wtIds, extractFsImageIdFromUrl(ed.url));
+    addImageFsId(wtIds, extractFsImageIdFromUrl(ed.url));
   } else if (ed.pageType == "person") {
     addFsId(wtIds, extractFsPersonIdFromUrl(ed.url));
   }
