@@ -115,6 +115,9 @@ if (runningExtensionId === currentExtensionId) {
   // A landscape tree should look like this:
   // https://www.familysearch.org/en/tree/pedigree/landscape/L62P-39Y
   const pedigreeLandscapeRegex = /^\/(?:[^\/]+\/)?tree\/pedigree\/landscape\/.*$/;
+  // A portrait tree should look like this:
+  // https://www.familysearch.org/en/tree/pedigree/portrait/G443-GML
+  const pedigreePortraitRegex = /^\/(?:[^\/]+\/)?tree\/pedigree\/portrait\/.*$/;
 
   async function fetchFsSimilarRecordsJson(recordId, sessionId) {
     logDebug("fetchFsSimilarRecordsJson, sessionId is: " + sessionId);
@@ -529,8 +532,18 @@ if (runningExtensionId === currentExtensionId) {
       matchRegex: imageRegex,
       locationTypes: [
         {
+          locationTypeName: "imageSideBarRecord",
+          selector: "aside h2 a > span",
+          optionKey: "imageShowWtIconSidebar",
+        },
+        {
+          locationTypeName: "imageSideBarAttached",
+          selector: "aside [data-testid='person'] [data-testid='nameLink'] [data-testid='fullName']",
+          optionKey: "imageShowWtIconSidebar",
+        },
+        {
           locationTypeName: "pageH1",
-          selector: "main h1 > span, [data-testid='fullName'], nav ol",
+          selector: "main h1 > span, nav ol",
           useFsIdFromPageUrl: true,
           optionKey: "imageShowWtIconH1",
         },
@@ -563,7 +576,8 @@ if (runningExtensionId === currentExtensionId) {
         },
         {
           locationTypeName: "searchPersonInFsTree",
-          selector: "[data-testid='nameSpan'] [data-testid='fullName']",
+          selector:
+            "aside [data-testid='nameSpan'] [data-testid='fullName'], aside [data-testid='person'] [data-testid='fullName']",
           optionKey: "searchResultsShowWtIconPersonInTree",
         },
       ],
@@ -573,7 +587,7 @@ if (runningExtensionId === currentExtensionId) {
       matchRegex: pedigreeLandscapeRegex,
       locationTypes: [
         {
-          locationTypeName: "pedgreePerson",
+          locationTypeName: "pedigreePerson",
           selector: "li [data-testid='nameLink'] div > span",
           optionKey: "pedigreeLandscapeShowWtIcon",
         },
@@ -581,6 +595,23 @@ if (runningExtensionId === currentExtensionId) {
           locationTypeName: "sidebarHeader",
           selector: "[data-testid='PersonSheetHeader'] [data-testid='nameLink'] [data-testid='fullName']",
           optionKey: "pedigreeLandscapeShowWtIconSidebar",
+        },
+      ],
+    },
+    {
+      pageType: "pedigreePortrait",
+      matchRegex: pedigreePortraitRegex,
+      locationTypes: [
+        {
+          locationTypeName: "pedigreePerson",
+          selector:
+            "[data-testid='pedigree'] [data-testid='person'] [data-testid='nameLink'] [data-testid='namePart2']",
+          optionKey: "pedigreePortraitShowWtIcon",
+        },
+        {
+          locationTypeName: "sidebarHeader",
+          selector: "aside [data-testid='PersonSheetHeader'] [data-testid='nameLink'] [data-testid='fullName']",
+          optionKey: "pedigreePortraitShowWtIconSidebar",
         },
       ],
     },

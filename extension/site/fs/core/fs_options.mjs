@@ -315,6 +315,12 @@ const uiOptionsGroup = {
       defaultValue: true,
     },
     {
+      optionName: "imageShowWtIconSidebar",
+      type: "checkbox",
+      label: "On image pages show icon next to names in sidebar",
+      defaultValue: true,
+    },
+    {
       optionName: "pedigreeLandscapeShowWtIcon",
       type: "checkbox",
       label: "On pedigree landscape tree show icon next to names",
@@ -324,6 +330,18 @@ const uiOptionsGroup = {
       optionName: "pedigreeLandscapeShowWtIconSidebar",
       type: "checkbox",
       label: "On pedigree landscape tree show icon next to name in sidebar",
+      defaultValue: true,
+    },
+    {
+      optionName: "pedigreePortraitShowWtIcon",
+      type: "checkbox",
+      label: "On pedigree portrait tree show icon next to names",
+      defaultValue: true,
+    },
+    {
+      optionName: "pedigreePortraitShowWtIconSidebar",
+      type: "checkbox",
+      label: "On pedigree portrait tree show icon next to name in sidebar",
       defaultValue: true,
     },
     {
