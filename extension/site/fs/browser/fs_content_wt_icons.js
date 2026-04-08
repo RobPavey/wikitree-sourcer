@@ -61,7 +61,7 @@ SOFTWARE.
 // https://www.familysearch.org/en/search/record/results?count=20&&q.givenName=Casimiro%20Molina&q.surname=Lopez&q.birthLikePlace=Santa%20Fe%2C%20New%20Mexico%2C%20United%20States&q.birthLikeDate.from=1876&q.birthLikeDate.to=1880&q.deathLikePlace=Santa%20Barbara%2C%20Santa%20Barbara%2C%20California%2C%20United%20States&q.deathLikeDate.from=1938&q.deathLikeDate.to=1942&q.marriageLikePlace=Santa%20Barbara%2C%20California%2C%20United%20States&q.marriageLikeDate.from=1908&q.marriageLikeDate.to=1916&q.spouseGivenName=Victoria&q.spouseSurname=Cordero&q.recordCountry=United%20States
 //    1st and 5th are referenced from WT profiles
 
-console.log("fs_content_wt_icons.js loaded");
+logDebug("fs_content_wt_icons.js loaded");
 
 // Get the ID of the current extension instance
 const currentExtensionId = chrome.runtime?.id;
@@ -74,19 +74,19 @@ const runningExtensionId = window.sourcerFsContentWtIconsId;
 if (runningExtensionId === currentExtensionId) {
   // This is a redundant injection of the SAME version.
   // We can safely exit.
-  console.log("fs_content_wt_icons.js: Same version already running.");
+  logDebug("fs_content_wt_icons.js: Same version already running.");
 } else {
   // 1. This is either the first run OR a new version being injected.
   // 2. Kill the old observer if it exists to prevent "ghost" icons.
   if (window.sourcerWtMutationObserver) {
     window.sourcerWtMutationObserver.disconnect();
-    console.log("WikiTree Sourcer: Cleaned up old observer.");
+    logDebug("WikiTree Sourcer: Cleaned up old observer.");
   }
 
   // 3. Mark this window with the NEW ID so future redundant injections stop here.
   window.sourcerFsContentWtIconsId = currentExtensionId;
 
-  console.log("fs_content_wt_icons.js was not already loaded");
+  logDebug("fs_content_wt_icons.js was not already loaded");
 
   // A person url should look like one of these:
   // https://www.familysearch.org/en/tree/person/details/L62P-39Y
@@ -105,10 +105,13 @@ if (runningExtensionId === currentExtensionId) {
   const imageRegex = /^\/ark\:\/\d+\/\d\:\d\:([A-Z0-9]{4,5}\-[A-Z0-9]{3,4}\-[A-Z0-9]{2,4}(?:\-[A-Z0-9]{1,4})?).*$/;
   // A search results URL URL  should look like one of these:
   // https://www.familysearch.org/en/search/record/results?count=20&treeref=G443-GML&q.givenName=Etienne&q.surname=Smit&q.birthLikeDate.from=1926&q.birthLikeDate.to=1930&q.deathLikeDate.from=2005&q.deathLikeDate.to=2009&q.marriageLikePlace=Paarl%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from=1949&q.marriageLikeDate.to=1957&q.spouseGivenName=Anna%20Jacoba&q.spouseSurname=de%20Villiers&q.marriageLikePlace.1=Wynberg%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from.1=1959&q.marriageLikeDate.to.1=1967&q.spouseGivenName.1=Helena&q.spouseSurname.1=Theron&q.recordCountry=South%20Africa
-  const searchRegex = /^https\:\/\/(?:www\.)?familysearch.org\/[^\/]+\/search\/.*$/;
+  const searchRegex = /^\/(?:[^\/]+\/)?search\/.*$/;
+  // A landscape tree should look like this:
+  // https://www.familysearch.org/en/tree/pedigree/landscape/L62P-39Y
+  const pedigreeLandscapeRegex = /^\/(?:[^\/]+\/)?tree\/pedigree\/landscape\/.*$/;
 
   async function fetchFsSimilarRecordsJson(recordId, sessionId) {
-    console.log("fetchFsSimilarRecordsJson, sessionId is: " + sessionId);
+    logDebug("fetchFsSimilarRecordsJson, sessionId is: " + sessionId);
 
     if (!recordId) {
       return { success: false };
@@ -125,7 +128,7 @@ if (runningExtensionId === currentExtensionId) {
             ?.split("=")[1];
           if (fssessionid) {
             sessionId = fssessionid;
-            console.log("fetchFsSimilarRecordsJson, sessionId from cookies is: " + sessionId);
+            logDebug("fetchFsSimilarRecordsJson, sessionId from cookies is: " + sessionId);
           }
         }
       }
@@ -137,7 +140,7 @@ if (runningExtensionId === currentExtensionId) {
     fetchUrl += recordId;
     fetchUrl += "/matches?collection=records&includeSummary=true&count=10";
 
-    console.log("fetchUrl is", fetchUrl);
+    logDebug("fetchUrl is", fetchUrl);
 
     let fetchOptionsHeaders = {
       accept: "application/x-gedcomx-v1+json, application/json",
@@ -165,8 +168,8 @@ if (runningExtensionId === currentExtensionId) {
         return { success: false };
       });
 
-      console.log("response is");
-      console.log(response);
+      logDebug("response is");
+      logDebug(response);
 
       // On Firefox it may return zero any time you use "no-cors"
       if (response.status !== 200) {
@@ -182,15 +185,15 @@ if (runningExtensionId === currentExtensionId) {
       // Examine the text in the response
       let data = await response.text();
 
-      //console.log("data is:");
-      //console.log(data);
+      //logDebug("data is:");
+      //logDebug(data);
 
       if (data.startsWith("{")) {
         const jsonData = data;
         const dataObj = JSON.parse(jsonData);
 
-        console.log("dataObj is:");
-        console.log(dataObj);
+        logDebug("dataObj is:");
+        logDebug(dataObj);
 
         if (dataObj) {
           return { success: true, dataObj: dataObj };
@@ -266,7 +269,7 @@ if (runningExtensionId === currentExtensionId) {
   }
 
   async function fetchFsSourcesJson(sourceIdList, sessionId) {
-    //console.log("fetchFsSourcesJson, sessionId is: " + sessionId);
+    //logDebug("fetchFsSourcesJson, sessionId is: " + sessionId);
 
     if (!sessionId) {
       sessionId = "";
@@ -290,7 +293,7 @@ if (runningExtensionId === currentExtensionId) {
 
     fetchUrl += "?readExternalData=true";
 
-    console.log("fetchUrl is", fetchUrl);
+    logDebug("fetchUrl is", fetchUrl);
 
     let fetchOptionsHeaders = {
       accept: "application/x-gedcomx-v1+json, application/json",
@@ -318,8 +321,8 @@ if (runningExtensionId === currentExtensionId) {
         return { success: false };
       });
 
-      console.log("response is");
-      console.log(response);
+      logDebug("response is");
+      logDebug(response);
 
       // On Firefox it may return zero any time you use "no-cors"
       if (response.status !== 200) {
@@ -335,15 +338,15 @@ if (runningExtensionId === currentExtensionId) {
       // Examine the text in the response
       let data = await response.text();
 
-      //console.log("data is:");
-      //console.log(data);
+      //logDebug("data is:");
+      //logDebug(data);
 
       if (data.startsWith("{")) {
         const jsonData = data;
         const dataObj = JSON.parse(jsonData);
 
-        console.log("dataObj is:");
-        console.log(dataObj);
+        logDebug("dataObj is:");
+        logDebug(dataObj);
 
         if (dataObj) {
           return { success: true, dataObj: dataObj };
@@ -542,6 +545,37 @@ if (runningExtensionId === currentExtensionId) {
           selector: "td > h2 > strong > a",
           optionKey: "searchResultsShowWtIconResultRow",
         },
+        {
+          locationTypeName: "sidebarHeader",
+          selector: "[data-testid='PersonSheetHeader'] [data-testid='nameLink'] [data-testid='fullName']",
+          optionKey: "searchResultsShowWtIconSidebar",
+        },
+        {
+          locationTypeName: "sidebarHeaderPreview",
+          selector: "[data-testid='recordPreview-InfoSheet'] h1 > div",
+          optionKey: "searchResultsShowWtIconSidebar",
+        },
+        {
+          locationTypeName: "searchPersonInFsTree",
+          selector: "[data-testid='nameSpan'] [data-testid='fullName']",
+          optionKey: "searchResultsShowWtIconPersonInTree",
+        },
+      ],
+    },
+    {
+      pageType: "pedigreeLandscape",
+      matchRegex: pedigreeLandscapeRegex,
+      locationTypes: [
+        {
+          locationTypeName: "pedgreePerson",
+          selector: "li [data-testid='nameLink'] div > span",
+          optionKey: "pedigreeLandscapeShowWtIcon",
+        },
+        {
+          locationTypeName: "sidebarHeader",
+          selector: "[data-testid='PersonSheetHeader'] [data-testid='nameLink'] [data-testid='fullName']",
+          optionKey: "pedigreeLandscapeShowWtIconSidebar",
+        },
       ],
     },
   ];
@@ -674,10 +708,10 @@ if (runningExtensionId === currentExtensionId) {
 </svg>`;
 
   function addWikiTreeIcon(location, wikiIds) {
-    console.log("addWikiTreeIcon", location, wikiIds);
+    logDebug("addWikiTreeIcon", location, wikiIds);
 
     if (wikiIds.length < 1) {
-      console.log("addWikiTreeIcon, profiles length less than 1");
+      logDebug("addWikiTreeIcon, profiles length less than 1");
       return;
     }
 
@@ -747,7 +781,6 @@ if (runningExtensionId === currentExtensionId) {
     anchorElement.target = "_blank";
     anchorElement.style.textDecoration = "none";
 
-    // 6. Inject it next to the name
     anchorElement.appendChild(img);
 
     // if this span element is an ellipsis style then we need to avoid the icon disappearing
@@ -843,13 +876,13 @@ if (runningExtensionId === currentExtensionId) {
   }
 
   async function getWikiIdsForBatch(currentBatch) {
-    console.log("getWikiIdsForPendingBatch, currentBatch is", currentBatch);
+    logDebug("getWikiIdsForPendingBatch, currentBatch is", currentBatch);
 
     // we cache all the fsIds that we have queried about
 
     let pendingFsIds = currentBatch.pendingFsIds;
     if (pendingFsIds) {
-      console.log(`getWikiIdsForBatch, pendingFsIds size is ${pendingFsIds.size}`);
+      logDebug(`getWikiIdsForBatch, pendingFsIds size is ${pendingFsIds.size}`);
     } else {
       console.log(`getWikiIdsForBatch, pendingFsIds undefined`);
       return;
@@ -858,22 +891,22 @@ if (runningExtensionId === currentExtensionId) {
     const fsIdsToCheck = Array.from(pendingFsIds.keys());
     let fsIdsToQuery = [];
 
-    console.log("getWikiIdsForPendingBatch, fsIdsToCheck is", fsIdsToCheck);
+    logDebug("getWikiIdsForPendingBatch, fsIdsToCheck is", fsIdsToCheck);
 
     for (let fsId of fsIdsToCheck) {
       if (!cachedFsIdToWtIdsMap.has(fsId)) {
         fsIdsToQuery.push(fsId);
       }
     }
-    console.log("getWikiIdsForPendingBatch, fsIdsToQuery is", fsIdsToQuery);
+    logDebug("getWikiIdsForPendingBatch, fsIdsToQuery is", fsIdsToQuery);
 
     const fsIdsString = fsIdsToQuery.join(",");
 
-    console.log("getWikiIdsForPendingBatch, fsIdsString is", fsIdsString);
+    logDebug("getWikiIdsForPendingBatch, fsIdsString is", fsIdsString);
 
     try {
       const response = await wtPlusApiGetProfilesUsingFsId(fsIdsString);
-      console.log("getWikiIdsForPendingBatch, response is: ", response);
+      logDebug("getWikiIdsForPendingBatch, response is: ", response);
       if (response.response?.profiles) {
         function addWikiIdToMap(fsIdList, wikiId) {
           for (let fsId of fsIdList) {
@@ -923,12 +956,14 @@ if (runningExtensionId === currentExtensionId) {
     logDebug("cachedFsIdToWtIdsMap is:", cachedFsIdToWtIdsMap);
 
     // Go through the locations and set the WikiIds
-    let locations = currentBatch.locations;
-    for (let location of locations) {
-      if (location.fsId) {
-        let wikiIds = cachedFsIdToWtIdsMap.get(location.fsId);
-        if (wikiIds) {
-          addWikiTreeIcon(location, wikiIds);
+    if (currentBatch.locations) {
+      let locations = currentBatch.locations;
+      for (let location of locations) {
+        if (location.fsId) {
+          let wikiIds = cachedFsIdToWtIdsMap.get(location.fsId);
+          if (wikiIds) {
+            addWikiTreeIcon(location, wikiIds);
+          }
         }
       }
     }
@@ -947,34 +982,41 @@ if (runningExtensionId === currentExtensionId) {
   }
 
   function getFsIdDataFromUrl(url) {
-    //console.log("getFsIdDataFromUrl ", url);
+    //logDebug("getFsIdDataFromUrl ", url);
 
     // Remove the start and the domain, leaving the rest of the string untouched
     const domainRegex = /^https?:\/\/(?:www\.)?familysearch\.org/;
     url = url.replace(domainRegex, "");
 
-    //console.log("getFsIdDataFromUrl modified URL is ", url);
+    logDebug("getFsIdDataFromUrl modified URL is ", url);
 
     if (personRegex.test(url)) {
       let personId = url.replace(personRegex, "$1");
-      //console.log("personId is:", personId);
+      //logDebug("personId is:", personId);
 
       if (personId.length > 5) {
         return { fsIdType: "person", fsId: personId };
       }
     } else if (recordRegex.test(url)) {
       let recordId = url.replace(recordRegex, "$1");
-      console.log("url is : ", url, "recordId is:", recordId);
+      logDebug("url is : ", url, "recordId is:", recordId);
 
       if (recordId.length > 5) {
         return { fsIdType: "record", fsId: recordId };
       }
     } else if (imageRegex.test(url)) {
       let imageId = url.replace(imageRegex, "$1");
-      console.log("url is : ", url, "imageId is:", imageId);
+      logDebug("url is : ", url, "imageId is:", imageId);
 
       if (imageId.length > 5) {
         return { fsIdType: "image", fsId: imageId };
+      }
+    } else if (pedigreeLandscapeRegex.test(url)) {
+      let personId = url.replace(pedigreeLandscapeRegex, "$1");
+      logDebug("url is : ", url, "personId is:", personId);
+
+      if (personId.length > 5) {
+        return { fsIdType: "person", fsId: personId };
       }
     } else {
       console.log("getFsIdDataFromUrl no match for ", url);
@@ -1085,7 +1127,7 @@ if (runningExtensionId === currentExtensionId) {
         pageInfo.fsIdType = fsIdData.fsIdType;
       }
 
-      console.log("pageProfile is: ", pageInfo.pageProfile);
+      logDebug("pageProfile is: ", pageInfo.pageProfile);
 
       if (!pageInfo.pageProfile) {
         console.log("initWtIconInjection could not identify pageProfile for URL:", document.URL);
@@ -1150,7 +1192,7 @@ if (runningExtensionId === currentExtensionId) {
 
     window.hasSourcerWtIconInjectionStarted = true;
 
-    console.log("initWtIconInjection: document.URL is: " + document.URL);
+    logDebug("initWtIconInjection: document.URL is: " + document.URL);
 
     const observer = new MutationObserver((mutations) => {
       // Check if the extension is still "alive"

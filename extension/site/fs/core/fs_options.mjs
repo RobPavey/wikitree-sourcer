@@ -315,9 +315,33 @@ const uiOptionsGroup = {
       defaultValue: true,
     },
     {
+      optionName: "pedigreeLandscapeShowWtIcon",
+      type: "checkbox",
+      label: "On pedigree landscape tree show icon next to names",
+      defaultValue: true,
+    },
+    {
+      optionName: "pedigreeLandscapeShowWtIconSidebar",
+      type: "checkbox",
+      label: "On pedigree landscape tree show icon next to name in sidebar",
+      defaultValue: true,
+    },
+    {
       optionName: "searchResultsShowWtIconResultRow",
       type: "checkbox",
       label: "On search results pages show icons on result rows",
+      defaultValue: true,
+    },
+    {
+      optionName: "searchResultsShowWtIconPersonInTree",
+      type: "checkbox",
+      label: "On search results pages show icon on suggested person in family tree",
+      defaultValue: true,
+    },
+    {
+      optionName: "searchResultsShowWtIconSidebar",
+      type: "checkbox",
+      label: "On search results pages show icon on name in sidebar",
       defaultValue: true,
     },
   ],
