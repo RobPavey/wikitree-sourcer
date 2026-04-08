@@ -140,7 +140,7 @@ function extractRecordData(table, result) {
           if (value) {
             recordData[label] = value;
           } else {
-            console.log("Unhandled case: Num children = " + numChildren + ". " + label);
+            console.warn("Unhandled case: Num children = " + numChildren + ". " + label);
           }
         }
       }
@@ -487,7 +487,7 @@ function extractDataForImageInNewViewer(document, result) {
 }
 
 function extractDataForImage(filmViewerNode, result) {
-  console.log("extractDataForImage");
+  logDebug("extractDataForImage");
   // Example images:
 
   // This one has transcribed data under "Image Index"
@@ -534,7 +534,6 @@ function extractDataForImage(filmViewerNode, result) {
     }
 
     let titleNode = crumbsNode.querySelector("li.visible-phone > span");
-    console.log("titleQ.length = " + titleQ.length);
     if (titleNode) {
       result.filmTitle = titleNode.textContent;
     }
@@ -1096,7 +1095,7 @@ function extractDataForPopup(searchArtifactResults, result) {
 }
 
 function extractData(document, url) {
-  console.log("fs extractData, url = " + url);
+  logDebug("fs extractData, url = " + url);
 
   var result = {};
 
@@ -1133,13 +1132,13 @@ function extractData(document, url) {
   const personSourcesRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/sources\/(.*$)/i;
   const personVitalsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/vitals\/(.*$)/i;
 
-  console.log("mainContent is");
-  console.log(mainContent);
+  logDebug("mainContent is");
+  logDebug(mainContent);
 
   if (mainContent) {
     let filmViewerNode = mainContent.querySelector("fs-film-viewer");
     if (filmViewerNode) {
-      console.log("extractData, it is a film viewer page:");
+      logDebug("extractData, it is a film viewer page:");
 
       extractDataForImage(filmViewerNode, result);
       return result;
@@ -1173,17 +1172,17 @@ function extractData(document, url) {
         extractDataForPersonPageFormat2(document, personId, result);
         return result;
       } else if (url.startsWith("https://www.familysearch.org/ark:/61903/3:1:")) {
-        console.log("extractData, it is a new image page:");
+        logDebug("extractData, it is a new image page:");
 
         // e.g.: https://www.familysearch.org/ark:/61903/3:1:3Q9M-CS4F-NQ21?view=explore&groupId=M9DG-2LY
         extractDataForImageInNewViewer(document, result);
       } else if (url.startsWith("https://www.familysearch.org/ark:/61903/3:")) {
         // e.g. https://www.familysearch.org/ark:/61903/3:2:77TV-BWKC?view=fullText&keywords=Johnson,William%20Johnson,William
         // Not sure what the :2 means but treat as image for now
-        console.log("extractData, it is a new image page with something other than 3:1:");
+        logDebug("extractData, it is a new image page with something other than 3:1:");
         extractDataForImageInNewViewer(document, result);
       } else {
-        console.log("page type is unknown but has a #main element");
+        logDebug("page type is unknown but has a #main element");
         result.pageType = "unknown";
       }
     } else {
@@ -1255,7 +1254,7 @@ function extractData(document, url) {
 
       if (unknown) {
         // page may be partially loaded
-        console.log("page type is unknown");
+        console.warn("page type is unknown");
 
         result.pageType = "unknown";
         result.dataMayBeIncomplete = true;
