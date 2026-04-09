@@ -67,7 +67,7 @@ async function injectContentScriptsIntoExistingTab(tab, contentScriptJs, allFram
 
   try {
     // First, check if content script is already there to avoid double-loading
-    await chrome.tabs.sendMessage(tab.id, { type: "ping" });
+    let response = await chrome.tabs.sendMessage(tab.id, { type: "ping" });
 
     // it might look like this check make no difference but using the response
     // ensures a "full handshake". Without this check, when there are multiple tabs
@@ -113,7 +113,7 @@ async function injectContentScriptsIntoExistingTabFrame(tab, contentScriptJs, fr
 
   try {
     // First, check if frame content script is already there to avoid double-loading
-    await chrome.tabs.sendMessage(tab.id, { type: "framePing" }, { frameId: frameId });
+    let response = await chrome.tabs.sendMessage(tab.id, { type: "framePing" }, { frameId: frameId });
 
     // it might look like this check make no difference but using the response
     // ensures a "full handshake". Without this check, when there are multiple tabs
@@ -384,10 +384,6 @@ async function registerContentScripts() {
   // There may be existing tabs open and the extension has just been installed so we want to load the
   // content scripts into existing tabs that match
   await injectContentScriptsIntoExistingTabs(scripts);
-
-  // if permissions are later granted by the user we want to inject the content script into existing tabs
-  // that got the new permission
-  chrome.permissions.onAdded.addListener(async (permissions) => {});
 }
 
 async function injectContentScriptsIntoTabsOnPermissionsChange(permissions) {
