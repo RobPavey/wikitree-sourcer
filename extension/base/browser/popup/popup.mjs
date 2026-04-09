@@ -26,7 +26,7 @@ import { popupState, progressState } from "./popup_state.mjs";
 import { isSafari, isChrome } from "../common/browser_check.mjs";
 import { doesUrlMatchChromePattern } from "../common/permissions.mjs";
 import { checkPermissionForSites } from "./popup_permissions.mjs";
-import { getSiteDataForSite } from "../common/site_registry_storage.mjs";
+import { getSiteDataForSite, getSites } from "../common/site_registry_storage.mjs";
 
 import {
   setPopupMenuWidth,
@@ -275,7 +275,16 @@ async function checkPermissionsForMatchedContentScript(activeTab, contentScript,
 
   displayBusyMessage(`WikiTree Sourcer initializing menu (check permissions for ${siteName}) ...`);
 
-  if (await chrome.permissions.contains({ origins: originsToRequest })) {
+  // Safari can get an error in chrome.permissions.contains when switching from
+  // content_scripts to optional_host_permissions (as Sourcer did in 3.0.0)
+  let hasPermission = false;
+  try {
+    hasPermission = await chrome.permissions.contains({ origins: originsToRequest });
+  } catch (e) {
+    logDebug("Permission check threw error, proceeding to request:", e);
+  }
+
+  if (hasPermission) {
     logDebug("We have permissions for the site.");
     displayBusyMessage(`WikiTree Sourcer initializing menu (have permissions for ${siteName}) ...`);
 
@@ -377,6 +386,37 @@ async function determineSiteNameForTab(activeTab) {
   // This is normal if extension icon is clicked on an unsupported page
   logDebug("WikiTree Sourcer: determineSiteNameForTab. Tab has URL but no content script match");
   logDebug("activeTab.url is: " + activeTab.url);
+
+  // Because of some weird bugs seen in Safari iOS let's double check that this is really an
+  // unsupported site - perhas something went wrong with registerContentScripts in the background.
+  let siteRegistry = await getSites();
+  if (siteRegistry) {
+    for (let siteName of Object.keys(siteRegistry)) {
+      let siteData = siteRegistry[siteName];
+      for (let match of siteData.matches) {
+        let doesTabMatch = doesUrlMatchChromePattern(match, url);
+        if (doesTabMatch) {
+          // this is an error - it does match a registered site but there was no matching
+          // registered content scriyt
+          displayMessageWithIcon(
+            "warning",
+            "This URL does match a supported site not no registered content script was found",
+            "Something went wrong at Sourcer startup."
+          );
+          return "error";
+        }
+      }
+    }
+  } else {
+    // this is an error - there is no site registry
+    displayMessageWithIcon(
+      "warning",
+      "Sourcer was unable to read its siteRegistry",
+      "Something went wrong at Sourcer startup."
+    );
+    return "error";
+  }
+
   return "unknown";
 }
 
