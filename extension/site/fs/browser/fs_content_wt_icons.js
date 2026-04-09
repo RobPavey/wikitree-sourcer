@@ -404,32 +404,34 @@ if (runningExtensionId === currentExtensionId) {
     logDebug("fetchFsIdsForSources, sourceIdList", sourceIdList);
 
     let result = await fetchFsSourcesJson(sourceIdList);
-    if (result.success) {
+    if (result.success && result.dataObj && result.dataObj.sources && result.dataObj.sources.length) {
       logDebug("fetchFsIdsForSources, dataObj", result.dataObj);
       let sources = result.dataObj.sources;
 
       for (let location of locationBatch.locations) {
         let locationTypeName = location.locationType.locationTypeName;
+        let sourceId = null;
         if (locationTypeName == "sourceRow") {
           // get the source ID from the element
-          let sourceId = extractSourceIdFromElement(location.matchedElement);
-          if (sourceId) {
-            for (let source of sources) {
-              if (source.id == sourceId) {
-                if (source.uri && source.uri.uri) {
-                  // non-FS sources can be mising a uri
+          sourceId = extractSourceIdFromElement(location.matchedElement);
+        }
 
-                  let fsIdData = getFsIdDataFromUrl(source.uri.uri);
-                  if (fsIdData) {
-                    let fsId = fsIdData.fsId;
-                    location.fsId = fsId;
-                    location.fsIdType = fsIdData.fsIdType;
+        if (sourceId) {
+          for (let source of sources) {
+            if (source.id == sourceId) {
+              if (source.uri && source.uri.uri) {
+                // non-FS sources can be mising a uri
 
-                    addLocationToPendingFsIds(locationBatch, fsId, location);
-                  }
+                let fsIdData = getFsIdDataFromUrl(source.uri.uri);
+                if (fsIdData) {
+                  let fsId = fsIdData.fsId;
+                  location.fsId = fsId;
+                  location.fsIdType = fsIdData.fsIdType;
+
+                  addLocationToPendingFsIds(locationBatch, fsId, location);
                 }
-                break;
               }
+              break;
             }
           }
         }
@@ -539,6 +541,11 @@ if (runningExtensionId === currentExtensionId) {
         {
           locationTypeName: "imageSideBarAttached",
           selector: "aside [data-testid='person'] [data-testid='nameLink'] [data-testid='fullName']",
+          optionKey: "imageShowWtIconSidebar",
+        },
+        {
+          locationTypeName: "imageIndexRecord",
+          selector: "aside tbody > tr > td > a[href^='/ark:/61903/'] > span",
           optionKey: "imageShowWtIconSidebar",
         },
         {
@@ -659,6 +666,16 @@ if (runningExtensionId === currentExtensionId) {
     if (locationType.locationTypeName == "sourceRow") {
       let titleElement = element.querySelector("div[class^='cssSourceTitle']");
       return titleElement;
+    }
+
+    if (locationType.locationTypeName == "imageIndexRecord") {
+      let tdElement = element.closest("td");
+      if (tdElement) {
+        let attachElement = tdElement.querySelector("a[href*='search/linker']");
+        if (attachElement) {
+          return attachElement;
+        }
+      }
     }
 
     if (locationType.locationTypeName == "imageNavBar") {
@@ -823,6 +840,7 @@ if (runningExtensionId === currentExtensionId) {
     // if this span element is an ellipsis style then we need to avoid the icon disappearing
     // when the ellipsis is shown
     const isEllipsisSpan = Array.from(spanElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
+    const locationTypeName = location.locationType.locationTypeName;
 
     if (isEllipsisSpan) {
       const container = spanElement.parentElement;
@@ -843,7 +861,7 @@ if (runningExtensionId === currentExtensionId) {
 
       // Append to PARENT so it's not clipped by the span
       container.appendChild(anchorElement);
-    } else if (location.locationType.locationTypeName === "sourceRow") {
+    } else if (locationTypeName === "sourceRow" || locationTypeName == "imageIndexRecord") {
       // Set container to flex so icon stays visible next to the span
       spanElement.style.display = "flex";
       spanElement.style.alignItems = "flex-start";
@@ -854,14 +872,14 @@ if (runningExtensionId === currentExtensionId) {
       anchorElement.style.marginLeft = "8px";
 
       spanElement.appendChild(anchorElement);
-    } else if (location.locationType.locationTypeName === "imageNavBar") {
+    } else if (locationTypeName === "imageNavBar") {
       // the spanElement is a container that we want to append to
       anchorElement.style.flexShrink = "0";
       anchorElement.style.display = "flex";
       anchorElement.style.marginLeft = "8px";
 
       spanElement.appendChild(anchorElement);
-    } else if (location.locationType.locationTypeName === "similarRecord") {
+    } else if (locationTypeName === "similarRecord") {
       // the spanElement is a container that we want to append to
       anchorElement.style.marginLeft = "0px";
       spanElement.appendChild(anchorElement);
@@ -1108,7 +1126,7 @@ if (runningExtensionId === currentExtensionId) {
 
     location.spanElement = getSpanElementToAddIconTo(location);
     if (!location.spanElement) {
-      logDebug("location matched element has no span element");
+      logDebug("location matched element has no span element", location);
       return false;
     }
 
