@@ -34,9 +34,9 @@ import {
 
 import { writeToClipboard, clearClipboard } from "./popup_clipboard.mjs";
 
-import { options } from "/base/browser/options/options_loader.mjs";
+import { options } from "../options/options_loader.mjs";
 
-import { cachedDataCache } from "/base/browser/common/data_cache.mjs";
+import { cachedDataCache } from "../common/data_cache.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Citation

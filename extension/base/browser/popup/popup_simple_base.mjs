@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { loadDataCache, cachedDataCache, isCachedDataCacheReady } from "/base/browser/common/data_cache.mjs";
+import { loadDataCache, cachedDataCache, isCachedDataCacheReady } from "../common/data_cache.mjs";
 
 import {
   addBuildCitationMenuItems,
@@ -47,13 +47,13 @@ import {
   buildCitationObjectForTable,
 } from "/base/browser/popup/popup_citation.mjs";
 
-import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
+import { addSearchMenus } from "./popup_search.mjs";
 
-import { options } from "/base/browser/options/options_loader.mjs";
+import { options } from "../options/options_loader.mjs";
 
-import { writeToClipboard, clearClipboard } from "/base/browser/popup/popup_clipboard.mjs";
+import { writeToClipboard, clearClipboard } from "./popup_clipboard.mjs";
 
-import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
+import { addSavePersonDataMenuItem } from "./popup_person_data.mjs";
 
 var simplePopupFunctions = {
   buildCitationFunction: undefined,

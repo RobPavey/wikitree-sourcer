@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { options } from "/base/browser/options/options_loader.mjs";
+import { options } from "../options/options_loader.mjs";
 import {
   addMenuItem,
   addBackMenuItem,
@@ -33,8 +33,8 @@ import {
   keepPopupOpen,
   displayUnexpectedErrorMessage,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import { CD } from "/base/core/country_data.mjs";
-import { getLocalStorageItem } from "/base/browser/common/browser_compat.mjs";
+import { CD } from "../../core/country_data.mjs";
+import { getLocalStorageItem } from "../common/browser_compat.mjs";
 import { popupState } from "./popup_state.mjs";
 
 var filterState = {

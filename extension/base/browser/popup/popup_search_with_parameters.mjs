@@ -22,8 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addBackMenuItem, beginMainMenu, endMainMenu, addBreak } from "/base/browser/popup/popup_menu_building.mjs";
-import { options } from "/base/browser/options/options_loader.mjs";
+import { addBackMenuItem, beginMainMenu, endMainMenu, addBreak } from "./popup_menu_building.mjs";
+import { options } from "../options/options_loader.mjs";
 
 function getCategoriesLabelText(siteData, gd, parameters) {
   let labelText = "Choose category: ";

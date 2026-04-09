@@ -25,7 +25,7 @@ SOFTWARE.
 import "../../../site/all/core/register_site_data.mjs";
 import { getSites, storeSiteRegistry } from "../common/site_registry_storage.mjs";
 import { isChrome, isFirefox, isSafari } from "../common/browser_check.mjs";
-import { logDebug } from "/base/core/log_debug.mjs";
+import { logDebug } from "../../core/log_debug.mjs";
 
 // Helper to convert Chrome Match Patterns to Regex
 // This tests whether a match pattern from a registered content script matches

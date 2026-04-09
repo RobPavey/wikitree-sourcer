@@ -22,21 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { options } from "/base/browser/options/options_loader.mjs";
-import { RC } from "/base/core/record_collections.mjs";
-import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
-import { getLatestCitation } from "/base/browser/popup/popup_citation.mjs";
-import { loadDataCache, cachedDataCache } from "/base/browser/common/data_cache.mjs";
+import { options } from "../options/options_loader.mjs";
+import { RC } from "../../core/record_collections.mjs";
+import { getLatestPersonData } from "./popup_person_data.mjs";
+import { getLatestCitation } from "./popup_citation.mjs";
+import { loadDataCache, cachedDataCache } from "../common/data_cache.mjs";
 
-import { clearAsyncResultCache } from "/base/core/async_result_cache.mjs";
-import { isSafari } from "/base/browser/common/browser_check.mjs";
-import { openOrShowOptionsPage } from "/base/browser/common/browser_compat.mjs";
+import { clearAsyncResultCache } from "../../core/async_result_cache.mjs";
+import { isSafari } from "../common/browser_check.mjs";
+import { openOrShowOptionsPage } from "../common/browser_compat.mjs";
 
-import { clearCitation } from "/base/browser/popup/popup_citation.mjs";
+import { clearCitation } from "./popup_citation.mjs";
 
-import { addShowCitationAssistantMenuItem } from "/base/browser/popup/popup_menu_blocks.mjs";
+import { addShowCitationAssistantMenuItem } from "./popup_menu_blocks.mjs";
 
-import { getSites } from "/base/browser/common/site_registry_storage.mjs";
+import { getSites } from "../common/site_registry_storage.mjs";
 
 /**
  * Temporary workaround for secondary monitors on MacOS where redraws don't happen

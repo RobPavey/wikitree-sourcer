@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { isSafari } from "/base/browser/common/browser_check.mjs";
+import { isSafari } from "./browser_check.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Browser compatibility

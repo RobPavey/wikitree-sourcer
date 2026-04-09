@@ -23,8 +23,8 @@ SOFTWARE.
 */
 
 import { displayMessageThenClosePopup, emptyMenu, displayMessageWithIcon } from "./popup_menu_building.mjs";
-import { logDebug } from "/base/core/log_debug.mjs";
-import { isFirefox } from "/base/browser/common/browser_check.mjs";
+import { logDebug } from "../../core/log_debug.mjs";
+import { isFirefox } from "../common/browser_check.mjs";
 import {
   commonCheckPermissionForSite,
   commonCheckPermissionForSites,

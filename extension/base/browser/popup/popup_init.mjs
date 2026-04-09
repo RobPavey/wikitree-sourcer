@@ -36,9 +36,9 @@ import {
   openExceptionPage,
   displayMessageWithIcon,
 } from "./popup_menu_building.mjs";
-import { logDebug } from "/base/core/log_debug.mjs";
+import { logDebug } from "../../core/log_debug.mjs";
 
-import "/site/all/browser/popup_register_search_sites.mjs";
+import "../../../site/all/browser/popup_register_search_sites.mjs";
 
 logDebug("Loaded popup_init.mjs");
 
@@ -487,7 +487,7 @@ async function initPopup(siteName, menuSetupFunction) {
     initPopupInternal(siteName, menuSetupFunction);
   } catch (e) {
     console.error("WikiTree Sourcer: initPopup, exception occurred, e is:", e);
-    openExceptionPage("Error during creating popup menu for content.", "", e, true);
+    openExceptionPage("Error during creating popup menu for content.", siteName, e, true);
   }
 }
 

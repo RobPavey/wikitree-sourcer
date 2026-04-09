@@ -32,9 +32,9 @@ import {
   beginMainMenu,
   endMainMenu,
   closePopup,
-} from "/base/browser/popup/popup_menu_building.mjs";
+} from "./popup_menu_building.mjs";
 
-import { addEditCitationMenuItem } from "/base/browser/popup/popup_citation.mjs";
+import { addEditCitationMenuItem } from "./popup_citation.mjs";
 
 function addStandardMenuEnd(menu, data, backFunction) {
   addMenuDivider(menu);

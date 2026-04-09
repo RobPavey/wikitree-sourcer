@@ -22,8 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { logDebug } from "/base/core/log_debug.mjs";
-import { isFirefox } from "/base/browser/common/browser_check.mjs";
+import { logDebug } from "../../core/log_debug.mjs";
 
 async function commonCheckPermissionForSites(siteMatches, options, requestFunction) {
   let permissions = { origins: siteMatches };

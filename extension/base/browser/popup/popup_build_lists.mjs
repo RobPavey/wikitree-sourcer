@@ -31,7 +31,7 @@ import {
 } from "./popup_menu_building.mjs";
 
 import { writeToClipboard, clearClipboard } from "./popup_clipboard.mjs";
-import { options } from "/base/browser/options/options_loader.mjs";
+import { options } from "../options/options_loader.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Building lists

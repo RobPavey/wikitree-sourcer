@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CitationBuilder } from "/base/core/citation_builder.mjs";
-import { callFunctionWithStoredOptions } from "/base/browser/options/options_loader.mjs";
-import { getLocalStorageItem } from "/base/browser/common/browser_compat.mjs";
+import { CitationBuilder } from "../../core/citation_builder.mjs";
+import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
+import { getLocalStorageItem } from "../common/browser_compat.mjs";
 
 function refreshAfterChange(options) {
   //console.log("refreshAfterChange called");

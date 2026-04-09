@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { getLocalStorageItem } from "/base/browser/common/browser_compat.mjs";
+import { getLocalStorageItem } from "../common/browser_compat.mjs";
 
 var uiState = {
   activeTab: "search",

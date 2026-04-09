@@ -30,7 +30,7 @@ import { doSearchGivenSearchData } from "./background_search.mjs";
 import { checkPermissionForSiteMatches } from "./background_permissions.mjs";
 
 import { buildScotlandsPeopleContextSearchData } from "../../../site/scotp/core/scotp_context_menu.mjs";
-import { logDebug } from "/base/core/log_debug.mjs";
+import { logDebug } from "../../core/log_debug.mjs";
 
 function openAncestryLink(tab, link, options) {
   // do not redirect sharing links when using library edition since that does not work

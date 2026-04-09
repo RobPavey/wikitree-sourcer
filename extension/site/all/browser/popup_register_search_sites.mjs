@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { getSites } from "/base/browser/common/site_registry_storage.mjs";
+import { getSites } from "../../../base/browser/common/site_registry_storage.mjs";
 
 // Importing each of these site modules causes them to register their search menu items
 
