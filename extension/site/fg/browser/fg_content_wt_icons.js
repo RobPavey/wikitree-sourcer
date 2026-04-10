@@ -363,25 +363,87 @@ if (runningExtensionId === currentExtensionId) {
 
     // we cache all the fsIds that we have queried about
 
+    // if there is a cemetery id in the locations we get the memorials for that first
+
     let pendingFgMemorialIds = new Map();
+    let cemeteryIds = new Map();
     for (let location of currentBatch.locations) {
-      if (location.fgId && location.fgIdType == "memorial") {
-        if (!pendingFgMemorialIds.has(location.fgId)) {
-          pendingFgMemorialIds.set(location.fgId, []);
+      let fgId = location.fgId;
+      let fgIdType = location.fgIdType;
+      if (!fgId || !fgIdType) {
+        continue;
+      }
+
+      if (fgIdType == "memorial") {
+        if (!pendingFgMemorialIds.has(fgId)) {
+          pendingFgMemorialIds.set(fgId, []);
         }
-        pendingFgMemorialIds.get(location.fgId).push(location);
+        pendingFgMemorialIds.get(fgId).push(location);
+      } else if (fgIdType == "cemetery") {
+        if (!cemeteryIds.has(fgId)) {
+          cemeteryIds.set(fgId, []);
+        }
+        cemeteryIds.get(fgId).push(location);
       }
     }
     logDebug(`getWikiIdsForBatch, pendingFgMemorialIds is:`, pendingFgMemorialIds);
 
-    const fgIdsToCheck = Array.from(pendingFgMemorialIds.keys());
+    if (cemeteryIds.size > 0) {
+      if (cemeteryIds.size > 1) {
+        console.warn("More than one cemetery id in pending locactions, using first");
+      }
+
+      const [cemeteryId, locations] = cemeteryIds.entries().next().value;
+
+      const fgIdToQuery = "fgcem" + cemeteryId;
+
+      try {
+        const response = await wtPlusApiGetProfilesUsingFgId(fgIdToQuery);
+        logDebug("getWikiIdsForPendingBatch, cemetery response is: ", response);
+        if (response.response?.memorials) {
+          // record the profiles that reference the elements fgId for the currentBatch
+          const memorials = response.response.memorials;
+          let wikiIdsForCemetery = [];
+          memorials.forEach((memorial) => {
+            let wikiId = memorial.WikiTreeID;
+            let fgMemorialId = memorial.memorial.toString();
+
+            wikiIdsForCemetery.push(wikiId);
+
+            if (!cachedFgMemorialIdToWtIdsMap.has(fgMemorialId)) {
+              cachedFgMemorialIdToWtIdsMap.set(fgMemorialId, []);
+            }
+
+            let wikiIdsForFgMemorialId = cachedFgMemorialIdToWtIdsMap.get(fgMemorialId);
+            if (!wikiIdsForFgMemorialId.includes(wikiId)) {
+              wikiIdsForFgMemorialId.push(wikiId);
+            }
+          });
+
+          if (memorials.length > 0) {
+            // this cemetery has WT profiles add an icon
+            logDebug("processPendingLocations, wikiIdsForCemetery is:", wikiIdsForCemetery);
+            if (wikiIdsForCemetery) {
+              for (let location of locations) {
+                addWikiTreeIcon(location, wikiIdsForCemetery);
+              }
+            }
+          }
+        }
+      } catch (error) {
+        console.error("!!!!!!! WT+ API Batch fetch failed", error);
+        logDebug("fgIdToQuery cemetery id string is: ", fgIdToQuery);
+      }
+    }
+
+    const fgMemorialIdsToCheck = Array.from(pendingFgMemorialIds.keys());
     let fgIdsToQuery = [];
 
-    logDebug("getWikiIdsForPendingBatch, fgIdsToCheck is", fgIdsToCheck);
+    logDebug("getWikiIdsForPendingBatch, fgMemorialIdsToCheck is", fgMemorialIdsToCheck);
 
-    for (let fgId of fgIdsToCheck) {
+    for (let fgId of fgMemorialIdsToCheck) {
       if (!cachedFgMemorialIdToWtIdsMap.has(fgId)) {
-        fgIdsToQuery.push(fgId);
+        fgIdsToQuery.push("fgmem" + fgId);
       }
     }
     logDebug("getWikiIdsForPendingBatch, fgIdsToQuery is", fgIdsToQuery);
