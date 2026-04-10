@@ -372,7 +372,7 @@ function buildTopLevelMenuItemFunctions(maxItems, data, excludeSite) {
 function buildSubMenuItemFunctions(data, filter, excludeSite) {
   return buildSortedMenuItemFunctions(
     -1,
-    "popup_includeOnSubMenu",
+    "popup_includeOnSubmenu",
     "popup_sortAlphaInSubmenu",
     data,
     filter,

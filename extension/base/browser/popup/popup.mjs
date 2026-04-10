@@ -308,6 +308,9 @@ async function checkPermissionsForMatchedContentScript(activeTab, contentScript,
     // script is injected in the background script using chrome.permissions.onAdded
 
     displayBusyMessage(`WikiTree Sourcer initializing menu (granted permissions for ${siteName}) ...`);
+
+    await injectContentScriptIfMissing(activeTab, contentScript, siteData);
+
     return siteName;
   }
 
