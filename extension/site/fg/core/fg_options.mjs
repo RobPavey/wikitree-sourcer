@@ -146,6 +146,23 @@ const citationOptionsGroup = {
   ],
 };
 
+const uiOptionsGroup = {
+  category: "ui",
+  subcategory: "fg",
+  tab: "ui",
+  subsection: "fg",
+  subheading: "wtIconPageMods",
+
+  options: [
+    {
+      optionName: "memorialShowWtIconH1",
+      type: "checkbox",
+      label: "On person pages show icon next to top-level heading",
+      defaultValue: true,
+    },
+  ],
+};
+
 registerSubsectionForOptions("search", "fg", "Find a Grave");
 registerSiteSearchPopupOptionsGroup("fg");
 registerSubheadingForOptions("search", "fg", "parameters", "Search Parameters");
@@ -153,3 +170,7 @@ registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "fg", "Find a Grave");
 registerOptionsGroup(citationOptionsGroup);
+
+registerSubsectionForOptions("ui", "fg", "FindAGrave");
+registerSubheadingForOptions("ui", "fg", "wtIconPageMods", "Page Modifications for WikiTree usage icons");
+registerOptionsGroup(uiOptionsGroup);

@@ -1073,6 +1073,13 @@ if (runningExtensionId === currentExtensionId) {
       if (personId.length > 5) {
         return { fsIdType: "person", fsId: personId };
       }
+    } else if (pedigreePortraitRegex.test(url)) {
+      let personId = url.replace(pedigreePortraitRegex, "$1");
+      logDebug("url is : ", url, "personId is:", personId);
+
+      if (personId.length > 5) {
+        return { fsIdType: "person", fsId: personId };
+      }
     } else {
       console.log("getFsIdDataFromUrl no match for ", url);
     }
