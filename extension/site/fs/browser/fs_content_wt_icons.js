@@ -66,6 +66,9 @@ SOFTWARE.
 //
 // https://www.familysearch.org/en/search/record/results?count=20&&q.givenName=Casimiro%20Molina&q.surname=Lopez&q.birthLikePlace=Santa%20Fe%2C%20New%20Mexico%2C%20United%20States&q.birthLikeDate.from=1876&q.birthLikeDate.to=1880&q.deathLikePlace=Santa%20Barbara%2C%20Santa%20Barbara%2C%20California%2C%20United%20States&q.deathLikeDate.from=1938&q.deathLikeDate.to=1942&q.marriageLikePlace=Santa%20Barbara%2C%20California%2C%20United%20States&q.marriageLikeDate.from=1908&q.marriageLikeDate.to=1916&q.spouseGivenName=Victoria&q.spouseSurname=Cordero&q.recordCountry=United%20States
 //    1st and 5th are referenced from WT profiles
+//
+// Landscape pedigree:
+//  https://www.familysearch.org/en/tree/pedigree/landscape/LH61-K46
 
 logDebug("fs_content_wt_icons.js loaded");
 

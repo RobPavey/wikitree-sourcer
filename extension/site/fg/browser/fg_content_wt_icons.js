@@ -62,19 +62,19 @@ if (runningExtensionId === currentExtensionId) {
   // and the flowers tabe looks like:
   // https://www.findagrave.com/memorial/96562587/john_luther-bond/flower
   // https://www.findagrave.com/memorial/96562587/john-luther-bond#source
-  const memorialRegex = /^https:\/\/www\.findagrave\.com\/memorial\/(\d+)\/.*$/;
+  const memorialRegex = /^\/memorial\/(\d+)\/.*$/;
 
   // A cemetery page should look like one of these:
   // https://www.findagrave.com/cemetery/8074/inglewood-park-cemetery
-  const cemeteryRegex = /^https:\/\/www\.findagrave\.com\/cemetery\/(\d+)\/.*$/;
+  const cemeteryRegex = /^\/cemetery\/(\d+)\/.*$/;
 
   // A cemetery search page looks like:
   // https://www.findagrave.com/cemetery/8074/memorial-search?fulltext=&firstname=&middlename=&lastname=Bond&cemeteryName=Inglewood+Park+Cemetery&birthyear=&birthyearfilter=&deathyear=&deathyearfilter=&bio=&linkedToName=&plot=&memorialid=&mcid=&datefilter=&orderby=r
-  const cemeterySearchRegex = /^https\/\/www\.findagrave\.com\/cemetery\/(\d+)\/memorial-search.*/;
+  const cemeterySearchRegex = /^\/cemetery\/(\d+)\/memorial-search.*/;
 
   // A general search liike like:
   // https://www.findagrave.com/memorial/search?firstname=John&middlename=Luther&lastname=Bond&includeMaidenName=true&birthyear=1853&birthyearfilter=exact&deathyear=1931&deathyearfilter=exact
-  const memorialSearchRegex = /^https:\/\/www\.findagrave\.com\/memorial\/search.*/;
+  const memorialSearchRegex = /^\/memorial\/search.*/;
 
   const pageProfiles = [
     {
@@ -95,8 +95,9 @@ if (runningExtensionId === currentExtensionId) {
       locationTypes: [
         {
           locationTypeName: "pageH1",
-          selector: "#bio-name",
+          selector: "h1.bio-name",
           useIdFromPageUrl: true,
+          iconPlaceElementRule: { type: "same" },
           optionKey: "memorialShowWtIconH1",
         },
       ],
@@ -122,6 +123,14 @@ if (runningExtensionId === currentExtensionId) {
           selector: "#bio-name",
           optionKey: "memorialShowWtIconH1",
           useIdFromPageUrl: true,
+          iconPlaceElementRule: { type: "same" },
+        },
+        {
+          locationTypeName: "familyMember",
+          selector: "div.data-family h3[itemprop='name']",
+          optionKey: "memorialShowWtIconFamilyMember",
+          // iconPlaceElementRule: { type: "closest", closestMatch: "div.member-item" },
+          iconPlaceElementRule: { type: "same" },
         },
       ],
     },
@@ -156,50 +165,28 @@ if (runningExtensionId === currentExtensionId) {
     });
   }
 
-  function wtPlusApiGetProfilesUsingFsId(idString) {
+  function wtPlusApiGetProfilesUsingFgId(idString) {
     let url = `https://plus.wikitree.com/function/wtFindAGrave4Bee/Sourcer.json?query=${idString}`;
     return wtPlusApiCall(url);
   }
 
-  function getSpanElementToAddIconTo(location) {
+  function getElementToAddIconTo(location) {
     let element = location.matchedElement;
 
     let locationType = location.locationType;
 
-    if (locationType.locationTypeName == "pageH1") {
-      return element;
-    }
-
-    if (element.tagName == "SPAN") {
-      return element;
-    }
-
-    let enclosingDiv = element.closest("div");
-    if (enclosingDiv) {
-      let spanElement = enclosingDiv.querySelector("h1 span");
-      if (spanElement) {
-        return spanElement;
-      }
-    }
-
-    // for record pages the title is not actually a span, it is a div
-    if (element.tagName == "DIV") {
-      let enclosingH1 = element.closest("h1");
-      if (enclosingH1) {
+    if (locationType.iconPlaceElementRule) {
+      let rule = locationType.iconPlaceElementRule;
+      if (rule.type == "same") {
         return element;
+      } else if (rule.type == "closest") {
+        let closestElement = element.closest(rule.closestMatch);
+        if (closestElement) {
+          return closestElement;
+        }
       }
-    }
-
-    // for other people on a record page
-    if (element.tagName == "A") {
-      let enclosingSpan = element.closest("span");
-      if (enclosingSpan) {
-        return enclosingSpan;
-      }
-      let enclosingStrong = element.closest("strong"); // for search results
-      if (enclosingStrong) {
-        return enclosingStrong;
-      }
+    } else {
+      return element;
     }
   }
 
@@ -252,7 +239,7 @@ if (runningExtensionId === currentExtensionId) {
       return;
     }
 
-    let spanElement = location.spanElement;
+    let iconPlaceElement = location.iconPlaceElement;
 
     let svgIcon = null;
     let titleText = "FindAGrave " + location.fgIdType + " " + location.fgId + " is ";
@@ -315,102 +302,60 @@ if (runningExtensionId === currentExtensionId) {
       anchorElement.setAttribute("href", "https://www.wikitree.com/wiki/" + wikiIds[0]);
     }
 
+    anchorElement.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+
+    anchorElement.addEventListener("mousedown", (event) => {
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    });
+
     anchorElement.target = "_blank";
     anchorElement.style.textDecoration = "none";
 
     anchorElement.appendChild(img);
 
-    // if this span element is an ellipsis style then we need to avoid the icon disappearing
-    // when the ellipsis is shown
-    const isEllipsisSpan = Array.from(spanElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
     const locationTypeName = location.locationType.locationTypeName;
 
-    if (isEllipsisSpan) {
-      const container = spanElement.parentElement;
-
-      // Set container to flex so icon stays visible next to the span
-      container.style.display = "flex";
-      container.style.alignItems = "center";
-      container.style.flexDirection = "row";
-      container.style.width = "100%"; // Ensure it uses the full header width
-
-      // Allow the name to shrink, but keep the icon fixed
-      spanElement.style.flexShrink = "1";
-      spanElement.style.minWidth = "0"; // Firefox requirement for flex-shrink on text
+    if (locationTypeName === "sourceRow" || locationTypeName == "imageIndexRecord") {
+      // Set container to flex so icon stays visible next to the other element
+      iconPlaceElement.style.display = "flex";
+      iconPlaceElement.style.alignItems = "flex-start";
+      iconPlaceElement.style.flexDirection = "row";
 
       anchorElement.style.flexShrink = "0";
       anchorElement.style.display = "flex";
       anchorElement.style.marginLeft = "8px";
 
-      // Append to PARENT so it's not clipped by the span
-      container.appendChild(anchorElement);
-    } else if (locationTypeName === "sourceRow" || locationTypeName == "imageIndexRecord") {
-      // Set container to flex so icon stays visible next to the span
-      spanElement.style.display = "flex";
-      spanElement.style.alignItems = "flex-start";
-      spanElement.style.flexDirection = "row";
-
-      anchorElement.style.flexShrink = "0";
-      anchorElement.style.display = "flex";
-      anchorElement.style.marginLeft = "8px";
-
-      spanElement.appendChild(anchorElement);
+      iconPlaceElement.appendChild(anchorElement);
     } else if (locationTypeName === "imageNavBar") {
-      // the spanElement is a container that we want to append to
+      // the iconPlaceElement is a container that we want to append to
       anchorElement.style.flexShrink = "0";
       anchorElement.style.display = "flex";
       anchorElement.style.marginLeft = "8px";
 
-      spanElement.appendChild(anchorElement);
+      iconPlaceElement.appendChild(anchorElement);
     } else if (locationTypeName === "similarRecord") {
-      // the spanElement is a container that we want to append to
+      // the iconPlaceElement is a container that we want to append to
       anchorElement.style.marginLeft = "0px";
-      spanElement.appendChild(anchorElement);
+      iconPlaceElement.appendChild(anchorElement);
     } else {
       img.style.marginLeft = "12px";
-      spanElement.appendChild(anchorElement);
+      iconPlaceElement.appendChild(anchorElement);
     }
   }
 
-  let cachedFgIdToWtIdsMap = new Map();
+  let cachedFgMemorialIdToWtIdsMap = new Map();
 
   let pendingLocationsBatch = {};
   let debounceTimer = null;
-
-  function addLocationToPendingFsIds(locationBatch, fgId, location) {
-    if (!locationBatch.pendingFgIds.has(fgId)) {
-      locationBatch.pendingFgIds.set(fgId, []);
-    }
-    locationBatch.pendingFgIds.get(fgId).push(location);
-  }
 
   function addLocationToPendingBatch(location) {
     if (!pendingLocationsBatch.locations) {
       pendingLocationsBatch.locations = [];
     }
     pendingLocationsBatch.locations.push(location);
-
-    if (!pendingLocationsBatch.pendingFgIds) {
-      pendingLocationsBatch.pendingFgIds = new Map();
-    }
-
-    const fgId = location.fgId;
-    if (fgId) {
-      addLocationToPendingFsIds(pendingLocationsBatch, fgId, location);
-    } else {
-      let locationType = location.locationType;
-      if (locationType.needToFetchIds) {
-        pendingLocationsBatch.awaitingFsIdFetch = true;
-        let fetchFunction = location.locationType.fetchFunction;
-        if (!pendingLocationsBatch.fetchFunctions) {
-          pendingLocationsBatch.fetchFunctions = [];
-        }
-        if (!pendingLocationsBatch.fetchFunctions.includes(fetchFunction)) {
-          pendingLocationsBatch.fetchFunctions.push(fetchFunction);
-          pendingLocationsBatch.awaitingFsIdFetch = true;
-        }
-      }
-    }
   }
 
   async function getWikiIdsForBatch(currentBatch) {
@@ -418,21 +363,24 @@ if (runningExtensionId === currentExtensionId) {
 
     // we cache all the fsIds that we have queried about
 
-    let pendingFgIds = currentBatch.pendingFgIds;
-    if (pendingFgIds) {
-      logDebug(`getWikiIdsForBatch, pendingFgIds size is ${pendingFgIds.size}`);
-    } else {
-      console.log(`getWikiIdsForBatch, pendingFgIds undefined`);
-      return;
+    let pendingFgMemorialIds = new Map();
+    for (let location of currentBatch.locations) {
+      if (location.fgId && location.fgIdType == "memorial") {
+        if (!pendingFgMemorialIds.has(location.fgId)) {
+          pendingFgMemorialIds.set(location.fgId, []);
+        }
+        pendingFgMemorialIds.get(location.fgId).push(location);
+      }
     }
+    logDebug(`getWikiIdsForBatch, pendingFgMemorialIds is:`, pendingFgMemorialIds);
 
-    const fgIdsToCheck = Array.from(pendingFgIds.keys());
+    const fgIdsToCheck = Array.from(pendingFgMemorialIds.keys());
     let fgIdsToQuery = [];
 
     logDebug("getWikiIdsForPendingBatch, fgIdsToCheck is", fgIdsToCheck);
 
     for (let fgId of fgIdsToCheck) {
-      if (!cachedFgIdToWtIdsMap.has(fgId)) {
+      if (!cachedFgMemorialIdToWtIdsMap.has(fgId)) {
         fgIdsToQuery.push(fgId);
       }
     }
@@ -443,26 +391,26 @@ if (runningExtensionId === currentExtensionId) {
     logDebug("getWikiIdsForPendingBatch, fgIdsString is", fgIdsString);
 
     try {
-      const response = await wtPlusApiGetProfilesUsingFsId(fgIdsString);
+      const response = await wtPlusApiGetProfilesUsingFgId(fgIdsString);
       logDebug("getWikiIdsForPendingBatch, response is: ", response);
       if (response.response?.memorials) {
         // record the profiles that reference the elements fgId for the currentBatch
         response.response.memorials.forEach((memorial) => {
-          let fgId = memorial.memorial.toString();
           let wikiId = memorial.WikiTreeID;
+          let fgMemorialId = memorial.memorial.toString();
 
-          if (!cachedFgIdToWtIdsMap.has(fgId)) {
-            cachedFgIdToWtIdsMap.set(fgId, []);
+          if (!cachedFgMemorialIdToWtIdsMap.has(fgMemorialId)) {
+            cachedFgMemorialIdToWtIdsMap.set(fgMemorialId, []);
           }
 
-          let wikiIdsForFgId = cachedFgIdToWtIdsMap.get(fgId);
-          if (!wikiIdsForFgId.includes(wikiId)) {
-            wikiIdsForFgId.push(wikiId);
+          let wikiIdsForFgMemorialId = cachedFgMemorialIdToWtIdsMap.get(fgMemorialId);
+          if (!wikiIdsForFgMemorialId.includes(wikiId)) {
+            wikiIdsForFgMemorialId.push(wikiId);
           }
         });
       }
     } catch (error) {
-      console.error("WT+ API Batch fetch failed", error);
+      console.error("!!!!!!! WT+ API Batch fetch failed", error);
       logDebug("fgIdsString is", fgIdsString);
     }
   }
@@ -474,12 +422,6 @@ if (runningExtensionId === currentExtensionId) {
       return;
     }
 
-    if (pendingLocationsBatch.awaitingFsIdFetch) {
-      for (let fetchFunction of pendingLocationsBatch.fetchFunctions) {
-        await fetchFunction(pendingLocationsBatch);
-      }
-    }
-
     // Clear the pendingLocationsBatch immediately so new mutations start a fresh batch
     const currentBatch = pendingLocationsBatch;
     pendingLocationsBatch = {};
@@ -487,7 +429,7 @@ if (runningExtensionId === currentExtensionId) {
     // Use WT+ API to get the WikiTree IDs that use these fsIds
     await getWikiIdsForBatch(currentBatch);
 
-    logDebug("cachedFgIdToWtIdsMap is:", cachedFgIdToWtIdsMap);
+    logDebug("cachedFgMemorialIdToWtIdsMap is:", cachedFgMemorialIdToWtIdsMap);
 
     // Go through the locations and set the WikiIds
     if (currentBatch.locations) {
@@ -497,7 +439,7 @@ if (runningExtensionId === currentExtensionId) {
 
         if (location.fgId) {
           logDebug("processPendingLocations, location.fgId is:", location.fgId);
-          let wikiIds = cachedFgIdToWtIdsMap.get(location.fgId);
+          let wikiIds = cachedFgMemorialIdToWtIdsMap.get(location.fgId);
           logDebug("processPendingLocations, wikiIds is:", wikiIds);
           if (wikiIds) {
             addWikiTreeIcon(location, wikiIds);
@@ -508,6 +450,10 @@ if (runningExtensionId === currentExtensionId) {
   }
 
   function determinePageProfile(url) {
+    // Remove the start and the domain, leaving the rest of the string untouched
+    const domainRegex = /^https?:\/\/(?:www\.)?findagrave\.com/;
+    url = url.replace(domainRegex, "");
+
     for (let profile of pageProfiles) {
       if (profile.matchRegex.test(url)) {
         return profile;
@@ -518,33 +464,37 @@ if (runningExtensionId === currentExtensionId) {
   function getFgIdDataFromUrl(url) {
     logDebug("getFgIdDataFromUrl ", url);
 
+    // Remove the start and the domain, leaving the rest of the string untouched
+    const domainRegex = /^https?:\/\/(?:www\.)?findagrave\.com/;
+    url = url.replace(domainRegex, "");
+
     if (memorialSearchRegex.test(url)) {
       let memorialId = url.replace(memorialSearchRegex, "$1");
       logDebug("memorialId is:", memorialId);
 
-      if (memorialId.length > 5) {
+      if (memorialId.length > 0) {
         return { fgIdType: "memorial", fgId: memorialId };
       }
     } else if (memorialRegex.test(url)) {
       let memorialId = url.replace(memorialRegex, "$1");
       logDebug("memorialId is:", memorialId);
 
-      if (memorialId.length > 5) {
+      if (memorialId.length > 0) {
         return { fgIdType: "memorial", fgId: memorialId };
       }
     } else if (cemeterySearchRegex.test(url)) {
-      let imageId = url.replace(cemeterySearchRegex, "$1");
-      logDebug("url is : ", url, "imageId is:", imageId);
+      let memorialId = url.replace(cemeterySearchRegex, "$1");
+      logDebug("url is : ", url, "memorialId is:", memorialId);
 
-      if (imageId.length > 5) {
-        return { fgIdType: "memorial", fgId: imageId };
+      if (memorialId.length > 0) {
+        return { fgIdType: "memorial", fgId: memorialId };
       }
     } else if (cemeteryRegex.test(url)) {
-      let personId = url.replace(cemeteryRegex, "$1");
-      logDebug("url is : ", url, "personId is:", personId);
+      let cemeteryId = url.replace(cemeteryRegex, "$1");
+      logDebug("url is : ", url, "cemeteryId is:", cemeteryId);
 
-      if (personId.length > 5) {
-        return { fgIdType: "cemetery", fgId: personId };
+      if (cemeteryId.length > 0) {
+        return { fgIdType: "cemetery", fgId: cemeteryId };
       }
     } else {
       console.log("getFgIdDataFromUrl no match for ", url);
@@ -597,41 +547,27 @@ if (runningExtensionId === currentExtensionId) {
       return false;
     }
 
-    location.spanElement = getSpanElementToAddIconTo(location);
-    if (!location.spanElement) {
-      logDebug("location matched element has no span element", location);
+    location.iconPlaceElement = getElementToAddIconTo(location);
+    if (!location.iconPlaceElement) {
+      logDebug("location matched element has no iconPlaceElement", location);
       return false;
     }
 
-    location.isEllipsisSpan = false;
-
-    let hasIconAlready = location.spanElement.querySelector(".wt-sourcer-icon");
-    if (!hasIconAlready) {
-      // in the case of the ellipsis the icon is a sibling of the span
-      const isEllipsisSpan = Array.from(location.spanElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
-      if (isEllipsisSpan) {
-        location.isEllipsisSpan = true;
-        const container = location.spanElement.parentElement;
-        hasIconAlready = container.querySelector(".wt-sourcer-icon");
-      }
-    }
+    let hasIconAlready = location.iconPlaceElement.querySelector(".wt-sourcer-icon");
     if (hasIconAlready) {
       location.hasIcon = true;
       logDebug("location matched element has icon already");
       return false;
     }
 
-    if (!location.locationType.needToFetchIds) {
-      let fgIdData = extractFgIdFromLocation(location); // Helper to get ID from href or text
-      if (fgIdData) {
-        location.fgId = fgIdData.fgId;
-        location.fgIdType = fgIdData.fgIdType;
-      } else {
-        logDebug("location matched element has no fgId and does not require fetch");
-        return false;
-      }
+    let fgIdData = extractFgIdFromLocation(location); // Helper to get ID from href or text
+    logDebug("called extractFgIdFromLocation, fgIdData returned is:", fgIdData);
+    if (fgIdData) {
+      location.fgId = fgIdData.fgId;
+      location.fgIdType = fgIdData.fgIdType;
     } else {
-      logDebug("location has locationType.needToFetchIds", location);
+      logDebug("location matched element has no fgId and does not require fetch");
+      return false;
     }
 
     el.dataset.wtIconProcessed = "true";
@@ -672,6 +608,8 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
 
+    //logDebug("areOptionsForThisPageEnabled is: ", areOptionsForThisPageEnabled);
+
     if (!pageInfo.pageProfile || !areOptionsForThisPageEnabled) {
       return;
     }
@@ -683,8 +621,8 @@ if (runningExtensionId === currentExtensionId) {
     for (let locationType of pageInfo.pageProfile.locationTypes) {
       if (isLocationTypeEnabled(locationType, options)) {
         let candidateElements = document.querySelectorAll(locationType.selector);
-        //logDebug("locationType ", locationType);
-        //logDebug("candidateElements ", candidateElements);
+        //logDebug("onMutation: locationType ", locationType);
+        //logDebug("onMutation: candidateElements ", candidateElements);
         for (let candidateElement of candidateElements) {
           let candidateLocation = { locationType: locationType, matchedElement: candidateElement };
           if (analyzeLocation(candidateLocation)) {
@@ -714,6 +652,35 @@ if (runningExtensionId === currentExtensionId) {
     }
   }
 
+  function injectWTSourcerStyles() {
+    const style = document.createElement("style");
+    style.textContent = `
+        /* 1. Kill outline on the FG parent when icon is clicked/focused */
+        a:has(.wt-sourcer-icon:active),
+        a:has(.wt-sourcer-icon:focus),
+        a:has(.wt-sourcer-icon:focus-within) {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        /* 2. Kill outline on YOUR anchor element specifically */
+        a:has(> .wt-sourcer-icon), 
+        a:has(> .wt-sourcer-icon):focus,
+        a:has(> .wt-sourcer-icon):active {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        /* 3. The "Focus-Visible" bypass */
+        /* This handles the 'after-click' ring modern browsers use */
+        .wt-sourcer-icon:focus-visible,
+        a:has(.wt-sourcer-icon):focus-visible {
+            outline: none !important;
+        }
+    `;
+    (document.head || document.documentElement).appendChild(style);
+  }
+
   function initWtIconInjection(options) {
     // Check if we've already initialized to prevent double-observers
     if (window.hasSourcerWtIconInjectionStarted) return;
@@ -721,6 +688,8 @@ if (runningExtensionId === currentExtensionId) {
     window.hasSourcerWtIconInjectionStarted = true;
 
     logDebug("initWtIconInjection: document.URL is: " + document.URL);
+
+    injectWTSourcerStyles();
 
     const observer = new MutationObserver((mutations) => {
       // Check if the extension is still "alive"
@@ -766,10 +735,7 @@ if (runningExtensionId === currentExtensionId) {
     );
   }
 
-  // Only start once the window is fully loaded
-  if (document.readyState === "complete") {
-    checkOptionsAndInitWtIconInjection();
-  } else {
-    window.addEventListener("load", checkOptionsAndInitWtIconInjection);
-  }
+  // we could wait for the document.readyState to be "complete" or listen for
+  // the "load" event, but for FindAGrave that makes the icons appear very late.
+  checkOptionsAndInitWtIconInjection();
 }

@@ -157,7 +157,13 @@ const uiOptionsGroup = {
     {
       optionName: "memorialShowWtIconH1",
       type: "checkbox",
-      label: "On person pages show icon next to top-level heading",
+      label: "On memorial pages show icon next to top-level heading",
+      defaultValue: true,
+    },
+    {
+      optionName: "memorialShowWtIconFamilyMember",
+      type: "checkbox",
+      label: "On memorial pages show icon next to family members",
       defaultValue: true,
     },
   ],
