@@ -161,7 +161,7 @@ async function requestPermissionsFromUser(permissions, options) {
           displayMessageWithIcon("warning", "Permission request failed");
           resolve(false);
         } else if (chrome.runtime.lastError) {
-          displayMessageWithIcon("warning", "Permission request failed");
+          displayMessageWithIcon("warning", "Permission request failed", chrome.runtime.lastError.message);
           resolve(false);
         } else {
           resolve(true);
@@ -169,7 +169,7 @@ async function requestPermissionsFromUser(permissions, options) {
       } catch (error) {
         console.error("Exception caught during chrome.permissions.request.", error);
         //menu.style = savedMenuStyle;
-        displayMessageThenClosePopup("Permission request failed.");
+        displayMessageWithIcon("warning", "Permission request failed with exception.", error.message);
         resolve(false);
       }
     };

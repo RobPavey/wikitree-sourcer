@@ -27,9 +27,15 @@ import { logDebug } from "../../core/log_debug.mjs";
 async function commonCheckPermissionForSites(siteMatches, options, requestFunction) {
   let permissions = { origins: siteMatches };
 
-  logDebug("checkPermissionForSites, permissions is:", permissions);
+  logDebug("commonCheckPermissionForSites, permissions is:", permissions);
 
-  let hasPermission = await chrome.permissions.contains(permissions);
+  let hasPermission = false;
+
+  try {
+    hasPermission = await chrome.permissions.contains(permissions);
+  } catch (e) {
+    logDebug("commonCheckPermissionForSites, chrome.permissions.contains got exception:", e);
+  }
 
   if (hasPermission) {
     return true;
