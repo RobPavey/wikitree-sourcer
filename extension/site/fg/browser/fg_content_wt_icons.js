@@ -27,6 +27,9 @@ SOFTWARE.
 // Memorial page:
 //
 // https://www.findagrave.com/memorial/96562587/john_luther-bond
+//
+// https://www.findagrave.com/memorial/7195433/olifus-manuel
+//    Has two WT profiles referencing it (currently but may be fixed)
 
 logDebug("fg_content_wt_icons.js loaded");
 
@@ -83,8 +86,15 @@ if (runningExtensionId === currentExtensionId) {
       locationTypes: [
         {
           locationTypeName: "pageH1",
-          selector: "h1 [data-testid='fullName']",
+          selector: "h1.page-title",
           useIdFromPageUrl: true,
+          iconPlaceElementRule: { type: "same" },
+          optionKey: "memorialShowWtIconH1",
+        },
+        {
+          locationTypeName: "memorial",
+          selector: "h2.name-grave",
+          iconPlaceElementRule: { type: "same" },
           optionKey: "memorialShowWtIconH1",
         },
       ],
@@ -107,9 +117,9 @@ if (runningExtensionId === currentExtensionId) {
       matchRegex: memorialSearchRegex,
       locationTypes: [
         {
-          locationTypeName: "pageH1",
-          selector: "h1 [data-testid='fullName']",
-          useIdFromPageUrl: true,
+          locationTypeName: "memorial",
+          selector: "h2.name-grave",
+          iconPlaceElementRule: { type: "same" },
           optionKey: "memorialShowWtIconH1",
         },
       ],
@@ -387,6 +397,7 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
     logDebug(`getWikiIdsForBatch, pendingFgMemorialIds is:`, pendingFgMemorialIds);
+    logDebug(`getWikiIdsForBatch, cemeteryIds is:`, cemeteryIds);
 
     if (cemeteryIds.size > 0) {
       if (cemeteryIds.size > 1) {
@@ -429,6 +440,11 @@ if (runningExtensionId === currentExtensionId) {
               }
             }
           }
+
+          logDebug(
+            "getWikiIdsForPendingBatch, after cemetery response cachedFgMemorialIdToWtIdsMap is: ",
+            cachedFgMemorialIdToWtIdsMap
+          );
         }
       } catch (error) {
         console.error("!!!!!!! WT+ API Batch fetch failed", error);
@@ -545,11 +561,11 @@ if (runningExtensionId === currentExtensionId) {
         return { fgIdType: "memorial", fgId: memorialId };
       }
     } else if (cemeterySearchRegex.test(url)) {
-      let memorialId = url.replace(cemeterySearchRegex, "$1");
-      logDebug("url is : ", url, "memorialId is:", memorialId);
+      let cemeteryId = url.replace(cemeterySearchRegex, "$1");
+      logDebug("url is : ", url, "cemeteryId is:", cemeteryId);
 
-      if (memorialId.length > 0) {
-        return { fgIdType: "memorial", fgId: memorialId };
+      if (cemeteryId.length > 0) {
+        return { fgIdType: "cemetery", fgId: cemeteryId };
       }
     } else if (cemeteryRegex.test(url)) {
       let cemeteryId = url.replace(cemeteryRegex, "$1");
