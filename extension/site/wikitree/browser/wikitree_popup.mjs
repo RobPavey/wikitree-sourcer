@@ -514,7 +514,7 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
         apiOtherParentId = apiChild.Father;
       }
 
-      if (apiOtherParentId) {
+      if (apiOtherParentId && apiPerson.Spouses) {
         // currently we only add children when the other parent is known
         // find this spouse
         let apiSpouse = apiPerson.Spouses[apiOtherParentId];
