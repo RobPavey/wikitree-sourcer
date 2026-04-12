@@ -132,6 +132,7 @@ if (runningExtensionId === currentExtensionId) {
           locationTypeName: "pageH1",
           selector: "#bio-name",
           optionKey: "memorialShowWtIconH1",
+          optionKeyForOutRef: "memorialShowWtIconForOutRefH1",
           useIdFromPageUrl: true,
           iconPlaceElementRule: { type: "same" },
         },
@@ -201,7 +202,47 @@ if (runningExtensionId === currentExtensionId) {
   }
 
   // Define  SVG icons
-  const svgSingle = `data:image/svg+xml;utf8,
+  const svgRefWtProcessing = `data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgb(255, 175, 2)" />
+      <stop offset="50%" stop-color="rgb(255, 210, 120)" />
+      <stop offset="85%" stop-color="rgb(255, 240, 200)" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="rgb(255, 248, 230)" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="12" cy="12" r="10.5" 
+          fill="rgb(255, 248, 230)" 
+          stroke="url(%23ringGradient)" 
+          stroke-width="2"
+          stroke-dasharray="45, 15">
+    <animateTransform 
+      attributeName="transform" 
+      type="rotate" 
+      from="0 12 12" 
+      to="360 12 12" 
+      dur="1.5s" 
+      repeatCount="indefinite" />
+  </circle>
+  
+  <text x="12" y="18" 
+        font-family="sans-serif" 
+        font-size="16px" 
+        font-weight="bold" 
+        fill="rgb(80, 80, 80)" 
+        text-anchor="middle">
+    ?
+    <animate 
+      attributeName="opacity" 
+      values="1;0.2;1" 
+      dur="1.5s" 
+      repeatCount="indefinite" />
+  </text>
+</svg>`;
+
+  const svgSingleRefFromWt = `data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
   
@@ -220,7 +261,7 @@ if (runningExtensionId === currentExtensionId) {
         fill="none"/>
 </svg>`;
 
-  const svgMultiple = `data:image/svg+xml;utf8,
+  const svgMultipleRefsFromWt = `data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <circle cx="15" cy="9" r="8" fill="%23ffaf02" stroke="white" stroke-width="1.5" opacity="0.6"/>
   
@@ -241,25 +282,180 @@ if (runningExtensionId === currentExtensionId) {
         fill="none"/>
 </svg>`;
 
-  function addWikiTreeIcon(location, wikiIds) {
-    logDebug("addWikiTreeIcon", location, wikiIds);
+  const svgRefToWt = `data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
+  
+  /* Shadow Arrow */
+  <path d="M1 12H16M11 8L15 12L11 16" 
+        stroke="rgba(0,0,0,0.4)" 
+        stroke-width="5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+        
+  /* White Arrow */
+  <path d="M1 12H16M11 8L15 12L11 16" 
+        stroke="white" 
+        stroke-width="2.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+</svg>`;
 
-    if (wikiIds.length < 1) {
-      logDebug("addWikiTreeIcon, profiles length less than 1");
+  const svgRefMutual = `data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
+  
+  /* Shadow Arrow */
+  <path d="M1 12H16M5 8L1 12L5 16M12 8L16 12L12 16" 
+        stroke="rgba(0,0,0,0.4)" 
+        stroke-width="5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+        
+  /* White Arrow */
+  <path d="M1 12H16M5 8L1 12L5 16M12 8L16 12L12 16" 
+        stroke="white" 
+        stroke-width="2.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+</svg>`;
+
+  const svgRefWtConflict = `data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  /* 1. Circle with Red Outline */
+  <circle cx="12" cy="12" r="11" fill="rgb(255, 175, 2)" stroke="rgb(255, 0, 0)" stroke-width="2"/>
+  
+  /* 2. Parallel, \"Missed Connection\" Arrows (White) */
+  /* Top Arrow (points Left) */
+  <path d="M1 9.5H16M5 5.5L1 9.5" 
+        stroke="rgb(255, 255, 255)" 
+        stroke-width="2.5" 
+        stroke-linecap="round" 
+        fill="none"/>
+
+  /* Bottom Arrow (points Right, Fixed: Lower-Head) */
+  <path d="M1 14.5H16M12 18.5L16 14.5" 
+        stroke="rgb(255, 255, 255)" 
+        stroke-width="2.5" 
+        stroke-linecap="round" 
+        fill="none"/>
+</svg>`;
+
+  function addProcessingIcon(location) {
+    logDebug("addProcessingIcon", location);
+
+    let iconPlaceElement = location.iconPlaceElement;
+
+    let svgIcon = svgRefWtProcessing;
+
+    const img = document.createElement("img");
+
+    // 3. Set the source to your SVG string
+    img.src = svgIcon;
+
+    // 4. Add styling for alignment and spacing
+    img.style.width = "24px";
+    img.style.height = "24px";
+    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
+    img.style.position = "relative";
+    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
+    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+
+    img.style.cursor = "pointer";
+    img.className = "wt-sourcer-processing-icon"; // Good for your MutationObserver check
+
+    // Set initial filter
+    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+    img.style.filter = normalFilter;
+
+    img.style.marginLeft = "12px";
+    iconPlaceElement.appendChild(img);
+  }
+
+  function removeProcessingIcon(location) {
+    let iconPlaceElement = location.iconPlaceElement;
+    let iconElement = iconPlaceElement.querySelector(".wt-sourcer-processing-icon");
+    if (iconElement) {
+      iconPlaceElement.removeChild(iconElement);
+    }
+  }
+
+  function addWikiTreeIcon(location, wikiIds = [], flowerWikiIds = []) {
+    removeProcessingIcon(location);
+
+    if (!wikiIds) {
+      wikiIds = [];
+    }
+    if (!flowerWikiIds) {
+      flowerWikiIds = [];
+    }
+
+    if (wikiIds.length == 0 && flowerWikiIds.length == 0) {
       return;
     }
+
+    logDebug("addWikiTreeIcon", location, wikiIds, flowerWikiIds);
 
     let iconPlaceElement = location.iconPlaceElement;
 
     let svgIcon = null;
     let titleText = "FindAGrave " + location.fgIdType + " " + location.fgId + " is ";
 
+    let linkUrl = "";
+
     if (wikiIds.length > 1) {
-      svgIcon = svgMultiple;
+      svgIcon = svgMultipleRefsFromWt;
       titleText += `referenced from ${wikiIds.length} WikiTree profiles`;
-    } else {
-      svgIcon = svgSingle;
+
+      let fgId = location.fgId;
+      if (fgId) {
+        let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
+        if (location.fgIdType == "memorial") {
+          wtPlusUrl += "FindAGrave=fgmem";
+        } else {
+          wtPlusUrl += "FindAGrave=fgcem";
+        }
+        wtPlusUrl += fgId;
+        wtPlusUrl += "&render=1";
+        linkUrl = wtPlusUrl;
+      }
+    } else if (wikiIds.length == 1) {
+      svgIcon = svgSingleRefFromWt;
       titleText += `referenced from WikiTree profile: ${wikiIds[0]}`;
+      linkUrl = "https://www.wikitree.com/wiki/" + wikiIds[0];
+    }
+
+    if (flowerWikiIds.length == 1) {
+      if (wikiIds.length == 1) {
+        titleText += ` and this memorial also uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`;
+        if (wikiIds[0] == flowerWikiIds[0]) {
+          svgIcon = svgRefMutual;
+        } else {
+          svgIcon = svgRefWtConflict;
+        }
+      } else if (wikiIds.length == 0) {
+        svgIcon = svgRefToWt;
+        titleText = `FindAGrave ${location.fgIdType} ${location.fgId} uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`;
+        linkUrl = "https://www.wikitree.com/wiki/" + flowerWikiIds[0];
+      } else {
+        // there are multiple WT profiles referencing this memorial which in itself is an error
+        // and we also reference a WT profile
+        svgIcon = svgRefWtConflict;
+        titleText += ` and this memorial also uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`;
+      }
+    } else if (flowerWikiIds.length > 1) {
+      // this profile references multiple WT profiles.
+      if (wikiIds.length > 0) {
+        svgIcon = svgRefWtConflict;
+        titleText += ` and this memorial also uses a flowers to reference multiple WikiTree profiles`;
+      } else {
+        svgIcon = svgRefWtConflict;
+        titleText = `FindAGrave ${location.fgIdType} ${location.fgId} uses a flowers to reference multiple WikiTree profiles`;
+      }
     }
 
     const img = document.createElement("img");
@@ -295,21 +491,8 @@ if (runningExtensionId === currentExtensionId) {
 
     // create an anchor element
     const anchorElement = document.createElement("a");
-    if (wikiIds.length > 1) {
-      let fgId = location.fgId;
-      if (fgId) {
-        let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
-        if (location.fgIdType == "memorial") {
-          wtPlusUrl += "FindAGrave=fgmem";
-        } else {
-          wtPlusUrl += "FindAGrave=fgcem";
-        }
-        wtPlusUrl += fgId;
-        wtPlusUrl += "&render=1";
-        anchorElement.setAttribute("href", wtPlusUrl);
-      }
-    } else {
-      anchorElement.setAttribute("href", "https://www.wikitree.com/wiki/" + wikiIds[0]);
+    if (linkUrl) {
+      anchorElement.setAttribute("href", linkUrl);
     }
 
     anchorElement.addEventListener("click", (event) => {
@@ -326,34 +509,8 @@ if (runningExtensionId === currentExtensionId) {
 
     anchorElement.appendChild(img);
 
-    const locationTypeName = location.locationType.locationTypeName;
-
-    if (locationTypeName === "sourceRow" || locationTypeName == "imageIndexRecord") {
-      // Set container to flex so icon stays visible next to the other element
-      iconPlaceElement.style.display = "flex";
-      iconPlaceElement.style.alignItems = "flex-start";
-      iconPlaceElement.style.flexDirection = "row";
-
-      anchorElement.style.flexShrink = "0";
-      anchorElement.style.display = "flex";
-      anchorElement.style.marginLeft = "8px";
-
-      iconPlaceElement.appendChild(anchorElement);
-    } else if (locationTypeName === "imageNavBar") {
-      // the iconPlaceElement is a container that we want to append to
-      anchorElement.style.flexShrink = "0";
-      anchorElement.style.display = "flex";
-      anchorElement.style.marginLeft = "8px";
-
-      iconPlaceElement.appendChild(anchorElement);
-    } else if (locationTypeName === "similarRecord") {
-      // the iconPlaceElement is a container that we want to append to
-      anchorElement.style.marginLeft = "0px";
-      iconPlaceElement.appendChild(anchorElement);
-    } else {
-      img.style.marginLeft = "12px";
-      iconPlaceElement.appendChild(anchorElement);
-    }
+    img.style.marginLeft = "12px";
+    iconPlaceElement.appendChild(anchorElement);
   }
 
   let cachedFgMemorialIdToWtIdsMap = new Map();
@@ -493,6 +650,39 @@ if (runningExtensionId === currentExtensionId) {
     }
   }
 
+  function getFlowerWikiIdsForLocation(location) {
+    let locationType = location.locationType;
+    let optionKeyForOutRef = locationType.optionKeyForOutRef;
+
+    let options = pageInfo.options;
+
+    let optionKey = "ui_fg_" + optionKeyForOutRef;
+    if (!options[optionKey]) {
+      return;
+    }
+
+    let flowerWikiIds = [];
+    if (locationType.useIdFromPageUrl) {
+      // check to see if there is a flower
+      let flowers = document.querySelectorAll("div.flower-list p.flower-text");
+      for (let flower of flowers) {
+        let flowerText = flower.textContent;
+        if (flowerText) {
+          const regex = /^(.+\-\d+) on WikiTree$/;
+          if (regex.test(flowerText)) {
+            let flowerWikiId = flowerText.replace(regex, "$1");
+            if (flowerWikiId) {
+              if (!flowerWikiIds.includes(flowerWikiId)) {
+                flowerWikiIds.push(flowerWikiId);
+              }
+            }
+          }
+        }
+      }
+    }
+    return flowerWikiIds;
+  }
+
   async function processPendingLocations() {
     // Check if the extension is still "alive"
     if (!chrome.runtime?.id) {
@@ -519,9 +709,9 @@ if (runningExtensionId === currentExtensionId) {
           logDebug("processPendingLocations, location.fgId is:", location.fgId);
           let wikiIds = cachedFgMemorialIdToWtIdsMap.get(location.fgId);
           logDebug("processPendingLocations, wikiIds is:", wikiIds);
-          if (wikiIds) {
-            addWikiTreeIcon(location, wikiIds);
-          }
+
+          let flowerWikiIds = getFlowerWikiIdsForLocation(location);
+          addWikiTreeIcon(location, wikiIds, flowerWikiIds);
         }
       }
     }
@@ -648,6 +838,7 @@ if (runningExtensionId === currentExtensionId) {
       return false;
     }
 
+    addProcessingIcon(location);
     el.dataset.wtIconProcessed = "true";
 
     return true;
@@ -684,6 +875,9 @@ if (runningExtensionId === currentExtensionId) {
           break;
         }
       }
+
+      // store the options in a page global so other functions can access them
+      pageInfo.options = options;
     }
 
     //logDebug("areOptionsForThisPageEnabled is: ", areOptionsForThisPageEnabled);

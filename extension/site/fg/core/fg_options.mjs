@@ -161,6 +161,12 @@ const uiOptionsGroup = {
       defaultValue: true,
     },
     {
+      optionName: "memorialShowWtIconForOutRefH1",
+      type: "checkbox",
+      label: "On memorial pages for top-level heading and indicate if there are links back to WT",
+      defaultValue: true,
+    },
+    {
       optionName: "memorialShowWtIconFamilyMember",
       type: "checkbox",
       label: "On memorial pages show icon next to family members",
