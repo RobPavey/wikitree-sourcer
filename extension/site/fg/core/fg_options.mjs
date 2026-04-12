@@ -237,7 +237,17 @@ registerSubsectionForOptions("citation", "fg", "Find a Grave");
 registerOptionsGroup(citationOptionsGroup);
 
 registerSubsectionForOptions("ui", "fg", "FindAGrave");
-registerSubheadingForOptions("ui", "fg", "wtIconPageModBehaviour", "Page Modifications for WikiTree usage icons");
+registerSubheadingForOptions(
+  "ui",
+  "fg",
+  "wtIconPageModBehaviour",
+  "Page Modifications for WikiTree usage icons (behaviour)"
+);
 registerOptionsGroup(uiOptionsPageModBehaviourGroup);
-registerSubheadingForOptions("ui", "fg", "wtIconPageModLocactions", "Page Modifications for WikiTree usage icons");
+registerSubheadingForOptions(
+  "ui",
+  "fg",
+  "wtIconPageModLocactions",
+  "Page Modifications for WikiTree usage icons (locations)"
+);
 registerOptionsGroup(uiOptionsPageModLocationsGroup);
