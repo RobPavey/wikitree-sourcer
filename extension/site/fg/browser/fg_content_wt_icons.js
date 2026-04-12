@@ -89,13 +89,13 @@ if (runningExtensionId === currentExtensionId) {
           selector: "h1.page-title",
           useIdFromPageUrl: true,
           iconPlaceElementRule: { type: "same" },
-          optionKey: "memorialShowWtIconH1",
+          optionKey: "cemeteryShowWtIconH1",
         },
         {
           locationTypeName: "memorial",
           selector: "h2.name-grave",
           iconPlaceElementRule: { type: "same" },
-          optionKey: "memorialShowWtIconH1",
+          optionKey: "cemeterySearchShowWtIcon",
         },
       ],
     },
@@ -108,7 +108,8 @@ if (runningExtensionId === currentExtensionId) {
           selector: "h1.bio-name",
           useIdFromPageUrl: true,
           iconPlaceElementRule: { type: "same" },
-          optionKey: "memorialShowWtIconH1",
+          optionKey: "cemeteryShowWtIconH1",
+          optionKey2: "cemeteryShowWtCategoryIconH1",
         },
       ],
     },
@@ -120,7 +121,7 @@ if (runningExtensionId === currentExtensionId) {
           locationTypeName: "memorial",
           selector: "h2.name-grave",
           iconPlaceElementRule: { type: "same" },
-          optionKey: "memorialShowWtIconH1",
+          optionKey: "memorialSearchShowWtIcon",
         },
       ],
     },
@@ -147,9 +148,22 @@ if (runningExtensionId === currentExtensionId) {
     },
   ];
 
+  function getOptions() {
+    return pageInfo.options;
+  }
+
   function isLocationTypeEnabled(locationType, options) {
-    let optionKey = "ui_fg_" + locationType.optionKey;
-    return options[optionKey];
+    if (locationType.optionKey) {
+      if (locationType.optionKey2) {
+        let optionKey2 = "ui_fg_" + locationType.optionKey2;
+        if (options[optionKey2]) {
+          return true;
+        }
+      }
+
+      let optionKey = "ui_fg_" + locationType.optionKey;
+      return options[optionKey];
+    }
   }
 
   function wtPlusApiCall(url) {
@@ -407,12 +421,72 @@ if (runningExtensionId === currentExtensionId) {
   </g>
 </svg>`;
 
+  function triggerCopyFeedback(element) {
+    // 1. Add the glow effect
+    element.classList.add("wt-copy-success");
+
+    // 2. Create and position the tooltip
+    const rect = element.getBoundingClientRect();
+    const tooltip = document.createElement("div");
+    tooltip.className = "wt-copy-tooltip";
+    tooltip.innerText = "Copied!";
+
+    // Position it relative to the icon's current screen position
+    tooltip.style.left = `${rect.left + rect.width / 2 + window.scrollX}px`;
+    tooltip.style.top = `${rect.top + window.scrollY}px`;
+
+    document.body.appendChild(tooltip);
+
+    // 3. Clean up after the animation finishes
+    setTimeout(() => {
+      element.classList.remove("wt-copy-success");
+      tooltip.remove();
+    }, 800);
+  }
+
+  function addRightClickCopyToElement(element, clipboardText) {
+    if (!clipboardText) {
+      return;
+    }
+
+    if (!getOptions().ui_fg_rightClickCopy) {
+      return;
+    }
+
+    element.addEventListener("contextmenu", async (event) => {
+      // Stop the default browser context menu from appearing
+      event.preventDefault();
+
+      try {
+        // Copy to clipboard
+        await navigator.clipboard.writeText(clipboardText);
+        console.log(`Copied ${clipboardText} to clipboard`);
+
+        // Optional: Provide visual feedback (like a temporary tooltip)
+        triggerCopyFeedback(element);
+      } catch (err) {
+        if (err.name === "NotAllowedError") {
+          console.log("Clipboard access denied. Ensure the page has focus.");
+          // Optional: Show a different tooltip like "Click page first!"
+          // showErrorFeedback(element, "Click page first!");
+        } else {
+          console.error("Failed to copy:", err);
+        }
+      }
+    });
+  }
+
   function addProcessingIcon(location) {
+    if (!getOptions().ui_fg_showProcessingIcon) {
+      return;
+    }
+    const useAnimation = getOptions().ui_fg_animateProcessingIcon;
+
     logDebug("addProcessingIcon", location);
 
     let iconPlaceElement = location.iconPlaceElement;
 
-    let svgIcon = svgRefWtProcessing;
+    let svgIcon = useAnimation ? svgRefWtProcessingAnimated : svgRefWtProcessing;
 
     const img = document.createElement("img");
 
@@ -466,6 +540,7 @@ if (runningExtensionId === currentExtensionId) {
 
     let svgIcon = null;
     let titleText = "FindAGrave " + location.fgIdType + " " + location.fgId + " is ";
+    let clipboardText = "";
 
     let linkUrl = "";
 
@@ -485,10 +560,18 @@ if (runningExtensionId === currentExtensionId) {
         wtPlusUrl += "&render=1";
         linkUrl = wtPlusUrl;
       }
+
+      for (let wikiId of wikiIds) {
+        if (clipboardText) {
+          clipboardText += ",";
+        }
+        clipboardText += wikiId;
+      }
     } else if (wikiIds.length == 1) {
       svgIcon = svgSingleRefFromWt;
       titleText += `referenced from WikiTree profile: ${wikiIds[0]}`;
       linkUrl = "https://www.wikitree.com/wiki/" + wikiIds[0];
+      clipboardText = wikiIds[0];
     }
 
     if (flowerWikiIds.length == 1) {
@@ -572,6 +655,9 @@ if (runningExtensionId === currentExtensionId) {
     anchorElement.appendChild(img);
 
     img.style.marginLeft = "12px";
+
+    addRightClickCopyToElement(anchorElement, clipboardText);
+
     iconPlaceElement.appendChild(anchorElement);
   }
 
@@ -728,77 +814,81 @@ if (runningExtensionId === currentExtensionId) {
       // we only use the first cemetery
       const fgIdToQuery = "fgcem" + cemeteryId;
 
-      try {
-        const response = await wtPlusApiGetProfilesUsingFgId(fgIdToQuery);
-        logDebug("getWikiIdsForPendingBatch, cemetery response is: ", response);
-        if (response.response?.memorials) {
-          // record the profiles that reference the elements fgId for the currentBatch
-          const memorials = response.response.memorials;
-          let wikiIdsForCemetery = [];
-          memorials.forEach((memorial) => {
-            let wikiId = memorial.WikiTreeID;
-            let fgMemorialId = memorial.memorial.toString();
+      if (getOptions().ui_fg_cemeteryShowWtIconH1) {
+        try {
+          const response = await wtPlusApiGetProfilesUsingFgId(fgIdToQuery);
+          logDebug("getWikiIdsForPendingBatch, cemetery response is: ", response);
+          if (response.response?.memorials) {
+            // record the profiles that reference the elements fgId for the currentBatch
+            const memorials = response.response.memorials;
+            let wikiIdsForCemetery = [];
+            memorials.forEach((memorial) => {
+              let wikiId = memorial.WikiTreeID;
+              let fgMemorialId = memorial.memorial.toString();
 
-            wikiIdsForCemetery.push(wikiId);
+              wikiIdsForCemetery.push(wikiId);
 
-            if (!cachedFgMemorialIdToWtIdsMap.has(fgMemorialId)) {
-              cachedFgMemorialIdToWtIdsMap.set(fgMemorialId, []);
-            }
+              if (!cachedFgMemorialIdToWtIdsMap.has(fgMemorialId)) {
+                cachedFgMemorialIdToWtIdsMap.set(fgMemorialId, []);
+              }
 
-            let wikiIdsForFgMemorialId = cachedFgMemorialIdToWtIdsMap.get(fgMemorialId);
-            if (!wikiIdsForFgMemorialId.includes(wikiId)) {
-              wikiIdsForFgMemorialId.push(wikiId);
-            }
-          });
+              let wikiIdsForFgMemorialId = cachedFgMemorialIdToWtIdsMap.get(fgMemorialId);
+              if (!wikiIdsForFgMemorialId.includes(wikiId)) {
+                wikiIdsForFgMemorialId.push(wikiId);
+              }
+            });
 
-          if (memorials.length > 0) {
-            // this cemetery has WT profiles add an icon
-            logDebug("processPendingLocations, wikiIdsForCemetery is:", wikiIdsForCemetery);
-            if (wikiIdsForCemetery) {
-              for (let location of locations) {
-                addWikiTreeIcon(location, wikiIdsForCemetery);
+            if (memorials.length > 0) {
+              // this cemetery has WT profiles add an icon
+              logDebug("processPendingLocations, wikiIdsForCemetery is:", wikiIdsForCemetery);
+              if (wikiIdsForCemetery) {
+                for (let location of locations) {
+                  addWikiTreeIcon(location, wikiIdsForCemetery);
+                }
               }
             }
-          }
 
-          logDebug(
-            "getWikiIdsForPendingBatch, after cemetery response cachedFgMemorialIdToWtIdsMap is: ",
-            cachedFgMemorialIdToWtIdsMap
-          );
+            logDebug(
+              "getWikiIdsForPendingBatch, after cemetery response cachedFgMemorialIdToWtIdsMap is: ",
+              cachedFgMemorialIdToWtIdsMap
+            );
+          }
+        } catch (error) {
+          console.error("!!!!!!! WT+ API Batch fetch failed", error);
+          logDebug("fgIdToQuery cemetery id string is: ", fgIdToQuery);
         }
-      } catch (error) {
-        console.error("!!!!!!! WT+ API Batch fetch failed", error);
-        logDebug("fgIdToQuery cemetery id string is: ", fgIdToQuery);
       }
 
-      // also try to get the category for the cemetery
-      try {
-        const response = await wtPlusApiGetCategoryForCemetery(cemeteryId);
-        logDebug("getWikiIdsForPendingBatch, cemetery category response is: ", response);
-        if (response?.response?.categories && response.response.categories.length) {
-          // record the profiles that reference the elements fgId for the currentBatch
-          const categories = response.response.categories;
-          let categoryNamesForCemetery = [];
-          categories.forEach((category) => {
-            let categoryName = category.category;
-            let fgId = category.fgId;
+      if (getOptions().ui_fg_cemeteryShowWtCategoryIconH1) {
+        // also try to get the category for the cemetery
+        try {
+          const response = await wtPlusApiGetCategoryForCemetery(cemeteryId);
+          logDebug("getWikiIdsForPendingBatch, cemetery category response is: ", response);
+          if (response?.response?.categories && response.response.categories.length) {
+            // record the profiles that reference the elements fgId for the currentBatch
+            const categories = response.response.categories;
+            let categoryNamesForCemetery = [];
+            categories.forEach((category) => {
+              let categoryName = category.category;
+              let fgId = category.fgId;
 
-            categoryNamesForCemetery.push(categoryName);
-          });
+              categoryNamesForCemetery.push(categoryName);
+            });
 
-          if (categories.length > 0) {
-            // this cemetery has a WT category
-            logDebug("processPendingLocations, categoryNamesForCemetery is:", categoryNamesForCemetery);
-            if (categoryNamesForCemetery) {
-              for (let location of locations) {
-                addWikiTreeCategoryIcon(location, categoryNamesForCemetery);
+            if (categories.length > 0) {
+              // this cemetery has a WT category
+              logDebug("processPendingLocations, categoryNamesForCemetery is:", categoryNamesForCemetery);
+              if (categoryNamesForCemetery) {
+                for (let location of locations) {
+                  addWikiTreeCategoryIcon(location, categoryNamesForCemetery);
+                }
               }
             }
           }
+        } catch (error) {
+          console.error("!!!!!!! WT+ API Batch fetch failed", error);
+          logDebug("cemetery id string is: ", cemeteryId);
         }
-      } catch (error) {
-        console.error("!!!!!!! WT+ API Batch fetch failed", error);
-        logDebug("cemetery id string is: ", cemeteryId);
       }
     }
 
@@ -1141,6 +1231,37 @@ if (runningExtensionId === currentExtensionId) {
         .wt-sourcer-icon:focus-visible,
         a:has(.wt-sourcer-icon):focus-visible {
             outline: none !important;
+        }
+
+        .wt-sourcer-icon {
+            cursor: context-menu; /* Signals right-click utility */
+            transition: filter 0.2s ease-in-out;
+        }
+
+        /* The 'success' glow using your WikiTree Orange */
+        .wt-copy-success {
+            filter: drop-shadow(0 0 8px rgba(255, 175, 2, 0.9)) !important;
+        }
+
+        /* The floating 'Copied!' label */
+        .wt-copy-tooltip {
+            position: absolute;
+            background: #333333;
+            color: #ffffff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: sans-serif;
+            pointer-events: none;
+            z-index: 2147483647; /* Max possible z-index to stay on top */
+            transform: translate(-50%, -100%);
+            animation: wt-fade-up 0.8s ease-out forwards;
+        }
+
+        @keyframes wt-fade-up {
+            0% { opacity: 0; margin-top: 0; }
+            20% { opacity: 1; margin-top: -10px; }
+            100% { opacity: 0; margin-top: -20px; }
         }
     `;
     (document.head || document.documentElement).appendChild(style);
