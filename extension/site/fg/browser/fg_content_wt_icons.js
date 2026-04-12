@@ -181,6 +181,11 @@ if (runningExtensionId === currentExtensionId) {
     return wtPlusApiCall(url);
   }
 
+  function wtPlusApiGetCategoryForCemetery(fgId) {
+    let url = `https://plus.wikitree.com/function/wtCatCIBSearch/BEE_FindAGraveButton.json?Query=${fgId}&cib=FGCemetery`;
+    return wtPlusApiCall(url);
+  }
+
   function getElementToAddIconTo(location) {
     let element = location.matchedElement;
 
@@ -203,6 +208,24 @@ if (runningExtensionId === currentExtensionId) {
 
   // Define  SVG icons
   const svgRefWtProcessing = `data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  /* 1. Muted, Neutral Circle */
+  /* Using rgb(180, 180, 180) for a clean, 'pending' grey */
+  <circle cx="12" cy="12" r="11" fill="rgb(180, 180, 180)" stroke="rgb(130, 130, 130)" stroke-width="1.5"/>
+  
+  /* 2. The Central Question Mark (Bold White) */
+  /* This text element is the cleanest way to do this at 24x24 */
+  <text x="12" y="17" 
+        font-family="sans-serif" 
+        font-size="16px" 
+        font-weight="bold" 
+        fill="rgb(255, 255, 255)" 
+        text-anchor="middle">
+    ?
+  </text>
+</svg>`;
+
+  const svgRefWtProcessingAnimated = `data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
   <defs>
     <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -343,6 +366,45 @@ if (runningExtensionId === currentExtensionId) {
         stroke-width="2.5" 
         stroke-linecap="round" 
         fill="none"/>
+</svg>`;
+
+  const svgRefWtCategory = `data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  /* 1. WikiTree Orange Circle (Thick White Outline) */
+  <circle cx="12" cy="12" r="11" fill="rgb(255, 175, 2)" stroke="white" stroke-width="2"/>
+  
+  /* 2. Stacked Index Cards (Refined Palette) */
+  <g stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+    /* Bottom card (fill: none) */
+    <path fill="none" d="M5 14.5h14v3.5H5z"/>
+    
+    /* Middle card (fill: Warm Cream) */
+    /* This color matches the circle perimeter, effectively hiding 
+       the other black lines and creating the visual 'stack'. */
+    <path fill="rgb(255, 248, 230)" d="M7 10.25h14v3.5H7z"/>
+    
+    /* Top card (fill: none) */
+    <path fill="none" d="M5 6h14v3.5H5z"/>
+  </g>
+</svg>`;
+
+  const svgRefWtCategoryConflict = `data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  /* 1. WikiTree Orange Circle (Red and White Outlines) */
+  <circle cx="12" cy="12" r="11" fill="rgb(255, 175, 2)" stroke="white" stroke-width="1.5"/>
+  <circle cx="12" cy="12" r="11" fill="none" stroke="rgb(255, 0, 0)" stroke-width="2"/>
+  
+  /* 2. Aligned Stacked Cards (Thin Black Outline) */
+  <g stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+    /* Bottom card (Aligned with middle, Warm Cream fill) */
+    <path fill="rgb(255, 248, 230)" d="M7 14.5h14v3.5H7z"/>
+    
+    /* Middle card (Warm Cream fill) */
+    <path fill="rgb(255, 248, 230)" d="M7 10.25h14v3.5H7z"/>
+    
+    /* Top card (Shifted left, transparent fill) */
+    <path fill="none" d="M5 6h14v3.5H5z"/>
+  </g>
 </svg>`;
 
   function addProcessingIcon(location) {
@@ -513,6 +575,106 @@ if (runningExtensionId === currentExtensionId) {
     iconPlaceElement.appendChild(anchorElement);
   }
 
+  function addWikiTreeCategoryIcon(location, categoryNames) {
+    removeProcessingIcon(location);
+
+    if (!categoryNames) {
+      categoryNames = [];
+    }
+
+    if (!categoryNames.length) {
+      return;
+    }
+
+    logDebug("addWikiTreeCategoryIcon", location, categoryNames);
+
+    let iconPlaceElement = location.iconPlaceElement;
+
+    let svgIcon = null;
+    let titleText = "FindAGrave " + location.fgIdType + " " + location.fgId + " is ";
+
+    let linkUrl = "";
+
+    if (categoryNames.length > 1) {
+      svgIcon = svgRefWtCategoryConflict;
+      titleText += `referenced from ${categoryNames.length} WikiTree categories`;
+
+      let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
+
+      let categoryNamesString = "";
+      for (let categoryName of categoryNames) {
+        if (categoryNamesString) {
+          categoryNamesString += " OR ";
+        }
+
+        let modifiedName = categoryName.replace(/[\s,]/g, "_");
+        categoryNamesString += `CategoryFull="${modifiedName}"`;
+      }
+
+      wtPlusUrl += categoryNamesString;
+      wtPlusUrl += "&render=1";
+      linkUrl = wtPlusUrl;
+    } else if (categoryNames.length == 1) {
+      svgIcon = svgRefWtCategory;
+      titleText += `referenced from WikiTree category: ${categoryNames[0]}`;
+      linkUrl = "https://www.wikitree.com/wiki/Category:" + categoryNames[0];
+    }
+
+    const img = document.createElement("img");
+
+    // 3. Set the source to your SVG string
+    img.src = svgIcon;
+
+    // 4. Add styling for alignment and spacing
+    img.style.width = "24px";
+    img.style.height = "24px";
+    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
+    img.style.position = "relative";
+    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
+    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+
+    img.style.cursor = "pointer";
+    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
+
+    // 5. Add a tooltip for clarity
+    img.title = titleText;
+
+    // Set initial filter
+    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+    img.style.filter = normalFilter;
+
+    img.addEventListener("mouseenter", () => {
+      img.style.filter = `${normalFilter} brightness(1.1)`;
+    });
+
+    img.addEventListener("mouseleave", () => {
+      img.style.filter = normalFilter;
+    });
+
+    // create an anchor element
+    const anchorElement = document.createElement("a");
+    if (linkUrl) {
+      anchorElement.setAttribute("href", linkUrl);
+    }
+
+    anchorElement.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+
+    anchorElement.addEventListener("mousedown", (event) => {
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    });
+
+    anchorElement.target = "_blank";
+    anchorElement.style.textDecoration = "none";
+
+    anchorElement.appendChild(img);
+
+    img.style.marginLeft = "12px";
+    iconPlaceElement.appendChild(anchorElement);
+  }
+
   let cachedFgMemorialIdToWtIdsMap = new Map();
 
   let pendingLocationsBatch = {};
@@ -563,6 +725,7 @@ if (runningExtensionId === currentExtensionId) {
 
       const [cemeteryId, locations] = cemeteryIds.entries().next().value;
 
+      // we only use the first cemetery
       const fgIdToQuery = "fgcem" + cemeteryId;
 
       try {
@@ -606,6 +769,36 @@ if (runningExtensionId === currentExtensionId) {
       } catch (error) {
         console.error("!!!!!!! WT+ API Batch fetch failed", error);
         logDebug("fgIdToQuery cemetery id string is: ", fgIdToQuery);
+      }
+
+      // also try to get the category for the cemetery
+      try {
+        const response = await wtPlusApiGetCategoryForCemetery(cemeteryId);
+        logDebug("getWikiIdsForPendingBatch, cemetery category response is: ", response);
+        if (response?.response?.categories && response.response.categories.length) {
+          // record the profiles that reference the elements fgId for the currentBatch
+          const categories = response.response.categories;
+          let categoryNamesForCemetery = [];
+          categories.forEach((category) => {
+            let categoryName = category.category;
+            let fgId = category.fgId;
+
+            categoryNamesForCemetery.push(categoryName);
+          });
+
+          if (categories.length > 0) {
+            // this cemetery has a WT category
+            logDebug("processPendingLocations, categoryNamesForCemetery is:", categoryNamesForCemetery);
+            if (categoryNamesForCemetery) {
+              for (let location of locations) {
+                addWikiTreeCategoryIcon(location, categoryNamesForCemetery);
+              }
+            }
+          }
+        }
+      } catch (error) {
+        console.error("!!!!!!! WT+ API Batch fetch failed", error);
+        logDebug("cemetery id string is: ", cemeteryId);
       }
     }
 
