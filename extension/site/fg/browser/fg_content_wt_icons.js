@@ -168,6 +168,10 @@ if (runningExtensionId === currentExtensionId) {
 
   function wtPlusApiCall(url) {
     return new Promise((resolve, reject) => {
+      if (!chrome.runtime?.id) {
+        reject("Extension context invalidated");
+        return;
+      }
       chrome.runtime.sendMessage(
         {
           type: "doWtPlusApiCall",
@@ -429,7 +433,7 @@ if (runningExtensionId === currentExtensionId) {
     const rect = element.getBoundingClientRect();
     const tooltip = document.createElement("div");
     tooltip.className = "wt-copy-tooltip";
-    tooltip.innerText = "Copied!";
+    tooltip.innerText = "Copied";
 
     // Position it relative to the icon's current screen position
     tooltip.style.left = `${rect.left + rect.width / 2 + window.scrollX}px`;
@@ -656,7 +660,7 @@ if (runningExtensionId === currentExtensionId) {
 
     img.style.marginLeft = "12px";
 
-    addRightClickCopyToElement(anchorElement, clipboardText);
+    addRightClickCopyToElement(img, clipboardText);
 
     iconPlaceElement.appendChild(anchorElement);
   }
@@ -1254,14 +1258,15 @@ if (runningExtensionId === currentExtensionId) {
             font-family: sans-serif;
             pointer-events: none;
             z-index: 2147483647; /* Max possible z-index to stay on top */
-            transform: translate(-50%, -100%);
-            animation: wt-fade-up 0.8s ease-out forwards;
+            transform: translate(-50%, -120%);
+            animation: wt-fade-out 1.0s ease-in-out forwards;
         }
 
-        @keyframes wt-fade-up {
-            0% { opacity: 0; margin-top: 0; }
-            20% { opacity: 1; margin-top: -10px; }
-            100% { opacity: 0; margin-top: -20px; }
+        @keyframes wt-fade-out {
+            0% { opacity: 0; }
+            15% { opacity: 1; }  /* Quick fade in */
+            80% { opacity: 1; }  /* Hold visibility */
+            100% { opacity: 0; } /* Fade away */
         }
     `;
     (document.head || document.documentElement).appendChild(style);
