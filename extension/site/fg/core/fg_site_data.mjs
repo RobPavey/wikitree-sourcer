@@ -27,7 +27,7 @@ import { registerSite } from "../../../base/core/site_registry.mjs";
 const siteData = {
   siteName: "fg",
   matches: ["*://www.findagrave.com/*"],
-  additionalContentJsFiles: ["fg_content_wt_icons"],
+  additionalContentJsFiles: ["wt_icons_common", "fg_content_wt_icons"],
   runAt: "document_end",
   repositoryName: "Find a Grave",
   usPhoneNumber: "",

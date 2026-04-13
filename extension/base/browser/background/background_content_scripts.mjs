@@ -315,6 +315,19 @@ async function injectContentScriptsIntoExistingTabs(contentScripts) {
   }
 }
 
+async function extensionFileExists(path) {
+  // 1. Convert the relative path to a full extension URL
+  const url = chrome.runtime.getURL(path);
+  try {
+    // 2. Attempt a HEAD request (more efficient than getting the whole file)
+    const response = await fetch(url, { method: "HEAD" });
+    return response.ok;
+  } catch (error) {
+    // 3. If the fetch fails or the file isn't found
+    return false;
+  }
+}
+
 async function registerContentScripts() {
   // including register_site_data.mjs above will have registered the site data in
   // a siteRegistry var in site_registry.mjs. But this is only in the background context.
@@ -338,7 +351,15 @@ async function registerContentScripts() {
         if (siteData.additionalContentJsFiles) {
           for (let addJs of siteData.additionalContentJsFiles) {
             let addJsPath = "site/" + id + "/browser/" + addJs + ".js";
-            js.push(addJsPath);
+            if (await extensionFileExists(addJsPath)) {
+              js.push(addJsPath);
+            } else {
+              // it might be a shared file in the base
+              addJsPath = "base/browser/content/" + addJs + ".js";
+              if (await extensionFileExists(addJsPath)) {
+                js.push(addJsPath);
+              }
+            }
           }
         }
 

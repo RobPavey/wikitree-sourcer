@@ -148,10 +148,6 @@ if (runningExtensionId === currentExtensionId) {
     },
   ];
 
-  function getOptions() {
-    return pageInfo.options;
-  }
-
   function isLocationTypeEnabled(locationType, options) {
     if (locationType.optionKey) {
       if (locationType.optionKey2) {
@@ -166,42 +162,14 @@ if (runningExtensionId === currentExtensionId) {
     }
   }
 
-  function wtPlusApiCall(url) {
-    return new Promise((resolve, reject) => {
-      if (!chrome.runtime?.id) {
-        reject("Extension context invalidated");
-        return;
-      }
-      chrome.runtime.sendMessage(
-        {
-          type: "doWtPlusApiCall",
-          url: url,
-        },
-        (response) => {
-          if (response && response.success) {
-            resolve(JSON.parse(response.rawData));
-          } else {
-            if (chrome.runtime.lastError) {
-              reject(chrome.runtime.lastError);
-            } else if (response.error) {
-              reject(response.error);
-            } else {
-              reject("No response");
-            }
-          }
-        }
-      );
-    });
-  }
-
   function wtPlusApiGetProfilesUsingFgId(idString) {
     let url = `https://plus.wikitree.com/function/wtFindAGrave4Bee/Sourcer.json?query=${idString}`;
-    return wtPlusApiCall(url);
+    return pageMods.wtPlusApiCall(url);
   }
 
   function wtPlusApiGetCategoryForCemetery(fgId) {
     let url = `https://plus.wikitree.com/function/wtCatCIBSearch/BEE_FindAGraveButton.json?Query=${fgId}&cib=FGCemetery`;
-    return wtPlusApiCall(url);
+    return pageMods.wtPlusApiCall(url);
   }
 
   function getElementToAddIconTo(location) {
@@ -224,308 +192,8 @@ if (runningExtensionId === currentExtensionId) {
     }
   }
 
-  // Define  SVG icons
-  const svgRefWtProcessing = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  /* 1. Muted, Neutral Circle */
-  /* Using rgb(180, 180, 180) for a clean, 'pending' grey */
-  <circle cx="12" cy="12" r="11" fill="rgb(180, 180, 180)" stroke="rgb(130, 130, 130)" stroke-width="1.5"/>
-  
-  /* 2. The Central Question Mark (Bold White) */
-  /* This text element is the cleanest way to do this at 24x24 */
-  <text x="12" y="17" 
-        font-family="sans-serif" 
-        font-size="16px" 
-        font-weight="bold" 
-        fill="rgb(255, 255, 255)" 
-        text-anchor="middle">
-    ?
-  </text>
-</svg>`;
-
-  const svgRefWtProcessingAnimated = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="rgb(255, 175, 2)" />
-      <stop offset="50%" stop-color="rgb(255, 210, 120)" />
-      <stop offset="85%" stop-color="rgb(255, 240, 200)" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="rgb(255, 248, 230)" stop-opacity="0" />
-    </linearGradient>
-  </defs>
-
-  <circle cx="12" cy="12" r="10.5" 
-          fill="rgb(255, 248, 230)" 
-          stroke="url(%23ringGradient)" 
-          stroke-width="2"
-          stroke-dasharray="45, 15">
-    <animateTransform 
-      attributeName="transform" 
-      type="rotate" 
-      from="0 12 12" 
-      to="360 12 12" 
-      dur="1.5s" 
-      repeatCount="indefinite" />
-  </circle>
-  
-  <text x="12" y="18" 
-        font-family="sans-serif" 
-        font-size="16px" 
-        font-weight="bold" 
-        fill="rgb(80, 80, 80)" 
-        text-anchor="middle">
-    ?
-    <animate 
-      attributeName="opacity" 
-      values="1;0.2;1" 
-      dur="1.5s" 
-      repeatCount="indefinite" />
-  </text>
-</svg>`;
-
-  const svgSingleRefFromWt = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
-  
-  <path d="M16 12H1M1 12L5 8M1 12L5 16" 
-        stroke="rgba(0,0,0,0.4)" 
-        stroke-width="5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-        
-  <path d="M16 12H1M1 12L5 8M1 12L5 16" 
-        stroke="white" 
-        stroke-width="2.5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-</svg>`;
-
-  const svgMultipleRefsFromWt = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <circle cx="15" cy="9" r="8" fill="%23ffaf02" stroke="white" stroke-width="1.5" opacity="0.6"/>
-  
-  <circle cx="10" cy="14" r="9" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
-  
-  <path d="M13 14H2M2 14L5 11M2 14L5 17" 
-        stroke="rgba(0,0,0,0.4)" 
-        stroke-width="5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-        
-  <path d="M13 14H2M2 14L5 11M2 14L5 17" 
-        stroke="white" 
-        stroke-width="2.5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-</svg>`;
-
-  const svgRefToWt = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
-  
-  /* Shadow Arrow */
-  <path d="M1 12H16M11 8L15 12L11 16" 
-        stroke="rgba(0,0,0,0.4)" 
-        stroke-width="5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-        
-  /* White Arrow */
-  <path d="M1 12H16M11 8L15 12L11 16" 
-        stroke="white" 
-        stroke-width="2.5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-</svg>`;
-
-  const svgRefMutual = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
-  
-  /* Shadow Arrow */
-  <path d="M1 12H16M5 8L1 12L5 16M12 8L16 12L12 16" 
-        stroke="rgba(0,0,0,0.4)" 
-        stroke-width="5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-        
-  /* White Arrow */
-  <path d="M1 12H16M5 8L1 12L5 16M12 8L16 12L12 16" 
-        stroke="white" 
-        stroke-width="2.5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-</svg>`;
-
-  const svgRefWtConflict = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  /* 1. Circle with Red Outline */
-  <circle cx="12" cy="12" r="11" fill="rgb(255, 175, 2)" stroke="rgb(255, 0, 0)" stroke-width="2"/>
-  
-  /* 2. Parallel, \"Missed Connection\" Arrows (White) */
-  /* Top Arrow (points Left) */
-  <path d="M1 9.5H16M5 5.5L1 9.5" 
-        stroke="rgb(255, 255, 255)" 
-        stroke-width="2.5" 
-        stroke-linecap="round" 
-        fill="none"/>
-
-  /* Bottom Arrow (points Right, Fixed: Lower-Head) */
-  <path d="M1 14.5H16M12 18.5L16 14.5" 
-        stroke="rgb(255, 255, 255)" 
-        stroke-width="2.5" 
-        stroke-linecap="round" 
-        fill="none"/>
-</svg>`;
-
-  const svgRefWtCategory = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  /* 1. WikiTree Orange Circle (Thick White Outline) */
-  <circle cx="12" cy="12" r="11" fill="rgb(255, 175, 2)" stroke="white" stroke-width="2"/>
-  
-  /* 2. Stacked Index Cards (Refined Palette) */
-  <g stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-    /* Bottom card (fill: none) */
-    <path fill="none" d="M5 14.5h14v3.5H5z"/>
-    
-    /* Middle card (fill: Warm Cream) */
-    /* This color matches the circle perimeter, effectively hiding 
-       the other black lines and creating the visual 'stack'. */
-    <path fill="rgb(255, 248, 230)" d="M7 10.25h14v3.5H7z"/>
-    
-    /* Top card (fill: none) */
-    <path fill="none" d="M5 6h14v3.5H5z"/>
-  </g>
-</svg>`;
-
-  const svgRefWtCategoryConflict = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  /* 1. WikiTree Orange Circle (Red and White Outlines) */
-  <circle cx="12" cy="12" r="11" fill="rgb(255, 175, 2)" stroke="white" stroke-width="1.5"/>
-  <circle cx="12" cy="12" r="11" fill="none" stroke="rgb(255, 0, 0)" stroke-width="2"/>
-  
-  /* 2. Aligned Stacked Cards (Thin Black Outline) */
-  <g stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-    /* Bottom card (Aligned with middle, Warm Cream fill) */
-    <path fill="rgb(255, 248, 230)" d="M7 14.5h14v3.5H7z"/>
-    
-    /* Middle card (Warm Cream fill) */
-    <path fill="rgb(255, 248, 230)" d="M7 10.25h14v3.5H7z"/>
-    
-    /* Top card (Shifted left, transparent fill) */
-    <path fill="none" d="M5 6h14v3.5H5z"/>
-  </g>
-</svg>`;
-
-  function triggerCopyFeedback(element) {
-    // 1. Add the glow effect
-    element.classList.add("wt-copy-success");
-
-    // 2. Create and position the tooltip
-    const rect = element.getBoundingClientRect();
-    const tooltip = document.createElement("div");
-    tooltip.className = "wt-copy-tooltip";
-    tooltip.innerText = "Copied";
-
-    // Position it relative to the icon's current screen position
-    tooltip.style.left = `${rect.left + rect.width / 2 + window.scrollX}px`;
-    tooltip.style.top = `${rect.top + window.scrollY}px`;
-
-    document.body.appendChild(tooltip);
-
-    // 3. Clean up after the animation finishes
-    setTimeout(() => {
-      element.classList.remove("wt-copy-success");
-      tooltip.remove();
-    }, 800);
-  }
-
-  function addRightClickCopyToElement(element, clipboardText) {
-    if (!clipboardText) {
-      return;
-    }
-
-    if (!getOptions().ui_fg_rightClickCopy) {
-      return;
-    }
-
-    element.addEventListener("contextmenu", async (event) => {
-      // Stop the default browser context menu from appearing
-      event.preventDefault();
-
-      try {
-        // Copy to clipboard
-        await navigator.clipboard.writeText(clipboardText);
-        console.log(`Copied ${clipboardText} to clipboard`);
-
-        // Optional: Provide visual feedback (like a temporary tooltip)
-        triggerCopyFeedback(element);
-      } catch (err) {
-        if (err.name === "NotAllowedError") {
-          console.log("Clipboard access denied. Ensure the page has focus.");
-          // Optional: Show a different tooltip like "Click page first!"
-          // showErrorFeedback(element, "Click page first!");
-        } else {
-          console.error("Failed to copy:", err);
-        }
-      }
-    });
-  }
-
-  function addProcessingIcon(location) {
-    if (!getOptions().ui_fg_showProcessingIcon) {
-      return;
-    }
-    const useAnimation = getOptions().ui_fg_animateProcessingIcon;
-
-    logDebug("addProcessingIcon", location);
-
-    let iconPlaceElement = location.iconPlaceElement;
-
-    let svgIcon = useAnimation ? svgRefWtProcessingAnimated : svgRefWtProcessing;
-
-    const img = document.createElement("img");
-
-    // 3. Set the source to your SVG string
-    img.src = svgIcon;
-
-    // 4. Add styling for alignment and spacing
-    img.style.width = "24px";
-    img.style.height = "24px";
-    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
-    img.style.position = "relative";
-    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
-    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-
-    img.style.cursor = "pointer";
-    img.className = "wt-sourcer-processing-icon"; // Good for your MutationObserver check
-
-    // Set initial filter
-    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-    img.style.filter = normalFilter;
-
-    img.style.marginLeft = "12px";
-    iconPlaceElement.appendChild(img);
-  }
-
-  function removeProcessingIcon(location) {
-    let iconPlaceElement = location.iconPlaceElement;
-    let iconElement = iconPlaceElement.querySelector(".wt-sourcer-processing-icon");
-    if (iconElement) {
-      iconPlaceElement.removeChild(iconElement);
-    }
-  }
-
   function addWikiTreeIcon(location, wikiIds = [], flowerWikiIds = []) {
-    removeProcessingIcon(location);
+    pageMods.removeProcessingIcon(location);
 
     if (!wikiIds) {
       wikiIds = [];
@@ -549,7 +217,7 @@ if (runningExtensionId === currentExtensionId) {
     let linkUrl = "";
 
     if (wikiIds.length > 1) {
-      svgIcon = svgMultipleRefsFromWt;
+      svgIcon = pageMods.getIcon("svgMultipleRefsFromWt");
       titleText += `referenced from ${wikiIds.length} WikiTree profiles`;
 
       let fgId = location.fgId;
@@ -572,7 +240,7 @@ if (runningExtensionId === currentExtensionId) {
         clipboardText += wikiId;
       }
     } else if (wikiIds.length == 1) {
-      svgIcon = svgSingleRefFromWt;
+      svgIcon = pageMods.getIcon("svgSingleRefFromWt");
       titleText += `referenced from WikiTree profile: ${wikiIds[0]}`;
       linkUrl = "https://www.wikitree.com/wiki/" + wikiIds[0];
       clipboardText = wikiIds[0];
@@ -582,27 +250,27 @@ if (runningExtensionId === currentExtensionId) {
       if (wikiIds.length == 1) {
         titleText += ` and this memorial also uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`;
         if (wikiIds[0] == flowerWikiIds[0]) {
-          svgIcon = svgRefMutual;
+          svgIcon = pageMods.getIcon("svgRefMutual");
         } else {
-          svgIcon = svgRefWtConflict;
+          svgIcon = pageMods.getIcon("svgRefWtConflict");
         }
       } else if (wikiIds.length == 0) {
-        svgIcon = svgRefToWt;
+        svgIcon = pageMods.getIcon("svgRefToWt");
         titleText = `FindAGrave ${location.fgIdType} ${location.fgId} uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`;
         linkUrl = "https://www.wikitree.com/wiki/" + flowerWikiIds[0];
       } else {
         // there are multiple WT profiles referencing this memorial which in itself is an error
         // and we also reference a WT profile
-        svgIcon = svgRefWtConflict;
+        svgIcon = pageMods.getIcon("svgRefWtConflict");
         titleText += ` and this memorial also uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`;
       }
     } else if (flowerWikiIds.length > 1) {
       // this profile references multiple WT profiles.
       if (wikiIds.length > 0) {
-        svgIcon = svgRefWtConflict;
+        svgIcon = pageMods.getIcon("svgRefWtConflict");
         titleText += ` and this memorial also uses a flowers to reference multiple WikiTree profiles`;
       } else {
-        svgIcon = svgRefWtConflict;
+        svgIcon = pageMods.getIcon("svgRefWtConflict");
         titleText = `FindAGrave ${location.fgIdType} ${location.fgId} uses a flowers to reference multiple WikiTree profiles`;
       }
     }
@@ -660,7 +328,7 @@ if (runningExtensionId === currentExtensionId) {
 
     img.style.marginLeft = "12px";
 
-    addRightClickCopyToElement(img, clipboardText);
+    pageMods.addRightClickCopyToElement(img, clipboardText);
 
     iconPlaceElement.appendChild(anchorElement);
   }
@@ -818,7 +486,7 @@ if (runningExtensionId === currentExtensionId) {
       // we only use the first cemetery
       const fgIdToQuery = "fgcem" + cemeteryId;
 
-      if (getOptions().ui_fg_cemeteryShowWtIconH1) {
+      if (pageMods.getOptions().ui_fg_cemeteryShowWtIconH1) {
         try {
           const response = await wtPlusApiGetProfilesUsingFgId(fgIdToQuery);
           logDebug("getWikiIdsForPendingBatch, cemetery response is: ", response);
@@ -863,7 +531,7 @@ if (runningExtensionId === currentExtensionId) {
         }
       }
 
-      if (getOptions().ui_fg_cemeteryShowWtCategoryIconH1) {
+      if (pageMods.getOptions().ui_fg_cemeteryShowWtCategoryIconH1) {
         // also try to get the category for the cemetery
         try {
           const response = await wtPlusApiGetCategoryForCemetery(cemeteryId);
@@ -941,7 +609,7 @@ if (runningExtensionId === currentExtensionId) {
     let locationType = location.locationType;
     let optionKeyForOutRef = locationType.optionKeyForOutRef;
 
-    let options = pageInfo.options;
+    let options = pageMods.getOptions();
 
     let optionKey = "ui_fg_" + optionKeyForOutRef;
     if (!options[optionKey]) {
@@ -1125,13 +793,12 @@ if (runningExtensionId === currentExtensionId) {
       return false;
     }
 
-    addProcessingIcon(location);
+    pageMods.addProcessingIcon(location);
     el.dataset.wtIconProcessed = "true";
 
     return true;
   }
 
-  let pageInfo = {};
   let areOptionsForThisPageEnabled = false;
 
   function onMutation(options, mutations) {
@@ -1140,23 +807,23 @@ if (runningExtensionId === currentExtensionId) {
     if (window.sourcerWtIconsLastProcessedUrl !== document.URL) {
       window.sourcerWtIconsLastProcessedUrl = document.URL;
 
-      pageInfo.pageProfile = determinePageProfile(document.URL);
+      pageMods.pageProfile = determinePageProfile(document.URL);
       let fgIdData = getFgIdDataFromUrl(document.URL);
       if (fgIdData) {
-        pageInfo.fgId = fgIdData.fgId;
-        pageInfo.fgIdType = fgIdData.fgIdType;
+        pageMods.pageId = fgIdData.fgId;
+        pageMods.pageIdType = fgIdData.fgIdType;
       }
 
-      logDebug("pageProfile is: ", pageInfo.pageProfile);
+      logDebug("pageProfile is: ", pageMods.pageProfile);
 
-      if (!pageInfo.pageProfile) {
+      if (!pageMods.pageProfile) {
         console.log("initWtIconInjection could not identify pageProfile for URL:", document.URL);
         return;
       }
 
       // if none of the options for this profile are enabled return
       areOptionsForThisPageEnabled = false;
-      for (let locationType of pageInfo.pageProfile.locationTypes) {
+      for (let locationType of pageMods.pageProfile.locationTypes) {
         if (isLocationTypeEnabled(locationType, options)) {
           areOptionsForThisPageEnabled = true;
           break;
@@ -1164,12 +831,12 @@ if (runningExtensionId === currentExtensionId) {
       }
 
       // store the options in a page global so other functions can access them
-      pageInfo.options = options;
+      pageMods.setOptions(options);
     }
 
     //logDebug("areOptionsForThisPageEnabled is: ", areOptionsForThisPageEnabled);
 
-    if (!pageInfo.pageProfile || !areOptionsForThisPageEnabled) {
+    if (!pageMods.pageProfile || !areOptionsForThisPageEnabled) {
       return;
     }
 
@@ -1177,7 +844,7 @@ if (runningExtensionId === currentExtensionId) {
 
     let candidateLocations = [];
 
-    for (let locationType of pageInfo.pageProfile.locationTypes) {
+    for (let locationType of pageMods.pageProfile.locationTypes) {
       if (isLocationTypeEnabled(locationType, options)) {
         let candidateElements = document.querySelectorAll(locationType.selector);
         //logDebug("onMutation: locationType ", locationType);
@@ -1211,66 +878,7 @@ if (runningExtensionId === currentExtensionId) {
     }
   }
 
-  function injectWTSourcerStyles() {
-    const style = document.createElement("style");
-    style.textContent = `
-        /* 1. Kill outline on the FG parent when icon is clicked/focused */
-        a:has(.wt-sourcer-icon:active),
-        a:has(.wt-sourcer-icon:focus),
-        a:has(.wt-sourcer-icon:focus-within) {
-            outline: none !important;
-            box-shadow: none !important;
-        }
-
-        /* 2. Kill outline on YOUR anchor element specifically */
-        a:has(> .wt-sourcer-icon), 
-        a:has(> .wt-sourcer-icon):focus,
-        a:has(> .wt-sourcer-icon):active {
-            outline: none !important;
-            box-shadow: none !important;
-        }
-
-        /* 3. The "Focus-Visible" bypass */
-        /* This handles the 'after-click' ring modern browsers use */
-        .wt-sourcer-icon:focus-visible,
-        a:has(.wt-sourcer-icon):focus-visible {
-            outline: none !important;
-        }
-
-        .wt-sourcer-icon {
-            cursor: context-menu; /* Signals right-click utility */
-            transition: filter 0.2s ease-in-out;
-        }
-
-        /* The 'success' glow using your WikiTree Orange */
-        .wt-copy-success {
-            filter: drop-shadow(0 0 8px rgba(255, 175, 2, 0.9)) !important;
-        }
-
-        /* The floating 'Copied!' label */
-        .wt-copy-tooltip {
-            position: absolute;
-            background: #333333;
-            color: #ffffff;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-family: sans-serif;
-            pointer-events: none;
-            z-index: 2147483647; /* Max possible z-index to stay on top */
-            transform: translate(-50%, -120%);
-            animation: wt-fade-out 1.0s ease-in-out forwards;
-        }
-
-        @keyframes wt-fade-out {
-            0% { opacity: 0; }
-            15% { opacity: 1; }  /* Quick fade in */
-            80% { opacity: 1; }  /* Hold visibility */
-            100% { opacity: 0; } /* Fade away */
-        }
-    `;
-    (document.head || document.documentElement).appendChild(style);
-  }
+  let pageMods = undefined;
 
   function initWtIconInjection(options) {
     // Check if we've already initialized to prevent double-observers
@@ -1280,7 +888,9 @@ if (runningExtensionId === currentExtensionId) {
 
     logDebug("initWtIconInjection: document.URL is: " + document.URL);
 
-    injectWTSourcerStyles();
+    pageMods = new WikiTreeSourcerPageModsHelper("fg");
+
+    pageMods.injectWTSourcerStyles();
 
     const observer = new MutationObserver((mutations) => {
       // Check if the extension is still "alive"
