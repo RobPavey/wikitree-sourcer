@@ -82,6 +82,7 @@ if (runningExtensionId === currentExtensionId) {
   const pageProfiles = [
     {
       pageType: "cemeterySearch",
+      pageIdType: "cemetery",
       matchRegex: cemeterySearchRegex,
       locationTypes: [
         {
@@ -93,6 +94,7 @@ if (runningExtensionId === currentExtensionId) {
         },
         {
           locationTypeName: "memorial",
+          locationIdType: "memorial",
           selector: "h2.name-grave",
           iconPlaceElementRule: { type: "same" },
           optionKey: "cemeterySearchShowWtIcon",
@@ -101,6 +103,7 @@ if (runningExtensionId === currentExtensionId) {
     },
     {
       pageType: "cemetery",
+      pageIdType: "cemetery",
       matchRegex: cemeteryRegex,
       locationTypes: [
         {
@@ -119,6 +122,7 @@ if (runningExtensionId === currentExtensionId) {
       locationTypes: [
         {
           locationTypeName: "memorial",
+          locationIdType: "memorial",
           selector: "h2.name-grave",
           iconPlaceElementRule: { type: "same" },
           optionKey: "memorialSearchShowWtIcon",
@@ -127,6 +131,7 @@ if (runningExtensionId === currentExtensionId) {
     },
     {
       pageType: "memorial",
+      pageIdType: "memorial",
       matchRegex: memorialRegex,
       locationTypes: [
         {
@@ -139,9 +144,10 @@ if (runningExtensionId === currentExtensionId) {
         },
         {
           locationTypeName: "familyMember",
+          locationIdType: "memorial",
           selector: "div.data-family h3[itemprop='name']",
           optionKey: "memorialShowWtIconFamilyMember",
-          // iconPlaceElementRule: { type: "closest", closestMatch: "div.member-item" },
+          // iconPlaceElementRule: { type: "closest", selector: "div.member-item" },
           iconPlaceElementRule: { type: "same" },
         },
       ],
@@ -167,8 +173,8 @@ if (runningExtensionId === currentExtensionId) {
     return pageMods.wtPlusApiCall(url);
   }
 
-  function wtPlusApiGetCategoryForCemetery(fgId) {
-    let url = `https://plus.wikitree.com/function/wtCatCIBSearch/BEE_FindAGraveButton.json?Query=${fgId}&cib=FGCemetery`;
+  function wtPlusApiGetCategoryForCemetery(id) {
+    let url = `https://plus.wikitree.com/function/wtCatCIBSearch/BEE_FindAGraveButton.json?Query=${id}&cib=FGCemetery`;
     return pageMods.wtPlusApiCall(url);
   }
 
@@ -182,7 +188,7 @@ if (runningExtensionId === currentExtensionId) {
       if (rule.type == "same") {
         return element;
       } else if (rule.type == "closest") {
-        let closestElement = element.closest(rule.closestMatch);
+        let closestElement = element.closest(rule.selector);
         if (closestElement) {
           return closestElement;
         }
@@ -211,7 +217,7 @@ if (runningExtensionId === currentExtensionId) {
     let iconPlaceElement = location.iconPlaceElement;
 
     let svgIcon = null;
-    let titleText = "FindAGrave " + location.fgIdType + " " + location.fgId + " is ";
+    let titleText = "FindAGrave " + location.idType + " " + location.id + " is ";
     let clipboardText = "";
 
     let linkUrl = "";
@@ -220,15 +226,15 @@ if (runningExtensionId === currentExtensionId) {
       svgIcon = pageMods.getIcon("svgMultipleRefsFromWt");
       titleText += `referenced from ${wikiIds.length} WikiTree profiles`;
 
-      let fgId = location.fgId;
-      if (fgId) {
+      let id = location.id;
+      if (id) {
         let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
-        if (location.fgIdType == "memorial") {
+        if (location.idType == "memorial") {
           wtPlusUrl += "FindAGrave=fgmem";
         } else {
           wtPlusUrl += "FindAGrave=fgcem";
         }
-        wtPlusUrl += fgId;
+        wtPlusUrl += id;
         wtPlusUrl += "&render=1";
         linkUrl = wtPlusUrl;
       }
@@ -256,7 +262,7 @@ if (runningExtensionId === currentExtensionId) {
         }
       } else if (wikiIds.length == 0) {
         svgIcon = pageMods.getIcon("svgRefToWt");
-        titleText = `FindAGrave ${location.fgIdType} ${location.fgId} uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`;
+        titleText = `FindAGrave ${location.idType} ${location.id} uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`;
         linkUrl = "https://www.wikitree.com/wiki/" + flowerWikiIds[0];
       } else {
         // there are multiple WT profiles referencing this memorial which in itself is an error
@@ -271,7 +277,7 @@ if (runningExtensionId === currentExtensionId) {
         titleText += ` and this memorial also uses a flowers to reference multiple WikiTree profiles`;
       } else {
         svgIcon = pageMods.getIcon("svgRefWtConflict");
-        titleText = `FindAGrave ${location.fgIdType} ${location.fgId} uses a flowers to reference multiple WikiTree profiles`;
+        titleText = `FindAGrave ${location.idType} ${location.id} uses a flowers to reference multiple WikiTree profiles`;
       }
     }
 
@@ -334,7 +340,7 @@ if (runningExtensionId === currentExtensionId) {
   }
 
   function addWikiTreeCategoryIcon(location, categoryNames) {
-    removeProcessingIcon(location);
+    pageMods.removeProcessingIcon(location);
 
     if (!categoryNames) {
       categoryNames = [];
@@ -349,12 +355,12 @@ if (runningExtensionId === currentExtensionId) {
     let iconPlaceElement = location.iconPlaceElement;
 
     let svgIcon = null;
-    let titleText = "FindAGrave " + location.fgIdType + " " + location.fgId + " is ";
+    let titleText = "FindAGrave " + location.idType + " " + location.id + " is ";
 
     let linkUrl = "";
 
     if (categoryNames.length > 1) {
-      svgIcon = svgRefWtCategoryConflict;
+      svgIcon = pageMods.getIcon("svgRefWtCategoryConflict");
       titleText += `referenced from ${categoryNames.length} WikiTree categories`;
 
       let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
@@ -373,7 +379,7 @@ if (runningExtensionId === currentExtensionId) {
       wtPlusUrl += "&render=1";
       linkUrl = wtPlusUrl;
     } else if (categoryNames.length == 1) {
-      svgIcon = svgRefWtCategory;
+      svgIcon = pageMods.getIcon("svgRefWtCategory");
       titleText += `referenced from WikiTree category: ${categoryNames[0]}`;
       linkUrl = "https://www.wikitree.com/wiki/Category:" + categoryNames[0];
     }
@@ -455,22 +461,22 @@ if (runningExtensionId === currentExtensionId) {
     let pendingFgMemorialIds = new Map();
     let cemeteryIds = new Map();
     for (let location of currentBatch.locations) {
-      let fgId = location.fgId;
-      let fgIdType = location.fgIdType;
-      if (!fgId || !fgIdType) {
+      let id = location.id;
+      let idType = location.idType;
+      if (!id || !idType) {
         continue;
       }
 
-      if (fgIdType == "memorial") {
-        if (!pendingFgMemorialIds.has(fgId)) {
-          pendingFgMemorialIds.set(fgId, []);
+      if (idType == "memorial") {
+        if (!pendingFgMemorialIds.has(id)) {
+          pendingFgMemorialIds.set(id, []);
         }
-        pendingFgMemorialIds.get(fgId).push(location);
-      } else if (fgIdType == "cemetery") {
-        if (!cemeteryIds.has(fgId)) {
-          cemeteryIds.set(fgId, []);
+        pendingFgMemorialIds.get(id).push(location);
+      } else if (idType == "cemetery") {
+        if (!cemeteryIds.has(id)) {
+          cemeteryIds.set(id, []);
         }
-        cemeteryIds.get(fgId).push(location);
+        cemeteryIds.get(id).push(location);
       }
     }
     logDebug(`getWikiIdsForBatch, pendingFgMemorialIds is:`, pendingFgMemorialIds);
@@ -491,7 +497,7 @@ if (runningExtensionId === currentExtensionId) {
           const response = await wtPlusApiGetProfilesUsingFgId(fgIdToQuery);
           logDebug("getWikiIdsForPendingBatch, cemetery response is: ", response);
           if (response.response?.memorials) {
-            // record the profiles that reference the elements fgId for the currentBatch
+            // record the profiles that reference the elements id for the currentBatch
             const memorials = response.response.memorials;
             let wikiIdsForCemetery = [];
             memorials.forEach((memorial) => {
@@ -537,12 +543,12 @@ if (runningExtensionId === currentExtensionId) {
           const response = await wtPlusApiGetCategoryForCemetery(cemeteryId);
           logDebug("getWikiIdsForPendingBatch, cemetery category response is: ", response);
           if (response?.response?.categories && response.response.categories.length) {
-            // record the profiles that reference the elements fgId for the currentBatch
+            // record the profiles that reference the elements id for the currentBatch
             const categories = response.response.categories;
             let categoryNamesForCemetery = [];
             categories.forEach((category) => {
               let categoryName = category.category;
-              let fgId = category.fgId;
+              let id = category.id;
 
               categoryNamesForCemetery.push(categoryName);
             });
@@ -569,9 +575,9 @@ if (runningExtensionId === currentExtensionId) {
 
     logDebug("getWikiIdsForPendingBatch, fgMemorialIdsToCheck is", fgMemorialIdsToCheck);
 
-    for (let fgId of fgMemorialIdsToCheck) {
-      if (!cachedFgMemorialIdToWtIdsMap.has(fgId)) {
-        fgIdsToQuery.push("fgmem" + fgId);
+    for (let id of fgMemorialIdsToCheck) {
+      if (!cachedFgMemorialIdToWtIdsMap.has(id)) {
+        fgIdsToQuery.push("fgmem" + id);
       }
     }
     logDebug("getWikiIdsForPendingBatch, fgIdsToQuery is", fgIdsToQuery);
@@ -584,7 +590,7 @@ if (runningExtensionId === currentExtensionId) {
       const response = await wtPlusApiGetProfilesUsingFgId(fgIdsString);
       logDebug("getWikiIdsForPendingBatch, response is: ", response);
       if (response.response?.memorials) {
-        // record the profiles that reference the elements fgId for the currentBatch
+        // record the profiles that reference the elements id for the currentBatch
         response.response.memorials.forEach((memorial) => {
           let wikiId = memorial.WikiTreeID;
           let fgMemorialId = memorial.memorial.toString();
@@ -660,9 +666,9 @@ if (runningExtensionId === currentExtensionId) {
       for (let location of locations) {
         logDebug("processPendingLocations, location is:", location);
 
-        if (location.fgId) {
-          logDebug("processPendingLocations, location.fgId is:", location.fgId);
-          let wikiIds = cachedFgMemorialIdToWtIdsMap.get(location.fgId);
+        if (location.id) {
+          logDebug("processPendingLocations, location.id is:", location.id);
+          let wikiIds = cachedFgMemorialIdToWtIdsMap.get(location.id);
           logDebug("processPendingLocations, wikiIds is:", wikiIds);
 
           let flowerWikiIds = getFlowerWikiIdsForLocation(location);
@@ -672,64 +678,12 @@ if (runningExtensionId === currentExtensionId) {
     }
   }
 
-  function determinePageProfile(url) {
-    // Remove the start and the domain, leaving the rest of the string untouched
-    const domainRegex = /^https?:\/\/(?:www\.)?findagrave\.com/;
-    url = url.replace(domainRegex, "");
-
-    for (let profile of pageProfiles) {
-      if (profile.matchRegex.test(url)) {
-        return profile;
-      }
-    }
-  }
-
-  function getFgIdDataFromUrl(url) {
-    logDebug("getFgIdDataFromUrl ", url);
-
-    // Remove the start and the domain, leaving the rest of the string untouched
-    const domainRegex = /^https?:\/\/(?:www\.)?findagrave\.com/;
-    url = url.replace(domainRegex, "");
-
-    if (memorialSearchRegex.test(url)) {
-      let memorialId = url.replace(memorialSearchRegex, "$1");
-      logDebug("memorialId is:", memorialId);
-
-      if (memorialId.length > 0) {
-        return { fgIdType: "memorial", fgId: memorialId };
-      }
-    } else if (memorialRegex.test(url)) {
-      let memorialId = url.replace(memorialRegex, "$1");
-      logDebug("memorialId is:", memorialId);
-
-      if (memorialId.length > 0) {
-        return { fgIdType: "memorial", fgId: memorialId };
-      }
-    } else if (cemeterySearchRegex.test(url)) {
-      let cemeteryId = url.replace(cemeterySearchRegex, "$1");
-      logDebug("url is : ", url, "cemeteryId is:", cemeteryId);
-
-      if (cemeteryId.length > 0) {
-        return { fgIdType: "cemetery", fgId: cemeteryId };
-      }
-    } else if (cemeteryRegex.test(url)) {
-      let cemeteryId = url.replace(cemeteryRegex, "$1");
-      logDebug("url is : ", url, "cemeteryId is:", cemeteryId);
-
-      if (cemeteryId.length > 0) {
-        return { fgIdType: "cemetery", fgId: cemeteryId };
-      }
-    } else {
-      console.log("getFgIdDataFromUrl no match for ", url);
-    }
-  }
-
   function extractFgIdFromLocation(location) {
     logDebug("extractFgIdFromLocation, location is:", location);
 
     if (location.locationType.useIdFromPageUrl) {
-      logDebug("extractFgIdFromLocation, using fgId from page url");
-      let fgIdData = getFgIdDataFromUrl(document.URL);
+      logDebug("extractFgIdFromLocation, using id from page url");
+      let fgIdData = pageMods.getIdDataFromUrl(document.URL);
       if (fgIdData) {
         return fgIdData;
       }
@@ -742,15 +696,15 @@ if (runningExtensionId === currentExtensionId) {
     if (enclosingLinkElement) {
       let href = enclosingLinkElement.getAttribute("href");
       if (href) {
-        logDebug("extractFgIdFromLocation, using fgId from href", href);
+        logDebug("extractFgIdFromLocation, using id from href", href);
 
-        let fgIdData = getFgIdDataFromUrl(href);
+        let fgIdData = pageMods.getIdDataFromUrl(href, location);
         if (fgIdData) {
           return fgIdData;
         }
       }
     } else {
-      console.log("no fgId found for location ", location);
+      console.log("no id found for location ", location);
     }
   }
 
@@ -786,10 +740,10 @@ if (runningExtensionId === currentExtensionId) {
     let fgIdData = extractFgIdFromLocation(location); // Helper to get ID from href or text
     logDebug("called extractFgIdFromLocation, fgIdData returned is:", fgIdData);
     if (fgIdData) {
-      location.fgId = fgIdData.fgId;
-      location.fgIdType = fgIdData.fgIdType;
+      location.id = fgIdData.id;
+      location.idType = fgIdData.idType;
     } else {
-      logDebug("location matched element has no fgId and does not require fetch");
+      logDebug("location matched element has no id and does not require fetch");
       return false;
     }
 
@@ -807,11 +761,12 @@ if (runningExtensionId === currentExtensionId) {
     if (window.sourcerWtIconsLastProcessedUrl !== document.URL) {
       window.sourcerWtIconsLastProcessedUrl = document.URL;
 
-      pageMods.pageProfile = determinePageProfile(document.URL);
-      let fgIdData = getFgIdDataFromUrl(document.URL);
+      pageMods.determinePageProfile(document.URL);
+
+      let fgIdData = pageMods.getIdDataFromUrl(document.URL);
       if (fgIdData) {
-        pageMods.pageId = fgIdData.fgId;
-        pageMods.pageIdType = fgIdData.fgIdType;
+        pageMods.pageId = fgIdData.id;
+        pageMods.pageIdType = fgIdData.idType;
       }
 
       logDebug("pageProfile is: ", pageMods.pageProfile);
@@ -830,7 +785,6 @@ if (runningExtensionId === currentExtensionId) {
         }
       }
 
-      // store the options in a page global so other functions can access them
       pageMods.setOptions(options);
     }
 
@@ -888,9 +842,12 @@ if (runningExtensionId === currentExtensionId) {
 
     logDebug("initWtIconInjection: document.URL is: " + document.URL);
 
-    pageMods = new WikiTreeSourcerPageModsHelper("fg");
-
-    pageMods.injectWTSourcerStyles();
+    let siteConfig = {
+      siteName: "fg",
+      pageProfiles: pageProfiles,
+      domainRegex: /^https?:\/\/(?:www\.)?findagrave\.com/,
+    };
+    pageMods = new WikiTreeSourcerPageModsHelper(siteConfig);
 
     const observer = new MutationObserver((mutations) => {
       // Check if the extension is still "alive"

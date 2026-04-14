@@ -23,8 +23,11 @@ SOFTWARE.
 */
 
 class WikiTreeSourcerPageModsHelper {
-  constructor(siteName) {
-    this.siteName = siteName;
+  constructor(siteConfig) {
+    this.siteName = siteConfig.siteName;
+    this.pageProfiles = siteConfig.pageProfiles;
+    this.domainRegex = siteConfig.domainRegex;
+    this.injectWTSourcerStyles();
   }
 
   setOptions(options) {
@@ -33,6 +36,12 @@ class WikiTreeSourcerPageModsHelper {
 
   getOptions() {
     return this.options;
+  }
+
+  getOption(leafOptionName) {
+    if (this.options) {
+      return this.options["ui_" + this.siteName + "_" + leafOptionName];
+    }
   }
 
   // Define  SVG icons
@@ -244,10 +253,10 @@ class WikiTreeSourcerPageModsHelper {
   }
 
   addProcessingIcon(location) {
-    if (!this.getOptions().ui_fg_showProcessingIcon) {
+    if (!this.getOption("showProcessingIcon")) {
       return;
     }
-    const useAnimation = this.getOptions().ui_fg_animateProcessingIcon;
+    const useAnimation = this.getOption("animateProcessingIcon");
 
     logDebug("addProcessingIcon", location);
 
@@ -284,6 +293,8 @@ class WikiTreeSourcerPageModsHelper {
     let iconElement = iconPlaceElement.querySelector(".wt-sourcer-processing-icon");
     if (iconElement) {
       iconPlaceElement.removeChild(iconElement);
+    } else {
+      console.warn("no iconElement found for location", location);
     }
   }
 
@@ -318,7 +329,7 @@ class WikiTreeSourcerPageModsHelper {
   injectWTSourcerStyles() {
     const style = document.createElement("style");
     style.textContent = `
-        /* 1. Kill outline on the FG parent when icon is clicked/focused */
+        /* 1. Kill outline on the parent when icon is clicked/focused */
         a:has(.wt-sourcer-icon:active),
         a:has(.wt-sourcer-icon:focus),
         a:has(.wt-sourcer-icon:focus-within) {
@@ -404,7 +415,7 @@ class WikiTreeSourcerPageModsHelper {
       return;
     }
 
-    if (!this.getOptions().ui_fg_rightClickCopy) {
+    if (!this.getOption("rightClickCopy")) {
       return;
     }
 
@@ -429,5 +440,39 @@ class WikiTreeSourcerPageModsHelper {
         }
       }
     });
+  }
+
+  determinePageProfile(url) {
+    // Remove the start and the domain, leaving the rest of the string untouched
+    url = url.replace(this.domainRegex, "");
+
+    for (let profile of this.pageProfiles) {
+      if (profile.matchRegex.test(url)) {
+        this.pageProfile = profile;
+        return profile;
+      }
+    }
+  }
+
+  getIdDataFromUrl(url, location) {
+    logDebug("getIdDataFromUrl ", url);
+
+    // Remove the start and the domain, leaving the rest of the string untouched
+    url = url.replace(this.domainRegex, "");
+
+    for (let profile of this.pageProfiles) {
+      let regex = profile.matchRegex;
+      if (regex.test(url)) {
+        let id = url.replace(regex, "$1");
+        logDebug(`getIdDataFromUrl: profile is ${profile.pageType} id is: ${id}`);
+
+        let idType = profile.pageType;
+
+        if (location && location.locationType && location.locationType.locationIdType) {
+          idType = location.locationType.locationIdType;
+        }
+        return { idType: idType, id: id };
+      }
+    }
   }
 }

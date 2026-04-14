@@ -246,7 +246,36 @@ const buildAllCitationsOptionsGroup = {
   ],
 };
 
-const uiOptionsGroup = {
+const uiOptionsPageModBehaviourGroup = {
+  category: "ui",
+  subcategory: "fs",
+  tab: "ui",
+  subsection: "fs",
+  subheading: "wtIconPageModBehaviour",
+
+  options: [
+    {
+      optionName: "showProcessingIcon",
+      type: "checkbox",
+      label: "Show a processing icon while determining if a WikiTree usage icon should be shown",
+      defaultValue: true,
+    },
+    {
+      optionName: "animateProcessingIcon",
+      type: "checkbox",
+      label: "Animate the processing icon",
+      defaultValue: true,
+    },
+    {
+      optionName: "rightClickCopy",
+      type: "checkbox",
+      label: "Override right-click on icons to copy the wikiID or other relevant text",
+      defaultValue: true,
+    },
+  ],
+};
+
+const uiOptionsPageModLocationsGroup = {
   category: "ui",
   subcategory: "fs",
   tab: "ui",
@@ -382,5 +411,17 @@ registerSubsectionForOptions(
 registerOptionsGroup(buildAllCitationsOptionsGroup);
 
 registerSubsectionForOptions("ui", "fs", "FamilySearch");
-registerSubheadingForOptions("ui", "fs", "wtIconPageMods", "Page Modifications for WikiTree usage icons");
-registerOptionsGroup(uiOptionsGroup);
+registerSubheadingForOptions(
+  "ui",
+  "fs",
+  "wtIconPageModBehaviour",
+  "Page Modifications for WikiTree usage icons (behaviour)"
+);
+registerOptionsGroup(uiOptionsPageModBehaviourGroup);
+registerSubheadingForOptions(
+  "ui",
+  "fs",
+  "wtIconPageModLocactions",
+  "Page Modifications for WikiTree usage icons (locations)"
+);
+registerOptionsGroup(uiOptionsPageModLocationsGroup);

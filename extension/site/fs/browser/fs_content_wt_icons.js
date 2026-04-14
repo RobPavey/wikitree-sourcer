@@ -43,13 +43,13 @@ SOFTWARE.
 //  Has lots of Similar Records
 //
 // 	https://www.familysearch.org/ark:/61903/1:1:XLX7-TL7?lang=en
-//    Marriage
+//    Marriage for Casimiro Lopez, is referenced from WT
 //
 // Image:
 //
 // https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSV8-W944-B?i=356&lang=en&cc=1478678
 //    Image page with 23 WT profiles linking to it
-//    Note the unusual 4 part fsId
+//    Note the unusual 4 part id
 //
 // https://familysearch.org/ark:/61903/3:1:3Q9M-CS2Q-M6MV?cc=2821281&lang=en&view=index&groupId=&personArk=%2Fark%3A%2F61903%2F1%3A1%3A6ZCM-FKTL&action=view
 //    Referenced from 2 WT profiles
@@ -57,10 +57,10 @@ SOFTWARE.
 //
 // https://www.familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&i=160&cc=1804002
 //  Marriage
-//
-// https://www.familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&i=160&cc=1804002
+//  Has image index at bottom with a linked record
 //
 // https://www.familysearch.org/ark:/61903/3:1:33SQ-GR6Z-4DW?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AMH4N-35W&action=view&cc=1488411&lang=en&groupId=
+//   1920 census - not linked to a WT profile but is attached to an FS person that is
 //
 // Search results:
 //
@@ -111,6 +111,7 @@ if (runningExtensionId === currentExtensionId) {
   const recordRegex = /^\/ark\:\/61903\/1\:\d\:([A-Z0-9]{4,5}\-[A-Z0-9]{3,4}).*$/;
   // An image URL  should look like one of these:
   // https://familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&view=index&groupId=M9C5-PB5
+  // https://www.familysearch.org/ark:/61903/3:1:3Q9M-CS7M-83GB-Y?lang=en&i=540
   const imageRegex = /^\/ark\:\/\d+\/\d\:\d\:([A-Z0-9]{4,5}\-[A-Z0-9]{3,4}\-[A-Z0-9]{2,4}(?:\-[A-Z0-9]{1,4})?).*$/;
   // A search results URL URL  should look like one of these:
   // https://www.familysearch.org/en/search/record/results?count=20&treeref=G443-GML&q.givenName=Etienne&q.surname=Smit&q.birthLikeDate.from=1926&q.birthLikeDate.to=1930&q.deathLikeDate.from=2005&q.deathLikeDate.to=2009&q.marriageLikePlace=Paarl%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from=1949&q.marriageLikeDate.to=1957&q.spouseGivenName=Anna%20Jacoba&q.spouseSurname=de%20Villiers&q.marriageLikePlace.1=Wynberg%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from.1=1959&q.marriageLikeDate.to.1=1967&q.spouseGivenName.1=Helena&q.spouseSurname.1=Theron&q.recordCountry=South%20Africa
@@ -223,7 +224,7 @@ if (runningExtensionId === currentExtensionId) {
   }
 
   async function fetchSimilarRecords(locationBatch) {
-    let pageFsId = pageInfo.fsId;
+    let pageFsId = pageMods.id;
     if (!pageFsId) {
       return;
     }
@@ -266,12 +267,12 @@ if (runningExtensionId === currentExtensionId) {
             logDebug("similar record location title is :", locationTitle);
             if (entry.title == locationTitle) {
               let fsUrl = entry.id;
-              let fsIdData = getFsIdDataFromUrl(fsUrl);
-              if (fsIdData) {
-                let fsId = fsIdData.fsId;
-                location.fsId = fsId;
-                location.fsIdType = fsIdData.fsIdType;
-                addLocationToPendingFsIds(locationBatch, fsId, location);
+              let idData = pageMods.getIdDataFromUrl(fsUrl, location);
+              if (idData) {
+                let id = idData.id;
+                location.id = id;
+                location.idType = idData.idType;
+                addLocationToPendingFsIds(locationBatch, id, location);
               }
             }
           }
@@ -425,13 +426,13 @@ if (runningExtensionId === currentExtensionId) {
               if (source.uri && source.uri.uri) {
                 // non-FS sources can be mising a uri
 
-                let fsIdData = getFsIdDataFromUrl(source.uri.uri);
-                if (fsIdData) {
-                  let fsId = fsIdData.fsId;
-                  location.fsId = fsId;
-                  location.fsIdType = fsIdData.fsIdType;
+                let idData = pageMods.getIdDataFromUrl(source.uri.uri, location);
+                if (idData) {
+                  let id = idData.id;
+                  location.id = id;
+                  location.idType = idData.idType;
 
-                  addLocationToPendingFsIds(locationBatch, fsId, location);
+                  addLocationToPendingFsIds(locationBatch, id, location);
                 }
               }
               break;
@@ -447,6 +448,7 @@ if (runningExtensionId === currentExtensionId) {
   const pageProfiles = [
     {
       pageType: "personDetails",
+      pageIdType: "person",
       matchRegex: personDetailsRegex,
       locationTypes: [
         {
@@ -457,6 +459,7 @@ if (runningExtensionId === currentExtensionId) {
         },
         {
           locationTypeName: "familyMember",
+          locationIdType: "person",
           selector: "[data-testid='nameLink'] [data-testid='fullName']",
           optionKey: "personDetailsShowWtIconFamily",
         },
@@ -464,6 +467,7 @@ if (runningExtensionId === currentExtensionId) {
     },
     {
       pageType: "personSources",
+      pageIdType: "person",
       matchRegex: personSourcesRegex,
       locationTypes: [
         {
@@ -477,12 +481,14 @@ if (runningExtensionId === currentExtensionId) {
           selector: "[data-testid='section-card-sources'] [data-testid='source-heading-section']",
           optionKey: "personSourcesShowWtIconOnSourceRow",
           needToFetchIds: true,
+          iconPlaceElementRule: { type: "child", selector: "div[class^='cssSourceTitle']" },
           fetchFunction: fetchFsIdsForSources,
         },
       ],
     },
     {
       pageType: "personAbout",
+      pageIdType: "person",
       matchRegex: personAboutRegex,
       locationTypes: [
         {
@@ -500,6 +506,7 @@ if (runningExtensionId === currentExtensionId) {
     },
     {
       pageType: "record",
+      pageIdType: "record",
       matchRegex: recordRegex,
       locationTypes: [
         {
@@ -511,6 +518,7 @@ if (runningExtensionId === currentExtensionId) {
         {
           locationTypeName: "otherPeople",
           selector: "tr > th > span > a",
+          iconPlaceElementRule: { type: "closest", selector: "span" },
           optionKey: "recordShowWtIconOtherPeople",
         },
         {
@@ -523,6 +531,7 @@ if (runningExtensionId === currentExtensionId) {
           selector: "li div[role='button'] span > span",
           needToFetchIds: true,
           fetchFunction: fetchSimilarRecords,
+          iconPlaceElementRule: { type: "parent" },
           optionKey: "recordShowWtIconSimilarRecords",
         },
         {
@@ -534,6 +543,7 @@ if (runningExtensionId === currentExtensionId) {
     },
     {
       pageType: "image",
+      pageIdType: "image",
       matchRegex: imageRegex,
       locationTypes: [
         {
@@ -549,11 +559,21 @@ if (runningExtensionId === currentExtensionId) {
         {
           locationTypeName: "imageIndexRecord",
           selector: "aside tbody > tr > td > a[href^='/ark:/61903/'] > span",
+          iconPlaceElementRule: {
+            type: "closestThenChild",
+            closestSelector: "td",
+            childSelector: "a[href*='search/linker']",
+          },
           optionKey: "imageShowWtIconSidebar",
         },
         {
           locationTypeName: "pageH1",
           selector: "main h1 > span, nav ol",
+          iconPlaceElementRule: {
+            type: "closestThenChild",
+            closestSelector: "div",
+            childSelector: "h1 span",
+          },
           useFsIdFromPageUrl: true,
           optionKey: "imageShowWtIconH1",
         },
@@ -572,6 +592,7 @@ if (runningExtensionId === currentExtensionId) {
         {
           locationTypeName: "searchResult",
           selector: "td > h2 > strong > a",
+          iconPlaceElementRule: { type: "closest", selector: "strong" },
           optionKey: "searchResultsShowWtIconResultRow",
         },
         {
@@ -661,128 +682,72 @@ if (runningExtensionId === currentExtensionId) {
     return wtPlusApiCall(url);
   }
 
-  function getSpanElementToAddIconTo(location) {
+  function getElementToAddIconTo(location) {
     let element = location.matchedElement;
 
     let locationType = location.locationType;
 
-    if (locationType.locationTypeName == "sourceRow") {
-      let titleElement = element.querySelector("div[class^='cssSourceTitle']");
-      return titleElement;
-    }
-
-    if (locationType.locationTypeName == "imageIndexRecord") {
-      let tdElement = element.closest("td");
-      if (tdElement) {
-        let attachElement = tdElement.querySelector("a[href*='search/linker']");
-        if (attachElement) {
-          return attachElement;
+    if (locationType.iconPlaceElementRule) {
+      let rule = locationType.iconPlaceElementRule;
+      if (rule.type == "same") {
+        return element;
+      } else if (rule.type == "parent") {
+        return element.parentElement;
+      } else if (rule.type == "closest") {
+        let closestElement = element.closest(rule.selector);
+        if (closestElement) {
+          return closestElement;
+        }
+      } else if (rule.type == "child") {
+        let childElement = element.querySelector(rule.selector);
+        if (childElement) {
+          return childElement;
+        }
+      } else if (rule.type == "closestThenChild") {
+        let closestElement = element.closest(rule.closestSelector);
+        if (closestElement) {
+          let childElement = closestElement.querySelector(rule.childSelector);
+          if (childElement) {
+            return childElement;
+          }
         }
       }
-    }
 
-    if (locationType.locationTypeName == "imageNavBar") {
+      console.warn("locationType has iconPlaceElementRule but it failed", location);
+    } else {
       return element;
-    }
-
-    if (locationType.locationTypeName == "similarRecord") {
-      // we want to add as a child of the parent span
-      return element.parentElement;
-    }
-
-    if (element.tagName == "SPAN") {
-      return element;
-    }
-
-    let enclosingDiv = element.closest("div");
-    if (enclosingDiv) {
-      let spanElement = enclosingDiv.querySelector("h1 span");
-      if (spanElement) {
-        return spanElement;
-      }
-    }
-
-    // for record pages the title is not actually a span, it is a div
-    if (element.tagName == "DIV") {
-      let enclosingH1 = element.closest("h1");
-      if (enclosingH1) {
-        return element;
-      }
-    }
-
-    // for other people on a record page
-    if (element.tagName == "A") {
-      let enclosingSpan = element.closest("span");
-      if (enclosingSpan) {
-        return enclosingSpan;
-      }
-      let enclosingStrong = element.closest("strong"); // for search results
-      if (enclosingStrong) {
-        return enclosingStrong;
-      }
     }
   }
 
-  // Define  SVG icons
-  const svgSingle = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
-  
-  <path d="M16 12H1M1 12L5 8M1 12L5 16" 
-        stroke="rgba(0,0,0,0.4)" 
-        stroke-width="5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-        
-  <path d="M16 12H1M1 12L5 8M1 12L5 16" 
-        stroke="white" 
-        stroke-width="2.5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-</svg>`;
-
-  const svgMultiple = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <circle cx="15" cy="9" r="8" fill="%23ffaf02" stroke="white" stroke-width="1.5" opacity="0.6"/>
-  
-  <circle cx="10" cy="14" r="9" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
-  
-  <path d="M13 14H2M2 14L5 11M2 14L5 17" 
-        stroke="rgba(0,0,0,0.4)" 
-        stroke-width="5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-        
-  <path d="M13 14H2M2 14L5 11M2 14L5 17" 
-        stroke="white" 
-        stroke-width="2.5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-</svg>`;
-
   function addWikiTreeIcon(location, wikiIds) {
+    pageMods.removeProcessingIcon(location);
+
     logDebug("addWikiTreeIcon", location, wikiIds);
 
-    if (wikiIds.length < 1) {
-      logDebug("addWikiTreeIcon, profiles length less than 1");
+    if (!wikiIds || wikiIds.length < 1) {
       return;
     }
 
-    let spanElement = location.spanElement;
+    let iconPlaceElement = location.iconPlaceElement;
 
     let svgIcon = null;
-    let titleText = "FamilySearch " + location.fsIdType + " " + location.fsId + " is ";
+    let titleText = "FamilySearch " + location.idType + " " + location.id + " is ";
+    let clipboardText = "";
 
     if (wikiIds.length > 1) {
-      svgIcon = svgMultiple;
+      svgIcon = pageMods.getIcon("svgMultipleRefsFromWt");
       titleText += `referenced from ${wikiIds.length} WikiTree profiles`;
+
+      for (let wikiId of wikiIds) {
+        if (clipboardText) {
+          clipboardText += ",";
+        }
+        clipboardText += wikiId;
+      }
     } else {
-      svgIcon = svgSingle;
+      svgIcon = pageMods.getIcon("svgSingleRefFromWt");
       titleText += `referenced from WikiTree profile: ${wikiIds[0]}`;
+      clipboardText = wikiIds[0];
     }
 
     const img = document.createElement("img");
@@ -819,15 +784,15 @@ if (runningExtensionId === currentExtensionId) {
     // create an anchor element
     const anchorElement = document.createElement("a");
     if (wikiIds.length > 1) {
-      let fsId = location.fsId;
-      if (fsId) {
+      let id = location.id;
+      if (id) {
         let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
-        if (location.fsIdType == "image") {
+        if (location.idType == "image") {
           wtPlusUrl += "FamilySearchImage=";
         } else {
           wtPlusUrl += "FamilySearch=";
         }
-        wtPlusUrl += fsId;
+        wtPlusUrl += id;
         wtPlusUrl += "&render=1";
         anchorElement.setAttribute("href", wtPlusUrl);
       }
@@ -842,11 +807,11 @@ if (runningExtensionId === currentExtensionId) {
 
     // if this span element is an ellipsis style then we need to avoid the icon disappearing
     // when the ellipsis is shown
-    const isEllipsisSpan = Array.from(spanElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
+    const isEllipsisSpan = Array.from(iconPlaceElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
     const locationTypeName = location.locationType.locationTypeName;
 
     if (isEllipsisSpan) {
-      const container = spanElement.parentElement;
+      const container = iconPlaceElement.parentElement;
 
       // Set container to flex so icon stays visible next to the span
       container.style.display = "flex";
@@ -855,8 +820,8 @@ if (runningExtensionId === currentExtensionId) {
       container.style.width = "100%"; // Ensure it uses the full header width
 
       // Allow the name to shrink, but keep the icon fixed
-      spanElement.style.flexShrink = "1";
-      spanElement.style.minWidth = "0"; // Firefox requirement for flex-shrink on text
+      iconPlaceElement.style.flexShrink = "1";
+      iconPlaceElement.style.minWidth = "0"; // Firefox requirement for flex-shrink on text
 
       anchorElement.style.flexShrink = "0";
       anchorElement.style.display = "flex";
@@ -866,30 +831,32 @@ if (runningExtensionId === currentExtensionId) {
       container.appendChild(anchorElement);
     } else if (locationTypeName === "sourceRow" || locationTypeName == "imageIndexRecord") {
       // Set container to flex so icon stays visible next to the span
-      spanElement.style.display = "flex";
-      spanElement.style.alignItems = "flex-start";
-      spanElement.style.flexDirection = "row";
+      iconPlaceElement.style.display = "flex";
+      iconPlaceElement.style.alignItems = "flex-start";
+      iconPlaceElement.style.flexDirection = "row";
 
       anchorElement.style.flexShrink = "0";
       anchorElement.style.display = "flex";
       anchorElement.style.marginLeft = "8px";
 
-      spanElement.appendChild(anchorElement);
+      iconPlaceElement.appendChild(anchorElement);
     } else if (locationTypeName === "imageNavBar") {
-      // the spanElement is a container that we want to append to
+      // the iconPlaceElement is a container that we want to append to
       anchorElement.style.flexShrink = "0";
       anchorElement.style.display = "flex";
       anchorElement.style.marginLeft = "8px";
 
-      spanElement.appendChild(anchorElement);
+      iconPlaceElement.appendChild(anchorElement);
     } else if (locationTypeName === "similarRecord") {
-      // the spanElement is a container that we want to append to
+      // the iconPlaceElement is a container that we want to append to
       anchorElement.style.marginLeft = "0px";
-      spanElement.appendChild(anchorElement);
+      iconPlaceElement.appendChild(anchorElement);
     } else {
       img.style.marginLeft = "12px";
-      spanElement.appendChild(anchorElement);
+      iconPlaceElement.appendChild(anchorElement);
     }
+
+    pageMods.addRightClickCopyToElement(img, clipboardText);
   }
 
   let cachedFsIdToWtIdsMap = new Map();
@@ -897,11 +864,11 @@ if (runningExtensionId === currentExtensionId) {
   let pendingLocationsBatch = {};
   let debounceTimer = null;
 
-  function addLocationToPendingFsIds(locationBatch, fsId, location) {
-    if (!locationBatch.pendingFsIds.has(fsId)) {
-      locationBatch.pendingFsIds.set(fsId, []);
+  function addLocationToPendingFsIds(locationBatch, id, location) {
+    if (!locationBatch.pendingFsIds.has(id)) {
+      locationBatch.pendingFsIds.set(id, []);
     }
-    locationBatch.pendingFsIds.get(fsId).push(location);
+    locationBatch.pendingFsIds.get(id).push(location);
   }
 
   function addLocationToPendingBatch(location) {
@@ -914,9 +881,9 @@ if (runningExtensionId === currentExtensionId) {
       pendingLocationsBatch.pendingFsIds = new Map();
     }
 
-    const fsId = location.fsId;
-    if (fsId) {
-      addLocationToPendingFsIds(pendingLocationsBatch, fsId, location);
+    const id = location.id;
+    if (id) {
+      addLocationToPendingFsIds(pendingLocationsBatch, id, location);
     } else {
       let locationType = location.locationType;
       if (locationType.needToFetchIds) {
@@ -951,9 +918,9 @@ if (runningExtensionId === currentExtensionId) {
 
     logDebug("getWikiIdsForPendingBatch, fsIdsToCheck is", fsIdsToCheck);
 
-    for (let fsId of fsIdsToCheck) {
-      if (!cachedFsIdToWtIdsMap.has(fsId)) {
-        fsIdsToQuery.push(fsId);
+    for (let id of fsIdsToCheck) {
+      if (!cachedFsIdToWtIdsMap.has(id)) {
+        fsIdsToQuery.push(id);
       }
     }
     logDebug("getWikiIdsForPendingBatch, fsIdsToQuery is", fsIdsToQuery);
@@ -967,18 +934,18 @@ if (runningExtensionId === currentExtensionId) {
       logDebug("getWikiIdsForPendingBatch, response is: ", response);
       if (response.response?.profiles) {
         function addWikiIdToMap(fsIdList, wikiId) {
-          for (let fsId of fsIdList) {
-            if (!cachedFsIdToWtIdsMap.has(fsId)) {
-              cachedFsIdToWtIdsMap.set(fsId, []);
+          for (let id of fsIdList) {
+            if (!cachedFsIdToWtIdsMap.has(id)) {
+              cachedFsIdToWtIdsMap.set(id, []);
             }
-            let wikiIdsForFsId = cachedFsIdToWtIdsMap.get(fsId);
+            let wikiIdsForFsId = cachedFsIdToWtIdsMap.get(id);
             if (!wikiIdsForFsId.includes(wikiId)) {
               wikiIdsForFsId.push(wikiId);
             }
           }
         }
 
-        // record the profiles that reference the elements fsId for the currentBatch
+        // record the profiles that reference the elements id for the currentBatch
         response.response.profiles.forEach((profile) => {
           addWikiIdToMap(profile.persons, profile.wikitreeID);
           addWikiIdToMap(profile.records, profile.wikitreeID);
@@ -1017,74 +984,13 @@ if (runningExtensionId === currentExtensionId) {
     if (currentBatch.locations) {
       let locations = currentBatch.locations;
       for (let location of locations) {
-        if (location.fsId) {
-          let wikiIds = cachedFsIdToWtIdsMap.get(location.fsId);
-          if (wikiIds) {
-            addWikiTreeIcon(location, wikiIds);
-          }
+        if (location.id) {
+          let wikiIds = cachedFsIdToWtIdsMap.get(location.id);
+          addWikiTreeIcon(location, wikiIds);
+        } else {
+          pageMods.removeProcessingIcon(location);
         }
       }
-    }
-  }
-
-  function determinePageProfile(url) {
-    // Remove the start and the domain, leaving the rest of the string untouched
-    const domainRegex = /^https?:\/\/(?:www\.)?familysearch\.org/;
-    url = url.replace(domainRegex, "");
-
-    for (let profile of pageProfiles) {
-      if (profile.matchRegex.test(url)) {
-        return profile;
-      }
-    }
-  }
-
-  function getFsIdDataFromUrl(url) {
-    //logDebug("getFsIdDataFromUrl ", url);
-
-    // Remove the start and the domain, leaving the rest of the string untouched
-    const domainRegex = /^https?:\/\/(?:www\.)?familysearch\.org/;
-    url = url.replace(domainRegex, "");
-
-    logDebug("getFsIdDataFromUrl modified URL is ", url);
-
-    if (personRegex.test(url)) {
-      let personId = url.replace(personRegex, "$1");
-      //logDebug("personId is:", personId);
-
-      if (personId.length > 5) {
-        return { fsIdType: "person", fsId: personId };
-      }
-    } else if (recordRegex.test(url)) {
-      let recordId = url.replace(recordRegex, "$1");
-      logDebug("url is : ", url, "recordId is:", recordId);
-
-      if (recordId.length > 5) {
-        return { fsIdType: "record", fsId: recordId };
-      }
-    } else if (imageRegex.test(url)) {
-      let imageId = url.replace(imageRegex, "$1");
-      logDebug("url is : ", url, "imageId is:", imageId);
-
-      if (imageId.length > 5) {
-        return { fsIdType: "image", fsId: imageId };
-      }
-    } else if (pedigreeLandscapeRegex.test(url)) {
-      let personId = url.replace(pedigreeLandscapeRegex, "$1");
-      logDebug("url is : ", url, "personId is:", personId);
-
-      if (personId.length > 5) {
-        return { fsIdType: "person", fsId: personId };
-      }
-    } else if (pedigreePortraitRegex.test(url)) {
-      let personId = url.replace(pedigreePortraitRegex, "$1");
-      logDebug("url is : ", url, "personId is:", personId);
-
-      if (personId.length > 5) {
-        return { fsIdType: "person", fsId: personId };
-      }
-    } else {
-      console.log("getFsIdDataFromUrl no match for ", url);
     }
   }
 
@@ -1092,10 +998,10 @@ if (runningExtensionId === currentExtensionId) {
     logDebug("extractFsIdFromLocation, location is:", location);
 
     if (location.locationType.useFsIdFromPageUrl) {
-      logDebug("extractFsIdFromLocation, using fsId from location");
-      let fsIdData = getFsIdDataFromUrl(document.URL);
-      if (fsIdData) {
-        return fsIdData;
+      logDebug("extractFsIdFromLocation, using id from location");
+      let idData = pageMods.getIdDataFromUrl(document.URL);
+      if (idData) {
+        return idData;
       }
       return "";
     }
@@ -1106,15 +1012,15 @@ if (runningExtensionId === currentExtensionId) {
     if (enclosingLinkElement) {
       let href = enclosingLinkElement.getAttribute("href");
       if (href) {
-        logDebug("extractFsIdFromLocation, using fsId from href", href);
+        logDebug("extractFsIdFromLocation, using id from href", href);
 
-        let fsIdData = getFsIdDataFromUrl(href);
-        if (fsIdData) {
-          return fsIdData;
+        let idData = pageMods.getIdDataFromUrl(href, location);
+        if (idData) {
+          return idData;
         }
       }
     } else {
-      console.log("no fsId found for location ", location);
+      console.log("no id found for location ", location);
     }
   }
 
@@ -1134,21 +1040,23 @@ if (runningExtensionId === currentExtensionId) {
       return false;
     }
 
-    location.spanElement = getSpanElementToAddIconTo(location);
-    if (!location.spanElement) {
+    location.iconPlaceElement = getElementToAddIconTo(location);
+    if (!location.iconPlaceElement) {
       logDebug("location matched element has no span element", location);
       return false;
     }
 
     location.isEllipsisSpan = false;
 
-    let hasIconAlready = location.spanElement.querySelector(".wt-sourcer-icon");
+    let hasIconAlready = location.iconPlaceElement.querySelector(".wt-sourcer-icon");
     if (!hasIconAlready) {
       // in the case of the ellipsis the icon is a sibling of the span
-      const isEllipsisSpan = Array.from(location.spanElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
+      const isEllipsisSpan = Array.from(location.iconPlaceElement.classList).some((cls) =>
+        cls.startsWith("ellipsisCss")
+      );
       if (isEllipsisSpan) {
         location.isEllipsisSpan = true;
-        const container = location.spanElement.parentElement;
+        const container = location.iconPlaceElement.parentElement;
         hasIconAlready = container.querySelector(".wt-sourcer-icon");
       }
     }
@@ -1159,24 +1067,24 @@ if (runningExtensionId === currentExtensionId) {
     }
 
     if (!location.locationType.needToFetchIds) {
-      let fsIdData = extractFsIdFromLocation(location); // Helper to get ID from href or text
-      if (fsIdData) {
-        location.fsId = fsIdData.fsId;
-        location.fsIdType = fsIdData.fsIdType;
+      let idData = extractFsIdFromLocation(location); // Helper to get ID from href or text
+      if (idData) {
+        location.id = idData.id;
+        location.idType = idData.idType;
       } else {
-        logDebug("location matched element has no fsId and does not require fetch");
+        logDebug("location matched element has no id and does not require fetch");
         return false;
       }
     } else {
       logDebug("location has locationType.needToFetchIds", location);
     }
 
+    pageMods.addProcessingIcon(location);
     el.dataset.wtIconProcessed = "true";
 
     return true;
   }
 
-  let pageInfo = {};
   let areOptionsForThisPageEnabled = false;
 
   function onMutation(options, mutations) {
@@ -1185,31 +1093,33 @@ if (runningExtensionId === currentExtensionId) {
     if (window.sourcerWtIconsLastProcessedUrl !== document.URL) {
       window.sourcerWtIconsLastProcessedUrl = document.URL;
 
-      pageInfo.pageProfile = determinePageProfile(document.URL);
-      let fsIdData = getFsIdDataFromUrl(document.URL);
-      if (fsIdData) {
-        pageInfo.fsId = fsIdData.fsId;
-        pageInfo.fsIdType = fsIdData.fsIdType;
+      pageMods.determinePageProfile(document.URL);
+      let idData = pageMods.getIdDataFromUrl(document.URL);
+      if (idData) {
+        pageMods.id = idData.id;
+        pageMods.idType = idData.idType;
       }
 
-      logDebug("pageProfile is: ", pageInfo.pageProfile);
+      logDebug("pageProfile is: ", pageMods.pageProfile);
 
-      if (!pageInfo.pageProfile) {
+      if (!pageMods.pageProfile) {
         console.log("initWtIconInjection could not identify pageProfile for URL:", document.URL);
         return;
       }
 
       // if none of the options for this profile are enabled return
       areOptionsForThisPageEnabled = false;
-      for (let locationType of pageInfo.pageProfile.locationTypes) {
+      for (let locationType of pageMods.pageProfile.locationTypes) {
         if (isLocationTypeEnabled(locationType, options)) {
           areOptionsForThisPageEnabled = true;
           break;
         }
       }
+
+      pageMods.setOptions(options);
     }
 
-    if (!pageInfo.pageProfile || !areOptionsForThisPageEnabled) {
+    if (!pageMods.pageProfile || !areOptionsForThisPageEnabled) {
       return;
     }
 
@@ -1217,7 +1127,7 @@ if (runningExtensionId === currentExtensionId) {
 
     let candidateLocations = [];
 
-    for (let locationType of pageInfo.pageProfile.locationTypes) {
+    for (let locationType of pageMods.pageProfile.locationTypes) {
       if (isLocationTypeEnabled(locationType, options)) {
         let candidateElements = document.querySelectorAll(locationType.selector);
         //logDebug("locationType ", locationType);
@@ -1251,6 +1161,8 @@ if (runningExtensionId === currentExtensionId) {
     }
   }
 
+  let pageMods = undefined;
+
   function initWtIconInjection(options) {
     // Check if we've already initialized to prevent double-observers
     if (window.hasSourcerWtIconInjectionStarted) return;
@@ -1258,6 +1170,13 @@ if (runningExtensionId === currentExtensionId) {
     window.hasSourcerWtIconInjectionStarted = true;
 
     logDebug("initWtIconInjection: document.URL is: " + document.URL);
+
+    let siteConfig = {
+      siteName: "fs",
+      pageProfiles: pageProfiles,
+      domainRegex: /^https?:\/\/(?:www\.)?familysearch\.org/,
+    };
+    pageMods = new WikiTreeSourcerPageModsHelper(siteConfig);
 
     const observer = new MutationObserver((mutations) => {
       // Check if the extension is still "alive"
