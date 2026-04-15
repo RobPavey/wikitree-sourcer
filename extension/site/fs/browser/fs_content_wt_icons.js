@@ -1207,21 +1207,32 @@ if (runningExtensionId === currentExtensionId) {
       return;
     }
 
-    if (pendingLocationsBatch.fetchFunctionsForFsIds) {
-      for (let fetchFunction of pendingLocationsBatch.fetchFunctionsForFsIds) {
-        await fetchFunction(pendingLocationsBatch);
-      }
-    }
-
-    if (pendingLocationsBatch.fetchFunctionsForBackLinks) {
-      for (let fetchFunction of pendingLocationsBatch.fetchFunctionsForBackLinks) {
-        await fetchFunction(pendingLocationsBatch);
-      }
-    }
-
     // Clear the pendingLocationsBatch immediately so new mutations start a fresh batch
     const currentBatch = pendingLocationsBatch;
     pendingLocationsBatch = {};
+
+    // Filter out locations where the element has been detached from the DOM
+    // This happens if FamilySearch/React re-rendered the area while we were waiting.
+    currentBatch.locations = currentBatch.locations.filter((location) => {
+      const isConnected = location.matchedElement && location.matchedElement.isConnected;
+
+      if (!isConnected) {
+        logDebug("Pruning disconnected location from batch:", location);
+      }
+      return isConnected;
+    });
+
+    if (currentBatch.fetchFunctionsForFsIds) {
+      for (let fetchFunction of currentBatch.fetchFunctionsForFsIds) {
+        await fetchFunction(currentBatch);
+      }
+    }
+
+    if (currentBatch.fetchFunctionsForBackLinks) {
+      for (let fetchFunction of currentBatch.fetchFunctionsForBackLinks) {
+        await fetchFunction(currentBatch);
+      }
+    }
 
     // Use WT+ API to get the WikiTree IDs that use these fsIds
     await getWikiIdsForBatch(currentBatch);

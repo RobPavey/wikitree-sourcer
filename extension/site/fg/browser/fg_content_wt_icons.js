@@ -401,7 +401,7 @@ if (runningExtensionId === currentExtensionId) {
 
             if (memorials.length > 0) {
               // this cemetery has WT profiles add an icon
-              logDebug("processPendingLocations, wikiIdsForCemetery is:", wikiIdsForCemetery);
+              logDebug("getWikiIdsForBatch, wikiIdsForCemetery is:", wikiIdsForCemetery);
               if (wikiIdsForCemetery) {
                 for (let location of locations) {
                   addWikiTreeIcon(location, wikiIdsForCemetery);
@@ -438,7 +438,7 @@ if (runningExtensionId === currentExtensionId) {
 
             if (categories.length > 0) {
               // this cemetery has a WT category
-              logDebug("processPendingLocations, categoryNamesForCemetery is:", categoryNamesForCemetery);
+              logDebug("getWikiIdsForBatch, categoryNamesForCemetery is:", categoryNamesForCemetery);
               if (categoryNamesForCemetery) {
                 for (let location of locations) {
                   addWikiTreeCategoryIcon(location, categoryNamesForCemetery);
@@ -723,10 +723,12 @@ if (runningExtensionId === currentExtensionId) {
 
     logDebug("initWtIconInjection: document.URL is: " + document.URL);
 
+    const domainRegex = /^https?:\/\/(?:[a-z0-9-]+\.)*familysearch\.(?:org|net|jp|org\.uk|de|fr|es|it)/i;
+
     let siteConfig = {
       siteName: "fg",
       pageProfiles: pageProfiles,
-      domainRegex: /^https?:\/\/(?:www\.)?findagrave\.com/,
+      domainRegex: domainRegex,
     };
     pageMods = new WikiTreeSourcerPageModsHelper(siteConfig);
     pageMods.setOptions(options);
