@@ -280,7 +280,7 @@ const uiOptionsPageModLocationsGroup = {
   subcategory: "fs",
   tab: "ui",
   subsection: "fs",
-  subheading: "wtIconPageMods",
+  subheading: "wtIconPageModLocations",
 
   options: [
     {
@@ -427,7 +427,7 @@ registerOptionsGroup(uiOptionsPageModBehaviourGroup);
 registerSubheadingForOptions(
   "ui",
   "fs",
-  "wtIconPageModLocactions",
+  "wtIconPageModLocations",
   "Page Modifications for WikiTree usage icons (locations)"
 );
 registerOptionsGroup(uiOptionsPageModLocationsGroup);

@@ -154,20 +154,6 @@ if (runningExtensionId === currentExtensionId) {
     },
   ];
 
-  function isLocationTypeEnabled(locationType, options) {
-    if (locationType.optionKey) {
-      if (locationType.optionKey2) {
-        let optionKey2 = "ui_fg_" + locationType.optionKey2;
-        if (options[optionKey2]) {
-          return true;
-        }
-      }
-
-      let optionKey = "ui_fg_" + locationType.optionKey;
-      return options[optionKey];
-    }
-  }
-
   function wtPlusApiGetProfilesUsingFgId(idString) {
     let url = `https://plus.wikitree.com/function/wtFindAGrave4Bee/Sourcer.json?query=${idString}`;
     return pageMods.wtPlusApiCall(url);
@@ -676,13 +662,11 @@ if (runningExtensionId === currentExtensionId) {
       // if none of the options for this profile are enabled return
       areOptionsForThisPageEnabled = false;
       for (let locationType of pageMods.pageProfile.locationTypes) {
-        if (isLocationTypeEnabled(locationType, options)) {
+        if (pageMods.isLocationTypeEnabled(locationType)) {
           areOptionsForThisPageEnabled = true;
           break;
         }
       }
-
-      pageMods.setOptions(options);
     }
 
     //logDebug("areOptionsForThisPageEnabled is: ", areOptionsForThisPageEnabled);
@@ -696,7 +680,7 @@ if (runningExtensionId === currentExtensionId) {
     let candidateLocations = [];
 
     for (let locationType of pageMods.pageProfile.locationTypes) {
-      if (isLocationTypeEnabled(locationType, options)) {
+      if (pageMods.isLocationTypeEnabled(locationType)) {
         let candidateElements = document.querySelectorAll(locationType.selector);
         //logDebug("onMutation: locationType ", locationType);
         //logDebug("onMutation: candidateElements ", candidateElements);
@@ -745,6 +729,7 @@ if (runningExtensionId === currentExtensionId) {
       domainRegex: /^https?:\/\/(?:www\.)?findagrave\.com/,
     };
     pageMods = new WikiTreeSourcerPageModsHelper(siteConfig);
+    pageMods.setOptions(options);
 
     const observer = new MutationObserver((mutations) => {
       // Check if the extension is still "alive"

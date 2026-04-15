@@ -800,6 +800,7 @@ if (runningExtensionId === currentExtensionId) {
           locationTypeName: "thisRecordAttachedTo",
           selector: "div[class^='attachCss'] [data-testid='person'] [data-testid='fullName']",
           optionKey: "recordShowWtIconAttached",
+          iconAddRule: { type: "ellipsis" },
         },
         {
           locationTypeName: "similarRecord",
@@ -816,6 +817,7 @@ if (runningExtensionId === currentExtensionId) {
           locationTypeName: "similarRecordAttachedTo",
           selector: "li [data-testid='person'] [data-testid='fullName']",
           optionKey: "recordShowWtIconSimilarRecordsAttached",
+          iconAddRule: { type: "ellipsis" },
         },
       ],
     },
@@ -833,6 +835,7 @@ if (runningExtensionId === currentExtensionId) {
           locationTypeName: "imageSideBarAttached",
           selector: "aside [data-testid='person'] [data-testid='nameLink'] [data-testid='fullName']",
           optionKey: "imageShowWtIconSidebar",
+          iconAddRule: { type: "ellipsis" },
         },
         {
           locationTypeName: "imageIndexRecord",
@@ -842,7 +845,7 @@ if (runningExtensionId === currentExtensionId) {
             closestSelector: "td",
             childSelector: "a[href*='search/linker']",
           },
-          iconAddRule: { type: "makeFlexAddChild" },
+          iconAddRule: { type: "ellipsis" },
           optionKey: "imageShowWtIconSidebar",
         },
         {
@@ -891,6 +894,7 @@ if (runningExtensionId === currentExtensionId) {
           selector:
             "aside [data-testid='nameSpan'] [data-testid='fullName'], aside [data-testid='person'] [data-testid='fullName']",
           optionKey: "searchResultsShowWtIconPersonInTree",
+          iconAddRule: { type: "ellipsis" },
         },
       ],
     },
@@ -902,11 +906,13 @@ if (runningExtensionId === currentExtensionId) {
           locationTypeName: "pedigreePerson",
           selector: "li [data-testid='nameLink'] div > span",
           optionKey: "pedigreeLandscapeShowWtIcon",
+          iconAddRule: { type: "ellipsis" },
         },
         {
           locationTypeName: "sidebarHeader",
           selector: "[data-testid='PersonSheetHeader'] [data-testid='nameLink'] [data-testid='fullName']",
           optionKey: "pedigreeLandscapeShowWtIconSidebar",
+          iconAddRule: { type: "ellipsis" },
         },
       ],
     },
@@ -919,20 +925,17 @@ if (runningExtensionId === currentExtensionId) {
           selector:
             "[data-testid='pedigree'] [data-testid='person'] [data-testid='nameLink'] [data-testid='namePart2']",
           optionKey: "pedigreePortraitShowWtIcon",
+          iconAddRule: { type: "ellipsis" },
         },
         {
           locationTypeName: "sidebarHeader",
           selector: "aside [data-testid='PersonSheetHeader'] [data-testid='nameLink'] [data-testid='fullName']",
           optionKey: "pedigreePortraitShowWtIconSidebar",
+          iconAddRule: { type: "ellipsis" },
         },
       ],
     },
   ];
-
-  function isLocationTypeEnabled(locationType, options) {
-    let optionKey = "ui_fs_" + locationType.optionKey;
-    return options[optionKey];
-  }
 
   function wtPlusApiCall(url) {
     return new Promise((resolve, reject) => {
@@ -1304,20 +1307,8 @@ if (runningExtensionId === currentExtensionId) {
       return false;
     }
 
-    location.isEllipsisSpan = false;
-
-    let hasIconAlready = location.iconPlaceElement.querySelector(".wt-sourcer-icon");
-    if (!hasIconAlready) {
-      // in the case of the ellipsis the icon is a sibling of the span
-      const isEllipsisSpan = Array.from(location.iconPlaceElement.classList).some((cls) =>
-        cls.startsWith("ellipsisCss")
-      );
-      if (isEllipsisSpan) {
-        location.isEllipsisSpan = true;
-        const container = location.iconPlaceElement.parentElement;
-        hasIconAlready = container.querySelector(".wt-sourcer-icon");
-      }
-    }
+    let iconParent = pageMods.findExistingIconParent(location);
+    let hasIconAlready = iconParent.querySelector(".wt-sourcer-icon");
     if (hasIconAlready) {
       location.hasIcon = true;
       logDebug("location matched element has icon already");
@@ -1371,13 +1362,11 @@ if (runningExtensionId === currentExtensionId) {
       // if none of the options for this profile are enabled return
       areOptionsForThisPageEnabled = false;
       for (let locationType of pageMods.pageProfile.locationTypes) {
-        if (isLocationTypeEnabled(locationType, options)) {
+        if (pageMods.isLocationTypeEnabled(locationType)) {
           areOptionsForThisPageEnabled = true;
           break;
         }
       }
-
-      pageMods.setOptions(options);
     }
 
     if (!pageMods.pageProfile || !areOptionsForThisPageEnabled) {
@@ -1389,7 +1378,7 @@ if (runningExtensionId === currentExtensionId) {
     let candidateLocations = [];
 
     for (let locationType of pageMods.pageProfile.locationTypes) {
-      if (isLocationTypeEnabled(locationType, options)) {
+      if (pageMods.isLocationTypeEnabled(locationType)) {
         let candidateElements = document.querySelectorAll(locationType.selector);
         //logDebug("locationType ", locationType);
         //logDebug("candidateElements ", candidateElements);
@@ -1438,6 +1427,7 @@ if (runningExtensionId === currentExtensionId) {
       domainRegex: /^https?:\/\/(?:www\.)?familysearch\.org/,
     };
     pageMods = new WikiTreeSourcerPageModsHelper(siteConfig);
+    pageMods.setOptions(options);
 
     const observer = new MutationObserver((mutations) => {
       // Check if the extension is still "alive"

@@ -707,4 +707,23 @@ class WikiTreeSourcerPageModsHelper {
       }
     }
   }
+
+  isLocationTypeEnabled(locationType) {
+    if (locationType.optionKey) {
+      let enabled = this.getOption(locationType.optionKey);
+
+      if (locationType.optionKey2) {
+        let enabled2 = this.getOption(locationType.optionKey2);
+        if (enabled2) {
+          return true;
+        }
+      }
+
+      return enabled;
+    } else {
+      // no option key
+      console.warn("locationType has no optionKey");
+      return false;
+    }
+  }
 }
