@@ -341,21 +341,51 @@ class WikiTreeSourcerPageModsHelper {
     this.addIconAtLocation(location, img);
   }
 
+  findExistingIconParent(location) {
+    let iconPlaceElement = location.iconPlaceElement;
+    if (iconPlaceElement) {
+      const iconAddRule = location.locationType.iconAddRule;
+      if (iconAddRule) {
+        let addType = iconAddRule.type;
+        if (addType == "ellipsis") {
+          return iconPlaceElement.parentElement;
+        } else if (addType == "makeFlexAddChild") {
+          return iconPlaceElement;
+        } else if (addType == "addFlexChild") {
+          return iconPlaceElement;
+        } else if (addType == "addChild") {
+          return iconPlaceElement;
+        } else {
+          console.warn("Unknown iconAddRule", iconAddRule);
+        }
+      } else {
+        return iconPlaceElement;
+      }
+    }
+  }
+
   removeProcessingIcon(location) {
     if (!this.getOption("showProcessingIcon")) {
       return;
     }
 
+    logDebug("removeProcessingIcon, location is", location);
+
     let iconPlaceElement = location.iconPlaceElement;
     if (iconPlaceElement) {
       if (iconPlaceElement.isConnected) {
-        let iconElement = iconPlaceElement.querySelector(".wt-sourcer-processing-icon");
-        if (iconElement && iconElement.isConnected) {
-          iconPlaceElement.removeChild(iconElement);
+        let iconParent = this.findExistingIconParent(location);
+        if (iconParent) {
+          let iconElement = iconParent.querySelector(".wt-sourcer-processing-icon");
+          if (iconElement && iconElement.isConnected) {
+            iconParent.removeChild(iconElement);
+          } else {
+            // This case can happen when switching back and forth between FS pages
+            // It is not really an error and can be safely ignored
+            //console.warn("removeProcessingIcon: no iconElement found for location", location);
+          }
         } else {
-          // This case can happen when switching back and forth between FS pages
-          // It is not really an error and can be safely ignored
-          //console.warn("removeProcessingIcon: no iconElement found for location", location);
+          console.warn("removeProcessingIcon: no iconParent for location", location);
         }
       } else {
         //console.warn("removeProcessingIcon: iconPlaceElement is no longer part of the document", location);
@@ -668,7 +698,7 @@ class WikiTreeSourcerPageModsHelper {
         let id = url.replace(regex, "$1");
         logDebug(`getIdDataFromUrl: profile is ${profile.pageType} id is: ${id}`);
 
-        let idType = profile.pageType;
+        let idType = profile.pageIdType;
 
         if (location && location.locationType && location.locationType.locationIdType) {
           idType = location.locationType.locationIdType;

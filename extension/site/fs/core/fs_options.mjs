@@ -290,6 +290,12 @@ const uiOptionsPageModLocationsGroup = {
       defaultValue: true,
     },
     {
+      optionName: "personShowWtIconForOutRefH1",
+      type: "checkbox",
+      label: "On person pages in icon next to top-level heading, indicate if there are links back to WT",
+      defaultValue: true,
+    },
+    {
       optionName: "personDetailsShowWtIconFamily",
       type: "checkbox",
       label: "On person 'Details' pages show icons for family members",

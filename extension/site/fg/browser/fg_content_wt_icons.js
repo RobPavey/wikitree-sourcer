@@ -274,10 +274,10 @@ if (runningExtensionId === currentExtensionId) {
       // this profile references multiple WT profiles.
       if (wikiIds.length > 0) {
         svgIcon = pageMods.getIcon("svgRefWtConflict");
-        titleText += ` and this memorial also uses a flowers to reference multiple WikiTree profiles`;
+        titleText += ` and this memorial also uses flowers to reference multiple WikiTree profiles`;
       } else {
         svgIcon = pageMods.getIcon("svgRefWtConflict");
-        titleText = `FindAGrave ${location.idType} ${location.id} uses a flowers to reference multiple WikiTree profiles`;
+        titleText = `FindAGrave ${location.idType} ${location.id} uses flowers to reference multiple WikiTree profiles`;
       }
     }
 
