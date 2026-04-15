@@ -365,6 +365,141 @@ class WikiTreeSourcerPageModsHelper {
     }
   }
 
+  createIconElement(svgIcon, titleText) {
+    const img = document.createElement("img");
+
+    // 3. Set the source to your SVG string
+    img.src = svgIcon;
+
+    // 4. Add styling for alignment and spacing
+    img.style.width = "24px";
+    img.style.height = "24px";
+    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
+    img.style.position = "relative";
+    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
+    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+
+    img.style.cursor = "pointer";
+    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
+
+    // 5. Add a tooltip for clarity
+    img.title = titleText;
+
+    // Set initial filter
+    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+    img.style.filter = normalFilter;
+
+    img.addEventListener("mouseenter", () => {
+      img.style.filter = `${normalFilter} brightness(1.1)`;
+    });
+
+    img.addEventListener("mouseleave", () => {
+      img.style.filter = normalFilter;
+    });
+
+    return img;
+  }
+
+  createIconElement(svgIcon, titleText) {
+    const img = document.createElement("img");
+
+    // 3. Set the source to your SVG string
+    img.src = svgIcon;
+
+    // 4. Add styling for alignment and spacing
+    img.style.width = "24px";
+    img.style.height = "24px";
+    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
+    img.style.position = "relative";
+    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
+    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+
+    img.style.cursor = "pointer";
+    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
+
+    // 5. Add a tooltip for clarity
+    img.title = titleText;
+
+    // Set initial filter
+    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+    img.style.filter = normalFilter;
+
+    img.addEventListener("mouseenter", () => {
+      img.style.filter = `${normalFilter} brightness(1.1)`;
+    });
+
+    img.addEventListener("mouseleave", () => {
+      img.style.filter = normalFilter;
+    });
+
+    return img;
+  }
+
+  createIconElement(svgIcon, titleText, clipboardText) {
+    const img = document.createElement("img");
+
+    // 3. Set the source to your SVG string
+    img.src = svgIcon;
+
+    // 4. Add styling for alignment and spacing
+    img.style.width = "24px";
+    img.style.height = "24px";
+    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
+    img.style.position = "relative";
+    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
+    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+
+    img.style.cursor = "pointer";
+    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
+
+    // 5. Add a tooltip for clarity
+    img.title = titleText;
+
+    // Set initial filter
+    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+    img.style.filter = normalFilter;
+
+    img.addEventListener("mouseenter", () => {
+      img.style.filter = `${normalFilter} brightness(1.1)`;
+    });
+
+    img.addEventListener("mouseleave", () => {
+      img.style.filter = normalFilter;
+    });
+
+    if (clipboardText) {
+      this.addRightClickCopyToElement(img, clipboardText);
+    }
+
+    return img;
+  }
+
+  createAnchorWithIconElement(svgIcon, titleText, clipboardText, linkUrl) {
+    const img = this.createIconElement(svgIcon, titleText, clipboardText);
+
+    // create an anchor element
+    const anchorElement = document.createElement("a");
+    if (linkUrl) {
+      anchorElement.setAttribute("href", linkUrl);
+    }
+
+    anchorElement.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+
+    anchorElement.addEventListener("mousedown", (event) => {
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    });
+
+    anchorElement.target = "_blank";
+    anchorElement.style.textDecoration = "none";
+
+    anchorElement.appendChild(img);
+
+    return anchorElement;
+  }
+
   wtPlusApiCall(url) {
     return new Promise((resolve, reject) => {
       if (!chrome.runtime?.id) {

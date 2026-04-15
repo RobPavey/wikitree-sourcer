@@ -607,7 +607,8 @@ if (runningExtensionId === currentExtensionId) {
         },
         {
           locationTypeName: "sidebarHeaderPreview",
-          selector: "[data-testid='recordPreview-InfoSheet'] h1 > div",
+          selector: "aside[data-testid='recordPreview-InfoSheet'] h1 > div",
+          hrefRule: { type: "grandparentThenChild", childSelector: "div > a" },
           optionKey: "searchResultsShowWtIconSidebar",
         },
         {
@@ -733,11 +734,10 @@ if (runningExtensionId === currentExtensionId) {
       return;
     }
 
-    let iconPlaceElement = location.iconPlaceElement;
-
     let svgIcon = null;
     let titleText = "FamilySearch " + location.idType + " " + location.id + " is ";
     let clipboardText = "";
+    let linkUrl = "";
 
     if (wikiIds.length > 1) {
       svgIcon = pageMods.getIcon("svgMultipleRefsFromWt");
@@ -749,79 +749,28 @@ if (runningExtensionId === currentExtensionId) {
         }
         clipboardText += wikiId;
       }
+
+      let id = location.id;
+      if (id) {
+        linkUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
+        if (location.idType == "image") {
+          linkUrl += "FamilySearchImage=";
+        } else {
+          linkUrl += "FamilySearch=";
+        }
+        linkUrl += id;
+        linkUrl += "&render=1";
+      }
     } else {
       svgIcon = pageMods.getIcon("svgSingleRefFromWt");
       titleText += `referenced from WikiTree profile: ${wikiIds[0]}`;
       clipboardText = wikiIds[0];
+      linkUrl = "https://www.wikitree.com/wiki/" + wikiIds[0];
     }
 
-    const img = document.createElement("img");
-
-    // 3. Set the source to your SVG string
-    img.src = svgIcon;
-
-    // 4. Add styling for alignment and spacing
-    img.style.width = "24px";
-    img.style.height = "24px";
-    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
-    img.style.position = "relative";
-    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
-    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-
-    img.style.cursor = "pointer";
-    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
-
-    // 5. Add a tooltip for clarity
-    img.title = titleText;
-
-    // Set initial filter
-    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-    img.style.filter = normalFilter;
-
-    img.addEventListener("mouseenter", () => {
-      img.style.filter = `${normalFilter} brightness(1.1)`;
-    });
-
-    img.addEventListener("mouseleave", () => {
-      img.style.filter = normalFilter;
-    });
-
-    // create an anchor element
-    const anchorElement = document.createElement("a");
-    if (wikiIds.length > 1) {
-      let id = location.id;
-      if (id) {
-        let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
-        if (location.idType == "image") {
-          wtPlusUrl += "FamilySearchImage=";
-        } else {
-          wtPlusUrl += "FamilySearch=";
-        }
-        wtPlusUrl += id;
-        wtPlusUrl += "&render=1";
-        anchorElement.setAttribute("href", wtPlusUrl);
-      }
-    } else {
-      anchorElement.setAttribute("href", "https://www.wikitree.com/wiki/" + wikiIds[0]);
-    }
-
-    anchorElement.target = "_blank";
-    anchorElement.style.textDecoration = "none";
-
-    anchorElement.addEventListener("click", (event) => {
-      event.stopPropagation();
-    });
-
-    anchorElement.addEventListener("mousedown", (event) => {
-      event.stopPropagation();
-      event.stopImmediatePropagation();
-    });
-
-    anchorElement.appendChild(img);
+    const anchorElement = pageMods.createAnchorWithIconElement(svgIcon, titleText, clipboardText, linkUrl);
 
     pageMods.addIconAtLocation(location, anchorElement);
-
-    pageMods.addRightClickCopyToElement(img, clipboardText);
   }
 
   let cachedFsIdToWtIdsMap = new Map();
@@ -972,10 +921,23 @@ if (runningExtensionId === currentExtensionId) {
     }
 
     let element = location.matchedElement;
-    // We found an element that could be a place where an icon could be added
-    let enclosingLinkElement = element.closest("a");
-    if (enclosingLinkElement) {
-      let href = enclosingLinkElement.getAttribute("href");
+    let hrefRule = location.locationType.hrefRule;
+
+    let hrefElement = undefined;
+
+    if (hrefRule) {
+      if (hrefRule.type == "grandparentThenChild") {
+        let parent = element.parentElement;
+        let grandparent = parent.parentElement;
+        hrefElement = grandparent.querySelector(hrefRule.childSelector);
+      }
+    } else {
+      // Default is to find the enclosing anchor element
+      hrefElement = element.closest("a");
+    }
+
+    if (hrefElement) {
+      let href = hrefElement.getAttribute("href");
       if (href) {
         logDebug("extractFsIdFromLocation, using id from href", href);
 
@@ -984,9 +946,9 @@ if (runningExtensionId === currentExtensionId) {
           return idData;
         }
       }
-    } else {
-      console.log("no id found for location ", location);
     }
+
+    console.log("no id found for location ", location);
   }
 
   function analyzeLocation(location) {

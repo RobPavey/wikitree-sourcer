@@ -281,60 +281,9 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
 
-    const img = document.createElement("img");
-
-    // 3. Set the source to your SVG string
-    img.src = svgIcon;
-
-    // 4. Add styling for alignment and spacing
-    img.style.width = "24px";
-    img.style.height = "24px";
-    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
-    img.style.position = "relative";
-    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
-    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-
-    img.style.cursor = "pointer";
-    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
-
-    // 5. Add a tooltip for clarity
-    img.title = titleText;
-
-    // Set initial filter
-    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-    img.style.filter = normalFilter;
-
-    img.addEventListener("mouseenter", () => {
-      img.style.filter = `${normalFilter} brightness(1.1)`;
-    });
-
-    img.addEventListener("mouseleave", () => {
-      img.style.filter = normalFilter;
-    });
-
-    // create an anchor element
-    const anchorElement = document.createElement("a");
-    if (linkUrl) {
-      anchorElement.setAttribute("href", linkUrl);
-    }
-
-    anchorElement.addEventListener("click", (event) => {
-      event.stopPropagation();
-    });
-
-    anchorElement.addEventListener("mousedown", (event) => {
-      event.stopPropagation();
-      event.stopImmediatePropagation();
-    });
-
-    anchorElement.target = "_blank";
-    anchorElement.style.textDecoration = "none";
-
-    anchorElement.appendChild(img);
+    const anchorElement = pageMods.createAnchorWithIconElement(svgIcon, titleText, clipboardText, linkUrl);
 
     pageMods.addIconAtLocation(location, anchorElement);
-
-    pageMods.addRightClickCopyToElement(img, clipboardText);
   }
 
   function addWikiTreeCategoryIcon(location, categoryNames) {
@@ -354,7 +303,7 @@ if (runningExtensionId === currentExtensionId) {
 
     let svgIcon = null;
     let titleText = "FindAGrave " + location.idType + " " + location.id + " is ";
-
+    let clipboardText = "";
     let linkUrl = "";
 
     if (categoryNames.length > 1) {
@@ -382,59 +331,9 @@ if (runningExtensionId === currentExtensionId) {
       linkUrl = "https://www.wikitree.com/wiki/Category:" + categoryNames[0];
     }
 
-    const img = document.createElement("img");
+    const anchorElement = pageMods.createAnchorWithIconElement(svgIcon, titleText, clipboardText, linkUrl);
 
-    // 3. Set the source to your SVG string
-    img.src = svgIcon;
-
-    // 4. Add styling for alignment and spacing
-    img.style.width = "24px";
-    img.style.height = "24px";
-    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
-    img.style.position = "relative";
-    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
-    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-
-    img.style.cursor = "pointer";
-    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
-
-    // 5. Add a tooltip for clarity
-    img.title = titleText;
-
-    // Set initial filter
-    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-    img.style.filter = normalFilter;
-
-    img.addEventListener("mouseenter", () => {
-      img.style.filter = `${normalFilter} brightness(1.1)`;
-    });
-
-    img.addEventListener("mouseleave", () => {
-      img.style.filter = normalFilter;
-    });
-
-    // create an anchor element
-    const anchorElement = document.createElement("a");
-    if (linkUrl) {
-      anchorElement.setAttribute("href", linkUrl);
-    }
-
-    anchorElement.addEventListener("click", (event) => {
-      event.stopPropagation();
-    });
-
-    anchorElement.addEventListener("mousedown", (event) => {
-      event.stopPropagation();
-      event.stopImmediatePropagation();
-    });
-
-    anchorElement.target = "_blank";
-    anchorElement.style.textDecoration = "none";
-
-    anchorElement.appendChild(img);
-
-    img.style.marginLeft = "12px";
-    iconPlaceElement.appendChild(anchorElement);
+    pageMods.addIconAtLocation(location, anchorElement);
   }
 
   let cachedFgMemorialIdToWtIdsMap = new Map();
