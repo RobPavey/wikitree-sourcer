@@ -252,6 +252,62 @@ class WikiTreeSourcerPageModsHelper {
       : WikiTreeSourcerPageModsHelper.svgRefWtProcessing;
   }
 
+  addIconAtLocation(location, iconElementToAdd) {
+    let iconPlaceElement = location.iconPlaceElement;
+
+    const iconAddRule = location.locationType.iconAddRule;
+    if (iconAddRule) {
+      let addType = iconAddRule.type;
+      if (addType == "ellipsis") {
+        const container = iconPlaceElement.parentElement;
+
+        // Set container to flex so icon stays visible next to the span
+        container.style.display = "flex";
+        container.style.alignItems = "center";
+        container.style.flexDirection = "row";
+        container.style.width = "100%"; // Ensure it uses the full header width
+
+        // Allow the name to shrink, but keep the icon fixed
+        iconPlaceElement.style.flexShrink = "1";
+        iconPlaceElement.style.minWidth = "0"; // Firefox requirement for flex-shrink on text
+
+        iconElementToAdd.style.flexShrink = "0";
+        iconElementToAdd.style.display = "flex";
+        iconElementToAdd.style.marginLeft = "8px";
+
+        // Append to PARENT so it's not clipped by the span
+        container.appendChild(iconElementToAdd);
+      } else if (addType == "makeFlexAddChild") {
+        // Set container to flex so icon stays visible next to the span
+        iconPlaceElement.style.display = "flex";
+        iconPlaceElement.style.alignItems = "flex-start";
+        iconPlaceElement.style.flexDirection = "row";
+
+        iconElementToAdd.style.flexShrink = "0";
+        iconElementToAdd.style.display = "flex";
+        iconElementToAdd.style.marginLeft = "8px";
+
+        iconPlaceElement.appendChild(iconElementToAdd);
+      } else if (addType == "addFlexChild") {
+        // the iconPlaceElement is a container that we want to append to
+        iconElementToAdd.style.flexShrink = "0";
+        iconElementToAdd.style.display = "flex";
+        iconElementToAdd.style.marginLeft = "8px";
+
+        iconPlaceElement.appendChild(iconElementToAdd);
+      } else if (addType == "addChild") {
+        // the iconPlaceElement is a container that we want to append to
+        iconElementToAdd.style.marginLeft = "0px";
+        iconPlaceElement.appendChild(iconElementToAdd);
+      } else {
+        console.warn("Unknown iconAddRule", iconAddRule);
+      }
+    } else {
+      iconElementToAdd.style.marginLeft = "12px";
+      iconPlaceElement.appendChild(iconElementToAdd);
+    }
+  }
+
   addProcessingIcon(location) {
     if (!this.getOption("showProcessingIcon")) {
       return;
@@ -259,8 +315,6 @@ class WikiTreeSourcerPageModsHelper {
     const useAnimation = this.getOption("animateProcessingIcon");
 
     logDebug("addProcessingIcon", location);
-
-    let iconPlaceElement = location.iconPlaceElement;
 
     let svgIcon = this.getProcessingIcon(useAnimation);
 
@@ -284,17 +338,30 @@ class WikiTreeSourcerPageModsHelper {
     const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
     img.style.filter = normalFilter;
 
-    img.style.marginLeft = "12px";
-    iconPlaceElement.appendChild(img);
+    this.addIconAtLocation(location, img);
   }
 
   removeProcessingIcon(location) {
+    if (!this.getOption("showProcessingIcon")) {
+      return;
+    }
+
     let iconPlaceElement = location.iconPlaceElement;
-    let iconElement = iconPlaceElement.querySelector(".wt-sourcer-processing-icon");
-    if (iconElement) {
-      iconPlaceElement.removeChild(iconElement);
+    if (iconPlaceElement) {
+      if (iconPlaceElement.isConnected) {
+        let iconElement = iconPlaceElement.querySelector(".wt-sourcer-processing-icon");
+        if (iconElement && iconElement.isConnected) {
+          iconPlaceElement.removeChild(iconElement);
+        } else {
+          // This case can happen when switching back and forth between FS pages
+          // It is not really an error and can be safely ignored
+          //console.warn("removeProcessingIcon: no iconElement found for location", location);
+        }
+      } else {
+        //console.warn("removeProcessingIcon: iconPlaceElement is no longer part of the document", location);
+      }
     } else {
-      console.warn("no iconElement found for location", location);
+      console.warn("removeProcessingIcon: no iconPlaceElement for location", location);
     }
   }
 

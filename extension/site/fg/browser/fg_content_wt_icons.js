@@ -332,11 +332,9 @@ if (runningExtensionId === currentExtensionId) {
 
     anchorElement.appendChild(img);
 
-    img.style.marginLeft = "12px";
+    pageMods.addIconAtLocation(location, anchorElement);
 
     pageMods.addRightClickCopyToElement(img, clipboardText);
-
-    iconPlaceElement.appendChild(anchorElement);
   }
 
   function addWikiTreeCategoryIcon(location, categoryNames) {

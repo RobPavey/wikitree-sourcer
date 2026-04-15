@@ -454,6 +454,7 @@ if (runningExtensionId === currentExtensionId) {
         {
           locationTypeName: "pageH1",
           selector: "h1 [data-testid='fullName']",
+          iconAddRule: { type: "ellipsis" },
           useFsIdFromPageUrl: true,
           optionKey: "personShowWtIconH1",
         },
@@ -479,6 +480,7 @@ if (runningExtensionId === currentExtensionId) {
         {
           locationTypeName: "sourceRow",
           selector: "[data-testid='section-card-sources'] [data-testid='source-heading-section']",
+          iconAddRule: { type: "makeFlexAddChild" },
           optionKey: "personSourcesShowWtIconOnSourceRow",
           needToFetchIds: true,
           iconPlaceElementRule: { type: "child", selector: "div[class^='cssSourceTitle']" },
@@ -529,6 +531,7 @@ if (runningExtensionId === currentExtensionId) {
         {
           locationTypeName: "similarRecord",
           selector: "li div[role='button'] span > span",
+          iconAddRule: { type: "addChild" },
           needToFetchIds: true,
           fetchFunction: fetchSimilarRecords,
           iconPlaceElementRule: { type: "parent" },
@@ -564,6 +567,7 @@ if (runningExtensionId === currentExtensionId) {
             closestSelector: "td",
             childSelector: "a[href*='search/linker']",
           },
+          iconAddRule: { type: "makeFlexAddChild" },
           optionKey: "imageShowWtIconSidebar",
         },
         {
@@ -580,6 +584,7 @@ if (runningExtensionId === currentExtensionId) {
         {
           locationTypeName: "imageNavBar",
           selector: "nav > div > div[class^='rowCss']",
+          iconAddRule: { type: "addFlexChild" },
           useFsIdFromPageUrl: true,
           optionKey: "imageShowWtIconH1",
         },
@@ -803,58 +808,18 @@ if (runningExtensionId === currentExtensionId) {
     anchorElement.target = "_blank";
     anchorElement.style.textDecoration = "none";
 
+    anchorElement.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+
+    anchorElement.addEventListener("mousedown", (event) => {
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    });
+
     anchorElement.appendChild(img);
 
-    // if this span element is an ellipsis style then we need to avoid the icon disappearing
-    // when the ellipsis is shown
-    const isEllipsisSpan = Array.from(iconPlaceElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
-    const locationTypeName = location.locationType.locationTypeName;
-
-    if (isEllipsisSpan) {
-      const container = iconPlaceElement.parentElement;
-
-      // Set container to flex so icon stays visible next to the span
-      container.style.display = "flex";
-      container.style.alignItems = "center";
-      container.style.flexDirection = "row";
-      container.style.width = "100%"; // Ensure it uses the full header width
-
-      // Allow the name to shrink, but keep the icon fixed
-      iconPlaceElement.style.flexShrink = "1";
-      iconPlaceElement.style.minWidth = "0"; // Firefox requirement for flex-shrink on text
-
-      anchorElement.style.flexShrink = "0";
-      anchorElement.style.display = "flex";
-      anchorElement.style.marginLeft = "8px";
-
-      // Append to PARENT so it's not clipped by the span
-      container.appendChild(anchorElement);
-    } else if (locationTypeName === "sourceRow" || locationTypeName == "imageIndexRecord") {
-      // Set container to flex so icon stays visible next to the span
-      iconPlaceElement.style.display = "flex";
-      iconPlaceElement.style.alignItems = "flex-start";
-      iconPlaceElement.style.flexDirection = "row";
-
-      anchorElement.style.flexShrink = "0";
-      anchorElement.style.display = "flex";
-      anchorElement.style.marginLeft = "8px";
-
-      iconPlaceElement.appendChild(anchorElement);
-    } else if (locationTypeName === "imageNavBar") {
-      // the iconPlaceElement is a container that we want to append to
-      anchorElement.style.flexShrink = "0";
-      anchorElement.style.display = "flex";
-      anchorElement.style.marginLeft = "8px";
-
-      iconPlaceElement.appendChild(anchorElement);
-    } else if (locationTypeName === "similarRecord") {
-      // the iconPlaceElement is a container that we want to append to
-      anchorElement.style.marginLeft = "0px";
-      iconPlaceElement.appendChild(anchorElement);
-    } else {
-      img.style.marginLeft = "12px";
-      iconPlaceElement.appendChild(anchorElement);
-    }
+    pageMods.addIconAtLocation(location, anchorElement);
 
     pageMods.addRightClickCopyToElement(img, clipboardText);
   }
@@ -1092,6 +1057,9 @@ if (runningExtensionId === currentExtensionId) {
     // without a page reload. In that case the MutationObserver is still running
     if (window.sourcerWtIconsLastProcessedUrl !== document.URL) {
       window.sourcerWtIconsLastProcessedUrl = document.URL;
+
+      // we have changed page so kill any pending locations
+      pendingLocationsBatch = {};
 
       pageMods.determinePageProfile(document.URL);
       let idData = pageMods.getIdDataFromUrl(document.URL);
