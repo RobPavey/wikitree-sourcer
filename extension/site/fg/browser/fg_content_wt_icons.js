@@ -723,12 +723,10 @@ if (runningExtensionId === currentExtensionId) {
 
     logDebug("initWtIconInjection: document.URL is: " + document.URL);
 
-    const domainRegex = /^https?:\/\/(?:[a-z0-9-]+\.)*familysearch\.(?:org|net|jp|org\.uk|de|fr|es|it)/i;
-
     let siteConfig = {
       siteName: "fg",
       pageProfiles: pageProfiles,
-      domainRegex: domainRegex,
+      domainRegex: /^https?:\/\/(?:www\.)?findagrave\.com/,
     };
     pageMods = new WikiTreeSourcerPageModsHelper(siteConfig);
     pageMods.setOptions(options);
