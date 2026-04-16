@@ -500,8 +500,8 @@ if (runningExtensionId === currentExtensionId) {
 
   let sourceInfoCache = {};
 
-  async function getSourceInfoForSourceIds(sourceIdList) {
-    logDebug("getSourceInfoForSourceIds, sourceInfoCache", sourceInfoCache);
+  async function getSourceInfosForSourceIds(sourceIdList) {
+    logDebug("getSourceInfosForSourceIds, sourceInfoCache", sourceInfoCache);
 
     let trimmedSourceIdList = [];
     let result = {};
@@ -537,7 +537,7 @@ if (runningExtensionId === currentExtensionId) {
         fetchResult.dataObj.sources &&
         fetchResult.dataObj.sources.length
       ) {
-        logDebug("getSourceInfoForSourceIds, dataObj", fetchResult.dataObj);
+        logDebug("getSourceInfosForSourceIds, dataObj", fetchResult.dataObj);
         let sources = fetchResult.dataObj.sources;
 
         for (let source of sources) {
@@ -558,7 +558,7 @@ if (runningExtensionId === currentExtensionId) {
           sourceInfoCache[sourceId] = sourceInfo;
         }
       } else {
-        logDebug("getSourceInfoForSourceIds, bad response from fetchFsSourcesJson", result);
+        logDebug("getSourceInfosForSourceIds, bad response from fetchFsSourcesJson", result);
       }
     }
 
@@ -580,44 +580,57 @@ if (runningExtensionId === currentExtensionId) {
     return null;
   }
 
-  async function fetchBackLinksFromSources(locationBatch) {
+  async function getSourceInfosForLocationBatch(locationBatch, fetchProfile) {
     // make a list of the sourceIds that we need
-    let sourceIdList = [];
+    let sourceIdSet = new Set();
 
     // it is possible that we have the option for icons on source rows turned off
     // but we want to check for backlinks to WT.
     // Or the pageH1 can be in an earlier processing batch than the sourceRow locations
-    logDebug("fetchBackLinksFromSources: pageProfile is ", pageMods.pageProfile);
+    logDebug("getSourceInfosForLocationBatch: fetchProfile is ", fetchProfile);
 
-    // go through all the locations and find persons who wan the sourceIds fetched
+    // go through all the locations and find persons who want the sourceIds fetched
     for (let location of locationBatch.locations) {
       let locationType = location.locationType;
-      if (locationType.fetchForBackLink) {
-        let optionKey = locationType.fetchForBackLink.optionKey;
+      if (locationType[fetchProfile]) {
+        logDebug("getSourceInfosForLocationBatch: actual fetchProfile is ", locationType[fetchProfile]);
+
+        let optionKey = locationType[fetchProfile].optionKey;
         if (!optionKey || pageMods.getOption(optionKey)) {
           if (location.id) {
             let idType = location.idType;
             if (idType == "person") {
-              let personSourceIdList = await getSourceIdsForPerson(location.id);
-              sourceIdList.push(...personSourceIdList);
-              location.personSourceIdList = personSourceIdList;
+              logDebug("getSourceInfosForLocationBatch: found person ", location);
+              let personSourceIdList = location.personSourceIdList;
+              if (!personSourceIdList) {
+                personSourceIdList = await getSourceIdsForPerson(location.id);
+                location.personSourceIdList = personSourceIdList;
+              }
+              logDebug("getSourceInfosForLocationBatch: personSourceIdList is ", personSourceIdList);
+              personSourceIdList.forEach((item) => sourceIdSet.add(item));
             }
           }
         }
       }
     }
 
-    logDebug("fetchBackLinksFromSources, sourceIdList", sourceIdList);
+    let sourceIdList = [...sourceIdSet];
 
-    let sourceInfos = await getSourceInfoForSourceIds(sourceIdList);
+    logDebug("getSourceInfosForLocationBatch, sourceIdList", sourceIdList);
 
-    logDebug("fetchBackLinksFromSources, sourceInfos", sourceInfos);
+    let sourceInfos = await getSourceInfosForSourceIds(sourceIdList);
+
+    logDebug("getSourceInfosForLocationBatch, sourceInfos", sourceInfos);
+
+    return sourceInfos;
+  }
+
+  async function fetchBackLinksFromSources(locationBatch) {
+    let sourceInfos = await getSourceInfosForLocationBatch(locationBatch, "fetchForBackLink");
 
     function addBackLinkWikiIdToLocation(location, wikiId) {
       if (wikiId) {
-        if (!location.backLinkWikiIds) {
-          location.backLinkWikiIds = [];
-        }
+        location.backLinkWikiIds ??= [];
         if (!location.backLinkWikiIds.includes(wikiId)) {
           location.backLinkWikiIds.push(wikiId);
         }
@@ -650,6 +663,38 @@ if (runningExtensionId === currentExtensionId) {
     }
   }
 
+  async function fetchSourceFsIdsFromSources(locationBatch) {
+    logDebug("fetchSourceFsIdsFromSources", locationBatch);
+
+    let sourceInfos = await getSourceInfosForLocationBatch(locationBatch, "fetchForSourceFsIds");
+
+    logDebug("fetchSourceFsIdsFromSources, sourceInfos is", sourceInfos);
+
+    if (sourceInfos) {
+      for (let location of locationBatch.locations) {
+        if (location.personSourceIdList) {
+          for (let sourceId of location.personSourceIdList) {
+            let sourceInfo = sourceInfos[sourceId];
+            if (sourceInfo && sourceInfo.sourceType != "DEFAULT") {
+              if (sourceInfo.uri) {
+                // non-FS sources can be mising a uri
+
+                let idData = pageMods.getIdDataFromUrl(sourceInfo.uri, location);
+                logDebug("fetchSourceFsIdsFromSources, idData is", idData);
+
+                if (idData) {
+                  location.sourceFsIds ??= [];
+                  location.sourceFsIds.push({ idData: idData, sourceInfo: sourceInfo });
+                  addLocationToPendingFsIds(locationBatch, idData.id, location);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   async function fetchFsIdsForSources(locationBatch) {
     // make a list of the sourceIds that we need
     let sourceIdList = [];
@@ -666,7 +711,7 @@ if (runningExtensionId === currentExtensionId) {
 
     logDebug("fetchFsIdsForSources, sourceIdList", sourceIdList);
 
-    let sourceInfos = await getSourceInfoForSourceIds(sourceIdList);
+    let sourceInfos = await getSourceInfosForSourceIds(sourceIdList);
 
     logDebug("fetchFsIdsForSources, sourceInfos", sourceInfos);
 
@@ -714,6 +759,10 @@ if (runningExtensionId === currentExtensionId) {
           optionKey: "personShowWtIconH1",
           fetchForBackLink: {
             fetchFunction: fetchBackLinksFromSources,
+            optionKey: "personShowWtIconH1BackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
             optionKey: "personShowWtIconH1BackLink",
           },
         },
@@ -1124,6 +1173,10 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
 
+    if (location.sourceFsIds && location.sourceFsIds.length) {
+      svgIcon = pageMods.buildIcon(true, true);
+    }
+
     const anchorElement = pageMods.createAnchorWithIconElement(svgIcon, titleText, clipboardText, linkUrl);
 
     pageMods.addIconAtLocation(location, anchorElement);
@@ -1178,6 +1231,18 @@ if (runningExtensionId === currentExtensionId) {
       }
       if (!pendingLocationsBatch.fetchFunctionsForBackLinks.includes(fetchFunction)) {
         pendingLocationsBatch.fetchFunctionsForBackLinks.push(fetchFunction);
+      }
+    }
+
+    // if there are any fetches required to check for back links add them to a list
+    if (locationType.fetchForSourceFsIds) {
+      let fetchForSourceFsIds = locationType.fetchForSourceFsIds;
+      let fetchFunction = fetchForSourceFsIds.fetchFunction;
+      if (!pendingLocationsBatch.fetchFunctionsForSourceWikiIds) {
+        pendingLocationsBatch.fetchFunctionsForSourceWikiIds = [];
+      }
+      if (!pendingLocationsBatch.fetchFunctionsForSourceWikiIds.includes(fetchFunction)) {
+        pendingLocationsBatch.fetchFunctionsForSourceWikiIds.push(fetchFunction);
       }
     }
   }
@@ -1274,6 +1339,12 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
 
+    if (currentBatch.fetchFunctionsForSourceWikiIds) {
+      for (let fetchFunction of currentBatch.fetchFunctionsForSourceWikiIds) {
+        await fetchFunction(currentBatch);
+      }
+    }
+
     // Use WT+ API to get the WikiTree IDs that use these fsIds
     await getWikiIdsForBatch(currentBatch);
 
@@ -1285,6 +1356,12 @@ if (runningExtensionId === currentExtensionId) {
       for (let location of locations) {
         if (location.id) {
           let wikiIds = cachedFsIdToWtIdsMap.get(location.id);
+          if (location.sourceFsIds) {
+            for (let sourceFsId of location.sourceFsIds) {
+              let fsId = sourceFsId.idData.id;
+              sourceFsId.wikiIds = cachedFsIdToWtIdsMap.get(fsId);
+            }
+          }
           addWikiTreeIcon(location, wikiIds);
         } else {
           pageMods.removeProcessingIcon(location);

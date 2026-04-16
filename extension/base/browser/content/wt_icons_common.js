@@ -242,6 +242,85 @@ class WikiTreeSourcerPageModsHelper {
   </g>
 </svg>`;
 
+  buildIcon(hasProfileRef, hasSourceRef) {
+    function styleRoundPath(color, width) {
+      return `
+        stroke="${color}"
+        stroke-width="${width}" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"`;
+    }
+
+    let sourceBox = "";
+    let sourceArrow = "";
+
+    if (hasSourceRef) {
+      const shadowStyle = styleRoundPath("rgba(0,0,0,0.4)", "4");
+      const mainStyle = styleRoundPath("white", 2);
+      const link1Path = `d="M2 4.5 H4"`;
+      const link2Path = `d="M6 4.5 H8"`;
+
+      const linkIcon = `
+        <path ${link1Path} ${shadowStyle}/>
+        <path ${link1Path} ${mainStyle}/>
+        <path ${link2Path} ${shadowStyle}/>
+        <path ${link2Path} ${mainStyle}/>
+      `;
+
+      // Green Source Box (represents an FS source)
+      sourceBox = `
+        <rect x="8" y="1" width="8" height="7" rx="1" fill="#94d07a" stroke="black" stroke-width="0.5"/>
+        <line x1="9" y1="3" x2="15" y2="3" stroke="white" stroke-width="0.5" />
+        <line x1="9" y1="5" x2="13" y2="5" stroke="white" stroke-width="0.5" />
+        ${linkIcon}
+    `;
+
+      // 2. The Arrow pointing to the Source Box
+      if (!hasProfileRef) {
+        const sourceArrowPath = `d="M12 18 V7 M12 7 L8 11 M12 7 L16 11"`;
+
+        sourceArrow = `
+          <path ${sourceArrowPath} ${shadowStyle}/>
+          <path ${sourceArrowPath} ${mainStyle}/>
+        `;
+      }
+    }
+
+    // 3. Your original Profile Arrows (only if hasProfileRef is true)
+    const profileArrows = hasProfileRef
+      ? `
+ <path d="M16 12 H1 M1 12 L5 8 M1 12 L5 16" 
+        stroke="rgba(0,0,0,0.4)" 
+        stroke-width="5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+        
+  <path d="M16 12 H1 M1 12 L5 8 M1 12 L5 16" 
+        stroke="white" 
+        stroke-width="2.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+    `
+      : "";
+
+    const defaultCircle = `
+        <circle cx="12" cy="12" r="11" fill="#ffaf02" stroke="white" stroke-width="1.5"/>
+      `;
+
+    const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        ${defaultCircle}
+        ${sourceBox}
+        ${sourceArrow}
+        ${profileArrows}
+    </svg>`;
+
+    return `data:image/svg+xml;base64,${btoa(svg)}`;
+  }
+
   getIcon(iconName) {
     return WikiTreeSourcerPageModsHelper[iconName];
   }
