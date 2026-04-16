@@ -275,126 +275,211 @@ const uiOptionsPageModBehaviourGroup = {
   ],
 };
 
-const uiOptionsPageModLocationsGroup = {
+const uiOptionsPageModPersonPageLocationsGroup = {
   category: "ui",
   subcategory: "fs",
   tab: "ui",
   subsection: "fs",
-  subheading: "wtIconPageModLocations",
-
+  subheading: "wtIconPageModPersonPageLocations",
   options: [
     {
       optionName: "personShowWtIconH1",
       type: "checkbox",
-      label: "On person pages show icon next to top-level heading",
+      label: "Show icon next to top-level heading",
       defaultValue: true,
     },
     {
-      optionName: "personShowWtIconForOutRefH1",
+      optionName: "personShowWtIconH1BackLink",
       type: "checkbox",
-      label: "On person pages in icon next to top-level heading, indicate if there are links back to WT",
+      label: "In icon next to top-level heading, indicate if there are links back to WT",
       defaultValue: true,
     },
     {
       optionName: "personDetailsShowWtIconFamily",
       type: "checkbox",
-      label: "On person 'Details' pages show icons for family members",
+      label: "On 'Details' pages show icons for family members",
       defaultValue: true,
     },
     {
       optionName: "personSourcesShowWtIconOnSourceRow",
       type: "checkbox",
-      label: "On person 'Sources' pages show icons for source rows",
+      label: "On 'Sources' pages show icons for source rows",
       defaultValue: true,
     },
     {
       optionName: "personAboutShowWtIconFamily",
       type: "checkbox",
-      label: "On person 'About' pages show icons for family members",
+      label: "On 'About' pages show icons for family members",
       defaultValue: true,
     },
     {
+      optionName: "personShowWtIconFamilyBackLink",
+      type: "checkbox",
+      label: "In icons for family members, indicate if there are links back to WT (requires fetches)",
+      defaultValue: true,
+    },
+  ],
+};
+
+const uiOptionsPageModRecordPageLocationsGroup = {
+  category: "ui",
+  subcategory: "fs",
+  tab: "ui",
+  subsection: "fs",
+  subheading: "wtIconPageModRecordPageLocations",
+  options: [
+    {
       optionName: "recordShowWtIconH1",
       type: "checkbox",
-      label: "On record pages show icon next to top-level heading",
+      label: "Show icon next to top-level heading",
       defaultValue: true,
     },
     {
       optionName: "recordShowWtIconOtherPeople",
       type: "checkbox",
-      label: "On record pages show icon for other people in record",
+      label: "Show icon for other people in record",
       defaultValue: true,
     },
     {
       optionName: "recordShowWtIconAttached",
       type: "checkbox",
-      label: "On record pages show icon for people record is attached to",
+      label: "Show icon for people record is attached to",
       defaultValue: true,
     },
     {
       optionName: "recordShowWtIconSimilarRecords",
       type: "checkbox",
-      label: "On record pages show icon for 'Similar Records'",
+      label: "Show icon for 'Similar Records'",
       defaultValue: true,
     },
     {
       optionName: "recordShowWtIconSimilarRecordsAttached",
       type: "checkbox",
-      label: "On record pages show icon for people 'Similar Records' are attached to",
+      label: "Show icon for people 'Similar Records' are attached to",
       defaultValue: true,
     },
     {
+      optionName: "recordShowWtIconForPersonBackLink",
+      type: "checkbox",
+      label: "In icons for other people in FS tree, indicate if there are links back to WT (requires fetches)",
+      defaultValue: true,
+    },
+  ],
+};
+
+const uiOptionsPageModImagePageLocationsGroup = {
+  category: "ui",
+  subcategory: "fs",
+  tab: "ui",
+  subsection: "fs",
+  subheading: "wtIconPageModImagePageLocations",
+  options: [
+    {
       optionName: "imageShowWtIconH1",
       type: "checkbox",
-      label: "On image pages show icon next to top-level heading",
+      label: "Show icon next to top-level heading",
       defaultValue: true,
     },
     {
       optionName: "imageShowWtIconSidebar",
       type: "checkbox",
-      label: "On image pages show icon next to names in sidebar",
+      label: "Show icon next to names in sidebar",
       defaultValue: true,
     },
     {
+      optionName: "imageShowWtIconPeopleBackLink",
+      type: "checkbox",
+      label: "In icon next to names in sidebar, indicate if there are links back to WT (requires fetches)",
+      defaultValue: true,
+    },
+  ],
+};
+
+const uiOptionsPageModPedigreeLandscapeLocationsGroup = {
+  category: "ui",
+  subcategory: "fs",
+  tab: "ui",
+  subsection: "fs",
+  subheading: "wtIconPageModPedigreeLandscapeLocations",
+  options: [
+    {
       optionName: "pedigreeLandscapeShowWtIcon",
       type: "checkbox",
-      label: "On pedigree landscape tree show icon next to names",
+      label: "Show icon next to names",
       defaultValue: true,
     },
     {
       optionName: "pedigreeLandscapeShowWtIconSidebar",
       type: "checkbox",
-      label: "On pedigree landscape tree show icon next to name in sidebar",
+      label: "Show icon next to name in sidebar",
       defaultValue: true,
     },
     {
+      optionName: "pedigreeLandscapeShowWtIconPeopleBackLink",
+      type: "checkbox",
+      label: "For links to people, indicate if there are links back to WT (requires fetches)",
+      defaultValue: true,
+    },
+  ],
+};
+
+const uiOptionsPageModPedigreePortraitLocationsGroup = {
+  category: "ui",
+  subcategory: "fs",
+  tab: "ui",
+  subsection: "fs",
+  subheading: "wtIconPageModPedigreePortraitLocations",
+  options: [
+    {
       optionName: "pedigreePortraitShowWtIcon",
       type: "checkbox",
-      label: "On pedigree portrait tree show icon next to names",
+      label: "Show icon next to names",
       defaultValue: true,
     },
     {
       optionName: "pedigreePortraitShowWtIconSidebar",
       type: "checkbox",
-      label: "On pedigree portrait tree show icon next to name in sidebar",
+      label: "Show icon next to name in sidebar",
       defaultValue: true,
     },
     {
+      optionName: "pedigreePortraitShowWtIconPeopleBackLink",
+      type: "checkbox",
+      label: "For links to people, indicate if there are links back to WT (requires fetches)",
+      defaultValue: true,
+    },
+  ],
+};
+
+const uiOptionsPageModSearchLocationsGroup = {
+  category: "ui",
+  subcategory: "fs",
+  tab: "ui",
+  subsection: "fs",
+  subheading: "wtIconPageModSearchLocations",
+  options: [
+    {
       optionName: "searchResultsShowWtIconResultRow",
       type: "checkbox",
-      label: "On search results pages show icons on result rows",
+      label: "Show icons on result rows",
       defaultValue: true,
     },
     {
       optionName: "searchResultsShowWtIconPersonInTree",
       type: "checkbox",
-      label: "On search results pages show icon on suggested person in family tree",
+      label: "Show icon on suggested person in family tree",
       defaultValue: true,
     },
     {
       optionName: "searchResultsShowWtIconSidebar",
       type: "checkbox",
-      label: "On search results pages show icon on name in sidebar",
+      label: "Show icon on name in sidebar",
+      defaultValue: true,
+    },
+    {
+      optionName: "searchResultsShowWtIconPersonInTreeBackLink",
+      type: "checkbox",
+      label: "For links to people, indicate if there are links back to WT (requires fetches)",
       defaultValue: true,
     },
   ],
@@ -424,10 +509,51 @@ registerSubheadingForOptions(
   "Page Modifications for WikiTree usage icons (behaviour)"
 );
 registerOptionsGroup(uiOptionsPageModBehaviourGroup);
+
 registerSubheadingForOptions(
   "ui",
   "fs",
-  "wtIconPageModLocations",
-  "Page Modifications for WikiTree usage icons (locations)"
+  "wtIconPageModPersonPageLocations",
+  "Page Modifications for WikiTree usage icons (Person page locations)"
 );
-registerOptionsGroup(uiOptionsPageModLocationsGroup);
+registerOptionsGroup(uiOptionsPageModPersonPageLocationsGroup);
+
+registerSubheadingForOptions(
+  "ui",
+  "fs",
+  "wtIconPageModRecordPageLocations",
+  "Page Modifications for WikiTree usage icons (Record page locations)"
+);
+registerOptionsGroup(uiOptionsPageModRecordPageLocationsGroup);
+
+registerSubheadingForOptions(
+  "ui",
+  "fs",
+  "wtIconPageModImagePageLocations",
+  "Page Modifications for WikiTree usage icons (Image page locations)"
+);
+registerOptionsGroup(uiOptionsPageModImagePageLocationsGroup);
+
+registerSubheadingForOptions(
+  "ui",
+  "fs",
+  "wtIconPageModPedigreeLandscapeLocations",
+  "Page Modifications for WikiTree usage icons (Pedigree landscape tree page locations)"
+);
+registerOptionsGroup(uiOptionsPageModPedigreeLandscapeLocationsGroup);
+
+registerSubheadingForOptions(
+  "ui",
+  "fs",
+  "wtIconPageModPedigreePortraitLocations",
+  "Page Modifications for WikiTree usage icons (Pedigree portrait tree page locations)"
+);
+registerOptionsGroup(uiOptionsPageModPedigreePortraitLocationsGroup);
+
+registerSubheadingForOptions(
+  "ui",
+  "fs",
+  "wtIconPageModSearchLocations",
+  "Page Modifications for WikiTree usage icons (Search Results page locations)"
+);
+registerOptionsGroup(uiOptionsPageModSearchLocationsGroup);

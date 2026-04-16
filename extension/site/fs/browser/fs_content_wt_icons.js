@@ -714,7 +714,7 @@ if (runningExtensionId === currentExtensionId) {
           optionKey: "personShowWtIconH1",
           fetchForBackLink: {
             fetchFunction: fetchBackLinksFromSources,
-            optionKey: "personShowWtIconForOutRefH1",
+            optionKey: "personShowWtIconH1BackLink",
           },
         },
         {
@@ -723,6 +723,10 @@ if (runningExtensionId === currentExtensionId) {
           selector: "[data-testid='nameLink'] [data-testid='fullName']",
           iconAddRule: { type: "ellipsis" },
           optionKey: "personDetailsShowWtIconFamily",
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "personShowWtIconFamilyBackLink",
+          },
         },
       ],
     },
@@ -739,7 +743,7 @@ if (runningExtensionId === currentExtensionId) {
           optionKey: "personShowWtIconH1",
           fetchForBackLink: {
             fetchFunction: fetchBackLinksFromSources,
-            optionKey: "personShowWtIconForOutRefH1",
+            optionKey: "personShowWtIconH1BackLink",
           },
         },
         {
@@ -768,7 +772,7 @@ if (runningExtensionId === currentExtensionId) {
           optionKey: "personShowWtIconH1",
           fetchForBackLink: {
             fetchFunction: fetchBackLinksFromSources,
-            optionKey: "personShowWtIconForOutRefH1",
+            optionKey: "personShowWtIconH1BackLink",
           },
         },
         {
@@ -776,6 +780,10 @@ if (runningExtensionId === currentExtensionId) {
           selector: "[data-testid='nameLink'] [data-testid='fullName']",
           iconAddRule: { type: "ellipsis" },
           optionKey: "personAboutShowWtIconFamily",
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "personShowWtIconFamilyBackLink",
+          },
         },
       ],
     },
@@ -801,6 +809,10 @@ if (runningExtensionId === currentExtensionId) {
           selector: "div[class^='attachCss'] [data-testid='person'] [data-testid='fullName']",
           optionKey: "recordShowWtIconAttached",
           iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "recordShowWtIconForPersonBackLink",
+          },
         },
         {
           locationTypeName: "similarRecord",
@@ -818,6 +830,10 @@ if (runningExtensionId === currentExtensionId) {
           selector: "li [data-testid='person'] [data-testid='fullName']",
           optionKey: "recordShowWtIconSimilarRecordsAttached",
           iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "recordShowWtIconForPersonBackLink",
+          },
         },
       ],
     },
@@ -836,6 +852,10 @@ if (runningExtensionId === currentExtensionId) {
           selector: "aside [data-testid='person'] [data-testid='nameLink'] [data-testid='fullName']",
           optionKey: "imageShowWtIconSidebar",
           iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "imageShowWtIconPeopleBackLink",
+          },
         },
         {
           locationTypeName: "imageIndexRecord",
@@ -895,6 +915,10 @@ if (runningExtensionId === currentExtensionId) {
             "aside [data-testid='nameSpan'] [data-testid='fullName'], aside [data-testid='person'] [data-testid='fullName']",
           optionKey: "searchResultsShowWtIconPersonInTree",
           iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "searchResultsShowWtIconPersonInTreeBackLink",
+          },
         },
       ],
     },
@@ -907,12 +931,20 @@ if (runningExtensionId === currentExtensionId) {
           selector: "li [data-testid='nameLink'] div > span",
           optionKey: "pedigreeLandscapeShowWtIcon",
           iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "pedigreeLandscapeShowWtIconPeopleBackLink",
+          },
         },
         {
           locationTypeName: "sidebarHeader",
           selector: "[data-testid='PersonSheetHeader'] [data-testid='nameLink'] [data-testid='fullName']",
           optionKey: "pedigreeLandscapeShowWtIconSidebar",
           iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "pedigreeLandscapeShowWtIconPeopleBackLink",
+          },
         },
       ],
     },
@@ -926,12 +958,20 @@ if (runningExtensionId === currentExtensionId) {
             "[data-testid='pedigree'] [data-testid='person'] [data-testid='nameLink'] [data-testid='namePart2']",
           optionKey: "pedigreePortraitShowWtIcon",
           iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "pedigreePortraitShowWtIconPeopleBackLink",
+          },
         },
         {
           locationTypeName: "sidebarHeader",
           selector: "aside [data-testid='PersonSheetHeader'] [data-testid='nameLink'] [data-testid='fullName']",
           optionKey: "pedigreePortraitShowWtIconSidebar",
           iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "pedigreePortraitShowWtIconPeopleBackLink",
+          },
         },
       ],
     },
