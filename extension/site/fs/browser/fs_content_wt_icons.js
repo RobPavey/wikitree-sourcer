@@ -32,6 +32,10 @@ SOFTWARE.
 // https://www.familysearch.org/en/tree/person/details/L62P-39Y
 //  Casimio Lopez
 //
+// https://www.familysearch.org/en/tree/person/sources/GWHS-7KV
+//  Maria Barbara Basson - has no direct links to or from a WT profile but has
+//  sources that do.
+//
 // Record:
 //
 // https://www.familysearch.org/ark:/61903/1:1:MWXN-JL5?lang=en
@@ -679,7 +683,7 @@ if (runningExtensionId === currentExtensionId) {
               if (sourceInfo.uri) {
                 // non-FS sources can be mising a uri
 
-                let idData = pageMods.getIdDataFromUrl(sourceInfo.uri, location);
+                let idData = pageMods.getIdDataFromUrl(sourceInfo.uri);
                 logDebug("fetchSourceFsIdsFromSources, idData is", idData);
 
                 if (idData) {
@@ -729,7 +733,7 @@ if (runningExtensionId === currentExtensionId) {
               if (sourceInfo.uri) {
                 // non-FS sources can be mising a uri
 
-                let idData = pageMods.getIdDataFromUrl(sourceInfo.uri, location);
+                let idData = pageMods.getIdDataFromUrl(sourceInfo.uri);
                 if (idData) {
                   let id = idData.id;
                   location.id = id;
@@ -776,6 +780,10 @@ if (runningExtensionId === currentExtensionId) {
             fetchFunction: fetchBackLinksFromSources,
             optionKey: "personShowWtIconFamilyBackLink",
           },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1BackLink",
+          },
         },
       ],
     },
@@ -792,6 +800,10 @@ if (runningExtensionId === currentExtensionId) {
           optionKey: "personShowWtIconH1",
           fetchForBackLink: {
             fetchFunction: fetchBackLinksFromSources,
+            optionKey: "personShowWtIconH1BackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
             optionKey: "personShowWtIconH1BackLink",
           },
         },
@@ -823,6 +835,10 @@ if (runningExtensionId === currentExtensionId) {
             fetchFunction: fetchBackLinksFromSources,
             optionKey: "personShowWtIconH1BackLink",
           },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1BackLink",
+          },
         },
         {
           locationTypeName: "familyMember",
@@ -832,6 +848,10 @@ if (runningExtensionId === currentExtensionId) {
           fetchForBackLink: {
             fetchFunction: fetchBackLinksFromSources,
             optionKey: "personShowWtIconFamilyBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1BackLink",
           },
         },
       ],
@@ -862,6 +882,10 @@ if (runningExtensionId === currentExtensionId) {
             fetchFunction: fetchBackLinksFromSources,
             optionKey: "recordShowWtIconForPersonBackLink",
           },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1BackLink",
+          },
         },
         {
           locationTypeName: "similarRecord",
@@ -882,6 +906,10 @@ if (runningExtensionId === currentExtensionId) {
           fetchForBackLink: {
             fetchFunction: fetchBackLinksFromSources,
             optionKey: "recordShowWtIconForPersonBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1BackLink",
           },
         },
       ],
@@ -904,6 +932,10 @@ if (runningExtensionId === currentExtensionId) {
           fetchForBackLink: {
             fetchFunction: fetchBackLinksFromSources,
             optionKey: "imageShowWtIconPeopleBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1BackLink",
           },
         },
         {
@@ -968,6 +1000,10 @@ if (runningExtensionId === currentExtensionId) {
             fetchFunction: fetchBackLinksFromSources,
             optionKey: "searchResultsShowWtIconPersonInTreeBackLink",
           },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1BackLink",
+          },
         },
       ],
     },
@@ -984,6 +1020,10 @@ if (runningExtensionId === currentExtensionId) {
             fetchFunction: fetchBackLinksFromSources,
             optionKey: "pedigreeLandscapeShowWtIconPeopleBackLink",
           },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1BackLink",
+          },
         },
         {
           locationTypeName: "sidebarHeader",
@@ -993,6 +1033,10 @@ if (runningExtensionId === currentExtensionId) {
           fetchForBackLink: {
             fetchFunction: fetchBackLinksFromSources,
             optionKey: "pedigreeLandscapeShowWtIconPeopleBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1BackLink",
           },
         },
       ],
@@ -1011,6 +1055,10 @@ if (runningExtensionId === currentExtensionId) {
             fetchFunction: fetchBackLinksFromSources,
             optionKey: "pedigreePortraitShowWtIconPeopleBackLink",
           },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1BackLink",
+          },
         },
         {
           locationTypeName: "sidebarHeader",
@@ -1020,6 +1068,10 @@ if (runningExtensionId === currentExtensionId) {
           fetchForBackLink: {
             fetchFunction: fetchBackLinksFromSources,
             optionKey: "pedigreePortraitShowWtIconPeopleBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1BackLink",
           },
         },
       ],
@@ -1099,14 +1151,19 @@ if (runningExtensionId === currentExtensionId) {
 
     let backLinkWikiIds = location.backLinkWikiIds;
 
+    let sourceFsIds = location.sourceFsIds;
+
     if (!wikiIds) {
       wikiIds = [];
     }
     if (!backLinkWikiIds) {
       backLinkWikiIds = [];
     }
+    if (!sourceFsIds) {
+      sourceFsIds = [];
+    }
 
-    if (wikiIds.length == 0 && backLinkWikiIds.length == 0) {
+    if (wikiIds.length == 0 && backLinkWikiIds.length == 0 && sourceFsIds == 0) {
       return;
     }
 
@@ -1116,14 +1173,59 @@ if (runningExtensionId === currentExtensionId) {
       includeSourceBox: false,
       mainArrowStyle: "none",
     };
-    let titleText = "FamilySearch " + location.idType + " " + location.id + " is ";
+    let titleText = "FamilySearch " + location.idType + " " + location.id;
     let clipboardText = "";
     let linkUrl = "";
+
+    let primaryWikiId = "";
+
+    function buildWikiProfileUrl(wikiId) {
+      return "https://www.wikitree.com/wiki/" + wikiId;
+    }
+
+    function buildWtPlusUrl(fsId, fsIdType) {
+      let linkUrl = "";
+      if (fsId) {
+        linkUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
+        if (fsIdType == "image") {
+          linkUrl += "FamilySearchImage=";
+        } else {
+          linkUrl += "FamilySearch=";
+        }
+        linkUrl += fsId;
+        linkUrl += "&render=1";
+      }
+      return linkUrl;
+    }
+
+    function buildWtPlusUrlForSet(fsIdSet, fsIdType) {
+      let linkUrl = "";
+      if (fsIdSet.size > 0) {
+        linkUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
+        let keyword = "";
+        if (fsIdType == "image") {
+          keyword = "FamilySearchImage=";
+        } else {
+          keyword = "FamilySearch=";
+        }
+
+        let added = false;
+        for (let fsId of fsIdSet) {
+          if (added) {
+            linkUrl += " OR ";
+          }
+          linkUrl += keyword + fsId;
+          added = true;
+        }
+        linkUrl += "&render=1";
+      }
+      return linkUrl;
+    }
 
     if (wikiIds.length > 1) {
       iconConfig.isMultiple = true;
       iconConfig.mainArrowStyle = "in";
-      titleText += `referenced from ${wikiIds.length} WikiTree profiles`;
+      titleText += `\n• is referenced from ${wikiIds.length} profiles`;
 
       for (let wikiId of wikiIds) {
         if (clipboardText) {
@@ -1132,29 +1234,20 @@ if (runningExtensionId === currentExtensionId) {
         clipboardText += wikiId;
       }
 
-      let id = location.id;
-      if (id) {
-        linkUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
-        if (location.idType == "image") {
-          linkUrl += "FamilySearchImage=";
-        } else {
-          linkUrl += "FamilySearch=";
-        }
-        linkUrl += id;
-        linkUrl += "&render=1";
-      }
+      linkUrl = buildWtPlusUrl(location.id, location.idType);
     } else if (wikiIds.length == 1) {
       iconConfig.mainArrowStyle = "in";
+      primaryWikiId = wikiIds[0];
 
-      titleText += `referenced from WikiTree profile: ${wikiIds[0]}`;
+      titleText += `\n• is referenced from profile ${wikiIds[0]}`;
       clipboardText = wikiIds[0];
-      linkUrl = "https://www.wikitree.com/wiki/" + wikiIds[0];
+      linkUrl = buildWikiProfileUrl(wikiIds[0]);
     }
 
     if (backLinkWikiIds.length == 1) {
       if (wikiIds.length == 1) {
-        titleText += ` and this ${location.idType} also uses a source to reference WikiTree profile: ${backLinkWikiIds[0]}`;
-        if (wikiIds[0] == backLinkWikiIds[0]) {
+        titleText += `\n• uses a source to reference profile ${backLinkWikiIds[0]}`;
+        if (primaryWikiId == backLinkWikiIds[0]) {
           iconConfig.mainArrowStyle = "both";
         } else {
           iconConfig.mainArrowStyle = "split";
@@ -1162,30 +1255,103 @@ if (runningExtensionId === currentExtensionId) {
         }
       } else if (wikiIds.length == 0) {
         iconConfig.mainArrowStyle = "out";
-        titleText = `FamilySearch ${location.idType} ${location.id} uses a source to reference WikiTree profile: ${backLinkWikiIds[0]}`;
-        linkUrl = "https://www.wikitree.com/wiki/" + backLinkWikiIds[0];
+        titleText += `\n• uses a source to reference profile ${backLinkWikiIds[0]}`;
+        linkUrl = buildWikiProfileUrl(backLinkWikiIds[0]);
       } else {
         // there are multiple WT profiles referencing this FS profile which in itself is an error
         // and we also reference a WT profile
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
-        titleText += ` and this ${location.idType} also uses a source to reference WikiTree profile: ${backLinkWikiIds[0]}`;
+        titleText += `\n• uses a source to reference profile ${backLinkWikiIds[0]}`;
       }
     } else if (backLinkWikiIds.length > 1) {
       // this profile references multiple WT profiles.
       if (wikiIds.length > 0) {
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
-        titleText += ` and this memorial also uses sources to reference multiple WikiTree profiles`;
+        titleText += `\n• uses sources to reference multiple profiles`;
       } else {
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
-        titleText = `FamilySearch ${location.idType} ${location.id} uses sources to reference multiple WikiTree profiles`;
+        titleText += `\n• uses sources to reference multiple profiles`;
       }
     }
 
     if (location.sourceFsIds && location.sourceFsIds.length) {
       iconConfig.includeSourceBox = true;
+      let recordWikiIds = new Set();
+      let numRecordsUsedOnWt = 0;
+      let imageWikiIds = new Set();
+      let numImagesUsedOnWt = 0;
+      for (let sourceFsId of location.sourceFsIds) {
+        let idType = sourceFsId.idData.idType;
+        if (idType == "record") {
+          if (sourceFsId.wikiIds) {
+            numRecordsUsedOnWt++;
+            for (let wikiId of sourceFsId.wikiIds) {
+              recordWikiIds.add(wikiId);
+            }
+          }
+        } else if (idType == "image") {
+          if (sourceFsId.wikiIds) {
+            numImagesUsedOnWt++;
+            for (let wikiId of sourceFsId.wikiIds) {
+              imageWikiIds.add(wikiId);
+            }
+          }
+        }
+      }
+
+      if (recordWikiIds.size == 1) {
+        let wikiId = recordWikiIds.values().next().value;
+        titleText += `\n• has ${numRecordsUsedOnWt} attached record sources referenced by profile ${wikiId}`;
+
+        if (primaryWikiId && wikiId != primaryWikiId) {
+          iconConfig.isConflict = true;
+        }
+
+        if (!linkUrl) {
+          linkUrl = buildWikiProfileUrl(wikiId);
+        }
+
+        if (imageWikiIds.size > 0) {
+          titleText += `\n• has ${numImagesUsedOnWt} attached image sources referenced by`;
+          if (imageWikiIds.size == 1) {
+            let imageWikiId = imageWikiIds.values().next().value;
+            titleText += ` profile ${imageWikiId}`;
+          } else {
+            titleText += ` ${imageWikiIds.size} profiles`;
+          }
+        }
+      } else if (recordWikiIds.size > 1) {
+        if (iconConfig.mainArrowStyle == "none") {
+          iconConfig.isMultiple = true;
+        }
+        iconConfig.isConflict = true;
+        let wikiId = recordWikiIds.values().next().value;
+
+        if (!linkUrl) {
+          linkUrl = buildWtPlusUrlForSet(recordWikiIds, "record");
+        }
+
+        titleText += `\n• has attached record sources referenced by ${recordWikiIds.size} profiles`;
+
+        if (imageWikiIds.size > 0) {
+          titleText += `\n• has attached image sources referenced by ${imageWikiIds.size} profiles`;
+        }
+      } else if (imageWikiIds.size == 1) {
+        let wikiId = imageWikiIds.values().next().value;
+        titleText += `\n• has attached image sources referenced by profile ${wikiId}`;
+        if (!linkUrl) {
+          linkUrl = buildWikiProfileUrl(wikiId);
+        }
+      } else if (imageWikiIds.size > 1) {
+        if (!linkUrl) {
+          linkUrl = buildWtPlusUrlForSet(imageWikiIds, "image");
+        }
+
+        titleText += `\n• has attached image sources referenced by ${imageWikiIds.size} profiles`;
+      }
     }
 
     const svgIcon = pageMods.buildIcon(iconConfig);
@@ -1478,6 +1644,8 @@ if (runningExtensionId === currentExtensionId) {
   let areOptionsForThisPageEnabled = false;
 
   function onMutation(options, mutations) {
+    //logDebug("onMutation: mutations is: ", mutations);
+
     // Because FamilySearch is a Single Page Application (SPA), the URL can change
     // without a page reload. In that case the MutationObserver is still running
     if (window.sourcerWtIconsLastProcessedUrl !== document.URL) {
@@ -1511,6 +1679,7 @@ if (runningExtensionId === currentExtensionId) {
     }
 
     if (!pageMods.pageProfile || !areOptionsForThisPageEnabled) {
+      logDebug("areOptionsForThisPageEnabled is: ", areOptionsForThisPageEnabled, "returning");
       return;
     }
 
@@ -1594,7 +1763,27 @@ if (runningExtensionId === currentExtensionId) {
       subtree: true,
     });
 
-    logDebug("WikiTree Sourcer: Observer started.");
+    // NEW: Add a safety-net poll for the first 5 seconds
+    // This is to handle case where a FamilySearch page was not triggering and mutation
+    // events due to an internal FS SDK error:
+    // "flags-js client SDK_READY_TIMED_OUT event received, resolving timeout Promise but flags will return control treatment"
+    let pollCount = 0;
+    const maxPolls = 10; // 10 polls * 500ms = 5 seconds
+
+    const safetyPoll = setInterval(() => {
+      pollCount++;
+      logDebug(`WikiTree Sourcer: Safety poll ${pollCount}/${maxPolls}`);
+
+      // Manually trigger the scan
+      onMutation(options, null);
+
+      if (pollCount >= maxPolls) {
+        clearInterval(safetyPoll);
+      }
+    }, 500);
+
+    logDebug("WikiTree Sourcer: Observer started. Performing initial scan");
+    onMutation(options, null);
   }
 
   async function checkOptionsAndInitWtIconInjection() {

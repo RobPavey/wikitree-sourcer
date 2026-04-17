@@ -543,7 +543,7 @@ class WikiTreeSourcerPageModsHelper {
       return;
     }
 
-    logDebug("removeProcessingIcon, location is", location);
+    //logDebug("removeProcessingIcon, location is", location);
 
     let iconPlaceElement = location.iconPlaceElement;
     if (iconPlaceElement) {
