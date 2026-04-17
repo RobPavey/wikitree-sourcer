@@ -202,14 +202,21 @@ if (runningExtensionId === currentExtensionId) {
 
     let iconPlaceElement = location.iconPlaceElement;
 
-    let svgIcon = null;
+    let iconConfig = {
+      isMultiple: false,
+      isConflict: false,
+      includeCategory: false,
+      mainArrowStyle: "none",
+    };
+
     let titleText = "FindAGrave " + location.idType + " " + location.id + " is ";
     let clipboardText = "";
 
     let linkUrl = "";
 
     if (wikiIds.length > 1) {
-      svgIcon = pageMods.getIcon("svgMultipleRefsFromWt");
+      iconConfig.isMultiple = true;
+      iconConfig.mainArrowStyle = "in";
       titleText += `referenced from ${wikiIds.length} WikiTree profiles`;
 
       let id = location.id;
@@ -232,7 +239,7 @@ if (runningExtensionId === currentExtensionId) {
         clipboardText += wikiId;
       }
     } else if (wikiIds.length == 1) {
-      svgIcon = pageMods.getIcon("svgSingleRefFromWt");
+      iconConfig.mainArrowStyle = "in";
       titleText += `referenced from WikiTree profile: ${wikiIds[0]}`;
       linkUrl = "https://www.wikitree.com/wiki/" + wikiIds[0];
       clipboardText = wikiIds[0];
@@ -242,30 +249,36 @@ if (runningExtensionId === currentExtensionId) {
       if (wikiIds.length == 1) {
         titleText += ` and this memorial also uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`;
         if (wikiIds[0] == flowerWikiIds[0]) {
-          svgIcon = pageMods.getIcon("svgRefMutual");
+          iconConfig.mainArrowStyle = "both";
         } else {
-          svgIcon = pageMods.getIcon("svgRefWtConflict");
+          iconConfig.mainArrowStyle = "split";
+          iconConfig.isConflict = true;
         }
       } else if (wikiIds.length == 0) {
-        svgIcon = pageMods.getIcon("svgRefToWt");
+        iconConfig.mainArrowStyle = "out";
         titleText = `FindAGrave ${location.idType} ${location.id} uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`;
         linkUrl = "https://www.wikitree.com/wiki/" + flowerWikiIds[0];
       } else {
         // there are multiple WT profiles referencing this memorial which in itself is an error
         // and we also reference a WT profile
-        svgIcon = pageMods.getIcon("svgRefWtConflict");
+        iconConfig.mainArrowStyle = "split";
+        iconConfig.isConflict = true;
         titleText += ` and this memorial also uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`;
       }
     } else if (flowerWikiIds.length > 1) {
       // this profile references multiple WT profiles.
       if (wikiIds.length > 0) {
-        svgIcon = pageMods.getIcon("svgRefWtConflict");
+        iconConfig.mainArrowStyle = "split";
+        iconConfig.isConflict = true;
         titleText += ` and this memorial also uses flowers to reference multiple WikiTree profiles`;
       } else {
-        svgIcon = pageMods.getIcon("svgRefWtConflict");
+        iconConfig.mainArrowStyle = "split";
+        iconConfig.isConflict = true;
         titleText = `FindAGrave ${location.idType} ${location.id} uses flowers to reference multiple WikiTree profiles`;
       }
     }
+
+    const svgIcon = pageMods.buildIcon(iconConfig);
 
     const anchorElement = pageMods.createAnchorWithIconElement(svgIcon, titleText, clipboardText, linkUrl);
 
@@ -287,13 +300,18 @@ if (runningExtensionId === currentExtensionId) {
 
     let iconPlaceElement = location.iconPlaceElement;
 
-    let svgIcon = null;
+    let iconConfig = {
+      isMultiple: false,
+      isConflict: false,
+      includeCategory: true,
+      mainArrowStyle: "none",
+    };
     let titleText = "FindAGrave " + location.idType + " " + location.id + " is ";
     let clipboardText = "";
     let linkUrl = "";
 
     if (categoryNames.length > 1) {
-      svgIcon = pageMods.getIcon("svgRefWtCategoryConflict");
+      iconConfig.isConflict = true;
       titleText += `referenced from ${categoryNames.length} WikiTree categories`;
 
       let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
@@ -312,10 +330,11 @@ if (runningExtensionId === currentExtensionId) {
       wtPlusUrl += "&render=1";
       linkUrl = wtPlusUrl;
     } else if (categoryNames.length == 1) {
-      svgIcon = pageMods.getIcon("svgRefWtCategory");
       titleText += `referenced from WikiTree category: ${categoryNames[0]}`;
       linkUrl = "https://www.wikitree.com/wiki/Category:" + categoryNames[0];
     }
+
+    const svgIcon = pageMods.buildIcon(iconConfig);
 
     const anchorElement = pageMods.createAnchorWithIconElement(svgIcon, titleText, clipboardText, linkUrl);
 
