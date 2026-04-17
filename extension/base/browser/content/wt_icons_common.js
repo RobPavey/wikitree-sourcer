@@ -242,7 +242,7 @@ class WikiTreeSourcerPageModsHelper {
   </g>
 </svg>`;
 
-  buildIcon(hasProfileRef, hasSourceRef) {
+  buildMultipleIcon(iconConfig) {
     function styleRoundPath(color, width) {
       return `
         stroke="${color}"
@@ -255,11 +255,11 @@ class WikiTreeSourcerPageModsHelper {
     let sourceBox = "";
     let sourceArrow = "";
 
-    if (hasSourceRef) {
-      const shadowStyle = styleRoundPath("rgba(0,0,0,0.4)", "4");
+    if (iconConfig.includeSourceBox) {
+      const shadowStyle = styleRoundPath("rgba(0,0,0,0.4)", 4);
       const mainStyle = styleRoundPath("white", 2);
-      const link1Path = `d="M2 4.5 H4"`;
-      const link2Path = `d="M6 4.5 H8"`;
+      const link1Path = `d="M2 3.5 H4"`;
+      const link2Path = `d="M6 3.5 H8"`;
 
       const linkIcon = `
         <path ${link1Path} ${shadowStyle}/>
@@ -268,7 +268,7 @@ class WikiTreeSourcerPageModsHelper {
         <path ${link2Path} ${mainStyle}/>
       `;
 
-      // Green Source Box (represents an FS source)
+      // Green Source Box (represents a source)
       sourceBox = `
         <rect x="8" y="1" width="8" height="7" rx="1" fill="#94d07a" stroke="black" stroke-width="0.5"/>
         <line x1="9" y1="3" x2="15" y2="3" stroke="white" stroke-width="0.5" />
@@ -276,8 +276,8 @@ class WikiTreeSourcerPageModsHelper {
         ${linkIcon}
     `;
 
-      // 2. The Arrow pointing to the Source Box
-      if (!hasProfileRef) {
+      // The Arrow pointing to the Source Box - only shown if there is no main arrow
+      if (iconConfig.mainArrowStyle == "none") {
         const sourceArrowPath = `d="M12 18 V7 M12 7 L8 11 M12 7 L16 11"`;
 
         sourceArrow = `
@@ -287,36 +287,273 @@ class WikiTreeSourcerPageModsHelper {
       }
     }
 
-    // 3. Your original Profile Arrows (only if hasProfileRef is true)
-    const profileArrows = hasProfileRef
-      ? `
- <path d="M16 12 H1 M1 12 L5 8 M1 12 L5 16" 
-        stroke="rgba(0,0,0,0.4)" 
-        stroke-width="5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-        
-  <path d="M16 12 H1 M1 12 L5 8 M1 12 L5 16" 
-        stroke="white" 
-        stroke-width="2.5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-    `
-      : "";
+    // The main arrow
+    let mainArrow = "";
+    if (iconConfig.mainArrowStyle != "none") {
+      const shadowStyle = styleRoundPath("rgba(0,0,0,0.4)", 4);
+      const mainStyle = styleRoundPath("white", 2);
 
-    const defaultCircle = `
-        <circle cx="12" cy="12" r="11" fill="#ffaf02" stroke="white" stroke-width="1.5"/>
+      const l = 2.5;
+      const r = 14;
+      const y = 14;
+      const h = 4;
+
+      switch (iconConfig.mainArrowStyle) {
+        case "in":
+          {
+            const ht = y - h;
+            const hb = y + h;
+            const lhr = l + h;
+            const stem = `M${r} ${y} H${l}`;
+            const lhead = `M${l} ${y} L${lhr} ${ht} M${l} ${y} L${lhr} ${hb}`;
+            const mainArrowPath = `d="${stem} ${lhead}"`;
+            mainArrow = `
+              <path ${mainArrowPath} ${shadowStyle}/>
+              <path ${mainArrowPath} ${mainStyle}/>
+            `;
+          }
+          break;
+        case "out":
+          {
+            const ht = y - h;
+            const hb = y + h;
+            const rhr = r - h;
+            const stem = `M${r} ${y} H${l}`;
+            const rhead = `M${r} ${y} L${rhr} ${ht} M${r} ${y} L${rhr} ${hb}`;
+            const mainArrowPath = `d="${stem} ${rhead}"`;
+            mainArrow = `
+              <path ${mainArrowPath} ${shadowStyle}/>
+              <path ${mainArrowPath} ${mainStyle}/>
+            `;
+          }
+          break;
+        case "both":
+          {
+            const ht = y - h;
+            const hb = y + h;
+            const lhr = l + h;
+            const rhr = r - h;
+            const stem = `M${r} ${y} H${l}`;
+            const lhead = `M${l} ${y} L${lhr} ${ht} M${l} ${y} L${lhr} ${hb}`;
+            const rhead = `M${r} ${y} L${rhr} ${ht} M${r} ${y} L${rhr} ${hb}`;
+            const mainArrowPath = `d="${stem} ${lhead} ${rhead}"`;
+            mainArrow = `
+              <path ${mainArrowPath} ${shadowStyle}/>
+              <path ${mainArrowPath} ${mainStyle}/>
+            `;
+          }
+          break;
+        case "split":
+          {
+            const t = 12;
+            const b = 16;
+            const ht = t - h;
+            const hb = b + h;
+            const lhr = l + h;
+            const rhr = r - h;
+            const tstem = `M${r} ${t} H${l}`;
+            const bstem = `M${r} ${b} H${l}`;
+            const lhead = `M${l} ${t} L${lhr} ${ht}`;
+            const rhead = `M${r} ${b} M${r} ${b} L${rhr} ${hb}`;
+
+            const topArrowPath = `d="${tstem} ${lhead}"`;
+            const bottomArrowPath = `d="${bstem} ${rhead}"`;
+            mainArrow = `
+              <path ${topArrowPath} ${shadowStyle}/>
+              <path ${bottomArrowPath} ${shadowStyle}/>
+              <path ${topArrowPath} ${mainStyle}/>
+              <path ${bottomArrowPath} ${mainStyle}/>
+            `;
+          }
+          break;
+      }
+    }
+
+    let fill = `"rgb(255, 175, 2)"`;
+    let stroke = `"white"`;
+    if (iconConfig.isConflict) {
+      stroke = `"rgb(255, 0, 0)"`;
+    }
+    const circleBack = `
+        <circle cx="15" cy="9" r="8" fill=${fill} stroke=${stroke} stroke-width="1.5" opacity="0.6"/>
+      `;
+    const circleFront = `
+        <circle cx="10" cy="14" r="9" fill=${fill} stroke=${stroke} stroke-width="1.5"/>
       `;
 
     const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        ${defaultCircle}
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        ${circleBack}
+        ${circleFront}
         ${sourceBox}
         ${sourceArrow}
-        ${profileArrows}
-    </svg>`;
+        ${mainArrow}
+      </svg>`;
+
+    return `data:image/svg+xml;base64,${btoa(svg)}`;
+  }
+
+  buildIcon(iconConfig) {
+    if (iconConfig.isMultiple) {
+      return this.buildMultipleIcon(iconConfig);
+    }
+    function styleRoundPath(color, width) {
+      return `
+        stroke="${color}"
+        stroke-width="${width}" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"`;
+    }
+
+    let sourceBox = "";
+    let sourceArrow = "";
+
+    if (iconConfig.includeSourceBox) {
+      const shadowStyle = styleRoundPath("rgba(0,0,0,0.4)", 4);
+      const mainStyle = styleRoundPath("white", 2);
+      const link1Path = `d="M2 3.5 H4"`;
+      const link2Path = `d="M6 3.5 H8"`;
+
+      const linkIcon = `
+        <path ${link1Path} ${shadowStyle}/>
+        <path ${link1Path} ${mainStyle}/>
+        <path ${link2Path} ${shadowStyle}/>
+        <path ${link2Path} ${mainStyle}/>
+      `;
+
+      // Green Source Box (represents a source)
+      sourceBox = `
+        <rect x="8" y="1" width="8" height="7" rx="1" fill="#94d07a" stroke="black" stroke-width="0.5"/>
+        <line x1="9" y1="3" x2="15" y2="3" stroke="white" stroke-width="0.5" />
+        <line x1="9" y1="5" x2="13" y2="5" stroke="white" stroke-width="0.5" />
+        ${linkIcon}
+    `;
+
+      // The Arrow pointing to the Source Box - only shown if there is no main arrow
+      if (iconConfig.mainArrowStyle == "none") {
+        const sourceArrowPath = `d="M12 18 V7 M12 7 L8 11 M12 7 L16 11"`;
+
+        sourceArrow = `
+          <path ${sourceArrowPath} ${shadowStyle}/>
+          <path ${sourceArrowPath} ${mainStyle}/>
+        `;
+      }
+    }
+
+    let categoryGroup = "";
+    if (iconConfig.includeCategory) {
+      /* Stacked Index Cards  */
+      categoryGroup = `
+        <g stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <path fill="none" d="M 5 14.5 H 19 V 18 H 5 Z"/>
+          <path fill="rgb(255, 248, 230)" d="M 7 10.25 H 21 V 13.75 H 7 Z"/>
+          <path fill="none" d="M 5 6 H 19 V 9.5 H 5 Z"/>
+        </g>
+      `;
+    }
+
+    // The main arrow
+    let mainArrow = "";
+    if (iconConfig.mainArrowStyle != "none") {
+      const shadowStyle = styleRoundPath("rgba(0,0,0,0.4)", 5);
+      const mainStyle = styleRoundPath("white", 2.5);
+
+      const l = 2.5;
+      const r = 16;
+      const y = 12;
+      const h = 4;
+
+      switch (iconConfig.mainArrowStyle) {
+        case "in":
+          {
+            const ht = y - h;
+            const hb = y + h;
+            const lhr = l + h;
+            const stem = `M${r} ${y} H${l}`;
+            const lhead = `M${l} ${y} L${lhr} ${ht} M${l} ${y} L${lhr} ${hb}`;
+            const mainArrowPath = `d="${stem} ${lhead}"`;
+            mainArrow = `
+              <path ${mainArrowPath} ${shadowStyle}/>
+              <path ${mainArrowPath} ${mainStyle}/>
+            `;
+          }
+          break;
+        case "out":
+          {
+            const ht = y - h;
+            const hb = y + h;
+            const rhr = r - h;
+            const stem = `M${r} ${y} H${l}`;
+            const rhead = `M${r} ${y} L${rhr} ${ht} M${r} ${y} L${rhr} ${hb}`;
+            const mainArrowPath = `d="${stem} ${rhead}"`;
+            mainArrow = `
+              <path ${mainArrowPath} ${shadowStyle}/>
+              <path ${mainArrowPath} ${mainStyle}/>
+            `;
+          }
+          break;
+        case "both":
+          {
+            const ht = y - h;
+            const hb = y + h;
+            const lhr = l + h;
+            const rhr = r - h;
+            const stem = `M${r} ${y} H${l}`;
+            const lhead = `M${l} ${y} L${lhr} ${ht} M${l} ${y} L${lhr} ${hb}`;
+            const rhead = `M${r} ${y} L${rhr} ${ht} M${r} ${y} L${rhr} ${hb}`;
+            const mainArrowPath = `d="${stem} ${lhead} ${rhead}"`;
+            mainArrow = `
+              <path ${mainArrowPath} ${shadowStyle}/>
+              <path ${mainArrowPath} ${mainStyle}/>
+            `;
+          }
+          break;
+        case "split":
+          {
+            const t = 9.5;
+            const b = 14.5;
+            const ht = t - h;
+            const hb = b + h;
+            const lhr = l + h;
+            const rhr = r - h;
+            const tstem = `M${r} ${t} H${l}`;
+            const bstem = `M${r} ${b} H${l}`;
+            const lhead = `M${l} ${t} L${lhr} ${ht}`;
+            const rhead = `M${r} ${b} M${r} ${b} L${rhr} ${hb}`;
+
+            const topArrowPath = `d="${tstem} ${lhead}"`;
+            const bottomArrowPath = `d="${bstem} ${rhead}"`;
+            mainArrow = `
+              <path ${topArrowPath} ${shadowStyle}/>
+              <path ${bottomArrowPath} ${shadowStyle}/>
+              <path ${topArrowPath} ${mainStyle}/>
+              <path ${bottomArrowPath} ${mainStyle}/>
+            `;
+          }
+          break;
+      }
+    }
+
+    let circle = "";
+    if (iconConfig.isConflict) {
+      circle = `
+        <circle cx="12" cy="12" r="11" fill="rgb(255, 175, 2)" stroke="rgb(255, 0, 0)" stroke-width="2"/>
+      `;
+    } else {
+      circle = `
+        <circle cx="12" cy="12" r="11" fill="#ffaf02" stroke="white" stroke-width="1.5"/>
+      `;
+    }
+
+    const svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        ${circle}
+        ${sourceBox}
+        ${categoryGroup}
+        ${sourceArrow}
+        ${mainArrow}
+      </svg>`;
 
     return `data:image/svg+xml;base64,${btoa(svg)}`;
   }

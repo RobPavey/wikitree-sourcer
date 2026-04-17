@@ -1111,12 +1111,20 @@ if (runningExtensionId === currentExtensionId) {
     }
 
     let svgIcon = null;
+    let iconConfig = {
+      isMultiple: false,
+      isConflict: false,
+      includeSourceBox: false,
+      mainArrowStyle: "none",
+    };
     let titleText = "FamilySearch " + location.idType + " " + location.id + " is ";
     let clipboardText = "";
     let linkUrl = "";
 
     if (wikiIds.length > 1) {
       svgIcon = pageMods.getIcon("svgMultipleRefsFromWt");
+      iconConfig.isMultiple = true;
+      iconConfig.mainArrowStyle = "in";
       titleText += `referenced from ${wikiIds.length} WikiTree profiles`;
 
       for (let wikiId of wikiIds) {
@@ -1137,8 +1145,10 @@ if (runningExtensionId === currentExtensionId) {
         linkUrl += id;
         linkUrl += "&render=1";
       }
-    } else {
+    } else if (wikiIds.length == 1) {
       svgIcon = pageMods.getIcon("svgSingleRefFromWt");
+      iconConfig.mainArrowStyle = "in";
+
       titleText += `referenced from WikiTree profile: ${wikiIds[0]}`;
       clipboardText = wikiIds[0];
       linkUrl = "https://www.wikitree.com/wiki/" + wikiIds[0];
@@ -1149,33 +1159,53 @@ if (runningExtensionId === currentExtensionId) {
         titleText += ` and this ${location.idType} also uses a source to reference WikiTree profile: ${backLinkWikiIds[0]}`;
         if (wikiIds[0] == backLinkWikiIds[0]) {
           svgIcon = pageMods.getIcon("svgRefMutual");
+          iconConfig.mainArrowStyle = "both";
         } else {
           svgIcon = pageMods.getIcon("svgRefWtConflict");
+          iconConfig.mainArrowStyle = "split";
+          iconConfig.isConflict = true;
         }
       } else if (wikiIds.length == 0) {
         svgIcon = pageMods.getIcon("svgRefToWt");
+        iconConfig.mainArrowStyle = "out";
         titleText = `FamilySearch ${location.idType} ${location.id} uses a source to reference WikiTree profile: ${backLinkWikiIds[0]}`;
         linkUrl = "https://www.wikitree.com/wiki/" + backLinkWikiIds[0];
       } else {
-        // there are multiple WT profiles referencing this memorial which in itself is an error
+        // there are multiple WT profiles referencing this FS profile which in itself is an error
         // and we also reference a WT profile
         svgIcon = pageMods.getIcon("svgRefWtConflict");
+        iconConfig.mainArrowStyle = "split";
+        iconConfig.isConflict = true;
         titleText += ` and this ${location.idType} also uses a source to reference WikiTree profile: ${backLinkWikiIds[0]}`;
       }
     } else if (backLinkWikiIds.length > 1) {
       // this profile references multiple WT profiles.
       if (wikiIds.length > 0) {
         svgIcon = pageMods.getIcon("svgRefWtConflict");
+        iconConfig.mainArrowStyle = "split";
+        iconConfig.isConflict = true;
         titleText += ` and this memorial also uses sources to reference multiple WikiTree profiles`;
       } else {
         svgIcon = pageMods.getIcon("svgRefWtConflict");
+        iconConfig.mainArrowStyle = "split";
+        iconConfig.isConflict = true;
         titleText = `FamilySearch ${location.idType} ${location.id} uses sources to reference multiple WikiTree profiles`;
       }
     }
 
     if (location.sourceFsIds && location.sourceFsIds.length) {
-      svgIcon = pageMods.buildIcon(true, true);
+      iconConfig.includeSourceBox = true;
     }
+
+    iconConfig = {
+      isMultiple: false,
+      isConflict: false,
+      includeSourceBox: false,
+      includeCategory: true,
+      mainArrowStyle: "none",
+    };
+
+    svgIcon = pageMods.buildIcon(iconConfig);
 
     const anchorElement = pageMods.createAnchorWithIconElement(svgIcon, titleText, clipboardText, linkUrl);
 
