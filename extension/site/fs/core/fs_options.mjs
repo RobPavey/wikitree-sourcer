@@ -295,6 +295,13 @@ const uiOptionsPageModPersonPageLocationsGroup = {
       defaultValue: true,
     },
     {
+      optionName: "personShowWtIconH1SourceRef",
+      type: "checkbox",
+      label:
+        "In icon next to top-level heading, indicate if there are attached sources that are used on WT (requires fetches)",
+      defaultValue: true,
+    },
+    {
       optionName: "personDetailsShowWtIconFamily",
       type: "checkbox",
       label: "On 'Details' pages show icons for family members",
@@ -316,6 +323,13 @@ const uiOptionsPageModPersonPageLocationsGroup = {
       optionName: "personShowWtIconFamilyBackLink",
       type: "checkbox",
       label: "In icons for family members, indicate if there are links back to WT (requires fetches)",
+      defaultValue: true,
+    },
+    {
+      optionName: "personShowWtIconFamilySourceRef",
+      type: "checkbox",
+      label:
+        "In icons for family members, indicate if there are attached sources that are used on WT (requires fetches)",
       defaultValue: true,
     },
   ],
@@ -364,6 +378,13 @@ const uiOptionsPageModRecordPageLocationsGroup = {
       label: "In icons for other people in FS tree, indicate if there are links back to WT (requires fetches)",
       defaultValue: true,
     },
+    {
+      optionName: "recordShowWtIconForPersonSourceRef",
+      type: "checkbox",
+      label:
+        "In icons for other people in FS tree, indicate if there are attached sources that are used on WT (requires fetches)",
+      defaultValue: true,
+    },
   ],
 };
 
@@ -390,6 +411,13 @@ const uiOptionsPageModImagePageLocationsGroup = {
       optionName: "imageShowWtIconPeopleBackLink",
       type: "checkbox",
       label: "In icon next to names in sidebar, indicate if there are links back to WT (requires fetches)",
+      defaultValue: true,
+    },
+    {
+      optionName: "imageShowWtIconPeopleSourceRef",
+      type: "checkbox",
+      label:
+        "In icon next to names in sidebar, indicate if there are attached sources that are used on WT (requires fetches)",
       defaultValue: true,
     },
   ],
@@ -420,6 +448,12 @@ const uiOptionsPageModPedigreeLandscapeLocationsGroup = {
       label: "For links to people, indicate if there are links back to WT (requires fetches)",
       defaultValue: true,
     },
+    {
+      optionName: "pedigreeLandscapeShowWtIconPeopleSourceRef",
+      type: "checkbox",
+      label: "For links to people, indicate if there are attached sources that are used on WT (requires fetches)",
+      defaultValue: true,
+    },
   ],
 };
 
@@ -446,6 +480,12 @@ const uiOptionsPageModPedigreePortraitLocationsGroup = {
       optionName: "pedigreePortraitShowWtIconPeopleBackLink",
       type: "checkbox",
       label: "For links to people, indicate if there are links back to WT (requires fetches)",
+      defaultValue: true,
+    },
+    {
+      optionName: "pedigreePortraitShowWtIconPeopleSourceRef",
+      type: "checkbox",
+      label: "For links to people, indicate if there are attached sources that are used on WT (requires fetches)",
       defaultValue: true,
     },
   ],
@@ -480,6 +520,12 @@ const uiOptionsPageModSearchLocationsGroup = {
       optionName: "searchResultsShowWtIconPersonInTreeBackLink",
       type: "checkbox",
       label: "For links to people, indicate if there are links back to WT (requires fetches)",
+      defaultValue: true,
+    },
+    {
+      optionName: "searchResultsShowWtIconPersonInTreeSourceRef",
+      type: "checkbox",
+      label: "For links to people, indicate if there are attached sources that are used on WT (requires fetches)",
       defaultValue: true,
     },
   ],

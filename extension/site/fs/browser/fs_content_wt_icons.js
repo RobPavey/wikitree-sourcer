@@ -767,7 +767,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "personShowWtIconH1SourceRef",
           },
         },
         {
@@ -782,7 +782,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "personShowWtIconFamilySourceRef",
           },
         },
       ],
@@ -804,7 +804,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "personShowWtIconH1SourceRef",
           },
         },
         {
@@ -837,7 +837,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "personShowWtIconH1SourceRef",
           },
         },
         {
@@ -851,7 +851,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "personShowWtIconFamilySourceRef",
           },
         },
       ],
@@ -884,7 +884,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "recordShowWtIconForPersonSourceRef",
           },
         },
         {
@@ -909,7 +909,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "recordShowWtIconForPersonSourceRef",
           },
         },
       ],
@@ -935,7 +935,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "imageShowWtIconPeopleSourceRef",
           },
         },
         {
@@ -1002,7 +1002,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "searchResultsShowWtIconPersonInTreeSourceRef",
           },
         },
       ],
@@ -1022,7 +1022,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "pedigreeLandscapeShowWtIconPeopleSourceRef",
           },
         },
         {
@@ -1036,7 +1036,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "pedigreeLandscapeShowWtIconPeopleSourceRef",
           },
         },
       ],
@@ -1057,7 +1057,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "pedigreePortraitShowWtIconPeopleSourceRef",
           },
         },
         {
@@ -1071,7 +1071,7 @@ if (runningExtensionId === currentExtensionId) {
           },
           fetchForSourceFsIds: {
             fetchFunction: fetchSourceFsIdsFromSources,
-            optionKey: "personShowWtIconH1BackLink",
+            optionKey: "pedigreePortraitShowWtIconPeopleSourceRef",
           },
         },
       ],
@@ -1761,6 +1761,8 @@ if (runningExtensionId === currentExtensionId) {
     observer.observe(document.body, {
       childList: true,
       subtree: true,
+      attributes: true, // Catch class or style changes (like 'hidden' being removed)
+      characterData: true, // Catch cases where text is swapped out inside a node
     });
 
     // NEW: Add a safety-net poll for the first 5 seconds
