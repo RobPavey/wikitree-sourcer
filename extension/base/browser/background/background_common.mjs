@@ -110,6 +110,8 @@ function messageHandler(request, sender, sendResponse) {
   } else if (request.type == "doWtPlusApiCall") {
     doWtPlusApiCall(request, sendResponse);
     return true;
+  } else if (request.type == "openInNewTab") {
+    openInNewTab(request.url, sender.tab, request.tabOption);
   }
   //else if (request.type == "updateContextMenu") {
   //  modifyContextMenu(request.contentType);

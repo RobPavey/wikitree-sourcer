@@ -28,6 +28,293 @@ class WikiTreeSourcerPageModsHelper {
     this.pageProfiles = siteConfig.pageProfiles;
     this.domainRegex = siteConfig.domainRegex;
     this.injectWTSourcerStyles();
+    this.initTooltip();
+    this.addGlobalShield();
+    this.iconDataMap = new WeakMap(); // used to store keys in element attributes
+  }
+
+  initTooltip() {
+    this.tooltip = document.createElement("div");
+    this.tooltip.className = "wt-sourcer-custom-tooltip";
+    // Basic styling - move specific colors/padding to your injectWTSourcerStyles
+    Object.assign(this.tooltip.style, {
+      position: "fixed",
+      display: "none",
+      zIndex: "999999",
+      pointerEvents: "none", // Ensures tooltip doesn't flicker under mouse
+      backgroundColor: "white",
+      color: "black",
+      padding: "8px",
+      borderRadius: "4px",
+      fontSize: "12px",
+      boxShadow: "0 2px 5px rgba(0,0,0,0.3)",
+    });
+    document.body.appendChild(this.tooltip);
+  }
+
+  async copyTextToClipboard(element, clipboardText) {
+    try {
+      // Copy to clipboard
+      await navigator.clipboard.writeText(clipboardText);
+      console.log(`Copied ${clipboardText} to clipboard`);
+
+      // Optional: Provide visual feedback (like a temporary tooltip)
+      this.triggerCopyFeedback(element, "Copied");
+    } catch (err) {
+      if (err.name === "NotAllowedError") {
+        console.log("Clipboard access denied. Ensure the page has focus.");
+        this.triggerCopyFeedback(element, "Copy failed. Click in this page first.", 4000);
+        // Optional: Show a different tooltip like "Click page first!"
+        // showErrorFeedback(element, "Click page first!");
+      } else {
+        console.error("Failed to copy:", err);
+      }
+    }
+  }
+
+  showTooltip(clientX, clientY, iconData, isTouch) {
+    const tooltipData = iconData?.tooltipData;
+    logDebug(`tooltipData is`, tooltipData);
+    if (tooltipData) {
+      let mainDiv = this.tooltip;
+
+      mainDiv.replaceChildren();
+      let label = document.createElement("label");
+      label.textContent = tooltipData.title;
+      mainDiv.appendChild(label);
+
+      if (tooltipData.listItems.length > 0) {
+        let listElement = document.createElement("ul");
+        for (let listItem of tooltipData.listItems) {
+          let listItemElement = document.createElement("li");
+          listItemElement.textContent = listItem;
+          listElement.appendChild(listItemElement);
+        }
+        mainDiv.appendChild(listElement);
+      }
+
+      mainDiv.style.display = "block";
+      mainDiv.style.maxWidth = "500px"; // Ensure it can't grow forever
+
+      // Force a reflow/repaint while the touch is active
+      void mainDiv.offsetHeight;
+
+      const xOffset = isTouch ? 40 : 15;
+      const yOffset = isTouch ? -80 : 15;
+
+      // Calculate potential right edge
+      const screenWidth = window.innerWidth;
+      const tooltipWidth = this.tooltip.offsetWidth;
+      const screenHeight = window.innerHeight;
+      const tooltipHeight = this.tooltip.offsetHeight;
+      let left = clientX + xOffset;
+      let top = clientY + yOffset;
+
+      logDebug(`showTooltip: screenWidth=${screenWidth}, tooltipWidth=${tooltipWidth}, left=${left}`);
+
+      // If it overflows the right edge, flip it to the left side of the cursor
+      if (left + tooltipWidth > screenWidth) {
+        left = clientX - tooltipWidth - xOffset;
+      }
+
+      // If it overflows the bottom edge, flip it to the top side of the cursor
+      if (top + tooltipHeight > screenHeight) {
+        top = clientY - tooltipHeight - yOffset;
+      }
+
+      // Immediate positioning so it doesn't "pop" in from the corner
+      mainDiv.style.left = left + "px";
+      mainDiv.style.top = top + "px";
+    }
+  }
+  hideTooltip(event, iconData) {
+    logDebug(`hiding tooltip`);
+    this.tooltip.style.display = "none";
+  }
+
+  handleClickOnIcon(iconData) {
+    logDebug("handleClickOnIcon: iconData is", iconData);
+    if (iconData.linkUrl) {
+      chrome.runtime.sendMessage({ type: "openInNewTab", url: iconData.linkUrl, tabOption: "" });
+    }
+  }
+
+  handleEventOnIcon(type, e) {
+    function neutralizeParentTitle(element) {
+      const parentWithTitle = element.closest("[aria-haspopup='true']");
+      // Don't neutralize if it's our own icon's container
+      if (parentWithTitle && !parentWithTitle.classList.contains("wt-sourcer-icon-container")) {
+        parentWithTitle.dataset.wtOldTitle = parentWithTitle.getAttribute("title");
+        parentWithTitle.removeAttribute("title");
+      }
+    }
+
+    function restoreParentTitle(element) {
+      const parentWithTitle = element.closest("[aria-haspopup='true']");
+      // Don't neutralize if it's our own icon's container
+      if (parentWithTitle && !parentWithTitle.classList.contains("wt-sourcer-icon-container")) {
+        if (parentWithTitle.dataset.wtOldTitle) {
+          parentWithTitle.setAttribute("title", parentWithTitle.dataset.wtOldTitle);
+          delete parentWithTitle.dataset.wtOldTitle;
+        }
+      }
+    }
+
+    logDebug(`Shielding ${type} from FamilySearch`);
+    logDebug(`e.target is`, e.target);
+
+    // we want to return as fast as possible if not on an interactable WT icon
+    // but we already check this exists in the caller
+    let iconContainer = e.target.closest(".wt-sourcer-icon-container");
+    if (!iconContainer) {
+      return;
+    }
+
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    e.preventDefault();
+
+    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+    const hoverFilter = `${normalFilter} brightness(1.1)`;
+
+    logDebug(`iconContainer is`, iconContainer);
+    let iconData = this.iconDataMap.get(iconContainer);
+    logDebug(`iconData is`, iconData);
+    if (!iconData) {
+      return;
+    }
+
+    switch (type) {
+      case "mouseover": {
+        // Check if this is a touch event pretending to be a mouse
+        // 'ontouchstart' in window is a quick check, or check e.sourceCapabilities
+        if (window.matchMedia("(pointer: coarse)").matches) {
+          return; // Don't show tooltips on touch devices via hover events
+        }
+
+        // For mouseover: we also need to neutralize the parent title
+        neutralizeParentTitle(iconContainer);
+
+        this.showTooltip(e.clientX, e.clientY, iconData, false);
+
+        let iconElement = iconContainer.querySelector(".wt-sourcer-icon");
+        if (iconElement) {
+          iconElement.style.filter = hoverFilter;
+        }
+        break;
+      }
+      case "mouseout": {
+        restoreParentTitle(iconContainer);
+
+        this.hideTooltip(e, iconData);
+
+        let iconElement = iconContainer.querySelector(".wt-sourcer-icon");
+        if (iconElement) {
+          iconElement.style.filter = normalFilter;
+        }
+        break;
+      }
+      case "contextmenu": {
+        let clipboardText = iconData?.rightClickCopyText;
+        logDebug(`contextmenu event: clipboardText is ${clipboardText}`);
+        if (clipboardText) {
+          this.copyTextToClipboard(iconContainer, clipboardText);
+        }
+        break;
+      }
+      case "click": {
+        logDebug("handleEventOnIcon: detected a click");
+
+        if (this.wasLongPress) {
+          this.wasLongPress = false;
+        } else {
+          this.handleClickOnIcon(iconData);
+        }
+
+        break;
+      }
+      case "touchstart": {
+        // Extract coordinates immediately from the first touch point
+        const touch = e.touches[0];
+        const touchX = touch.clientX;
+        const touchY = touch.clientY;
+
+        // Start the 'Long Press' timer (typically 500ms)
+        this.longPressTimer = setTimeout(() => {
+          // long press in mobile shows the context menu
+          this.showTooltip(touchX, touchY, iconData, true);
+          this.wasLongPress = true;
+        }, 500);
+        break;
+      }
+      case "touchmove":
+      case "touchcancel":
+      case "touchend": {
+        // If they move their finger or lift it before 500ms, cancel the long press
+        if (this.longPressTimer) {
+          clearTimeout(this.longPressTimer);
+          this.longPressTimer = null;
+        }
+
+        if (type != "touchmove") {
+          if (this.wasLongPress) {
+            // Reset the flag after a short delay so the 'click' filter works
+            setTimeout(() => {
+              this.wasLongPress = false;
+            }, 100);
+          } else {
+            // treat this as a click, for touch we will not
+            // also get the click event because we did preventDefault on the touchStart.
+            this.handleClickOnIcon(iconData);
+          }
+        }
+        break;
+      }
+    }
+  }
+
+  handleTouchOutsideIconsAndTooltips() {
+    // Add this to your constructor or a setup method
+    document.addEventListener(
+      "touchstart",
+      (e) => {
+        if (this.tooltip && this.tooltip.style.display === "block") {
+          // Check if the tap hit the icon or the tooltip itself
+          const hitUI =
+            e.target.closest(".wt-sourcer-icon-container") || e.target.closest(".wt-sourcer-custom-tooltip");
+
+          if (!hitUI) {
+            this.hideTooltip();
+            // Optional: clear wasLongPress so the next tap is treated fresh
+            this.wasLongPress = false;
+          }
+        }
+      },
+      { capture: true, passive: true }
+    );
+  }
+
+  addGlobalShield() {
+    // Add these once to the window
+    ["click", "mousedown", "contextmenu", "mouseover", "mouseout", "touchstart", "touchend", "touchmove"].forEach(
+      (type) => {
+        window.addEventListener(
+          type,
+          (e) => {
+            // Use .closest to see if the event started inside or on your icon
+            if (e.target.closest && e.target.closest(".wt-sourcer-icon-container")) {
+              this.handleEventOnIcon(type, e);
+            }
+          },
+          {
+            capture: true, // // TRUE is critical - this is the Capture Phase
+            passive: false, // CRITICAL: Allows e.preventDefault() to work on touch
+          }
+        );
+      }
+    );
+
+    this.handleTouchOutsideIconsAndTooltips();
   }
 
   setOptions(options) {
@@ -569,7 +856,7 @@ class WikiTreeSourcerPageModsHelper {
     }
   }
 
-  createIconElement(svgIcon, titleText) {
+  createIconElement(svgIcon) {
     const img = document.createElement("img");
 
     // 3. Set the source to your SVG string
@@ -586,122 +873,36 @@ class WikiTreeSourcerPageModsHelper {
     img.style.cursor = "pointer";
     img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
 
-    // 5. Add a tooltip for clarity
-    img.title = titleText;
-
     // Set initial filter
     const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
     img.style.filter = normalFilter;
-
-    img.addEventListener("mouseenter", () => {
-      img.style.filter = `${normalFilter} brightness(1.1)`;
-    });
-
-    img.addEventListener("mouseleave", () => {
-      img.style.filter = normalFilter;
-    });
-
     return img;
   }
 
-  createIconElement(svgIcon, titleText) {
-    const img = document.createElement("img");
+  createAnchorWithIconElement(svgIcon, tooltipData, clipboardText, linkUrl) {
+    const img = this.createIconElement(svgIcon);
 
-    // 3. Set the source to your SVG string
-    img.src = svgIcon;
+    // create an anchor-like span element
+    const iconContainer = document.createElement("span");
+    iconContainer.className = "wt-sourcer-icon-container";
+    iconContainer.style.cursor = "pointer";
+    iconContainer.style.display = "inline-block";
+    iconContainer.style.lineHeight = "0"; // Prevents icon from shifting text height
 
-    // 4. Add styling for alignment and spacing
-    img.style.width = "24px";
-    img.style.height = "24px";
-    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
-    img.style.position = "relative";
-    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
-    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-
-    img.style.cursor = "pointer";
-    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
-
-    // 5. Add a tooltip for clarity
-    img.title = titleText;
-
-    // Set initial filter
-    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-    img.style.filter = normalFilter;
-
-    img.addEventListener("mouseenter", () => {
-      img.style.filter = `${normalFilter} brightness(1.1)`;
-    });
-
-    img.addEventListener("mouseleave", () => {
-      img.style.filter = normalFilter;
-    });
-
-    return img;
-  }
-
-  createIconElement(svgIcon, titleText, clipboardText) {
-    const img = document.createElement("img");
-
-    // 3. Set the source to your SVG string
-    img.src = svgIcon;
-
-    // 4. Add styling for alignment and spacing
-    img.style.width = "24px";
-    img.style.height = "24px";
-    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
-    img.style.position = "relative";
-    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
-    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-
-    img.style.cursor = "pointer";
-    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
-
-    // 5. Add a tooltip for clarity
-    img.title = titleText;
-
-    // Set initial filter
-    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-    img.style.filter = normalFilter;
-
-    img.addEventListener("mouseenter", () => {
-      img.style.filter = `${normalFilter} brightness(1.1)`;
-    });
-
-    img.addEventListener("mouseleave", () => {
-      img.style.filter = normalFilter;
-    });
-
-    if (clipboardText) {
-      this.addRightClickCopyToElement(img, clipboardText);
+    let rightClickCopyText = "";
+    if (clipboardText && this.getOption("rightClickCopy")) {
+      rightClickCopyText = clipboardText;
     }
 
-    return img;
-  }
-
-  createAnchorWithIconElement(svgIcon, titleText, clipboardText, linkUrl) {
-    const img = this.createIconElement(svgIcon, titleText, clipboardText);
-
-    // create an anchor element
-    const anchorElement = document.createElement("a");
-    if (linkUrl) {
-      anchorElement.setAttribute("href", linkUrl);
-    }
-
-    anchorElement.addEventListener("click", (event) => {
-      event.stopPropagation();
+    this.iconDataMap.set(iconContainer, {
+      linkUrl: linkUrl,
+      rightClickCopyText: rightClickCopyText,
+      tooltipData: tooltipData,
     });
 
-    anchorElement.addEventListener("mousedown", (event) => {
-      event.stopPropagation();
-      event.stopImmediatePropagation();
-    });
+    iconContainer.appendChild(img);
 
-    anchorElement.target = "_blank";
-    anchorElement.style.textDecoration = "none";
-
-    anchorElement.appendChild(img);
-
-    return anchorElement;
+    return iconContainer;
   }
 
   wtPlusApiCall(url) {
@@ -768,6 +969,14 @@ class WikiTreeSourcerPageModsHelper {
             filter: drop-shadow(0 0 8px rgba(255, 175, 2, 0.9)) !important;
         }
 
+        .wt-sourcer-icon-container, 
+        .wt-sourcer-icon-container * {
+            /* Prevents the iOS context menu/preview on long press */
+            -webkit-touch-callout: none !important;
+            /* Prevents text selection which can also trigger on long press */
+            -webkit-user-select: none !important;
+        }
+
         /* The floating 'Copied!' label */
         .wt-copy-tooltip {
             position: absolute;
@@ -789,11 +998,35 @@ class WikiTreeSourcerPageModsHelper {
             80% { opacity: 1; }  /* Hold visibility */
             100% { opacity: 0; } /* Fade away */
         }
+
+        .wt-sourcer-custom-tooltip {
+          position: fixed;
+          display: none;
+          z-index: 2147483647; /* Maximum possible z-index */
+          pointer-events: none;
+          background-color: #333333;
+          color: #ffffff;
+          padding: 10px;
+          border-radius: 6px;
+          font-size: 13px;
+          line-height: 1.4;
+          max-width: 300px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+          border: 1px solid #555;
+          font-family: sans-serif;
+        }
+        .wt-sourcer-custom-tooltip ul {
+          margin: 5px 0 0 18px;
+          padding: 0;
+        }
+        .wt-sourcer-custom-tooltip li {
+          margin-bottom: 2px;
+        }
     `;
     (document.head || document.documentElement).appendChild(style);
   }
 
-  triggerCopyFeedback(element) {
+  triggerCopyFeedback(element, feedbackText, timeOutMs = 800) {
     // 1. Add the glow effect
     element.classList.add("wt-copy-success");
 
@@ -801,7 +1034,7 @@ class WikiTreeSourcerPageModsHelper {
     const rect = element.getBoundingClientRect();
     const tooltip = document.createElement("div");
     tooltip.className = "wt-copy-tooltip";
-    tooltip.innerText = "Copied";
+    tooltip.innerText = feedbackText;
 
     // Position it relative to the icon's current screen position
     tooltip.style.left = `${rect.left + rect.width / 2 + window.scrollX}px`;
@@ -814,38 +1047,6 @@ class WikiTreeSourcerPageModsHelper {
       element.classList.remove("wt-copy-success");
       tooltip.remove();
     }, 800);
-  }
-
-  addRightClickCopyToElement(element, clipboardText) {
-    if (!clipboardText) {
-      return;
-    }
-
-    if (!this.getOption("rightClickCopy")) {
-      return;
-    }
-
-    element.addEventListener("contextmenu", async (event) => {
-      // Stop the default browser context menu from appearing
-      event.preventDefault();
-
-      try {
-        // Copy to clipboard
-        await navigator.clipboard.writeText(clipboardText);
-        console.log(`Copied ${clipboardText} to clipboard`);
-
-        // Optional: Provide visual feedback (like a temporary tooltip)
-        this.triggerCopyFeedback(element);
-      } catch (err) {
-        if (err.name === "NotAllowedError") {
-          console.log("Clipboard access denied. Ensure the page has focus.");
-          // Optional: Show a different tooltip like "Click page first!"
-          // showErrorFeedback(element, "Click page first!");
-        } else {
-          console.error("Failed to copy:", err);
-        }
-      }
-    });
   }
 
   determinePageProfile(url) {
@@ -861,7 +1062,7 @@ class WikiTreeSourcerPageModsHelper {
   }
 
   getIdDataFromUrl(url, location) {
-    logDebug("getIdDataFromUrl ", url);
+    //logDebug("getIdDataFromUrl ", url);
 
     // Remove the start and the domain, leaving the rest of the string untouched
     url = url.replace(this.domainRegex, "");
@@ -870,7 +1071,7 @@ class WikiTreeSourcerPageModsHelper {
       let regex = profile.matchRegex;
       if (regex.test(url)) {
         let id = url.replace(regex, "$1");
-        logDebug(`getIdDataFromUrl: profile is ${profile.pageType} id is: ${id}`);
+        //logDebug(`getIdDataFromUrl: profile is ${profile.pageType} id is: ${id}`);
 
         let idType = profile.pageIdType;
 

@@ -655,10 +655,18 @@ if (runningExtensionId === currentExtensionId) {
                   addBackLinkWikiIdToLocation(location, wikiId);
                 }
               } else if (sourceInfo.title) {
-                let regex = /[^\s]+\-\d+/;
-                let wikiId = sourceInfo.title.match(regex);
-                logDebug(`fetchBackLinksFromSources: found WT title, sourceId is ${sourceId}, wikiId is ${wikiId}`);
-                addBackLinkWikiIdToLocation(location, wikiId);
+                const title = sourceInfo.title;
+                // This looks for both the text "wikitree" (any case) plus a valid WikiTree ID
+                // in any order
+                const wtIdRegex = /^(?=.*wikitree).*?([\p{L}]+-\d+)/iu;
+                const match = wtIdRegex.exec(title);
+                if (match) {
+                  let wikiId = match[1];
+                  if (wikiId) {
+                    logDebug(`fetchBackLinksFromSources: found WT title, sourceId is ${sourceId}, wikiId is ${wikiId}`);
+                    addBackLinkWikiIdToLocation(location, wikiId);
+                  }
+                }
               }
             }
           }
@@ -1013,7 +1021,7 @@ if (runningExtensionId === currentExtensionId) {
       locationTypes: [
         {
           locationTypeName: "pedigreePerson",
-          selector: "li [data-testid='nameLink'] div > span",
+          selector: "li [data-testid='nameLink'] div > span:not([class^='wt-sourcer'])",
           optionKey: "pedigreeLandscapeShowWtIcon",
           iconAddRule: { type: "ellipsis" },
           fetchForBackLink: {
@@ -1174,6 +1182,7 @@ if (runningExtensionId === currentExtensionId) {
       mainArrowStyle: "none",
     };
     let titleText = "FamilySearch " + location.idType + " " + location.id;
+    let tooltipData = { title: titleText, listItems: [] };
     let clipboardText = "";
     let linkUrl = "";
 
@@ -1225,7 +1234,7 @@ if (runningExtensionId === currentExtensionId) {
     if (wikiIds.length > 1) {
       iconConfig.isMultiple = true;
       iconConfig.mainArrowStyle = "in";
-      titleText += `\n• is referenced from ${wikiIds.length} profiles`;
+      tooltipData.listItems.push(`is referenced from ${wikiIds.length} profiles`);
 
       for (let wikiId of wikiIds) {
         if (clipboardText) {
@@ -1239,14 +1248,14 @@ if (runningExtensionId === currentExtensionId) {
       iconConfig.mainArrowStyle = "in";
       primaryWikiId = wikiIds[0];
 
-      titleText += `\n• is referenced from profile ${wikiIds[0]}`;
+      tooltipData.listItems.push(`is referenced from profile ${wikiIds[0]}`);
       clipboardText = wikiIds[0];
       linkUrl = buildWikiProfileUrl(wikiIds[0]);
     }
 
     if (backLinkWikiIds.length == 1) {
       if (wikiIds.length == 1) {
-        titleText += `\n• uses a source to reference profile ${backLinkWikiIds[0]}`;
+        tooltipData.listItems.push(`uses a source to reference profile ${backLinkWikiIds[0]}`);
         if (primaryWikiId == backLinkWikiIds[0]) {
           iconConfig.mainArrowStyle = "both";
         } else {
@@ -1255,25 +1264,25 @@ if (runningExtensionId === currentExtensionId) {
         }
       } else if (wikiIds.length == 0) {
         iconConfig.mainArrowStyle = "out";
-        titleText += `\n• uses a source to reference profile ${backLinkWikiIds[0]}`;
+        tooltipData.listItems.push(`uses a source to reference profile ${backLinkWikiIds[0]}`);
         linkUrl = buildWikiProfileUrl(backLinkWikiIds[0]);
       } else {
         // there are multiple WT profiles referencing this FS profile which in itself is an error
         // and we also reference a WT profile
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
-        titleText += `\n• uses a source to reference profile ${backLinkWikiIds[0]}`;
+        tooltipData.listItems.push(`uses a source to reference profile ${backLinkWikiIds[0]}`);
       }
     } else if (backLinkWikiIds.length > 1) {
       // this profile references multiple WT profiles.
       if (wikiIds.length > 0) {
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
-        titleText += `\n• uses sources to reference multiple profiles`;
+        tooltipData.listItems.push(`uses sources to reference multiple profiles`);
       } else {
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
-        titleText += `\n• uses sources to reference multiple profiles`;
+        tooltipData.listItems.push(`uses sources to reference multiple profiles`);
       }
     }
 
@@ -1302,9 +1311,16 @@ if (runningExtensionId === currentExtensionId) {
         }
       }
 
+      if (recordWikiIds.size == 0 && imageWikiIds.size == 0) {
+        if (wikiIds.length == 0 && backLinkWikiIds.length == 0) {
+          // we do not need an icon
+          return;
+        }
+      }
+
       if (recordWikiIds.size == 1) {
         let wikiId = recordWikiIds.values().next().value;
-        titleText += `\n• has ${numRecordsUsedOnWt} attached record sources referenced by profile ${wikiId}`;
+        tooltipData.listItems.push(`has ${numRecordsUsedOnWt} attached record sources referenced by profile ${wikiId}`);
 
         if (primaryWikiId && wikiId != primaryWikiId) {
           iconConfig.isConflict = true;
@@ -1313,15 +1329,19 @@ if (runningExtensionId === currentExtensionId) {
         if (!linkUrl) {
           linkUrl = buildWikiProfileUrl(wikiId);
         }
+        if (!clipboardText) {
+          clipboardText = wikiId;
+        }
 
         if (imageWikiIds.size > 0) {
-          titleText += `\n• has ${numImagesUsedOnWt} attached image sources referenced by`;
+          let listItem = `has ${numImagesUsedOnWt} attached image sources referenced by`;
           if (imageWikiIds.size == 1) {
             let imageWikiId = imageWikiIds.values().next().value;
-            titleText += ` profile ${imageWikiId}`;
+            listItem += ` profile ${imageWikiId}`;
           } else {
-            titleText += ` ${imageWikiIds.size} profiles`;
+            listItem += ` ${imageWikiIds.size} profiles`;
           }
+          tooltipData.listItems.push(listItem);
         }
       } else if (recordWikiIds.size > 1) {
         if (iconConfig.mainArrowStyle == "none") {
@@ -1334,29 +1354,49 @@ if (runningExtensionId === currentExtensionId) {
           linkUrl = buildWtPlusUrlForSet(recordWikiIds, "record");
         }
 
-        titleText += `\n• has attached record sources referenced by ${recordWikiIds.size} profiles`;
+        if (!clipboardText) {
+          for (let wikiId of recordWikiIds) {
+            if (clipboardText) {
+              clipboardText += ",";
+            }
+            clipboardText += wikiId;
+          }
+        }
+
+        tooltipData.listItems.push(`has attached record sources referenced by ${recordWikiIds.size} profiles`);
 
         if (imageWikiIds.size > 0) {
-          titleText += `\n• has attached image sources referenced by ${imageWikiIds.size} profiles`;
+          tooltipData.listItems.push(`has attached image sources referenced by ${imageWikiIds.size} profiles`);
         }
       } else if (imageWikiIds.size == 1) {
         let wikiId = imageWikiIds.values().next().value;
-        titleText += `\n• has attached image sources referenced by profile ${wikiId}`;
+        tooltipData.listItems.push(`has attached image sources referenced by profile ${wikiId}`);
         if (!linkUrl) {
           linkUrl = buildWikiProfileUrl(wikiId);
+        }
+        if (!clipboardText) {
+          clipboardText = wikiId;
         }
       } else if (imageWikiIds.size > 1) {
         if (!linkUrl) {
           linkUrl = buildWtPlusUrlForSet(imageWikiIds, "image");
         }
+        if (!clipboardText) {
+          for (let wikiId of imageWikiIds) {
+            if (clipboardText) {
+              clipboardText += ",";
+            }
+            clipboardText += wikiId;
+          }
+        }
 
-        titleText += `\n• has attached image sources referenced by ${imageWikiIds.size} profiles`;
+        tooltipData.listItems.push(`has attached image sources referenced by ${imageWikiIds.size} profiles`);
       }
     }
 
     const svgIcon = pageMods.buildIcon(iconConfig);
 
-    const anchorElement = pageMods.createAnchorWithIconElement(svgIcon, titleText, clipboardText, linkUrl);
+    const anchorElement = pageMods.createAnchorWithIconElement(svgIcon, tooltipData, clipboardText, linkUrl);
 
     pageMods.addIconAtLocation(location, anchorElement);
   }
@@ -1604,7 +1644,7 @@ if (runningExtensionId === currentExtensionId) {
 
     if (location.matchedElement.querySelector(".wt-sourcer-icon")) {
       location.hasIcon = true;
-      logDebug("location matched element has icon already");
+      logDebug("location matchedElement has icon already", location);
       return false;
     }
 
@@ -1618,7 +1658,7 @@ if (runningExtensionId === currentExtensionId) {
     let hasIconAlready = iconParent.querySelector(".wt-sourcer-icon");
     if (hasIconAlready) {
       location.hasIcon = true;
-      logDebug("location matched element has icon already");
+      logDebug("location iconParent has icon already", location);
       return false;
     }
 
@@ -1761,8 +1801,8 @@ if (runningExtensionId === currentExtensionId) {
     observer.observe(document.body, {
       childList: true,
       subtree: true,
-      attributes: true, // Catch class or style changes (like 'hidden' being removed)
-      characterData: true, // Catch cases where text is swapped out inside a node
+      //attributes: true, // Catch class or style changes (like 'hidden' being removed)
+      //characterData: true, // Catch cases where text is swapped out inside a node
     });
 
     // NEW: Add a safety-net poll for the first 5 seconds
