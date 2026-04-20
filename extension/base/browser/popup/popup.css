@@ -3,25 +3,37 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
     sans-serif;
   font-size: 14px;
-  margin: 0;
-  padding: 0;
 }
 
-/* 1. THE LOCK: Chrome sees this and stays at 350px. Period. */
+/* 1. Base Styles for all platforms (Chrome/Edge/Desktop Safari) */
 html,
 body {
   width: 350px;
-  min-width: 350px; /* Force Chrome to stay at this size */
+  min-width: 350px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents accidental horizontal scrolling */
 }
 
-/* 2. THE UNLOCK: This targets ONLY WebKit (Safari/iOS) */
-/* Chrome ignores this 'selector hack', so it stays locked at 350px */
+/* 2. Safari/iOS Specific Adjustments */
 @supports (-webkit-hyphens: none) {
   html,
   body {
-    width: 100vw;
-    min-width: 0; /* Remove the 350px lock for Safari/iOS */
+    /* On iPhone: fills the sheet. 
+       On iPad: stays at 350px unless the screen is smaller than that.
+    */
+    width: 100%;
+    min-width: 350px;
     max-width: 100vw;
+  }
+}
+
+/* 3. Handling very small mobile screens (older iPhones) */
+@media (max-width: 350px) {
+  html,
+  body {
+    min-width: 100vw;
+    width: 100vw;
   }
 }
 
