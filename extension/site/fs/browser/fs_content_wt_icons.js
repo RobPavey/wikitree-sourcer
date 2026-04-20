@@ -613,6 +613,9 @@ if (runningExtensionId === currentExtensionId) {
               logDebug("getSourceInfosForLocationBatch: personSourceIdList is ", personSourceIdList);
               personSourceIdList.forEach((item) => sourceIdSet.add(item));
             }
+          } else if (locationType.locationTypeName == "sourceRow") {
+            let sourceId = extractSourceIdFromElement(location.matchedElement);
+            sourceIdSet.add(sourceId);
           }
         }
       }
@@ -630,7 +633,11 @@ if (runningExtensionId === currentExtensionId) {
   }
 
   async function fetchBackLinksFromSources(locationBatch) {
+    //logDebug("fetchBackLinksFromSources, locationBatch is", locationBatch);
+
     let sourceInfos = await getSourceInfosForLocationBatch(locationBatch, "fetchForBackLink");
+
+    //logDebug("fetchBackLinksFromSources, sourceInfos is", sourceInfos);
 
     function addBackLinkWikiIdToLocation(location, wikiId) {
       if (wikiId) {
@@ -641,33 +648,55 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
 
+    function checkLocationAndSourceId(location, sourceId) {
+      let sourceInfo = sourceInfos[sourceId];
+      //logDebug("checkLocationAndSourceId, sourceInfo is", sourceInfo);
+
+      if (sourceInfo && sourceInfo.sourceType == "DEFAULT") {
+        //logDebug("checkLocationAndSourceId, sourceInfo is DEFAULT");
+        if (sourceInfo.uri) {
+          let regex = /^.*wikitree.com\/wiki\/([^\s]+\-\d+).*$/;
+          if (regex.test(sourceInfo.uri)) {
+            let wikiId = sourceInfo.uri.replace(regex, "$1");
+            logDebug(`fetchBackLinksFromSources: found WT uri, sourceId is ${sourceId}, wikiId is ${wikiId}`);
+            addBackLinkWikiIdToLocation(location, wikiId);
+            return true;
+          }
+        } else if (sourceInfo.title) {
+          const title = sourceInfo.title;
+          // This looks for both the text "wikitree" (any case) plus a valid WikiTree ID
+          // in any order
+          const wtIdRegex = /^(?=.*wikitree).*?([\p{L}]+-\d+)/iu;
+          const match = wtIdRegex.exec(title);
+          if (match) {
+            let wikiId = match[1];
+            if (wikiId) {
+              logDebug(`fetchBackLinksFromSources: found WT title, sourceId is ${sourceId}, wikiId is ${wikiId}`);
+              addBackLinkWikiIdToLocation(location, wikiId);
+              return true;
+            }
+          }
+        }
+      }
+      return false;
+    }
+
     if (sourceInfos) {
       for (let location of locationBatch.locations) {
         if (location.personSourceIdList) {
           for (let sourceId of location.personSourceIdList) {
-            let sourceInfo = sourceInfos[sourceId];
-            if (sourceInfo && sourceInfo.sourceType == "DEFAULT") {
-              if (sourceInfo.uri) {
-                let regex = /^.*wikitree.com\/wiki\/([^\s]+\-\d+).*$/;
-                if (regex.test(sourceInfo.uri)) {
-                  let wikiId = sourceInfo.uri.replace(regex, "$1");
-                  logDebug(`fetchBackLinksFromSources: found WT uri, sourceId is ${sourceId}, wikiId is ${wikiId}`);
-                  addBackLinkWikiIdToLocation(location, wikiId);
-                }
-              } else if (sourceInfo.title) {
-                const title = sourceInfo.title;
-                // This looks for both the text "wikitree" (any case) plus a valid WikiTree ID
-                // in any order
-                const wtIdRegex = /^(?=.*wikitree).*?([\p{L}]+-\d+)/iu;
-                const match = wtIdRegex.exec(title);
-                if (match) {
-                  let wikiId = match[1];
-                  if (wikiId) {
-                    logDebug(`fetchBackLinksFromSources: found WT title, sourceId is ${sourceId}, wikiId is ${wikiId}`);
-                    addBackLinkWikiIdToLocation(location, wikiId);
-                  }
-                }
-              }
+            checkLocationAndSourceId(location, sourceId);
+          }
+        } else if (location.locationType.locationTypeName == "sourceRow") {
+          // if this source is actually the one that has a back link we would like an icon
+          let sourceId = extractSourceIdFromElement(location.matchedElement);
+
+          //logDebug(`fetchBackLinksFromSources, sourceId=${sourceId} location is `, location);
+          if (checkLocationAndSourceId(location, sourceId)) {
+            //logDebug(`fetchBackLinksFromSources, added to backLinkWikiIds`);
+            if (!location.id) {
+              location.id = sourceId;
+              location.idType = "source";
             }
           }
         }
@@ -824,6 +853,10 @@ if (runningExtensionId === currentExtensionId) {
           iconPlaceElementRule: { type: "child", selector: "div[class^='cssSourceTitle']" },
           fetchForId: {
             fetchFunction: fetchFsIdsForSources,
+          },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "personShowWtIconH1BackLink",
           },
         },
       ],
@@ -1264,7 +1297,11 @@ if (runningExtensionId === currentExtensionId) {
         }
       } else if (wikiIds.length == 0) {
         iconConfig.mainArrowStyle = "out";
-        tooltipData.listItems.push(`uses a source to reference profile ${backLinkWikiIds[0]}`);
+        if (location.idType == "source") {
+          tooltipData.listItems.push(`references profile ${backLinkWikiIds[0]}`);
+        } else {
+          tooltipData.listItems.push(`uses a source to reference profile ${backLinkWikiIds[0]}`);
+        }
         linkUrl = buildWikiProfileUrl(backLinkWikiIds[0]);
       } else {
         // there are multiple WT profiles referencing this FS profile which in itself is an error
