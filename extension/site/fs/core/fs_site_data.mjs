@@ -27,7 +27,7 @@ import { registerSite } from "../../../base/core/site_registry.mjs";
 const siteData = {
   siteName: "fs",
   matches: ["*://www.familysearch.org/*", "*://familysearch.org/*"],
-  additionalContentJsFiles: ["wt_icons_common", "fs_content_wt_icons"],
+  additionalContentJsFiles: ["base/browser/content/wt_icons_common", "fs_content_wt_icons"],
   repositoryName: "FamilySearch",
   usPhoneNumber: "(866)406-1830",
   email: "nasupport@familysearch.org",
