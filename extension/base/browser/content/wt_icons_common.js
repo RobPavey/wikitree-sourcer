@@ -589,13 +589,23 @@ class WikiTreeSourcerPageModsHelper {
     let categoryGroup = "";
     if (iconConfig.includeCategory) {
       /* Stacked Index Cards  */
-      categoryGroup = `
-        <g stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-          <path fill="none" d="M 5 14.5 H 19 V 18 H 5 Z"/>
-          <path fill="rgb(255, 248, 230)" d="M 7 10.25 H 21 V 13.75 H 7 Z"/>
-          <path fill="none" d="M 5 6 H 19 V 9.5 H 5 Z"/>
-        </g>
-      `;
+      if (iconConfig.isConflict) {
+        categoryGroup = `
+          <g stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <path fill="rgb(255, 248, 230)" d="M 7 14.5 H 21 V 18 H 7 Z"/>
+            <path fill="rgb(255, 248, 230)" d="M 7 10.25 H 21 V 13.75 H 7 Z"/>
+            <path fill="none" d="M 5 6 H 19 V 9.5 H 5 Z"/>
+          </g>
+        `;
+      } else {
+        categoryGroup = `
+          <g stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <path fill="none" d="M 5 14.5 H 19 V 18 H 5 Z"/>
+            <path fill="rgb(255, 248, 230)" d="M 7 10.25 H 21 V 13.75 H 7 Z"/>
+            <path fill="none" d="M 5 6 H 19 V 9.5 H 5 Z"/>
+          </g>
+        `;
+      }
     }
 
     // The main arrow
@@ -1059,6 +1069,8 @@ class WikiTreeSourcerPageModsHelper {
         return profile;
       }
     }
+
+    logDebug(`determinePageProfile, no profile found, url is ${url}, pageProfiles is `, this.pageProfiles);
   }
 
   getIdDataFromUrl(url, location) {

@@ -67,6 +67,10 @@ if (runningExtensionId === currentExtensionId) {
   // https://www.findagrave.com/memorial/96562587/john-luther-bond#source
   const memorialRegex = /^\/memorial\/(\d+)\/.*$/;
 
+  // A virtual cemetery page should look like one of these:
+  // https://www.findagrave.com/virtual-cemetery/427392?page=1#sr-55216107
+  const virtualCemeteryRegex = /^\/virtual-cemetery\/(\d+)[\/\?\#].*$/;
+
   // A cemetery page should look like one of these:
   // https://www.findagrave.com/cemetery/8074/inglewood-park-cemetery
   const cemeteryRegex = /^\/cemetery\/(\d+)\/.*$/;
@@ -92,6 +96,20 @@ if (runningExtensionId === currentExtensionId) {
           iconPlaceElementRule: { type: "same" },
           optionKey: "cemeteryShowWtIconH1",
         },
+        {
+          locationTypeName: "memorial",
+          locationIdType: "memorial",
+          selector: "h2.name-grave",
+          iconPlaceElementRule: { type: "same" },
+          optionKey: "cemeterySearchShowWtIcon",
+        },
+      ],
+    },
+    {
+      pageType: "virtualCemetery",
+      pageIdType: "cemetery",
+      matchRegex: virtualCemeteryRegex,
+      locationTypes: [
         {
           locationTypeName: "memorial",
           locationIdType: "memorial",
