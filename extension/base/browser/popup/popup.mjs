@@ -400,10 +400,10 @@ async function determineSiteNameForTab(activeTab) {
         let doesTabMatch = doesUrlMatchChromePattern(match, url);
         if (doesTabMatch) {
           // this is an error - it does match a registered site but there was no matching
-          // registered content scriyt
+          // registered content script
           displayMessageWithIcon(
             "warning",
-            "This URL does match a supported site not no registered content script was found",
+            `This URL does match a supported site (${siteData.siteName}) but no registered content script was found`,
             "Something went wrong at Sourcer startup."
           );
           return "error";
