@@ -276,7 +276,7 @@ if (runningExtensionId === currentExtensionId) {
                 let id = idData.id;
                 location.id = id;
                 location.idType = idData.idType;
-                addLocationToPendingFsIds(locationBatch, id, location);
+                addLocationToPendingFsIds(locationBatch, id, idData.idType, location);
               }
             }
           }
@@ -697,7 +697,7 @@ if (runningExtensionId === currentExtensionId) {
                 if (idData) {
                   location.sourceFsIds ??= [];
                   location.sourceFsIds.push({ idData: idData, sourceInfo: sourceInfo });
-                  addLocationToPendingFsIds(locationBatch, idData.id, location);
+                  addLocationToPendingFsIds(locationBatch, idData.id, idData.idType, location);
                 }
               }
             }
@@ -747,7 +747,7 @@ if (runningExtensionId === currentExtensionId) {
                   location.id = id;
                   location.idType = idData.idType;
 
-                  addLocationToPendingFsIds(locationBatch, id, location);
+                  addLocationToPendingFsIds(locationBatch, id, idData.idType, location);
                 }
               }
             }
@@ -1406,11 +1406,12 @@ if (runningExtensionId === currentExtensionId) {
   let pendingLocationsBatch = {};
   let debounceTimer = null;
 
-  function addLocationToPendingFsIds(locationBatch, id, location) {
-    if (!locationBatch.pendingFsIds.has(id)) {
-      locationBatch.pendingFsIds.set(id, []);
+  function addLocationToPendingFsIds(locationBatch, id, idType, location) {
+    let key = id + "|" + idType;
+    if (!locationBatch.pendingFsIds.has(key)) {
+      locationBatch.pendingFsIds.set(key, []);
     }
-    locationBatch.pendingFsIds.get(id).push(location);
+    locationBatch.pendingFsIds.get(key).push(location);
   }
 
   function addLocationToPendingBatch(location) {
@@ -1427,7 +1428,7 @@ if (runningExtensionId === currentExtensionId) {
 
     const id = location.id;
     if (id) {
-      addLocationToPendingFsIds(pendingLocationsBatch, id, location);
+      addLocationToPendingFsIds(pendingLocationsBatch, id, location.idType, location);
     } else {
       if (locationType.needToFetchIds) {
         let fetchForId = locationType.fetchForId;
@@ -1484,8 +1485,10 @@ if (runningExtensionId === currentExtensionId) {
 
     logDebug("getWikiIdsForPendingBatch, fsIdsToCheck is", fsIdsToCheck);
 
-    for (let id of fsIdsToCheck) {
-      if (!cachedFsIdToWtIdsMap.has(id)) {
+    for (let key of fsIdsToCheck) {
+      if (!cachedFsIdToWtIdsMap.has(key)) {
+        let keyParts = key.split("|");
+        let id = keyParts[0];
         fsIdsToQuery.push(id);
       }
     }
@@ -1499,12 +1502,13 @@ if (runningExtensionId === currentExtensionId) {
       const response = await wtPlusApiGetProfilesUsingFsId(fsIdsString);
       logDebug("getWikiIdsForPendingBatch, response is: ", response);
       if (response.response?.profiles) {
-        function addWikiIdToMap(fsIdList, wikiId) {
+        function addWikiIdToMap(idType, fsIdList, wikiId) {
           for (let id of fsIdList) {
-            if (!cachedFsIdToWtIdsMap.has(id)) {
-              cachedFsIdToWtIdsMap.set(id, []);
+            let key = id + "|" + idType;
+            if (!cachedFsIdToWtIdsMap.has(key)) {
+              cachedFsIdToWtIdsMap.set(key, []);
             }
-            let wikiIdsForFsId = cachedFsIdToWtIdsMap.get(id);
+            let wikiIdsForFsId = cachedFsIdToWtIdsMap.get(key);
             if (!wikiIdsForFsId.includes(wikiId)) {
               wikiIdsForFsId.push(wikiId);
             }
@@ -1513,9 +1517,9 @@ if (runningExtensionId === currentExtensionId) {
 
         // record the profiles that reference the elements id for the currentBatch
         response.response.profiles.forEach((profile) => {
-          addWikiIdToMap(profile.persons, profile.wikitreeID);
-          addWikiIdToMap(profile.records, profile.wikitreeID);
-          addWikiIdToMap(profile.recordImages, profile.wikitreeID);
+          addWikiIdToMap("person", profile.persons, profile.wikitreeID);
+          addWikiIdToMap("record", profile.records, profile.wikitreeID);
+          addWikiIdToMap("image", profile.recordImages, profile.wikitreeID);
         });
       }
     } catch (error) {
@@ -1574,11 +1578,13 @@ if (runningExtensionId === currentExtensionId) {
       let locations = currentBatch.locations;
       for (let location of locations) {
         if (location.id) {
-          let wikiIds = cachedFsIdToWtIdsMap.get(location.id);
+          let key = location.id + "|" + location.idType;
+          let wikiIds = cachedFsIdToWtIdsMap.get(key);
           if (location.sourceFsIds) {
             for (let sourceFsId of location.sourceFsIds) {
               let fsId = sourceFsId.idData.id;
-              sourceFsId.wikiIds = cachedFsIdToWtIdsMap.get(fsId);
+              let sourceKey = fsId + "|" + sourceFsId.idData.idType;
+              sourceFsId.wikiIds = cachedFsIdToWtIdsMap.get(sourceKey);
             }
           }
           addWikiTreeIcon(location, wikiIds);

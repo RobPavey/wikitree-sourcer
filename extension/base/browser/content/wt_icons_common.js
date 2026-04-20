@@ -74,7 +74,7 @@ class WikiTreeSourcerPageModsHelper {
 
   showTooltip(clientX, clientY, iconData, isTouch) {
     const tooltipData = iconData?.tooltipData;
-    logDebug(`tooltipData is`, tooltipData);
+    //logDebug(`tooltipData is`, tooltipData);
     if (tooltipData) {
       let mainDiv = this.tooltip;
 
@@ -110,7 +110,7 @@ class WikiTreeSourcerPageModsHelper {
       let left = clientX + xOffset;
       let top = clientY + yOffset;
 
-      logDebug(`showTooltip: screenWidth=${screenWidth}, tooltipWidth=${tooltipWidth}, left=${left}`);
+      //logDebug(`showTooltip: screenWidth=${screenWidth}, tooltipWidth=${tooltipWidth}, left=${left}`);
 
       // If it overflows the right edge, flip it to the left side of the cursor
       if (left + tooltipWidth > screenWidth) {
@@ -128,7 +128,7 @@ class WikiTreeSourcerPageModsHelper {
     }
   }
   hideTooltip(event, iconData) {
-    logDebug(`hiding tooltip`);
+    //logDebug(`hiding tooltip`);
     this.tooltip.style.display = "none";
   }
 
