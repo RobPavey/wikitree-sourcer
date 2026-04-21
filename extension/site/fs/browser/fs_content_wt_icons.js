@@ -1269,7 +1269,7 @@ if (runningExtensionId === currentExtensionId) {
     if (wikiIds.length > 1) {
       iconConfig.isMultiple = true;
       iconConfig.mainArrowStyle = "in";
-      tooltipData.listItems.push(`is referenced from ${wikiIds.length} profiles`);
+      tooltipData.listItems.push({ text: `is referenced from ${wikiIds.length} profiles` });
 
       for (let wikiId of wikiIds) {
         if (clipboardText) {
@@ -1283,26 +1283,28 @@ if (runningExtensionId === currentExtensionId) {
       iconConfig.mainArrowStyle = "in";
       primaryWikiId = wikiIds[0];
 
-      tooltipData.listItems.push(`is referenced from profile ${wikiIds[0]}`);
+      tooltipData.listItems.push({ text: `is referenced from profile ${wikiIds[0]}` });
       clipboardText = wikiIds[0];
       linkUrl = buildWikiProfileUrl(wikiIds[0]);
     }
 
     if (backLinkWikiIds.length == 1) {
       if (wikiIds.length == 1) {
-        tooltipData.listItems.push(`uses a source to reference profile ${backLinkWikiIds[0]}`);
+        let tooltipListItem = { text: `uses a source to reference profile ${backLinkWikiIds[0]}` };
         if (primaryWikiId == backLinkWikiIds[0]) {
           iconConfig.mainArrowStyle = "both";
         } else {
           iconConfig.mainArrowStyle = "split";
           iconConfig.isConflict = true;
+          tooltipListItem.isError = true;
         }
+        tooltipData.listItems.push(tooltipListItem);
       } else if (wikiIds.length == 0) {
         iconConfig.mainArrowStyle = "out";
         if (location.idType == "source") {
-          tooltipData.listItems.push(`references profile ${backLinkWikiIds[0]}`);
+          tooltipData.listItems.push({ text: `references profile ${backLinkWikiIds[0]}` });
         } else {
-          tooltipData.listItems.push(`uses a source to reference profile ${backLinkWikiIds[0]}`);
+          tooltipData.listItems.push({ text: `uses a source to reference profile ${backLinkWikiIds[0]}` });
         }
         linkUrl = buildWikiProfileUrl(backLinkWikiIds[0]);
       } else {
@@ -1310,18 +1312,18 @@ if (runningExtensionId === currentExtensionId) {
         // and we also reference a WT profile
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
-        tooltipData.listItems.push(`uses a source to reference profile ${backLinkWikiIds[0]}`);
+        tooltipData.listItems.push({ text: `uses a source to reference profile ${backLinkWikiIds[0]}`, isError: true });
       }
     } else if (backLinkWikiIds.length > 1) {
       // this profile references multiple WT profiles.
       if (wikiIds.length > 0) {
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
-        tooltipData.listItems.push(`uses sources to reference multiple profiles`);
+        tooltipData.listItems.push({ text: `uses sources to reference multiple profiles`, isError: true });
       } else {
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
-        tooltipData.listItems.push(`uses sources to reference multiple profiles`);
+        tooltipData.listItems.push({ text: `uses sources to reference multiple profiles`, isError: true });
       }
     }
 
@@ -1359,11 +1361,16 @@ if (runningExtensionId === currentExtensionId) {
 
       if (recordWikiIds.size == 1) {
         let wikiId = recordWikiIds.values().next().value;
-        tooltipData.listItems.push(`has ${numRecordsUsedOnWt} attached record sources referenced by profile ${wikiId}`);
+        let tooltipListItem = {
+          text: `has ${numRecordsUsedOnWt} attached record sources referenced by profile ${wikiId}`,
+        };
 
         if (primaryWikiId && wikiId != primaryWikiId) {
           iconConfig.isConflict = true;
+          tooltipListItem.isError = true;
+          tooltipListItem.text = `has ${numRecordsUsedOnWt} attached record sources referenced by a different profile ${wikiId}`;
         }
+        tooltipData.listItems.push(tooltipListItem);
 
         if (!linkUrl) {
           linkUrl = buildWikiProfileUrl(wikiId);
@@ -1373,14 +1380,14 @@ if (runningExtensionId === currentExtensionId) {
         }
 
         if (imageWikiIds.size > 0) {
-          let listItem = `has ${numImagesUsedOnWt} attached image sources referenced by`;
+          let listItemText = `has ${numImagesUsedOnWt} attached image sources referenced by`;
           if (imageWikiIds.size == 1) {
             let imageWikiId = imageWikiIds.values().next().value;
-            listItem += ` profile ${imageWikiId}`;
+            listItemText += ` profile ${imageWikiId}`;
           } else {
-            listItem += ` ${imageWikiIds.size} profiles`;
+            listItemText += ` ${imageWikiIds.size} profiles`;
           }
-          tooltipData.listItems.push(listItem);
+          tooltipData.listItems.push({ text: listItemText });
         }
       } else if (recordWikiIds.size > 1) {
         if (iconConfig.mainArrowStyle == "none") {
@@ -1402,14 +1409,19 @@ if (runningExtensionId === currentExtensionId) {
           }
         }
 
-        tooltipData.listItems.push(`has attached record sources referenced by ${recordWikiIds.size} profiles`);
+        tooltipData.listItems.push({
+          text: `has attached record sources referenced by ${recordWikiIds.size} profiles`,
+          isError: true,
+        });
 
         if (imageWikiIds.size > 0) {
-          tooltipData.listItems.push(`has attached image sources referenced by ${imageWikiIds.size} profiles`);
+          tooltipData.listItems.push({
+            text: `has attached image sources referenced by ${imageWikiIds.size} profiles`,
+          });
         }
       } else if (imageWikiIds.size == 1) {
         let wikiId = imageWikiIds.values().next().value;
-        tooltipData.listItems.push(`has attached image sources referenced by profile ${wikiId}`);
+        tooltipData.listItems.push({ text: `has attached image sources referenced by profile ${wikiId}` });
         if (!linkUrl) {
           linkUrl = buildWikiProfileUrl(wikiId);
         }
@@ -1429,7 +1441,7 @@ if (runningExtensionId === currentExtensionId) {
           }
         }
 
-        tooltipData.listItems.push(`has attached image sources referenced by ${imageWikiIds.size} profiles`);
+        tooltipData.listItems.push({ text: `has attached image sources referenced by ${imageWikiIds.size} profiles` });
       }
     }
 

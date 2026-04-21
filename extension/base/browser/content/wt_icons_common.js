@@ -87,7 +87,12 @@ class WikiTreeSourcerPageModsHelper {
         let listElement = document.createElement("ul");
         for (let listItem of tooltipData.listItems) {
           let listItemElement = document.createElement("li");
-          listItemElement.textContent = listItem;
+          listItemElement.textContent = listItem.text;
+          if (listItem.isError) {
+            listItemElement.className = "wt-sourcer-tooltip-error";
+          } else {
+            listItemElement.className = "wt-sourcer-tooltip";
+          }
           listElement.appendChild(listItemElement);
         }
         mainDiv.appendChild(listElement);
@@ -141,7 +146,7 @@ class WikiTreeSourcerPageModsHelper {
 
   handleEventOnIcon(type, e) {
     function neutralizeParentTitle(element) {
-      const parentWithTitle = element.closest("[aria-haspopup='true']");
+      let parentWithTitle = element.closest("[title]");
       // Don't neutralize if it's our own icon's container
       if (parentWithTitle && !parentWithTitle.classList.contains("wt-sourcer-icon-container")) {
         parentWithTitle.dataset.wtOldTitle = parentWithTitle.getAttribute("title");
@@ -1031,6 +1036,9 @@ class WikiTreeSourcerPageModsHelper {
         }
         .wt-sourcer-custom-tooltip li {
           margin-bottom: 2px;
+        }
+        .wt-sourcer-tooltip-error {
+          color: red;
         }
     `;
     (document.head || document.documentElement).appendChild(style);

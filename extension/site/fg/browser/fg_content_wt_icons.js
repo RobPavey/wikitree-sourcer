@@ -236,7 +236,7 @@ if (runningExtensionId === currentExtensionId) {
     if (wikiIds.length > 1) {
       iconConfig.isMultiple = true;
       iconConfig.mainArrowStyle = "in";
-      tooltipData.listItems.push(`is referenced from ${wikiIds.length} WikiTree profiles`);
+      tooltipData.listItems.push({ text: `is referenced from ${wikiIds.length} WikiTree profiles` });
 
       let id = location.id;
       if (id) {
@@ -259,41 +259,46 @@ if (runningExtensionId === currentExtensionId) {
       }
     } else if (wikiIds.length == 1) {
       iconConfig.mainArrowStyle = "in";
-      tooltipData.listItems.push(`is referenced from WikiTree profile: ${wikiIds[0]}`);
+      tooltipData.listItems.push({ text: `is referenced from WikiTree profile: ${wikiIds[0]}` });
       linkUrl = "https://www.wikitree.com/wiki/" + wikiIds[0];
       clipboardText = wikiIds[0];
     }
 
     if (flowerWikiIds.length == 1) {
       if (wikiIds.length == 1) {
-        tooltipData.listItems.push(`uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`);
+        let tootipListItem = { text: `uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}` };
         if (wikiIds[0] == flowerWikiIds[0]) {
           iconConfig.mainArrowStyle = "both";
         } else {
           iconConfig.mainArrowStyle = "split";
           iconConfig.isConflict = true;
+          tootipListItem.isError = true;
         }
+        tooltipData.listItems.push(tootipListItem);
       } else if (wikiIds.length == 0) {
         iconConfig.mainArrowStyle = "out";
-        tooltipData.listItems.push(`uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`);
+        tooltipData.listItems.push({ text: `uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}` });
         linkUrl = "https://www.wikitree.com/wiki/" + flowerWikiIds[0];
       } else {
         // there are multiple WT profiles referencing this memorial which in itself is an error
         // and we also reference a WT profile
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
-        tooltipData.listItems.push(`uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`);
+        tooltipData.listItems.push({
+          text: `uses a flower to reference WikiTree profile: ${flowerWikiIds[0]}`,
+          isError: true,
+        });
       }
     } else if (flowerWikiIds.length > 1) {
       // this profile references multiple WT profiles.
       if (wikiIds.length > 0) {
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
-        tooltipData.listItems.push(`uses flowers to reference multiple WikiTree profiles`);
+        tooltipData.listItems.push({ text: `uses flowers to reference multiple WikiTree profiles`, isError: true });
       } else {
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
-        tooltipData.listItems.push(`uses flowers to reference multiple WikiTree profiles`);
+        tooltipData.listItems.push({ text: `uses flowers to reference multiple WikiTree profiles`, isError: true });
       }
     }
 
@@ -332,7 +337,7 @@ if (runningExtensionId === currentExtensionId) {
 
     if (categoryNames.length > 1) {
       iconConfig.isConflict = true;
-      tooltipData.listItems.push(`referenced from ${categoryNames.length} WikiTree categories`);
+      tooltipData.listItems.push({ text: `referenced from ${categoryNames.length} WikiTree categories` });
 
       let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
 
@@ -350,7 +355,7 @@ if (runningExtensionId === currentExtensionId) {
       wtPlusUrl += "&render=1";
       linkUrl = wtPlusUrl;
     } else if (categoryNames.length == 1) {
-      tooltipData.listItems.push(`is referenced from WikiTree category: ${categoryNames[0]}`);
+      tooltipData.listItems.push({ text: `is referenced from WikiTree category: ${categoryNames[0]}` });
       linkUrl = "https://www.wikitree.com/wiki/Category:" + categoryNames[0];
     }
 
