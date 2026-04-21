@@ -32,6 +32,7 @@ const siteData = {
     "*://*.google.ca/books/*",
     "*://*.google.com.au/books/*",
     "*://*.google.de/books/*",
+    "*://*.google.ie/books/*",
     "*://*.google.it/books/*",
     "*://*.google.fr/books/*",
     "*://*.google.se/books/*",
