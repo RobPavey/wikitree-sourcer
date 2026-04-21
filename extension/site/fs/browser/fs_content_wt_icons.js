@@ -1231,8 +1231,10 @@ if (runningExtensionId === currentExtensionId) {
         linkUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
         if (fsIdType == "image") {
           linkUrl += "FamilySearchImage=";
+        } else if (fsIdType == "record") {
+          linkUrl += "FamilySearchRecord=";
         } else {
-          linkUrl += "FamilySearch=";
+          linkUrl += "FamilySearchPerson=";
         }
         linkUrl += fsId;
         linkUrl += "&render=1";
