@@ -75,41 +75,58 @@ function extractMar2026Format(document, result) {
   let locationElement = document.querySelector("p[class^='PublicationInfo_Location']");
   let dateTimeElement = document.querySelector("div.sticky-sm-top time");
 
-  if (!publisherElement || !dateTimeElement || !locationElement) {
-    return;
-  }
-
-  if (dateTimeElement) {
-    result.publicationDate = dateTimeElement.textContent;
-  }
-
-  if (publisherElement) {
-    result.newspaperTitle = cleanText(publisherElement.textContent);
-  }
-
-  // locationElement is tricky as it has child nmaes we want to ignore.
-  if (locationElement) {
-    if (locationElement.childNodes && locationElement.childNodes.length > 0) {
-      result.location = cleanText(locationElement.childNodes[0].textContent);
-    }
-  }
-
-  if (pageNumberElement) {
-    let text = pageNumberElement.textContent;
-    // Can have multiple spaces. e.g.:
-    // Page  26
-    let parts = text.split(/\s+/);
-    if (parts.length == 2) {
-      result.pageNumber = parts[1];
-    }
-  }
-
   if (metaTitle) {
     result.articleTitle = metaTitle.getAttribute("content");
   }
 
   if (metaDescription) {
     result.articleDescription = metaDescription.getAttribute("content");
+  }
+
+  if (!publisherElement || !dateTimeElement || !locationElement) {
+    // If you are not logged into newspapers.com it will not have found these
+    // We can extract stuff from the description.
+    // e.g:
+    // Clipping found in The Bangor Daily News published in Bangor, Maine on 7/2/1991. Obituary for Gladys T. McCloskey
+    if (result.articleDescription) {
+      let desc = result.articleDescription;
+      const regex = /^Clipping found in (.*) published in (.*) on ([^.]+)\.(.*)$/;
+      if (regex.test(desc)) {
+        let matches = desc.match(regex);
+        if (matches.length == 5 && matches[4] == result.articleTitle) {
+          result.publicationDate = matches[3];
+          result.newspaperTitle = matches[1];
+          result.location = matches[2];
+          result.success = true;
+        }
+      }
+    }
+    return;
+  } else {
+    if (dateTimeElement) {
+      result.publicationDate = dateTimeElement.textContent;
+    }
+
+    if (publisherElement) {
+      result.newspaperTitle = cleanText(publisherElement.textContent);
+    }
+
+    // locationElement is tricky as it has child nmaes we want to ignore.
+    if (locationElement) {
+      if (locationElement.childNodes && locationElement.childNodes.length > 0) {
+        result.location = cleanText(locationElement.childNodes[0].textContent);
+      }
+    }
+
+    if (pageNumberElement) {
+      let text = pageNumberElement.textContent;
+      // Can have multiple spaces. e.g.:
+      // Page  26
+      let parts = text.split(/\s+/);
+      if (parts.length == 2) {
+        result.pageNumber = parts[1];
+      }
+    }
   }
 
   result.success = true;
