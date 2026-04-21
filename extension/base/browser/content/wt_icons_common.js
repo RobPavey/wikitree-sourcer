@@ -1033,19 +1033,17 @@ class WikiTreeSourcerPageModsHelper {
         .wt-sourcer-custom-tooltip label {
           display: block;
           margin: 0 0 4px 0;
-          /* No left padding needed because the container has 10px */
-          /*padding-left: 0;*/
         } 
         .wt-sourcer-custom-tooltip ul {
           margin: 0 !important;
-          padding-left: 14px !important;
+          padding-left: 14px;
           list-style-type: disc;
         }
         .wt-sourcer-custom-tooltip li {
           /* 3. Force the LI to start at the edge of the UL's padding */
-          margin: 0 0 2px 0 !important;
-          padding-left: 4px !important;
-          text-indent: -8px !important;
+          margin: 0 0 2px 0;
+          padding-left: 4px;
+          text-indent: -8px;
         }
         .wt-sourcer-tooltip-error {
           color: red;
