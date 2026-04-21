@@ -1249,8 +1249,10 @@ if (runningExtensionId === currentExtensionId) {
         let keyword = "";
         if (fsIdType == "image") {
           keyword = "FamilySearchImage=";
+        } else if (fsIdType == "record") {
+          keyword = "FamilySearchRecord=";
         } else {
-          keyword = "FamilySearch=";
+          keyword = "FamilySearchPerson=";
         }
 
         let added = false;
@@ -1330,14 +1332,18 @@ if (runningExtensionId === currentExtensionId) {
     if (location.sourceFsIds && location.sourceFsIds.length) {
       iconConfig.includeSourceBox = true;
       let recordWikiIds = new Set();
+      let recordFsIds = new Set();
       let numRecordsUsedOnWt = 0;
       let imageWikiIds = new Set();
+      let imageFsIds = new Set();
       let numImagesUsedOnWt = 0;
       for (let sourceFsId of location.sourceFsIds) {
         let idType = sourceFsId.idData.idType;
+        let fsId = sourceFsId.idData.id;
         if (idType == "record") {
           if (sourceFsId.wikiIds) {
             numRecordsUsedOnWt++;
+            recordFsIds.add(fsId);
             for (let wikiId of sourceFsId.wikiIds) {
               recordWikiIds.add(wikiId);
             }
@@ -1345,6 +1351,7 @@ if (runningExtensionId === currentExtensionId) {
         } else if (idType == "image") {
           if (sourceFsId.wikiIds) {
             numImagesUsedOnWt++;
+            imageFsIds.add(fsId);
             for (let wikiId of sourceFsId.wikiIds) {
               imageWikiIds.add(wikiId);
             }
@@ -1397,7 +1404,7 @@ if (runningExtensionId === currentExtensionId) {
         let wikiId = recordWikiIds.values().next().value;
 
         if (!linkUrl) {
-          linkUrl = buildWtPlusUrlForSet(recordWikiIds, "record");
+          linkUrl = buildWtPlusUrlForSet(recordFsIds, "record");
         }
 
         if (!clipboardText) {
@@ -1430,7 +1437,7 @@ if (runningExtensionId === currentExtensionId) {
         }
       } else if (imageWikiIds.size > 1) {
         if (!linkUrl) {
-          linkUrl = buildWtPlusUrlForSet(imageWikiIds, "image");
+          linkUrl = buildWtPlusUrlForSet(imageFsIds, "image");
         }
         if (!clipboardText) {
           for (let wikiId of imageWikiIds) {
