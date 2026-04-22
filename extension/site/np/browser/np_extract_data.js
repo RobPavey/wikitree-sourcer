@@ -76,7 +76,13 @@ function extractMar2026Format(document, result) {
   let dateTimeElement = document.querySelector("div.sticky-sm-top time");
 
   if (metaTitle) {
-    result.articleTitle = metaTitle.getAttribute("content");
+    title = metaTitle.getAttribute("content");
+    // sometimes it has " - Newspapers.com" on the end
+    const endingToRemove = " - Newspapers.com";
+    if (title.endsWith(endingToRemove)) {
+      title = title.substring(0, title.length - endingToRemove.length);
+    }
+    result.articleTitle = title;
   }
 
   if (metaDescription) {
