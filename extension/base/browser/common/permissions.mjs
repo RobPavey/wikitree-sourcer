@@ -67,7 +67,14 @@ function doesUrlMatchChromePattern(pattern, url) {
     .replace(/[.+^${}()|[\]\\]/g, "\\$&") // Escape all regex specials
     .replace(/\*/g, ".*"); // Convert * to .*
 
+  // there can be an issue with a pattern like "*://*.billiongraves.com/*"
+  // not matching:
+  // https://billiongraves.com/grave/Ivan-Lucien-Freeman/6498843?referrer=myheritage
+  // The browser matching will match but our regex has to allow for that
+  regexString = regexString.replace(/:\/\/\.\*\\\./, ":\\/\\/(?:.*\\.)?");
+
   const regex = new RegExp(`^${regexString}$`);
+
   return regex.test(url);
 }
 
