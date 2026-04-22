@@ -278,11 +278,31 @@ function extractData(document, url) {
     let linkNode = formADiv.querySelector("a#form-a-front");
     if (!linkNode) {
       linkNode = formADiv.querySelector("a.form-a");
+      if (!linkNode) {
+        // just use the first link - to handle 1926 census
+        linkNode = formADiv.querySelector("li > a");
+      }
     }
     if (linkNode) {
       let href = linkNode.getAttribute("href");
       if (href) {
         result.imageLink = href;
+      }
+    }
+  }
+
+  if (!result.imageLink) {
+    // 1926 census is a different format - it actuallu does have a #form-a
+    // this is a defensive backup
+    let pdfList = document.querySelector("ul.pdf-list");
+    if (pdfList) {
+      // just use the first link
+      let linkNode = pdfList.querySelector("li > a");
+      if (linkNode) {
+        let href = linkNode.getAttribute("href");
+        if (href) {
+          result.imageLink = href;
+        }
       }
     }
   }
