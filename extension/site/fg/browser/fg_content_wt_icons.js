@@ -553,6 +553,13 @@ if (runningExtensionId === currentExtensionId) {
     if (locationType.useIdFromPageUrl) {
       // check to see if there is a flower
       let flowers = document.querySelectorAll("div.flower-list p.flower-text");
+      logDebug("getFlowerWikiIdsForLocation, flowers is", flowers);
+      if (flowers.length == 0) {
+        // may be on the flowers page e.g.:
+        // https://www.findagrave.com/memorial/96569470/sarah_saphronia-bond/flower
+        flowers = document.querySelectorAll("#flower-list p.flower-text");
+        logDebug("getFlowerWikiIdsForLocation, flowers is", flowers);
+      }
       for (let flower of flowers) {
         let flowerText = flower.textContent;
         if (flowerText) {
@@ -682,7 +689,7 @@ if (runningExtensionId === currentExtensionId) {
 
   let areOptionsForThisPageEnabled = false;
 
-  function onMutation(options, mutations) {
+  function onMutation(mutations) {
     // Because FindAGrave is a Single Page Application (SPA), the URL can change
     // without a page reload. In that case the MutationObserver is still running
     if (window.sourcerWtIconsLastProcessedUrl !== document.URL) {
@@ -759,6 +766,33 @@ if (runningExtensionId === currentExtensionId) {
 
   let pageMods = undefined;
 
+  function listenForAddFlower() {
+    document.addEventListener(
+      "click",
+      (e) => {
+        let addFlowerButton = e.target.closest("#add-leave-flower");
+        if (addFlowerButton) {
+          logDebug("clicked on add flower button");
+          if (pageMods.pageProfile) {
+            for (let locationType of pageMods.pageProfile.locationTypes) {
+              if (locationType.locationTypeName == "pageH1") {
+                // onMutation will get triggered as the flower is added, but it may cause
+                // the pageH1 to get updated before the flowerText is present
+                // so it is better to do a wait and manually call onMutation
+                // This wait should be longer than the debounce wait
+                setTimeout(() => {
+                  pageMods.removeWikiTreeIconsForLocationType(locationType, getElementToAddIconTo);
+                  onMutation();
+                }, 400);
+              }
+            }
+          }
+        }
+      },
+      { capture: true, passive: true }
+    );
+  }
+
   function initWtIconInjection(options) {
     // Check if we've already initialized to prevent double-observers
     if (window.hasSourcerWtIconInjectionStarted) return;
@@ -787,7 +821,7 @@ if (runningExtensionId === currentExtensionId) {
       }
 
       //logDebug("MutationObserver called", mutations);
-      onMutation(options, mutations);
+      onMutation(mutations);
     });
 
     window.sourcerWtMutationObserver = observer;
@@ -798,6 +832,9 @@ if (runningExtensionId === currentExtensionId) {
     });
 
     logDebug("WikiTree Sourcer: Observer started.");
+
+    // add a listener for adding a flower
+    listenForAddFlower();
   }
 
   async function checkOptionsAndInitWtIconInjection() {

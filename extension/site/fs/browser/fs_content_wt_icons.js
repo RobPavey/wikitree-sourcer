@@ -1747,7 +1747,7 @@ if (runningExtensionId === currentExtensionId) {
 
   let areOptionsForThisPageEnabled = false;
 
-  function onMutation(options, mutations) {
+  function onMutation(mutations) {
     //logDebug("onMutation: mutations is: ", mutations);
 
     // Because FamilySearch is a Single Page Application (SPA), the URL can change
@@ -1827,6 +1827,30 @@ if (runningExtensionId === currentExtensionId) {
 
   let pageMods = undefined;
 
+  function listenForAddSource() {
+    document.addEventListener(
+      "click",
+      (e) => {
+        let sourceSaveButton = e.target.closest("button[data-testid='source-save-button']");
+        if (sourceSaveButton) {
+          logDebug("clicked on save button");
+          if (pageMods.pageProfile) {
+            for (let locationType of pageMods.pageProfile.locationTypes) {
+              if (locationType.locationTypeName == "pageH1") {
+                let personId = pageMods.id;
+                if (personSourceIdsCache[personId]) {
+                  delete personSourceIdsCache[personId];
+                }
+                pageMods.removeWikiTreeIconsForLocationType(locationType, getElementToAddIconTo);
+              }
+            }
+          }
+        }
+      },
+      { capture: true, passive: true }
+    );
+  }
+
   function initWtIconInjection(options) {
     // Check if we've already initialized to prevent double-observers
     if (window.hasSourcerWtIconInjectionStarted) return;
@@ -1857,7 +1881,7 @@ if (runningExtensionId === currentExtensionId) {
       }
 
       //logDebug("MutationObserver called", mutations);
-      onMutation(options, mutations);
+      onMutation(mutations);
     });
 
     window.sourcerWtMutationObserver = observer;
@@ -1868,6 +1892,9 @@ if (runningExtensionId === currentExtensionId) {
       //attributes: true, // Catch class or style changes (like 'hidden' being removed)
       //characterData: true, // Catch cases where text is swapped out inside a node
     });
+
+    // add a listener for adding a new source
+    listenForAddSource();
 
     // NEW: Add a safety-net poll for the first 5 seconds
     // This is to handle case where a FamilySearch page was not triggering and mutation

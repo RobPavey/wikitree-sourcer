@@ -784,6 +784,57 @@ class WikiTreeSourcerPageModsHelper {
     }
   }
 
+  removeWikiTreeIconAtLocation(location) {
+    //logDebug("removeWikiTreeIconAtLocation", location);
+    let iconPlaceElement = location.iconPlaceElement;
+    //logDebug("removeWikiTreeIconAtLocation: iconPlaceElement is", iconPlaceElement);
+
+    if (iconPlaceElement) {
+      if (iconPlaceElement.isConnected) {
+        let iconParent = this.findExistingIconParent(location);
+        if (iconParent) {
+          //logDebug("removeWikiTreeIconAtLocation, iconParent is", iconParent);
+          let iconElement = iconParent.querySelector(".wt-sourcer-icon-container");
+          //logDebug("removeWikiTreeIconAtLocation, iconElement is", iconElement);
+          if (iconElement && iconElement.isConnected) {
+            //logDebug("removeWikiTreeIconAtLocation, removing iconElement");
+            iconParent.removeChild(iconElement);
+          } else {
+            // This case can happen when switching back and forth between FS pages
+            // It is not really an error and can be safely ignored
+            //console.warn("removeIconAtLocation: no iconElement found for location", location);
+          }
+        } else {
+          console.warn("removeWikiTreeIconAtLocation: no iconParent for location", location);
+        }
+      } else {
+        //console.warn("removeIconAtLocation: iconPlaceElement is no longer part of the document", location);
+      }
+    } else {
+      console.warn("removeWikiTreeIconAtLocation: no iconPlaceElement for location", location);
+    }
+  }
+
+  removeWikiTreeIconsForLocationType(locationType, getElementToAddIconTo) {
+    // this is used to force rebuild of the H1 icon on the sources page when
+    // a new backlink source is added (or any source is added)
+    logDebug("removeWikiTreeIconsForLocationType, locationType is", locationType);
+
+    let candidateElements = document.querySelectorAll(locationType.selector);
+    logDebug("removeWikiTreeIconsForLocationType, candidateElements is", candidateElements);
+    for (let candidateElement of candidateElements) {
+      let candidateLocation = { locationType: locationType, matchedElement: candidateElement };
+
+      if (candidateElement.dataset && candidateElement.dataset.wtIconProcessed) {
+        delete candidateElement.dataset.wtIconProcessed;
+      }
+
+      candidateLocation.iconPlaceElement = getElementToAddIconTo(candidateLocation);
+
+      this.removeWikiTreeIconAtLocation(candidateLocation);
+    }
+  }
+
   addProcessingIcon(location) {
     if (!this.getOption("showProcessingIcon")) {
       return;
