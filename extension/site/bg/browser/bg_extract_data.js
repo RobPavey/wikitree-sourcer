@@ -161,6 +161,43 @@ function extractFromJson(document, result, dataScript) {
   }
 }
 
+function extractFromJson2026(document, result, dataScript) {
+  const jsonText = dataScript.innerHTML;
+  if (!jsonText || !jsonText.startsWith("{")) {
+    console.log("bg extract not JSON text");
+    return result;
+  }
+  const dataJson = JSON.parse(jsonText);
+  // Either the main person on memorial or some inscribed
+  let apiData = dataJson?.props?.pageProps?.apiData;
+  if (!apiData) {
+    console.log("bg extract no apiData in script JSON");
+    return result;
+  }
+
+  let collectionData = apiData.Collection;
+  let recordData = apiData.Record;
+
+  if (!recordData) {
+    console.log("bg extract no recordData in apiData");
+    return result;
+  }
+
+  setFromJsonWithKey(result, recordData, "fullname", "fullName");
+  setFromJsonWithKey(result, recordData, "family_names", "lastName");
+  setFromJsonWithKey(result, recordData, "given_names", "givenName");
+
+  setFromJsonWithKey(result, recordData, "birth_date", "birthDate");
+  if (result.birthDate) {
+    result.birthDate = convertDateString(result.birthDate);
+  }
+
+  setFromJsonWithKey(result, recordData, "death_date", "deathDate");
+  if (result.deathDate) {
+    result.deathDate = convertDateString(result.deathDate);
+  }
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -176,10 +213,17 @@ function extractData(document, url) {
   // new style record page (Oct 2022)
   const recordPageHeaderNode = document.querySelector("[class^='RecordPage_header__']");
 
-  const dataScript = document.querySelector("script[type='application/ld+json']");
   // extract from script tag JSON in head
+  let dataScript = document.querySelector("script#__NEXT_DATA__"); // 2026 format
   if (dataScript) {
-    extractFromJson(document, result, dataScript);
+    extractFromJson2026(document, result, dataScript);
+  }
+
+  if (!dataScript || !result.fullName) {
+    dataScript = document.querySelector("script[type='application/ld+json']");
+    if (dataScript) {
+      extractFromJson(document, result, dataScript);
+    }
   }
 
   if (vitalInformationNode) {
