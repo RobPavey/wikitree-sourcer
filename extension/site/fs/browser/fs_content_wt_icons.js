@@ -1417,18 +1417,20 @@ if (runningExtensionId === currentExtensionId) {
         }
 
         tooltipData.listItems.push({
-          text: `has attached record sources referenced by ${recordWikiIds.size} profiles`,
+          text: `has ${numRecordsUsedOnWt} attached record sources referenced by ${recordWikiIds.size} profiles`,
           isError: true,
         });
 
         if (imageWikiIds.size > 0) {
           tooltipData.listItems.push({
-            text: `has attached image sources referenced by ${imageWikiIds.size} profiles`,
+            text: `has ${numImagesUsedOnWt} attached image sources referenced by ${imageWikiIds.size} profiles`,
           });
         }
       } else if (imageWikiIds.size == 1) {
         let wikiId = imageWikiIds.values().next().value;
-        tooltipData.listItems.push({ text: `has attached image sources referenced by profile ${wikiId}` });
+        tooltipData.listItems.push({
+          text: `has ${numImagesUsedOnWt} attached image sources referenced by profile ${wikiId}`,
+        });
         if (!linkUrl) {
           linkUrl = buildWikiProfileUrl(wikiId);
         }
@@ -1448,7 +1450,9 @@ if (runningExtensionId === currentExtensionId) {
           }
         }
 
-        tooltipData.listItems.push({ text: `has attached image sources referenced by ${imageWikiIds.size} profiles` });
+        tooltipData.listItems.push({
+          text: `has ${numImagesUsedOnWt} attached image sources referenced by ${imageWikiIds.size} profiles`,
+        });
       }
     }
 
