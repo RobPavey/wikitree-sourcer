@@ -641,6 +641,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       "Baptism Date",
       "Christening Date",
       "Birth Date",
+      "Date of Birth",
       "Baptism Year",
       "Christening Year",
       "Birth Year",
@@ -1507,7 +1508,7 @@ function generalizeDataGivenRecordType(ed, result) {
   determineRoleGivenRecordType(ed, result);
 
   if (result.recordType == RT.BirthRegistration) {
-    const dateFields = ["Birth Date", "Birth Registration Date"];
+    const dateFields = ["Birth Date", "Date of Birth", "Birth Registration Date"];
     const yearFields = ["Birth Registration Year"];
     const quarterFields = ["Birth Registration Quarter", "Birth Quarter"];
     if (!setDateFromAncestryDateFields(ed, result, ["event", "birth"], dateFields, yearFields, quarterFields)) {
@@ -1548,7 +1549,7 @@ function generalizeDataGivenRecordType(ed, result) {
 
     buildParents(ed, result);
   } else if (result.recordType == RT.Birth) {
-    const dateFields = ["Birth Date"];
+    const dateFields = ["Birth Date", "Date of Birth"];
     setDateFromAncestryDateFields(ed, result, ["event", "birth"], dateFields);
 
     let eventPlace = getCleanValueForRecordDataList(ed, result, ["Birth Place", "Birthplace", "Registration Place"]);
@@ -1614,7 +1615,7 @@ function generalizeDataGivenRecordType(ed, result) {
     result.ageAtDeath = getCleanValueForRecordDataList(ed, result, ["Age at Death", "Death Age", "Age"]);
 
     // later England Death Registration include exact birth date
-    let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date");
+    let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date");
     if (birthDate) {
       result.setBirthDate(birthDate);
     }
@@ -1667,7 +1668,7 @@ function generalizeDataGivenRecordType(ed, result) {
     }
 
     // later England Death Registration include exact birth date
-    let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date", "Birth Year"], "date");
+    let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth", "Birth Year"], "date");
     if (birthDate) {
       result.setBirthDate(birthDate);
     }
@@ -1772,7 +1773,7 @@ function generalizeDataGivenRecordType(ed, result) {
     if (ed.titleCollection && ed.titleCollection.includes("1939")) {
       result.setEventYear("1939");
 
-      let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date");
+      let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date");
       result.setBirthDate(birthDate);
 
       let maritalStatus = getCleanValueForRecordDataList(ed, result, ["Marital Status", "Marital status"]);
@@ -2256,7 +2257,7 @@ function generalizeDataGivenRecordType(ed, result) {
   } else if (result.recordType == RT.Obituary) {
     // if there is a death or burial date etc then this is likely a record for this person not a
     // child or spouse
-    let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date");
+    let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date");
     let deathDate = getCleanValueForRecordDataList(ed, result, ["Death Date"], "date");
     let deathPlace = getCleanValueForRecordDataList(ed, result, ["Death Place", "Death County"]);
     let eventDate = getCleanValueForRecordDataList(ed, result, ["Obituary Date", "Date", "Newspaper Date"], "date");
@@ -2463,7 +2464,7 @@ function generalizeDataGivenRecordType(ed, result) {
         "date"
       )
     );
-    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date"));
+    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date"));
     result.setDeathDate(getCleanValueForRecordDataList(ed, result, ["Death Date"], "date"));
     if (!result.eventDate) {
       result.setEventYear(
@@ -2567,7 +2568,7 @@ function generalizeDataGivenRecordType(ed, result) {
   } else if (result.recordType == RT.SchoolRecords) {
     result.setEventDate(getCleanValueForRecordDataList(ed, result, ["Yearbook Date", "Admission Date"], "date"));
 
-    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date"));
+    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date"));
     result.setBirthYear(getCleanValueForRecordDataList(ed, result, ["Birth Year"]));
 
     let schoolLocation = getCleanValueForRecordDataList(ed, result, ["School Location"]);
@@ -2657,7 +2658,7 @@ function generalizeDataGivenRecordType(ed, result) {
     if (ageAtEvent) {
       result.ageAtEvent = ageAtEvent;
     }
-    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date"));
+    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date"));
     result.setBirthPlace(getCleanValueForRecordDataList(ed, result, ["Birth Place"]));
     let arrivalDate = getCleanValueForRecordDataList(ed, result, ["Arrival Date"]);
     if (arrivalDate) {
@@ -2674,7 +2675,7 @@ function generalizeDataGivenRecordType(ed, result) {
   } else if (result.recordType == RT.FreedomOfCity) {
     result.setEventDate(getCleanValueForRecordDataList(ed, result, ["Admission Date", "Event Date", "Date"], "date"));
     result.setEventPlace(getCleanValueForRecordDataList(ed, result, ["Residence Place"]));
-    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date"));
+    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date"));
     result.setBirthPlace(getCleanValueForRecordDataList(ed, result, ["Birth Place"]));
 
     result.setFieldIfValueExists(
@@ -2769,7 +2770,7 @@ function generalizeDataGivenRecordType(ed, result) {
     result.setEventPlace(eventPlace);
 
     // lots of record have a birth date. The narrative may not use it but search can.
-    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date"));
+    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date"));
     result.setBirthPlace(getCleanValueForRecordDataList(ed, result, ["Birth Place"]));
 
     result.setDeathDate(getCleanValueForRecordDataList(ed, result, ["Death Date"], "date"));
@@ -3259,7 +3260,7 @@ function setExtraGdHouseholdFields(extractedData, result, generalizedMember, fie
   setMemberData("maritalStatus", ["Marital Status", "Marital status"], GD.standardizeMaritalStatus);
   setMemberData("gender", ["Gender"], GD.standardizeGender);
   setMemberData("occupation", ["Occupation"]);
-  setMemberData("birthDate", ["Birth Date", "DOB"]);
+  setMemberData("birthDate", ["Birth Date", "DOB", "Date of Birth"]);
   setMemberData("birthPlace", ["Where born", "Where Born", "Birth Place", "Birthplace", "Birth place"]);
   setMemberData("birthYear", ["Estimated Birth Year", "Birth Year"]);
   setMemberData("employer", ["Employer"]);
