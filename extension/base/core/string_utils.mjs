@@ -384,6 +384,43 @@ const StringUtils = {
 
     return false;
   },
+
+  convertHtmlTagsToWikiMarkup(htmlString) {
+    if (!htmlString) return "";
+
+    //console.log("convertHtmlTagsToWikiMarkup: htmlString:", htmlString);
+
+    let wikiText = htmlString;
+
+    // 1. Bold: <b> or <strong> -> '''text'''
+    wikiText = wikiText.replace(/<(?:b|strong)>(.*?)<\/(?:b|strong)>/gi, "'''$1'''");
+
+    // 2. Italics: <i> or <em> -> ''text''
+    wikiText = wikiText.replace(/<(?:i|em)>(.*?)<\/(?:i|em)>/gi, "''$1''");
+
+    // 3. Headings: <h1> -> = text =, <h2> -> == text ==, etc.
+    wikiText = wikiText.replace(/<h1>(.*?)<\/h1>/gi, "= $1 =");
+    wikiText = wikiText.replace(/<h2>(.*?)<\/h2>/gi, "== $1 ==");
+    wikiText = wikiText.replace(/<h3>(.*?)<\/h3>/gi, "=== $1 ===");
+
+    // 4. Links: <a href="url">text</a> -> [url text]
+    wikiText = wikiText.replace(/<a\s+[^>]*href="\s*([^"]*)\s*"[^>]*>\s*(.*?)\s*<\/a>/gi, "[$1 $2]");
+
+    // 5. Lists: <li> -> * (Basic implementation)
+    wikiText = wikiText.replace(/<li>(.*?)<\/li>/gi, "* $1");
+
+    // 6. Line Breaks: <br> or <br /> -> (WikiTree supports <br>, but often uses double newline)
+    // Keeping <br> is usually safer for exact formatting, but we'll clean up the tags.
+    wikiText = wikiText.replace(/<br\s*\/?>/gi, "<br>");
+
+    // 7. Strip structural tags that don't have direct equivalents (ul, ol, p, div)
+    // This leaves the content but removes the containers.
+    wikiText = wikiText.replace(/<\/?(?:ul|ol|p|div|span)>/gi, "");
+
+    //console.log("convertHtmlTagsToWikiMarkup: wikiText:", wikiText);
+
+    return wikiText.trim();
+  },
 };
 
 export { StringUtils };

@@ -25,6 +25,7 @@ SOFTWARE.
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { DataString } from "../../../base/core/data_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import {
   buildFsRecordLinkOrTemplate,
   buildFsImageLinkOrTemplate,
@@ -352,7 +353,7 @@ function buildSourceReferenceFromRecord(ed, gd, options) {
     addValue("Book", refData.sourceBookNbr);
     addValue("Page", refData.sourcePageNbr);
 
-    addValue("Affiliate Name", refData.externalRepositoryName);
+    addValue("Affiliate Name", StringUtils.convertHtmlTagsToWikiMarkup(refData.externalRepositoryName));
     addValue("Affiliate Publication Title", refData.externalPublicationTitle);
     addValue("Affiliate Publication Number", refData.externalPublicationNumber);
     addValue("Affiliate Film Number", refData.externalFilmNumber);
