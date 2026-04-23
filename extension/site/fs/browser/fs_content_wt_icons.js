@@ -1208,6 +1208,11 @@ if (runningExtensionId === currentExtensionId) {
       return;
     }
 
+    let locationType = location.locationType;
+    let locationTypeName = locationType?.locationTypeName;
+    let pageProfile = pageMods.pageProfile;
+    let pageIdType = pageProfile.pageIdType;
+
     let iconConfig = {
       isMultiple: false,
       isConflict: false,
@@ -1268,10 +1273,33 @@ if (runningExtensionId === currentExtensionId) {
       return linkUrl;
     }
 
+    if (pageIdType == "person" && locationTypeName == "pageH1") {
+      if (wikiIds.length) {
+        pageProfile.wikiIds = wikiIds;
+      } else if (backLinkWikiIds.length) {
+        pageProfile.wikiIds = backLinkWikiIds;
+      } else if (sourceFsIds.length) {
+        pageProfile.wikiIds = [];
+        for (let sourceFsId of sourceFsIds) {
+          let idType = sourceFsId.idData.idType;
+          if (idType == "record") {
+            if (sourceFsId.wikiIds) {
+              for (let wikiId of sourceFsId.wikiIds) {
+                if (!pageProfile.wikiIds.includes(wikiId)) {
+                  pageProfile.wikiIds.push(wikiId);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
     if (wikiIds.length > 1) {
       iconConfig.isMultiple = true;
       iconConfig.mainArrowStyle = "in";
-      tooltipData.listItems.push({ text: `is referenced from ${wikiIds.length} profiles` });
+      let tooltipListItem = { text: `is referenced from ${wikiIds.length} profiles` };
+      tooltipData.listItems.push(tooltipListItem);
 
       for (let wikiId of wikiIds) {
         if (clipboardText) {
@@ -1281,13 +1309,28 @@ if (runningExtensionId === currentExtensionId) {
       }
 
       linkUrl = buildWtPlusUrl(location.id, location.idType);
+
+      if (locationTypeName == "person" || locationTypeName == "record") {
+        iconConfig.isConflict = true;
+        tooltipListItem.isError = true;
+      }
     } else if (wikiIds.length == 1) {
       iconConfig.mainArrowStyle = "in";
       primaryWikiId = wikiIds[0];
 
-      tooltipData.listItems.push({ text: `is referenced from profile ${wikiIds[0]}` });
+      let tooltipListItem = { text: `is referenced from profile ${wikiIds[0]}` };
+      tooltipData.listItems.push(tooltipListItem);
+
       clipboardText = wikiIds[0];
       linkUrl = buildWikiProfileUrl(wikiIds[0]);
+
+      if (pageIdType == "person" && locationTypeName == "sourceRow" && pageProfile.wikiIds) {
+        if (pageProfile.wikiIds.length == 1 && pageProfile.wikiIds[0] != wikiIds[0]) {
+          iconConfig.isConflict = true;
+          tooltipListItem.text += ` which is different to profile ${pageProfile.wikiIds[0]}`;
+          tooltipListItem.isError = true;
+        }
+      }
     }
 
     if (backLinkWikiIds.length == 1) {
