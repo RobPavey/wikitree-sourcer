@@ -27,6 +27,7 @@ import { RC } from "./record_collections.mjs";
 import { StringUtils } from "./string_utils.mjs";
 import { DateUtils } from "./date_utils.mjs";
 import { RT, RecordSubtype, Role } from "./record_type.mjs";
+import { NameUtils } from "./name_utils.mjs";
 
 const possibleLifeSpan = 120;
 
@@ -1466,6 +1467,19 @@ class NameObj {
     return name;
   }
 
+  updateNarrativeName() {
+    if (!this.narrativeName) {
+      if (this.nonPrefixHonorific == "Mrs") {
+        let predictedGender = NameUtils.predictGenderFromGivenNames(this.inferForenames());
+        if (predictedGender == "male") {
+          // this could be a name like "Mrs. Jacob Mytinger" where the husband's name is
+          // used. We never want to refer to this person as "Jacob" for example.
+          this.narrativeName = this.inferFullName();
+        }
+      }
+    }
+  }
+
   removeSuffix(name, isFull = false) {
     if (!name) {
       return "";
@@ -1611,6 +1625,7 @@ class NameObj {
       this.name = this.moveNicknamesFromNameString(this.name);
       this.name = this.removeTitle(this.name, true);
       this.name = this.removeSuffix(this.name, true);
+      this.updateNarrativeName();
     }
   }
 
@@ -1628,6 +1643,7 @@ class NameObj {
       this.forenames = this.cleanName(name);
       this.forenames = this.removeTitle(this.forenames);
       this.moveNicknamesFromForenames();
+      this.updateNarrativeName();
     }
   }
 
@@ -1635,6 +1651,7 @@ class NameObj {
     if (name && isString(name)) {
       this.firstName = this.cleanName(name);
       this.firstName = this.removeTitle(this.firstName);
+      this.updateNarrativeName();
     }
   }
 
@@ -1642,6 +1659,7 @@ class NameObj {
     if (name && isString(name)) {
       this.firstNames = this.cleanName(name);
       this.firstNames = this.removeTitle(this.firstNames);
+      this.updateNarrativeName();
     }
   }
 

@@ -500,6 +500,19 @@ const DateUtils = {
       return result;
     }
 
+    // Sometimes we can get a date like: 11 1793
+    const monthNumYearRegex = /^(\d\d?)+\s+(\d\d\d\d)$/;
+    if (monthNumYearRegex.test(cleanString)) {
+      let monthNum = cleanString.replace(monthNumYearRegex, "$1");
+      let yearNum = cleanString.replace(monthNumYearRegex, "$2");
+
+      result.monthNum = monthNum;
+      result.yearNum = yearNum;
+      result.hasMonth = true;
+      result.isValid = true;
+      return result;
+    }
+
     // Sometimes we can get a date like: 1907 Oct-Nov-Dec
     // e.g.: https://www.ancestry.com/discoveryui-content/view/335664:8952
     // Typically this is removed in generatized data but just in case:

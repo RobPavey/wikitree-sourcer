@@ -482,6 +482,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:VZ4P-PBP",
   },
   {
+    caseName: "us_pa_death_1793_mrs_jacob_mytinger",
+    url: "https://www.familysearch.org/ark:/61903/1:1:H543-TJMM?lang=en",
+  },
+  {
     caseName: "us_pa_marriage_amanda_duff",
     url: "https://www.familysearch.org/ark:/61903/1:1:VF9F-FGL",
   },

@@ -1,0 +1,44 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Jacob Mytinger",
+    "nonPrefixHonorific": "Mrs",
+    "narrativeName": "Mrs Jacob Mytinger",
+    "lastName": "Mytinger",
+    "forenames": "Jacob"
+  },
+  "deathDate": {
+    "dateString": "11 1793",
+    "yearString": "1793"
+  },
+  "eventDate": {
+    "dateString": "11 1793",
+    "yearString": "1793"
+  },
+  "eventPlace": {
+    "placeString": "Philadelphia, Phila., Penn."
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Jacob Mytinger",
+        "lastName": "Mytinger",
+        "forenames": "Jacob"
+      }
+    }
+  ],
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "H543-TJMM"
+    }
+  ],
+  "collectionData": {
+    "id": "3535178",
+    "collectionTitle": "Pennsylvania, Deaths and Burials, 1720-1999"
+  },
+  "hasValidData": true
+}
