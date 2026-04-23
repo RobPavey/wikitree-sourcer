@@ -1976,7 +1976,7 @@ registerSubsectionForOptions(
   "ui",
   "pageMods",
   "Page Mods general",
-  "By default Sourcer will not make changes to web pages (except for when filling out search forms at user request).",
+  "By default Sourcer will not make changes to web pages (except for when filling out search forms at user request or highlighting items in search results).",
   2
 );
 
