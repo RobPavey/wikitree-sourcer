@@ -1131,23 +1131,18 @@ class WikiTreeSourcerPageModsHelper {
         .wt-sourcer-custom-tooltip ul {
           margin: 0;
           padding: 0;
-          list-style-position: outside;
-          padding-inline-start: 0;
           display: flex;
           flex-direction: column;
           gap: 4px;
         }
         .wt-sourcer-custom-tooltip li {
-          /* 3. Force the LI to start at the edge of the UL's padding */
           margin: 0 0 2px 0;
           padding-left: 0px;
-          /*text-indent: -8px;*/
 
           display: grid;
           /* Grid column 1 is the bullet, column 2 is the text */
           grid-template-columns: 1em auto; 
           align-items: start;
-          width: fit-content;
           line-height: 1.4;
         }
 
