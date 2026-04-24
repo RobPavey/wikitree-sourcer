@@ -99,33 +99,67 @@ class WikiTreeSourcerPageModsHelper {
       }
 
       mainDiv.style.display = "block";
-      mainDiv.style.maxWidth = "500px"; // Ensure it can't grow forever
+
+      // The tooltip may already have been used an expanded to fit text
+      // this resets that
+      // 'auto' allows it to shrink-wrap, 'max-content' is even more explicit
+      mainDiv.style.width = "max-content";
+      mainDiv.style.maxWidth = "500px";
+
+      // Force a reflow/repaint to get the NEW dimensions
+      void mainDiv.offsetHeight;
+
+      // --- START NEW BOUNDARY LOGIC ---
+      const gap = isTouch ? 20 : 15;
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      // Set a safe maximum width so it doesn't hug the screen edges
+      const safeMargin = 20;
+      const absoluteMaxWidth = Math.min(500, screenWidth - safeMargin * 2);
+      mainDiv.style.maxWidth = absoluteMaxWidth + "px";
+
+      // Force a reflow to get the actual height/width after setting maxWidth
+      void mainDiv.offsetHeight;
+
+      let tooltipWidth = mainDiv.offsetWidth;
+
+      // Calculate horizontal position
+      let left = clientX + gap;
+      if (left + tooltipWidth > screenWidth - safeMargin) {
+        // Try flipping to the left
+        left = clientX - tooltipWidth - gap;
+
+        // If it's STILL off the left edge (narrow screens),
+        // center it or pin it to the margin
+        if (left < safeMargin) {
+          left = safeMargin;
+
+          if (tooltipWidth > screenWidth - safeMargin * 2) {
+            // If it's this cramped, the width needs to shrink further
+            mainDiv.style.width = screenWidth - safeMargin * 2 + "px";
+          }
+        }
+      }
 
       // Force a reflow/repaint while the touch is active
       void mainDiv.offsetHeight;
+      let tooltipHeight = mainDiv.offsetHeight;
 
-      const xOffset = isTouch ? 40 : 15;
-      const yOffset = isTouch ? -80 : 15;
+      // Calculate vertical position
+      let top = clientY + gap;
+      if (top + tooltipHeight > screenHeight - safeMargin) {
+        // Try flipping vertically
+        top = clientY - tooltipHeight - gap;
 
-      // Calculate potential right edge
-      const screenWidth = window.innerWidth;
-      const tooltipWidth = this.tooltip.offsetWidth;
-      const screenHeight = window.innerHeight;
-      const tooltipHeight = this.tooltip.offsetHeight;
-      let left = clientX + xOffset;
-      let top = clientY + yOffset;
-
-      //logDebug(`showTooltip: screenWidth=${screenWidth}, tooltipWidth=${tooltipWidth}, left=${left}`);
-
-      // If it overflows the right edge, flip it to the left side of the cursor
-      if (left + tooltipWidth > screenWidth) {
-        left = clientX - tooltipWidth - xOffset;
+        // If it's STILL off the top edge,
+        // center it or pin it to the margin
+        if (top < safeMargin) {
+          top = safeMargin;
+        }
       }
 
-      // If it overflows the bottom edge, flip it to the top side of the cursor
-      if (top + tooltipHeight > screenHeight) {
-        top = clientY - tooltipHeight - yOffset;
-      }
+      // --- END NEW BOUNDARY LOGIC ---
 
       // Immediate positioning so it doesn't "pop" in from the corner
       mainDiv.style.left = left + "px";
@@ -1076,19 +1110,28 @@ class WikiTreeSourcerPageModsHelper {
           border-radius: 6px;
           font-size: 13px;
           line-height: 1.4;
-          max-width: 300px;
+
+          width: fit-content;
+          max-width: 500px;
+
           box-shadow: 0 4px 12px rgba(0,0,0,0.5);
           border: 1px solid #555;
           font-family: sans-serif;
+
+          box-sizing: border-box; /* Critical for padding not to break width */
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          /* Ensure the list doesn't get cut off when narrow */
+          min-width: 150px;
         }
         .wt-sourcer-custom-tooltip label {
           display: block;
           margin: 0 0 4px 0;
         } 
         .wt-sourcer-custom-tooltip ul {
-          margin: 0 !important;
-          padding-left: 14px;
-          list-style-type: disc;
+          margin: 5px 0 0 1.2em; /* Use em for bullet spacing */
+          padding: 0;
+          list-style-position: outside;
         }
         .wt-sourcer-custom-tooltip li {
           /* 3. Force the LI to start at the edge of the UL's padding */
@@ -1098,6 +1141,14 @@ class WikiTreeSourcerPageModsHelper {
         }
         .wt-sourcer-tooltip-error {
           color: red;
+        }
+
+        /* Add a media query for very small devices */
+        @media (max-width: 400px) {
+          .wt-sourcer-custom-tooltip {
+            font-size: 11px;
+            padding: 6px;
+          }
         }
     `;
     (document.head || document.documentElement).appendChild(style);
