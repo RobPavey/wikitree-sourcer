@@ -172,6 +172,12 @@ const uiOptionsPageModBehaviourGroup = {
       label: "Override right-click on icons to copy the wikiID or other relevant text",
       defaultValue: true,
     },
+    {
+      optionName: "modifyCitationOnPage",
+      type: "checkbox",
+      label: "Modify the Source Citation provided by Find A Grave to use a WikiTree template",
+      defaultValue: false,
+    },
   ],
 };
 

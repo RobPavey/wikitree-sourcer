@@ -797,6 +797,28 @@ if (runningExtensionId === currentExtensionId) {
     );
   }
 
+  // This code is based on the WikiTree BEE code that modifies the FindAGrave "Source citation"
+  function modifyCitation(memorialId) {
+    const citation = document.getElementById("citationInfo");
+    const memorialLink = citation.getElementsByTagName("a")[1];
+    const previousWithTemplate = memorialLink.previousSibling.textContent
+      .replace("Find a Grave Memorial ID ", "{{FindAGrave|")
+      .replace("GedenkstÃ¤tten-ID bei Find a Grave ", "{{FindAGrave|");
+    memorialLink.previousSibling.textContent = previousWithTemplate;
+    memorialLink.nextSibling.textContent = "}}" + memorialLink.nextSibling.textContent;
+  }
+
+  function optionallyModifyFindAGraveSourceCitation(options) {
+    let option = options.ui_fg_modifyCitationOnPage;
+    if (option) {
+      const memorialIdLabel = document.getElementById("memNumberLabel");
+      if (memorialIdLabel != null) {
+        memorialIdThis = memorialIdLabel.innerText;
+        modifyCitation(memorialIdThis);
+      }
+    }
+  }
+
   function initWtIconInjection(options) {
     // Check if we've already initialized to prevent double-observers
     if (window.hasSourcerWtIconInjectionStarted) return;
@@ -804,6 +826,8 @@ if (runningExtensionId === currentExtensionId) {
     window.hasSourcerWtIconInjectionStarted = true;
 
     logDebug("initWtIconInjection: document.URL is: " + document.URL);
+
+    optionallyModifyFindAGraveSourceCitation(options);
 
     let siteConfig = {
       siteName: "fg",
