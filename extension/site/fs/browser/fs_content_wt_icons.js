@@ -1310,7 +1310,7 @@ if (runningExtensionId === currentExtensionId) {
 
       linkUrl = buildWtPlusUrl(location.id, location.idType);
 
-      if (locationTypeName == "person" || locationTypeName == "record") {
+      if (location.idType == "person" || location.idType == "record") {
         iconConfig.isConflict = true;
         tooltipListItem.isError = true;
       }
