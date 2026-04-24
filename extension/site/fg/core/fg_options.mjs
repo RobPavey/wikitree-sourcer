@@ -177,6 +177,7 @@ const uiOptionsPageModBehaviourGroup = {
       type: "checkbox",
       label: "Modify the Source Citation provided by Find A Grave to use a WikiTree template",
       defaultValue: false,
+      comment: "Do not enable this if WikiTree BEE is enabled as it will cause BEE to make a corrupted citation.",
     },
   ],
 };

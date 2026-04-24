@@ -800,12 +800,23 @@ if (runningExtensionId === currentExtensionId) {
   // This code is based on the WikiTree BEE code that modifies the FindAGrave "Source citation"
   function modifyCitation(memorialId) {
     const citation = document.getElementById("citationInfo");
+    // asume that the link we want to change is the second anchor in the citation
     const memorialLink = citation.getElementsByTagName("a")[1];
-    const previousWithTemplate = memorialLink.previousSibling.textContent
-      .replace("Find a Grave Memorial ID ", "{{FindAGrave|")
-      .replace("GedenkstÃ¤tten-ID bei Find a Grave ", "{{FindAGrave|");
-    memorialLink.previousSibling.textContent = previousWithTemplate;
-    memorialLink.nextSibling.textContent = "}}" + memorialLink.nextSibling.textContent;
+    let preceedingText = memorialLink.previousSibling.textContent;
+    let followingText = memorialLink.nextSibling.textContent;
+    // be careful in case BEE has already changed it
+    const standardEnglishText = "Find a Grave Memorial ID ";
+    const standardGermanText = "GedenkstÃ¤tten-ID bei Find a Grave ";
+
+    if (preceedingText.includes(standardEnglishText) || preceedingText.includes(standardGermanText)) {
+      const newPreceedingText = preceedingText
+        .replace(standardEnglishText, "{{FindAGrave|")
+        .replace(standardGermanText, "{{FindAGrave|");
+      const newFollowingText = "}}" + followingText;
+
+      memorialLink.previousSibling.textContent = newPreceedingText;
+      memorialLink.nextSibling.textContent = newFollowingText;
+    }
   }
 
   function optionallyModifyFindAGraveSourceCitation(options) {
