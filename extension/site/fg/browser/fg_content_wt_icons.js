@@ -69,11 +69,15 @@ if (runningExtensionId === currentExtensionId) {
 
   // A virtual cemetery page should look like one of these:
   // https://www.findagrave.com/virtual-cemetery/427392?page=1#sr-55216107
-  const virtualCemeteryRegex = /^\/virtual-cemetery\/(\d+)[\/\?\#].*$/;
+  // but can be:
+  // https://www.findagrave.com/virtual-cemetery/427392
+  const virtualCemeteryRegex = /^\/virtual-cemetery\/(\d+).*$/;
 
   // A cemetery page should look like one of these:
   // https://www.findagrave.com/cemetery/8074/inglewood-park-cemetery
-  const cemeteryRegex = /^\/cemetery\/(\d+)\/.*$/;
+  // But when coming from a category link can be:
+  // https://www.findagrave.com/cemetery/8074
+  const cemeteryRegex = /^\/cemetery\/(\d+).*$/;
 
   // A cemetery search page looks like:
   // https://www.findagrave.com/cemetery/8074/memorial-search?fulltext=&firstname=&middlename=&lastname=Bond&cemeteryName=Inglewood+Park+Cemetery&birthyear=&birthyearfilter=&deathyear=&deathyearfilter=&bio=&linkedToName=&plot=&memorialid=&mcid=&datefilter=&orderby=r
