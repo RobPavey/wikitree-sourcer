@@ -172,9 +172,10 @@ class WikiTreeSourcerPageModsHelper {
   }
 
   handleClickOnIcon(iconData) {
+    let option = this.options.ui_pageMods_newTabPos;
     logDebug("handleClickOnIcon: iconData is", iconData);
     if (iconData.linkUrl) {
-      chrome.runtime.sendMessage({ type: "openInNewTab", url: iconData.linkUrl, tabOption: "" });
+      chrome.runtime.sendMessage({ type: "openInNewTab", url: iconData.linkUrl, tabOption: option });
     }
   }
 

@@ -1905,6 +1905,17 @@ const uiPageModsOptionsGroup = {
       defaultValue: false,
       comment: "This is a master control. If this is not checked then no page modifications will be made.",
     },
+    {
+      optionName: "newTabPos",
+      type: "select",
+      label: "Where to open a new tab when clicking a Sourcer button/icon",
+      values: [
+        { value: "rightMost", text: "To the right of all existing tabs" },
+        { value: "nextToRight", text: "To the right of the current tab" },
+        { value: "newWindow", text: "In a new window" },
+      ],
+      defaultValue: "rightMost",
+    },
   ],
 };
 
