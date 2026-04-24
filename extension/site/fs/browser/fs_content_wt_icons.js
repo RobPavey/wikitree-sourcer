@@ -1185,6 +1185,8 @@ if (runningExtensionId === currentExtensionId) {
     }
   }
 
+  let currentPageWikiIds = [];
+
   function addWikiTreeIcon(location, wikiIds) {
     pageMods.removeProcessingIcon(location);
 
@@ -1274,19 +1276,19 @@ if (runningExtensionId === currentExtensionId) {
     }
 
     if (pageIdType == "person" && locationTypeName == "pageH1") {
+      currentPageWikiIds = [];
       if (wikiIds.length) {
-        pageProfile.wikiIds = wikiIds;
+        currentPageWikiIds = [...wikiIds];
       } else if (backLinkWikiIds.length) {
-        pageProfile.wikiIds = backLinkWikiIds;
+        currentPageWikiIds = [...backLinkWikiIds];
       } else if (sourceFsIds.length) {
-        pageProfile.wikiIds = [];
         for (let sourceFsId of sourceFsIds) {
           let idType = sourceFsId.idData.idType;
           if (idType == "record") {
             if (sourceFsId.wikiIds) {
               for (let wikiId of sourceFsId.wikiIds) {
-                if (!pageProfile.wikiIds.includes(wikiId)) {
-                  pageProfile.wikiIds.push(wikiId);
+                if (!currentPageWikiIds.includes(wikiId)) {
+                  currentPageWikiIds.push(wikiId);
                 }
               }
             }
@@ -1324,10 +1326,10 @@ if (runningExtensionId === currentExtensionId) {
       clipboardText = wikiIds[0];
       linkUrl = buildWikiProfileUrl(wikiIds[0]);
 
-      if (pageIdType == "person" && locationTypeName == "sourceRow" && pageProfile.wikiIds) {
-        if (pageProfile.wikiIds.length == 1 && pageProfile.wikiIds[0] != wikiIds[0]) {
+      if (pageIdType == "person" && locationTypeName == "sourceRow" && currentPageWikiIds) {
+        if (currentPageWikiIds.length == 1 && currentPageWikiIds[0] != wikiIds[0]) {
           iconConfig.isConflict = true;
-          tooltipListItem.text += ` which is different to profile ${pageProfile.wikiIds[0]}`;
+          tooltipListItem.text += ` which is different to profile ${currentPageWikiIds[0]}`;
           tooltipListItem.isError = true;
         }
       }
