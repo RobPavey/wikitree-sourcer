@@ -664,21 +664,15 @@ async function addSearchMenus(menu, data, backFunction, excludeSite) {
     subMenuText = "Search...";
   }
 
-  // If the top-level menu is showing as many items as the sub-menu could show with no filters
-  // then don't show the "Shaow All Search Sites" item
+  // Note, we used to hide the Submenu Item if it would not show anyhing that was not already
+  // shown on the top-level menu. This is not feasible now that the option
+  // search_general_popup_maxTotalItemsInTopMenu can retroactively remove items from the top level
+  // menu.
   let subMenuFunctions = buildSubMenuItemFunctions(data, null, excludeSite);
-  console.log("subMenuFunctions is: ", subMenuFunctions);
-  if (subMenuFunctions.functionList.length > topMenuFunctionList.length) {
-    // If the top level menu is showing every single search site option then there is no need for
-    // a submenu
-    if (topMenuFunctionList.length < registeredSearchMenuItemFunctions.length) {
-      // add the "All search sites.." submenu item
-      addMenuItem(menu, subMenuText, function (element) {
-        setupAllSitesSubmenu(data, filter, backFunction, excludeSite);
-      });
-      countOfMenuItemsAdded++;
-    }
-  }
+  addMenuItem(menu, subMenuText, function (element) {
+    setupAllSitesSubmenu(data, filter, backFunction, excludeSite);
+  });
+  countOfMenuItemsAdded++;
 
   return countOfMenuItemsAdded;
 }
