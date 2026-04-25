@@ -1119,33 +1119,9 @@ if (runningExtensionId === currentExtensionId) {
     },
   ];
 
-  function wtPlusApiCall(url) {
-    return new Promise((resolve, reject) => {
-      chrome.runtime.sendMessage(
-        {
-          type: "doWtPlusApiCall",
-          url: url,
-        },
-        (response) => {
-          if (response && response.success) {
-            resolve(JSON.parse(response.rawData));
-          } else {
-            if (chrome.runtime.lastError) {
-              reject(chrome.runtime.lastError);
-            } else if (response.error) {
-              reject(response.error);
-            } else {
-              reject("No response");
-            }
-          }
-        }
-      );
-    });
-  }
-
   function wtPlusApiGetProfilesUsingFsId(idString) {
     let url = `https://plus.wikitree.com/function/wtFamilySearch/Sourcer.json?query=${idString}`;
-    return wtPlusApiCall(url);
+    return pageMods.wtPlusApiCall(url);
   }
 
   function getElementToAddIconTo(location) {
@@ -1206,7 +1182,7 @@ if (runningExtensionId === currentExtensionId) {
       sourceFsIds = [];
     }
 
-    if (wikiIds.length == 0 && backLinkWikiIds.length == 0 && sourceFsIds == 0) {
+    if (wikiIds.length == 0 && backLinkWikiIds.length == 0 && sourceFsIds == 0 && !location.error) {
       return;
     }
 
@@ -1227,6 +1203,19 @@ if (runningExtensionId === currentExtensionId) {
     let linkUrl = "";
 
     let primaryWikiId = "";
+
+    if (wikiIds.length == 0 && location.error) {
+      let error = location.error;
+      iconConfig.isFetchError = true;
+      let itemText = `could not get data from the WT+ API`;
+      if (error.wasBlocked) {
+        itemText += " because your IP address was blocked";
+      } else {
+        itemText += " due to " + error.message;
+      }
+      let tooltipListItem = { text: itemText, isError: true };
+      tooltipData.listItems.push(tooltipListItem);
+    }
 
     function buildWikiProfileUrl(wikiId) {
       return "https://www.wikitree.com/wiki/" + wikiId;
@@ -1632,6 +1621,16 @@ if (runningExtensionId === currentExtensionId) {
     } catch (error) {
       console.error("WT+ API Batch fetch failed", error);
       logDebug("fsIdsString is", fsIdsString);
+
+      if (currentBatch.locations) {
+        let locations = currentBatch.locations;
+        for (let location of locations) {
+          location.error = { message: `Fetch failed due to '${error}'` };
+          if (error == "Blocked request") {
+            location.error.wasBlocked = true;
+          }
+        }
+      }
     }
   }
 

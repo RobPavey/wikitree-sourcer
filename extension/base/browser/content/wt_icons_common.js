@@ -556,14 +556,23 @@ class WikiTreeSourcerPageModsHelper {
 
     let fill = `"rgb(255, 175, 2)"`;
     let stroke = `"white"`;
+    let strokeDashArray = "";
     if (iconConfig.isConflict) {
       stroke = `"rgb(255, 0, 0)"`;
     }
+    if (iconConfig.isFetchError) {
+      let r = 11;
+      let circum = 2 * Math.PI * r;
+      let dashLen = circum / 10;
+      stroke = `"rgb(255, 0, 0)"`;
+      strokeDashArray = `stroke-dasharray="${dashLen} ${dashLen}"`;
+    }
+
     const circleBack = `
-        <circle cx="15" cy="9" r="8" fill=${fill} stroke=${stroke} stroke-width="1.5" opacity="0.6"/>
+        <circle cx="15" cy="9" r="8" fill=${fill} ${strokeDashArray} stroke=${stroke} stroke-width="1.5" opacity="0.6"/>
       `;
     const circleFront = `
-        <circle cx="10" cy="14" r="9" fill=${fill} stroke=${stroke} stroke-width="1.5"/>
+        <circle cx="10" cy="14" r="9" fill=${fill} ${strokeDashArray} stroke=${stroke} stroke-width="1.5"/>
       `;
 
     const svg = `
@@ -734,6 +743,14 @@ class WikiTreeSourcerPageModsHelper {
     if (iconConfig.isConflict) {
       circle = `
         <circle cx="12" cy="12" r="11" fill="rgb(255, 175, 2)" stroke="rgb(255, 0, 0)" stroke-width="2"/>
+      `;
+    } else if (iconConfig.isFetchError) {
+      let r = 11;
+      let circum = 2 * Math.PI * r;
+      let dashLen = circum / 10;
+      circle = `
+        <circle cx="12" cy="12" r="11" fill="rgb(255, 175, 2)"
+        stroke="rgb(255, 0, 0)" stroke-dasharray="${dashLen} ${dashLen}" stroke-width="2"/>
       `;
     } else {
       circle = `
@@ -1019,7 +1036,15 @@ class WikiTreeSourcerPageModsHelper {
         },
         (response) => {
           if (response && response.success) {
-            resolve(JSON.parse(response.rawData));
+            logDebug("wtPlusApiCall: response is:", response);
+            let rawData = response.rawData;
+            if (rawData.startsWith("{")) {
+              resolve(JSON.parse(rawData));
+            } else if (rawData.startsWith("<html>") && rawData.includes("Blocked request")) {
+              reject("Blocked request");
+            } else {
+              reject("Not JSON");
+            }
           } else {
             if (chrome.runtime.lastError) {
               reject(chrome.runtime.lastError);

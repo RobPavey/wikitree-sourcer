@@ -216,7 +216,7 @@ if (runningExtensionId === currentExtensionId) {
       flowerWikiIds = [];
     }
 
-    if (wikiIds.length == 0 && flowerWikiIds.length == 0) {
+    if (wikiIds.length == 0 && flowerWikiIds.length == 0 && !location.error) {
       return;
     }
 
@@ -236,6 +236,19 @@ if (runningExtensionId === currentExtensionId) {
     let clipboardText = "";
 
     let linkUrl = "";
+
+    if (wikiIds.length == 0 && location.error) {
+      let error = location.error;
+      iconConfig.isFetchError = true;
+      let itemText = `could not get data from the WT+ API`;
+      if (error.wasBlocked) {
+        itemText += " because your IP address was blocked";
+      } else {
+        itemText += " due to " + error.message;
+      }
+      let tooltipListItem = { text: itemText, isError: true };
+      tooltipData.listItems.push(tooltipListItem);
+    }
 
     if (wikiIds.length > 1) {
       iconConfig.isMultiple = true;
@@ -464,7 +477,17 @@ if (runningExtensionId === currentExtensionId) {
           }
         } catch (error) {
           console.error("!!!!!!! WT+ API Batch fetch failed", error);
-          logDebug("fgIdToQuery cemetery id string is: ", fgIdToQuery);
+          logDebug("fgIdToQuery id string is: ", fgIdToQuery);
+
+          if (currentBatch.locations) {
+            let locations = currentBatch.locations;
+            for (let location of locations) {
+              location.error = { message: `Fetch failed due to '${error}'` };
+              if (error == "Blocked request") {
+                location.error.wasBlocked = true;
+              }
+            }
+          }
         }
       }
 
@@ -497,6 +520,16 @@ if (runningExtensionId === currentExtensionId) {
         } catch (error) {
           console.error("!!!!!!! WT+ API Batch fetch failed", error);
           logDebug("cemetery id string is: ", cemeteryId);
+
+          if (currentBatch.locations) {
+            let locations = currentBatch.locations;
+            for (let location of locations) {
+              location.error = { message: `Fetch failed due to '${error}'` };
+              if (error == "Blocked request") {
+                location.error.wasBlocked = true;
+              }
+            }
+          }
         }
       }
     }
@@ -539,6 +572,16 @@ if (runningExtensionId === currentExtensionId) {
     } catch (error) {
       console.error("!!!!!!! WT+ API Batch fetch failed", error);
       logDebug("fgIdsString is", fgIdsString);
+
+      if (currentBatch.locations) {
+        let locations = currentBatch.locations;
+        for (let location of locations) {
+          location.error = { message: `Fetch failed due to '${error}'` };
+          if (error == "Blocked request") {
+            location.error.wasBlocked = true;
+          }
+        }
+      }
     }
   }
 

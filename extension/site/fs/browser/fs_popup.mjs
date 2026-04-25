@@ -718,7 +718,6 @@ async function setupFsPopupMenu(extractedData, tabId) {
     if (count) {
       addMenuDivider(menu);
     }
-
     addFsImageBuildCitationMenuItems(menu, data);
   } else if (extractedData.pageType == "person") {
     await addSearchMenus(menu, data, backFunction, "fs");
