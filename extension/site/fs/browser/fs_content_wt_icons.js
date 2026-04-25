@@ -1635,69 +1635,83 @@ if (runningExtensionId === currentExtensionId) {
   }
 
   async function processPendingLocations() {
-    // Check if the extension is still "alive"
-    if (!chrome.runtime?.id) {
-      console.log("WikiTree Sourcer: Context invalidated, stopping batch.");
-      return;
-    }
-
-    // Clear the pendingLocationsBatch immediately so new mutations start a fresh batch
-    const currentBatch = pendingLocationsBatch;
-    pendingLocationsBatch = {};
-
-    // Filter out locations where the element has been detached from the DOM
-    // This happens if FamilySearch/React re-rendered the area while we were waiting.
-    currentBatch.locations = currentBatch.locations.filter((location) => {
-      const isConnected = location.matchedElement && location.matchedElement.isConnected;
-
-      if (!isConnected) {
-        logDebug("Pruning disconnected location from batch:", location);
+    try {
+      // Check if the extension is still "alive"
+      if (!chrome.runtime?.id) {
+        console.log("WikiTree Sourcer: Context invalidated, stopping batch.");
+        return;
       }
-      return isConnected;
-    });
 
-    if (currentBatch.fetchFunctionsForFsIds) {
-      for (let fetchFunction of currentBatch.fetchFunctionsForFsIds) {
-        await fetchFunction(currentBatch);
+      // Clear the pendingLocationsBatch immediately so new mutations start a fresh batch
+      const currentBatch = pendingLocationsBatch;
+      pendingLocationsBatch = {};
+
+      if (!currentBatch.locations) {
+        // this can happen whete switching back and forth quickly between Details and Sources
+        return;
       }
-    }
 
-    if (currentBatch.fetchFunctionsForBackLinks) {
-      for (let fetchFunction of currentBatch.fetchFunctionsForBackLinks) {
-        await fetchFunction(currentBatch);
-      }
-    }
+      // Filter out locations where the element has been detached from the DOM
+      // This happens if FamilySearch/React re-rendered the area while we were waiting.
+      currentBatch.locations = currentBatch.locations.filter((location) => {
+        const isConnected = location.matchedElement && location.matchedElement.isConnected;
 
-    if (currentBatch.fetchFunctionsForSourceWikiIds) {
-      for (let fetchFunction of currentBatch.fetchFunctionsForSourceWikiIds) {
-        await fetchFunction(currentBatch);
-      }
-    }
+        if (!isConnected) {
+          logDebug("Pruning disconnected location from batch:", location);
+        }
+        return isConnected;
+      });
 
-    // Use WT+ API to get the WikiTree IDs that use these fsIds
-    await getWikiIdsForBatch(currentBatch);
-
-    logDebug("cachedFsIdToWtIdsMap is:", cachedFsIdToWtIdsMap);
-
-    // Go through the locations and set the WikiIds
-    if (currentBatch.locations) {
-      let locations = currentBatch.locations;
-      for (let location of locations) {
-        if (location.id) {
-          let key = location.id + "|" + location.idType;
-          let wikiIds = cachedFsIdToWtIdsMap.get(key);
-          if (location.sourceFsIds) {
-            for (let sourceFsId of location.sourceFsIds) {
-              let fsId = sourceFsId.idData.id;
-              let sourceKey = fsId + "|" + sourceFsId.idData.idType;
-              sourceFsId.wikiIds = cachedFsIdToWtIdsMap.get(sourceKey);
-            }
-          }
-          addWikiTreeIcon(location, wikiIds);
-        } else {
-          pageMods.removeProcessingIcon(location);
+      if (currentBatch.fetchFunctionsForFsIds) {
+        for (let fetchFunction of currentBatch.fetchFunctionsForFsIds) {
+          await fetchFunction(currentBatch);
         }
       }
+
+      if (currentBatch.fetchFunctionsForBackLinks) {
+        for (let fetchFunction of currentBatch.fetchFunctionsForBackLinks) {
+          await fetchFunction(currentBatch);
+        }
+      }
+
+      if (currentBatch.fetchFunctionsForSourceWikiIds) {
+        for (let fetchFunction of currentBatch.fetchFunctionsForSourceWikiIds) {
+          await fetchFunction(currentBatch);
+        }
+      }
+
+      // Use WT+ API to get the WikiTree IDs that use these fsIds
+      await getWikiIdsForBatch(currentBatch);
+
+      logDebug("cachedFsIdToWtIdsMap is:", cachedFsIdToWtIdsMap);
+
+      // Go through the locations and set the WikiIds
+      if (currentBatch.locations) {
+        let locations = currentBatch.locations;
+        for (let location of locations) {
+          if (location.id) {
+            let key = location.id + "|" + location.idType;
+            let wikiIds = cachedFsIdToWtIdsMap.get(key);
+            if (location.sourceFsIds) {
+              for (let sourceFsId of location.sourceFsIds) {
+                let fsId = sourceFsId.idData.id;
+                let sourceKey = fsId + "|" + sourceFsId.idData.idType;
+                sourceFsId.wikiIds = cachedFsIdToWtIdsMap.get(sourceKey);
+              }
+            }
+            addWikiTreeIcon(location, wikiIds);
+          } else {
+            pageMods.removeProcessingIcon(location);
+          }
+        }
+      }
+    } catch (error) {
+      openExceptionPageForContentScript(
+        "Error in processPendingLocations for FamilySearch page",
+        pageMods,
+        error,
+        true
+      );
     }
   }
 
@@ -1797,79 +1811,82 @@ if (runningExtensionId === currentExtensionId) {
 
   function onMutation(mutations) {
     //logDebug("onMutation: mutations is: ", mutations);
+    try {
+      // Because FamilySearch is a Single Page Application (SPA), the URL can change
+      // without a page reload. In that case the MutationObserver is still running
+      if (window.sourcerWtIconsLastProcessedUrl !== document.URL) {
+        window.sourcerWtIconsLastProcessedUrl = document.URL;
 
-    // Because FamilySearch is a Single Page Application (SPA), the URL can change
-    // without a page reload. In that case the MutationObserver is still running
-    if (window.sourcerWtIconsLastProcessedUrl !== document.URL) {
-      window.sourcerWtIconsLastProcessedUrl = document.URL;
+        // we have changed page so kill any pending locations
+        pendingLocationsBatch = {};
 
-      // we have changed page so kill any pending locations
-      pendingLocationsBatch = {};
-
-      pageMods.determinePageProfile(document.URL);
-      let idData = pageMods.getIdDataFromUrl(document.URL);
-      if (idData) {
-        pageMods.id = idData.id;
-        pageMods.idType = idData.idType;
-      }
-
-      logDebug("pageProfile is: ", pageMods.pageProfile);
-
-      if (!pageMods.pageProfile) {
-        console.log("initWtIconInjection could not identify pageProfile for URL:", document.URL);
-        return;
-      }
-
-      // if none of the options for this profile are enabled return
-      areOptionsForThisPageEnabled = false;
-      for (let locationType of pageMods.pageProfile.locationTypes) {
-        if (pageMods.isLocationTypeEnabled(locationType)) {
-          areOptionsForThisPageEnabled = true;
-          break;
+        pageMods.determinePageProfile(document.URL);
+        let idData = pageMods.getIdDataFromUrl(document.URL);
+        if (idData) {
+          pageMods.id = idData.id;
+          pageMods.idType = idData.idType;
         }
-      }
-    }
 
-    if (!pageMods.pageProfile || !areOptionsForThisPageEnabled) {
-      logDebug("areOptionsForThisPageEnabled is: ", areOptionsForThisPageEnabled, "returning");
-      return;
-    }
+        logDebug("pageProfile is: ", pageMods.pageProfile);
 
-    let foundNew = false;
+        if (!pageMods.pageProfile) {
+          console.log("initWtIconInjection could not identify pageProfile for URL:", document.URL);
+          return;
+        }
 
-    let candidateLocations = [];
-
-    for (let locationType of pageMods.pageProfile.locationTypes) {
-      if (pageMods.isLocationTypeEnabled(locationType)) {
-        let candidateElements = document.querySelectorAll(locationType.selector);
-        //logDebug("locationType ", locationType);
-        //logDebug("candidateElements ", candidateElements);
-        for (let candidateElement of candidateElements) {
-          let candidateLocation = { locationType: locationType, matchedElement: candidateElement };
-          if (analyzeLocation(candidateLocation)) {
-            //logDebug("pushing candidateLocation ", candidateLocation);
-
-            candidateLocations.push(candidateLocation);
-          } else {
-            //logDebug("candidate location rejected:", candidateLocation);
+        // if none of the options for this profile are enabled return
+        areOptionsForThisPageEnabled = false;
+        for (let locationType of pageMods.pageProfile.locationTypes) {
+          if (pageMods.isLocationTypeEnabled(locationType)) {
+            areOptionsForThisPageEnabled = true;
+            break;
           }
         }
       }
-    }
 
-    if (candidateLocations.length) {
-      logDebug(`There are ${candidateLocations.length} candidateLocations`);
-      logDebug(candidateLocations);
-      foundNew = true;
-    }
+      if (!pageMods.pageProfile || !areOptionsForThisPageEnabled) {
+        logDebug("areOptionsForThisPageEnabled is: ", areOptionsForThisPageEnabled, "returning");
+        return;
+      }
 
-    candidateLocations.forEach((candidateLocation) => {
-      addLocationToPendingBatch(candidateLocation);
-    });
+      let foundNew = false;
 
-    if (foundNew) {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(processPendingLocations, 300); // Wait 300ms of "silence"
+      let candidateLocations = [];
+
+      for (let locationType of pageMods.pageProfile.locationTypes) {
+        if (pageMods.isLocationTypeEnabled(locationType)) {
+          let candidateElements = document.querySelectorAll(locationType.selector);
+          //logDebug("locationType ", locationType);
+          //logDebug("candidateElements ", candidateElements);
+          for (let candidateElement of candidateElements) {
+            let candidateLocation = { locationType: locationType, matchedElement: candidateElement };
+            if (analyzeLocation(candidateLocation)) {
+              //logDebug("pushing candidateLocation ", candidateLocation);
+
+              candidateLocations.push(candidateLocation);
+            } else {
+              //logDebug("candidate location rejected:", candidateLocation);
+            }
+          }
+        }
+      }
+
+      if (candidateLocations.length) {
+        logDebug(`There are ${candidateLocations.length} candidateLocations`);
+        logDebug(candidateLocations);
+        foundNew = true;
+      }
+
+      candidateLocations.forEach((candidateLocation) => {
+        addLocationToPendingBatch(candidateLocation);
+      });
+
+      if (foundNew) {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(processPendingLocations, 300); // Wait 300ms of "silence"
+      }
+    } catch (error) {
+      openExceptionPageForContentScript("Error in onMutation for FamilySearch page", pageMods, error, true);
     }
   }
 
