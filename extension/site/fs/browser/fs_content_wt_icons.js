@@ -377,26 +377,24 @@ if (runningExtensionId === currentExtensionId) {
 
     let cachedIds = personSourceIdsCache[personId];
     if (cachedIds) {
+      logDebug("returning cached ids");
       return cachedIds;
     }
 
     let fetchResult = await fetchFsSourceIdsForPersonJson(personId);
-    if (
-      fetchResult.success &&
-      fetchResult.dataObj &&
-      fetchResult.dataObj.entityRefs &&
-      fetchResult.dataObj.entityRefs.length
-    ) {
+    if (fetchResult.success && fetchResult.dataObj && fetchResult.dataObj.entityRefs) {
       logDebug("getSourceIdsForPerson, dataObj", fetchResult.dataObj);
       let entityRefs = fetchResult.dataObj.entityRefs;
 
       let sourceIds = [];
-      for (let entityRef of entityRefs) {
-        let value = entityRef.value;
+      if (entityRefs.length) {
+        for (let entityRef of entityRefs) {
+          let value = entityRef.value;
 
-        if (value && value.type == "SOURCE") {
-          let sourceId = value.uri;
-          sourceIds.push(sourceId);
+          if (value && value.type == "SOURCE") {
+            let sourceId = value.uri;
+            sourceIds.push(sourceId);
+          }
         }
       }
 
