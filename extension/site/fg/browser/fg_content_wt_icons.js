@@ -609,6 +609,7 @@ if (runningExtensionId === currentExtensionId) {
       }
       for (let flower of flowers) {
         let flowerText = flower.textContent;
+        logDebug("flowerText is ", flowerText);
         if (flowerText) {
           const regex = /^(.+\-\d+) on WikiTree$/;
           if (regex.test(flowerText)) {
@@ -616,6 +617,19 @@ if (runningExtensionId === currentExtensionId) {
             if (flowerWikiId) {
               if (!flowerWikiIds.includes(flowerWikiId)) {
                 flowerWikiIds.push(flowerWikiId);
+              }
+            }
+          } else {
+            // try something more flexible to spport flow text like
+            // "Family tree on WikiTree at Eliott-29"
+            let wtIndex = flowerText.search(/wikitree/i);
+            if (wtIndex != -1) {
+              idRegex = /^.*([^\s]+\-\d+)[^\d]*$/;
+              if (idRegex.test(flowerText)) {
+                let flowerWikiId = flowerText.replace(idRegex, "$1");
+                if (flowerWikiId && !flowerWikiIds.includes(flowerWikiId)) {
+                  flowerWikiIds.push(flowerWikiId);
+                }
               }
             }
           }
