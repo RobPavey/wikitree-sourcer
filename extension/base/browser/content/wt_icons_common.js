@@ -36,20 +36,20 @@ class WikiTreeSourcerPageModsHelper {
   initTooltip() {
     this.tooltip = document.createElement("div");
     this.tooltip.className = "wt-sourcer-custom-tooltip";
-    // Basic styling - move specific colors/padding to your injectWTSourcerStyles
-    Object.assign(this.tooltip.style, {
-      position: "fixed",
-      display: "none",
-      zIndex: "999999",
-      pointerEvents: "none", // Ensures tooltip doesn't flicker under mouse
-      backgroundColor: "white",
-      color: "black",
-      padding: "8px",
-      borderRadius: "4px",
-      fontSize: "12px",
-      boxShadow: "0 2px 5px rgba(0,0,0,0.3)",
-    });
     document.body.appendChild(this.tooltip);
+
+    let banner = document.createElement("label");
+    banner.textContent = "WikiTree Sourcer";
+    banner.className = "wt-sourcer-custom-tooltip-banner";
+    this.tooltip.appendChild(banner);
+    let sup = document.createElement("sup");
+    sup.innerText = "\u00A0[1]";
+    banner.appendChild(sup);
+
+    let content = document.createElement("div");
+    content.className = "wt-sourcer-custom-tooltip-content";
+    this.tooltip.appendChild(content);
+    this.tooltipContent = content;
   }
 
   async copyTextToClipboard(element, clipboardText) {
@@ -77,11 +77,13 @@ class WikiTreeSourcerPageModsHelper {
     //logDebug(`tooltipData is`, tooltipData);
     if (tooltipData) {
       let mainDiv = this.tooltip;
+      let contentDiv = this.tooltipContent;
 
-      mainDiv.replaceChildren();
+      contentDiv.replaceChildren();
+
       let label = document.createElement("label");
       label.textContent = tooltipData.title;
-      mainDiv.appendChild(label);
+      contentDiv.appendChild(label);
 
       if (tooltipData.listItems.length > 0) {
         let listElement = document.createElement("ul");
@@ -95,7 +97,7 @@ class WikiTreeSourcerPageModsHelper {
           }
           listElement.appendChild(listItemElement);
         }
-        mainDiv.appendChild(listElement);
+        contentDiv.appendChild(listElement);
       }
 
       mainDiv.style.display = "block";
@@ -1130,17 +1132,17 @@ class WikiTreeSourcerPageModsHelper {
           display: none;
           z-index: 2147483647; /* Maximum possible z-index */
           pointer-events: none;
-          background-color: #333333;
-          color: #ffffff;
-          padding: 10px;
-          border-radius: 6px;
-          font-size: 13px;
+          background-color: white;
+          color: black;
+          /*padding: 8px;*/
+          border-radius: 4px;
+          font-size: 12px;
           line-height: 1.4;
 
           width: fit-content;
           max-width: 500px;
 
-          box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+          box-shadow: 0 3px 6px rgba(0,0,0,0.5);
           border: 1px solid #555;
           font-family: sans-serif;
 
@@ -1150,6 +1152,11 @@ class WikiTreeSourcerPageModsHelper {
           /* Ensure the list doesn't get cut off when narrow */
           min-width: 150px;
         }
+
+        .wt-sourcer-custom-tooltip-content {
+          padding: 0px 8px 8px 8px;
+        }
+
         .wt-sourcer-custom-tooltip label {
           display: block;
           margin: 0 0 4px 0;
@@ -1181,6 +1188,20 @@ class WikiTreeSourcerPageModsHelper {
             /* This ensures the bullet is vertically centered with the first line */
             text-align: left; 
             /*color: #bbb; /* Subtle bullet color */
+        }
+
+        .wt-sourcer-custom-tooltip-banner {
+          display: block;
+          padding: 2px 8px 0px 8px;
+          margin: 0;
+          vertical-align: middle;
+          color: white;
+          background-color: #699d32;
+          border: none;
+          text-align: left;
+        }
+        .wt-sourcer-custom-tooltip-banner sup {
+          line-height: 0 !important;
         }
 
         .wt-sourcer-tooltip-error {
