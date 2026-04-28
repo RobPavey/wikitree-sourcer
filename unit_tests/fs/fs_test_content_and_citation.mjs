@@ -651,6 +651,13 @@ const personRegressionData = [
     fetchType: "person",
   },
   {
+    // FamilySearch changed what the fetch returned in Apr 2026
+    // No description in dataObj
+    caseName: "xx_profile_garnett_swanson_1907_1990_apr2026fmt",
+    url: "https://www.familysearch.org/en/tree/person/details/L64W-R4Z",
+    fetchType: "person",
+  },
+  {
     // causing issues with sibling lists
     caseName: "xx_profile_garnett_swanson_1907_1990",
     url: "https://www.familysearch.org/en/tree/person/details/L64W-R4Z",

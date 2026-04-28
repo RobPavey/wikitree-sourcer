@@ -3206,15 +3206,20 @@ function extractPersonDataFromFetch(result, document, dataObj, options) {
   // is the one that is being focused on
   let description = dataObj.description;
 
-  if (!description) {
+  let personId = "";
+  if (description) {
+    // For a person page the description will be something like: "#SD-G8S8-5FJ" meaning the personId is:
+    // "G8S8-5FJ"
+    // Note. This description field no longer seems to exist after April 2025.
+    personId = description.replace(/^\#SD\-/, "");
+    result.personId = personId;
+  } else if (dataObj.persons && dataObj.persons.length > 0) {
+    personId = dataObj.persons[0].id;
+    result.personId = personId;
+  } else {
     // this could be an image page which is not handled currently
     return result;
   }
-
-  // For a person page the description will be something like: "#SD-G8S8-5FJ" meaning the personId is:
-  // "G8S8-5FJ"
-  let personId = description.replace(/^\#SD\-/, "");
-  result.personId = personId;
 
   if (!dataObj.persons || dataObj.persons.length < 1) {
     return result;
