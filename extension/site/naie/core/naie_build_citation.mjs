@@ -67,6 +67,8 @@ function buildCoreCitation(ed, gd, builder) {
         link = "http://www.census.nationalarchives.ie" + link;
       }
     }
+    // The imageLink query part can contain spaces - encode those.
+    link = encodeURI(link);
     builder.imageLink = "[" + link + " National Archives of Ireland Image]";
   }
 
