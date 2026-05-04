@@ -32,6 +32,11 @@ import {
 import { handleDoSearchWithSearchDataMessage } from "./background_search.mjs";
 import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
 import { handleExceptionMessage } from "./background_exception.mjs";
+import {
+  registerContentScripts,
+  injectContentScriptsIntoTabsOnPermissionsChange,
+} from "./background_content_scripts.mjs";
+import { logDebug } from "/base/core/log_debug.mjs";
 
 function setPopup(tab, popupPage) {
   //console.log("WikiTree Sourcer, background script (MV3), set popup on tab " + tab + " to: " + popupPage);
@@ -68,8 +73,7 @@ function messageHandler(request, sender, sendResponse) {
   // Request should have these fields
   // type = the message type, a string that defines the action to be performed
 
-  //console.log("background messageHandler, request is: ");
-  //console.log(request);
+  logDebug("background messageHandler, request is:", request);
 
   if (request.type == "contentLoaded") {
     //console.log("WikiTree Sourcer, background script, received contentLoaded message");
@@ -112,10 +116,25 @@ function messageHandler(request, sender, sendResponse) {
     return true;
   } else if (request.type == "openInNewTab") {
     openInNewTab(request.url, sender.tab, request.tabOption);
+  } else if (request.type == "reregisterContentScripts") {
+    console.log("calling registerContentScripts");
+    doRegisterContentScripts(sendResponse);
+    return true;
+  } else if (request.type == "log") {
+    console.log("reveived log message in background", request.message);
+    return false;
   }
   //else if (request.type == "updateContextMenu") {
   //  modifyContextMenu(request.contentType);
   //}
+}
+
+async function doRegisterContentScripts(sendResponse) {
+  await registerContentScripts();
+
+  let contentScripts = await chrome.scripting.getRegisteredContentScripts();
+  logDebug("doRegisterContentScripts, sending response, contentScripts is ", contentScripts);
+  sendResponse({ success: true });
 }
 
 function openInNewTab(link, currentTab, tabOption) {

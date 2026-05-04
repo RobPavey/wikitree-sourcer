@@ -45,7 +45,7 @@ import {
 
 import { addStandardMenuEnd, addShowCitationAssistantMenuItem } from "./popup_menu_blocks.mjs";
 import { addEditCitationMenuItem } from "./popup_citation.mjs";
-import { logDebug } from "../../core/log_debug.mjs";
+import { logDebug } from "/base/core/log_debug.mjs";
 
 var detectedSupportedSite = false;
 
@@ -327,6 +327,50 @@ async function checkPermissionsForMatchedContentScript(activeTab, contentScript,
   return "error";
 }
 
+function displayUnexpectedErrorMessage(message) {
+  popupState.progress = progressState.sitePopupDisplayError;
+
+  logDebug("message is: " + message);
+
+  displayMessageWithIcon("warning", "Unexpected error: " + message + ".\n\nPlease try again.");
+}
+
+// Normally this is not required but for early versions of iOS (16,17) the onInstalled
+// message does not seem to be called in the background. So we register the content scripts
+// upon first use of the popup.
+async function registerContentScripts() {
+  try {
+    let response = await chrome.runtime.sendMessage({
+      type: "reregisterContentScripts",
+    });
+
+    logDebug("reregContentScripts got response: ", response);
+
+    // the message should only ever get a successful response but it could be delayed
+    // if the background is asleep.
+    if (chrome.runtime.lastError) {
+      const message = "Failed to reregContentScripts, runtime.lastError is set";
+      displayUnexpectedErrorMessage(message, chrome.runtime.lastError, true);
+      return false;
+    } else if (!response) {
+      let message = "Failed to reregContentScripts, no response from background script.";
+      message += "\nTry disabling and re-enabling the WikiTree Sourcer extension.";
+      displayUnexpectedErrorMessage(message, undefined, false);
+      return false;
+    } else if (!response.success) {
+      const message = "Failed to reregContentScripts, success=false";
+      displayUnexpectedErrorMessage(message, response, true);
+      return false;
+    }
+  } catch (error) {
+    const message = "Failed to open search page, caught exception";
+    displayUnexpectedErrorMessage(message, error, true);
+    return false;
+  }
+
+  return true;
+}
+
 async function determineSiteNameForTab(activeTab) {
   displayBusyMessage("WikiTree Sourcer initializing menu (determineSiteNameForTab) ...");
 
@@ -360,14 +404,20 @@ async function determineSiteNameForTab(activeTab) {
 
     let contentScripts = await chrome.scripting.getRegisteredContentScripts();
 
+    logDebug("determineSiteNameForTab: contentScripts is", contentScripts);
     if (!contentScripts || contentScripts.length == 0) {
-      displayMessageWithIcon(
-        "warning",
-        "There are no registered content scripts for the extension.",
-        "Sourcer will not work in this browser."
-      );
-      return "error";
+      if (!(await registerContentScripts())) {
+        displayMessageWithIcon(
+          "warning",
+          "There are no registered content scripts for the extension.",
+          "Sourcer will not work in this browser."
+        );
+        return "error";
+      }
+      contentScripts = await chrome.scripting.getRegisteredContentScripts();
     }
+
+    logDebug("determineSiteNameForTab: contentScripts is ", contentScripts);
 
     for (let contentScript of contentScripts) {
       for (let match of contentScript.matches) {
@@ -376,6 +426,8 @@ async function determineSiteNameForTab(activeTab) {
         if (doesTabMatch) {
           return await checkPermissionsForMatchedContentScript(activeTab, contentScript, match);
         }
+
+        logDebug("determineSiteNameForTab: no match is ", match, url);
       }
     }
   } catch (e) {
@@ -391,7 +443,7 @@ async function determineSiteNameForTab(activeTab) {
   logDebug("activeTab.url is: " + activeTab.url);
 
   // Because of some weird bugs seen in Safari iOS let's double check that this is really an
-  // unsupported site - perhas something went wrong with registerContentScripts in the background.
+  // unsupported site - perhaps something went wrong with registerContentScripts in the background.
   let siteRegistry = await getSites();
   if (siteRegistry) {
     for (let siteName of Object.keys(siteRegistry)) {

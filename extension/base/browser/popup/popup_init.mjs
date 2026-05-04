@@ -38,7 +38,7 @@ import {
 } from "./popup_menu_building.mjs";
 import { logDebug } from "../../core/log_debug.mjs";
 
-import "../../../site/all/browser/popup_register_search_sites.mjs";
+import "/site/all/browser/popup_register_search_sites.mjs";
 
 logDebug("Loaded popup_init.mjs");
 

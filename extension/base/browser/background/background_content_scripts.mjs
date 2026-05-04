@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import "../../../site/all/core/register_site_data.mjs";
+import "/site/all/core/register_site_data.mjs";
 import { getSites, storeSiteRegistry } from "../common/site_registry_storage.mjs";
 import { isChrome, isFirefox, isSafari } from "../common/browser_check.mjs";
 import { logDebug } from "../../core/log_debug.mjs";
@@ -326,6 +326,12 @@ async function registerContentScripts() {
   let scripts = [];
 
   let sites = await getSites();
+  logDebug("registerContentScripts: sites is", sites);
+
+  if (!sites) {
+    return;
+  }
+
   for (const siteName of Object.keys(sites)) {
     let siteData = sites[siteName];
     if (siteData) {
