@@ -645,13 +645,14 @@ if (runningExtensionId === currentExtensionId) {
               }
             }
           } else {
-            // try something more flexible to spport flow text like
+            // try something more flexible to spport flower text like
             // "Family tree on WikiTree at Eliott-29"
             let wtIndex = flowerText.search(/wikitree/i);
             if (wtIndex != -1) {
-              idRegex = /^.*([^\s]+\-\d+)[^\d]*$/;
-              if (idRegex.test(flowerText)) {
-                let flowerWikiId = flowerText.replace(idRegex, "$1");
+              const idRegex = /[^\s]+\-\d+/g;
+              let matches = flowerText.match(idRegex);
+              if (matches.length == 1) {
+                let flowerWikiId = matches[0];
                 if (flowerWikiId && !flowerWikiIds.includes(flowerWikiId)) {
                   flowerWikiIds.push(flowerWikiId);
                 }
