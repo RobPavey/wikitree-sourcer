@@ -80,8 +80,12 @@ if (runningExtensionId === currentExtensionId) {
   const cemeteryRegex = /^\/cemetery\/(\d+).*$/;
 
   // A cemetery search page looks like:
+  // https://www.findagrave.com/cemetery/search?cemetery-name=Evergreen&cemetery-loc=New+York%2C+USA&only-with-cemeteries=cemOnly&locationId=state_36
+  const cemeterySearchRegex = /^\/cemetery\/search.*/;
+
+  // A cemetery search within page looks like:
   // https://www.findagrave.com/cemetery/8074/memorial-search?fulltext=&firstname=&middlename=&lastname=Bond&cemeteryName=Inglewood+Park+Cemetery&birthyear=&birthyearfilter=&deathyear=&deathyearfilter=&bio=&linkedToName=&plot=&memorialid=&mcid=&datefilter=&orderby=r
-  const cemeterySearchRegex = /^\/cemetery\/(\d+)\/memorial-search.*/;
+  const cemeterySearchWithinRegex = /^\/cemetery\/(\d+)\/memorial-search.*/;
 
   // A general search liike like:
   // https://www.findagrave.com/memorial/search?firstname=John&middlename=Luther&lastname=Bond&includeMaidenName=true&birthyear=1853&birthyearfilter=exact&deathyear=1931&deathyearfilter=exact
@@ -92,6 +96,20 @@ if (runningExtensionId === currentExtensionId) {
       pageType: "cemeterySearch",
       pageIdType: "cemetery",
       matchRegex: cemeterySearchRegex,
+      locationTypes: [
+        {
+          locationTypeName: "cemeteryInCemeterySearch",
+          locationIdType: "cemetery",
+          selector: "div.cemetery-result-list h3.name-grave",
+          iconPlaceElementRule: { type: "same" },
+          optionKey: "cemeterySearchShowWtIconCemetery",
+        },
+      ],
+    },
+    {
+      pageType: "cemeterySearchWithin",
+      pageIdType: "cemetery",
+      matchRegex: cemeterySearchWithinRegex,
       locationTypes: [
         {
           locationTypeName: "pageH1",
@@ -105,7 +123,7 @@ if (runningExtensionId === currentExtensionId) {
           locationIdType: "memorial",
           selector: "h2.name-grave",
           iconPlaceElementRule: { type: "same" },
-          optionKey: "cemeterySearchShowWtIcon",
+          optionKey: "cemeterySearchWithinShowWtIcon",
         },
       ],
     },
@@ -134,7 +152,12 @@ if (runningExtensionId === currentExtensionId) {
           useIdFromPageUrl: true,
           iconPlaceElementRule: { type: "same" },
           optionKey: "cemeteryShowWtIconH1",
-          optionKey2: "cemeteryShowWtCategoryIconH1",
+        },
+        {
+          locationTypeName: "nearbyCemetery",
+          selector: "div.nearby-cemeteries strong[itemprop='name'] > a",
+          iconPlaceElementRule: { type: "same" },
+          optionKey: "cemeteryShowWtIconNearby",
         },
       ],
     },
@@ -253,13 +276,16 @@ if (runningExtensionId === currentExtensionId) {
     if (wikiIds.length > 1) {
       iconConfig.isMultiple = true;
       iconConfig.mainArrowStyle = "in";
-      tooltipData.listItems.push({ text: `is referenced from ${wikiIds.length} WikiTree profiles` });
+
+      let tootipListItem = { text: `is referenced from ${wikiIds.length} WikiTree profiles` };
 
       let id = location.id;
       if (id) {
         let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
         if (location.idType == "memorial") {
           wtPlusUrl += "FindAGrave=fgmem";
+          iconConfig.isConflict = true;
+          tootipListItem.isError = true;
         } else {
           wtPlusUrl += "FindAGrave=fgcem";
         }
@@ -267,6 +293,8 @@ if (runningExtensionId === currentExtensionId) {
         wtPlusUrl += "&render=1";
         linkUrl = wtPlusUrl;
       }
+
+      tooltipData.listItems.push(tootipListItem);
 
       for (let wikiId of wikiIds) {
         if (clipboardText) {
@@ -427,16 +455,8 @@ if (runningExtensionId === currentExtensionId) {
     logDebug(`getWikiIdsForBatch, cemeteryIds is:`, cemeteryIds);
 
     if (cemeteryIds.size > 0) {
-      if (cemeteryIds.size > 1) {
-        console.warn("More than one cemetery id in pending locactions, using first");
-      }
-
-      const [cemeteryId, locations] = cemeteryIds.entries().next().value;
-
-      // we only use the first cemetery
-      const fgIdToQuery = "fgcem" + cemeteryId;
-
-      if (pageMods.getOptions().ui_fg_cemeteryShowWtIconH1) {
+      for (const [cemeteryId, locations] of cemeteryIds) {
+        const fgIdToQuery = "fgcem" + cemeteryId;
         try {
           const response = await wtPlusApiGetProfilesUsingFgId(fgIdToQuery);
           logDebug("getWikiIdsForPendingBatch, cemetery response is: ", response);
@@ -474,6 +494,11 @@ if (runningExtensionId === currentExtensionId) {
               "getWikiIdsForPendingBatch, after cemetery response cachedFgMemorialIdToWtIdsMap is: ",
               cachedFgMemorialIdToWtIdsMap
             );
+          } else {
+            // the cemetery has no memorials used on WT
+            for (let location of locations) {
+              pageMods.removeProcessingIcon(location);
+            }
           }
         } catch (error) {
           console.error("!!!!!!! WT+ API Batch fetch failed", error);
@@ -489,44 +514,44 @@ if (runningExtensionId === currentExtensionId) {
             }
           }
         }
-      }
 
-      if (pageMods.getOptions().ui_fg_cemeteryShowWtCategoryIconH1) {
-        // also try to get the category for the cemetery
-        try {
-          const response = await wtPlusApiGetCategoryForCemetery(cemeteryId);
-          logDebug("getWikiIdsForPendingBatch, cemetery category response is: ", response);
-          if (response?.response?.categories && response.response.categories.length) {
-            // record the profiles that reference the elements id for the currentBatch
-            const categories = response.response.categories;
-            let categoryNamesForCemetery = [];
-            categories.forEach((category) => {
-              let categoryName = category.category;
-              let id = category.id;
+        if (pageMods.getOptions().ui_fg_cemeteryShowWtCategoryIcon) {
+          // also try to get the category for the cemetery
+          try {
+            const response = await wtPlusApiGetCategoryForCemetery(cemeteryId);
+            logDebug("getWikiIdsForPendingBatch, cemetery category response is: ", response);
+            if (response?.response?.categories && response.response.categories.length) {
+              // record the profiles that reference the elements id for the currentBatch
+              const categories = response.response.categories;
+              let categoryNamesForCemetery = [];
+              categories.forEach((category) => {
+                let categoryName = category.category;
+                let id = category.id;
 
-              categoryNamesForCemetery.push(categoryName);
-            });
+                categoryNamesForCemetery.push(categoryName);
+              });
 
-            if (categories.length > 0) {
-              // this cemetery has a WT category
-              logDebug("getWikiIdsForBatch, categoryNamesForCemetery is:", categoryNamesForCemetery);
-              if (categoryNamesForCemetery) {
-                for (let location of locations) {
-                  addWikiTreeCategoryIcon(location, categoryNamesForCemetery);
+              if (categories.length > 0) {
+                // this cemetery has a WT category
+                logDebug("getWikiIdsForBatch, categoryNamesForCemetery is:", categoryNamesForCemetery);
+                if (categoryNamesForCemetery) {
+                  for (let location of locations) {
+                    addWikiTreeCategoryIcon(location, categoryNamesForCemetery);
+                  }
                 }
               }
             }
-          }
-        } catch (error) {
-          console.error("!!!!!!! WT+ API Batch fetch failed", error);
-          logDebug("cemetery id string is: ", cemeteryId);
+          } catch (error) {
+            console.error("!!!!!!! WT+ API Batch fetch failed", error);
+            logDebug("cemetery id string is: ", cemeteryId);
 
-          if (currentBatch.locations) {
-            let locations = currentBatch.locations;
-            for (let location of locations) {
-              location.error = { message: `Fetch failed due to '${error}'` };
-              if (error == "Blocked request") {
-                location.error.wasBlocked = true;
+            if (currentBatch.locations) {
+              let locations = currentBatch.locations;
+              for (let location of locations) {
+                location.error = { message: `Fetch failed due to '${error}'` };
+                if (error == "Blocked request") {
+                  location.error.wasBlocked = true;
+                }
               }
             }
           }
@@ -691,7 +716,10 @@ if (runningExtensionId === currentExtensionId) {
     if (enclosingLinkElement) {
       let href = enclosingLinkElement.getAttribute("href");
       if (href) {
-        logDebug("extractFgIdFromLocation, using id from href", href);
+        //logDebug("extractFgIdFromLocation, using id from href", href);
+
+        // sometimes the href can have a newline in it
+        href = href.replace(/[\n\s]/g, "");
 
         let fgIdData = pageMods.getIdDataFromUrl(href, location);
         if (fgIdData) {
