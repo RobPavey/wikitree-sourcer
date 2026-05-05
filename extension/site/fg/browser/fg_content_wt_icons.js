@@ -649,7 +649,7 @@ if (runningExtensionId === currentExtensionId) {
             // "Family tree on WikiTree at Eliott-29"
             let wtIndex = flowerText.search(/wikitree/i);
             if (wtIndex != -1) {
-              const idRegex = /[^\s]+\-\d+/g;
+              const idRegex = /[^\s\/!@#\$\"\'\%\^\&\*\|\[\]]+\-\d+/g;
               let matches = flowerText.match(idRegex);
               if (matches.length == 1) {
                 let flowerWikiId = matches[0];
