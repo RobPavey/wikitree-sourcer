@@ -46,9 +46,10 @@ import { generalizeData, regeneralizeDataWithLinkedRecords } from "../core/ances
 import { getDataForLinkedHouseholdRecords, processWithFetchedLinkData } from "./ancestry_popup_linked_records.mjs";
 
 async function getSharingDataObj(source) {
+  let response = { success: false };
   try {
     if (source.extractedData) {
-      let response = await fetchAncestrySharingDataObj(source.extractedData);
+      response = await fetchAncestrySharingDataObj(source.extractedData);
 
       if (response.success) {
         source.sharingDataObj = response.dataObj;
@@ -65,6 +66,8 @@ async function getSharingDataObj(source) {
     console.log("getAncestrySharingDataObj caught exception on fetchAncestrySharingDataObj:");
     console.log(e);
   }
+
+  return response;
 }
 
 async function updateWithLinkData(data) {
@@ -244,6 +247,7 @@ async function getSourcerCitations(runDate, result, type, options) {
 
   result.failureCount = requestsResult.failureCount;
   result.linkedRecordFailureCount = 0;
+  result.sharingLinksFailureCount = 0;
 
   // Now that we have the generalizedData for each source go through and add a link to the personData
   if (result.personGeneralizedData) {
@@ -266,9 +270,8 @@ async function getSourcerCitations(runDate, result, type, options) {
   }
   async function getSharingObjRequestFunction(input, updateStatusFunction) {
     updateStatusFunction("getting sharing link...");
-    let newResponse = { success: true };
-    await getSharingDataObj(input);
-    return newResponse;
+    let response = await getSharingDataObj(input);
+    return response;
   }
   const sharingMessage = "WikiTree Sourcer fetching sharing link each source";
   let sharingRequestsResult = await doRequestsInParallel(
@@ -281,7 +284,7 @@ async function getSourcerCitations(runDate, result, type, options) {
     // some of the source records could not be retrieved.
     await parallelRequestsDisplayErrorsMessage("getting sharing links");
   }
-  result.failureCount += sharingRequestsResult.failureCount;
+  result.sharingLinksFailureCount += sharingRequestsResult.failureCount;
 
   // we now have the directly referenced source records extracted and generalized.
   // For some records we need to get linked records.

@@ -88,7 +88,7 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
   // On Firefox it may return zero any time you use "no-cors"
   if (response.status !== 200) {
     console.log("Looks like there was a problem. Status Code: " + response.status);
-    return { success: false };
+    return { success: false, allowRetry: true };
   }
 
   // Examine the text in the response
@@ -169,6 +169,10 @@ async function fetchAncestrySharingDataObj(ed) {
       //console.log("fetchAncestrySharingDataObj, generated and saving to cache");
       addCachedAsyncResult(cacheTag, recordUrl, result);
     }
+  } else {
+    // there is no image associated with the record
+    // Do not treat this as an error
+    result.success = true;
   }
 
   //console.log("result is:");
