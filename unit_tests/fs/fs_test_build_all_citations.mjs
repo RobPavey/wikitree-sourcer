@@ -264,6 +264,11 @@ const regressionData = [
     url: "https://www.familysearch.org/tree/person/details/K2B7-NSV",
   },
   {
+    // Newer version of the FS profile, for testing notes in sources
+    caseName: "k2fn_1vl_william_herron_2026format",
+    url: "https://www.familysearch.org/tree/person/details/K2FN-1VL",
+  },
+  {
     // bug in sorting, marriage source has no date but its record does
     caseName: "k2fn_1vl_william_herron",
     url: "https://www.familysearch.org/tree/person/details/K2FN-1VL",
