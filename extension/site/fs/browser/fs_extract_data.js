@@ -3207,11 +3207,17 @@ function extractPersonDataFromFetch(result, document, dataObj, options) {
   let description = dataObj.description;
 
   let personId = "";
-  if (description) {
+  if (description && description.startsWith("#SD-")) {
     // For a person page the description will be something like: "#SD-G8S8-5FJ" meaning the personId is:
     // "G8S8-5FJ"
     // Note. This description field no longer seems to exist after April 2025.
     personId = description.replace(/^\#SD\-/, "");
+    result.personId = personId;
+  } else if (description && description.startsWith("#SD_PERSON_")) {
+    // For a person page the description will be something like: "#SD-G8S8-5FJ" meaning the personId is:
+    // "G8S8-5FJ"
+    // Note. This description field no longer seems to exist after April 2025.
+    personId = description.replace(/^\#SD_PERSON_/, "");
     result.personId = personId;
   } else if (dataObj.persons && dataObj.persons.length > 0) {
     personId = dataObj.persons[0].id;
