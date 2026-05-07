@@ -615,21 +615,15 @@ if (runningExtensionId === currentExtensionId) {
     }
 
     if (dataObj.sourceDescriptions) {
-      let fgUrl = "";
       for (let sourceDescription of dataObj.sourceDescriptions) {
         if (sourceDescription.about && sourceDescription.about.includes("findagrave")) {
-          fgUrl = sourceDescription.about;
-          break;
+          return sourceDescription.about;
         } else if (sourceDescription.identifiers && sourceDescription.identifiers["http://gedcomx.org/Persistent"]) {
           let persistentIds = sourceDescription.identifiers["http://gedcomx.org/Persistent"];
           for (let id of persistentIds) {
             if (id.includes("findagrave")) {
-              fgUrl = id;
-              break;
+              return id;
             }
-          }
-          if (fgUrl) {
-            return fgUrl;
           }
         }
       }
