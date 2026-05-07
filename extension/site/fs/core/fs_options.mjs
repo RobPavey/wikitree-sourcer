@@ -349,6 +349,13 @@ const uiOptionsPageModRecordPageLocationsGroup = {
       defaultValue: true,
     },
     {
+      optionName: "recordShowWtIconH1ExternalSource",
+      type: "checkbox",
+      label:
+        "In icon next to top-level heading, if record references an external source, indicate if they are used on WT (requires fetches)",
+      defaultValue: true,
+    },
+    {
       optionName: "recordShowWtIconOtherPeople",
       type: "checkbox",
       label: "Show icon for other people in record",

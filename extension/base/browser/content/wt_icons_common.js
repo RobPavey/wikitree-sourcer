@@ -593,6 +593,7 @@ class WikiTreeSourcerPageModsHelper {
     if (iconConfig.isMultiple) {
       return this.buildMultipleIcon(iconConfig);
     }
+
     function styleRoundPath(color, width) {
       return `
         stroke="${color}"
@@ -600,6 +601,46 @@ class WikiTreeSourcerPageModsHelper {
         stroke-linecap="round" 
         stroke-linejoin="round" 
         fill="none"`;
+    }
+
+    let externalBox = "";
+    let externalArrow = "";
+
+    if (iconConfig.includeExternal) {
+      const shadowStyle = styleRoundPath("rgba(0,0,0,0.4)", 3);
+      const mainStyle = styleRoundPath("white", 1.5);
+      const toExternalArrowPath = `d="M2 20 H8 M8 20 L6 22 M8 20 L6 18"`;
+
+      const toExternalArrow = `
+        <path ${toExternalArrowPath} ${shadowStyle}/>
+        <path ${toExternalArrowPath} ${mainStyle}/>
+      `;
+
+      // Green Source Box (represents a source)
+      externalBox = `
+        <rect x="8" y="16" width="8" height="7" rx="1" fill="#7aa9d0" stroke="black" stroke-width="0.5"/>
+        <line x1="9" y1="18" x2="15" y2="18" stroke="white" stroke-width="0.5" />
+        <line x1="9" y1="21" x2="13" y2="21" stroke="white" stroke-width="0.5" />
+        ${toExternalArrow}
+      `;
+
+      // The Arrow pointing to the Source Box - only shown if there is no main arrow
+      if (iconConfig.mainArrowStyle == "none") {
+        if (iconConfig.includeSourceBox) {
+          // double arrow
+          const doubleArrowPath = `d="M12 7 V17 M12 17 L9 14 M12 17 L15 14 M12 7 L9 10 M12 7 L15 10"`;
+          externalArrow = `
+            <path ${doubleArrowPath} ${shadowStyle}/>
+            <path ${doubleArrowPath} ${mainStyle}/>
+          `;
+        } else {
+          const externalArrowPath = `d="M12 7 V17 M12 17 L9 14 M12 17 L15 14"`;
+          externalArrow = `
+            <path ${externalArrowPath} ${shadowStyle}/>
+            <path ${externalArrowPath} ${mainStyle}/>
+          `;
+        }
+      }
     }
 
     let sourceBox = "";
@@ -624,11 +665,11 @@ class WikiTreeSourcerPageModsHelper {
         <line x1="9" y1="3" x2="15" y2="3" stroke="white" stroke-width="0.5" />
         <line x1="9" y1="5" x2="13" y2="5" stroke="white" stroke-width="0.5" />
         ${linkIcon}
-    `;
+      `;
 
       // The Arrow pointing to the Source Box - only shown if there is no main arrow
-      if (iconConfig.mainArrowStyle == "none") {
-        const sourceArrowPath = `d="M12 18 V7 M12 7 L8 11 M12 7 L16 11"`;
+      if (iconConfig.mainArrowStyle == "none" && !iconConfig.includeExternal) {
+        const sourceArrowPath = `d="M12 18 V7 M12 7 L9 10 M12 7 L15 10"`;
 
         sourceArrow = `
           <path ${sourceArrowPath} ${shadowStyle}/>
@@ -764,8 +805,10 @@ class WikiTreeSourcerPageModsHelper {
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         ${circle}
         ${sourceBox}
+        ${externalBox}
         ${categoryGroup}
         ${sourceArrow}
+        ${externalArrow}
         ${mainArrow}
       </svg>`;
 
@@ -1047,6 +1090,37 @@ class WikiTreeSourcerPageModsHelper {
             } else {
               reject("Not JSON");
             }
+          } else {
+            if (chrome.runtime.lastError) {
+              reject(chrome.runtime.lastError);
+            } else if (response.error) {
+              reject(response.error);
+            } else {
+              reject("No response");
+            }
+          }
+        }
+      );
+    });
+  }
+
+  backgroundFetchJson(fetchUrl, fetchOptions) {
+    console.log("backgroundFetch", fetchUrl, fetchOptions);
+    return new Promise((resolve, reject) => {
+      if (!chrome.runtime?.id) {
+        reject("Extension context invalidated");
+        return;
+      }
+      chrome.runtime.sendMessage(
+        {
+          type: "doFetchJson",
+          fetchUrl: fetchUrl,
+          fetchOptions: fetchOptions,
+        },
+        (response) => {
+          if (response && response.success) {
+            logDebug("backgroundFetch: response is:", response);
+            resolve(response);
           } else {
             if (chrome.runtime.lastError) {
               reject(chrome.runtime.lastError);

@@ -370,6 +370,76 @@ if (runningExtensionId === currentExtensionId) {
     return { success: false };
   }
 
+  let recordDataObjCache = {};
+
+  async function fetchFsRecordDataObj(recordUrl) {
+    console.log("fetchFsRecordDataObj, recordUrl is: " + recordUrl);
+
+    let cachedRecordDataObj = recordDataObjCache[recordUrl];
+    if (cachedRecordDataObj) {
+      logDebug("returning cachedRecordDataObj", cachedRecordDataObj);
+      return cachedRecordDataObj;
+    }
+
+    let fssessionid = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("fssessionid="))
+      ?.split("=")[1];
+    //console.log("fetchFsRecordDataObj, fssessionid: " + fssessionid);
+
+    let fetchType = "record";
+
+    let fetchUrl = recordUrl;
+    console.log("fetchFsRecordDataObj, fetchUrl is: " + fetchUrl);
+
+    // sometimes the URL has an extra / on the end. This causes the fetch to fail. So remove it
+    fetchUrl = fetchUrl.replace(/\/\?/, "?");
+    fetchUrl = fetchUrl.replace(/\/$/, "");
+
+    // This seems like a recent change on FamilySearch (noticed on 25 May 2022).
+    // Sometimes the URL contains "/search/" and this stops the fetch working
+    if (fetchUrl.indexOf("www.familysearch.org/search/ark:/") != -1) {
+      fetchUrl = fetchUrl.replace("www.familysearch.org/search/ark:/", "www.familysearch.org/ark:/");
+    }
+
+    //console.log("fetchFsRecordDataObj, fetchUrl is: " + fetchUrl);
+
+    let fetchOptionsHeaders = {
+      accept: "application/x-gedcomx-v1+json, application/json",
+      "accept-language": "en",
+      from: "fsSearch.record.getGedcomX@familysearch.org",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      authorization: "Bearer " + fssessionid,
+    };
+
+    let fetchOptions = {
+      headers: fetchOptionsHeaders,
+      referrerPolicy: "strict-origin-when-cross-origin",
+      body: null,
+      method: "GET",
+      mode: "cors",
+      credentials: "include",
+    };
+
+    try {
+      let response = await pageMods.backgroundFetchJson(fetchUrl, fetchOptions);
+
+      console.log("fetchFsRecordDataObj, response is: ", response);
+
+      recordDataObjCache[recordUrl] = response;
+
+      return response;
+    } catch (error) {
+      console.log("fetch failed, error is:");
+      console.log(error);
+      console.log("Fetch URL is: " + fetchUrl);
+
+      return { success: false, error: "Exception", exceptionObject: error };
+    }
+  }
+
   let personSourceIdsCache = {};
 
   async function getSourceIdsForPerson(personId) {
@@ -500,6 +570,33 @@ if (runningExtensionId === currentExtensionId) {
     return { success: false };
   }
 
+  function extractFindAGraveMemorialIdFromUrl(fgUrl) {
+    if (!fgUrl) {
+      return "";
+    }
+
+    // extract the memorial ID from the findagrave URL
+    // e.g. http://www.findagrave.com/cgi-bin/fg.cgi?page=gr&GRid=51993416
+    let regex1 = /^.*https?\:\/\/www\.findagrave\.com\/cgi\-bin\/fg\.cgi\?page\=gr\&GRid\=(\d+)$/;
+    // e.g. https://www.findagrave.com/memorial/51993416/william-herron
+    let regex2 = /^.*https?\:\/\/(?:www\.)?findagrave\.com\/memorial\/(\d+).*$/;
+
+    let fgMemId = "";
+    if (regex1.test(fgUrl)) {
+      let memorialId = fgUrl.replace(regex1, "$1");
+      if (memorialId) {
+        fgMemId = memorialId;
+      }
+    } else if (regex2.test(fgUrl)) {
+      let memorialId = fgUrl.replace(regex2, "$1");
+      if (memorialId) {
+        fgMemId = memorialId;
+      }
+    }
+
+    return fgMemId;
+  }
+
   let sourceInfoCache = {};
 
   async function getSourceInfosForSourceIds(sourceIdList) {
@@ -554,6 +651,55 @@ if (runningExtensionId === currentExtensionId) {
           }
           if (source.sourceType) {
             sourceInfo.sourceType = source.sourceType;
+          }
+
+          if (sourceInfo.title && sourceInfo.title.includes("Find a Grave")) {
+            logDebug("getSourceInfosForSourceIds: found Find a Grave source");
+            // check if this is a FamilySearch source
+            let fgUrl = "";
+            if (sourceInfo.uri.includes("familysearch.org")) {
+              let recordFetchResult = await fetchFsRecordDataObj(sourceInfo.uri);
+              logDebug("getSourceInfosForSourceIds: recordFetchResult is", recordFetchResult);
+              if (recordFetchResult.success && recordFetchResult.json) {
+                let dataObj = recordFetchResult.json;
+
+                if (dataObj.sourceDescriptions) {
+                  for (let sourceDescription of dataObj.sourceDescriptions) {
+                    if (sourceDescription.about && sourceDescription.about.includes("findagrave")) {
+                      fgUrl = sourceDescription.about;
+                      break;
+                    } else if (
+                      sourceDescription.identifiers &&
+                      sourceDescription.identifiers["http://gedcomx.org/Persistent"]
+                    ) {
+                      let persistentIds = sourceDescription.identifiers["http://gedcomx.org/Persistent"];
+                      for (let id of persistentIds) {
+                        if (id.includes("findagrave")) {
+                          fgUrl = id;
+                          break;
+                        }
+                      }
+                      if (fgUrl) {
+                        break;
+                      }
+                    }
+                  }
+                }
+              }
+            } else if (sourceInfo.uri.includes("findagrave.com")) {
+              fgUrl = sourceInfo.uri;
+            }
+
+            let fgMemId = extractFindAGraveMemorialIdFromUrl(fgUrl);
+            if (fgMemId) {
+              sourceInfo.externalSource = {
+                externalId: fgMemId,
+                externalSiteName: "fg",
+                externalSiteTitle: "Find a Grave",
+                externalSourceTypeName: "memorial",
+                externalUrl: fgUrl,
+              };
+            }
           }
 
           result[sourceId] = sourceInfo;
@@ -714,8 +860,8 @@ if (runningExtensionId === currentExtensionId) {
         if (location.personSourceIdList) {
           for (let sourceId of location.personSourceIdList) {
             let sourceInfo = sourceInfos[sourceId];
-            if (sourceInfo && sourceInfo.sourceType != "DEFAULT") {
-              if (sourceInfo.uri) {
+            if (sourceInfo) {
+              if (sourceInfo.uri && sourceInfo.sourceType != "DEFAULT") {
                 // non-FS sources can be mising a uri
 
                 let idData = pageMods.getIdDataFromUrl(sourceInfo.uri);
@@ -726,6 +872,18 @@ if (runningExtensionId === currentExtensionId) {
                   location.sourceFsIds.push({ idData: idData, sourceInfo: sourceInfo });
                   addLocationToPendingFsIds(locationBatch, idData.id, idData.idType, location);
                 }
+              }
+
+              if (sourceInfo.externalSource) {
+                logDebug(
+                  "fetchSourceFsIdsFromSources, found externalSource (location,sourceInfo)",
+                  location,
+                  sourceInfo
+                );
+                location.externalSources ??= [];
+                location.externalSources.push(sourceInfo.externalSource);
+                let key = sourceInfo.externalSource.externalSiteName + "|" + sourceInfo.externalSource.externalId;
+                addLocationToPendingExternalSources(locationBatch, key, location);
               }
             }
           }
@@ -776,6 +934,90 @@ if (runningExtensionId === currentExtensionId) {
 
                   addLocationToPendingFsIds(locationBatch, id, idData.idType, location);
                 }
+              }
+
+              if (sourceInfo.externalSource) {
+                logDebug("fetchFsIdsForSources, found externalSource (location,sourceInfo)", location, sourceInfo);
+                location.externalSources ??= [];
+                location.externalSources.push(sourceInfo.externalSource);
+                let key = sourceInfo.externalSource.externalSiteName + "|" + sourceInfo.externalSource.externalId;
+                addLocationToPendingExternalSources(locationBatch, key, location);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  async function fetchExternalSourceForRecord(locationBatch) {
+    logDebug("fetchExternalSourceForRecord, locationBatch", locationBatch);
+
+    for (let location of locationBatch.locations) {
+      let pageType = pageMods.pageProfile.pageType;
+      let locationTypeName = location.locationType.locationTypeName;
+      logDebug("fetchExternalSourceForRecord, location", location);
+      if (pageType == "record" && locationTypeName == "pageH1") {
+        // first check by looking at the page if this is a record with an external source
+        let h1Element = location.matchedElement.parentElement;
+        let containerElement = h1Element.parentElement;
+        let recordTitleElement = containerElement.querySelector("h2 > div");
+        logDebug("fetchExternalSourceForRecord, recordTitleElement", recordTitleElement);
+        if (!recordTitleElement) {
+          continue;
+        }
+
+        let recordTitle = recordTitleElement.textContent;
+
+        if (recordTitle.includes("Find a Grave Index")) {
+          logDebug("fetchExternalSourceForRecord: found Find a Grave source");
+          let recordFetchResult = await fetchFsRecordDataObj(document.URL);
+          logDebug("fetchExternalSourceForRecord: recordFetchResult is", recordFetchResult);
+          if (recordFetchResult.success && recordFetchResult.json) {
+            let dataObj = recordFetchResult.json;
+
+            if (dataObj.sourceDescriptions) {
+              let fgUrl = "";
+              for (let sourceDescription of dataObj.sourceDescriptions) {
+                if (sourceDescription.about && sourceDescription.about.includes("findagrave")) {
+                  fgUrl = sourceDescription.about;
+                  break;
+                } else if (
+                  sourceDescription.identifiers &&
+                  sourceDescription.identifiers["http://gedcomx.org/Persistent"]
+                ) {
+                  let persistentIds = sourceDescription.identifiers["http://gedcomx.org/Persistent"];
+                  for (let id of persistentIds) {
+                    if (id.includes("findagrave")) {
+                      fgUrl = id;
+                      break;
+                    }
+                  }
+                  if (fgUrl) {
+                    break;
+                  }
+                }
+              }
+              let fgMemId = extractFindAGraveMemorialIdFromUrl(fgUrl);
+
+              if (fgMemId) {
+                let externalSource = {
+                  externalId: fgMemId,
+                  externalSiteName: "fg",
+                  externalSiteTitle: "Find a Grave",
+                  externalSourceTypeName: "memorial",
+                  externalUrl: fgUrl,
+                };
+
+                logDebug(
+                  "fetchExternalSourceForRecord, found externalSource (location, externalSource)",
+                  location,
+                  externalSource
+                );
+                location.externalSources ??= [];
+                location.externalSources.push(externalSource);
+                let key = externalSource.externalSiteName + "|" + externalSource.externalId;
+                addLocationToPendingExternalSources(locationBatch, key, location);
               }
             }
           }
@@ -905,6 +1147,10 @@ if (runningExtensionId === currentExtensionId) {
           selector: "main h1 > div",
           optionKey: "recordShowWtIconH1",
           useFsIdFromPageUrl: true,
+          fetchForExternalSource: {
+            fetchFunction: fetchExternalSourceForRecord,
+            optionKey: "recordShowWtIconH1ExternalSource",
+          },
         },
         {
           locationTypeName: "otherPeople",
@@ -1122,6 +1368,11 @@ if (runningExtensionId === currentExtensionId) {
     return pageMods.wtPlusApiCall(url);
   }
 
+  function wtPlusApiGetProfilesUsingFgId(idString) {
+    let url = `https://plus.wikitree.com/function/wtFindAGrave4Bee/Sourcer.json?query=${idString}`;
+    return pageMods.wtPlusApiCall(url);
+  }
+
   function getElementToAddIconTo(location) {
     let element = location.matchedElement;
 
@@ -1170,6 +1421,8 @@ if (runningExtensionId === currentExtensionId) {
 
     let sourceFsIds = location.sourceFsIds;
 
+    let externalSources = location.externalSources;
+
     if (!wikiIds) {
       wikiIds = [];
     }
@@ -1179,8 +1432,17 @@ if (runningExtensionId === currentExtensionId) {
     if (!sourceFsIds) {
       sourceFsIds = [];
     }
+    if (!externalSources) {
+      externalSources = [];
+    }
 
-    if (wikiIds.length == 0 && backLinkWikiIds.length == 0 && sourceFsIds == 0 && !location.error) {
+    if (
+      wikiIds.length == 0 &&
+      backLinkWikiIds.length == 0 &&
+      sourceFsIds.length == 0 &&
+      externalSources.length == 0 &&
+      !location.error
+    ) {
       return;
     }
 
@@ -1361,15 +1623,15 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
 
-    if (location.sourceFsIds && location.sourceFsIds.length) {
-      iconConfig.includeSourceBox = true;
+    let attachedSourceWikiIdCount = 0;
+    if (sourceFsIds.length) {
       let recordWikiIds = new Set();
       let recordFsIds = new Set();
       let numRecordsUsedOnWt = 0;
       let imageWikiIds = new Set();
       let imageFsIds = new Set();
       let numImagesUsedOnWt = 0;
-      for (let sourceFsId of location.sourceFsIds) {
+      for (let sourceFsId of sourceFsIds) {
         let idType = sourceFsId.idData.idType;
         let fsId = sourceFsId.idData.id;
         if (idType == "record") {
@@ -1391,11 +1653,10 @@ if (runningExtensionId === currentExtensionId) {
         }
       }
 
-      if (recordWikiIds.size == 0 && imageWikiIds.size == 0) {
-        if (wikiIds.length == 0 && backLinkWikiIds.length == 0) {
-          // we do not need an icon
-          return;
-        }
+      attachedSourceWikiIdCount = recordWikiIds.size + imageWikiIds.size;
+
+      if (attachedSourceWikiIdCount) {
+        iconConfig.includeSourceBox = true;
       }
 
       if (recordWikiIds.size == 1) {
@@ -1488,6 +1749,39 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
 
+    let externalWikiIdCount = 0;
+    if (externalSources && externalSources.length) {
+      for (let externalSource of externalSources) {
+        if (externalSource.wikiIds && externalSource.wikiIds.length) {
+          iconConfig.includeExternal = true;
+          let title = externalSource.externalSiteTitle;
+          let type = externalSource.externalSourceTypeName;
+          let id = externalSource.externalId;
+          let wikiIds = externalSource.wikiIds;
+          externalWikiIdCount += wikiIds.length;
+          if (wikiIds.length > 1) {
+            tooltipData.listItems.push({
+              text: `references ${title} ${type} ${id} which is referenced by ${wikiIds.size} profiles`,
+            });
+          } else {
+            tooltipData.listItems.push({
+              text: `references ${title} ${type} ${id} which is referenced by profile ${wikiIds[0]}`,
+            });
+            if (!linkUrl) {
+              linkUrl = buildWikiProfileUrl(wikiIds[0]);
+            }
+          }
+        }
+      }
+    }
+
+    if (attachedSourceWikiIdCount == 0 && externalWikiIdCount == 0) {
+      if (wikiIds.length == 0 && backLinkWikiIds.length == 0) {
+        // we do not need an icon
+        return;
+      }
+    }
+
     const svgIcon = pageMods.buildIcon(iconConfig);
 
     const anchorElement = pageMods.createAnchorWithIconElement(svgIcon, tooltipData, clipboardText, linkUrl);
@@ -1496,6 +1790,8 @@ if (runningExtensionId === currentExtensionId) {
   }
 
   let cachedFsIdToWtIdsMap = new Map();
+
+  let cachedExternalSourceToWtIdsMap = new Map();
 
   let pendingLocationsBatch = {};
   let debounceTimer = null;
@@ -1508,6 +1804,13 @@ if (runningExtensionId === currentExtensionId) {
     locationBatch.pendingFsIds.get(key).push(location);
   }
 
+  function addLocationToPendingExternalSources(locationBatch, key, location) {
+    if (!locationBatch.pendingExternalSources.has(key)) {
+      locationBatch.pendingExternalSources.set(key, []);
+    }
+    locationBatch.pendingExternalSources.get(key).push(location);
+  }
+
   function addLocationToPendingBatch(location) {
     if (!pendingLocationsBatch.locations) {
       pendingLocationsBatch.locations = [];
@@ -1516,6 +1819,9 @@ if (runningExtensionId === currentExtensionId) {
 
     if (!pendingLocationsBatch.pendingFsIds) {
       pendingLocationsBatch.pendingFsIds = new Map();
+    }
+    if (!pendingLocationsBatch.pendingExternalSources) {
+      pendingLocationsBatch.pendingExternalSources = new Map();
     }
 
     let locationType = location.locationType;
@@ -1539,24 +1845,48 @@ if (runningExtensionId === currentExtensionId) {
     // if there are any fetches required to check for back links add them to a list
     if (locationType.fetchForBackLink) {
       let fetchForBackLink = locationType.fetchForBackLink;
-      let fetchFunction = fetchForBackLink.fetchFunction;
-      if (!pendingLocationsBatch.fetchFunctionsForBackLinks) {
-        pendingLocationsBatch.fetchFunctionsForBackLinks = [];
-      }
-      if (!pendingLocationsBatch.fetchFunctionsForBackLinks.includes(fetchFunction)) {
-        pendingLocationsBatch.fetchFunctionsForBackLinks.push(fetchFunction);
+      let optionKey = fetchForBackLink.optionKey;
+      if (!optionKey || pageMods.getOption(optionKey)) {
+        let fetchFunction = fetchForBackLink.fetchFunction;
+        if (!pendingLocationsBatch.fetchFunctionsForBackLinks) {
+          pendingLocationsBatch.fetchFunctionsForBackLinks = [];
+        }
+        if (!pendingLocationsBatch.fetchFunctionsForBackLinks.includes(fetchFunction)) {
+          pendingLocationsBatch.fetchFunctionsForBackLinks.push(fetchFunction);
+        }
       }
     }
 
-    // if there are any fetches required to check for back links add them to a list
+    // if there are any fetches required to check for attached sources add them to a list
     if (locationType.fetchForSourceFsIds) {
       let fetchForSourceFsIds = locationType.fetchForSourceFsIds;
-      let fetchFunction = fetchForSourceFsIds.fetchFunction;
-      if (!pendingLocationsBatch.fetchFunctionsForSourceWikiIds) {
-        pendingLocationsBatch.fetchFunctionsForSourceWikiIds = [];
+
+      let optionKey = fetchForSourceFsIds.optionKey;
+      if (!optionKey || pageMods.getOption(optionKey)) {
+        let fetchFunction = fetchForSourceFsIds.fetchFunction;
+        if (!pendingLocationsBatch.fetchFunctionsForSourceWikiIds) {
+          pendingLocationsBatch.fetchFunctionsForSourceWikiIds = [];
+        }
+        if (!pendingLocationsBatch.fetchFunctionsForSourceWikiIds.includes(fetchFunction)) {
+          pendingLocationsBatch.fetchFunctionsForSourceWikiIds.push(fetchFunction);
+        }
       }
-      if (!pendingLocationsBatch.fetchFunctionsForSourceWikiIds.includes(fetchFunction)) {
-        pendingLocationsBatch.fetchFunctionsForSourceWikiIds.push(fetchFunction);
+    }
+
+    // if there are any fetches required to check for external add them to a list
+    if (locationType.fetchForExternalSource) {
+      console.log("fetchForExternalSource found");
+      let fetchForExternalSource = locationType.fetchForExternalSource;
+
+      let optionKey = fetchForExternalSource.optionKey;
+      if (!optionKey || pageMods.getOption(optionKey)) {
+        let fetchFunction = fetchForExternalSource.fetchFunction;
+        if (!pendingLocationsBatch.fetchFunctionsForSourceWikiIds) {
+          pendingLocationsBatch.fetchFunctionsForSourceWikiIds = [];
+        }
+        if (!pendingLocationsBatch.fetchFunctionsForSourceWikiIds.includes(fetchFunction)) {
+          pendingLocationsBatch.fetchFunctionsForSourceWikiIds.push(fetchFunction);
+        }
       }
     }
   }
@@ -1630,6 +1960,77 @@ if (runningExtensionId === currentExtensionId) {
         }
       }
     }
+
+    // check externalSources
+
+    let pendingExternalSources = currentBatch.pendingExternalSources;
+    if (pendingExternalSources) {
+      logDebug(`getWikiIdsForBatch, pendingExternalSources size is ${pendingExternalSources.size}`);
+    } else {
+      console.log(`getWikiIdsForBatch, pendingExternalSources undefined`);
+      return;
+    }
+
+    if (pendingExternalSources.size == 0) {
+      return;
+    }
+
+    const externalSourcesToCheck = Array.from(pendingExternalSources.keys());
+    let fgIdsToQuery = [];
+
+    logDebug("getWikiIdsForPendingBatch, externalSourcesToCheck is", externalSourcesToCheck);
+
+    for (let key of externalSourcesToCheck) {
+      if (!cachedExternalSourceToWtIdsMap.has(key)) {
+        let keyParts = key.split("|");
+        let siteName = keyParts[0];
+        let id = keyParts[1];
+        if (siteName == "fg") {
+          fgIdsToQuery.push("fgmem" + id);
+        }
+      }
+    }
+    logDebug("getWikiIdsForPendingBatch, fgIdsToQuery is", fgIdsToQuery);
+
+    const fgIdsString = fgIdsToQuery.join(",");
+
+    logDebug("getWikiIdsForPendingBatch, fgIdsString is", fgIdsString);
+
+    try {
+      const response = await wtPlusApiGetProfilesUsingFgId(fgIdsString);
+      logDebug("getWikiIdsForPendingBatch, fg response is: ", response);
+
+      if (response.response?.memorials) {
+        // record the profiles that reference the elements id for the currentBatch
+        response.response.memorials.forEach((memorial) => {
+          let wikiId = memorial.WikiTreeID;
+          let fgMemorialId = memorial.memorial.toString();
+          let externalId = "fg|" + fgMemorialId;
+
+          if (!cachedExternalSourceToWtIdsMap.has(externalId)) {
+            cachedExternalSourceToWtIdsMap.set(externalId, []);
+          }
+
+          let wikiIdsForFgMemorialId = cachedExternalSourceToWtIdsMap.get(externalId);
+          if (!wikiIdsForFgMemorialId.includes(wikiId)) {
+            wikiIdsForFgMemorialId.push(wikiId);
+          }
+        });
+      }
+    } catch (error) {
+      console.error("WT+ API Batch fetch failed", error);
+      logDebug("fgIdsString is", fgIdsString);
+
+      if (currentBatch.locations) {
+        let locations = currentBatch.locations;
+        for (let location of locations) {
+          location.error = { message: `Fetch failed due to '${error}'` };
+          if (error == "Blocked request") {
+            location.error.wasBlocked = true;
+          }
+        }
+      }
+    }
   }
 
   async function processPendingLocations() {
@@ -1683,18 +2084,31 @@ if (runningExtensionId === currentExtensionId) {
 
       logDebug("cachedFsIdToWtIdsMap is:", cachedFsIdToWtIdsMap);
 
+      if (cachedExternalSourceToWtIdsMap.size) {
+        logDebug("cachedExternalSourceToWtIdsMap is:", cachedExternalSourceToWtIdsMap);
+      }
+
       // Go through the locations and set the WikiIds
       if (currentBatch.locations) {
         let locations = currentBatch.locations;
         for (let location of locations) {
-          if (location.id) {
-            let key = location.id + "|" + location.idType;
-            let wikiIds = cachedFsIdToWtIdsMap.get(key);
-            if (location.sourceFsIds) {
-              for (let sourceFsId of location.sourceFsIds) {
-                let fsId = sourceFsId.idData.id;
-                let sourceKey = fsId + "|" + sourceFsId.idData.idType;
-                sourceFsId.wikiIds = cachedFsIdToWtIdsMap.get(sourceKey);
+          let wikiIds = [];
+          if (location.id || location.externalSources) {
+            if (location.id) {
+              let key = location.id + "|" + location.idType;
+              wikiIds = cachedFsIdToWtIdsMap.get(key);
+              if (location.sourceFsIds) {
+                for (let sourceFsId of location.sourceFsIds) {
+                  let fsId = sourceFsId.idData.id;
+                  let sourceKey = fsId + "|" + sourceFsId.idData.idType;
+                  sourceFsId.wikiIds = cachedFsIdToWtIdsMap.get(sourceKey);
+                }
+              }
+            }
+            if (location.externalSources) {
+              for (let externalSource of location.externalSources) {
+                let sourceKey = externalSource.externalSiteName + "|" + externalSource.externalId;
+                externalSource.wikiIds = cachedExternalSourceToWtIdsMap.get(sourceKey);
               }
             }
             addWikiTreeIcon(location, wikiIds);

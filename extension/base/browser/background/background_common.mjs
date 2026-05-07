@@ -58,12 +58,59 @@ async function handleGetPlatformInfoMessage(request, sendResponse) {
 async function doWtPlusApiCall(request, sendResponse) {
   console.log("doWtPlusApiCall, request is:", request);
 
-  let fecthURL = request.url;
+  let fetchUrl = request.url;
 
-  fetch(fecthURL)
+  fetch(fetchUrl)
     .then((response) => response.text())
     .then((text) => sendResponse({ success: true, rawData: text }))
     .catch((error) => sendResponse({ success: false, error: error.message }));
+
+  return true; // Keep the message channel open for the async response
+}
+
+async function doFetchJson(request, sendResponse) {
+  console.log("doFetchJson, request is:", request);
+
+  let fetchUrl = request.fetchUrl;
+  let fetchOptions = request.fetchOptions;
+
+  try {
+    let response = await fetch(fetchUrl, fetchOptions);
+    console.log("doFetchJson, response is:", response);
+
+    console.log("fetchFsRecordDataObj, response.status is: " + response.status);
+
+    if (response.status !== 200) {
+      console.log("Looks like there was a problem. Status Code: " + response.status);
+      console.log("Fetch URL is: " + fetchUrl);
+      sendResponse({
+        success: false,
+        error: "FetchError",
+        status: response.status,
+        fetchUrl: fetchUrl,
+      });
+    }
+
+    let jsonData = await response.text();
+
+    //console.log("fetchFsRecordDataObj: response text is:");
+    //console.log(jsonData);
+
+    if (!jsonData || jsonData[0] != `{`) {
+      console.log("The response text does not look like JSON");
+      //console.log(jsonData);
+      sendResponse({ success: false, error: "NotJSON" });
+    }
+
+    const json = JSON.parse(jsonData);
+
+    console.log("json is:");
+    console.log(json);
+
+    sendResponse({ success: true, json: json });
+  } catch (error) {
+    sendResponse({ success: false, error: error.message });
+  }
 
   return true; // Keep the message channel open for the async response
 }
@@ -113,6 +160,9 @@ function messageHandler(request, sender, sendResponse) {
     return true;
   } else if (request.type == "doWtPlusApiCall") {
     doWtPlusApiCall(request, sendResponse);
+    return true;
+  } else if (request.type == "doFetchJson") {
+    doFetchJson(request, sendResponse);
     return true;
   } else if (request.type == "openInNewTab") {
     openInNewTab(request.url, sender.tab, request.tabOption);
