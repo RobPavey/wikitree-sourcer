@@ -36,6 +36,9 @@ SOFTWARE.
 //  Maria Barbara Basson - has no direct links to or from a WT profile but has
 //  sources that do.
 //
+// https://www.familysearch.org/en/tree/person/sources/M9BV-DXD
+//  Charles Allen Pavey - has a direct reference to FindAGrave
+//
 // Record:
 //
 // https://www.familysearch.org/ark:/61903/1:1:MWXN-JL5?lang=en
@@ -1760,15 +1763,28 @@ if (runningExtensionId === currentExtensionId) {
           let wikiIds = externalSource.wikiIds;
           externalWikiIdCount += wikiIds.length;
           if (wikiIds.length > 1) {
-            tooltipData.listItems.push({
+            let tooltipListItem = {
               text: `references ${title} ${type} ${id} which is referenced by ${wikiIds.size} profiles`,
-            });
+            };
+
+            iconConfig.isConflict = true;
+            tooltipListItem.isError = true;
+            tooltipData.listItems.push(tooltipListItem);
           } else {
-            tooltipData.listItems.push({
-              text: `references ${title} ${type} ${id} which is referenced by profile ${wikiIds[0]}`,
-            });
+            let wikiId = wikiIds[0];
+            let tooltipListItem = {
+              text: `references ${title} ${type} ${id} which is referenced by profile ${wikiId}`,
+            };
+
+            if (primaryWikiId && wikiId != primaryWikiId) {
+              iconConfig.isConflict = true;
+              tooltipListItem.isError = true;
+              tooltipListItem.text = `references ${title} ${type} ${id} which is referenced by a different profile ${wikiId}`;
+            }
+
+            tooltipData.listItems.push(tooltipListItem);
             if (!linkUrl) {
-              linkUrl = buildWikiProfileUrl(wikiIds[0]);
+              linkUrl = buildWikiProfileUrl(wikiId);
             }
           }
         }
