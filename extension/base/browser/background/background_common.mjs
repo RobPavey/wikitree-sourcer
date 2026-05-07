@@ -76,13 +76,13 @@ async function doFetchJson(request, sendResponse) {
 
   try {
     let response = await fetch(fetchUrl, fetchOptions);
-    console.log("doFetchJson, response is:", response);
+    //console.log("doFetchJson, response is:", response);
 
-    console.log("fetchFsRecordDataObj, response.status is: " + response.status);
+    //console.log("fetchFsRecordDataObj, response.status is: " + response.status);
 
     if (response.status !== 200) {
-      console.log("Looks like there was a problem. Status Code: " + response.status);
-      console.log("Fetch URL is: " + fetchUrl);
+      //console.log("Looks like there was a problem. Status Code: " + response.status);
+      //console.log("Fetch URL is: " + fetchUrl);
       sendResponse({
         success: false,
         error: "FetchError",

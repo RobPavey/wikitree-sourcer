@@ -378,6 +378,15 @@ if (runningExtensionId === currentExtensionId) {
   async function fetchFsRecordDataObj(recordUrl) {
     console.log("fetchFsRecordDataObj, recordUrl is: " + recordUrl);
 
+    // standardize the URL to improve cache hits
+    // remove any query from URL
+    let queryIndex = recordUrl.indexOf("?");
+    if (queryIndex != -1) {
+      recordUrl = recordUrl.substring(0, queryIndex);
+    }
+    let regex = /^\s*https?\:\/\/(?:www\.)?familysearch\.org/;
+    recordUrl = recordUrl.replace(regex, "https://www.familysearch.org");
+
     let cachedRecordDataObj = recordDataObjCache[recordUrl];
     if (cachedRecordDataObj) {
       logDebug("returning cachedRecordDataObj", cachedRecordDataObj);
@@ -600,6 +609,33 @@ if (runningExtensionId === currentExtensionId) {
     return fgMemId;
   }
 
+  function getFindAGraveUrlFromRecordDataObj(dataObj) {
+    if (!dataObj) {
+      return;
+    }
+
+    if (dataObj.sourceDescriptions) {
+      let fgUrl = "";
+      for (let sourceDescription of dataObj.sourceDescriptions) {
+        if (sourceDescription.about && sourceDescription.about.includes("findagrave")) {
+          fgUrl = sourceDescription.about;
+          break;
+        } else if (sourceDescription.identifiers && sourceDescription.identifiers["http://gedcomx.org/Persistent"]) {
+          let persistentIds = sourceDescription.identifiers["http://gedcomx.org/Persistent"];
+          for (let id of persistentIds) {
+            if (id.includes("findagrave")) {
+              fgUrl = id;
+              break;
+            }
+          }
+          if (fgUrl) {
+            return fgUrl;
+          }
+        }
+      }
+    }
+  }
+
   let sourceInfoCache = {};
 
   async function getSourceInfosForSourceIds(sourceIdList) {
@@ -664,30 +700,7 @@ if (runningExtensionId === currentExtensionId) {
               let recordFetchResult = await fetchFsRecordDataObj(sourceInfo.uri);
               logDebug("getSourceInfosForSourceIds: recordFetchResult is", recordFetchResult);
               if (recordFetchResult.success && recordFetchResult.json) {
-                let dataObj = recordFetchResult.json;
-
-                if (dataObj.sourceDescriptions) {
-                  for (let sourceDescription of dataObj.sourceDescriptions) {
-                    if (sourceDescription.about && sourceDescription.about.includes("findagrave")) {
-                      fgUrl = sourceDescription.about;
-                      break;
-                    } else if (
-                      sourceDescription.identifiers &&
-                      sourceDescription.identifiers["http://gedcomx.org/Persistent"]
-                    ) {
-                      let persistentIds = sourceDescription.identifiers["http://gedcomx.org/Persistent"];
-                      for (let id of persistentIds) {
-                        if (id.includes("findagrave")) {
-                          fgUrl = id;
-                          break;
-                        }
-                      }
-                      if (fgUrl) {
-                        break;
-                      }
-                    }
-                  }
-                }
+                fgUrl = getFindAGraveUrlFromRecordDataObj(recordFetchResult.json);
               }
             } else if (sourceInfo.uri.includes("findagrave.com")) {
               fgUrl = sourceInfo.uri;
@@ -977,51 +990,27 @@ if (runningExtensionId === currentExtensionId) {
           let recordFetchResult = await fetchFsRecordDataObj(document.URL);
           logDebug("fetchExternalSourceForRecord: recordFetchResult is", recordFetchResult);
           if (recordFetchResult.success && recordFetchResult.json) {
-            let dataObj = recordFetchResult.json;
+            let fgUrl = getFindAGraveUrlFromRecordDataObj(recordFetchResult.json);
+            let fgMemId = extractFindAGraveMemorialIdFromUrl(fgUrl);
 
-            if (dataObj.sourceDescriptions) {
-              let fgUrl = "";
-              for (let sourceDescription of dataObj.sourceDescriptions) {
-                if (sourceDescription.about && sourceDescription.about.includes("findagrave")) {
-                  fgUrl = sourceDescription.about;
-                  break;
-                } else if (
-                  sourceDescription.identifiers &&
-                  sourceDescription.identifiers["http://gedcomx.org/Persistent"]
-                ) {
-                  let persistentIds = sourceDescription.identifiers["http://gedcomx.org/Persistent"];
-                  for (let id of persistentIds) {
-                    if (id.includes("findagrave")) {
-                      fgUrl = id;
-                      break;
-                    }
-                  }
-                  if (fgUrl) {
-                    break;
-                  }
-                }
-              }
-              let fgMemId = extractFindAGraveMemorialIdFromUrl(fgUrl);
+            if (fgMemId) {
+              let externalSource = {
+                externalId: fgMemId,
+                externalSiteName: "fg",
+                externalSiteTitle: "Find a Grave",
+                externalSourceTypeName: "memorial",
+                externalUrl: fgUrl,
+              };
 
-              if (fgMemId) {
-                let externalSource = {
-                  externalId: fgMemId,
-                  externalSiteName: "fg",
-                  externalSiteTitle: "Find a Grave",
-                  externalSourceTypeName: "memorial",
-                  externalUrl: fgUrl,
-                };
-
-                logDebug(
-                  "fetchExternalSourceForRecord, found externalSource (location, externalSource)",
-                  location,
-                  externalSource
-                );
-                location.externalSources ??= [];
-                location.externalSources.push(externalSource);
-                let key = externalSource.externalSiteName + "|" + externalSource.externalId;
-                addLocationToPendingExternalSources(locationBatch, key, location);
-              }
+              logDebug(
+                "fetchExternalSourceForRecord, found externalSource (location, externalSource)",
+                location,
+                externalSource
+              );
+              location.externalSources ??= [];
+              location.externalSources.push(externalSource);
+              let key = externalSource.externalSiteName + "|" + externalSource.externalId;
+              addLocationToPendingExternalSources(locationBatch, key, location);
             }
           }
         }
