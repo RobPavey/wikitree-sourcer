@@ -376,8 +376,6 @@ if (runningExtensionId === currentExtensionId) {
   let recordDataObjCache = {};
 
   async function fetchFsRecordDataObj(recordUrl) {
-    console.log("fetchFsRecordDataObj, recordUrl is: " + recordUrl);
-
     // standardize the URL to improve cache hits
     // remove any query from URL
     let queryIndex = recordUrl.indexOf("?");
@@ -402,7 +400,6 @@ if (runningExtensionId === currentExtensionId) {
     let fetchType = "record";
 
     let fetchUrl = recordUrl;
-    console.log("fetchFsRecordDataObj, fetchUrl is: " + fetchUrl);
 
     // sometimes the URL has an extra / on the end. This causes the fetch to fail. So remove it
     fetchUrl = fetchUrl.replace(/\/\?/, "?");
@@ -437,8 +434,6 @@ if (runningExtensionId === currentExtensionId) {
 
     try {
       let response = await pageMods.backgroundFetchJson(fetchUrl, fetchOptions);
-
-      console.log("fetchFsRecordDataObj, response is: ", response);
 
       recordDataObjCache[recordUrl] = response;
 
@@ -1874,7 +1869,6 @@ if (runningExtensionId === currentExtensionId) {
 
     // if there are any fetches required to check for external add them to a list
     if (locationType.fetchForExternalSource) {
-      console.log("fetchForExternalSource found");
       let fetchForExternalSource = locationType.fetchForExternalSource;
 
       let optionKey = fetchForExternalSource.optionKey;
