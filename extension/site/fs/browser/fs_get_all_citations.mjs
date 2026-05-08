@@ -35,23 +35,42 @@ import {
   buildFsPlainCitations,
 } from "../core/fs_build_all_citations.mjs";
 
+import { logDebug } from "/base/core/log_debug.mjs";
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 async function getSourcerCitation(runDate, source, type, sessionId, options, updateStatusFunction) {
+  logDebug("getSourcerCitation, source is:", source);
+
   let uri = source.uri;
 
   let fetchResult = { success: false };
 
-  if (uri) {
+  let fetchFailed = false;
+
+  if (uri && uri.includes("familysearch.org/")) {
     fetchResult = await fetchRecord(uri, sessionId);
     let retryCount = 0;
     while (!fetchResult.success && fetchResult.allowRetry && retryCount < 3) {
       retryCount++;
       updateStatusFunction("retry " + retryCount);
+      await sleep(20);
       fetchResult = await fetchRecord(uri, sessionId);
     }
+    if (!fetchResult.success) {
+      // we can still get info from the source
+      logDebug("getSourcerCitation, fetch failed fetchResult is:", fetchResult);
+      fetchFailed = true;
+    }
+  } else {
+    // we can still get info from the source
+    logDebug("getSourcerCitation, no familysearch url found");
   }
 
-  //console.log("getSourcerCitation, fetchResult is:");
-  //console.log(fetchResult);
+  logDebug("getSourcerCitation, fetchResult is:");
+  logDebug(fetchResult);
 
   let sourceDataObjects = undefined;
   if (fetchResult.success) {
@@ -68,6 +87,12 @@ async function getSourcerCitation(runDate, source, type, sessionId, options, upd
   }
 
   buildSourcerCitation(runDate, source, type, options);
+
+  if (fetchFailed) {
+    return { success: false };
+  }
+
+  return { success: true };
 }
 
 async function getSourcerCitations(runDate, result, type, sessionId, options) {
@@ -89,8 +114,7 @@ async function getSourcerCitations(runDate, result, type, sessionId, options) {
 
   async function requestFunction(input, updateStatusFunction) {
     updateStatusFunction("fetching...");
-    let newResponse = { success: true };
-    await getSourcerCitation(runDate, input, type, sessionId, options, updateStatusFunction);
+    let newResponse = await getSourcerCitation(runDate, input, type, sessionId, options, updateStatusFunction);
     return newResponse;
   }
 

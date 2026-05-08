@@ -299,7 +299,17 @@ async function fsBuildAllCitationsAction(data, citationType) {
             message2 += excludedSourcesMessage;
           }
 
-          writeToClipboard(response.citationsString, message, false, message2);
+          let iconType = "check";
+          if (response.failureCount) {
+            iconType = "warning";
+            message2 +=
+              "\n\nWarning: Some data could not be retreived from FamilySearch so the citations may be incomplete.";
+            if (response.failureCount) {
+              message2 += "\n- There were " + response.failureCount + " failures getting sources";
+            }
+          }
+
+          writeToClipboard(response.citationsString, message, false, message2, iconType);
         }
       } else {
         const message = "All sources were excluded due to option settings.";
@@ -307,9 +317,6 @@ async function fsBuildAllCitationsAction(data, citationType) {
         displayMessageWithIcon("warning", message, excludedSourcesMessage);
       }
     } else {
-      // It can fail even if there is an image URL, for example findagrave images:
-      // https://www.ancestry.com/discoveryui-content/view/2221897:60527
-      // This is not considered an error there just will be no sharing link
       const message = "An error occurred getting sources.";
       displayMessageWithIcon("warning", message, response.errorMessage);
     }
