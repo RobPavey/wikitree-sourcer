@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nEntry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Nancy's son William Franklin Furr married Wilma Faye Yandle on 13 June 1954 in Charlotte, Mecklenburg, North Carolina, United States.<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nEntry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Marriage of son William Franklin Furr''': \"North Carolina, County Marriages, 1762-2011\"<br/>citing Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>Entry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nNancy L Furr's son William Franklin Furr marriage to Wilma Faye Yandle on 13 Jun 1954 in Charlotte, Mecklenburg, North Carolina, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Nancy's son William Franklin Furr married Wilma Faye Yandle on 13 June 1954 in Charlotte, Mecklenburg, North Carolina, United States.<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nNancy L Furr's son William Franklin Furr marriage to Wilma Faye Yandle on 13 Jun 1954 in Charlotte, Mecklenburg, North Carolina, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Marriage of son William Franklin Furr''': \"North Carolina, County Marriages, 1762-2011\"<br/>citing Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>Nancy L Furr's son William Franklin Furr marriage to Wilma Faye Yandle on 13 Jun 1954 in Charlotte, Mecklenburg, North Carolina, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nName: Nancy L Furr.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Nancy's son William Franklin Furr married Wilma Faye Yandle on 13 June 1954 in Charlotte, Mecklenburg, North Carolina, United States.<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nName: Nancy L Furr.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Marriage of son William Franklin Furr''': \"North Carolina, County Marriages, 1762-2011\"<br/>citing Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>Name: Nancy L Furr.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}\n{| border=\"1\"\n| Name || Nancy L Furr\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Nancy's son William Franklin Furr married Wilma Faye Yandle on 13 June 1954 in Charlotte, Mecklenburg, North Carolina, United States.<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}\n{| border=\"1\"\n| Name || Nancy L Furr\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Marriage of son William Franklin Furr''': \"North Carolina, County Marriages, 1762-2011\"<br/>citing Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>Name: Nancy L Furr.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nEntry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Nancy's son William Franklin Furr married Wilma Faye Yandle on 13 June 1954 in Charlotte, Mecklenburg, North Carolina, United States.<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nEntry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Marriage of son William Franklin Furr''': \"North Carolina, County Marriages, 1762-2011\"<br/>citing Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>Entry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Nancy's son William Franklin Furr married Wilma Faye Yandle on 13 June 1954 in Charlotte, Mecklenburg, North Carolina, United States.<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Marriage of son William Franklin Furr''': \"North Carolina, County Marriages, 1762-2011\"<br/>citing Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91D-93C4-1}}.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nNancy L Furr's son William Franklin Furr marriage to Wilma Faye Yandle on 13 Jun 1954 in Charlotte, Mecklenburg, North Carolina, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Nancy's son William Franklin Furr married Wilma Faye Yandle on 13 June 1954 in Charlotte, Mecklenburg, North Carolina, United States.<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nNancy L Furr's son William Franklin Furr marriage to Wilma Faye Yandle on 13 Jun 1954 in Charlotte, Mecklenburg, North Carolina, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Marriage of son William Franklin Furr''': \"North Carolina, County Marriages, 1762-2011\"<br/>citing Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>Nancy L Furr's son William Franklin Furr marriage to Wilma Faye Yandle on 13 Jun 1954 in Charlotte, Mecklenburg, North Carolina, United States.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nEntry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Nancy's son William Franklin Furr married Wilma Faye Yandle on 13 June 1954 in Charlotte, Mecklenburg, North Carolina, United States.<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nEntry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Marriage of son William Franklin Furr''': \"North Carolina, County Marriages, 1762-2011\"<br/>citing Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>Entry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954.",
+    "type": "source"
+  }
+}

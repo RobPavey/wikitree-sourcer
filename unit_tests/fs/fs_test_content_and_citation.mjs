@@ -453,6 +453,14 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:Q2R1-ZVMS",
   },
   {
+    caseName: "us_nc_marriage_1954_nancy_furr",
+    url: "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BV?lang=en",
+  },
+  {
+    caseName: "us_nc_military_draft_1942_nancy_furr",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDC?lang=en",
+  },
+  {
     caseName: "us_nv_marriage_1965_john_smith",
     url: "https://www.familysearch.org/ark:/61903/1:1:VVVW-XS7",
   },

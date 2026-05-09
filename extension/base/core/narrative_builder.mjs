@@ -582,7 +582,7 @@ class NarrativeBuilder {
     let string = "";
     if (gd.role == Role.Other) {
       string = this.getPersonNameOrPronoun(isMidSentence);
-      string += " was in the record for another person who";
+      string += " was in the record for another person,";
     } else {
       string = this.getPossessiveName(isMidSentence);
       let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
@@ -591,6 +591,9 @@ class NarrativeBuilder {
     let primaryPersonName = gd.inferPrimaryPersonFullName();
     if (primaryPersonName) {
       string += " " + primaryPersonName;
+    }
+    if (gd.role == Role.Other) {
+      string += ", who";
     }
     return string;
   }
@@ -2814,9 +2817,7 @@ class NarrativeBuilder {
     let placeObj = gd.inferEventPlaceObj();
 
     if (role && role != Role.Primary) {
-      let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
-      let possessiveName = this.getPossessiveName();
-      this.startSentence(possessiveName + " " + relationship);
+      this.startSentence(this.getPossessiveNamePlusPrimaryPerson());
     } else {
       this.startSentence(this.getPersonNameOrPronoun(false));
     }

@@ -3847,7 +3847,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
                   }
                 }
               }
-            } else if (!personIdWithRelatedFact) {
+            } else if (!personIdWithRelatedFact || !relatedPersonFactType) {
               // Sometimes the related person should be ignored,
               // for example in the case of us_ky_marriage_1891_ida_sphar where the
               // related person is the spouse in a marriage
@@ -4120,6 +4120,9 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
       // this is weird we have a primary fact for a different person but no relationships
       // This happens for: us_or_spouse_death_1989_leland_churchill
       // In that case the person of record is the spouse of a person who died.
+      // It also happens for us_nc_military_draft_1942_nancy_furr
+      // In that case the person of record is the spouse of a perion in a draft registration
+      // card - but she is just recorded as an informant - so there is no way to know the relationship.
 
       let person = findPersonById(dataObj, personId);
 
@@ -4157,6 +4160,10 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
               }
             }
           }
+        }
+
+        if (!relationshipToPerson) {
+          relationshipToPerson = "Other";
         }
 
         if (relationshipToPerson) {

@@ -1,0 +1,1375 @@
+{
+  "id" : "r_102239658784",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1703023398260,
+    "created" : 1703023398260
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q248-5MTQ?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q248-5MTQ?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q248-5MTQ"
+    }
+  },
+  "description" : "#sd_p_101227781169",
+  "persons" : [ {
+    "id" : "p_101227781168",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QVRG-JSDH?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/Q248-5MTQ?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDH" ]
+    },
+    "names" : [ {
+      "id" : "ff96f3e3-3636-4a3a-93c6-fb20995741ad",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1703023398260,
+        "created" : 1703023398260
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Ralph Emerson Furr",
+        "parts" : [ {
+          "id" : "5c4aa5c0-e9f9-423e-8366-3f8fb0b9b759",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Ralph Emerson",
+          "fields" : [ {
+            "id" : "7dd2c1d9-e2c2-4245-aa1f-dc0046c25189",
+            "attribution" : {
+              "modified" : 1703023398260,
+              "created" : 1703023398260
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "3495de9c-e7b8-45dd-881e-c678157dfc81",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Ralph Emerson"
+            }, {
+              "id" : "3495de9c-e7b8-45dd-881e-c678157dfc81",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Ralph Emerson"
+            }, {
+              "id" : "3495de9c-e7b8-45dd-881e-c678157dfc81",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Ralph Emerson",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "322adfee-1c46-488d-963d-954a0bcf6585",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Furr",
+          "fields" : [ {
+            "id" : "582f0db7-d475-4df5-8a65-20abbded7e3a",
+            "attribution" : {
+              "modified" : 1703023398260,
+              "created" : 1703023398260
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "0540f843-de1f-4a8e-98de-0eded38a398b",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Furr"
+            }, {
+              "id" : "0540f843-de1f-4a8e-98de-0eded38a398b",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Furr"
+            }, {
+              "id" : "0540f843-de1f-4a8e-98de-0eded38a398b",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Furr",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "f4873471-5127-45b5-b2a6-08805e3141ad",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "44947778-03d3-4524-8dc1-2489790cda33",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Ralph Emerson Furr"
+          }, {
+            "id" : "44947778-03d3-4524-8dc1-2489790cda33",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Ralph Emerson Furr",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "White",
+      "fields" : [ {
+        "id" : "845aaf75-68ee-4a85-aa22-dd53332e4215",
+        "attribution" : {
+          "modified" : 1703023398260,
+          "created" : 1703023398260
+        },
+        "type" : "http://gedcomx.org/Race",
+        "values" : [ {
+          "id" : "3687e4fd-de90-4bc2-814b-6ebdd6905b61",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "White"
+        } ]
+      } ]
+    }, {
+      "id" : "2f3d177f-07bd-484d-bbe7-54ae8dae3259",
+      "attribution" : {
+        "modified" : 1703023398260,
+        "created" : 1703023398260
+      },
+      "type" : "http://gedcomx.org/MilitaryDraftRegistration",
+      "date" : {
+        "id" : "455db3e8-c8a8-47f8-869f-cb9684766606",
+        "original" : "1942",
+        "fields" : [ {
+          "id" : "9461ebda-1cf4-4018-a0d7-15ad43065ac6",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "ee90d75a-7c6a-4c14-b708-aefce52d4b1c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1942",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "ee90d75a-7c6a-4c14-b708-aefce52d4b1c",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1942"
+          }, {
+            "id" : "ee90d75a-7c6a-4c14-b708-aefce52d4b1c",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1942",
+            "resource" : "+1942",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "789d80b7-dc74-44c7-96d6-405a807e7c50",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "7589e7c1-e5eb-4cfa-8bb7-3d1c34503fb5",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1942"
+          }, {
+            "id" : "7589e7c1-e5eb-4cfa-8bb7-3d1c34503fb5",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1942"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "be3680c6-42b8-41cf-8f2a-d84a595d300e",
+        "original" : "Mallard Creek, Mecklenburg, North Carolina, United States",
+        "description" : "#place_393065",
+        "fields" : [ {
+          "id" : "c568e668-8252-4bd1-b282-d00e2374a5d1",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "2bd4d972-aecc-4948-880e-e3e1d412735b",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Mallard Creek, Mecklenburg, North Carolina, United States",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "2bd4d972-aecc-4948-880e-e3e1d412735b",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=93&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Mecklenburg, North Carolina, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/393065",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=DC,CLE,TC&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "980f2426-d1e6-44d0-8b7a-7dcf8778e79d",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "6ee1f6a4-b4ef-4a33-91ed-f7fa212d492a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "North Carolina"
+          } ]
+        }, {
+          "id" : "acac0462-8191-44eb-b6de-b5ed4ce5761e",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "bbb07366-ea09-4ac3-a144-dca6a284d69c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Mecklenburg"
+          } ]
+        }, {
+          "id" : "095e066e-2541-4667-b810-7c37d9d93e97",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "130397b0-a1d9-441b-a21c-32586e70bd10",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Mallard Creek"
+          } ]
+        }, {
+          "id" : "15bd4eb6-0031-4383-a4b5-7c255686167f",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "189fe6dd-6af2-4028-a717-7197cfeaf684",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "a0d01992-dd45-4e51-a75d-150da2ae06e8",
+        "attribution" : {
+          "modified" : 1703023398260,
+          "created" : 1703023398260
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "9839899d-1e4e-4d94-a5db-2ffdcd382253",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Draft Registration",
+          "resource" : "http://gedcomx.org/MilitaryDraftRegistration"
+        } ]
+      } ]
+    }, {
+      "id" : "43c11206-3620-4808-97c8-abdd19e0f75c",
+      "attribution" : {
+        "modified" : 1703023398260,
+        "created" : 1703023398260
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "b7a66d80-9ebe-413e-9099-0e7448ce6807",
+        "original" : "05 Dec 1902",
+        "fields" : [ {
+          "id" : "6061a335-10e9-471c-9573-3d8400ba95d7",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "9288b751-6989-4940-971c-4753b90fe8bd",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "05 Dec 1902",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "9288b751-6989-4940-971c-4753b90fe8bd",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "05 Dec 1902"
+          }, {
+            "id" : "9288b751-6989-4940-971c-4753b90fe8bd",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "5 December 1902",
+            "resource" : "+1902-12-05",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "9422fba8-4f17-4162-847b-47d73df27227",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "8446b5cd-4619-4165-b91b-2ce78a44f7c6",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DAY_ORIG",
+            "text" : "05"
+          } ]
+        }, {
+          "id" : "6e5da134-6322-437c-8889-8ce6e1bdf0df",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "a7942a96-1143-4b74-b452-99a86c7050f3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_MONTH_ORIG",
+            "text" : "Dec"
+          } ]
+        }, {
+          "id" : "59070bb4-692b-4100-984c-d022fd943e8e",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "8e30b4c6-f088-48d1-a628-3d40f4f2de84",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1902"
+          }, {
+            "id" : "8e30b4c6-f088-48d1-a628-3d40f4f2de84",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1902"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "3e42f205-de91-4c4f-85ea-ab705e19081c",
+        "original" : "Concord, North Carolina",
+        "fields" : [ {
+          "id" : "353932e4-4193-41d4-9655-4637c744e053",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://familysearch.org/types/fields/CityOrTown",
+          "values" : [ {
+            "id" : "c21d0812-5169-4a09-9ed7-335d0a3a2673",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_CITY_TOWN_ORIG",
+            "text" : "Concord"
+          } ]
+        }, {
+          "id" : "01538102-d18b-4751-b406-0fc55b8b04e3",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://familysearch.org/types/fields/StateOrCountry",
+          "values" : [ {
+            "id" : "79dbe3f4-b4ea-4233-bcdd-eaada24bd3f4",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_STATE_COUNTRY_ORIG",
+            "text" : "North Carolina"
+          } ]
+        }, {
+          "id" : "f966dc7a-4bc7-40b1-88c4-67586084db37",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "9d981a5c-a088-4ec0-aec2-aaccd39572b8",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Concord, North Carolina",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "58542456-6622-4da2-a861-a320b014df1b",
+      "attribution" : {
+        "modified" : 1703023398260,
+        "created" : 1703023398260
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "id" : "27429aa2-0a12-4f80-b7e6-8b0a7c39a047",
+        "original" : "Mallard Creek, Mecklenburg, North Carolina, United States",
+        "fields" : [ {
+          "id" : "1a869c57-e199-4f51-ac9a-f60a5e6e2101",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "63904052-6c36-46cb-bcb6-4bf6b5689f9e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_STATE_ORIG",
+            "text" : "North Carolina"
+          } ]
+        }, {
+          "id" : "e9e823fa-5460-4385-9571-a1123578fafa",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "65aeea31-56b4-4b3e-a14a-4d9dc2779369",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "id" : "03f33ca8-a330-42d0-b15f-f5493bbf8c7f",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "7027ab39-6656-4f11-8c10-4ca638661060",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_PLACE_ORIG",
+            "text" : "Mallard Creek, Mecklenburg, North Carolina, United States",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "444eecc3-56c4-4bae-9857-18c39775eb81",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "43779542-c433-4130-ae4c-a1f11b9cd8c7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_CITY_ORIG",
+            "text" : "Mallard Creek"
+          } ]
+        }, {
+          "id" : "d842db6a-af87-4a0d-97fa-e4e6f8e9a42c",
+          "attribution" : {
+            "modified" : 1703023398260,
+            "created" : 1703023398260
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "697b3058-fcb9-4759-9511-e642c4e5d678",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_COUNTY_ORIG",
+            "text" : "Mecklenburg"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "8eb81fd0-1374-4122-a48e-8a497e7f5ecf",
+      "attribution" : {
+        "modified" : 1703023398260,
+        "created" : 1703023398260
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "822a1b91-2c7f-4a50-9a61-8308bd1d9990",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_100854688_01382_00000_1002947254672_000"
+      } ]
+    }, {
+      "id" : "989ba904-83c6-4796-ae72-3d042ba6afb5",
+      "attribution" : {
+        "modified" : 1703023398260,
+        "created" : 1703023398260
+      },
+      "type" : "http://gedcomx.org/RelationshipToHead",
+      "values" : [ {
+        "id" : "7f31264c-db0d-40fc-8ede-d163c2d7584a",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_RELATIONSHIP_TO_HEAD_ORIG",
+        "text" : "self"
+      } ]
+    }, {
+      "id" : "5e5a3c7f-5f0b-4506-9b69-f861b7eb5796",
+      "attribution" : {
+        "modified" : 1703023398260,
+        "created" : 1703023398260
+      },
+      "type" : "http://familysearch.org/types/fields/FsUnsupported",
+      "values" : [ {
+        "id" : "f4284924-bd93-41e3-baa6-39e59f55c4e1",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_UNSUPPORTED",
+        "text" : "{\"PR_NAME_SURN_LTR_ORIG\":\"F\",\"PR_NAME_SURN_LTR\":\"F\"}"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Ralph Emerson Furr",
+      "birthDate" : "05 Dec 1902",
+      "birthPlace" : "Concord, North Carolina"
+    }
+  }, {
+    "id" : "p_101227781169",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "extracted" : true,
+    "principal" : false,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QVRG-JSDC?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/Q248-5MTQ?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDC" ]
+    },
+    "names" : [ {
+      "id" : "3f2c5496-cee3-4681-98eb-56197d469b6e",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=99&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1703023398260,
+        "created" : 1703023398260
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Mrs Nancy Lee Furr",
+        "parts" : [ {
+          "id" : "d24a1b44-49b2-4bcc-af5f-c9183c41d541",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Nancy Lee",
+          "fields" : [ {
+            "id" : "73e708b4-a083-4ac5-960c-594e91c198c8",
+            "attribution" : {
+              "modified" : 1703023398260,
+              "created" : 1703023398260
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "a0489171-6b22-4299-8b3d-20c0a824ef28",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "INFORMANT_NAME_GN_ORIG",
+              "text" : "Nancy Lee"
+            }, {
+              "id" : "a0489171-6b22-4299-8b3d-20c0a824ef28",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "INFORMANT_NAME_GN",
+              "text" : "Nancy Lee"
+            }, {
+              "id" : "a0489171-6b22-4299-8b3d-20c0a824ef28",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=99&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "INFORMANT_NAME_GN",
+              "text" : "Nancy Lee",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:PFL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "576cb1b0-eb60-42ba-9a43-4c7339b3b92f",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Furr",
+          "fields" : [ {
+            "id" : "8586f726-e5cd-4a51-a33f-082520bee4ff",
+            "attribution" : {
+              "modified" : 1703023398260,
+              "created" : 1703023398260
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "0f679542-2446-4005-b05e-1013d1c7104a",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "INFORMANT_NAME_SURN_ORIG",
+              "text" : "Furr"
+            }, {
+              "id" : "0f679542-2446-4005-b05e-1013d1c7104a",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "INFORMANT_NAME_SURN",
+              "text" : "Furr"
+            }, {
+              "id" : "0f679542-2446-4005-b05e-1013d1c7104a",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=99&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "INFORMANT_NAME_SURN",
+              "text" : "Furr",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:PFL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "f8ec0f19-83e5-4682-90cb-e70fa5c4703b",
+          "type" : "http://gedcomx.org/Prefix",
+          "value" : "Mrs",
+          "fields" : [ {
+            "id" : "4f135141-499e-4c0e-83c7-8a49fe2db0ef",
+            "attribution" : {
+              "modified" : 1703023398260,
+              "created" : 1703023398260
+            },
+            "type" : "http://gedcomx.org/Prefix",
+            "values" : [ {
+              "id" : "c78682f2-48ec-4dd8-9701-5de75525391f",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "INFORMANT_NAME_PRE_ORIG",
+              "text" : "Mrs"
+            }, {
+              "id" : "c78682f2-48ec-4dd8-9701-5de75525391f",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=99&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "INFORMANT_NAME_PRE",
+              "text" : "Mrs",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:PFL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "bbf838f8-9058-4a0a-8e36-1aaf6c47c2ca",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "9344264d-b474-49de-bc49-1a8ced68aa84",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "INFORMANT_NAME_ORIG",
+            "text" : "Mrs Nancy Lee Furr"
+          }, {
+            "id" : "9344264d-b474-49de-bc49-1a8ced68aa84",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=99&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "INFORMANT_NAME",
+            "text" : "Mrs Nancy Lee Furr",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:PFL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "f24dfcc5-21fe-40b6-ab12-83af4740f7ed",
+      "attribution" : {
+        "modified" : 1703023398260,
+        "created" : 1703023398260
+      },
+      "type" : "http://gedcomx.org/Role",
+      "values" : [ {
+        "id" : "90408a1b-6ea5-4830-ae54-486d63b2a5cf",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "ROLE",
+        "text" : "INFORMANT"
+      } ]
+    }, {
+      "id" : "45881dcc-90f3-44f2-b800-f1ebd804ad75",
+      "attribution" : {
+        "modified" : 1703023398260,
+        "created" : 1703023398260
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "9ddce423-0ece-463c-9949-0241bb339f19",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_100854688_01382_00000_1002947254672_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Mrs Nancy Lee Furr"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_102239658784",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:Q248-5MTQ",
+    "componentOf" : {
+      "description" : "#sd_c_2431127",
+      "descriptionId" : "sd_c_2431127"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1703023398260,
+    "modified" : 1710034506131,
+    "coverage" : [ {
+      "recordType" : "http://gedcomx.org/Military"
+    } ],
+    "citations" : [ {
+      "value" : "\"North Carolina, First Draft Registration Cards, 1940-1945\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDH : Sun Mar 10 01:35:06 UTC 2024), Entry for Ralph Emerson Furr and Mrs Nancy Lee Furr, 1942."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Ralph Emerson Furr, \"North Carolina, First Draft Registration Cards, 1940-1945\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1002947254672" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:Q248-5MTQ" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/platform/records/collections/2431127?arkName=1:2:Q248-5MTQ"
+    }
+  }, {
+    "id" : "sd_c_2431127",
+    "about" : "https://www.familysearch.org/platform/records/collections/2431127",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1422553747328,
+    "modified" : 1749625952304,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "North Carolina, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/337"
+      },
+      "temporal" : {
+        "original" : "1940/1945",
+        "formal" : "+1940/+1945"
+      },
+      "recordType" : "http://gedcomx.org/Military"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "North Carolina, First Draft Registration Cards, 1940-1945"
+    }, {
+      "lang" : "zh",
+      "value" : "北卡羅來納州，第一次徵兵登記卡，1940 年 - 1945 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Caroline du Nord, Fiches de premier enrôlement, 1940-1945"
+    }, {
+      "lang" : "ru",
+      "value" : "Северная Каролина, карточки первой постановки на воинский учет, 1940-1945 гг."
+    }, {
+      "lang" : "no",
+      "value" : "North Carolina, Første innkalling registreringskort, 1940-1945"
+    }, {
+      "lang" : "es",
+      "value" : "Primer Borrador de Tarjetas de Registro, Carolina del Norte, 1940-1945"
+    }, {
+      "lang" : "mn",
+      "value" : "Хойд Каролина, анхны цэрэгт татах бүртгэлийн карт, 1940-1945"
+    }, {
+      "lang" : "ko",
+      "value" : "노스캐롤라이나, 1차 징병 등록 카드, 1940-1945"
+    }, {
+      "lang" : "ja",
+      "value" : "ノースカロライナ州、第一次世界大戦徴兵登録カード、1940年-1945年"
+    }, {
+      "lang" : "it",
+      "value" : "Carolina del Nord, Schede con bozze di registrazione, 1940-1945"
+    }, {
+      "lang" : "id",
+      "value" : "Carolina Utara, Kartu Pendaftaran Wajib Militer Pertama, 1940-1945"
+    }, {
+      "lang" : "hu",
+      "value" : "Észak-Karolina, Első sorozási jelentkezési kartonok, 1940–1945"
+    }, {
+      "lang" : "sk",
+      "value" : "Severná Karolína, prvé povolávacie rozkazy, 1940 – 1945"
+    }, {
+      "lang" : "th",
+      "value" : "นอร์ทแคโรไลนา, บัตรลงทะเบียนเกณฑ์ทหารครั้งแรก, ปี 1940-1945"
+    }, {
+      "lang" : "to",
+      "value" : "Noate Kalolaina, Fuofua Kaati Lesisita Fakaangaanga, 1940-1945"
+    }, {
+      "lang" : "bg",
+      "value" : "Северна Каролина, Първи повиквателни за регистрация, 1940 – 1945"
+    }, {
+      "lang" : "km",
+      "value" : "ប័ណ្ណចុះឈ្មោះព្រាងដំបូងនៃការ៉ូលីណាខាងជើង, ឆ្នាំ 1940-1945"
+    }, {
+      "lang" : "pl",
+      "value" : "Karolina Północna, Karty rejestracyjne pierwszego poboru, 1940-1945"
+    }, {
+      "lang" : "ro",
+      "value" : "Carolina de Nord, Cartonașe de înscriere inițială pentru conscripție, 1940-1945"
+    }, {
+      "lang" : "sv",
+      "value" : "North Carolina, kort för första dragningsinskrivning, 1940–1945"
+    }, {
+      "lang" : "sm",
+      "value" : "North Carolina, Thẻ Đăng Ký Nhập Ngũ Lần Đầu,1940-1945"
+    }, {
+      "lang" : "vi",
+      "value" : "North Carolina, Thẻ Đăng Ký Nhập Ngũ Lần Đầu,1940-1945"
+    }, {
+      "lang" : "sq",
+      "value" : "Karolina e Veriut, Karta e Parë e Regjistrimit, 1940-1945"
+    }, {
+      "lang" : "pt",
+      "value" : "Carolina do Norte, Primeiros Cartões de Registro, 1940-1945"
+    }, {
+      "lang" : "de",
+      "value" : "North Carolina, First Draft Registration Cards, 1940-1945"
+    }, {
+      "lang" : "uk",
+      "value" : "Північна Кароліна, реєстраційні картки першого призову, 1940–1945 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Sjeverna Karolina, kartice za prijavu pri prvom novačenju, 1940. - 1945."
+    }, {
+      "lang" : "cs",
+      "value" : "Severní Karolína, první návrh registračních karet, 1940-1945"
+    }, {
+      "lang" : "da",
+      "value" : "North Carolina, første udkast til registreringskort, 1940-1945"
+    }, {
+      "lang" : "nl",
+      "value" : "North Carolina, Eerste Dienstplicht Registratie Kaarten, 1940-1945"
+    }, {
+      "lang" : "et",
+      "value" : "Põhja-Carolina, Esimene Registreerimiskaartide Mustand, 1940–1945"
+    }, {
+      "lang" : "fj",
+      "value" : "Kad ni Rejisita ena North Carolina, Matai ni Volayaca, 1940-1945"
+    }, {
+      "lang" : "fi",
+      "value" : "Pohjois-Carolinan ensimmäiset kutsuntakortit, 1940-1945"
+    }, {
+      "lang" : "tl",
+      "value" : "North Carolina, Mga Card ng Pagpaparehistro sa Unang Paglilingkod, 1940-1945"
+    }, {
+      "lang" : "mg",
+      "value" : "Karatra fisoratana anarana andrana voalohany tany Caroline Avaratra, 1940-1945"
+    }, {
+      "lang" : "ceb",
+      "value" : "North Carolina, Mga Kard sa Unang Pagrehistro sa Pagkasundalo, 1940-1945"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/2431127" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C9PN-L4ND",
+    "componentOf" : {
+      "description" : "#sd_c_2431127",
+      "descriptionId" : "sd_c_2431127"
+    },
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "title:United States, North Carolina",
+        "description" : "https://www.familysearch.org/platform/places/description/337"
+      },
+      "temporal" : {
+        "original" : "1940-1945",
+        "formal" : "+1940-01-01T00:00:00Z/+1945-12-31T23:59:59Z"
+      },
+      "recordType" : "http://gedcomx.org/DraftRegistration"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C9PN-L4ND" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/platform/records/collections/2431127?arkName=3:1:3Q9M-C9PN-L4ND"
+    }
+  }, {
+    "id" : "sd_p_101227781169",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDC",
+    "componentOf" : {
+      "description" : "#src_r_102239658784",
+      "descriptionId" : "src_r_102239658784"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"North Carolina, First Draft Registration Cards, 1940-1945\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDH : Sun Mar 10 01:35:06 UTC 2024), Entry for Ralph Emerson Furr and Mrs Nancy Lee Furr, 1942."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Mrs Nancy Lee Furr, \"North Carolina, First Draft Registration Cards, 1940-1945\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Mrs Nancy Lee Furr, \"North Carolina, First Draft Registration Cards, 1940-1945\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDC" ]
+    }
+  }, {
+    "id" : "sd_p_101227781168",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDH",
+    "componentOf" : {
+      "description" : "#src_r_102239658784",
+      "descriptionId" : "src_r_102239658784"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"North Carolina, First Draft Registration Cards, 1940-1945\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDH : Sun Mar 10 01:35:06 UTC 2024), Entry for Ralph Emerson Furr and Mrs Nancy Lee Furr, 1942."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Ralph Emerson Furr, \"North Carolina, First Draft Registration Cards, 1940-1945\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Ralph Emerson Furr, \"North Carolina, First Draft Registration Cards, 1940-1945\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDH" ]
+    }
+  }, {
+    "id" : "sd_auto_M9J1-7SR",
+    "resourceType" : "http://familysearch.org/types/collection/auto",
+    "coverage" : [ {
+      "spatial" : {
+        "description" : "https://www.familysearch.org/platform/places/description/337"
+      },
+      "temporal" : {
+        "formal" : "+1849-01-01T00:00:00Z/+1993-12-31T23:59:59Z"
+      }
+    } ],
+    "titles" : [ {
+      "value" : "United States, North Carolina, Military Service, from 1849 to 1993"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "http://group-service.rms.records.service.prod.us-east-1.prod.fslocal.org/group/M9J1-7SR" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_393065",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/393065" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "34a0aaed-1d59-43ed-876f-01522fa0ffba",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "a8ae8ef5-5005-4b66-9528-3bdff7a1e2e8",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "14-1171"
+    } ]
+  }, {
+    "id" : "e6aa30e3-0400-453d-a49d-f99287f89cdf",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "e7fcd679-f2b3-417d-b8cc-00c819a433be",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "758cd927-346c-4698-bb7f-a2c8c92e5634",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "d257f3e1-c7bb-4b90-a00b-f3041d56000c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "59c71bf2-dfcf-41cb-a70c-ae0ad876f120",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "220348df-cfc7-4060-90cf-ef571a71124f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "{\"EXT_2_IMAGE_REFERENCE\":\"32892_620303988_0065-01381\",\"EXT_2_FILM_NBR\":\"32892_620303988_0065\",\"EXT_ARC_ID\":\"5557837\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-C9PN-L4ND\",\"FS_COLLECTION_ID\":\"2431127\",\"FS_FOLDER\":\"100854688\",\"EXT_PERSON_ID\":\"963880\",\"EXT_RECORD_GROUP_NAME\":\"Records of the Selective Service System, 1926-1975\",\"EXT_STATE_HEADQUARTER\":\"North Carolina\",\"EXT_YCORD\":\"1000\"}"
+    } ]
+  }, {
+    "id" : "19517595-0fcc-44a4-8943-447abf559bd6",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "98deb7e2-5768-467c-9449-856af4b84856",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000_100854688_01382_00000_1002947254672"
+    } ]
+  }, {
+    "id" : "f08bf6c6-c253-42bd-b2eb-f32787483c94",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/SourceBoxNbr",
+    "values" : [ {
+      "id" : "8419dd51-5f92-4e1a-9e19-1a73efeb1b09",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_BOX_NBR_ORIG",
+      "text" : "126"
+    } ]
+  }, {
+    "id" : "3d3afdc8-42fd-4081-bfb1-2d763b1796fd",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/FilmNbr",
+    "values" : [ {
+      "id" : "7c808483-74b0-4c90-8f23-e7d87583d7bd",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "100854688"
+    } ]
+  }, {
+    "id" : "c7f35adf-aa36-4d9a-9eab-423ca41e3404",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/SourceSurnRange",
+    "values" : [ {
+      "id" : "14370702-f952-4e38-818e-a5b6eead959b",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_SURN_RANGE_ORIG",
+      "text" : "Funderburk, L M - Fyske, E A"
+    }, {
+      "id" : "14370702-f952-4e38-818e-a5b6eead959b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_SURN_RANGE",
+      "text" : "Furr, Oscar-Furr, Ralph Leroy"
+    } ]
+  }, {
+    "id" : "80ea5205-c295-4f91-8463-92b9274736ad",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/ExtRepositoryName",
+    "values" : [ {
+      "id" : "6637cbfd-931c-433c-8c07-42945eafec1f",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_REPOSITORY_NAME_ORIG",
+      "text" : "The National Archives Southeast Region"
+    } ]
+  }, {
+    "id" : "24333b11-76ef-46a1-89af-c5d0d7375d4a",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/ExtRecordGroup",
+    "values" : [ {
+      "id" : "ab4136ca-c36c-480f-9ca0-1036e0019d38",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_RECORD_GROUP_ORIG",
+      "text" : "RG 147"
+    } ]
+  }, {
+    "id" : "9ff78fee-236d-4bf5-b648-3d1478c5172d",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "1a34aecf-1223-444b-8721-4110fd6cd05d",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_IMAGE_APID\":\"TH-909-48201-6792-37\",\"EVENT_PLACE_LEVEL_2_TYPE\":\"State\",\"FS_DAS_VERIFY\":\"22-JAN-15\",\"FS_IMAGE_NBR\":\"01382\",\"FS_IMAGE_ID\":\"/100854688/100854688_01382.jpg\",\"EVENT_PLACE_LEVEL_1_TYPE\":\"Country\",\"EVENT_PLACE_LEVEL_4_TYPE\":\"City\",\"FS_UNIQUE_ID\":\"1002947254672\",\"EVENT_PLACE_LEVEL_3_TYPE\":\"County\",\"FS_FOLDER_IMAGE_SEQ\":\"1382\"}"
+    } ]
+  }, {
+    "id" : "a8e78812-6a5a-4a65-8228-d9db604cf357",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "c9adf0de-8151-4260-84d5-4ea916669eb8",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "26179"
+    } ]
+  }, {
+    "id" : "e843f7ad-1428-42c9-8acb-9378ec0060e7",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/ExtPubTitle",
+    "values" : [ {
+      "id" : "faa7ad62-1f11-41e3-a72e-b41ded4582a1",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_PUB_TITLE_ORIG",
+      "text" : "North Carolina World War II Draft Registration Cards"
+    }, {
+      "id" : "faa7ad62-1f11-41e3-a72e-b41ded4582a1",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_PUB_TITLE",
+      "text" : "World War II Draft Registration Cards for the State of North Carolina"
+    } ]
+  }, {
+    "id" : "20f829d1-43bf-47d4-83d8-c81be7ad9e03",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/HouseholdId",
+    "values" : [ {
+      "id" : "390eeddf-02dd-41ea-b0be-2f22ec4c0e80",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_HOUSEHOLD_ID",
+      "text" : "484152"
+    } ]
+  }, {
+    "id" : "c4f63855-10e0-405e-9505-67675f914736",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "eef5daf4-7767-46d3-9f74-58d8c72a2124",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "2014-11-07; dbj"
+    } ]
+  }, {
+    "id" : "9c77db7a-e6d7-4184-966d-81959652c910",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "e8ee74e5-320c-4cf4-acfa-477323c03aff",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "5"
+    } ]
+  }, {
+    "id" : "5c81b0ca-e7a4-4eb9-ad4e-2eb126ba1509",
+    "attribution" : {
+      "modified" : 1703023398260,
+      "created" : 1703023398260
+    },
+    "type" : "http://familysearch.org/types/fields/ExtRepositoryPlace",
+    "values" : [ {
+      "id" : "a05a66ee-bbc4-44c0-8b9b-1697a5c3ef3f",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_REPOSITORY_PLACE_ORIG",
+      "text" : "Atlanta, GA"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "100854688"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "1382"
+    } ]
+  } ]
+}

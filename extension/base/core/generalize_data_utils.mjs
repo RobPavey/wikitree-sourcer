@@ -4513,6 +4513,12 @@ class GeneralizedData {
         refTitle = "Record";
       }
 
+      // maybe this could be handled in the table rather than a special case
+      // e.g. "Military of son..." does not sound right
+      if (refTitle == "Military") {
+        refTitle = "Military Record";
+      }
+
       refTitle += " of " + relationship;
       let primaryPersonName = this.inferPrimaryPersonFullName();
       if (primaryPersonName) {

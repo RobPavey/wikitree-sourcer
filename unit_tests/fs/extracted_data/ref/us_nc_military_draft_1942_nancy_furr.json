@@ -1,0 +1,42 @@
+{
+  "url": "https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDC?lang=en",
+  "recordData": {
+    "Name": "Mrs Nancy Lee Furr",
+    "Role": "INFORMANT",
+    "Source Box Nbr": "126",
+    "Source Surn Range": "Furr, Oscar-Furr, Ralph Leroy"
+  },
+  "eventDateOriginal": "1942",
+  "eventDate": "1942",
+  "eventYear": "1942",
+  "eventPlaceOriginal": "Mallard Creek, Mecklenburg, North Carolina, United States",
+  "eventPlace": "Mecklenburg, North Carolina, United States",
+  "eventPlaceL2": "Mecklenburg",
+  "eventPlaceL1": "United States",
+  "fullName": "Mrs Nancy Lee Furr",
+  "givenName": "Nancy Lee",
+  "surname": "Furr",
+  "prefix": "Mrs",
+  "relationshipToFactPerson": "Other",
+  "relatedPersonFactType": "MilitaryDraftRegistration",
+  "relatedPersonFullName": "Ralph Emerson Furr",
+  "relatedPersonGivenName": "Ralph Emerson",
+  "relatedPersonSurname": "Furr",
+  "relatedPersonLink": "https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDH",
+  "extData": "{\"EXT_2_IMAGE_REFERENCE\":\"32892_620303988_0065-01381\",\"EXT_2_FILM_NBR\":\"32892_620303988_0065\",\"EXT_ARC_ID\":\"5557837\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-C9PN-L4ND\",\"FS_COLLECTION_ID\":\"2431127\",\"FS_FOLDER\":\"100854688\",\"EXT_PERSON_ID\":\"963880\",\"EXT_RECORD_GROUP_NAME\":\"Records of the Selective Service System, 1926-1975\",\"EXT_STATE_HEADQUARTER\":\"North Carolina\",\"EXT_YCORD\":\"1000\"}",
+  "referenceData": {
+    "filmNumber": "100854688",
+    "externalRepositoryName": "The National Archives Southeast Region",
+    "externalPublicationTitle": "North Carolina World War II Draft Registration Cards",
+    "digitalFilmNumber": "100854688",
+    "imageNumber": "1382"
+  },
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:Q248-5MTQ",
+  "collectionTitle": "North Carolina, First Draft Registration Cards, 1940-1945",
+  "fsCollectionId": "2431127",
+  "citation": "\"North Carolina, First Draft Registration Cards, 1940-1945\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDH : Sun Mar 10 01:35:06 UTC 2024), Entry for Ralph Emerson Furr and Mrs Nancy Lee Furr, 1942.",
+  "sourceTitleForPerson": "Mrs Nancy Lee Furr, \"North Carolina, First Draft Registration Cards, 1940-1945\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDC",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C9PN-L4ND",
+  "pageType": "record"
+}
