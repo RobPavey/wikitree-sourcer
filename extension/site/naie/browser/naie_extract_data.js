@@ -162,7 +162,7 @@ function extractData(document, url) {
   }
 
   // we want to get the ID of the person/record so that we can identify the selected person in the household
-  const idRegex = /^.*search\-the\-census\/census\-record.*[&?]id\=(\d+).*$/i;
+  const idRegex = /^.*search\-the(?:\-\d\d\d\d)?\-census\/census\-record.*[&?#](?:a_)?id\=(\d+).*$/i;
   if (idRegex.test(url)) {
     result.recordId = url.replace(idRegex, "$1");
   } else {
