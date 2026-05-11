@@ -1,0 +1,74 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "lastName": "Carnell",
+    "forenames": "Leslie Victor Ernest George"
+  },
+  "birthDate": {
+    "dateString": "18 Apr 1899"
+  },
+  "birthPlace": {
+    "placeString": "Wolborough, Devon, England"
+  },
+  "deathDate": {
+    "dateString": "Mar 1955"
+  },
+  "personGender": "male",
+  "spouses": [
+    {
+      "name": {
+        "name": "Rose L Carnell"
+      },
+      "marriageDate": {
+        "dateString": "Dec 1937"
+      },
+      "marriagePlace": {
+        "placeString": "Newton Abbot, Devonshire"
+      },
+      "birthDate": {
+        "yearString": "1900"
+      },
+      "deathDate": {
+        "yearString": "1953"
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Private"
+          }
+        }
+      ]
+    }
+  ],
+  "wtSearchTemplates": [
+    "{{Ancestry Tree|118431178|420175338817}}"
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Ernest George Carnell",
+        "lastName": "Carnell",
+        "forenames": "William Ernest George"
+      },
+      "birthDate": {
+        "yearString": "1875"
+      },
+      "deathDate": {
+        "yearString": "1958"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Louisa Phillips"
+      },
+      "birthDate": {
+        "yearString": "1874"
+      },
+      "deathDate": {
+        "yearString": "1945"
+      }
+    }
+  },
+  "hasValidData": true
+}

@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 const debugConfig = {
-  enabled: false,
+  enabled: true,
 
   // List function names here to only see their logs. Keep empty [] to show all.
   allowedFunctions: ["getApiPersonFromGetRelatives", "setupFsPopupMenu", "determineSiteNameForTab", "anonymous"],

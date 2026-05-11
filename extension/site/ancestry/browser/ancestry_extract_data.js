@@ -2004,6 +2004,33 @@ function handlePersonFactsJune2024(document, result) {
     extractPersonCardSimpleValue(result, personCardScript, "deathDate", "deathDate");
     extractPersonCardSimpleValue(result, personCardScript, "deathPlace", "deathPlace");
     extractPersonCardSimpleValue(result, personCardScript, "gender", "gender");
+  } else {
+    // In May 2026 the script data became a new forma which has more data in it
+    let personDataScriptJson = document.querySelector("#person-data");
+    if (personDataScriptJson) {
+      let json = personDataScriptJson.textContent;
+      let personData = JSON.parse(json);
+      if (personData) {
+        console.log(personData);
+        if (personData.person) {
+          let personCard = personData.person.PersonCard;
+          if (personCard) {
+            console.log(personCard);
+            result.fullName = personCard.FullName;
+            result.givenName = personCard.Given;
+            result.surname = personCard.Surname;
+            result.birthDate = personCard.BirthDate;
+            result.birthPlace = personCard.BirthPlace;
+            result.deathDate = personCard.DeathDate;
+            result.deathPlace = personCard.DeathPlace;
+            result.gender = personCard.Gender == 0 ? "female" : "male";
+          }
+
+          let personResearch = personData.person.PersonResearch;
+          // there is a lot of data in this that we could use instead of what we do below
+        }
+      }
+    }
   }
 
   let personCardContainer = document.querySelector("#personCardContainer");

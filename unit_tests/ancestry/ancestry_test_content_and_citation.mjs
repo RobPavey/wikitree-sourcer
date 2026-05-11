@@ -1327,6 +1327,11 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46591661544/facts",
   },
   {
+    // 2026 format. Was not getting any useful data in extract
+    caseName: "xx_profile_leslie_carnell_england_2026",
+    url: "https://www.ancestry.com/family-tree/person/tree/118431178/person/420175338817/facts",
+  },
+  {
     // 2026 format. The name O'Briend is causing issues.
     caseName: "xx_profile_loretta_obrien_u_2025_us",
     url: "https://www.ancestry.com/family-tree/person/tree/208562775/person/192735105415/facts",
