@@ -40,12 +40,11 @@ import { options } from "/base/browser/options/options_loader.mjs";
 import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 const nzbdmStartYear = 1848;
-const nzbdmEndYear = 2025;
+// there is no end year as deaths up to present are allowed if birth is more the 80 years ago
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
     startYear: nzbdmStartYear,
-    endYear: nzbdmEndYear,
     dateTestType: "bmd",
     countryList: ["New Zealand"],
   };
@@ -117,10 +116,13 @@ function addNzbdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
 
 function addNzbdmSearchBirthsMenuItem(menu, data, filter) {
   if (!filter) {
+    let toDate = new Date();
+    let endYear = toDate.getFullYear() - 79;
+
     let maxLifespan = Number(options.search_general_maxLifespan);
     let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
       nzbdmStartYear,
-      nzbdmEndYear,
+      endYear,
       maxLifespan
     );
     if (!birthPossibleInRange) {
@@ -134,10 +136,13 @@ function addNzbdmSearchBirthsMenuItem(menu, data, filter) {
 
 function addNzbdmSearchMarriagesMenuItem(menu, data, filter) {
   if (!filter) {
+    let toDate = new Date();
+    let endYear = toDate.getFullYear() - 74;
+
     let maxLifespan = Number(options.search_general_maxLifespan);
     let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
       nzbdmStartYear,
-      nzbdmEndYear,
+      endYear,
       maxLifespan
     );
     if (!marriagePossibleInRange) {
@@ -151,10 +156,13 @@ function addNzbdmSearchMarriagesMenuItem(menu, data, filter) {
 
 function addNzbdmSearchDeathsMenuItem(menu, data, filter) {
   if (!filter) {
+    let toDate = new Date();
+    let endYear = toDate.getFullYear();
+
     let maxLifespan = Number(options.search_general_maxLifespan);
     let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
       nzbdmStartYear,
-      nzbdmEndYear,
+      endYear,
       maxLifespan
     );
     if (!deathPossibleInRange) {
