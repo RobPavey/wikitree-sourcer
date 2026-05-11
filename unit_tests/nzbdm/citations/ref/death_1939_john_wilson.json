@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nDeath Registration Number: 1939/28545<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nJohn Wilson death registered 1939 (age 7m) in New Zealand.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John's death (age 7 months) was registered in 1939 in New Zealand.<ref>\n'''Death Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nDeath Registration Number: 1939/28545<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nJohn Wilson death registered 1939 (age 7m) in New Zealand.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Death Registration Number: 1939/28545<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>John Wilson death registered 1939 (age 7m) in New Zealand.",
+    "type": "source"
+  }
+}

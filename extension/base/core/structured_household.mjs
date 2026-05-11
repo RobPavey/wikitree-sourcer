@@ -338,7 +338,7 @@ function addSpouseOrParentsForSelectedHouseholdMember(gd) {
       }
     }
     if (!isNaN(yearsMarried)) {
-      let marriageDateString = GeneralizedData.getSubtractAgeFromDate(eventDate, yearsMarried);
+      let marriageDateString = GeneralizedData.subtractAgeOrTimePeriodFromDate(eventDate, yearsMarried);
       let marriageYear = StringUtils.getLastWord(marriageDateString);
       if (marriageYear) {
         spouse.marriageDate.yearString = marriageYear;

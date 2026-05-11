@@ -2205,23 +2205,39 @@ class GeneralizedData {
     return years;
   }
 
-  static getSubtractAgeFromDate(dateString, age) {
-    let parsedDate = DateUtils.parseDateString(dateString);
-    if (!parsedDate.isValid) {
-      return "";
+  static subtractAgeOrTimePeriodFromDate(dateString, age) {
+    if (typeof age === "string") {
+      let parsedAge = DateUtils.parseAgeOrTimePeriod(age);
+      if (!parsedAge.isValid) {
+        return "";
+      }
+
+      if (parsedAge.isRange) {
+        let rangeInYears = parsedAge.endYearsNum - parsedAge.startYearsNum;
+        let halfRange = Math.trunc(rangeInYears / 2);
+        let midYear = parsedAge.startYearsNum + halfRange;
+        return DateUtils.subtractYearsFromDateString(dateString, midYear);
+      } else {
+        if (parsedAge.hasYears) {
+          return DateUtils.subtractYearsFromDateString(dateString, parsedAge.yearsNum);
+        }
+        if (parsedAge.hasMonths) {
+          return DateUtils.subtractMonthsFromDateString(dateString, parsedAge.monthsNum);
+        }
+        if (parsedAge.hasWeeks) {
+          return DateUtils.subtractWeeksFromDateString(dateString, parsedAge.weeksNum);
+        }
+        if (parsedAge.hasDays) {
+          return DateUtils.subtractDaysFromDateString(dateString, parsedAge.daysNum);
+        }
+      }
+    } else if (typeof age === "number") {
+      if (Number.isInteger(age)) {
+        return DateUtils.subtractYearsFromDateString(dateString, age);
+      }
     }
 
-    let ageNum = parseInt(age);
-    if (isNaN(ageNum)) {
-      return "";
-    }
-    parsedDate.yearNum -= ageNum;
-
-    return DateUtils.getStdShortFormDateString(parsedDate);
-  }
-
-  static getSubtractAgeFromDateYear(dateYear, age) {
-    return dateYear - age;
+    return "";
   }
 
   extractNamePartsFromForenames(nameParts) {
@@ -2733,10 +2749,12 @@ class GeneralizedData {
         }
       }
       if (!isNaN(yearsMarried)) {
-        let marriageDateString = GeneralizedData.getSubtractAgeFromDate(eventDate, yearsMarried);
-        let marriageYear = StringUtils.getLastWord(marriageDateString);
-        if (marriageYear) {
-          spouse.marriageDate.yearString = marriageYear;
+        let marriageDateString = GeneralizedData.subtractAgeOrTimePeriodFromDate(eventDate, yearsMarried);
+        if (marriageDateString) {
+          let marriageYear = StringUtils.getLastWord(marriageDateString);
+          if (marriageYear) {
+            spouse.marriageDate.yearString = marriageYear;
+          }
         }
       }
     }
@@ -3330,7 +3348,7 @@ class GeneralizedData {
       if (this.ageAtDeath) {
         let deathDateString = this.deathDate.getDateString();
 
-        let dateString = GeneralizedData.getSubtractAgeFromDate(deathDateString, this.ageAtDeath);
+        let dateString = GeneralizedData.subtractAgeOrTimePeriodFromDate(deathDateString, this.ageAtDeath);
         if (!dateString) {
           return undefined;
         }
@@ -3348,12 +3366,14 @@ class GeneralizedData {
     }
     if (this.eventDate && this.ageAtEvent) {
       let eventDateString = this.eventDate.getDateString();
-      let dateString = GeneralizedData.getSubtractAgeFromDate(eventDateString, this.ageAtEvent);
-      let yearString = StringUtils.getLastWord(dateString);
-      let dateObj = new DateObj();
-      dateObj.yearString = yearString;
-      dateObj.qualifier = dateQualifiers.ABOUT;
-      return dateObj;
+      let dateString = GeneralizedData.subtractAgeOrTimePeriodFromDate(eventDateString, this.ageAtEvent);
+      if (dateString) {
+        let yearString = StringUtils.getLastWord(dateString);
+        let dateObj = new DateObj();
+        dateObj.yearString = yearString;
+        dateObj.qualifier = dateQualifiers.ABOUT;
+        return dateObj;
+      }
     }
     if (this.eventDate && !this.role) {
       if (this.recordType == RT.Baptism) {

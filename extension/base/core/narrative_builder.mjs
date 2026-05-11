@@ -78,25 +78,42 @@ class NarrativeBuilder {
   }
 
   getNarrativeAgeString(ageString) {
-    let result = "";
-    if (ageString) {
+    let parsedAge = DateUtils.parseAgeOrTimePeriod(ageString);
+    if (!parsedAge.isValid) {
+      if (ageString && typeof ageString == "string") {
+        ageString = ageString.toLowerCase();
+      }
+      return ageString;
+    }
+
+    let result = ageString;
+    if (ageString && typeof ageString == "string") {
+      result = ageString.toLowerCase();
+    }
+
+    if (parsedAge.isRange) {
+      result = parsedAge.startYearsNum.toString() + " to " + parsedAge.endYearsNum.toString();
+    } else {
       // if it is something like "20 Years 9 months" we just want "20"
-      const yearsAndMonthsRegex = /^(\d+)\s+years\s+(\d+)\s+months[\s\.]*$/i;
-      if (yearsAndMonthsRegex.test(ageString)) {
-        result = ageString.replace(yearsAndMonthsRegex, "$1");
-      } else {
-        // if it is something like "20 years" or "20 years." we just want 20
-        result = ageString.replace(/years?/i, "").trim();
-        if (/^\d+\/12$/.test(result)) {
-          result = result.replace(/\/12/, "").trim();
-          if (result == "1") {
-            result += " month";
-          } else {
-            result += " months";
-          }
+      if (parsedAge.hasYears) {
+        result = parsedAge.yearsNum.toString();
+      } else if (parsedAge.hasMonths) {
+        result = parsedAge.monthsNum.toString() + " month";
+        if (parsedAge.monthsNum != 1) {
+          result += "s";
+        }
+      } else if (parsedAge.hasDays) {
+        result = parsedAge.daysNum.toString() + " day";
+        if (parsedAge.daysNum != 1) {
+          result += "s";
         }
       }
     }
+
+    if (result && parsedAge.isAbout) {
+      result = "about " + result;
+    }
+
     return result;
   }
 
@@ -805,6 +822,8 @@ class NarrativeBuilder {
         // it could be something like "of Full Age"
         includeAgeText = false;
         age = age.toLowerCase();
+      } else {
+        age = this.getNarrativeAgeString(age);
       }
 
       let format = this.getSubcatOption("ageFormat");
@@ -848,12 +867,50 @@ class NarrativeBuilder {
       if (age) {
         let sentence = this.getPronounAndPastTenseInitialCaps() + " ";
 
-        if (typeof age == "string" && age.search(/[^0-9]/) != -1) {
+        let parsedAge = DateUtils.parseAgeOrTimePeriod(age);
+
+        if (!parsedAge.isValid) {
           // the age has non numerical characters, it could be something like "of Full Age"
           let lcAge = age.toLowerCase();
           sentence += lcAge;
         } else {
-          sentence += age + " years old";
+          if (parsedAge.isRange) {
+            let start = result.startYearsNum.toString();
+            let end = result.endYearsNum.toString();
+
+            sentence += start + " to " + end + " years old";
+          } else {
+            if (parsedAge.hasYears && !parsedAge.hasMonths) {
+              sentence += parsedAge.yearsNum + " years old";
+            } else {
+              let ageString = "";
+              if (parsedAge.hasYears) {
+                ageString += parsedAge.yearsNum + " years";
+              }
+              if (parsedAge.hasMonths) {
+                if (ageString) {
+                  ageString += " ";
+                }
+                ageString += parsedAge.monthsNum + " months";
+              }
+              if (parsedAge.hasWeeks) {
+                if (ageString) {
+                  ageString += " ";
+                }
+                ageString += parsedAge.weeksNum + " months";
+              }
+              if (parsedAge.hasDays) {
+                if (ageString) {
+                  ageString += " ";
+                }
+                ageString += parsedAge.daysNum + " months";
+              }
+
+              if (ageString) {
+                sentence += ageString;
+              }
+            }
+          }
         }
 
         this.addFullSentence(sentence);

@@ -1593,7 +1593,7 @@ function generalizeData(input) {
       let yearsMarried = ed.recordData["Cnt Years Married"];
       if (yearsMarried) {
         let censusDate = result.inferEventDate();
-        let marriageDateString = GeneralizedData.getSubtractAgeFromDate(censusDate, yearsMarried);
+        let marriageDateString = GeneralizedData.subtractAgeOrTimePeriodFromDate(censusDate, yearsMarried);
         let marriageYear = StringUtils.getLastWord(marriageDateString);
         if (marriageYear) {
           result.spouses[0].marriageDate.yearString = marriageYear;
