@@ -1,0 +1,31 @@
+{
+  "sourceOfData": "freebmd",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "Bennett",
+    "forenames": "Rose L"
+  },
+  "eventDate": {
+    "quarter": 4,
+    "yearString": "1937"
+  },
+  "registrationDistrict": "Newton Abbot",
+  "spouses": [
+    {
+      "name": {
+        "name": "Ernest G Carnell"
+      },
+      "marriageDate": {
+        "quarter": 4,
+        "yearString": "1937"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "marriages",
+    "volume": "5b",
+    "page": "313"
+  },
+  "hasValidData": true
+}

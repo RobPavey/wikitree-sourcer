@@ -14362,7 +14362,7 @@ const NameUtils = {
     // replace any multiple white spaces with one space
     resultString = resultString.replace(/\s+/g, " ");
 
-    // Check for something in paraetheses at start (can happen the 1881 census on ScotP) see example in
+    // Check for something in parentheses at start (can happen the 1881 census on ScotP) see example in
     // test case census_lds_1881_mrs_fraser which has "(Mrs) FRASER" in th surname
     // Another example has "(A M) FRASER" in surname and "Donald" in forname.
     // For now remove anything in parens at start

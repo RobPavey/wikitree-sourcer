@@ -1,0 +1,54 @@
+{
+  "url": "https://www.freebmd2.org.uk/6a0222f4865574bd21803c8f/entry-information/176050584/rose-l-bennett-marriage-devon-newton-a-v5b-p313?locale=en&record_hash=yVs%2Fnhix2zfCV2dAzARslA&search_entry=176050584",
+  "success": true,
+  "name": "Rose L BENNETT",
+  "inlineCitationText": "<ref>\"FreeBMD Search\", online database. GRO Index of Marriages,\n    Oct to Dec 1937, Newton A. Registration District, Volume 5b Page 313\n    [https://www.freebmd.org.uk/entry-information/yVs/nhix2zfCV2dAzARslA/hash \n    Marriage of Rose L Bennett\n        : Spouse's surname Carnell\n    ]. Viewed 11 May 2026\n    </ref>",
+  "recordData": {
+    "Surname": {
+      "text": "Bennett"
+    },
+    "Given Name": {
+      "text": "Rose L"
+    },
+    "Record Type": {
+      "text": "Marriage"
+    },
+    "Registration Date": {
+      "text": "Oct to Dec 1937"
+    },
+    "Spouse Name": {
+      "text": "Ernest G CARNELL",
+      "href": "https://www.freebmd2.org.uk/6a0222f4865574bd21803c8f/176050584/marriage_details?locale=en",
+      "linkId": ""
+    },
+    "District": {
+      "text": "Newton A.",
+      "href": "https://www.freebmd2.org.uk/districts/34/details-of-newton-abbot-district?entry_id=176050584&locale=en&search_id=6a0222f4865574bd21803c8f",
+      "linkId": ""
+    },
+    "Volume": {
+      "text": "5b"
+    },
+    "Page": {
+      "text": "313",
+      "href": "https://www.freebmd2.org.uk/6a0222f4865574bd21803c8f/176050584/same_page_entries?district=Newton+A.&locale=en&page=313&quarter=404&record=3&volume=5b"
+    },
+    "Transcriber": {
+      "text": "et685"
+    }
+  },
+  "metadata": {
+    "freebmd.Surname": "Bennett",
+    "freebmd.GivenName": "Rose L",
+    "freebmd.OtherNames": "L",
+    "freebmd.AssociateName": "Carnell",
+    "freebmd.DistrictInSource": "Newton A.",
+    "freebmd.OfficialDistrict": "Newton Abbot",
+    "freebmd.Volume": "5b",
+    "freebmd.Page": "313",
+    "freebmd.RecordType": "Marriages",
+    "freebmd.Quarter": "Oct to Dec 1937",
+    "freebmd.PersistentURL": "https://www.freebmd2.org.uk:443/entry-information/hash?id=yVs%252Fnhix2zfCV2dAzARslA&locale=en"
+  },
+  "format": "v2025"
+}

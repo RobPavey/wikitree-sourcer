@@ -83,6 +83,10 @@ const regressionData = [
     caseName: "m_1906_kerridge_frederick_v2026",
     url: "https://dev.freebmd2.org.uk/695da40fbd30f24b671c1bf0/entry-information/116242858/frederick-charles-kerridge-marriage-lancashire-prestwich-v8d-p803?locale=en&search_entry=116242858",
   },
+  {
+    caseName: "m_1937_rose_bennett_v2025",
+    url: "https://www.freebmd2.org.uk/6a0222f4865574bd21803c8f/entry-information/176050584/rose-l-bennett-marriage-devon-newton-a-v5b-p313?locale=en&record_hash=yVs%2Fnhix2zfCV2dAzARslA&search_entry=176050584",
+  },
 ];
 
 async function runTests(testManager) {
