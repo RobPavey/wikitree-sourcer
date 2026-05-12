@@ -50,7 +50,35 @@ const citationOptionsGroup = {
   subcategory: "itcadgg",
   tab: "citation",
   subsection: "itcadgg",
-  options: [],
+  options: [
+    {
+      optionName: "Current",
+      type: "checkbox",
+      label: "Uses Current birth fields",
+      defaultValue: false,
+    },
+    {
+      optionName: "Uniform",
+      type: "checkbox",
+      label: "Uses standardized fields",
+      defaultValue: true,
+    },
+    {
+      optionName: "dataStyle",
+      type: "select",
+      label: "Include record data as",
+      values: [
+        { value: "none", text: "Do not include data" },
+        { value: "sentence", text: "Standard Sourcer sentence for the record type" },
+        { value: "listCurated", text: "List of field names/values cleaned up and curated" },
+        {
+          value: "datastring",
+          text: "More detailed sentence unique to this record",
+        },
+      ],
+      defaultValue: "sentence",
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "itcadgg", "Caduti Della Grande Guerra (Italian Fallen of the Great War)");

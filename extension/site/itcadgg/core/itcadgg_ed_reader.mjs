@@ -24,10 +24,16 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
 
 class ItcadggEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
+    //Debugging to check ed variable
+    //console.log("DEBUG: ItcadggEdReader received ed =", ed);
+    //console.log("DEBUG: edData=", JSON.stringify(ed, null, 2))
+    this.recordType = RT.Death;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -46,88 +52,135 @@ class ItcadggEdReader extends ExtractedDataReader {
     return "record";
   }
 
+  getParents() {
+    if (!this.ed.extracted_data.name) return undefined;
+
+    const fullName = this.ed.extracted_data.name.trim();
+    //console.log("DEBUG: fullName =", fullName);
+    // Step 1: Extract father/patronymic if present at the end (last DI ...)
+    let fatherName;
+    let parents = {};
+    let namePart = fullName;
+
+    // Match the last " DI " with something after it
+    const lastDiIndex = fullName.toUpperCase().lastIndexOf(" DI ");
+    if (lastDiIndex !== -1) {
+      fatherName = StringUtils.toInitialCapsEachWord(fullName.slice(lastDiIndex + 4).trim());
+      namePart = fullName.slice(0, lastDiIndex).trim();
+    }
+    //console.log("DEBUG: fatherName =", fatherName);
+    //console.log("DEBUG: namePart after removing father =", namePart);
+    let fatherNameObj = undefined;
+    fatherNameObj = this.makeNameObjFromForenamesAndLastName(fatherName, "");
+    parents.father = { name: fatherNameObj };
+    //console.log("DEBUG: parents =", parents);
+
+    return parents;
+  }
+
   getNameObj() {
-    return undefined;
+    if (!this.ed.extracted_data.name) return undefined;
+
+    const fullName = this.ed.extracted_data.name.trim();
+    //console.log("DEBUG: fullName =", fullName);
+    // Step 1: Extract father at the end (last DI ...)
+    let fatherName;
+    let namePart = fullName;
+
+    // Match the last " DI " with something after it
+    const lastDiIndex = fullName.toUpperCase().lastIndexOf(" DI ");
+    if (lastDiIndex !== -1) {
+      fatherName = StringUtils.toInitialCapsEachWord(fullName.slice(lastDiIndex + 4).trim());
+      namePart = fullName.slice(0, lastDiIndex).trim();
+    }
+    //console.log("DEBUG: fatherName =", fatherName);
+    //console.log("DEBUG: namePart after removing father =", namePart);
+
+    // Step 2: Split remaining name into words
+    const parts = namePart.split(" ");
+
+    // Step 3: Determine last name, considering Italian surname particles
+    const lastNameParticles = ["DI", "DE", "D’", "DEL", "DELLA", "LO"];
+    let lastName = parts[0]; // first word = start of last name
+    let firstNamesStartIndex = 1;
+
+    // If the first word is a particle, include the next word
+    if (lastNameParticles.includes(parts[0].toUpperCase()) && parts.length > 1) {
+      lastName += " " + parts[1];
+      firstNamesStartIndex = 2;
+    }
+
+    // Remaining words = first names
+    const firstNames = parts.slice(firstNamesStartIndex).join(" ");
+    //console.log("DEBUG: lastName =", lastName);
+    //console.log("DEBUG: firstNames =", firstNames);
+    // Step 4: Build name object
+    const nameObj = this.makeNameObjFromForenamesAndLastName(
+      StringUtils.toInitialCapsEachWord(firstNames),
+      StringUtils.toInitialCapsEachWord(lastName)
+    );
+
+    return nameObj;
   }
 
   getGender() {
-    return "";
+    // The dataset is for fallen soldiers — overwhelmingly male
+    return "male";
   }
 
   getEventDateObj() {
-    return undefined;
+    // The "event" here can be considered the date of death
+    let date = this.ed.extracted_data.death_date;
+    return this.makeDateObjFromDateString(date);
   }
 
   getEventPlaceObj() {
-    return undefined;
-  }
-
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
+    // The event place corresponds to the place of death
+    return this.getDeathPlaceObj(this.ed.extracted_data.death_place);
   }
 
   getBirthDateObj() {
-    return undefined;
+    let date = this.ed.extracted_data.birth_date;
+    return this.makeDateObjFromDateString(date);
   }
 
   getBirthPlaceObj() {
-    return undefined;
+    const birthFullPlace = [
+      this.ed.extracted_data.birth_place,
+      this.ed.extracted_data.birth_province,
+      this.ed.extracted_data.birth_region,
+    ]
+      .filter(Boolean)
+      .join(", ");
+    return this.makePlaceObjFromFullPlaceName(birthFullPlace);
   }
 
   getDeathDateObj() {
-    return undefined;
+    let date = this.ed.extracted_data.death_date;
+    return this.makeDateObjFromDateString(date);
   }
 
   getDeathPlaceObj() {
-    return undefined;
-  }
-
-  getAgeAtEvent() {
-    return "";
-  }
-
-  getAgeAtDeath() {
-    return "";
-  }
-
-  getRegistrationDistrict() {
-    return "";
-  }
-
-  getRelationshipToHead() {
-    return "";
-  }
-
-  getMaritalStatus() {
-    return "";
-  }
-
-  getOccupation() {
-    return "";
-  }
-
-  getSpouses() {
-    return undefined;
-  }
-
-  getParents() {
-    return undefined;
-  }
-
-  getHousehold() {
-    return undefined;
+    // Only "Luogo Morte" is given, no province/region available
+    return this.makePlaceObjFromFullPlaceName(this.ed.extracted_data.death_place);
   }
 
   getCollectionData() {
-    return undefined;
+    // Provide context for citation
+    let id = "Death";
+    let collectionData = { id: id };
+    collectionData.collectionID = "itcadgg";
+    collectionData.title = "Albo dei Caduti Italiani della Grande Guerra";
+    collectionData.url = this.ed.image_link ? this.ed.image_link : this.ed.url;
+
+    //return {
+    //  collectionID: "itcadgg",
+    //  title: "Albo dei Caduti Italiani della Grande Guerra",
+    //  url: this.ed.image_link ? this.ed.image_link : this.ed.url,
+    //  recordType: RT.Military,
+    //  id: "Deaths"
+    //};
+    return collectionData;
   }
 }
 

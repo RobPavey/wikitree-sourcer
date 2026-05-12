@@ -31,19 +31,63 @@ function extractData(document, url) {
     result.url = url;
   }
   result.success = false;
+  try {
+    // Main container for the data
+    const dataArea = document.querySelector("#Pnldati");
+    if (!dataArea) return result;
 
-  /*
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  //console.log("entriesQuery size is: " + entriesQuery.length);
-  if (entries.length < 1) {
-    return result;
+    // Extract all label/value pairs
+    const rows = dataArea.querySelectorAll("tr");
+    const data = {};
+
+    rows.forEach((row) => {
+      const labelNode = row.querySelector("span[id^='Label']");
+      const valueNode = row.querySelector("span[id^='lbl']");
+      if (labelNode && valueNode) {
+        const label = labelNode.textContent.replace(":", "").trim();
+        const value = valueNode.textContent.trim();
+        if (label && value) data[label] = value;
+      }
+    });
+
+    // Optional link to the image (“Mostra pagina”)
+    const pageLink = dataArea.querySelector("a#HlnkAlbo");
+    if (pageLink) {
+      result.imageLink = pageLink.getAttribute("href");
+    }
+
+    // Save the raw extracted data
+    result.data = data;
+
+    // Optional — simplified structure for consistency across sites
+    result.extracted_data = {
+      name: data["Nominativo e paternità"],
+      birth_date: data["Data nascita"],
+      birth_place: data["Comune nascita"],
+      birth_region: data["Regione nascita"],
+      birth_province: data["Provincia nascita"],
+      birth_place_current: data["Comune nascita attuale"],
+      birth_region_current: data["Regione nascita attuale"],
+      birth_province_current: data["Provincia nascita attuale"],
+      death_date: data["Data Morte"],
+      death_place: data["Luogo Morte"],
+      rank: data["Grado Uniformato"],
+      unit: data["Reparto Uniformato"],
+      cause_of_death: data["Causa Morte Uniformata"],
+      rank_albo: data["Grado in Albo"],
+      unit_albo: data["Reparto in Albo"],
+      cause_of_death_albo: data["Causa Morte in Albo"],
+      casualita: data["Casualità"],
+      image_link: result.imageLink,
+    };
+
+    // Mark success *after* building the data
+    result.success = true;
+  } catch (err) {
+    console.error("Error extracting data:", err);
   }
-  */
-
-  result.success = true;
-
-  //console.log(result);
-
+  // This will print the full result object
+  //console.log("Extracted result:", result);
   return result;
 }
 

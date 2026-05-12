@@ -1,0 +1,42 @@
+{
+  "sourceOfData": "itcadgg",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Abate",
+    "forenames": "Leonardo"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "30 Dicembre 1917"
+  },
+  "eventPlace": {
+    "placeString": "Caltanissetta"
+  },
+  "birthDate": {
+    "dateString": "17 Febbraio 1884"
+  },
+  "birthPlace": {
+    "placeString": "Serradifalco, Caltanissetta, Sicilia"
+  },
+  "deathDate": {
+    "dateString": "30 Dicembre 1917"
+  },
+  "deathPlace": {
+    "placeString": "Caltanissetta"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Domenico"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Death",
+    "collectionID": "itcadgg",
+    "title": "Albo dei Caduti Italiani della Grande Guerra",
+    "url": "https://www.cadutigrandeguerra.it/DettagliNominativi.aspx?id=SQ%2bRzkCbzdmuTr%2buc7TPaw%3d%3d"
+  },
+  "hasValidData": true
+}

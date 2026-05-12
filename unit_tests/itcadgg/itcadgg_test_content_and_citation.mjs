@@ -30,12 +30,14 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.itcadgg.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+    caseName: "abate_leonardo_di_domenico_1917",
+    url: "https://www.cadutigrandeguerra.it/DettagliNominativi.aspx?id=SQ%2bRzkCbzdmuTr%2buc7TPaw%3d%3d",
   },
-  */
+  {
+    caseName: "di_francesco_gabriele_donato_di_angelo_antonio_1916",
+    url: "https://www.cadutigrandeguerra.it/DettagliNominativi.aspx?id=iA8bcDG9Nw0JoD1jYId0aA%3d%3d",
+  },
 ];
 
 async function runTests(testManager) {
