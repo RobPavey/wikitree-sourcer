@@ -27,8 +27,12 @@ import { runBuildSearchDataTests } from "../test_utils/test_build_search_utils.m
 
 const regressionData = [
   {
-    caseName: "abate_leonardo_di_domenico_1917-252_read",
+    caseName: "abate_leonardo_di_domenico_1917",
     inputPath: "itcadgg/generalized_data/ref/abate_leonardo_di_domenico_1917",
+  },
+  {
+    caseName: "di_francesco_gabriele_donato_di_angelo_antonio_1916",
+    inputPath: "itcadgg/generalized_data/ref/di_francesco_gabriele_donato_di_angelo_antonio_1916",
   },
 ];
 
