@@ -685,14 +685,16 @@ if (runningExtensionId === currentExtensionId) {
             logDebug("getSourceInfosForSourceIds: found Find a Grave source");
             // check if this is a FamilySearch source
             let fgUrl = "";
-            if (sourceInfo.uri.includes("familysearch.org")) {
-              let recordFetchResult = await fetchFsRecordDataObj(sourceInfo.uri);
-              logDebug("getSourceInfosForSourceIds: recordFetchResult is", recordFetchResult);
-              if (recordFetchResult.success && recordFetchResult.json) {
-                fgUrl = getFindAGraveUrlFromRecordDataObj(recordFetchResult.json);
+            if (sourceInfo.uri) {
+              if (sourceInfo.uri.includes("familysearch.org")) {
+                let recordFetchResult = await fetchFsRecordDataObj(sourceInfo.uri);
+                logDebug("getSourceInfosForSourceIds: recordFetchResult is", recordFetchResult);
+                if (recordFetchResult.success && recordFetchResult.json) {
+                  fgUrl = getFindAGraveUrlFromRecordDataObj(recordFetchResult.json);
+                }
+              } else if (sourceInfo.uri.includes("findagrave.com")) {
+                fgUrl = sourceInfo.uri;
               }
-            } else if (sourceInfo.uri.includes("findagrave.com")) {
-              fgUrl = sourceInfo.uri;
             }
 
             let fgMemId = extractFindAGraveMemorialIdFromUrl(fgUrl);
