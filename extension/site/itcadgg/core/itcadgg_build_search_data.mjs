@@ -24,20 +24,27 @@ SOFTWARE.
 
 function buildSearchData(input) {
   const gd = input.generalizedData;
+  const options = input.options;
 
   let fieldData = {};
   let selectData = {};
 
-  //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-  // Add code here to populate the search data that is used to fill out the search form
-  // The fieldData typically will be used for text fields
-  // while the selectData will be for select controls
-  // In these structures use the names of the elements in the search form that need to be
-  // filled
-  // For examples see:
-  // - extension/site/vicbdm/core/vicbdm_build_search_data.mjs
-  // - extension/site/nswbdm/core/nswbdm_build_search_data.mjs
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  let forenames = gd.inferForenames();
+  let lastName = gd.inferLastName();
+
+  if (lastName) {
+    let nameAndPaternity = lastName + " " + forenames;
+    let parentNames = gd.inferParentForenamesAndLastName();
+    if (parentNames.fatherForenames) {
+      nameAndPaternity += " di " + parentNames.fatherForenames;
+    }
+    fieldData.tNome = nameAndPaternity;
+  }
+
+  let deathYear = gd.inferDeathYear();
+  if (deathYear) {
+    fieldData.tAnnoMorte = deathYear;
+  }
 
   //console.log("fieldData is:");
   //console.log(fieldData);

@@ -118,10 +118,10 @@ async function getPendingSearch() {
 
 function setSearchingBanner() {
   // Modify the page to say it is a WikiTree Sourcer search
-  //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-  // insert code here to change the search page HTML to make it obvious that a
-  // WikiTree Sourcer search is happening so that they don't start typing in the search form.
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  let headingElement = document.querySelector("div.body-content >p > b > font");
+  if (headingElement) {
+    headingElement.textContent = "Sourcer doing search";
+  }
 }
 
 async function doPendingSearch() {
@@ -139,9 +139,19 @@ async function doPendingSearch() {
     //console.log("doPendingSearch: isRetry is");
     //console.log(isRetry);
 
-    //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-    // insert code here to do the search by filling out the form and submitting it
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    let searchButtonElement = document.querySelector("#btCerca");
+
+    if (searchButtonElement) {
+      for (var key in fieldData) {
+        let inputElement = document.querySelector("#" + key);
+        if (inputElement) {
+          inputElement.value = fieldData[key];
+        }
+      }
+
+      // now submit the form to do the search
+      searchButtonElement.click();
+    }
 
     // clear the pending data so that we don't use it again on refine search
     pendingSearchData = undefined;
@@ -149,16 +159,16 @@ async function doPendingSearch() {
 }
 
 async function checkForPendingSearch() {
-  //console.log("checkForPendingSearch: called");
-  //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
+  console.log("checkForPendingSearch: called");
+  console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
     return;
   }
 
-  //console.log("checkForPendingSearch: URL is");
-  //console.log(document.URL);
+  console.log("checkForPendingSearch: URL is");
+  console.log(document.URL);
 
   let searchData = undefined;
   try {
@@ -202,10 +212,10 @@ async function checkForPendingSearch() {
 ////////////////////////////////////////////////////////////////////////////////
 
 async function doSearchInExistingTab(request, sender, sendResponse) {
-  //console.log("nswbdm: additionalMessageHandler, request is:");
-  //console.log(request);
-  //console.log("nswbdm: additionalMessageHandler, document.URL is:");
-  //console.log(document.URL);
+  console.log("nswbdm: additionalMessageHandler, request is:");
+  console.log(request);
+  console.log("nswbdm: additionalMessageHandler, document.URL is:");
+  console.log(document.URL);
 
   // We could try to check if this is the correct type of page (Births, Deaths etc)
   // and clear the fields and refill them. But it is simpler to just load the desired URL

@@ -26,9 +26,6 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class DoewUriBuilder {
   constructor() {
-    //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-    // Change the URL below to the start of the search URL for your site
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     this.uri = "https://www.doew.at/personensuche";
     this.searchTermAdded = false;
   }
@@ -69,8 +66,8 @@ class DoewUriBuilder {
   }
 
   addYearOfBirth(year) {
-    this.addSearchParameter("birthdate", "01.01."+(parseInt(year) - 3));
-    this.addSearchParameter("birthdate_to", "31.03."+(parseInt(year) + 3));
+    this.addSearchParameter("birthdate", "01.01." + (parseInt(year) - 3));
+    this.addSearchParameter("birthdate_to", "31.03." + (parseInt(year) + 3));
   }
 
   addPlaceOfBirth(place) {

@@ -149,6 +149,7 @@ class ItcadggEdReader extends ExtractedDataReader {
       this.ed.extracted_data.birth_place,
       this.ed.extracted_data.birth_province,
       this.ed.extracted_data.birth_region,
+      "Italy",
     ]
       .filter(Boolean)
       .join(", ");

@@ -26,14 +26,10 @@ import { buildSearchData } from "../../extension/site/itcadgg/core/itcadgg_build
 import { runBuildSearchDataTests } from "../test_utils/test_build_search_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    // has pref name
-    caseName: "wikitree_stanway-252_read",
-    inputPath: "wikitree/generalized_data/ref/stanway-252_read",
-    typeOfSearch: "Births",
+    caseName: "abate_leonardo_di_domenico_1917-252_read",
+    inputPath: "itcadgg/generalized_data/ref/abate_leonardo_di_domenico_1917",
   },
-  */
 ];
 
 async function runTests(testManager) {

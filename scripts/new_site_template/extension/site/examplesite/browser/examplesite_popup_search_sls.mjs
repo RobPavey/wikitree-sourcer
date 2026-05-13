@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+import { addMenuItem, doAsyncActionWithCatch, closePopup } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
   doBackgroundSearchWithSearchData,
@@ -65,7 +65,7 @@ async function examplesiteSearch(generalizedData) {
     const checkPermissionsOptions = {
       reason: "To perform a search on ExampleSite a content script needs to be loaded on the ExampleSite search page.",
     };
-    let allowed = await checkPermissionForSiteMatches("exampleSite", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("examplesite", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

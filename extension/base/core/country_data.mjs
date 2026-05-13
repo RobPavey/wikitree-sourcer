@@ -126,7 +126,7 @@ const CountryData = [
   { stdName: "Germany", matches: ["Germany", "Deutschland"], hasStates: true },
   { stdName: "German Empire", matches: ["German Empire"] },
   { stdName: "Austria", matches: ["Austria", "Österreich"] },
-  { stdName: "Italy", matches: ["Italy"] },
+  { stdName: "Italy", matches: ["Italy", "Italia", "Italie", "Italien"] },
   { stdName: "Netherlands", matches: ["Netherlands", "Nederland"], hasStates: true },
   { stdName: "Belgium", matches: ["Belgium"] },
   { stdName: "Luxembourg", matches: ["Luxembourg"] },

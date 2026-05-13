@@ -24,11 +24,6 @@ SOFTWARE.
 
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
-//!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-// insert code here to do detect the selected row by looking for the styling that
-// was added in the content script when the row was clicked. Code below is an example.
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 // Support of additional PANB databases will likely require this function
 function getSelectedRow(document) {
   const highlightStyle = "font-weight: bold; font-style: italic";

@@ -26,9 +26,6 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class MorbihanUriBuilder {
   constructor() {
-    //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-    // Change the URL below to the start of the search URL for your site
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     this.uri = "https://www.morbihan.org/search";
     this.searchTermAdded = false;
   }

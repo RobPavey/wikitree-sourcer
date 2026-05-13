@@ -31,6 +31,7 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    // https://www.wikitree.com/wiki/Abate-148 on WikiTree
     caseName: "abate_leonardo_di_domenico_1917",
     url: "https://www.cadutigrandeguerra.it/DettagliNominativi.aspx?id=SQ%2bRzkCbzdmuTr%2buc7TPaw%3d%3d",
   },

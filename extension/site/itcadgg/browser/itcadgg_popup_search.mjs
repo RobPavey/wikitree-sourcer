@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+import { addMenuItem, doAsyncActionWithCatch, closePopup } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
   doBackgroundSearchWithSearchData,
@@ -34,15 +34,15 @@ import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permiss
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const itcadggStartYear = 1800;
-const itcadggEndYear = 2000;
+const itcadggStartYear = 1914;
+const itcadggEndYear = 1921;
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
     startYear: itcadggStartYear,
     endYear: itcadggEndYear,
-    dateTestType: "bmd",
-    countryList: [],
+    dateTestType: "died",
+    countryList: ["Italy"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
@@ -58,38 +58,40 @@ function shouldShowSearchMenuItem(data, filter) {
 
 async function itcadggSearch(generalizedData) {
   const input = { generalizedData: generalizedData, options: options };
-  doAsyncActionWithCatch("Caduti Della Grande Guerra (Italian Fallen of the Great War) Search", input, async function () {
-    let loadedModule = await import(`../core/itcadgg_build_search_data.mjs`);
-    let buildResult = loadedModule.buildSearchData(input);
+  doAsyncActionWithCatch(
+    "Caduti Della Grande Guerra (Italian Fallen of the Great War) Search",
+    input,
+    async function () {
+      let loadedModule = await import(`../core/itcadgg_build_search_data.mjs`);
+      let buildResult = loadedModule.buildSearchData(input);
 
-    const checkPermissionsOptions = {
-      reason: "To perform a search on Caduti Della Grande Guerra (Italian Fallen of the Great War) a content script needs to be loaded on the Caduti Della Grande Guerra (Italian Fallen of the Great War) search page.",
-    };
-    let allowed = await checkPermissionForSiteMatches("exampleSite", checkPermissionsOptions);
-    if (!allowed) {
-      closePopup();
-      return;
+      const checkPermissionsOptions = {
+        reason:
+          "To perform a search on Caduti Della Grande Guerra (Italian Fallen of the Great War) a content script needs to be loaded on the Caduti Della Grande Guerra (Italian Fallen of the Great War) search page.",
+      };
+      let allowed = await checkPermissionForSiteMatches("itcadgg", checkPermissionsOptions);
+      if (!allowed) {
+        closePopup();
+        return;
+      }
+
+      let searchUrl = "https://www.cadutigrandeguerra.it/CercaNome.aspx";
+
+      const searchData = {
+        timeStamp: Date.now(),
+        url: searchUrl,
+        fieldData: buildResult.fieldData,
+        selectData: buildResult.selectData,
+      };
+
+      //console.log("itcadggSearch, searchData is:");
+      //console.log(searchData);
+
+      let reuseTabIfPossible = options.search_itcadgg_reuseExistingTab;
+
+      doBackgroundSearchWithSearchData("itcadgg", searchData, reuseTabIfPossible);
     }
-
-    //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-    // put URL of this site's search page here
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    let searchUrl = "https://www.itcadgg.org/search";
-
-    const searchData = {
-      timeStamp: Date.now(),
-      url: searchUrl,
-      fieldData: buildResult.fieldData,
-      selectData: buildResult.selectData,
-    };
-
-    //console.log("itcadggSearch, searchData is:");
-    //console.log(searchData);
-
-    let reuseTabIfPossible = options.search_itcadgg_reuseExistingTab;
-
-    doBackgroundSearchWithSearchData("itcadgg", searchData, reuseTabIfPossible);
-  });
+  );
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
