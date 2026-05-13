@@ -56,6 +56,7 @@ import "../../freereg/core/freereg_site_data.mjs";
 import "../../fs/core/fs_site_data.mjs";
 import "../../gbooks/core/gbooks_site_data.mjs";
 import "../../geneteka/core/geneteka_site_data.mjs";
+import "../../gensau/core/gensau_site_data.mjs";
 import "../../gro/core/gro_site_data.mjs";
 import "../../hathi/core/hathi_site_data.mjs";
 import "../../irishg/core/irishg_site_data.mjs";

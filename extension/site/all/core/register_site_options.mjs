@@ -53,6 +53,7 @@ import "../../freereg/core/freereg_options.mjs";
 import "../../fs/core/fs_options.mjs";
 import "../../gbooks/core/gbooks_options.mjs";
 import "../../geneteka/core/geneteka_options.mjs";
+import "../../gensau/core/gensau_options.mjs";
 import "../../gro/core/gro_options.mjs";
 import "../../hathi/core/hathi_options.mjs";
 import "../../irishg/core/irishg_options.mjs";

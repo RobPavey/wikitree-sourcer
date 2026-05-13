@@ -49,6 +49,7 @@ const siteNames = [
   "fs",
   "gbooks",
   "geneteka",
+  "gensau",
   "gro",
   "hathi",
   "irishg",
