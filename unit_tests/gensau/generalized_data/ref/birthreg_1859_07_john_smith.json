@@ -2,5 +2,10 @@
   "sourceOfData": "gensau",
   "sourceType": "record",
   "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "personGender": "male",
   "hasValidData": true
 }

@@ -2,5 +2,10 @@
   "sourceOfData": "gensau",
   "sourceType": "record",
   "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Marion Monk"
+  },
+  "personGender": "female",
   "hasValidData": true
 }

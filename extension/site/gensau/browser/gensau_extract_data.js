@@ -93,6 +93,9 @@ function extractData(document, url) {
         isDisabled = true;
       }
       if (!isDisabled && value != "Not Recorded") {
+        if (name.endsWith(":")) {
+          name = name.substring(0, name.length - 1);
+        }
         result.recordData[name] = value;
       }
     }

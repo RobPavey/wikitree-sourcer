@@ -2,5 +2,10 @@
   "sourceOfData": "gensau",
   "sourceType": "record",
   "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "O'Reilly",
+    "forenames": "John Leslie Patrick"
+  },
+  "personGender": "male",
   "hasValidData": true
 }

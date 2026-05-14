@@ -5,12 +5,12 @@
   "titleGivenNames": "Marion Monk",
   "databaseName": "Birth Registrations",
   "recordData": {
-    "Surname:": "PAVEY",
-    "Given Names:": "Marion Monk",
-    "Gender:": "F",
-    "Father:": "Harry James PAVEY",
-    "District:": "Clare",
-    "Book/Page:": "630/103",
-    "Birth Year:": "1898"
+    "Surname": "PAVEY",
+    "Given Names": "Marion Monk",
+    "Gender": "F",
+    "Father": "Harry James PAVEY",
+    "District": "Clare",
+    "Book/Page": "630/103",
+    "Birth Year": "1898"
   }
 }

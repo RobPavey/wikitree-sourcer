@@ -605,7 +605,7 @@ class ExtractedDataReader {
   }
 
   getRecordDataValue(key) {
-    if (!this.ed.recordData) {
+    if (!key || !this.ed.recordData) {
       return undefined;
     }
 
@@ -812,6 +812,25 @@ class ExtractedDataReader {
     }
 
     return RT.Unclassified;
+  }
+
+  getGenderFromString(genderString, maleValues, femaleValues, doToLowerCase = false) {
+    if (genderString) {
+      if (doToLowerCase) {
+        genderString = genderString.toLowerCase();
+      }
+      if (maleValues.includes(genderString)) {
+        return "male";
+      } else if (femaleValues.includes(genderString)) {
+        return "female";
+      }
+    }
+    return "";
+  }
+
+  getGenderFromRecordData(key, maleValues, femaleValues, doToLowerCase = false) {
+    let genderString = this.getRecordDataValue(key);
+    return this.getGenderFromString(genderString, maleValues, femaleValues, doToLowerCase);
   }
 }
 

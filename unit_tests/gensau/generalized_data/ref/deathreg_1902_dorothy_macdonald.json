@@ -2,5 +2,10 @@
   "sourceOfData": "gensau",
   "sourceType": "record",
   "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "MacDonald",
+    "forenames": "Dorothy Isabel Rose"
+  },
+  "personGender": "female",
   "hasValidData": true
 }

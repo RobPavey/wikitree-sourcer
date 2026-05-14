@@ -5,12 +5,12 @@
   "titleGivenNames": "John",
   "databaseName": "Birth Registrations",
   "recordData": {
-    "Surname:": "SMITH",
-    "Given Names:": "John",
-    "Gender:": "M",
-    "Father:": "George SMITH",
-    "District:": "Adelaide",
-    "Book/Page:": "15/154",
-    "Birth Year:": "1859-07"
+    "Surname": "SMITH",
+    "Given Names": "John",
+    "Gender": "M",
+    "Father": "George SMITH",
+    "District": "Adelaide",
+    "Book/Page": "15/154",
+    "Birth Year": "1859-07"
   }
 }

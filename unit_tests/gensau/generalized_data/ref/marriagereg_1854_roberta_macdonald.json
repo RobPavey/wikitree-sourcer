@@ -2,5 +2,9 @@
   "sourceOfData": "gensau",
   "sourceType": "record",
   "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "MacDonald",
+    "forenames": "Roberta"
+  },
   "hasValidData": true
 }

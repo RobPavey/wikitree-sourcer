@@ -2,5 +2,9 @@
   "sourceOfData": "gensau",
   "sourceType": "record",
   "recordType": "Baptism",
+  "name": {
+    "lastName": "De Silva",
+    "forenames": "Ludovina"
+  },
   "hasValidData": true
 }

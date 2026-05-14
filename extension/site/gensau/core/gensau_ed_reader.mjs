@@ -24,23 +24,24 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
 
-const recordTypes = [
+const recordTypeMatches = [
   {
     recordType: RT.Baptism,
-    databaseNameMatches: ["South Australian Church records - Baptisms"],
+    collectionIds: ["South Australian Church records - Baptisms"],
   },
   {
     recordType: RT.BirthRegistration,
-    databaseNameMatches: ["Birth Registrations"],
+    collectionIds: ["Birth Registrations"],
   },
   {
     recordType: RT.DeathRegistration,
-    databaseNameMatches: ["Death Registrations"],
+    collectionIds: ["Death Registrations"],
   },
   {
     recordType: RT.MarriageRegistration,
-    databaseNameMatches: ["Marriage Registrations"],
+    collectionIds: ["Marriage Registrations"],
   },
 ];
 
@@ -50,10 +51,9 @@ class GensauEdReader extends ExtractedDataReader {
 
     let databaseName = ed.databaseName;
     if (databaseName) {
-      for (let rt of recordTypes) {
-        if (rt.databaseNameMatches.includes(databaseName)) {
-          this.recordType = rt.recordType;
-        }
+      let typeData = this.getRecordTypeMatch(recordTypeMatches, { collectionId: databaseName });
+      if (typeData) {
+        this.recordType = typeData.recordType;
       }
     }
   }
@@ -75,11 +75,25 @@ class GensauEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    return undefined;
+    let lastName = this.ed.titleSurname;
+    let givenNames = this.ed.titleGivenNames;
+
+    if (!lastName) {
+      lastName = this.getRecordDataValue("Surname");
+    }
+    if (!givenNames) {
+      givenNames = this.getRecordDataValue("Given Names");
+    }
+
+    if (lastName) {
+      lastName = NameUtils.convertNameFromAllCapsToMixedCase(lastName);
+    }
+
+    return this.makeNameObjFromForenamesAndLastName(givenNames, lastName);
   }
 
   getGender() {
-    return "";
+    return this.getGenderFromRecordData("Gender", ["M"], ["F"]);
   }
 
   getEventDateObj() {

@@ -2,5 +2,10 @@
   "sourceOfData": "gensau",
   "sourceType": "record",
   "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "George Charles McKenzie"
+  },
+  "personGender": "male",
   "hasValidData": true
 }

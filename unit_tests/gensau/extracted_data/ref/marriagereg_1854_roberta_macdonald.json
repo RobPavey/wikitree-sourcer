@@ -5,11 +5,11 @@
   "titleGivenNames": "Roberta",
   "databaseName": "Marriage Registrations",
   "recordData": {
-    "Groom Given Names:": "William Isaac",
-    "Bride Surname:": "MACDONALD",
-    "Bride Given Names:": "Roberta",
-    "District:": "The Murray/Burra",
-    "Book/Page:": "20/100",
-    "Marriage Year:": "1854"
+    "Groom Given Names": "William Isaac",
+    "Bride Surname": "MACDONALD",
+    "Bride Given Names": "Roberta",
+    "District": "The Murray/Burra",
+    "Book/Page": "20/100",
+    "Marriage Year": "1854"
   }
 }

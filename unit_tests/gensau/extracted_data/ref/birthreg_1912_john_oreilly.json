@@ -5,12 +5,12 @@
   "titleGivenNames": "John Leslie Patrick",
   "databaseName": "Birth Registrations",
   "recordData": {
-    "Surname:": "OREILLY",
-    "Given Names:": "John Leslie Patrick",
-    "Gender:": "M",
-    "Father:": "James Andrew Esmond OREILLY",
-    "District:": "Adelaide",
-    "Book/Page:": "882/412",
-    "Birth Year:": "1912"
+    "Surname": "OREILLY",
+    "Given Names": "John Leslie Patrick",
+    "Gender": "M",
+    "Father": "James Andrew Esmond OREILLY",
+    "District": "Adelaide",
+    "Book/Page": "882/412",
+    "Birth Year": "1912"
   }
 }
