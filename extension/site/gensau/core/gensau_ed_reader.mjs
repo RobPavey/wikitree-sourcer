@@ -25,9 +25,37 @@ SOFTWARE.
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
+const recordTypes = [
+  {
+    recordType: RT.Baptism,
+    databaseNameMatches: ["South Australian Church records - Baptisms"],
+  },
+  {
+    recordType: RT.BirthRegistration,
+    databaseNameMatches: ["Birth Registrations"],
+  },
+  {
+    recordType: RT.DeathRegistration,
+    databaseNameMatches: ["Death Registrations"],
+  },
+  {
+    recordType: RT.MarriageRegistration,
+    databaseNameMatches: ["Marriage Registrations"],
+  },
+];
+
 class GensauEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
+
+    let databaseName = ed.databaseName;
+    if (databaseName) {
+      for (let rt of recordTypes) {
+        if (rt.databaseNameMatches.includes(databaseName)) {
+          this.recordType = rt.recordType;
+        }
+      }
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////

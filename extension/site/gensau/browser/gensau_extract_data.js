@@ -32,13 +32,71 @@ function extractData(document, url) {
   }
   result.success = false;
 
-  /*
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  //console.log("entriesQuery size is: " + entriesQuery.length);
-  if (entries.length < 1) {
+  let headingElement = document.querySelector("div.header div.heading");
+  if (!headingElement) {
     return result;
   }
-  */
+
+  let headingH2 = headingElement.querySelector("h2");
+  if (headingH2) {
+    const firstTextNode = headingH2.firstChild;
+    if (firstTextNode) {
+      result.titleSurname = firstTextNode.textContent;
+    }
+    const spanElement = headingH2.querySelector("span");
+    if (spanElement) {
+      let givenNames = spanElement.textContent;
+      if (givenNames.startsWith(", ")) {
+        givenNames = givenNames.substring(2).trim();
+      }
+      if (givenNames) {
+        result.titleGivenNames = givenNames;
+      }
+    }
+  }
+
+  const dbElement = headingElement.querySelector("p");
+  if (dbElement) {
+    let dbText = dbElement.textContent;
+    // example: Found in 'Birth Registrations' Database
+    const regex = /^\s*Found\s+in\s+'([^']+)'\s+Database\s*$/i;
+    if (regex.test(dbText)) {
+      let dbName = dbText.replace(regex, "$1");
+      if (dbName) {
+        result.databaseName = dbName;
+      }
+    }
+  }
+
+  let headingSubtitle = headingElement.querySelector("p");
+
+  const dataRows = document.querySelectorAll("form div.gsa_userdetail > div.gsa_row");
+  if (dataRows.length < 1) {
+    return result;
+  }
+
+  result.recordData = {};
+
+  for (let dataRowElement of dataRows) {
+    let fieldNameElement = dataRowElement.querySelector("span.gsa_field_name");
+    let fieldValueElement = dataRowElement.querySelector("span.gsa_field_value");
+
+    if (fieldNameElement && fieldValueElement) {
+      let isDisabled = false;
+      let disabledElement = fieldValueElement.querySelector("a.disabled1");
+      if (disabledElement) {
+        isDisabled = true;
+      }
+      let name = fieldNameElement.textContent;
+      let value = fieldValueElement.textContent;
+      if (value == "(members only)") {
+        isDisabled = true;
+      }
+      if (!isDisabled && value != "Not Recorded") {
+        result.recordData[name] = value;
+      }
+    }
+  }
 
   result.success = true;
 
