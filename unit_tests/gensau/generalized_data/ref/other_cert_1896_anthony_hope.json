@@ -6,5 +6,13 @@
     "lastName": "Hope",
     "forenames": "Anthony"
   },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "BONES",
+        "forenames": "Catherine"
+      }
+    }
+  ],
   "hasValidData": true
 }

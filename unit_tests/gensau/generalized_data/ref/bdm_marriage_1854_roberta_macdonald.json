@@ -7,6 +7,19 @@
     "forenames": "Roberta"
   },
   "personGender": "female",
+  "eventDate": {
+    "dateString": "1854"
+  },
   "registrationDistrict": "The Murray/Burra",
+  "spouses": [
+    {
+      "name": {
+        "forenames": "William Isaac"
+      },
+      "marriageDate": {
+        "dateString": "1854"
+      }
+    }
+  ],
   "hasValidData": true
 }

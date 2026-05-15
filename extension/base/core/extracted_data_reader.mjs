@@ -187,7 +187,7 @@ class ExtractedDataReader {
   }
 
   getAgeAtEvent() {
-    return "";
+    return this.getValueUsingRecordTypeData("ageAtEvent");
   }
 
   getAgeAtDeath() {
@@ -211,7 +211,7 @@ class ExtractedDataReader {
   }
 
   getOccupation() {
-    return "";
+    return this.getValueUsingRecordTypeData("occupation");
   }
 
   getUnit() {
@@ -235,26 +235,74 @@ class ExtractedDataReader {
   }
 
   getArrivalDate() {
-    return "";
+    return this.getValueUsingRecordTypeData("arrivalDate");
   }
 
   getArrivalPlace() {
-    return "";
+    return this.getValueUsingRecordTypeData("arrivalPlace");
   }
 
   getDepartureDate() {
-    return "";
+    return this.getValueUsingRecordTypeData("departureDate");
   }
 
   getDeparturePlace() {
-    return "";
+    return this.getValueUsingRecordTypeData("departurePlace");
   }
 
   getShipName() {
-    return "";
+    return this.getValueUsingRecordTypeData("shipName");
   }
 
   getSpouses() {
+    let spouseNameObj = this.makeNameObjUsingRecordTypeDataKeys("spouseFullName", "spouseForenames", "spouseLastName");
+    if (!spouseNameObj) {
+      // could be bride and groom names
+      let gender = this.getGender();
+
+      if (gender == "male") {
+        spouseNameObj = this.makeNameObjUsingRecordTypeDataKeys("brideFullName", "brideForenames", "brideLastName");
+      } else if (gender == "female") {
+        spouseNameObj = this.makeNameObjUsingRecordTypeDataKeys("groomFullName", "groomForenames", "groomLastName");
+      } else {
+        // no (valid) gender
+        // try comparing this person's name with the bride and groom names
+
+        let brideNameObj = this.makeNameObjUsingRecordTypeDataKeys("brideFullName", "brideForenames", "brideLastName");
+        let groomNameObj = this.makeNameObjUsingRecordTypeDataKeys("groomFullName", "groomForenames", "groomLastName");
+
+        if (brideNameObj && groomNameObj) {
+          let mainPersonNameObj = makeNameObjUsingRecordTypeData("fullName", "forenames", "lastName");
+          if (mainPersonNameObj.inferFullName() == brideNameObj.inferFullName()) {
+            spouseNameObj = groomNameObj;
+          } else if (mainPersonNameObj.inferFullName() == groomNameObj.inferFullName()) {
+            spouseNameObj = brideNameObj;
+          } else if (mainPersonNameObj.inferForenames() == brideNameObj.inferForenames()) {
+            spouseNameObj = groomNameObj;
+          } else if (mainPersonNameObj.inferForenames() == groomNameObj.inferForenames()) {
+            spouseNameObj = brideNameObj;
+          } else if (mainPersonNameObj.inferLastName() == brideNameObj.inferLastName()) {
+            spouseNameObj = groomNameObj;
+          } else if (mainPersonNameObj.inferLastName() == groomNameObj.inferLastName()) {
+            spouseNameObj = brideNameObj;
+          }
+        }
+      }
+    }
+
+    if (spouseNameObj) {
+      let eventDateObj = undefined;
+      let eventPlaceObj = undefined;
+      let age = "";
+
+      if (this.recordType == RT.Marriage || this.recordType == RT.MarriageRegistration) {
+        eventDateObj = this.getEventDateObj();
+        eventPlaceObj = this.getEventPlaceObj();
+        age = this.getAgeAtEvent();
+      }
+
+      return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age)];
+    }
     return undefined;
   }
 
@@ -333,6 +381,21 @@ class ExtractedDataReader {
         return nameObj;
       }
     }
+  }
+
+  makeNameObjUsingRecordTypeDataKeys(fullNameKey, forenamesKey, lastNameKey) {
+    let nameObj = undefined;
+    let fullName = this.getValueUsingRecordTypeData(fullNameKey);
+    if (fullName) {
+      nameObj = this.makeNameObjFromFullName(fullName);
+    } else {
+      let forenames = this.getValueUsingRecordTypeData(forenamesKey);
+      let lastName = this.getValueUsingRecordTypeData(lastNameKey);
+      if (forenames || lastName) {
+        nameObj = this.makeNameObjFromForenamesAndLastName(forenames, lastName);
+      }
+    }
+    return nameObj;
   }
 
   makeDateObjFromDateString(dateString) {

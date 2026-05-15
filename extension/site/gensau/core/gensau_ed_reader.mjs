@@ -47,6 +47,14 @@ const recordTypes = [
       femaleForenames: { recordDataKeys: ["Bride Given Names"] },
       femaleLastName: { recordDataKeys: ["Bride Surname"] },
     },
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Marriage Date", "Marriage Year"],
+      },
+      eventPlace: {
+        recordDataKeys: ["Marriage Place"],
+      },
+    },
   },
   // Newspaper
   {
@@ -59,6 +67,16 @@ const recordTypes = [
   },
   {
     recordType: RT.Marriage,
+    collectionIds: ["Newspaper Marriages"],
+    documentTypes: ["Marriage"],
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Date"],
+      },
+    },
+  },
+  {
+    recordType: RT.Newspaper,
     collectionIds: ["Newspaper Marriages"],
   },
   {
@@ -82,6 +100,11 @@ const recordTypes = [
   {
     recordType: RT.Marriage,
     collectionIds: ["South Australian Church records - Marriages"],
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Marriage Date", "Year of marriage"],
+      },
+    },
   },
   {
     recordType: RT.OtherChurchEvent,
@@ -193,6 +216,39 @@ const defaultRecordTypeData = {
     registrationDistrict: {
       recordDataKeys: ["District"],
     },
+    arrivalDate: {
+      recordDataKeys: ["Arrival Date"],
+    },
+    departureDate: {
+      recordDataKeys: ["Departure Date"],
+    },
+    shipName: {
+      recordDataKeys: ["Ship Name"],
+    },
+    spouseForenames: {
+      recordDataKeys: ["Spouse Given Names"],
+    },
+    spouseLastName: {
+      recordDataKeys: ["Spouse Surname"],
+    },
+    brideForenames: {
+      recordDataKeys: ["Bride Given Names"],
+    },
+    brideLastName: {
+      recordDataKeys: ["Bride Surname"],
+    },
+    brideAge: {
+      recordDataKeys: ["Bride Age"],
+    },
+    groomForenames: {
+      recordDataKeys: ["Groom Given Names"],
+    },
+    groomLastName: {
+      recordDataKeys: ["Groom Surname"],
+    },
+    groomAge: {
+      recordDataKeys: ["Groom Age"],
+    },
   },
   advancedPlaceRules: {
     addImpliedPartsToBlankPlace: true,
@@ -207,14 +263,20 @@ class GensauEdReader extends ExtractedDataReader {
 
     this.defaultRecordTypeData = defaultRecordTypeData;
     let databaseName = ed.databaseName;
+    let documentType = ed.recordData["Notice"];
     if (databaseName) {
-      let recordTypeData = this.getRecordTypeMatch(recordTypes, { collectionId: databaseName });
+      let recordTypeData = this.getRecordTypeMatch(recordTypes, {
+        collectionId: databaseName,
+        documentType: documentType,
+      });
       if (recordTypeData) {
         this.recordTypeData = recordTypeData;
         this.recordType = recordTypeData.recordType;
       } else {
         this.recordTypeData = unclassifiedTypeData;
       }
+    } else {
+      this.recordTypeData = unclassifiedTypeData;
     }
   }
 
@@ -297,38 +359,6 @@ class GensauEdReader extends ExtractedDataReader {
     }
 
     return "";
-  }
-
-  getAgeAtEvent() {
-    return "";
-  }
-
-  getAgeAtDeath() {
-    return "";
-  }
-
-  getRelationshipToHead() {
-    return "";
-  }
-
-  getMaritalStatus() {
-    return "";
-  }
-
-  getOccupation() {
-    return "";
-  }
-
-  getSpouses() {
-    return undefined;
-  }
-
-  getParents() {
-    return undefined;
-  }
-
-  getHousehold() {
-    return undefined;
   }
 
   getCollectionData() {

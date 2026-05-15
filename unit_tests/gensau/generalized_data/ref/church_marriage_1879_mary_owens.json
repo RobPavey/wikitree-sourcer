@@ -6,5 +6,18 @@
     "lastName": "Owens",
     "forenames": "Mary Anne V"
   },
+  "eventDate": {
+    "dateString": "1879"
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Joseph"
+      },
+      "marriageDate": {
+        "dateString": "1879"
+      }
+    }
+  ],
   "hasValidData": true
 }
