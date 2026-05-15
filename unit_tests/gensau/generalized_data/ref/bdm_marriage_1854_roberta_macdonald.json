@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "MacDonald",
+    "forenames": "Roberta"
+  },
+  "personGender": "female",
+  "hasValidData": true
+}

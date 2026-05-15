@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Leslie William Thomas"
+  },
+  "hasValidData": true
+}

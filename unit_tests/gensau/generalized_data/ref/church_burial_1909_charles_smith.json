@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Charles Jnr"
+  },
+  "hasValidData": true
+}

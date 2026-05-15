@@ -727,18 +727,6 @@ class WiewaswieEdReader extends ExtractedDataReader {
     return this.makePlaceObjFromFullPlaceName(placeString);
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
-  }
-
   getBirthDateObj() {
     let ddmmyyyDate = this.extractIndexedPersonFieldByDataKey(0, "BirthDate");
     return this.makeDateObjFromDdmmyyyyDate(ddmmyyyDate, "-");

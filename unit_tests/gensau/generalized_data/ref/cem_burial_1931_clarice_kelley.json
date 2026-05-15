@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Kelly",
+    "forenames": "Clarice Eleanor",
+    "nicknames": "Ellie"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Owens",
+    "forenames": "Mary Anne V"
+  },
+  "hasValidData": true
+}

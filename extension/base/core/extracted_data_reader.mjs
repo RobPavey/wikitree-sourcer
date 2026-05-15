@@ -25,6 +25,7 @@ SOFTWARE.
 import { RT } from "./record_type.mjs";
 import { NameObj, DateObj, PlaceObj } from "./generalize_data_utils.mjs";
 import { DateUtils } from "./date_utils.mjs";
+import { NameUtils } from "./name_utils.mjs";
 
 // This is the base class for the EdReader for each site (that uses this pattern)
 // The main reason for the base class is so that if the derived class doesn't define one of these functions
@@ -59,18 +60,67 @@ class ExtractedDataReader {
   }
 
   getNameObj() {
+    let forenames = this.getValueUsingRecordTypeData("forenames");
+    let lastName = this.getValueUsingRecordTypeData("lastName");
+
+    let advanced = this.getRecordTypeProperty("advancedNameRules");
+    if (advanced) {
+      let advanced = this.recordTypeData.advancedNameRules;
+      if (advanced.canHaveHonorificAfterForenamesWithComma) {
+        let parts = forenames.split(",");
+        if (parts.length == 2) {
+          forenames = parts[1].trim() + " " + parts[0].trim();
+        }
+      }
+    }
+
+    if (forenames && lastName) {
+      return this.makeNameObjFromForenamesAndLastName(forenames, lastName);
+    }
+
+    let fullName = this.getValueUsingRecordTypeData("fullName");
+
+    if (fullName) {
+      return this.makeNameObjFromFullName(forenames, lastName);
+    }
+
+    if (lastName) {
+      return this.makeNameObjFromLastName(lastName);
+    }
+
+    if (forenames) {
+      this.makeNameObjFromForenames(forenames);
+    }
+
     return undefined;
   }
 
   getGender() {
-    return "";
+    return this.getValueUsingRecordTypeData("gender");
   }
 
   getEventDateObj() {
+    let dateString = this.getValueUsingRecordTypeData("eventDate");
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
     return undefined;
   }
 
   getEventPlaceObj() {
+    let placeString = this.getValueUsingRecordTypeData("eventPlace");
+
+    if (placeString) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
     return undefined;
   }
 
@@ -225,6 +275,14 @@ class ExtractedDataReader {
     if (forenames) {
       let nameObj = new NameObj();
       nameObj.setForenames(forenames);
+      return nameObj;
+    }
+  }
+
+  makeNameObjFromLastName(lastName) {
+    if (lastName) {
+      let nameObj = new NameObj();
+      nameObj.setLastName(lastName);
       return nameObj;
     }
   }
@@ -613,10 +671,23 @@ class ExtractedDataReader {
   }
 
   getRecordDataValueForKeys(keys) {
-    if (this.ed.recordData) {
+    if (this.ed.recordData && keys) {
       if (keys && keys.length > 0) {
         for (let key of keys) {
           let value = this.ed.recordData[key];
+          if (value) {
+            return value;
+          }
+        }
+      }
+    }
+  }
+
+  getExtractedDataValueForKeys(keys) {
+    if (this.ed && keys) {
+      if (keys && keys.length > 0) {
+        for (let key of keys) {
+          let value = this.ed[key];
           if (value) {
             return value;
           }
@@ -831,6 +902,119 @@ class ExtractedDataReader {
   getGenderFromRecordData(key, maleValues, femaleValues, doToLowerCase = false) {
     let genderString = this.getRecordDataValue(key);
     return this.getGenderFromString(genderString, maleValues, femaleValues, doToLowerCase);
+  }
+
+  getValueUsingRule(rule) {
+    let value = undefined;
+    if (!rule) {
+      return value;
+    }
+
+    if (rule.prioritizeEdKeys) {
+      value = this.getExtractedDataValueForKeys(rule.edKeys);
+    }
+
+    if (!value) {
+      value = this.getRecordDataValueForKeys(rule.recordDataKeys);
+    }
+
+    if (!value && !rule.prioritizeEdKeys) {
+      value = this.getExtractedDataValueForKeys(rule.edKeys);
+    }
+
+    if (value) {
+      if (rule.convertNameFromAllCapsToMixedCase) {
+        value = NameUtils.convertNameFromAllCapsToMixedCase(value);
+      }
+      if (rule.modifier) {
+        let mod = rule.modifier;
+        if (mod.regex && mod.replaceString) {
+          if (mod.regex.test(value)) {
+            value = value.replace(mod.regex, mod.replaceString);
+          }
+        }
+      }
+      if (rule.valueMapping) {
+        for (let key of Object.keys(rule.valueMapping)) {
+          const matches = rule.valueMapping[key].matches;
+          if (matches) {
+            if (matches.includes(value)) {
+              value = key;
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    return value;
+  }
+
+  getRecordDataRuleForName(name) {
+    // name is a standard name used in gd
+    let rule = undefined;
+    let defaultRule = undefined;
+
+    if (this.recordTypeData && this.recordTypeData.rules) {
+      rule = this.recordTypeData.rules[name];
+    }
+
+    if (this.defaultRecordTypeData && this.defaultRecordTypeData.rules) {
+      defaultRule = this.defaultRecordTypeData.rules[name];
+    }
+
+    if (rule && defaultRule && rule.combineRule) {
+      rule = { ...rule, ...defaultRule };
+    } else if (!rule && defaultRule) {
+      rule = defaultRule;
+    }
+
+    return rule;
+  }
+
+  getValueUsingRecordTypeData(name) {
+    // name is a standard name used in gd
+    let value = undefined;
+    let rule = undefined;
+    let defaultRule = undefined;
+
+    if (this.recordTypeData && this.recordTypeData.rules) {
+      rule = this.recordTypeData.rules[name];
+    }
+
+    if (this.defaultRecordTypeData && this.defaultRecordTypeData.rules) {
+      defaultRule = this.defaultRecordTypeData.rules[name];
+    }
+
+    if (rule && defaultRule && rule.combineRule) {
+      rule = { ...rule, ...defaultRule };
+    }
+
+    if (rule) {
+      value = this.getValueUsingRule(rule);
+      if (value) {
+        if (rule.substition) {
+        }
+      }
+    }
+
+    if (!value && defaultRule) {
+      value = this.getValueUsingRule(defaultRule);
+    }
+
+    return value;
+  }
+
+  getRecordTypeProperty(key) {
+    if (this.recordTypeData && this.recordTypeData[key]) {
+      return this.recordTypeData[key];
+    }
+
+    if (this.defaultRecordTypeData && this.defaultRecordTypeData[key]) {
+      return this.defaultRecordTypeData[key];
+    }
+
+    return undefined;
   }
 }
 

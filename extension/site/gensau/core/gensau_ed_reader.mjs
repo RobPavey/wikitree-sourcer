@@ -26,11 +26,8 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 
-const recordTypeMatches = [
-  {
-    recordType: RT.Baptism,
-    collectionIds: ["South Australian Church records - Baptisms"],
-  },
+const recordTypes = [
+  // BDM
   {
     recordType: RT.BirthRegistration,
     collectionIds: ["Birth Registrations"],
@@ -42,18 +39,172 @@ const recordTypeMatches = [
   {
     recordType: RT.MarriageRegistration,
     collectionIds: ["Marriage Registrations"],
+    inferGenderByNameMatch: {
+      forenames: { edKeys: ["titleGivenNames"] },
+      lastName: { edKeys: ["titleSurname"] },
+      maleForenames: { recordDataKeys: ["Groom Given Names"] },
+      maleLastName: { recordDataKeys: ["Groom Surname"] },
+      femaleForenames: { recordDataKeys: ["Bride Given Names"] },
+      femaleLastName: { recordDataKeys: ["Bride Surname"] },
+    },
+  },
+  // Newspaper
+  {
+    recordType: RT.Birth,
+    collectionIds: ["Newspaper Births"],
+  },
+  {
+    recordType: RT.Death,
+    collectionIds: ["Newspaper Deaths"],
+  },
+  {
+    recordType: RT.Marriage,
+    collectionIds: ["Newspaper Marriages"],
+  },
+  {
+    recordType: RT.Divorce,
+    collectionIds: ["Newspaper Divorces"],
+  },
+  // Cemeteries Burial Records
+  {
+    recordType: RT.Burial,
+    collectionIds: ["South Australia Cemeteries"],
+  },
+  // Church Records
+  {
+    recordType: RT.Burial,
+    collectionIds: ["South Australian Church records - Burials"],
+  },
+  {
+    recordType: RT.Baptism,
+    collectionIds: ["South Australian Church records - Baptisms"],
+  },
+  {
+    recordType: RT.Marriage,
+    collectionIds: ["South Australian Church records - Marriages"],
+  },
+  {
+    recordType: RT.OtherChurchEvent,
+    collectionIds: ["South Australian Church records - Other"],
+  },
+  // Admission Records
+  {
+    recordType: RT.SchoolRecords,
+    collectionIds: ["South Australian School Admissions"],
+    rules: {
+      eventPlace: {
+        recordDataKeys: ["Address", "Town"],
+      },
+    },
+  },
+  {
+    recordType: RT.MedicalPatient,
+    collectionIds: ["Hospital, Asylum and Lying-in Home Admissions"],
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Admission Date", "Admission Year"],
+      },
+      eventPlace: {
+        recordDataKeys: ["Hospital", "Residence"],
+      },
+    },
+    advancedNameRules: {
+      canHaveHonorificAfterForenamesWithComma: true,
+    },
+  },
+  // Other Records
+  {
+    recordType: RT.Unclassified,
+    collectionIds: ["Biographical Index of South Australians"],
+  },
+  {
+    recordType: RT.Unclassified,
+    collectionIds: ["Biographical Index of South Australians - Supplementary"],
+  },
+  {
+    recordType: RT.Certificate,
+    collectionIds: ["Certificates-Australia and Overseas"],
+  },
+  {
+    recordType: RT.Unclassified,
+    collectionIds: ["Irish Born South Australians (IBSA)"],
+  },
+  {
+    recordType: RT.PassengerList,
+    collectionIds: ["Ship Passenger Arrivals in South Australia"],
+  },
+  {
+    recordType: RT.Unclassified,
+    collectionIds: ["Ships to South Australia"],
+  },
+  {
+    recordType: RT.PassengerList,
+    collectionIds: ["Shipping Passenger Departures from South Australia"],
+  },
+  {
+    recordType: RT.Probate,
+    collectionIds: ["South Australian Public Trustees/Deceased Estates"],
   },
 ];
+
+const unclassifiedTypeData = {
+  recordType: RT.Unclassified,
+};
+
+const defaultRecordTypeData = {
+  rules: {
+    forenames: {
+      prioritizeEdKeys: true,
+      recordDataKeys: ["Given Names", "First Names"],
+      edKeys: ["titleGivenNames"],
+      modifier: { regex: /\(([^)]+)\)/, replaceString: '"$1"' },
+    },
+    lastName: {
+      prioritizeEdKeys: true,
+      recordDataKeys: ["Surname"],
+      edKeys: ["titleSurname"],
+      convertNameFromAllCapsToMixedCase: true,
+    },
+    gender: {
+      recordDataKeys: ["Gender", "Sex"],
+      valueMapping: {
+        male: ["M"],
+        female: ["F"],
+      },
+    },
+    deathDate: {
+      recordDataKeys: ["Death Date"],
+    },
+    ageAtEvent: {
+      recordDataKeys: ["Age"],
+    },
+    occupation: {
+      recordDataKeys: ["Occupation"],
+    },
+    birthDate: {
+      recordDataKeys: ["Birth Date"],
+    },
+    birthPlace: {
+      recordDataKeys: ["Birth Place"],
+    },
+  },
+  impliedCountryName: "Australia",
+  impliedStateName: "South Australia",
+};
 
 class GensauEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
 
+    this.defaultRecordTypeData = defaultRecordTypeData;
     let databaseName = ed.databaseName;
     if (databaseName) {
-      let typeData = this.getRecordTypeMatch(recordTypeMatches, { collectionId: databaseName });
-      if (typeData) {
-        this.recordType = typeData.recordType;
+      let recordTypeData = this.getRecordTypeMatch(recordTypes, { collectionId: databaseName });
+      if (recordTypeData) {
+        this.recordTypeData = recordTypeData;
+        this.recordType = recordTypeData.recordType;
+      } else {
+        this.recordTypeData = unclassifiedTypeData;
       }
     }
   }
@@ -74,41 +225,68 @@ class GensauEdReader extends ExtractedDataReader {
     return "record";
   }
 
-  getNameObj() {
-    let lastName = this.ed.titleSurname;
-    let givenNames = this.ed.titleGivenNames;
-
-    if (!lastName) {
-      lastName = this.getRecordDataValue("Surname");
-    }
-    if (!givenNames) {
-      givenNames = this.getRecordDataValue("Given Names");
-    }
-
-    if (lastName) {
-      lastName = NameUtils.convertNameFromAllCapsToMixedCase(lastName);
-    }
-
-    return this.makeNameObjFromForenamesAndLastName(givenNames, lastName);
-  }
-
   getGender() {
-    return this.getGenderFromRecordData("Gender", ["M"], ["F"]);
-  }
+    let gender = super.getGender();
+    if (gender) {
+      return gender;
+    }
 
-  getEventDateObj() {
-    return undefined;
-  }
+    if (this.recordTypeData.inferGenderByNameMatch) {
+      let infer = this.recordTypeData.inferGenderByNameMatch;
 
-  getEventPlaceObj() {
-    return undefined;
-  }
+      let forenames = this.getValueUsingRule(infer.forenames);
+      let lastName = this.getValueUsingRule(infer.lastName);
+      let maleForenames = this.getValueUsingRule(infer.maleForenames);
+      let maleLastName = this.getValueUsingRule(infer.maleLastName);
+      let femaleForenames = this.getValueUsingRule(infer.femaleForenames);
+      let femaleLastName = this.getValueUsingRule(infer.femaleLastName);
 
-  getLastNameAtBirth() {
-    return "";
-  }
+      if (forenames && lastName) {
+        if (maleForenames && maleLastName && maleForenames == forenames && maleLastName == lastName) {
+          return "male";
+        }
+        if (femaleForenames && femaleLastName && femaleForenames == forenames && femaleLastName == lastName) {
+          return "female";
+        }
+        if (maleForenames && maleForenames == forenames) {
+          return "male";
+        }
+        if (femaleForenames && femaleForenames == forenames) {
+          return "female";
+        }
+        if (maleLastName && maleLastName == lastName) {
+          return "male";
+        }
+        if (femaleLastName && femaleLastName == lastName) {
+          return "female";
+        }
+      } else if (forenames) {
+        if (maleForenames && maleForenames == forenames) {
+          return "male";
+        }
+        if (femaleForenames && femaleForenames == forenames) {
+          return "female";
+        }
+      } else if (lastName) {
+        if (maleLastName && maleLastName == lastName) {
+          return "male";
+        }
+        if (femaleLastName && femaleLastName == lastName) {
+          return "female";
+        }
+      }
+    }
 
-  getLastNameAtDeath() {
+    let nameObj = this.getNameObj();
+    if (nameObj) {
+      if (nameObj.nonPrefixHonorific) {
+        let honorific = nameObj.nonPrefixHonorific;
+        if (honorific.startsWith("Mrs") || honorific.startsWith("Miss") || honorific.startsWith("Ms")) {
+          return "female";
+        }
+      }
+    }
+
     return "";
   }
 

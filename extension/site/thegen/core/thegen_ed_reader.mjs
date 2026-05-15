@@ -529,18 +529,6 @@ class ThegenEdReader extends ExtractedDataReader {
     return undefined;
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
-  }
-
   getBirthDateObj() {
     if (this.recordType == RT.Census) {
       if (this.is1939Register) {

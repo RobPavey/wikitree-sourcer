@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Black",
+    "forenames": "Cuthbert & Emma Hannah"
+  },
+  "hasValidData": true
+}

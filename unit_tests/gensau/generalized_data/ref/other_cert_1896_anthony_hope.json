@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Certificate",
+  "name": {
+    "lastName": "Hope",
+    "forenames": "Anthony"
+  },
+  "hasValidData": true
+}

@@ -208,18 +208,6 @@ class BaclacOldStyleEdReader extends ExtractedDataReader {
     return placeObj;
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
-  }
-
   getBirthDateObj() {
     let dateOfBirth = this.getRecordDataValue("Birth Date");
     if (dateOfBirth) {

@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "MedicalPatient",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Mark",
+    "nonPrefixHonorific": "Mrs",
+    "narrativeName": "Mrs Mark Smith"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1899"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "O'Neill",
+    "forenames": "Patrick Henry"
+  },
+  "personGender": "male",
+  "hasValidData": true
+}

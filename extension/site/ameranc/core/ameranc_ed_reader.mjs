@@ -416,18 +416,6 @@ class AmerancEdReader extends ExtractedDataReader {
     return undefined;
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
-  }
-
   getBirthDateObj() {
     let dateString = this.getRecordDataOrTranscriptValueForKeys(["Date of Birth"]);
     if (dateString) {

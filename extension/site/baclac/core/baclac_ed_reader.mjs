@@ -496,10 +496,6 @@ class BaclacEdReader extends ExtractedDataReader {
     return placeObj;
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
   getLastNameAtDeath() {
     if (!this.typeData.noName) {
       let dateOfDeath = this.getRecordDataValue("Date of death");

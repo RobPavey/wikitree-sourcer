@@ -1,10 +1,10 @@
 {
   "sourceOfData": "gensau",
   "sourceType": "record",
-  "recordType": "MarriageRegistration",
+  "recordType": "Burial",
   "name": {
-    "lastName": "MacDonald",
-    "forenames": "Roberta"
+    "lastName": "Kelly",
+    "forenames": "Augustine H Havelock"
   },
   "hasValidData": true
 }

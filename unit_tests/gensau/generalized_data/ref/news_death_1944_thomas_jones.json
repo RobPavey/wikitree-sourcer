@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "Jones",
+    "forenames": "Thomas Patrick"
+  },
+  "hasValidData": true
+}
