@@ -40,12 +40,13 @@ function extractData(document, url) {
   // https://www.openarchieven.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf/nl
   // where the language part on end may be en, nl, de or fr
 
-  if (!/^https\:\/\/www\.openarchieven\.nl\/frl\:[a-z0-9\-]+\/?(?:\w\w)?$/.test(url)) {
+  const urlRegex = /^(https\:\/\/www\.openarchieven\.nl\/frl\:[a-z0-9\-]+)\/?(?:\w\w)?$/;
+  if (!urlRegex.test(url)) {
     return result;
   }
 
   // remove any language part from the URL
-  url = url.replace(/^(https\:\/\/www\.openarchieven\.nl\/frl\:[a-z0-9\-]+)\/?(?:\w\w)?$/, "$1");
+  url = url.replace(urlRegex, "$1");
   result.url = url;
 
   result.lang = lang;
@@ -59,14 +60,6 @@ function extractData(document, url) {
   if (pageHeaderText) {
     result.pageHeader = pageHeaderText;
   }
-
-  /*
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  //console.log("entriesQuery size is: " + entriesQuery.length);
-  if (entries.length < 1) {
-    return result;
-  }
-  */
 
   result.success = true;
 
