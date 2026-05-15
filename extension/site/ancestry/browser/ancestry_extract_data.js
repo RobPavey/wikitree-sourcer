@@ -2011,11 +2011,11 @@ function handlePersonFactsJune2024(document, result) {
       let json = personDataScriptJson.textContent;
       let personData = JSON.parse(json);
       if (personData) {
-        console.log(personData);
+        //console.log(personData);
         if (personData.person) {
           let personCard = personData.person.PersonCard;
           if (personCard) {
-            console.log(personCard);
+            //console.log(personCard);
             result.fullName = personCard.FullName;
             result.givenName = personCard.Given;
             result.surname = personCard.Surname;
