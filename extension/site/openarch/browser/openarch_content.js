@@ -35,12 +35,13 @@ async function doFetch() {
   // https://www.openarchieven.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf
   // https://www.openarchieven.nl/zar:9035582F-0BCC-4640-8BC2-95DA8D148A9B
 
-  if (/^https\:\/\/www\.openarchieven\.nl\/\w+\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/.test(url)) {
-    archive = url.replace(/^https\:\/\/www\.openarchieven\.nl\/(\w+)\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/, "$1");
+  const urlRegEx = /^https\:\/\/www\.openarchieven\.nl\/(\w+)\:([a-zA-Z0-9\-]+)(?:\/\w\w)?\/?(?:\?.*)?$/;
+  if (urlRegEx.test(url)) {
+    archive = url.replace(urlRegEx, "$1");
     if (!archive || archive == url) {
       archive = "";
     }
-    identifier = url.replace(/^https\:\/\/www\.openarchieven\.nl\/\w+\:([a-zA-Z0-9\-]+)(?:\/\w\w)?\/?$/, "$1");
+    identifier = url.replace(urlRegEx, "$2");
     if (!identifier || identifier == url) {
       identifier = "";
     }
