@@ -31,7 +31,6 @@ const recordTypes = [
   {
     recordType: RT.BirthRegistration,
     collectionIds: ["Birth Registrations"],
-    advancedPlaceRules: {},
   },
   {
     recordType: RT.DeathRegistration,
@@ -173,8 +172,17 @@ const defaultRecordTypeData = {
         female: ["F"],
       },
     },
+    birthDate: {
+      recordDataKeys: ["Birth Date", "Birth Year"],
+    },
+    birthPlace: {
+      recordDataKeys: ["Birth Place"],
+    },
     deathDate: {
-      recordDataKeys: ["Death Date"],
+      recordDataKeys: ["Death Date", "Death Year"],
+    },
+    deathPlace: {
+      recordDataKeys: ["Death Place"],
     },
     ageAtEvent: {
       recordDataKeys: ["Age"],
@@ -182,17 +190,12 @@ const defaultRecordTypeData = {
     occupation: {
       recordDataKeys: ["Occupation"],
     },
-    birthDate: {
-      recordDataKeys: ["Birth Date", "Birth Year"],
-    },
-    birthPlace: {
-      recordDataKeys: ["Birth Place"],
-    },
     registrationDistrict: {
       recordDataKeys: ["District"],
     },
   },
   advancedPlaceRules: {
+    addImpliedPartsToBlankPlace: true,
     impliedCountryName: "Australia",
     impliedStateName: "South Australia",
   },
@@ -296,27 +299,11 @@ class GensauEdReader extends ExtractedDataReader {
     return "";
   }
 
-  getBirthPlaceObj() {
-    return undefined;
-  }
-
-  getDeathDateObj() {
-    return undefined;
-  }
-
-  getDeathPlaceObj() {
-    return undefined;
-  }
-
   getAgeAtEvent() {
     return "";
   }
 
   getAgeAtDeath() {
-    return "";
-  }
-
-  getRegistrationDistrict() {
     return "";
   }
 

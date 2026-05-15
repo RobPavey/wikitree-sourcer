@@ -150,14 +150,39 @@ class ExtractedDataReader {
   }
 
   getBirthPlaceObj() {
+    let placeString = this.getValueUsingRecordTypeData("birthPlace");
+
+    if (placeString || this.recordType == RT.Birth || this.recordType == RT.BirthRegistration) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
     return undefined;
   }
 
   getDeathDateObj() {
+    let dateString = this.getValueUsingRecordTypeData("deathDate");
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
     return undefined;
   }
 
   getDeathPlaceObj() {
+    let placeString = this.getValueUsingRecordTypeData("deathPlace");
+
+    if (placeString || this.recordType == RT.Death || this.recordType == RT.DeathRegistration) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
     return undefined;
   }
 
@@ -601,13 +626,19 @@ class ExtractedDataReader {
 
     function addImpliedParts(placeObj) {
       if (advanced) {
-        if (advanced.impliedStateName) {
+        if (!placeString && !advanced.addImpliedPartsToBlankPlace) {
+          return;
+        }
+
+        let existingParts = placeObj.separatePlaceIntoParts();
+
+        if (advanced.impliedStateName && !existingParts.state) {
           addPart(advanced.impliedStateName);
           placeObj.state = advanced.impliedStateName;
         }
-        if (advanced.impliedCountryName) {
-          addPart(advanced.impliedStateName);
-          placeObj.state = advanced.impliedStateName;
+        if (advanced.impliedCountryName && !existingParts.country) {
+          addPart(advanced.impliedCountryName);
+          placeObj.country = advanced.impliedCountryName;
         }
       }
     }
@@ -1047,12 +1078,34 @@ class ExtractedDataReader {
   }
 
   getRecordTypeProperty(key) {
+    let property = undefined;
+    let defaultProperty = undefined;
+
     if (this.recordTypeData && this.recordTypeData[key]) {
-      return this.recordTypeData[key];
+      property = this.recordTypeData[key];
     }
 
     if (this.defaultRecordTypeData && this.defaultRecordTypeData[key]) {
-      return this.defaultRecordTypeData[key];
+      defaultProperty = this.defaultRecordTypeData[key];
+    }
+
+    if (property) {
+      if (defaultProperty) {
+        // both exist
+        if (typeof property === "object" && typeof defaultProperty === "object") {
+          if (property.doNotCombineWithDefault) {
+            return property;
+          } else {
+            return { ...property, ...defaultProperty };
+          }
+        } else {
+          return property;
+        }
+      } else {
+        return property;
+      }
+    } else if (defaultProperty) {
+      return defaultProperty;
     }
 
     return undefined;

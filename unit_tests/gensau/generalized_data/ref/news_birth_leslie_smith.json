@@ -6,5 +6,10 @@
     "lastName": "Smith",
     "forenames": "Leslie William Thomas"
   },
+  "birthPlace": {
+    "state": "South Australia",
+    "country": "Australia",
+    "placeString": "South Australia, Australia"
+  },
   "hasValidData": true
 }

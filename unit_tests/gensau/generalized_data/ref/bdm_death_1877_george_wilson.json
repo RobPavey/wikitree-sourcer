@@ -7,5 +7,14 @@
     "forenames": "George Charles McKenzie"
   },
   "personGender": "male",
+  "deathDate": {
+    "dateString": "1877"
+  },
+  "deathPlace": {
+    "state": "South Australia",
+    "country": "Australia",
+    "placeString": "South Australia, Australia"
+  },
+  "registrationDistrict": "Grey",
   "hasValidData": true
 }

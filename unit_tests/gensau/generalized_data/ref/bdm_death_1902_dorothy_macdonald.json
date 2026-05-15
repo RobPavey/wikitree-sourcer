@@ -7,5 +7,14 @@
     "forenames": "Dorothy Isabel Rose"
   },
   "personGender": "female",
+  "deathDate": {
+    "dateString": "1902"
+  },
+  "deathPlace": {
+    "state": "South Australia",
+    "country": "Australia",
+    "placeString": "South Australia, Australia"
+  },
+  "registrationDistrict": "Adelaide",
   "hasValidData": true
 }

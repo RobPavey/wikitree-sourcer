@@ -10,5 +10,11 @@
   "birthDate": {
     "dateString": "1898"
   },
+  "birthPlace": {
+    "state": "South Australia",
+    "country": "Australia",
+    "placeString": "South Australia, Australia"
+  },
+  "registrationDistrict": "Clare",
   "hasValidData": true
 }

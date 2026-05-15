@@ -10,5 +10,11 @@
   "birthDate": {
     "dateString": "1859-07"
   },
+  "birthPlace": {
+    "state": "South Australia",
+    "country": "Australia",
+    "placeString": "South Australia, Australia"
+  },
+  "registrationDistrict": "Adelaide",
   "hasValidData": true
 }
