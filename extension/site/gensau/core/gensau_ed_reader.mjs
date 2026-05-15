@@ -31,6 +31,7 @@ const recordTypes = [
   {
     recordType: RT.BirthRegistration,
     collectionIds: ["Birth Registrations"],
+    advancedPlaceRules: {},
   },
   {
     recordType: RT.DeathRegistration,
@@ -182,14 +183,19 @@ const defaultRecordTypeData = {
       recordDataKeys: ["Occupation"],
     },
     birthDate: {
-      recordDataKeys: ["Birth Date"],
+      recordDataKeys: ["Birth Date", "Birth Year"],
     },
     birthPlace: {
       recordDataKeys: ["Birth Place"],
     },
+    registrationDistrict: {
+      recordDataKeys: ["District"],
+    },
   },
-  impliedCountryName: "Australia",
-  impliedStateName: "South Australia",
+  advancedPlaceRules: {
+    impliedCountryName: "Australia",
+    impliedStateName: "South Australia",
+  },
 };
 
 class GensauEdReader extends ExtractedDataReader {
@@ -288,14 +294,6 @@ class GensauEdReader extends ExtractedDataReader {
     }
 
     return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
-  }
-
-  getBirthDateObj() {
-    return undefined;
   }
 
   getBirthPlaceObj() {

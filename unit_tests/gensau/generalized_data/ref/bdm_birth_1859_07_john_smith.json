@@ -7,5 +7,8 @@
     "forenames": "John"
   },
   "personGender": "male",
+  "birthDate": {
+    "dateString": "1859-07"
+  },
   "hasValidData": true
 }

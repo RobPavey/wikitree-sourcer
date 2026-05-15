@@ -137,6 +137,15 @@ class ExtractedDataReader {
   }
 
   getBirthDateObj() {
+    let dateString = this.getValueUsingRecordTypeData("birthDate");
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
     return undefined;
   }
 
@@ -165,7 +174,7 @@ class ExtractedDataReader {
   }
 
   getRegistrationDistrict() {
-    return "";
+    return this.getValueUsingRecordTypeData("registrationDistrict");
   }
 
   getRelationshipToHead() {
@@ -575,11 +584,43 @@ class ExtractedDataReader {
   }
 
   makePlaceObjFromFullPlaceName(placeString) {
+    let advanced = this.getRecordTypeProperty("advancedPlaceRules");
+
+    if (!placeString) {
+      placeString = "";
+    }
+
+    function addPart(part) {
+      if (part) {
+        if (placeString) {
+          placeString += ", ";
+        }
+        placeString += part;
+      }
+    }
+
+    function addImpliedParts(placeObj) {
+      if (advanced) {
+        if (advanced.impliedStateName) {
+          addPart(advanced.impliedStateName);
+          placeObj.state = advanced.impliedStateName;
+        }
+        if (advanced.impliedCountryName) {
+          addPart(advanced.impliedStateName);
+          placeObj.state = advanced.impliedStateName;
+        }
+      }
+    }
+
+    let placeObj = new PlaceObj();
+    addImpliedParts(placeObj);
+    placeObj.placeString = placeString;
+
     if (placeString) {
-      let placeObj = new PlaceObj();
-      placeObj.placeString = placeString;
       return placeObj;
     }
+
+    return undefined;
   }
 
   makePlaceObjFromCountryName(countryString) {
