@@ -12,9 +12,9 @@
     "dateString": "22-Sep-1923"
   },
   "eventPlace": {
+    "placeString": "Adelaide, South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia",
-    "placeString": "Adelaide, South Australia, Australia"
+    "country": "Australia"
   },
   "hasValidData": true
 }

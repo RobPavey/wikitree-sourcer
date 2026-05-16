@@ -11,17 +11,21 @@
     "dateString": "27-Oct-1898"
   },
   "birthPlace": {
+    "placeString": "South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia",
-    "placeString": "South Australia, Australia"
+    "country": "Australia"
   },
   "registrationDistrict": "Clare",
   "parents": {
     "father": {
-      "name": "Harry James Pavey"
+      "name": {
+        "name": "Harry James Pavey"
+      }
     },
     "mother": {
-      "name": "Sarah McAskill"
+      "name": {
+        "name": "Sarah McAskill"
+      }
     }
   },
   "hasValidData": true

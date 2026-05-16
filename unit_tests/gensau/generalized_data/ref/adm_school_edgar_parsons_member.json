@@ -8,9 +8,9 @@
   },
   "personGender": "male",
   "eventPlace": {
+    "placeString": "Hawker, South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia",
-    "placeString": "Hawker, South Australia, Australia"
+    "country": "Australia"
   },
   "birthDate": {
     "dateString": "12-Jan-1900"

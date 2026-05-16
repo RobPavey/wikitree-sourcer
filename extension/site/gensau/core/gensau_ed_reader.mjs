@@ -29,7 +29,7 @@ import { NameUtils } from "../../../base/core/name_utils.mjs";
 function cleanForenames(edReader, inputString) {
   let resultString = inputString;
 
-  // forenames can contain a prefered name in parens,
+  // forenames can contain a preferred name in parens,
   // Sourcer generalize code expects this to be in double quotes
   const regex = /\(([^)]+)\)/;
   if (regex.test(resultString)) {
@@ -37,7 +37,7 @@ function cleanForenames(edReader, inputString) {
   }
 
   // sometimes there is a comma followed by a prefix: e.g. "Patricia, Mrs"
-  // we move the profix to the start so that it is handled correctly
+  // we move the prefix to the start so that it is handled correctly
   let parts = resultString.split(",");
   if (parts.length == 2) {
     resultString = parts[1].trim() + " " + parts[0].trim();
@@ -49,8 +49,9 @@ function cleanForenames(edReader, inputString) {
 function cleanDate(edReader, inputString) {
   let resultString = inputString;
 
-  // Occasionally a rbirth reg gets a Birth Year like "1857-09"
-  // wich is a year and month. By default Sourcer would treak that as a year range
+  // Occasionally a birth reg gets a Birth Year like "1857-09"
+  // which is a year and month. By default Sourcer would treat that as a year range
+  // change it to "09 1957" which will get treated correctly
   const regex = /^(\d\d\d\d)-(\d\d?)$/;
   if (regex.test(resultString)) {
     let yearString = resultString.replace(regex, "$1");

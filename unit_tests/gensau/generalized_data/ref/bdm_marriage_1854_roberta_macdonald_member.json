@@ -11,9 +11,9 @@
     "dateString": "17-Feb-1854"
   },
   "eventPlace": {
+    "placeString": "St Barnabas Church Clare, South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia",
-    "placeString": "St Barnabas Church Clare, South Australia, Australia"
+    "country": "Australia"
   },
   "registrationDistrict": "The Murray/Burra",
   "spouses": [
@@ -26,9 +26,9 @@
         "dateString": "17-Feb-1854"
       },
       "marriagePlace": {
+        "placeString": "St Barnabas Church Clare, South Australia, Australia",
         "state": "South Australia",
-        "country": "Australia",
-        "placeString": "St Barnabas Church Clare, South Australia, Australia"
+        "country": "Australia"
       }
     }
   ],

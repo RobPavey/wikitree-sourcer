@@ -962,7 +962,7 @@ class PlaceObj {
     return classObj;
   }
 
-  separatePlaceIntoParts() {
+  separatePlaceIntoParts(defaultCountryStdName) {
     // it can be hard to get the county from the string.
     let country = undefined;
     let placeNameMinusCountry = this.placeString;
@@ -979,6 +979,8 @@ class PlaceObj {
       placeNameMinusCountry = countryExtract.remainder;
 
       result.country = country.stdName;
+    } else {
+      country = CD.matchCountryFromStdCountryName(defaultCountryStdName);
     }
 
     if (country && !country.hasStates && !country.hasCounties) {

@@ -13,14 +13,14 @@
     "dateString": "05-Jan-1899"
   },
   "eventPlace": {
+    "placeString": "Wallaroo, South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia",
-    "placeString": "Wallaroo, South Australia, Australia"
+    "country": "Australia"
   },
   "birthPlace": {
+    "placeString": "South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia",
-    "placeString": "S A, South Australia, Australia"
+    "country": "Australia"
   },
   "ageAtEvent": "45",
   "occupation": "Domestic Duties",

@@ -674,11 +674,18 @@ class ExtractedDataReader {
           return;
         }
 
-        let existingParts = placeObj.separatePlaceIntoParts();
+        placeObj.placeString = placeString;
+        let existingParts = placeObj.separatePlaceIntoParts(advanced.impliedCountryName);
 
-        if (advanced.impliedStateName && !existingParts.state) {
-          addPart(advanced.impliedStateName);
-          placeObj.state = advanced.impliedStateName;
+        if (advanced.impliedStateName) {
+          if (existingParts.county) {
+            placeString = existingParts.localPlace;
+            addPart(existingParts.county);
+            placeObj.state = existingParts.county;
+          } else {
+            addPart(advanced.impliedStateName);
+            placeObj.state = advanced.impliedStateName;
+          }
         }
         if (advanced.impliedCountryName && !existingParts.country) {
           addPart(advanced.impliedCountryName);
@@ -729,18 +736,15 @@ class ExtractedDataReader {
   }
 
   makeParentsFromNameObjs(fatherNameObj, motherNameObj) {
-    let fatherName = fatherNameObj ? fatherNameObj.inferFullName() : undefined;
-    let motherName = motherNameObj ? motherNameObj.inferFullName() : undefined;
-
-    if (fatherName || motherName) {
+    if (fatherNameObj || motherNameObj) {
       let parents = {};
-      if (fatherName) {
+      if (fatherNameObj) {
         parents.father = {};
-        parents.father.name = fatherName;
+        parents.father.name = fatherNameObj;
       }
-      if (motherName) {
+      if (motherNameObj) {
         parents.mother = {};
-        parents.mother.name = motherName;
+        parents.mother.name = motherNameObj;
       }
       return parents;
     }

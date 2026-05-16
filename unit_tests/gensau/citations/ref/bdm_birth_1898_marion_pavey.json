@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Genealogy SA\"<br/>\nBirth Registrations; Book/Page: 630/103<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=398862&coid=birth&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>\nMarion Monk Pavey birth 1898 registered in the Clare district, birth place South Australia, Australia.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Genealogy SA\"<br/>\nBirth Registrations; Book/Page: 630/103<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=398862&coid=birth&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>\nMarion Monk Pavey birth 1898 registered in the Clare district, birth place South Australia, Australia, daughter of Harry James Pavey.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Marion's birth in 1898 was registered in the Clare district.<ref>\n'''Birth Registration''':\n\"Genealogy SA\"<br/>\nBirth Registrations; Book/Page: 630/103<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=398862&coid=birth&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>\nMarion Monk Pavey birth 1898 registered in the Clare district, birth place South Australia, Australia.\n</ref>",
+    "citation": "Marion's birth in 1898 was registered in the Clare district. She was the daughter of Harry James Pavey.<ref>\n'''Birth Registration''':\n\"Genealogy SA\"<br/>\nBirth Registrations; Book/Page: 630/103<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=398862&coid=birth&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>\nMarion Monk Pavey birth 1898 registered in the Clare district, birth place South Australia, Australia, daughter of Harry James Pavey.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Birth Registration''': \"Genealogy SA\"<br/>Birth Registrations; Book/Page: 630/103<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=398862&coid=birth&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>Marion Monk Pavey birth 1898 registered in the Clare district, birth place South Australia, Australia.",
+    "citation": "* '''Birth Registration''': \"Genealogy SA\"<br/>Birth Registrations; Book/Page: 630/103<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=398862&coid=birth&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>Marion Monk Pavey birth 1898 registered in the Clare district, birth place South Australia, Australia, daughter of Harry James Pavey.",
     "type": "source"
   }
 }

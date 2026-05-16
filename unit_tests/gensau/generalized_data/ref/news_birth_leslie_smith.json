@@ -7,9 +7,9 @@
     "forenames": "Leslie William Thomas"
   },
   "birthPlace": {
+    "placeString": "South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia",
-    "placeString": "South Australia, Australia"
+    "country": "Australia"
   },
   "hasValidData": true
 }

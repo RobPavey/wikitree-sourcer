@@ -781,7 +781,7 @@ const StateData = {
     { stdName: "Northern Territory", matches: ["Northern Territory", "NT"] },
     { stdName: "Queensland", matches: ["Queensland", "QLD", "Qld"] },
     { stdName: "Victoria", matches: ["Victoria", "VIC", "Vic"] },
-    { stdName: "South Australia", matches: ["South Australia", "SA", "S Australia"] },
+    { stdName: "South Australia", matches: ["South Australia", "SA", "S Australia", "S A"] },
     { stdName: "Western Australia", matches: ["Western Australia", "WA", "W Australia", "West Australia"] },
     { stdName: "Tasmania", matches: ["Tasmania", "Tas", "TAS"] },
   ],
@@ -799,6 +799,18 @@ const StateData = {
 };
 
 const CD = {
+  matchCountryFromStdCountryName: function (stdName) {
+    if (!stdName) {
+      return "";
+    }
+
+    for (let country of CountryData) {
+      if (stdName == country.stdName) {
+        return country;
+      }
+    }
+  },
+
   matchCountryFromPlaceName: function (placeName) {
     if (!placeName) {
       return "";

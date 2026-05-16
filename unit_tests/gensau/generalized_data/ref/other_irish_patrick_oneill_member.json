@@ -15,10 +15,14 @@
   },
   "parents": {
     "father": {
-      "name": "John O'Neill"
+      "name": {
+        "name": "John O'Neill"
+      }
     },
     "mother": {
-      "name": "- -"
+      "name": {
+        "name": "- -"
+      }
     }
   },
   "hasValidData": true

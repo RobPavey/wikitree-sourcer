@@ -11,17 +11,21 @@
     "dateString": "07 1859"
   },
   "birthPlace": {
+    "placeString": "South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia",
-    "placeString": "South Australia, Australia"
+    "country": "Australia"
   },
   "registrationDistrict": "Adelaide",
   "parents": {
     "father": {
-      "name": "George Smith"
+      "name": {
+        "name": "George Smith"
+      }
     },
     "mother": {
-      "name": "Matilda Bean"
+      "name": {
+        "name": "Matilda Bean"
+      }
     }
   },
   "hasValidData": true

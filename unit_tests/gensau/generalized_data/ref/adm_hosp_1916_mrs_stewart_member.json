@@ -10,9 +10,9 @@
     "dateString": "25-Jul-1916"
   },
   "eventPlace": {
+    "placeString": "Clare Lying-in Home, South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia",
-    "placeString": "Clare Lying-in Home, South Australia, Australia"
+    "country": "Australia"
   },
   "hasValidData": true
 }
