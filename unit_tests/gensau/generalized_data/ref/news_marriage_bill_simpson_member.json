@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "name": {
+    "lastName": "Simpson",
+    "forenames": "Dawn"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "SIMPSON",
+        "forenames": "Dawn"
+      }
+    }
+  ],
+  "hasValidData": true
+}

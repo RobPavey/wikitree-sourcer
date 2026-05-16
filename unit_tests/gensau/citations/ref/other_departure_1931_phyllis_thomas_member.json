@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Passenger List''':\n\"Genealogy SA\"<br/>\nShipping Passenger Departures from South Australia; Source: State Records GRG 41/35; Notes: Single. Class: 2nd. Last residence: Australia. Intended residence: England & Australia. Race: British<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=28733&coid=shipping-departures&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nPhyllis Gwendolen Hewett Thomas.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Phyllis was a passenger on the ship Cathay.<ref>\n'''Passenger List''':\n\"Genealogy SA\"<br/>\nShipping Passenger Departures from South Australia; Source: State Records GRG 41/35; Notes: Single. Class: 2nd. Last residence: Australia. Intended residence: England & Australia. Race: British<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=28733&coid=shipping-departures&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nPhyllis Gwendolen Hewett Thomas.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Passenger List''': \"Genealogy SA\"<br/>Shipping Passenger Departures from South Australia; Source: State Records GRG 41/35; Notes: Single. Class: 2nd. Last residence: Australia. Intended residence: England & Australia. Race: British<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=28733&coid=shipping-departures&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Phyllis Gwendolen Hewett Thomas.",
+    "type": "source"
+  }
+}

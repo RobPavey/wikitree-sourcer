@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Other Church Event''':\n\"Genealogy SA\"<br/>\nSouth Australian Church Records - Other; Source: Gawler Methodist Tod Street Sunday School Primary Girls 1930-1933; Notes: Jul, Aug, Sep<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=4085&coid=church-others&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nM Smith.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "M was recorded in a church event.<ref>\n'''Other Church Event''':\n\"Genealogy SA\"<br/>\nSouth Australian Church Records - Other; Source: Gawler Methodist Tod Street Sunday School Primary Girls 1930-1933; Notes: Jul, Aug, Sep<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=4085&coid=church-others&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nM Smith.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Other Church Event''': \"Genealogy SA\"<br/>South Australian Church Records - Other; Source: Gawler Methodist Tod Street Sunday School Primary Girls 1930-1933; Notes: Jul, Aug, Sep<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=4085&coid=church-others&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>M Smith.",
+    "type": "source"
+  }
+}

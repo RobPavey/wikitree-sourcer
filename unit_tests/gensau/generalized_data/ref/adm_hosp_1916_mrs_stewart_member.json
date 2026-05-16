@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "MedicalPatient",
+  "name": {
+    "lastName": "Stewart",
+    "forenames": "Mrs"
+  },
+  "eventDate": {
+    "dateString": "25-Jul-1916"
+  },
+  "eventPlace": {
+    "state": "South Australia",
+    "country": "Australia",
+    "placeString": "Clare Lying-in Home, South Australia, Australia"
+  },
+  "hasValidData": true
+}

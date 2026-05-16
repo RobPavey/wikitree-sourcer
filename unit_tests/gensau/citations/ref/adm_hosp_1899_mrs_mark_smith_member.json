@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Medical Patient''':\n\"Genealogy SA\"<br/>\nHospital, Asylum and Lying-in Home Admissions; Notes: Received by C. of D.C. Saunderson. Result=Cured. Financial=Not Paying<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=214815&coid=hospital&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nMrs Mark Smith on 5 Jan 1899 in Wallaroo, South Australia, Australia. Born in S A, South Australia, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mrs Mark Smith was a patient on 5 January 1899 in Wallaroo, South Australia, Australia.<ref>\n'''Medical Patient''':\n\"Genealogy SA\"<br/>\nHospital, Asylum and Lying-in Home Admissions; Notes: Received by C. of D.C. Saunderson. Result=Cured. Financial=Not Paying<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=214815&coid=hospital&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nMrs Mark Smith on 5 Jan 1899 in Wallaroo, South Australia, Australia. Born in S A, South Australia, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Medical Patient''': \"Genealogy SA\"<br/>Hospital, Asylum and Lying-in Home Admissions; Notes: Received by C. of D.C. Saunderson. Result=Cured. Financial=Not Paying<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=214815&coid=hospital&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Mrs Mark Smith on 5 Jan 1899 in Wallaroo, South Australia, Australia. Born in S A, South Australia, Australia.",
+    "type": "source"
+  }
+}

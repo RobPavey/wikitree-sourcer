@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Genealogy SA\"<br/>\nSouth Australian Public Trustees/Deceased Estates; Notice: Deceased Estate; Source: Gazette; Notes: Ref=Vol1p1929<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=127347&coid=public-trustees&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nAlexander MacKay probate. Occupation: Gentleman.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Alexander was in a probate record.<ref>\n'''Probate''':\n\"Genealogy SA\"<br/>\nSouth Australian Public Trustees/Deceased Estates; Notice: Deceased Estate; Source: Gazette; Notes: Ref=Vol1p1929<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=127347&coid=public-trustees&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nAlexander MacKay probate. Occupation: Gentleman.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Probate''': \"Genealogy SA\"<br/>South Australian Public Trustees/Deceased Estates; Notice: Deceased Estate; Source: Gazette; Notes: Ref=Vol1p1929<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=127347&coid=public-trustees&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Alexander MacKay probate. Occupation: Gentleman.",
+    "type": "source"
+  }
+}

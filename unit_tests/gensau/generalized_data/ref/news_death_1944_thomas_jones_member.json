@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "Jones",
+    "forenames": "Thomas Patrick"
+  },
+  "ageAtEvent": "39",
+  "hasValidData": true
+}

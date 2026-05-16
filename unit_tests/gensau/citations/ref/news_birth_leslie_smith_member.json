@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Genealogy SA\"<br/>\nNewspaper Births; Notice: Birth; Source: Advertiser<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=372666&coid=newspaper-birth&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nLeslie William Thomas Smith born on 13 Jul 1943 in South Australia, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Leslie was born on 13 July 1943 in South Australia, Australia.<ref>\n'''Birth''':\n\"Genealogy SA\"<br/>\nNewspaper Births; Notice: Birth; Source: Advertiser<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=372666&coid=newspaper-birth&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nLeslie William Thomas Smith born on 13 Jul 1943 in South Australia, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth''': \"Genealogy SA\"<br/>Newspaper Births; Notice: Birth; Source: Advertiser<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=372666&coid=newspaper-birth&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Leslie William Thomas Smith born on 13 Jul 1943 in South Australia, Australia.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Rose Priscilla Jane Hooper''':\n\"Genealogy SA\"<br/>\nBiographical Index of South Australians<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=67982&coid=bisa&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nRose Priscilla Jane Hooper.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Rose was in a record.<ref>\n'''Record of Rose Priscilla Jane Hooper''':\n\"Genealogy SA\"<br/>\nBiographical Index of South Australians<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=67982&coid=bisa&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nRose Priscilla Jane Hooper.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Rose Priscilla Jane Hooper''': \"Genealogy SA\"<br/>Biographical Index of South Australians<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=67982&coid=bisa&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Rose Priscilla Jane Hooper.",
+    "type": "source"
+  }
+}

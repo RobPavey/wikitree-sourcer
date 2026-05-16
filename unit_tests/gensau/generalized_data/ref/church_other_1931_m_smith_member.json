@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "OtherChurchEvent",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "M"
+  },
+  "hasValidData": true
+}

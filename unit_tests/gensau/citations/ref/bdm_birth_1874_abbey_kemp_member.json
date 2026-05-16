@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Genealogy SA\"<br/>\nBirth Registrations; Book/Page: 143/400<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=144387&coid=birth&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>\nAbbey Kemp birth registered  in the Daly district, birth place South Australia, Australia.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Genealogy SA\"<br/>\nBirth Registrations; Book/Page: 143/400<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=144387&coid=birth&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>\nAbbey Kemp birth 1 Nov 1874 registered in the Daly district, birth place South Australia, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Abbey's birth was registered in the Daly district.<ref>\n'''Birth Registration''':\n\"Genealogy SA\"<br/>\nBirth Registrations; Book/Page: 143/400<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=144387&coid=birth&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>\nAbbey Kemp birth registered  in the Daly district, birth place South Australia, Australia.\n</ref>",
+    "citation": "Abbey's birth on 1 November 1874 was registered in the Daly district.<ref>\n'''Birth Registration''':\n\"Genealogy SA\"<br/>\nBirth Registrations; Book/Page: 143/400<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=144387&coid=birth&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>\nAbbey Kemp birth 1 Nov 1874 registered in the Daly district, birth place South Australia, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Birth Registration''': \"Genealogy SA\"<br/>Birth Registrations; Book/Page: 143/400<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=144387&coid=birth&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>Abbey Kemp birth registered  in the Daly district, birth place South Australia, Australia.",
+    "citation": "* '''Birth Registration''': \"Genealogy SA\"<br/>Birth Registrations; Book/Page: 143/400<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=144387&coid=birth&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>Abbey Kemp birth 1 Nov 1874 registered in the Daly district, birth place South Australia, Australia.",
     "type": "source"
   }
 }

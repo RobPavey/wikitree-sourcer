@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Genealogy SA\"<br/>\nSouth Australian Church records - Marriages; Source: Parish/Church Records<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=02c025cad20cd26e19d169e0fcec538b&coid=church-marriage&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nMary Anne V Owens marriage to Joseph BUNNETT in 1879.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mary married Joseph Bunnett in 1879.<ref>\n'''Marriage''':\n\"Genealogy SA\"<br/>\nSouth Australian Church records - Marriages; Source: Parish/Church Records<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=02c025cad20cd26e19d169e0fcec538b&coid=church-marriage&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nMary Anne V Owens marriage to Joseph BUNNETT in 1879.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Genealogy SA\"<br/>South Australian Church records - Marriages; Source: Parish/Church Records<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=02c025cad20cd26e19d169e0fcec538b&coid=church-marriage&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Mary Anne V Owens marriage to Joseph BUNNETT in 1879.",
+    "type": "source"
+  }
+}

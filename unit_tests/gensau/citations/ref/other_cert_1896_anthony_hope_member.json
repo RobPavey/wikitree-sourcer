@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Certificate''':\n\"Genealogy SA\"<br/>\nCertificates-Australia and Overseas; Source: Donated Certificates; Notes: Source = File; Groom age=35. Bride age=30. Groom's Parents=Edward HOPE (DEC). Bride's Father=Patrick BONES. Witnesses=Thomas BONES, Anne LYONS<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=9120&coid=certificates&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nAnthony Hope.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Anthony was issued a certificate.<ref>\n'''Certificate''':\n\"Genealogy SA\"<br/>\nCertificates-Australia and Overseas; Source: Donated Certificates; Notes: Source = File; Groom age=35. Bride age=30. Groom's Parents=Edward HOPE (DEC). Bride's Father=Patrick BONES. Witnesses=Thomas BONES, Anne LYONS<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=9120&coid=certificates&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nAnthony Hope.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Certificate''': \"Genealogy SA\"<br/>Certificates-Australia and Overseas; Source: Donated Certificates; Notes: Source = File; Groom age=35. Bride age=30. Groom's Parents=Edward HOPE (DEC). Bride's Father=Patrick BONES. Witnesses=Thomas BONES, Anne LYONS<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=9120&coid=certificates&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Anthony Hope.",
+    "type": "source"
+  }
+}

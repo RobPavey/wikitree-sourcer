@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Genealogy SA\"<br/>\nDeath Registrations; Book/Page: 79/49; Notes: Age=5m<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=64887&coid=death&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>\nGeorge Charles McKenzie Wilson death 2 Feb 1877 registered in the Grey district.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "George's death on 2 February 1877 was registered in the Grey district.<ref>\n'''Death Registration''':\n\"Genealogy SA\"<br/>\nDeath Registrations; Book/Page: 79/49; Notes: Age=5m<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=64887&coid=death&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>\nGeorge Charles McKenzie Wilson death 2 Feb 1877 registered in the Grey district.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"Genealogy SA\"<br/>Death Registrations; Book/Page: 79/49; Notes: Age=5m<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=64887&coid=death&cid=5 Genealogy SA Record] (accessed 6 May 2021)<br/>George Charles McKenzie Wilson death 2 Feb 1877 registered in the Grey district.",
+    "type": "source"
+  }
+}

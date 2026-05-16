@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Black",
+    "forenames": "Cuthbert & Emma Hannah"
+  },
+  "eventDate": {
+    "dateString": "01-Nov-1863"
+  },
+  "hasValidData": true
+}

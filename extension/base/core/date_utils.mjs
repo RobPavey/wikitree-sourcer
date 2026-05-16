@@ -500,6 +500,35 @@ const DateUtils = {
       return result;
     }
 
+    // Sometimes we can get a date like: 06-Mar-1913 (e.f. from Genealogy SA)
+    const dayDashMonthDashYearRegex = /^(\d\d?)-([A-Z][a-z][a-z])-(\d\d\d\d)$/;
+    if (dayDashMonthDashYearRegex.test(cleanString)) {
+      let dayString = cleanString.replace(dayDashMonthDashYearRegex, "$1");
+      let monthString = cleanString.replace(dayDashMonthDashYearRegex, "$2");
+      let yearString = cleanString.replace(dayDashMonthDashYearRegex, "$3");
+
+      let dayNum = parseInt(dayString);
+      if (isNaN(dayNum) || !dayNum) {
+        return result;
+      }
+      let monthNum = DateUtils.monthStringToMonthNum(monthString);
+      if (monthNum == 0) {
+        return result;
+      }
+      let yearNum = parseInt(yearString);
+      if (isNaN(yearNum) || !yearNum) {
+        return result;
+      }
+
+      result.dayNum = dayNum;
+      result.monthNum = monthNum;
+      result.yearNum = yearNum;
+      result.hasDay = true;
+      result.hasMonth = true;
+      result.isValid = true;
+      return result;
+    }
+
     // Sometimes we can get a date like: 11 1793
     const monthNumYearRegex = /^(\d\d?)+\s+(\d\d\d\d)$/;
     if (monthNumYearRegex.test(cleanString)) {

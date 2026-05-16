@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "MedicalPatient",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Mark",
+    "nonPrefixHonorific": "Mrs",
+    "narrativeName": "Mrs Mark Smith"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "05-Jan-1899"
+  },
+  "eventPlace": {
+    "state": "South Australia",
+    "country": "Australia",
+    "placeString": "Wallaroo, South Australia, Australia"
+  },
+  "birthPlace": {
+    "state": "South Australia",
+    "country": "Australia",
+    "placeString": "S A, South Australia, Australia"
+  },
+  "ageAtEvent": "45",
+  "occupation": "Domestic Duties",
+  "hasValidData": true
+}

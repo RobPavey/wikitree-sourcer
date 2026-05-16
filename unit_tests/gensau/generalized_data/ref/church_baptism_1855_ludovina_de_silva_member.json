@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "De Silva",
+    "forenames": "Ludovina"
+  },
+  "birthDate": {
+    "dateString": "14-Aug-1855"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Genealogy SA\"<br/>\nNewspaper Marriages; Notice: Marriage; Source: Blair Card Index<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=d270afec1d90e95718d3a0ba752cc6bc&coid=newspaper-marriage&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nCuthbert & Emma Hannah Black marriage on 1 Nov 1863.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Cuthbert married on 1 November 1863.<ref>\n'''Marriage''':\n\"Genealogy SA\"<br/>\nNewspaper Marriages; Notice: Marriage; Source: Blair Card Index<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=d270afec1d90e95718d3a0ba752cc6bc&coid=newspaper-marriage&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nCuthbert & Emma Hannah Black marriage on 1 Nov 1863.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Genealogy SA\"<br/>Newspaper Marriages; Notice: Marriage; Source: Blair Card Index<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=d270afec1d90e95718d3a0ba752cc6bc&coid=newspaper-marriage&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Cuthbert & Emma Hannah Black marriage on 1 Nov 1863.",
+    "type": "source"
+  }
+}

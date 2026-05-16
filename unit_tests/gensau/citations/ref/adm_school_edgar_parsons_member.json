@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''School Records''':\n\"Genealogy SA\"<br/>\nSouth Australian School Admissions; Source: School Records; Notes: Other parent, Ruphina PARSONS<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=36964&coid=school-admissions&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nEdgar Eli Parsons in Hawker, South Australia, Australia. Born on 12 Jan 1900.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Edgar was at school in Hawker, South Australia, Australia.<ref>\n'''School Records''':\n\"Genealogy SA\"<br/>\nSouth Australian School Admissions; Source: School Records; Notes: Other parent, Ruphina PARSONS<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=36964&coid=school-admissions&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nEdgar Eli Parsons in Hawker, South Australia, Australia. Born on 12 Jan 1900.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''School Records''': \"Genealogy SA\"<br/>South Australian School Admissions; Source: School Records; Notes: Other parent, Ruphina PARSONS<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=36964&coid=school-admissions&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Edgar Eli Parsons in Hawker, South Australia, Australia. Born on 12 Jan 1900.",
+    "type": "source"
+  }
+}

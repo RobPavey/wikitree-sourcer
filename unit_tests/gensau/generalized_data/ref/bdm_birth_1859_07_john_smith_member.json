@@ -3,25 +3,25 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "name": {
-    "lastName": "Kemp",
-    "forenames": "Abbey"
+    "lastName": "Smith",
+    "forenames": "John"
   },
-  "personGender": "female",
+  "personGender": "male",
   "birthDate": {
-    "dateString": "01-Nov-1874"
+    "dateString": "1859-07"
   },
   "birthPlace": {
     "state": "South Australia",
     "country": "Australia",
     "placeString": "South Australia, Australia"
   },
-  "registrationDistrict": "Daly",
+  "registrationDistrict": "Adelaide",
   "parents": {
     "father": {
-      "name": "Richard KEMP"
+      "name": "George SMITH"
     },
     "mother": {
-      "name": "Sarah DOYLE"
+      "name": "Matilda BEAN"
     }
   },
   "hasValidData": true

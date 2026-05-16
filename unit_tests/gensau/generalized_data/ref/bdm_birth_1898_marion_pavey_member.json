@@ -3,25 +3,25 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "name": {
-    "lastName": "Kemp",
-    "forenames": "Abbey"
+    "lastName": "Pavey",
+    "forenames": "Marion Monk"
   },
   "personGender": "female",
   "birthDate": {
-    "dateString": "01-Nov-1874"
+    "dateString": "27-Oct-1898"
   },
   "birthPlace": {
     "state": "South Australia",
     "country": "Australia",
     "placeString": "South Australia, Australia"
   },
-  "registrationDistrict": "Daly",
+  "registrationDistrict": "Clare",
   "parents": {
     "father": {
-      "name": "Richard KEMP"
+      "name": "Harry James PAVEY"
     },
     "mother": {
-      "name": "Sarah DOYLE"
+      "name": "Sarah MCASKILL"
     }
   },
   "hasValidData": true

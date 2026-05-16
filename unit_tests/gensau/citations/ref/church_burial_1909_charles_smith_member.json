@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Genealogy SA\"<br/>\nSouth Australian Church records - Burials; Source: Parish/Church Records; Notes: No. 111; 9ftx4ft; used for burial July 31st 1908<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=5889&coid=church-burial&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nCharles Jnr Smith burial.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Charles was buried.<ref>\n'''Burial''':\n\"Genealogy SA\"<br/>\nSouth Australian Church records - Burials; Source: Parish/Church Records; Notes: No. 111; 9ftx4ft; used for burial July 31st 1908<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=5889&coid=church-burial&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nCharles Jnr Smith burial.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Genealogy SA\"<br/>South Australian Church records - Burials; Source: Parish/Church Records; Notes: No. 111; 9ftx4ft; used for burial July 31st 1908<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=5889&coid=church-burial&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Charles Jnr Smith burial.",
+    "type": "source"
+  }
+}

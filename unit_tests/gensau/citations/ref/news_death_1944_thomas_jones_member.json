@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Thomas Patrick Jones''':\n\"Genealogy SA\"<br/>\nNewspaper Death Notices; Notice: Obituary; Source: Southern Cross; Notes: See Page 8. Place of death=Port Pirie, S.A<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=1731462&coid=newspaper-death&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nThomas Patrick Jones.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Thomas was in a record.<ref>\n'''Record of Thomas Patrick Jones''':\n\"Genealogy SA\"<br/>\nNewspaper Death Notices; Notice: Obituary; Source: Southern Cross; Notes: See Page 8. Place of death=Port Pirie, S.A<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=1731462&coid=newspaper-death&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nThomas Patrick Jones.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Thomas Patrick Jones''': \"Genealogy SA\"<br/>Newspaper Death Notices; Notice: Obituary; Source: Southern Cross; Notes: See Page 8. Place of death=Port Pirie, S.A<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=1731462&coid=newspaper-death&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Thomas Patrick Jones.",
+    "type": "source"
+  }
+}

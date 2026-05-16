@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Genealogy SA\"<br/>\nSouth Australian Church records - Baptisms; Source: Parish/Church Records; Notes: No. 415; Minister: Thomas Williams<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=40610&coid=church-baptism&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nLudovina De Silva baptism (born 14 Aug 1855).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ludovina was born on 14 August 1855 and baptised.<ref>\n'''Baptism''':\n\"Genealogy SA\"<br/>\nSouth Australian Church records - Baptisms; Source: Parish/Church Records; Notes: No. 415; Minister: Thomas Williams<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=40610&coid=church-baptism&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nLudovina De Silva baptism (born 14 Aug 1855).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"Genealogy SA\"<br/>South Australian Church records - Baptisms; Source: Parish/Church Records; Notes: No. 415; Minister: Thomas Williams<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=40610&coid=church-baptism&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Ludovina De Silva baptism (born 14 Aug 1855).",
+    "type": "source"
+  }
+}

@@ -8,7 +8,7 @@
   },
   "personGender": "female",
   "birthDate": {
-    "dateString": "01-Nov-1874"
+    "dateString": "1874"
   },
   "birthPlace": {
     "state": "South Australia",
@@ -19,9 +19,6 @@
   "parents": {
     "father": {
       "name": "Richard KEMP"
-    },
-    "mother": {
-      "name": "Sarah DOYLE"
     }
   },
   "hasValidData": true

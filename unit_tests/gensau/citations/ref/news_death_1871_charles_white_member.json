@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Charles White''':\n\"Genealogy SA\"<br/>\nNewspaper Death Notices; Notice: Mortuary Returns; Source: Register; Notes: Was a nephew of Major- General White, British army. Body: Age 18 years, 5ft 7in high; fair hair and complexion; a midshipman on board the ship Yatala. Conditions: Was killed by a fall from the rigging of the ship Yatala, in Port Adelaide, November 1, 1871. An inquest was held on the body at Port Adelaide on the 1st November, 1871, before R.J. Peake, Esq., and a verdict of accidental death returned<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=1644681&coid=newspaper-death&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nCharles White.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Charles was in a record.<ref>\n'''Record of Charles White''':\n\"Genealogy SA\"<br/>\nNewspaper Death Notices; Notice: Mortuary Returns; Source: Register; Notes: Was a nephew of Major- General White, British army. Body: Age 18 years, 5ft 7in high; fair hair and complexion; a midshipman on board the ship Yatala. Conditions: Was killed by a fall from the rigging of the ship Yatala, in Port Adelaide, November 1, 1871. An inquest was held on the body at Port Adelaide on the 1st November, 1871, before R.J. Peake, Esq., and a verdict of accidental death returned<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=1644681&coid=newspaper-death&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nCharles White.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Charles White''': \"Genealogy SA\"<br/>Newspaper Death Notices; Notice: Mortuary Returns; Source: Register; Notes: Was a nephew of Major- General White, British army. Body: Age 18 years, 5ft 7in high; fair hair and complexion; a midshipman on board the ship Yatala. Conditions: Was killed by a fall from the rigging of the ship Yatala, in Port Adelaide, November 1, 1871. An inquest was held on the body at Port Adelaide on the 1st November, 1871, before R.J. Peake, Esq., and a verdict of accidental death returned<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=1644681&coid=newspaper-death&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Charles White.",
+    "type": "source"
+  }
+}

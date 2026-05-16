@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Probate",
+  "name": {
+    "lastName": "MacKay",
+    "forenames": "Alexander"
+  },
+  "occupation": "Gentleman",
+  "hasValidData": true
+}

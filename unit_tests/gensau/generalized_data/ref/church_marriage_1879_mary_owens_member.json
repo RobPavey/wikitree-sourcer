@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Owens",
+    "forenames": "Mary Anne V"
+  },
+  "eventDate": {
+    "dateString": "1879"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "BUNNETT",
+        "forenames": "Joseph"
+      },
+      "marriageDate": {
+        "dateString": "1879"
+      }
+    }
+  ],
+  "hasValidData": true
+}

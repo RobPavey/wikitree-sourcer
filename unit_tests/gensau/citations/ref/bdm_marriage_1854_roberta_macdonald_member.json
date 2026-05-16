@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Genealogy SA\"<br/>\nMarriage Registrations; Book/Page: 20/100; Notes: Symbol=A<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=584450ecbde29be3334ebc5fa276dca5&coid=marriage&cid=5&Surname=macdonald Genealogy SA Record] (accessed 6 May 2021)<br/>\nRoberta MacDonald marriage to William Isaac KERR on 17 Feb 1854 in St Barnabas Church Clare, South Australia, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Roberta married William Isaac KERR on 17 February 1854 in St Barnabas Church Clare, South Australia, Australia.<ref>\n'''Marriage Registration''':\n\"Genealogy SA\"<br/>\nMarriage Registrations; Book/Page: 20/100; Notes: Symbol=A<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=584450ecbde29be3334ebc5fa276dca5&coid=marriage&cid=5&Surname=macdonald Genealogy SA Record] (accessed 6 May 2021)<br/>\nRoberta MacDonald marriage to William Isaac KERR on 17 Feb 1854 in St Barnabas Church Clare, South Australia, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"Genealogy SA\"<br/>Marriage Registrations; Book/Page: 20/100; Notes: Symbol=A<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=584450ecbde29be3334ebc5fa276dca5&coid=marriage&cid=5&Surname=macdonald Genealogy SA Record] (accessed 6 May 2021)<br/>Roberta MacDonald marriage to William Isaac KERR on 17 Feb 1854 in St Barnabas Church Clare, South Australia, Australia.",
+    "type": "source"
+  }
+}

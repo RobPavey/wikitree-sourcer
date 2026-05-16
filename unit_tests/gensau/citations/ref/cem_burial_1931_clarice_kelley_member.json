@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Genealogy SA\"<br/>\nSouth Australia Cemeteries; Source: Memorial Inscription<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=75264&coid=cemeteries&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nClarice Eleanor Kelly burial (died on 31 May 1931 at age 45).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Clarice (age 45) died on 31 May 1931 and was buried.<ref>\n'''Burial''':\n\"Genealogy SA\"<br/>\nSouth Australia Cemeteries; Source: Memorial Inscription<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=75264&coid=cemeteries&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nClarice Eleanor Kelly burial (died on 31 May 1931 at age 45).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Genealogy SA\"<br/>South Australia Cemeteries; Source: Memorial Inscription<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=75264&coid=cemeteries&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Clarice Eleanor Kelly burial (died on 31 May 1931 at age 45).",
+    "type": "source"
+  }
+}

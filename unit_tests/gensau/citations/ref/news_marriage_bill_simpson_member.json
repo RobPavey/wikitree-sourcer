@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Newspaper''':\n\"Genealogy SA\"<br/>\nNewspaper Marriages; Notice: Anniversary; Source: Advertiser<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=8c9a847a0484279ec819aef117ce7174&coid=newspaper-marriage&cid=4&Surname=simpson Genealogy SA Record] (accessed 6 May 2021)<br/>\nDawn Simpson.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Dawn was mentioned in a newspaper article.<ref>\n'''Newspaper''':\n\"Genealogy SA\"<br/>\nNewspaper Marriages; Notice: Anniversary; Source: Advertiser<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=8c9a847a0484279ec819aef117ce7174&coid=newspaper-marriage&cid=4&Surname=simpson Genealogy SA Record] (accessed 6 May 2021)<br/>\nDawn Simpson.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Newspaper''': \"Genealogy SA\"<br/>Newspaper Marriages; Notice: Anniversary; Source: Advertiser<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=8c9a847a0484279ec819aef117ce7174&coid=newspaper-marriage&cid=4&Surname=simpson Genealogy SA Record] (accessed 6 May 2021)<br/>Dawn Simpson.",
+    "type": "source"
+  }
+}

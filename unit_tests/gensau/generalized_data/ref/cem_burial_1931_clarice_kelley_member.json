@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Kelly",
+    "forenames": "Clarice Eleanor",
+    "nicknames": "Ellie"
+  },
+  "deathDate": {
+    "dateString": "31-May-1931"
+  },
+  "ageAtEvent": "45",
+  "hasValidData": true
+}

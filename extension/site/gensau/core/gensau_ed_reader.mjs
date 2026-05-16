@@ -196,7 +196,7 @@ const defaultRecordTypeData = {
       },
     },
     birthDate: {
-      recordDataKeys: ["Birth Date", "Birth Year"],
+      recordDataKeys: ["Date of Birth", "Birth Date", "Birth Year"],
     },
     birthPlace: {
       recordDataKeys: ["Birth Place"],

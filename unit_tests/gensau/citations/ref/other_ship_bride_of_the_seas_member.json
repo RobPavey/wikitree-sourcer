@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Bride of the Seas''':\n\"Genealogy SA\"<br/>\nShips to South Australia; Source: SA Register 11-7-1865<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=2244&coid=ships&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nBride of the Seas.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Bride of the Seas was in a record.<ref>\n'''Record of Bride of the Seas''':\n\"Genealogy SA\"<br/>\nShips to South Australia; Source: SA Register 11-7-1865<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=2244&coid=ships&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nBride of the Seas.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Bride of the Seas''': \"Genealogy SA\"<br/>Ships to South Australia; Source: SA Register 11-7-1865<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=2244&coid=ships&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Bride of the Seas.",
+    "type": "source"
+  }
+}

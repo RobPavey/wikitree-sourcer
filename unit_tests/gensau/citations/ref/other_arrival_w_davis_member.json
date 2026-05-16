@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Passenger List''':\n\"Genealogy SA\"<br/>\nShip Passenger Arrivals in South Australia; Source: State Records GRG 41/34; Notes: Age=12+. Title=Mr. Sex=M<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=42811&coid=shipping&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nW A Davis.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "W was a passenger on the ship Orvieto.<ref>\n'''Passenger List''':\n\"Genealogy SA\"<br/>\nShip Passenger Arrivals in South Australia; Source: State Records GRG 41/34; Notes: Age=12+. Title=Mr. Sex=M<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=42811&coid=shipping&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nW A Davis.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Passenger List''': \"Genealogy SA\"<br/>Ship Passenger Arrivals in South Australia; Source: State Records GRG 41/34; Notes: Age=12+. Title=Mr. Sex=M<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=42811&coid=shipping&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>W A Davis.",
+    "type": "source"
+  }
+}

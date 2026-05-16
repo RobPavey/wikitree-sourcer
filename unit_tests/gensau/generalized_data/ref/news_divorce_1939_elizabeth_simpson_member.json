@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "name": {
+    "lastName": "Simpson",
+    "forenames": "Elizabeth"
+  },
+  "hasValidData": true
+}

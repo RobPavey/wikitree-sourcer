@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Genealogy SA\"<br/>\nNewspaper Divorces; Source: Adelaide Newspapers; Notes: Or DAWSON. Nisi. Uncontested. Cause: desertion<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=9758&coid=divorce&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nElizabeth Simpson divorce.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Elizabeth was in a divorce record.<ref>\n'''Divorce''':\n\"Genealogy SA\"<br/>\nNewspaper Divorces; Source: Adelaide Newspapers; Notes: Or DAWSON. Nisi. Uncontested. Cause: desertion<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=9758&coid=divorce&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nElizabeth Simpson divorce.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Divorce''': \"Genealogy SA\"<br/>Newspaper Divorces; Source: Adelaide Newspapers; Notes: Or DAWSON. Nisi. Uncontested. Cause: desertion<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=9758&coid=divorce&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Elizabeth Simpson divorce.",
+    "type": "source"
+  }
+}

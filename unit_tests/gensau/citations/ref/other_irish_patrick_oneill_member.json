@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Patrick Henry O'Neill''':\n\"Genealogy SA\"<br/>\nIrish Born South Australians (IBSA)<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=13875&coid=ibsa&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nPatrick Henry O'Neill. Born in 1849. Died on 6 Mar 1913.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Patrick was in a record.<ref>\n'''Record of Patrick Henry O'Neill''':\n\"Genealogy SA\"<br/>\nIrish Born South Australians (IBSA)<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=13875&coid=ibsa&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nPatrick Henry O'Neill. Born in 1849. Died on 6 Mar 1913.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Patrick Henry O'Neill''': \"Genealogy SA\"<br/>Irish Born South Australians (IBSA)<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=13875&coid=ibsa&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Patrick Henry O'Neill. Born in 1849. Died on 6 Mar 1913.",
+    "type": "source"
+  }
+}

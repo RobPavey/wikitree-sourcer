@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Kelly",
+    "forenames": "Augustine H Havelock"
+  },
+  "deathDate": {
+    "dateString": "24-Jan-1875"
+  },
+  "ageAtEvent": "5",
+  "hasValidData": true
+}
