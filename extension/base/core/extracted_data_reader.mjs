@@ -63,17 +63,6 @@ class ExtractedDataReader {
     let forenames = this.getValueUsingRecordTypeData("forenames");
     let lastName = this.getValueUsingRecordTypeData("lastName");
 
-    let advanced = this.getRecordTypeProperty("advancedNameRules");
-    if (advanced) {
-      let advanced = this.recordTypeData.advancedNameRules;
-      if (advanced.canHaveHonorificAfterForenamesWithComma) {
-        let parts = forenames.split(",");
-        if (parts.length == 2) {
-          forenames = parts[1].trim() + " " + parts[0].trim();
-        }
-      }
-    }
-
     if (forenames && lastName) {
       return this.makeNameObjFromForenamesAndLastName(forenames, lastName);
     }
@@ -826,16 +815,23 @@ class ExtractedDataReader {
     return this.ed.recordData[key];
   }
 
-  getRecordDataValueForKeys(keys) {
+  getRecordDataKeyAndValueForKeys(keys) {
     if (this.ed.recordData && keys) {
       if (keys && keys.length > 0) {
         for (let key of keys) {
           let value = this.ed.recordData[key];
           if (value) {
-            return value;
+            return { key: key, value: value };
           }
         }
       }
+    }
+  }
+
+  getRecordDataValueForKeys(keys) {
+    let match = this.getRecordDataKeyAndValueForKeys(keys);
+    if (match) {
+      return match.value;
     }
   }
 
@@ -1082,13 +1078,8 @@ class ExtractedDataReader {
       if (rule.convertNameFromAllCapsToMixedCase) {
         value = NameUtils.convertNameFromAllCapsToMixedCase(value);
       }
-      if (rule.modifier) {
-        let mod = rule.modifier;
-        if (mod.regex && mod.replaceString) {
-          if (mod.regex.test(value)) {
-            value = value.replace(mod.regex, mod.replaceString);
-          }
-        }
+      if (rule.cleanFunction) {
+        value = rule.cleanFunction(this, value);
       }
       if (rule.valueMapping) {
         for (let key of Object.keys(rule.valueMapping)) {

@@ -192,6 +192,17 @@ const DateUtils = {
       let startYearString = cleanString.substring(0, 4);
       let endYearString = cleanString.substring(5);
       if (endYearString.length == 2) {
+        // check that the endyear digits are greater than the last two digits of start year
+        let startYearLast2 = startYearString.substring(2, 4);
+        let startNum = parseInt(startYearLast2);
+        let endNum = parseInt(startYearLast2);
+        if (isNaN(startNum) || isNaN(endNum)) {
+          return result;
+        }
+        if (endNum < startNum) {
+          return result;
+        }
+
         endYearString = startYearString.substring(0, 2) + endYearString;
       }
 

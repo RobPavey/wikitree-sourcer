@@ -26,6 +26,43 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 
+function cleanForenames(edReader, inputString) {
+  let resultString = inputString;
+
+  // forenames can contain a prefered name in parens,
+  // Sourcer generalize code expects this to be in double quotes
+  const regex = /\(([^)]+)\)/;
+  if (regex.test(resultString)) {
+    resultString = resultString.replace('"$1"');
+  }
+
+  // sometimes there is a comma followed by a prefix: e.g. "Patricia, Mrs"
+  // we move the profix to the start so that it is handled correctly
+  let parts = resultString.split(",");
+  if (parts.length == 2) {
+    resultString = parts[1].trim() + " " + parts[0].trim();
+  }
+
+  return resultString;
+}
+
+function cleanDate(edReader, inputString) {
+  let resultString = inputString;
+
+  // Occasionally a rbirth reg gets a Birth Year like "1857-09"
+  // wich is a year and month. By default Sourcer would treak that as a year range
+  const regex = /^(\d\d\d\d)-(\d\d?)$/;
+  if (regex.test(resultString)) {
+    let yearString = resultString.replace(regex, "$1");
+    let monthString = resultString.replace(regex, "$2");
+    if (yearString && monthString) {
+      resultString = monthString + " " + yearString;
+    }
+  }
+
+  return resultString;
+}
+
 const recordTypes = [
   // BDM
   {
@@ -131,9 +168,6 @@ const recordTypes = [
         recordDataKeys: ["Hospital", "Residence"],
       },
     },
-    advancedNameRules: {
-      canHaveHonorificAfterForenamesWithComma: true,
-    },
   },
   // Other Records
   {
@@ -180,7 +214,7 @@ const defaultRecordTypeData = {
       prioritizeEdKeys: true,
       recordDataKeys: ["Given Names", "First Names"],
       edKeys: ["titleGivenNames"],
-      modifier: { regex: /\(([^)]+)\)/, replaceString: '"$1"' },
+      cleanFunction: cleanForenames,
     },
     lastName: {
       prioritizeEdKeys: true,
@@ -197,6 +231,7 @@ const defaultRecordTypeData = {
     },
     birthDate: {
       recordDataKeys: ["Date of Birth", "Birth Date", "Birth Year"],
+      cleanFunction: cleanDate,
     },
     birthPlace: {
       recordDataKeys: ["Birth Place"],
@@ -230,12 +265,14 @@ const defaultRecordTypeData = {
     },
     spouseLastName: {
       recordDataKeys: ["Spouse Surname"],
+      convertNameFromAllCapsToMixedCase: true,
     },
     brideForenames: {
       recordDataKeys: ["Bride Given Names"],
     },
     brideLastName: {
       recordDataKeys: ["Bride Surname"],
+      convertNameFromAllCapsToMixedCase: true,
     },
     brideAge: {
       recordDataKeys: ["Bride Age"],
@@ -245,15 +282,18 @@ const defaultRecordTypeData = {
     },
     groomLastName: {
       recordDataKeys: ["Groom Surname"],
+      convertNameFromAllCapsToMixedCase: true,
     },
     groomAge: {
       recordDataKeys: ["Groom Age"],
     },
     fatherFullName: {
       recordDataKeys: ["Father"],
+      convertNameFromAllCapsToMixedCase: true,
     },
     motherFullName: {
       recordDataKeys: ["Mother"],
+      convertNameFromAllCapsToMixedCase: true,
     },
   },
   advancedPlaceRules: {

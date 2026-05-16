@@ -8,7 +8,7 @@
   },
   "personGender": "male",
   "birthDate": {
-    "dateString": "1859-07"
+    "dateString": "07 1859"
   },
   "birthPlace": {
     "state": "South Australia",
@@ -18,7 +18,7 @@
   "registrationDistrict": "Adelaide",
   "parents": {
     "father": {
-      "name": "George SMITH"
+      "name": "George Smith"
     }
   },
   "hasValidData": true
