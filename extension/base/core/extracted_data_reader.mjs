@@ -60,28 +60,7 @@ class ExtractedDataReader {
   }
 
   getNameObj() {
-    let forenames = this.getValueUsingRecordTypeData("forenames");
-    let lastName = this.getValueUsingRecordTypeData("lastName");
-
-    if (forenames && lastName) {
-      return this.makeNameObjFromForenamesAndLastName(forenames, lastName);
-    }
-
-    let fullName = this.getValueUsingRecordTypeData("fullName");
-
-    if (fullName) {
-      return this.makeNameObjFromFullName(forenames, lastName);
-    }
-
-    if (lastName) {
-      return this.makeNameObjFromLastName(lastName);
-    }
-
-    if (forenames) {
-      this.makeNameObjFromForenames(forenames);
-    }
-
-    return undefined;
+    return this.makeNameObjUsingRecordTypeDataKeys("fullName", "forenames", "lastName");
   }
 
   getGender() {
@@ -376,18 +355,28 @@ class ExtractedDataReader {
   }
 
   makeNameObjUsingRecordTypeDataKeys(fullNameKey, forenamesKey, lastNameKey) {
-    let nameObj = undefined;
-    let fullName = this.getValueUsingRecordTypeData(fullNameKey);
-    if (fullName) {
-      nameObj = this.makeNameObjFromFullName(fullName);
-    } else {
-      let forenames = this.getValueUsingRecordTypeData(forenamesKey);
-      let lastName = this.getValueUsingRecordTypeData(lastNameKey);
-      if (forenames || lastName) {
-        nameObj = this.makeNameObjFromForenamesAndLastName(forenames, lastName);
-      }
+    let forenames = this.getValueUsingRecordTypeData(forenamesKey);
+    let lastName = this.getValueUsingRecordTypeData(lastNameKey);
+
+    if (forenames && lastName) {
+      return this.makeNameObjFromForenamesAndLastName(forenames, lastName);
     }
-    return nameObj;
+
+    let fullName = this.getValueUsingRecordTypeData(fullNameKey);
+
+    if (fullName) {
+      return this.makeNameObjFromFullName(fullName);
+    }
+
+    if (lastName) {
+      return this.makeNameObjFromLastName(lastName);
+    }
+
+    if (forenames) {
+      return this.makeNameObjFromForenames(forenames);
+    }
+
+    return undefined;
   }
 
   makeDateObjFromDateString(dateString) {
