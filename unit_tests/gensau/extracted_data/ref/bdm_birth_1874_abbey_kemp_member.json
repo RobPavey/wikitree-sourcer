@@ -1,0 +1,18 @@
+{
+  "url": "https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=144387&coid=birth&cid=5",
+  "success": true,
+  "titleSurname": "KEMP",
+  "titleGivenNames": "Abbey",
+  "databaseName": "Birth Registrations",
+  "recordData": {
+    "Surname": "KEMP",
+    "Given Names": "Abbey",
+    "Date of Birth": "01-Nov-1874",
+    "Gender": "F",
+    "Father": "Richard KEMP",
+    "Mother": "Sarah DOYLE",
+    "Birth Residence": "Moonta Mines",
+    "District": "Daly",
+    "Book/Page": "143/400"
+  }
+}

@@ -16,5 +16,10 @@
     "placeString": "South Australia, Australia"
   },
   "registrationDistrict": "Clare",
+  "parents": {
+    "father": {
+      "name": "Harry James PAVEY"
+    }
+  },
   "hasValidData": true
 }

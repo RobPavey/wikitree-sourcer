@@ -307,7 +307,10 @@ class ExtractedDataReader {
   }
 
   getParents() {
-    return undefined;
+    let fatherNameObj = this.makeNameObjUsingRecordTypeDataKeys("fatherFullName", "fatherForenames", "fatherLastName");
+    let motherNameObj = this.makeNameObjUsingRecordTypeDataKeys("motherFullName", "motherForenames", "motherLastName");
+
+    return this.makeParentsFromNameObjs(fatherNameObj, motherNameObj);
   }
 
   getPrimaryPerson() {
@@ -745,6 +748,24 @@ class ExtractedDataReader {
       }
     }
     return spouseObj;
+  }
+
+  makeParentsFromNameObjs(fatherNameObj, motherNameObj) {
+    let fatherName = fatherNameObj ? fatherNameObj.inferFullName() : undefined;
+    let motherName = motherNameObj ? motherNameObj.inferFullName() : undefined;
+
+    if (fatherName || motherName) {
+      let parents = {};
+      if (fatherName) {
+        parents.father = {};
+        parents.father.name = fatherName;
+      }
+      if (motherName) {
+        parents.mother = {};
+        parents.mother.name = motherName;
+      }
+      return parents;
+    }
   }
 
   makeParentsFromForenamesAndLastNames(fatherForenames, fatherLastName, motherForenames, motherLastName) {

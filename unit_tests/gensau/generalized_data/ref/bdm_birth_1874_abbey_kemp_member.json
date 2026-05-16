@@ -3,22 +3,22 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "name": {
-    "lastName": "O'Reilly",
-    "forenames": "John Leslie Patrick"
+    "lastName": "Kemp",
+    "forenames": "Abbey"
   },
-  "personGender": "male",
-  "birthDate": {
-    "dateString": "1912"
-  },
+  "personGender": "female",
   "birthPlace": {
     "state": "South Australia",
     "country": "Australia",
     "placeString": "South Australia, Australia"
   },
-  "registrationDistrict": "Adelaide",
+  "registrationDistrict": "Daly",
   "parents": {
     "father": {
-      "name": "James Andrew Esmond OREILLY"
+      "name": "Richard KEMP"
+    },
+    "mother": {
+      "name": "Sarah DOYLE"
     }
   },
   "hasValidData": true

@@ -16,5 +16,10 @@
     "placeString": "South Australia, Australia"
   },
   "registrationDistrict": "Adelaide",
+  "parents": {
+    "father": {
+      "name": "George SMITH"
+    }
+  },
   "hasValidData": true
 }

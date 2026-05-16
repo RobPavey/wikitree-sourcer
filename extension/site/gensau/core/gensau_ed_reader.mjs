@@ -249,6 +249,12 @@ const defaultRecordTypeData = {
     groomAge: {
       recordDataKeys: ["Groom Age"],
     },
+    fatherFullName: {
+      recordDataKeys: ["Father"],
+    },
+    motherFullName: {
+      recordDataKeys: ["Mother"],
+    },
   },
   advancedPlaceRules: {
     addImpliedPartsToBlankPlace: true,
