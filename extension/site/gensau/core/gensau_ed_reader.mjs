@@ -409,6 +409,35 @@ class GensauEdReader extends ExtractedDataReader {
   }
 
   getCollectionData() {
+    let id = "";
+    let year = "";
+
+    if (this.recordType == RT.BirthRegistration) {
+      id = "Births";
+      let birthDataObj = this.getBirthDateObj();
+      if (birthDataObj) {
+        year = birthDataObj.getYearString();
+      }
+    } else if (this.recordType == RT.DeathRegistration) {
+      id = "Deaths";
+      let deathDataObj = this.getDeathDateObj();
+      if (deathDataObj) {
+        year = deathDataObj.getYearString();
+      }
+    } else if (this.recordType == RT.MarriageRegistration) {
+      id = "Marriages";
+      let eventDataObj = this.getEventDateObj();
+      if (eventDataObj) {
+        year = eventDataObj.getYearString();
+      }
+    }
+
+    if (id) {
+      let registrationNumber = this.ed.recordData["Book/Page"];
+
+      let collectionData = { id: id, year: year, registrationNumber: registrationNumber };
+      return collectionData;
+    }
     return undefined;
   }
 }

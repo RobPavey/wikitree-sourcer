@@ -16,5 +16,10 @@
     "country": "Australia"
   },
   "registrationDistrict": "Grey",
+  "collectionData": {
+    "id": "Deaths",
+    "year": "1877",
+    "registrationNumber": "79/49"
+  },
   "hasValidData": true
 }

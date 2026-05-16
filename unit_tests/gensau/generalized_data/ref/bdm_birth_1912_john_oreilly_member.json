@@ -28,5 +28,10 @@
       }
     }
   },
+  "collectionData": {
+    "id": "Births",
+    "year": "1912",
+    "registrationNumber": "882/412"
+  },
   "hasValidData": true
 }

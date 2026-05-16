@@ -16,5 +16,10 @@
     "country": "Australia"
   },
   "registrationDistrict": "Adelaide",
+  "collectionData": {
+    "id": "Deaths",
+    "year": "1902",
+    "registrationNumber": "290/184"
+  },
   "hasValidData": true
 }

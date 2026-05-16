@@ -28,5 +28,10 @@
       }
     }
   },
+  "collectionData": {
+    "id": "Births",
+    "year": "1874",
+    "registrationNumber": "143/400"
+  },
   "hasValidData": true
 }

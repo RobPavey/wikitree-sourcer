@@ -1824,7 +1824,7 @@ const RecordCollectionData = [
     partOf: ["AustraliaBirths"],
     sites: {
       fmp: {
-        id: "Victoria Births",
+        id: "New South Wales Births",
         dates: { from: 1836, to: 1913 },
         // The father's last name is usually implied and will fail to match on FMP
         searchQueryFields: {
@@ -1883,6 +1883,82 @@ const RecordCollectionData = [
       nswbdm: {
         id: "Marriages",
         dates: { from: 1787, to: 1980 },
+      },
+    },
+  },
+
+  // South Australia BMD
+  {
+    wtsId: "SouthAustraliaBirths",
+    title: "South Australia Birth Index",
+    country: "Australia",
+    isBirth: true,
+    partOf: ["AustraliaBirths"],
+    sites: {
+      fmp: {
+        id: "South Australia Births 1842-1928",
+        dates: { from: 1842, to: 1928 },
+        // The father's last name is usually implied and will fail to match on FMP
+        searchQueryFields: {
+          district: "",
+          fatherLastName: "",
+        },
+      },
+      gensau: {
+        id: "Births",
+        dates: { from: 1838, to: 1928 },
+        searchQueryFields: { registrationNumber: "Book_Page" },
+      },
+    },
+  },
+  {
+    wtsId: "SouthAustraliaDeaths",
+    title: "South Australia Death Index",
+    country: "Australia",
+    isDeath: true,
+    partOf: ["AustraliaDeaths"],
+    sites: {
+      fmp: {
+        id: "South Australia Deaths 1836-1985",
+        dates: { from: 1836, to: 1913 },
+        // these fields are not supported in search of this collection
+        searchQueryFields: {
+          district: "",
+          fatherFirstName: "",
+          fatherLastName: "",
+          motherFirstName: "",
+          motherLastName: "useKeyword",
+        },
+      },
+      gensau: {
+        id: "Marriages",
+        dates: { from: 1838, to: 1928 },
+        searchQueryFields: { registrationNumber: "Book_Page" },
+      },
+    },
+  },
+  {
+    wtsId: "SouthAustraliaMarriages",
+    title: "South Australia Marriage Index",
+    country: "Australia",
+    isMarriage: true,
+    partOf: ["AustraliaMarriages"],
+    sites: {
+      fmp: {
+        id: "South Australia Marriages 1836-1942",
+        dates: { from: 1836, to: 1942 },
+        searchQueryFields: {
+          district: "",
+          fatherFirstName: "",
+          fatherLastName: "",
+          motherFirstName: "",
+          motherLastName: "useKeyword",
+        },
+      },
+      gensau: {
+        id: "Deaths",
+        dates: { from: 1838, to: 1928 },
+        searchQueryFields: { registrationNumber: "Book_Page" },
       },
     },
   },
