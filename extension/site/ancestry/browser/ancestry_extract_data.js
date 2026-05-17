@@ -796,6 +796,11 @@ function extractImageThumb(document, result) {
     thumbNode = document.querySelector("#mainContent > section.heroImageContainer");
   }
 
+  if (!thumbNode) {
+    // could be new May 2026 format
+    thumbNode = document.querySelector("#mainContent header div.recordThumbnail");
+  }
+
   if (thumbNode) {
     let linkNode = thumbNode.querySelector("a");
     //console.log("extractImageThumb, linkNode = ");

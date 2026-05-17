@@ -1,0 +1,83 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Florence Hutchinson"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "yearString": "1894",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Massachusetts"
+  },
+  "eventDate": {
+    "yearString": "1940"
+  },
+  "eventPlace": {
+    "placeString": "Taunton, Bristol, Massachusetts"
+  },
+  "ageAtEvent": "46",
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "John Hutchinson",
+      "age": "50",
+      "relationship": "head",
+      "uid": "http://www.ancestry.com/search/collections/2442/records/93824253"
+    },
+    {
+      "name": "Florence Hutchinson",
+      "age": "46",
+      "relationship": "wife",
+      "isSelected": true,
+      "race": "White",
+      "maritalStatus": "married",
+      "gender": "female",
+      "birthPlace": "Massachusetts",
+      "birthYear": "abt 1894"
+    },
+    {
+      "name": "Beatrice Hutchinson",
+      "age": "16",
+      "relationship": "daughter",
+      "uid": "http://www.ancestry.com/search/collections/2442/records/93824255"
+    },
+    {
+      "name": "John Hutchinson",
+      "age": "14",
+      "relationship": "son",
+      "uid": "http://www.ancestry.com/search/collections/2442/records/93824256"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "John Hutchinson"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2442|93824254}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|2442|93824253}}",
+    "{{Ancestry Record|2442|93824255}}",
+    "{{Ancestry Record|2442|93824256}}"
+  ],
+  "collectionData": {
+    "id": "2442",
+    "collectionTitle": "1940 United States Federal Census"
+  },
+  "hasValidData": true
+}
