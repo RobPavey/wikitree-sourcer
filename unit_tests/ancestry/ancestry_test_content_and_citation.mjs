@@ -974,6 +974,14 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/41984770:6061",
   },
   {
+    caseName: "us_federal_census_1940_florence_hutchinson_may2026_new",
+    url: "https://www.ancestry.com/search/collections/2442/records/93824254",
+  },
+  {
+    caseName: "us_federal_census_1940_florence_hutchinson_may2026_old",
+    url: "https://www.ancestry.com/search/collections/2442/records/93824254",
+  },
+  {
     caseName: "us_federal_census_1950_polly_beardsley",
     url: "https://www.ancestry.com/discoveryui-content/view/18187958:8054?ssrc=pt&tid=82382307&pid=44461527800",
   },
