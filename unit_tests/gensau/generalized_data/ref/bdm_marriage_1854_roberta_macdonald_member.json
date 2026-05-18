@@ -13,7 +13,8 @@
   "eventPlace": {
     "placeString": "St Barnabas Church Clare, South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia"
+    "country": "Australia",
+    "basePlaceString": "St Barnabas Church Clare"
   },
   "registrationDistrict": "The Murray/Burra",
   "spouses": [
@@ -28,7 +29,8 @@
       "marriagePlace": {
         "placeString": "St Barnabas Church Clare, South Australia, Australia",
         "state": "South Australia",
-        "country": "Australia"
+        "country": "Australia",
+        "basePlaceString": "St Barnabas Church Clare"
       }
     }
   ],

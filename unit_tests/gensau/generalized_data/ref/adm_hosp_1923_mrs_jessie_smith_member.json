@@ -14,7 +14,8 @@
   "eventPlace": {
     "placeString": "Adelaide, South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia"
+    "country": "Australia",
+    "basePlaceString": "Adelaide"
   },
   "hasValidData": true
 }

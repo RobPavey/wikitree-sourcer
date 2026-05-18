@@ -759,6 +759,25 @@ class NarrativeBuilder {
     this.addParentageAsSeparateSentenceGivenParentsAndGender(parentNames, this.personGender);
   }
 
+  addResidenceForMainSentence() {
+    let gd = this.eventGd;
+    let residencePlaceObj = gd.inferResidencePlaceObj();
+    if (residencePlaceObj) {
+      let residencePlaceString = residencePlaceObj.inferBasePlaceString();
+      if (residencePlaceString) {
+      }
+    }
+
+    let parentNames = gd.inferParentNamesForDataString();
+    this.addParentageForMainSentenceGivenParentsAndGender(parentNames, this.personGender);
+  }
+
+  addResidenceAsSeparateSentence() {
+    let gd = this.eventGd;
+    let parentNames = gd.inferParentNamesForDataString();
+    this.addParentageAsSeparateSentenceGivenParentsAndGender(parentNames, this.personGender);
+  }
+
   formatDate(dateString, addPreposition, prepSuffix = "") {
     let gd = this.eventGd;
 

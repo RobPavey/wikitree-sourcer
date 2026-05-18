@@ -13,7 +13,8 @@
   "birthPlace": {
     "placeString": "South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia"
+    "country": "Australia",
+    "basePlaceString": ""
   },
   "registrationDistrict": "Clare",
   "parents": {

@@ -872,9 +872,9 @@ function getBirthRegistrationString(gd, options) {
     // sometimes there is a birth place that contains more info than the registration place
     // e.g.: https://www.ancestry.com/discoveryui-content/view/3027592:2573
     let birthPlace = gd.birthPlace;
-    if (birthPlace && birthPlace.placeString) {
-      let birthPlaceString = birthPlace.placeString;
-      if (!dataString.includes(birthPlaceString)) {
+    if (birthPlace) {
+      let birthPlaceString = birthPlace.inferBasePlaceString();
+      if (birthPlaceString && !dataString.includes(birthPlaceString)) {
         dataString += ", birth place " + birthPlaceString;
       }
     }
@@ -886,6 +886,16 @@ function getBirthRegistrationString(gd, options) {
 
     if (gd.mothersMaidenName) {
       dataString += ", mother's maiden name " + gd.mothersMaidenName;
+    }
+
+    // sometimes there is a residence place, it looks better to put this after parents
+    // for a birth
+    let residencePlace = gd.inferResidencePlaceObj();
+    if (residencePlace) {
+      let residencePlaceString = residencePlace.inferBasePlaceString();
+      if (residencePlaceString && !dataString.includes(residencePlaceString)) {
+        dataString += ", residence " + residencePlaceString;
+      }
     }
   }
 

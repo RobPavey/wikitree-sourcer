@@ -154,6 +154,31 @@ class ExtractedDataReader {
     return undefined;
   }
 
+  getResidenceDateObj() {
+    let dateString = this.getValueUsingRecordTypeData("residenceDate");
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
+    return undefined;
+  }
+
+  getResidencePlaceObj() {
+    let placeString = this.getValueUsingRecordTypeData("residencePlace");
+
+    if (placeString) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
+    return undefined;
+  }
+
   getAgeAtEvent() {
     return this.getValueUsingRecordTypeData("ageAtEvent");
   }
@@ -659,6 +684,8 @@ class ExtractedDataReader {
       placeString = "";
     }
 
+    const basePlaceString = placeString;
+
     function addPart(part) {
       if (part) {
         if (placeString) {
@@ -687,9 +714,16 @@ class ExtractedDataReader {
             placeObj.state = advanced.impliedStateName;
           }
         }
-        if (advanced.impliedCountryName && !existingParts.country) {
-          addPart(advanced.impliedCountryName);
-          placeObj.country = advanced.impliedCountryName;
+        if (advanced.impliedCountryName) {
+          if (existingParts.country) {
+            placeString = existingParts.localPlace;
+            addPart(existingParts.county);
+            addPart(existingParts.country);
+            placeObj.country = existingParts.country;
+          } else {
+            addPart(advanced.impliedCountryName);
+            placeObj.country = advanced.impliedCountryName;
+          }
         }
       }
     }
@@ -699,6 +733,9 @@ class ExtractedDataReader {
     placeObj.placeString = placeString;
 
     if (placeString) {
+      if (placeString != basePlaceString) {
+        placeObj.basePlaceString = basePlaceString;
+      }
       return placeObj;
     }
 
@@ -1050,6 +1087,7 @@ class ExtractedDataReader {
   }
 
   getValueUsingRule(rule) {
+    // Note that this doesn't handle the seperate type rules and default rules
     let value = undefined;
     if (!rule) {
       return value;
@@ -1090,28 +1128,6 @@ class ExtractedDataReader {
     return value;
   }
 
-  getRecordDataRuleForName(name) {
-    // name is a standard name used in gd
-    let rule = undefined;
-    let defaultRule = undefined;
-
-    if (this.recordTypeData && this.recordTypeData.rules) {
-      rule = this.recordTypeData.rules[name];
-    }
-
-    if (this.defaultRecordTypeData && this.defaultRecordTypeData.rules) {
-      defaultRule = this.defaultRecordTypeData.rules[name];
-    }
-
-    if (rule && defaultRule && rule.combineRule) {
-      rule = { ...rule, ...defaultRule };
-    } else if (!rule && defaultRule) {
-      rule = defaultRule;
-    }
-
-    return rule;
-  }
-
   getValueUsingRecordTypeData(name) {
     // name is a standard name used in gd
     let value = undefined;
@@ -1132,10 +1148,6 @@ class ExtractedDataReader {
 
     if (rule) {
       value = this.getValueUsingRule(rule);
-      if (value) {
-        if (rule.substition) {
-        }
-      }
     }
 
     if (!value && defaultRule) {

@@ -40,13 +40,12 @@ function buildGensauUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Genealogy SA";
+  builder.sourceTitle += "Genealogy SA - " + ed.databaseName;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = ed.databaseName;
-
   builder.addSourceReferenceField("Notice", ed.recordData["Notice"]);
+  builder.addSourceReferenceField("District", ed.recordData["District"]);
   builder.addSourceReferenceField("Book/Page", ed.recordData["Book/Page"]);
   builder.addSourceReferenceField("Source", ed.recordData["Source"]);
   builder.addSourceReferenceField("Source2", ed.recordData["Source2"]);

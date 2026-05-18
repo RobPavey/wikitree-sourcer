@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"Genealogy SA\"<br/>\nSouth Australian Church records - Baptisms<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=40610&coid=church-baptism&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nLudovina De Silva baptism.\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"Genealogy SA - South Australian Church records - Baptisms\"<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=40610&coid=church-baptism&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nLudovina De Silva baptism.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Ludovina was baptised.<ref>\n'''Baptism''':\n\"Genealogy SA\"<br/>\nSouth Australian Church records - Baptisms<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=40610&coid=church-baptism&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nLudovina De Silva baptism.\n</ref>",
+    "citation": "Ludovina was baptised.<ref>\n'''Baptism''':\n\"Genealogy SA - South Australian Church records - Baptisms\"<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=40610&coid=church-baptism&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nLudovina De Silva baptism.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Baptism''': \"Genealogy SA\"<br/>South Australian Church records - Baptisms<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=40610&coid=church-baptism&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Ludovina De Silva baptism.",
+    "citation": "* '''Baptism''': \"Genealogy SA - South Australian Church records - Baptisms\"<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=40610&coid=church-baptism&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Ludovina De Silva baptism.",
     "type": "source"
   }
 }

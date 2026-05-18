@@ -10,7 +10,8 @@
   "eventPlace": {
     "placeString": "Hawker, South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia"
+    "country": "Australia",
+    "basePlaceString": "Hawker"
   },
   "birthDate": {
     "dateString": "12-Jan-1900"

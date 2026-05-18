@@ -13,7 +13,14 @@
   "deathPlace": {
     "placeString": "South Australia, Australia",
     "state": "South Australia",
-    "country": "Australia"
+    "country": "Australia",
+    "basePlaceString": ""
+  },
+  "residencePlace": {
+    "placeString": "Mount Gambier, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "basePlaceString": "Mount Gambier"
   },
   "registrationDistrict": "Grey",
   "collectionData": {

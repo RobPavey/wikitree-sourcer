@@ -69,6 +69,11 @@ const recordTypes = [
   {
     recordType: RT.BirthRegistration,
     collectionIds: ["Birth Registrations"],
+    rules: {
+      residencePlace: {
+        recordDataKeys: ["Birth Residence"],
+      },
+    },
   },
   {
     recordType: RT.DeathRegistration,
@@ -242,6 +247,9 @@ const defaultRecordTypeData = {
     },
     deathPlace: {
       recordDataKeys: ["Death Place"],
+    },
+    residencePlace: {
+      recordDataKeys: ["Residence"],
     },
     ageAtEvent: {
       recordDataKeys: ["Age"],
