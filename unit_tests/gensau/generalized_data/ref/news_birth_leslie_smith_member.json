@@ -15,5 +15,17 @@
     "country": "Australia",
     "basePlaceString": ""
   },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Dell"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Albert"
+      }
+    }
+  },
   "hasValidData": true
 }

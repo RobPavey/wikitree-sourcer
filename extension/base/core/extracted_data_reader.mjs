@@ -101,7 +101,7 @@ class ExtractedDataReader {
   }
 
   getMothersMaidenName() {
-    return "";
+    return this.getValueUsingRecordTypeData("mothersMaidenName");
   }
 
   getBirthDateObj() {
@@ -303,7 +303,21 @@ class ExtractedDataReader {
     let fatherNameObj = this.makeNameObjUsingRecordTypeDataKeys("fatherFullName", "fatherForenames", "fatherLastName");
     let motherNameObj = this.makeNameObjUsingRecordTypeDataKeys("motherFullName", "motherForenames", "motherLastName");
 
-    return this.makeParentsFromNameObjs(fatherNameObj, motherNameObj);
+    if (fatherNameObj || motherNameObj) {
+      return this.makeParentsFromNameObjs(fatherNameObj, motherNameObj);
+    }
+
+    let parentNames = this.getValueUsingRecordTypeData("parentNames");
+    if (parentNames) {
+      let parts = parentNames.split("&");
+      if (parts.length == 2) {
+        let fatherName = parts[0].trim();
+        let motherName = parts[1].trim();
+        if (fatherName && motherName) {
+          return this.makeParentsFromFullNames(fatherName, motherName);
+        }
+      }
+    }
   }
 
   getPrimaryPerson() {

@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record of Patrick Henry O'Neill''':\n\"Genealogy SA - Irish Born South Australians (IBSA)\"<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=13875&coid=ibsa&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nPatrick Henry O'Neill.\n</ref>",
+    "citation": "<ref>\n'''Record of Patrick Henry O'Neill''':\n\"South Australia - Irish Born South Australians (IBSA)\"<br/>\nGenealogy SA<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nPatrick Henry O'Neill.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Patrick was in a record.<ref>\n'''Record of Patrick Henry O'Neill''':\n\"Genealogy SA - Irish Born South Australians (IBSA)\"<br/>\n[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=13875&coid=ibsa&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>\nPatrick Henry O'Neill.\n</ref>",
+    "citation": "Patrick was in a record.<ref>\n'''Record of Patrick Henry O'Neill''':\n\"South Australia - Irish Born South Australians (IBSA)\"<br/>\nGenealogy SA<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nPatrick Henry O'Neill.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record of Patrick Henry O'Neill''': \"Genealogy SA - Irish Born South Australians (IBSA)\"<br/>[https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=13875&coid=ibsa&cid=4 Genealogy SA Record] (accessed 6 May 2021)<br/>Patrick Henry O'Neill.",
+    "citation": "* '''Record of Patrick Henry O'Neill''': \"South Australia - Irish Born South Australians (IBSA)\"<br/>Genealogy SA<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Patrick Henry O'Neill.",
     "type": "source"
   }
 }

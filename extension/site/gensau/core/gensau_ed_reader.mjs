@@ -304,6 +304,9 @@ const defaultRecordTypeData = {
       recordDataKeys: ["Mother"],
       convertNameFromAllCapsToMixedCase: true,
     },
+    parentNames: {
+      recordDataKeys: ["Parents"],
+    },
   },
   advancedPlaceRules: {
     addImpliedPartsToBlankPlace: true,
