@@ -35,38 +35,50 @@ import {
   addBackMenuItem,
   beginMainMenu,
   endMainMenu,
-  addBreak,
-  closePopup,
-  keepPopupOpen,
-  displayUnexpectedErrorMessage,
-} from "/base/browser/popup/popup_menu_building.mjs";
-import { CD } from "../../core/country_data.mjs";
-import { getLocalStorageItem } from "../common/browser_compat.mjs";
-import { popupState } from "./popup_state.mjs";
+  doAsyncActionWithCatch,
+} from "./popup_menu_building.mjs";
 
-import { shouldShowSiteSearch } from "./popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "./popup_search.mjs";
 import { setupSearchWithParametersSubmenu } from "./popup_search_with_parameters.mjs";
 
+function doSearchFromConfig(config, gd, typeOfSearch, parameters) {
+  const input = {
+    generalizedData: gd,
+    typeOfSearch: typeOfSearch,
+    searchParameters: parameters,
+    options: options,
+  };
+  const actionText = config.siteDisplayName + " Search";
+  const siteName = config.siteName;
+  const modulePath = `../../../site/${siteName}/core/${siteName}_build_search_url.mjs`;
+  doAsyncActionWithCatch(actionText, input, async function () {
+    let loadedModule = await import(chrome.runtime.getURL(modulePath));
+    doSearch(loadedModule, input);
+  });
+}
+
 function addDefaultSearchMenuItemFromConfig(menu, data, backFunction, filter, config) {
+  const defaultMenuItemText = "Search " + config.siteDisplayName;
+
   if (config.includeDefaultSearch) {
     if (config.includeSearchSubmenu) {
       addMenuItemWithSubmenu(
         menu,
-        config.defaultMenuItemText,
+        defaultMenuItemText,
         function (element) {
-          config.searchFunction(data.generalizedData);
+          doSearchFromConfig(config, data.generalizedData);
         },
         function () {
           setupSearchSubmenuFromConfig(data, backFunction, filter, config);
         }
       );
     } else {
-      addMenuItem(menu, config.defaultMenuItemText, function (element) {
-        config.searchFunction(data.generalizedData);
+      addMenuItem(menu, defaultMenuItemText, function (element) {
+        doSearchFromConfig(config, data.generalizedData);
       });
     }
   } else {
-    addMenuItem(menu, config.defaultMenuItemText, function (element) {
+    addMenuItem(menu, defaultMenuItemText, function (element) {
       setupSearchSubmenuFromConfig(data, backFunction, filter, config);
     });
   }
@@ -90,7 +102,7 @@ async function setupSearchWithParametersSubmenuFromConfig(data, backFunction, co
   }
   if (dataModule[dataName]) {
     function searchFunction(gd, parameters) {
-      config.searchFunction(gd, "SpecifiedParameters", parameters);
+      doSearchFromConfig(config, gd, "SpecifiedParameters", parameters);
     }
     setupSearchWithParametersSubmenu(data, backFunction, dataModule[dataName], searchFunction);
   }
@@ -110,7 +122,7 @@ async function setupSearchSubmenuFromConfig(data, backFunction, filter, config) 
 
     if (subconfig.includeSameCollection) {
       addSameRecordMenuItem(menu, data, config.siteName, function (element) {
-        config.searchFunction(data.generalizedData, "SameCollection");
+        doSearchFromConfig(config, data.generalizedData, "SameCollection");
       });
     }
 
@@ -122,7 +134,7 @@ async function setupSearchSubmenuFromConfig(data, backFunction, filter, config) 
           }
         }
         addMenuItem(menu, search.menuItemText, function (element) {
-          config.searchFunction(data.generalizedData, search.typeOfSearch);
+          doSearchFromConfig(config, data.generalizedData, search.typeOfSearch);
         });
       }
     }
@@ -133,4 +145,24 @@ async function setupSearchSubmenuFromConfig(data, backFunction, filter, config) 
   endMainMenu(menu);
 }
 
-export { addDefaultSearchMenuItemFromConfig, addSearchWithParametersMenuItemFromConfig, setupSearchSubmenuFromConfig };
+function registerSearchMenuItemFromConfig(config) {
+  function addDefaultSearchMenuItem(menu, data, backFunction, filter) {
+    return addDefaultSearchMenuItemFromConfig(menu, data, backFunction, filter, config);
+  }
+  function shouldShowSearchMenuItem(data, filter) {
+    return shouldShowSiteSearch(data.generalizedData, filter, config.siteConstraints);
+  }
+  registerSearchMenuItemFunction(
+    config.siteName,
+    config.siteDisplayName,
+    addDefaultSearchMenuItem,
+    shouldShowSearchMenuItem
+  );
+}
+
+export {
+  registerSearchMenuItemFromConfig,
+  addDefaultSearchMenuItemFromConfig,
+  addSearchWithParametersMenuItemFromConfig,
+  setupSearchSubmenuFromConfig,
+};

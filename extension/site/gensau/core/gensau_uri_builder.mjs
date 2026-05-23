@@ -84,6 +84,10 @@ class GensauUriBuilder {
     this.addSearchParameter("Father", string);
   }
 
+  addDistrict(string) {
+    this.addSearchParameter("District", string);
+  }
+
   addBookPage(string) {
     this.addSearchParameter("Book_Page", string);
   }

@@ -39,17 +39,17 @@ const searchTypes = {
     eventYearType: "born",
   },
   bdmBirths: {
-    params: ["surname", "givenNames", "eventYear"],
+    params: ["surname", "givenNames", "eventYear", "district"],
     eventYearType: "born",
     collectionId: "birth",
   },
   bdmDeaths: {
-    params: ["surname", "givenNames", "eventYear"],
+    params: ["surname", "givenNames", "eventYear", "district"],
     eventYearType: "died",
     collectionId: "death",
   },
   bdmMarriages: {
-    params: ["surname", "givenNames", "eventYear"],
+    params: ["surname", "givenNames", "eventYear", "district"],
     eventYearType: "lived",
     collectionId: "marriage",
   },
@@ -128,7 +128,7 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   // father
-  if (parameters && parameters.father) {
+  if (searchConfig.params.includes("father") || (parameters && parameters.father)) {
     let parentNames = gd.inferParentForenamesAndLastName();
     let fatherName = "";
     if (parentNames) {
@@ -143,6 +143,10 @@ function buildSearchUrl(buildUrlInput) {
       }
       builder.addFather(fatherName);
     }
+  }
+
+  if (searchConfig.params.includes("district") && gd.registrationDistrict) {
+    builder.addDistrict(gd.registrationDistrict);
   }
 
   if (typeOfSearch == "SameCollection") {

@@ -22,13 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
-
-import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
-
-import { addDefaultSearchMenuItemFromConfig } from "/base/browser/popup/popup_search_config.mjs";
-
-import { options } from "/base/browser/options/options_loader.mjs";
+import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_search_config.mjs";
 
 /*
 BDM Registrations
@@ -70,47 +64,18 @@ South Australian Public Trustees/Deceased Estates#	1841 to 2023	234,592	19 Aug 2
   Includes Adelaide Catholic burials and some Funeral Directors.
 */
 
-const gensauStartYear = 1835;
-
-function shouldShowSearchMenuItem(data, filter) {
-  const siteConstraints = {
-    startYear: gensauStartYear,
-    dateTestType: "bmd",
-    countryList: ["Australia", "Colony of South Australia"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
-  return true;
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////
-// Menu actions
-//////////////////////////////////////////////////////////////////////////////////////////
-
-async function gensauSearch(generalizedData, typeOfSearch, parameters) {
-  const input = {
-    generalizedData: generalizedData,
-    typeOfSearch: typeOfSearch,
-    searchParameters: parameters,
-    options: options,
-  };
-  doAsyncActionWithCatch("Genealogy SA Search", input, async function () {
-    let loadedModule = await import(`../core/gensau_build_search_url.mjs`);
-    doSearch(loadedModule, input);
-  });
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// Menu items
+// Configuration
 //////////////////////////////////////////////////////////////////////////////////////////
 
 const searchMenuConfig = {
   siteName: "gensau",
-  defaultMenuItemText: "Search Genealogy SA",
-  searchFunction: gensauSearch,
+  siteDisplayName: "Genealogy SA",
+  siteConstraints: {
+    startYear: 1835,
+    dateTestType: "bmd",
+    countryList: ["Australia", "Colony of South Australia"],
+  },
   includeDefaultSearch: true,
   includeSearchSubmenu: true,
   submenuConfig: {
@@ -149,16 +114,8 @@ const searchMenuConfig = {
   },
 };
 
-function addGensauDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  return addDefaultSearchMenuItemFromConfig(menu, data, backFunction, filter, searchMenuConfig);
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// Submenus
-//////////////////////////////////////////////////////////////////////////////////////////
-
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("gensau", "Genealogy SA", addGensauDefaultSearchMenuItem, shouldShowSearchMenuItem);
+registerSearchMenuItemFromConfig(searchMenuConfig);
