@@ -179,7 +179,7 @@ function addBuildListSubmenuMenuItem(menu, data, text, listType, spouse) {
   });
 }
 
-function setupBuildListsSubMenu(data, backFunction, siblingsNeedExpand) {
+function setupBuildListsSubmenu(data, backFunction, siblingsNeedExpand) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -237,7 +237,7 @@ function addBuildListsMenuItem(menu, data, backFunction, siblingsNeedExpand) {
 
   if (listsAvailable) {
     addMenuItem(menu, "Build Lists...", function () {
-      setupBuildListsSubMenu(data, backFunction, siblingsNeedExpand);
+      setupBuildListsSubmenu(data, backFunction, siblingsNeedExpand);
     });
   }
 }

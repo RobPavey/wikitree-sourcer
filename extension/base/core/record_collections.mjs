@@ -1905,7 +1905,7 @@ const RecordCollectionData = [
         },
       },
       gensau: {
-        id: "Births",
+        id: "birth",
         dates: { from: 1838, to: 1928 },
         searchQueryFields: { registrationNumber: "Book_Page" },
       },
@@ -1931,7 +1931,7 @@ const RecordCollectionData = [
         },
       },
       gensau: {
-        id: "Marriages",
+        id: "marriage",
         dates: { from: 1838, to: 1928 },
         searchQueryFields: { registrationNumber: "Book_Page" },
       },
@@ -1956,7 +1956,7 @@ const RecordCollectionData = [
         },
       },
       gensau: {
-        id: "Deaths",
+        id: "death",
         dates: { from: 1838, to: 1928 },
         searchQueryFields: { registrationNumber: "Book_Page" },
       },

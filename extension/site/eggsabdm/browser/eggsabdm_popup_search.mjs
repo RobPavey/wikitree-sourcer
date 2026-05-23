@@ -25,7 +25,7 @@ SOFTWARE.
 import {
   addBackMenuItem,
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
@@ -40,7 +40,7 @@ import {
 
 import { options } from "/base/browser/options/options_loader.mjs";
 import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 const eggsabdmStartYear = 1688;
 const eggsabdmEndYear = 2015;
@@ -131,14 +131,14 @@ async function eggsabdmSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addEggsabdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search eGGSA BDM",
     function (element) {
-      setupEggsabdmSearchSubMenu(data, backFunction, filter);
+      setupEggsabdmSearchSubmenu(data, backFunction, filter);
     },
     function (element) {
-      setupEggsabdmSearchWithParametersSubMenu(data, backFunction);
+      setupEggsabdmSearchWithParametersSubmenu(data, backFunction);
     }
   );
 
@@ -156,7 +156,7 @@ function addEggsabdmAreaMenuItem(menu, generalizedData, area) {
 
 function addEggsabdmSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupEggsabdmSearchWithParametersSubMenu(data, backFunction);
+    setupEggsabdmSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -164,9 +164,9 @@ function addEggsabdmSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupEggsabdmSearchSubMenu(data, backFunction, filter) {
+async function setupEggsabdmSearchSubmenu(data, backFunction, filter) {
   const backToHereFunction = function () {
-    setupEggsabdmSearchSubMenu(data, backFunction, filter);
+    setupEggsabdmSearchSubmenu(data, backFunction, filter);
   };
 
   const menu = beginMainMenu();
@@ -179,9 +179,9 @@ async function setupEggsabdmSearchSubMenu(data, backFunction, filter) {
   endMainMenu(menu);
 }
 
-async function setupEggsabdmSearchWithParametersSubMenu(data, backFunction) {
+async function setupEggsabdmSearchWithParametersSubmenu(data, backFunction) {
   const dataModule = await import(`../core/eggsabdm_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.EggsabdmData, eggsabdmSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.EggsabdmData, eggsabdmSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

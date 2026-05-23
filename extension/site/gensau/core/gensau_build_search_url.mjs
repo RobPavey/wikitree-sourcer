@@ -23,13 +23,136 @@ SOFTWARE.
 */
 
 import { GensauUriBuilder } from "./gensau_uri_builder.mjs";
+import { RC } from "../../../base/core/record_collections.mjs";
+
+const searchTypes = {
+  default: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+  },
+  SameCollection: {
+    params: ["surname"],
+    eventYearType: "born",
+  },
+  SpecifiedParameters: {
+    params: ["surname"],
+    eventYearType: "born",
+  },
+  bdmBirths: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "born",
+    collectionId: "birth",
+  },
+  bdmDeaths: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "died",
+    collectionId: "death",
+  },
+  bdmMarriages: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "marriage",
+  },
+};
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
+  const typeOfSearch = buildUrlInput.typeOfSearch;
+  const options = buildUrlInput.options;
+  const runDate = buildUrlInput.runDate;
+  const parameters = buildUrlInput.searchParameters;
 
   var builder = new GensauUriBuilder();
 
+  if (!typeOfSearch) {
+    typeOfSearch = "default";
+  }
+
+  let searchConfig = searchTypes[typeOfSearch];
+  if (!searchConfig) {
+    return {
+      url: "https://www.genealogysa.org.au/resources/online-database-search",
+    };
+  }
+
   // call methods on builder here
+
+  let collectionId = "";
+  if (typeOfSearch == "SameCollection") {
+    if (gd.collectionData && gd.collectionData.id) {
+      collectionId = RC.mapCollectionId(
+        gd.sourceOfData,
+        gd.collectionData.id,
+        "gensau",
+        gd.inferEventCountry(),
+        gd.inferEventYear()
+      );
+    }
+  } else if (typeOfSearch == "SpecifiedParameters") {
+    if (parameters.category && parameters.category != "All") {
+      searchConfig = searchTypes[parameters.category];
+    } else {
+      searchConfig = searchTypes["default"];
+    }
+    collectionId = searchConfig.collectionId;
+  } else if (searchConfig.collectionId) {
+    collectionId = searchConfig.collectionId;
+  }
+
+  if (collectionId) {
+    builder.addCollectionId(collectionId);
+  }
+
+  if (searchConfig.params.includes("surname")) {
+    builder.addSurname(gd.inferLastName());
+  }
+  if (searchConfig.params.includes("givenNames")) {
+    builder.addGivenNames(gd.inferForenames());
+  }
+
+  if (searchConfig.params.includes("eventYear")) {
+    if (searchConfig.eventYearType == "lived") {
+      const maxLifespan = Number(options.search_general_maxLifespan);
+      let lifeRange = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
+      if (lifeRange.startYear && lifeRange.endYear) {
+        let lifeSpan = lifeRange.endYear - lifeRange.startYear;
+        let accuracy = Math.trunc((lifeSpan + 1) / 2);
+        let midpointYear = lifeRange.startYear + accuracy;
+        builder.addEventYear(midpointYear, accuracy);
+      }
+    } else if (searchConfig.eventYearType == "born") {
+      let birthYear = gd.inferBirthYear();
+      let accuracy = 5;
+      builder.addEventYear(birthYear, accuracy);
+    }
+  }
+
+  // father
+  if (parameters && parameters.father) {
+    let parentNames = gd.inferParentForenamesAndLastName();
+    let fatherName = "";
+    if (parentNames) {
+      let fatherForenames = parentNames.fatherForenames;
+      let fatherLastName = parentNames.fatherLastName;
+      if (fatherForenames && fatherLastName) {
+        fatherName = fatherForenames + " " + fatherLastName;
+      } else if (fatherForenames) {
+        fatherName = fatherForenames;
+      } else if (fatherLastName) {
+        fatherName = fatherLastName;
+      }
+      builder.addFather(fatherName);
+    }
+  }
+
+  if (typeOfSearch == "SameCollection") {
+    if (gd.collectionData.registrationNumber) {
+      builder.addBookPage(gd.collectionData.registrationNumber);
+    } else if (gd.collectionData.volume && gd.collectionData.page) {
+      let bookPage = gd.collectionData.volume + "/" + gd.collectionData.page;
+      builder.addBookPage(bookPage);
+    }
+  }
 
   const url = builder.getUri();
 

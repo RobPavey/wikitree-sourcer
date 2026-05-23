@@ -424,19 +424,19 @@ class GensauEdReader extends ExtractedDataReader {
     let year = "";
 
     if (this.recordType == RT.BirthRegistration) {
-      id = "Births";
+      id = "birth";
       let birthDataObj = this.getBirthDateObj();
       if (birthDataObj) {
         year = birthDataObj.getYearString();
       }
     } else if (this.recordType == RT.DeathRegistration) {
-      id = "Deaths";
+      id = "death";
       let deathDataObj = this.getDeathDateObj();
       if (deathDataObj) {
         year = deathDataObj.getYearString();
       }
     } else if (this.recordType == RT.MarriageRegistration) {
-      id = "Marriages";
+      id = "marriage";
       let eventDataObj = this.getEventDateObj();
       if (eventDataObj) {
         year = eventDataObj.getYearString();
@@ -446,7 +446,15 @@ class GensauEdReader extends ExtractedDataReader {
     if (id) {
       let registrationNumber = this.ed.recordData["Book/Page"];
 
-      let collectionData = { id: id, year: year, registrationNumber: registrationNumber };
+      let volume = "";
+      let page = "";
+      let parts = registrationNumber.split("/");
+      if (parts.length == 2) {
+        volume = parts[0].trim();
+        page = parts[1].trim();
+      }
+
+      let collectionData = { id: id, year: year, registrationNumber: registrationNumber, valume: volume, page: page };
       return collectionData;
     }
     return undefined;

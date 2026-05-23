@@ -23,17 +23,17 @@ SOFTWARE.
 */
 
 import {
-  setupSearchCollectionsSubMenu,
+  setupSearchCollectionsSubmenu,
   addSameRecordMenuItem,
   addBackMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addMenuItem,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 import {
   doSearch,
   registerSearchMenuItemFunction,
@@ -96,14 +96,14 @@ async function mhSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addMhDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search MyHeritage",
     function (element) {
       mhSearch(data.generalizedData, "");
     },
     function () {
-      setupMhSearchSubMenu(data, backFunction);
+      setupMhSearchSubmenu(data, backFunction);
     }
   );
 
@@ -118,7 +118,7 @@ function addMhSameRecordMenuItem(menu, data) {
 
 function addMhSearchCollectionsMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search a specific collection...", function (element) {
-    setupSearchCollectionsSubMenu(data, "mh", mhSearchCollection, backFunction);
+    setupSearchCollectionsSubmenu(data, "mh", mhSearchCollection, backFunction);
   });
 }
 
@@ -130,7 +130,7 @@ function addMhSearchTreeMenuItem(menu, data) {
 
 function addMhSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupMhSearchWithParametersSubMenu(data, backFunction);
+    setupMhSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -138,9 +138,9 @@ function addMhSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupMhSearchSubMenu(data, backFunction) {
+async function setupMhSearchSubmenu(data, backFunction) {
   let backToHereFunction = function () {
-    setupMhSearchSubMenu(data, backFunction);
+    setupMhSearchSubmenu(data, backFunction);
   };
 
   let menu = beginMainMenu();
@@ -154,9 +154,9 @@ async function setupMhSearchSubMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-async function setupMhSearchWithParametersSubMenu(data, backFunction) {
+async function setupMhSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/mh_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.MhData, mhSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.MhData, mhSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

@@ -108,7 +108,7 @@ async function nzbdmSearch(generalizedData, typeOfSearch) {
 
 function addNzbdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
   addMenuItem(menu, "Search New Zealand BDM...", function (element) {
-    setupNzbdmSearchSubMenu(data, backFunction, filter);
+    setupNzbdmSearchSubmenu(data, backFunction, filter);
   });
 
   return true;
@@ -178,7 +178,7 @@ function addNzbdmSearchDeathsMenuItem(menu, data, filter) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupNzbdmSearchSubMenu(data, backFunction, filter) {
+async function setupNzbdmSearchSubmenu(data, backFunction, filter) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);

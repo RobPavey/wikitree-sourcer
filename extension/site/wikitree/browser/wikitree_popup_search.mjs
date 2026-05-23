@@ -24,14 +24,14 @@ SOFTWARE.
 
 import {
   addBackMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addMenuItem,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
   closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import {
   doSearch,
@@ -218,14 +218,14 @@ async function wikitreeSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addWikitreeDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search WikiTree",
     function (element) {
       wikitreeSearch(data.generalizedData);
     },
     function () {
-      setupWikitreeSearchSubMenu(data, backFunction);
+      setupWikitreeSearchSubmenu(data, backFunction);
     }
   );
 
@@ -285,7 +285,7 @@ function addWikitreeSearchForUsageMenuItem(menu, data, backFunction) {
 
 function addWikitreeSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupWikitreeSearchWithParametersSubMenu(data, backFunction);
+    setupWikitreeSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -293,9 +293,9 @@ function addWikitreeSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupWikitreeSearchSubMenu(data, backFunction) {
+async function setupWikitreeSearchSubmenu(data, backFunction) {
   let backToHereFunction = function () {
-    setupWikitreeSearchSubMenu(data, backFunction);
+    setupWikitreeSearchSubmenu(data, backFunction);
   };
 
   let menu = beginMainMenu();
@@ -312,9 +312,9 @@ async function setupWikitreeSearchSubMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-async function setupWikitreeSearchWithParametersSubMenu(data, backFunction) {
+async function setupWikitreeSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/wikitree_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.WikitreeData, wikitreeSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.WikitreeData, wikitreeSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

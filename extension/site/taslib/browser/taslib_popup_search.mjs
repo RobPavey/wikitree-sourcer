@@ -25,7 +25,7 @@ SOFTWARE.
 import {
   addBackMenuItem,
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
@@ -70,14 +70,14 @@ async function taslibSearch(generalizedData, typeOfSearch) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addTaslibDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search Libraries Tasmania, Names Index",
     function (element) {
       taslibSearch(data.generalizedData);
     },
     function () {
-      setupTaslibSearchSubMenu(data, backFunction, filter);
+      setupTaslibSearchSubmenu(data, backFunction, filter);
     }
   );
 
@@ -139,7 +139,7 @@ function addTaslibSearchDeathsMenuItem(menu, data, filter) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupTaslibSearchSubMenu(data, backFunction, filter) {
+async function setupTaslibSearchSubmenu(data, backFunction, filter) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);

@@ -25,6 +25,8 @@ SOFTWARE.
 import { options } from "../options/options_loader.mjs";
 import {
   addMenuItem,
+  addMenuItemWithSubmenu,
+  addSameRecordMenuItem,
   addBackMenuItem,
   beginMainMenu,
   endMainMenu,
@@ -89,8 +91,12 @@ function openUrlInNewTab(link) {
 
 async function doSearch(loadedModule, input) {
   const result = loadedModule.buildSearchUrl(input);
-  var newURL = result.url;
-  openUrlInNewTab(newURL);
+  if (result) {
+    var newURL = result.url;
+    if (newURL) {
+      openUrlInNewTab(newURL);
+    }
+  }
   closePopup();
 }
 
@@ -187,6 +193,10 @@ function testGeneralizedDataForDatesAndCountries(gd, siteConstraints) {
       let deathPossibleInRange = gd.couldPersonHaveDiedInDateRange(siteStartYear, siteEndYear, maxLifespan);
 
       if (!(birthPossibleInRange || deathPossibleInRange)) {
+        return false;
+      }
+    } else if (dateTestType == "born") {
+      if (!gd.couldPersonHaveBeenBornInDateRange(siteStartYear, siteEndYear, maxLifespan)) {
         return false;
       }
     } else if (dateTestType == "died") {
@@ -369,7 +379,7 @@ function buildTopLevelMenuItemFunctions(maxItems, data, excludeSite) {
   );
 }
 
-function buildSubMenuItemFunctions(data, filter, excludeSite) {
+function buildSubmenuItemFunctions(data, filter, excludeSite) {
   return buildSortedMenuItemFunctions(
     -1,
     "popup_includeOnSubmenu",
@@ -582,7 +592,7 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
 
     for (let registeredFunction of registeredSearchMenuItemFunctions) {
       let siteName = registeredFunction.siteName;
-      let priorityOptionName = "search_" + siteName + "_popup_priorityOnSubMenu";
+      let priorityOptionName = "search_" + siteName + "_popup_priorityOnSubmenu";
 
       if (options[priorityOptionName] <= 0) {
         addBreak(excludedSitesLabelElement);
@@ -601,11 +611,11 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
 }
 
 function setupAllSitesSubmenu(data, filter, backFunction, excludeSite) {
-  let subMenuFunctions = buildSubMenuItemFunctions(data, filter, excludeSite);
-  let subMenuFunctionList = subMenuFunctions.functionList;
+  let submenuFunctions = buildSubmenuItemFunctions(data, filter, excludeSite);
+  let submenuFunctionList = submenuFunctions.functionList;
 
-  //console.log("setupAllSitesSubmenu, subMenuFunctions is:");
-  //console.log(subMenuFunctions);
+  //console.log("setupAllSitesSubmenu, submenuFunctions is:");
+  //console.log(submenuFunctions);
 
   let backToHereFunction = function () {
     setupAllSitesSubmenu(data, filter, backFunction, excludeSite);
@@ -614,10 +624,10 @@ function setupAllSitesSubmenu(data, filter, backFunction, excludeSite) {
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
-  addSearchFilterMenuItem(menu, filter, subMenuFunctions.numSitesExcludedByPriority, backToHereFunction);
+  addSearchFilterMenuItem(menu, filter, submenuFunctions.numSitesExcludedByPriority, backToHereFunction);
 
   // add the search menu items for each site in list
-  for (let registeredFunction of subMenuFunctionList) {
+  for (let registeredFunction of submenuFunctionList) {
     //console.log("registeredFunction is:");
     //console.log(registeredFunction);
     let menuItemFunction = registeredFunction.menuItemFunction;
@@ -659,17 +669,17 @@ async function addSearchMenus(menu, data, backFunction, excludeSite) {
     countryArray: gd.inferCountries(),
   };
 
-  let subMenuText = "Show All Search Sites...";
+  let submenuText = "Show All Search Sites...";
   if (maxItems <= 0) {
-    subMenuText = "Search...";
+    submenuText = "Search...";
   }
 
   // Note, we used to hide the Submenu Item if it would not show anyhing that was not already
   // shown on the top-level menu. This is not feasible now that the option
   // search_general_popup_maxTotalItemsInTopMenu can retroactively remove items from the top level
   // menu.
-  let subMenuFunctions = buildSubMenuItemFunctions(data, null, excludeSite);
-  addMenuItem(menu, subMenuText, function (element) {
+  let submenuFunctions = buildSubmenuItemFunctions(data, null, excludeSite);
+  addMenuItem(menu, submenuText, function (element) {
     setupAllSitesSubmenu(data, filter, backFunction, excludeSite);
   });
   countOfMenuItemsAdded++;

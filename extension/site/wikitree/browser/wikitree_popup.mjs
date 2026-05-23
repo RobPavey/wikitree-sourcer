@@ -2039,7 +2039,7 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
           checkWtPersonData(wtPersonData, processFunction, backFunctionForApprove);
         }
 
-        setupImproveNameFieldsSubMenu(
+        setupImproveNameFieldsSubmenu(
           wtPersonData,
           message1,
           problemMessages,
@@ -2077,7 +2077,7 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
         }
 
         const existingValue = wtPersonData[fieldName];
-        setupImproveTextFieldSubMenu(existingValue, message1, message2, continueFunction, backFunctionForApprove);
+        setupImproveTextFieldSubmenu(existingValue, message1, message2, continueFunction, backFunctionForApprove);
         return true;
       }
     }
@@ -2282,8 +2282,8 @@ async function userCheckForCensusTablesImprovements(
       backFunction();
     } else {
       //let prevDiffIndex = getIndexOfPrevDiffNeedingApproval();
-      //setupApproveCensusChangeSubMenu(data, tabId, backFunction, input, prevDiffIndex);
-      setupApproveCensusChangeSubMenu(tabId, backFunction, compareResult, biography, flags, lastDiffIndex);
+      //setupApproveCensusChangeSubmenu(data, tabId, backFunction, input, prevDiffIndex);
+      setupApproveCensusChangeSubmenu(tabId, backFunction, compareResult, biography, flags, lastDiffIndex);
     }
   }
 
@@ -2292,7 +2292,7 @@ async function userCheckForCensusTablesImprovements(
     // got to end
     doCensusTablesImprovements(tabId, compareResult, biography);
   } else {
-    setupApproveCensusChangeSubMenu(tabId, backFunctionForApprove, compareResult, biography, flags, diffIndex);
+    setupApproveCensusChangeSubmenu(tabId, backFunctionForApprove, compareResult, biography, flags, diffIndex);
   }
 }
 
@@ -2435,7 +2435,7 @@ async function addMergeEditFromCitationObjectMenuItem(menu, data, tabId, backFun
 
 async function addMergeEditMenuItem(menu, data, tabId, backFunction) {
   addMenuItem(menu, "Merge/Edit from external data...", function (element) {
-    setupMergeEditSubMenu(data, tabId, backFunction);
+    setupMergeEditSubmenu(data, tabId, backFunction);
   });
 }
 
@@ -2449,7 +2449,7 @@ async function addShowAdditionalFieldsMenuItem(menu, tabId) {
 
 async function addImproveCensusTablesMenuItem(menu, data, tabId, backFunction) {
   addMenuItem(menu, "Improve census tables (BETA) ...", function (element) {
-    setupImproveCensusTablesSubMenu(data, tabId, backFunction);
+    setupImproveCensusTablesSubmenu(data, tabId, backFunction);
   });
 }
 
@@ -2457,7 +2457,7 @@ async function addImproveCensusTablesMenuItem(menu, data, tabId, backFunction) {
 // Sub menus
 ////////////////////////////////////////////////////////////////////////////////
 
-async function setupImproveTextFieldSubMenu(existingValue, message1, message2, continueFunction, backFunction) {
+async function setupImproveTextFieldSubmenu(existingValue, message1, message2, continueFunction, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -2502,7 +2502,7 @@ async function setupImproveTextFieldSubMenu(existingValue, message1, message2, c
   endMainMenu(menu);
 }
 
-async function setupImproveNameFieldsSubMenu(wtPersonData, message1, problemMessages, continueFunction, backFunction) {
+async function setupImproveNameFieldsSubmenu(wtPersonData, message1, problemMessages, continueFunction, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -2579,13 +2579,13 @@ async function setupImproveNameFieldsSubMenu(wtPersonData, message1, problemMess
   endMainMenu(menu);
 }
 
-async function setupMergeEditSubMenu(data, tabId, backFunction) {
+async function setupMergeEditSubmenu(data, tabId, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
 
   let toHereBackFunction = function () {
-    setupMergeEditSubMenu(data, tabId, backFunction);
+    setupMergeEditSubmenu(data, tabId, backFunction);
   };
 
   const item1Added = await addMergeEditFromPersonDataMenuItem(menu, data, tabId, toHereBackFunction);
@@ -2601,7 +2601,7 @@ async function setupMergeEditSubMenu(data, tabId, backFunction) {
   endMainMenu(menu);
 }
 
-async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biography, jsonData) {
+async function setupImproveCensusTablesSubmenu2(data, tabId, backFunction, biography, jsonData) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -2612,7 +2612,7 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
   };
 
   let toHereBackFunction = function () {
-    setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biography, jsonData);
+    setupImproveCensusTablesSubmenu2(data, tabId, backFunction, biography, jsonData);
   };
 
   let compareResult = compareCensusTables(data, biography, jsonData);
@@ -2858,7 +2858,7 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
   endMainMenu(menu);
 }
 
-async function setupImproveCensusTablesSubMenu(data, tabId, backFunction) {
+async function setupImproveCensusTablesSubmenu(data, tabId, backFunction) {
   // Make the whole window wider (if not on iOS)
   widthBeforeWidePopup = overrideMenuWidth("600px");
 
@@ -2911,7 +2911,7 @@ async function setupImproveCensusTablesSubMenu(data, tabId, backFunction) {
     wtApiGetRelatives(data.extractedData.wikiId, fields, true, true, true, true).then(
       function handleResolve(jsonData) {
         if (jsonData && jsonData.length > 0) {
-          setupImproveCensusTablesSubMenu2(data, tabId, resizeBackFunction, biography, jsonData);
+          setupImproveCensusTablesSubmenu2(data, tabId, resizeBackFunction, biography, jsonData);
         }
       },
       function handleReject(reason) {
@@ -2962,7 +2962,7 @@ function getRelativeId(relative) {
   return id;
 }
 
-async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResult, biography, flags, diffIndex) {
+async function setupApproveCensusChangeSubmenu(tabId, backFunction, compareResult, biography, flags, diffIndex) {
   let menu = beginMainMenu();
 
   let diff = compareResult.diffs[diffIndex];

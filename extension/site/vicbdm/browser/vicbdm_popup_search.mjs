@@ -40,7 +40,7 @@ import {
   doBackgroundSearchWithSearchData,
 } from "/base/browser/popup/popup_search.mjs";
 
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
@@ -138,14 +138,14 @@ async function vicbdmSearchWithParameters(generalizedData, parameters) {
 
 function addVicbdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
   addMenuItem(menu, "Search Victoria BDM (Aus)...", function (element) {
-    setupVicbdmSearchSubMenu(data, backFunction, filter);
+    setupVicbdmSearchSubmenu(data, backFunction, filter);
   });
 
   return true;
 }
 
 function addVicbdmSameRecordMenuItem(menu, data) {
-  addSameRecordMenuItem(menu, data, "fmp", function (element) {
+  addSameRecordMenuItem(menu, data, "vicbdm", function (element) {
     vicbdmSearch(data.generalizedData, "SameCollection");
   });
 }
@@ -209,7 +209,7 @@ function addVicbdmSearchDeathsMenuItem(menu, data, filter) {
 
 function addVicbdmSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupVicbdmSearchWithParametersSubMenu(data, backFunction);
+    setupVicbdmSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -217,9 +217,9 @@ function addVicbdmSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupVicbdmSearchSubMenu(data, backFunction, filter) {
+async function setupVicbdmSearchSubmenu(data, backFunction, filter) {
   let backToHereFunction = function () {
-    setupVicbdmSearchSubMenu(data, backFunction, filter);
+    setupVicbdmSearchSubmenu(data, backFunction, filter);
   };
 
   let menu = beginMainMenu();
@@ -235,9 +235,9 @@ async function setupVicbdmSearchSubMenu(data, backFunction, filter) {
   endMainMenu(menu);
 }
 
-async function setupVicbdmSearchWithParametersSubMenu(data, backFunction) {
+async function setupVicbdmSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/vicbdm_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.VicbdmData, vicbdmSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.VicbdmData, vicbdmSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

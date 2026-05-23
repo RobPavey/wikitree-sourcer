@@ -23,16 +23,16 @@ SOFTWARE.
 */
 
 import {
-  setupSearchCollectionsSubMenu,
+  setupSearchCollectionsSubmenu,
   addSameRecordMenuItem,
   addBackMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addMenuItem,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, dataHasName } from "/base/browser/popup/popup_search.mjs";
 
@@ -97,14 +97,14 @@ async function ancestrySearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addAncestryDefaultSearchMenuItem(menu, data, backFunction) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search Ancestry",
     function (element) {
       ancestrySearch(data.generalizedData, "");
     },
     function () {
-      setupAncestrySearchSubMenu(data, backFunction);
+      setupAncestrySearchSubmenu(data, backFunction);
     }
   );
   return true;
@@ -118,7 +118,7 @@ function addAncestrySameRecordMenuItem(menu, data) {
 
 function addAncestrySearchCollectionsMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search a specific collection...", function (element) {
-    setupSearchCollectionsSubMenu(data, "ancestry", ancestrySearchCollection, backFunction);
+    setupSearchCollectionsSubmenu(data, "ancestry", ancestrySearchCollection, backFunction);
   });
 }
 
@@ -130,7 +130,7 @@ function addAncestryTreesMenuItem(menu, data) {
 
 function addAncestrySearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupAncestrySearchWithParametersSubMenu(data, backFunction);
+    setupAncestrySearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -138,9 +138,9 @@ function addAncestrySearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupAncestrySearchSubMenu(data, backFunction) {
+async function setupAncestrySearchSubmenu(data, backFunction) {
   let backToHereFunction = function () {
-    setupAncestrySearchSubMenu(data, backFunction);
+    setupAncestrySearchSubmenu(data, backFunction);
   };
 
   let menu = beginMainMenu();
@@ -154,9 +154,9 @@ async function setupAncestrySearchSubMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-async function setupAncestrySearchWithParametersSubMenu(data, backFunction) {
+async function setupAncestrySearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/ancestry_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.AncestryData, ancestrySearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.AncestryData, ancestrySearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

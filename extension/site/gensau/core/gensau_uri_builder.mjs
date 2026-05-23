@@ -26,11 +26,13 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class GensauUriBuilder {
   constructor() {
-    //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-    // Change the URL below to the start of the search URL for your site
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    this.uri = "https://www.gensau.org/search";
-    this.searchTermAdded = false;
+    // The URL of the top level of the search is:
+    // https://www.genealogysa.org.au/resources/online-database-search
+    // As soon as you enter any search paramaters. For example just a surname of "Smith"
+    // It gets very long:
+    // https://www.genealogysa.org.au/index.php?option=com_gsa&view=gsa&layout=essearch&Itemid=193&collection_id=&page_no=1&sort_by=&sort_direction=asc&Surname=Smith&GivenName=&year_from=&accuracy=&ShipName=
+    this.uri = "https://www.genealogysa.org.au/index.php?option=com_gsa&view=gsa&layout=essearch&Itemid=193";
+    this.searchTermAdded = true;
   }
 
   addSearchTerm(string) {
@@ -60,44 +62,30 @@ class GensauUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
+  addCollectionId(string) {
+    this.addSearchParameter("collection_id", string);
   }
 
   addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("Surname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("GivenName", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
+  addEventYear(year, accuracy) {
+    // &year_from=1905&accuracy=35
+    this.addSearchParameter("year_from", year);
+    this.addSearchParameter("accuracy", accuracy);
   }
 
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
+  addFather(string) {
+    this.addSearchParameter("Father", string);
   }
 
-  addStartYear(string) {
-    this.addSearchParameter("start", string);
-  }
-
-  addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+  addBookPage(string) {
+    this.addSearchParameter("Book_Page", string);
   }
 
   getUri() {

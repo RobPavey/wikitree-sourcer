@@ -27,7 +27,7 @@ import {
   addBuildCitationMenuItems,
   addMenuItemWithSubtitle,
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addBackMenuItem,
   addMenuDivider,
   beginMainMenu,
@@ -603,7 +603,7 @@ async function addCreateSourceMenuItems(menu, data, tabId, backFunction) {
 
 function addBuildAllCitationsMenuItem(menu, data, backFunction) {
   if (data.extractedData.sourceIds && data.extractedData.sourceIds.length > 0) {
-    addMenuItemWithSubMenu(
+    addMenuItemWithSubmenu(
       menu,
       "Build All Citations",
       function (element) {
@@ -611,7 +611,7 @@ function addBuildAllCitationsMenuItem(menu, data, backFunction) {
         fsBuildAllCitationsAction(data, citationType);
       },
       function () {
-        setupBuildAllCitationsSubMenu(data, backFunction);
+        setupBuildAllCitationsSubmenu(data, backFunction);
       }
     );
   }
@@ -650,7 +650,7 @@ function addFsImageBuildCitationMenuItems(menu, data) {
   );
 }
 
-function setupBuildAllCitationsSubMenu(data, backFunction) {
+function setupBuildAllCitationsSubmenu(data, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);

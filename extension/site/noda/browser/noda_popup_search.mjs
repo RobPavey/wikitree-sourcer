@@ -24,18 +24,18 @@ SOFTWARE.
 
 import {
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   doAsyncActionWithCatch,
   addBackMenuItem,
   addSameRecordMenuItem,
   addSameEventMenuItem,
   beginMainMenu,
   endMainMenu,
-  setupSearchCollectionsSubMenu,
+  setupSearchCollectionsSubmenu,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -101,14 +101,14 @@ async function nodaSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addNodaDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search Digitalarkivet (Norway)",
     function (element) {
       nodaSearch(data.generalizedData, "");
     },
     function () {
-      setupNodaSearchSubMenu(data, backFunction, filter);
+      setupNodaSearchSubmenu(data, backFunction, filter);
     }
   );
 
@@ -129,13 +129,13 @@ function addNodaSameEventMenuItem(menu, data) {
 
 function addNodaSearchCollectionsMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search a specific collection...", function (element) {
-    setupSearchCollectionsSubMenu(data, "noda", nodaSearchSearchCollection, backFunction);
+    setupSearchCollectionsSubmenu(data, "noda", nodaSearchSearchCollection, backFunction);
   });
 }
 
 function addNodaSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupNodaSearchWithParametersSubMenu(data, backFunction);
+    setupNodaSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -143,7 +143,7 @@ function addNodaSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupNodaSearchSubMenu(data, backFunction, filter) {
+async function setupNodaSearchSubmenu(data, backFunction, filter) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -156,9 +156,9 @@ async function setupNodaSearchSubMenu(data, backFunction, filter) {
   endMainMenu(menu);
 }
 
-async function setupNodaSearchWithParametersSubMenu(data, backFunction) {
+async function setupNodaSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/noda_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.NodaData, nodaSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.NodaData, nodaSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

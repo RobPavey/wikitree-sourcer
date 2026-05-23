@@ -25,7 +25,7 @@ SOFTWARE.
 import {
   addBackMenuItem,
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
@@ -38,7 +38,7 @@ import {
   openUrlInNewTab,
 } from "/base/browser/popup/popup_search.mjs";
 
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 import { EggsaGrvsCommon } from "../core/eggsagrvs_common.mjs";
@@ -132,14 +132,14 @@ async function eggsagrvsSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addEggsagrvsDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search eGGSA Graves",
     function (element) {
-      setupEggsagrvsSearchSubMenu(data, backFunction, filter);
+      setupEggsagrvsSearchSubmenu(data, backFunction, filter);
     },
     function (element) {
-      setupEggsagrvsSearchWithParametersSubMenu(data, backFunction);
+      setupEggsagrvsSearchWithParametersSubmenu(data, backFunction);
     }
   );
 
@@ -154,7 +154,7 @@ function addEggsagrvsAreaMenuItem(menu, generalizedData, item) {
 
 function addEggsagrvsSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupEggsagrvsSearchWithParametersSubMenu(data, backFunction);
+    setupEggsagrvsSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -162,9 +162,9 @@ function addEggsagrvsSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupEggsagrvsSearchSubMenu(data, backFunction, filter) {
+async function setupEggsagrvsSearchSubmenu(data, backFunction, filter) {
   const backToHereFunction = function () {
-    setupEggsagrvsSearchSubMenu(data, backFunction, filter);
+    setupEggsagrvsSearchSubmenu(data, backFunction, filter);
   };
 
   const menu = beginMainMenu();
@@ -177,9 +177,9 @@ async function setupEggsagrvsSearchSubMenu(data, backFunction, filter) {
   endMainMenu(menu);
 }
 
-async function setupEggsagrvsSearchWithParametersSubMenu(data, backFunction) {
+async function setupEggsagrvsSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/eggsagrvs_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.EggsaGrvsData, eggsagrvsSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.EggsaGrvsData, eggsagrvsSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
