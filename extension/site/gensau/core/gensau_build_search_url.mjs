@@ -57,7 +57,7 @@ const searchTypes = {
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
-  const typeOfSearch = buildUrlInput.typeOfSearch;
+  let typeOfSearch = buildUrlInput.typeOfSearch;
   const options = buildUrlInput.options;
   const runDate = buildUrlInput.runDate;
   const parameters = buildUrlInput.searchParameters;

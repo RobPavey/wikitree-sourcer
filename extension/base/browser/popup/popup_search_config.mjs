@@ -38,10 +38,16 @@ import {
   doAsyncActionWithCatch,
 } from "./popup_menu_building.mjs";
 
-import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "./popup_search.mjs";
+import {
+  doSearch,
+  registerSearchMenuItemFunction,
+  shouldShowSiteSearch,
+  doBackgroundSearchWithSearchData,
+} from "./popup_search.mjs";
 import { setupSearchWithParametersSubmenu } from "./popup_search_with_parameters.mjs";
+import { checkPermissionForSiteMatches } from "./popup_permissions.mjs";
 
-function doSearchFromConfig(config, gd, typeOfSearch, parameters) {
+async function doUrlSearchFromConfig(config, gd, typeOfSearch, parameters) {
   const input = {
     generalizedData: gd,
     typeOfSearch: typeOfSearch,
@@ -55,6 +61,74 @@ function doSearchFromConfig(config, gd, typeOfSearch, parameters) {
     let loadedModule = await import(chrome.runtime.getURL(modulePath));
     doSearch(loadedModule, input);
   });
+}
+
+async function doLocalStorageSearchFromConfig(config, gd, typeOfSearch, parameters) {
+  const input = {
+    generalizedData: gd,
+    typeOfSearch: typeOfSearch,
+    searchParameters: parameters,
+    options: options,
+    runDate: new Date(),
+  };
+  const actionText = config.siteDisplayName + " Search";
+  const siteName = config.siteName;
+  const siteDisplayName = config.siteDisplayName;
+  const modulePath = `../../../site/${siteName}/core/${siteName}_build_search_data.mjs`;
+  const lsConfig = config.localStorageConfig;
+  let permissionsMessage = lsConfig.permissionsMessage;
+  if (!permissionsMessage) {
+    permissionsMessage = `To perform a search on ${siteDisplayName} a content script needs to be loaded on the search page.`;
+  }
+
+  doAsyncActionWithCatch(actionText, input, async function () {
+    let loadedModule = await import(chrome.runtime.getURL(modulePath));
+    let buildResult = loadedModule.buildSearchData(input);
+
+    const checkPermissionsOptions = {
+      reason: permissionsMessage,
+    };
+    let allowed = await checkPermissionForSiteMatches(siteName, checkPermissionsOptions);
+    if (!allowed) {
+      closePopup();
+      return;
+    }
+
+    let searchData = undefined;
+    if (lsConfig.buildLocalStorageDataFunction) {
+      searchData = lsConfig.buildLocalStorageDataFunction(buildResult, typeOfSearch);
+    } else if (lsConfig.searchUrl) {
+      let searchUrl = lsConfig.searchUrl;
+      searchData = {
+        timeStamp: Date.now(),
+        url: searchUrl,
+        fieldData: buildResult.fieldData,
+        selectData: buildResult.selectData,
+        searchType: typeOfSearch,
+      };
+    } else {
+      closePopup();
+      return;
+    }
+
+    let reuseOptionName = lsConfig.reuseTabOptionName;
+    if (!reuseOptionName) {
+      reuseOptionName = `search_${siteName}_reuseExistingTab`;
+    }
+    let reuseTabIfPossible = options[reuseOptionName];
+
+    doBackgroundSearchWithSearchData(siteName, searchData, reuseTabIfPossible);
+  });
+}
+
+async function doSearchFromConfig(config, gd, typeOfSearch, parameters) {
+  if (config.searchFunction) {
+    config.searchFunction(gd, typeOfSearch, parameters);
+  } else if (config.localStorageConfig) {
+    doLocalStorageSearchFromConfig(config, gd, typeOfSearch, parameters);
+  } else {
+    doUrlSearchFromConfig(config, gd, typeOfSearch, parameters);
+  }
 }
 
 function addDefaultSearchMenuItemFromConfig(menu, data, backFunction, filter, config) {
@@ -78,7 +152,7 @@ function addDefaultSearchMenuItemFromConfig(menu, data, backFunction, filter, co
       });
     }
   } else {
-    addMenuItem(menu, defaultMenuItemText, function (element) {
+    addMenuItem(menu, defaultMenuItemText + "...", function (element) {
       setupSearchSubmenuFromConfig(data, backFunction, filter, config);
     });
   }
@@ -98,7 +172,7 @@ async function setupSearchWithParametersSubmenuFromConfig(data, backFunction, co
   let dataModule = await import(chrome.runtime.getURL(dataModulePath));
   let dataName = config.submenuConfig.searchWithParametersData;
   if (!dataName || !dataModule[dataName]) {
-    dataName = "searchWithParametersData";
+    dataName = "SearchWithParametersData";
   }
   if (dataModule[dataName]) {
     function searchFunction(gd, parameters) {

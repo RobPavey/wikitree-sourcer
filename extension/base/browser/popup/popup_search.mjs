@@ -121,6 +121,10 @@ function dataHasBirthOrDeathDate(data) {
 }
 
 function testFilterForDatesAndCountries(filter, siteConstraints) {
+  if (!filter || !siteConstraints) {
+    return true;
+  }
+
   let siteStartYear = siteConstraints.startYear;
   let siteEndYear = siteConstraints.endYear;
   let siteCountryList = siteConstraints.countryList;
@@ -165,6 +169,10 @@ function testFilterForDatesAndCountries(filter, siteConstraints) {
 }
 
 function testGeneralizedDataForDatesAndCountries(gd, siteConstraints) {
+  if (!gd || !siteConstraints) {
+    return true;
+  }
+
   let siteStartYear = siteConstraints.startYear;
   let siteEndYear = siteConstraints.endYear;
   let siteCountryList = siteConstraints.countryList;
@@ -242,11 +250,30 @@ function testGeneralizedDataForDatesAndCountries(gd, siteConstraints) {
   return true;
 }
 
+function computeDynamicConstraints(constraints) {
+  const now = new Date();
+  const yearNow = now.getFullYear();
+
+  function computeDynamicYear(constraint) {
+    if (constraint.beforeNow) {
+      return yearNow - constraint.offset;
+    }
+  }
+  if (!constraints.startYear && constraints.startYearDynamic) {
+    constraints.startYear = computeDynamicYear(constraints.startYearDynamic);
+  }
+  if (!constraints.endYear && constraints.endYearDynamic) {
+    constraints.endYear = computeDynamicYear(constraints.endYearDynamic);
+  }
+}
+
 function shouldShowSiteSearch(gd, filter, siteConstraints) {
   let name = gd.inferFullName();
   if (!name) {
     return false;
   }
+
+  computeDynamicConstraints(siteConstraints);
 
   if (filter) {
     if (!testFilterForDatesAndCountries(filter, siteConstraints)) {

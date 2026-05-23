@@ -81,7 +81,6 @@ const searchMenuConfig = {
   submenuConfig: {
     includeSameCollection: true,
     includeSearchWithParameters: true,
-    searchWithParametersData: "GensauData",
     submenuOtherSearches: [
       {
         menuItemText: "Search Birth Registrations",

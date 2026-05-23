@@ -22,231 +22,65 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  beginMainMenu,
-  endMainMenu,
-  addMenuItem,
-  addBackMenuItem,
-  addSameRecordMenuItem,
-  doAsyncActionWithCatch,
-  closePopup,
-} from "/base/browser/popup/popup_menu_building.mjs";
+import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_search_config.mjs";
 
-import { options } from "/base/browser/options/options_loader.mjs";
+//////////////////////////////////////////////////////////////////////////////////////////
+// Configuration
+//////////////////////////////////////////////////////////////////////////////////////////
 
-import {
-  registerSearchMenuItemFunction,
-  shouldShowSiteSearch,
-  doBackgroundSearchWithSearchData,
-} from "/base/browser/popup/popup_search.mjs";
-
-import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
-
-import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
-
-function getSupportedDates() {
-  const recordStartYear = 1836;
-  const date = new Date();
-  const year = date.getFullYear();
-  const recordEndYear = year - 29;
-
-  let birthEndYear = year - 99;
-  let marriageEndYear = year - 59;
-  let deathEndYear = year - 29;
-
-  const dates = {
-    startYear: recordStartYear,
-    endYear: recordEndYear,
-    birthEndYear: birthEndYear,
-    marriageEndYear: marriageEndYear,
-    deathEndYear: deathEndYear,
-  };
-
-  return dates;
-}
-
-function shouldShowSearchMenuItem(data, filter) {
-  const supportedDates = getSupportedDates();
-
-  const siteConstraints = {
-    startYear: supportedDates.startYear,
-    endYear: supportedDates.endYear,
+const searchMenuConfig = {
+  siteName: "vicbdm",
+  siteDisplayName: "Victoria BDM (Aus)",
+  siteConstraints: {
+    startYear: 1836,
+    endYearDynamic: { beforeNow: true, offset: 29 },
     dateTestType: "bmd",
     countryList: ["Australia", "Colony of Victoria"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
-  return true;
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// Menu actions
-//////////////////////////////////////////////////////////////////////////////////////////
-
-async function doVicbdmSearch(input, isRetry = false) {
-  doAsyncActionWithCatch("Victoria BDM (Aus) Search", input, async function () {
-    let loadedModule = await import(`../core/vicbdm_build_search_data.mjs`);
-    let buildResult = loadedModule.buildSearchData(input);
-
-    const checkPermissionsOptions = {
-      reason:
-        "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
-    };
-    let allowed = await checkPermissionForSiteMatches("vicbdm", checkPermissionsOptions);
-    if (!allowed) {
-      closePopup();
-      return;
-    }
-
-    const searchData = {
-      timeStamp: Date.now(),
-      url: "https://my.rio.bdm.vic.gov.au/efamily-history/-",
-      fieldData: buildResult.fieldData,
-      selectData: buildResult.selectData,
-    };
-
-    //console.log("doVicbdmSearch, searchData is:");
-    //console.log(searchData);
-
-    let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
-
-    doBackgroundSearchWithSearchData("vicbdm", searchData, reuseTabIfPossible);
-  });
-}
-
-async function vicbdmSearch(generalizedData, typeOfSearch) {
-  const input = { generalizedData: generalizedData, typeOfSearch: typeOfSearch, options: options };
-  doVicbdmSearch(input);
-}
-
-async function vicbdmSearchWithParameters(generalizedData, parameters) {
-  const input = {
-    typeOfSearch: "SpecifiedParameters",
-    searchParameters: parameters,
-    generalizedData: generalizedData,
-    options: options,
-  };
-  doVicbdmSearch(input);
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// Menu items
-//////////////////////////////////////////////////////////////////////////////////////////
-
-function addVicbdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search Victoria BDM (Aus)...", function (element) {
-    setupVicbdmSearchSubmenu(data, backFunction, filter);
-  });
-
-  return true;
-}
-
-function addVicbdmSameRecordMenuItem(menu, data) {
-  addSameRecordMenuItem(menu, data, "vicbdm", function (element) {
-    vicbdmSearch(data.generalizedData, "SameCollection");
-  });
-}
-
-function addVicbdmSearchBirthsMenuItem(menu, data, filter) {
-  if (!filter) {
-    const supportedDates = getSupportedDates();
-
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      supportedDates.startYear,
-      supportedDates.birthEndYear,
-      maxLifespan
-    );
-    if (!birthPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Victoria BDM Births", function (element) {
-    vicbdmSearch(data.generalizedData, "Births");
-  });
-}
-
-function addVicbdmSearchMarriagesMenuItem(menu, data, filter) {
-  if (!filter) {
-    const supportedDates = getSupportedDates();
-
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      supportedDates.startYear,
-      supportedDates.marriageEndYear,
-      maxLifespan
-    );
-    if (!marriagePossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Victoria BDM Marriages", function (element) {
-    vicbdmSearch(data.generalizedData, "Marriages");
-  });
-}
-
-function addVicbdmSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter) {
-    const supportedDates = getSupportedDates();
-
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      supportedDates.startYear,
-      supportedDates.deathEndYear,
-      maxLifespan
-    );
-    if (!deathPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Victoria BDM Deaths", function (element) {
-    vicbdmSearch(data.generalizedData, "Deaths");
-  });
-}
-
-function addVicbdmSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupVicbdmSearchWithParametersSubmenu(data, backFunction);
-  });
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// Submenus
-//////////////////////////////////////////////////////////////////////////////////////////
-
-async function setupVicbdmSearchSubmenu(data, backFunction, filter) {
-  let backToHereFunction = function () {
-    setupVicbdmSearchSubmenu(data, backFunction, filter);
-  };
-
-  let menu = beginMainMenu();
-
-  addBackMenuItem(menu, backFunction);
-
-  addVicbdmSameRecordMenuItem(menu, data);
-  addVicbdmSearchBirthsMenuItem(menu, data, filter);
-  addVicbdmSearchMarriagesMenuItem(menu, data, filter);
-  addVicbdmSearchDeathsMenuItem(menu, data, filter);
-  addVicbdmSearchWithParametersMenuItem(menu, data, backToHereFunction);
-
-  endMainMenu(menu);
-}
-
-async function setupVicbdmSearchWithParametersSubmenu(data, backFunction) {
-  let dataModule = await import(`../core/vicbdm_search_menu_data.mjs`);
-  setupSearchWithParametersSubmenu(data, backFunction, dataModule.VicbdmData, vicbdmSearchWithParameters);
-}
+  },
+  localStorageConfig: {
+    permissionsMessage:
+      "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
+    searchUrl: "https://my.rio.bdm.vic.gov.au/efamily-history/-",
+  },
+  includeDefaultSearch: false,
+  includeSearchSubmenu: true,
+  submenuConfig: {
+    includeSameCollection: true,
+    includeSearchWithParameters: true,
+    submenuOtherSearches: [
+      {
+        menuItemText: "Search Victoria BDM Births",
+        typeOfSearch: "Births",
+        constraints: {
+          startYear: 1836,
+          endYearDynamic: { beforeNow: true, offset: 99 },
+          dateTestType: "born",
+        },
+      },
+      {
+        menuItemText: "Search Victoria BDM Deaths",
+        typeOfSearch: "Deaths",
+        constraints: {
+          startYear: 1836,
+          endYearDynamic: { beforeNow: true, offset: 59 },
+          dateTestType: "died",
+        },
+      },
+      {
+        menuItemText: "Search Victoria BDM Marriages",
+        typeOfSearch: "Marriages",
+        constraints: {
+          startYear: 1836,
+          endYearDynamic: { beforeNow: true, offset: 29 },
+          dateTestType: "bdm",
+        },
+      },
+    ],
+  },
+};
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction(
-  "vicbdm",
-  "Victoria BDM (Aus)",
-  addVicbdmDefaultSearchMenuItem,
-  shouldShowSearchMenuItem
-);
+registerSearchMenuItemFromConfig(searchMenuConfig);

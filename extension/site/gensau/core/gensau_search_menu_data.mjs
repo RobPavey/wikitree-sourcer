@@ -69,7 +69,7 @@ const categories = [
   { value: "All", text: "All" },
 ];
 
-const GensauData = {
+const SearchWithParametersData = {
   includeCategories: function (generalizedData, parameters) {
     return true;
   },
@@ -189,4 +189,4 @@ const GensauData = {
   updateParametersOnCollectionChange: function (generalizedData, parameters, options) {},
 };
 
-export { GensauData };
+export { SearchWithParametersData };
