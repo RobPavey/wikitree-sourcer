@@ -31,9 +31,7 @@ function transformPlainText(plainText, phase, options) {
 
   let lcText = plainText.toLowerCase();
 
-  // check for Victorian BDM (do this last because another site citation might have the given name
-  // Victoria in it).
-  if (phase != 2) {
+  if (phase != 1) {
     return undefined;
   }
 
@@ -56,7 +54,7 @@ function transformPlainText(plainText, phase, options) {
     defaultToYearFirst: true,
     startYear: 1800,
   };
-  let yearAndNum = parser.extractYearAndRegistrationNumberFromText(lcText, extractInput);
+  let yearAndNum = parser.extractYearAndRegistrationNumberFromText(extractInput);
 
   if (!yearAndNum) {
     return undefined;
@@ -99,8 +97,6 @@ function transformPlainText(plainText, phase, options) {
     fieldData: fieldData,
     searchType: searchType,
   };
-
-  return searchData;
 
   const result = {
     searchData: searchData,

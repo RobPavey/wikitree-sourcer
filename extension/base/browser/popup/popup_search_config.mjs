@@ -203,7 +203,25 @@ async function setupSearchSubmenuFromConfig(data, backFunction, filter, config) 
     if (subconfig.submenuOtherSearches) {
       for (let search of subconfig.submenuOtherSearches) {
         if (search.constraints) {
-          if (!shouldShowSiteSearch(data.generalizedData, filter, search.constraints)) {
+          let constraints = search.constraints;
+          if (config.siteConstraints) {
+            let siteConstraints = config.siteConstraints;
+            if (!constraints.startYear && !constraints.startYearDynamic) {
+              if (siteConstraints.startYear) {
+                constraints.startYear = siteConstraints.startYear;
+              } else if (siteConstraints.startYearDynamic) {
+                constraints.startYearDynamic = siteConstraints.startYearDynamic;
+              }
+            }
+            if (!constraints.endYear && !constraints.endYearDynamic) {
+              if (siteConstraints.endYear) {
+                constraints.endYear = siteConstraints.endYear;
+              } else if (siteConstraints.endYearDynamic) {
+                constraints.endYearDynamic = siteConstraints.endYearDynamic;
+              }
+            }
+          }
+          if (!shouldShowSiteSearch(data.generalizedData, filter, constraints)) {
             continue;
           }
         }
@@ -213,7 +231,9 @@ async function setupSearchSubmenuFromConfig(data, backFunction, filter, config) 
       }
     }
 
-    addSearchWithParametersMenuItemFromConfig(menu, data, backToHereFunction, config);
+    if (subconfig.includeSearchWithParameters) {
+      addSearchWithParametersMenuItemFromConfig(menu, data, backToHereFunction, config);
+    }
   }
 
   endMainMenu(menu);

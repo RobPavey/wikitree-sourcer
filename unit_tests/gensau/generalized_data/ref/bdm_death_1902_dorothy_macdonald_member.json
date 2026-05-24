@@ -24,9 +24,11 @@
   },
   "registrationDistrict": "Adelaide",
   "collectionData": {
-    "id": "Deaths",
+    "id": "death",
     "year": "1902",
-    "registrationNumber": "290/184"
+    "registrationNumber": "290/184",
+    "volume": "290",
+    "page": "184"
   },
   "hasValidData": true
 }

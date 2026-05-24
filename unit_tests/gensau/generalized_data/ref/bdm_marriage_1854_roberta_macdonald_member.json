@@ -35,9 +35,11 @@
     }
   ],
   "collectionData": {
-    "id": "Marriages",
+    "id": "marriage",
     "year": "1854",
-    "registrationNumber": "20/100"
+    "registrationNumber": "20/100",
+    "volume": "20",
+    "page": "100"
   },
   "hasValidData": true
 }

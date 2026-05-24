@@ -18,9 +18,11 @@
   },
   "registrationDistrict": "Grey",
   "collectionData": {
-    "id": "Deaths",
+    "id": "death",
     "year": "1877",
-    "registrationNumber": "79/49"
+    "registrationNumber": "79/49",
+    "volume": "79",
+    "page": "49"
   },
   "hasValidData": true
 }

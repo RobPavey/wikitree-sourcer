@@ -36,9 +36,11 @@
     }
   },
   "collectionData": {
-    "id": "Births",
+    "id": "birth",
     "year": "1912",
-    "registrationNumber": "882/412"
+    "registrationNumber": "882/412",
+    "volume": "882",
+    "page": "412"
   },
   "hasValidData": true
 }

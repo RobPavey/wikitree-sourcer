@@ -48,12 +48,12 @@ function transformPlainText(plainText, phase, options) {
     return undefined;
   }
 
+  let parser = new CitationParser(lcText);
   const extractInput = {
     defaultToYearFirst: false,
     startYear: 1700,
   };
-
-  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, extractInput);
+  let yearAndNum = parser.extractYearAndRegistrationNumberFromText(extractInput);
 
   if (!yearAndNum) {
     return undefined;

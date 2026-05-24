@@ -52,7 +52,6 @@ const searchMenuConfig = {
         menuItemText: "Search Victoria BDM Births",
         typeOfSearch: "Births",
         constraints: {
-          startYear: 1836,
           endYearDynamic: { beforeNow: true, offset: 99 },
           dateTestType: "born",
         },
@@ -61,8 +60,7 @@ const searchMenuConfig = {
         menuItemText: "Search Victoria BDM Deaths",
         typeOfSearch: "Deaths",
         constraints: {
-          startYear: 1836,
-          endYearDynamic: { beforeNow: true, offset: 59 },
+          endYearDynamic: { beforeNow: true, offset: 29 },
           dateTestType: "died",
         },
       },
@@ -70,9 +68,8 @@ const searchMenuConfig = {
         menuItemText: "Search Victoria BDM Marriages",
         typeOfSearch: "Marriages",
         constraints: {
-          startYear: 1836,
-          endYearDynamic: { beforeNow: true, offset: 29 },
-          dateTestType: "bdm",
+          endYearDynamic: { beforeNow: true, offset: 59 },
+          dateTestType: "married",
         },
       },
     ],

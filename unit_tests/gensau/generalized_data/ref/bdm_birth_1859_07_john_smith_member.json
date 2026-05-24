@@ -36,9 +36,11 @@
     }
   },
   "collectionData": {
-    "id": "Births",
+    "id": "birth",
     "year": "1859",
-    "registrationNumber": "15/154"
+    "registrationNumber": "15/154",
+    "volume": "15",
+    "page": "154"
   },
   "hasValidData": true
 }

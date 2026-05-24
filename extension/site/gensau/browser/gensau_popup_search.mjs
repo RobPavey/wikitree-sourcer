@@ -106,7 +106,7 @@ const searchMenuConfig = {
         constraints: {
           startYear: 1842,
           endYear: 1951,
-          dateTestType: "bdm",
+          dateTestType: "married",
         },
       },
     ],

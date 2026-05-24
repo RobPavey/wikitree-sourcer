@@ -454,7 +454,7 @@ class GensauEdReader extends ExtractedDataReader {
         page = parts[1].trim();
       }
 
-      let collectionData = { id: id, year: year, registrationNumber: registrationNumber, valume: volume, page: page };
+      let collectionData = { id: id, year: year, registrationNumber: registrationNumber, volume: volume, page: page };
       return collectionData;
     }
     return undefined;

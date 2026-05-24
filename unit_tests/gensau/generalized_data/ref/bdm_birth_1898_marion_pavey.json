@@ -25,9 +25,11 @@
     }
   },
   "collectionData": {
-    "id": "Births",
+    "id": "birth",
     "year": "1898",
-    "registrationNumber": "630/103"
+    "registrationNumber": "630/103",
+    "volume": "630",
+    "page": "103"
   },
   "hasValidData": true
 }

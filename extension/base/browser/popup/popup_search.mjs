@@ -211,6 +211,10 @@ function testGeneralizedDataForDatesAndCountries(gd, siteConstraints) {
       if (!gd.couldPersonHaveDiedInDateRange(siteStartYear, siteEndYear, maxLifespan)) {
         return false;
       }
+    } else if (dateTestType == "married") {
+      if (!gd.couldPersonHaveMarriedInDateRange(siteStartYear, siteEndYear, maxLifespan)) {
+        return false;
+      }
     } else if (dateTestType == "lived") {
       if (!gd.couldPersonHaveLivedInDateRange(siteStartYear, siteEndYear, maxLifespan)) {
         return false;
