@@ -131,32 +131,40 @@ async function doSearchFromConfig(config, gd, typeOfSearch, parameters) {
   }
 }
 
-function addDefaultSearchMenuItemFromConfig(menu, data, backFunction, filter, config) {
-  const defaultMenuItemText = "Search " + config.siteDisplayName;
+function addSearchMenuItemFromConfig(menu, data, backFunction, filter, config, menuItemConfig) {
+  let includeDefaultSearch = menuItemConfig.includeDefaultSearch;
+  let includeSearchSubmenu = menuItemConfig.includeSearchSubmenu;
 
-  if (config.includeDefaultSearch) {
-    if (config.includeSearchSubmenu) {
+  if (!includeDefaultSearch && !includeSearchSubmenu) {
+    includeDefaultSearch = true;
+  }
+
+  if (includeDefaultSearch) {
+    if (includeSearchSubmenu) {
       addMenuItemWithSubmenu(
         menu,
-        defaultMenuItemText,
+        menuItemConfig.menuItemText,
         function (element) {
           doSearchFromConfig(config, data.generalizedData);
         },
         function () {
-          setupSearchSubmenuFromConfig(data, backFunction, filter, config);
+          setupSearchSubmenuFromConfig(data, backFunction, filter, config, menuItemConfig.submenuConfig);
         }
       );
     } else {
-      addMenuItem(menu, defaultMenuItemText, function (element) {
-        doSearchFromConfig(config, data.generalizedData);
+      addMenuItem(menu, menuItemConfig.menuItemText, function (element) {
+        doSearchFromConfig(config, data.generalizedData, menuItemConfig.typeOfSearch);
       });
     }
   } else {
-    addMenuItem(menu, defaultMenuItemText + "...", function (element) {
-      setupSearchSubmenuFromConfig(data, backFunction, filter, config);
+    addMenuItem(menu, menuItemConfig.menuItemText + "...", function (element) {
+      setupSearchSubmenuFromConfig(data, backFunction, filter, config, menuItemConfig.submenuConfig);
     });
   }
+}
 
+function addDefaultSearchMenuItemFromConfig(menu, data, backFunction, filter, config) {
+  addSearchMenuItemFromConfig(menu, data, backFunction, filter, config, config.defaultMenuItem);
   return true;
 }
 
@@ -182,28 +190,26 @@ async function setupSearchWithParametersSubmenuFromConfig(data, backFunction, co
   }
 }
 
-async function setupSearchSubmenuFromConfig(data, backFunction, filter, config) {
+async function setupSearchSubmenuFromConfig(data, backFunction, filter, config, submenuConfig) {
   let backToHereFunction = function () {
-    setupSearchSubmenu(data, backFunction, filter, config);
+    setupSearchSubmenuFromConfig(data, backFunction, filter, config, submenuConfig);
   };
 
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
 
-  if (config.submenuConfig) {
-    const subconfig = config.submenuConfig;
-
-    if (subconfig.includeSameCollection) {
+  if (submenuConfig) {
+    if (submenuConfig.includeSameCollection) {
       addSameRecordMenuItem(menu, data, config.siteName, function (element) {
         doSearchFromConfig(config, data.generalizedData, "SameCollection");
       });
     }
 
-    if (subconfig.submenuOtherSearches) {
-      for (let search of subconfig.submenuOtherSearches) {
-        if (search.constraints) {
-          let constraints = search.constraints;
+    if (submenuConfig.submenuMenuItems) {
+      for (let menuItemConfig of submenuConfig.submenuMenuItems) {
+        if (menuItemConfig.constraints) {
+          let constraints = menuItemConfig.constraints;
           if (config.siteConstraints) {
             let siteConstraints = config.siteConstraints;
             if (!constraints.startYear && !constraints.startYearDynamic) {
@@ -225,13 +231,11 @@ async function setupSearchSubmenuFromConfig(data, backFunction, filter, config) 
             continue;
           }
         }
-        addMenuItem(menu, search.menuItemText, function (element) {
-          doSearchFromConfig(config, data.generalizedData, search.typeOfSearch);
-        });
+        addSearchMenuItemFromConfig(menu, data, backToHereFunction, filter, config, menuItemConfig);
       }
     }
 
-    if (subconfig.includeSearchWithParameters) {
+    if (submenuConfig.includeSearchWithParameters) {
       addSearchWithParametersMenuItemFromConfig(menu, data, backToHereFunction, config);
     }
   }
@@ -254,9 +258,4 @@ function registerSearchMenuItemFromConfig(config) {
   );
 }
 
-export {
-  registerSearchMenuItemFromConfig,
-  addDefaultSearchMenuItemFromConfig,
-  addSearchWithParametersMenuItemFromConfig,
-  setupSearchSubmenuFromConfig,
-};
+export { registerSearchMenuItemFromConfig };

@@ -31,10 +31,13 @@ import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_sear
 const searchMenuConfig = {
   siteName: "exampleSite",
   siteDisplayName: "ExampleSite",
-  includeDefaultSearch: true,
-  includeSearchSubmenu: false,
   localStorageConfig: {
     searchUrl: "https://put_your_search_url_here",
+  },
+  defaultMenuItem: {
+    menuItemText: "Search ExampleSite",
+    includeDefaultSearch: true,
+    includeSearchSubmenu: false,
   },
 };
 

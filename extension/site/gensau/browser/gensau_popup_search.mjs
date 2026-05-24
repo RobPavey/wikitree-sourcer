@@ -76,40 +76,129 @@ const searchMenuConfig = {
     dateTestType: "bmd",
     countryList: ["Australia", "Colony of South Australia"],
   },
-  includeDefaultSearch: true,
-  includeSearchSubmenu: true,
-  submenuConfig: {
-    includeSameCollection: true,
-    includeSearchWithParameters: true,
-    submenuOtherSearches: [
-      {
-        menuItemText: "Search Birth Registrations",
-        typeOfSearch: "bdmBirths",
-        constraints: {
-          startYear: 1837,
-          endYear: 1928,
-          dateTestType: "born",
+  defaultMenuItem: {
+    menuItemText: "Search Genealogy SA",
+    includeDefaultSearch: true,
+    includeSearchSubmenu: true,
+    submenuConfig: {
+      includeSameCollection: true,
+      includeSearchWithParameters: true,
+      submenuMenuItems: [
+        {
+          menuItemText: "Search Birth Registrations",
+          typeOfSearch: "bdmBirths",
+          constraints: {
+            startYear: 1837,
+            endYear: 1928,
+            dateTestType: "born",
+          },
         },
-      },
-      {
-        menuItemText: "Search Death Registrations",
-        typeOfSearch: "bdmDeaths",
-        constraints: {
-          startYear: 1842,
-          endYear: 1996,
-          dateTestType: "died",
+        {
+          menuItemText: "Search Death Registrations",
+          typeOfSearch: "bdmDeaths",
+          constraints: {
+            startYear: 1842,
+            endYear: 1996,
+            dateTestType: "died",
+          },
         },
-      },
-      {
-        menuItemText: "Search Marriage Registrations",
-        typeOfSearch: "bdmMarriages",
-        constraints: {
-          startYear: 1842,
-          endYear: 1951,
-          dateTestType: "married",
+        {
+          menuItemText: "Search Marriage Registrations",
+          typeOfSearch: "bdmMarriages",
+          constraints: {
+            startYear: 1842,
+            endYear: 1951,
+            dateTestType: "married",
+          },
         },
-      },
-    ],
+        {
+          menuItemText: "Search Newspaper Notices",
+          includeDefaultSearch: false,
+          includeSearchSubmenu: true,
+          submenuConfig: {
+            submenuMenuItems: [
+              {
+                menuItemText: "Search Newspaper Births",
+                typeOfSearch: "newsBirths",
+                constraints: {
+                  startYear: 1839,
+                  endYear: 2018,
+                  dateTestType: "born",
+                },
+              },
+              {
+                menuItemText: "Search Newspaper Death Notices",
+                typeOfSearch: "newsDeaths",
+                constraints: {
+                  startYear: 1852,
+                  endYear: 2020,
+                  dateTestType: "died",
+                },
+              },
+              {
+                menuItemText: "Search Newspaper Marriages",
+                typeOfSearch: "newsMarriages",
+                constraints: {
+                  startYear: 1852,
+                  endYear: 2018,
+                  dateTestType: "married",
+                },
+              },
+              {
+                menuItemText: "Search Newspaper Divorces",
+                typeOfSearch: "newsDivorces",
+                constraints: {
+                  startYear: 1859,
+                  endYear: 1954,
+                  dateTestType: "married",
+                },
+              },
+            ],
+          },
+        },
+        {
+          menuItemText: "Search Church Records",
+          includeDefaultSearch: false,
+          includeSearchSubmenu: true,
+          submenuConfig: {
+            submenuMenuItems: [
+              {
+                menuItemText: "Search Church Burials",
+                typeOfSearch: "churchBurials",
+                constraints: {
+                  startYear: 1847,
+                  dateTestType: "born",
+                },
+              },
+              {
+                menuItemText: "Search Church Baptisms",
+                typeOfSearch: "churchBaptisms",
+                constraints: {
+                  startYear: 1839,
+                  dateTestType: "died",
+                },
+              },
+              {
+                menuItemText: "Search Church Marriages",
+                typeOfSearch: "churchMarriages",
+                constraints: {
+                  startYear: 1842,
+                  dateTestType: "married",
+                },
+              },
+              {
+                menuItemText: "Search Church Other",
+                typeOfSearch: "churchOther",
+                constraints: {
+                  startYear: 1863,
+                  dateTestType: "married",
+                },
+              },
+            ],
+          },
+        },
+      ],
+    },
   },
 };
 

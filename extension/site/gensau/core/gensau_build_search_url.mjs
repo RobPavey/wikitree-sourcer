@@ -53,6 +53,46 @@ const searchTypes = {
     eventYearType: "lived",
     collectionId: "marriage",
   },
+  newsBirths: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "born",
+    collectionId: "newspaper-birth",
+  },
+  newsDeaths: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "died",
+    collectionId: "newspaper-death",
+  },
+  newsMarriages: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "newspaper-marriage",
+  },
+  newsDivorces: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "divorce",
+  },
+  churchBurials: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "died",
+    collectionId: "church-burial",
+  },
+  churchBaptisms: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "born",
+    collectionId: "church-baptism",
+  },
+  churchMarriages: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "church-marriage",
+  },
+  churchOther: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "church-others",
+  },
 };
 
 function buildSearchUrl(buildUrlInput) {
@@ -122,6 +162,10 @@ function buildSearchUrl(buildUrlInput) {
       }
     } else if (searchConfig.eventYearType == "born") {
       let birthYear = gd.inferBirthYear();
+      let accuracy = 5;
+      builder.addEventYear(birthYear, accuracy);
+    } else if (searchConfig.eventYearType == "died") {
+      let birthYear = gd.inferDeathYear();
       let accuracy = 5;
       builder.addEventYear(birthYear, accuracy);
     }

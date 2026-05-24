@@ -59,35 +59,38 @@ const searchMenuConfig = {
       "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
     buildLocalStorageDataFunction: buildLocalStorageDataFromBuildResult,
   },
-  includeDefaultSearch: false,
-  includeSearchSubmenu: true,
-  submenuConfig: {
-    submenuOtherSearches: [
-      {
-        menuItemText: "Search New Zealand BDM Births",
-        typeOfSearch: "Births",
-        constraints: {
-          endYearDynamic: { beforeNow: true, offset: 79 },
-          dateTestType: "born",
+  defaultMenuItem: {
+    menuItemText: "Search New Zealand BDM",
+    includeDefaultSearch: false,
+    includeSearchSubmenu: true,
+    submenuConfig: {
+      submenuMenuItems: [
+        {
+          menuItemText: "Search New Zealand BDM Births",
+          typeOfSearch: "Births",
+          constraints: {
+            endYearDynamic: { beforeNow: true, offset: 79 },
+            dateTestType: "born",
+          },
         },
-      },
-      {
-        menuItemText: "Search New Zealand BDM Deaths",
-        typeOfSearch: "Deaths",
-        constraints: {
-          endYearDynamic: { beforeNow: true, offset: 0 },
-          dateTestType: "died",
+        {
+          menuItemText: "Search New Zealand BDM Deaths",
+          typeOfSearch: "Deaths",
+          constraints: {
+            endYearDynamic: { beforeNow: true, offset: 0 },
+            dateTestType: "died",
+          },
         },
-      },
-      {
-        menuItemText: "Search New Zealand BDM Marriages",
-        typeOfSearch: "Marriages",
-        constraints: {
-          endYearDynamic: { beforeNow: true, offset: 74 },
-          dateTestType: "married",
+        {
+          menuItemText: "Search New Zealand BDM Marriages",
+          typeOfSearch: "Marriages",
+          constraints: {
+            endYearDynamic: { beforeNow: true, offset: 74 },
+            dateTestType: "married",
+          },
         },
-      },
-    ],
+      ],
+    },
   },
 };
 

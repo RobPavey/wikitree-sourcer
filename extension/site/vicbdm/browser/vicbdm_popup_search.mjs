@@ -42,37 +42,40 @@ const searchMenuConfig = {
       "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
     searchUrl: "https://my.rio.bdm.vic.gov.au/efamily-history/-",
   },
-  includeDefaultSearch: false,
-  includeSearchSubmenu: true,
-  submenuConfig: {
-    includeSameCollection: true,
-    includeSearchWithParameters: true,
-    submenuOtherSearches: [
-      {
-        menuItemText: "Search Victoria BDM Births",
-        typeOfSearch: "Births",
-        constraints: {
-          endYearDynamic: { beforeNow: true, offset: 99 },
-          dateTestType: "born",
+  defaultMenuItem: {
+    menuItemText: "Search Victoria BDM (Aus)",
+    includeDefaultSearch: false,
+    includeSearchSubmenu: true,
+    submenuConfig: {
+      includeSameCollection: true,
+      includeSearchWithParameters: true,
+      submenuMenuItems: [
+        {
+          menuItemText: "Search Victoria BDM Births",
+          typeOfSearch: "Births",
+          constraints: {
+            endYearDynamic: { beforeNow: true, offset: 99 },
+            dateTestType: "born",
+          },
         },
-      },
-      {
-        menuItemText: "Search Victoria BDM Deaths",
-        typeOfSearch: "Deaths",
-        constraints: {
-          endYearDynamic: { beforeNow: true, offset: 29 },
-          dateTestType: "died",
+        {
+          menuItemText: "Search Victoria BDM Deaths",
+          typeOfSearch: "Deaths",
+          constraints: {
+            endYearDynamic: { beforeNow: true, offset: 29 },
+            dateTestType: "died",
+          },
         },
-      },
-      {
-        menuItemText: "Search Victoria BDM Marriages",
-        typeOfSearch: "Marriages",
-        constraints: {
-          endYearDynamic: { beforeNow: true, offset: 59 },
-          dateTestType: "married",
+        {
+          menuItemText: "Search Victoria BDM Marriages",
+          typeOfSearch: "Marriages",
+          constraints: {
+            endYearDynamic: { beforeNow: true, offset: 59 },
+            dateTestType: "married",
+          },
         },
-      },
-    ],
+      ],
+    },
   },
 };
 
