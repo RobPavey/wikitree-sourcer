@@ -285,18 +285,14 @@ function shouldUseFetch() {
   // For thise we return true and it will just fail when it doesn't get JSON data back from the fetch.
 
   let useFetch = false;
+  let createSourceDialog = document.querySelector("div[aria-modal='true'][role='dialog'][aria-label='Create Source']");
 
-  if (personDetailsRegex.test(location.href)) {
+  if (createSourceDialog) {
+    useFetch = false;
+  } else if (personDetailsRegex.test(location.href)) {
     useFetch = true;
   } else if (personSourcesRegex.test(location.href)) {
-    let createSourceDialog = document.querySelector(
-      "div[aria-modal='true'][role='dialog'][aria-label='Create Source']"
-    );
-    if (createSourceDialog) {
-      useFetch = false;
-    } else {
-      useFetch = true;
-    }
+    useFetch = true;
   } else if (imageWithSidebarUrlRegEx.test(location.href)) {
     // This is an image with a person details selected
     useFetch = true;

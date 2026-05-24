@@ -1124,6 +1124,11 @@ function extractData(document, url) {
   result.url = url;
 
   // first determine what kind of page we are in.
+  let createSourceDialog = document.querySelector("div[aria-modal='true'][role='dialog'][aria-label='Create Source']");
+  if (createSourceDialog) {
+    extractDataForCreateSource(document, result);
+    return result;
+  }
 
   let mainContent = document.querySelector("#main-content-section");
 
@@ -1153,15 +1158,6 @@ function extractData(document, url) {
     mainContent = document.querySelector("#main");
     if (mainContent) {
       // this is a newer format page, only supported for person pages currently
-
-      // check if we are on the sourcers page with the create source dialog up
-      let createSourceDialog = document.querySelector(
-        "div[aria-modal='true'][role='dialog'][aria-label='Create Source']"
-      );
-      if (createSourceDialog) {
-        extractDataForCreateSource(document, result);
-        return result;
-      }
 
       if (personDetailsRegex.test(url)) {
         // it is a person page
