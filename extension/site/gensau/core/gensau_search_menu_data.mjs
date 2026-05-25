@@ -63,10 +63,29 @@ South Australian Public Trustees/Deceased Estates#	1841 to 2023	234,592	19 Aug 2
 */
 
 const categories = [
+  { value: "all", text: "All" },
   { value: "bdmBirths", text: "Birth Registrations" },
   { value: "bdmDeaths", text: "Death Registrations" },
   { value: "bdmMarriages", text: "Marriage Registrations" },
-  { value: "All", text: "All" },
+  { value: "newsBirths", text: "Newspaper Births" },
+  { value: "newsDeaths", text: "Newspaper Death Notices" },
+  { value: "newsMarriages", text: "Newspaper Marriages" },
+  { value: "newsDivorces", text: "Newspaper Divorces" },
+  { value: "cemeteries", text: "South Australia Cemeteries" },
+  { value: "churchBurials", text: "Church Burials" },
+  { value: "churchBaptisms", text: "Church Baptisms" },
+  { value: "churchMarriages", text: "Church Marriages" },
+  { value: "churchOther", text: "Other Church Records" },
+  { value: "admissionsSchool", text: "South Australian School Admissions" },
+  { value: "admissionsHosp", text: "Hospital, Asylum and Lying-in Home Admissions" },
+  { value: "other", text: "All Other Records" },
+  { value: "otherBisa", text: "Biographical Index of South Australians" },
+  { value: "otherBisaSupp", text: "Biographical Index of South Australians - Supplementary" },
+  { value: "otherCerts", text: "Certificates-Australia and Overseas" },
+  { value: "otherIbsa", text: "Irish Born South Australians (IBSA)" },
+  { value: "otherShipArrivals", text: "Ship Passenger Arrivals in South Australia" },
+  { value: "otherShipDepartures", text: "Shipping Passenger Departures from South Australia" },
+  { value: "otherTrustees", text: "South Australian Public Trustees/Deceased Estates" },
 ];
 
 const SearchWithParametersData = {
@@ -78,111 +97,11 @@ const SearchWithParametersData = {
     return categories;
   },
 
-  includeLastNameSelector: function (generalizedData, parameters) {
-    // we can support multiple last names in search so do not use the default
-    return false;
-  },
-
-  includeSpouses: function (generalizedData, parameters) {
-    if (parameters.category == "bdmBirths") {
-      return false;
-    }
-
-    return true;
-  },
-
-  includeParents: function (generalizedData, parameters) {
-    if (parameters.category == "bdmBirths" || parameters.category == "bdmDeaths") {
-      return true;
-    }
-    return false;
-  },
-
-  includeMmn: function (generalizedData, parameters) {
-    // including MMN when searching all three types will exclude all marriages
-    if (parameters.category == "bdmBirths" || parameters.category == "bdmDeaths") {
-      return true;
-    }
-    return false;
-  },
-
-  getAdditionalControls(generalizedData, parameters, options) {
-    let controls = [];
-
-    // Last names
-    let lastNamesArray = generalizedData.inferPersonLastNamesArray(generalizedData);
-    if (lastNamesArray.length > 1) {
-      let lastNamesHeadingControl = {};
-      lastNamesHeadingControl.type = "heading";
-      lastNamesHeadingControl.label = "There are multiple last names, select which to use";
-      controls.push(lastNamesHeadingControl);
-
-      for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
-        let lastName = lastNamesArray[lastNameIndex];
-
-        let nameControl = {};
-        nameControl.elementId = "includeLastName_" + lastName;
-        nameControl.parameterName = "includeLastName_" + lastName;
-        nameControl.type = "checkbox";
-        nameControl.label = lastName;
-        controls.push(nameControl);
-      }
-    }
-
-    return controls;
-  },
-
   setDefaultSearchParameters: function (generalizedData, parameters, options) {
-    parameters.category = "All";
-
-    // Last names
-    let lastNamesArray = generalizedData.inferPersonLastNamesArray(generalizedData);
-    if (lastNamesArray.length > 1) {
-      for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
-        let lastName = lastNamesArray[lastNameIndex];
-
-        parameters["includeLastName_" + lastName] = true;
-      }
-    }
-
-    parameters.place = "<none>";
+    parameters.category = "all";
   },
 
-  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {
-    // Last names
-    let lastNamesArray = generalizedData.inferPersonLastNamesArray(generalizedData);
-    if (lastNamesArray.length > 1) {
-      // init all includes to false
-      for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
-        let lastName = lastNamesArray[lastNameIndex];
-        parameters["includeLastName_" + lastName] = false;
-      }
-
-      if (parameters.category == "bdmBirths") {
-        let lastName = generalizedData.inferLastNameAtBirth();
-        if (!lastName) {
-          lastName = lastNamesArray[0];
-        }
-        if (lastName) {
-          parameters["includeLastName_" + lastName] = true;
-        }
-      } else if (parameters.category == "bdmDeaths") {
-        let lastName = generalizedData.inferLastNameAtDeath();
-        if (!lastName) {
-          lastName = lastNamesArray[lastNamesArray.length - 1];
-        }
-        if (lastName) {
-          parameters["includeLastName_" + lastName] = true;
-        }
-      } else {
-        for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
-          let lastName = lastNamesArray[lastNameIndex];
-
-          parameters["includeLastName_" + lastName] = true;
-        }
-      }
-    }
-  },
+  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {},
 
   updateParametersOnSubcategoryChange: function (generalizedData, parameters, options) {},
 

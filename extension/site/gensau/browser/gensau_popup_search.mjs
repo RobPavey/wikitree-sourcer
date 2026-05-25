@@ -157,6 +157,14 @@ const searchMenuConfig = {
           },
         },
         {
+          menuItemText: "Search South Australia Cemeteries",
+          typeOfSearch: "cemeteries",
+          constraints: {
+            startYear: 1802,
+            dateTestType: "died",
+          },
+        },
+        {
           menuItemText: "Search Church Records",
           includeDefaultSearch: false,
           includeSearchSubmenu: true,
@@ -187,11 +195,108 @@ const searchMenuConfig = {
                 },
               },
               {
-                menuItemText: "Search Church Other",
+                menuItemText: "Search Other Church Records",
                 typeOfSearch: "churchOther",
                 constraints: {
                   startYear: 1863,
                   dateTestType: "married",
+                },
+              },
+            ],
+          },
+        },
+        {
+          menuItemText: "Search Admission Records",
+          includeDefaultSearch: false,
+          includeSearchSubmenu: true,
+          submenuConfig: {
+            submenuMenuItems: [
+              {
+                menuItemText: "Search South Australian School Admissions",
+                typeOfSearch: "admissionsSchool",
+                constraints: {
+                  startYear: 1847,
+                  endYear: 1996,
+                  dateTestType: "lived",
+                },
+              },
+              {
+                menuItemText: "Search Hospital, Asylum and Lying-in Home Admissions",
+                typeOfSearch: "admissionsHosp",
+                constraints: {
+                  startYear: 1839,
+                  endYear: 1970,
+                  dateTestType: "lived",
+                },
+              },
+            ],
+          },
+        },
+        {
+          menuItemText: "Search Other Records",
+          includeDefaultSearch: true,
+          includeSearchSubmenu: true,
+          typeOfSearch: "other",
+          submenuConfig: {
+            submenuMenuItems: [
+              {
+                menuItemText: "Search Biographical Index of South Australians",
+                typeOfSearch: "otherBisa",
+                constraints: {
+                  startYear: 1836,
+                  endYear: 1885,
+                  dateTestType: "lived",
+                },
+              },
+              {
+                menuItemText: "Search Biographical Index of South Australians - Supplementary",
+                typeOfSearch: "otherBisaSupp",
+                constraints: {
+                  startYear: 1836,
+                  endYear: 1885,
+                  dateTestType: "lived",
+                },
+              },
+              {
+                menuItemText: "Search Certificates-Australia and Overseas",
+                typeOfSearch: "otherCerts",
+                constraints: {
+                  startYear: 1763,
+                  dateTestType: "lived",
+                },
+              },
+              {
+                menuItemText: "Search Irish Born South Australians (IBSA)",
+                typeOfSearch: "otherIbsa",
+                constraints: {
+                  dateTestType: "lived",
+                },
+              },
+              {
+                menuItemText: "Search Ship Passenger Arrivals in South Australia",
+                typeOfSearch: "otherShipArrivals",
+                constraints: {
+                  startYear: 1836,
+                  endYear: 1952,
+                  dateTestType: "lived",
+                },
+              },
+              {
+                menuItemText: "Search Shipping Passenger Departures from South Australia",
+                typeOfSearch: "otherShipDepartures",
+                constraints: {
+                  startYear: 1836,
+                  endYear: 1940,
+                  dateTestType: "lived",
+                },
+              },
+              {
+                menuItemText: "Search South Australian Public Trustees/Deceased Estates",
+                typeOfSearch: "otherTrustees",
+                constraints: {
+                  startYear: 1841,
+                  endYear: 2023,
+                  dateTestType: "lived",
                 },
               },
             ],

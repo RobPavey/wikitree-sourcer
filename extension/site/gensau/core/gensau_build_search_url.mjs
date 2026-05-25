@@ -26,7 +26,7 @@ import { GensauUriBuilder } from "./gensau_uri_builder.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
 
 const searchTypes = {
-  default: {
+  all: {
     params: ["surname", "givenNames", "eventYear"],
     eventYearType: "lived",
   },
@@ -73,6 +73,11 @@ const searchTypes = {
     eventYearType: "lived",
     collectionId: "divorce",
   },
+  cemeteries: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "died",
+    collectionId: "cemeteries",
+  },
   churchBurials: {
     params: ["surname", "givenNames", "eventYear"],
     eventYearType: "died",
@@ -93,6 +98,56 @@ const searchTypes = {
     eventYearType: "lived",
     collectionId: "church-others",
   },
+  admissionsSchool: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "school-admissions",
+  },
+  admissionsHosp: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "hospital",
+  },
+  other: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "misc",
+  },
+  otherBisa: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "bisa",
+  },
+  otherBisaSupp: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "bisasupp",
+  },
+  otherCerts: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "certificates",
+  },
+  otherIbsa: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "ibsa",
+  },
+  otherShipArrivals: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "shipping",
+  },
+  otherShipDepartures: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "shipping-departures",
+  },
+  otherTrustees: {
+    params: ["surname", "givenNames", "eventYear"],
+    eventYearType: "lived",
+    collectionId: "public-trustees",
+  },
 };
 
 function buildSearchUrl(buildUrlInput) {
@@ -105,7 +160,7 @@ function buildSearchUrl(buildUrlInput) {
   var builder = new GensauUriBuilder();
 
   if (!typeOfSearch) {
-    typeOfSearch = "default";
+    typeOfSearch = "all";
   }
 
   let searchConfig = searchTypes[typeOfSearch];
@@ -118,6 +173,7 @@ function buildSearchUrl(buildUrlInput) {
   // call methods on builder here
 
   let collectionId = "";
+  let collection = undefined;
   if (typeOfSearch == "SameCollection") {
     if (gd.collectionData && gd.collectionData.id) {
       collectionId = RC.mapCollectionId(
@@ -127,12 +183,11 @@ function buildSearchUrl(buildUrlInput) {
         gd.inferEventCountry(),
         gd.inferEventYear()
       );
+      collection = RC.findCollection("gensau", fmpCollectionId);
     }
   } else if (typeOfSearch == "SpecifiedParameters") {
-    if (parameters.category && parameters.category != "All") {
+    if (parameters.category) {
       searchConfig = searchTypes[parameters.category];
-    } else {
-      searchConfig = searchTypes["default"];
     }
     collectionId = searchConfig.collectionId;
   } else if (searchConfig.collectionId) {
@@ -144,7 +199,16 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   if (searchConfig.params.includes("surname")) {
-    builder.addSurname(gd.inferLastName());
+    let lastName = gd.inferLastName();
+    if (parameters) {
+      // parameters can override the lastNameindex
+      lastName = gd.inferLastNameGivenParametersAndCollection(parameters, collection);
+    } else if (searchConfig.eventYearType == "died") {
+      lastName = gd.inferLastNameAtDeath();
+    } else {
+      lastName = gd.inferLastNameGivenParametersAndCollection(parameters, collection);
+    }
+    builder.addSurname(lastName);
   }
   if (searchConfig.params.includes("givenNames")) {
     builder.addGivenNames(gd.inferForenames());

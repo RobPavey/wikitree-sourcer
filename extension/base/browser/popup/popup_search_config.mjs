@@ -145,7 +145,7 @@ function addSearchMenuItemFromConfig(menu, data, backFunction, filter, config, m
         menu,
         menuItemConfig.menuItemText,
         function (element) {
-          doSearchFromConfig(config, data.generalizedData);
+          doSearchFromConfig(config, data.generalizedData, menuItemConfig.typeOfSearch);
         },
         function () {
           setupSearchSubmenuFromConfig(data, backFunction, filter, config, menuItemConfig.submenuConfig);
@@ -168,17 +168,17 @@ function addDefaultSearchMenuItemFromConfig(menu, data, backFunction, filter, co
   return true;
 }
 
-async function addSearchWithParametersMenuItemFromConfig(menu, data, backFunction, config) {
+async function addSearchWithParametersMenuItemFromConfig(menu, data, backFunction, config, submenuConfig) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupSearchWithParametersSubmenuFromConfig(data, backFunction, config);
+    setupSearchWithParametersSubmenuFromConfig(data, backFunction, config, submenuConfig);
   });
 }
 
-async function setupSearchWithParametersSubmenuFromConfig(data, backFunction, config) {
+async function setupSearchWithParametersSubmenuFromConfig(data, backFunction, config, submenuConfig) {
   let siteName = config.siteName;
   let dataModulePath = `../../../site/${siteName}/core/${siteName}_search_menu_data.mjs`;
   let dataModule = await import(chrome.runtime.getURL(dataModulePath));
-  let dataName = config.submenuConfig.searchWithParametersData;
+  let dataName = submenuConfig.searchWithParametersData;
   if (!dataName || !dataModule[dataName]) {
     dataName = "SearchWithParametersData";
   }
@@ -236,7 +236,7 @@ async function setupSearchSubmenuFromConfig(data, backFunction, filter, config, 
     }
 
     if (submenuConfig.includeSearchWithParameters) {
-      addSearchWithParametersMenuItemFromConfig(menu, data, backToHereFunction, config);
+      addSearchWithParametersMenuItemFromConfig(menu, data, backToHereFunction, config, submenuConfig);
     }
   }
 
