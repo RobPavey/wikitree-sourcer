@@ -183,7 +183,7 @@ function buildSearchUrl(buildUrlInput) {
         gd.inferEventCountry(),
         gd.inferEventYear()
       );
-      collection = RC.findCollection("gensau", fmpCollectionId);
+      collection = RC.findCollection("gensau", collectionId);
     }
   } else if (typeOfSearch == "SpecifiedParameters") {
     if (parameters.category) {
