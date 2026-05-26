@@ -887,6 +887,12 @@ if (runningExtensionId === currentExtensionId) {
                   location,
                   sourceInfo
                 );
+
+                if (!location.id) {
+                  location.id = sourceId;
+                  location.idType = "source";
+                }
+
                 location.externalSources ??= [];
                 location.externalSources.push(sourceInfo.externalSource);
                 let key = sourceInfo.externalSource.externalSiteName + "|" + sourceInfo.externalSource.externalId;
@@ -945,6 +951,11 @@ if (runningExtensionId === currentExtensionId) {
 
               if (sourceInfo.externalSource) {
                 logDebug("fetchFsIdsForSources, found externalSource (location,sourceInfo)", location, sourceInfo);
+                if (!location.id) {
+                  location.id = sourceId;
+                  location.idType = "source";
+                }
+
                 location.externalSources ??= [];
                 location.externalSources.push(sourceInfo.externalSource);
                 let key = sourceInfo.externalSource.externalSiteName + "|" + sourceInfo.externalSource.externalId;
