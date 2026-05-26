@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Probate''':\n\"South Australia - South Australian Public Trustees/Deceased Estates\"<br/>\nGenealogy SA; Notice: Deceased Estate; Source: Gazette; Publication Date: 1885; Notes: Ref=Vol1p1929<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAlexander MacKay probate. Occupation: Gentleman.\n</ref>",
+    "citation": "<ref>\n'''Probate''':\n\"South Australia - South Australian Public Trustees/Deceased Estates\"<br/>\nGenealogy SA; Surname: MACKAY; Given Names: Alexander; Year: 1885; Notice: Deceased Estate; Source: Gazette; Publication Date: 1885; Notice: Deceased Estate; Notes: Ref=Vol1p1929<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAlexander MacKay probate on 15 Mar 1885. Occupation: Gentleman.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Alexander was in a probate record.<ref>\n'''Probate''':\n\"South Australia - South Australian Public Trustees/Deceased Estates\"<br/>\nGenealogy SA; Notice: Deceased Estate; Source: Gazette; Publication Date: 1885; Notes: Ref=Vol1p1929<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAlexander MacKay probate. Occupation: Gentleman.\n</ref>",
+    "citation": "Alexander's estate passed probate on 15 March 1885.<ref>\n'''Probate''':\n\"South Australia - South Australian Public Trustees/Deceased Estates\"<br/>\nGenealogy SA; Surname: MACKAY; Given Names: Alexander; Year: 1885; Notice: Deceased Estate; Source: Gazette; Publication Date: 1885; Notice: Deceased Estate; Notes: Ref=Vol1p1929<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAlexander MacKay probate on 15 Mar 1885. Occupation: Gentleman.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Probate''': \"South Australia - South Australian Public Trustees/Deceased Estates\"<br/>Genealogy SA; Notice: Deceased Estate; Source: Gazette; Publication Date: 1885; Notes: Ref=Vol1p1929<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Alexander MacKay probate. Occupation: Gentleman.",
+    "citation": "* '''Probate''': \"South Australia - South Australian Public Trustees/Deceased Estates\"<br/>Genealogy SA; Surname: MACKAY; Given Names: Alexander; Year: 1885; Notice: Deceased Estate; Source: Gazette; Publication Date: 1885; Notice: Deceased Estate; Notes: Ref=Vol1p1929<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Alexander MacKay probate on 15 Mar 1885. Occupation: Gentleman.",
     "type": "source"
   }
 }

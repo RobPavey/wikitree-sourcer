@@ -6,6 +6,15 @@
     "lastName": "Kelly",
     "forenames": "Augustine H Havelock"
   },
+  "eventDate": {
+    "dateString": "1875"
+  },
+  "eventPlace": {
+    "placeString": "Clare General, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "basePlaceString": "Clare General"
+  },
   "deathDate": {
     "dateString": "24-Jan-1875"
   },

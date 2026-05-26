@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record of Thomas Patrick Jones''':\n\"South Australia - Newspaper Death Notices\"<br/>\nGenealogy SA; Notice: Obituary<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nThomas Patrick Jones.\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"South Australia - Newspaper Death Notices\"<br/>\nGenealogy SA; Surname: JONES; Year: 1944; Notice: Obituary; Notice: Obituary<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nThomas Patrick Jones death 1944 in South Australia, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Thomas was in a record.<ref>\n'''Record of Thomas Patrick Jones''':\n\"South Australia - Newspaper Death Notices\"<br/>\nGenealogy SA; Notice: Obituary<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nThomas Patrick Jones.\n</ref>",
+    "citation": "Thomas died in 1944 in South Australia, Australia.<ref>\n'''Death''':\n\"South Australia - Newspaper Death Notices\"<br/>\nGenealogy SA; Surname: JONES; Year: 1944; Notice: Obituary; Notice: Obituary<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nThomas Patrick Jones death 1944 in South Australia, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record of Thomas Patrick Jones''': \"South Australia - Newspaper Death Notices\"<br/>Genealogy SA; Notice: Obituary<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Thomas Patrick Jones.",
+    "citation": "* '''Death''': \"South Australia - Newspaper Death Notices\"<br/>Genealogy SA; Surname: JONES; Year: 1944; Notice: Obituary; Notice: Obituary<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Thomas Patrick Jones death 1944 in South Australia, Australia.",
     "type": "source"
   }
 }

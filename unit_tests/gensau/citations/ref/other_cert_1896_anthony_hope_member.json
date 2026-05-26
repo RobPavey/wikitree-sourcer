@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Certificate''':\n\"South Australia - Certificates-Australia and Overseas\"<br/>\nGenealogy SA; Source: Donated Certificates; Notes: Source = File; Groom age=35. Bride age=30. Groom's Parents=Edward HOPE (DEC). Bride's Father=Patrick BONES. Witnesses=Thomas BONES, Anne LYONS<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAnthony Hope.\n</ref>",
+    "citation": "<ref>\n'''Certificate''':\n\"South Australia - Certificates-Australia and Overseas\"<br/>\nGenealogy SA; Surname: HOPE; Given Names: Anthony; Year: 1896; Source: Donated Certificates; Notes: Source = File; Groom age=35. Bride age=30. Groom's Parents=Edward HOPE (DEC). Bride's Father=Patrick BONES. Witnesses=Thomas BONES, Anne LYONS<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAnthony Hope on 16 May 1896 in Blacburn LAN, England.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Anthony was issued a certificate.<ref>\n'''Certificate''':\n\"South Australia - Certificates-Australia and Overseas\"<br/>\nGenealogy SA; Source: Donated Certificates; Notes: Source = File; Groom age=35. Bride age=30. Groom's Parents=Edward HOPE (DEC). Bride's Father=Patrick BONES. Witnesses=Thomas BONES, Anne LYONS<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAnthony Hope.\n</ref>",
+    "citation": "Anthony was issued a certificate on 16 May 1896 in Blacburn LAN, England.<ref>\n'''Certificate''':\n\"South Australia - Certificates-Australia and Overseas\"<br/>\nGenealogy SA; Surname: HOPE; Given Names: Anthony; Year: 1896; Source: Donated Certificates; Notes: Source = File; Groom age=35. Bride age=30. Groom's Parents=Edward HOPE (DEC). Bride's Father=Patrick BONES. Witnesses=Thomas BONES, Anne LYONS<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAnthony Hope on 16 May 1896 in Blacburn LAN, England.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Certificate''': \"South Australia - Certificates-Australia and Overseas\"<br/>Genealogy SA; Source: Donated Certificates; Notes: Source = File; Groom age=35. Bride age=30. Groom's Parents=Edward HOPE (DEC). Bride's Father=Patrick BONES. Witnesses=Thomas BONES, Anne LYONS<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Anthony Hope.",
+    "citation": "* '''Certificate''': \"South Australia - Certificates-Australia and Overseas\"<br/>Genealogy SA; Surname: HOPE; Given Names: Anthony; Year: 1896; Source: Donated Certificates; Notes: Source = File; Groom age=35. Bride age=30. Groom's Parents=Edward HOPE (DEC). Bride's Father=Patrick BONES. Witnesses=Thomas BONES, Anne LYONS<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Anthony Hope on 16 May 1896 in Blacburn LAN, England.",
     "type": "source"
   }
 }

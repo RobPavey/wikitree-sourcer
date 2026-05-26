@@ -6,6 +6,9 @@
     "lastName": "Hope",
     "forenames": "Anthony"
   },
+  "eventDate": {
+    "dateString": "1896"
+  },
   "spouses": [
     {
       "name": {

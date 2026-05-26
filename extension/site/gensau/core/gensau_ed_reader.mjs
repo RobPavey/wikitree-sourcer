@@ -93,6 +93,7 @@ const recordTypes = [
     rules: {
       eventDate: {
         recordDataKeys: ["Marriage Date", "Marriage Year"],
+        cleanFunction: cleanDate,
       },
       eventPlace: {
         recordDataKeys: ["Marriage Place"],
@@ -103,20 +104,20 @@ const recordTypes = [
   {
     recordType: RT.Birth,
     collectionIds: ["Newspaper Births"],
+    documentTypes: ["Birth", "birth"],
+  },
+  {
+    recordType: RT.Birth,
+    collectionIds: ["Newspaper Births"],
   },
   {
     recordType: RT.Death,
-    collectionIds: ["Newspaper Deaths"],
+    collectionIds: ["Newspaper Death Notices", "Newspaper Deaths"],
   },
   {
     recordType: RT.Marriage,
     collectionIds: ["Newspaper Marriages"],
     documentTypes: ["Marriage"],
-    rules: {
-      eventDate: {
-        recordDataKeys: ["Date"],
-      },
-    },
   },
   {
     recordType: RT.Newspaper,
@@ -125,20 +126,53 @@ const recordTypes = [
   {
     recordType: RT.Divorce,
     collectionIds: ["Newspaper Divorces"],
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Divorce Date", "Divorce Year"],
+        cleanFunction: cleanDate,
+      },
+    },
   },
   // Cemeteries Burial Records
   {
     recordType: RT.Burial,
     collectionIds: ["South Australia Cemeteries"],
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Burial Date", "EventYear"],
+        cleanFunction: cleanDate,
+      },
+      eventPlace: {
+        recordDataKeys: ["Cemetery"],
+      },
+    },
   },
   // Church Records
   {
     recordType: RT.Burial,
     collectionIds: ["South Australian Church records - Burials"],
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Date of Burial", "Burial Year"],
+        cleanFunction: cleanDate,
+      },
+      eventPlace: {
+        recordDataKeys: ["Place of Burial"],
+      },
+    },
   },
   {
     recordType: RT.Baptism,
     collectionIds: ["South Australian Church records - Baptisms"],
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Date of Baptism", "Baptism Year"],
+        cleanFunction: cleanDate,
+      },
+      eventPlace: {
+        recordDataKeys: ["Place of Baptism"],
+      },
+    },
   },
   {
     recordType: RT.Marriage,
@@ -146,6 +180,10 @@ const recordTypes = [
     rules: {
       eventDate: {
         recordDataKeys: ["Marriage Date", "Year of marriage"],
+        cleanFunction: cleanDate,
+      },
+      eventPlace: {
+        recordDataKeys: ["Place of Marriage"],
       },
     },
   },
@@ -158,6 +196,10 @@ const recordTypes = [
     recordType: RT.SchoolRecords,
     collectionIds: ["South Australian School Admissions"],
     rules: {
+      eventDate: {
+        recordDataKeys: ["Registration Date"],
+        cleanFunction: cleanDate,
+      },
       eventPlace: {
         recordDataKeys: ["Address", "Town"],
       },
@@ -169,6 +211,7 @@ const recordTypes = [
     rules: {
       eventDate: {
         recordDataKeys: ["Admission Date", "Admission Year"],
+        cleanFunction: cleanDate,
       },
       eventPlace: {
         recordDataKeys: ["Hospital", "Residence"],
@@ -235,15 +278,23 @@ const defaultRecordTypeData = {
         female: ["F"],
       },
     },
+    eventDate: {
+      recordDataKeys: ["Event Date", "Date", "Event Year", "EventYear", "Publication Date"],
+      cleanFunction: cleanDate,
+    },
+    eventPlace: {
+      recordDataKeys: ["Location"],
+    },
     birthDate: {
-      recordDataKeys: ["Date of Birth", "Birth Date", "Birth Year"],
+      recordDataKeys: ["Date of Birth", "Birth Date", "Birth Year", "Birth"],
       cleanFunction: cleanDate,
     },
     birthPlace: {
       recordDataKeys: ["Birth Place"],
     },
     deathDate: {
-      recordDataKeys: ["Death Date", "Death Year"],
+      recordDataKeys: ["Date of Death", "Death Date", "Death Year", "Death"],
+      cleanFunction: cleanDate,
     },
     deathPlace: {
       recordDataKeys: ["Death Place"],

@@ -6,6 +6,9 @@
     "lastName": "De Silva",
     "forenames": "Ludovina"
   },
+  "eventDate": {
+    "dateString": "09-Oct-1855"
+  },
   "birthDate": {
     "dateString": "14-Aug-1855"
   },

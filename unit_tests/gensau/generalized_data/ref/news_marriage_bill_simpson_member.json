@@ -6,6 +6,15 @@
     "lastName": "Simpson",
     "forenames": "Dawn"
   },
+  "eventDate": {
+    "dateString": "12-Apr-1947"
+  },
+  "eventPlace": {
+    "placeString": "Methodist Church Mt Bryan, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "basePlaceString": "Methodist Church Mt Bryan"
+  },
   "spouses": [
     {
       "name": {

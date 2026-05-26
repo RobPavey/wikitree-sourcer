@@ -1,10 +1,19 @@
 {
   "sourceOfData": "gensau",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Death",
   "name": {
     "lastName": "Jones",
     "forenames": "Thomas Patrick"
+  },
+  "eventDate": {
+    "dateString": "27-Jan-1944"
+  },
+  "deathPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "basePlaceString": ""
   },
   "ageAtEvent": "39",
   "hasValidData": true

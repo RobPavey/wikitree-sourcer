@@ -183,6 +183,12 @@ class CitationBuilder {
     }
   }
 
+  addSourceReferenceFieldFromRd(recordData, label, excludeValues) {
+    if (recordData) {
+      this.addSourceReferenceField(label, recordData[label], excludeValues);
+    }
+  }
+
   addSourceReferenceText(value) {
     if (!value) {
       return;

@@ -6,6 +6,9 @@
     "lastName": "Kelly",
     "forenames": "Clarice Eleanor (Ellie)"
   },
+  "eventDate": {
+    "dateString": "1931"
+  },
   "ageAtEvent": "45",
   "hasValidData": true
 }

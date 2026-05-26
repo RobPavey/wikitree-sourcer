@@ -723,7 +723,7 @@ class ExtractedDataReader {
             placeString = existingParts.localPlace;
             addPart(existingParts.county);
             placeObj.state = existingParts.county;
-          } else {
+          } else if (!existingParts.country || existingParts.country == advanced.impliedCountryName) {
             addPart(advanced.impliedStateName);
             placeObj.state = advanced.impliedStateName;
           }

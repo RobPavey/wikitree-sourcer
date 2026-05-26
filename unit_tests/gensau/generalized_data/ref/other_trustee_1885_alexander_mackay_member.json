@@ -6,6 +6,9 @@
     "lastName": "MacKay",
     "forenames": "Alexander"
   },
+  "eventDate": {
+    "dateString": "15-Mar-1885"
+  },
   "occupation": "Gentleman",
   "hasValidData": true
 }

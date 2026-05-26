@@ -6,6 +6,9 @@
     "lastName": "Smith",
     "forenames": "Leslie William Thomas"
   },
+  "eventDate": {
+    "dateString": "14-Jul-1943"
+  },
   "birthDate": {
     "dateString": "13-Jul-1943"
   },

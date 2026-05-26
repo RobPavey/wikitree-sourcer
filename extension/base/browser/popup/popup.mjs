@@ -399,6 +399,8 @@ async function checkForLocalSavedPage(activeTab, url) {
 }
 
 async function determineSiteNameForTab(activeTab) {
+  logDebug("WikiTree Sourcer: determineSiteNameForTab");
+
   displayBusyMessage("WikiTree Sourcer initializing menu (determineSiteNameForTab) ...");
 
   let manifest = chrome.runtime.getManifest();
@@ -416,12 +418,13 @@ async function determineSiteNameForTab(activeTab) {
   }
 
   // for local debugging only
-  let debugSiteName = checkForLocalSavedPage(activeTab, url);
+  let debugSiteName = await checkForLocalSavedPage(activeTab, url);
   if (debugSiteName) {
+    logDebug("WikiTree Sourcer: determineSiteNameForTab returning debugSiteName of:", debugSiteName);
     return debugSiteName;
   }
 
-  logDebug("WikiTree Sourcer: determineSiteNameForTab");
+  logDebug("WikiTree Sourcer: determineSiteNameForTab checking content scripts");
 
   if (typeof chrome.scripting?.getRegisteredContentScripts !== "function") {
     displayMessageWithIcon(

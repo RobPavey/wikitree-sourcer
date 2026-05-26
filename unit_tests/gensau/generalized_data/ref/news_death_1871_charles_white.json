@@ -1,10 +1,19 @@
 {
   "sourceOfData": "gensau",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Death",
   "name": {
     "lastName": "White",
     "forenames": "Charles"
+  },
+  "eventDate": {
+    "dateString": "1871"
+  },
+  "deathPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "basePlaceString": ""
   },
   "hasValidData": true
 }

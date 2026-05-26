@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"South Australia - Newspaper Births\"<br/>\nGenealogy SA; Notice: Birth<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nLeslie William Thomas Smith born in South Australia, Australia.\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"South Australia - Newspaper Births\"<br/>\nGenealogy SA; Surname: SMITH; Given Names: Leslie William Thomas; Notice: Birth; Notice: Birth<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nLeslie William Thomas Smith born in South Australia, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Leslie was born in South Australia, Australia.<ref>\n'''Birth''':\n\"South Australia - Newspaper Births\"<br/>\nGenealogy SA; Notice: Birth<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nLeslie William Thomas Smith born in South Australia, Australia.\n</ref>",
+    "citation": "Leslie was born in South Australia, Australia.<ref>\n'''Birth''':\n\"South Australia - Newspaper Births\"<br/>\nGenealogy SA; Surname: SMITH; Given Names: Leslie William Thomas; Notice: Birth; Notice: Birth<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nLeslie William Thomas Smith born in South Australia, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Birth''': \"South Australia - Newspaper Births\"<br/>Genealogy SA; Notice: Birth<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Leslie William Thomas Smith born in South Australia, Australia.",
+    "citation": "* '''Birth''': \"South Australia - Newspaper Births\"<br/>Genealogy SA; Surname: SMITH; Given Names: Leslie William Thomas; Notice: Birth; Notice: Birth<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Leslie William Thomas Smith born in South Australia, Australia.",
     "type": "source"
   }
 }

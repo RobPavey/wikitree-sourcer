@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"South Australia - Newspaper Divorces\"<br/>\nGenealogy SA; Source: Adelaide Newspapers; Notes: Or DAWSON. Nisi. Uncontested. Cause: desertion<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nElizabeth Simpson divorce.\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"South Australia - Newspaper Divorces\"<br/>\nGenealogy SA; Surname: SIMPSON; Given Names: Elizabeth; Year: 1939; Source: Adelaide Newspapers; Notes: Or DAWSON. Nisi. Uncontested. Cause: desertion<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nElizabeth Simpson divorce on 11 Dec 1939.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Elizabeth was in a divorce record.<ref>\n'''Divorce''':\n\"South Australia - Newspaper Divorces\"<br/>\nGenealogy SA; Source: Adelaide Newspapers; Notes: Or DAWSON. Nisi. Uncontested. Cause: desertion<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nElizabeth Simpson divorce.\n</ref>",
+    "citation": "Elizabeth was in a divorce record on 11 December 1939.<ref>\n'''Divorce''':\n\"South Australia - Newspaper Divorces\"<br/>\nGenealogy SA; Surname: SIMPSON; Given Names: Elizabeth; Year: 1939; Source: Adelaide Newspapers; Notes: Or DAWSON. Nisi. Uncontested. Cause: desertion<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nElizabeth Simpson divorce on 11 Dec 1939.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Divorce''': \"South Australia - Newspaper Divorces\"<br/>Genealogy SA; Source: Adelaide Newspapers; Notes: Or DAWSON. Nisi. Uncontested. Cause: desertion<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Elizabeth Simpson divorce.",
+    "citation": "* '''Divorce''': \"South Australia - Newspaper Divorces\"<br/>Genealogy SA; Surname: SIMPSON; Given Names: Elizabeth; Year: 1939; Source: Adelaide Newspapers; Notes: Or DAWSON. Nisi. Uncontested. Cause: desertion<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Elizabeth Simpson divorce on 11 Dec 1939.",
     "type": "source"
   }
 }

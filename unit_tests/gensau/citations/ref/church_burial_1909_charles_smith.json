@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"South Australia - South Australian Church records - Burials\"<br/>\nGenealogy SA<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nCharles Jnr Smith burial.\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"South Australia - South Australian Church records - Burials\"<br/>\nGenealogy SA; Surname: SMITH; Given Names: Charles Jnr.; Year: 1909<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nCharles Jnr Smith burial in 1909.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Charles was buried.<ref>\n'''Burial''':\n\"South Australia - South Australian Church records - Burials\"<br/>\nGenealogy SA<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nCharles Jnr Smith burial.\n</ref>",
+    "citation": "Charles was buried in 1909.<ref>\n'''Burial''':\n\"South Australia - South Australian Church records - Burials\"<br/>\nGenealogy SA; Surname: SMITH; Given Names: Charles Jnr.; Year: 1909<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nCharles Jnr Smith burial in 1909.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Burial''': \"South Australia - South Australian Church records - Burials\"<br/>Genealogy SA<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Charles Jnr Smith burial.",
+    "citation": "* '''Burial''': \"South Australia - South Australian Church records - Burials\"<br/>Genealogy SA; Surname: SMITH; Given Names: Charles Jnr.; Year: 1909<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Charles Jnr Smith burial in 1909.",
     "type": "source"
   }
 }

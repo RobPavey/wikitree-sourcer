@@ -6,6 +6,14 @@
     "lastName": "Hope",
     "forenames": "Anthony"
   },
+  "eventDate": {
+    "dateString": "16-May-1896"
+  },
+  "eventPlace": {
+    "placeString": "Blacburn LAN, England",
+    "country": "England",
+    "basePlaceString": "Blacburn LAN, ENG"
+  },
   "spouses": [
     {
       "name": {

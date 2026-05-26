@@ -53,13 +53,28 @@ function buildSourceTitle(ed, gd, builder) {
 
 function buildSourceReference(ed, gd, builder) {
   builder.addSourceReferenceText("Genealogy SA");
-  builder.addSourceReferenceField("Notice", ed.recordData["Notice"]);
-  builder.addSourceReferenceField("District", ed.recordData["District"]);
-  builder.addSourceReferenceField("Book/Page", ed.recordData["Book/Page"]);
-  builder.addSourceReferenceField("Source", ed.recordData["Source"]);
-  builder.addSourceReferenceField("Source2", ed.recordData["Source2"]);
-  builder.addSourceReferenceField("Publication Date", ed.recordData["Publication Date"]);
-  builder.addSourceReferenceField("Notes", ed.recordData["Notes"]);
+  let rd = ed.recordData;
+  if (rd) {
+    builder.addSourceReferenceFieldFromRd(rd, "Surname");
+
+    if (rd["Book/Page"]) {
+      builder.addSourceReferenceFieldFromRd(rd, "Book/Page");
+    } else {
+      builder.addSourceReferenceFieldFromRd(rd, "Given Names");
+      builder.addSourceReferenceField("Year", gd.inferEventYear());
+    }
+
+    builder.addSourceReferenceFieldFromRd(rd, "Notice");
+    builder.addSourceReferenceFieldFromRd(rd, "Source");
+    builder.addSourceReferenceFieldFromRd(rd, "Source2");
+    builder.addSourceReferenceFieldFromRd(rd, "Publication Date");
+    builder.addSourceReferenceFieldFromRd(rd, "Registration Number");
+    builder.addSourceReferenceFieldFromRd(rd, "Admission/Registration No");
+    builder.addSourceReferenceFieldFromRd(rd, "Rec Type");
+    builder.addSourceReferenceFieldFromRd(rd, "SNcode");
+    builder.addSourceReferenceFieldFromRd(rd, "Notice");
+    builder.addSourceReferenceFieldFromRd(rd, "Notes");
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
