@@ -24,10 +24,12 @@ SOFTWARE.
 
 import * as test_content_and_citation from "./gensau_test_content_and_citation.mjs";
 import * as test_build_search_url from "./gensau_test_build_search_url.mjs";
+import * as test_context from "./gensau_test_context.mjs";
 
 async function runTests(testManager) {
   await test_content_and_citation.runTests(testManager);
   await test_build_search_url.runTests(testManager);
+  await test_context.runTests(testManager);
 }
 
 export { runTests };

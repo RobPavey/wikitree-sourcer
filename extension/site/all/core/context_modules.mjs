@@ -27,6 +27,7 @@ SOFTWARE.
 import * as ancestryContextModule from "../../../site/ancestry/core/ancestry_context.mjs";
 import * as fmpContextModule from "../../../site/fmp/core/fmp_context.mjs";
 import * as fsContextModule from "../../../site/fs/core/fs_context.mjs";
+import * as gensauContextModule from "../../../site/gensau/core/gensau_context.mjs";
 import * as nswbdmContextModule from "../../../site/nswbdm/core/nswbdm_context.mjs";
 import * as nzbdmContextModule from "../../../site/nzbdm/core/nzbdm_context.mjs";
 import * as scotpContextModule from "../../../site/scotp/core/scotp_context.mjs";
@@ -39,6 +40,7 @@ let contextModules = {
   ancestry: ancestryContextModule,
   fmp: fmpContextModule,
   fs: fsContextModule,
+  gensau: gensauContextModule,
   np: npContextModule,
   nswbdm: nswbdmContextModule,
   nzbdm: nzbdmContextModule,

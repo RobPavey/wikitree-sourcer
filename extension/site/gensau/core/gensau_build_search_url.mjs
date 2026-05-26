@@ -157,7 +157,7 @@ function buildSearchUrl(buildUrlInput) {
   const runDate = buildUrlInput.runDate;
   const parameters = buildUrlInput.searchParameters;
 
-  var builder = new GensauUriBuilder();
+  let builder = new GensauUriBuilder();
 
   if (!typeOfSearch) {
     typeOfSearch = "all";
@@ -270,7 +270,7 @@ function buildSearchUrl(buildUrlInput) {
 
   //console.log("URL is " + url);
 
-  var result = {
+  let result = {
     url: url,
   };
 
