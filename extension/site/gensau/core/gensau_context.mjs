@@ -68,7 +68,7 @@ function transformPlainText(plainText, phase, options) {
     return undefined;
   }
 
-  console.log("gensau: transformPlainText: string is a match", plainText);
+  //console.log("gensau: transformPlainText: string is a match", plainText);
 
   let collectionId = "";
   for (let typeMatch of typeMatches) {
@@ -80,7 +80,7 @@ function transformPlainText(plainText, phase, options) {
     }
   }
 
-  console.log("gensau: transformPlainText: collectionId is", collectionId);
+  //console.log("gensau: transformPlainText: collectionId is", collectionId);
 
   if (!collectionId) {
     return {
@@ -95,10 +95,10 @@ function transformPlainText(plainText, phase, options) {
 
   const surnameExtractInput = {
     individual: {
-      matches: [/^.*(?:surname|last name)\s*:?\s*(\w+)(?:[,; ].*$|$)/is],
+      matches: [/(?:^|^.*[^a-z']\s+)(?:surname|last name)\s*:?\s*(\w+)(?:[,; ].*$|$)/is],
     },
     combined: {
-      matches: [/^.*name[^a-z]+([a-z ]+)\W.*$/is],
+      matches: [/(?:^|^.*[^a-z']\s+)(?:name|for)[^a-z]+([a-z ]+)\W.*$/is],
       partMatches: [/^\s*(?:[^ ]+ )*([a-z]+)\s*$/i],
     },
     noKey: {
@@ -110,29 +110,32 @@ function transformPlainText(plainText, phase, options) {
     builder.addSurname(surname);
   }
 
-  const bookExtractInput = {
-    individual: {
-      matches: [/^.*(?:book number|volume number|book|volume)\s*:?\s*([0-9]+[a-z]*)(?:\W.*$|$)/is],
-    },
-    combined: {
-      matches: [/^.*book\/page[^a-z0-9]+([a-z0-9]+\/[0-9]+)\W.*$/is, /^.*[^a-z]+([0-9]+[a-z]?\/[0-9]+)(?:\W.*$|$)/is],
-      partMatches: [/^([a-z0-9]+)\/[0-9]+$/i],
-    },
-  };
-  const pageExtractInput = {
-    individual: {
-      matches: [/^.*(?:page number|page)\s*:?\s*([0-9]+)(?:\W.*$|$)/is],
-    },
-    combined: {
-      matches: [/^.*book\/page[^a-z0-9]+([a-z0-9]+\/[0-9]+)\W.*$/is, /^.*[^a-z]+([a-z0-9]+\/[0-9]+)(?:\W.*$|$)/is],
-      partMatches: [/^[a-z0-9]+\/([0-9]+)$/i],
-    },
-  };
-  let book = parser.extractValueFromText(bookExtractInput);
-  let page = parser.extractValueFromText(pageExtractInput);
-  if (book && page) {
-    let bookPageString = book + "/" + page;
-    builder.addBookPage(bookPageString);
+  if (collectionId == "birth") {
+    // only birth allows search by Book/Page
+    const bookExtractInput = {
+      individual: {
+        matches: [/^.*(?:book number|volume number|book|volume)\s*[:#]?\s*([0-9]+[a-z]*)(?:\W.*$|$)/is],
+      },
+      combined: {
+        matches: [/^.*book\/page[^a-z0-9]+([a-z0-9]+\/[0-9]+)\W.*$/is, /^.*[^a-z]+([0-9]+[a-z]?\/[0-9]+)(?:\W.*$|$)/is],
+        partMatches: [/^([a-z0-9]+)\/[0-9]+$/i],
+      },
+    };
+    const pageExtractInput = {
+      individual: {
+        matches: [/^.*(?:page number|page)\s*:?\s*([0-9]+)(?:\W.*$|$)/is, /^.*p\s*:?\s*([0-9]+)(?:\W.*$|$)/is],
+      },
+      combined: {
+        matches: [/^.*book\/page[^a-z0-9]+([a-z0-9]+\/[0-9]+)\W.*$/is, /^.*[^a-z]+([a-z0-9]+\/[0-9]+)(?:\W.*$|$)/is],
+        partMatches: [/^[a-z0-9]+\/([0-9]+)$/i],
+      },
+    };
+    let book = parser.extractValueFromText(bookExtractInput);
+    let page = parser.extractValueFromText(pageExtractInput);
+    if (book && page) {
+      let bookPageString = book + "/" + page;
+      builder.addBookPage(bookPageString);
+    }
   }
 
   const link = builder.getUri();

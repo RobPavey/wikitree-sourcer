@@ -27,6 +27,15 @@ import { runContextTests } from "../test_utils/test_context_utils.mjs";
 
 const regressionData = [
   {
+    // From https://www.wikitree.com/wiki/Potter-2780
+    // Has multiple names
+    caseName: "bdm_birth_1859_john_potter_wt",
+    inputText: `Genealogy SA • Retrieved 04 Jan 2014
+Event Birth • Name John POTTER • Birth Date: 04 Sep 1859 • Father's Name: Daniel POTTER • Mother's Name: Margaret MENZIES • Birth Place: Mount Gambier • Registration Place: Grey, South Australia • Page Number: 492 • Volume Number 18 •`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
     // Sourcer citation
     caseName: "bdm_birth_1874_abbey_kemp_sourcer",
     inputText: `Birth Registration: "South Australia - Birth Registrations"
@@ -40,6 +49,21 @@ Abbey Kemp birth 1 Nov 1874 registered in the Daly district, daughter of Richard
     // https://www.wikitree.com/wiki/Kemp-14752
     caseName: "bdm_birth_1874_abbey_kemp_wt",
     inputText: `KEMP, Abbey, South Australian Birth registrations index, Daly 143/400, accessed 10 May 2026 via Genealogy SA`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
+    // From https://www.wikitree.com/wiki/Stubberfield-8
+    // No name, code is under "page"
+    caseName: "bdm_death_1878_walter_stubberfield_wt",
+    inputText: `Death: Author: S.A. Genealogical and Heraldry Society. Title: South Australian Deaths - Index of Registrations. Abbreviation: Index of SA Deaths. Publication: South Australian Genealogical and Heraldry Society. Italicized: Y. Paranthetical: Y. Citing: Page: 872/1961 (accessed before 20 March 2011)`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
+    // From https://www.wikitree.com/wiki/Couzens-45
+    caseName: "bdm_birth_1900_vera_couzens_wt",
+    inputText: `South Australia Birth Index compiled by Genealogy South Australia; citing Norwood District book#657; p72; for Vera Azalia Jessie Frances Couzens, b: 30 Mar 1900 (father: John Couzens & mother: Annie Rebecca Elliott); res: Hackney, Australia`,
     function: transformPlainText,
     numPhases: 3,
   },
