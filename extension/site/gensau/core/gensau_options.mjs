@@ -33,7 +33,18 @@ const citationOptionsGroup = {
   subcategory: "gensau",
   tab: "citation",
   subsection: "gensau",
-  options: [],
+  options: [
+    {
+      optionName: "linkType",
+      type: "select",
+      label: "Type of link to Genealogy SA site",
+      values: [
+        { value: "toHomePage", text: "To home page" },
+        { value: "toRecord", text: "To record page" },
+      ],
+      defaultValue: "toHomePage",
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "gensau", "Genealogy SA");

@@ -1187,6 +1187,8 @@ class PlaceObj {
     // So for searching or adding profiles you would use inferPlaceString but for
     // narrative and dataString you would likely want inferExtractedPlaceString
     if (Object.hasOwn(this, "extractedPlaceString")) {
+      // Note that this could be an empty string but with still want to return it rather
+      // than returning a string that is just the inferrred state/country
       return this.extractedPlaceString;
     }
 

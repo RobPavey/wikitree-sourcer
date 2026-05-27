@@ -78,9 +78,10 @@ function buildSourceReference(ed, gd, builder) {
 }
 
 function buildRecordLink(ed, gd, builder) {
-  const useRecordUrl = false; // no option for now
+  let options = builder.getOptions();
+  let linkType = options.citation_gensau_linkType;
 
-  if (useRecordUrl) {
+  if (linkType == "toRecord") {
     let gensauUrl = buildGensauRecordUrl(ed, builder);
     let recordLink = "[" + gensauUrl + " Genealogy SA Record]";
     builder.recordLinkOrTemplate = recordLink;
