@@ -4,8 +4,9 @@
   "recordType": "MedicalPatient",
   "name": {
     "lastName": "Stewart",
-    "forenames": "Mrs"
+    "nonPrefixHonorific": "Mrs"
   },
+  "personGender": "female",
   "eventDate": {
     "dateString": "25-Jul-1916"
   },
