@@ -1328,20 +1328,34 @@ class NarrativeBuilder {
           this.addToSentence(spouseName);
           this.addAgeForMainSentence(spouseAge);
         }
-        let year = gd.inferEventYear();
-        if (dateString != year && !quarter) {
-          this.addDateToSentence(this.formatDateObj(dateObj, true));
-        } else if (year) {
-          if (quarter == "Jan-Feb-Mar") {
-            let yearNum = DateUtils.getYearNumFromYearString(year);
-            if (yearNum) {
-              yearNum -= 1;
-              this.addToSentence("in late " + yearNum + "/early " + year);
+        if (hasAdditionalDate) {
+          if (typeString == "birth") {
+            let birthDateObj = gd.inferBirthDateObj();
+            if (birthDateObj) {
+              this.addDateToSentence(this.formatDateObj(birthDateObj, true));
+            }
+          } else if (typeString == "death") {
+            let deathDateObj = gd.inferDeathDateObj();
+            if (deathDateObj) {
+              this.addDateToSentence(this.formatDateObj(deathDateObj, true));
+            }
+          }
+        } else {
+          let year = gd.inferEventYear();
+          if (dateString != year && !quarter) {
+            this.addDateToSentence(this.formatDateObj(dateObj, true));
+          } else if (year) {
+            if (quarter == "Jan-Feb-Mar") {
+              let yearNum = DateUtils.getYearNumFromYearString(year);
+              if (yearNum) {
+                yearNum -= 1;
+                this.addToSentence("in late " + yearNum + "/early " + year);
+              } else {
+                this.addToSentence("in " + year);
+              }
             } else {
               this.addToSentence("in " + year);
             }
-          } else {
-            this.addToSentence("in " + year);
           }
         }
         let pronoun = this.getPossessivePronounInitialCaps();

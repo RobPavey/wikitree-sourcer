@@ -3670,14 +3670,16 @@ class GeneralizedData {
   }
 
   inferEventDate() {
-    if (this.eventDate) {
-      return this.eventDate.getDateString();
+    let eventDate = this.inferEventDateObj();
+    if (eventDate) {
+      return eventDate.getDateString();
     }
   }
 
   inferEventYear() {
-    if (this.eventDate) {
-      return this.eventDate.getYearString();
+    let eventDate = this.inferEventDateObj();
+    if (eventDate) {
+      return eventDate.getYearString();
     }
   }
 

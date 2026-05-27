@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { RT } from "../../../base/core/record_type.mjs";
 
 function buildGensauRecordUrl(ed, builder) {
   // The URLS tend to be really long e.g.:
@@ -57,11 +58,20 @@ function buildSourceReference(ed, gd, builder) {
   if (rd) {
     builder.addSourceReferenceFieldFromRd(rd, "Surname");
 
+    if (gd.recordType != RT.BirthRegistration) {
+      builder.addSourceReferenceFieldFromRd(rd, "Given Names");
+      let eventYear = gd.inferEventYear();
+      if (!eventYear) {
+        if (gd.recordType == RT.DeathRegistration) {
+          eventYear = gd.inferDeathYear();
+        }
+      }
+      builder.addSourceReferenceField("Year", eventYear);
+      builder.addSourceReferenceField("District", gd.registrationDistrict);
+    }
+
     if (rd["Book/Page"]) {
       builder.addSourceReferenceFieldFromRd(rd, "Book/Page");
-    } else {
-      builder.addSourceReferenceFieldFromRd(rd, "Given Names");
-      builder.addSourceReferenceField("Year", gd.inferEventYear());
     }
 
     builder.addSourceReferenceFieldFromRd(rd, "Notice");
