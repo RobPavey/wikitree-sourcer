@@ -12,7 +12,7 @@
   "eventPlace": {
     "placeString": "Blacburn LAN, England",
     "country": "England",
-    "basePlaceString": "Blacburn LAN, ENG"
+    "extractedPlaceString": "Blacburn LAN, ENG"
   },
   "spouses": [
     {

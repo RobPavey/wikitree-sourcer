@@ -14,13 +14,13 @@
     "placeString": "South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": ""
+    "extractedPlaceString": ""
   },
   "residencePlace": {
     "placeString": "Moonta Mines, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Moonta Mines"
+    "extractedPlaceString": "Moonta Mines"
   },
   "registrationDistrict": "Daly",
   "parents": {

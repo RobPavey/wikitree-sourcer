@@ -13,13 +13,13 @@
     "placeString": "Clare Lying-in Home, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Clare Lying-in Home"
+    "extractedPlaceString": "Clare Lying-in Home"
   },
   "residencePlace": {
     "placeString": "Clare, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Clare"
+    "extractedPlaceString": "Clare"
   },
   "hasValidData": true
 }

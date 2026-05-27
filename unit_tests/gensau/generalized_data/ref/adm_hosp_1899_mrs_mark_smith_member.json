@@ -16,19 +16,19 @@
     "placeString": "Wallaroo, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Wallaroo"
+    "extractedPlaceString": "Wallaroo"
   },
   "birthPlace": {
     "placeString": "South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "S A"
+    "extractedPlaceString": "S A"
   },
   "residencePlace": {
     "placeString": "Snowtown, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Snowtown"
+    "extractedPlaceString": "Snowtown"
   },
   "ageAtEvent": "45",
   "occupation": "Domestic Duties",

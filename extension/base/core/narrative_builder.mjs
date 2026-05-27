@@ -763,7 +763,7 @@ class NarrativeBuilder {
     let gd = this.eventGd;
     let residencePlaceObj = gd.inferResidencePlaceObj();
     if (residencePlaceObj) {
-      let residencePlaceString = residencePlaceObj.inferBasePlaceString();
+      let residencePlaceString = residencePlaceObj.inferExtractedPlaceString();
       if (residencePlaceString) {
       }
     }

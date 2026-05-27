@@ -14,13 +14,13 @@
     "placeString": "South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": ""
+    "extractedPlaceString": ""
   },
   "residencePlace": {
     "placeString": "Stanley Flat nr Clare, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Stanley Flat nr Clare"
+    "extractedPlaceString": "Stanley Flat nr Clare"
   },
   "registrationDistrict": "Clare",
   "parents": {

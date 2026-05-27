@@ -698,7 +698,7 @@ class ExtractedDataReader {
       placeString = "";
     }
 
-    const basePlaceString = placeString;
+    const extractedPlaceString = placeString;
 
     function addPart(part) {
       if (part) {
@@ -747,8 +747,8 @@ class ExtractedDataReader {
     placeObj.placeString = placeString;
 
     if (placeString) {
-      if (placeString != basePlaceString) {
-        placeObj.basePlaceString = basePlaceString;
+      if (placeString != extractedPlaceString) {
+        placeObj.extractedPlaceString = extractedPlaceString;
       }
       return placeObj;
     }

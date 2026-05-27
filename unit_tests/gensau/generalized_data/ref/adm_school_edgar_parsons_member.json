@@ -14,7 +14,7 @@
     "placeString": "Hawker, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Hawker"
+    "extractedPlaceString": "Hawker"
   },
   "birthDate": {
     "dateString": "12-Jan-1900"

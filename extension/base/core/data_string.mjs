@@ -873,7 +873,7 @@ function getBirthRegistrationString(gd, options) {
     // e.g.: https://www.ancestry.com/discoveryui-content/view/3027592:2573
     let birthPlace = gd.birthPlace;
     if (birthPlace) {
-      let birthPlaceString = birthPlace.inferBasePlaceString();
+      let birthPlaceString = birthPlace.inferExtractedPlaceString();
       if (birthPlaceString && !dataString.includes(birthPlaceString)) {
         dataString += ", birth place " + birthPlaceString;
       }
@@ -892,7 +892,7 @@ function getBirthRegistrationString(gd, options) {
     // for a birth
     let residencePlace = gd.inferResidencePlaceObj();
     if (residencePlace) {
-      let residencePlaceString = residencePlace.inferBasePlaceString();
+      let residencePlaceString = residencePlace.inferExtractedPlaceString();
       if (residencePlaceString && !dataString.includes(residencePlaceString)) {
         dataString += ", residence " + residencePlaceString;
       }

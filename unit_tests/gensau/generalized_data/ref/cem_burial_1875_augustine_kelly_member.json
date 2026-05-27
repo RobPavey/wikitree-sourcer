@@ -13,7 +13,7 @@
     "placeString": "Clare General, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Clare General"
+    "extractedPlaceString": "Clare General"
   },
   "deathDate": {
     "dateString": "24-Jan-1875"

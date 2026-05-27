@@ -13,7 +13,7 @@
     "placeString": "South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": ""
+    "extractedPlaceString": ""
   },
   "ageAtEvent": "39",
   "hasValidData": true

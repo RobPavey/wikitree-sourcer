@@ -15,7 +15,7 @@
     "placeString": "Adelaide, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Adelaide"
+    "extractedPlaceString": "Adelaide"
   },
   "hasValidData": true
 }

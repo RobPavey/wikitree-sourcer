@@ -14,13 +14,13 @@
     "placeString": "South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": ""
+    "extractedPlaceString": ""
   },
   "residencePlace": {
     "placeString": "Unley, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Unley"
+    "extractedPlaceString": "Unley"
   },
   "registrationDistrict": "Adelaide",
   "collectionData": {

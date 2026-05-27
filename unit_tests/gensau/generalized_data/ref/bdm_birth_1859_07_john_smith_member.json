@@ -14,13 +14,13 @@
     "placeString": "South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": ""
+    "extractedPlaceString": ""
   },
   "residencePlace": {
     "placeString": "Brompton, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Brompton"
+    "extractedPlaceString": "Brompton"
   },
   "registrationDistrict": "Adelaide",
   "parents": {

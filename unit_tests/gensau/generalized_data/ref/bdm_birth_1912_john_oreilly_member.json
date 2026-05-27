@@ -14,13 +14,13 @@
     "placeString": "South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": ""
+    "extractedPlaceString": ""
   },
   "residencePlace": {
     "placeString": "Helmsdale, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Helmsdale"
+    "extractedPlaceString": "Helmsdale"
   },
   "registrationDistrict": "Adelaide",
   "parents": {

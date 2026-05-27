@@ -1180,14 +1180,14 @@ class PlaceObj {
     return place;
   }
 
-  inferBasePlaceString() {
+  inferExtractedPlaceString() {
     // This is the place string from the extracted record, it may be cleaned
     // but it has not been standardized or had county/state/country added.
     // Not all sites set this up yet, in those cases this is the same as inferPlaceString.
     // So for searching or adding profiles you would use inferPlaceString but for
-    // narrative and dataString you would likely want inferBasePlaceString
-    if (Object.hasOwn(this, "basePlaceString")) {
-      return this.basePlaceString;
+    // narrative and dataString you would likely want inferExtractedPlaceString
+    if (Object.hasOwn(this, "extractedPlaceString")) {
+      return this.extractedPlaceString;
     }
 
     return this.inferPlaceString();

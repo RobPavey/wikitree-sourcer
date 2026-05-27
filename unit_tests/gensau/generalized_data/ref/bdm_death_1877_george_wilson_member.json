@@ -14,13 +14,13 @@
     "placeString": "South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": ""
+    "extractedPlaceString": ""
   },
   "residencePlace": {
     "placeString": "Mount Gambier, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "Mount Gambier"
+    "extractedPlaceString": "Mount Gambier"
   },
   "registrationDistrict": "Grey",
   "collectionData": {

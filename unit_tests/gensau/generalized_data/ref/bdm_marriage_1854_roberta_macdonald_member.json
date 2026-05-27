@@ -14,7 +14,7 @@
     "placeString": "St Barnabas Church Clare, South Australia, Australia",
     "state": "South Australia",
     "country": "Australia",
-    "basePlaceString": "St Barnabas Church Clare"
+    "extractedPlaceString": "St Barnabas Church Clare"
   },
   "registrationDistrict": "The Murray/Burra",
   "spouses": [
@@ -30,7 +30,7 @@
         "placeString": "St Barnabas Church Clare, South Australia, Australia",
         "state": "South Australia",
         "country": "Australia",
-        "basePlaceString": "St Barnabas Church Clare"
+        "extractedPlaceString": "St Barnabas Church Clare"
       }
     }
   ],
