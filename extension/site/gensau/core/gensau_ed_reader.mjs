@@ -170,7 +170,7 @@ const recordTypes = [
         cleanFunction: cleanDate,
       },
       eventPlace: {
-        recordDataKeys: ["Place of Baptism", "Church"],
+        recordDataKeys: ["Place of Baptism", "Church", "Parish"],
       },
     },
   },
@@ -183,13 +183,18 @@ const recordTypes = [
         cleanFunction: cleanDate,
       },
       eventPlace: {
-        recordDataKeys: ["Place of Marriage"],
+        recordDataKeys: ["Place of Marriage", "Church", "Parish"],
       },
     },
   },
   {
     recordType: RT.OtherChurchEvent,
     collectionIds: ["South Australian Church records - Other"],
+    rules: {
+      eventPlace: {
+        recordDataKeys: ["Church", "Parish", "Location"],
+      },
+    },
   },
   // Admission Records
   {
@@ -314,8 +319,14 @@ const defaultRecordTypeData = {
     arrivalDate: {
       recordDataKeys: ["Arrival Date"],
     },
+    arrivalPlace: {
+      recordDataKeys: ["Disembarked"],
+    },
     departureDate: {
       recordDataKeys: ["Departure Date"],
+    },
+    departurePlace: {
+      recordDataKeys: ["Embarked", "Embarked from"],
     },
     shipName: {
       recordDataKeys: ["Ship Name"],

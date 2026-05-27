@@ -9,6 +9,12 @@
   "eventDate": {
     "dateString": "1879"
   },
+  "eventPlace": {
+    "placeString": "Adelaide Catholic, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Adelaide Catholic"
+  },
   "spouses": [
     {
       "name": {
@@ -17,6 +23,12 @@
       },
       "marriageDate": {
         "dateString": "1879"
+      },
+      "marriagePlace": {
+        "placeString": "Adelaide Catholic, South Australia, Australia",
+        "state": "South Australia",
+        "country": "Australia",
+        "extractedPlaceString": "Adelaide Catholic"
       }
     }
   ],

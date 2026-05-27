@@ -8,7 +8,9 @@
   },
   "ageAtEvent": "27",
   "occupation": "Bookseller's Assistant",
+  "arrivalPlace": "London",
   "departureDate": "26-Mar-1931",
+  "departurePlace": "Adelaide",
   "shipName": "Cathay",
   "hasValidData": true
 }

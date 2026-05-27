@@ -3000,6 +3000,12 @@ class NarrativeBuilder {
       } else if (departureDate && departureDate == eventDate) {
         isDeparture = true;
       }
+    } else {
+      if (arrivalDate) {
+        isArrival = true;
+      } else if (departureDate) {
+        isDeparture = true;
+      }
     }
 
     if (isArrival) {
