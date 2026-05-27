@@ -27,6 +27,13 @@ import { runContextTests } from "../test_utils/test_context_utils.mjs";
 
 const regressionData = [
   {
+    // From Australia project example
+    caseName: "bdm_birth_1857_tom_lomman_aus",
+    inputText: `South Australia Birth Index. (Genealogy SA, https://www.genealogysa.org.au : accessed 11 May 2020), database entry for Lomman, Tom (Birth Date: 23 Dec 1857, Father: Thomas Lomman, Mother: Louisa Bratchell, Birthplace: Shipley), Reference: District Adelaide, Book 11, Page 251.`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
     // From https://www.wikitree.com/wiki/Potter-2780
     // Has multiple names
     caseName: "bdm_birth_1859_john_potter_wt",

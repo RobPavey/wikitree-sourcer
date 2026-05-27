@@ -98,11 +98,14 @@ function transformPlainText(plainText, phase, options) {
       matches: [/(?:^|^.*[^a-z']\s+)(?:surname|last name)\s*:?\s*(\w+)(?:[,; ].*$|$)/is],
     },
     combined: {
-      matches: [/(?:^|^.*[^a-z']\s+)(?:name|for)[^a-z]+([a-z ]+)\W.*$/is],
+      matches: [
+        /^.*entry for\s+([a-z ]+)\W.*$/is, // Aus project case
+        /(?:^|^.*[^a-z']\s+)(?:name|for)[^a-z]+([a-z ]+)\W.*$/is,
+      ],
       partMatches: [/^\s*(?:[^ ]+ )*([a-z]+)\s*$/i],
     },
     noKey: {
-      matches: [/(?:^|^.*[^a-z])([a-z]+),\s?[a-z]+,.*$/is],
+      matches: [/(?:^|^.*[^a-z])([a-z]+),\s?[a-z ]+[,:\-].*$/is],
     },
   };
   let surname = parser.extractValueFromText(surnameExtractInput);
