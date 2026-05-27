@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Surname: MACDONALD; Year: 1902; Book/Page: 290/184<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDorothy Isabel Rose MacDonald death 1902 registered in the Adelaide district.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Surname: MACDONALD; Year: 1902; District: Adelaide; Book/Page: 290/184<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDorothy Isabel Rose MacDonald death 1902 registered in the Adelaide district.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Dorothy's death in 1902 was registered in the Adelaide district.<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Surname: MACDONALD; Year: 1902; Book/Page: 290/184<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDorothy Isabel Rose MacDonald death 1902 registered in the Adelaide district.\n</ref>",
+    "citation": "Dorothy's death in 1902 was registered in the Adelaide district.<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Surname: MACDONALD; Year: 1902; District: Adelaide; Book/Page: 290/184<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDorothy Isabel Rose MacDonald death 1902 registered in the Adelaide district.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death Registration''': \"South Australia - Death Registrations\"<br/>Genealogy SA; Surname: MACDONALD; Year: 1902; Book/Page: 290/184<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Dorothy Isabel Rose MacDonald death 1902 registered in the Adelaide district.",
+    "citation": "* '''Death Registration''': \"South Australia - Death Registrations\"<br/>Genealogy SA; Surname: MACDONALD; Year: 1902; District: Adelaide; Book/Page: 290/184<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Dorothy Isabel Rose MacDonald death 1902 registered in the Adelaide district.",
     "type": "source"
   }
 }

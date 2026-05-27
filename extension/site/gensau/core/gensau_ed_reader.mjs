@@ -157,7 +157,7 @@ const recordTypes = [
         cleanFunction: cleanDate,
       },
       eventPlace: {
-        recordDataKeys: ["Place of Burial"],
+        recordDataKeys: ["Place of Burial", "Parish"],
       },
     },
   },
@@ -170,7 +170,7 @@ const recordTypes = [
         cleanFunction: cleanDate,
       },
       eventPlace: {
-        recordDataKeys: ["Place of Baptism"],
+        recordDataKeys: ["Place of Baptism", "Church"],
       },
     },
   },

@@ -9,6 +9,12 @@
   "eventDate": {
     "dateString": "09-Oct-1855"
   },
+  "eventPlace": {
+    "placeString": "Adelaide Pirie Street Methodist Church, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Adelaide Pirie Street Methodist Church"
+  },
   "birthDate": {
     "dateString": "14-Aug-1855"
   },
