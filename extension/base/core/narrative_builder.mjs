@@ -469,7 +469,7 @@ class NarrativeBuilder {
 
     function tryFirstName() {
       let name = gd.inferFirstName();
-      if (name) {
+      if (name && name.length > 1) {
         result.nameOrPronoun = name;
         return true;
       }
@@ -478,7 +478,7 @@ class NarrativeBuilder {
 
     function tryForenames() {
       let name = gd.inferForenames();
-      if (name) {
+      if (name && name.length > 1) {
         result.nameOrPronoun = name;
         return true;
       }
