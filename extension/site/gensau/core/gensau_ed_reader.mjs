@@ -237,7 +237,7 @@ const recordTypes = [
     collectionIds: ["Certificates-Australia and Overseas"],
   },
   {
-    recordType: RT.Unclassified,
+    recordType: RT.BiographicalIndex,
     collectionIds: ["Irish Born South Australians (IBSA)"],
   },
   {
