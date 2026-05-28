@@ -93,7 +93,6 @@ const recordTypes = [
     rules: {
       eventDate: {
         recordDataKeys: ["Marriage Date", "Marriage Year"],
-        cleanFunction: cleanDate,
       },
       eventPlace: {
         recordDataKeys: ["Marriage Place"],
@@ -129,7 +128,6 @@ const recordTypes = [
     rules: {
       eventDate: {
         recordDataKeys: ["Divorce Date", "Divorce Year"],
-        cleanFunction: cleanDate,
       },
     },
   },
@@ -140,7 +138,6 @@ const recordTypes = [
     rules: {
       eventDate: {
         recordDataKeys: ["Burial Date", "EventYear"],
-        cleanFunction: cleanDate,
       },
       eventPlace: {
         recordDataKeys: ["Cemetery"],
@@ -154,7 +151,6 @@ const recordTypes = [
     rules: {
       eventDate: {
         recordDataKeys: ["Date of Burial", "Burial Year"],
-        cleanFunction: cleanDate,
       },
       eventPlace: {
         recordDataKeys: ["Place of Burial", "Parish"],
@@ -167,7 +163,6 @@ const recordTypes = [
     rules: {
       eventDate: {
         recordDataKeys: ["Date of Baptism", "Baptism Year"],
-        cleanFunction: cleanDate,
       },
       eventPlace: {
         recordDataKeys: ["Place of Baptism", "Church", "Parish"],
@@ -180,7 +175,6 @@ const recordTypes = [
     rules: {
       eventDate: {
         recordDataKeys: ["Marriage Date", "Year of marriage"],
-        cleanFunction: cleanDate,
       },
       eventPlace: {
         recordDataKeys: ["Place of Marriage", "Church", "Parish"],
@@ -203,7 +197,6 @@ const recordTypes = [
     rules: {
       eventDate: {
         recordDataKeys: ["Registration Date"],
-        cleanFunction: cleanDate,
       },
       eventPlace: {
         recordDataKeys: ["Address", "Town"],
