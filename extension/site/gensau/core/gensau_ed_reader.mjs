@@ -225,11 +225,11 @@ const recordTypes = [
   },
   // Other Records
   {
-    recordType: RT.Unclassified,
+    recordType: RT.BiographicalIndex,
     collectionIds: ["Biographical Index of South Australians"],
   },
   {
-    recordType: RT.Unclassified,
+    recordType: RT.BiographicalIndex,
     collectionIds: ["Biographical Index of South Australians - Supplementary"],
   },
   {

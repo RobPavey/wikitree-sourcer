@@ -4467,6 +4467,14 @@ class GeneralizedData {
         defaultTitle: "Encyclopedia",
         sourceMatches: [{ title: "Wikipedia entry", matches: ["wikipedia"] }],
       },
+      {
+        type: RT.Biography,
+        defaultTitle: "Biography",
+      },
+      {
+        type: RT.BiographicalIndex,
+        defaultTitle: "Biographical Index",
+      },
     ];
 
     function lookup(gd, collectionTitle, table) {

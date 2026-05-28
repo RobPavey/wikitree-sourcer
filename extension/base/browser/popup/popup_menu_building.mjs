@@ -1302,6 +1302,8 @@ function setupBuildCitationSubmenu(
     Unclassified: "Unknown",
     Apprenticeship: "Apprenticeship",
     Baptism: "Baptism",
+    Biography: "Biography",
+    BiographicalIndex: "BiographicalIndex",
     Birth: "Birth",
     BirthRegistration: "Birth Registration",
     Book: "Book",

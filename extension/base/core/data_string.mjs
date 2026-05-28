@@ -779,6 +779,99 @@ function getValuationRollString(gd, options) {
   return dataString;
 }
 
+function getPassengerListString(gd, options) {
+  let dataString = getFullName(gd);
+
+  let eventDate = gd.inferEventDate();
+  let eventPlace = gd.inferEventPlace();
+
+  let arrivalDate = gd.arrivalDate;
+  let arrivalPlace = gd.arrivalPlace;
+  let departureDate = gd.departureDate;
+  let departurePlace = gd.departurePlace;
+  let ageAtEvent = gd.ageAtEvent;
+
+  let isArrival = false;
+  let isDeparture = false;
+  if (eventDate) {
+    if (arrivalDate && arrivalDate == eventDate) {
+      isArrival = true;
+    } else if (departureDate && departureDate == eventDate) {
+      isDeparture = true;
+    }
+  } else {
+    if (arrivalDate) {
+      isArrival = true;
+    } else if (departureDate) {
+      isDeparture = true;
+    }
+  }
+
+  if (ageAtEvent) {
+    dataString += ", age " + ageAtEvent + ",";
+  }
+
+  if (isArrival) {
+    dataString += " arrived";
+
+    if (gd.shipName) {
+      dataString += " on the ship " + gd.shipName;
+    }
+
+    if (arrivalDate) {
+      dataString += " " + arrivalDate;
+    }
+
+    if (arrivalPlace) {
+      dataString += " at " + arrivalPlace;
+    }
+
+    if (departurePlace) {
+      dataString += ", departed from ";
+      dataString += departurePlace;
+      if (departureDate) {
+        dataString += " " + departureDate;
+      }
+    }
+  } else if (isDeparture) {
+    dataString += " departed";
+
+    if (departurePlace) {
+      dataString += " from ";
+      dataString += departurePlace;
+    }
+
+    if (gd.shipName) {
+      dataString += " on ship " + gd.shipName;
+    }
+
+    if (departureDate) {
+      dataString += " " + departureDate;
+    }
+
+    if (arrivalPlace) {
+      dataString += " bound to ";
+      dataString += arrivalPlace;
+    }
+  } else {
+    dataString += " was a passenger";
+
+    if (gd.shipName) {
+      dataString += " on ship " + gd.shipName;
+    }
+
+    if (eventDate) {
+      dataString += " " + eventDate;
+    }
+
+    if (eventPlace) {
+      dataString += " " + getPlaceWithPreposition(eventPlace);
+    }
+  }
+
+  return dataString;
+}
+
 function addRegistrationPlace(gd, options) {
   let placeString = "";
 
@@ -1927,6 +2020,10 @@ const DataString = {
       }
       case RT.ValuationRoll: {
         dataString = getValuationRollString(gd, options);
+        break;
+      }
+      case RT.PassengerList: {
+        dataString = getPassengerListString(gd, options);
         break;
       }
     }
