@@ -245,11 +245,22 @@ class CitationParser {
   }
 
   extractValueFromText(extractInput) {
+    let text = this.text;
+
+    if (extractInput.preClean) {
+      let clean = extractInput.preClean;
+      if (clean.removeMatches) {
+        for (let regex of clean.removeMatches) {
+          text = text.replace(regex, "");
+        }
+      }
+    }
+
     if (extractInput.individual) {
       for (let regex of extractInput.individual.matches) {
-        if (regex.test(this.text)) {
-          let value = this.text.replace(regex, "$1");
-          if (value && value != this.text) {
+        if (regex.test(text)) {
+          let value = text.replace(regex, "$1");
+          if (value && value != text) {
             return value;
           }
         }
@@ -258,13 +269,13 @@ class CitationParser {
 
     if (extractInput.combined) {
       for (let regex of extractInput.combined.matches) {
-        if (regex.test(this.text)) {
-          let combinedValue = this.text.replace(regex, "$1");
-          if (combinedValue && combinedValue != this.text) {
+        if (regex.test(text)) {
+          let combinedValue = text.replace(regex, "$1");
+          if (combinedValue && combinedValue != text) {
             for (let partRegex of extractInput.combined.partMatches) {
               if (partRegex.test(combinedValue)) {
                 let value = combinedValue.replace(partRegex, "$1");
-                if (value && value != this.text) {
+                if (value && value != text) {
                   return value;
                 }
               }
@@ -276,9 +287,9 @@ class CitationParser {
 
     if (extractInput.noKey) {
       for (let regex of extractInput.noKey.matches) {
-        if (regex.test(this.text)) {
-          let value = this.text.replace(regex, "$1");
-          if (value && value != this.text) {
+        if (regex.test(text)) {
+          let value = text.replace(regex, "$1");
+          if (value && value != text) {
             return value;
           }
         }

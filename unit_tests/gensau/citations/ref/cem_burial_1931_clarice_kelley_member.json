@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"South Australia - South Australia Cemeteries\"<br/>\nGenealogy SA; Surname: KELLY; Year: 1931; Source: Memorial Inscription<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nClarice Eleanor (Ellie) Kelly burial (died on 31 May 1931 at age 45) in 1931 in Clare General, South Australia, Australia.\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"South Australia - South Australia Cemeteries\"<br/>\nGenealogy SA; Surname: KELLY; Given Names: Clarice Eleanor (Ellie); Year: 1931; Source: Memorial Inscription<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nClarice Eleanor (Ellie) Kelly burial (died on 31 May 1931 at age 45) in 1931 in Clare General, South Australia, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Clarice (age 45) died on 31 May 1931 and was buried in 1931 in Clare General, South Australia, Australia.<ref>\n'''Burial''':\n\"South Australia - South Australia Cemeteries\"<br/>\nGenealogy SA; Surname: KELLY; Year: 1931; Source: Memorial Inscription<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nClarice Eleanor (Ellie) Kelly burial (died on 31 May 1931 at age 45) in 1931 in Clare General, South Australia, Australia.\n</ref>",
+    "citation": "Clarice (age 45) died on 31 May 1931 and was buried in 1931 in Clare General, South Australia, Australia.<ref>\n'''Burial''':\n\"South Australia - South Australia Cemeteries\"<br/>\nGenealogy SA; Surname: KELLY; Given Names: Clarice Eleanor (Ellie); Year: 1931; Source: Memorial Inscription<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nClarice Eleanor (Ellie) Kelly burial (died on 31 May 1931 at age 45) in 1931 in Clare General, South Australia, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Burial''': \"South Australia - South Australia Cemeteries\"<br/>Genealogy SA; Surname: KELLY; Year: 1931; Source: Memorial Inscription<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Clarice Eleanor (Ellie) Kelly burial (died on 31 May 1931 at age 45) in 1931 in Clare General, South Australia, Australia.",
+    "citation": "* '''Burial''': \"South Australia - South Australia Cemeteries\"<br/>Genealogy SA; Surname: KELLY; Given Names: Clarice Eleanor (Ellie); Year: 1931; Source: Memorial Inscription<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Clarice Eleanor (Ellie) Kelly burial (died on 31 May 1931 at age 45) in 1931 in Clare General, South Australia, Australia.",
     "type": "source"
   }
 }

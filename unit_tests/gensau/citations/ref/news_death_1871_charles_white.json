@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death''':\n\"South Australia - Newspaper Death Notices\"<br/>\nGenealogy SA; Surname: WHITE; Year: 1871; Notice: Mortuary Returns; Notice: Mortuary Returns<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nCharles White death 1871 in South Australia, Australia.\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"South Australia - Newspaper Death Notices\"<br/>\nGenealogy SA; Surname: WHITE; Given Names: Charles; Year: 1871; Notice: Mortuary Returns; Notice: Mortuary Returns<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nCharles White death 1871 in South Australia, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Charles died in 1871 in South Australia, Australia.<ref>\n'''Death''':\n\"South Australia - Newspaper Death Notices\"<br/>\nGenealogy SA; Surname: WHITE; Year: 1871; Notice: Mortuary Returns; Notice: Mortuary Returns<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nCharles White death 1871 in South Australia, Australia.\n</ref>",
+    "citation": "Charles died in 1871 in South Australia, Australia.<ref>\n'''Death''':\n\"South Australia - Newspaper Death Notices\"<br/>\nGenealogy SA; Surname: WHITE; Given Names: Charles; Year: 1871; Notice: Mortuary Returns; Notice: Mortuary Returns<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nCharles White death 1871 in South Australia, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death''': \"South Australia - Newspaper Death Notices\"<br/>Genealogy SA; Surname: WHITE; Year: 1871; Notice: Mortuary Returns; Notice: Mortuary Returns<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Charles White death 1871 in South Australia, Australia.",
+    "citation": "* '''Death''': \"South Australia - Newspaper Death Notices\"<br/>Genealogy SA; Surname: WHITE; Given Names: Charles; Year: 1871; Notice: Mortuary Returns; Notice: Mortuary Returns<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Charles White death 1871 in South Australia, Australia.",
     "type": "source"
   }
 }

@@ -77,12 +77,22 @@ function buildSourceReference(ed, gd, builder) {
 
     if (sourceReferenceIncludes == "searchPlusRef") {
       if (!isDataList) {
-        builder.addSourceReferenceFieldFromRd(rd, "Surname");
+        if (rd["Surname"]) {
+          builder.addSourceReferenceFieldFromRd(rd, "Surname");
+        } else {
+          let surname = gd.inferLastName();
+          builder.addSourceReferenceField("Surname", surname);
+        }
       }
 
       if (gd.recordType != RT.BirthRegistration) {
         if (!isDataList) {
-          builder.addSourceReferenceFieldFromRd(rd, "Given Names");
+          if (rd["Given Names"]) {
+            builder.addSourceReferenceFieldFromRd(rd, "Given Names");
+          } else {
+            let surname = gd.inferForenames();
+            builder.addSourceReferenceField("Given Names", surname);
+          }
         }
         let eventYear = gd.inferEventYear();
         if (!eventYear) {

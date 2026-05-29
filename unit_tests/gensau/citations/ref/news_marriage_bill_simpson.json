@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Newspaper''':\n\"South Australia - Newspaper Marriages\"<br/>\nGenealogy SA; Given Names: Bill; Notice: Anniversary; Notice: Anniversary<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDawn Simpson.\n</ref>",
+    "citation": "<ref>\n'''Newspaper''':\n\"South Australia - Newspaper Marriages\"<br/>\nGenealogy SA; Surname: Simpson; Given Names: Bill; Notice: Anniversary; Notice: Anniversary<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDawn Simpson.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Dawn was mentioned in a newspaper article.<ref>\n'''Newspaper''':\n\"South Australia - Newspaper Marriages\"<br/>\nGenealogy SA; Given Names: Bill; Notice: Anniversary; Notice: Anniversary<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDawn Simpson.\n</ref>",
+    "citation": "Dawn was mentioned in a newspaper article.<ref>\n'''Newspaper''':\n\"South Australia - Newspaper Marriages\"<br/>\nGenealogy SA; Surname: Simpson; Given Names: Bill; Notice: Anniversary; Notice: Anniversary<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDawn Simpson.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Newspaper''': \"South Australia - Newspaper Marriages\"<br/>Genealogy SA; Given Names: Bill; Notice: Anniversary; Notice: Anniversary<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Dawn Simpson.",
+    "citation": "* '''Newspaper''': \"South Australia - Newspaper Marriages\"<br/>Genealogy SA; Surname: Simpson; Given Names: Bill; Notice: Anniversary; Notice: Anniversary<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Dawn Simpson.",
     "type": "source"
   }
 }

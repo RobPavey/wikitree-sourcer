@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"South Australia - South Australia Cemeteries\"<br/>\nGenealogy SA; Surname: KELLY; Year: 1931<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nClarice Eleanor (Ellie) Kelly burial (died age 45) in 1931.\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"South Australia - South Australia Cemeteries\"<br/>\nGenealogy SA; Surname: KELLY; Given Names: Clarice Eleanor (Ellie); Year: 1931<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nClarice Eleanor (Ellie) Kelly burial (died age 45) in 1931.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Clarice (age 45) was buried in 1931.<ref>\n'''Burial''':\n\"South Australia - South Australia Cemeteries\"<br/>\nGenealogy SA; Surname: KELLY; Year: 1931<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nClarice Eleanor (Ellie) Kelly burial (died age 45) in 1931.\n</ref>",
+    "citation": "Clarice (age 45) was buried in 1931.<ref>\n'''Burial''':\n\"South Australia - South Australia Cemeteries\"<br/>\nGenealogy SA; Surname: KELLY; Given Names: Clarice Eleanor (Ellie); Year: 1931<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nClarice Eleanor (Ellie) Kelly burial (died age 45) in 1931.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Burial''': \"South Australia - South Australia Cemeteries\"<br/>Genealogy SA; Surname: KELLY; Year: 1931<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Clarice Eleanor (Ellie) Kelly burial (died age 45) in 1931.",
+    "citation": "* '''Burial''': \"South Australia - South Australia Cemeteries\"<br/>Genealogy SA; Surname: KELLY; Given Names: Clarice Eleanor (Ellie); Year: 1931<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Clarice Eleanor (Ellie) Kelly burial (died age 45) in 1931.",
     "type": "source"
   }
 }

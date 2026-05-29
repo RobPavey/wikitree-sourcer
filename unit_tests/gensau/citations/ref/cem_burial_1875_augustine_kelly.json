@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"South Australia - South Australia Cemeteries\"<br/>\nGenealogy SA; Surname: KELLY; Year: 1875<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAugustine H Havelock Kelly burial (died age 5) in 1875.\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"South Australia - South Australia Cemeteries\"<br/>\nGenealogy SA; Surname: KELLY; Given Names: Augustine H Havelock; Year: 1875<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAugustine H Havelock Kelly burial (died age 5) in 1875.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Augustine (age 5) was buried in 1875.<ref>\n'''Burial''':\n\"South Australia - South Australia Cemeteries\"<br/>\nGenealogy SA; Surname: KELLY; Year: 1875<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAugustine H Havelock Kelly burial (died age 5) in 1875.\n</ref>",
+    "citation": "Augustine (age 5) was buried in 1875.<ref>\n'''Burial''':\n\"South Australia - South Australia Cemeteries\"<br/>\nGenealogy SA; Surname: KELLY; Given Names: Augustine H Havelock; Year: 1875<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAugustine H Havelock Kelly burial (died age 5) in 1875.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Burial''': \"South Australia - South Australia Cemeteries\"<br/>Genealogy SA; Surname: KELLY; Year: 1875<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Augustine H Havelock Kelly burial (died age 5) in 1875.",
+    "citation": "* '''Burial''': \"South Australia - South Australia Cemeteries\"<br/>Genealogy SA; Surname: KELLY; Given Names: Augustine H Havelock; Year: 1875<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Augustine H Havelock Kelly burial (died age 5) in 1875.",
     "type": "source"
   }
 }
