@@ -117,6 +117,18 @@ const regressionData = [
         thisTypeOnly: "narrative",
         optionOverrides: { narrative_deathRegReg_sentenceStructure: "twoSentences" },
       },
+      {
+        variantName: "data_style_list",
+        optionOverrides: { citation_gensau_dataStyle: "list" },
+      },
+      {
+        variantName: "source_ref_only_ref",
+        optionOverrides: { citation_gensau_sourceReferenceIncludes: "refOnly" },
+      },
+      {
+        variantName: "data_style_list_source_ref_only_ref",
+        optionOverrides: { citation_gensau_dataStyle: "list", citation_gensau_sourceReferenceIncludes: "refOnly" },
+      },
     ],
   },
   {

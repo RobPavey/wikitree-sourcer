@@ -44,6 +44,30 @@ const citationOptionsGroup = {
       ],
       defaultValue: "toHomePage",
     },
+    {
+      optionName: "sourceReferenceIncludes",
+      type: "select",
+      label: "Data to put in Source Reference",
+      values: [
+        { value: "searchPlusRef", text: "All data needed to find in search plus reference type data" },
+        { value: "refOnly", text: "Just reference type data" },
+      ],
+      defaultValue: "searchPlusRef",
+    },
+    {
+      optionName: "dataStyle",
+      type: "select",
+      label: "Include record data at end of citation as",
+      values: [
+        { value: "none", text: "Do not include data" },
+        {
+          value: "string",
+          text: "Sentence (fall back to list if no sentence)",
+        },
+        { value: "list", text: "List of field names/values" },
+      ],
+      defaultValue: "string",
+    },
   ],
 };
 

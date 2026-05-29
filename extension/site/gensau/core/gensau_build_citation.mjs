@@ -52,38 +52,55 @@ function buildSourceTitle(ed, gd, builder) {
   builder.sourceTitle += "South Australia - " + ed.databaseName;
 }
 
+const referenceFieldLabels = [
+  "Book/Page",
+  "Notice",
+  "Source",
+  "Source2",
+  "Publication Date",
+  "Registration Number",
+  "Admission/Registration No",
+  "Rec Type",
+  "SNcode",
+  "Notice",
+  "Notes",
+];
+
 function buildSourceReference(ed, gd, builder) {
   builder.addSourceReferenceText("Genealogy SA");
   let rd = ed.recordData;
   if (rd) {
-    builder.addSourceReferenceFieldFromRd(rd, "Surname");
+    let options = builder.getOptions();
+    const sourceReferenceIncludes = options.citation_gensau_sourceReferenceIncludes;
+    const dataStyle = options.citation_gensau_dataStyle;
+    const isDataList = dataStyle == "list";
 
-    if (gd.recordType != RT.BirthRegistration) {
-      builder.addSourceReferenceFieldFromRd(rd, "Given Names");
-      let eventYear = gd.inferEventYear();
-      if (!eventYear) {
-        if (gd.recordType == RT.DeathRegistration) {
-          eventYear = gd.inferDeathYear();
+    if (sourceReferenceIncludes == "searchPlusRef") {
+      if (!isDataList) {
+        builder.addSourceReferenceFieldFromRd(rd, "Surname");
+      }
+
+      if (gd.recordType != RT.BirthRegistration) {
+        if (!isDataList) {
+          builder.addSourceReferenceFieldFromRd(rd, "Given Names");
+        }
+        let eventYear = gd.inferEventYear();
+        if (!eventYear) {
+          if (gd.recordType == RT.DeathRegistration) {
+            eventYear = gd.inferDeathYear();
+          }
+        }
+        builder.addSourceReferenceField("Year", eventYear);
+
+        if (!isDataList) {
+          builder.addSourceReferenceField("District", gd.registrationDistrict);
         }
       }
-      builder.addSourceReferenceField("Year", eventYear);
-      builder.addSourceReferenceField("District", gd.registrationDistrict);
     }
 
-    if (rd["Book/Page"]) {
-      builder.addSourceReferenceFieldFromRd(rd, "Book/Page");
+    for (let label of referenceFieldLabels) {
+      builder.addSourceReferenceFieldFromRd(rd, label);
     }
-
-    builder.addSourceReferenceFieldFromRd(rd, "Notice");
-    builder.addSourceReferenceFieldFromRd(rd, "Source");
-    builder.addSourceReferenceFieldFromRd(rd, "Source2");
-    builder.addSourceReferenceFieldFromRd(rd, "Publication Date");
-    builder.addSourceReferenceFieldFromRd(rd, "Registration Number");
-    builder.addSourceReferenceFieldFromRd(rd, "Admission/Registration No");
-    builder.addSourceReferenceFieldFromRd(rd, "Rec Type");
-    builder.addSourceReferenceFieldFromRd(rd, "SNcode");
-    builder.addSourceReferenceFieldFromRd(rd, "Notice");
-    builder.addSourceReferenceFieldFromRd(rd, "Notes");
   }
 }
 
@@ -102,11 +119,34 @@ function buildRecordLink(ed, gd, builder) {
   }
 }
 
+function buildDataString(ed, gd, builder) {
+  let options = builder.getOptions();
+  const dataStyle = options.citation_gensau_dataStyle;
+
+  if (dataStyle == "string") {
+    builder.addStandardDataString(gd);
+  } else if (dataStyle == "list") {
+    let rd = ed.recordData;
+    if (rd) {
+      function filterFunction(keys) {
+        let newKeys = [];
+        for (let key of keys) {
+          if (!referenceFieldLabels.includes(key)) {
+            newKeys.push(key);
+          }
+        }
+        return newKeys;
+      }
+
+      builder.dataString = builder.buildDataList(rd, filterFunction);
+    }
+  }
+}
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  buildDataString(ed, gd, builder);
 }
 
 function buildCitation(input) {
