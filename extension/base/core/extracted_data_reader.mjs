@@ -892,7 +892,159 @@ class ExtractedDataReader {
     }
   }
 
-  getRecordTypeMatch(recordTypeMatches, inputData) {
+  testForEqualsOneOf(matchConfig, matchValues) {
+    let value = matchConfig.value;
+    if (!value) {
+      return false;
+    }
+
+    if (!matchConfig.isCaseSensitive) {
+      value = value.toLowerCase();
+    }
+
+    let matchFound = false;
+    for (let matchValue of matchValues) {
+      if (!matchConfig.isCaseSensitive) {
+        matchValue = matchValue.toLowerCase();
+      }
+      if (value == matchValue) {
+        matchFound = true;
+        break;
+      }
+    }
+    if (!matchFound) {
+      return false;
+    }
+    return true;
+  }
+
+  testForStringIncludesAllFromOneSet(matchConfig, matchSets) {
+    let value = matchConfig.value;
+    if (!value) {
+      return false;
+    }
+    if (!matchConfig.isCaseSensitive) {
+      value = value.toLowerCase();
+    }
+
+    let matchFound = false;
+    for (let set of matchSets) {
+      let partsMatch = true;
+      for (let part of set) {
+        if (!matchConfig.isCaseSensitive) {
+          part = part.toLowerCase();
+        }
+        if (!value.includes(part)) {
+          partsMatch = false;
+          break;
+        }
+      }
+      if (partsMatch) {
+        matchFound = true;
+        break;
+      }
+    }
+
+    if (!matchFound) {
+      return false;
+    }
+
+    return true;
+  }
+
+  testForArrayIncludesAllFromOneSet(matchConfig, matchSets) {
+    let testArray = matchConfig.value;
+
+    let matchFound = false;
+    for (let set of matchSets) {
+      let hasAll = true;
+      for (let value of set) {
+        if (matchConfig.isCaseSensitive) {
+          if (!testArray.includes(value)) {
+            hasAll = false;
+            break;
+          }
+        } else {
+          value = value.toLowerCase();
+          let valueFound = false;
+          for (let testValue of testArray) {
+            if (testValue.toLowerCase() == value) {
+              valueFound = true;
+              break;
+            }
+          }
+          if (!valueFound) {
+            hasAll = false;
+            break;
+          }
+        }
+      }
+      if (hasAll) {
+        matchFound = true;
+        break;
+      }
+    }
+
+    if (!matchFound) {
+      return false;
+    }
+
+    return true;
+  }
+
+  testForObjectHasAllFromOneSet(matchConfig, matchSets) {
+    let testObject = matchConfig.value;
+
+    let matchFound = false;
+    for (let set of matchSets) {
+      let hasAll = true;
+      for (let propertyName of set) {
+        if (matchConfig.isCaseSensitive) {
+          if (!Object.hasOwn(testObject, propertyName)) {
+            hasAll = false;
+            break;
+          }
+        } else {
+          propertyName = propertyName.toLowerCase();
+          let fieldFound = false;
+          for (let testProperty of Object.keys(testObject)) {
+            if (testProperty.toLowerCase() == propertyName) {
+              fieldFound = true;
+              break;
+            }
+          }
+          if (!fieldFound) {
+            hasAll = false;
+            break;
+          }
+        }
+      }
+      if (hasAll) {
+        matchFound = true;
+        break;
+      }
+    }
+
+    if (!matchFound) {
+      return false;
+    }
+
+    return true;
+  }
+
+  // Defining the "enum" inside the class using static properties
+  static MatchType = Object.freeze({
+    EqualsOneOf: "EqualsOneOf",
+    StringIncludesAllFromOneSet: "StringIncludesAllFromOneSet",
+    ArrayIncludesAllFromOneSet: "ArrayIncludesAllFromOneSet",
+    ObjectHasAllFromOneSet: "ObjectHasAllFromOneSet",
+  });
+
+  getRecordTypeMatch(recordTypes, inputData, matchInput) {
+    // recordTypes is an array of recordType definitions
+    // matchInput is selected data from the extractedData object along with
+    // rules of how to match it to the matchData in the typeData
+
     let collectionId = inputData.collectionId;
     let collectionTitle = inputData.collectionTitle;
     let documentType = inputData.documentType;
@@ -901,7 +1053,43 @@ class ExtractedDataReader {
     let recordDataLabels = inputData.recordDataLabels;
     let recordSections = inputData.recordSections;
 
-    for (let typeData of recordTypeMatches) {
+    for (let typeData of recordTypes) {
+      if (matchInput) {
+        if (typeData.matchData) {
+          let failedTest = false;
+
+          // go through each of the tests required for this typeData
+          for (let matchDataKey of Object.keys(typeData.matchData)) {
+            let testPassed = false;
+            let matchConfig = matchInput[matchDataKey];
+            let matchValues = typeData.matchData[matchDataKey];
+            if (matchConfig && matchValues) {
+              switch (matchConfig.matchType) {
+                case ExtractedDataReader.MatchType.EqualsOneOf:
+                  testPassed = this.testForEqualsOneOf(matchConfig, matchValues);
+                  break;
+                case ExtractedDataReader.MatchType.StringIncludesAllFromOneSet:
+                  testPassed = this.testForStringIncludesAllFromOneSet(matchConfig, matchValues);
+                  break;
+                case ExtractedDataReader.MatchType.ArrayIncludesAllFromOneSet:
+                  testPassed = this.testForArrayIncludesAllFromOneSet(matchConfig, matchValues);
+                  break;
+                case ExtractedDataReader.MatchType.ObjectHasAllFromOneSet:
+                  testPassed = this.testForObjectHasAllFromOneSet(matchConfig, matchValues);
+                  break;
+              }
+            }
+            if (!testPassed) {
+              failedTest = true;
+              break;
+            }
+          }
+          if (failedTest) {
+            continue;
+          }
+        }
+      }
+
       // collectionId
       if (typeData.collectionIds) {
         if (!collectionId) {
@@ -1072,8 +1260,8 @@ class ExtractedDataReader {
     return undefined;
   }
 
-  determineRecordType(recordTypeMatches, inputData) {
-    let typeData = this.getRecordTypeMatch(recordTypeMatches, inputData);
+  determineRecordType(recordTypeMatches, inputData, matchInput) {
+    let typeData = this.getRecordTypeMatch(recordTypeMatches, inputData, matchInput);
     if (typeData) {
       return typeData.recordType;
     }
@@ -1152,8 +1340,8 @@ class ExtractedDataReader {
       rule = this.recordTypeData.rules[name];
     }
 
-    if (this.defaultRecordTypeData && this.defaultRecordTypeData.rules) {
-      defaultRule = this.defaultRecordTypeData.rules[name];
+    if (this.baseRecordTypeData && this.baseRecordTypeData.rules) {
+      defaultRule = this.baseRecordTypeData.rules[name];
     }
 
     if (rule && defaultRule && rule.combineRule) {
@@ -1179,8 +1367,8 @@ class ExtractedDataReader {
       property = this.recordTypeData[key];
     }
 
-    if (this.defaultRecordTypeData && this.defaultRecordTypeData[key]) {
-      defaultProperty = this.defaultRecordTypeData[key];
+    if (this.baseRecordTypeData && this.baseRecordTypeData[key]) {
+      defaultProperty = this.baseRecordTypeData[key];
     }
 
     if (property) {

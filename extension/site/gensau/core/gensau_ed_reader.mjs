@@ -68,7 +68,9 @@ const recordTypes = [
   // BDM
   {
     recordType: RT.BirthRegistration,
-    collectionIds: ["Birth Registrations"],
+    matchData: {
+      databaseName: ["Birth Registrations"],
+    },
     rules: {
       residencePlace: {
         recordDataKeys: ["Birth Residence"],
@@ -77,11 +79,15 @@ const recordTypes = [
   },
   {
     recordType: RT.DeathRegistration,
-    collectionIds: ["Death Registrations"],
+    matchData: {
+      databaseName: ["Death Registrations"],
+    },
   },
   {
     recordType: RT.MarriageRegistration,
-    collectionIds: ["Marriage Registrations"],
+    matchData: {
+      databaseName: ["Marriage Registrations"],
+    },
     inferGenderByNameMatch: {
       forenames: { edKeys: ["titleGivenNames"] },
       lastName: { edKeys: ["titleSurname"] },
@@ -102,29 +108,41 @@ const recordTypes = [
   // Newspaper
   {
     recordType: RT.Birth,
-    collectionIds: ["Newspaper Births"],
-    documentTypes: ["Birth", "birth"],
+    matchData: {
+      databaseName: ["Newspaper Births"],
+      notice: ["Birth", "birth"],
+    },
   },
   {
     recordType: RT.Birth,
-    collectionIds: ["Newspaper Births"],
+    matchData: {
+      databaseName: ["Newspaper Births"],
+    },
   },
   {
     recordType: RT.Death,
-    collectionIds: ["Newspaper Death Notices", "Newspaper Deaths"],
+    matchData: {
+      databaseName: ["Newspaper Death Notices", "Newspaper Deaths"],
+    },
   },
   {
     recordType: RT.Marriage,
-    collectionIds: ["Newspaper Marriages"],
-    documentTypes: ["Marriage"],
+    matchData: {
+      databaseName: ["Newspaper Marriages"],
+      notice: ["Marriage"],
+    },
   },
   {
     recordType: RT.Newspaper,
-    collectionIds: ["Newspaper Marriages"],
+    matchData: {
+      databaseName: ["Newspaper Marriages"],
+    },
   },
   {
     recordType: RT.Divorce,
-    collectionIds: ["Newspaper Divorces"],
+    matchData: {
+      databaseName: ["Newspaper Divorces"],
+    },
     rules: {
       eventDate: {
         recordDataKeys: ["Divorce Date", "Divorce Year"],
@@ -134,7 +152,9 @@ const recordTypes = [
   // Cemeteries Burial Records
   {
     recordType: RT.Burial,
-    collectionIds: ["South Australia Cemeteries"],
+    matchData: {
+      databaseName: ["South Australia Cemeteries"],
+    },
     rules: {
       eventDate: {
         recordDataKeys: ["Burial Date", "EventYear"],
@@ -147,7 +167,9 @@ const recordTypes = [
   // Church Records
   {
     recordType: RT.Burial,
-    collectionIds: ["South Australian Church records - Burials"],
+    matchData: {
+      databaseName: ["South Australian Church records - Burials"],
+    },
     rules: {
       eventDate: {
         recordDataKeys: ["Date of Burial", "Burial Year"],
@@ -159,7 +181,9 @@ const recordTypes = [
   },
   {
     recordType: RT.Baptism,
-    collectionIds: ["South Australian Church records - Baptisms"],
+    matchData: {
+      databaseName: ["South Australian Church records - Baptisms"],
+    },
     rules: {
       eventDate: {
         recordDataKeys: ["Date of Baptism", "Baptism Year"],
@@ -171,7 +195,9 @@ const recordTypes = [
   },
   {
     recordType: RT.Marriage,
-    collectionIds: ["South Australian Church records - Marriages"],
+    matchData: {
+      databaseName: ["South Australian Church records - Marriages"],
+    },
     rules: {
       eventDate: {
         recordDataKeys: ["Marriage Date", "Year of marriage"],
@@ -183,7 +209,9 @@ const recordTypes = [
   },
   {
     recordType: RT.OtherChurchEvent,
-    collectionIds: ["South Australian Church records - Other"],
+    matchData: {
+      databaseName: ["South Australian Church records - Other"],
+    },
     rules: {
       eventPlace: {
         recordDataKeys: ["Church", "Parish", "Location"],
@@ -193,7 +221,9 @@ const recordTypes = [
   // Admission Records
   {
     recordType: RT.SchoolRecords,
-    collectionIds: ["South Australian School Admissions"],
+    matchData: {
+      databaseName: ["South Australian School Admissions"],
+    },
     rules: {
       eventDate: {
         recordDataKeys: ["Registration Date"],
@@ -205,7 +235,9 @@ const recordTypes = [
   },
   {
     recordType: RT.MedicalPatient,
-    collectionIds: ["Hospital, Asylum and Lying-in Home Admissions"],
+    matchData: {
+      databaseName: ["Hospital, Asylum and Lying-in Home Admissions"],
+    },
     rules: {
       eventDate: {
         recordDataKeys: ["Admission Date", "Admission Year"],
@@ -219,35 +251,51 @@ const recordTypes = [
   // Other Records
   {
     recordType: RT.BiographicalIndex,
-    collectionIds: ["Biographical Index of South Australians"],
+    matchData: {
+      databaseName: ["Biographical Index of South Australians"],
+    },
   },
   {
     recordType: RT.BiographicalIndex,
-    collectionIds: ["Biographical Index of South Australians - Supplementary"],
+    matchData: {
+      databaseName: ["Biographical Index of South Australians - Supplementary"],
+    },
   },
   {
     recordType: RT.Certificate,
-    collectionIds: ["Certificates-Australia and Overseas"],
+    matchData: {
+      databaseName: ["Certificates-Australia and Overseas"],
+    },
   },
   {
     recordType: RT.BiographicalIndex,
-    collectionIds: ["Irish Born South Australians (IBSA)"],
+    matchData: {
+      databaseName: ["Irish Born South Australians (IBSA)"],
+    },
   },
   {
     recordType: RT.PassengerList,
-    collectionIds: ["Ship Passenger Arrivals in South Australia"],
+    matchData: {
+      databaseName: ["Ship Passenger Arrivals in South Australia"],
+    },
   },
   {
     recordType: RT.Unclassified,
-    collectionIds: ["Ships to South Australia"],
+    matchData: {
+      databaseName: ["Ships to South Australia"],
+    },
   },
   {
     recordType: RT.PassengerList,
-    collectionIds: ["Shipping Passenger Departures from South Australia"],
+    matchData: {
+      databaseName: ["Shipping Passenger Departures from South Australia"],
+    },
   },
   {
     recordType: RT.Probate,
-    collectionIds: ["South Australian Public Trustees/Deceased Estates"],
+    matchData: {
+      databaseName: ["South Australian Public Trustees/Deceased Estates"],
+    },
   },
 ];
 
@@ -255,7 +303,7 @@ const unclassifiedTypeData = {
   recordType: RT.Unclassified,
 };
 
-const defaultRecordTypeData = {
+const baseRecordTypeData = {
   rules: {
     forenames: {
       prioritizeEdKeys: true,
@@ -374,20 +422,21 @@ class GensauEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
 
-    this.defaultRecordTypeData = defaultRecordTypeData;
-    let databaseName = ed.databaseName;
-    let documentType = ed.recordData["Notice"];
-    if (databaseName) {
-      let recordTypeData = this.getRecordTypeMatch(recordTypes, {
-        collectionId: databaseName,
-        documentType: documentType,
-      });
-      if (recordTypeData) {
-        this.recordTypeData = recordTypeData;
-        this.recordType = recordTypeData.recordType;
-      } else {
-        this.recordTypeData = unclassifiedTypeData;
-      }
+    this.baseRecordTypeData = baseRecordTypeData;
+    let matchConfig = {
+      databaseName: {
+        matchType: ExtractedDataReader.MatchType.EqualsOneOf,
+        value: ed.databaseName,
+      },
+      notice: {
+        matchType: ExtractedDataReader.MatchType.EqualsOneOf,
+        value: ed.recordData["Notice"],
+      },
+    };
+    let recordTypeData = this.getRecordTypeMatch(recordTypes, {}, matchConfig);
+    if (recordTypeData) {
+      this.recordTypeData = recordTypeData;
+      this.recordType = recordTypeData.recordType;
     } else {
       this.recordTypeData = unclassifiedTypeData;
     }
