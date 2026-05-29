@@ -208,6 +208,18 @@ const recordTypes = [
     },
   },
   {
+    recordType: RT.Confirmation,
+    matchData: {
+      databaseName: ["South Australian Church records - Other"],
+      eventType: ["Confirmation"],
+    },
+    rules: {
+      eventPlace: {
+        recordDataKeys: ["Church", "Parish", "Location"],
+      },
+    },
+  },
+  {
     recordType: RT.OtherChurchEvent,
     matchData: {
       databaseName: ["South Australian Church records - Other"],
@@ -431,6 +443,10 @@ class GensauEdReader extends ExtractedDataReader {
       notice: {
         matchType: ExtractedDataReader.MatchType.EqualsOneOf,
         value: ed.recordData["Notice"],
+      },
+      eventType: {
+        matchType: ExtractedDataReader.MatchType.EqualsOneOf,
+        value: ed.recordData["Event Type"],
       },
     };
     let recordTypeData = this.getRecordTypeMatch(recordTypes, matchConfig);
