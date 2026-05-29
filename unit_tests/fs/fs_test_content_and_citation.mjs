@@ -752,6 +752,14 @@ const bookRegressionData = [
   },
 ];
 
+const createSourceRegressionData = [
+  {
+    // Synthetic Details page with the Create Source dialog open from the Sources sidebar.
+    caseName: "create_source_from_details_sidebar",
+    url: "https://www.familysearch.org/tree/person/details/TEST-123",
+  },
+];
+
 const optionVariants = [
   {
     variantName: "dataStyle_fsShort_fsCitation",
@@ -819,6 +827,8 @@ function cleanStaleOutputFiles(testManager) {
   removeStaleOutputFiles("fs", "generalized_data", testCaseSets, logger);
   removeStaleOutputFiles("fs", "citations", testCaseSets, logger);
   removeStaleOutputFiles("fs", "household_tables", testCaseSets, logger);
+
+  removeStaleOutputFiles("fs", "extracted_data", createSourceRegressionData, logger);
 }
 
 async function runTests(testManager) {
@@ -843,6 +853,8 @@ async function runTests(testManager) {
   await runExtractDataTests("fs", bookRegressionData, testManager, false, false);
   await runGeneralizeDataTests("fs", generalizeData, bookRegressionData, testManager, false);
   await runBuildCitationTests("fs", functions, bookRegressionData, testManager, optionVariants, false);
+
+  await runExtractDataTests("fs", createSourceRegressionData, testManager, false, false);
 }
 
 export { runTests };
