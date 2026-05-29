@@ -491,7 +491,7 @@ class MhEdReader extends ExtractedDataReader {
         },
       };
 
-      this.recordType = this.determineRecordType(recordTypeMatches, inputData, matchConfig);
+      this.recordType = this.determineRecordType(recordTypeMatches, matchConfig);
     }
   }
 

@@ -1048,18 +1048,10 @@ class ExtractedDataReader {
     ObjectHasAllFromOneSet: "ObjectHasAllFromOneSet",
   });
 
-  getRecordTypeMatch(recordTypes, inputData, matchInput) {
+  getRecordTypeMatch(recordTypes, matchInput) {
     // recordTypes is an array of recordType definitions
     // matchInput is selected data from the extractedData object along with
     // rules of how to match it to the matchData in the typeData
-
-    let collectionId = inputData.collectionId;
-    let collectionTitle = inputData.collectionTitle;
-    let documentType = inputData.documentType;
-    let documentSubtype = inputData.documentSubtype;
-    let recordData = inputData.recordData;
-    let recordDataLabels = inputData.recordDataLabels;
-    let recordSections = inputData.recordSections;
 
     for (let typeData of recordTypes) {
       if (matchInput) {
@@ -1098,169 +1090,6 @@ class ExtractedDataReader {
         }
       }
 
-      // collectionId
-      if (typeData.collectionIds) {
-        if (!collectionId) {
-          continue;
-        }
-        let collectionIdMatchFound = false;
-        for (let typeCollectionId of typeData.collectionIds) {
-          if (typeCollectionId.toLowerCase() == collectionId.toLowerCase()) {
-            collectionIdMatchFound = true;
-            break;
-          }
-        }
-        if (!collectionIdMatchFound) {
-          continue;
-        }
-      }
-
-      // document type
-      if (typeData.documentTypes) {
-        if (!documentType) {
-          continue;
-        }
-        let documentTypeMatchFound = false;
-        for (let typeDocumentType of typeData.documentTypes) {
-          if (typeDocumentType.toLowerCase() == documentType.toLowerCase()) {
-            documentTypeMatchFound = true;
-            break;
-          }
-        }
-        if (!documentTypeMatchFound) {
-          continue;
-        }
-      }
-
-      // document subtype
-      if (typeData.documentSubtypes) {
-        if (!documentSubtype) {
-          continue;
-        }
-        let documentSubtypeMatchFound = false;
-        for (let typeDocumentSubtype of typeData.documentSubtypes) {
-          if (typeDocumentSubtype.toLowerCase() == documentSubtype.toLowerCase()) {
-            documentSubtypeMatchFound = true;
-            break;
-          }
-        }
-        if (!documentSubtypeMatchFound) {
-          continue;
-        }
-      }
-
-      // collection title
-      if (typeData.collectionTitleMatches) {
-        if (!collectionTitle) {
-          continue;
-        }
-
-        let title = collectionTitle.toLowerCase();
-        let collectionTitleMatchFound = false;
-        for (let typeDataTitleParts of typeData.collectionTitleMatches) {
-          let partsMatch = true;
-          for (let part of typeDataTitleParts) {
-            part = part.toLowerCase();
-            if (!title.includes(part)) {
-              partsMatch = false;
-              break;
-            }
-          }
-          if (partsMatch) {
-            collectionTitleMatchFound = true;
-            break;
-          }
-        }
-
-        if (!collectionTitleMatchFound) {
-          continue;
-        }
-      }
-
-      if (typeData.requiredRecordSections) {
-        if (!recordSections) {
-          continue;
-        }
-
-        let recordSectionMatchFound = false;
-        for (let requiredSectionSet of typeData.requiredRecordSections) {
-          let sectionsPresent = true;
-          for (let section of requiredSectionSet) {
-            if (!recordSections[section]) {
-              sectionsPresent = false;
-              break;
-            }
-          }
-          if (sectionsPresent) {
-            recordSectionMatchFound = true;
-            break;
-          }
-        }
-        if (!recordSectionMatchFound) {
-          continue;
-        }
-      }
-
-      if (typeData.requiredFields) {
-        if (recordData) {
-          let requiredFieldsMatchFound = false;
-          for (let requiredFieldSet of typeData.requiredFields) {
-            let fieldsPresent = true;
-            for (let label of requiredFieldSet) {
-              label = label.toLowerCase();
-              let fieldFound = false;
-              for (let key of Object.keys(recordData)) {
-                if (key.toLowerCase() == label) {
-                  fieldFound = true;
-                  break;
-                }
-              }
-
-              if (!fieldFound) {
-                fieldsPresent = false;
-                break;
-              }
-            }
-            if (fieldsPresent) {
-              requiredFieldsMatchFound = true;
-              break;
-            }
-          }
-          if (!requiredFieldsMatchFound) {
-            continue;
-          }
-        } else if (recordDataLabels) {
-          let requiredFieldsMatchFound = false;
-          for (let requiredFieldSet of typeData.requiredFields) {
-            let fieldsPresent = true;
-            for (let label of requiredFieldSet) {
-              label = label.toLowerCase();
-              let fieldFound = false;
-              for (let key of recordDataLabels) {
-                if (key.toLowerCase() == label) {
-                  fieldFound = true;
-                  break;
-                }
-              }
-
-              if (!fieldFound) {
-                fieldsPresent = false;
-                break;
-              }
-            }
-            if (fieldsPresent) {
-              requiredFieldsMatchFound = true;
-              break;
-            }
-          }
-          if (!requiredFieldsMatchFound) {
-            continue;
-          }
-        } else {
-          continue;
-        }
-      }
-
       // if we get this far it is a match
       return typeData;
     }
@@ -1268,8 +1097,8 @@ class ExtractedDataReader {
     return undefined;
   }
 
-  determineRecordType(recordTypeMatches, inputData, matchInput) {
-    let typeData = this.getRecordTypeMatch(recordTypeMatches, inputData, matchInput);
+  determineRecordType(recordTypeMatches, matchInput) {
+    let typeData = this.getRecordTypeMatch(recordTypeMatches, matchInput);
     if (typeData) {
       return typeData.recordType;
     }

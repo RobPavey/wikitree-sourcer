@@ -433,7 +433,7 @@ class GensauEdReader extends ExtractedDataReader {
         value: ed.recordData["Notice"],
       },
     };
-    let recordTypeData = this.getRecordTypeMatch(recordTypes, {}, matchConfig);
+    let recordTypeData = this.getRecordTypeMatch(recordTypes, matchConfig);
     if (recordTypeData) {
       this.recordTypeData = recordTypeData;
       this.recordType = recordTypeData.recordType;

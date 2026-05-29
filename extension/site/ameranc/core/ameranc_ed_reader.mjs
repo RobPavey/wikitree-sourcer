@@ -217,7 +217,7 @@ class AmerancEdReader extends ExtractedDataReader {
       },
     };
 
-    this.recordType = this.determineRecordType(recordTypeMatches, {}, matchConfig);
+    this.recordType = this.determineRecordType(recordTypeMatches, matchConfig);
   }
 
   makeNameObjFromAmerancFullName(fullNameString) {

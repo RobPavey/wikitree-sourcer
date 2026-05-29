@@ -302,7 +302,7 @@ class ThegenEdReader extends ExtractedDataReader {
         value: inputData.recordData,
       };
     }
-    let recordTypeData = this.getRecordTypeMatch(recordTypeMatches, {}, matchConfig);
+    let recordTypeData = this.getRecordTypeMatch(recordTypeMatches, matchConfig);
     if (recordTypeData) {
       this.recordType = recordTypeData.recordType;
       if (recordTypeData.recordSubtype) {
