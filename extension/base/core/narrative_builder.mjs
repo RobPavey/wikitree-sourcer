@@ -1868,17 +1868,24 @@ class NarrativeBuilder {
       }
     }
 
-    if (deathDateObj) {
+    age = gd.ageAtDeath;
+    if (!age) {
+      age = gd.ageAtEvent;
+    }
+
+    if (deathDateObj || deathPlaceObj) {
       this.startSentence(this.getPersonPronounOrNameIfNoGender() + " died");
 
-      age = gd.ageAtDeath;
-      if (!age) {
-        age = gd.ageAtEvent;
-      }
       this.addAgeForMainSentence(age);
       this.addDateWithPreposition(deathDateObj);
       this.addPlaceWithPreposition(deathPlaceObj);
+    } else if (age) {
+      if (this.getSubcatOption("includeAge") == "inMainSentence") {
+        this.startSentence(this.getPersonPronounOrNameIfNoGender() + " died");
+        this.addToSentence("at the age of " + age);
+      }
     }
+
     this.terminateSentence();
 
     this.addAgeAsSeparateSentence(age);

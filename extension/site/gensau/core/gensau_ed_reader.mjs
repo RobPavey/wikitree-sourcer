@@ -120,6 +120,20 @@ const recordTypes = [
     },
   },
   {
+    recordType: RT.Obituary,
+    matchData: {
+      databaseName: ["Newspaper Death Notices", "Newspaper Deaths"],
+      notice: ["Obituary"],
+    },
+  },
+  {
+    recordType: RT.Newspaper,
+    matchData: {
+      databaseName: ["Newspaper Death Notices", "Newspaper Deaths"],
+      notice: ["Birthday Memoriam"],
+    },
+  },
+  {
     recordType: RT.Death,
     matchData: {
       databaseName: ["Newspaper Death Notices", "Newspaper Deaths"],

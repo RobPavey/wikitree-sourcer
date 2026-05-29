@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death''':\n\"South Australia - Newspaper Death Notices\"<br/>\nGenealogy SA; Surname: JONES; Year: 1944; Notice: Obituary; Source: Southern Cross; Publication Date: 11-Feb-1944; Notice: Obituary; Notes: See Page 8. Place of death=Port Pirie, S.A<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nThomas Patrick Jones death 27 Jan 1944 in South Australia, Australia.\n</ref>",
+    "citation": "<ref>\n'''Obituary''':\n\"South Australia - Newspaper Death Notices\"<br/>\nGenealogy SA; Surname: JONES; Year: 1944; Notice: Obituary; Source: Southern Cross; Publication Date: 11-Feb-1944; Notice: Obituary; Notes: See Page 8. Place of death=Port Pirie, S.A<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nThomas Patrick Jones on 27 Jan 1944.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Thomas died (age 39) on 27 January 1944 in South Australia, Australia.<ref>\n'''Death''':\n\"South Australia - Newspaper Death Notices\"<br/>\nGenealogy SA; Surname: JONES; Year: 1944; Notice: Obituary; Source: Southern Cross; Publication Date: 11-Feb-1944; Notice: Obituary; Notes: See Page 8. Place of death=Port Pirie, S.A<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nThomas Patrick Jones death 27 Jan 1944 in South Australia, Australia.\n</ref>",
+    "citation": "Thomas was in an obituary on 27 January 1944. Thomas died at the age of 39.<ref>\n'''Obituary''':\n\"South Australia - Newspaper Death Notices\"<br/>\nGenealogy SA; Surname: JONES; Year: 1944; Notice: Obituary; Source: Southern Cross; Publication Date: 11-Feb-1944; Notice: Obituary; Notes: See Page 8. Place of death=Port Pirie, S.A<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nThomas Patrick Jones on 27 Jan 1944.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death''': \"South Australia - Newspaper Death Notices\"<br/>Genealogy SA; Surname: JONES; Year: 1944; Notice: Obituary; Source: Southern Cross; Publication Date: 11-Feb-1944; Notice: Obituary; Notes: See Page 8. Place of death=Port Pirie, S.A<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Thomas Patrick Jones death 27 Jan 1944 in South Australia, Australia.",
+    "citation": "* '''Obituary''': \"South Australia - Newspaper Death Notices\"<br/>Genealogy SA; Surname: JONES; Year: 1944; Notice: Obituary; Source: Southern Cross; Publication Date: 11-Feb-1944; Notice: Obituary; Notes: See Page 8. Place of death=Port Pirie, S.A<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Thomas Patrick Jones on 27 Jan 1944.",
     "type": "source"
   }
 }
