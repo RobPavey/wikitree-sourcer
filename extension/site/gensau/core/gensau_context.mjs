@@ -44,11 +44,13 @@ const typeMatches = [
     collectionId: "death",
     matches: [/Death Registration/i],
     fuzzyMatches: [/Death/i],
+    searchFields: ["surname", "givennames", "year", "district"],
   },
   {
     collectionId: "marriage",
     matches: [/Marriage Registration/i],
     fuzzyMatches: [/Marriage/i],
+    searchFields: ["surname", "givennames", "year", "district"],
   },
   {
     collectionId: "newspaper-birth",
@@ -290,6 +292,18 @@ function transformPlainText(plainText, phase, options) {
     let year = parser.extractValueFromText(yearExtractInput);
     if (year) {
       builder.addEventYear(year);
+    }
+  }
+
+  if (searchFields.includes("district")) {
+    const districtExtractInput = {
+      individual: {
+        matches: [/(?:^|^.*[^a-z']\s+)(?:district|registration district)\s*:?\s*(\w+)(?:[,; ].*$|$)/is],
+      },
+    };
+    let district = parser.extractValueFromText(districtExtractInput);
+    if (district) {
+      builder.addDistrict(district);
     }
   }
 
