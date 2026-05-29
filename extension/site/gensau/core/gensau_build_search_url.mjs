@@ -32,7 +32,6 @@ const searchTypes = {
   },
   SameCollection: {
     params: ["surname"],
-    eventYearType: "born",
   },
   SpecifiedParameters: {
     params: ["surname"],
@@ -184,6 +183,13 @@ function buildSearchUrl(buildUrlInput) {
         gd.inferEventYear()
       );
       collection = RC.findCollection("gensau", collectionId);
+
+      for (const [key, value] of Object.entries(searchTypes)) {
+        if (value.collectionId == collectionId) {
+          searchConfig = value;
+          break;
+        }
+      }
     }
   } else if (typeOfSearch == "SpecifiedParameters") {
     if (parameters.category) {
@@ -257,7 +263,8 @@ function buildSearchUrl(buildUrlInput) {
     builder.addDistrict(gd.registrationDistrict);
   }
 
-  if (typeOfSearch == "SameCollection") {
+  // Only birth registrations support search by Book/Page
+  if (typeOfSearch == "SameCollection" && collectionId == "birth") {
     if (gd.collectionData.registrationNumber) {
       builder.addBookPage(gd.collectionData.registrationNumber);
     } else if (gd.collectionData.volume && gd.collectionData.page) {

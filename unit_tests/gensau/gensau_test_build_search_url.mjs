@@ -26,13 +26,17 @@ import { buildSearchUrl } from "../../extension/site/gensau/core/gensau_build_se
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
+    caseName: "bdm_marriage_1854_roberta_macdonald_member",
+    inputPath: "gensau/generalized_data/ref/bdm_marriage_1854_roberta_macdonald_member",
     typeOfSearch: "SameCollection",
   },
-  */
+  {
+    // has pref name
+    caseName: "wikitree_stanway-252_read",
+    inputPath: "wikitree/generalized_data/ref/stanway-252_read",
+    typeOfSearch: "bdmBirths",
+  },
 ];
 
 async function runTests(testManager) {
