@@ -955,6 +955,10 @@ class ExtractedDataReader {
   testForArrayIncludesAllFromOneSet(matchConfig, matchSets) {
     let testArray = matchConfig.value;
 
+    if (!testArray || !Array.isArray(testArray)) {
+      return false;
+    }
+
     let matchFound = false;
     for (let set of matchSets) {
       let hasAll = true;
@@ -994,6 +998,10 @@ class ExtractedDataReader {
 
   testForObjectHasAllFromOneSet(matchConfig, matchSets) {
     let testObject = matchConfig.value;
+
+    if (!testObject || typeof testObject !== "object") {
+      return false;
+    }
 
     let matchFound = false;
     for (let set of matchSets) {

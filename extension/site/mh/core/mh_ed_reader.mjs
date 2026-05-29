@@ -30,195 +30,279 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 const recordTypeMatches = [
   {
     recordType: RT.BirthRegistration,
-    collectionIds: ["10092", "10442"],
+    matchData: {
+      collectionIds: ["10092", "10442"],
+    },
   },
   {
     recordType: RT.MarriageRegistration,
-    collectionIds: ["10443"],
+    matchData: {
+      collectionIds: ["10443"],
+    },
   },
   {
     recordType: RT.Census,
-    collectionIds: ["10678"],
+    matchData: {
+      collectionIds: ["10678"],
+    },
   },
 
   // put ones with Document type first
   {
     recordType: RT.Immigration,
-    documentTypes: ["immigrant record"],
+    matchData: {
+      documentTypes: ["immigrant record"],
+    },
   },
   {
     recordType: RT.Divorce,
-    documentTypes: ["divorce"],
+    matchData: {
+      documentTypes: ["divorce"],
+    },
   },
   {
     recordType: RT.Burial,
-    documentTypes: ["death / burial", "death/burial"],
-    requiredFields: [["burial"]],
+    matchData: {
+      documentTypes: ["death / burial", "death/burial"],
+      requiredFields: [["burial"]],
+    },
   },
   {
     recordType: RT.Death,
-    documentTypes: ["death / burial", "death/burial"],
-    requiredFields: [["death"]],
+    matchData: {
+      documentTypes: ["death / burial", "death/burial"],
+      requiredFields: [["death"]],
+    },
   },
   {
     recordType: RT.DeathOrBurial,
-    documentTypes: ["death / burial", "death/burial"],
+    matchData: {
+      documentTypes: ["death / burial", "death/burial"],
+    },
   },
   {
     recordType: RT.Will,
-    documentTypes: ["will"],
+    matchData: {
+      documentTypes: ["will"],
+    },
   },
   {
     recordType: RT.Probate,
-    documentTypes: ["probate", "letter of administration", "intestacy"],
+    matchData: {
+      documentTypes: ["probate", "letter of administration", "intestacy"],
+    },
   },
   {
     recordType: RT.LegalRecord,
-    documentTypes: ["insolvency"],
+    matchData: {
+      documentTypes: ["insolvency"],
+    },
   },
 
   // collection matches
   {
     recordType: RT.Baptism,
-    collectionTitleMatches: [["births and christenings"]],
-    requiredFields: [["christening"], ["baptism"]],
+    matchData: {
+      collectionTitleMatches: [["births and christenings"]],
+      requiredFields: [["christening"], ["baptism"]],
+    },
   },
   {
     recordType: RT.Census,
-    collectionTitleMatches: [["census"], ["register"]],
-    requiredRecordSections: [["Census"]],
+    matchData: {
+      collectionTitleMatches: [["census"], ["register"]],
+      requiredRecordSections: [["Census"]],
+    },
   },
   {
     recordType: RT.BirthRegistration,
-    collectionTitleMatches: [["england & wales, birth index, 1837-2005"], ["birth", "gro index"]],
+    matchData: {
+      collectionTitleMatches: [["england & wales, birth index, 1837-2005"], ["birth", "gro index"]],
+    },
   },
   {
     recordType: RT.MarriageRegistration,
-    collectionTitleMatches: [["england & wales, marriage index, 1837-2005"], ["register of marriages for "]],
+    matchData: {
+      collectionTitleMatches: [["england & wales, marriage index, 1837-2005"], ["register of marriages for "]],
+    },
   },
   {
     recordType: RT.DeathRegistration,
-    collectionTitleMatches: [["england & wales, death index"], ["england & wales deaths,"]],
+    matchData: {
+      collectionTitleMatches: [["england & wales, death index"], ["england & wales deaths,"]],
+    },
   },
   {
     recordType: RT.Directory,
-    collectionTitleMatches: [["business register"], ["u.s. public records index"], ["phone and address listings"]],
+    matchData: {
+      collectionTitleMatches: [["business register"], ["u.s. public records index"], ["phone and address listings"]],
+    },
   },
   {
     recordType: RT.SocialSecurity,
-    collectionTitleMatches: [["social security applications and claims"]],
+    matchData: {
+      collectionTitleMatches: [["social security applications and claims"]],
+    },
   },
   {
     recordType: RT.Employment,
-    collectionTitleMatches: [["medicare public provider"], ["attorney registrations"], ["job applications"]],
+    matchData: {
+      collectionTitleMatches: [["medicare public provider"], ["attorney registrations"], ["job applications"]],
+    },
   },
   {
     recordType: RT.FamHistOrPedigree,
-    collectionTitleMatches: [["biographies"], ["genealogy of the"], ["personal reminiscences of"]],
+    matchData: {
+      collectionTitleMatches: [["biographies"], ["genealogy of the"], ["personal reminiscences of"]],
+    },
   },
   {
     recordType: RT.FamilyTree,
-    collectionTitleMatches: [["family trees"], ["family tree"]],
+    matchData: {
+      collectionTitleMatches: [["family trees"], ["family tree"]],
+    },
   },
   {
     recordType: RT.Directory,
-    collectionTitleMatches: [["directory and gazetteer"]],
+    matchData: {
+      collectionTitleMatches: [["directory and gazetteer"]],
+    },
   },
   {
     recordType: RT.ElectoralRegister,
-    collectionTitleMatches: [["register of electors"], ["electoral roll"], ["voter registration"], ["voter list"]],
+    matchData: {
+      collectionTitleMatches: [["register of electors"], ["electoral roll"], ["voter registration"], ["voter list"]],
+    },
   },
   {
     recordType: RT.Probate,
-    collectionTitleMatches: [["will and probate index"]],
+    matchData: {
+      collectionTitleMatches: [["will and probate index"]],
+    },
   },
   {
     recordType: RT.PassengerList,
-    collectionTitleMatches: [["passenger list"], ["passenger manifest"]],
+    matchData: {
+      collectionTitleMatches: [["passenger list"], ["passenger manifest"]],
+    },
   },
   {
     recordType: RT.ConvictTransportation,
-    collectionTitleMatches: [["convict transportation"]],
+    matchData: {
+      collectionTitleMatches: [["convict transportation"]],
+    },
   },
   {
     recordType: RT.Newspaper,
-    collectionTitleMatches: [["newspaper"]],
+    matchData: {
+      collectionTitleMatches: [["newspaper"]],
+    },
   },
   {
     recordType: RT.Pension,
-    collectionTitleMatches: [["pension"]],
+    matchData: {
+      collectionTitleMatches: [["pension"]],
+    },
   },
   {
     recordType: RT.Memorial,
-    collectionTitleMatches: [["commonwealth war graves"]],
+    matchData: {
+      collectionTitleMatches: [["commonwealth war graves"]],
+    },
   },
   {
     recordType: RT.Military,
-    collectionTitleMatches: [
-      ["enlistment"],
-      ["service medal"],
-      ["navy", "service record"],
-      ["army", "service record"],
-      ["marine", "service record"],
-      ["navy", "awards"],
-      ["army", "awards"],
-      ["marine", "awards"],
-      ["soldiers"],
-      ["muster roll"],
-      ["royal navy reserve"],
-    ],
+    matchData: {
+      collectionTitleMatches: [
+        ["enlistment"],
+        ["service medal"],
+        ["navy", "service record"],
+        ["army", "service record"],
+        ["marine", "service record"],
+        ["navy", "awards"],
+        ["army", "awards"],
+        ["marine", "awards"],
+        ["soldiers"],
+        ["muster roll"],
+        ["royal navy reserve"],
+      ],
+    },
   },
   {
     recordType: RT.Census,
-    collectionTitleMatches: [["census"]],
-    requiredFields: [["residence date", "residence place"], ["residence"]],
+    matchData: {
+      collectionTitleMatches: [["census"]],
+      requiredFields: [["residence date", "residence place"], ["residence"]],
+    },
   },
 
   // matches using required fields only
   {
     recordType: RT.Baptism,
-    requiredFields: [["baptism date", "baptism place"], ["baptism"], ["christening"]],
+    matchData: {
+      requiredFields: [["baptism date", "baptism place"], ["baptism"], ["christening"]],
+    },
   },
   {
     recordType: RT.Burial,
-    requiredFields: [["burial date", "burial place"], ["burial"]],
+    matchData: {
+      requiredFields: [["burial date", "burial place"], ["burial"]],
+    },
   },
   {
     recordType: RT.Will,
-    requiredFields: [["will", "court"]],
+    matchData: {
+      requiredFields: [["will", "court"]],
+    },
   },
   {
     recordType: RT.ElectoralRegister,
-    requiredFields: [["voter registration"]],
+    matchData: {
+      requiredFields: [["voter registration"]],
+    },
   },
   {
     recordType: RT.CriminalRegister,
-    requiredFields: [["offence", "conviction"]],
+    matchData: {
+      requiredFields: [["offence", "conviction"]],
+    },
   },
   {
     recordType: RT.Imprisonment,
-    requiredFields: [["imprisonment"]],
+    matchData: {
+      requiredFields: [["imprisonment"]],
+    },
   },
   {
     recordType: RT.Immigration,
-    requiredFields: [["arrival"]],
+    matchData: {
+      requiredFields: [["arrival"]],
+    },
   },
 
   {
     recordType: RT.Death,
-    requiredFields: [["death date", "death place"], ["death"]],
+    matchData: {
+      requiredFields: [["death date", "death place"], ["death"]],
+    },
   },
   {
     recordType: RT.Marriage,
-    requiredFields: [["marriage date", "marriage place"], ["marriage"]],
+    matchData: {
+      requiredFields: [["marriage date", "marriage place"], ["marriage"]],
+    },
   },
   {
     recordType: RT.Birth,
-    requiredFields: [["birth date", "birth place"], ["birth"]],
+    matchData: {
+      requiredFields: [["birth date", "birth place"], ["birth"]],
+    },
   },
   {
     recordType: RT.Residence,
-    requiredFields: [["residence date", "residence place"], ["residence"]],
+    matchData: {
+      requiredFields: [["residence date", "residence place"], ["residence"]],
+    },
   },
 ];
 
@@ -384,7 +468,30 @@ class MhEdReader extends ExtractedDataReader {
         inputData.documentType = documentTypeValue.value;
       }
 
-      this.recordType = this.determineRecordType(recordTypeMatches, inputData);
+      let matchConfig = {
+        collectionIds: {
+          matchType: ExtractedDataReader.MatchType.EqualsOneOf,
+          value: inputData.collectionId,
+        },
+        documentTypes: {
+          matchType: ExtractedDataReader.MatchType.EqualsOneOf,
+          value: inputData.documentType,
+        },
+        collectionTitleMatches: {
+          matchType: ExtractedDataReader.MatchType.StringIncludesAllFromOneSet,
+          value: inputData.collectionTitle,
+        },
+        requiredRecordSections: {
+          matchType: ExtractedDataReader.MatchType.ArrayIncludesAllFromOneSet,
+          value: inputData.recordSections,
+        },
+        requiredFields: {
+          matchType: ExtractedDataReader.MatchType.ArrayIncludesAllFromOneSet,
+          value: inputData.recordDataLabels,
+        },
+      };
+
+      this.recordType = this.determineRecordType(recordTypeMatches, inputData, matchConfig);
     }
   }
 
