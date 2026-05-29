@@ -823,11 +823,12 @@ function cleanStaleOutputFiles(testManager) {
   //
   let logger = new LocalErrorLogger(testManager.results, "fs_clean");
   let testCaseSets = [regressionData, imageRegressionData, personRegressionData, bookRegressionData];
-  let extractedDataTestCaseSets = [...testCaseSets, createSourceRegressionData];
-  removeStaleOutputFiles("fs", "extracted_data", extractedDataTestCaseSets, logger);
+  removeStaleOutputFiles("fs", "extracted_data", testCaseSets, logger);
   removeStaleOutputFiles("fs", "generalized_data", testCaseSets, logger);
   removeStaleOutputFiles("fs", "citations", testCaseSets, logger);
   removeStaleOutputFiles("fs", "household_tables", testCaseSets, logger);
+
+  removeStaleOutputFiles("fs", "extracted_data", createSourceRegressionData, logger);
 }
 
 async function runTests(testManager) {
