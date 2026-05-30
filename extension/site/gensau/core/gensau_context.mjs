@@ -27,7 +27,7 @@ import { GensauUriBuilder } from "./gensau_uri_builder.mjs";
 
 const phaseMatches = [
   [[/GenealogySA/i], [/Genealogy SA/i], [/Genealogy South Australia/i]],
-  [[/South Australia/]],
+  [[/South Australia/i]],
   [[/\WS\s*A\W/, /\WS\.\s*A\.\W/]],
 ];
 
@@ -147,8 +147,6 @@ function transformPlainText(plainText, phase, options) {
     return undefined;
   }
 
-  let lcText = plainText.toLowerCase();
-
   let isMatch = false;
   let matches = phaseMatches[phase];
   for (let matchSet of matches) {
@@ -216,7 +214,7 @@ function transformPlainText(plainText, phase, options) {
   let builder = new GensauUriBuilder();
   builder.addCollectionId(collectionId);
 
-  let parser = new CitationParser(lcText);
+  let parser = new CitationParser(plainText);
 
   if (searchFields.includes("surname")) {
     const surnameExtractInput = {
@@ -298,7 +296,10 @@ function transformPlainText(plainText, phase, options) {
   if (searchFields.includes("district")) {
     const districtExtractInput = {
       individual: {
-        matches: [/(?:^|^.*[^a-z']\s+)(?:district|registration district)\s*:?\s*(\w+)(?:[,; ].*$|$)/is],
+        matches: [
+          /(?:^|^.*[^a-z']\s+)(?:district|registration district)\s*:?\s*(\w+)(?:[,; ].*$|$)/is,
+          /(?:^|^.*[^a-z']\s+)(?:registration place|reg place)\s*:?\s*(\w+)(?:[,; ].*$|$)/is,
+        ],
       },
     };
     let district = parser.extractValueFromText(districtExtractInput);
