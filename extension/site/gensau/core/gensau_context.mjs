@@ -143,9 +143,32 @@ const typeMatches = [
   },
 ];
 
+function extractSurname(parser, builder) {
+  const surnameExtractInput = {
+    wholeText: {
+      matches: [
+        /(?:^|[\s,\n])(?:surname|last name)\s*:?\s*(\w+)/i,
+        /entry for\s+([a-z ]+),\s*[a-z]/i, // Aus project case
+        /(?:^|[^a-z']\s+)(?:name|for)[^a-z]+([a-z]+),\s+[a-z ]+/i,
+        /(?:^|[^a-z ']\s+)(?:name|for)[^a-z]+[a-z ]+\s+([a-z]+)/i,
+        /(?:^|[^a-z ']\s+)([a-z]+),\s+[a-z ]*[a-z]\s*,?\s*child of/i,
+        /(?:^|[^a-z ']\s+)[a-z ]*[a-z]\s+([a-z]+)\s*,?\s*child of/i,
+        // "Surname, fornames" at start of whole text (possible with some non-alpha chars before it)
+        /^\W*([a-z]+),\s?[a-z ]+/i,
+        // "Surname, fornames" at start of line or sentence
+        /(?:\.|\n|<br ?\/?>|<br ?\/?>\n)\s*([a-z]+),\s?[a-z ]+/i,
+      ],
+    },
+  };
+  let surname = parser.extractMatchingValueFromText(surnameExtractInput);
+  if (surname) {
+    builder.addSurname(surname.trim());
+  }
+}
+
 function extractGivenNames(parser, builder) {
   const givenNamesExtractInput = {
-    individual: {
+    wholeText: {
       matches: [
         /(?:^|[\s,\n])(?:forenames|given names|given name)\s*:?\s*(\w+)/i,
         /entry for\s+[a-z ]+,\s*([a-z](?:[a-z ]*[a-z])?)/i, // Aus project case
@@ -153,14 +176,16 @@ function extractGivenNames(parser, builder) {
         /(?:^|[^a-z ']\s+)(?:name|for)[^a-z]+([a-z ]+)\s+[a-z]/i,
         /(?:^|[^a-z ']\s+)[a-z]+,\s+([a-z ]*[a-z])\s*,?\s*child of/i,
         /(?:^|[^a-z ']\s+)([a-z ]*[a-z])\s+[a-z]+\s*,?\s*child of/i,
+        // "Surname, fornames" at start of whole text (possible with some non-alpha chars before it)
         /^\W*[a-z]+,\s?([a-z ]+)/i,
-        // /(?:^|[^a-z ']*)[a-z]+,\s?([a-z ]+)/i,
+        // "Surname, fornames" at start of line or sentence
+        /(?:\.|\n|<br ?\/?>|<br ?\/?>\n)\s*[a-z]+,\s?([a-z ]+)/i,
       ],
     },
   };
   let givenNames = parser.extractMatchingValueFromText(givenNamesExtractInput);
   if (givenNames) {
-    builder.addGivenNames(givenNames);
+    builder.addGivenNames(givenNames.trim());
   }
 }
 
@@ -239,6 +264,7 @@ function transformPlainText(plainText, phase, options) {
   let parser = new CitationParser(plainText);
 
   if (searchFields.includes("surname")) {
+    /*
     const surnameExtractInput = {
       individual: {
         matches: [
@@ -263,6 +289,8 @@ function transformPlainText(plainText, phase, options) {
     if (surname) {
       builder.addSurname(surname);
     }
+      */
+    extractSurname(parser, builder);
   }
 
   if (searchFields.includes("givennames")) {

@@ -313,8 +313,8 @@ class CitationParser {
       }
     }
 
-    if (extractInput.individual) {
-      for (let regex of extractInput.individual.matches) {
+    if (extractInput.wholeText) {
+      for (let regex of extractInput.wholeText.matches) {
         let matches = text.match(regex);
         if (matches && matches.length > 1) {
           let value = matches[1];

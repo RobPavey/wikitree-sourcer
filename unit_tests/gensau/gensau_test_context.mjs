@@ -82,6 +82,13 @@ Abbey Kemp birth 1 Nov 1874 registered in the Daly district, daughter of Richard
     numPhases: 3,
   },
   {
+    // From https://www.wikitree.com/wiki/Timson-14
+    caseName: "bdm_death_1925_emily_page_wt",
+    inputText: `↑ Genealogy South Australia: Death. PAGE, Emily Fergusson; 22-Aug-1925; Age 62; F; Daly; 480/556. https://www.genealogysa.org.au/`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
     // From sourcer - narrative with citation in edit mode (straight from build citation)
     caseName: "bdm_death_1940_rhoda_holness_sourcer_nar",
     inputText: `Rhoda's death in 1940 was registered in the Talunga district.<ref>
@@ -109,6 +116,13 @@ Rhoda Abbey Holness death 1940 registered in the Talunga district.
 Australia, Marriage Index, 1788-1950; Lehi, UT; Australia, Marriage Index, 1788-1950; Page number: 877; Volume Number: 93
 Ancestry au Record 1780 #95279502 (accessed 22 August 2024)
 Eliza Ann Parsons, child of William Parsons, marriage to Charles Endersby on 24 Dec 1872 in Adelaide, South Australia.`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
+    // From https://www.wikitree.com/wiki/Timson-14
+    caseName: "bdm_marriage_1881_emily_timson_wt",
+    inputText: `↑ Genealogy South Australia: Marriage. PAGE, Stephen; TIMSON, Emily; 16-Jun-1881; Stephen PAGE; William TIMSON; Daly; 127/1004. https://www.genealogysa.org.au/`,
     function: transformPlainText,
     numPhases: 3,
   },
