@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { writeTestOutputFile, readInputFile, readFile } from "./ref_file_utils.mjs";
+import { writeTestOutputFile, readInputFile, readFile, removeStaleOutputFiles } from "./ref_file_utils.mjs";
 import { LocalErrorLogger } from "./error_log_utils.mjs";
 import { compareOrReplaceRefFileWithResult } from "./helper_utils.mjs";
 
@@ -32,7 +32,7 @@ function testEnabled(parameters, testName) {
 
 // The regressionData passed in must be an array of objects.
 // Each object having the keys: "caseName" and "inputPath"
-async function runContextTests(siteName, regressionData, testManager) {
+async function runContextTests(siteName, regressionData, testManager, cleanStaleFiles = true) {
   if (!testEnabled(testManager.parameters, "context")) {
     return;
   }
@@ -42,6 +42,14 @@ async function runContextTests(siteName, regressionData, testManager) {
   console.log("=== Starting test : " + testName + " ===");
 
   let logger = new LocalErrorLogger(testManager.results, testName);
+
+  let resultDir = "context";
+
+  // clear out any stale test or ref files so that old test data doesn't hang around after a test is renamed
+  // or removed. A file is considered stale if there is no longer a test case that generates it.
+  if (cleanStaleFiles) {
+    removeStaleOutputFiles(siteName, resultDir, [regressionData], logger);
+  }
 
   let testDataCache = undefined;
 
@@ -72,8 +80,6 @@ async function runContextTests(siteName, regressionData, testManager) {
     } else {
       continue;
     }
-
-    let resultDir = "context";
 
     // write out result file.
     if (!writeTestOutputFile(result, siteName, resultDir, testData, logger)) {
