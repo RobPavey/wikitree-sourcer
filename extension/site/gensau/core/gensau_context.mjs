@@ -35,16 +35,17 @@ const defaultSearchFields = ["surname", "givennames", "year"];
 
 const typeMatches = [
   {
-    collectionId: "birth",
-    matches: [/Birth Registration/i],
-    fuzzyMatches: [/Birth/i],
-    searchFields: ["surname", "givennames", "year", "district", "bookpage"],
-  },
-  {
+    // death comes before birth since a death citation can mention birth date
     collectionId: "death",
     matches: [/Death Registration/i],
     fuzzyMatches: [/Death/i],
     searchFields: ["surname", "givennames", "year", "district"],
+  },
+  {
+    collectionId: "birth",
+    matches: [/Birth Registration/i],
+    fuzzyMatches: [/Birth/i],
+    searchFields: ["surname", "givennames", "year", "district", "bookpage"],
   },
   {
     collectionId: "marriage",
