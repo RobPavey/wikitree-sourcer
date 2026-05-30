@@ -28,7 +28,7 @@ import { GensauUriBuilder } from "./gensau_uri_builder.mjs";
 const phaseMatches = [
   [[/GenealogySA/i], [/Genealogy SA/i], [/Genealogy South Australia/i]],
   [[/South Australia/i]],
-  [[/(?:^\s*|\W)S\s*A(?:\W|$)/], [/(?:^\s*|\W)S\.\s*A\.(?:\W|$)/]],
+  [[/(?:^\s*|\W)S\s*A(?:\W|$)/], [/(?:^\s*|\W)S\.\s*A\.(?:\W|$)/], [/District:/i, /Book\/Page:/i]],
 ];
 
 const defaultSearchFields = ["surname", "givennames", "year"];
@@ -40,30 +40,37 @@ const typeMatches = [
     matches: [/Deaths? Registration/i],
     fuzzyMatches: [/Death/i],
     searchFields: ["surname", "givennames", "year", "district"],
+    dateYearSpecifiers: ["death"],
+  },
+  {
+    // marriage comes before birth since a marriage citation can mention birth date
+    collectionId: "marriage",
+    matches: [/Marriages? Registration/i],
+    fuzzyMatches: [/Marriage/i],
+    searchFields: ["surname", "givennames", "year", "district"],
+    dateYearSpecifiers: ["marriage"],
   },
   {
     collectionId: "birth",
     matches: [/Births? Registration/i],
     fuzzyMatches: [/Birth/i],
     searchFields: ["surname", "givennames", "year", "district", "bookpage"],
-  },
-  {
-    collectionId: "marriage",
-    matches: [/Marriages? Registration/i],
-    fuzzyMatches: [/Marriage/i],
-    searchFields: ["surname", "givennames", "year", "district"],
+    dateYearSpecifiers: ["birth"],
   },
   {
     collectionId: "newspaper-birth",
     matches: [/Newspaper Birth/i],
+    dateYearSpecifiers: ["birth"],
   },
   {
     collectionId: "newspaper-death",
     matches: [/Newspaper Death/i, /Death Notice/i],
+    dateYearSpecifiers: ["death"],
   },
   {
     collectionId: "newspaper-marriage",
     matches: [/Newspaper Marriage/i],
+    dateYearSpecifiers: ["marriage"],
   },
   {
     collectionId: "divorce",
@@ -71,22 +78,26 @@ const typeMatches = [
   },
   {
     collectionId: "cemeteries",
-    matches: [/South Australia Cemeteries/i, /South Australia Cemetery/i],
+    matches: [/South Australia Cemeteries/i, /South Australia Cemetery/i, /SA Cemeteries/i, /SA Cemetery/i],
     fuzzyMatches: [/Cemeteries/i, /Cemetery/i],
+    dateYearSpecifiers: ["death", "burial"],
   },
   {
     collectionId: "church-burial",
     matches: [/South Australian Church records - Burial/i],
     fuzzyMatches: [/Burial/i],
+    dateYearSpecifiers: ["burial", "death"],
   },
   {
     collectionId: "church-baptism",
     matches: [/South Australian Church records - Baptism/i],
     fuzzyMatches: [/Baptism/i],
+    dateYearSpecifiers: ["birth"],
   },
   {
     collectionId: "church-marriage",
     matches: [/South Australian Church records - Marriage/i, /Church Marriage/i],
+    dateYearSpecifiers: ["marriage"],
   },
   {
     collectionId: "church-others",
@@ -170,7 +181,7 @@ function extractGivenNames(parser, builder) {
   const givenNamesExtractInput = {
     wholeText: {
       matches: [
-        /(?:^|[\s,\n])(?:forenames|given names|given name)\s*:?\s*([a-z ]+)/i,
+        /(?:^|[\s,\n])(?:forenames|given names|given name|first names|first name)\s*:?\s*([a-z ]+)/i,
         /entry for\s+[a-z ]+,\s*([a-z](?:[a-z ]*[a-z])?)/i, // Aus project case
         /(?:^|[^a-z']\s+)(?:name|for)[^a-z]+[a-z]+,\s+([a-z ]+)/i,
         /(?:^|[^a-z ']\s+)(?:name|for)[^a-z]+([a-z ]+)\s+[a-z]/i,
@@ -190,32 +201,51 @@ function extractGivenNames(parser, builder) {
     // Surname: HARRISON Given Names: Leonard George Date of Birth: 03-Apr-1887 Gender: M Father:
     // we with get the given name as:
     // Leonard George Date of Birth
-    let fieldNameIndex = givenNames.search(/(date|gender|father|mother|district)/i);
-    if (fieldNameIndex > 0) {
-      givenNames = givenNames.substring(0, fieldNameIndex);
+    givenNames = givenNames.trim();
+    // This could remove middle names that match these trings but should bot remove the first name
+    const terminators = [
+      "date",
+      "gender",
+      "father",
+      "mother",
+      "district",
+      "bride",
+      "surname",
+      "other",
+      "birth",
+      "death",
+    ];
+    for (let term of terminators) {
+      const pattern = " " + term + "(?:\\s|$)";
+      const regex = new RegExp(pattern, "i");
+      let termIndex = givenNames.search(regex);
+      if (termIndex != -1) {
+        givenNames = givenNames.substring(0, termIndex);
+      }
     }
-
     builder.addGivenNames(givenNames.trim());
   }
 }
 
-function extractYear(parser, builder) {
+function extractYear(parser, builder, typeData) {
+  const removeMatches = [
+    // e.g. "(Genealogy SA, https://www.genealogysa.org.au : accessed 11 May 2020)
+    /\([^\)]*(?:accessed|viewed|retrieved)[^\)]+\)/i,
+    // e.g. "Daly 143/400, accessed 10 May 2026 via Genealogy SA"
+    /(?:accessed|viewed|retrieved)\s+(?:\d\d?\s+)(?:[a-z]+\s+)?\d\d\d\d\W/i,
+    // remove year ranges. E.g.:
+    // Marriage: "Australia, Marriage Index, 1788-1950"
+    // Australia, Marriage Index, 1788-1950; Page number: 877
+    /\d\d\d\d-\d\d\d\d/gi,
+  ];
   const yearExtractInput = {
     preClean: {
-      removeMatches: [
-        // e.g. "(Genealogy SA, https://www.genealogysa.org.au : accessed 11 May 2020)
-        /\([^\)]*(?:accessed|viewed|retrieved)[^\)]+\)/i,
-        // e.g. "Daly 143/400, accessed 10 May 2026 via Genealogy SA"
-        /(?:accessed|viewed|retrieved)\s+(?:\d\d?\s+)(?:[a-z]+\s+)?\d\d\d\d\W/i,
-        // remove year ranges. E.g.:
-        // Marriage: "Australia, Marriage Index, 1788-1950"
-        // Australia, Marriage Index, 1788-1950; Page number: 877
-        /\d\d\d\d-\d\d\d\d/gi,
-      ],
+      removeMatches: removeMatches,
     },
     wholeText: {
       matches: [
-        /(?:year|event year|birth year|death year)\s*:?\s*(\w+)(?:[,; ]|$)/i,
+        // The "year" in this makes the others redundant?
+        /(?:year|event year|eventyear|event date|eventdate|date|in)\s*:?\s*(\d\d\d\d)(?:\W|$)/i,
         // e.g. 02/12/1867
         /(?:^|[^\d])\d\d\/\d\d\/(\d\d\d\d)(?:\W|$)/i,
         // e.g. 2-Dec-1980
@@ -228,11 +258,71 @@ function extractYear(parser, builder) {
         /(?:^|[^\d])\d\d [a-z]{3} (\d\d\d\d)(?:\W|$)/i,
         // e.g. xyz, 1980.
         /[^a-z0-9/]+(\d\d\d\d)\s*(?:\W|$)/i,
-        // e.g. born 1876
-        /(?:in|on|born|died|birth|death|married|b\.|d\.|m\.)\s+(\d\d\d\d)/i,
       ],
     },
   };
+
+  const birthYearExtractInput = {
+    preClean: {
+      removeMatches: removeMatches,
+    },
+    wholeText: {
+      matches: [
+        // e.g. born 1876 or Date of Birth: 1876
+        /(?:birth year|birthyear|year of birth|born|birth|b\.)\s*:?\s*(\d\d\d\d)(?:\W|$)/i,
+        // e.g. 02/12/1867
+        /(?:birth date|birthdate|date of birth|born|birth|b\.)\s*:?\s*\s\d\d\/\d\d\/(\d\d\d\d)(?:\W|$)/i,
+      ],
+    },
+  };
+
+  const deathYearExtractInput = {
+    preClean: {
+      removeMatches: removeMatches,
+    },
+    wholeText: {
+      matches: [
+        // e.g. died 1876 or Date of Death: 1876
+        /(?:death year|deathyear|year of death|born|birth|b\.)\s*:?\s*(\d\d\d\d)(?:\W|$)/i,
+        // e.g. 02/12/1867
+        /(?:death date|deathdate|date of death|died|death|b\.)\s*:?\s*\s\d\d\/\d\d\/(\d\d\d\d)(?:\W|$)/i,
+      ],
+    },
+  };
+
+  const marriageYearExtractInput = {
+    preClean: {
+      removeMatches: removeMatches,
+    },
+    wholeText: {
+      matches: [
+        // e.g. born 1876 or Date of Birth: 1876
+        /(?:marriage year|marriageyear|year of marriage|marriage date|marriagedate|date of marriage|married|marriage|m\.)\s*:?\s*(\d\d\d\d)(?:\W|$)/i,
+        // e.g. 02/12/1867
+        /(?:marriage date|marriagedate|date of marriage|married|marriage|m\.)\s*:?\s*\s\d\d\/\d\d\/(\d\d\d\d)(?:\W|$)/i,
+      ],
+    },
+  };
+
+  const specExtractInputs = {
+    birth: birthYearExtractInput,
+    death: deathYearExtractInput,
+    marriage: marriageYearExtractInput,
+  };
+
+  if (typeData && typeData.dateYearSpecifiers) {
+    for (let spec of typeData.dateYearSpecifiers) {
+      let specExtractInput = specExtractInputs[spec];
+      if (specExtractInput) {
+        let year = parser.extractMatchingValueFromText(specExtractInput);
+        if (year) {
+          builder.addEventYear(year);
+          return;
+        }
+      }
+    }
+  }
+
   let year = parser.extractMatchingValueFromText(yearExtractInput);
   if (year) {
     builder.addEventYear(year);
@@ -244,8 +334,8 @@ function extractDistrict(parser, builder) {
     wholeText: {
       matches: [
         // e.g.: , Reference: District Adelaide, Book 11,
-        /(?:^\s*|[^a-z]\s+)(?:district|registration district)\s*:?\s*(\w+)(?:[,; ]|$)/i,
-        /(?:^\s*|[^a-z]\s+)(?:registration place|reg place)\s*:?\s*(\w+)(?:[,; ]|$)/i,
+        /(?:^\s*|\s+)(?:district|registration district)\s*:?\s*(\w+)(?:[,; ]|$)/i,
+        /(?:^\s*|\s+)(?:registration place|reg place)\s*:?\s*(\w+)(?:[,; ]|$)/i,
       ],
     },
   };
@@ -369,7 +459,7 @@ function transformPlainText(plainText, phase, options) {
   }
 
   if (searchFields.includes("year")) {
-    extractYear(parser, builder);
+    extractYear(parser, builder, matchedType);
   }
 
   if (searchFields.includes("district")) {

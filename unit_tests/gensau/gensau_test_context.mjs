@@ -141,6 +141,14 @@ Eliza Ann Parsons, child of William Parsons, marriage to Charles Endersby on 24 
     function: transformPlainText,
     numPhases: 3,
   },
+  {
+    // From https://www.wikitree.com/wiki/Gameau-3
+    // No SA, multiple dates
+    caseName: "bdm_marriage_1931_jack_lewis_wt",
+    inputText: `Groom Given Name(s): Jack Lewis Groom Last Name: GAMEAU Bride Given Name(s): Ruby Florence Bride Last Name: SCHULZ Marriage Date: 1931, May 21 Marriage Place: St Martins Church Campbelltown Groom Age: 22 Groom Approx. Birth Year: 1909 Groom Marital Status: S Groom Father: Thomas Victor GAMEAU Bride Age: 21 Bride Approx. Birth Year: 1910 Bride Marital Status: S Bride Father Name: Paul Rheinhold SCHULZ District: Norwood Book/Page: 327/483`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
 ];
 
 async function runTests(testManager) {
