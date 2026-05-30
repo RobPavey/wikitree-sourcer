@@ -28,7 +28,7 @@ import { GensauUriBuilder } from "./gensau_uri_builder.mjs";
 const phaseMatches = [
   [[/GenealogySA/i], [/Genealogy SA/i], [/Genealogy South Australia/i]],
   [[/South Australia/i]],
-  [[/\WS\s*A\W/, /\WS\.\s*A\.\W/]],
+  [[/(?:^\s*|\W)S\s*A(?:\W|$)/], [/(?:^\s*|\W)S\.\s*A\.(?:\W|$)/]],
 ];
 
 const defaultSearchFields = ["surname", "givennames", "year"];
@@ -37,19 +37,19 @@ const typeMatches = [
   {
     // death comes before birth since a death citation can mention birth date
     collectionId: "death",
-    matches: [/Death Registration/i],
+    matches: [/Deaths? Registration/i],
     fuzzyMatches: [/Death/i],
     searchFields: ["surname", "givennames", "year", "district"],
   },
   {
     collectionId: "birth",
-    matches: [/Birth Registration/i],
+    matches: [/Births? Registration/i],
     fuzzyMatches: [/Birth/i],
     searchFields: ["surname", "givennames", "year", "district", "bookpage"],
   },
   {
     collectionId: "marriage",
-    matches: [/Marriage Registration/i],
+    matches: [/Marriages? Registration/i],
     fuzzyMatches: [/Marriage/i],
     searchFields: ["surname", "givennames", "year", "district"],
   },
@@ -170,7 +170,7 @@ function extractGivenNames(parser, builder) {
   const givenNamesExtractInput = {
     wholeText: {
       matches: [
-        /(?:^|[\s,\n])(?:forenames|given names|given name)\s*:?\s*(\w+)/i,
+        /(?:^|[\s,\n])(?:forenames|given names|given name)\s*:?\s*([a-z ]+)/i,
         /entry for\s+[a-z ]+,\s*([a-z](?:[a-z ]*[a-z])?)/i, // Aus project case
         /(?:^|[^a-z']\s+)(?:name|for)[^a-z]+[a-z]+,\s+([a-z ]+)/i,
         /(?:^|[^a-z ']\s+)(?:name|for)[^a-z]+([a-z ]+)\s+[a-z]/i,
@@ -183,8 +183,18 @@ function extractGivenNames(parser, builder) {
       ],
     },
   };
+
   let givenNames = parser.extractMatchingValueFromText(givenNamesExtractInput);
   if (givenNames) {
+    // in an example like this:
+    // Surname: HARRISON Given Names: Leonard George Date of Birth: 03-Apr-1887 Gender: M Father:
+    // we with get the given name as:
+    // Leonard George Date of Birth
+    let fieldNameIndex = givenNames.search(/(date|gender|father|mother|district)/i);
+    if (fieldNameIndex > 0) {
+      givenNames = givenNames.substring(0, fieldNameIndex);
+    }
+
     builder.addGivenNames(givenNames.trim());
   }
 }

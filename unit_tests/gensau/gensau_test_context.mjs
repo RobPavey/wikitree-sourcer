@@ -60,6 +60,13 @@ Abbey Kemp birth 1 Nov 1874 registered in the Daly district, daughter of Richard
     numPhases: 3,
   },
   {
+    // https://www.wikitree.com/wiki/Harrison-5166
+    caseName: "bdm_birth_1887_leonard_harrison_wt",
+    inputText: `SA BDM (Secondary evidence) Page: Frome 393 310 Text: Surname: HARRISON Given Names: Leonard George Date of Birth: 03-Apr-1887 Gender: M Father: John Thomas HARRISON Mother: Norah WILLIAMS Birth Residence: Port Augusta District: Frome Book/Page: 393/310`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
     // From https://www.wikitree.com/wiki/Couzens-45
     caseName: "bdm_birth_1900_vera_couzens_wt",
     inputText: `South Australia Birth Index compiled by Genealogy South Australia; citing Norwood District book#657; p72; for Vera Azalia Jessie Frances Couzens, b: 30 Mar 1900 (father: John Couzens & mother: Annie Rebecca Elliott); res: Hackney, Australia`,
