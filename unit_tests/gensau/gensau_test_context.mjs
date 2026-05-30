@@ -102,6 +102,17 @@ Rhoda Abbey Holness death 1940 registered in the Talunga district.
     numPhases: 3,
   },
   {
+    // From https://www.wikitree.com/wiki/Parsons-1005
+    // No date
+    caseName: "bdm_marriage_1872_eliza_parsons_wt",
+    inputText: `↑ Marriage: "Australia, Marriage Index, 1788-1950"
+Australia, Marriage Index, 1788-1950; Lehi, UT; Australia, Marriage Index, 1788-1950; Page number: 877; Volume Number: 93
+Ancestry au Record 1780 #95279502 (accessed 22 August 2024)
+Eliza Ann Parsons, child of William Parsons, marriage to Charles Endersby on 24 Dec 1872 in Adelaide, South Australia.`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
     // From https://www.wikitree.com/wiki/Kemp-14752
     // No date
     caseName: "bdm_marriage_1896_abbey_kemp_wt",

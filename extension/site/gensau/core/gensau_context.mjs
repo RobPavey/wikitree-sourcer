@@ -143,6 +143,27 @@ const typeMatches = [
   },
 ];
 
+function extractGivenNames(parser, builder) {
+  const givenNamesExtractInput = {
+    individual: {
+      matches: [
+        /(?:^|[\s,\n])(?:forenames|given names|given name)\s*:?\s*(\w+)/i,
+        /entry for\s+[a-z ]+,\s*([a-z](?:[a-z ]*[a-z])?)/i, // Aus project case
+        /(?:^|[^a-z']\s+)(?:name|for)[^a-z]+[a-z]+,\s+([a-z ]+)/i,
+        /(?:^|[^a-z ']\s+)(?:name|for)[^a-z]+([a-z ]+)\s+[a-z]/i,
+        /(?:^|[^a-z ']\s+)[a-z]+,\s+([a-z ]*[a-z])\s*,?\s*child of/i,
+        /(?:^|[^a-z ']\s+)([a-z ]*[a-z])\s+[a-z]+\s*,?\s*child of/i,
+        /^\W*[a-z]+,\s?([a-z ]+)/i,
+        // /(?:^|[^a-z ']*)[a-z]+,\s?([a-z ]+)/i,
+      ],
+    },
+  };
+  let givenNames = parser.extractMatchingValueFromText(givenNamesExtractInput);
+  if (givenNames) {
+    builder.addGivenNames(givenNames);
+  }
+}
+
 function transformPlainText(plainText, phase, options) {
   if (!plainText) {
     return undefined;
@@ -230,6 +251,7 @@ function transformPlainText(plainText, phase, options) {
         matches: [
           /^.*entry for\s+([a-z ]+)\W.*$/is, // Aus project case
           /(?:^|^.*[^a-z']\s+)(?:name|for)[^a-z]+([a-z ]+)\W.*$/is,
+          /(?:^\s*|^.*[^a-z ]+\s+|\n\s*)([a-z ]+), ?child of.*$/is,
         ],
         partMatches: [/^\s*(?:[^ ]+ )*([a-z]+)\s*$/i],
       },
@@ -244,31 +266,7 @@ function transformPlainText(plainText, phase, options) {
   }
 
   if (searchFields.includes("givennames")) {
-    const givenNamesExtractInput = {
-      individual: {
-        matches: [
-          /(?:^|^.*[^a-z']\s+)(?:forenames|given names|given name)\s*:?\s*(\w+)(?:[,; ].*$|$)/is,
-          /^.*entry for\s+[a-z ]+,([a-z](?:[a-z ]*[a-z])?)\W.*$/is, // Aus project case
-          /(?:^|^.*[^a-z']\s+)(?:name|for)[^a-z]+[a-z]+,\s+([a-z ]+).*$/is,
-          /(?:^|^.*[^a-z']\s+)(?:name|for)[^a-z]+([a-z ]+)\s+[a-z]+\W.*$/is,
-        ],
-      },
-      combined: {
-        matches: [
-          /^.*entry for\s+[a-z ]+,([a-z ]+)\W.*$/is, // Aus project case
-          /(?:^|^.*[^a-z']\s+)(?:name|for)[^a-z]+[a-z]+,\s+([a-z ]+).*$/is,
-          /(?:^|^.*[^a-z']\s+)(?:name|for)[^a-z]+([a-z](?:[a-z ]*[a-z])?)\s+([a-z]+)\W.*$/is,
-        ],
-        partMatches: [/^\s*(?:[^ ]+ )*([a-z]+)\s*$/i],
-      },
-      noKey: {
-        matches: [/^[^a-z]*[a-z]+,\s?([a-z ]+)[,:\-].*$/is, /^.*[^a-z][a-z]+,\s?([a-z ]+)[,:\-].*$/is],
-      },
-    };
-    let givenNames = parser.extractValueFromText(givenNamesExtractInput);
-    if (givenNames) {
-      builder.addGivenNames(givenNames);
-    }
+    extractGivenNames(parser, builder);
   }
 
   if (searchFields.includes("year")) {

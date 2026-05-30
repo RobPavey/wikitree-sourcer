@@ -296,6 +296,35 @@ class CitationParser {
       }
     }
   }
+
+  extractMatchingValueFromText(extractInput) {
+    let text = this.text;
+
+    if (!text) {
+      return;
+    }
+
+    if (extractInput.preClean) {
+      let clean = extractInput.preClean;
+      if (clean.removeMatches) {
+        for (let regex of clean.removeMatches) {
+          text = text.replace(regex, "");
+        }
+      }
+    }
+
+    if (extractInput.individual) {
+      for (let regex of extractInput.individual.matches) {
+        let matches = text.match(regex);
+        if (matches && matches.length > 1) {
+          let value = matches[1];
+          if (value) {
+            return value;
+          }
+        }
+      }
+    }
+  }
 }
 
 export { CitationParser };
