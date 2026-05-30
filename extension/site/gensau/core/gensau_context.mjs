@@ -189,6 +189,93 @@ function extractGivenNames(parser, builder) {
   }
 }
 
+function extractYear(parser, builder) {
+  const yearExtractInput = {
+    preClean: {
+      removeMatches: [
+        // e.g. "(Genealogy SA, https://www.genealogysa.org.au : accessed 11 May 2020)
+        /\([^\)]*(?:accessed|viewed|retrieved)[^\)]+\)/i,
+        // e.g. "Daly 143/400, accessed 10 May 2026 via Genealogy SA"
+        /(?:accessed|viewed|retrieved)\s+(?:\d\d?\s+)(?:[a-z]+\s+)?\d\d\d\d\W/i,
+        // remove year ranges. E.g.:
+        // Marriage: "Australia, Marriage Index, 1788-1950"
+        // Australia, Marriage Index, 1788-1950; Page number: 877
+        /\d\d\d\d-\d\d\d\d/gi,
+      ],
+    },
+    wholeText: {
+      matches: [
+        /(?:year|event year|birth year|death year)\s*:?\s*(\w+)(?:[,; ]|$)/i,
+        // e.g. 02/12/1867
+        /(?:^|[^\d])\d\d\/\d\d\/(\d\d\d\d)(?:\W|$)/i,
+        // e.g. 2-Dec-1980
+        /(?:^|[^\d])\d\d-[a-z]{3}-(\d\d\d\d)(?:\W|$)/i,
+        // e.g. 2 December 1980 or 23 Dec 1857
+        /(?:^|[^\d])\d\d? [a-z]{3,10} (\d\d\d\d)(?:\W|$)/i,
+        // e.g. 2-10-1980
+        /(?:^|[^\d])\d\d-\d\d-(\d\d\d\d)(?:\W|$)/i,
+        // e.g. 2-Dec-1980
+        /(?:^|[^\d])\d\d [a-z]{3} (\d\d\d\d)(?:\W|$)/i,
+        // e.g. xyz, 1980.
+        /[^a-z0-9/]+(\d\d\d\d)\s*(?:\W|$)/i,
+        // e.g. born 1876
+        /(?:in|on|born|died|birth|death|married|b\.|d\.|m\.)\s+(\d\d\d\d)/i,
+      ],
+    },
+  };
+  let year = parser.extractMatchingValueFromText(yearExtractInput);
+  if (year) {
+    builder.addEventYear(year);
+  }
+}
+
+function extractDistrict(parser, builder) {
+  const districtExtractInput = {
+    wholeText: {
+      matches: [
+        // e.g.: , Reference: District Adelaide, Book 11,
+        /(?:^\s*|[^a-z]\s+)(?:district|registration district)\s*:?\s*(\w+)(?:[,; ]|$)/i,
+        /(?:^\s*|[^a-z]\s+)(?:registration place|reg place)\s*:?\s*(\w+)(?:[,; ]|$)/i,
+      ],
+    },
+  };
+  let district = parser.extractMatchingValueFromText(districtExtractInput);
+  if (district) {
+    builder.addDistrict(district);
+  }
+}
+
+function extractBookPage(parser, builder) {
+  const bookExtractInput = {
+    wholeText: {
+      matches: [
+        // e.g.
+        //  citing Norwood District book#657; p72; for
+        /(?:book number|volume number|book|volume)\s*[:#]?\s*([0-9]+[a-z]*)(?:\W|$)/i,
+        /book\/page[^a-z0-9]+([a-z0-9]+)\/[0-9]+(?:\W|$)/i,
+        /[^a-z0-9]+([0-9]+[a-z]?)\/[0-9]+(?:\W|$)/i,
+      ],
+    },
+  };
+  const pageExtractInput = {
+    wholeText: {
+      matches: [
+        /(?:page number|[^/]page)\s*:?\s*([0-9]+)(?:\W|$)/i,
+        // e.g. citing Norwood District book#657; p72; for
+        /(?:^|\W)p\s*:?\s*([0-9]+)(?:\W|$)/i,
+        /book\/page[^a-z0-9]+[a-z0-9]+\/([0-9]+)(?:\W|$)/i,
+        /[^a-z0-9]+[a-z0-9]+\/([0-9]+)(?:\W|$)/i,
+      ],
+    },
+  };
+  let book = parser.extractMatchingValueFromText(bookExtractInput);
+  let page = parser.extractMatchingValueFromText(pageExtractInput);
+  if (book && page) {
+    let bookPageString = book + "/" + page;
+    builder.addBookPage(bookPageString);
+  }
+}
+
 function transformPlainText(plainText, phase, options) {
   if (!plainText) {
     return undefined;
@@ -264,32 +351,6 @@ function transformPlainText(plainText, phase, options) {
   let parser = new CitationParser(plainText);
 
   if (searchFields.includes("surname")) {
-    /*
-    const surnameExtractInput = {
-      individual: {
-        matches: [
-          /(?:^|^.*[^a-z']\s+)(?:surname|last name)\s*:?\s*(\w+)(?:[,; ].*$|$)/is,
-          /^.*entry for\s+([a-z ]+),[a-z ]+\W.*$/is, // Aus project case
-          /(?:^|^.*[^a-z']\s+)(?:name|for)[^a-z]+([a-z]+),\s+[a-z ]+.*$/is,
-        ],
-      },
-      combined: {
-        matches: [
-          /^.*entry for\s+([a-z ]+)\W.*$/is, // Aus project case
-          /(?:^|^.*[^a-z']\s+)(?:name|for)[^a-z]+([a-z ]+)\W.*$/is,
-          /(?:^\s*|^.*[^a-z ]+\s+|\n\s*)([a-z ]+), ?child of.*$/is,
-        ],
-        partMatches: [/^\s*(?:[^ ]+ )*([a-z]+)\s*$/i],
-      },
-      noKey: {
-        matches: [/^[^a-z]*([a-z]+),\s?[a-z ]+[,:\-].*$/is, /(?:^|^.*[^a-z])([a-z]+),\s?[a-z ]+[,:\-].*$/is],
-      },
-    };
-    let surname = parser.extractValueFromText(surnameExtractInput);
-    if (surname) {
-      builder.addSurname(surname);
-    }
-      */
     extractSurname(parser, builder);
   }
 
@@ -298,72 +359,15 @@ function transformPlainText(plainText, phase, options) {
   }
 
   if (searchFields.includes("year")) {
-    const yearExtractInput = {
-      preClean: {
-        removeMatches: [
-          // e.g. "(Genealogy SA, https://www.genealogysa.org.au : accessed 11 May 2020)
-          /\([^\)]*(?:accessed|viewed)[^\)]+\)/i,
-          // e.g. "Daly 143/400, accessed 10 May 2026 via Genealogy SA"
-          /(?:accessed|viewed)\s+(?:\d\d?\s+)(?:[a-z]+\s+)?\d\d\d\d\W/i,
-        ],
-      },
-      individual: {
-        matches: [/(?:^|^.*[^a-z']\s+)(?:year|event year|birth year|death year)\s*:?\s*(\w+)(?:[,; ].*$|$)/is],
-      },
-      noKey: {
-        matches: [/^.*[^a-z0-9/]+(\d\d\d\d)\W.*$/is, /^.*\d\d\/\d\d\/(\d\d\d\d)\W.*$/is],
-      },
-    };
-    let year = parser.extractValueFromText(yearExtractInput);
-    if (year) {
-      builder.addEventYear(year);
-    }
+    extractYear(parser, builder);
   }
 
   if (searchFields.includes("district")) {
-    const districtExtractInput = {
-      individual: {
-        matches: [
-          /(?:^|^.*[^a-z']\s+)(?:district|registration district)\s*:?\s*(\w+)(?:[,; ].*$|$)/is,
-          /(?:^|^.*[^a-z']\s+)(?:registration place|reg place)\s*:?\s*(\w+)(?:[,; ].*$|$)/is,
-        ],
-      },
-    };
-    let district = parser.extractValueFromText(districtExtractInput);
-    if (district) {
-      builder.addDistrict(district);
-    }
+    extractDistrict(parser, builder);
   }
 
   if (searchFields.includes("bookpage")) {
-    // only birth allows search by Book/Page
-    const bookExtractInput = {
-      individual: {
-        matches: [/^.*(?:book number|volume number|book|volume)\s*[:#]?\s*([0-9]+[a-z]*)(?:\W.*$|$)/is],
-      },
-      combined: {
-        matches: [
-          /^.*book\/page[^a-z0-9]+([a-z0-9]+\/[0-9]+)\W.*$/is,
-          /^.*[^a-z0-9]+([0-9]+[a-z]?\/[0-9]+)(?:\W.*$|$)/is,
-        ],
-        partMatches: [/^([a-z0-9]+)\/[0-9]+$/i],
-      },
-    };
-    const pageExtractInput = {
-      individual: {
-        matches: [/^.*(?:page number|[^/]page)\s*:?\s*([0-9]+)(?:\W.*$|$)/is, /^.*p\s*:?\s*([0-9]+)(?:\W.*$|$)/is],
-      },
-      combined: {
-        matches: [/^.*book\/page[^a-z0-9]+([a-z0-9]+\/[0-9]+)\W.*$/is, /^.*[^a-z0-9]+([a-z0-9]+\/[0-9]+)(?:\W.*$|$)/is],
-        partMatches: [/^[a-z0-9]+\/([0-9]+)$/i],
-      },
-    };
-    let book = parser.extractValueFromText(bookExtractInput);
-    let page = parser.extractValueFromText(pageExtractInput);
-    if (book && page) {
-      let bookPageString = book + "/" + page;
-      builder.addBookPage(bookPageString);
-    }
+    extractBookPage(parser, builder);
   }
 
   const link = builder.getUri();
