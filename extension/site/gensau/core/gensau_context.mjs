@@ -28,7 +28,7 @@ import { GensauUriBuilder } from "./gensau_uri_builder.mjs";
 const phaseMatches = [
   [[/GenealogySA/i], [/Genealogy SA/i], [/Genealogy South Australia/i]],
   [[/South Australia/i]],
-  [[/(?:^\s*|\W)S\s*A(?:\W|$)/], [/(?:^\s*|\W)S\.\s*A\.(?:\W|$)/], [/District:/i, /Book\/Page:/i]],
+  [[/(?:^\s*|\W)S\s*A(?:\W|$)/], [/(?:^\s*|\W)S\.\s*A\.(?:\W|$)/], [/SABDM/], [/District:/i, /Book\/Page:/i]],
 ];
 
 const defaultSearchFields = ["surname", "givennames", "year"];
@@ -181,7 +181,7 @@ function extractGivenNames(parser, builder) {
   const givenNamesExtractInput = {
     wholeText: {
       matches: [
-        /(?:^|[\s,\n])(?:forenames|given names|given name|first names|first name)\s*:?\s*([a-z ]+)/i,
+        /(?:^|[\s,\n])(?:forenames|given names|given name|given name\(s\)|first names|first name|first name\(s\))\s*:?\s*([a-z ]+)/i,
         /entry for\s+[a-z ]+,\s*([a-z](?:[a-z ]*[a-z])?)/i, // Aus project case
         /(?:^|[^a-z']\s+)(?:name|for)[^a-z]+[a-z]+,\s+([a-z ]+)/i,
         /(?:^|[^a-z ']\s+)(?:name|for)[^a-z]+([a-z ]+)\s+[a-z]/i,
@@ -210,10 +210,13 @@ function extractGivenNames(parser, builder) {
       "mother",
       "district",
       "bride",
+      "groom",
       "surname",
+      "last",
       "other",
       "birth",
       "death",
+      "marriage",
     ];
     for (let term of terminators) {
       const pattern = " " + term + "(?:\\s|$)";
