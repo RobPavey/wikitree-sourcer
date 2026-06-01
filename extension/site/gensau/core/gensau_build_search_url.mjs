@@ -24,6 +24,8 @@ SOFTWARE.
 
 import { GensauUriBuilder } from "./gensau_uri_builder.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
+import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+import { SearchHelper } from "../../../base/core/search_helper.mjs";
 
 const searchTypes = {
   all: {
@@ -49,7 +51,7 @@ const searchTypes = {
   },
   bdmMarriages: {
     params: ["surname", "givenNames", "eventYear", "district"],
-    eventYearType: "lived",
+    eventYearType: "adult",
     collectionId: "marriage",
   },
   newsBirths: {
@@ -64,12 +66,12 @@ const searchTypes = {
   },
   newsMarriages: {
     params: ["surname", "givenNames", "eventYear"],
-    eventYearType: "lived",
+    eventYearType: "adult",
     collectionId: "newspaper-marriage",
   },
   newsDivorces: {
     params: ["surname", "givenNames", "eventYear"],
-    eventYearType: "lived",
+    eventYearType: "adult",
     collectionId: "divorce",
   },
   cemeteries: {
@@ -89,7 +91,7 @@ const searchTypes = {
   },
   churchMarriages: {
     params: ["surname", "givenNames", "eventYear"],
-    eventYearType: "lived",
+    eventYearType: "adult",
     collectionId: "church-marriage",
   },
   churchOther: {
@@ -124,7 +126,7 @@ const searchTypes = {
   },
   otherCerts: {
     params: ["surname", "givenNames", "eventYear"],
-    eventYearType: "lived",
+    eventYearType: "adult",
     collectionId: "certificates",
   },
   otherIbsa: {
@@ -144,10 +146,51 @@ const searchTypes = {
   },
   otherTrustees: {
     params: ["surname", "givenNames", "eventYear"],
-    eventYearType: "lived",
+    eventYearType: "adult",
     collectionId: "public-trustees",
   },
 };
+
+function addYearAndAccuracyForRange(builder, range) {
+  if (range && range.endYear >= range.startYear) {
+    let diff = range.endYear - range.startYear;
+    let accuracy = Math.trunc((diff + 1) / 2);
+    let midpointYear = range.startYear + accuracy;
+    builder.addEventYear(midpointYear.toString(), accuracy.toString());
+  }
+}
+
+function addYearAndAccuracyForLifeRange(builder, helper, startAge) {
+  let startExactness = helper.options.search_gensau_birthYearExactness;
+  let endExactness = helper.options.search_gensau_deathYearExactness;
+  let lifeRange = helper.getYearRangeForAgeToDeath(startAge, startExactness, endExactness);
+  if (lifeRange) {
+    addYearAndAccuracyForRange(builder, lifeRange);
+  }
+}
+
+function addYearAndAccuracyForBirth(builder, helper) {
+  let exactness = helper.options.search_gensau_birthYearExactness;
+  let range = helper.getYearRangeForBirth(exactness);
+  if (range) {
+    addYearAndAccuracyForRange(builder, range);
+  }
+}
+
+function addYearAndAccuracyForDeath(builder, helper) {
+  let exactness = helper.options.search_gensau_deathYearExactness;
+  let range = helper.getYearRangeForDeath(exactness);
+  if (range) {
+    addYearAndAccuracyForRange(builder, range);
+  }
+}
+
+function addYearAndAccuracyForEvent(builder, helper, exactness) {
+  let range = helper.getYearRangeForEvent(exactness);
+  if (range) {
+    addYearAndAccuracyForRange(builder, range);
+  }
+}
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
@@ -156,6 +199,7 @@ function buildSearchUrl(buildUrlInput) {
   const runDate = buildUrlInput.runDate;
   const parameters = buildUrlInput.searchParameters;
 
+  let helper = new SearchHelper(gd, options, runDate);
   let builder = new GensauUriBuilder();
 
   if (!typeOfSearch) {
@@ -174,6 +218,7 @@ function buildSearchUrl(buildUrlInput) {
   let collectionId = "";
   let collection = undefined;
   if (typeOfSearch == "SameCollection") {
+    helper.overrideQualifier = dateQualifiers.EXACT;
     if (gd.collectionData && gd.collectionData.id) {
       collectionId = RC.mapCollectionId(
         gd.sourceOfData,
@@ -221,23 +266,20 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   if (searchConfig.params.includes("eventYear")) {
-    if (searchConfig.eventYearType == "lived") {
-      const maxLifespan = Number(options.search_general_maxLifespan);
-      let lifeRange = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
-      if (lifeRange.startYear && lifeRange.endYear) {
-        let lifeSpan = lifeRange.endYear - lifeRange.startYear;
-        let accuracy = Math.trunc((lifeSpan + 1) / 2);
-        let midpointYear = lifeRange.startYear + accuracy;
-        builder.addEventYear(midpointYear, accuracy);
+    if (typeOfSearch == "SameCollection") {
+      helper.overrideQualifier = dateQualifiers.EXACT;
+      addYearAndAccuracyForEvent(builder, helper, "exact");
+    } else {
+      if (searchConfig.eventYearType == "lived") {
+        addYearAndAccuracyForLifeRange(builder, helper, 0);
+      } else if (searchConfig.eventYearType == "adult") {
+        const minAdultAge = 14;
+        addYearAndAccuracyForLifeRange(builder, helper, minAdultAge);
+      } else if (searchConfig.eventYearType == "born") {
+        addYearAndAccuracyForBirth(builder, helper);
+      } else if (searchConfig.eventYearType == "died") {
+        addYearAndAccuracyForDeath(builder, helper);
       }
-    } else if (searchConfig.eventYearType == "born") {
-      let birthYear = gd.inferBirthYear();
-      let accuracy = 5;
-      builder.addEventYear(birthYear, accuracy);
-    } else if (searchConfig.eventYearType == "died") {
-      let birthYear = gd.inferDeathYear();
-      let accuracy = 5;
-      builder.addEventYear(birthYear, accuracy);
     }
   }
 

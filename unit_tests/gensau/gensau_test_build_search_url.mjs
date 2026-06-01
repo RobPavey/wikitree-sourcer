@@ -36,6 +36,26 @@ const regressionData = [
     caseName: "wikitree_stanway-252_read",
     inputPath: "wikitree/generalized_data/ref/stanway-252_read",
     typeOfSearch: "bdmBirths",
+    optionVariants: [
+      {
+        variantName: "birthsExactness1",
+        typeOfSearch: "bdmBirths",
+        optionOverrides: { search_gensau_birthYearExactness: "1" },
+      },
+      {
+        variantName: "deathsExactnessExact",
+        typeOfSearch: "bdmDeaths",
+        optionOverrides: { search_gensau_deathYearExactness: "exact" },
+      },
+      {
+        variantName: "parametersDeathLastName1",
+        typeOfSearch: "SpecifiedParameters",
+        searchParameters: {
+          category: "bdmDeaths",
+          lastNameIndex: 1,
+        },
+      },
+    ],
   },
 ];
 
