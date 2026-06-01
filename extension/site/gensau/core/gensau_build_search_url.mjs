@@ -218,7 +218,6 @@ function buildSearchUrl(buildUrlInput) {
   let collectionId = "";
   let collection = undefined;
   if (typeOfSearch == "SameCollection") {
-    helper.overrideQualifier = dateQualifiers.EXACT;
     if (gd.collectionData && gd.collectionData.id) {
       collectionId = RC.mapCollectionId(
         gd.sourceOfData,
