@@ -303,7 +303,7 @@ async function fsBuildAllCitationsAction(data, citationType) {
           if (response.failureCount) {
             iconType = "warning";
             message2 +=
-              "\n\nWarning: Some data could not be retreived from FamilySearch so the citations may be incomplete.";
+              "\n\nWarning: Some data could not be retrieved from FamilySearch so the citations may be incomplete.";
             if (response.failureCount) {
               message2 += "\n- There were " + response.failureCount + " failures getting sources";
             }

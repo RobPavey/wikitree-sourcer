@@ -792,7 +792,7 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
           if (response.failureCount || response.linkedRecordFailureCount || response.sharingLinksFailureCount) {
             iconType = "warning";
             message2 +=
-              "\n\nWarning: Some data could not be retreived from Ancestry so the citations may be incomplete.";
+              "\n\nWarning: Some data could not be retrieved from Ancestry so the citations may be incomplete.";
             if (response.failureCount) {
               message2 += "\n- There were " + response.failureCount + " failures getting sources";
             }
@@ -803,7 +803,7 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
               message2 += "\n- There were " + response.sharingLinksFailureCount + " failures getting sharing links";
             }
             message2 +=
-              "\n\nNote: Sourcer caches the data that was retreived, so if you wait a few seconds and try again you may be able to get all of the records and thus get a full list of citations.\n";
+              "\n\nNote: Sourcer caches the data that was retrieved, so if you wait a few seconds and try again you may be able to get all of the records and thus get a full list of citations.\n";
           }
 
           writeToClipboard(response.citationsString, message, false, message2, iconType);
