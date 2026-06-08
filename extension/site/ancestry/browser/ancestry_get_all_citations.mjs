@@ -154,6 +154,7 @@ async function getExtractedAndGeneralizedData(source) {
 
   if (uri) {
     fetchResult = await getExtractedDataFromRecordUrl(uri);
+    source.fetchStatus = fetchResult;
     if (!fetchResult.success) {
       console.log("getExtractedAndGeneralizedData, getExtractedDataFromRecordUrl failed, fetchResult is:");
       console.log(fetchResult);

@@ -272,7 +272,7 @@ function getIncompleteCitationsString(response) {
       if (status == 410) {
         reason = " has been removed from the FamilySearch site";
       }
-      message += `\n- Source "${title} with URL ${uri} ${reason} (status code: ${status})`;
+      message += `\n• Source "${title} with URL ${uri} ${reason} (status code: ${status})`;
     }
   }
 

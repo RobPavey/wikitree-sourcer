@@ -55,7 +55,7 @@ async function savePersonData(data, getAllCitationsFunction) {
       let response = await getAllCitationsFunction(data);
       if (!response.success) {
         const message = "Could not save person data because could not build all citations.";
-        displayMessageWithIcon("warning", message, response.errorMessage);
+        displayMessageWithIcon("warning", message, "", response.errorMessage);
         return;
       }
     }
