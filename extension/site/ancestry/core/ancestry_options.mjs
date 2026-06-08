@@ -162,12 +162,6 @@ const citationOptionsGroup = {
       label: "Include a sharing template to the original image if available",
       defaultValue: true,
     },
-    {
-      optionName: "addEditCitationButton",
-      type: "checkbox",
-      label: "On Ancestry image pages add a button to edit citation in panel",
-      defaultValue: true,
-    },
   ],
 };
 
@@ -203,6 +197,23 @@ const buildAllCitationsOptionsGroup = {
   ],
 };
 
+const uiOptionsPageModEditCitationGroup = {
+  category: "ui",
+  subcategory: "ancestry",
+  tab: "ui",
+  subsection: "ancestry",
+  subheading: "wtIconPageModEditCitation",
+
+  options: [
+    {
+      optionName: "addEditCitationButton",
+      type: "checkbox",
+      label: "On Ancestry image pages add a button to edit citation in panel",
+      defaultValue: true,
+    },
+  ],
+};
+
 registerSubsectionForOptions("search", "ancestry", "Ancestry");
 registerSiteSearchPopupOptionsGroup("ancestry");
 registerSubheadingForOptions("search", "ancestry", "parameters", "Search Parameters");
@@ -218,3 +229,7 @@ registerSubsectionForOptions(
   "NOTE: Some Ancestry profiles have many incorrect sources - please check the generated citations."
 );
 registerOptionsGroup(buildAllCitationsOptionsGroup);
+
+registerSubsectionForOptions("ui", "ancestry", "Ancestry");
+registerSubheadingForOptions("ui", "ancestry", "wtIconPageModEditCitation", "Page Modifications for Editing Citation");
+registerOptionsGroup(uiOptionsPageModEditCitationGroup);

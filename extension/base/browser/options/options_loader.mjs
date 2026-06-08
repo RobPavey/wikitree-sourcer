@@ -377,9 +377,34 @@ function convertOptionsFrom12To13(loadedOptions, optionsRegistry) {
     delete convertedOptions.context_general_newTabPos;
   }
 
-  convertedOptions.options_version = 12;
+  convertedOptions.options_version = 13;
 
   console.log("convertOptionsFrom12To13, after:");
+  console.log(convertedOptions);
+
+  return convertedOptions;
+}
+
+function convertOptionsFrom13To14(loadedOptions, optionsRegistry) {
+  let convertedOptions = { ...loadedOptions };
+
+  console.log("convertOptionsFrom13To14, before:");
+  console.log(loadedOptions);
+
+  // ui_pageMods_allowPageMods forced from false to true
+  if (convertedOptions.ui_pageMods_allowPageMods == false) {
+    convertedOptions.ui_pageMods_allowPageMods = true;
+  }
+
+  // citation_ancestry_addEditCitationButton changed to ui_ancestry_addEditCitationButton
+  if (convertedOptions.citation_ancestry_addEditCitationButton !== undefined) {
+    convertedOptions.ui_ancestry_addEditCitationButton = convertedOptions.citation_ancestry_addEditCitationButton;
+    delete convertedOptions.citation_ancestry_addEditCitationButton;
+  }
+
+  convertedOptions.options_version = 14;
+
+  console.log("convertOptionsFrom13To14, after:");
   console.log(convertedOptions);
 
   return convertedOptions;
@@ -432,6 +457,9 @@ function convertOptions(loadedOptions, defaultOptions, optionsRegistry) {
   }
   if (loadedVersion < 13) {
     loadedOptions = convertOptionsFrom12To13(loadedOptions, optionsRegistry);
+  }
+  if (loadedVersion < 14) {
+    loadedOptions = convertOptionsFrom13To14(loadedOptions, optionsRegistry);
   }
 
   return loadedOptions;

@@ -1902,7 +1902,7 @@ const uiPageModsOptionsGroup = {
       optionName: "allowPageMods",
       type: "checkbox",
       label: "Enable Sourcer to make web page modifications",
-      defaultValue: false,
+      defaultValue: true,
       comment: "This is a master control. If this is not checked then no page modifications will be made.",
     },
     {
