@@ -304,8 +304,22 @@ async function fsBuildAllCitationsAction(data, citationType) {
             iconType = "warning";
             message2 +=
               "\n\nWarning: Some data could not be retrieved from FamilySearch so the citations may be incomplete.";
-            if (response.failureCount) {
-              message2 += "\n- There were " + response.failureCount + " failures getting sources";
+            if (response.failureCount == 1) {
+              message2 += "\n\nThere was " + response.failureCount + " failure getting sources:";
+            } else {
+              message2 += "\n\nThere were " + response.failureCount + " failures getting sources:";
+            }
+            for (let source of response.sources) {
+              if (source.fetchStatus && !source.fetchStatus.success) {
+                let status = source.fetchStatus.statusCode;
+                let title = source.title;
+                let uri = source.uri;
+                let reason = " could not be fetched";
+                if (status == 410) {
+                  reason = " has been removed";
+                }
+                message2 += `\n- Source "${title} with URL ${uri} ${reason}`;
+              }
             }
           }
 

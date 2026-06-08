@@ -152,12 +152,17 @@ async function fetchRecord(fetchUrl, sessionId) {
 
     if (response.status !== 200) {
       console.log("fetchRecord: Looks like there was a problem. Status Code: " + response.status);
-      return {
+      let result = {
         success: false,
         errorCondition: "FetchError",
         status: response.status,
         allowRetry: true,
       };
+      if (response.status == 410) {
+        // this means the record has been permanently deleted
+        result.allowRetry = false;
+      }
+      return result;
     }
 
     let jsonData = await response.text();
