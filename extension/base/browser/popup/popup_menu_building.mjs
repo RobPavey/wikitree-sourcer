@@ -266,7 +266,7 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
   document.getElementById("menu").appendChild(fragment);
 }
 
-async function displayMessageWithIcon(iconType, message1, message2) {
+async function displayMessageWithIcon(iconType, message1, message2, errorMessage1) {
   emptyMenu();
 
   let fragment = document.createDocumentFragment();
@@ -310,6 +310,13 @@ async function displayMessageWithIcon(iconType, message1, message2) {
     label2.className = "messageLabelInDiv";
     label2.innerText = message2;
     labelDiv.appendChild(label2);
+  }
+
+  if (errorMessage1) {
+    let label = document.createElement("label");
+    label.className = "errorMessageLabelInDiv";
+    label.innerText = errorMessage1;
+    labelDiv.appendChild(label);
   }
 
   document.getElementById("menu").appendChild(fragment);

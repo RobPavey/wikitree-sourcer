@@ -144,6 +144,11 @@ button.linkButton {
   display: block;
   margin: 0px;
 }
+.errorMessageLabelInDiv {
+  display: block;
+  color: red;
+  margin: 0px;
+}
 /* The three below are used to display menu items with a submenu link on right */
 ul.list li.menuItemWithSubMenu {
   padding: 0px;

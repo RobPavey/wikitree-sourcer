@@ -78,7 +78,12 @@ async function savePersonData(data, getAllCitationsFunction) {
     if (data.allCitationsNoteMessage) {
       message2 += data.allCitationsNoteMessage;
     }
-    displayMessageWithIconThenClosePopup("check", message1, message2);
+
+    if (data.allCitationsErrorMessage) {
+      displayMessageWithIcon("warning", message1, message2, data.allCitationsErrorMessage);
+    } else {
+      displayMessageWithIconThenClosePopup("check", message1, message2);
+    }
   });
 }
 

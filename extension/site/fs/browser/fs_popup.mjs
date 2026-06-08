@@ -253,6 +253,32 @@ function getExcludedSourcesString(response) {
   return message;
 }
 
+function getIncompleteCitationsString(response) {
+  let message = "";
+
+  message +=
+    "\nWarning: Some data could not be retrieved from FamilySearch so the citations may be incomplete. See below:";
+  if (response.failureCount == 1) {
+    message += "\n\nThere was " + response.failureCount + " failure getting sources:";
+  } else {
+    message += "\n\nThere were " + response.failureCount + " failures getting sources:";
+  }
+  for (let source of response.sources) {
+    if (source.fetchStatus && !source.fetchStatus.success) {
+      let status = source.fetchStatus.statusCode;
+      let title = source.title;
+      let uri = source.uri;
+      let reason = " could not be fetched";
+      if (status == 410) {
+        reason = " has been removed from the FamilySearch site";
+      }
+      message += `\n- Source "${title} with URL ${uri} ${reason} (status code: ${status})`;
+    }
+  }
+
+  return message;
+}
+
 async function fsBuildAllCitationsAction(data, citationType) {
   try {
     clearClipboard();
@@ -300,30 +326,13 @@ async function fsBuildAllCitationsAction(data, citationType) {
           }
 
           let iconType = "check";
+          let errorMessage = "";
           if (response.failureCount) {
             iconType = "warning";
-            message2 +=
-              "\n\nWarning: Some data could not be retrieved from FamilySearch so the citations may be incomplete.";
-            if (response.failureCount == 1) {
-              message2 += "\n\nThere was " + response.failureCount + " failure getting sources:";
-            } else {
-              message2 += "\n\nThere were " + response.failureCount + " failures getting sources:";
-            }
-            for (let source of response.sources) {
-              if (source.fetchStatus && !source.fetchStatus.success) {
-                let status = source.fetchStatus.statusCode;
-                let title = source.title;
-                let uri = source.uri;
-                let reason = " could not be fetched";
-                if (status == 410) {
-                  reason = " has been removed";
-                }
-                message2 += `\n- Source "${title} with URL ${uri} ${reason}`;
-              }
-            }
+            errorMessage = getIncompleteCitationsString(response);
           }
 
-          writeToClipboard(response.citationsString, message, false, message2, iconType);
+          writeToClipboard(response.citationsString, message, false, message2, iconType, errorMessage);
         }
       } else {
         const message = "All sources were excluded due to option settings.";
@@ -371,6 +380,8 @@ async function fsGetAllCitationsForSavePersonData(data) {
       data.allCitationsString = response.citationsString;
       data.allCitationsType = response.citationsStringType;
       data.allCitationsNoteMessage = getExcludedSourcesString(response);
+      data.allCitationsErrorMessage = getIncompleteCitationsString(response);
+
       return { success: true };
     } else {
       // If it fails we want to let the user know
