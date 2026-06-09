@@ -125,6 +125,7 @@ async function fetchAncestrySharingDataObj(ed) {
   let cachedResult = await getCachedAsyncResult(cacheTag, recordUrl);
   if (cachedResult) {
     //console.log("fetchAncestrySharingDataObj, found in cache");
+    cachedResult.wasInCache = true;
     return cachedResult;
   }
 

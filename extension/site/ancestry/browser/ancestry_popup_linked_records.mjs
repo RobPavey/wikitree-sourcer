@@ -132,12 +132,13 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
   }
 
   const queueOptions = {
-    initialWaitBetweenRequests: 20,
-    maxWaitime: 3200,
+    maxConcurrency: 1,
+    initialWaitBetweenRequests: 200,
+    maxWaitime: 10000,
     additionalRetryWaitime: 3200,
     additionalManyRecent429sWaitime: 5000,
-    slowDownFromStartCount: 10,
-    slowDownFromStartMult: 4,
+    slowDownFromStartCount: 7,
+    slowDownFromStartMult: 8,
   };
   //console.log("getDataForLinkedRecords, about to call doRequestsInParallel, requests is:");
   //console.log(requests);

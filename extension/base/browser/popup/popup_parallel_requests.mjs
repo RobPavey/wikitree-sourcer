@@ -28,40 +28,36 @@ import {
   displayMessageWithIconAndWaitForContinue,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-var monitoredSleepsInProgress = 0;
+class SleepMonitor {
+  constructor() {
+    this.sleepsInProgress = 0;
+  }
 
-function doUnmonitoredSleep(ms) {
-  //console.log("monitorRequestQueue, starting sleep for: " + ms + " at time: " + Date.now());
-  return new Promise((resolveTimeout) =>
-    setTimeout(function () {
-      //console.log("monitorRequestQueue, sleep completed for: " + ms + " at time: " + Date.now());
-      resolveTimeout();
-    }, ms)
-  );
-}
+  async monitoredSleep(ms) {
+    this.sleepsInProgress++;
+    const randomJitter = Math.floor(Math.random() * queueOptions.maxJitter);
+    await new Promise((resolve) => setTimeout(resolve, ms + randomJitter));
+    this.sleepsInProgress--;
+  }
 
-function doMonitoredSleep(ms) {
-  // The purpose of this is to allow the loop in monitorRequestQueue do do sleeps in between
-  // checking the queue. The issue it solves is that the requests could all complete and the
-  // parallel requests terminate while there was still a timeout for the sleep - which could then
-  // call its callback when the next set of parallel requests had started.
+  async unmonitoredSleep(ms) {
+    await new Promise((resolve) => setTimeout(resolve, ms));
+  }
 
-  //console.log("monitorRequestQueue, starting sleep for: " + ms + " at time: " + Date.now());
-  monitoredSleepsInProgress++;
-  return new Promise((resolveTimeout) =>
-    setTimeout(function () {
-      monitoredSleepsInProgress--;
-      //console.log("monitorRequestQueue, sleep completed for: " + ms + " at time: " + Date.now());
-      resolveTimeout();
-    }, ms)
-  );
-}
+  async monitoredSleepForConcurrency() {
+    while (requestsTracker.inFlight >= queueResponseTracker.maxConcurrency) {
+      await this.unmonitoredSleep(10);
+    }
+  }
 
-async function waitForAnyMonitoredSleepsToComplete() {
-  while (monitoredSleepsInProgress) {
-    await doUnmonitoredSleep(1);
+  async waitForAnyMonitoredSleepsToComplete() {
+    while (this.sleepsInProgress) {
+      await this.unmonitoredSleep(10);
+    }
   }
 }
+
+var sleepMonitor = new SleepMonitor();
 
 const maxRetryCount = 4;
 
@@ -113,12 +109,14 @@ function resetQueueResponseTracker() {
 }
 
 const defaultQueueOptions = {
+  maxConcurrency: 10,
   initialWaitBetweenRequests: 1,
   maxWaitime: 3200,
   additionalRetryWaitime: 3200,
   additionalManyRecent429sWaitime: 5000,
   slowDownFromStartCount: 30,
   slowDownFromStartMult: 2,
+  maxJitter: 500,
 };
 var queueOptions = defaultQueueOptions;
 
@@ -150,6 +148,8 @@ function updateQueueTimingForResponse(response) {
       if (queueResponseTracker.waitBetweenRequests < queueOptions.maxWaitime) {
         queueResponseTracker.waitBetweenRequests *= 2;
       }
+
+      queueResponseTracker.maxConcurrency = 1;
     } else {
       queueResponseTracker.totalOtherError++;
     }
@@ -176,6 +176,8 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
     queueResponseTracker.waitBetweenRequests *= queueOptions.slowDownFromStartMult;
   }
 
+  queueResponseTracker.maxConcurrency = queueOptions.maxConcurrency;
+
   while (requestsTracker.receivedResponseCount != requestsTracker.expectedResponseCount) {
     if (requestQueue.length > 0) {
       let nextRequest = requestQueue.shift();
@@ -184,8 +186,12 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
       //console.log("monitorRequestQueue: matchingRequestState is:");
       //console.log(matchingRequestState);
 
+      if (requestsTracker.inFlight >= queueResponseTracker.maxConcurrency) {
+        await sleepMonitor.monitoredSleepForConcurrency();
+      }
+
       // if this request has had several retries already and the latest one was a 429
-      // then wait an additional time befor queueing it
+      // then wait an additional time before queueing it
       if (matchingRequestState.retryCount > 1 && matchingRequestState.statusCode == 429) {
         if (matchingRequestState.status && matchingRequestState.status.startsWith("retry")) {
           matchingRequestState.status = "waiting before " + matchingRequestState.status;
@@ -193,7 +199,7 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
           matchingRequestState.status = "waiting";
         }
         displayStatusMessage(resolve);
-        await doMonitoredSleep(queueOptions.additionalRetryWaitime);
+        await sleepMonitor.monitoredSleep(queueOptions.additionalRetryWaitime);
       }
 
       // if we have had several 429s in the last few responses then wait a bit extra
@@ -212,15 +218,17 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
           matchingRequestState.status = "waiting";
         }
         displayStatusMessage(resolve);
-        await doMonitoredSleep(queueOptions.additionalManyRecent429sWaitime);
+        await sleepMonitor.monitoredSleep(queueOptions.additionalManyRecent429sWaitime);
       } else {
-        await doMonitoredSleep(queueResponseTracker.waitBetweenRequests);
+        if (!requestsTracker.lastResponseWasCached) {
+          await sleepMonitor.monitoredSleep(queueResponseTracker.waitBetweenRequests);
+        }
       }
 
       doRequest(nextRequest);
     }
 
-    await doMonitoredSleep(1); // just to allow other tasks to run
+    await sleepMonitor.monitoredSleep(1); // just to allow other tasks to run
     if (queueResponseTracker.abortRequests) {
       break;
     }
@@ -333,7 +341,7 @@ async function terminateParallelRequests(resolve) {
   // requestsTracker.parallelRequestsId. It is posible there could be a race condition when a
   // fetch responded after we call reolve but before control returns to the caller but we haven't
   // seen that. If it happens we should wait for all outstanding fetches here.
-  await waitForAnyMonitoredSleepsToComplete();
+  await sleepMonitor.waitForAnyMonitoredSleepsToComplete();
 
   resetStaticCounts();
 
@@ -365,12 +373,18 @@ function handleRequestResponse(request, response, doRequest, resolve) {
   //console.log("in parallel_requests handleRequestResponse, matchingRequestState is:");
   //console.log(matchingRequestState);
 
+  requestsTracker.lastResponseWasCached = false;
+
   if (response.success) {
     if (matchingRequestState) {
       matchingRequestState.status = "completed";
       matchingRequestState.response = response;
     }
     requestsTracker.receivedResponseCount++;
+
+    if (response.wasInCache) {
+      requestsTracker.lastResponseWasCached = true;
+    }
 
     //console.log("in parallel_requests handleRequestResponse, requestsTracker is:");
     //console.log(requestsTracker);
@@ -458,6 +472,7 @@ function doRequestsInParallel(
   requestsTracker.parallelRequestsId++;
 
   requestsTracker.requestStates = [];
+  requestsTracker.inFlight = 0;
   for (let request of requests) {
     request.requestsTracker = requestsTracker.parallelRequestsId;
     let requestState = {
@@ -474,6 +489,8 @@ function doRequestsInParallel(
   return new Promise((resolve, reject) => {
     try {
       async function doRequest(request) {
+        requestsTracker.inFlight++;
+        //console.log("doRequest start, requestsTracker.inFlight increased to ", requestsTracker.inFlight);
         try {
           //console.log("doRequestsInParallel: calling requestFunction. request is:");
           //console.log(request);
@@ -490,6 +507,8 @@ function doRequestsInParallel(
           let response = { success: false, error: error };
           handleRequestResponse(request, response, doRequest, resolve);
         }
+        requestsTracker.inFlight--;
+        //console.log("doRequest end, requestsTracker.inFlight reduced to ", requestsTracker.inFlight);
       }
 
       clearRequestQueue();

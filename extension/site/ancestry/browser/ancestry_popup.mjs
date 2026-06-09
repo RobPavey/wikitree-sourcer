@@ -913,7 +913,9 @@ async function ancestryGetAllCitationsForSavePersonData(data) {
       data.allCitationsString = response.citationsString;
       data.allCitationsType = response.citationsStringType;
       data.allCitationsNoteMessage = getExcludedSourcesString(response, data);
-      data.allCitationsErrorMessage = getIncompleteCitationsString(response);
+      if (response.failureCount || response.linkedRecordFailureCount || response.sharingLinksFailureCount) {
+        data.allCitationsErrorMessage = getIncompleteCitationsString(response);
+      }
       return { success: true };
     } else {
       // If it fails we want to let the user know

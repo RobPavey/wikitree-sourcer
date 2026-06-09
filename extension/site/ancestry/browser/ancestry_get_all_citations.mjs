@@ -162,6 +162,10 @@ async function getExtractedAndGeneralizedData(source) {
       response.statusCode = fetchResult.statusCode;
       return response;
     }
+
+    if (fetchResult.wasInCache) {
+      response.wasInCache = true;
+    }
   } else {
     return response;
   }
@@ -231,10 +235,13 @@ async function getSourcerCitations(runDate, result, type, options) {
   }
 
   const queueOptions = {
-    initialWaitBetweenRequests: 1,
-    maxWaitime: 1600,
-    additionalRetryWaitime: 1600,
-    additionalManyRecent429sWaitime: 1600,
+    maxConcurrency: 1,
+    initialWaitBetweenRequests: 200,
+    maxWaitime: 10000,
+    additionalRetryWaitime: 3200,
+    additionalManyRecent429sWaitime: 5000,
+    slowDownFromStartCount: 7,
+    slowDownFromStartMult: 8,
   };
   const message = "WikiTree Sourcer fetching record for each source";
   let requestsResult = await doRequestsInParallel(requests, fetchSourceRequestFunction, queueOptions, message);
@@ -274,7 +281,7 @@ async function getSourcerCitations(runDate, result, type, options) {
     let response = await getSharingDataObj(input);
     return response;
   }
-  const sharingMessage = "WikiTree Sourcer fetching sharing link each source";
+  const sharingMessage = "WikiTree Sourcer fetching sharing link for each source";
   let sharingRequestsResult = await doRequestsInParallel(
     sharingRequests,
     getSharingObjRequestFunction,
