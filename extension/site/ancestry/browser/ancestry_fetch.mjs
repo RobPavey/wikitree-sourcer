@@ -199,6 +199,15 @@ async function fetchAncestryRecordPage(recordUrl) {
 
     //console.log("domain is: " + domain);
 
+    let discoveryRegex = /^(https?\:\/\/[^\.]+\.[^\/]+)\/discoveryui-content\/view\/([a-z0-9]+)\:([a-z0-9]+)$/;
+    if (discoveryRegex.test(recordUrl)) {
+      // https://www.ancestry.com/discoveryui-content/view/1903048:2352
+      // Redirects to: http://www.ancestry.com/search/collections/2352/records/1903048
+      // which redirects to: https://www.ancestry.com/search/collections/2352/records/1903048
+      // So avoid that network traffic by changing the URL here
+      recordUrl = recordUrl.replace(discoveryRegex, "$1/search/collections/$3/records/$2");
+    }
+
     let response = await fetch(recordUrl, {
       headers: {
         accept: "*/*",

@@ -236,12 +236,12 @@ async function getSourcerCitations(runDate, result, type, options) {
 
   const queueOptions = {
     maxConcurrency: 1,
-    initialWaitBetweenRequests: 200,
+    initialWaitBetweenRequests: 100,
     maxWaitime: 10000,
-    additionalRetryWaitime: 3200,
-    additionalManyRecent429sWaitime: 5000,
+    additionalRetryWaitime: 10000,
+    additionalManyRecent429sWaitime: 50000,
     slowDownFromStartCount: 7,
-    slowDownFromStartMult: 8,
+    slowDownFromStartMult: 5,
   };
   const message = "WikiTree Sourcer fetching record for each source";
   let requestsResult = await doRequestsInParallel(requests, fetchSourceRequestFunction, queueOptions, message);

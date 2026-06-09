@@ -30,6 +30,22 @@ import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permiss
 
 import { markHouseholdMembersToIncludeInTable } from "/base/core/table_builder.mjs";
 
+function pushLinkedRecord(linkedRecords, link, name) {
+  if (!link) {
+    return;
+  }
+
+  // this avoids a redirect
+  let newLink = link.replace(/^http\:\/\//, "https://");
+
+  let linkedRecord = {
+    link: newLink,
+    name: name,
+  };
+
+  linkedRecords.push(linkedRecord);
+}
+
 function extractDataFromHtml(htmlText, recordUrl) {
   //console.log("extractDataFromHtml, recordUrl is: " + recordUrl);
   //console.log("extractDataFromHtml, htmlText is: ");
@@ -133,12 +149,12 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
 
   const queueOptions = {
     maxConcurrency: 1,
-    initialWaitBetweenRequests: 200,
+    initialWaitBetweenRequests: 100,
     maxWaitime: 10000,
-    additionalRetryWaitime: 3200,
-    additionalManyRecent429sWaitime: 5000,
+    additionalRetryWaitime: 10000,
+    additionalManyRecent429sWaitime: 50000,
     slowDownFromStartCount: 7,
-    slowDownFromStartMult: 8,
+    slowDownFromStartMult: 5,
   };
   //console.log("getDataForLinkedRecords, about to call doRequestsInParallel, requests is:");
   //console.log(requests);
@@ -240,14 +256,14 @@ async function getDataForLinkedHouseholdRecords(data, processfunction, options) 
         if (!name) {
           name = "Unknown name";
         }
-        linkedRecords.push({ link: member.uid, name: name });
+        pushLinkedRecord(linkedRecords, member.uid, name);
       }
     }
   }
 
   if (linkedRecords.length > 0) {
-    //console.log("getDataForLinkedHouseholdRecords. calling getDataForLinkedRecords, linkedRecords is:");
-    //console.log(linkedRecords);
+    console.log("getDataForLinkedHouseholdRecords. calling getDataForLinkedRecords, linkedRecords is:");
+    console.log(linkedRecords);
     getDataForLinkedRecords(data, linkedRecords, processfunction);
   } else {
     //console.log("getDataForLinkedHouseholdRecords. calling processfunction directly");
@@ -268,54 +284,19 @@ async function processWithFetchedLinkData(data, processFunction, tabId) {
   if (linkData && role) {
     // there is a role so this is not the primary person.
     if (role == "Parent") {
-      let childLink = linkData["Child"];
-      if (childLink) {
-        linkedRecords.push({
-          link: childLink,
-          name: "Child",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Child"], "Child");
     } else if (role == "Child") {
-      let fatherLink = linkData["Father"];
-      if (fatherLink) {
-        linkedRecords.push({
-          link: fatherLink,
-          name: "Father",
-        });
-      }
-      let motherLink = linkData["Mother"];
-      if (motherLink) {
-        linkedRecords.push({
-          link: motherLink,
-          name: "Mother",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Father"], "Father");
+      pushLinkedRecord(linkedRecords, linkData["Mother"], "Mother");
     } else if (role == "Sibling") {
-      let childLink = linkData["Siblings"];
-      if (childLink) {
-        linkedRecords.push({
-          link: childLink,
-          name: "Siblings",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Siblings"], "Siblings");
     } else if (role == "Spouse") {
-      let childLink = linkData["Spouse"];
-      if (childLink) {
-        linkedRecords.push({
-          link: childLink,
-          name: "Spouse",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Spouse"], "Spouse");
     }
   } else if (data.extractedData.household && role) {
     if (data.extractedData.household.members.length > 1) {
       let primaryMember = data.extractedData.household.members[0];
-      if (primaryMember.link) {
-        linkedRecords.push({
-          link: primaryMember.link,
-          name: "Primary person",
-        });
-      }
+      pushLinkedRecord(linkedRecords, primaryMember.link, "Primary person");
     }
   }
 
@@ -347,7 +328,7 @@ async function getDataForCitationAndHouseholdRecords(data, processfunction, opti
         if (!name) {
           name = "Unknown name";
         }
-        linkedRecords.push({ link: member.uid, name: name });
+        pushLinkedRecord(linkedRecords, member.uid, name);
       }
     }
   }
@@ -357,28 +338,10 @@ async function getDataForCitationAndHouseholdRecords(data, processfunction, opti
   if (linkData && role) {
     // there is a role so this is not the primary person.
     if (role == "Parent") {
-      let childLink = linkData["Child"];
-      if (childLink) {
-        linkedRecords.push({
-          link: childLink,
-          name: "Child",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Child"], "Child");
     } else if (role == "Child") {
-      let fatherLink = linkData["Father"];
-      if (fatherLink) {
-        linkedRecords.push({
-          link: fatherLink,
-          name: "Father",
-        });
-      }
-      let motherLink = linkData["Mother"];
-      if (motherLink) {
-        linkedRecords.push({
-          link: motherLink,
-          name: "Mother",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Father"], "Father");
+      pushLinkedRecord(linkedRecords, linkData["Mother"], "Mother");
     }
   }
 

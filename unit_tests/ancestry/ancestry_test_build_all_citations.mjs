@@ -52,6 +52,22 @@ import {
 
 import { loadExtractDataInWrapper } from "../test_utils/test_extract_data_utils.mjs";
 
+function pushLinkedRecord(linkedRecords, link, name) {
+  if (!link) {
+    return;
+  }
+
+  // this avoids a redirect
+  let newLink = link.replace(/^http\:\/\//, "https://");
+
+  let linkedRecord = {
+    link: newLink,
+    name: name,
+  };
+
+  linkedRecords.push(linkedRecord);
+}
+
 function testLinkedHouseholdRecords(source, savedData, options) {
   let gd = source.generalizedData;
 
@@ -67,7 +83,7 @@ function testLinkedHouseholdRecords(source, savedData, options) {
         if (!name) {
           name = "Unknown name";
         }
-        linkedRecords.push({ link: member.uid, name: name });
+        pushLinkedRecord(linkedRecords, member.uid, name);
       }
     }
   }
@@ -93,54 +109,19 @@ function testFetchedLinkData(source, savedData) {
   if (linkData && role) {
     // there is a role so this is not the primary person.
     if (role == "Parent") {
-      let childLink = linkData["Child"];
-      if (childLink) {
-        linkedRecords.push({
-          link: childLink,
-          name: "Child",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Child"], "Child");
     } else if (role == "Child") {
-      let fatherLink = linkData["Father"];
-      if (fatherLink) {
-        linkedRecords.push({
-          link: fatherLink,
-          name: "Father",
-        });
-      }
-      let motherLink = linkData["Mother"];
-      if (motherLink) {
-        linkedRecords.push({
-          link: motherLink,
-          name: "Mother",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Father"], "Father");
+      pushLinkedRecord(linkedRecords, linkData["Mother"], "Mother");
     } else if (role == "Sibling") {
-      let childLink = linkData["Siblings"];
-      if (childLink) {
-        linkedRecords.push({
-          link: childLink,
-          name: "Siblings",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Siblings"], "Siblings");
     } else if (role == "Spouse") {
-      let childLink = linkData["Spouse"];
-      if (childLink) {
-        linkedRecords.push({
-          link: childLink,
-          name: "Spouse",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Spouse"], "Spouse");
     }
   } else if (source.extractedData.household && role) {
     if (source.extractedData.household.members.length > 1) {
       let primaryMember = source.extractedData.household.members[0];
-      if (primaryMember.link) {
-        linkedRecords.push({
-          link: primaryMember.link,
-          name: "Primary person",
-        });
-      }
+      pushLinkedRecord(linkedRecords, primaryMember.link, "Primary person");
     }
   }
 

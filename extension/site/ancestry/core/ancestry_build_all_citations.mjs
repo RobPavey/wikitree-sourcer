@@ -443,6 +443,7 @@ function filterSourceIdsToSources(result, sourceIds, options) {
   result.sources = [];
 
   for (let sourceId of uniqueSourceIds) {
+    // Note we used to do this:
     let recordUrl = result.urlStart + "/discoveryui-content/view/" + sourceId.recordId + ":" + sourceId.dbId;
     let source = {
       recordUrl: recordUrl,
