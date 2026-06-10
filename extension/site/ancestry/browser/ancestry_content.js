@@ -639,8 +639,10 @@ chrome.runtime.sendMessage(
     if (response && response.success) {
       const options = response.options;
       if (options) {
-        if (options.citation_ancestry_addEditCitationButton) {
-          addEditCitationButton();
+        if (options.ui_pageMods_allowPageMods) {
+          if (options.citation_ancestry_addEditCitationButton) {
+            addEditCitationButton();
+          }
         }
       }
     }

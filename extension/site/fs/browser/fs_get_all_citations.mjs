@@ -89,7 +89,14 @@ async function getSourcerCitation(runDate, source, type, sessionId, options, upd
   buildSourcerCitation(runDate, source, type, options);
 
   if (fetchFailed) {
-    return { success: false };
+    let result = { success: false };
+    source.fetchStatus = {
+      success: false,
+    };
+    if (fetchResult.status) {
+      source.fetchStatus.statusCode = fetchResult.status;
+    }
+    return result;
   }
 
   return { success: true };
@@ -153,7 +160,7 @@ async function fsGetAllCitations(input) {
     return result;
   }
 
-  let sourcesObj = await fetchFsSourcesJson(ed.sourceIds);
+  let sourcesObj = await fetchFsSourcesJson(ed.sourceIds, sessionId);
   let retryCount = 0;
   while (retryCount < 3 && !sourcesObj.success && sourcesObj.allowRetry) {
     retryCount++;

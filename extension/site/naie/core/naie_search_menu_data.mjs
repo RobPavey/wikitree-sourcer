@@ -36,6 +36,7 @@ const collections = [
   { value: "1851", text: "1851 Census", subcategory: "census" },
   { value: "1901", text: "1901 Census", subcategory: "census" },
   { value: "1911", text: "1911 Census", subcategory: "census" },
+  { value: "1926", text: "1926 Census", subcategory: "census" },
 ];
 
 function setLastNameForYear(generalizedData, yearString, parameters) {

@@ -293,7 +293,7 @@ async function parallelRequestsDisplayErrorsMessage(actionName) {
   }
   baseMessage += "\nPress continue to use what could be retrieved.\n";
   baseMessage +=
-    "\nNote: Sourcer caches the data that was retreived, so if you press continue and then wait a few seconds and try again you may be able to get all of the records and thus get a full list of citations.\n";
+    "\nNote: Sourcer caches the data that was retrieved, so if you press continue and then wait a few seconds and try again you may be able to get all of the records and thus get a full list of citations.\n";
 
   let message2 = "";
   for (let requestState of requestsTracker.requestStates) {
