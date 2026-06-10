@@ -745,7 +745,8 @@ function getExcludedSourcesString(response, data) {
 function getIncompleteCitationsString(response) {
   let message = "";
 
-  message += "\nWarning: Some data could not be retrieved from Ancestry so the citations may be incomplete.";
+  message +=
+    "\nWarning: Some data could not be retrieved from Ancestry so the citations may be incomplete or excluded.";
   if (response.failureCount) {
     if (response.failureCount == 1) {
       message += "\n\nThere was " + response.failureCount + " failure getting sources";
@@ -768,21 +769,24 @@ function getIncompleteCitationsString(response) {
     }
   }
 
-  for (let source of response.sources) {
-    if (source.fetchStatus && !source.fetchStatus.success) {
-      let status = source.fetchStatus.statusCode;
-      let title = source.title;
-      let uri = source.recordUrl;
-      let reason = " could not be fetched";
-      if (status == 410) {
-        reason = " has been removed from the FamilySearch site";
-      }
-      message += `\n• Source "${title} with URL ${uri} ${reason} (status code: ${status})`;
+  let error429count = 0;
+  for (let source of response.fetchFailedSources) {
+    let status = source.fetchStatus.statusCode;
+    let title = source.title;
+    let uri = source.recordUrl;
+    let reason = " could not be fetched";
+    if (status == 410) {
+      reason = " has been removed from the site";
+    } else if (status == 429) {
+      error429count++;
     }
+    message += `\n• Source "${title} with URL ${uri} ${reason} (status code: ${status})`;
   }
 
-  message +=
-    "\n\n⚠️ Note: Sourcer caches the data that was retrieved, so if you wait a few seconds and try again you may be able to get all of the records and thus get a full list of citations.\n";
+  if (error429count) {
+    message +=
+      "\n\n⚠️ Note: Sourcer caches the data that was retrieved, so if you wait a few seconds and try again you may be able to get all of the records that got 429 errors.\n";
+  }
 
   return message;
 }

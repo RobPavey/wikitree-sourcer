@@ -257,23 +257,21 @@ function getIncompleteCitationsString(response) {
   let message = "";
 
   message +=
-    "\nWarning: Some data could not be retrieved from FamilySearch so the citations may be incomplete. See below:";
+    "\nWarning: Some data could not be retrieved from FamilySearch so the citations may be incomplete or excluded. See below:";
   if (response.failureCount == 1) {
     message += "\n\nThere was " + response.failureCount + " failure getting sources:";
   } else {
     message += "\n\nThere were " + response.failureCount + " failures getting sources:";
   }
-  for (let source of response.sources) {
-    if (source.fetchStatus && !source.fetchStatus.success) {
-      let status = source.fetchStatus.statusCode;
-      let title = source.title;
-      let uri = source.uri;
-      let reason = " could not be fetched";
-      if (status == 410) {
-        reason = " has been removed from the FamilySearch site";
-      }
-      message += `\n• Source "${title} with URL ${uri} ${reason} (status code: ${status})`;
+  for (let source of response.fetchFailedSources) {
+    let status = source.fetchStatus.statusCode;
+    let title = source.title;
+    let uri = source.uri;
+    let reason = " could not be fetched";
+    if (status == 410) {
+      reason = " has been removed from the FamilySearch site";
     }
+    message += `\n• Source "${title} with URL ${uri} ${reason} (status code: ${status})`;
   }
 
   return message;

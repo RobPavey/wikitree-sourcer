@@ -135,6 +135,21 @@ async function getSourcerCitations(runDate, result, type, sessionId, options) {
 
   result.failureCount = requestsResult.failureCount;
 
+  if (result.failureCount) {
+    let prunedSources = [];
+    let failedSources = [];
+    for (let source of result.sources) {
+      if (source.fetchStatus && !source.fetchStatus.success) {
+        failedSources.push(source);
+      } else {
+        prunedSources.push(source);
+      }
+    }
+
+    result.sources = prunedSources;
+    result.fetchFailedSources = failedSources;
+  }
+
   buildSourcerCitations(result, type, options);
 }
 

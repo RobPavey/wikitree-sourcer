@@ -1304,7 +1304,6 @@ function setupBuildCitationSubMenu(
   let needsRefTitle = manualClassification.isRefTitleNeeded;
 
   // This is used for submenu list - it is not as advanced as GeneraizedData.getRefTitle.
-  // This isn't alphabetical order
   const rtToRefTitle = {
     Unclassified: "Unknown",
     Apprenticeship: "Apprenticeship",
@@ -1315,6 +1314,7 @@ function setupBuildCitationSubMenu(
     Burial: "Burial",
     Certificate: "Certificate",
     Census: "Census",
+    ChurchRecords: "Church Records",
     ConvictTransportation: "Convict Transportation",
     CrewList: "Crew List",
     CriminalRegister: "Criminal Register",
@@ -1351,7 +1351,6 @@ function setupBuildCitationSubMenu(
     NonpopulationCensus: "Nonpopulation Census",
     Obituary: "Obituary",
     OtherChurchEvent: "Other Church Event",
-    ChurchRecords: "Church Records",
     PassengerList: "Passenger List",
     PassportApplication: "Passport Application",
     Pension: "Pension",

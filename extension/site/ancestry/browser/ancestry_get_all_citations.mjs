@@ -320,6 +320,21 @@ async function getSourcerCitations(runDate, result, type, options) {
     }
   }
 
+  // prune out failed source so we don't build citations for them
+  if (result.failureCount) {
+    let prunedSources = [];
+    let failedSources = [];
+    for (let source of result.sources) {
+      if (source.fetchStatus && !source.fetchStatus.success) {
+        failedSources.push(source);
+      } else {
+        prunedSources.push(source);
+      }
+    }
+    result.sources = prunedSources;
+    result.fetchFailedSources = failedSources;
+  }
+
   //console.log("getSourcerCitations: before buildSourcerCitations, result is:");
   //console.log(result);
 
