@@ -227,6 +227,7 @@ async function getSourcerCitations(runDate, result, type, options) {
 
     updateStatusFunction("fetching...");
     let response = await getExtractedAndGeneralizedData(input);
+    updateStatusFunction("fetch responded");
 
     //console.log("getSourcerCitations, requestFunction, response is:");
     //console.log(response);

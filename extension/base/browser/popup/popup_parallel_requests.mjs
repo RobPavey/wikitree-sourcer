@@ -221,7 +221,14 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
         await sleepMonitor.monitoredSleep(queueOptions.additionalManyRecent429sWaitime);
       } else {
         if (!requestsTracker.lastResponseWasCached) {
-          await sleepMonitor.monitoredSleep(queueResponseTracker.waitBetweenRequests);
+          let waitTime = queueResponseTracker.waitBetweenRequests;
+          // subtract the time that the request actually took to respond
+          if (requestsTracker.lastRequestTime) {
+            waitTime -= requestsTracker.lastRequestTime;
+          }
+          if (waitTime > 0) {
+            await sleepMonitor.monitoredSleep(queueResponseTracker.waitBetweenRequests);
+          }
         }
       }
 
@@ -494,9 +501,12 @@ function doRequestsInParallel(
         try {
           //console.log("doRequestsInParallel: calling requestFunction. request is:");
           //console.log(request);
+          let startTime = Date.now();
           let response = await requestFunction(request.input, function (status) {
             updateStatusForRequest(request, status, resolve);
           });
+          let endTime = Date.now();
+          requestsTracker.lastRequestTime = endTime - startTime;
           //console.log("doRequestsInParallel: requestFunction returned. response is:");
           //console.log(response);
 
