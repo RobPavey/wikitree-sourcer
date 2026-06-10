@@ -627,6 +627,11 @@ const imageRegressionData = [
     url: "https://www.familysearch.org/search/catalog/549079?availability=Family%20History%20Library",
   },
   {
+    // Was getting a title of "Image Viewer"
+    caseName: "image_us_de_land_records",
+    url: "https://www.familysearch.org/ark:/61903/3:1:3QS7-99WC-VH6B?cc=2078654&wc=M7HT-Z29%3A358133901%2C358577801&lang=en&i=41",
+  },
+  {
     // Note: I had to edit the saved .html file for many errors.
     caseName: "image_us_ky_marriage_1821",
     url: "https://www.familysearch.org/ark:/61903/3:1:3QS7-89SS-998T?i=31&cc=1804888",

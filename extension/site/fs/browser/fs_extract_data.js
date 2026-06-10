@@ -237,7 +237,7 @@ function extractDataForImageInNewViewer(document, result) {
   //console.log("titleSpan is:");
   //console.log(titleSpan);
 
-  if (titleSpan) {
+  if (titleSpan && titleSpan.textContent.trim() != "Image Viewer") {
     let title = titleSpan.textContent.trim();
     if (title) {
       result.filmTitle = title;
@@ -245,13 +245,21 @@ function extractDataForImageInNewViewer(document, result) {
   } else {
     // newer format is different
     let wayFindingLink1 = mainNode.querySelector("nav[aria-label='Waypoints'] a[wayfinding]");
-    if (!wayFindingLink1) {
+    if (!wayFindingLink1 || wayFindingLink1.getAttribute("href").length < 30) {
+      // June 2026: https://www.familysearch.org/ark:/61903/3:1:3QS7-99WC-VH6B?cc=2078654&wc=M7HT-Z29%3A358133901%2C358577801&lang=en&i=41
+      wayFindingLink1 = mainNode.querySelector("nav[aria-label='Waypoints'] a[data-wayfinding]");
+    }
+    if (!wayFindingLink1 || wayFindingLink1.getAttribute("href").length < 30) {
       // can't rely on aria-label as it changes with language
       wayFindingLink1 = mainNode.querySelector("nav a[wayfinding]");
     }
+    if (!wayFindingLink1 || wayFindingLink1.getAttribute("href").length < 30) {
+      // June 2026: https://www.familysearch.org/ark:/61903/3:1:3QS7-99WC-VH6B?cc=2078654&wc=M7HT-Z29%3A358133901%2C358577801&lang=en&i=41
+      wayFindingLink1 = mainNode.querySelector("nav a[data-wayfinding]");
+    }
     if (wayFindingLink1) {
       let title = wayFindingLink1.textContent.trim();
-      if (title) {
+      if (title && title != "Image Viewer") {
         result.filmTitle = title;
       }
     }

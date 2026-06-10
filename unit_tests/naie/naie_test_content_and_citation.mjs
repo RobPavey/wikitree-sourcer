@@ -97,6 +97,10 @@ const regressionData = [
     url: "http://www.census.nationalarchives.ie/pages/1901/Clare/Ballynacally/Inishmore_on_Deen_Island/1075611/",
   },
   {
+    caseName: "census_1901_rachel_greenwood",
+    url: "https://www.census.nationalarchives.ie/pages/1901/Antrim/Shankhill/Tudor_Place/950389/",
+  },
+  {
     caseName: "census_1901_william_gunson_2025",
     url: "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1901&surname__icontains=Gunson&firstname__icontains=William&county=Tipperary&id=8161089",
   },
@@ -115,6 +119,10 @@ const regressionData = [
   {
     caseName: "census_1911_waterford_john_long",
     url: "http://www.census.nationalarchives.ie/pages/1911/Waterford/Waterford_No__2_Urban/Spring_Garden_Alley/670431/",
+  },
+  {
+    caseName: "census_1926_laois_brigid_foy",
+    url: "https://nationalarchives.ie/collections/search-the-1926-census/census-record/#census_year=1926&surname__icontains=Foy&updated_sex=F&updated_age__gte=19&updated_age__lte=23&updated_religion=Roman+Catholic&townland=Sleaty&a_id=794186",
   },
   {
     caseName: "will_1876_james_betts_2025",

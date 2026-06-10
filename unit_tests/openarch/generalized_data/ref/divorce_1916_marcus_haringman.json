@@ -1,0 +1,42 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "name": {
+    "forenames": "Marcus",
+    "lastName": "Haringman"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "27 Mar 1916"
+  },
+  "eventPlace": {
+    "placeString": "Amsterdam, Noord-Holland, Nederland",
+    "country": "Nederland"
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Roosje",
+        "lastName": "Bolle"
+      },
+      "marriageDate": {
+        "dateString": "19-11-1902"
+      },
+      "marriagePlace": {
+        "placeString": "Amsterdam",
+        "country": "Nederland"
+      },
+      "personGender": "female"
+    }
+  ],
+  "collectionData": {
+    "id": "BS Huwelijk",
+    "nameParts": {
+      "forenames": "Marcus",
+      "lastName": "Haringman"
+    },
+    "place": "Amsterdam"
+  },
+  "hasValidData": true
+}
