@@ -1153,9 +1153,9 @@ async function getWikiTreeMergeEditData(data, personData, citationObject) {
   // change explanation
   let fromString = "";
   if (citationObject) {
-    fromString = getCitationObjectExplanationText(personGd, otherSiteData);
+    fromString = getCitationObjectExplanationText(personEd, personGd, otherSiteData);
   } else if (personGd.sourceType == "profile") {
-    fromString = getPersonDataExplanationText(personGd, otherSiteData);
+    fromString = getPersonDataExplanationText(personEd, personGd, otherSiteData);
   }
   if (fromString) {
     result.changeExplanation = "Merge external data for " + fromString + " via WikiTree Sourcer";
@@ -1862,9 +1862,9 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
   // change explanation
   let fromString = "";
   if (citationObject) {
-    fromString = getCitationObjectExplanationText(personGd, otherSiteData);
+    fromString = getCitationObjectExplanationText(personEd, personGd, otherSiteData);
   } else if (personGd.sourceType == "profile") {
-    fromString = getPersonDataExplanationText(personGd, otherSiteData);
+    fromString = getPersonDataExplanationText(personEd, personGd, otherSiteData);
   }
   if (fromString) {
     result.changeExplanation = "Add using external data for " + fromString + " via WikiTree Sourcer";
@@ -2118,7 +2118,22 @@ async function mergeEditFromPersonData(data, personData, citationObject, tabId, 
   checkWtPersonData(wtPersonData, processFunction, backFunction);
 }
 
-function getPersonDataExplanationText(gd, otherSiteData) {
+function addToExplanationText(text, toAdd) {
+  if (!toAdd) {
+    return text;
+  }
+
+  // Don't know if there is an internal limit on WikiTree
+  // Here is an example we may want to use:
+  // Merge external data for Harry Alfred Pavey (1852-1914) from Ancestry profile https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199474/facts via WikiTree Sourcer
+  const lengthLimit = 250;
+  if (text.length + toAdd.length <= lengthLimit) {
+    return text + toAdd;
+  }
+  return text;
+}
+
+function getPersonDataExplanationText(ed, gd, otherSiteData) {
   let name = gd.inferFullName();
   if (!name) {
     name = "Unknown";
@@ -2135,23 +2150,25 @@ function getPersonDataExplanationText(gd, otherSiteData) {
     deathYear = "";
   }
   if (birthYear || deathYear) {
-    text += " (" + birthYear + "-" + deathYear + ")";
+    text = addToExplanationText(text, " (" + birthYear + "-" + deathYear + ")");
   }
 
   let externalSiteName = gd.sourceOfData;
   if (otherSiteData) {
     externalSiteName = otherSiteData.repositoryName;
   }
-  text += " from " + externalSiteName;
+  text = addToExplanationText(text, " from " + externalSiteName);
 
   if (gd.personRepoRef) {
-    text += " profile " + gd.personRepoRef;
+    text = addToExplanationText(text, " profile " + gd.personRepoRef);
+  } else {
+    text = addToExplanationText(text, " profile " + ed.url);
   }
 
   return text;
 }
 
-function getCitationObjectExplanationText(gd, otherSiteData) {
+function getCitationObjectExplanationText(ed, gd, otherSiteData) {
   let name = gd.inferFullName();
   if (!name) {
     name = "Unknown";
@@ -2168,16 +2185,16 @@ function getCitationObjectExplanationText(gd, otherSiteData) {
     deathYear = "";
   }
   if (birthYear || deathYear) {
-    text += " (" + birthYear + "-" + deathYear + ")";
+    text = addToExplanationText(text, " (" + birthYear + "-" + deathYear + ")");
   }
 
-  text += ". Record type: " + gd.recordType;
+  text = addToExplanationText(text, ". Record type: " + gd.recordType);
 
   let externalSiteName = gd.sourceOfData;
   if (otherSiteData) {
     externalSiteName = otherSiteData.repositoryName;
   }
-  text += " from " + externalSiteName;
+  text = addToExplanationText(text, " from " + externalSiteName);
 
   return text;
 }
