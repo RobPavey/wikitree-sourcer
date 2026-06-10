@@ -32,9 +32,14 @@ function buildSearchUrl(buildUrlInput) {
   const parameters = buildUrlInput.searchParameters;
   const options = buildUrlInput.options;
 
-  const usePre2025Site = options.search_naie_usePre2025Site;
+  let usePre2025Site = options.search_naie_usePre2025Site;
+  let search1926Census = false;
+  if (parameters.collection == "1926") {
+    usePre2025Site = false;
+    search1926Census = true;
+  }
 
-  var builder = new NaieUriBuilder(usePre2025Site);
+  var builder = new NaieUriBuilder(usePre2025Site, search1926Census);
 
   builder.addYear(parameters.collection);
 

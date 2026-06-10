@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1926 Census''':\n\"1926 Census of Ireland\"<br/>\nThe National Archives of Ireland<br/>\n[https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Sleaty_2408_0014_0015_0_00029.pdf National Archives of Ireland Image] - [https://nationalarchives.ie/collections/search-the-1926-census/census-record/#census_year=1926&surname__icontains=Foy&updated_sex=F&updated_age__gte=19&updated_age__lte=23&updated_religion=Roman+Catholic&townland=Sleaty&a_id=794186 National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nBrigid Foy (20), single daughter, in household of Michael Foy (63) in Sleaty, Graigue Rural, Laois, Ireland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1926 census Brigid (age 20) was the unmarried daughter of Michael Foy in Sleaty, Graigue Rural, Laois, Ireland.<ref>\n'''1926 Census''':\n\"1926 Census of Ireland\"<br/>\nThe National Archives of Ireland<br/>\n[https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Sleaty_2408_0014_0015_0_00029.pdf National Archives of Ireland Image] - [https://nationalarchives.ie/collections/search-the-1926-census/census-record/#census_year=1926&surname__icontains=Foy&updated_sex=F&updated_age__gte=19&updated_age__lte=23&updated_religion=Roman+Catholic&townland=Sleaty&a_id=794186 National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nBrigid Foy (20), single daughter, in household of Michael Foy (63) in Sleaty, Graigue Rural, Laois, Ireland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1926 Census''': \"1926 Census of Ireland\"<br/>The National Archives of Ireland<br/>[https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Sleaty_2408_0014_0015_0_00029.pdf National Archives of Ireland Image] - [https://nationalarchives.ie/collections/search-the-1926-census/census-record/#census_year=1926&surname__icontains=Foy&updated_sex=F&updated_age__gte=19&updated_age__lte=23&updated_religion=Roman+Catholic&townland=Sleaty&a_id=794186 National Archives of Ireland Record] (accessed 6 May 2021)<br/>Brigid Foy (20), single daughter, in household of Michael Foy (63) in Sleaty, Graigue Rural, Laois, Ireland.",
+    "type": "source"
+  }
+}

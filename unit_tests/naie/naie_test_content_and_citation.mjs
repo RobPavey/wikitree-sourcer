@@ -117,6 +117,10 @@ const regressionData = [
     url: "http://www.census.nationalarchives.ie/pages/1911/Waterford/Waterford_No__2_Urban/Spring_Garden_Alley/670431/",
   },
   {
+    caseName: "census_1926_laois_brigid_foy",
+    url: "https://nationalarchives.ie/collections/search-the-1926-census/census-record/#census_year=1926&surname__icontains=Foy&updated_sex=F&updated_age__gte=19&updated_age__lte=23&updated_religion=Roman+Catholic&townland=Sleaty&a_id=794186",
+  },
+  {
     caseName: "will_1876_james_betts_2025",
     url: "https://www.willcalendars.nationalarchives.ie/search/cwa/details.jsp?id=1639538416",
   },
