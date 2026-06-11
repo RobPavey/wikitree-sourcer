@@ -2123,10 +2123,8 @@ function addToExplanationText(text, toAdd) {
     return text;
   }
 
-  // Don't know if there is an internal limit on WikiTree
-  // Here is an example we may want to use:
-  // Merge external data for Harry Alfred Pavey (1852-1914) from Ancestry profile https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199474/facts via WikiTree Sourcer
-  const lengthLimit = 250;
+  // The text input limits to 150 chars so we should respect that
+  const lengthLimit = 150;
   if (text.length + toAdd.length <= lengthLimit) {
     return text + toAdd;
   }
@@ -2161,6 +2159,8 @@ function getPersonDataExplanationText(ed, gd, otherSiteData) {
 
   if (gd.personRepoRef) {
     text = addToExplanationText(text, " profile " + gd.personRepoRef);
+  } else if (ed.ancestryTemplate) {
+    text = addToExplanationText(text, " profile " + ed.ancestryTemplate);
   } else {
     text = addToExplanationText(text, " profile " + ed.url);
   }

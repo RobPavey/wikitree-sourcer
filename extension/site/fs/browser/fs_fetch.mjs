@@ -114,9 +114,9 @@ async function fetchFsSourcesJson(sourceIdList, sessionId) {
   return { success: false };
 }
 
-async function fetchRecord(fetchUrl, sessionId) {
-  //console.log("fetchRecord, fetchUrl is: " + fetchUrl);
-  //console.log("fetchRecord, sessionId is: " + sessionId);
+async function fetchRecordJson(fetchUrl, sessionId) {
+  //console.log("fetchRecordJson, fetchUrl is: " + fetchUrl);
+  //console.log("fetchRecordJson, sessionId is: " + sessionId);
 
   if (!fetchUrl.includes("familysearch.org/")) {
     return { success: false };
@@ -151,7 +151,7 @@ async function fetchRecord(fetchUrl, sessionId) {
     //console.log("doFetch, response.status is: " + response.status);
 
     if (response.status !== 200) {
-      console.log("fetchRecord: Looks like there was a problem. Status Code: " + response.status);
+      console.log("fetchRecordJson: Looks like there was a problem. Status Code: " + response.status);
       let result = {
         success: false,
         errorCondition: "FetchError",
@@ -197,4 +197,97 @@ async function fetchRecord(fetchUrl, sessionId) {
   }
 }
 
-export { fetchFsSourcesJson, fetchRecord };
+function extractDataFromHtml(htmlText, url) {
+  //console.log("extractDataFromHtml, url is: " + url);
+  //console.log("extractDataFromHtml, htmlText is: ");
+  //console.log(htmlText);
+
+  let parser = new DOMParser();
+  let document = parser.parseFromString(htmlText, "text/html");
+  //console.log("document is:");
+  //console.log(document);
+
+  let extractedData = extractData(document, url);
+
+  return extractedData;
+}
+
+async function fetchRecordHtml(fetchUrl, sessionId) {
+  //console.log("fetchRecordJson, fetchUrl is: " + fetchUrl);
+  //console.log("fetchRecordJson, sessionId is: " + sessionId);
+
+  if (!fetchUrl.includes("familysearch.org/")) {
+    return { success: false };
+  }
+
+  fetchUrl = fetchUrl.replace(/\/familysearch.org/, "/www.familysearch.org");
+
+  //console.log("doFetch, fetchUrl is: " + fetchUrl);
+
+  let fetchOptionsHeaders = {
+    accept: "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    from: "fsSearch.record.getGedcomX@familysearch.org",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    authorization: "Bearer " + sessionId,
+  };
+
+  let fetchOptions = {
+    headers: fetchOptionsHeaders,
+    referrerPolicy: "strict-origin-when-cross-origin",
+    body: null,
+    method: "GET",
+    mode: "cors",
+    credentials: "include",
+  };
+
+  try {
+    let response = await fetch(fetchUrl, fetchOptions);
+
+    //console.log("doFetch, response.status is: " + response.status);
+
+    if (response.status !== 200) {
+      console.log("fetchRecordJson: Looks like there was a problem. Status Code: " + response.status);
+      let result = {
+        success: false,
+        errorCondition: "FetchError",
+        status: response.status,
+        allowRetry: true,
+      };
+      if (response.status == 410) {
+        // this means the record has been permanently deleted
+        result.allowRetry = false;
+      }
+      return result;
+    }
+
+    let htmlText = await response.text();
+
+    //console.log("doFetch: response text is:");
+    //console.log(jsonData);
+
+    if (!htmlText || htmlText[0] != "{") {
+      console.log("The response text does not look like HTML");
+      //console.log(jsonData);
+      return { success: false, errorCondition: "NotHTML" };
+    }
+
+    let extractedData = extractDataFromHtml(htmlText, fetchUrl);
+
+    //console.log("dataObj is:");
+    //console.log(dataObj);
+
+    let result = {};
+    result.extractedData = extractedData;
+    result.success = true;
+    return result;
+  } catch (error) {
+    console.log("fetch failed, error is:");
+    console.log(error);
+    return { success: false };
+  }
+}
+
+export { fetchFsSourcesJson, fetchRecordJson, fetchRecordHtml };

@@ -38,6 +38,7 @@ import {
   buildSourcerCitation,
   buildSourcerCitations,
   buildFsPlainCitations,
+  pruneSources,
 } from "../../extension/site/fs/core/fs_build_all_citations.mjs";
 
 async function testGetSourcerCitation(runDate, savedData, source, type, options, extractDataFromFetch) {
@@ -68,6 +69,8 @@ async function testGetSourcerCitations(runDate, savedData, result, type, options
   for (let source of result.sources) {
     await testGetSourcerCitation(runDate, savedData, source, type, options, extractDataFromFetch);
   }
+
+  pruneSources(result, options);
 
   buildSourcerCitations(result, type, options);
 }

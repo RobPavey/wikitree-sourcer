@@ -246,7 +246,12 @@ function getExcludedSourcesString(response) {
     "due to option settings because the source person was not a primary person for the event."
   );
 
-  addMessage(response.numExcludedDuplicateSources, "due to option settings because the source is a duplicate.");
+  addMessage(
+    response.numExcludedRetiredSources,
+    "due to option settings because the source is marked as a retired duplicate source."
+  );
+
+  addMessage(response.numExcludedDuplicateSources, "because the source is a duplicate.");
 
   addMessage(response.numExcludedTreeSources, "because the source just references another family tree.");
 

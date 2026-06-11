@@ -865,8 +865,6 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
               " excluded due to option settings because the source person was not a primary person for the event.";
           }
 
-          numExcludedDuplicateSources;
-
           displayMessageWithIcon("warning", message, message2);
         }
       }

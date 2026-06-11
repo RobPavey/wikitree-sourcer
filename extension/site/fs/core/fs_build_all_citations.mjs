@@ -821,6 +821,37 @@ function doesCitationWantHouseholdTable(citationType, generalizedData, options) 
   return false;
 }
 
+function buildSourcerCitationGivenGd(runDate, source, type, options) {
+  let extractedData = source.extractedData;
+  let generalizedData = source.generalizedData;
+
+  let householdTableString = "";
+  if (doesCitationWantHouseholdTable(type, generalizedData, options)) {
+    const tableInput = {
+      extractedData: extractedData,
+      generalizedData: generalizedData,
+      dataCache: undefined,
+      options: options,
+    };
+
+    const tableObject = buildHouseholdTable(tableInput);
+    householdTableString = tableObject.tableString;
+  }
+
+  const input = {
+    extractedData: extractedData,
+    generalizedData: generalizedData,
+    runDate: runDate,
+    type: type,
+    dataCache: undefined,
+    options: options,
+    householdTableString: householdTableString,
+  };
+  const citationObject = buildCitation(input);
+  citationObject.generalizedData = generalizedData;
+  source.citationObject = citationObject;
+}
+
 function buildSourcerCitation(runDate, source, type, options) {
   if (source.dataObjects) {
     let extractedData = source.extractedData;
@@ -831,32 +862,7 @@ function buildSourcerCitation(runDate, source, type, options) {
       let generalizedData = generalizeData({ extractedData: extractedData });
       if (generalizedData && generalizedData.hasValidData) {
         source.generalizedData = generalizedData;
-
-        let householdTableString = "";
-        if (doesCitationWantHouseholdTable(type, generalizedData, options)) {
-          const tableInput = {
-            extractedData: extractedData,
-            generalizedData: generalizedData,
-            dataCache: undefined,
-            options: options,
-          };
-
-          const tableObject = buildHouseholdTable(tableInput);
-          householdTableString = tableObject.tableString;
-        }
-
-        const input = {
-          extractedData: extractedData,
-          generalizedData: generalizedData,
-          runDate: runDate,
-          type: type,
-          dataCache: undefined,
-          options: options,
-          householdTableString: householdTableString,
-        };
-        const citationObject = buildCitation(input);
-        citationObject.generalizedData = generalizedData;
-        source.citationObject = citationObject;
+        buildSourcerCitationGivenGd(runDate, source, type, options);
       }
     }
   }
@@ -896,71 +902,130 @@ function buildSourcerCitation(runDate, source, type, options) {
   }
 }
 
+function pruneSources(result, options) {
+  if (result.failureCount) {
+    let prunedSources = [];
+    let failedSources = [];
+    for (let source of result.sources) {
+      if (source.fetchStatus && !source.fetchStatus.success) {
+        failedSources.push(source);
+      } else {
+        prunedSources.push(source);
+      }
+    }
+
+    result.sources = prunedSources;
+    result.fetchFailedSources = failedSources;
+  }
+
+  // always exclude duplicate sources
+  {
+    let newSources = [];
+    if (result.sources.length) {
+      newSources.push(result.sources[0]);
+    }
+    for (let thisIndex = 1; thisIndex < result.sources.length; thisIndex++) {
+      let source = result.sources[thisIndex];
+      let removeSource = false;
+      let ed = source.extractedData;
+      if (ed && ed.recordUrl) {
+        let thisRecordUrl = ed.recordUrl;
+        let thisImageUrl = ed.fsImageUrl;
+
+        // compare with previous sources to see if it is a duplicate
+        for (let otherIndex = 0; otherIndex < thisIndex; otherIndex++) {
+          let otherSource = result.sources[otherIndex];
+          let otherEd = otherSource.extractedData;
+          if (otherEd && otherEd.recordUrl) {
+            let otherRecordUrl = otherEd.recordUrl;
+            let otherImageUrl = otherEd.fsImageUrl;
+
+            //console.log("otherSource.uri = " + otherSource.uri);
+            if (otherRecordUrl == thisRecordUrl) {
+              if (!thisImageUrl || otherImageUrl == thisImageUrl) {
+                removeSource = true;
+                break;
+              }
+            }
+          }
+        }
+      }
+
+      if (removeSource) {
+        result.numExcludedDuplicateSources++;
+      } else {
+        newSources.push(source);
+      }
+    }
+    result.sources = newSources;
+  }
+
+  if (options.buildAll_fs_excludeOtherRoleSources) {
+    let newSources = [];
+    for (let source of result.sources) {
+      if (source.citationObject) {
+        const gd = source.generalizedData;
+        if (gd && gd.role && gd.role != Role.Primary) {
+          // exclude this one
+          result.numExcludedOtherRoleSources++;
+        } else {
+          newSources.push(source);
+        }
+      } else {
+        newSources.push(source);
+      }
+    }
+    result.sources = newSources;
+  }
+
+  if (options.buildAll_fs_excludeRetiredSources != "never") {
+    let newSources = [];
+    for (let source of result.sources) {
+      let removeSource = false;
+      let ed = source.extractedData;
+      // e.g. "Forward To Ark": "https://familysearch.org/ark:/61903/1:2:9HXH-3B3",
+      if (ed && ed.recordData && ed.recordData["Forward To Ark"]) {
+        if (options.buildAll_fs_excludeRetiredSources == "always") {
+          removeSource = true;
+        } else {
+          // the forward to Ark URL cannot be compared as it is a weird redirect using "/1:2:"
+          // but the current URL is store in either forwardPersonToArk or extData in this case.
+          let currentSourceUrl = ed.forwardPersonToArk;
+          if (!currentSourceUrl) {
+            if (ed.extData && ed.extData.startsWith("http")) {
+              currentSourceUrl = ed.extData;
+            }
+          }
+
+          if (currentSourceUrl) {
+            currentSourceUrl = currentSourceUrl.replace("www.familysearch.org", "familysearch.org");
+
+            //console.log("currentSourceUrl = " + currentSourceUrl);
+
+            for (let otherSource of result.sources) {
+              //console.log("otherSource.uri = " + otherSource.uri);
+              if (otherSource.uri == currentSourceUrl) {
+                removeSource = true;
+                //console.log("removing duplicate source");
+                break;
+              }
+            }
+          }
+        }
+      }
+
+      if (removeSource) {
+        result.numExcludedRetiredSources++;
+      } else {
+        newSources.push(source);
+      }
+    }
+    result.sources = newSources;
+  }
+}
+
 async function buildSourcerCitations(result, type, options) {
   try {
-    if (options.buildAll_fs_excludeOtherRoleSources) {
-      let newSources = [];
-      for (let source of result.sources) {
-        if (source.citationObject) {
-          const gd = source.generalizedData;
-          if (gd && gd.role && gd.role != Role.Primary) {
-            // exclude this one
-            result.numExcludedOtherRoleSources++;
-          } else {
-            newSources.push(source);
-          }
-        } else {
-          newSources.push(source);
-        }
-      }
-      result.sources = newSources;
-    }
-
-    if (options.buildAll_fs_excludeRetiredSources != "never") {
-      let newSources = [];
-      for (let source of result.sources) {
-        let removeSource = false;
-        let ed = source.extractedData;
-        // e.g. "Forward To Ark": "https://familysearch.org/ark:/61903/1:2:9HXH-3B3",
-        if (ed && ed.recordData && ed.recordData["Forward To Ark"]) {
-          if (options.buildAll_fs_excludeRetiredSources == "always") {
-            removeSource = true;
-          } else {
-            // the forward to Ark URL cannot be compared as it is a weird redirect using "/1:2:"
-            // but the current URL is store in either forwardPersonToArk or extData in this case.
-            let currentSourceUrl = ed.forwardPersonToArk;
-            if (!currentSourceUrl) {
-              if (ed.extData && ed.extData.startsWith("http")) {
-                currentSourceUrl = ed.extData;
-              }
-            }
-
-            if (currentSourceUrl) {
-              currentSourceUrl = currentSourceUrl.replace("www.familysearch.org", "familysearch.org");
-
-              //console.log("currentSourceUrl = " + currentSourceUrl);
-
-              for (let otherSource of result.sources) {
-                //console.log("otherSource.uri = " + otherSource.uri);
-                if (otherSource.uri == currentSourceUrl) {
-                  removeSource = true;
-                  //console.log("removing duplicate source");
-                  break;
-                }
-              }
-            }
-          }
-        }
-
-        if (removeSource) {
-          result.numExcludedDuplicateSources++;
-        } else {
-          newSources.push(source);
-        }
-      }
-      result.sources = newSources;
-    }
-
     sortSourcesUsingFsSortKeysAndFetchedRecords(result);
 
     if (type == "source") {
@@ -990,4 +1055,11 @@ async function buildSourcerCitations(result, type, options) {
   }
 }
 
-export { filterAndEnhanceFsSourcesIntoSources, buildSourcerCitation, buildSourcerCitations, buildFsPlainCitations };
+export {
+  filterAndEnhanceFsSourcesIntoSources,
+  buildSourcerCitationGivenGd,
+  buildSourcerCitation,
+  buildSourcerCitations,
+  buildFsPlainCitations,
+  pruneSources,
+};

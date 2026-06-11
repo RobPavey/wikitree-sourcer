@@ -48,6 +48,7 @@ import {
   buildSourcerCitations,
   filterSourceIdsToSources,
   setUrlStart,
+  pruneSources,
 } from "../../extension/site/ancestry/core/ancestry_build_all_citations.mjs";
 
 import { loadExtractDataInWrapper } from "../test_utils/test_extract_data_utils.mjs";
@@ -212,6 +213,8 @@ async function testGetSourcerCitations(runDate, savedData, result, type, options
   for (let source of result.sources) {
     await testGetSourcerCitation(runDate, savedData, gd, source, type, options);
   }
+
+  pruneSources(result, options);
 
   buildSourcerCitations(result, type, options);
 }

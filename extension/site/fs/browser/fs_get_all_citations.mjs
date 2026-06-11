@@ -23,22 +23,114 @@ SOFTWARE.
 */
 
 import { displayBusyMessage } from "/base/browser/popup/popup_menu_building.mjs";
+import { getUserClassification, getUserProvidedVitals } from "/base/browser/popup/popup_build_all.mjs";
 
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
 import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
-import { fetchFsSourcesJson, fetchRecord } from "./fs_fetch.mjs";
+import { fetchFsSourcesJson, fetchRecordJson, fetchRecordHtml } from "./fs_fetch.mjs";
 import {
   filterAndEnhanceFsSourcesIntoSources,
   buildSourcerCitation,
   buildSourcerCitations,
   buildFsPlainCitations,
+  pruneSources,
 } from "../core/fs_build_all_citations.mjs";
 
+import { RT } from "/base/core/record_type.mjs";
 import { logDebug } from "/base/core/log_debug.mjs";
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function shouldUseJsonFetch(uri) {
+  // There are many kinds of pages on the FamilySearch site.
+  // We only want to use JSON fetch for record pages (and not images)
+  // So not for search results, collection pages etc
+
+  // An image page has:
+  // #main-content-section
+  // Many pages have:
+  // #main
+  // On the element with id #main the record pages have aria-label="Main Content"
+  // However this is true for other pages like this:
+  // https://www.familysearch.org/search/genealogies
+  // For thise we return true and it will just fail when it doesn't get JSON data back from the fetch.
+
+  let useFetch = false;
+
+  if (personDetailsRegex.test(uri)) {
+    useFetch = true;
+  } else if (personSourcesRegex.test(location.href)) {
+    useFetch = true;
+  } else if (imageWithSidebarUrlRegEx.test(uri)) {
+    // This is an image with a person details selected
+    useFetch = true;
+  } else {
+    if (uri.startsWith("https://www.familysearch.org/ark:/")) {
+      let url = uri;
+      let recordId = url.replace(/^https\:\/\/www\.familysearch\.org\/ark\:\/\d+\/([^/?&]+).*$/, "$1");
+      if (recordId && recordId != url) {
+        if (recordId.startsWith("1:1:")) {
+          useFetch = true;
+        }
+      }
+    }
+  }
+
+  //console.log("shouldUseFetch, returning useFetch = " + useFetch);
+
+  return useFetch;
+}
+
+async function fetchRecordJsonAfterAdjustingUrl(uri, sessionId) {
+  //console.log("doFetch, document.location is: " + document.location);
+
+  let fetchType = "record";
+  let fetchUrl = uri;
+  //console.log("doFetch, fetchUrl is: " + fetchUrl);
+
+  // sometimes the URL has an extra / on the end. This causes the fetch to fail. So remove it
+  fetchUrl = fetchUrl.replace(/\/\?/, "?");
+  fetchUrl = fetchUrl.replace(/\/$/, "");
+
+  if (personDetailsRegex.test(fetchUrl) || personSourcesRegex.test(fetchUrl) || personVitalsRegex.test(fetchUrl)) {
+    let personId = "";
+    if (personDetailsRegex.test(fetchUrl)) {
+      personId = fetchUrl.replace(personDetailsRegex, "$1");
+    } else if (personSourcesRegex.test(fetchUrl)) {
+      personId = fetchUrl.replace(personSourcesRegex, "$1");
+    } else if (personVitalsRegex.test(fetchUrl)) {
+      personId = fetchUrl.replace(personVitalsRegex, "$1");
+    }
+    let slashOrQueryIndex = personId.search(/[/?]/);
+    if (slashOrQueryIndex != -1) {
+      personId = personId.substring(0, slashOrQueryIndex);
+    }
+
+    // API URL looks like this: https://api.familysearch.org/platform/tree/persons/K2F9-F5Z
+    if (personId) {
+      fetchUrl = "https://www.familysearch.org/platform/tree/persons/" + personId + "?relatives";
+      fetchType = "person";
+    }
+  } else if (imageWithSidebarUrlRegEx.test(fetchUrl)) {
+    //console.log("This is an image with a sidebar");
+
+    // This is an image with a person details selected.
+    let newUrl = fetchUrl.replace(imageWithSidebarUrlRegEx, "https://www.familysearch.org/ark:/$1/1:1:$2");
+    if (newUrl && newUrl != fetchUrl) {
+      fetchUrl = newUrl;
+    }
+  }
+
+  // This seems like a recent change on FamilySearch (noticed on 25 May 2022).
+  // Sometimes the URL contains "/search/" and this stops the fetch working
+  if (fetchUrl.indexOf("www.familysearch.org/search/ark:/") != -1) {
+    fetchUrl = fetchUrl.replace("www.familysearch.org/search/ark:/", "www.familysearch.org/ark:/");
+  }
+
+  return await fetchRecordJson(fetchUrl, sessionId);
 }
 
 async function getSourcerCitation(runDate, source, type, sessionId, options, updateStatusFunction) {
@@ -51,18 +143,50 @@ async function getSourcerCitation(runDate, source, type, sessionId, options, upd
   let fetchFailed = false;
 
   if (uri && uri.includes("familysearch.org/")) {
-    fetchResult = await fetchRecord(uri, sessionId);
+    // standardize URI
+    uri = uri.replace(/\/familysearch.org/, "/www.familysearch.org");
+
+    let useJsonFetch = shouldUseJsonFetch(uri);
+
+    if (useJsonFetch) {
+      fetchResult = await fetchRecordJsonAfterAdjustingUrl(uri, sessionId);
+    } else {
+      fetchResult = await fetchRecordHtml(uri, sessionId);
+    }
     let retryCount = 0;
     while (!fetchResult.success && fetchResult.allowRetry && retryCount < 3) {
       retryCount++;
       updateStatusFunction("retry " + retryCount);
       await sleep(20);
-      fetchResult = await fetchRecord(uri, sessionId);
+      if (useJsonFetch) {
+        fetchResult = await fetchRecordJsonAfterAdjustingUrl(uri, sessionId);
+      } else {
+        fetchResult = await fetchRecordHtml(uri, sessionId);
+      }
     }
     if (!fetchResult.success) {
       // we can still get info from the source
       logDebug("getSourcerCitation, fetch failed fetchResult is:", fetchResult);
       fetchFailed = true;
+    }
+
+    if (useJsonFetch) {
+      let sourceDataObjects = undefined;
+      if (fetchResult.success) {
+        sourceDataObjects = fetchResult.dataObjects;
+      }
+
+      if (sourceDataObjects) {
+        source.dataObjects = sourceDataObjects;
+        let sessionId = "";
+        let extractedData = extractDataFromFetch(undefined, "", source.dataObjects, "record", sessionId, options);
+        if (extractedData) {
+          source.extractedData = extractedData;
+        }
+      }
+    } else {
+      if (fetchResult.success) {
+      }
     }
   } else {
     // we can still get info from the source
@@ -71,20 +195,6 @@ async function getSourcerCitation(runDate, source, type, sessionId, options, upd
 
   logDebug("getSourcerCitation, fetchResult is:");
   logDebug(fetchResult);
-
-  let sourceDataObjects = undefined;
-  if (fetchResult.success) {
-    sourceDataObjects = fetchResult.dataObjects;
-  }
-
-  if (sourceDataObjects) {
-    source.dataObjects = sourceDataObjects;
-    let sessionId = "";
-    let extractedData = extractDataFromFetch(undefined, "", source.dataObjects, "record", sessionId, options);
-    if (extractedData) {
-      source.extractedData = extractedData;
-    }
-  }
 
   buildSourcerCitation(runDate, source, type, options);
 
@@ -135,19 +245,24 @@ async function getSourcerCitations(runDate, result, type, sessionId, options) {
 
   result.failureCount = requestsResult.failureCount;
 
-  if (result.failureCount) {
-    let prunedSources = [];
-    let failedSources = [];
-    for (let source of result.sources) {
-      if (source.fetchStatus && !source.fetchStatus.success) {
-        failedSources.push(source);
-      } else {
-        prunedSources.push(source);
-      }
-    }
+  pruneSources(result, options);
 
-    result.sources = prunedSources;
-    result.fetchFailedSources = failedSources;
+  for (let source of result.sources) {
+    let gd = source.generalizedData;
+    if (gd) {
+      if (gd.recordType == RT.Unclassified) {
+        let response = await getUserClassification(source);
+        if (response.refTitle) {
+          gd.overrideRefTitle = response.refTitle;
+        }
+        if (response.recordType != RT.Unclassified) {
+          gd.recordType = response.recordType;
+          generalizeDataGivenRecordType(ed, gd);
+        }
+      }
+    } else {
+      let response = await getUserProvidedVitals(source);
+    }
   }
 
   buildSourcerCitations(result, type, options);
@@ -161,6 +276,7 @@ async function fsGetAllCitations(input) {
 
   let result = { success: false };
   result.numExcludedOtherRoleSources = 0;
+  result.numExcludedRetiredSources = 0;
   result.numExcludedDuplicateSources = 0;
   result.numExcludedNonFsSources = 0;
   result.numExcludedFsImageSources = 0;
@@ -208,7 +324,8 @@ async function fsGetAllCitations(input) {
       result.errorMessage = error.message;
     }
   } else {
-    result.errorMessage = "Could not get list of sources. Try running from the 'SOURCES' page.";
+    result.errorMessage =
+      "Could not get list of sources. Try running from the 'SOURCES' page or reloading the page in the browser.";
   }
 
   return result;

@@ -497,26 +497,43 @@ function buildSourcerCitation(runDate, source, type, options) {
   }
 }
 
-async function buildSourcerCitations(result, type, options) {
-  try {
-    if (options.buildAll_ancestry_excludeOtherRoleSources) {
-      let newSources = [];
-      for (let source of result.sources) {
-        if (source.citationObject) {
-          const gd = source.generalizedData;
-          if (gd && gd.role && gd.role != Role.Primary) {
-            // exclude this one
-            result.numExcludedOtherRoleSources++;
-          } else {
-            newSources.push(source);
-          }
+function pruneSources(result, options) {
+  // prune out failed source so we don't build citations for them
+  if (result.failureCount) {
+    let prunedSources = [];
+    let failedSources = [];
+    for (let source of result.sources) {
+      if (source.fetchStatus && !source.fetchStatus.success) {
+        failedSources.push(source);
+      } else {
+        prunedSources.push(source);
+      }
+    }
+    result.sources = prunedSources;
+    result.fetchFailedSources = failedSources;
+  }
+
+  if (options.buildAll_ancestry_excludeOtherRoleSources) {
+    let newSources = [];
+    for (let source of result.sources) {
+      if (source.citationObject) {
+        const gd = source.generalizedData;
+        if (gd && gd.role && gd.role != Role.Primary) {
+          // exclude this one
+          result.numExcludedOtherRoleSources++;
         } else {
           newSources.push(source);
         }
+      } else {
+        newSources.push(source);
       }
-      result.sources = newSources;
     }
+    result.sources = newSources;
+  }
+}
 
+async function buildSourcerCitations(result, type, options) {
+  try {
     sortSourcesUsingFetchedRecords(result);
 
     if (type == "source") {
@@ -549,4 +566,4 @@ async function buildSourcerCitations(result, type, options) {
   }
 }
 
-export { buildSourcerCitation, buildSourcerCitations, filterSourceIdsToSources, setUrlStart };
+export { buildSourcerCitation, buildSourcerCitations, filterSourceIdsToSources, setUrlStart, pruneSources };
