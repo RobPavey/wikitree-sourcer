@@ -23,6 +23,57 @@ SOFTWARE.
 */
 
 import { beginMainMenu, endMainMenu, addBreak, rtToRefTitle } from "./popup_menu_building.mjs";
+import { RT } from "/base/core/record_type.mjs";
+
+function addDivWithLabel(menu, text) {
+  let label = document.createElement("label");
+  label.className = "dialogInput";
+  label.appendChild(document.createTextNode(text));
+
+  let div = document.createElement("div");
+  div.className = "menuRowDiv";
+  div.appendChild(label);
+
+  menu.list.appendChild(div);
+}
+
+function addSourceDetailsToMenu(menu, source) {
+  let ed = source.extractedData;
+  let gd = source.generalizedData;
+  let title = ed.collectionTitle;
+  let role = gd.role;
+  let nameString = gd.inferFullName();
+  let dateString = gd.inferEventDate();
+  let placeString = gd.inferEventPlace();
+
+  if (title) {
+    addDivWithLabel(menu, title);
+  }
+
+  if (nameString) {
+    addDivWithLabel(menu, "Name: " + nameString);
+  }
+
+  if (dateString) {
+    addDivWithLabel(menu, "Date: " + dateString);
+  }
+
+  if (placeString) {
+    addDivWithLabel(menu, "Place: " + placeString);
+  }
+
+  if (role) {
+    addDivWithLabel(menu, "Role: " + role);
+    if (gd.primaryPerson) {
+      if (gd.primaryPerson.name) {
+        let primaryNameString = gd.primaryPerson.name.inferFullName();
+        if (primaryNameString) {
+          addDivWithLabel(menu, "...of: " + primaryNameString);
+        }
+      }
+    }
+  }
+}
 
 function getUserClassification(source) {
   return new Promise((resolve, reject) => {
@@ -86,11 +137,10 @@ function getUserClassification(source) {
       return textInput;
     }
 
+    addSourceDetailsToMenu(menu, source);
+
     // Explanation
-    let reasonLabel = document.createElement("label");
-    reasonLabel.className = "dialogInput";
-    reasonLabel.appendChild(document.createTextNode("Could not identify the record type."));
-    menu.list.appendChild(reasonLabel);
+    addDivWithLabel(menu, "Could not identify the record type.");
 
     if (needsRecordType) {
       addBreak(menu.list);
@@ -131,13 +181,33 @@ function getUserClassification(source) {
     addBreak(menu.list);
     addBreak(menu.list);
 
-    let button = document.createElement("button");
-    button.className = "dialogButton";
-    button.innerText = "Keep source with changes";
-    button.onclick = function (element) {
-      resolve();
-    };
-    menu.list.appendChild(button);
+    {
+      let button = document.createElement("button");
+      button.className = "dialogButton";
+      button.innerText = "Keep source with changes";
+      button.onclick = function (element) {
+        let result = {
+          include: true,
+          recordType: recordType,
+          refTitle: refTitle,
+        };
+        resolve(result);
+      };
+      menu.list.appendChild(button);
+    }
+
+    {
+      let button = document.createElement("button");
+      button.className = "dialogButton";
+      button.innerText = "Exclude source";
+      button.onclick = function (element) {
+        let result = {
+          include: false,
+        };
+        resolve(result);
+      };
+      menu.list.appendChild(button);
+    }
 
     endMainMenu(menu);
   });

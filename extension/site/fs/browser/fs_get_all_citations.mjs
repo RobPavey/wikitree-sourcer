@@ -31,11 +31,14 @@ import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permiss
 import { fetchFsSourcesJson, fetchRecordJson, fetchRecordHtml } from "./fs_fetch.mjs";
 import {
   filterAndEnhanceFsSourcesIntoSources,
+  buildSourcerCitationGivenGd,
   buildSourcerCitation,
   buildSourcerCitations,
   buildFsPlainCitations,
   pruneSources,
 } from "../core/fs_build_all_citations.mjs";
+
+import { generalizeDataGivenRecordType } from "../core/fs_generalize_data.mjs";
 
 import { RT } from "/base/core/record_type.mjs";
 import { logDebug } from "/base/core/log_debug.mjs";
@@ -257,7 +260,9 @@ async function getSourcerCitations(runDate, result, type, sessionId, options) {
         }
         if (response.recordType != RT.Unclassified) {
           gd.recordType = response.recordType;
+          let ed = source.extractedData;
           generalizeDataGivenRecordType(ed, gd);
+          buildSourcerCitationGivenGd(runDate, source, type, options);
         }
       }
     } else {
