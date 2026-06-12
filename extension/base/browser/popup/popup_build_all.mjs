@@ -40,35 +40,50 @@ function addDivWithLabel(menu, text) {
 function addSourceDetailsToMenu(menu, source) {
   let ed = source.extractedData;
   let gd = source.generalizedData;
-  let title = ed.collectionTitle;
-  let role = gd.role;
-  let nameString = gd.inferFullName();
-  let dateString = gd.inferEventDate();
-  let placeString = gd.inferEventPlace();
+
+  let title = "";
+  if (ed) {
+    // this is a bit site specific
+    if (ed.collectionTitle) {
+      title = ed.collectionTitle;
+    } else if (ed.titleCollection) {
+      title = ed.collectionTitle;
+    }
+  }
+
+  if (!title && source.title) {
+    title = source.title;
+  }
 
   if (title) {
     addDivWithLabel(menu, title);
   }
 
-  if (nameString) {
-    addDivWithLabel(menu, "Name: " + nameString);
-  }
+  if (gd) {
+    let role = gd.role;
+    let nameString = gd.inferFullName();
+    let dateString = gd.inferEventDate();
+    let placeString = gd.inferEventPlace();
+    if (nameString) {
+      addDivWithLabel(menu, "Name: " + nameString);
+    }
 
-  if (dateString) {
-    addDivWithLabel(menu, "Date: " + dateString);
-  }
+    if (dateString) {
+      addDivWithLabel(menu, "Date: " + dateString);
+    }
 
-  if (placeString) {
-    addDivWithLabel(menu, "Place: " + placeString);
-  }
+    if (placeString) {
+      addDivWithLabel(menu, "Place: " + placeString);
+    }
 
-  if (role) {
-    addDivWithLabel(menu, "Role: " + role);
-    if (gd.primaryPerson) {
-      if (gd.primaryPerson.name) {
-        let primaryNameString = gd.primaryPerson.name.inferFullName();
-        if (primaryNameString) {
-          addDivWithLabel(menu, "...of: " + primaryNameString);
+    if (role) {
+      addDivWithLabel(menu, "Role: " + role);
+      if (gd.primaryPerson) {
+        if (gd.primaryPerson.name) {
+          let primaryNameString = gd.primaryPerson.name.inferFullName();
+          if (primaryNameString) {
+            addDivWithLabel(menu, "...of: " + primaryNameString);
+          }
         }
       }
     }
@@ -217,42 +232,10 @@ function getUserProvidedVitals(source) {
   return new Promise((resolve, reject) => {
     let menu = beginMainMenu();
 
-    let recordType = RT.Unclassified;
-    let refTitle = "";
+    let narrative = "";
     let textInputField = undefined;
 
-    let needsRecordType = true; // needs work
-    let needsRefTitle = true; // needs work
-
-    function fillRecordTypeSelector(selector) {
-      while (selector.firstChild) {
-        selector.removeChild(selector.firstChild);
-      }
-
-      const keys = Object.keys(rtToRefTitle);
-      for (const key of keys) {
-        let option = document.createElement("option");
-        option.value = key;
-        option.text = rtToRefTitle[key];
-        selector.appendChild(option);
-      }
-    }
-
-    function addSelector(id, labelText, fillFunction, changeFunction) {
-      let selector = document.createElement("select");
-      selector.id = id;
-      selector.className = "dialogSelector";
-      fillFunction(selector);
-      selector.addEventListener("change", changeFunction);
-      let label = document.createElement("label");
-      label.className = "dialogInput";
-      label.appendChild(document.createTextNode(labelText));
-      addBreak(label);
-      label.appendChild(selector);
-      menu.list.appendChild(label);
-
-      return selector;
-    }
+    let needsNarrative = true; // needs work
 
     function addTextInput(id, labelText, changeFunction) {
       let textInput = document.createElement("input");
@@ -270,43 +253,18 @@ function getUserProvidedVitals(source) {
       return textInput;
     }
 
+    addSourceDetailsToMenu(menu, source);
+
     // Explanation
-    let reasonLabel = document.createElement("label");
-    reasonLabel.className = "dialogInput";
-    reasonLabel.appendChild(document.createTextNode("More details are required for narrative"));
+    addDivWithLabel(menu, "More details are required for narrative.");
 
-    if (needsRecordType) {
-      addBreak(menu.list);
-      addBreak(menu.list);
-
-      // Record Type
-      let recordTypeSelector = addSelector(
-        "recordTypeSelector",
-        "Choose record type: ",
-        fillRecordTypeSelector,
-        function (event) {
-          recordType = event.target.value;
-          //console.log("set record type to: " + recordType);
-          // set ref title
-          if (recordType == "Unclassified") {
-            refTitle = "";
-          } else {
-            refTitle = rtToRefTitle[recordType];
-          }
-          if (textInputField) {
-            textInputField.value = refTitle;
-          }
-        }
-      );
-    }
-
-    if (needsRefTitle) {
+    if (needsNarrative) {
       addBreak(menu.list);
       addBreak(menu.list);
 
       // text input
-      textInputField = addTextInput("refTitleInput", "Choose label: ", function (event) {
-        refTitle = event.target.value;
+      textInputField = addTextInput("narrativeInput", "Narrative:", function (event) {
+        narrative = event.target.value;
         //console.log("set ref title to: " + refTitle);
       });
     }
@@ -314,17 +272,32 @@ function getUserProvidedVitals(source) {
     addBreak(menu.list);
     addBreak(menu.list);
 
-    let button = document.createElement("button");
-    button.className = "dialogButton";
-    button.innerText = "Keep source with changes";
-    button.onclick = function (element) {
-      let result = {
-        recordType: recordType,
-        refTitle: refTitle,
+    {
+      let button = document.createElement("button");
+      button.className = "dialogButton";
+      button.innerText = "Keep source with changes";
+      button.onclick = function (element) {
+        let result = {
+          include: true,
+          narrative: narrative,
+        };
+        resolve(result);
       };
-      resolve(result);
-    };
-    menu.list.appendChild(button);
+      menu.list.appendChild(button);
+    }
+
+    {
+      let button = document.createElement("button");
+      button.className = "dialogButton";
+      button.innerText = "Exclude source";
+      button.onclick = function (element) {
+        let result = {
+          include: false,
+        };
+        resolve(result);
+      };
+      menu.list.appendChild(button);
+    }
 
     endMainMenu(menu);
   });

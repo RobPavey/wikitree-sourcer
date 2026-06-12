@@ -24,15 +24,15 @@
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nName: Nancy L Furr.\n</ref>",
+    "citation": "<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nName: Nancy L Furr; Relationship to fact person: Parent; Fact: Marriage; Related person name: William Franklin Furr; Related person gender: male; Related person spouse name: Wilma Faye Yandle; Event date: 13 Jun 1954; Event place: Charlotte, Mecklenburg, North Carolina, United States.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "Nancy's son William Franklin Furr married Wilma Faye Yandle on 13 June 1954 in Charlotte, Mecklenburg, North Carolina, United States.<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nName: Nancy L Furr.\n</ref>",
+    "citation": "Nancy's son William Franklin Furr married Wilma Faye Yandle on 13 June 1954 in Charlotte, Mecklenburg, North Carolina, United States.<ref>\n'''Marriage of son William Franklin Furr''':\n\"North Carolina, County Marriages, 1762-2011\"<br/>\nciting Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>\n{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>\nName: Nancy L Furr; Relationship to fact person: Parent; Fact: Marriage; Related person name: William Franklin Furr; Related person gender: male; Related person spouse name: Wilma Faye Yandle; Event date: 13 Jun 1954; Event place: Charlotte, Mecklenburg, North Carolina, United States.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''Marriage of son William Franklin Furr''': \"North Carolina, County Marriages, 1762-2011\"<br/>citing Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>Name: Nancy L Furr.",
+    "citation": "* '''Marriage of son William Franklin Furr''': \"North Carolina, County Marriages, 1762-2011\"<br/>citing Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>Name: Nancy L Furr; Relationship to fact person: Parent; Fact: Marriage; Related person name: William Franklin Furr; Related person gender: male; Related person spouse name: Wilma Faye Yandle; Event date: 13 Jun 1954; Event place: Charlotte, Mecklenburg, North Carolina, United States.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
@@ -44,7 +44,7 @@
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''Marriage of son William Franklin Furr''': \"North Carolina, County Marriages, 1762-2011\"<br/>citing Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>Name: Nancy L Furr.",
+    "citation": "* '''Marriage of son William Franklin Furr''': \"North Carolina, County Marriages, 1762-2011\"<br/>citing Digital film/folder number: 007742014; FHL microfilm: 002447710; Image number: 218<br/>{{FamilySearch Record|Q28T-D3BV}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C91D-93C4-1}}<br/>Name: Nancy L Furr; Relationship to fact person: Parent; Fact: Marriage; Related person name: William Franklin Furr; Related person gender: male; Related person spouse name: Wilma Faye Yandle; Event date: 13 Jun 1954; Event place: Charlotte, Mecklenburg, North Carolina, United States.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {

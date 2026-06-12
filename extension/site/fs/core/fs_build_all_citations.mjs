@@ -159,8 +159,15 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
       }
     }
 
+    let excludeAsTreeSource = false;
     // ignore some useless sources
-    if (source.citation == "Ancestry Family Tree" && source.title == "Ancestry Family Trees" && !source.notes) {
+    if (source.citation && source.citation.includes("Ancestry Family Tree")) {
+      let notes = source.notes;
+      if (!notes || notes.startsWith("This information comes from 1 or more individual Ancestry Family Tree files")) {
+        excludeAsTreeSource = true;
+      }
+    }
+    if (excludeAsTreeSource) {
       result.numExcludedTreeSources++;
       continue;
     }
@@ -452,6 +459,10 @@ function sortFacts(result) {
 }
 
 function buildNarrativeForPlainCitation(source, options) {
+  if (source.userOverrideForNarrative) {
+    return source.userOverrideForNarrative;
+  }
+
   let narrative = "";
 
   if (source.prefName) {

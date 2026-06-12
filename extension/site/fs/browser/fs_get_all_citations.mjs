@@ -246,25 +246,42 @@ async function getSourcerCitations(runDate, result, type, sessionId, options) {
 
   pruneSources(result, options);
 
+  let userFilteredSources = [];
   for (let source of result.sources) {
+    let includeSource = true;
     let gd = source.generalizedData;
     if (gd) {
       if (gd.recordType == RT.Unclassified) {
         let response = await getUserClassification(source);
-        if (response.refTitle) {
-          gd.overrideRefTitle = response.refTitle;
-        }
-        if (response.recordType != RT.Unclassified) {
-          gd.recordType = response.recordType;
-          let ed = source.extractedData;
-          generalizeDataGivenRecordType(ed, gd);
-          buildSourcerCitationGivenGd(runDate, source, type, options);
+        if (response.include) {
+          if (response.refTitle) {
+            gd.overrideRefTitle = response.refTitle;
+          }
+          if (response.recordType != RT.Unclassified) {
+            gd.recordType = response.recordType;
+            let ed = source.extractedData;
+            generalizeDataGivenRecordType(ed, gd);
+            buildSourcerCitationGivenGd(runDate, source, type, options);
+          }
+        } else {
+          includeSource = false;
         }
       }
     } else {
       let response = await getUserProvidedVitals(source);
+      if (response.include) {
+        if (response.narrative) {
+          source.userOverrideForNarrative = response.narrative;
+        }
+      } else {
+        includeSource = false;
+      }
+    }
+    if (includeSource) {
+      userFilteredSources.push(source);
     }
   }
+  result.sources = userFilteredSources;
 
   buildSourcerCitations(result, type, options);
 }
@@ -325,8 +342,13 @@ async function fsGetAllCitations(input) {
       result.errorMessage = error.message;
     }
   } else {
-    result.errorMessage =
-      "Could not get list of sources. Try running from the 'SOURCES' page or reloading the page in the browser.";
+    result.errorMessage = "Could not get list of sources.";
+    let onSourcesPage = ed.url.includes("person/sources");
+    if (onSourcesPage) {
+      result.errorMessage += " Try reloading the page in the browser.";
+    } else {
+      result.errorMessage += " Try running from the 'SOURCES' page or reloading the page in the browser.";
+    }
   }
 
   return result;

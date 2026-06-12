@@ -24,15 +24,15 @@
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''Marriage of daughter Ann Cameron''':\n\"Canada, Ontario Marriages, 1869-1927\"<br/>\nciting Digital film/folder number: 004529109; FHL microfilm: 1862892<br/>\n{{FamilySearch Record|FMN3-4Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9Q97-Y39L-C6M}} Image number 00465<br/>\nName: Donald Cameron.\n</ref>",
+    "citation": "<ref>\n'''Marriage of daughter Ann Cameron''':\n\"Canada, Ontario Marriages, 1869-1927\"<br/>\nciting Digital film/folder number: 004529109; FHL microfilm: 1862892<br/>\n{{FamilySearch Record|FMN3-4Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9Q97-Y39L-C6M}} Image number 00465<br/>\nName: Donald Cameron; Relationship to fact person: Parent; Fact: Marriage; Related person name: Ann Cameron; Related person gender: female; Related person spouse name: Neil Mclean; Event date: 15 Jul 1874; Event place: Osprey, Grey, Ontario, Canada.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "Donald's daughter Ann Cameron married Neil Mclean on 15 July 1874 in Osprey, Grey, Ontario, Canada.<ref>\n'''Marriage of daughter Ann Cameron''':\n\"Canada, Ontario Marriages, 1869-1927\"<br/>\nciting Digital film/folder number: 004529109; FHL microfilm: 1862892<br/>\n{{FamilySearch Record|FMN3-4Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9Q97-Y39L-C6M}} Image number 00465<br/>\nName: Donald Cameron.\n</ref>",
+    "citation": "Donald's daughter Ann Cameron married Neil Mclean on 15 July 1874 in Osprey, Grey, Ontario, Canada.<ref>\n'''Marriage of daughter Ann Cameron''':\n\"Canada, Ontario Marriages, 1869-1927\"<br/>\nciting Digital film/folder number: 004529109; FHL microfilm: 1862892<br/>\n{{FamilySearch Record|FMN3-4Z6}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9Q97-Y39L-C6M}} Image number 00465<br/>\nName: Donald Cameron; Relationship to fact person: Parent; Fact: Marriage; Related person name: Ann Cameron; Related person gender: female; Related person spouse name: Neil Mclean; Event date: 15 Jul 1874; Event place: Osprey, Grey, Ontario, Canada.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''Marriage of daughter Ann Cameron''': \"Canada, Ontario Marriages, 1869-1927\"<br/>citing Digital film/folder number: 004529109; FHL microfilm: 1862892<br/>{{FamilySearch Record|FMN3-4Z6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|9Q97-Y39L-C6M}} Image number 00465<br/>Name: Donald Cameron.",
+    "citation": "* '''Marriage of daughter Ann Cameron''': \"Canada, Ontario Marriages, 1869-1927\"<br/>citing Digital film/folder number: 004529109; FHL microfilm: 1862892<br/>{{FamilySearch Record|FMN3-4Z6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|9Q97-Y39L-C6M}} Image number 00465<br/>Name: Donald Cameron; Relationship to fact person: Parent; Fact: Marriage; Related person name: Ann Cameron; Related person gender: female; Related person spouse name: Neil Mclean; Event date: 15 Jul 1874; Event place: Osprey, Grey, Ontario, Canada.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
@@ -44,7 +44,7 @@
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''Marriage of daughter Ann Cameron''': \"Canada, Ontario Marriages, 1869-1927\"<br/>citing Digital film/folder number: 004529109; FHL microfilm: 1862892<br/>{{FamilySearch Record|FMN3-4Z6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|9Q97-Y39L-C6M}} Image number 00465<br/>Name: Donald Cameron.",
+    "citation": "* '''Marriage of daughter Ann Cameron''': \"Canada, Ontario Marriages, 1869-1927\"<br/>citing Digital film/folder number: 004529109; FHL microfilm: 1862892<br/>{{FamilySearch Record|FMN3-4Z6}} (accessed 6 May 2021)<br/>{{FamilySearch Image|9Q97-Y39L-C6M}} Image number 00465<br/>Name: Donald Cameron; Relationship to fact person: Parent; Fact: Marriage; Related person name: Ann Cameron; Related person gender: female; Related person spouse name: Neil Mclean; Event date: 15 Jul 1874; Event place: Osprey, Grey, Ontario, Canada.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {
