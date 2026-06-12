@@ -23,12 +23,14 @@ SOFTWARE.
 */
 
 import { getExtractedDataFromRecordUrl } from "./ancestry_url_to_ed.mjs";
+import { getQueueOptions } from "./ancestry_fetch_queue.mjs";
 
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
 import { getCachedAsyncResult, registerAsyncCacheTag } from "../../../base/core/async_result_cache.mjs";
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 
 import { markHouseholdMembersToIncludeInTable } from "/base/core/table_builder.mjs";
+import { options } from "/base/browser/options/options_loader.mjs";
 
 function pushLinkedRecord(linkedRecords, link, name) {
   if (!link) {
@@ -147,15 +149,6 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     return newResponse;
   }
 
-  const queueOptions = {
-    maxConcurrency: 1,
-    initialWaitBetweenRequests: 100,
-    maxWaitime: 10000,
-    additionalRetryWaitime: 10000,
-    additionalManyRecent429sWaitime: 50000,
-    slowDownFromStartCount: 7,
-    slowDownFromStartMult: 5,
-  };
   //console.log("getDataForLinkedRecords, about to call doRequestsInParallel, requests is:");
   //console.log(requests);
 
@@ -173,6 +166,8 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
         displayMessage = "Fetching linked records to complete citation of " + ed.titleCollection;
       }
     }
+
+    const queueOptions = getQueueOptions(options, "linked");
     let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions, displayMessage);
 
     //console.log("getDataForLinkedRecords, returned from doRequestsInParallel, requestsResult is:");

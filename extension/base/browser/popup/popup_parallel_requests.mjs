@@ -33,10 +33,14 @@ class SleepMonitor {
     this.sleepsInProgress = 0;
   }
 
-  async monitoredSleep(ms) {
+  async monitoredSleep(ms, includeJitter = false) {
     this.sleepsInProgress++;
-    const randomJitter = Math.floor(Math.random() * queueOptions.maxJitter);
-    await new Promise((resolve) => setTimeout(resolve, ms + randomJitter));
+    let msToWait = ms;
+    if (includeJitter) {
+      const randomJitter = Math.floor(Math.random() * queueOptions.maxJitter);
+      msToWait += randomJitter;
+    }
+    await new Promise((resolve) => setTimeout(resolve, msToWait));
     this.sleepsInProgress--;
   }
 
@@ -218,16 +222,21 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
           matchingRequestState.status = "waiting";
         }
         displayStatusMessage(resolve);
-        await sleepMonitor.monitoredSleep(queueOptions.additionalManyRecent429sWaitime);
+        await sleepMonitor.monitoredSleep(queueOptions.additionalManyRecent429sWaitime, true);
       } else {
         if (!requestsTracker.lastResponseWasCached) {
           let waitTime = queueResponseTracker.waitBetweenRequests;
-          // subtract the time that the request actually took to respond
-          if (requestsTracker.lastRequestTime) {
+          // subtract the time that the request actually took to respond, but only if there is
+          // no concurrency and we didn't just switch to that
+          if (
+            requestsTracker.lastRequestTime &&
+            queueResponseTracker.maxConcurrency == 1 &&
+            queueResponseTracker.total429 == 0
+          ) {
             waitTime -= requestsTracker.lastRequestTime;
           }
           if (waitTime > 0) {
-            await sleepMonitor.monitoredSleep(queueResponseTracker.waitBetweenRequests);
+            await sleepMonitor.monitoredSleep(queueResponseTracker.waitBetweenRequests, true);
           }
         }
       }

@@ -243,6 +243,17 @@ const buildAllCitationsOptionsGroup = {
       ],
       defaultValue: "ifDuplicate",
     },
+    {
+      optionName: "fetchSpeed",
+      type: "select",
+      label: "Fetch speed (faster has more risk of 429 errors)",
+      values: [
+        { value: "fast", text: "Fast" },
+        { value: "medium", text: "Medium" },
+        { value: "slow", text: "Slow" },
+      ],
+      defaultValue: "medium",
+    },
   ],
 };
 

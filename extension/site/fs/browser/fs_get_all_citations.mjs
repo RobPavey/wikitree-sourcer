@@ -39,6 +39,7 @@ import {
 } from "../core/fs_build_all_citations.mjs";
 
 import { generalizeDataGivenRecordType } from "../core/fs_generalize_data.mjs";
+import { getQueueOptions } from "./fs_fetch_queue.mjs";
 
 import { RT } from "/base/core/record_type.mjs";
 import { logDebug } from "/base/core/log_debug.mjs";
@@ -238,12 +239,7 @@ async function getSourcerCitations(runDate, result, type, sessionId, options) {
     return newResponse;
   }
 
-  const queueOptions = {
-    initialWaitBetweenRequests: 1,
-    maxWaitime: 1600,
-    additionalRetryWaitime: 1600,
-    additionalManyRecent429sWaitime: 1600,
-  };
+  const queueOptions = getQueueOptions(options, "sources");
   let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions);
 
   result.failureCount = requestsResult.failureCount;

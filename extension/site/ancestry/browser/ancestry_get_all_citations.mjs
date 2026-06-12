@@ -34,6 +34,7 @@ import { doesCitationWantHouseholdTable } from "/base/browser/popup/popup_citati
 
 import { fetchAncestrySharingDataObj } from "./ancestry_fetch.mjs";
 import { getExtractedDataFromRecordUrl } from "./ancestry_url_to_ed.mjs";
+import { getQueueOptions } from "./ancestry_fetch_queue.mjs";
 
 import {
   buildSourcerCitation,
@@ -236,16 +237,8 @@ async function getSourcerCitations(runDate, result, type, options) {
     return response;
   }
 
-  const queueOptions = {
-    maxConcurrency: 1,
-    initialWaitBetweenRequests: 100,
-    maxWaitime: 10000,
-    additionalRetryWaitime: 10000,
-    additionalManyRecent429sWaitime: 50000,
-    slowDownFromStartCount: 7,
-    slowDownFromStartMult: 5,
-  };
   const message = "WikiTree Sourcer fetching record for each source";
+  const queueOptions = getQueueOptions(options, "sources");
   let requestsResult = await doRequestsInParallel(requests, fetchSourceRequestFunction, queueOptions, message);
   //console.log("getSourcerCitations: after getExtractedAndGeneralizedData parallel, requestsResult is:");
   //console.log(requestsResult);
@@ -284,10 +277,11 @@ async function getSourcerCitations(runDate, result, type, options) {
     return response;
   }
   const sharingMessage = "WikiTree Sourcer fetching sharing link for each source";
+  const sharingQueueOptions = getQueueOptions(options, "sharing");
   let sharingRequestsResult = await doRequestsInParallel(
     sharingRequests,
     getSharingObjRequestFunction,
-    queueOptions,
+    sharingQueueOptions,
     sharingMessage
   );
   if (sharingRequestsResult.failureCount > 0) {
