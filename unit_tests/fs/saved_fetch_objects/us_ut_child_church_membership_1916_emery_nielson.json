@@ -1,0 +1,1184 @@
+{
+  "id" : "r_178146020731",
+  "lang" : "en",
+  "attribution" : {
+    "contributor" : {
+      "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMM-V8FT",
+      "resourceId" : "cis.user.MMMM-V8FT"
+    },
+    "modified" : 1698246256315,
+    "created" : 1698246256315,
+    "changeMessageResource" : "http://familysearch.org/types/reasons/127657",
+    "qualifiers" : [ {
+      "value" : "INGEST",
+      "name" : "http://familysearch.org/types/qualifiers/App"
+    } ]
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:HQ83-ZP99?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:HQ83-ZP99?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:HQ83-ZP99"
+    }
+  },
+  "description" : "#sd_p_301617153060",
+  "persons" : [ {
+    "id" : "p_301617153059",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "8690f9b3-d8bd-48f7-99f9-e7c7397239a9",
+        "attribution" : {
+          "modified" : 1758717590810,
+          "created" : 1758717590810
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "2753cbf2-fef9-467b-9582-9ee44b195d38",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        }, {
+          "id" : "2753cbf2-fef9-467b-9582-9ee44b195d38",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Gender?version=1.0.4"
+            },
+            "modified" : 1758717590810,
+            "created" : 1758717590810
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6PGW-R291?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/HQ83-ZP99?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6PGW-R291" ]
+    },
+    "names" : [ {
+      "id" : "b0de7b16-a78a-43f8-89bb-831d5d6764b2",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=92&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1758717590810,
+        "created" : 1758717590810
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Nielson",
+        "parts" : [ {
+          "id" : "ccd381be-11f1-4a39-9fc7-0e198e84619a",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Nielson",
+          "fields" : [ {
+            "id" : "772fe564-fd32-4fdc-919a-dce31939aae0",
+            "attribution" : {
+              "modified" : 1758717590810,
+              "created" : 1758717590810
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "5bd278f8-ff90-45fb-80bd-03bad4154d49",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Nielson"
+            }, {
+              "id" : "5bd278f8-ff90-45fb-80bd-03bad4154d49",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=92&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Nielson",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:L&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "2231f4da-288b-459e-abe4-9859ef160063",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "eb22a1e9-3cd2-4967-9057-7c7c62b3306b",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=92&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Nielson",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:L&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "b33eb4de-f57e-4da7-a558-faec1cfeffe4",
+      "attribution" : {
+        "modified" : 1758717590810,
+        "created" : 1758717590810
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "bacc8554-923b-4b6a-a8b5-e7f92ecace53",
+        "original" : "30 November 1916",
+        "formal" : "+1916-11-30",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "fields" : [ {
+          "id" : "9edd0a90-fc11-412a-9b4a-888bd92edd2e",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.5.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "ad0e374c-4c95-4c09-a935-bdfdff14ea9c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "30 Nov 1916"
+          }, {
+            "id" : "ad0e374c-4c95-4c09-a935-bdfdff14ea9c",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.5.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "30 November 1916",
+            "resource" : "+1916-11-30",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "19d724c9-413e-4d8d-95d1-bac353bb3f7f",
+          "attribution" : {
+            "modified" : 1758717590810,
+            "created" : 1758717590810
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "27940441-663d-4969-b1e9-e1657adc2de1",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DAY_ORIG",
+            "text" : "30"
+          } ]
+        }, {
+          "id" : "c70942e4-bd4b-4c55-82dd-de719e47eafc",
+          "attribution" : {
+            "modified" : 1758717590810,
+            "created" : 1758717590810
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "c0bb8fa8-712f-44c7-925b-a9ceb12f5162",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1916"
+          } ]
+        }, {
+          "id" : "9983ebc7-59e1-40ce-99ca-04544c22ddcd",
+          "attribution" : {
+            "modified" : 1758717590810,
+            "created" : 1758717590810
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "8b9ccbd4-98ac-4d65-ab83-7afc623484c0",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_MONTH_ORIG",
+            "text" : "Nov"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "b25204fe-dd34-4198-9c16-e69e7f7dc10c",
+        "original" : "Midview,Duchesne, Utah",
+        "fields" : [ {
+          "id" : "e737bb05-5072-4c3a-a6e4-dfe6ae3eed9a",
+          "attribution" : {
+            "modified" : 1758717590810,
+            "created" : 1758717590810
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "4ab681a7-3f2b-4669-8979-a021ad202eca",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Midview,Duchesne, Utah"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "7a9aeebe-05df-4877-a6e5-dc34a1fd5152",
+      "attribution" : {
+        "modified" : 1758717590810,
+        "created" : 1758717590810
+      },
+      "type" : "http://familysearch.org/types/facts/Membership",
+      "place" : {
+        "id" : "96446631-2c15-432e-ad2a-f01c5c9cc589",
+        "original" : "Duchesne, Utah, United States",
+        "fields" : [ {
+          "id" : "bdde4e26-5bff-413a-88b1-688bc06e6fe3",
+          "attribution" : {
+            "modified" : 1758717590810,
+            "created" : 1758717590810
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "9f871f54-f240-49a1-bde6-8360a16a8b92",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Duchesne, Utah, United States",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "2c6114ef-10e2-47b8-9523-c6960d7ccd80",
+          "attribution" : {
+            "modified" : 1758717590810,
+            "created" : 1758717590810
+          },
+          "type" : "http://gedcomx.org/Church",
+          "values" : [ {
+            "id" : "51ea70f5-cc3f-479e-ab52-b3c744e42e45",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CHURCH_ORIG",
+            "text" : "Midview Ward, Duchesne Stake"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "a3be736d-f084-4640-8845-864d50189576",
+        "attribution" : {
+          "modified" : 1758717590810,
+          "created" : 1758717590810
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "49d83a2d-12b9-45c1-9891-0530f3188a71",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Membership",
+          "resource" : "http://familysearch.org/types/facts/Membership"
+        }, {
+          "id" : "49d83a2d-12b9-45c1-9891-0530f3188a71",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Membership",
+          "resource" : "http://familysearch.org/types/facts/Membership"
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "c0c4b5f6-3bdb-4e9c-adde-3171ed5ae2a6",
+      "attribution" : {
+        "modified" : 1758717590810,
+        "created" : 1758717590810
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "ec66d083-198e-45a0-8a9e-e57a7d0a3810",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000106199957_00099_00036_0000178146020731_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Nielson",
+      "gender" : "Male",
+      "birthDate" : "30 November 1916",
+      "birthPlace" : "Midview,Duchesne, Utah"
+    }
+  }, {
+    "id" : "p_301617153060",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "3c2d34bd-f828-4125-9bb6-2ce15e5fa7f4",
+        "attribution" : {
+          "modified" : 1758717590810,
+          "created" : 1758717590810
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "7b5d3475-4e43-448c-8eae-74f5c6a1ce59",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1774542942711,
+            "created" : 1774542942711
+          },
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_FTHR_SEX_CODE_ORIG",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        }, {
+          "id" : "7b5d3475-4e43-448c-8eae-74f5c6a1ce59",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1774542942711,
+            "created" : 1774542942711
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6PGW-R2SM?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/HQ83-ZP99?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6PGW-R2SM" ]
+    },
+    "names" : [ {
+      "id" : "8f72f984-65cd-4655-a9d7-684cd58969c8",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=87&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1758717590810,
+        "created" : 1758717590810
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Emery",
+        "parts" : [ {
+          "id" : "5faedf76-6ea0-47ba-b6d4-be175bc79694",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Emery",
+          "fields" : [ {
+            "id" : "934e66f2-46a5-4e73-bcdb-90b4530b1282",
+            "attribution" : {
+              "modified" : 1758717590810,
+              "created" : 1758717590810
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "c9cd1a46-5d8e-492a-b98e-e13062fb444d",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Emery"
+            }, {
+              "id" : "c9cd1a46-5d8e-492a-b98e-e13062fb444d",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=87&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Emery",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:F&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "768ceba0-0864-48d6-a159-61920eb91ca4",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "b0be5a50-6484-4029-a96d-a16f478cdfa1",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=87&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Emery",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:F&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "7c443c86-99bc-4ee0-bcdc-ed0e63edadad",
+      "attribution" : {
+        "modified" : 1758717590810,
+        "created" : 1758717590810
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "7b4ad39a-22ea-456f-8b15-5fab46a6e85b",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000106199957_00099_00036_0000178146020731_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Emery",
+      "gender" : "Male"
+    }
+  }, {
+    "id" : "p_301617153061",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "b946ee51-8d33-43b7-b491-903612cef800",
+        "attribution" : {
+          "modified" : 1758717590810,
+          "created" : 1758717590810
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "fe37136d-138b-4e72-ad13-2539bc3a4e7f",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1774542942711,
+            "created" : 1774542942711
+          },
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MTHR_SEX_CODE_ORIG",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        }, {
+          "id" : "fe37136d-138b-4e72-ad13-2539bc3a4e7f",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1774542942711,
+            "created" : 1774542942711
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6PGW-R2S9?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/HQ83-ZP99?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6PGW-R2S9" ]
+    },
+    "names" : [ {
+      "id" : "2c86047e-42e3-4117-ad41-a94f5bb4549e",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1758717590810,
+        "created" : 1758717590810
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Sarah Bird",
+        "parts" : [ {
+          "id" : "2c6b50d7-a51d-439b-a478-0ef805c899e0",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Bird",
+          "fields" : [ {
+            "id" : "c768ebb2-badf-40e3-8475-45241938ea3b",
+            "attribution" : {
+              "modified" : 1758717590810,
+              "created" : 1758717590810
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "3a5df0ec-c833-43e9-bd35-3d7ac41a22a6",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
+              "text" : "Bird"
+            }, {
+              "id" : "3a5df0ec-c833-43e9-bd35-3d7ac41a22a6",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Bird",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "a864ead0-0305-432a-8ade-72574d7c18d8",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Sarah",
+          "fields" : [ {
+            "id" : "5d082997-b0b3-457e-b3c4-e40432ce4cc6",
+            "attribution" : {
+              "modified" : 1758717590810,
+              "created" : 1758717590810
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "a802b2c7-b797-4f05-8bf3-0bea031df56a",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Sarah"
+            }, {
+              "id" : "a802b2c7-b797-4f05-8bf3-0bea031df56a",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Sarah",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "f19a2ae2-0b71-4afa-9998-32195991b132",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "fab5d610-f849-4e16-95e8-d083b86d3d06",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Sarah Bird",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "02859970-a410-42f8-8000-3236198a46fe",
+      "attribution" : {
+        "modified" : 1758717590810,
+        "created" : 1758717590810
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "96f2507c-2b14-4553-9d50-90ea9347c226",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000106199957_00099_00036_0000178146020731_002"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Sarah Bird",
+      "gender" : "Female"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "f8937050-feab-4199-9e96-002789a53dbd",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_301617153060",
+      "resourceId" : "p_301617153060"
+    },
+    "person2" : {
+      "resource" : "#p_301617153059",
+      "resourceId" : "p_301617153059"
+    }
+  }, {
+    "id" : "9e4c2b29-c615-42d8-898b-18240a1b824a",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_301617153061",
+      "resourceId" : "p_301617153061"
+    },
+    "person2" : {
+      "resource" : "#p_301617153059",
+      "resourceId" : "p_301617153059"
+    }
+  }, {
+    "id" : "f9f5210c-ea76-472a-b2fc-c337b0dc15c6",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_301617153060",
+      "resourceId" : "p_301617153060"
+    },
+    "person2" : {
+      "resource" : "#p_301617153061",
+      "resourceId" : "p_301617153061"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_178146020731",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:HQ83-ZP99",
+    "componentOf" : {
+      "description" : "#sd_c_3714676",
+      "descriptionId" : "sd_c_3714676"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1698246256315,
+    "modified" : 1774584679471,
+    "coverage" : [ {
+      "recordType" : "http://familysearch.org/types/records/Miscellaneous"
+    } ],
+    "citations" : [ {
+      "value" : "\"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6PGW-R291 : Fri Mar 27 04:11:19 UTC 2026), Entry for Nielson and Emery."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Nielson, \"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:HQ83-ZP99" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/platform/records/collections/3714676?arkName=1:2:HQ83-ZP99"
+    },
+    "statuses" : [ "http://gedcomx.org/Published" ]
+  }, {
+    "id" : "sd_c_3714676",
+    "about" : "https://www.familysearch.org/platform/records/collections/3714676",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1590504608987,
+    "modified" : 1758717590810,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "World",
+        "description" : "https://www.familysearch.org/platform/places/description/324"
+      },
+      "temporal" : {
+        "original" : "1836/1970",
+        "formal" : "+1836/+1970"
+      },
+      "recordType" : "http://familysearch.org/types/records/Miscellaneous"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970"
+    }, {
+      "lang" : "fr",
+      "value" : "L’Église de Jésus-Christ des Saints des Derniers Jours, Registre des membres (dans le monde), 1836-1970"
+    }, {
+      "lang" : "no",
+      "value" : "Jesu Kristi Kirke av Siste Dagers Hellige, Medlemsregister (Verdensomspennende), 1836-1970"
+    }, {
+      "lang" : "es",
+      "value" : "La Iglesia de Jesucristo de los Santos de los Últimos Días, Registro de Miembros (en todo el mundo), 1836-1970"
+    }, {
+      "lang" : "mn",
+      "value" : "Есүс Христийн Хожмын Үеийн Гэгээнтнүүдийн Сүм, Гишүүдийн бүртгэл (Дэлхий даяар), 1836-1970 он"
+    }, {
+      "lang" : "ko",
+      "value" : "예수 그리스도 후기 성도 교회, 회원 기록(전 세계), 1836-1970"
+    }, {
+      "lang" : "ja",
+      "value" : "末日聖徒イエス・キリスト教会、会員レコード（全世界）、1836年-1970年"
+    }, {
+      "lang" : "it",
+      "value" : "Chiesa di Gesù Cristo dei Santi degli Ultimi Giorni, Archivio dei membri (in tutto il mondo), 1836-1970"
+    }, {
+      "lang" : "id",
+      "value" : "Gereja Yesus Kristus dari Orang-Orang Suci Zaman Akhir, Catatan Anggota (Di Seluruh Dunia), 1836-1970"
+    }, {
+      "lang" : "hu",
+      "value" : "Az Utolsó Napok Szentjeinek Jézus Krisztus Egyháza, a tagok nyilvántartása (világszerte), 1836-1970"
+    }, {
+      "lang" : "sk",
+      "value" : "Cirkev Ježiša Krista Svätých neskorších dní, Zoznam členov (Svetovo), 1836 – 1970"
+    }, {
+      "lang" : "th",
+      "value" : "ศาสนจักรของพระเยซูคริสต์แห่งวิสุทธิชนยุคสุดท้าย, บันทึกของสมาชิก (ทั่วโลก), ปี 1836-1970"
+    }, {
+      "lang" : "to",
+      "value" : "Siasi ʻo Sīsū Kalaisi ʻo e Kau Māʻoniʻoni ʻi he Ngaahi ʻAho Kimui Ní, Lekooti ʻo e Kāingalotú (Fakaemāmani Lahí), 1836-1970"
+    }, {
+      "lang" : "km",
+      "value" : "ព្រះវិហារព្រះយេស៊ូគ្រឹស្តនៃពួកបរិសុទ្ធថ្ងៃចុងក្រោយ, កំណត់ត្រានៃសមាជិក (ទូទាំងពិភពលោក), ឆ្នាំ 1836-1970"
+    }, {
+      "lang" : "pl",
+      "value" : "Kościół Jezusa Chrystusa Świętych w Dniach Ostatnich, Rejestr członków (na całym świecie), 1836-1970"
+    }, {
+      "lang" : "ro",
+      "value" : "Biserica lui Isus Hristos a Sfinților din Zilele din Urmă, Registrul membrilor (din toată lumea), 1836-1970"
+    }, {
+      "lang" : "sv",
+      "value" : "Jesu Kristi Kyrka av Sista Dagars Heliga, Medlemsregister (Världsomfattande), 1836-1970"
+    }, {
+      "lang" : "sm",
+      "value" : "Giáo Hội Các Thánh Hữu Ngày Sau của Chúa Giê Su Ky Tô, Hồ Sơ Tín Hữu (Toàn Cầu), 1836-1970"
+    }, {
+      "lang" : "vi",
+      "value" : "Giáo Hội Các Thánh Hữu Ngày Sau của Chúa Giê Su Ky Tô, Hồ Sơ Tín Hữu (Toàn Cầu), 1836-1970"
+    }, {
+      "lang" : "sq",
+      "value" : "Kisha e Jezu Krishtit e Shenjtorëve të Ditëve të Mëvonshme, Dokumentimi i Anëtarëve (Në mbarë botën), 1836-1970"
+    }, {
+      "lang" : "pt",
+      "value" : "A igreja de Jesus Cristo dos santos dos últimos dias, registro de membros (Mundial), 1836-1970"
+    }, {
+      "lang" : "de",
+      "value" : "Die Kirche Jesu Christi der Heiligen der Letzten Tage, Mitgliedertage (weltweit), 1836-1970"
+    }, {
+      "lang" : "uk",
+      "value" : "Церква Ісуса Христа Святих Останніх Днів, проект Record of Members (увесь світ), 1836–1970 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Crkva Isusa Krista svetaca posljednjih dana, Zapis članova (globalni), 1836.-1970."
+    }, {
+      "lang" : "cs",
+      "value" : "Církev Ježíše Krista Svatých posledních dnů, Záznam členů (Celosvětově), 1836–1970"
+    }, {
+      "lang" : "da",
+      "value" : "Jesu Kristi Kirke af Sidste Dages Hellige, medlemsoptegnelser, globalt, 1836-1970, s. 1836-1970"
+    }, {
+      "lang" : "fj",
+      "value" : "Na Lotu i Jisu Karisito ni Yalododonu Edaidai, i Volatukutuku ni Lewenilotu (Vuravura Raraba), 1836-1970"
+    }, {
+      "lang" : "fi",
+      "value" : "Myöhempien Aikojen Pyhien Jeesuksen Kristuksen Kirkko, Kirkon henkikirjat (maailmanlaajuinen), 1836–1970"
+    }, {
+      "lang" : "tl",
+      "value" : "The Church of Jesus Christ of Latter-day Saints, Record ng mga Kasapi (Buong Daigdig), 1836-1970"
+    }, {
+      "lang" : "mg",
+      "value" : "Rakitsoratra momba ny mpivavaka, fiangonan'ny Jesoa Kristy ho an'ny olomasin'ny andro farany (maneran-tany), 1836-1970"
+    }, {
+      "lang" : "ceb",
+      "value" : "Ang Church of Jesus Christ of Latter-day Saints, Rekord sa mga Membro (Tibuok kalibotan), 1836-1970"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/3714676" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C3HM-NQCW",
+    "componentOf" : {
+      "description" : "#sd_c_3714676",
+      "descriptionId" : "sd_c_3714676"
+    },
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Duchesne, Utah, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/393465"
+      },
+      "temporal" : {
+        "original" : "1915–1916",
+        "formal" : "+1915-01-01T00:00:00Z/+1916-12-31T23:59:59Z"
+      },
+      "recordType" : "http://familysearch.org/types/records/BabyBlessing"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C3HM-NQCW" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/platform/records/collections/3714676?arkName=3:1:3Q9M-C3HM-NQCW"
+    }
+  }, {
+    "id" : "sd_p_301617153059",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6PGW-R291",
+    "componentOf" : {
+      "description" : "#src_r_178146020731",
+      "descriptionId" : "src_r_178146020731"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6PGW-R291 : Fri Mar 27 04:11:19 UTC 2026), Entry for Nielson and Emery."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Nielson, \"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Nielson, \"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6PGW-R291" ]
+    }
+  }, {
+    "id" : "sd_p_301617153061",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6PGW-R2S9",
+    "componentOf" : {
+      "description" : "#src_r_178146020731",
+      "descriptionId" : "src_r_178146020731"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6PGW-R291 : Fri Mar 27 04:11:19 UTC 2026), Entry for Nielson and Emery."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Sarah Bird, \"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Sarah Bird, \"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6PGW-R2S9" ]
+    }
+  }, {
+    "id" : "sd_p_301617153060",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6PGW-R2SM",
+    "componentOf" : {
+      "description" : "#src_r_178146020731",
+      "descriptionId" : "src_r_178146020731"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6PGW-R291 : Fri Mar 27 04:11:19 UTC 2026), Entry for Nielson and Emery."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Emery, \"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Emery, \"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6PGW-R2SM" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "cd30803f-6d59-4cd4-a2c2-25bd93ad1759",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "5a9c9e52-a957-4103-99a6-a777aac68ebc",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"FS_IDX_PROJECT_ID\":\"84d4be3f-d2c6-49d4-b842-8c6813b92591\",\"FS_IDX_TEMPLATE_ID\":\"template://idx-template/templates/entity/template;entitytype=PROJECT;entityid=84d4be3f-d2c6-49d4-b842-8c6813b92591;name=dac7ea6d-2142-4025-bebb-b8024ba27a18\",\"FS_COLLECTION_ID\":\"3714676\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-C3HM-NQCW\"}"
+    } ]
+  }, {
+    "id" : "e0430823-eaa0-49be-abaf-d0ec2dfdf0b5",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/ExtPubTitle",
+    "values" : [ {
+      "id" : "319d9396-1f4d-4cff-b988-bb40d352a88e",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_PUB_TITLE_ORIG",
+      "text" : "Record of Members, 1836-1970"
+    } ]
+  }, {
+    "id" : "0837d25d-9c4f-4756-9040-cf2d91876e34",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/VisStatus",
+    "values" : [ {
+      "id" : "60d0ed14-0088-43d1-a695-275f921971f7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "id" : "e276cf00-83ad-421c-8126-315ec64c0639",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/RecordNbr",
+    "values" : [ {
+      "id" : "9258cb5d-e788-4a08-881b-856f9c72bd59",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "36"
+    } ]
+  }, {
+    "id" : "d1a53475-17f8-4dd8-8646-cf1c82fb2f62",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "id" : "7816ee89-b60c-49e1-9785-bda92adb91d2",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "4f946d74-9833-4418-a5cc-c7729ae862cb"
+    } ]
+  }, {
+    "id" : "54214815-9e0a-4cb5-881a-024f8e17a6b5",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "ac5dfbd2-704f-45da-b8e9-5b7f4b1b07af",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000106199957_00099_00036_0000178146020731"
+    } ]
+  }, {
+    "id" : "8f54b1b8-4c46-4765-b95c-8a21e3d8c8ff",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "95e9aa98-09d0-42be-a969-ab91a457f0d2",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "id" : "936fdac7-a2fa-480f-9c54-5c5ac88d42af",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "b1810ed2-37a3-4a85-89db-764bb52b1000",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "5"
+    } ]
+  }, {
+    "id" : "198573e3-aa14-47c6-8ff9-66f04dda84e8",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/ExtPubNbr",
+    "values" : [ {
+      "id" : "5f7e0b74-6036-4a56-8606-295f214ed424",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_PUB_NBR_ORIG",
+      "text" : "CR 375 8/b2240/f0001"
+    } ]
+  }, {
+    "id" : "549f6963-2900-4b37-bfb1-b51b747ab7fb",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "37ca2026-00c9-476f-abe4-1a90dddf248a",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "18c387cc-1353-45a5-be5f-2167060b52ca",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "77805804-b64e-45c5-91fe-f068c8515dd2",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "951eb53a-5dda-4a70-9371-35a34f8c4b7f",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "79e2dbb3-ce90-4180-ab17-a37a2cbd23cd",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "19-1371"
+    } ]
+  }, {
+    "id" : "6048412c-6854-4e0e-9089-5e5dcb196269",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "233d2e4c-a4b9-4616-81d4-855159010571",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "100000"
+    } ]
+  }, {
+    "id" : "ddb02907-c7fc-47ba-a062-616ad5f00b7c",
+    "attribution" : {
+      "modified" : 1758717590810,
+      "created" : 1758717590810
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "889ff41d-933b-4e43-913a-86d1f8918cfa",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_IMAGE_APID\":\"TH-909-88216-3876-69\",\"FS_IMAGE_NBR\":\"00099\"}"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "106199957_006_M9N9-32W"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "4"
+    } ]
+  } ],
+  "qualifiers" : [ {
+    "value" : "true",
+    "name" : "TreatmentWarnings"
+  } ],
+  "additionalAttribution" : [ {
+    "contributor" : {
+      "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMS-JZDV"
+    },
+    "modified" : 1693495643698,
+    "created" : 1693495643698,
+    "changeMessageResource" : "http://familysearch.org/types/reasons/127657"
+  } ]
+}

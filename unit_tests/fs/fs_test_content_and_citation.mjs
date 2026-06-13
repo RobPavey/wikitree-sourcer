@@ -533,6 +533,11 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:VYX9-KBH",
   },
   {
+    // was not getting event date
+    caseName: "us_ut_child_church_membership_1916_emery_nielson",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6PGW-R2SM?lang=en",
+  },
+  {
     // was not getting parents
     caseName: "us_ut_death_1959_virginia_vigus",
     url: "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRZ",

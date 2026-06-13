@@ -178,6 +178,10 @@ const factTypeToRecordType = [
     titleMatches: [{ recordType: RT.ElectoralRegister, matches: ["Electoral Register"] }],
   },
   {
+    type: "Membership",
+    titleMatches: [{ recordType: RT.ChurchRecords, matches: ["Church"] }],
+  },
+  {
     type: "TaxAssessment",
     defaultRT: RT.Tax,
   },
@@ -1390,8 +1394,9 @@ function generalizeData(input) {
   result.setDeathPlace(deathPlace);
 
   let eventDate = selectDate(ed.eventDate, ed.eventDateOriginal);
+  let eventYear = ed.eventYear;
 
-  if (eventDate && ed.eventYear) {
+  if (eventDate && eventYear) {
     // occasionally the event date is missing the year and should have it added
     // E.g. https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKC?lang=en
     // BUT. Sometime (e.g. on https://www.familysearch.org/ark:/61903/1:1:QGLK-B6K4?lang=en )
@@ -1399,15 +1404,15 @@ function generalizeData(input) {
     // "eventDate": "1 January 1782",
     // "eventYear": "1641-1813",
     // In that case we do not want to include the "eventYear"
-    if (ed.eventYear.length == 4) {
-      if (!eventDate.includes(ed.eventYear)) {
-        eventDate += " " + ed.eventYear;
+    if (eventYear.length == 4) {
+      if (!eventDate.includes(eventYear)) {
+        eventDate += " " + eventYear;
       }
     }
   }
 
   result.setEventDate(eventDate);
-  result.setEventYear(ed.eventYear);
+  result.setEventYear(eventYear);
 
   if (!ed.eventDate && !ed.eventDateOriginal && !ed.eventYear) {
     // this can happen for a census
