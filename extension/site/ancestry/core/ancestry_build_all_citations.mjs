@@ -88,6 +88,9 @@ function inferBestEventDateForCompare(gd) {
             eventDate = birthDate;
           }
         }
+      } else {
+        // sometimes an event date can be inferred from a related person
+        eventDate = gd.inferEventDate(true);
       }
     }
   }

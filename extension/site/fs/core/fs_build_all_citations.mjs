@@ -289,6 +289,9 @@ function inferBestEventDateForCompare(gd) {
             eventDate = gd.marriageDate;
           }
         }
+      } else {
+        // sometimes an event date can be inferred from a related person
+        eventDate = gd.inferEventDate(true);
       }
     }
   }

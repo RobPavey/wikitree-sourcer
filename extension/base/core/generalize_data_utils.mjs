@@ -3646,33 +3646,45 @@ class GeneralizedData {
     return "";
   }
 
-  inferEventDateObj() {
+  inferEventDateObj(includeRelatedPerson = false) {
     if (this.eventDate) {
       return this.eventDate;
     }
-  }
 
-  inferEventDate() {
-    if (this.eventDate) {
-      return this.eventDate.getDateString();
+    if (includeRelatedPerson && this.role && this.role != Role.Primary && this.primaryPerson) {
+      if (this.primaryPerson.deathDate) {
+        return this.primaryPerson.deathDate;
+      } else if (this.primaryPerson.birthDate) {
+        return this.primaryPerson.birthDate;
+      }
     }
   }
 
-  inferEventYear() {
-    if (this.eventDate) {
-      return this.eventDate.getYearString();
+  inferEventDate(includeRelatedPerson = false) {
+    let eventDate = this.inferEventDateObj(includeRelatedPerson);
+    if (eventDate) {
+      return eventDate.getDateString();
     }
   }
 
-  inferEventDateQualifier() {
-    if (this.eventDate) {
-      return this.eventDate.qualifier;
+  inferEventYear(includeRelatedPerson = false) {
+    let eventDate = this.inferEventDateObj(includeRelatedPerson);
+    if (eventDate) {
+      return eventDate.getYearString();
     }
   }
 
-  inferEventQuarter() {
-    if (this.eventDate) {
-      return this.eventDate.quarter;
+  inferEventDateQualifier(includeRelatedPerson = false) {
+    let eventDate = this.inferEventDateObj(includeRelatedPerson);
+    if (eventDate) {
+      return eventDate.qualifier;
+    }
+  }
+
+  inferEventQuarter(includeRelatedPerson = false) {
+    let eventDate = this.inferEventDateObj(includeRelatedPerson);
+    if (eventDate) {
+      return eventDate.quarter;
     }
   }
 

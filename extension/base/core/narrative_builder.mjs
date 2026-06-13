@@ -3320,7 +3320,7 @@ class NarrativeBuilder {
       }
     }
 
-    let dateObj = gd.inferEventDateObj();
+    let dateObj = gd.inferEventDateObj(true);
     let placeObj = gd.inferEventPlaceObj();
 
     if (gd.role && gd.role != Role.Primary) {

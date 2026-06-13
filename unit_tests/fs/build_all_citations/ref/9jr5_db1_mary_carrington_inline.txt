@@ -168,21 +168,20 @@ Name: Mary Elfreth Carrington; Residence Date: 10 Dec 1967; Residence Place: Ric
 </ref>
 
 <ref>
+'''Social Security record of son Carrington Eggleston''':
+"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007"<br/>
+citing Digital film/folder number: DI0001099<br/>
+{{FamilySearch Record|6KSN-BHTX}} (accessed 20 July 2023)<br/>
+Mary E Carrington in Social Security record for son Carrington Eggleston.
+</ref>
+
+<ref>
 '''Obituary of son Mr Carrington Carrington Eggleston''':
 "United States, GenealogyBank Obituaries, Births, and Marriages 1980-2014"<br/>
 citing Affiliate Name: GenealogyBank, Inc.; Digital film/folder number: 101250903; FHL microfilm: 101250903; Image number: 64<br/>
 {{FamilySearch Record|QVY8-LZBD}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|3Q9M-C9Y1-XQQS-1}}<br/>
 Name: Mary Elfreth Carrington Eggleston; Source Newspaper: Roanoke Times, The; Relationship to fact person: Parent; Fact: Obituary; Related person name: Mr Carrington Carrington Eggleston; Related person gender: male; Event date: 8 Jan 2001; Event place: Old Lick, Roanoke, Virginia, United States.
-</ref>
-
-<ref>
-'''Obituary of son Mr Beverley Purnell Eggleston, Jr Mr, Jr Mr''':
-"United States, GenealogyBank Obituaries, Births, and Marriages 1980-2014"<br/>
-citing Affiliate Name: NewsBank, Inc.; Digital film/folder number: 101126846; FHL microfilm: 101126846; Image number: 1512<br/>
-{{FamilySearch Record|QK4F-PC3Z}} (accessed 20 July 2023)<br/>
-{{FamilySearch Image|3Q9M-C9TZ-79Z7-P}}<br/>
-Name: Mary Elfreth Carrington Eggleston; Source Newspaper: Richmond Times-Dispatch; Relationship To Head: Parent; Relationship to fact person: Parent; Fact: Obituary; Related person name: Mr Beverley Purnell Eggleston, Jr Mr, Jr Mr; Related person gender: male; Event date: 22 Jul 2003; Event place: Virginia, United States.
 </ref>
 
 <ref>
@@ -194,9 +193,10 @@ Mary E Carrington in Social Security record for son Beverley Purnell Eggleston J
 </ref>
 
 <ref>
-'''Social Security record of son Carrington Eggleston''':
-"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007"<br/>
-citing Digital film/folder number: DI0001099<br/>
-{{FamilySearch Record|6KSN-BHTX}} (accessed 20 July 2023)<br/>
-Mary E Carrington in Social Security record for son Carrington Eggleston.
+'''Obituary of son Mr Beverley Purnell Eggleston, Jr Mr, Jr Mr''':
+"United States, GenealogyBank Obituaries, Births, and Marriages 1980-2014"<br/>
+citing Affiliate Name: NewsBank, Inc.; Digital film/folder number: 101126846; FHL microfilm: 101126846; Image number: 1512<br/>
+{{FamilySearch Record|QK4F-PC3Z}} (accessed 20 July 2023)<br/>
+{{FamilySearch Image|3Q9M-C9TZ-79Z7-P}}<br/>
+Name: Mary Elfreth Carrington Eggleston; Source Newspaper: Richmond Times-Dispatch; Relationship To Head: Parent; Relationship to fact person: Parent; Fact: Obituary; Related person name: Mr Beverley Purnell Eggleston, Jr Mr, Jr Mr; Related person gender: male; Event date: 22 Jul 2003; Event place: Virginia, United States.
 </ref>
