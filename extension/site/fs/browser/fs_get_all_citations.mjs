@@ -202,11 +202,17 @@ async function getUserChoicesForLackingSources(result, type, options) {
         }
       }
     } else if (isNarrativeNeeded) {
-      // This is probably a source that is not a FamilySearch source
+      // There is no gd. This is probably a source that is not a FamilySearch source
+      // or a FamilySearch image - extractData is not working for images currently
       let message = "Non-FamilySearch Source";
-      const fsRegex = /^https?\:\/\/(?:www\.)?familysearch.org\/.*/;
+      const fsRegex = /^https?\:\/\/(?:www\.)?familysearch\.org\/.*/;
       if (source.extractedData || fsRegex.test(source.uri)) {
-        message = "Source references unknown FamilySearch page";
+        const fsImageRegex = /^https?\:\/\/(?:www\.)?familysearch\.org\/ark\:\/61903\/3\:1\:.*/;
+        if (fsImageRegex.test(source.uri)) {
+          message = "Source is a FamilySearch image";
+        } else {
+          message = "Source references unknown FamilySearch page";
+        }
       }
       let response = await getUserProvidedVitals(source, message);
       if (response.include) {

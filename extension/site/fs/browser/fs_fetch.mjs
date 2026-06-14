@@ -203,7 +203,8 @@ function extractDataFromHtml(htmlText, url) {
   //console.log(htmlText);
 
   let parser = new DOMParser();
-  let parsedDocument = parser.parseFromString(htmlText, "text/html");
+  let newText = `<base href="${url}">${htmlText}`;
+  let parsedDocument = parser.parseFromString(newText, "text/html");
   //console.log("document is:");
   //console.log(document);
 

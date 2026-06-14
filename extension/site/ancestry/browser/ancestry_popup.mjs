@@ -831,6 +831,10 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
             message2 = "\nThese are source type citations and should be pasted after the Sources heading.";
           } else {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
+            if (response.citationsStringType == "narrative") {
+              message2 +=
+                "\n\nNote that the narrative strings generated are just starting points for you to add detail.";
+            }
           }
 
           if (excludedSourcesMessage) {
