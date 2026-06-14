@@ -435,3 +435,30 @@ li.dividerBelow {
   margin-bottom: 2px;
   word-break: break-all; /* Prevents long URLs from breaking the popup width */
 }
+
+dl {
+  display: grid;
+  grid-template-columns: min-content 1fr; /* Label uses min space, value takes rest */
+  gap: 10px 20px; /* 10px row gap, 20px column gap between label and value */
+  align-items: baseline; /* Keeps text aligned even if wrapped */
+  padding: 10px 10px;
+  background-color: #e1f0b4;
+}
+
+dt {
+  font-weight: bold;
+  white-space: nowrap; /* Prevents labels from wrapping */
+}
+
+dd {
+  margin-left: 0; /* Important: removes browser default indent */
+  overflow-wrap: break-word; /* Allows breaking within words if necessary */
+  word-break: break-word; /* Provides better compatibility for long URLs */
+}
+
+dd.truncate {
+  overflow: hidden; /* Hides the overflow */
+  white-space: nowrap; /* Prevents wrapping */
+  text-overflow: ellipsis; /* Adds the '...' */
+  min-width: 0; /* Essential: allows the flex/grid child to shrink below its content size */
+}

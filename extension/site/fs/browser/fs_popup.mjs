@@ -255,6 +255,8 @@ function getExcludedSourcesString(response) {
 
   addMessage(response.numExcludedTreeSources, "because the source just references another family tree.");
 
+  addMessage(response.numUserExcludedSources, "by responses to the previous dialogs.");
+
   return message;
 }
 

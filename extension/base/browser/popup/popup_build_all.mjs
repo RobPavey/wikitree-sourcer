@@ -25,6 +25,18 @@ SOFTWARE.
 import { beginMainMenu, endMainMenu, addBreak, rtToRefTitle } from "./popup_menu_building.mjs";
 import { RT } from "/base/core/record_type.mjs";
 
+function addHeading(menu, text) {
+  let label = document.createElement("label");
+  label.className = "dialogInput";
+  label.appendChild(document.createTextNode(text));
+
+  let div = document.createElement("div");
+  div.className = "menuRowDiv";
+  div.appendChild(label);
+
+  menu.list.appendChild(div);
+}
+
 function addDivWithLabel(menu, text) {
   let label = document.createElement("label");
   label.className = "dialogInput";
@@ -37,11 +49,49 @@ function addDivWithLabel(menu, text) {
   menu.list.appendChild(div);
 }
 
+function addSourceKeyValuePair(parentElement, key, value, doTruncate) {
+  let dt = document.createElement("dt");
+  dt.textContent = key;
+  let dd = document.createElement("dd");
+  if (value) {
+    dd.textContent = value;
+    if (doTruncate) {
+      dd.className = "truncate";
+    }
+  }
+
+  parentElement.appendChild(dt);
+  parentElement.appendChild(dd);
+}
+
+function addTextInput(menu, id, labelText, defaultValue, changeFunction) {
+  if (!defaultValue) {
+    defaultValue = "";
+  }
+  let textInput = document.createElement("input");
+  textInput.type = "text";
+  textInput.id = id;
+  textInput.className = "dialogTextInput";
+  textInput.value = defaultValue;
+  textInput.addEventListener("change", changeFunction);
+  let label = document.createElement("label");
+  label.className = "dialogInput";
+  label.appendChild(document.createTextNode(labelText));
+  addBreak(label);
+  label.appendChild(textInput);
+  menu.list.appendChild(label);
+
+  return textInput;
+}
+
 function addSourceDetailsToMenu(menu, source) {
   let ed = source.extractedData;
   let gd = source.generalizedData;
 
-  let title = "";
+  let dl = document.createElement("dl");
+  menu.list.appendChild(dl);
+
+  let title = source.title;
   if (ed) {
     // this is a bit site specific
     if (ed.collectionTitle) {
@@ -51,46 +101,76 @@ function addSourceDetailsToMenu(menu, source) {
     }
   }
 
-  if (!title && source.title) {
-    title = source.title;
-  }
-
-  if (title) {
-    addDivWithLabel(menu, title);
-  }
+  addSourceKeyValuePair(dl, "Title", title);
 
   if (gd) {
     let role = gd.role;
     let nameString = gd.inferFullName();
     let dateString = gd.inferEventDate();
     let placeString = gd.inferEventPlace();
-    if (nameString) {
-      addDivWithLabel(menu, "Name: " + nameString);
-    }
+    addSourceKeyValuePair(dl, "Name", nameString);
 
-    if (dateString) {
-      addDivWithLabel(menu, "Date: " + dateString);
-    }
+    addSourceKeyValuePair(dl, "Date", dateString);
 
-    if (placeString) {
-      addDivWithLabel(menu, "Place: " + placeString);
-    }
+    addSourceKeyValuePair(dl, "Place", placeString);
 
     if (role) {
-      addDivWithLabel(menu, "Role: " + role);
+      let value = role;
       if (gd.primaryPerson) {
         if (gd.primaryPerson.name) {
           let primaryNameString = gd.primaryPerson.name.inferFullName();
           if (primaryNameString) {
-            addDivWithLabel(menu, "...of: " + primaryNameString);
+            value += " of " + primaryNameString;
           }
         }
       }
+      addSourceKeyValuePair(dl, "Role", role);
     }
+  } else {
+    let dateString = source.eventDate;
+    let notes = source.notes;
+    let citation = source.citation;
+    let uri = source.uri;
+    addSourceKeyValuePair(dl, "Date", dateString);
+    addSourceKeyValuePair(dl, "Link", uri, true);
+    addSourceKeyValuePair(dl, "Citation", citation);
+    addSourceKeyValuePair(dl, "Notes", notes);
   }
 }
 
-function getUserClassification(source) {
+function addSelector(id, labelText, fillFunction, changeFunction) {
+  let selector = document.createElement("select");
+  selector.id = id;
+  selector.className = "dialogSelector";
+  fillFunction(selector);
+  selector.addEventListener("change", changeFunction);
+  let label = document.createElement("label");
+  label.className = "dialogInput";
+  label.appendChild(document.createTextNode(labelText));
+  addBreak(label);
+  label.appendChild(selector);
+  menu.list.appendChild(label);
+
+  return selector;
+}
+
+function addKeepButton(menu, clickFunction) {
+  let button = document.createElement("button");
+  button.className = "dialogButton";
+  button.innerText = "Keep source with changes";
+  button.onclick = clickFunction;
+  menu.list.appendChild(button);
+}
+
+function addExcludeButton(menu, clickFunction) {
+  let button = document.createElement("button");
+  button.className = "dialogButton";
+  button.innerText = "Exclude source";
+  button.onclick = clickFunction;
+  menu.list.appendChild(button);
+}
+
+function getUserClassification(source, isRecordTypeNeeded, isRefTitleNeeded) {
   return new Promise((resolve, reject) => {
     let menu = beginMainMenu();
 
@@ -103,8 +183,8 @@ function getUserClassification(source) {
     let refTitle = "";
     let textInputField = undefined;
 
-    let needsRecordType = true; // needs work
-    let needsRefTitle = true; // needs work
+    let needsRecordType = isRecordTypeNeeded;
+    let needsRefTitle = isRefTitleNeeded;
 
     function fillRecordTypeSelector(selector) {
       while (selector.firstChild) {
@@ -120,37 +200,7 @@ function getUserClassification(source) {
       }
     }
 
-    function addSelector(id, labelText, fillFunction, changeFunction) {
-      let selector = document.createElement("select");
-      selector.id = id;
-      selector.className = "dialogSelector";
-      fillFunction(selector);
-      selector.addEventListener("change", changeFunction);
-      let label = document.createElement("label");
-      label.className = "dialogInput";
-      label.appendChild(document.createTextNode(labelText));
-      addBreak(label);
-      label.appendChild(selector);
-      menu.list.appendChild(label);
-
-      return selector;
-    }
-
-    function addTextInput(id, labelText, changeFunction) {
-      let textInput = document.createElement("input");
-      textInput.type = "text";
-      textInput.id = id;
-      textInput.className = "dialogTextInput";
-      textInput.addEventListener("change", changeFunction);
-      let label = document.createElement("label");
-      label.className = "dialogInput";
-      label.appendChild(document.createTextNode(labelText));
-      addBreak(label);
-      label.appendChild(textInput);
-      menu.list.appendChild(label);
-
-      return textInput;
-    }
+    addHeading(menu, "Unclassified source");
 
     addSourceDetailsToMenu(menu, source);
 
@@ -187,7 +237,7 @@ function getUserClassification(source) {
       addBreak(menu.list);
 
       // text input
-      textInputField = addTextInput("refTitleInput", "Choose label: ", function (event) {
+      textInputField = addTextInput(menu, "refTitleInput", "Choose label: ", "", function (event) {
         refTitle = event.target.value;
         //console.log("set ref title to: " + refTitle);
       });
@@ -196,74 +246,61 @@ function getUserClassification(source) {
     addBreak(menu.list);
     addBreak(menu.list);
 
-    {
-      let button = document.createElement("button");
-      button.className = "dialogButton";
-      button.innerText = "Keep source with changes";
-      button.onclick = function (element) {
-        let result = {
-          include: true,
-          recordType: recordType,
-          refTitle: refTitle,
-        };
-        resolve(result);
+    addKeepButton(menu, function (element) {
+      let result = {
+        include: true,
+        recordType: recordType,
+        refTitle: refTitle,
       };
-      menu.list.appendChild(button);
-    }
+      resolve(result);
+    });
 
-    {
-      let button = document.createElement("button");
-      button.className = "dialogButton";
-      button.innerText = "Exclude source";
-      button.onclick = function (element) {
-        let result = {
-          include: false,
-        };
-        resolve(result);
+    addExcludeButton(menu, function (element) {
+      let result = {
+        include: false,
       };
-      menu.list.appendChild(button);
-    }
+      resolve(result);
+    });
 
     endMainMenu(menu);
   });
 }
 
-function getUserProvidedVitals(source) {
+function getUserProvidedVitals(source, message) {
   return new Promise((resolve, reject) => {
     let menu = beginMainMenu();
 
     let narrative = "";
+    let eventDate = source.eventDate;
     let textInputField = undefined;
 
+    let needsDate = true; // needs work
     let needsNarrative = true; // needs work
 
-    function addTextInput(id, labelText, changeFunction) {
-      let textInput = document.createElement("input");
-      textInput.type = "text";
-      textInput.id = id;
-      textInput.className = "dialogTextInput";
-      textInput.addEventListener("change", changeFunction);
-      let label = document.createElement("label");
-      label.className = "dialogInput";
-      label.appendChild(document.createTextNode(labelText));
-      addBreak(label);
-      label.appendChild(textInput);
-      menu.list.appendChild(label);
-
-      return textInput;
-    }
+    addHeading(menu, message);
 
     addSourceDetailsToMenu(menu, source);
 
     // Explanation
-    addDivWithLabel(menu, "More details are required for narrative.");
+    addBreak(menu.list);
+    addDivWithLabel(menu, "More details are required for narrative/sorting:");
+
+    if (needsDate) {
+      addBreak(menu.list);
+
+      // text input
+      addTextInput(menu, "narrativeInput", "Event date:", eventDate, function (event) {
+        eventDate = event.target.value;
+        //console.log("set ref title to: " + refTitle);
+      });
+    }
 
     if (needsNarrative) {
       addBreak(menu.list);
       addBreak(menu.list);
 
       // text input
-      textInputField = addTextInput("narrativeInput", "Narrative:", function (event) {
+      addTextInput(menu, "narrativeInput", "Narrative:", "", function (event) {
         narrative = event.target.value;
         //console.log("set ref title to: " + refTitle);
       });
@@ -272,32 +309,21 @@ function getUserProvidedVitals(source) {
     addBreak(menu.list);
     addBreak(menu.list);
 
-    {
-      let button = document.createElement("button");
-      button.className = "dialogButton";
-      button.innerText = "Keep source with changes";
-      button.onclick = function (element) {
-        let result = {
-          include: true,
-          narrative: narrative,
-        };
-        resolve(result);
+    addKeepButton(menu, function (element) {
+      let result = {
+        include: true,
+        eventDate: eventDate,
+        narrative: narrative,
       };
-      menu.list.appendChild(button);
-    }
+      resolve(result);
+    });
 
-    {
-      let button = document.createElement("button");
-      button.className = "dialogButton";
-      button.innerText = "Exclude source";
-      button.onclick = function (element) {
-        let result = {
-          include: false,
-        };
-        resolve(result);
+    addExcludeButton(menu, function (element) {
+      let result = {
+        include: false,
       };
-      menu.list.appendChild(button);
-    }
+      resolve(result);
+    });
 
     endMainMenu(menu);
   });

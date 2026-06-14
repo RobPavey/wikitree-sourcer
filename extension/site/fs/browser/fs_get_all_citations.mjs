@@ -137,6 +137,94 @@ async function fetchRecordJsonAfterAdjustingUrl(uri, sessionId) {
   return await fetchRecordJson(fetchUrl, sessionId);
 }
 
+async function getUserChoicesForLackingSources(result, type, options) {
+  let isRefTitleNeeded = false;
+  let isRecordTypeNeeded = false;
+  let isEventDateNeeded = false;
+  let isNarrativeNeeded = false;
+
+  if (options.citation_general_meaningfulNames != "none") {
+    isRefTitleNeeded = true;
+  }
+
+  if (type == "narrative") {
+    isRecordTypeNeeded = true;
+    isNarrativeNeeded = true;
+    isEventDateNeeded = true;
+  }
+
+  if (options.citation_fs_dataStyle == "string") {
+    isRecordTypeNeeded = true;
+  }
+
+  let userFilteredSources = [];
+  for (let source of result.sources) {
+    let includeSource = true;
+    let gd = source.generalizedData;
+    if (gd) {
+      if (gd.recordType == RT.Unclassified && (isRecordTypeNeeded || isRefTitleNeeded)) {
+        let response = await getUserClassification(source, isRecordTypeNeeded, isRefTitleNeeded);
+        if (response.include) {
+          if (response.refTitle) {
+            gd.overrideRefTitle = response.refTitle;
+          }
+          if (response.recordType != RT.Unclassified) {
+            gd.recordType = response.recordType;
+            let ed = source.extractedData;
+            generalizeDataGivenRecordType(ed, gd);
+            buildSourcerCitationGivenGd(runDate, source, type, options);
+          }
+        } else {
+          includeSource = false;
+          result.numUserExcludedSources++;
+        }
+      }
+
+      if (includeSource) {
+        let eventDate = gd.inferEventDate(true);
+        if (!eventDate && isDateNeeded) {
+          let message = "FamilySearch Source has insufficient data";
+          let response = await getUserProvidedVitals(source, message);
+          if (response.include) {
+            if (response.eventDate) {
+              gd.setEventDate(response.eventDate);
+            } else {
+              if (source.eventDate) {
+              }
+            }
+            if (response.narrative) {
+              source.userOverrideForNarrative = response.narrative;
+            }
+          } else {
+            includeSource = false;
+            result.numUserExcludedSources++;
+          }
+        }
+      }
+    } else if (isNarrativeNeeded) {
+      // This is probably a source that is not a FamilySearch source
+      let message = "Non-FamilySearch Source";
+      const fsRegex = /^https?\:\/\/(?:www\.)?familysearch.org\/.*/;
+      if (source.extractedData || fsRegex.test(source.uri)) {
+        message = "Source references unknown FamilySearch page";
+      }
+      let response = await getUserProvidedVitals(source, message);
+      if (response.include) {
+        if (response.narrative) {
+          source.userOverrideForNarrative = response.narrative;
+        }
+      } else {
+        includeSource = false;
+        result.numUserExcludedSources++;
+      }
+    }
+    if (includeSource) {
+      userFilteredSources.push(source);
+    }
+  }
+  result.sources = userFilteredSources;
+}
+
 async function getSourcerCitation(runDate, source, type, sessionId, options, updateStatusFunction) {
   logDebug("getSourcerCitation, source is:", source);
 
@@ -246,42 +334,7 @@ async function getSourcerCitations(runDate, result, type, sessionId, options) {
 
   pruneSources(result, options);
 
-  let userFilteredSources = [];
-  for (let source of result.sources) {
-    let includeSource = true;
-    let gd = source.generalizedData;
-    if (gd) {
-      if (gd.recordType == RT.Unclassified) {
-        let response = await getUserClassification(source);
-        if (response.include) {
-          if (response.refTitle) {
-            gd.overrideRefTitle = response.refTitle;
-          }
-          if (response.recordType != RT.Unclassified) {
-            gd.recordType = response.recordType;
-            let ed = source.extractedData;
-            generalizeDataGivenRecordType(ed, gd);
-            buildSourcerCitationGivenGd(runDate, source, type, options);
-          }
-        } else {
-          includeSource = false;
-        }
-      }
-    } else {
-      let response = await getUserProvidedVitals(source);
-      if (response.include) {
-        if (response.narrative) {
-          source.userOverrideForNarrative = response.narrative;
-        }
-      } else {
-        includeSource = false;
-      }
-    }
-    if (includeSource) {
-      userFilteredSources.push(source);
-    }
-  }
-  result.sources = userFilteredSources;
+  await getUserChoicesForLackingSources(result, type, options);
 
   buildSourcerCitations(result, type, options);
 }
@@ -299,6 +352,7 @@ async function fsGetAllCitations(input) {
   result.numExcludedNonFsSources = 0;
   result.numExcludedFsImageSources = 0;
   result.numExcludedTreeSources = 0;
+  result.numUserExcludedSources = 0;
 
   // request permission if needed
   const checkPermissionsOptions = {

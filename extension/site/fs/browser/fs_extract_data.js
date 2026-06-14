@@ -44,6 +44,12 @@ var personVitalsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/pers
 
 const useOldSystem = false;
 
+// Check if 'logDebug' is declared and if not then decare it
+// This happens when extractData is used from the popup
+if (typeof globalThis.logDebug !== "function") {
+  globalThis.logDebug = function (...args) {};
+}
+
 function cleanText(text) {
   if (!text) {
     return "";
@@ -1180,7 +1186,7 @@ function extractData(document, url) {
     if (mainContent) {
       // this is a newer format page, only supported for person pages currently
 
-      // check if we are on the sourcers page with the create source dialog up
+      // check if we are on the sources page with the create source dialog up
       let createSourceDialog = document.querySelector(
         "div[aria-modal='true'][role='dialog'][aria-label='Create Source']"
       );

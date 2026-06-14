@@ -203,11 +203,11 @@ function extractDataFromHtml(htmlText, url) {
   //console.log(htmlText);
 
   let parser = new DOMParser();
-  let document = parser.parseFromString(htmlText, "text/html");
+  let parsedDocument = parser.parseFromString(htmlText, "text/html");
   //console.log("document is:");
   //console.log(document);
 
-  let extractedData = extractData(document, url);
+  let extractedData = extractData(parsedDocument, url);
 
   return extractedData;
 }
@@ -268,7 +268,7 @@ async function fetchRecordHtml(fetchUrl, sessionId) {
     //console.log("doFetch: response text is:");
     //console.log(jsonData);
 
-    if (!htmlText || htmlText[0] != "{") {
+    if (!htmlText || htmlText[0] != "<") {
       console.log("The response text does not look like HTML");
       //console.log(jsonData);
       return { success: false, errorCondition: "NotHTML" };

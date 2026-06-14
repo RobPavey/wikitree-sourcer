@@ -3646,43 +3646,73 @@ class GeneralizedData {
     return "";
   }
 
-  inferEventDateObj(includeRelatedPerson = false) {
+  inferEventDateObj(includeImplied = false) {
     if (this.eventDate) {
       return this.eventDate;
     }
 
-    if (includeRelatedPerson && this.role && this.role != Role.Primary && this.primaryPerson) {
-      if (this.primaryPerson.deathDate) {
-        return this.primaryPerson.deathDate;
-      } else if (this.primaryPerson.birthDate) {
-        return this.primaryPerson.birthDate;
+    if (includeImplied && this.sourceType == "record" && this.recordType != RT.FamilyTree) {
+      if (this.role && this.role != Role.Primary && this.primaryPerson) {
+        if (this.primaryPerson.deathDate) {
+          return this.primaryPerson.deathDate;
+        } else if (this.primaryPerson.birthDate) {
+          return this.primaryPerson.birthDate;
+        }
+      }
+
+      if (
+        this.recordType == RT.Death ||
+        this.recordType == RT.DeathOrBurial ||
+        this.recordType == RT.DeathRegistration ||
+        this.recordType == RT.Burial ||
+        this.recordType == RT.Cremation ||
+        this.recordType == RT.Obituary
+      ) {
+        if (this.deathDate) {
+          return this.deathDate;
+        }
+      }
+
+      if (
+        this.recordType == RT.Birth ||
+        this.recordType == RT.BirthOrBaptism ||
+        this.recordType == RT.BirthRegistration ||
+        this.recordType == RT.Baptism
+      ) {
+        if (this.birthDate) {
+          return this.birthDate;
+        }
+      }
+
+      if (this.deathDate) {
+        return this.deathDate;
       }
     }
   }
 
-  inferEventDate(includeRelatedPerson = false) {
-    let eventDate = this.inferEventDateObj(includeRelatedPerson);
+  inferEventDate(includeImplied = false) {
+    let eventDate = this.inferEventDateObj(includeImplied);
     if (eventDate) {
       return eventDate.getDateString();
     }
   }
 
-  inferEventYear(includeRelatedPerson = false) {
-    let eventDate = this.inferEventDateObj(includeRelatedPerson);
+  inferEventYear(includeImplied = false) {
+    let eventDate = this.inferEventDateObj(includeImplied);
     if (eventDate) {
       return eventDate.getYearString();
     }
   }
 
-  inferEventDateQualifier(includeRelatedPerson = false) {
-    let eventDate = this.inferEventDateObj(includeRelatedPerson);
+  inferEventDateQualifier(includeImplied = false) {
+    let eventDate = this.inferEventDateObj(includeImplied);
     if (eventDate) {
       return eventDate.qualifier;
     }
   }
 
-  inferEventQuarter(includeRelatedPerson = false) {
-    let eventDate = this.inferEventDateObj(includeRelatedPerson);
+  inferEventQuarter(includeImplied = false) {
+    let eventDate = this.inferEventDateObj(includeImplied);
     if (eventDate) {
       return eventDate.quarter;
     }
