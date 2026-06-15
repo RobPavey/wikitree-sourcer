@@ -415,6 +415,17 @@ function additionalMessageHandler(request, sender, sendResponse) {
     setFields(request.fieldData);
     sendResponse({ success: true });
     return { wasHandled: true, returnValue: true };
+  } else if (request.type == "doFetch") {
+    fetch(request.url, request.options)
+      .then(async (response) => {
+        const status = response.status;
+        const ok = response.ok;
+        const text = await response.text();
+        sendResponse({ success: true, ok: ok, status: status, text: text });
+      })
+      .catch((err) => sendResponse({ success: false, error: err.message }));
+
+    return { wasHandled: true, returnValue: true };
   }
 
   return { wasHandled: false };

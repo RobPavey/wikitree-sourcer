@@ -248,7 +248,7 @@ async function getUserChoicesForLackingSources(result, runDate, type, options) {
   result.sources = userFilteredSources;
 }
 
-async function getSourcerCitation(runDate, source, type, sessionId, options, updateStatusFunction) {
+async function getSourcerCitation(runDate, source, type, sessionId, tabId, options, updateStatusFunction) {
   logDebug("getSourcerCitation, source is:", source);
 
   let uri = source.uri;
@@ -266,7 +266,7 @@ async function getSourcerCitation(runDate, source, type, sessionId, options, upd
     if (useJsonFetch) {
       fetchResult = await fetchRecordJsonAfterAdjustingUrl(uri, sessionId);
     } else {
-      fetchResult = await fetchRecordHtml(uri, sessionId);
+      fetchResult = await fetchRecordHtml(uri, sessionId, tabId);
     }
     let retryCount = 0;
     while (!fetchResult.success && fetchResult.allowRetry && retryCount < 3) {
@@ -301,6 +301,9 @@ async function getSourcerCitation(runDate, source, type, sessionId, options, upd
       }
     } else {
       if (fetchResult.success) {
+        if (fetchResult.extractedData) {
+          source.extractedData = fetchResult.extractedData;
+        }
       }
     }
   } else {
@@ -327,7 +330,7 @@ async function getSourcerCitation(runDate, source, type, sessionId, options, upd
   return { success: true };
 }
 
-async function getSourcerCitations(runDate, result, type, sessionId, options) {
+async function getSourcerCitations(runDate, result, type, sessionId, tabId, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
@@ -346,7 +349,7 @@ async function getSourcerCitations(runDate, result, type, sessionId, options) {
 
   async function requestFunction(input, updateStatusFunction) {
     updateStatusFunction("fetching...");
-    let newResponse = await getSourcerCitation(runDate, input, type, sessionId, options, updateStatusFunction);
+    let newResponse = await getSourcerCitation(runDate, input, type, sessionId, tabId, options, updateStatusFunction);
     return newResponse;
   }
 
@@ -367,6 +370,7 @@ async function fsGetAllCitations(input) {
   let options = input.options;
   let runDate = input.runDate;
   let sessionId = ed.sessionId;
+  let tabId = input.tabId;
 
   let result = { success: false };
   result.numExcludedOtherRoleSources = 0;
@@ -412,7 +416,7 @@ async function fsGetAllCitations(input) {
         case "narrative":
         case "inline":
         case "source":
-          await getSourcerCitations(runDate, result, citationType, sessionId, options);
+          await getSourcerCitations(runDate, result, citationType, sessionId, tabId, options);
           break;
       }
     } catch (error) {

@@ -1284,7 +1284,7 @@ function extractData(doc, url) {
 
       if (unknown) {
         // page may be partially loaded
-        console.warn("page type is unknown");
+        console.log("page type is unknown");
 
         result.pageType = "unknown";
         result.dataMayBeIncomplete = true;

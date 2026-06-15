@@ -85,6 +85,8 @@ import {
 import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 import { getLatestCitation } from "/base/browser/popup/popup_citation.mjs";
 
+var contentTabId;
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -294,6 +296,7 @@ async function fsBuildAllCitationsAction(data, citationType) {
     input.options = options;
     input.runDate = new Date();
     input.citationType = citationType;
+    input.tabId = contentTabId;
 
     if (saveUnitTestData) {
       // if saving unit test data we don't want to exclude any sources
@@ -706,6 +709,8 @@ async function setupFsPopupMenu(extractedData, tabId) {
   let backFunction = function () {
     setupFsPopupMenu(extractedData);
   };
+
+  contentTabId = tabId;
 
   //console.log("setupFsPopupMenu: extractedData is:");
   //console.log(extractedData);

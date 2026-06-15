@@ -213,7 +213,7 @@ function extractDataFromHtml(htmlText, url) {
   return extractedData;
 }
 
-async function fetchRecordHtml(fetchUrl, sessionId) {
+async function fetchRecordHtml(fetchUrl, sessionId, tabId) {
   //console.log("fetchRecordJson, fetchUrl is: " + fetchUrl);
   //console.log("fetchRecordJson, sessionId is: " + sessionId);
 
@@ -245,8 +245,17 @@ async function fetchRecordHtml(fetchUrl, sessionId) {
   };
 
   try {
-    let response = await fetch(fetchUrl, fetchOptions);
-
+    let response = undefined;
+    let htmlText = "";
+    if (tabId) {
+      response = await chrome.tabs.sendMessage(tabId, { type: "doFetch", url: fetchUrl, options: fetchOptions });
+      if (response && response.status == 200) {
+        htmlText = response.text;
+      }
+    } else {
+      response = await fetch(fetchUrl, fetchOptions);
+      htmlText = await response.text();
+    }
     //console.log("doFetch, response.status is: " + response.status);
 
     if (response.status !== 200) {
@@ -263,8 +272,6 @@ async function fetchRecordHtml(fetchUrl, sessionId) {
       }
       return result;
     }
-
-    let htmlText = await response.text();
 
     //console.log("doFetch: response text is:");
     //console.log(jsonData);
