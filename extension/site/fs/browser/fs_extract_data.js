@@ -1366,6 +1366,10 @@ function getDateValueFromDate(date, fieldTypeEnding, labelId) {
     return dateString;
   }
 
+  if (!date) {
+    return "";
+  }
+
   let closeMatch = undefined;
   if (date.fields) {
     for (let field of date.fields) {

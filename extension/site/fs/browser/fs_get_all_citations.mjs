@@ -196,6 +196,7 @@ async function getUserChoicesForLackingSources(result, runDate, type, options) {
             }
             if (response.eventDate && response.eventDate != eventDate) {
               gd.setEventDate(response.eventDate);
+              source.eventDate = response.eventDate;
               changedGd = true;
             } else if (!eventDate) {
               if (source.eventDate) {
@@ -231,7 +232,7 @@ async function getUserChoicesForLackingSources(result, runDate, type, options) {
       let response = await getUserProvidedVitals(source, message);
       if (response.include) {
         if (response.eventDate) {
-          source.userOverrideForEventDate = response.eventDate;
+          source.eventDate = response.eventDate;
         }
         if (response.narrative) {
           source.userOverrideForNarrative = response.narrative;
