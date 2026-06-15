@@ -137,9 +137,10 @@ async function fetchRecordJsonAfterAdjustingUrl(uri, sessionId) {
   return await fetchRecordJson(fetchUrl, sessionId);
 }
 
-async function getUserChoicesForLackingSources(result, type, options) {
+async function getUserChoicesForLackingSources(result, runDate, type, options) {
   let isRefTitleNeeded = false;
   let isRecordTypeNeeded = false;
+  let isNameNeeded = false;
   let isEventDateNeeded = false;
   let isNarrativeNeeded = false;
 
@@ -151,6 +152,7 @@ async function getUserChoicesForLackingSources(result, type, options) {
     isRecordTypeNeeded = true;
     isNarrativeNeeded = true;
     isEventDateNeeded = true;
+    isNameNeeded = true;
   }
 
   if (options.citation_fs_dataStyle == "string") {
@@ -182,18 +184,30 @@ async function getUserChoicesForLackingSources(result, type, options) {
 
       if (includeSource) {
         let eventDate = gd.inferEventDate(true);
-        if (!eventDate && isDateNeeded) {
+        let name = gd.inferFullName();
+        if ((!eventDate && isEventDateNeeded) || (!name && isNameNeeded)) {
           let message = "FamilySearch Source has insufficient data";
           let response = await getUserProvidedVitals(source, message);
           if (response.include) {
-            if (response.eventDate) {
+            let changedGd = false;
+            if (response.name && response.name != name) {
+              gd.setFullName(response.name);
+              changedGd = true;
+            }
+            if (response.eventDate && response.eventDate != eventDate) {
               gd.setEventDate(response.eventDate);
-            } else {
+              changedGd = true;
+            } else if (!eventDate) {
               if (source.eventDate) {
+                gd.setEventDate(source.eventDate);
+                changedGd = true;
               }
             }
             if (response.narrative) {
-              source.userOverrideForNarrative = response.narrative;
+              gd.userOverrideForNarrative = response.narrative;
+            }
+            if (changedGd) {
+              buildSourcerCitationGivenGd(runDate, source, type, options);
             }
           } else {
             includeSource = false;
@@ -216,6 +230,9 @@ async function getUserChoicesForLackingSources(result, type, options) {
       }
       let response = await getUserProvidedVitals(source, message);
       if (response.include) {
+        if (response.eventDate) {
+          source.userOverrideForEventDate = response.eventDate;
+        }
         if (response.narrative) {
           source.userOverrideForNarrative = response.narrative;
         }
@@ -340,7 +357,7 @@ async function getSourcerCitations(runDate, result, type, sessionId, options) {
 
   pruneSources(result, options);
 
-  await getUserChoicesForLackingSources(result, type, options);
+  await getUserChoicesForLackingSources(result, runDate, type, options);
 
   buildSourcerCitations(result, type, options);
 }

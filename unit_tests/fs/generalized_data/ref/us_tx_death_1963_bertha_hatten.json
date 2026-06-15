@@ -1,0 +1,29 @@
+{
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "sourceOfData": "fs",
+  "eventDate": {
+    "dateString": "18 July 1963",
+    "yearString": "1963"
+  },
+  "eventPlace": {
+    "placeString": "Bowie, Montague, Texas, United States"
+  },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "K7D9-F1Z"
+    }
+  ],
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "33SQ-GY19-W9M7"
+    }
+  ],
+  "collectionData": {
+    "id": "1983324",
+    "collectionTitle": "Texas, Deaths, 1890-1977"
+  },
+  "hasValidData": true
+}

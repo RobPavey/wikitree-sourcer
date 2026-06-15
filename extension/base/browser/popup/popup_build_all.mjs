@@ -31,7 +31,7 @@ function addHeading(menu, text) {
   label.appendChild(document.createTextNode(text));
 
   let div = document.createElement("div");
-  div.className = "menuRowDiv";
+  div.className = "yellowBackground";
   div.appendChild(label);
 
   menu.list.appendChild(div);
@@ -138,7 +138,7 @@ function addSourceDetailsToMenu(menu, source) {
   }
 }
 
-function addSelector(id, labelText, fillFunction, changeFunction) {
+function addSelector(menu, id, labelText, fillFunction, changeFunction) {
   let selector = document.createElement("select");
   selector.id = id;
   selector.className = "dialogSelector";
@@ -213,6 +213,7 @@ function getUserClassification(source, isRecordTypeNeeded, isRefTitleNeeded) {
 
       // Record Type
       let recordTypeSelector = addSelector(
+        menu,
         "recordTypeSelector",
         "Choose record type: ",
         fillRecordTypeSelector,
@@ -270,12 +271,28 @@ function getUserProvidedVitals(source, message) {
   return new Promise((resolve, reject) => {
     let menu = beginMainMenu();
 
-    let narrative = "";
-    let eventDate = source.eventDate;
-    let textInputField = undefined;
-
+    let needsName = false;
     let needsDate = true; // needs work
     let needsNarrative = true; // needs work
+
+    let gd = source.generalizedData;
+    let narrative = "";
+    let eventDate = source.eventDate;
+    let name = "";
+    if (gd) {
+      name = gd.inferFullName();
+      if (!name) {
+        needsName = true;
+      }
+      let gdEventDate = gd.inferEventDate(true);
+      if (gdEventDate) {
+        if (!eventDate || (eventDate.length <= 4 && gdEventDate.length > eventDate.length)) {
+          eventDate = gdEventDate;
+        }
+      }
+    }
+
+    let textInputField = undefined;
 
     addHeading(menu, message);
 
@@ -285,13 +302,21 @@ function getUserProvidedVitals(source, message) {
     addBreak(menu.list);
     addDivWithLabel(menu, "More details are required for narrative/sorting:");
 
+    if (needsName) {
+      addBreak(menu.list);
+
+      // text input
+      addTextInput(menu, "narrativeInput", "Name:", name, function (event) {
+        name = event.target.value;
+      });
+    }
+
     if (needsDate) {
       addBreak(menu.list);
 
       // text input
       addTextInput(menu, "narrativeInput", "Event date:", eventDate, function (event) {
         eventDate = event.target.value;
-        //console.log("set ref title to: " + refTitle);
       });
     }
 
@@ -299,8 +324,13 @@ function getUserProvidedVitals(source, message) {
       addBreak(menu.list);
       addBreak(menu.list);
 
+      let message = "Narrative:";
+      if (gd) {
+        message = "Narrative override (optional):";
+      }
+
       // text input
-      addTextInput(menu, "narrativeInput", "Narrative:", "", function (event) {
+      addTextInput(menu, "narrativeInput", message, "", function (event) {
         narrative = event.target.value;
         //console.log("set ref title to: " + refTitle);
       });
@@ -312,6 +342,7 @@ function getUserProvidedVitals(source, message) {
     addKeepButton(menu, function (element) {
       let result = {
         include: true,
+        name: name,
         eventDate: eventDate,
         narrative: narrative,
       };

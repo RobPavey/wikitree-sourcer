@@ -1,0 +1,39 @@
+{
+  "url": "https://www.familysearch.org/ark:/61903/1:1:K7D9-F1Z?lang=en",
+  "recordData": {},
+  "eventDateOriginal": "18 July 1963",
+  "eventDate": "18 July 1963",
+  "eventYear": "1963",
+  "eventPlaceOriginal": "Bowie, Montague",
+  "eventPlace": "Bowie, Montague, Texas, United States",
+  "eventPlaceL2": "Montague",
+  "referenceData": {
+    "filmNumber": "2117294",
+    "certificateNumber": "59099",
+    "digitalFilmNumber": "005144758",
+    "imageNumber": "829"
+  },
+  "extData": "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:33SQ-GY19-W9M7\",\"FS_COLLECTION_ID\":\"1983324\",\"FS_FOLDER\":\"5144758\"}",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9MXN-7CZB",
+  "collectionTitle": "Texas, Deaths, 1890-1977",
+  "fsCollectionId": "1983324",
+  "documentRecordData": {
+    "Name": "Bertha Lou Hatten",
+    "Sex": "Female",
+    "Age": "59 years",
+    "Birth Date": "23 December 1903",
+    "Birthplace": "Jackson, Oklahoma",
+    "Burial Date": "18 July 1963",
+    "Burial Place": "Electra, Texas",
+    "Marital Status": "Married",
+    "Race": "Caucasian",
+    "Event Type": "Death",
+    "Event Date": "18 July 1963",
+    "Event Place": "Bowie, Montague, Texas, United States",
+    "Event Place (Original)": "Bowie, Montague",
+    "Funeral Home": "James B. Totten and Son",
+    "Certificate Number": "59099"
+  },
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:33SQ-GY19-W9M7",
+  "pageType": "record"
+}

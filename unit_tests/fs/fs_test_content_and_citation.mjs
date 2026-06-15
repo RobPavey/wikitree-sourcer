@@ -529,6 +529,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:VMSB-3WR",
   },
   {
+    caseName: "us_tx_death_1963_bertha_hatten",
+    url: "https://www.familysearch.org/ark:/61903/1:1:K7D9-F1Z?lang=en",
+  },
+  {
     caseName: "us_tx_divorce_1976_sarah_pate",
     url: "https://www.familysearch.org/ark:/61903/1:1:VYX9-KBH",
   },

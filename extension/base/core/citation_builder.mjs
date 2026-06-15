@@ -269,14 +269,23 @@ class CitationBuilder {
     let wtExtractedData = undefined;
     let wtGeneralizedData = undefined;
 
-    const narrativeInput = {
-      eventGeneralizedData: gd,
-      wtExtractedData: wtExtractedData,
-      wtGeneralizedData: wtGeneralizedData,
-      dataCache: dataCache,
-      options: options,
-    };
-    let narrative = buildNarrative(narrativeInput);
+    let narrative = "";
+
+    if (gd.userOverrideForNarrative && gd.userOverrideForNarrative.trim()) {
+      narrative = gd.userOverrideForNarrative.trim();
+      if (!narrative.endsWith(".")) {
+        narrative += ".";
+      }
+    } else {
+      const narrativeInput = {
+        eventGeneralizedData: gd,
+        wtExtractedData: wtExtractedData,
+        wtGeneralizedData: wtGeneralizedData,
+        dataCache: dataCache,
+        options: options,
+      };
+      narrative = buildNarrative(narrativeInput);
+    }
 
     //console.log("addNarrative, narrative is");
     //console.log(narrative);

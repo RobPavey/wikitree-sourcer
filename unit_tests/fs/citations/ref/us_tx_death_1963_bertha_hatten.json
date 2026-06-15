@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "This person was in a record on 18 July 1963 in Bowie, Montague, Texas, United States.<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Record''': \"Texas, Deaths, 1890-1977\"<br/>citing Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33SQ-GY19-W9M7}}.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "This person was in a record on 18 July 1963 in Bowie, Montague, Texas, United States.<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Record''': \"Texas, Deaths, 1890-1977\"<br/>citing Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33SQ-GY19-W9M7}}.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "This person was in a record on 18 July 1963 in Bowie, Montague, Texas, United States.<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Record''': \"Texas, Deaths, 1890-1977\"<br/>citing Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33SQ-GY19-W9M7}}.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "This person was in a record on 18 July 1963 in Bowie, Montague, Texas, United States.<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Record''': \"Texas, Deaths, 1890-1977\"<br/>citing Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33SQ-GY19-W9M7}}.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "This person was in a record on 18 July 1963 in Bowie, Montague, Texas, United States.<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Record''': \"Texas, Deaths, 1890-1977\"<br/>citing Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33SQ-GY19-W9M7}}.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "This person was in a record on 18 July 1963 in Bowie, Montague, Texas, United States.<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Record''': \"Texas, Deaths, 1890-1977\"<br/>citing Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33SQ-GY19-W9M7}}.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "This person was in a record on 18 July 1963 in Bowie, Montague, Texas, United States.<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Record''': \"Texas, Deaths, 1890-1977\"<br/>citing Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33SQ-GY19-W9M7}}.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "This person was in a record on 18 July 1963 in Bowie, Montague, Texas, United States.<ref>\n'''Record''':\n\"Texas, Deaths, 1890-1977\"<br/>\nciting Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>\n{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33SQ-GY19-W9M7}}.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Record''': \"Texas, Deaths, 1890-1977\"<br/>citing Digital film/folder number: 005144758; FHL microfilm: 2117294; Image number: 829; Certificate number: 59099<br/>{{FamilySearch Record|K7D9-F1Z}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33SQ-GY19-W9M7}}.",
+    "type": "source"
+  }
+}

@@ -3754,6 +3754,18 @@ function extractDataFromFetch(doc, url, dataObjects, fetchType, sessionId, optio
   }
 
   let personId = description.replace(/^.*(p_\d*)$/, "$1");
+  if (personId == description) {
+    // didn't work
+    let persons = dataObj.persons;
+    if (persons) {
+      for (let person of persons) {
+        if (person.principal) {
+          personId = person.id;
+          break;
+        }
+      }
+    }
+  }
 
   let personIdWithRelatedFact = undefined;
   let relatedPersonFactType = undefined;
