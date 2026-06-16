@@ -118,6 +118,20 @@ const typeData = {
       father: ["Vader van de bruidegom", "Vader"],
       mother: ["Moeder van de bruidegom", "Moeder"],
     },
+    subEventTypes: {
+      Echtscheiding: {
+        // Civil Divorce
+        nlDocumentType: "Burgerlijke Stand Huwelijk",
+        enDocumentType: "Civil registration marriages",
+        recordType: RT.Divorce,
+        fixedGender: "male", // the primary person is always the groom
+        relation: {
+          primary: ["Bruidegom"],
+          father: ["Vader van de bruidegom", "Vader"],
+          mother: ["Moeder van de bruidegom", "Moeder"],
+        },
+      },
+    },
   },
   "BS Overlijden": {
     // Civil Death
@@ -199,8 +213,14 @@ class OpenarchEdReader extends ExtractedDataReader {
       if (this.a2aSourceType) {
         this.typeData = typeData[this.a2aSourceType];
         if (this.typeData) {
-          this.recordType = this.typeData.recordType;
-          this.recordSubtype = this.typeData.recordSubtype;
+          if (this.typeData.subEventTypes && this.typeData.subEventTypes[this.a2aEventType]) {
+            this.typeData = this.typeData.subEventTypes[this.a2aEventType];
+            this.recordType = this.typeData.recordType;
+            this.recordSubtype = this.typeData.recordSubtype;
+          } else {
+            this.recordType = this.typeData.recordType;
+            this.recordSubtype = this.typeData.recordSubtype;
+          }
         }
       }
     }
@@ -713,9 +733,39 @@ class OpenarchEdReader extends ExtractedDataReader {
       let brideName = this.extractPersonFieldByKey(bride, "PersonName");
       let spouseNameObj = this.makeNameObjFromA2aName(brideName);
       let a2aAge = this.extractPersonFieldByKey(bride, "Age");
-      let age = this.ageFromA2aAge(a2aAge);
-      let eventDateObj = this.getEventDateObj();
-      let eventPlaceObj = this.getEventPlaceObj();
+
+      // it may not be a marriage
+      let age = "";
+      let eventDateObj = undefined;
+      let eventPlaceObj = undefined;
+
+      if (this.recordType == RT.Marriage) {
+        age = this.ageFromA2aAge(a2aAge);
+        eventDateObj = this.getEventDateObj();
+        eventPlaceObj = this.getEventPlaceObj();
+      } else if (this.recordType == RT.Divorce) {
+        let a2aSourceRemarks = this.extractSourceFieldByKey("SourceRemark");
+        if (a2aSourceRemarks && a2aSourceRemarks.length > 0) {
+          for (let remark of a2aSourceRemarks) {
+            if (remark["@Key"] == "Opmerking") {
+              let value = remark["Value"];
+              if (value) {
+                // e.g. "Gehuwd te Amsterdam 19-11-1902."
+                const regex = /^Gehuwd te (\w+) (\d\d-\d\d-\d\d\d\d)\.?$/i;
+                if (regex.test(value)) {
+                  let marriagePlace = value.replace(regex, "$1");
+                  let marriageDate = value.replace(regex, "$2");
+                  eventDateObj = this.makeDateObjFromDateString(marriageDate);
+                  eventPlaceObj = this.makePlaceObjFromFullPlaceName(marriagePlace);
+                  if (eventPlaceObj) {
+                    eventPlaceObj.country = "Nederland";
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
 
       let spouseObj = this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age);
 

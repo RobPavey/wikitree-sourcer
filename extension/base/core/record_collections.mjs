@@ -883,7 +883,7 @@ const RecordCollectionData = [
     dates: { year: 1790, exactDate: "2 Aug 1790" },
     sites: {
       fs: { id: "1803959" },
-      ancestry: { id: "5058" },
+      ancestry: { id: "5058", altId: "1790usfedcen" },
       fmp: { id: "US Census 1790" },
       mh: {
         id: "10120",
@@ -899,7 +899,7 @@ const RecordCollectionData = [
     dates: { year: 1800, exactDate: "4 Aug 1800" },
     sites: {
       fs: { id: "1804228" },
-      ancestry: { id: "7590" },
+      ancestry: { id: "7590", altId: "1800usfedcen" },
       fmp: { id: "US Census 1800" },
       mh: {
         id: "10121",
@@ -915,7 +915,7 @@ const RecordCollectionData = [
     dates: { year: 1810, exactDate: "6 Aug 1810" },
     sites: {
       fs: { id: "1803765" },
-      ancestry: { id: "7613" },
+      ancestry: { id: "7613", altId: "1810usfedcen" },
       fmp: { id: "US Census 1810" },
       mh: {
         id: "10122",
@@ -931,7 +931,7 @@ const RecordCollectionData = [
     dates: { year: 1820, exactDate: "7 Aug 1820" },
     sites: {
       fs: { id: "1803955" },
-      ancestry: { id: "7734" },
+      ancestry: { id: "7734", altId: "1820usfedcen" },
       fmp: { id: "US Census 1820" },
       mh: {
         id: "10123",
@@ -947,7 +947,7 @@ const RecordCollectionData = [
     dates: { year: 1830, exactDate: "1 Jun 1830" },
     sites: {
       fs: { id: "1803958" },
-      ancestry: { id: "8058" },
+      ancestry: { id: "8058", altId: "1830usfedcen" },
       fmp: { id: "US Census 1830" },
       mh: {
         id: "10125",
@@ -963,7 +963,7 @@ const RecordCollectionData = [
     dates: { year: 1840, exactDate: "1 Jun 1840" },
     sites: {
       fs: { id: "1786457" },
-      ancestry: { id: "8057" },
+      ancestry: { id: "8057", altId: "1840usfedcen" },
       fmp: { id: "US Census 1840" },
       mh: {
         id: "10124",
@@ -980,7 +980,7 @@ const RecordCollectionData = [
     householdTableColumns: householdTableColumnsUsFederal1850,
     sites: {
       fs: { id: "1401638" },
-      ancestry: { id: "8054" },
+      ancestry: { id: "8054", altId: "1850usfedcen" },
       fmp: { id: "US Census 1850" },
       mh: {
         id: "10126",
@@ -997,7 +997,7 @@ const RecordCollectionData = [
     householdTableColumns: householdTableColumnsUsFederal1850,
     sites: {
       fs: { id: "1473181" },
-      ancestry: { id: "7667" },
+      ancestry: { id: "7667", altId: "1860usfedcen" },
       fmp: { id: "US Census 1860" },
       mh: {
         id: "10127",
@@ -1014,7 +1014,7 @@ const RecordCollectionData = [
     householdTableColumns: householdTableColumnsUsFederal1850,
     sites: {
       fs: { id: "1438024" },
-      ancestry: { id: "7163" },
+      ancestry: { id: "7163", altId: "1870usfedcen" },
       fmp: { id: "US Census 1870" },
       mh: {
         id: "10128",
@@ -1031,7 +1031,7 @@ const RecordCollectionData = [
     householdTableColumns: householdTableColumnsUsFederalPost1880,
     sites: {
       fs: { id: "1417683" },
-      ancestry: { id: "6742" },
+      ancestry: { id: "6742", altId: "1880usfedcen" },
       fmp: { id: "US Census 1880" },
       mh: {
         id: "10129",
@@ -1050,6 +1050,7 @@ const RecordCollectionData = [
       fs: { id: "1610551" },
       ancestry: {
         id: "5445",
+        altId: "1890usfedcen",
         title: "1890 United States Federal Census Fragment",
       },
       fmp: { id: "US Census 1890" },
@@ -1068,7 +1069,7 @@ const RecordCollectionData = [
     householdTableColumns: householdTableColumnsUsFederalPost1880,
     sites: {
       fs: { id: "1325221" },
-      ancestry: { id: "7602" },
+      ancestry: { id: "7602", altId: "1900usfedcen" },
       fmp: { id: "US Census 1900" },
       mh: {
         id: "10131",
@@ -1085,7 +1086,7 @@ const RecordCollectionData = [
     householdTableColumns: householdTableColumnsUsFederalPost1880,
     sites: {
       fs: { id: "1727033" },
-      ancestry: { id: "7884" },
+      ancestry: { id: "7884", altId: "1910usfedcen" },
       fmp: { id: "US Census 1910" },
       mh: {
         id: "10132",
@@ -1102,7 +1103,7 @@ const RecordCollectionData = [
     householdTableColumns: householdTableColumnsUsFederalPost1880,
     sites: {
       fs: { id: "1488411" },
-      ancestry: { id: "6061" },
+      ancestry: { id: "6061", altId: "1920usfedcen" },
       fmp: { id: "US Census 1920" },
       mh: {
         id: "10133",
@@ -1119,7 +1120,7 @@ const RecordCollectionData = [
     householdTableColumns: householdTableColumnsUsFederalPost1880,
     sites: {
       fs: { id: "1810731" },
-      ancestry: { id: "6224" },
+      ancestry: { id: "6224", altId: "1930usfedcen" },
       fmp: { id: "US Census 1930" },
       mh: {
         id: "10134",
@@ -1136,7 +1137,7 @@ const RecordCollectionData = [
     householdTableColumns: householdTableColumnsUsFederalPost1880,
     sites: {
       fs: { id: "2000219" },
-      ancestry: { id: "2442" },
+      ancestry: { id: "2442", altId: "1940usfedcen" },
       fmp: { id: "US Census 1940" },
       mh: {
         id: "10053",
@@ -1152,7 +1153,7 @@ const RecordCollectionData = [
     dates: { year: 1950, exactDate: "1 Apr 1950" },
     householdTableColumns: householdTableColumnsUsFederalPost1880,
     sites: {
-      ancestry: { id: "62308" },
+      ancestry: { id: "62308", altId: "1950usfedcen" },
       fs: { id: "4464515" },
       // fmp: { id: "US Census 1950"}, // Not yet transcribed on FMP (as of 31 Aug 2022)
       mh: {
