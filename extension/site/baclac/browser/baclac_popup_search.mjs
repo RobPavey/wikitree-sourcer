@@ -26,14 +26,14 @@ import {
   addSameRecordMenuItem,
   addBackMenuItem,
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   beginMainMenu,
   endMainMenu,
-  setupSearchCollectionsSubMenu,
+  setupSearchCollectionsSubmenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
@@ -104,14 +104,14 @@ function addBaclacDefaultSearchMenuItem(menu, data, backFunction) {
   //console.log("addBaclacDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search Library and Archives Canada",
     function (element) {
       baclacSearch(data.generalizedData, "Census");
     },
     function () {
-      setupBaclacSearchSubMenu(data, backFunction);
+      setupBaclacSearchSubmenu(data, backFunction);
     }
   );
 
@@ -138,13 +138,13 @@ function addBaclacSearchAllCollectionsMenuItem(menu, data) {
 
 function addBaclacSearchCollectionsMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search a specific collection...", function (element) {
-    setupSearchCollectionsSubMenu(data, "baclac", baclacSearchCollection, backFunction);
+    setupSearchCollectionsSubmenu(data, "baclac", baclacSearchCollection, backFunction);
   });
 }
 
 function addBaclacSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupBaclacSearchWithParametersSubMenu(data, backFunction);
+    setupBaclacSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -152,7 +152,7 @@ function addBaclacSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupBaclacSearchSubMenu(data, backFunction) {
+async function setupBaclacSearchSubmenu(data, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -168,9 +168,9 @@ async function setupBaclacSearchSubMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-async function setupBaclacSearchWithParametersSubMenu(data, backFunction) {
+async function setupBaclacSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/baclac_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.BaclacData, baclacSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.BaclacData, baclacSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

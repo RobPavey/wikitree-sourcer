@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "MedicalPatient",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Jessie",
+    "nonPrefixHonorific": "Mrs"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "22-Sep-1923"
+  },
+  "eventPlace": {
+    "placeString": "Adelaide, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Adelaide"
+  },
+  "hasValidData": true
+}

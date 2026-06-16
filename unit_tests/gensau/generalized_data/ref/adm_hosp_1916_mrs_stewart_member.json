@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "MedicalPatient",
+  "name": {
+    "lastName": "Stewart",
+    "nonPrefixHonorific": "Mrs"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "25-Jul-1916"
+  },
+  "eventPlace": {
+    "placeString": "Clare Lying-in Home, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Clare Lying-in Home"
+  },
+  "residencePlace": {
+    "placeString": "Clare, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Clare"
+  },
+  "hasValidData": true
+}

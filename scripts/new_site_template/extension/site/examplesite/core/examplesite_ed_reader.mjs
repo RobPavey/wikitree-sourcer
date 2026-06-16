@@ -62,18 +62,6 @@ class ExamplesiteEdReader extends ExtractedDataReader {
     return undefined;
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
-  }
-
   getBirthDateObj() {
     return undefined;
   }

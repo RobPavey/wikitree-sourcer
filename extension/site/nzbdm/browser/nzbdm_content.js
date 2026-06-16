@@ -243,6 +243,7 @@ async function doPendingSearch() {
           if (inputElement) {
             inputElement.value = value;
           } else {
+            console.log("Input not found, key = ", key);
             inputNotFound = true;
             break;
           }

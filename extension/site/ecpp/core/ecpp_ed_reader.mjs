@@ -384,13 +384,7 @@ class EcppEdReader extends ExtractedDataReader {
   }
 
   getGender() {
-    let sex = this.getFieldValue("sex");
-    if (sex == "M") {
-      return "male";
-    } else if (sex == "F") {
-      return "female";
-    }
-    return "";
+    return this.getGenderFromString(this.getFieldValue("sex"), ["M"], ["F"]);
   }
 
   getEventDateObj() {

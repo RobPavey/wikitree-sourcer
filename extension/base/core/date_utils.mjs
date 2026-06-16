@@ -192,6 +192,17 @@ const DateUtils = {
       let startYearString = cleanString.substring(0, 4);
       let endYearString = cleanString.substring(5);
       if (endYearString.length == 2) {
+        // check that the endyear digits are greater than the last two digits of start year
+        let startYearLast2 = startYearString.substring(2, 4);
+        let startNum = parseInt(startYearLast2);
+        let endNum = parseInt(startYearLast2);
+        if (isNaN(startNum) || isNaN(endNum)) {
+          return result;
+        }
+        if (endNum < startNum) {
+          return result;
+        }
+
         endYearString = startYearString.substring(0, 2) + endYearString;
       }
 
@@ -495,6 +506,35 @@ const DateUtils = {
       }
       result.monthNum = monthNum;
       result.yearNum = yearNum;
+      result.hasMonth = true;
+      result.isValid = true;
+      return result;
+    }
+
+    // Sometimes we can get a date like: 06-Mar-1913 (e.f. from Genealogy SA)
+    const dayDashMonthDashYearRegex = /^(\d\d?)-([A-Z][a-z][a-z])-(\d\d\d\d)$/;
+    if (dayDashMonthDashYearRegex.test(cleanString)) {
+      let dayString = cleanString.replace(dayDashMonthDashYearRegex, "$1");
+      let monthString = cleanString.replace(dayDashMonthDashYearRegex, "$2");
+      let yearString = cleanString.replace(dayDashMonthDashYearRegex, "$3");
+
+      let dayNum = parseInt(dayString);
+      if (isNaN(dayNum) || !dayNum) {
+        return result;
+      }
+      let monthNum = DateUtils.monthStringToMonthNum(monthString);
+      if (monthNum == 0) {
+        return result;
+      }
+      let yearNum = parseInt(yearString);
+      if (isNaN(yearNum) || !yearNum) {
+        return result;
+      }
+
+      result.dayNum = dayNum;
+      result.monthNum = monthNum;
+      result.yearNum = yearNum;
+      result.hasDay = true;
       result.hasMonth = true;
       result.isValid = true;
       return result;

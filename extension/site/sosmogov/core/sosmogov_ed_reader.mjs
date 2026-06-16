@@ -135,10 +135,6 @@ class SosmogovEdReader extends ExtractedDataReader {
     return undefined;
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
   getLastNameAtDeath() {
     let nameAtDeathObj = this.getNameObj();
     if (nameAtDeathObj && nameAtDeathObj.lastName) {

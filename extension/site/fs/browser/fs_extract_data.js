@@ -1156,6 +1156,11 @@ function extractData(doc, url) {
   result.url = url;
 
   // first determine what kind of page we are in.
+  let createSourceDialog = doc.querySelector("div[aria-modal='true'][role='dialog'][aria-label='Create Source']");
+  if (createSourceDialog) {
+    extractDataForCreateSource(doc, result);
+    return result;
+  }
 
   let mainContent = doc.querySelector("#main-content-section");
 

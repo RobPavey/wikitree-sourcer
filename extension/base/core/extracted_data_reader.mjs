@@ -25,6 +25,7 @@ SOFTWARE.
 import { RT } from "./record_type.mjs";
 import { NameObj, DateObj, PlaceObj } from "./generalize_data_utils.mjs";
 import { DateUtils } from "./date_utils.mjs";
+import { NameUtils } from "./name_utils.mjs";
 
 // This is the base class for the EdReader for each site (that uses this pattern)
 // The main reason for the base class is so that if the derived class doesn't define one of these functions
@@ -59,18 +60,35 @@ class ExtractedDataReader {
   }
 
   getNameObj() {
-    return undefined;
+    return this.makeNameObjUsingRecordTypeDataKeys("fullName", "forenames", "lastName");
   }
 
   getGender() {
-    return "";
+    return this.getValueUsingRecordTypeData("gender");
   }
 
   getEventDateObj() {
+    let dateString = this.getValueUsingRecordTypeData("eventDate");
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
     return undefined;
   }
 
   getEventPlaceObj() {
+    let placeString = this.getValueUsingRecordTypeData("eventPlace");
+
+    if (placeString) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
     return undefined;
   }
 
@@ -83,27 +101,86 @@ class ExtractedDataReader {
   }
 
   getMothersMaidenName() {
-    return "";
+    return this.getValueUsingRecordTypeData("mothersMaidenName");
   }
 
   getBirthDateObj() {
+    let dateString = this.getValueUsingRecordTypeData("birthDate");
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
     return undefined;
   }
 
   getBirthPlaceObj() {
+    let placeString = this.getValueUsingRecordTypeData("birthPlace");
+
+    if (placeString || this.recordType == RT.Birth || this.recordType == RT.BirthRegistration) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
     return undefined;
   }
 
   getDeathDateObj() {
+    let dateString = this.getValueUsingRecordTypeData("deathDate");
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
     return undefined;
   }
 
   getDeathPlaceObj() {
+    let placeString = this.getValueUsingRecordTypeData("deathPlace");
+
+    if (placeString || this.recordType == RT.Death || this.recordType == RT.DeathRegistration) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
+    return undefined;
+  }
+
+  getResidenceDateObj() {
+    let dateString = this.getValueUsingRecordTypeData("residenceDate");
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
+    return undefined;
+  }
+
+  getResidencePlaceObj() {
+    let placeString = this.getValueUsingRecordTypeData("residencePlace");
+
+    if (placeString) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
     return undefined;
   }
 
   getAgeAtEvent() {
-    return "";
+    return this.getValueUsingRecordTypeData("ageAtEvent");
   }
 
   getAgeAtDeath() {
@@ -115,7 +192,7 @@ class ExtractedDataReader {
   }
 
   getRegistrationDistrict() {
-    return "";
+    return this.getValueUsingRecordTypeData("registrationDistrict");
   }
 
   getRelationshipToHead() {
@@ -127,7 +204,7 @@ class ExtractedDataReader {
   }
 
   getOccupation() {
-    return "";
+    return this.getValueUsingRecordTypeData("occupation");
   }
 
   getUnit() {
@@ -151,31 +228,96 @@ class ExtractedDataReader {
   }
 
   getArrivalDate() {
-    return "";
+    return this.getValueUsingRecordTypeData("arrivalDate");
   }
 
   getArrivalPlace() {
-    return "";
+    return this.getValueUsingRecordTypeData("arrivalPlace");
   }
 
   getDepartureDate() {
-    return "";
+    return this.getValueUsingRecordTypeData("departureDate");
   }
 
   getDeparturePlace() {
-    return "";
+    return this.getValueUsingRecordTypeData("departurePlace");
   }
 
   getShipName() {
-    return "";
+    return this.getValueUsingRecordTypeData("shipName");
   }
 
   getSpouses() {
+    let spouseNameObj = this.makeNameObjUsingRecordTypeDataKeys("spouseFullName", "spouseForenames", "spouseLastName");
+    if (!spouseNameObj) {
+      // could be bride and groom names
+      let gender = this.getGender();
+
+      if (gender == "male") {
+        spouseNameObj = this.makeNameObjUsingRecordTypeDataKeys("brideFullName", "brideForenames", "brideLastName");
+      } else if (gender == "female") {
+        spouseNameObj = this.makeNameObjUsingRecordTypeDataKeys("groomFullName", "groomForenames", "groomLastName");
+      } else {
+        // no (valid) gender
+        // try comparing this person's name with the bride and groom names
+
+        let brideNameObj = this.makeNameObjUsingRecordTypeDataKeys("brideFullName", "brideForenames", "brideLastName");
+        let groomNameObj = this.makeNameObjUsingRecordTypeDataKeys("groomFullName", "groomForenames", "groomLastName");
+
+        if (brideNameObj && groomNameObj) {
+          let mainPersonNameObj = makeNameObjUsingRecordTypeData("fullName", "forenames", "lastName");
+          if (mainPersonNameObj.inferFullName() == brideNameObj.inferFullName()) {
+            spouseNameObj = groomNameObj;
+          } else if (mainPersonNameObj.inferFullName() == groomNameObj.inferFullName()) {
+            spouseNameObj = brideNameObj;
+          } else if (mainPersonNameObj.inferForenames() == brideNameObj.inferForenames()) {
+            spouseNameObj = groomNameObj;
+          } else if (mainPersonNameObj.inferForenames() == groomNameObj.inferForenames()) {
+            spouseNameObj = brideNameObj;
+          } else if (mainPersonNameObj.inferLastName() == brideNameObj.inferLastName()) {
+            spouseNameObj = groomNameObj;
+          } else if (mainPersonNameObj.inferLastName() == groomNameObj.inferLastName()) {
+            spouseNameObj = brideNameObj;
+          }
+        }
+      }
+    }
+
+    if (spouseNameObj) {
+      let eventDateObj = undefined;
+      let eventPlaceObj = undefined;
+      let age = "";
+
+      if (this.recordType == RT.Marriage || this.recordType == RT.MarriageRegistration) {
+        eventDateObj = this.getEventDateObj();
+        eventPlaceObj = this.getEventPlaceObj();
+        age = this.getAgeAtEvent();
+      }
+
+      return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age)];
+    }
     return undefined;
   }
 
   getParents() {
-    return undefined;
+    let fatherNameObj = this.makeNameObjUsingRecordTypeDataKeys("fatherFullName", "fatherForenames", "fatherLastName");
+    let motherNameObj = this.makeNameObjUsingRecordTypeDataKeys("motherFullName", "motherForenames", "motherLastName");
+
+    if (fatherNameObj || motherNameObj) {
+      return this.makeParentsFromNameObjs(fatherNameObj, motherNameObj);
+    }
+
+    let parentNames = this.getValueUsingRecordTypeData("parentNames");
+    if (parentNames) {
+      let parts = parentNames.split("&");
+      if (parts.length == 2) {
+        let fatherName = parts[0].trim();
+        let motherName = parts[1].trim();
+        if (fatherName && motherName) {
+          return this.makeParentsFromFullNames(fatherName, motherName);
+        }
+      }
+    }
   }
 
   getPrimaryPerson() {
@@ -229,6 +371,14 @@ class ExtractedDataReader {
     }
   }
 
+  makeNameObjFromLastName(lastName) {
+    if (lastName) {
+      let nameObj = new NameObj();
+      nameObj.setLastName(lastName);
+      return nameObj;
+    }
+  }
+
   makeNameObjFromLastNameCommaForenames(nameString) {
     if (nameString) {
       let commaIndex = nameString.indexOf(",");
@@ -241,6 +391,31 @@ class ExtractedDataReader {
         return nameObj;
       }
     }
+  }
+
+  makeNameObjUsingRecordTypeDataKeys(fullNameKey, forenamesKey, lastNameKey) {
+    let forenames = this.getValueUsingRecordTypeData(forenamesKey);
+    let lastName = this.getValueUsingRecordTypeData(lastNameKey);
+
+    if (forenames && lastName) {
+      return this.makeNameObjFromForenamesAndLastName(forenames, lastName);
+    }
+
+    let fullName = this.getValueUsingRecordTypeData(fullNameKey);
+
+    if (fullName) {
+      return this.makeNameObjFromFullName(fullName);
+    }
+
+    if (lastName) {
+      return this.makeNameObjFromLastName(lastName);
+    }
+
+    if (forenames) {
+      return this.makeNameObjFromForenames(forenames);
+    }
+
+    return undefined;
   }
 
   makeDateObjFromDateString(dateString) {
@@ -517,11 +692,68 @@ class ExtractedDataReader {
   }
 
   makePlaceObjFromFullPlaceName(placeString) {
+    let advanced = this.getRecordTypeProperty("advancedPlaceRules");
+
+    if (!placeString) {
+      placeString = "";
+    }
+
+    const extractedPlaceString = placeString;
+
+    function addPart(part) {
+      if (part) {
+        if (placeString) {
+          placeString += ", ";
+        }
+        placeString += part;
+      }
+    }
+
+    function addImpliedParts(placeObj) {
+      if (advanced) {
+        if (!placeString && !advanced.addImpliedPartsToBlankPlace) {
+          return;
+        }
+
+        placeObj.placeString = placeString;
+        let existingParts = placeObj.separatePlaceIntoParts(advanced.impliedCountryName);
+
+        if (advanced.impliedStateName) {
+          if (existingParts.county) {
+            placeString = existingParts.localPlace;
+            addPart(existingParts.county);
+            placeObj.state = existingParts.county;
+          } else if (!existingParts.country || existingParts.country == advanced.impliedCountryName) {
+            addPart(advanced.impliedStateName);
+            placeObj.state = advanced.impliedStateName;
+          }
+        }
+        if (advanced.impliedCountryName) {
+          if (existingParts.country) {
+            placeString = existingParts.localPlace;
+            addPart(existingParts.county);
+            addPart(existingParts.country);
+            placeObj.country = existingParts.country;
+          } else {
+            addPart(advanced.impliedCountryName);
+            placeObj.country = advanced.impliedCountryName;
+          }
+        }
+      }
+    }
+
+    let placeObj = new PlaceObj();
+    addImpliedParts(placeObj);
+    placeObj.placeString = placeString;
+
     if (placeString) {
-      let placeObj = new PlaceObj();
-      placeObj.placeString = placeString;
+      if (placeString != extractedPlaceString) {
+        placeObj.extractedPlaceString = extractedPlaceString;
+      }
       return placeObj;
     }
+
+    return undefined;
   }
 
   makePlaceObjFromCountryName(countryString) {
@@ -552,6 +784,21 @@ class ExtractedDataReader {
       }
     }
     return spouseObj;
+  }
+
+  makeParentsFromNameObjs(fatherNameObj, motherNameObj) {
+    if (fatherNameObj || motherNameObj) {
+      let parents = {};
+      if (fatherNameObj) {
+        parents.father = {};
+        parents.father.name = fatherNameObj;
+      }
+      if (motherNameObj) {
+        parents.mother = {};
+        parents.mother.name = motherNameObj;
+      }
+      return parents;
+    }
   }
 
   makeParentsFromForenamesAndLastNames(fatherForenames, fatherLastName, motherForenames, motherLastName) {
@@ -605,18 +852,38 @@ class ExtractedDataReader {
   }
 
   getRecordDataValue(key) {
-    if (!this.ed.recordData) {
+    if (!key || !this.ed.recordData) {
       return undefined;
     }
 
     return this.ed.recordData[key];
   }
 
-  getRecordDataValueForKeys(keys) {
-    if (this.ed.recordData) {
+  getRecordDataKeyAndValueForKeys(keys) {
+    if (this.ed.recordData && keys) {
       if (keys && keys.length > 0) {
         for (let key of keys) {
           let value = this.ed.recordData[key];
+          if (value) {
+            return { key: key, value: value };
+          }
+        }
+      }
+    }
+  }
+
+  getRecordDataValueForKeys(keys) {
+    let match = this.getRecordDataKeyAndValueForKeys(keys);
+    if (match) {
+      return match.value;
+    }
+  }
+
+  getExtractedDataValueForKeys(keys) {
+    if (this.ed && keys) {
+      if (keys && keys.length > 0) {
+        for (let key of keys) {
+          let value = this.ed[key];
           if (value) {
             return value;
           }
@@ -625,176 +892,201 @@ class ExtractedDataReader {
     }
   }
 
-  getRecordTypeMatch(recordTypeMatches, inputData) {
-    let collectionId = inputData.collectionId;
-    let collectionTitle = inputData.collectionTitle;
-    let documentType = inputData.documentType;
-    let documentSubtype = inputData.documentSubtype;
-    let recordData = inputData.recordData;
-    let recordDataLabels = inputData.recordDataLabels;
-    let recordSections = inputData.recordSections;
+  testForEqualsOneOf(matchConfig, matchValues) {
+    let value = matchConfig.value;
+    if (!value) {
+      return false;
+    }
 
-    for (let typeData of recordTypeMatches) {
-      // collectionId
-      if (typeData.collectionIds) {
-        if (!collectionId) {
-          continue;
+    if (!matchConfig.isCaseSensitive) {
+      value = value.toLowerCase();
+    }
+
+    let matchFound = false;
+    for (let matchValue of matchValues) {
+      if (!matchConfig.isCaseSensitive) {
+        matchValue = matchValue.toLowerCase();
+      }
+      if (value == matchValue) {
+        matchFound = true;
+        break;
+      }
+    }
+    if (!matchFound) {
+      return false;
+    }
+    return true;
+  }
+
+  testForStringIncludesAllFromOneSet(matchConfig, matchSets) {
+    let value = matchConfig.value;
+    if (!value) {
+      return false;
+    }
+    if (!matchConfig.isCaseSensitive) {
+      value = value.toLowerCase();
+    }
+
+    let matchFound = false;
+    for (let set of matchSets) {
+      let partsMatch = true;
+      for (let part of set) {
+        if (!matchConfig.isCaseSensitive) {
+          part = part.toLowerCase();
         }
-        let collectionIdMatchFound = false;
-        for (let typeCollectionId of typeData.collectionIds) {
-          if (typeCollectionId.toLowerCase() == collectionId.toLowerCase()) {
-            collectionIdMatchFound = true;
-            break;
-          }
-        }
-        if (!collectionIdMatchFound) {
-          continue;
+        if (!value.includes(part)) {
+          partsMatch = false;
+          break;
         }
       }
-
-      // document type
-      if (typeData.documentTypes) {
-        if (!documentType) {
-          continue;
-        }
-        let documentTypeMatchFound = false;
-        for (let typeDocumentType of typeData.documentTypes) {
-          if (typeDocumentType.toLowerCase() == documentType.toLowerCase()) {
-            documentTypeMatchFound = true;
-            break;
-          }
-        }
-        if (!documentTypeMatchFound) {
-          continue;
-        }
+      if (partsMatch) {
+        matchFound = true;
+        break;
       }
+    }
 
-      // document subtype
-      if (typeData.documentSubtypes) {
-        if (!documentSubtype) {
-          continue;
-        }
-        let documentSubtypeMatchFound = false;
-        for (let typeDocumentSubtype of typeData.documentSubtypes) {
-          if (typeDocumentSubtype.toLowerCase() == documentSubtype.toLowerCase()) {
-            documentSubtypeMatchFound = true;
+    if (!matchFound) {
+      return false;
+    }
+
+    return true;
+  }
+
+  testForArrayIncludesAllFromOneSet(matchConfig, matchSets) {
+    let testArray = matchConfig.value;
+
+    if (!testArray || !Array.isArray(testArray)) {
+      return false;
+    }
+
+    let matchFound = false;
+    for (let set of matchSets) {
+      let hasAll = true;
+      for (let value of set) {
+        if (matchConfig.isCaseSensitive) {
+          if (!testArray.includes(value)) {
+            hasAll = false;
             break;
-          }
-        }
-        if (!documentSubtypeMatchFound) {
-          continue;
-        }
-      }
-
-      // collection title
-      if (typeData.collectionTitleMatches) {
-        if (!collectionTitle) {
-          continue;
-        }
-
-        let title = collectionTitle.toLowerCase();
-        let collectionTitleMatchFound = false;
-        for (let typeDataTitleParts of typeData.collectionTitleMatches) {
-          let partsMatch = true;
-          for (let part of typeDataTitleParts) {
-            part = part.toLowerCase();
-            if (!title.includes(part)) {
-              partsMatch = false;
-              break;
-            }
-          }
-          if (partsMatch) {
-            collectionTitleMatchFound = true;
-            break;
-          }
-        }
-
-        if (!collectionTitleMatchFound) {
-          continue;
-        }
-      }
-
-      if (typeData.requiredRecordSections) {
-        if (!recordSections) {
-          continue;
-        }
-
-        let recordSectionMatchFound = false;
-        for (let requiredSectionSet of typeData.requiredRecordSections) {
-          let sectionsPresent = true;
-          for (let section of requiredSectionSet) {
-            if (!recordSections[section]) {
-              sectionsPresent = false;
-              break;
-            }
-          }
-          if (sectionsPresent) {
-            recordSectionMatchFound = true;
-            break;
-          }
-        }
-        if (!recordSectionMatchFound) {
-          continue;
-        }
-      }
-
-      if (typeData.requiredFields) {
-        if (recordData) {
-          let requiredFieldsMatchFound = false;
-          for (let requiredFieldSet of typeData.requiredFields) {
-            let fieldsPresent = true;
-            for (let label of requiredFieldSet) {
-              label = label.toLowerCase();
-              let fieldFound = false;
-              for (let key of Object.keys(recordData)) {
-                if (key.toLowerCase() == label) {
-                  fieldFound = true;
-                  break;
-                }
-              }
-
-              if (!fieldFound) {
-                fieldsPresent = false;
-                break;
-              }
-            }
-            if (fieldsPresent) {
-              requiredFieldsMatchFound = true;
-              break;
-            }
-          }
-          if (!requiredFieldsMatchFound) {
-            continue;
-          }
-        } else if (recordDataLabels) {
-          let requiredFieldsMatchFound = false;
-          for (let requiredFieldSet of typeData.requiredFields) {
-            let fieldsPresent = true;
-            for (let label of requiredFieldSet) {
-              label = label.toLowerCase();
-              let fieldFound = false;
-              for (let key of recordDataLabels) {
-                if (key.toLowerCase() == label) {
-                  fieldFound = true;
-                  break;
-                }
-              }
-
-              if (!fieldFound) {
-                fieldsPresent = false;
-                break;
-              }
-            }
-            if (fieldsPresent) {
-              requiredFieldsMatchFound = true;
-              break;
-            }
-          }
-          if (!requiredFieldsMatchFound) {
-            continue;
           }
         } else {
-          continue;
+          value = value.toLowerCase();
+          let valueFound = false;
+          for (let testValue of testArray) {
+            if (testValue.toLowerCase() == value) {
+              valueFound = true;
+              break;
+            }
+          }
+          if (!valueFound) {
+            hasAll = false;
+            break;
+          }
+        }
+      }
+      if (hasAll) {
+        matchFound = true;
+        break;
+      }
+    }
+
+    if (!matchFound) {
+      return false;
+    }
+
+    return true;
+  }
+
+  testForObjectHasAllFromOneSet(matchConfig, matchSets) {
+    let testObject = matchConfig.value;
+
+    if (!testObject || typeof testObject !== "object") {
+      return false;
+    }
+
+    let matchFound = false;
+    for (let set of matchSets) {
+      let hasAll = true;
+      for (let propertyName of set) {
+        if (matchConfig.isCaseSensitive) {
+          if (!Object.hasOwn(testObject, propertyName)) {
+            hasAll = false;
+            break;
+          }
+        } else {
+          propertyName = propertyName.toLowerCase();
+          let fieldFound = false;
+          for (let testProperty of Object.keys(testObject)) {
+            if (testProperty.toLowerCase() == propertyName) {
+              fieldFound = true;
+              break;
+            }
+          }
+          if (!fieldFound) {
+            hasAll = false;
+            break;
+          }
+        }
+      }
+      if (hasAll) {
+        matchFound = true;
+        break;
+      }
+    }
+
+    if (!matchFound) {
+      return false;
+    }
+
+    return true;
+  }
+
+  // Defining the "enum" inside the class using static properties
+  static MatchType = Object.freeze({
+    EqualsOneOf: "EqualsOneOf",
+    StringIncludesAllFromOneSet: "StringIncludesAllFromOneSet",
+    ArrayIncludesAllFromOneSet: "ArrayIncludesAllFromOneSet",
+    ObjectHasAllFromOneSet: "ObjectHasAllFromOneSet",
+  });
+
+  getRecordTypeMatch(recordTypes, matchInput) {
+    // recordTypes is an array of recordType definitions
+    // matchInput is selected data from the extractedData object along with
+    // rules of how to match it to the matchData in the typeData
+
+    for (let typeData of recordTypes) {
+      if (matchInput) {
+        if (typeData.matchData) {
+          let failedTest = false;
+
+          // go through each of the tests required for this typeData
+          for (let matchDataKey of Object.keys(typeData.matchData)) {
+            let testPassed = false;
+            let matchConfig = matchInput[matchDataKey];
+            let matchValues = typeData.matchData[matchDataKey];
+            if (matchConfig && matchValues) {
+              switch (matchConfig.matchType) {
+                case ExtractedDataReader.MatchType.EqualsOneOf:
+                  testPassed = this.testForEqualsOneOf(matchConfig, matchValues);
+                  break;
+                case ExtractedDataReader.MatchType.StringIncludesAllFromOneSet:
+                  testPassed = this.testForStringIncludesAllFromOneSet(matchConfig, matchValues);
+                  break;
+                case ExtractedDataReader.MatchType.ArrayIncludesAllFromOneSet:
+                  testPassed = this.testForArrayIncludesAllFromOneSet(matchConfig, matchValues);
+                  break;
+                case ExtractedDataReader.MatchType.ObjectHasAllFromOneSet:
+                  testPassed = this.testForObjectHasAllFromOneSet(matchConfig, matchValues);
+                  break;
+              }
+            }
+            if (!testPassed) {
+              failedTest = true;
+              break;
+            }
+          }
+          if (failedTest) {
+            continue;
+          }
         }
       }
 
@@ -805,13 +1097,137 @@ class ExtractedDataReader {
     return undefined;
   }
 
-  determineRecordType(recordTypeMatches, inputData) {
-    let typeData = this.getRecordTypeMatch(recordTypeMatches, inputData);
+  determineRecordType(recordTypeMatches, matchInput) {
+    let typeData = this.getRecordTypeMatch(recordTypeMatches, matchInput);
     if (typeData) {
       return typeData.recordType;
     }
 
     return RT.Unclassified;
+  }
+
+  getGenderFromString(genderString, maleValues, femaleValues, doToLowerCase = false) {
+    if (genderString) {
+      if (doToLowerCase) {
+        genderString = genderString.toLowerCase();
+      }
+      if (maleValues.includes(genderString)) {
+        return "male";
+      } else if (femaleValues.includes(genderString)) {
+        return "female";
+      }
+    }
+    return "";
+  }
+
+  getGenderFromRecordData(key, maleValues, femaleValues, doToLowerCase = false) {
+    let genderString = this.getRecordDataValue(key);
+    return this.getGenderFromString(genderString, maleValues, femaleValues, doToLowerCase);
+  }
+
+  getValueUsingRule(rule) {
+    // Note that this doesn't handle the seperate type rules and default rules
+    let value = undefined;
+    if (!rule) {
+      return value;
+    }
+
+    if (rule.prioritizeEdKeys) {
+      value = this.getExtractedDataValueForKeys(rule.edKeys);
+    }
+
+    if (!value) {
+      value = this.getRecordDataValueForKeys(rule.recordDataKeys);
+    }
+
+    if (!value && !rule.prioritizeEdKeys) {
+      value = this.getExtractedDataValueForKeys(rule.edKeys);
+    }
+
+    if (value) {
+      if (rule.convertNameFromAllCapsToMixedCase) {
+        value = NameUtils.convertNameFromAllCapsToMixedCase(value);
+      }
+      if (rule.cleanFunction) {
+        value = rule.cleanFunction(this, value);
+      }
+      if (rule.valueMapping) {
+        for (let key of Object.keys(rule.valueMapping)) {
+          const matches = rule.valueMapping[key].matches;
+          if (matches) {
+            if (matches.includes(value)) {
+              value = key;
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    return value;
+  }
+
+  getValueUsingRecordTypeData(name) {
+    // name is a standard name used in gd
+    let value = undefined;
+    let rule = undefined;
+    let defaultRule = undefined;
+
+    if (this.recordTypeData && this.recordTypeData.rules) {
+      rule = this.recordTypeData.rules[name];
+    }
+
+    if (this.baseRecordTypeData && this.baseRecordTypeData.rules) {
+      defaultRule = this.baseRecordTypeData.rules[name];
+    }
+
+    if (rule && defaultRule && rule.combineRule) {
+      rule = { ...rule, ...defaultRule };
+    }
+
+    if (rule) {
+      value = this.getValueUsingRule(rule);
+    }
+
+    if (!value && defaultRule) {
+      value = this.getValueUsingRule(defaultRule);
+    }
+
+    return value;
+  }
+
+  getRecordTypeProperty(key) {
+    let property = undefined;
+    let defaultProperty = undefined;
+
+    if (this.recordTypeData && this.recordTypeData[key]) {
+      property = this.recordTypeData[key];
+    }
+
+    if (this.baseRecordTypeData && this.baseRecordTypeData[key]) {
+      defaultProperty = this.baseRecordTypeData[key];
+    }
+
+    if (property) {
+      if (defaultProperty) {
+        // both exist
+        if (typeof property === "object" && typeof defaultProperty === "object") {
+          if (property.doNotCombineWithDefault) {
+            return property;
+          } else {
+            return { ...property, ...defaultProperty };
+          }
+        } else {
+          return property;
+        }
+      } else {
+        return property;
+      }
+    } else if (defaultProperty) {
+      return defaultProperty;
+    }
+
+    return undefined;
   }
 }
 

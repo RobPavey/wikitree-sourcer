@@ -912,10 +912,10 @@ function addMenuItemWithSubtitle(menu, innerText, onclick, subTitleText) {
   menu.list.appendChild(listItem);
 }
 
-function addMenuItemWithSubMenu(menu, innerText, onclick, onSubMenuClick) {
+function addMenuItemWithSubmenu(menu, innerText, onclick, onSubmenuClick) {
   // create a list item and add it to the list
   let listItem = document.createElement("li");
-  setMenuItemClassName(menu, listItem, "menuItemWithSubMenu");
+  setMenuItemClassName(menu, listItem, "menuItemWithSubmenu");
   menu.list.appendChild(listItem);
 
   let rowDiv = document.createElement("div");
@@ -938,7 +938,7 @@ function addMenuItemWithSubMenu(menu, innerText, onclick, onSubMenuClick) {
 
   let rightButton = document.createElement("button");
   rightButton.className = "menuButton";
-  rightButton.onclick = onSubMenuClick;
+  rightButton.onclick = onSubmenuClick;
   rightButton.innerText = ">";
   labelDiv.appendChild(rightButton);
 
@@ -1097,6 +1097,8 @@ const rtToRefTitle = {
   Unclassified: "Unknown",
   Apprenticeship: "Apprenticeship",
   Baptism: "Baptism",
+  Biography: "Biography",
+  BiographicalIndex: "BiographicalIndex",
   Birth: "Birth",
   BirthRegistration: "Birth Registration",
   Book: "Book",
@@ -1156,7 +1158,7 @@ const rtToRefTitle = {
   WorkhouseRecord: "Workhouse Record",
 };
 
-function setupBuildCitationSubMenuForRequestedUserInput(
+function setupBuildCitationSubmenuForRequestedUserInput(
   data,
   buildFunction,
   backFunction,
@@ -1179,7 +1181,7 @@ function setupBuildCitationSubMenuForRequestedUserInput(
         focusElementId = activeElement.id;
       }
 
-      setupBuildCitationSubMenuForRequestedUserInput(
+      setupBuildCitationSubmenuForRequestedUserInput(
         data,
         buildFunction,
         backFunction,
@@ -1341,7 +1343,7 @@ function setupBuildCitationSubMenuForRequestedUserInput(
   }
 }
 
-function setupBuildCitationSubMenu(
+function setupBuildCitationSubmenu(
   data,
   manualClassification,
   buildFunction,
@@ -1352,7 +1354,7 @@ function setupBuildCitationSubMenu(
   clearCitation();
 
   if (userInputFunction) {
-    setupBuildCitationSubMenuForRequestedUserInput(
+    setupBuildCitationSubmenuForRequestedUserInput(
       data,
       buildFunction,
       backFunction,
@@ -1492,7 +1494,7 @@ function setupBuildCitationSubMenu(
   endMainMenu(menu);
 }
 
-function setupOtherBuildCitationItemsSubMenu(
+function setupOtherBuildCitationItemsSubmenu(
   data,
   manualClassification,
   buildFunction,
@@ -1592,7 +1594,7 @@ function addBuildCitationMenuItem(
   input.type = type;
 
   let rightArrowClickFunction = function (element) {
-    setupOtherBuildCitationItemsSubMenu(
+    setupOtherBuildCitationItemsSubmenu(
       data,
       manualClassification,
       buildFunction,
@@ -1604,7 +1606,7 @@ function addBuildCitationMenuItem(
   };
 
   let suffixClickFunction = function (element) {
-    setupBuildCitationSubMenu(
+    setupBuildCitationSubmenu(
       input,
       manualClassification,
       buildFunction,
@@ -1622,7 +1624,7 @@ function addBuildCitationMenuItem(
   let mainClickFunction = suffix ? suffixClickFunction : simpleBuildClickFunction;
 
   if (othersOnSubmenu) {
-    addMenuItemWithSubMenu(menu, menuText, mainClickFunction, rightArrowClickFunction);
+    addMenuItemWithSubmenu(menu, menuText, mainClickFunction, rightArrowClickFunction);
   } else {
     addMenuItem(menu, menuText, mainClickFunction, shortcut);
   }
@@ -1919,7 +1921,7 @@ function setupHelpSubmenuMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFunction, backFunction) {
+async function setupSearchCollectionsSubmenu(data, siteName, searchCollectionFunction, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -1935,9 +1937,9 @@ async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFun
   };
   let collectionArray = RC.findCollectionsForSiteWithinDateRangeAndCountries(siteName, dates, countryArray);
 
-  //console.log("setupSearchCollectionsSubMenu, countryArray is:");
+  //console.log("setupSearchCollectionsSubmenu, countryArray is:");
   //console.log(countryArray);
-  //console.log("setupSearchCollectionsSubMenu, dates is:");
+  //console.log("setupSearchCollectionsSubmenu, dates is:");
   //console.log(dates);
 
   if (collectionArray && collectionArray.length > 0) {
@@ -2102,13 +2104,13 @@ export {
   addSameRecordMenuItem,
   addSameEventMenuItem,
   setPopupMenuWidth,
-  setupSearchCollectionsSubMenu,
+  setupSearchCollectionsSubmenu,
   addBackMenuItem,
   addHelpMenuItem,
   addBuyMeACoffeeMenuItem,
   addOptionsMenuItem,
   addItalicMessageMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addMenuItemWithSubtitle,
   addMenuItem,
   addBreak,

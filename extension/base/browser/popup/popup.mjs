@@ -371,7 +371,36 @@ async function registerContentScripts() {
   return true;
 }
 
+async function checkForLocalSavedPage(activeTab, url) {
+  const localRegex = /^.*unit_tests\/([^\/]+)\/saved_pages\/.*$/;
+  if (!localRegex.test(url)) {
+    return;
+  }
+
+  let siteName = url.replace(localRegex, "$1");
+  if (!siteName) {
+    return;
+  }
+
+  let siteData = await getSiteDataForSite(siteName);
+  if (!siteData) {
+    return;
+  }
+
+  let contentScripts = await chrome.scripting.getRegisteredContentScripts();
+
+  for (let contentScript of contentScripts) {
+    if (contentScript.id == siteName) {
+      await injectContentScriptIfMissing(activeTab, contentScript, siteData);
+    }
+  }
+
+  return siteName;
+}
+
 async function determineSiteNameForTab(activeTab) {
+  logDebug("WikiTree Sourcer: determineSiteNameForTab");
+
   displayBusyMessage("WikiTree Sourcer initializing menu (determineSiteNameForTab) ...");
 
   let manifest = chrome.runtime.getManifest();
@@ -388,7 +417,14 @@ async function determineSiteNameForTab(activeTab) {
     url = activeTab.url;
   }
 
-  logDebug("WikiTree Sourcer: determineSiteNameForTab");
+  // for local debugging only
+  let debugSiteName = await checkForLocalSavedPage(activeTab, url);
+  if (debugSiteName) {
+    logDebug("WikiTree Sourcer: determineSiteNameForTab returning debugSiteName of:", debugSiteName);
+    return debugSiteName;
+  }
+
+  logDebug("WikiTree Sourcer: determineSiteNameForTab checking content scripts");
 
   if (typeof chrome.scripting?.getRegisteredContentScripts !== "function") {
     displayMessageWithIcon(

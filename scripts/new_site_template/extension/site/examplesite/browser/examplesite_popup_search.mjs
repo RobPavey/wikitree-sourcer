@@ -22,65 +22,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
-
-import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
-
-import { options } from "/base/browser/options/options_loader.mjs";
-
-const examplesiteStartYear = 1800;
-const examplesiteEndYear = 2000;
-
-function shouldShowSearchMenuItem(data, filter) {
-  const siteConstraints = {
-    startYear: examplesiteStartYear,
-    endYear: examplesiteEndYear,
-    dateTestType: "bmd",
-    countryList: [],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
-  return true;
-}
+import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_search_config.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
-// Menu actions
+// Configuration
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function examplesiteSearch(generalizedData) {
-  const input = { generalizedData: generalizedData, options: options };
-  doAsyncActionWithCatch("ExampleSite Search", input, async function () {
-    let loadedModule = await import(`../core/examplesite_build_search_url.mjs`);
-    doSearch(loadedModule, input);
-  });
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// Menu items
-//////////////////////////////////////////////////////////////////////////////////////////
-
-function addExamplesiteDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search ExampleSite", function (element) {
-    examplesiteSearch(data.generalizedData);
-  });
-
-  return true;
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// Submenus
-//////////////////////////////////////////////////////////////////////////////////////////
+const searchMenuConfig = {
+  siteName: "exampleSite",
+  siteDisplayName: "ExampleSite",
+  defaultMenuItem: {
+    menuItemText: "Search ExampleSite",
+    includeDefaultSearch: true,
+    includeSearchSubmenu: false,
+  },
+};
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction(
-  "examplesite",
-  "ExampleSite",
-  addExamplesiteDefaultSearchMenuItem,
-  shouldShowSearchMenuItem
-);
+registerSearchMenuItemFromConfig(searchMenuConfig);

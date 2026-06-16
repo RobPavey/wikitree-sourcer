@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "George Charles McKenzie"
+  },
+  "personGender": "male",
+  "deathDate": {
+    "dateString": "1877"
+  },
+  "deathPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "registrationDistrict": "Grey",
+  "collectionData": {
+    "id": "death",
+    "year": "1877",
+    "registrationNumber": "79/49",
+    "volume": "79",
+    "page": "49"
+  },
+  "hasValidData": true
+}

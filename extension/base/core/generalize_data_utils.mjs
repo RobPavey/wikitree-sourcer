@@ -962,7 +962,7 @@ class PlaceObj {
     return classObj;
   }
 
-  separatePlaceIntoParts() {
+  separatePlaceIntoParts(defaultCountryStdName) {
     // it can be hard to get the county from the string.
     let country = undefined;
     let placeNameMinusCountry = this.placeString;
@@ -979,6 +979,8 @@ class PlaceObj {
       placeNameMinusCountry = countryExtract.remainder;
 
       result.country = country.stdName;
+    } else {
+      country = CD.matchCountryFromStdCountryName(defaultCountryStdName);
     }
 
     if (country && !country.hasStates && !country.hasCounties) {
@@ -1178,6 +1180,21 @@ class PlaceObj {
     return place;
   }
 
+  inferExtractedPlaceString() {
+    // This is the place string from the extracted record, it may be cleaned
+    // but it has not been standardized or had county/state/country added.
+    // Not all sites set this up yet, in those cases this is the same as inferPlaceString.
+    // So for searching or adding profiles you would use inferPlaceString but for
+    // narrative and dataString you would likely want inferExtractedPlaceString
+    if (Object.hasOwn(this, "extractedPlaceString")) {
+      // Note that this could be an empty string but with still want to return it rather
+      // than returning a string that is just the inferrred state/country
+      return this.extractedPlaceString;
+    }
+
+    return this.inferPlaceString();
+  }
+
   getPreposition(isForFullPlaceIncludingStreetAddress = false, placeStringOverride = "") {
     let prepositionHint = this.prepositionHint;
     if (prepositionHint) {
@@ -1350,19 +1367,6 @@ class NameObj {
     if (!name) {
       return "";
     }
-
-    let wordCount = StringUtils.countWords(name);
-
-    if (isFull) {
-      if (wordCount < 3) {
-        return name;
-      }
-    } else {
-      if (wordCount < 2) {
-        return name;
-      }
-    }
-
     let firstWord = StringUtils.getFirstWord(name);
 
     const titles = [
@@ -1444,24 +1448,21 @@ class NameObj {
     lcFirstWord = lcFirstWord.replace(/\//g, "");
 
     if (titles.includes(lcFirstWord)) {
-      // remove the title unless it would leave the name empty
       let remainder = StringUtils.getWordsAfterFirstWord(name);
-      if (remainder) {
-        if (!titlesThatAreNotPrefixes.includes(lcFirstWord)) {
-          if (this.prefix) {
-            if (!this.prefix.includes(firstWord)) {
-              this.prefix += " " + firstWord;
-            }
-          } else {
-            this.prefix = firstWord;
+      if (!titlesThatAreNotPrefixes.includes(lcFirstWord)) {
+        if (this.prefix) {
+          if (!this.prefix.includes(firstWord)) {
+            this.prefix += " " + firstWord;
           }
         } else {
-          if (!this.nonPrefixHonorific) {
-            this.nonPrefixHonorific = firstWord;
-          }
+          this.prefix = firstWord;
         }
-        return remainder;
+      } else {
+        if (!this.nonPrefixHonorific) {
+          this.nonPrefixHonorific = firstWord;
+        }
       }
+      return remainder;
     }
 
     return name;
@@ -1569,6 +1570,9 @@ class NameObj {
   }
 
   moveNicknamesFromNameString(nameString) {
+    if (!nameString) {
+      return;
+    }
     let newString = nameString;
     // if the nameString contain a name in quotes then it is a nickname
     let namesArray = nameString.split(/["]/);
@@ -1788,14 +1792,24 @@ class NameObj {
       }
     }
 
-    if (fullName) {
-      if (this.prefix && !fullName.startsWith(this.prefix)) {
+    if (this.prefix && (!fullName || !fullName.startsWith(this.prefix))) {
+      if (fullName) {
         fullName = this.prefix + " " + fullName;
-      } else if (this.nonPrefixHonorific && !fullName.startsWith(this.nonPrefixHonorific)) {
-        fullName = this.nonPrefixHonorific + " " + fullName;
+      } else {
+        fullName = this.prefix;
       }
-      if (this.suffix && !fullName.endsWith(this.suffix)) {
+    } else if (this.nonPrefixHonorific && (!fullName || !fullName.startsWith(this.nonPrefixHonorific))) {
+      if (fullName) {
+        fullName = this.nonPrefixHonorific + " " + fullName;
+      } else {
+        fullName = this.nonPrefixHonorific;
+      }
+    }
+    if (this.suffix && (!fullName || !fullName.endsWith(this.suffix))) {
+      if (fullName) {
         fullName = fullName + " " + this.suffix;
+      } else {
+        fullName = this.suffix;
       }
     }
 
@@ -4492,6 +4506,14 @@ class GeneralizedData {
         type: RT.Encyclopedia,
         defaultTitle: "Encyclopedia",
         sourceMatches: [{ title: "Wikipedia entry", matches: ["wikipedia"] }],
+      },
+      {
+        type: RT.Biography,
+        defaultTitle: "Biography",
+      },
+      {
+        type: RT.BiographicalIndex,
+        defaultTitle: "Biographical Index",
       },
     ];
 

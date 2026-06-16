@@ -30,93 +30,131 @@ const recordTypeMatches = [
   // document types
   {
     recordType: RT.Baptism,
-    documentTypes: ["Baptism"],
+    matchData: {
+      documentTypes: ["Baptism"],
+    },
   },
   {
     recordType: RT.Marriage,
     recordSubtype: RecordSubtype.Banns,
-    documentTypes: ["Marriage Banns"],
+    matchData: {
+      documentTypes: ["Marriage Banns"],
+    },
   },
   {
     recordType: RT.Marriage,
-    documentTypes: ["Marriage"],
+    matchData: {
+      documentTypes: ["Marriage"],
+    },
   },
   {
     recordType: RT.QuarterSession,
-    documentTypes: ["Court & Criminal"],
-    documentSubtypes: ["Quarter Sessions"],
+    matchData: {
+      documentTypes: ["Court & Criminal"],
+      documentSubtypes: ["Quarter Sessions"],
+    },
   },
 
   {
     recordType: RT.BirthRegistration,
-    collectionTitleMatches: [["Civil Registration Births"]],
+    matchData: {
+      collectionTitleMatches: [["Civil Registration Births"]],
+    },
   },
   {
     recordType: RT.MarriageRegistration,
-    collectionTitleMatches: [["Civil Registration Marriages"]],
+    matchData: { collectionTitleMatches: [["Civil Registration Marriages"]] },
   },
   {
     recordType: RT.DeathRegistration,
-    collectionTitleMatches: [["Civil Registration Deaths"]],
+    matchData: {
+      collectionTitleMatches: [["Civil Registration Deaths"]],
+    },
   },
   {
     recordType: RT.Baptism,
-    collectionTitleMatches: [["Baptism"]],
-    requiredFields: [["Date of Baptism"]],
+    matchData: {
+      collectionTitleMatches: [["Baptism"]],
+      requiredFields: [["Date of Baptism"]],
+    },
   },
   {
     recordType: RT.Burial,
-    collectionTitleMatches: [["BMDs"]],
-    requiredFields: [["Date of Burial"]],
+    matchData: {
+      collectionTitleMatches: [["BMDs"]],
+      requiredFields: [["Date of Burial"]],
+    },
   },
   {
     recordType: RT.Burial,
-    collectionTitleMatches: [["Parish Transcript Burials"]],
+    matchData: {
+      collectionTitleMatches: [["Parish Transcript Burials"]],
+    },
   },
   {
     recordType: RT.Death,
-    collectionTitleMatches: [["Headstones"]],
-    requiredFields: [["Date of Death"]],
+    matchData: {
+      collectionTitleMatches: [["Headstones"]],
+      requiredFields: [["Date of Death"]],
+    },
   },
   {
     recordType: RT.Marriage,
-    collectionTitleMatches: [["Parish Transcript Marriages, Licences and Banns"]],
+    matchData: {
+      collectionTitleMatches: [["Parish Transcript Marriages, Licences and Banns"]],
+    },
   },
 
   {
     recordType: RT.Census,
-    collectionTitleMatches: [["Census"], ["1939 Register"]],
+    matchData: {
+      collectionTitleMatches: [["Census"], ["1939 Register"]],
+    },
   },
   {
     recordType: RT.LandTax,
-    collectionTitleMatches: [["Tithe Records"]],
+    matchData: {
+      collectionTitleMatches: [["Tithe Records"]],
+    },
   },
   {
     recordType: RT.CriminalRegister,
-    collectionTitleMatches: [["Criminal Records"]],
+    matchData: {
+      collectionTitleMatches: [["Criminal Records"]],
+    },
   },
   {
     recordType: RT.ConvictTransportation,
-    collectionTitleMatches: [["Transportation"]],
+    matchData: {
+      collectionTitleMatches: [["Transportation"]],
+    },
   },
   {
     recordType: RT.PassengerList,
-    collectionTitleMatches: [["Passenger List"]],
+    matchData: {
+      collectionTitleMatches: [["Passenger List"]],
+    },
   },
   {
     recordType: RT.Apprenticeship,
-    collectionTitleMatches: [["Apprenticeship Records"]],
+    matchData: {
+      collectionTitleMatches: [["Apprenticeship Records"]],
+    },
   },
 
   {
     recordType: RT.Birth,
-    collectionTitleMatches: [["BMDs", "Births"]],
+    matchData: {
+      collectionTitleMatches: [["BMDs", "Births"]],
+    },
   },
 
   // ones with vague type, possibly images
   {
     recordType: RT.Birth,
-    collectionTitleMatches: [["Births"]],
+    matchData: {
+      collectionTitleMatches: [["Births"]],
+    },
   },
 ];
 
@@ -239,7 +277,32 @@ class ThegenEdReader extends ExtractedDataReader {
       }
     }
 
-    let recordTypeData = this.getRecordTypeMatch(recordTypeMatches, inputData);
+    let matchConfig = [];
+    if (inputData.documentType) {
+      matchConfig.documentTypes = {
+        matchType: ExtractedDataReader.MatchType.EqualsOneOf,
+        value: inputData.documentType,
+      };
+    }
+    if (inputData.documentSubtype) {
+      matchConfig.documentSubtypes = {
+        matchType: ExtractedDataReader.MatchType.EqualsOneOf,
+        value: inputData.documentSubtype,
+      };
+    }
+    if (inputData.collectionTitle) {
+      matchConfig.collectionTitleMatches = {
+        matchType: ExtractedDataReader.MatchType.StringIncludesAllFromOneSet,
+        value: inputData.collectionTitle,
+      };
+    }
+    if (inputData.recordData) {
+      matchConfig.requiredFields = {
+        matchType: ExtractedDataReader.MatchType.ObjectHasAllFromOneSet,
+        value: inputData.recordData,
+      };
+    }
+    let recordTypeData = this.getRecordTypeMatch(recordTypeMatches, matchConfig);
     if (recordTypeData) {
       this.recordType = recordTypeData.recordType;
       if (recordTypeData.recordSubtype) {
@@ -527,18 +590,6 @@ class ThegenEdReader extends ExtractedDataReader {
     }
 
     return undefined;
-  }
-
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
   }
 
   getBirthDateObj() {

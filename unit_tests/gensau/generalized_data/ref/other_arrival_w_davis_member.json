@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "PassengerList",
+  "name": {
+    "lastName": "Davis",
+    "forenames": "W A"
+  },
+  "arrivalDate": "05-Oct-1912",
+  "arrivalPlace": "Adelaide+",
+  "departurePlace": "Fremantle",
+  "shipName": "Orvieto",
+  "hasValidData": true
+}

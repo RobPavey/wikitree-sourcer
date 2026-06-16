@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"South Australia - Newspaper Births\"<br/>\nGenealogy SA; Surname: SMITH; Given Names: Leslie William Thomas; Year: 1943; Notice: Birth; Source: Advertiser; Publication Date: 14-Jul-1943; Notice: Birth<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nLeslie William Thomas Smith born on 13 Jul 1943, child of Dell & Albert, in South Australia, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Leslie, child of Dell & Albert, was born on 13 July 1943 in South Australia, Australia.<ref>\n'''Birth''':\n\"South Australia - Newspaper Births\"<br/>\nGenealogy SA; Surname: SMITH; Given Names: Leslie William Thomas; Year: 1943; Notice: Birth; Source: Advertiser; Publication Date: 14-Jul-1943; Notice: Birth<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nLeslie William Thomas Smith born on 13 Jul 1943, child of Dell & Albert, in South Australia, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth''': \"South Australia - Newspaper Births\"<br/>Genealogy SA; Surname: SMITH; Given Names: Leslie William Thomas; Year: 1943; Notice: Birth; Source: Advertiser; Publication Date: 14-Jul-1943; Notice: Birth<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Leslie William Thomas Smith born on 13 Jul 1943, child of Dell & Albert, in South Australia, Australia.",
+    "type": "source"
+  }
+}

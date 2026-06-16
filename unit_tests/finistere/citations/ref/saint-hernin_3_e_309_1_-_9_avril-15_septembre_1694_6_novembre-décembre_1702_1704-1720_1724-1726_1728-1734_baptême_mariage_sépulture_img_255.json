@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Registre paroissial''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 3 E 309 1 - 9 avril-15 septembre 1694, 6 novembre-décembre 1702, 1704-1720, 1724-1726, 1728-1734. - 9 avril 1694-1734; Image 255 sur 343; Lieu: Saint-Hernin (Finistère); Type de document: baptême, mariage, sépulture<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1040255.1634650/daoloc/0/255 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Registre paroissial''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 3 E 309 1 - 9 avril-15 septembre 1694, 6 novembre-décembre 1702, 1704-1720, 1724-1726, 1728-1734. - 9 avril 1694-1734; Image 255 sur 343; Lieu: Saint-Hernin (Finistère); Type de document: baptême, mariage, sépulture<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1040255.1634650/daoloc/0/255 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Registre paroissial''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère; 3 E 309 1 - 9 avril-15 septembre 1694, 6 novembre-décembre 1702, 1704-1720, 1724-1726, 1728-1734. - 9 avril 1694-1734; Image 255 sur 343; Lieu: Saint-Hernin (Finistère); Type de document: baptême, mariage, sépulture<br/>[https://recherche.archives.finistere.fr/ark:/72506/1040255.1634650/daoloc/0/255 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Registre paroissial''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 3 E 309 1 - 9 avril-15 septembre 1694, 6 novembre-décembre 1702, 1704-1720, 1724-1726, 1728-1734. - 9 avril 1694-1734, Image 255 sur 343, Lieu Saint-Hernin (Finistère), Type de document baptême, mariage, sépulture<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1040255.1634650/daoloc/0/255 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Registre paroissial''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 3 E 309 1 - 9 avril-15 septembre 1694, 6 novembre-décembre 1702, 1704-1720, 1724-1726, 1728-1734. - 9 avril 1694-1734, Image 255 sur 343, Lieu Saint-Hernin (Finistère), Type de document baptême, mariage, sépulture<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1040255.1634650/daoloc/0/255 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Registre paroissial''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère, 3 E 309 1 - 9 avril-15 septembre 1694, 6 novembre-décembre 1702, 1704-1720, 1724-1726, 1728-1734. - 9 avril 1694-1734, Image 255 sur 343, Lieu Saint-Hernin (Finistère), Type de document baptême, mariage, sépulture<br/>[https://recherche.archives.finistere.fr/ark:/72506/1040255.1634650/daoloc/0/255 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

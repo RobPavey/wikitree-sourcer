@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FamilySearch Create Source Dialog Test Fixture</title>
+  </head>
+  <body>
+    <div id="root">
+      <section id="main-content-section" aria-label="Main Content">
+        <section data-testid="person-details-page">
+          <h1>Test Person</h1>
+          <aside data-testid="sources-infosheet">
+            <h2>Sources</h2>
+            <button type="button">Add New Source</button>
+          </aside>
+        </section>
+      </section>
+      <div class="portalsCss_p1pr4d40">
+        <div portal="overlays">
+          <div class="focusColorCss_f1p26s5c moveHandleCss_m1i27s8t" style="position: absolute; transform: none;">
+            <div class="maxSizeCss_mdn2c19" style="opacity: 1; transform: scale(1);">
+              <div aria-modal="true" class="overlayContainerCss_ogpzw30 fixSizeCss_f1aw14ya" role="dialog" aria-label="Create Source">
+                <div class="fixSizeCss_f1aw14ya elevationBaseCss_e1vn31hu" style="border-radius: 12px;">
+                  <div data-size="lg" class="day0_ddwlgof blueTheme_b1udqlrf dialogOverlayCss_d1iafk6n">
+                    <div class="headerWrapperCss_hhdeet0 grayTheme_gucfp3a headerColorCss_h1wtnbvy">
+                      <h2><span class="ellipsisCss_e139x152">Create Source</span></h2>
+                      <button aria-label="Close" data-size="md" type="button">Close</button>
+                    </div>
+                    <div class="contentWrapperCss_c1xavo9g">
+                      <label for="source-date-field">Date</label>
+                      <input aria-label="Event Date" data-testid="source-date-field" id="source-date-field" role="combobox" type="text" value="">
+                      <label for="source-title-field">Title</label>
+                      <input aria-label="Source Title" data-testid="source-title-field" id="source-title-field" name="sourceTitle" type="text" value="">
+                      <label for="source-web-page-field">Web Page (Link to the Record)</label>
+                      <input aria-label="Source Type" data-testid="source-web-page-field" id="source-web-page-field" name="sourceWebPage" type="text" value="">
+                      <label for="source-citation-field">Where The Record Is Found (Citation)</label>
+                      <textarea aria-label="Citation" data-testid="source-citation-field" id="source-citation-field" name="sourceCitation"></textarea>
+                      <label for="source-notes-field">Describe The Record (Notes)</label>
+                      <textarea aria-label="Notes" data-testid="source-notes-field" id="source-notes-field" name="sourceNotes"></textarea>
+                      <label for="source-change-reason-field">Reason to Attach Source</label>
+                      <textarea data-testid="source-change-reason-field" id="source-change-reason-field" name="sourceChangeReason"></textarea>
+                      <button aria-label="Name" data-testid="source-vital-tag-chip-Name" type="button">Name</button>
+                      <button aria-label="Birth" data-testid="source-vital-tag-chip-Birth" type="button">Birth</button>
+                      <input aria-label="Add Source to My Source Box" data-testid="source-add-sourcebox-checkbox" name="sourceAddSourceBox" type="checkbox" checked>
+                      <button data-testid="source-cancel-button" type="reset">Cancel</button>
+                      <button data-testid="source-save-button" type="submit" aria-disabled="true">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

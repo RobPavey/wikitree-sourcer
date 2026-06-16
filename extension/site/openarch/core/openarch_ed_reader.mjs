@@ -680,18 +680,6 @@ class OpenarchEdReader extends ExtractedDataReader {
     return this.makePlaceObjFromA2aPlace(a2aPlace);
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
-  }
-
   getBirthDateObj() {
     let a2aDate = this.extractPrimaryPersonFieldByKey("BirthDate");
     return this.makeDateObjFromA2aDate(a2aDate);

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Certificate''':\n\"South Australia - Certificates-Australia and Overseas\"<br/>\nGenealogy SA; Surname: HOPE; Given Names: Anthony; Year: 1896<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAnthony Hope in 1896.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Anthony was issued a certificate in 1896.<ref>\n'''Certificate''':\n\"South Australia - Certificates-Australia and Overseas\"<br/>\nGenealogy SA; Surname: HOPE; Given Names: Anthony; Year: 1896<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAnthony Hope in 1896.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Certificate''': \"South Australia - Certificates-Australia and Overseas\"<br/>Genealogy SA; Surname: HOPE; Given Names: Anthony; Year: 1896<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Anthony Hope in 1896.",
+    "type": "source"
+  }
+}

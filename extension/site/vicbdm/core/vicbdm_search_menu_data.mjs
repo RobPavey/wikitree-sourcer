@@ -121,7 +121,7 @@ const categories = [
   { value: "All", text: "All" },
 ];
 
-const VicbdmData = {
+const SearchWithParametersData = {
   includeCategories: function (generalizedData, parameters) {
     return true;
   },
@@ -266,4 +266,4 @@ const VicbdmData = {
   updateParametersOnCollectionChange: function (generalizedData, parameters, options) {},
 };
 
-export { VicbdmData };
+export { SearchWithParametersData };

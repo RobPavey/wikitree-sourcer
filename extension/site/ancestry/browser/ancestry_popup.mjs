@@ -27,7 +27,7 @@ import {
   addBuildCitationMenuItems,
   addMenuItemWithSubtitle,
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addMenuDivider,
   addItalicMessageMenuItem,
   beginMainMenu,
@@ -1365,7 +1365,7 @@ function addBuildAncestryTreeMediaTemplateMenuItem(menu, data) {
 
 function addBuildAllCitationsMenuItem(menu, data, backFunction) {
   if (data.extractedData.sources && data.extractedData.sources.length > 0) {
-    addMenuItemWithSubMenu(
+    addMenuItemWithSubmenu(
       menu,
       "Build All Citations",
       function (element) {
@@ -1373,7 +1373,7 @@ function addBuildAllCitationsMenuItem(menu, data, backFunction) {
         ancestryBuildAllCitationsAction(data, citationType);
       },
       function () {
-        setupBuildAllCitationsSubMenu(data, backFunction);
+        setupBuildAllCitationsSubmenu(data, backFunction);
       }
     );
   }
@@ -1458,7 +1458,7 @@ async function addFillCreateCitationMenuItems(menu, data, tabId, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function setupBuildAllCitationsSubMenu(data, backFunction) {
+function setupBuildAllCitationsSubmenu(data, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);

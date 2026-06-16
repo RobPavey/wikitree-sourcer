@@ -1,0 +1,46 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Marion Monk"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "27-Oct-1898"
+  },
+  "birthPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "residencePlace": {
+    "placeString": "Stanley Flat nr Clare, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Stanley Flat nr Clare"
+  },
+  "registrationDistrict": "Clare",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Harry James Pavey"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Sarah McAskill"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "birth",
+    "year": "1898",
+    "registrationNumber": "630/103",
+    "volume": "630",
+    "page": "103"
+  },
+  "hasValidData": true
+}

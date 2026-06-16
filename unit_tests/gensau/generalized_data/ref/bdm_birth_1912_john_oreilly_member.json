@@ -1,0 +1,46 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "O'Reilly",
+    "forenames": "John Leslie Patrick"
+  },
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "02-Mar-1912"
+  },
+  "birthPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "residencePlace": {
+    "placeString": "Helmsdale, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Helmsdale"
+  },
+  "registrationDistrict": "Adelaide",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "James Andrew Esmond O'Reilly"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Susan Dronfield Holliday"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "birth",
+    "year": "1912",
+    "registrationNumber": "882/412",
+    "volume": "882",
+    "page": "412"
+  },
+  "hasValidData": true
+}

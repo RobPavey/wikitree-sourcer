@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "George Charles McKenzie"
+  },
+  "personGender": "male",
+  "deathDate": {
+    "dateString": "02-Feb-1877"
+  },
+  "deathPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "residencePlace": {
+    "placeString": "Mount Gambier, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Mount Gambier"
+  },
+  "registrationDistrict": "Grey",
+  "collectionData": {
+    "id": "death",
+    "year": "1877",
+    "registrationNumber": "79/49",
+    "volume": "79",
+    "page": "49"
+  },
+  "hasValidData": true
+}

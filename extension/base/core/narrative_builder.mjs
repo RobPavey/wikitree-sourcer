@@ -469,7 +469,7 @@ class NarrativeBuilder {
 
     function tryFirstName() {
       let name = gd.inferFirstName();
-      if (name) {
+      if (name && name.length > 1) {
         result.nameOrPronoun = name;
         return true;
       }
@@ -478,7 +478,7 @@ class NarrativeBuilder {
 
     function tryForenames() {
       let name = gd.inferForenames();
-      if (name) {
+      if (name && name.length > 1) {
         result.nameOrPronoun = name;
         return true;
       }
@@ -754,6 +754,25 @@ class NarrativeBuilder {
   }
 
   addParentageAsSeparateSentence() {
+    let gd = this.eventGd;
+    let parentNames = gd.inferParentNamesForDataString();
+    this.addParentageAsSeparateSentenceGivenParentsAndGender(parentNames, this.personGender);
+  }
+
+  addResidenceForMainSentence() {
+    let gd = this.eventGd;
+    let residencePlaceObj = gd.inferResidencePlaceObj();
+    if (residencePlaceObj) {
+      let residencePlaceString = residencePlaceObj.inferExtractedPlaceString();
+      if (residencePlaceString) {
+      }
+    }
+
+    let parentNames = gd.inferParentNamesForDataString();
+    this.addParentageForMainSentenceGivenParentsAndGender(parentNames, this.personGender);
+  }
+
+  addResidenceAsSeparateSentence() {
     let gd = this.eventGd;
     let parentNames = gd.inferParentNamesForDataString();
     this.addParentageAsSeparateSentenceGivenParentsAndGender(parentNames, this.personGender);
@@ -1309,20 +1328,34 @@ class NarrativeBuilder {
           this.addToSentence(spouseName);
           this.addAgeForMainSentence(spouseAge);
         }
-        let year = gd.inferEventYear();
-        if (dateString != year && !quarter) {
-          this.addDateToSentence(this.formatDateObj(dateObj, true));
-        } else if (year) {
-          if (quarter == "Jan-Feb-Mar") {
-            let yearNum = DateUtils.getYearNumFromYearString(year);
-            if (yearNum) {
-              yearNum -= 1;
-              this.addToSentence("in late " + yearNum + "/early " + year);
+        if (hasAdditionalDate) {
+          if (typeString == "birth") {
+            let birthDateObj = gd.inferBirthDateObj();
+            if (birthDateObj) {
+              this.addDateToSentence(this.formatDateObj(birthDateObj, true));
+            }
+          } else if (typeString == "death") {
+            let deathDateObj = gd.inferDeathDateObj();
+            if (deathDateObj) {
+              this.addDateToSentence(this.formatDateObj(deathDateObj, true));
+            }
+          }
+        } else {
+          let year = gd.inferEventYear();
+          if (dateString != year && !quarter) {
+            this.addDateToSentence(this.formatDateObj(dateObj, true));
+          } else if (year) {
+            if (quarter == "Jan-Feb-Mar") {
+              let yearNum = DateUtils.getYearNumFromYearString(year);
+              if (yearNum) {
+                yearNum -= 1;
+                this.addToSentence("in late " + yearNum + "/early " + year);
+              } else {
+                this.addToSentence("in " + year);
+              }
             } else {
               this.addToSentence("in " + year);
             }
-          } else {
-            this.addToSentence("in " + year);
           }
         }
         let pronoun = this.getPossessivePronounInitialCaps();
@@ -1835,17 +1868,24 @@ class NarrativeBuilder {
       }
     }
 
-    if (deathDateObj) {
+    age = gd.ageAtDeath;
+    if (!age) {
+      age = gd.ageAtEvent;
+    }
+
+    if (deathDateObj || deathPlaceObj) {
       this.startSentence(this.getPersonPronounOrNameIfNoGender() + " died");
 
-      age = gd.ageAtDeath;
-      if (!age) {
-        age = gd.ageAtEvent;
-      }
       this.addAgeForMainSentence(age);
       this.addDateWithPreposition(deathDateObj);
       this.addPlaceWithPreposition(deathPlaceObj);
+    } else if (age) {
+      if (this.getSubcatOption("includeAge") == "inMainSentence") {
+        this.startSentence(this.getPersonPronounOrNameIfNoGender() + " died");
+        this.addToSentence("at the age of " + age);
+      }
     }
+
     this.terminateSentence();
 
     this.addAgeAsSeparateSentence(age);
@@ -2965,6 +3005,12 @@ class NarrativeBuilder {
       if (arrivalDate && arrivalDate == eventDate) {
         isArrival = true;
       } else if (departureDate && departureDate == eventDate) {
+        isDeparture = true;
+      }
+    } else {
+      if (arrivalDate) {
+        isArrival = true;
+      } else if (departureDate) {
         isDeparture = true;
       }
     }

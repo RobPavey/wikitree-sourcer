@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nArchives départementales du Finistère; 6 M 688/1 - 1836 - 1836; Image 7 sur 34; Lieu: Pouldreuzic (Finistère); Type de document: liste nominative<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1144674/daogrp/0/7 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nArchives départementales du Finistère; 6 M 688/1 - 1836 - 1836; Image 7 sur 34; Lieu: Pouldreuzic (Finistère); Type de document: liste nominative<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1144674/daogrp/0/7 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Recensement''': \"Recensements de population\"<br/>Archives départementales du Finistère; 6 M 688/1 - 1836 - 1836; Image 7 sur 34; Lieu: Pouldreuzic (Finistère); Type de document: liste nominative<br/>[https://recherche.archives.finistere.fr/ark:/72506/1144674/daogrp/0/7 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nArchives départementales du Finistère, 6 M 688/1 - 1836 - 1836, Image 7 sur 34, Lieu Pouldreuzic (Finistère), Type de document liste nominative<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1144674/daogrp/0/7 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nArchives départementales du Finistère, 6 M 688/1 - 1836 - 1836, Image 7 sur 34, Lieu Pouldreuzic (Finistère), Type de document liste nominative<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1144674/daogrp/0/7 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Recensement''': \"Recensements de population\"<br/>Archives départementales du Finistère, 6 M 688/1 - 1836 - 1836, Image 7 sur 34, Lieu Pouldreuzic (Finistère), Type de document liste nominative<br/>[https://recherche.archives.finistere.fr/ark:/72506/1144674/daogrp/0/7 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

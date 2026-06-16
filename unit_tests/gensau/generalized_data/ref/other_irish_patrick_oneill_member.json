@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "BiographicalIndex",
+  "name": {
+    "lastName": "O'Neill",
+    "forenames": "Patrick Henry"
+  },
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "1849"
+  },
+  "deathDate": {
+    "dateString": "06-Mar-1913"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John O'Neill"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "- -"
+      }
+    }
+  },
+  "hasValidData": true
+}

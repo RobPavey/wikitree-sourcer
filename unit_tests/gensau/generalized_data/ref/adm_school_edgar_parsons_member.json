@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "SchoolRecords",
+  "name": {
+    "lastName": "Parsons",
+    "forenames": "Edgar Eli"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "15-Feb-1911"
+  },
+  "eventPlace": {
+    "placeString": "Hawker, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Hawker"
+  },
+  "birthDate": {
+    "dateString": "12-Jan-1900"
+  },
+  "hasValidData": true
+}

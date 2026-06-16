@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "MacDonald",
+    "forenames": "Dorothy Isabel Rose"
+  },
+  "personGender": "female",
+  "deathDate": {
+    "dateString": "1902"
+  },
+  "deathPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "registrationDistrict": "Adelaide",
+  "collectionData": {
+    "id": "death",
+    "year": "1902",
+    "registrationNumber": "290/184",
+    "volume": "290",
+    "page": "184"
+  },
+  "hasValidData": true
+}
