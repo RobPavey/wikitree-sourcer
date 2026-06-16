@@ -468,7 +468,7 @@ function addSearchFilterMenuItem(menu, filter, numSitesExcludedByPriority, backF
     if (numSitesExcludedByPriority == 1) {
       siteText = "site";
     }
-    filterText += "; " + numSitesExcludedByPriority + " " + siteText + " excluded by zero priority in options";
+    filterText += "; " + numSitesExcludedByPriority + " " + siteText + " excluded by 'Include' option";
   }
 
   // create a list item and add it to the list
@@ -623,9 +623,9 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
 
     for (let registeredFunction of registeredSearchMenuItemFunctions) {
       let siteName = registeredFunction.siteName;
-      let priorityOptionName = "search_" + siteName + "_popup_priorityOnSubmenu";
+      let includeOptionName = "search_" + siteName + "_popup_includeOnSubmenu";
 
-      if (options[priorityOptionName] <= 0) {
+      if (options[includeOptionName] === false) {
         addBreak(excludedSitesLabelElement);
         let excludedSiteElement = document.createElement("label");
         excludedSiteElement.innerText = registeredFunction.siteTitle;
