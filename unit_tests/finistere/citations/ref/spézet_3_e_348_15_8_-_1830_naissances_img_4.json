@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Naissance''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 3 E 348/15/8 - 1830 - 1830; Image 4 sur 16; Lieu: Spézet (Finistère); Type de document: naissance<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1373195/daogrp/0/4 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Naissance''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 3 E 348/15/8 - 1830 - 1830; Image 4 sur 16; Lieu: Spézet (Finistère); Type de document: naissance<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1373195/daogrp/0/4 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Naissance''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère; 3 E 348/15/8 - 1830 - 1830; Image 4 sur 16; Lieu: Spézet (Finistère); Type de document: naissance<br/>[https://recherche.archives.finistere.fr/ark:/72506/1373195/daogrp/0/4 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Naissance''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 3 E 348/15/8 - 1830 - 1830, Image 4 sur 16, Lieu Spézet (Finistère), Type de document naissance<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1373195/daogrp/0/4 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Naissance''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 3 E 348/15/8 - 1830 - 1830, Image 4 sur 16, Lieu Spézet (Finistère), Type de document naissance<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1373195/daogrp/0/4 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Naissance''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère, 3 E 348/15/8 - 1830 - 1830, Image 4 sur 16, Lieu Spézet (Finistère), Type de document naissance<br/>[https://recherche.archives.finistere.fr/ark:/72506/1373195/daogrp/0/4 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

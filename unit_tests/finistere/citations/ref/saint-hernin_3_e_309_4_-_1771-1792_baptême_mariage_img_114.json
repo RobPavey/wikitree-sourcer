@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Registre paroissial''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 3 E 309 4 - 1771-1792. - 1771-1792; Image 114 sur 335; Lieu: Saint-Hernin (Finistère); Type de document: baptême, mariage<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1040258.1634654/daoloc/0/114 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Registre paroissial''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 3 E 309 4 - 1771-1792. - 1771-1792; Image 114 sur 335; Lieu: Saint-Hernin (Finistère); Type de document: baptême, mariage<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1040258.1634654/daoloc/0/114 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Registre paroissial''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère; 3 E 309 4 - 1771-1792. - 1771-1792; Image 114 sur 335; Lieu: Saint-Hernin (Finistère); Type de document: baptême, mariage<br/>[https://recherche.archives.finistere.fr/ark:/72506/1040258.1634654/daoloc/0/114 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Registre paroissial''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 3 E 309 4 - 1771-1792. - 1771-1792, Image 114 sur 335, Lieu Saint-Hernin (Finistère), Type de document baptême, mariage<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1040258.1634654/daoloc/0/114 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Registre paroissial''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 3 E 309 4 - 1771-1792. - 1771-1792, Image 114 sur 335, Lieu Saint-Hernin (Finistère), Type de document baptême, mariage<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1040258.1634654/daoloc/0/114 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Registre paroissial''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère, 3 E 309 4 - 1771-1792. - 1771-1792, Image 114 sur 335, Lieu Saint-Hernin (Finistère), Type de document baptême, mariage<br/>[https://recherche.archives.finistere.fr/ark:/72506/1040258.1634654/daoloc/0/114 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}
