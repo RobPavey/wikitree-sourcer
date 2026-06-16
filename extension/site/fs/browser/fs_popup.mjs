@@ -323,7 +323,7 @@ async function fsBuildAllCitationsAction(data, citationType) {
         } else {
           let message = response.citationCount + " citations";
           let message2 = "";
-          if (response.citationsStringType == "source" || response.citationsStringType == "fsPlainSource") {
+          if (response.citationsStringType == "source" || response.citationsStringType == "fsSourceInfoSource") {
             message2 = "\nThese are source type citations and should be pasted after the Sources heading.";
           } else {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
@@ -692,11 +692,21 @@ function setupBuildAllCitationsSubMenu(data, backFunction) {
 
   addBackMenuItem(menu, backFunction);
 
-  addBuildAllCitationsSubmenuMenuItem(menu, data, "Narratives plus Sourcer style inline citations", "narrative");
-  addBuildAllCitationsSubmenuMenuItem(menu, data, "Sourcer style inline citations", "inline");
-  addBuildAllCitationsSubmenuMenuItem(menu, data, "Sourcer style source citations", "source");
-  addBuildAllCitationsSubmenuMenuItem(menu, data, "Inline citations using text on FS Sources page", "fsPlainInline");
-  addBuildAllCitationsSubmenuMenuItem(menu, data, "Source citations using text on FS Sources page", "fsPlainSource");
+  addBuildAllCitationsSubmenuMenuItem(menu, data, "Narratives plus inline citations", "narrative");
+  addBuildAllCitationsSubmenuMenuItem(menu, data, "Inline citations", "inline");
+  addBuildAllCitationsSubmenuMenuItem(menu, data, "Source citations", "source");
+  addBuildAllCitationsSubmenuMenuItem(
+    menu,
+    data,
+    "Inline citations using text on FS Sources page only",
+    "fsSourceInfoInline"
+  );
+  addBuildAllCitationsSubmenuMenuItem(
+    menu,
+    data,
+    "Source citations using text on FS Sources page only",
+    "fsSourceInfoSource"
+  );
 
   endMainMenu(menu);
 }

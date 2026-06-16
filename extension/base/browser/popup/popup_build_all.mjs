@@ -267,15 +267,17 @@ function getUserClassification(source, isRecordTypeNeeded, isRefTitleNeeded) {
   });
 }
 
-function getUserProvidedVitals(source, message) {
+function getUserProvidedVitals(source, message, needs) {
   return new Promise((resolve, reject) => {
     let menu = beginMainMenu();
 
-    let needsName = false;
-    let needsDate = true; // needs work
-    let needsNarrative = true; // needs work
+    let needsRefTitle = needs.refTitle;
+    let needsName = needs.name;
+    let needsDate = needs.eventDate;
+    let needsNarrative = needs.narrative;
 
     let gd = source.generalizedData;
+    let refTitle = "";
     let narrative = "";
     let eventDate = source.eventDate;
     let name = "";
@@ -292,21 +294,28 @@ function getUserProvidedVitals(source, message) {
       }
     }
 
-    let textInputField = undefined;
-
     addHeading(menu, message);
 
     addSourceDetailsToMenu(menu, source);
 
     // Explanation
     addBreak(menu.list);
-    addDivWithLabel(menu, "More details are required for narrative/sorting:");
+    addDivWithLabel(menu, "More details are required for citation:");
+
+    if (needsRefTitle) {
+      addBreak(menu.list);
+
+      // text input
+      addTextInput(menu, "labelInput", "Citation label:", name, function (event) {
+        refTitle = event.target.value;
+      });
+    }
 
     if (needsName) {
       addBreak(menu.list);
 
       // text input
-      addTextInput(menu, "narrativeInput", "Name:", name, function (event) {
+      addTextInput(menu, "nameInput", "Name:", name, function (event) {
         name = event.target.value;
       });
     }
@@ -315,7 +324,7 @@ function getUserProvidedVitals(source, message) {
       addBreak(menu.list);
 
       // text input
-      addTextInput(menu, "narrativeInput", "Event date:", eventDate, function (event) {
+      addTextInput(menu, "dateInput", "Event date:", eventDate, function (event) {
         eventDate = event.target.value;
       });
     }
@@ -342,6 +351,7 @@ function getUserProvidedVitals(source, message) {
     addKeepButton(menu, function (element) {
       let result = {
         include: true,
+        refTitle: refTitle,
         name: name,
         eventDate: eventDate,
         narrative: narrative,

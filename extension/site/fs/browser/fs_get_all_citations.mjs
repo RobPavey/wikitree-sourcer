@@ -34,7 +34,7 @@ import {
   buildSourcerCitationGivenGd,
   buildSourcerCitation,
   buildSourcerCitations,
-  buildFsPlainCitations,
+  buildFsSourceInfoCitations,
   pruneSources,
 } from "../core/fs_build_all_citations.mjs";
 
@@ -187,7 +187,13 @@ async function getUserChoicesForLackingSources(result, runDate, type, options) {
         let name = gd.inferFullName();
         if ((!eventDate && isEventDateNeeded) || (!name && isNameNeeded)) {
           let message = "FamilySearch Source has insufficient data";
-          let response = await getUserProvidedVitals(source, message);
+          let needs = {
+            name: isNameNeeded,
+            eventDate: isEventDateNeeded,
+            narrative: isNarrativeNeeded,
+          };
+
+          let response = await getUserProvidedVitals(source, message, needs);
           if (response.include) {
             let changedGd = false;
             if (response.name && response.name != name) {
@@ -216,9 +222,9 @@ async function getUserChoicesForLackingSources(result, runDate, type, options) {
           }
         }
       }
-    } else if (isNarrativeNeeded) {
+    } else if (isNarrativeNeeded || isRefTitleNeeded) {
       // There is no gd. This is probably a source that is not a FamilySearch source
-      // or a FamilySearch image - extractData is not working for images currently
+      // or it is a FamilySearch image - extractData is not working for images currently
       let message = "Non-FamilySearch Source";
       const fsRegex = /^https?\:\/\/(?:www\.)?familysearch\.org\/.*/;
       if (source.extractedData || fsRegex.test(source.uri)) {
@@ -229,8 +235,16 @@ async function getUserChoicesForLackingSources(result, runDate, type, options) {
           message = "Source references unknown FamilySearch page";
         }
       }
-      let response = await getUserProvidedVitals(source, message);
+      let needs = {
+        refTitle: isRefTitleNeeded,
+        eventDate: isEventDateNeeded,
+        narrative: isNarrativeNeeded,
+      };
+      let response = await getUserProvidedVitals(source, message, needs);
       if (response.include) {
+        if (response.refTitle) {
+          source.userOverrideForRefTitle = response.refTitle;
+        }
         if (response.eventDate) {
           source.eventDate = response.eventDate;
         }
@@ -277,7 +291,7 @@ async function getSourcerCitation(runDate, source, type, sessionId, tabId, optio
       if (useJsonFetch) {
         fetchResult = await fetchRecordJsonAfterAdjustingUrl(uri, sessionId);
       } else {
-        fetchResult = await fetchRecordHtml(uri, sessionId);
+        fetchResult = await fetchRecordHtml(uri, sessionId, tabId);
       }
     }
     if (!fetchResult.success) {
@@ -408,11 +422,11 @@ async function fsGetAllCitations(input) {
       let citationType = input.citationType;
 
       switch (citationType) {
-        case "fsPlainInline":
-          buildFsPlainCitations(result, "inline", options);
+        case "fsSourceInfoInline":
+          buildFsSourceInfoCitations(result, "inline", options);
           break;
-        case "fsPlainSource":
-          buildFsPlainCitations(result, "source", options);
+        case "fsSourceInfoSource":
+          buildFsSourceInfoCitations(result, "source", options);
           break;
         case "narrative":
         case "inline":

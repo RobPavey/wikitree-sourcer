@@ -195,7 +195,7 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
   }
 }
 
-function buildFsPlainCitations(result, type, options) {
+function buildFsSourceInfoCitations(result, type, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
@@ -212,11 +212,11 @@ function buildFsPlainCitations(result, type, options) {
       if (citationsString) {
         citationsString += "\n";
       }
-      citationsString += buildRefForPlainCitation(source, false, options);
+      citationsString += buildRefForSourceInfoCitation(source, false, options);
       citationsString += "\n";
     } else {
       citationsString += "* ";
-      citationsString += getTextForPlainCitation(source, "source", false, options);
+      citationsString += getTextForSourceInfoCitation(source, "source", false, options);
       citationsString += "\n";
     }
   }
@@ -461,7 +461,7 @@ function sortFacts(result) {
   result.facts.sort(compareFunction);
 }
 
-function buildNarrativeForPlainCitation(source, options) {
+function buildNarrativeForSourceInfoCitation(source, options) {
   if (source.userOverrideForNarrative) {
     return source.userOverrideForNarrative;
   }
@@ -484,7 +484,7 @@ function buildNarrativeForPlainCitation(source, options) {
   return narrative;
 }
 
-function getTextForPlainCitation(source, type, isSourcerStyle, options) {
+function getTextForSourceInfoCitation(source, type, isSourcerStyle, options) {
   function cleanText(text) {
     if (text) {
       text = text.replace(/\<\/?i\>/gi, "''");
@@ -580,6 +580,11 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
 
   let citationText = "";
 
+  if (source.userOverrideForRefTitle) {
+    if (options) {
+    }
+  }
+
   if (cleanCitationText) {
     if (isFsSource || cleanTitleText.includes(" in the ")) {
       citationText += cleanCitationText;
@@ -649,12 +654,12 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
   return citationText;
 }
 
-function buildRefForPlainCitation(source, isSourcerStyle, options) {
+function buildRefForSourceInfoCitation(source, isSourcerStyle, options) {
   let refString = "<ref>";
   if (options.citation_general_addNewlinesWithinRefs) {
     refString += "\n";
   }
-  refString += getTextForPlainCitation(source, "inline", isSourcerStyle, options);
+  refString += getTextForSourceInfoCitation(source, "inline", isSourcerStyle, options);
   if (options.citation_general_addNewlinesWithinRefs) {
     refString += "\n";
   }
@@ -723,9 +728,9 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
       }
 
       if (type == "narrative") {
-        citationsString += buildNarrativeForPlainCitation(source, options);
+        citationsString += buildNarrativeForSourceInfoCitation(source, options);
       }
-      citationsString += buildRefForPlainCitation(source, true, options);
+      citationsString += buildRefForSourceInfoCitation(source, true, options);
 
       citationsString += "\n";
       citationCount++;
@@ -744,7 +749,7 @@ function generateSourcerCitationsStringForTypeSource(result, options) {
       citationsString += source.citationObject.citation;
       citationsString += "\n";
     } else {
-      citationsString += "* " + getTextForPlainCitation(source, "source", true, options);
+      citationsString += "* " + getTextForSourceInfoCitation(source, "source", true, options);
       citationsString += "\n";
     }
   }
@@ -768,7 +773,7 @@ function generateSourcerCitationsStringForTypeInline(result, options) {
         citationsString += "\n";
       }
 
-      citationsString += buildRefForPlainCitation(source, true, options);
+      citationsString += buildRefForSourceInfoCitation(source, true, options);
       citationsString += "\n";
     }
   }
@@ -792,8 +797,8 @@ function generateSourcerCitationsStringForTypeNarrative(result, options) {
         citationsString += "\n";
       }
 
-      citationsString += buildNarrativeForPlainCitation(source, options);
-      citationsString += buildRefForPlainCitation(source, true, options);
+      citationsString += buildNarrativeForSourceInfoCitation(source, options);
+      citationsString += buildRefForSourceInfoCitation(source, true, options);
       citationsString += "\n";
     }
   }
@@ -1074,6 +1079,6 @@ export {
   buildSourcerCitationGivenGd,
   buildSourcerCitation,
   buildSourcerCitations,
-  buildFsPlainCitations,
+  buildFsSourceInfoCitations,
   pruneSources,
 };

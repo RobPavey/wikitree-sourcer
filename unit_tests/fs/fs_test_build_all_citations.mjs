@@ -38,7 +38,7 @@ import {
   filterAndEnhanceFsSourcesIntoSources,
   buildSourcerCitation,
   buildSourcerCitations,
-  buildFsPlainCitations,
+  buildFsSourceInfoCitations,
   pruneSources,
 } from "../../extension/site/fs/core/fs_build_all_citations.mjs";
 
@@ -91,11 +91,11 @@ async function fsTestGetAllCitations(input, extractDataFromFetch) {
     let citationType = options.buildAll_fs_citationType;
 
     switch (citationType) {
-      case "fsPlainInline":
-        buildFsPlainCitations(result, "inline", options);
+      case "fsSourceInfoInline":
+        buildFsSourceInfoCitations(result, "inline", options);
         break;
-      case "fsPlainSource":
-        buildFsPlainCitations(result, "source", options);
+      case "fsSourceInfoSource":
+        buildFsSourceInfoCitations(result, "source", options);
         break;
       case "narrative":
       case "inline":
@@ -238,7 +238,7 @@ const regressionData = [
       {
         variantName: "no_include_notes",
         optionOverrides: {
-          buildAll_fs_citationType: "fsPlainSource",
+          buildAll_fs_citationType: "fsSourceInfoSource",
           buildAll_fs_includeNotes: false,
         },
       },
@@ -459,13 +459,13 @@ const optionVariants = [
   {
     variantName: "fs_plain_inline",
     optionOverrides: {
-      buildAll_fs_citationType: "fsPlainInline",
+      buildAll_fs_citationType: "fsSourceInfoInline",
     },
   },
   {
     variantName: "fs_plain_source",
     optionOverrides: {
-      buildAll_fs_citationType: "fsPlainSource",
+      buildAll_fs_citationType: "fsSourceInfoSource",
     },
   },
 ];

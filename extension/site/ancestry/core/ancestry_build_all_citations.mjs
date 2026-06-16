@@ -241,25 +241,6 @@ function sortFacts(result) {
   result.facts.sort(compareFunction);
 }
 
-function buildNarrativeForPlainCitation(source, options) {
-  let narrative = "";
-
-  if (source.prefName) {
-    narrative += source.prefName;
-  } else {
-    narrative += "This person";
-  }
-  narrative += " was in a record";
-  if (source.eventDate) {
-    // could get correct preposition here (see formatDateObj in narrative_builder)
-    narrative += " in " + source.eventDate;
-  } else if (source.sortYear) {
-    narrative += " in " + source.sortYear;
-  }
-  narrative += ".";
-  return narrative;
-}
-
 function generateSourcerCitationsStringForFacts(result, type, options) {
   // this is only ever used for narrative or inline
   let citationsString = "";

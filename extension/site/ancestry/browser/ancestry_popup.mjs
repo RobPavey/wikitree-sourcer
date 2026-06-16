@@ -827,7 +827,7 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
         } else {
           let message = response.citationCount + " citations";
           let message2 = "";
-          if (response.citationsStringType == "source" || response.citationsStringType == "fsPlainSource") {
+          if (response.citationsStringType == "source") {
             message2 = "\nThese are source type citations and should be pasted after the Sources heading.";
           } else {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
