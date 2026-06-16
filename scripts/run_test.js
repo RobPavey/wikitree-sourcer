@@ -42,6 +42,7 @@ const siteNames = [
   "eggsabdm",
   "eggsagrvs",
   "fg",
+  "finistere",
   "fmp",
   "freebmd",
   "freecen",
@@ -84,7 +85,7 @@ const siteNames = [
   "wiewaswie",
   "wikipedia",
   "wikitree",
-  "yadvashem"
+  "yadvashem",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {

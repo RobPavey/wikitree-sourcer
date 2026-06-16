@@ -46,6 +46,7 @@ import "../../ecpp/core/ecpp_options.mjs";
 import "../../eggsabdm/core/eggsabdm_options.mjs";
 import "../../eggsagrvs/core/eggsagrvs_options.mjs";
 import "../../fg/core/fg_options.mjs";
+import "../../finistere/core/finistere_options.mjs";
 import "../../fmp/core/fmp_options.mjs";
 import "../../freebmd/core/freebmd_options.mjs";
 import "../../freecen/core/freecen_options.mjs";

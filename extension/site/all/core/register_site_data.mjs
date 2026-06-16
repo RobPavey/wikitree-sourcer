@@ -49,6 +49,7 @@ import "../../ecpp/core/ecpp_site_data.mjs";
 import "../../eggsabdm/core/eggsabdm_site_data.mjs";
 import "../../eggsagrvs/core/eggsagrvs_site_data.mjs";
 import "../../fg/core/fg_site_data.mjs";
+import "../../finistere/core/finistere_site_data.mjs";
 import "../../fmp/core/fmp_site_data.mjs";
 import "../../freebmd/core/freebmd_site_data.mjs";
 import "../../freecen/core/freecen_site_data.mjs";
