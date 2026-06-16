@@ -377,7 +377,7 @@ async function getSourcerCitations(runDate, result, type, sessionId, tabId, opti
 
   await getUserChoicesForLackingSources(result, runDate, type, options);
 
-  buildSourcerCitations(result, type, options);
+  buildSourcerCitations(result, runDate, type, options);
 }
 
 async function fsGetAllCitations(input) {
@@ -423,10 +423,10 @@ async function fsGetAllCitations(input) {
 
       switch (citationType) {
         case "fsSourceInfoInline":
-          buildFsSourceInfoCitations(result, "inline", options);
+          buildFsSourceInfoCitations(result, runDate, "inline", options);
           break;
         case "fsSourceInfoSource":
-          buildFsSourceInfoCitations(result, "source", options);
+          buildFsSourceInfoCitations(result, runDate, "source", options);
           break;
         case "narrative":
         case "inline":

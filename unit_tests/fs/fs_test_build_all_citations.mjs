@@ -73,7 +73,7 @@ async function testGetSourcerCitations(runDate, savedData, result, type, options
 
   pruneSources(result, options);
 
-  buildSourcerCitations(result, type, options);
+  buildSourcerCitations(result, runDate, type, options);
 }
 
 async function fsTestGetAllCitations(input, extractDataFromFetch) {
@@ -92,10 +92,10 @@ async function fsTestGetAllCitations(input, extractDataFromFetch) {
 
     switch (citationType) {
       case "fsSourceInfoInline":
-        buildFsSourceInfoCitations(result, "inline", options);
+        buildFsSourceInfoCitations(result, runDate, "inline", options);
         break;
       case "fsSourceInfoSource":
-        buildFsSourceInfoCitations(result, "source", options);
+        buildFsSourceInfoCitations(result, runDate, "source", options);
         break;
       case "narrative":
       case "inline":

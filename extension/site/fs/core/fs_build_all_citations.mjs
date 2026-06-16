@@ -195,7 +195,7 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
   }
 }
 
-function buildFsSourceInfoCitations(result, type, options) {
+function buildFsSourceInfoCitations(result, runDate, type, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
@@ -482,6 +482,181 @@ function buildNarrativeForSourceInfoCitation(source, options) {
   }
   narrative += ".";
   return narrative;
+}
+
+function getTextForSourceInfoCitationNew(source, runDate, type, options) {
+  let builder = new CitationBuilder(type, runDate, options);
+
+  function cleanText(text) {
+    if (text) {
+      text = text.replace(/\<\/?i\>/gi, "''");
+
+      if (type == "source") {
+        text = text.replace(/ *\n */g, "<br/>");
+        text = text.replace(/\s+/g, " ");
+      } else {
+        text = text.replace(/ *\n */g, "<br/>\n");
+      }
+
+      text = text.trim();
+
+      text = text.replace(/,$/g, "");
+
+      text = text.trim();
+    } else {
+      text = "";
+    }
+    return text;
+  }
+
+  function cleanTitle(text) {
+    if (text) {
+      // sometimes title has a newline after the person's name for no apparent reason
+      let titleText = text.replace(/\n/g, " ");
+      titleText = titleText.replace(/\s+/g, " ");
+      text = cleanText(titleText);
+    }
+    return text;
+  }
+
+  function cleanCitation(text) {
+    if (text) {
+      let titleText = text.replace(/\n/g, " ");
+      titleText = titleText.replace(/\s+/g, " ");
+      text = cleanText(titleText);
+    }
+    return text;
+  }
+
+  function cleanNotes(text) {
+    if (text) {
+      text = cleanText(text);
+
+      // crap that sometimes gets pasted in
+      text = text.replace(/[,\s\n]+save\s+cancel/gi, "");
+      text = text.replace(/\s+View\sblank\sform,?/gi, "");
+      text = text.replace(/\s+Add\salternate\sinformation,?/gi, "");
+      text = text.replace(/\s+Report\s+issue,?/gi, "");
+      text = text.replace(/SAVE\s+PRINT\s+SHARE[,.\s]/gi, "");
+      text = text.replace(/[\s\n]+VIEW[ ,]/gi, "");
+
+      text = text.replace(/ +/g, " ");
+      text = text.trim();
+    } else {
+      text = "";
+    }
+
+    return text;
+  }
+
+  function addSeparationWithinBody(nonNewlineSeparator) {
+    if (citationText) {
+      let addedSeparation = false;
+      if (isSourcerStyle) {
+        if (options.citation_general_addBreaksWithinBody) {
+          citationText += "<br/>";
+          addedSeparation = true;
+        }
+
+        if (type != "source" && options.citation_general_addNewlinesWithinBody) {
+          citationText += "\n";
+          addedSeparation = true;
+        }
+      }
+
+      if (!addedSeparation) {
+        citationText += nonNewlineSeparator;
+      }
+    }
+  }
+
+  let cleanTitleText = cleanTitle(source.title);
+  let cleanCitationText = cleanCitation(source.citation);
+
+  let includedTitle = false;
+  let includedCitation = false;
+  let includedNotes = false;
+
+  // If it is an FS Source then we only want the full FS citation and not the title.
+  const isFsSource = /^https?\:\/\/familysearch\.org\/ark\:\/\d+\/1\:1\:[A-Z0-1\-]+.*$/.test(source.uri);
+
+  let citationText = "";
+
+  if (source.userOverrideForRefTitle) {
+    if (options) {
+    }
+  }
+
+  if (cleanCitationText) {
+    if (isFsSource || cleanTitleText.includes(" in the ")) {
+      citationText += cleanCitationText;
+      includedCitation = true;
+    } else {
+      citationText += cleanTitleText;
+      includedTitle = true;
+
+      if (!citationText.includes(cleanCitationText)) {
+        addSeparationWithinBody(" ");
+        citationText += cleanCitationText;
+        includedCitation = true;
+      }
+    }
+  } else {
+    if (cleanTitleText) {
+      citationText += cleanTitleText;
+      includedTitle = true;
+    }
+  }
+
+  // somtimes the citation is just the uri, in this case it is better to put the title first
+  if (!citationText || citationText == source.uri) {
+    if (!includedTitle) {
+      citationText = cleanTitleText;
+      includedTitle = true;
+    }
+  }
+
+  // if there is no other text other than notes then put it before link
+  if (!citationText && !cleanTitleText && !cleanCitationText) {
+    citationText += cleanText(source.notes);
+    includedNotes = true;
+  }
+
+  if (source.uri && !citationText.includes(source.uri)) {
+    let tempUri = source.uri.replace(/^https?\:\/\/[^\/]+\//, "");
+    if (!citationText.includes(tempUri)) {
+      addSeparationWithinBody(" ");
+      if (source.uriUpdatedDate) {
+        citationText += "(" + source.uri + " : " + source.uriUpdatedDate + ")";
+      } else {
+        citationText += source.uri;
+      }
+    }
+  }
+
+  if (!isFsSource && !includedTitle && cleanTitleText && !citationText.includes(cleanTitleText)) {
+    addSeparationWithinBody(", ");
+    citationText += cleanTitleText;
+  }
+
+  if (!includedCitation && cleanCitationText && !citationText.includes(cleanCitationText)) {
+    addSeparationWithinBody(", ");
+    citationText += cleanCitationText;
+  }
+
+  if (source.notes && !includedNotes && options.buildAll_fs_includeNotes) {
+    // some notes are an automatic comment like "Source created by RecordSeek.com"
+    // Not useful to include that.
+    if (!source.notes.startsWith("Source created by ")) {
+      addSeparationWithinBody(", ");
+      citationText += " " + cleanNotes(source.notes);
+    }
+  }
+
+  // now the builder is setup use it to build the citation object
+  let citationString = builder.getCitationString(generalizedData);
+
+  return citationString;
 }
 
 function getTextForSourceInfoCitation(source, type, isSourcerStyle, options) {
@@ -1043,7 +1218,7 @@ function pruneSources(result, options) {
   }
 }
 
-async function buildSourcerCitations(result, type, options) {
+async function buildSourcerCitations(result, runDate, type, options) {
   try {
     sortSourcesUsingFsSortKeysAndFetchedRecords(result);
 
