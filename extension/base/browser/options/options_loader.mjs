@@ -402,6 +402,18 @@ function convertOptionsFrom13To14(loadedOptions, optionsRegistry) {
     delete convertedOptions.citation_ancestry_addEditCitationButton;
   }
 
+  // buildAll_fs_citationType values changed name:
+  //  fsPlainInline > fsSourceInfoInline
+  //  fsPlainSource > fsSourceInfoSource
+  let oldValue = convertedOptions.buildAll_fs_citationType;
+  if (oldValue) {
+    if (oldValue == "fsPlainInline") {
+      convertedOptions.buildAll_fs_citationType = "fsSourceInfoInline";
+    } else if (oldValue == "fsPlainSource") {
+      convertedOptions.buildAll_fs_citationType = "fsSourceInfoSource";
+    }
+  }
+
   convertedOptions.options_version = 14;
 
   console.log("convertOptionsFrom13To14, after:");
