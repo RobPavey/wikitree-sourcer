@@ -26,7 +26,7 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class MorbihanUriBuilder {
   constructor() {
-    this.uri = "https://www.morbihan.org/search";
+    this.uri = "https://patrimoines-archives.morbihan.fr/rechercher/archives/archives-en-ligne";
     this.searchTermAdded = false;
   }
 

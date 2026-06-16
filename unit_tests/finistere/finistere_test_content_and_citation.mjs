@@ -41,6 +41,16 @@ const regressionData = [
     ],
   },
   {
+    caseName: "le_faou_3_e_68_19_8_-_1830_mariage_img_3",
+    url: "https://recherche.archives.finistere.fr/ark:/72506/1287468/daogrp/0/3",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
     caseName: "motreff_3_e_189_5_-_1813-1832_naissances_img_17",
     url: "https://recherche.archives.finistere.fr/ark:/72506/645577.1478933/daoloc/0/17",
     optionVariants: [

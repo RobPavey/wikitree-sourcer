@@ -26,13 +26,12 @@ import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.
 
 function buildFinistereUrl(ed, builder) {
   let citationUrl = "";
-  let substringToFind = "";
-  if (ed.keyValueData["Sujet"] && ed.keyValueData["Sujet"].includes("recensement")) {
+  let substringToFind = "daoloc/0/";
+  let index = ed.url.indexOf(substringToFind);
+  if (index == -1) {
     substringToFind = "daogrp/0/";
-  } else {
-    substringToFind = "daoloc/0/";
+    index = ed.url.indexOf(substringToFind);
   }
-  const index = ed.url.indexOf(substringToFind);
   if (index !== -1 && ed.imageNumNow) {
     // Substring found in url and we have the current image num,
     // truncate the string after the substring and append current image num
