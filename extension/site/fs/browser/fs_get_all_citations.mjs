@@ -211,7 +211,13 @@ async function getUserChoicesForLackingSources(result, runDate, type, options) {
               }
             }
             if (response.narrative) {
-              gd.userOverrideForNarrative = response.narrative;
+              let narrative = response.narrative.trim();
+              if (narrative) {
+                if (!narrative.endsWith(".")) {
+                  narrative += ".";
+                }
+                gd.userOverrideForNarrative = narrative;
+              }
             }
             if (changedGd) {
               buildSourcerCitationGivenGd(runDate, source, type, options);

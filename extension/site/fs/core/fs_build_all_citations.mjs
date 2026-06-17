@@ -567,7 +567,7 @@ function getTextForSourceInfoCitation(source, runDate, type, isSourcerStyle, opt
   const isFsSource = /^https?\:\/\/familysearch\.org\/ark\:\/\d+\/1\:1\:[A-Z0-1\-]+.*$/.test(source.uri);
 
   if (source.userOverrideForRefTitle) {
-    if (options.citation_general_meaningfulNames) {
+    if (options.citation_general_meaningfulNames != "none") {
       builder.meaningfulTitle = cleanText(source.userOverrideForRefTitle);
     }
   }
