@@ -433,6 +433,13 @@ const regressionData = [
           buildAll_fs_excludeNonFsSources: true,
         },
       },
+      {
+        variantName: "plain_text_citation",
+        optionOverrides: {
+          buildAll_fs_citationType: "fsSourceInfoSource",
+          citation_general_target: "plain",
+        },
+      },
     ],
   },
 ];

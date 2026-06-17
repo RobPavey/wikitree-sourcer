@@ -392,6 +392,9 @@ class CitationBuilder {
     let autoTableOpt = options.table_general_autoGenerate;
 
     let accessedDate = this.getDateString(generalizedData, this.runDate);
+    if (this.accessedDateOverride) {
+      accessedDate = this.accessedDateOverride;
+    }
     let subReqString = this.getSubReqString(this.includeSubscriptionRequired);
 
     let citation = "";

@@ -33,7 +33,15 @@ import { groupSourcesIntoFacts } from "../../../base/core/group_sources_into_fac
 
 import { generalizeData } from "./fs_generalize_data.mjs";
 import { buildCitation } from "./fs_build_citation.mjs";
+import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
+import {
+  extractFsRecordIdFromUrl,
+  extractFsImageIdFromUrl,
+  buildFsRecordLinkOrTemplate,
+  buildFsImageLinkOrTemplate,
+  buildExternalLinkOrTemplate,
+} from "./fs_templates_and_links.mjs";
 
 function inferEventDate(source) {
   // there is no date, this can cause sort issues. Sometimes we can infer one
@@ -212,11 +220,10 @@ function buildFsSourceInfoCitations(result, runDate, type, options) {
       if (citationsString) {
         citationsString += "\n";
       }
-      citationsString += buildRefForSourceInfoCitation(source, false, options);
+      citationsString += buildRefForSourceInfoCitation(source, runDate, false, options);
       citationsString += "\n";
     } else {
-      citationsString += "* ";
-      citationsString += getTextForSourceInfoCitation(source, "source", false, options);
+      citationsString += getTextForSourceInfoCitation(source, runDate, "source", false, options);
       citationsString += "\n";
     }
   }
@@ -484,7 +491,7 @@ function buildNarrativeForSourceInfoCitation(source, options) {
   return narrative;
 }
 
-function getTextForSourceInfoCitationNew(source, runDate, type, options) {
+function getTextForSourceInfoCitation(source, runDate, type, isSourcerStyle, options) {
   let builder = new CitationBuilder(type, runDate, options);
 
   function cleanText(text) {
@@ -549,27 +556,6 @@ function getTextForSourceInfoCitationNew(source, runDate, type, options) {
     return text;
   }
 
-  function addSeparationWithinBody(nonNewlineSeparator) {
-    if (citationText) {
-      let addedSeparation = false;
-      if (isSourcerStyle) {
-        if (options.citation_general_addBreaksWithinBody) {
-          citationText += "<br/>";
-          addedSeparation = true;
-        }
-
-        if (type != "source" && options.citation_general_addNewlinesWithinBody) {
-          citationText += "\n";
-          addedSeparation = true;
-        }
-      }
-
-      if (!addedSeparation) {
-        citationText += nonNewlineSeparator;
-      }
-    }
-  }
-
   let cleanTitleText = cleanTitle(source.title);
   let cleanCitationText = cleanCitation(source.citation);
 
@@ -580,86 +566,115 @@ function getTextForSourceInfoCitationNew(source, runDate, type, options) {
   // If it is an FS Source then we only want the full FS citation and not the title.
   const isFsSource = /^https?\:\/\/familysearch\.org\/ark\:\/\d+\/1\:1\:[A-Z0-1\-]+.*$/.test(source.uri);
 
-  let citationText = "";
-
   if (source.userOverrideForRefTitle) {
-    if (options) {
+    if (options.citation_general_meaningfulNames) {
+      builder.meaningfulTitle = cleanText(source.userOverrideForRefTitle);
     }
   }
 
+  let sourceTitle = "";
+  let sourceReference = "";
+  let linkText = "";
+  let dataString = "";
+
   if (cleanCitationText) {
     if (isFsSource || cleanTitleText.includes(" in the ")) {
-      citationText += cleanCitationText;
+      if (cleanCitationText.includes('"')) {
+        builder.putSourceTitleInQuotes = false;
+      }
+
+      sourceTitle += cleanCitationText;
       includedCitation = true;
     } else {
-      citationText += cleanTitleText;
+      if (cleanTitleText.includes('"')) {
+        builder.putSourceTitleInQuotes = false;
+      }
+      sourceTitle += cleanTitleText;
       includedTitle = true;
 
-      if (!citationText.includes(cleanCitationText)) {
-        addSeparationWithinBody(" ");
-        citationText += cleanCitationText;
+      if (!sourceTitle.includes(cleanCitationText)) {
+        if (cleanCitationText.includes('"')) {
+          builder.putSourceTitleInQuotes = false;
+        }
+
+        sourceReference += cleanCitationText;
         includedCitation = true;
       }
     }
   } else {
     if (cleanTitleText) {
-      citationText += cleanTitleText;
+      sourceTitle += cleanTitleText;
       includedTitle = true;
     }
   }
 
   // somtimes the citation is just the uri, in this case it is better to put the title first
-  if (!citationText || citationText == source.uri) {
+  if (!sourceTitle || sourceTitle == source.uri) {
     if (!includedTitle) {
-      citationText = cleanTitleText;
+      sourceTitle = cleanTitleText;
       includedTitle = true;
     }
   }
 
   // if there is no other text other than notes then put it before link
-  if (!citationText && !cleanTitleText && !cleanCitationText) {
-    citationText += cleanText(source.notes);
+  if (!sourceTitle && !cleanTitleText && !cleanCitationText) {
+    sourceTitle += cleanText(source.notes);
     includedNotes = true;
   }
 
-  if (source.uri && !citationText.includes(source.uri)) {
+  if (source.uri && !sourceTitle.includes(source.uri)) {
     let tempUri = source.uri.replace(/^https?\:\/\/[^\/]+\//, "");
-    if (!citationText.includes(tempUri)) {
-      addSeparationWithinBody(" ");
+    if (!sourceTitle.includes(tempUri)) {
+      let target = options.citation_general_target;
       if (source.uriUpdatedDate) {
-        citationText += "(" + source.uri + " : " + source.uriUpdatedDate + ")";
+        builder.accessedDateOverride = source.uriUpdatedDate;
+      }
+      if (target == "wikitree") {
+        let url = source.uri;
+        if (extractFsImageIdFromUrl(url)) {
+          linkText = buildFsImageLinkOrTemplate(url);
+        } else if (extractFsRecordIdFromUrl(url)) {
+          linkText = buildFsRecordLinkOrTemplate(url);
+        } else {
+          linkText = buildExternalLinkOrTemplate(url);
+        }
       } else {
-        citationText += source.uri;
+        linkText = source.uri;
       }
     }
   }
 
-  if (!isFsSource && !includedTitle && cleanTitleText && !citationText.includes(cleanTitleText)) {
-    addSeparationWithinBody(", ");
-    citationText += cleanTitleText;
+  if (!isFsSource && !includedTitle && cleanTitleText && !sourceTitle.includes(cleanTitleText)) {
+    sourceReference += cleanTitleText;
   }
 
-  if (!includedCitation && cleanCitationText && !citationText.includes(cleanCitationText)) {
-    addSeparationWithinBody(", ");
-    citationText += cleanCitationText;
+  if (!includedCitation && cleanCitationText && !sourceTitle.includes(cleanCitationText)) {
+    dataString += cleanCitationText;
   }
 
   if (source.notes && !includedNotes && options.buildAll_fs_includeNotes) {
     // some notes are an automatic comment like "Source created by RecordSeek.com"
     // Not useful to include that.
     if (!source.notes.startsWith("Source created by ")) {
-      addSeparationWithinBody(", ");
-      citationText += " " + cleanNotes(source.notes);
+      if (dataString) {
+        dataString += " ";
+      }
+      dataString += cleanNotes(source.notes);
     }
   }
 
+  builder.sourceTitle = sourceTitle;
+  builder.sourceReference = sourceReference;
+  builder.recordLinkOrTemplate = linkText;
+  builder.dataString = dataString;
+
   // now the builder is setup use it to build the citation object
-  let citationString = builder.getCitationString(generalizedData);
+  let citationString = builder.getCitationString();
 
   return citationString;
 }
 
-function getTextForSourceInfoCitation(source, type, isSourcerStyle, options) {
+function getTextForSourceInfoCitationOld(source, type, isSourcerStyle, options) {
   function cleanText(text) {
     if (text) {
       text = text.replace(/\<\/?i\>/gi, "''");
@@ -829,20 +844,12 @@ function getTextForSourceInfoCitation(source, type, isSourcerStyle, options) {
   return citationText;
 }
 
-function buildRefForSourceInfoCitation(source, isSourcerStyle, options) {
-  let refString = "<ref>";
-  if (options.citation_general_addNewlinesWithinRefs) {
-    refString += "\n";
-  }
-  refString += getTextForSourceInfoCitation(source, "inline", isSourcerStyle, options);
-  if (options.citation_general_addNewlinesWithinRefs) {
-    refString += "\n";
-  }
-  refString += "</ref>";
+function buildRefForSourceInfoCitation(source, runDate, isSourcerStyle, options) {
+  let refString = getTextForSourceInfoCitation(source, runDate, "inline", isSourcerStyle, options);
   return refString;
 }
 
-function generateSourcerCitationsStringForFacts(result, type, options) {
+function generateSourcerCitationsStringForFacts(result, runDate, type, options) {
   // this is only ever used for narrative or inline
   let citationsString = "";
   let citationCount = 0;
@@ -905,7 +912,7 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
       if (type == "narrative") {
         citationsString += buildNarrativeForSourceInfoCitation(source, options);
       }
-      citationsString += buildRefForSourceInfoCitation(source, true, options);
+      citationsString += buildRefForSourceInfoCitation(source, runDate, true, options);
 
       citationsString += "\n";
       citationCount++;
@@ -916,7 +923,7 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
   result.citationCount = citationCount;
 }
 
-function generateSourcerCitationsStringForTypeSource(result, options) {
+function generateSourcerCitationsStringForTypeSource(result, runDate, options) {
   let citationsString = "";
 
   for (let source of result.sources) {
@@ -924,7 +931,7 @@ function generateSourcerCitationsStringForTypeSource(result, options) {
       citationsString += source.citationObject.citation;
       citationsString += "\n";
     } else {
-      citationsString += "* " + getTextForSourceInfoCitation(source, "source", true, options);
+      citationsString += getTextForSourceInfoCitation(source, runDate, "source", true, options);
       citationsString += "\n";
     }
   }
@@ -933,7 +940,7 @@ function generateSourcerCitationsStringForTypeSource(result, options) {
   result.citationCount = result.sources.length;
 }
 
-function generateSourcerCitationsStringForTypeInline(result, options) {
+function generateSourcerCitationsStringForTypeInline(result, runDate, options) {
   let citationsString = "";
 
   for (let source of result.sources) {
@@ -948,7 +955,7 @@ function generateSourcerCitationsStringForTypeInline(result, options) {
         citationsString += "\n";
       }
 
-      citationsString += buildRefForSourceInfoCitation(source, true, options);
+      citationsString += buildRefForSourceInfoCitation(source, runDate, true, options);
       citationsString += "\n";
     }
   }
@@ -957,7 +964,7 @@ function generateSourcerCitationsStringForTypeInline(result, options) {
   result.citationCount = result.sources.length;
 }
 
-function generateSourcerCitationsStringForTypeNarrative(result, options) {
+function generateSourcerCitationsStringForTypeNarrative(result, runDate, options) {
   let citationsString = "";
 
   for (let source of result.sources) {
@@ -973,7 +980,7 @@ function generateSourcerCitationsStringForTypeNarrative(result, options) {
       }
 
       citationsString += buildNarrativeForSourceInfoCitation(source, options);
-      citationsString += buildRefForSourceInfoCitation(source, true, options);
+      citationsString += buildRefForSourceInfoCitation(source, runDate, true, options);
       citationsString += "\n";
     }
   }
@@ -1223,20 +1230,20 @@ async function buildSourcerCitations(result, runDate, type, options) {
     sortSourcesUsingFsSortKeysAndFetchedRecords(result);
 
     if (type == "source") {
-      generateSourcerCitationsStringForTypeSource(result, options);
+      generateSourcerCitationsStringForTypeSource(result, runDate, options);
     } else {
       let groupCitations = options.buildAll_fs_groupCitations;
 
       if (groupCitations) {
         groupSourcesIntoFacts(result, type, options); // only needed for inlne and narrative
         sortFacts(result);
-        generateSourcerCitationsStringForFacts(result, type, options);
+        generateSourcerCitationsStringForFacts(result, runDate, type, options);
       } else {
         if (type == "inline") {
-          generateSourcerCitationsStringForTypeInline(result, options);
+          generateSourcerCitationsStringForTypeInline(result, runDate, options);
         } else {
           // must be narrative
-          generateSourcerCitationsStringForTypeNarrative(result, options);
+          generateSourcerCitationsStringForTypeNarrative(result, runDate, options);
         }
       }
     }
