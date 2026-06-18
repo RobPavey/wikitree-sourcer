@@ -263,11 +263,11 @@ function getExcludedSourcesString(response) {
 }
 
 function getIncompleteCitationsString(response) {
-  if (!response.fetchFailedSources) {
-    return;
-  }
-
   let message = "";
+
+  if (!response.fetchFailedSources || response.fetchFailedSources.length == 0) {
+    return message;
+  }
 
   message +=
     "\nWarning: Some data could not be retrieved from FamilySearch so the citations may be incomplete or excluded. See below:";

@@ -45,6 +45,22 @@ function cleanName(name) {
   return name;
 }
 
+function ancestryLinksMatch(linkA, linkB) {
+  // building household tables I hit an issue where it compared links for equality
+  // and these two did not match:
+  // "https://www.ancestry.com/search/collections/2352/records/1903048"
+  // "http://www.ancestry.com/search/collections/2352/records/1903048"
+
+  function standardizeLink(link) {
+    link = link.replace("http://", "https://");
+    return link;
+  }
+
+  let stdLinkA = standardizeLink(linkA);
+  let stdLinkB = standardizeLink(linkB);
+  return stdLinkA == stdLinkB;
+}
+
 // Note that spaces are remoxed from the Event Type or Record Type field before looking up here
 const eventTypeStringToDataType = {
   BirthRegistration: RT.BirthRegistration,
@@ -3303,7 +3319,7 @@ function regeneralizeDataWithLinkedRecords(input) {
           } else {
             let memberLinkedRecord = undefined;
             for (let linkedRecord of linkedRecords) {
-              if (linkedRecord.link == extractedMember.link) {
+              if (ancestryLinksMatch(linkedRecord.link, extractedMember.link)) {
                 memberLinkedRecord = linkedRecord;
                 break;
               }
@@ -3367,7 +3383,7 @@ function regeneralizeDataWithLinkedRecords(input) {
     if (primaryLink) {
       let primaryLinkedRecord = undefined;
       for (let linkedRecord of linkedRecords) {
-        if (linkedRecord.link == primaryLink) {
+        if (ancestryLinksMatch(linkedRecord.link, primaryLink)) {
           primaryLinkedRecord = linkedRecord;
           break;
         }

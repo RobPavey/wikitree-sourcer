@@ -769,23 +769,25 @@ function getIncompleteCitationsString(response) {
     }
   }
 
-  let error429count = 0;
-  for (let source of response.fetchFailedSources) {
-    let status = source.fetchStatus.statusCode;
-    let title = source.title;
-    let uri = source.recordUrl;
-    let reason = " could not be fetched";
-    if (status == 410) {
-      reason = " has been removed from the site";
-    } else if (status == 429) {
-      error429count++;
+  if (response.fetchFailedSources && response.fetchFailedSources.length > 0) {
+    let error429count = 0;
+    for (let source of response.fetchFailedSources) {
+      let status = source.fetchStatus.statusCode;
+      let title = source.title;
+      let uri = source.recordUrl;
+      let reason = " could not be fetched";
+      if (status == 410) {
+        reason = " has been removed from the site";
+      } else if (status == 429) {
+        error429count++;
+      }
+      message += `\n• Source "${title} with URL ${uri} ${reason} (status code: ${status})`;
     }
-    message += `\n• Source "${title} with URL ${uri} ${reason} (status code: ${status})`;
-  }
 
-  if (error429count) {
-    message +=
-      "\n\n⚠️ Note: Sourcer caches the data that was retrieved, so if you wait a few seconds and try again you may be able to get all of the records that got 429 errors.\n";
+    if (error429count) {
+      message +=
+        "\n\n⚠️ Note: Sourcer caches the data that was retrieved, so if you wait a few seconds and try again you may be able to get all of the records that got 429 errors.\n";
+    }
   }
 
   return message;
