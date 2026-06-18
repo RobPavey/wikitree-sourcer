@@ -244,6 +244,15 @@ const buildAllCitationsOptionsGroup = {
       defaultValue: "ifDuplicate",
     },
     {
+      optionName: "promptForSourceInfo",
+      type: "checkbox",
+      label:
+        "When a source is encountered that doesn't have enough data for the citation type and options, prompt the user",
+      defaultValue: true,
+      comment:
+        "If this is disabled please be careful to check the generated narratives for any incomplete ones as you will not be reminded automatically.",
+    },
+    {
       optionName: "fetchSpeed",
       type: "select",
       label: "Fetch speed (faster has more risk of 429 errors)",
