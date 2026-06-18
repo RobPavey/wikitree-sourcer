@@ -263,6 +263,10 @@ function getExcludedSourcesString(response) {
 }
 
 function getIncompleteCitationsString(response) {
+  if (!response.fetchFailedSources) {
+    return;
+  }
+
   let message = "";
 
   message +=
