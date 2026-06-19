@@ -112,31 +112,37 @@ function getRefTitle(ed, gd) {
     return refTitle;
   }
   let typeCount = 0;
+  let refTitleType = "Registre paroissial ou état civil";
   if (ed.keyValueData["Type de document"]) {
     if (ed.keyValueData["Type de document"].includes("baptême")) {
       refTitle = "Baptême";
+      refTitleType = "Registre paroissial";
       typeCount++;
     }
     if (ed.keyValueData["Type de document"].includes("sépulture")) {
       refTitle = "Sépulture";
+      refTitleType = "Registre paroissial";
       typeCount++;
     }
     if (ed.keyValueData["Type de document"].includes("mariage")) {
       refTitle = "Mariage";
+      // mariage could be either refTitleType
       typeCount++;
     }
     if (ed.keyValueData["Type de document"].includes("naissance")) {
       refTitle = "Naissance";
+      refTitleType = "État civil";
       typeCount++;
     }
     if (ed.keyValueData["Type de document"].includes("décès")) {
       refTitle = "Décès";
+      refTitleType = "État civil";
       typeCount++;
     }
     if (typeCount > 0) {
       if (typeCount > 1) {
-        // if consolidated BMS volume (more than 1 acte type), use generic parish refTitle/label
-        refTitle = "Registre paroissial";
+        // if consolidated BMS or NMD volume (more than 1 acte type), use refTitleType for refTitle
+        refTitle = refTitleType;
       }
     }
   }

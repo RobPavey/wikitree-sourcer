@@ -61,6 +61,16 @@ const regressionData = [
     ],
   },
   {
+    caseName: "ploudaniel_1328_e_depot_27_-_1840-1849_naissance_img_341",
+    url: "https://recherche.archives.finistere.fr/ark:/72506/1474211/daoloc/0/341",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
     caseName: "recensement_de_population_brest_6_m_129_-_1er_canton_de_la_justice_de_paix_1836_img_123",
     url: "https://recherche.archives.finistere.fr/ark:/72506/1041090.1139987/daogrp/0/123",
     optionVariants: [
