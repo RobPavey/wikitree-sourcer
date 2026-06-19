@@ -381,7 +381,9 @@ async function getSourcerCitations(runDate, result, type, sessionId, tabId, opti
 
   pruneSources(result, options);
 
-  await getUserChoicesForLackingSources(result, runDate, type, options);
+  if (options.buildAll_fs_promptForSourceInfo) {
+    await getUserChoicesForLackingSources(result, runDate, type, options);
+  }
 
   buildSourcerCitations(result, runDate, type, options);
 }

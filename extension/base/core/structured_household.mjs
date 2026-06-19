@@ -200,22 +200,24 @@ class StructuredHousehold {
             let thisLastName = StringUtils.getLastWord(thisMember.name);
             let thisAge = thisMember.age;
             let prevAgeDiff = thisAge - prevAge;
-            let lastHeadMember = lastHead.gdMember;
-            let lastHeadRelationship = lastHeadMember.relationship;
-            let lastHeadAge = lastHeadMember.age;
-            let lastHeadLastName = StringUtils.getLastWord(lastHeadMember.name);
-            let lastHeadAgeDiff = thisAge - lastHeadAge;
             if (prevRelationship == "son" && prevAge >= 16 && prevAgeDiff < 14 && prevLastName == thisLastName) {
               lastHouseholdMember.wife = householdMember;
               householdMember.husband = lastHouseholdMember;
               householdMember.relationTo = lastHouseholdMember;
-            } else if (lastHeadRelationship == "head" && lastHeadAgeDiff < 14 && lastHeadLastName == thisLastName) {
-              // not the wife of a son - looks like wife of the lastHead
-              lastWifeOfHead = householdMember;
-              lastHead.wife = householdMember;
-              householdMember.husband = lastHead;
-              confirmGender(lastHead, "male");
-              householdMember.relationTo = lastHead;
+            } else if (lastHead && lastHead.gdMember) {
+              let lastHeadMember = lastHead.gdMember;
+              let lastHeadRelationship = lastHeadMember.relationship;
+              let lastHeadAge = lastHeadMember.age;
+              let lastHeadLastName = StringUtils.getLastWord(lastHeadMember.name);
+              let lastHeadAgeDiff = thisAge - lastHeadAge;
+              if (lastHeadRelationship == "head" && lastHeadAgeDiff < 14 && lastHeadLastName == thisLastName) {
+                // not the wife of a son - looks like wife of the lastHead
+                lastWifeOfHead = householdMember;
+                lastHead.wife = householdMember;
+                householdMember.husband = lastHead;
+                confirmGender(lastHead, "male");
+                householdMember.relationTo = lastHead;
+              }
             }
           }
         }
