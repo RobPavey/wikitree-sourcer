@@ -74,6 +74,7 @@ const siteNames = [
   "panb",
   "ppnz",
   "psuk",
+  "qldbdm",
   "scotp",
   "sosmogov",
   "szukaj",
@@ -85,7 +86,7 @@ const siteNames = [
   "wiewaswie",
   "wikipedia",
   "wikitree",
-  "yadvashem",
+  "yadvashem"
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {
