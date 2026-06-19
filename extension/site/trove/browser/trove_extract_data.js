@@ -25,12 +25,7 @@ SOFTWARE.
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
 function extractData(document, url) {
-  var result = {};
-
-  if (url) {
-    result.url = url;
-  }
-  result.success = false;
+  let result = { url: url, success: false };
 
   /*
   const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
@@ -91,9 +86,6 @@ function extractData(document, url) {
   }
 
   result.success = true;
-
-  //console.log(result);
-
   return result;
 }
 

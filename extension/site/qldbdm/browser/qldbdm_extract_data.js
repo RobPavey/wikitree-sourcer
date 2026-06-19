@@ -25,25 +25,24 @@ SOFTWARE.
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
 function extractData(document, url) {
-  var result = {};
+  let result = { url: url, success: false };
 
-  if (url) {
-    result.url = url;
-  }
-  result.success = false;
-
-  /*
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  //console.log("entriesQuery size is: " + entriesQuery.length);
-  if (entries.length < 1) {
+  const items = document.querySelectorAll("#qg-primary-content div.form > ol > li");
+  if (items.length < 1) {
     return result;
   }
-  */
+
+  result.recordData = {};
+  for (let item of items) {
+    const columns = item.querySelectorAll("ul.questions > li");
+    if (columns.length == 2) {
+      const key = columns[0].textContent.trim();
+      const value = columns[1].textContent.trim();
+      result.recordData[key] = value;
+    }
+  }
 
   result.success = true;
-
-  //console.log(result);
-
   return result;
 }
 

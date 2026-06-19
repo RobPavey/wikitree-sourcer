@@ -38,12 +38,7 @@ function getSelectedRow(document) {
 }
 
 function extractData(document, url) {
-  var result = {};
-
-  if (url) {
-    result.url = url;
-  }
-  result.success = false;
+  let result = { url: url, success: false };
 
   //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
   // insert code here to extract the data from the selected search result on the page.
@@ -51,9 +46,6 @@ function extractData(document, url) {
   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   result.success = true;
-
-  //console.log(result);
-
   return result;
 }
 
