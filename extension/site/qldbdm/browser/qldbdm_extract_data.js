@@ -33,12 +33,22 @@ function extractData(document, url) {
   }
 
   result.recordData = {};
+  let isFirstItem = true;
   for (let item of items) {
     const columns = item.querySelectorAll("ul.questions > li");
     if (columns.length == 2) {
-      const key = columns[0].textContent.trim();
+      let key = columns[0].textContent.trim();
       const value = columns[1].textContent.trim();
-      result.recordData[key] = value;
+      if (key.endsWith(":")) {
+        key = key.substring(0, key.length - 1).trim();
+      }
+      if (isFirstItem) {
+        result.recordData["Type"] = key;
+        result.recordData["Name"] = value;
+        isFirstItem = false;
+      } else {
+        result.recordData[key] = value;
+      }
     }
   }
 

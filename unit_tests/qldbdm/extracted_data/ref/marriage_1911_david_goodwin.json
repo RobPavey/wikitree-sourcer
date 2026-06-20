@@ -2,9 +2,10 @@
   "url": "https://www.familyhistory.bdm.qld.gov.au/details/dca99bfee4e642d2a9f04ee11b0104bb611ca7aa3b53e6d01ed1994b80d1e9ea",
   "success": true,
   "recordData": {
-    "Marriage registration:": "David Patrick Goodwin",
-    "Marriage date:": "09/02/1911",
-    "Spouse's name:": "Maud Templeton",
-    "Registration details:": "1911/B/9762"
+    "Type": "Marriage registration",
+    "Name": "David Patrick Goodwin",
+    "Marriage date": "09/02/1911",
+    "Spouse's name": "Maud Templeton",
+    "Registration details": "1911/B/9762"
   }
 }

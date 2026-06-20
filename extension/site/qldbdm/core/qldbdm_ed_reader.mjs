@@ -24,99 +24,111 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
+
+function cleanDate(edReader, inputString) {
+  let dateString = DateUtils.getStdShortDateStringFromDayMonthYearString(inputString);
+  if (dateString) {
+    return dateString;
+  }
+  return inputString;
+}
+
+const recordTypes = [
+  // BDM
+  {
+    recordType: RT.BirthRegistration,
+    matchData: {
+      type: ["Birth registration"],
+    },
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Birth date"],
+        cleanFunction: cleanDate,
+      },
+      motherFullName: {
+        recordDataKeys: ["Mother's name"],
+      },
+      fatherFullName: {
+        recordDataKeys: ["Father/parent's name"],
+      },
+    },
+  },
+  {
+    recordType: RT.DeathRegistration,
+    matchData: {
+      type: ["Death registration"],
+    },
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Death date"],
+        cleanFunction: cleanDate,
+      },
+      motherFullName: {
+        recordDataKeys: ["Mother's name"],
+      },
+      fatherFullName: {
+        recordDataKeys: ["Father/parent's name"],
+      },
+    },
+  },
+  {
+    recordType: RT.MarriageRegistration,
+    matchData: {
+      type: ["Marriage registration"],
+    },
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Marriage date"],
+        cleanFunction: cleanDate,
+      },
+      spouseFullName: {
+        recordDataKeys: ["Spouse's name"],
+      },
+    },
+  },
+];
+
+const baseRecordTypeData = {
+  rules: {
+    fullName: {
+      recordDataKeys: ["Name"],
+    },
+  },
+  advancedPlaceRules: {
+    addImpliedPartsToBlankPlace: true,
+    impliedCountryName: "Australia",
+    impliedStateName: "Queensland",
+  },
+};
 
 class QldbdmEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
+
+    this.baseRecordTypeData = baseRecordTypeData;
+
+    let matchConfig = {
+      type: {
+        matchType: ExtractedDataReader.MatchType.EqualsOneOf,
+        value: ed.recordData["Type"],
+      },
+    };
+
+    let recordTypeData = this.getRecordTypeMatch(recordTypes, matchConfig);
+    if (recordTypeData) {
+      this.recordTypeData = recordTypeData;
+      this.recordType = recordTypeData.recordType;
+    } else {
+      this.recordTypeData = unclassifiedTypeData;
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
+  // Note: there are default implementations in ExtractedDataReader and, if using a data-driven
+  // style you may not need to override them here.
   ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  hasValidData() {
-    if (!this.ed.success) {
-      return false; //the extract failed, GeneralizedData is not even normally called in this case
-    }
-
-    return true;
-  }
-
-  getSourceType() {
-    return "record";
-  }
-
-  getNameObj() {
-    return undefined;
-  }
-
-  getGender() {
-    return "";
-  }
-
-  getEventDateObj() {
-    return undefined;
-  }
-
-  getEventPlaceObj() {
-    return undefined;
-  }
-
-  getBirthDateObj() {
-    return undefined;
-  }
-
-  getBirthPlaceObj() {
-    return undefined;
-  }
-
-  getDeathDateObj() {
-    return undefined;
-  }
-
-  getDeathPlaceObj() {
-    return undefined;
-  }
-
-  getAgeAtEvent() {
-    return "";
-  }
-
-  getAgeAtDeath() {
-    return "";
-  }
-
-  getRegistrationDistrict() {
-    return "";
-  }
-
-  getRelationshipToHead() {
-    return "";
-  }
-
-  getMaritalStatus() {
-    return "";
-  }
-
-  getOccupation() {
-    return "";
-  }
-
-  getSpouses() {
-    return undefined;
-  }
-
-  getParents() {
-    return undefined;
-  }
-
-  getHousehold() {
-    return undefined;
-  }
-
-  getCollectionData() {
-    return undefined;
-  }
 }
 
 export { QldbdmEdReader };

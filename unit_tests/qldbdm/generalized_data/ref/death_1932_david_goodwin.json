@@ -1,6 +1,30 @@
 {
   "sourceOfData": "qldbdm",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "DeathRegistration",
+  "name": {
+    "name": "David Patrick Goodwin"
+  },
+  "eventDate": {
+    "dateString": "3 May 1932"
+  },
+  "deathPlace": {
+    "placeString": "Queensland, Australia",
+    "state": "Queensland",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Michael Joseph"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Bridget Walsh"
+      }
+    }
+  },
   "hasValidData": true
 }

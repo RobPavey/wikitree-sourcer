@@ -910,6 +910,41 @@ const DateUtils = {
     return this.getDateStringFromYearMonthDay(year, month, day);
   },
 
+  getStdShortDateStringFromDayMonthYearString: function (dayMonthYearString, separator = "/") {
+    if (!dayMonthYearString) {
+      return "";
+    }
+
+    let parts = dayMonthYearString.split(separator);
+
+    if (parts.length != 3 || parts[2].length != 4) {
+      return "";
+    }
+
+    let year = Number(parts[2]);
+    if (isNaN(year)) {
+      year = 0;
+    }
+
+    let month = 0;
+    if (parts.length > 1) {
+      month = Number(parts[1]);
+      if (isNaN(month)) {
+        month = 0;
+      }
+    }
+
+    let day = 0;
+    if (parts.length > 2) {
+      day = Number(parts[0]);
+      if (isNaN(day)) {
+        day = 0;
+      }
+    }
+
+    return this.getDateStringFromYearMonthDay(year, month, day);
+  },
+
   compareParsedDates: function (parsedDateA, parsedDateB) {
     if (parsedDateA.isValid) {
       if (parsedDateB.isValid) {

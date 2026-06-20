@@ -32,91 +32,9 @@ class ExamplesiteEdReader extends ExtractedDataReader {
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
+  // Note: there are default implementations in ExtractedDataReader and, if using a data-driven
+  // style you may not need to override them here.
   ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  hasValidData() {
-    if (!this.ed.success) {
-      return false; //the extract failed, GeneralizedData is not even normally called in this case
-    }
-
-    return true;
-  }
-
-  getSourceType() {
-    return "record";
-  }
-
-  getNameObj() {
-    return undefined;
-  }
-
-  getGender() {
-    return "";
-  }
-
-  getEventDateObj() {
-    return undefined;
-  }
-
-  getEventPlaceObj() {
-    return undefined;
-  }
-
-  getBirthDateObj() {
-    return undefined;
-  }
-
-  getBirthPlaceObj() {
-    return undefined;
-  }
-
-  getDeathDateObj() {
-    return undefined;
-  }
-
-  getDeathPlaceObj() {
-    return undefined;
-  }
-
-  getAgeAtEvent() {
-    return "";
-  }
-
-  getAgeAtDeath() {
-    return "";
-  }
-
-  getRegistrationDistrict() {
-    return "";
-  }
-
-  getRelationshipToHead() {
-    return "";
-  }
-
-  getMaritalStatus() {
-    return "";
-  }
-
-  getOccupation() {
-    return "";
-  }
-
-  getSpouses() {
-    return undefined;
-  }
-
-  getParents() {
-    return undefined;
-  }
-
-  getHousehold() {
-    return undefined;
-  }
-
-  getCollectionData() {
-    return undefined;
-  }
 }
 
 export { ExamplesiteEdReader };

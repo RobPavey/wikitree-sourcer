@@ -189,6 +189,19 @@ class CitationBuilder {
     }
   }
 
+  addSourceReferenceFieldsFromRecordData(recordData, fieldsToInclude) {
+    let sourceRef = this.sourceReference;
+
+    for (let key in recordData) {
+      if (fieldsToInclude.includes(key)) {
+        let value = recordData[key];
+        if (value) {
+          this.addSourceReferenceField(key, value);
+        }
+      }
+    }
+  }
+
   addSourceReferenceText(value) {
     if (!value) {
       return;

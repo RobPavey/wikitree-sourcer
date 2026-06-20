@@ -23,31 +23,46 @@ SOFTWARE.
 */
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { RT } from "../../../base/core/record_type.mjs";
+
+const sourceReferenceFields = ["Registration details"];
 
 function buildQldbdmUrl(ed, builder) {
   return ed.url;
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle = "Queensland Registrations";
+  if (gd.recordType == RT.BirthRegistration) {
+    builder.sourceTitle = "Queensland Birth Registration Index";
+  } else if (gd.recordType == RT.DeathRegistration) {
+    builder.sourceTitle = "Queensland Death Registration Index";
+  } else if (gd.recordType == RT.MarriageRegistration) {
+    builder.sourceTitle = "Queensland Marriage Registration Index";
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  builder.sourceReference = "Queensland Government, Births, Deaths, Marriages";
+  builder.addSourceReferenceFieldsFromRecordData(ed.recordData, sourceReferenceFields);
 }
 
 function buildRecordLink(ed, gd, builder) {
   var qldbdmUrl = buildQldbdmUrl(ed, builder);
 
-  let recordLink = "[" + qldbdmUrl + " Queensland BDM (Aus) Record]";
+  let recordLink = "[" + qldbdmUrl + " Queensland BDM Record]";
   builder.recordLinkOrTemplate = recordLink;
+}
+
+function buildDataList(ed, gd, builder) {
+  builder.addListDataStringFromRecordData(ed.recordData, sourceReferenceFields);
 }
 
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  buildDataList(ed, gd, builder);
 }
 
 function buildCitation(input) {
