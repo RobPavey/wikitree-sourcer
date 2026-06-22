@@ -29,7 +29,7 @@ import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_sear
 //////////////////////////////////////////////////////////////////////////////////////////
 
 const searchMenuConfig = {
-  siteName: "exampleSite",
+  siteName: "examplesite",
   siteDisplayName: "ExampleSite",
   localStorageConfig: {
     searchUrl: "https://put_your_search_url_here",

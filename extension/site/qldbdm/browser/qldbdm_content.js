@@ -125,10 +125,10 @@ function setSearchingBanner() {
 }
 
 async function doPendingSearch() {
-  //console.log("##############################################################################");
-  //console.log("doPendingSearch: called");
-  //console.log("doPendingSearch: URL is");
-  //console.log(document.URL);
+  console.log("##############################################################################");
+  console.log("doPendingSearch: called");
+  console.log("doPendingSearch: URL is");
+  console.log(document.URL);
 
   if (pendingSearchData) {
     let isRetry = pendingSearchData.isRetry;
@@ -149,16 +149,16 @@ async function doPendingSearch() {
 }
 
 async function checkForPendingSearch() {
-  //console.log("checkForPendingSearch: called");
-  //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
+  console.log("checkForPendingSearch: called");
+  console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
     return;
   }
 
-  //console.log("checkForPendingSearch: URL is");
-  //console.log(document.URL);
+  console.log("checkForPendingSearch: URL is");
+  console.log(document.URL);
 
   let searchData = undefined;
   try {
@@ -167,22 +167,22 @@ async function checkForPendingSearch() {
     console.log("checkForPendingSearch: getPendingSearch reject");
   }
 
-  //console.log("checkForPendingSearch: searchData is:");
-  //console.log(searchData);
+  console.log("checkForPendingSearch: searchData is:");
+  console.log(searchData);
 
   if (searchData) {
     setSearchingBanner();
 
-    //console.log("checkForPendingSearch: got formValues:");
-    //console.log(searchData);
+    console.log("checkForPendingSearch: got formValues:");
+    console.log(searchData);
 
     let timeStamp = searchData.timeStamp;
     let timeStampNow = Date.now();
     let timeSinceSearch = timeStampNow - timeStamp;
 
-    //console.log("checkForPendingSearch: timeStamp is: " + timeStamp);
-    //console.log("checkForPendingSearch: timeStampNow is: " + timeStampNow);
-    //console.log("checkForPendingSearch: timeSinceSearch is: " + timeSinceSearch);
+    console.log("checkForPendingSearch: timeStamp is: " + timeStamp);
+    console.log("checkForPendingSearch: timeStampNow is: " + timeStampNow);
+    console.log("checkForPendingSearch: timeSinceSearch is: " + timeSinceSearch);
 
     // It can take a long time to populate the page with the input fields
     if (timeSinceSearch < 50000) {

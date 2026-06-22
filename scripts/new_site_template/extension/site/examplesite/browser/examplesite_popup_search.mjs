@@ -29,7 +29,7 @@ import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_sear
 //////////////////////////////////////////////////////////////////////////////////////////
 
 const searchMenuConfig = {
-  siteName: "exampleSite",
+  siteName: "examplesite",
   siteDisplayName: "ExampleSite",
   defaultMenuItem: {
     menuItemText: "Search ExampleSite",

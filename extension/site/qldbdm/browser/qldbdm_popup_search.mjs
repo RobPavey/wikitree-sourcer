@@ -29,10 +29,15 @@ import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_sear
 //////////////////////////////////////////////////////////////////////////////////////////
 
 const searchMenuConfig = {
-  siteName: "exampleSite",
+  siteName: "qldbdm",
   siteDisplayName: "Queensland BDM (Aus)",
+  siteConstraints: {
+    startYear: 1829,
+    dateTestType: "bmd",
+    countryList: ["Australia", "Colony of Queensland"],
+  },
   localStorageConfig: {
-    searchUrl: "https://put_your_search_url_here",
+    searchUrl: "https://www.familyhistory.bdm.qld.gov.au/",
   },
   defaultMenuItem: {
     menuItemText: "Search Queensland BDM (Aus)",
