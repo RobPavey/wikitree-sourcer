@@ -22,6 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// The WT+ API documentation is here:
+// https://www.wikitree.com/wiki/Help:WikiTree_Plus_API#wtFamilySearch
+
 // Example FamilySearch pages to test this on:/
 //
 // Person details:
