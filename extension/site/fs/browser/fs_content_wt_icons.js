@@ -1794,13 +1794,10 @@ if (runningExtensionId === currentExtensionId) {
         if (primaryWikiId && wikiId != primaryWikiId) {
           // this is not an error since multiple people can share an image
           tooltipListItem.text = `has ${numImagesUsedOnWt} attached image sources referenced by a different profile ${wikiId}`;
-        } else if (!primaryWikiId) {
-          primaryWikiId = recordWikiIds[0];
         }
 
         tooltipData.listItems.push(tooltipListItem);
 
-        allWikiIds.add(wikiId);
         if (!linkUrl) {
           linkUrl = buildWikiProfileUrl(wikiId);
         }
@@ -1809,8 +1806,6 @@ if (runningExtensionId === currentExtensionId) {
           clipboardText = wikiId;
         }
       } else if (imageWikiIds.size > 1) {
-        imageWikiIds.forEach((item) => allWikiIds.add(item));
-
         if (!linkUrl) {
           linkUrl = buildWtPlusUrlForSet(imageFsIds, "image");
         }
