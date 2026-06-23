@@ -1878,8 +1878,10 @@ if (runningExtensionId === currentExtensionId) {
 
     if (attachedSourceWikiIdCount == 0 && externalWikiIdCount == 0) {
       if (wikiIds.length == 0 && backLinkWikiIds.length == 0) {
-        // we do not need an icon
-        return;
+        // we do not need an icon unless there was an error
+        if (tooltipData.listItems.length == 0) {
+          return;
+        }
       }
     }
 
