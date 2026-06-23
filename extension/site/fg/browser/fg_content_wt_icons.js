@@ -264,7 +264,7 @@ if (runningExtensionId === currentExtensionId) {
       let error = location.error;
       iconConfig.isFetchError = true;
       let itemText = `could not get data from the WT+ API`;
-      if (error.wasBlocked) {
+      if (error.message == "Blocked request") {
         itemText += " because your IP address was blocked";
       } else {
         itemText += " due to " + error.message;
@@ -503,14 +503,10 @@ if (runningExtensionId === currentExtensionId) {
         } catch (error) {
           console.error("!!!!!!! WT+ API Batch fetch failed", error);
           logDebug("fgIdToQuery id string is: ", fgIdToQuery);
-
           if (currentBatch.locations) {
             let locations = currentBatch.locations;
             for (let location of locations) {
-              location.error = { message: `Fetch failed due to '${error}'` };
-              if (error == "Blocked request") {
-                location.error.wasBlocked = true;
-              }
+              location.error = error;
             }
           }
         }
@@ -548,10 +544,7 @@ if (runningExtensionId === currentExtensionId) {
             if (currentBatch.locations) {
               let locations = currentBatch.locations;
               for (let location of locations) {
-                location.error = { message: `Fetch failed due to '${error}'` };
-                if (error == "Blocked request") {
-                  location.error.wasBlocked = true;
-                }
+                location.error = error;
               }
             }
           }
@@ -602,10 +595,7 @@ if (runningExtensionId === currentExtensionId) {
         if (currentBatch.locations) {
           let locations = currentBatch.locations;
           for (let location of locations) {
-            location.error = { message: `Fetch failed due to '${error}'` };
-            if (error == "Blocked request") {
-              location.error.wasBlocked = true;
-            }
+            location.error = error;
           }
         }
       }
