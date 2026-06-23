@@ -926,7 +926,7 @@ class WikiTreeSourcerPageModsHelper {
 
   wtPlusApiCall(url, referrer) {
     if (referrer) {
-      url += ` referrer=${referrer}`;
+      url += `&referrer=${referrer}`;
     }
     return new Promise((resolve, reject) => {
       if (!chrome.runtime?.id) {
