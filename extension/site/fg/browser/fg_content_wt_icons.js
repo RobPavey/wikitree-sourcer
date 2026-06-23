@@ -571,39 +571,41 @@ if (runningExtensionId === currentExtensionId) {
     }
     logDebug("getWikiIdsForPendingBatch, fgIdsToQuery is", fgIdsToQuery);
 
-    const fgIdsString = fgIdsToQuery.join(",");
+    if (fgMemorialIdsToCheck.length > 0) {
+      const fgIdsString = fgIdsToQuery.join(",");
 
-    logDebug("getWikiIdsForPendingBatch, fgIdsString is", fgIdsString);
+      logDebug("getWikiIdsForPendingBatch, fgIdsString is", fgIdsString);
 
-    try {
-      const response = await wtPlusApiGetProfilesUsingFgId(fgIdsString);
-      logDebug("getWikiIdsForPendingBatch, response is: ", response);
-      if (response.response?.memorials) {
-        // record the profiles that reference the elements id for the currentBatch
-        response.response.memorials.forEach((memorial) => {
-          let wikiId = memorial.WikiTreeID;
-          let fgMemorialId = memorial.memorial.toString();
+      try {
+        const response = await wtPlusApiGetProfilesUsingFgId(fgIdsString);
+        logDebug("getWikiIdsForPendingBatch, response is: ", response);
+        if (response.response?.memorials) {
+          // record the profiles that reference the elements id for the currentBatch
+          response.response.memorials.forEach((memorial) => {
+            let wikiId = memorial.WikiTreeID;
+            let fgMemorialId = memorial.memorial.toString();
 
-          if (!cachedFgMemorialIdToWtIdsMap.has(fgMemorialId)) {
-            cachedFgMemorialIdToWtIdsMap.set(fgMemorialId, []);
-          }
+            if (!cachedFgMemorialIdToWtIdsMap.has(fgMemorialId)) {
+              cachedFgMemorialIdToWtIdsMap.set(fgMemorialId, []);
+            }
 
-          let wikiIdsForFgMemorialId = cachedFgMemorialIdToWtIdsMap.get(fgMemorialId);
-          if (!wikiIdsForFgMemorialId.includes(wikiId)) {
-            wikiIdsForFgMemorialId.push(wikiId);
-          }
-        });
-      }
-    } catch (error) {
-      console.error("!!!!!!! WT+ API Batch fetch failed", error);
-      logDebug("fgIdsString is", fgIdsString);
+            let wikiIdsForFgMemorialId = cachedFgMemorialIdToWtIdsMap.get(fgMemorialId);
+            if (!wikiIdsForFgMemorialId.includes(wikiId)) {
+              wikiIdsForFgMemorialId.push(wikiId);
+            }
+          });
+        }
+      } catch (error) {
+        console.error("!!!!!!! WT+ API Batch fetch failed", error);
+        logDebug("fgIdsString is", fgIdsString);
 
-      if (currentBatch.locations) {
-        let locations = currentBatch.locations;
-        for (let location of locations) {
-          location.error = { message: `Fetch failed due to '${error}'` };
-          if (error == "Blocked request") {
-            location.error.wasBlocked = true;
+        if (currentBatch.locations) {
+          let locations = currentBatch.locations;
+          for (let location of locations) {
+            location.error = { message: `Fetch failed due to '${error}'` };
+            if (error == "Blocked request") {
+              location.error.wasBlocked = true;
+            }
           }
         }
       }

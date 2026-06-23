@@ -2024,46 +2024,48 @@ if (runningExtensionId === currentExtensionId) {
     }
     logDebug("getWikiIdsForPendingBatch, fsIdsToQuery is", fsIdsToQuery);
 
-    const fsIdsString = fsIdsToQuery.join(",");
+    if (fsIdsToQuery.length > 0) {
+      const fsIdsString = fsIdsToQuery.join(",");
 
-    logDebug("getWikiIdsForPendingBatch, fsIdsString is", fsIdsString);
+      logDebug("getWikiIdsForPendingBatch, fsIdsString is", fsIdsString);
 
-    try {
-      const response = await wtPlusApiGetProfilesUsingFsId(fsIdsString);
-      logDebug("getWikiIdsForPendingBatch, response is: ", response);
-      if (response.response?.profiles) {
-        function addWikiIdToMap(idType, fsIdList, wikiId) {
-          wikiId = cleanWikiId(wikiId);
+      try {
+        const response = await wtPlusApiGetProfilesUsingFsId(fsIdsString);
+        logDebug("getWikiIdsForPendingBatch, response is: ", response);
+        if (response.response?.profiles) {
+          function addWikiIdToMap(idType, fsIdList, wikiId) {
+            wikiId = cleanWikiId(wikiId);
 
-          for (let id of fsIdList) {
-            let key = id + "|" + idType;
-            if (!cachedFsIdToWtIdsMap.has(key)) {
-              cachedFsIdToWtIdsMap.set(key, []);
-            }
-            let wikiIdsForFsId = cachedFsIdToWtIdsMap.get(key);
-            if (!wikiIdsForFsId.includes(wikiId)) {
-              wikiIdsForFsId.push(wikiId);
+            for (let id of fsIdList) {
+              let key = id + "|" + idType;
+              if (!cachedFsIdToWtIdsMap.has(key)) {
+                cachedFsIdToWtIdsMap.set(key, []);
+              }
+              let wikiIdsForFsId = cachedFsIdToWtIdsMap.get(key);
+              if (!wikiIdsForFsId.includes(wikiId)) {
+                wikiIdsForFsId.push(wikiId);
+              }
             }
           }
+
+          // record the profiles that reference the elements id for the currentBatch
+          response.response.profiles.forEach((profile) => {
+            addWikiIdToMap("person", profile.persons, profile.wikitreeID);
+            addWikiIdToMap("record", profile.records, profile.wikitreeID);
+            addWikiIdToMap("image", profile.recordImages, profile.wikitreeID);
+          });
         }
+      } catch (error) {
+        console.error("WT+ API Batch fetch failed", error);
+        logDebug("fsIdsString is", fsIdsString);
 
-        // record the profiles that reference the elements id for the currentBatch
-        response.response.profiles.forEach((profile) => {
-          addWikiIdToMap("person", profile.persons, profile.wikitreeID);
-          addWikiIdToMap("record", profile.records, profile.wikitreeID);
-          addWikiIdToMap("image", profile.recordImages, profile.wikitreeID);
-        });
-      }
-    } catch (error) {
-      console.error("WT+ API Batch fetch failed", error);
-      logDebug("fsIdsString is", fsIdsString);
-
-      if (currentBatch.locations) {
-        let locations = currentBatch.locations;
-        for (let location of locations) {
-          location.error = { message: `Fetch failed due to '${error}'` };
-          if (error == "Blocked request") {
-            location.error.wasBlocked = true;
+        if (currentBatch.locations) {
+          let locations = currentBatch.locations;
+          for (let location of locations) {
+            location.error = { message: `Fetch failed due to '${error}'` };
+            if (error == "Blocked request") {
+              location.error.wasBlocked = true;
+            }
           }
         }
       }
@@ -2100,41 +2102,43 @@ if (runningExtensionId === currentExtensionId) {
     }
     logDebug("getWikiIdsForPendingBatch, fgIdsToQuery is", fgIdsToQuery);
 
-    const fgIdsString = fgIdsToQuery.join(",");
+    if (fgIdsToQuery.length > 0) {
+      const fgIdsString = fgIdsToQuery.join(",");
 
-    logDebug("getWikiIdsForPendingBatch, fgIdsString is", fgIdsString);
+      logDebug("getWikiIdsForPendingBatch, fgIdsString is", fgIdsString);
 
-    try {
-      const response = await wtPlusApiGetProfilesUsingFgId(fgIdsString);
-      logDebug("getWikiIdsForPendingBatch, fg response is: ", response);
+      try {
+        const response = await wtPlusApiGetProfilesUsingFgId(fgIdsString);
+        logDebug("getWikiIdsForPendingBatch, fg response is: ", response);
 
-      if (response.response?.memorials) {
-        // record the profiles that reference the elements id for the currentBatch
-        response.response.memorials.forEach((memorial) => {
-          let wikiId = cleanWikiId(memorial.WikiTreeID);
-          let fgMemorialId = memorial.memorial.toString();
-          let externalId = "fg|" + fgMemorialId;
+        if (response.response?.memorials) {
+          // record the profiles that reference the elements id for the currentBatch
+          response.response.memorials.forEach((memorial) => {
+            let wikiId = cleanWikiId(memorial.WikiTreeID);
+            let fgMemorialId = memorial.memorial.toString();
+            let externalId = "fg|" + fgMemorialId;
 
-          if (!cachedExternalSourceToWtIdsMap.has(externalId)) {
-            cachedExternalSourceToWtIdsMap.set(externalId, []);
-          }
+            if (!cachedExternalSourceToWtIdsMap.has(externalId)) {
+              cachedExternalSourceToWtIdsMap.set(externalId, []);
+            }
 
-          let wikiIdsForFgMemorialId = cachedExternalSourceToWtIdsMap.get(externalId);
-          if (!wikiIdsForFgMemorialId.includes(wikiId)) {
-            wikiIdsForFgMemorialId.push(wikiId);
-          }
-        });
-      }
-    } catch (error) {
-      console.error("WT+ API Batch fetch failed", error);
-      logDebug("fgIdsString is", fgIdsString);
+            let wikiIdsForFgMemorialId = cachedExternalSourceToWtIdsMap.get(externalId);
+            if (!wikiIdsForFgMemorialId.includes(wikiId)) {
+              wikiIdsForFgMemorialId.push(wikiId);
+            }
+          });
+        }
+      } catch (error) {
+        console.error("WT+ API Batch fetch failed", error);
+        logDebug("fgIdsString is", fgIdsString);
 
-      if (currentBatch.locations) {
-        let locations = currentBatch.locations;
-        for (let location of locations) {
-          location.error = { message: `Fetch failed due to '${error}'` };
-          if (error == "Blocked request") {
-            location.error.wasBlocked = true;
+        if (currentBatch.locations) {
+          let locations = currentBatch.locations;
+          for (let location of locations) {
+            location.error = { message: `Fetch failed due to '${error}'` };
+            if (error == "Blocked request") {
+              location.error.wasBlocked = true;
+            }
           }
         }
       }
