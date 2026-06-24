@@ -60,10 +60,13 @@ async function doWtPlusApiCall(request, sendResponse) {
 
   let fetchUrl = request.url;
 
-  fetch(fetchUrl)
-    .then((response) => response.text())
-    .then((text) => sendResponse({ success: true, rawData: text }))
-    .catch((error) => sendResponse({ success: false, error: error.message }));
+  try {
+    const response = await fetch(fetchUrl);
+    const text = await response.text();
+    sendResponse({ success: true, rawData: text, status: response.status });
+  } catch (error) {
+    sendResponse({ success: false, error: error.message });
+  }
 
   return true; // Keep the message channel open for the async response
 }
