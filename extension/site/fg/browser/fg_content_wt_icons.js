@@ -200,13 +200,17 @@ if (runningExtensionId === currentExtensionId) {
   ];
 
   function wtPlusApiGetProfilesUsingFgId(idString) {
+    let pageIdData = pageMods.getIdDataFromUrl(document.URL);
+    let referrer = pageIdData ? pageIdData.id : "";
     let url = `https://plus.wikitree.com/function/wtFindAGrave4Bee/Sourcer.json?query=${idString}`;
-    return pageMods.wtPlusApiCall(url);
+    return pageMods.wtPlusApiCall(url, referrer);
   }
 
   function wtPlusApiGetCategoryForCemetery(id) {
+    let pageIdData = pageMods.getIdDataFromUrl(document.URL);
+    let referrer = pageIdData ? pageIdData.id : "";
     let url = `https://plus.wikitree.com/function/wtCatCIBSearch/BEE_FindAGraveButton.json?Query=${id}&cib=FGCemetery`;
-    return pageMods.wtPlusApiCall(url);
+    return pageMods.wtPlusApiCall(url, referrer);
   }
 
   function getElementToAddIconTo(location) {
@@ -264,7 +268,7 @@ if (runningExtensionId === currentExtensionId) {
       let error = location.error;
       iconConfig.isFetchError = true;
       let itemText = `could not get data from the WT+ API`;
-      if (error.wasBlocked) {
+      if (error.message == "Blocked request") {
         itemText += " because your IP address was blocked";
       } else {
         itemText += " due to " + error.message;
@@ -503,14 +507,10 @@ if (runningExtensionId === currentExtensionId) {
         } catch (error) {
           console.error("!!!!!!! WT+ API Batch fetch failed", error);
           logDebug("fgIdToQuery id string is: ", fgIdToQuery);
-
           if (currentBatch.locations) {
             let locations = currentBatch.locations;
             for (let location of locations) {
-              location.error = { message: `Fetch failed due to '${error}'` };
-              if (error == "Blocked request") {
-                location.error.wasBlocked = true;
-              }
+              location.error = error;
             }
           }
         }
@@ -548,10 +548,7 @@ if (runningExtensionId === currentExtensionId) {
             if (currentBatch.locations) {
               let locations = currentBatch.locations;
               for (let location of locations) {
-                location.error = { message: `Fetch failed due to '${error}'` };
-                if (error == "Blocked request") {
-                  location.error.wasBlocked = true;
-                }
+                location.error = error;
               }
             }
           }
@@ -571,39 +568,38 @@ if (runningExtensionId === currentExtensionId) {
     }
     logDebug("getWikiIdsForPendingBatch, fgIdsToQuery is", fgIdsToQuery);
 
-    const fgIdsString = fgIdsToQuery.join(",");
+    if (fgMemorialIdsToCheck.length > 0) {
+      const fgIdsString = fgIdsToQuery.join(",");
 
-    logDebug("getWikiIdsForPendingBatch, fgIdsString is", fgIdsString);
+      logDebug("getWikiIdsForPendingBatch, fgIdsString is", fgIdsString);
 
-    try {
-      const response = await wtPlusApiGetProfilesUsingFgId(fgIdsString);
-      logDebug("getWikiIdsForPendingBatch, response is: ", response);
-      if (response.response?.memorials) {
-        // record the profiles that reference the elements id for the currentBatch
-        response.response.memorials.forEach((memorial) => {
-          let wikiId = memorial.WikiTreeID;
-          let fgMemorialId = memorial.memorial.toString();
+      try {
+        const response = await wtPlusApiGetProfilesUsingFgId(fgIdsString);
+        logDebug("getWikiIdsForPendingBatch, response is: ", response);
+        if (response.response?.memorials) {
+          // record the profiles that reference the elements id for the currentBatch
+          response.response.memorials.forEach((memorial) => {
+            let wikiId = memorial.WikiTreeID;
+            let fgMemorialId = memorial.memorial.toString();
 
-          if (!cachedFgMemorialIdToWtIdsMap.has(fgMemorialId)) {
-            cachedFgMemorialIdToWtIdsMap.set(fgMemorialId, []);
-          }
+            if (!cachedFgMemorialIdToWtIdsMap.has(fgMemorialId)) {
+              cachedFgMemorialIdToWtIdsMap.set(fgMemorialId, []);
+            }
 
-          let wikiIdsForFgMemorialId = cachedFgMemorialIdToWtIdsMap.get(fgMemorialId);
-          if (!wikiIdsForFgMemorialId.includes(wikiId)) {
-            wikiIdsForFgMemorialId.push(wikiId);
-          }
-        });
-      }
-    } catch (error) {
-      console.error("!!!!!!! WT+ API Batch fetch failed", error);
-      logDebug("fgIdsString is", fgIdsString);
+            let wikiIdsForFgMemorialId = cachedFgMemorialIdToWtIdsMap.get(fgMemorialId);
+            if (!wikiIdsForFgMemorialId.includes(wikiId)) {
+              wikiIdsForFgMemorialId.push(wikiId);
+            }
+          });
+        }
+      } catch (error) {
+        console.error("!!!!!!! WT+ API Batch fetch failed", error);
+        logDebug("fgIdsString is", fgIdsString);
 
-      if (currentBatch.locations) {
-        let locations = currentBatch.locations;
-        for (let location of locations) {
-          location.error = { message: `Fetch failed due to '${error}'` };
-          if (error == "Blocked request") {
-            location.error.wasBlocked = true;
+        if (currentBatch.locations) {
+          let locations = currentBatch.locations;
+          for (let location of locations) {
+            location.error = error;
           }
         }
       }

@@ -22,6 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// The WT+ API documentation is here:
+// https://www.wikitree.com/wiki/Help:WikiTree_Plus_API#wtFamilySearch
+
 // Example FamilySearch pages to test this on:/
 //
 // Person details:
@@ -129,6 +132,22 @@ if (runningExtensionId === currentExtensionId) {
   // A portrait tree should look like this:
   // https://www.familysearch.org/en/tree/pedigree/portrait/G443-GML
   const pedigreePortraitRegex = /^\/(?:[^\/]+\/)?tree\/pedigree\/portrait\/.*$/;
+
+  function cleanWikiId(wikiId) {
+    if (!wikiId) {
+      return "";
+    }
+    wikiId = wikiId.trim();
+    if (!wikiId) {
+      return "";
+    }
+
+    if (wikiId.includes(" ")) {
+      wikiId = wikiId.replace(" ", "_");
+    }
+
+    return wikiId;
+  }
 
   async function fetchFsSimilarRecordsJson(recordId, sessionId) {
     logDebug("fetchFsSimilarRecordsJson, sessionId is: " + sessionId);
@@ -792,6 +811,7 @@ if (runningExtensionId === currentExtensionId) {
 
     function addBackLinkWikiIdToLocation(location, wikiId) {
       if (wikiId) {
+        wikiId = cleanWikiId(wikiId);
         location.backLinkWikiIds ??= [];
         if (!location.backLinkWikiIds.includes(wikiId)) {
           location.backLinkWikiIds.push(wikiId);
@@ -1358,13 +1378,17 @@ if (runningExtensionId === currentExtensionId) {
   ];
 
   function wtPlusApiGetProfilesUsingFsId(idString) {
+    let pageIdData = pageMods.getIdDataFromUrl(document.URL);
+    let referrer = pageIdData ? pageIdData.id : "";
     let url = `https://plus.wikitree.com/function/wtFamilySearch/Sourcer.json?query=${idString}`;
-    return pageMods.wtPlusApiCall(url);
+    return pageMods.wtPlusApiCall(url, referrer);
   }
 
   function wtPlusApiGetProfilesUsingFgId(idString) {
+    let pageIdData = pageMods.getIdDataFromUrl(document.URL);
+    let referrer = pageIdData ? pageIdData.id : "";
     let url = `https://plus.wikitree.com/function/wtFindAGrave4Bee/Sourcer.json?query=${idString}`;
-    return pageMods.wtPlusApiCall(url);
+    return pageMods.wtPlusApiCall(url, referrer);
   }
 
   function getElementToAddIconTo(location) {
@@ -1462,7 +1486,7 @@ if (runningExtensionId === currentExtensionId) {
       let error = location.error;
       iconConfig.isFetchError = true;
       let itemText = `could not get data from the WT+ API`;
-      if (error.wasBlocked) {
+      if (error.message == "Blocked request") {
         itemText += " because your IP address was blocked";
       } else {
         itemText += " due to " + error.message;
@@ -1518,6 +1542,25 @@ if (runningExtensionId === currentExtensionId) {
       return linkUrl;
     }
 
+    function buildWtPlusUrlForWikiIdSet(allWikiIds) {
+      let linkUrl = "";
+      if (allWikiIds.size > 0) {
+        linkUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
+        let keyword = "WikiTreeID";
+        let added = false;
+        for (let wikiId of allWikiIds) {
+          if (added) {
+            linkUrl += " OR ";
+          }
+          let searchWikiId = wikiId.includes(" ") ? '"' + wikiId + '"' : wikiId;
+          linkUrl += keyword + "=" + searchWikiId;
+          added = true;
+        }
+        linkUrl += "&render=1";
+      }
+      return linkUrl;
+    }
+
     if (pageIdType == "person" && locationTypeName == "pageH1") {
       currentPageWikiIds = [];
       if (wikiIds.length) {
@@ -1540,6 +1583,10 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
 
+    let allWikiIds = new Set();
+    let needToUseWtPlusUrlForAllWikiIds = false;
+
+    // Direct links from WikiTree
     if (wikiIds.length > 1) {
       iconConfig.isMultiple = true;
       iconConfig.mainArrowStyle = "in";
@@ -1555,6 +1602,9 @@ if (runningExtensionId === currentExtensionId) {
 
       linkUrl = buildWtPlusUrl(location.id, location.idType);
 
+      // in case there are more WikiIds referenced indirectly or from backlinks we record them all
+      wikiIds.forEach((item) => allWikiIds.add(item));
+
       if (location.idType == "person" || location.idType == "record") {
         iconConfig.isConflict = true;
         tooltipListItem.isError = true;
@@ -1569,6 +1619,9 @@ if (runningExtensionId === currentExtensionId) {
       clipboardText = wikiIds[0];
       linkUrl = buildWikiProfileUrl(wikiIds[0]);
 
+      // in case there are more WikiIds referenced indirectly or from backlinks we record them all
+      allWikiIds.add(wikiIds[0]);
+
       if (pageIdType == "person" && locationTypeName == "sourceRow" && currentPageWikiIds) {
         if (currentPageWikiIds.length == 1 && currentPageWikiIds[0] != wikiIds[0]) {
           iconConfig.isConflict = true;
@@ -1578,6 +1631,7 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
 
+    // Back links
     if (backLinkWikiIds.length == 1) {
       if (wikiIds.length == 1) {
         let tooltipListItem = { text: `uses a source to reference profile ${backLinkWikiIds[0]}` };
@@ -1587,9 +1641,12 @@ if (runningExtensionId === currentExtensionId) {
           iconConfig.mainArrowStyle = "split";
           iconConfig.isConflict = true;
           tooltipListItem.isError = true;
+          allWikiIds.add(backLinkWikiIds[0]);
+          needToUseWtPlusUrlForAllWikiIds = true;
         }
         tooltipData.listItems.push(tooltipListItem);
       } else if (wikiIds.length == 0) {
+        primaryWikiId = backLinkWikiIds[0];
         iconConfig.mainArrowStyle = "out";
         if (location.idType == "source") {
           tooltipData.listItems.push({ text: `references profile ${backLinkWikiIds[0]}` });
@@ -1597,12 +1654,15 @@ if (runningExtensionId === currentExtensionId) {
           tooltipData.listItems.push({ text: `uses a source to reference profile ${backLinkWikiIds[0]}` });
         }
         linkUrl = buildWikiProfileUrl(backLinkWikiIds[0]);
+        allWikiIds.add(backLinkWikiIds[0]);
       } else {
         // there are multiple WT profiles referencing this FS profile which in itself is an error
         // and we also reference a WT profile
         iconConfig.mainArrowStyle = "split";
         iconConfig.isConflict = true;
         tooltipData.listItems.push({ text: `uses a source to reference profile ${backLinkWikiIds[0]}`, isError: true });
+        allWikiIds.add(backLinkWikiIds[0]);
+        needToUseWtPlusUrlForAllWikiIds = true;
       }
     } else if (backLinkWikiIds.length > 1) {
       // this profile references multiple WT profiles.
@@ -1615,8 +1675,11 @@ if (runningExtensionId === currentExtensionId) {
         iconConfig.isConflict = true;
         tooltipData.listItems.push({ text: `uses sources to reference multiple profiles`, isError: true });
       }
+      backLinkWikiIds.forEach((item) => allWikiIds.add(item));
+      needToUseWtPlusUrlForAllWikiIds = true;
     }
 
+    // links from WikiTree to attached sources
     let attachedSourceWikiIdCount = 0;
     if (sourceFsIds.length) {
       let recordWikiIds = new Set();
@@ -1663,12 +1726,18 @@ if (runningExtensionId === currentExtensionId) {
           iconConfig.isConflict = true;
           tooltipListItem.isError = true;
           tooltipListItem.text = `has ${numRecordsUsedOnWt} attached record sources referenced by a different profile ${wikiId}`;
+          needToUseWtPlusUrlForAllWikiIds = true;
+        } else if (!primaryWikiId) {
+          primaryWikiId = wikiId;
         }
+
         tooltipData.listItems.push(tooltipListItem);
 
+        allWikiIds.add(wikiId);
         if (!linkUrl) {
           linkUrl = buildWikiProfileUrl(wikiId);
         }
+
         if (!clipboardText) {
           clipboardText = wikiId;
         }
@@ -1688,10 +1757,12 @@ if (runningExtensionId === currentExtensionId) {
           iconConfig.isMultiple = true;
         }
         iconConfig.isConflict = true;
-        let wikiId = recordWikiIds.values().next().value;
+        recordWikiIds.forEach((item) => allWikiIds.add(item));
 
         if (!linkUrl) {
           linkUrl = buildWtPlusUrlForSet(recordFsIds, "record");
+        } else {
+          needToUseWtPlusUrlForAllWikiIds = true;
         }
 
         if (!clipboardText) {
@@ -1709,18 +1780,35 @@ if (runningExtensionId === currentExtensionId) {
         });
 
         if (imageWikiIds.size > 0) {
+          let listItemText = `has ${numImagesUsedOnWt} attached image sources referenced by`;
+          if (imageWikiIds.size == 1) {
+            let imageWikiId = imageWikiIds.values().next().value;
+            listItemText += ` profile ${imageWikiId}`;
+          } else {
+            listItemText += ` ${imageWikiIds.size} profiles`;
+          }
+
           tooltipData.listItems.push({
-            text: `has ${numImagesUsedOnWt} attached image sources referenced by ${imageWikiIds.size} profiles`,
+            text: listItemText,
           });
         }
       } else if (imageWikiIds.size == 1) {
         let wikiId = imageWikiIds.values().next().value;
-        tooltipData.listItems.push({
+        let tooltipListItem = {
           text: `has ${numImagesUsedOnWt} attached image sources referenced by profile ${wikiId}`,
-        });
+        };
+
+        if (primaryWikiId && wikiId != primaryWikiId) {
+          // this is not an error since multiple people can share an image
+          tooltipListItem.text = `has ${numImagesUsedOnWt} attached image sources referenced by a different profile ${wikiId}`;
+        }
+
+        tooltipData.listItems.push(tooltipListItem);
+
         if (!linkUrl) {
           linkUrl = buildWikiProfileUrl(wikiId);
         }
+
         if (!clipboardText) {
           clipboardText = wikiId;
         }
@@ -1728,6 +1816,7 @@ if (runningExtensionId === currentExtensionId) {
         if (!linkUrl) {
           linkUrl = buildWtPlusUrlForSet(imageFsIds, "image");
         }
+
         if (!clipboardText) {
           for (let wikiId of imageWikiIds) {
             if (clipboardText) {
@@ -1743,6 +1832,7 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
 
+    // links from WikiTree to an external source referenced from FS
     let externalWikiIdCount = 0;
     if (externalSources && externalSources.length) {
       for (let externalSource of externalSources) {
@@ -1751,18 +1841,21 @@ if (runningExtensionId === currentExtensionId) {
           let title = externalSource.externalSiteTitle;
           let type = externalSource.externalSourceTypeName;
           let id = externalSource.externalId;
-          let wikiIds = externalSource.wikiIds;
-          externalWikiIdCount += wikiIds.length;
-          if (wikiIds.length > 1) {
+          let extWikiIds = externalSource.wikiIds;
+          externalWikiIdCount += extWikiIds.length;
+          if (extWikiIds.length > 1) {
             let tooltipListItem = {
-              text: `references ${title} ${type} ${id} which is referenced by ${wikiIds.size} profiles`,
+              text: `references ${title} ${type} ${id} which is referenced by ${extWikiIds.size} profiles`,
             };
 
             iconConfig.isConflict = true;
             tooltipListItem.isError = true;
             tooltipData.listItems.push(tooltipListItem);
+
+            extWikiIds.forEach((item) => allWikiIds.add(item));
+            needToUseWtPlusUrlForAllWikiIds = true;
           } else {
-            let wikiId = wikiIds[0];
+            let wikiId = extWikiIds[0];
             let tooltipListItem = {
               text: `references ${title} ${type} ${id} which is referenced by profile ${wikiId}`,
             };
@@ -1771,7 +1864,10 @@ if (runningExtensionId === currentExtensionId) {
               iconConfig.isConflict = true;
               tooltipListItem.isError = true;
               tooltipListItem.text = `references ${title} ${type} ${id} which is referenced by a different profile ${wikiId}`;
+              needToUseWtPlusUrlForAllWikiIds = true;
             }
+
+            allWikiIds.add(wikiId);
 
             tooltipData.listItems.push(tooltipListItem);
             if (!linkUrl) {
@@ -1784,9 +1880,17 @@ if (runningExtensionId === currentExtensionId) {
 
     if (attachedSourceWikiIdCount == 0 && externalWikiIdCount == 0) {
       if (wikiIds.length == 0 && backLinkWikiIds.length == 0) {
-        // we do not need an icon
-        return;
+        // we do not need an icon unless there was an error
+        if (tooltipData.listItems.length == 0) {
+          return;
+        }
       }
+    }
+
+    if (needToUseWtPlusUrlForAllWikiIds) {
+      // it should always have more than one WikiId at this point
+      iconConfig.isMultiple = true;
+      linkUrl = buildWtPlusUrlForWikiIdSet(allWikiIds);
     }
 
     const svgIcon = pageMods.buildIcon(iconConfig);
@@ -1924,44 +2028,45 @@ if (runningExtensionId === currentExtensionId) {
     }
     logDebug("getWikiIdsForPendingBatch, fsIdsToQuery is", fsIdsToQuery);
 
-    const fsIdsString = fsIdsToQuery.join(",");
+    if (fsIdsToQuery.length > 0) {
+      const fsIdsString = fsIdsToQuery.join(",");
 
-    logDebug("getWikiIdsForPendingBatch, fsIdsString is", fsIdsString);
+      logDebug("getWikiIdsForPendingBatch, fsIdsString is", fsIdsString);
 
-    try {
-      const response = await wtPlusApiGetProfilesUsingFsId(fsIdsString);
-      logDebug("getWikiIdsForPendingBatch, response is: ", response);
-      if (response.response?.profiles) {
-        function addWikiIdToMap(idType, fsIdList, wikiId) {
-          for (let id of fsIdList) {
-            let key = id + "|" + idType;
-            if (!cachedFsIdToWtIdsMap.has(key)) {
-              cachedFsIdToWtIdsMap.set(key, []);
-            }
-            let wikiIdsForFsId = cachedFsIdToWtIdsMap.get(key);
-            if (!wikiIdsForFsId.includes(wikiId)) {
-              wikiIdsForFsId.push(wikiId);
+      try {
+        const response = await wtPlusApiGetProfilesUsingFsId(fsIdsString);
+        logDebug("getWikiIdsForPendingBatch, response is: ", response);
+        if (response.response?.profiles) {
+          function addWikiIdToMap(idType, fsIdList, wikiId) {
+            wikiId = cleanWikiId(wikiId);
+
+            for (let id of fsIdList) {
+              let key = id + "|" + idType;
+              if (!cachedFsIdToWtIdsMap.has(key)) {
+                cachedFsIdToWtIdsMap.set(key, []);
+              }
+              let wikiIdsForFsId = cachedFsIdToWtIdsMap.get(key);
+              if (!wikiIdsForFsId.includes(wikiId)) {
+                wikiIdsForFsId.push(wikiId);
+              }
             }
           }
+
+          // record the profiles that reference the elements id for the currentBatch
+          response.response.profiles.forEach((profile) => {
+            addWikiIdToMap("person", profile.persons, profile.wikitreeID);
+            addWikiIdToMap("record", profile.records, profile.wikitreeID);
+            addWikiIdToMap("image", profile.recordImages, profile.wikitreeID);
+          });
         }
+      } catch (error) {
+        console.error("WT+ API Batch fetch failed", error);
+        logDebug("fsIdsString is", fsIdsString);
 
-        // record the profiles that reference the elements id for the currentBatch
-        response.response.profiles.forEach((profile) => {
-          addWikiIdToMap("person", profile.persons, profile.wikitreeID);
-          addWikiIdToMap("record", profile.records, profile.wikitreeID);
-          addWikiIdToMap("image", profile.recordImages, profile.wikitreeID);
-        });
-      }
-    } catch (error) {
-      console.error("WT+ API Batch fetch failed", error);
-      logDebug("fsIdsString is", fsIdsString);
-
-      if (currentBatch.locations) {
-        let locations = currentBatch.locations;
-        for (let location of locations) {
-          location.error = { message: `Fetch failed due to '${error}'` };
-          if (error == "Blocked request") {
-            location.error.wasBlocked = true;
+        if (currentBatch.locations) {
+          let locations = currentBatch.locations;
+          for (let location of locations) {
+            location.error = error;
           }
         }
       }
@@ -1998,41 +2103,40 @@ if (runningExtensionId === currentExtensionId) {
     }
     logDebug("getWikiIdsForPendingBatch, fgIdsToQuery is", fgIdsToQuery);
 
-    const fgIdsString = fgIdsToQuery.join(",");
+    if (fgIdsToQuery.length > 0) {
+      const fgIdsString = fgIdsToQuery.join(",");
 
-    logDebug("getWikiIdsForPendingBatch, fgIdsString is", fgIdsString);
+      logDebug("getWikiIdsForPendingBatch, fgIdsString is", fgIdsString);
 
-    try {
-      const response = await wtPlusApiGetProfilesUsingFgId(fgIdsString);
-      logDebug("getWikiIdsForPendingBatch, fg response is: ", response);
+      try {
+        const response = await wtPlusApiGetProfilesUsingFgId(fgIdsString);
+        logDebug("getWikiIdsForPendingBatch, fg response is: ", response);
 
-      if (response.response?.memorials) {
-        // record the profiles that reference the elements id for the currentBatch
-        response.response.memorials.forEach((memorial) => {
-          let wikiId = memorial.WikiTreeID;
-          let fgMemorialId = memorial.memorial.toString();
-          let externalId = "fg|" + fgMemorialId;
+        if (response.response?.memorials) {
+          // record the profiles that reference the elements id for the currentBatch
+          response.response.memorials.forEach((memorial) => {
+            let wikiId = cleanWikiId(memorial.WikiTreeID);
+            let fgMemorialId = memorial.memorial.toString();
+            let externalId = "fg|" + fgMemorialId;
 
-          if (!cachedExternalSourceToWtIdsMap.has(externalId)) {
-            cachedExternalSourceToWtIdsMap.set(externalId, []);
-          }
+            if (!cachedExternalSourceToWtIdsMap.has(externalId)) {
+              cachedExternalSourceToWtIdsMap.set(externalId, []);
+            }
 
-          let wikiIdsForFgMemorialId = cachedExternalSourceToWtIdsMap.get(externalId);
-          if (!wikiIdsForFgMemorialId.includes(wikiId)) {
-            wikiIdsForFgMemorialId.push(wikiId);
-          }
-        });
-      }
-    } catch (error) {
-      console.error("WT+ API Batch fetch failed", error);
-      logDebug("fgIdsString is", fgIdsString);
+            let wikiIdsForFgMemorialId = cachedExternalSourceToWtIdsMap.get(externalId);
+            if (!wikiIdsForFgMemorialId.includes(wikiId)) {
+              wikiIdsForFgMemorialId.push(wikiId);
+            }
+          });
+        }
+      } catch (error) {
+        console.error("WT+ API Batch fetch failed", error);
+        logDebug("fgIdsString is", fgIdsString);
 
-      if (currentBatch.locations) {
-        let locations = currentBatch.locations;
-        for (let location of locations) {
-          location.error = { message: `Fetch failed due to '${error}'` };
-          if (error == "Blocked request") {
-            location.error.wasBlocked = true;
+        if (currentBatch.locations) {
+          let locations = currentBatch.locations;
+          for (let location of locations) {
+            location.error = error;
           }
         }
       }

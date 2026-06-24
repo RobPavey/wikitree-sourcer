@@ -924,7 +924,10 @@ class WikiTreeSourcerPageModsHelper {
     return iconContainer;
   }
 
-  wtPlusApiCall(url) {
+  wtPlusApiCall(url, referrer) {
+    if (referrer) {
+      url += `&referrer=${referrer}`;
+    }
     return new Promise((resolve, reject) => {
       if (!chrome.runtime?.id) {
         reject("Extension context invalidated");
@@ -939,20 +942,30 @@ class WikiTreeSourcerPageModsHelper {
           if (response && response.success) {
             logDebug("wtPlusApiCall: response is:", response);
             let rawData = response.rawData;
-            if (rawData.startsWith("{")) {
-              resolve(JSON.parse(rawData));
-            } else if (rawData.startsWith("<html>") && rawData.includes("Blocked request")) {
-              reject("Blocked request");
+            if (response.status == 200) {
+              if (rawData.startsWith("{")) {
+                resolve(JSON.parse(rawData));
+              } else {
+                reject({ message: "Not JSON" });
+              }
             } else {
-              reject("Not JSON");
+              if (response.status == 429) {
+                if (rawData.startsWith("<html>") && rawData.includes("Blocked")) {
+                  reject({ message: "Blocked request", status: response.status });
+                } else {
+                  reject({ message: `Bad fetch status: ${response.status}`, status: response.status });
+                }
+              } else {
+                reject({ message: `Bad fetch status: ${response.status}`, status: response.status });
+              }
             }
           } else {
             if (chrome.runtime.lastError) {
-              reject(chrome.runtime.lastError);
+              reject({ message: chrome.runtime.lastError });
             } else if (response.error) {
-              reject(response.error);
+              reject({ message: response.error });
             } else {
-              reject("No response");
+              reject({ message: "No response" });
             }
           }
         }
