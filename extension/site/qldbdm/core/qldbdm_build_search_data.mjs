@@ -103,32 +103,32 @@ function buildSearchData(input) {
   if (typeOfSearch == "SameCollection") {
     if (vicbdmCollectionId) {
       if (vicbdmCollectionId == "Births") {
-        fieldData["birth"] = true;
+        //fieldData["birth"] = true;
       }
       if (vicbdmCollectionId == "Deaths") {
-        fieldData["death"] = true;
+        //fieldData["death"] = true;
       }
       if (vicbdmCollectionId == "Marriages") {
-        fieldData["marriage"] = true;
+        //fieldData["marriage"] = true;
       }
     }
   } else if (parameters) {
     if (parameters.category == "Births" || parameters.category == "All") {
-      fieldData["birth"] = true;
+      //fieldData["birth"] = true;
     }
     if (parameters.category == "Deaths" || parameters.category == "All") {
-      fieldData["death"] = true;
+      //fieldData["death"] = true;
     }
     if (parameters.category == "Marriages" || parameters.category == "All") {
-      fieldData["marriage"] = true;
+      //fieldData["marriage"] = true;
     }
   } else {
     if (typeOfSearch == "Births") {
-      fieldData["birth"] = true;
+      //fieldData["birth"] = true;
     } else if (typeOfSearch == "Deaths") {
-      fieldData["death"] = true;
+      //fieldData["death"] = true;
     } else if (typeOfSearch == "Marriages") {
-      fieldData["marriage"] = true;
+      //fieldData["marriage"] = true;
     }
   }
 
@@ -139,8 +139,8 @@ function buildSearchData(input) {
   if (typeOfSearch == "SameCollection" && eventYear) {
     let yearString = eventYear;
     if (yearString) {
-      fieldData["historicalSearch-yearRange-from"] = yearString;
-      fieldData["historicalSearch-yearRange-to"] = yearString;
+      //fieldData["historicalSearch-yearRange-from"] = yearString;
+      //fieldData["historicalSearch-yearRange-to"] = yearString;
     }
   } else if (birthYear && (typeOfSearch == "Births" || (parameters && parameters.category == "Births"))) {
     let qualifier = gd.inferBirthDateQualifier();
@@ -160,10 +160,10 @@ function buildSearchData(input) {
           startNum += 14;
           range.startYear = startNum.toString();
         }
-        fieldData["historicalSearch-yearRange-from"] = range.startYear;
+        //fieldData["historicalSearch-yearRange-from"] = range.startYear;
       }
       if (range.endYear) {
-        fieldData["historicalSearch-yearRange-to"] = range.endYear;
+        //fieldData["historicalSearch-yearRange-to"] = range.endYear;
       }
     }
   } else {
@@ -172,10 +172,10 @@ function buildSearchData(input) {
     let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
     if (range) {
       if (range.startYear) {
-        fieldData["historicalSearch-yearRange-from"] = range.startYear;
+        //fieldData["historicalSearch-yearRange-from"] = range.startYear;
       }
       if (range.endYear) {
-        fieldData["historicalSearch-yearRange-to"] = range.endYear;
+        //fieldData["historicalSearch-yearRange-to"] = range.endYear;
       }
     }
   }
@@ -190,7 +190,7 @@ function buildSearchData(input) {
       regNum = gd.collectionData.referenceNumber;
     }
     if (regNum) {
-      fieldData["historicalSearch-events-registrationNumber-number"] = regNum;
+      //fieldData["historicalSearch-events-registrationNumber-number"] = regNum;
     }
   }
 

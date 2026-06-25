@@ -123,6 +123,10 @@ function isSafari() {
   return isSafari;
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 // this is a version of a function in a shared module but we can't use that dynamic module version here
 async function openExceptionPageForContentScript(message, input, error, requestReport) {
   if (!isSafari()) {

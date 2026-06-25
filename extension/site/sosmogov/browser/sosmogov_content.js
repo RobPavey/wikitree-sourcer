@@ -202,10 +202,6 @@ function setSearchingBanner() {
   }
 }
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 function getCollectionDateRange() {
   // get the date range for this collection
   var sosmogovStartYear = 1910; // earliest year for death records in the collection

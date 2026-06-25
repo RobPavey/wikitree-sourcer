@@ -333,10 +333,6 @@ async function setFields(fieldData) {
 
   let createSourceDialog = document.querySelector("div[aria-modal='true'][role='dialog'][aria-label='Create Source']");
 
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-
   async function setTextValue(selector, value, useListBox) {
     let inputElement = createSourceDialog.querySelector(selector);
 

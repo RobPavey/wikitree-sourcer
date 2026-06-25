@@ -141,10 +141,6 @@ async function checkForPendingSearch() {
   }
 }
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 async function clearSearchFields() {
   // try to clear form
   let clearButtonElement = document.querySelector("historical-search div.btnRow button.btn-secondary");

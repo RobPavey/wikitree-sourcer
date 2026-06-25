@@ -22,10 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 async function setFields(fieldData, sendResponse) {
   console.log("setFields, fieldData is:");
   console.log(fieldData);

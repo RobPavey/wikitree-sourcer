@@ -27,6 +27,10 @@ import { registerSite } from "../../../base/core/site_registry.mjs";
 const siteData = {
   siteName: "qldbdm",
   matches: ["*://*.familyhistory.bdm.qld.gov.au/*"],
+  additionalContentJsFiles: [
+    "base/browser/content/content_register_tab",
+    "base/browser/content/content_pending_search",
+  ],
   repositoryName: "Queensland BDM (Aus)",
   usPhoneNumber: "",
   email: "",

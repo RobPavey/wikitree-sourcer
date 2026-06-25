@@ -340,7 +340,7 @@ async function registerContentScripts() {
         let id = siteName;
         let extractPath = "site/" + id + "/browser/" + id + "_extract_data.js";
         let contentScriptPath = "site/" + id + "/browser/" + id + "_content.js";
-        let js = [extractPath, commonPath, contentScriptPath];
+        let js = [extractPath, commonPath];
         if (siteData.additionalContentJsFiles) {
           for (let addJs of siteData.additionalContentJsFiles) {
             let addJsPath;
@@ -352,6 +352,7 @@ async function registerContentScripts() {
             js.push(addJsPath);
           }
         }
+        js.push(contentScriptPath); // always put <site>_content.js last
 
         let runAt = "document_idle";
         if (siteData.runAt) {

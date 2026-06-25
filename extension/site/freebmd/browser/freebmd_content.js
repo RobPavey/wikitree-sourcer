@@ -148,10 +148,6 @@ function setSearchingBanner() {
   }
 }
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 async function doPendingSearch() {
   //console.log("##############################################################################");
   //console.log("doPendingSearch: called");
