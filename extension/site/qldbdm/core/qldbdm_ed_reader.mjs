@@ -129,6 +129,25 @@ class QldbdmEdReader extends ExtractedDataReader {
   // Note: there are default implementations in ExtractedDataReader and, if using a data-driven
   // style you may not need to override them here.
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  getCollectionData() {
+    let id = "";
+    if (this.recordType == RT.BirthRegistration) {
+      id = "birth";
+    } else if (this.recordType == RT.DeathRegistration) {
+      id = "death";
+    } else if (this.recordType == RT.MarriageRegistration) {
+      id = "marriage";
+    }
+    let collectionData = { id: id };
+
+    let registrationDetails = this.ed["Registration details"];
+    if (registrationDetails) {
+      collectionData.registrationDetails = registrationDetails;
+    }
+
+    return collectionData;
+  }
 }
 
 export { QldbdmEdReader };

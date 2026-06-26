@@ -42,7 +42,40 @@ const searchMenuConfig = {
   defaultMenuItem: {
     menuItemText: "Search Queensland BDM (Aus)",
     includeDefaultSearch: true,
-    includeSearchSubmenu: false,
+    includeSearchSubmenu: true,
+    submenuConfig: {
+      includeSameCollection: true,
+      includeSearchWithParameters: true,
+      submenuMenuItems: [
+        {
+          menuItemText: "Search Births",
+          typeOfSearch: "births",
+          constraints: {
+            startYear: 1829,
+            endYearDynamic: { beforeNow: true, offset: 100 },
+            dateTestType: "born",
+          },
+        },
+        {
+          menuItemText: "Search Deaths",
+          typeOfSearch: "deaths",
+          constraints: {
+            startYear: 1829,
+            endYearDynamic: { beforeNow: true, offset: 30 },
+            dateTestType: "died",
+          },
+        },
+        {
+          menuItemText: "Search Marriages",
+          typeOfSearch: "marriages",
+          constraints: {
+            startYear: 1829,
+            endYearDynamic: { beforeNow: true, offset: 75 },
+            dateTestType: "married",
+          },
+        },
+      ],
+    },
   },
 };
 

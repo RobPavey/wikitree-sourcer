@@ -22,45 +22,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { RC } from "../../../base/core/record_collections.mjs";
+import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+import { SearchHelper } from "../../../base/core/search_helper.mjs";
+
 function buildSearchData(input) {
   let fieldData = {};
   let selectData = {};
-
-  //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-  // Add code here to populate the search data that is used to fill out the search form
-  // The fieldData typically will be used for text fields
-  // while the selectData will be for select controls
-  // In these structures use the names of the elements in the search form that need to be
-  // filled
-  // For examples see:
-  // - extension/site/vicbdm/core/vicbdm_build_search_data.mjs
-  // - extension/site/nswbdm/core/nswbdm_build_search_data.mjs
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  //console.log("fieldData is:");
-  //console.log(fieldData);
 
   const gd = input.generalizedData;
   const typeOfSearch = input.typeOfSearch;
   const options = input.options;
   const runDate = input.runDate;
+  let helper = new SearchHelper(gd, options, runDate);
 
   let sameCollection = false;
   let parameters = undefined;
-  let vicbdmCollectionId = "";
+  let thisSiteCollectionId = "";
   let collection = undefined;
 
   if (typeOfSearch == "SameCollection") {
     if (gd.collectionData && gd.collectionData.id) {
-      vicbdmCollectionId = RC.mapCollectionId(
+      thisSiteCollectionId = RC.mapCollectionId(
         gd.sourceOfData,
         gd.collectionData.id,
-        "vicbdm",
+        "qldbdm",
         gd.inferEventCountry(),
         gd.inferEventYear()
       );
-      if (vicbdmCollectionId) {
-        collection = RC.findCollection("vicbdm", vicbdmCollectionId);
+      if (thisSiteCollectionId) {
+        collection = RC.findCollection("qldbdm", thisSiteCollectionId);
         sameCollection = true;
       }
     }
@@ -75,9 +66,9 @@ function buildSearchData(input) {
 
   if (gd.name) {
     let givenNames = gd.name.inferForenamesPlusPreferredAndNicknames(
-      options.search_vicbdm_includeMiddleName,
-      options.search_vicbdm_includePrefName,
-      options.search_vicbdm_includeNicknames
+      options.search_qldbdm_includeMiddleName,
+      options.search_qldbdm_includePrefName,
+      options.search_qldbdm_includeNicknames
     );
 
     if (givenNames) {
@@ -100,35 +91,50 @@ function buildSearchData(input) {
     }
   }
 
+  let refineType = "";
+
   if (typeOfSearch == "SameCollection") {
-    if (vicbdmCollectionId) {
-      if (vicbdmCollectionId == "Births") {
-        //fieldData["birth"] = true;
+    helper.overrideQualifier = dateQualifiers.EXACT;
+    if (thisSiteCollectionId) {
+      if (thisSiteCollectionId == "birth") {
+        refineType = "birth";
       }
-      if (vicbdmCollectionId == "Deaths") {
-        //fieldData["death"] = true;
+      if (thisSiteCollectionId == "death") {
+        refineType = "death";
       }
-      if (vicbdmCollectionId == "Marriages") {
-        //fieldData["marriage"] = true;
+      if (thisSiteCollectionId == "marriage") {
+        refineType = "marriage";
       }
     }
   } else if (parameters) {
-    if (parameters.category == "Births" || parameters.category == "All") {
-      //fieldData["birth"] = true;
+    if (parameters.category == "births") {
+      refineType = "birth";
     }
-    if (parameters.category == "Deaths" || parameters.category == "All") {
-      //fieldData["death"] = true;
+    if (parameters.category == "deaths") {
+      refineType = "death";
     }
-    if (parameters.category == "Marriages" || parameters.category == "All") {
-      //fieldData["marriage"] = true;
+    if (parameters.category == "marriages") {
+      refineType = "marriage";
     }
   } else {
-    if (typeOfSearch == "Births") {
-      //fieldData["birth"] = true;
-    } else if (typeOfSearch == "Deaths") {
-      //fieldData["death"] = true;
-    } else if (typeOfSearch == "Marriages") {
-      //fieldData["marriage"] = true;
+    if (typeOfSearch == "births") {
+      refineType = "birth";
+    } else if (typeOfSearch == "deaths") {
+      refineType = "death";
+    } else if (typeOfSearch == "marriages") {
+      refineType = "marriage";
+    }
+  }
+
+  if (refineType) {
+    fieldData[refineType] = true;
+
+    if (!collection) {
+      collection = RC.findCollection("qldbdm", refineType);
+    }
+
+    if (collection) {
+      helper.setAllowedDateRange(collection.dates);
     }
   }
 
@@ -136,21 +142,27 @@ function buildSearchData(input) {
   let birthYear = gd.inferBirthYear();
   let deathYear = gd.inferDeathYear();
   let eventYear = gd.inferEventYear();
-  if (typeOfSearch == "SameCollection" && eventYear) {
-    let yearString = eventYear;
-    if (yearString) {
-      //fieldData["historicalSearch-yearRange-from"] = yearString;
-      //fieldData["historicalSearch-yearRange-to"] = yearString;
+  if (refineType == "birth" || refineType == "death") {
+    let range = helper.getYearRangeForBirth(options.search_gensau_birthYearExactness);
+    if (range && range.startYear) {
+      fieldData["dobfrom"] = range.startYear;
+      if (range.endYear && range.endYear != range.startYear) {
+        fieldData["dobto"] = range.startYear;
+      }
     }
-  } else if (birthYear && (typeOfSearch == "Births" || (parameters && parameters.category == "Births"))) {
-    let qualifier = gd.inferBirthDateQualifier();
-    let exactness = options.search_vicbdm_birthYearExactness;
-    setYearRangeForYear(birthYear, qualifier, exactness, fieldData);
-  } else if (deathYear && (typeOfSearch == "Deaths" || (parameters && parameters.category == "Deaths"))) {
-    let qualifier = gd.inferDeathDateQualifier();
-    let exactness = options.search_vicbdm_deathYearExactness;
-    setYearRangeForYear(deathYear, qualifier, exactness, fieldData);
-  } else if (typeOfSearch == "Marriages" || (parameters && parameters.category == "Marriages")) {
+  }
+
+  if (refineType == "death") {
+    let range = helper.getYearRangeForDeath(options.search_gensau_deathYearExactness);
+    if (range && range.startYear) {
+      fieldData["doefrom"] = range.startYear;
+      if (range.endYear && range.endYear != range.startYear) {
+        fieldData["doeto"] = range.startYear;
+      }
+    }
+  }
+
+  if (refineType == "marriage") {
     const maxLifespan = Number(options.search_general_maxLifespan);
     let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
     if (range) {
@@ -160,22 +172,10 @@ function buildSearchData(input) {
           startNum += 14;
           range.startYear = startNum.toString();
         }
-        //fieldData["historicalSearch-yearRange-from"] = range.startYear;
+        fieldData["doefrom"] = range.startYear;
       }
       if (range.endYear) {
-        //fieldData["historicalSearch-yearRange-to"] = range.endYear;
-      }
-    }
-  } else {
-    // all types?
-    const maxLifespan = Number(options.search_general_maxLifespan);
-    let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
-    if (range) {
-      if (range.startYear) {
-        //fieldData["historicalSearch-yearRange-from"] = range.startYear;
-      }
-      if (range.endYear) {
-        //fieldData["historicalSearch-yearRange-to"] = range.endYear;
+        fieldData["doeto"] = range.endYear;
       }
     }
   }

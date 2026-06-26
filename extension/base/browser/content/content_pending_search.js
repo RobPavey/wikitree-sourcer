@@ -25,7 +25,7 @@ SOFTWARE.
 // Code shared by most content scripts that use pending search - i.e. search using a form.
 // This file is included by putting it in the additionalContentJsFiles in site_data.
 
-// NOET: The functions doPendingSearch and setSearchingBanner must be implemented in the
+// NOTE: The functions doPendingSearch and setSearchingBanner must be implemented in the
 // <site>_content.js file for this to work
 
 var pendingSearchData;

@@ -38,6 +38,18 @@ class SearchHelper {
     return this.options;
   }
 
+  clampRange(yearRange) {
+    if (this.allowedDateRange) {
+      let from = this.allowedDateRange.from;
+      let to = this.allowedDateRange.to;
+      if (yearRange.startYear < from) {
+        yearRange.startYear = from;
+      }
+      if (yearRange.endYear > to) {
+        yearRange.endYear = to;
+      }
+    }
+  }
   getYearRangeFromYearNumAndQualifier(yearNum, wtsQualifier) {
     let startYear = yearNum;
     let endYear = yearNum;
@@ -71,7 +83,11 @@ class SearchHelper {
         break;
     }
 
-    return { startYear: startYear, endYear: endYear };
+    let yearRange = { startYear: startYear, endYear: endYear };
+
+    this.clampRange();
+
+    return yearRange;
   }
 
   getYearRangeFromYearNumAndExactness(yearNum, exactness) {
@@ -97,7 +113,11 @@ class SearchHelper {
       endYear += plusOrMinus;
     }
 
-    return { startYear: startYear, endYear: endYear };
+    let yearRange = { startYear: startYear, endYear: endYear };
+
+    this.clampRange();
+
+    return yearRange;
   }
 
   getYearRangeFromYearNumQualifierAndExactness(yearNum, qualifier, exactness) {
@@ -185,6 +205,11 @@ class SearchHelper {
       this.gd.inferEventDateQualifier(),
       exactness
     );
+  }
+
+  setAllowedDateRange(range) {
+    // range should either be undefined or have "from" and "to" properties as in collections
+    this.allowedDateRange = range;
   }
 }
 

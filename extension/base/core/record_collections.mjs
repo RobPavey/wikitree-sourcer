@@ -1888,6 +1888,70 @@ const RecordCollectionData = [
     },
   },
 
+  // Queensland BMD
+  {
+    wtsId: "QueenslandBirths",
+    title: "Queensland Birth Index",
+    country: "Australia",
+    isBirth: true,
+    partOf: ["AustraliaBirths"],
+    sites: {
+      fmp: {
+        id: "Queensland Births 1829-1919",
+        dates: { from: 1829, to: 1919 },
+        // The father's last name is usually implied and will fail to match on FMP
+        searchQueryFields: {
+          district: "",
+          fatherLastName: "",
+        },
+      },
+      qldbdm: {
+        id: "birth",
+        dates: { from: 1829, to: 1926 },
+        searchQueryFields: { registrationNumber: "Book_Page" },
+      },
+    },
+  },
+  {
+    wtsId: "QueenslandDeaths",
+    title: "Queensland Death Index",
+    country: "Australia",
+    isDeath: true,
+    partOf: ["AustraliaDeaths"],
+    sites: {
+      qldbdm: {
+        id: "death",
+        dates: { from: 1829, to: 1996 },
+        searchQueryFields: { registrationNumber: "Book_Page" },
+      },
+    },
+  },
+  {
+    wtsId: "QueenslandMarriages",
+    title: "Queensland Marriage Index",
+    country: "Australia",
+    isMarriage: true,
+    partOf: ["AustraliaMarriages"],
+    sites: {
+      fmp: {
+        id: "Queensland Marriages 1829-1939",
+        dates: { from: 1829, to: 1939 },
+        searchQueryFields: {
+          district: "",
+          fatherFirstName: "",
+          fatherLastName: "",
+          motherFirstName: "",
+          motherLastName: "useKeyword",
+        },
+      },
+      qldbdm: {
+        id: "marriage",
+        dates: { from: 1829, to: 1951 },
+        searchQueryFields: { registrationNumber: "Book_Page" },
+      },
+    },
+  },
+
   // South Australia BMD
   {
     wtsId: "SouthAustraliaBirths",

@@ -99,6 +99,24 @@ async function checkForPendingSearch() {
   });
 }
 
+function scrollResultsIntoViewWhenReady() {
+  let searchResultsElement = document.getElementById("searchresults");
+  if (!searchResultsElement) {
+    return;
+  }
+
+  const callback = (mutationList, observer) => {
+    //console.log("Mutation observer callback for scrollResultsIntoViewWhenReady");
+    //console.log(mutationList);
+    //console.log(observer);
+    searchResultsElement.scrollIntoView(true);
+  };
+
+  const observer = new MutationObserver(callback);
+  const config = { attributes: true, childList: true, subtree: true };
+  observer.observe(searchResultsElement, config);
+}
+
 async function doPendingSearch() {
   console.log("##############################################################################");
   console.log("doPendingSearch: called");
@@ -114,39 +132,64 @@ async function doPendingSearch() {
     console.log("doPendingSearch: isRetry is");
     console.log(isRetry);
 
-    let searchButtonElement = document.querySelector("#search");
+    let searchButtonElement = document.getElementById("search");
 
-    for (let key in fieldData) {
+    // first set the checkbox fields since these affect the text fields
+    for (let key of Object.keys(fieldData)) {
+      //console.log("doPendingSearch: key is: " + key);
+      let value = fieldData[key];
+      //console.log("doPendingSearch: value is: " + value);
+
+      if (value !== undefined && value !== "") {
+        console.log("doPendingSearch: key is: " + key);
+
+        let inputElement = document.getElementById(key);
+        console.log("doPendingSearch: inputElement is:");
+        console.log(inputElement);
+
+        if (inputElement) {
+          if (inputElement.type == "checkbox") {
+            if (inputElement.checked !== value) {
+              inputElement.click();
+              await sleep(50);
+            }
+          }
+        } else {
+          inputNotFound = true;
+          break;
+        }
+      }
+    }
+
+    // then set the text fields
+    for (let key of Object.keys(fieldData)) {
       //console.log("doPendingSearch: key is: " + key);
 
-      if (key) {
-        let value = fieldData[key];
-        //console.log("doPendingSearch: value is: " + value);
+      let value = fieldData[key];
+      //console.log("doPendingSearch: value is: " + value);
 
-        if (value !== undefined && value !== "") {
-          console.log("doPendingSearch: key is: " + key);
+      if (value !== undefined && value !== "") {
+        console.log("doPendingSearch: key is: " + key);
 
-          let inputElement = document.querySelector(`#${key}`);
-          console.log("doPendingSearch: inputElement is:");
-          console.log(inputElement);
+        let inputElement = document.getElementById(key);
+        console.log("doPendingSearch: inputElement is:");
+        console.log(inputElement);
 
-          if (inputElement) {
+        if (inputElement) {
+          if (inputElement.type != "checkbox") {
             // just setting the value sometimes does not seem to register with the form
             inputElement.focus();
             document.execCommand("selectAll", false);
             document.execCommand("insertText", false, value);
+            await sleep(10);
             if (searchButtonElement) {
               // moves to another input so that this field gets processed
               searchButtonElement.focus();
             }
-            //mainElement.scrollIntoView(); // so user can see the "please wait" message
-            //addMutationObserver(inputElement);
-            //setSearchingBanner();
-            await sleep(100);
-          } else {
-            inputNotFound = true;
-            break;
           }
+        } else {
+          inputNotFound = true;
+          break;
         }
       }
     }
@@ -156,6 +199,7 @@ async function doPendingSearch() {
 
     if (searchButtonElement) {
       searchButtonElement.click();
+      scrollResultsIntoViewWhenReady();
     }
   }
 }
