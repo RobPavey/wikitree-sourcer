@@ -1378,15 +1378,13 @@ if (runningExtensionId === currentExtensionId) {
   ];
 
   function wtPlusApiGetProfilesUsingFsId(idString) {
-    let pageIdData = pageMods.getIdDataFromUrl(document.URL);
-    let referrer = pageIdData ? pageIdData.id : "";
+    let referrer = document.URL;
     let url = `https://plus.wikitree.com/function/wtFamilySearch/Sourcer.json?query=${idString}`;
     return pageMods.wtPlusApiCall(url, referrer);
   }
 
   function wtPlusApiGetProfilesUsingFgId(idString) {
-    let pageIdData = pageMods.getIdDataFromUrl(document.URL);
-    let referrer = pageIdData ? pageIdData.id : "";
+    let referrer = document.URL;
     let url = `https://plus.wikitree.com/function/wtFindAGrave4Bee/Sourcer.json?query=${idString}`;
     return pageMods.wtPlusApiCall(url, referrer);
   }

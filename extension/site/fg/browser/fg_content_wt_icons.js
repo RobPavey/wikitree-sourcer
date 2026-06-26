@@ -200,15 +200,13 @@ if (runningExtensionId === currentExtensionId) {
   ];
 
   function wtPlusApiGetProfilesUsingFgId(idString) {
-    let pageIdData = pageMods.getIdDataFromUrl(document.URL);
-    let referrer = pageIdData ? pageIdData.id : "";
+    let referrer = document.URL;
     let url = `https://plus.wikitree.com/function/wtFindAGrave4Bee/Sourcer.json?query=${idString}`;
     return pageMods.wtPlusApiCall(url, referrer);
   }
 
   function wtPlusApiGetCategoryForCemetery(id) {
-    let pageIdData = pageMods.getIdDataFromUrl(document.URL);
-    let referrer = pageIdData ? pageIdData.id : "";
+    let referrer = document.URL;
     let url = `https://plus.wikitree.com/function/wtCatCIBSearch/BEE_FindAGraveButton.json?Query=${id}&cib=FGCemetery`;
     return pageMods.wtPlusApiCall(url, referrer);
   }
