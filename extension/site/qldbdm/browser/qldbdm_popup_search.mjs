@@ -37,7 +37,7 @@ const searchMenuConfig = {
     countryList: ["Australia", "Colony of Queensland"],
   },
   localStorageConfig: {
-    searchUrl: "https://www.familyhistory.bdm.qld.gov.au/",
+    searchUrl: "https://www.familyhistory.bdm.qld.gov.au/reset",
   },
   defaultMenuItem: {
     menuItemText: "Search Queensland BDM (Aus)",

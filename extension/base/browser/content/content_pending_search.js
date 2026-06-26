@@ -47,62 +47,6 @@ async function getPendingSearch() {
   });
 }
 
-async function checkForPendingSearch() {
-  console.log("checkForPendingSearch: called");
-  console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
-
-  if (document.referrer) {
-    // when this page was opened by the extension referrer is an empty string
-    return;
-  }
-
-  console.log("checkForPendingSearch: URL is");
-  console.log(document.URL);
-
-  let searchData = undefined;
-  try {
-    searchData = await getPendingSearch();
-  } catch (error) {
-    console.log("checkForPendingSearch: getPendingSearch reject");
-  }
-
-  console.log("checkForPendingSearch: searchData is:");
-  console.log(searchData);
-
-  if (!searchData) {
-    return;
-  }
-
-  if (searchData.url != document.URL) {
-    console.log("checkForPendingSearch: URLs do not match");
-    return;
-  }
-
-  setSearchingBanner();
-
-  console.log("checkForPendingSearch: got formValues:");
-  console.log(searchData);
-
-  let timeStamp = searchData.timeStamp;
-  let timeStampNow = Date.now();
-  let timeSinceSearch = timeStampNow - timeStamp;
-
-  console.log("checkForPendingSearch: timeStamp is: " + timeStamp);
-  console.log("checkForPendingSearch: timeStampNow is: " + timeStampNow);
-  console.log("checkForPendingSearch: timeSinceSearch is: " + timeSinceSearch);
-
-  // It can take a long time to populate the page with the input fields
-  if (timeSinceSearch < 50000) {
-    pendingSearchData = searchData;
-    doPendingSearch();
-  }
-
-  // clear the search data no that we have set pendingSearchData
-  chrome.storage.local.remove(["searchData"], function () {
-    //console.log("cleared searchData");
-  });
-}
-
 async function doSearchInExistingTab(request, sender, sendResponse) {
   //console.log("nswbdm: additionalMessageHandler, request is:");
   //console.log(request);

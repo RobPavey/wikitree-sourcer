@@ -175,7 +175,7 @@ async function handleSendMessageToRegisteredTabMessage(request, sender, sendResp
       } else if (!response) {
         console.log("handleSendMessageToRegisteredTabMessage failed, null response");
       } else {
-        //console.log("doSearchInExistingTab message sent OK");
+        //console.log("handleSendMessageToRegisteredTabMessage message sent OK");
         result.success = true;
         result.responseFromTab = response;
       }
