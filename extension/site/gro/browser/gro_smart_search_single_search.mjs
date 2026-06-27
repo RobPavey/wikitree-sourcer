@@ -220,14 +220,27 @@ async function doPostOnGroPage(url, postData) {
         };
       } else {
         console.log("doPostOnGroPage: chrome.runtime.sendMessage returned failed response");
-        return {
+        let result = {
           success: false,
         };
+        if (response.success) {
+          result.errorCondition = "Success but no response from tab";
+        } else if (response.responseFromTab) {
+          result.errorCondition = "Failed but response from tab";
+          result.status = response.responseFromTab.status;
+        } else if (response.lastError) {
+          result.errorCondition = response.lastError;
+        } else if (response.error) {
+          result.errorCondition = "Exception in background";
+          result.error = error;
+        }
+        return result;
       }
     } else {
       console.log("doPostOnGroPage: chrome.runtime.sendMessage returned null response");
       return {
         success: false,
+        errorCondition: "Null response",
       };
     }
   } catch (error) {
@@ -424,7 +437,17 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
 
     return extractResult;
   } else {
-    await showErrorDialog("Search failed. Unable to get search results from GRO.");
+    let message = "Search failed. Unable to get search results from GRO.";
+    if (fetchResult.errorCondition) {
+      message += " ErrorCondition = " + fetchResult.errorCondition + ".";
+    }
+    if (fetchResult.status) {
+      message += " Status = " + fetchResult.status + ".";
+    }
+    if (fetchResult.error) {
+      message += " Error = " + fetchResult.error + ".";
+    }
+    await showErrorDialog(message);
   }
 
   return { success: false };
