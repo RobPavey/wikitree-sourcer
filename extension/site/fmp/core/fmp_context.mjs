@@ -29,11 +29,11 @@ function transformLink(linkText, phase, options) {
     return "";
   }
 
+  let link = linkText;
+
   if (!link.includes("findmypast")) {
     return "";
   }
-
-  let link = linkText;
 
   let domain = "";
   // FMP can be accessed through NLS

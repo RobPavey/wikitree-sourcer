@@ -27,11 +27,11 @@ function transformLink(linkText, phase, options) {
     return "";
   }
 
+  let link = linkText;
+
   if (!link.includes("thegenealogist")) {
     return "";
   }
-
-  let link = linkText;
 
   let domain = link.replace(/^https?\:\/\/[^\.]+\.(thegenealogist[^\/]+)\/.*/, "$1");
 
