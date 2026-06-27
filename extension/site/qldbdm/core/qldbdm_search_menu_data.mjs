@@ -34,6 +34,20 @@ const SearchWithParametersData = {
     return true;
   },
 
+  includeSpouses: function (generalizedData, parameters) {
+    if (parameters.category == "marriages") {
+      return true;
+    }
+    return false;
+  },
+
+  includeParents: function (generalizedData, parameters) {
+    if (parameters.category == "births" || parameters.category == "deaths") {
+      return true;
+    }
+    return false;
+  },
+
   getCategories: function (generalizedData, parameters, options) {
     return categories;
   },
@@ -42,7 +56,35 @@ const SearchWithParametersData = {
     parameters.category = "all";
   },
 
-  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {},
+  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {
+    if (parameters.category == "births") {
+      let lastNamesArray = generalizedData.inferPersonLastNamesArray(generalizedData);
+      let lastNameAtBirth = generalizedData.inferLastNameAtBirth();
+      if (lastNamesArray && lastNamesArray.length > 1) {
+        if (lastNameAtBirth) {
+          let birthNameIndex = lastNamesArray.indexOf(lastNameAtBirth);
+          if (birthNameIndex != -1) {
+            parameters.lastNameIndex = birthNameIndex;
+          }
+        } else {
+          parameters.lastNameIndex = 0;
+        }
+      }
+    } else if (parameters.category == "deaths") {
+      let lastNamesArray = generalizedData.inferPersonLastNamesArray(generalizedData);
+      let lastNameAtDeath = generalizedData.inferLastNameAtDeath();
+      if (lastNamesArray && lastNamesArray.length > 1) {
+        if (lastNameAtDeath) {
+          let deathNameIndex = lastNamesArray.indexOf(lastNameAtDeath);
+          if (deathNameIndex != -1) {
+            parameters.lastNameIndex = deathNameIndex;
+          }
+        } else {
+          parameters.lastNameIndex = lastNamesArray.length - 1;
+        }
+      }
+    }
+  },
 
   updateParametersOnSubcategoryChange: function (generalizedData, parameters, options) {},
 

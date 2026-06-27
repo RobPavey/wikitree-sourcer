@@ -45,6 +45,48 @@ const searchBehaviorOptionsGroup = {
   ],
 };
 
+const searchParametersOptionsGroup = {
+  category: "search",
+  subcategory: "qldbdm",
+  tab: "search",
+  subsection: "qldbdm",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "birthYearExactness",
+      type: "select",
+      label: "Search exactness to use for birth year",
+      values: [
+        { value: "none", text: "Do not specify a birth year" },
+        { value: "auto", text: "Set automatically based on source" },
+        { value: "exact", text: "Exact year only" },
+        { value: 1, text: "+/- 1 years" },
+        { value: 3, text: "+/- 3 years" },
+        { value: 5, text: "+/- 5 years" },
+        { value: 10, text: "+/- 10 years" },
+        { value: 25, text: "+/- 25 years" },
+      ],
+      defaultValue: "auto",
+    },
+    {
+      optionName: "deathYearExactness",
+      type: "select",
+      label: "Search exactness to use for death year",
+      values: [
+        { value: "none", text: "Do not specify a death year" },
+        { value: "auto", text: "Set automatically based on source" },
+        { value: "exact", text: "Exact year only" },
+        { value: 1, text: "+/- 1 years" },
+        { value: 3, text: "+/- 3 years" },
+        { value: 5, text: "+/- 5 years" },
+        { value: 10, text: "+/- 10 years" },
+        { value: 25, text: "+/- 25 years" },
+      ],
+      defaultValue: "auto",
+    },
+  ],
+};
+
 const citationOptionsGroup = {
   category: "citation",
   subcategory: "qldbdm",
@@ -57,6 +99,8 @@ registerSubsectionForOptions("search", "qldbdm", "Queensland BDM (Aus)");
 registerSiteSearchPopupOptionsGroup("qldbdm");
 registerSubheadingForOptions("search", "qldbdm", "behavior", "Search Behavior");
 registerOptionsGroup(searchBehaviorOptionsGroup);
+registerSubheadingForOptions("search", "qldbdm", "parameters", "Search Parameters");
+registerOptionsGroup(searchParametersOptionsGroup);
 
 registerSubsectionForOptions("citation", "qldbdm", "Queensland BDM (Aus)");
 registerOptionsGroup(citationOptionsGroup);

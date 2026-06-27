@@ -85,7 +85,7 @@ class SearchHelper {
 
     let yearRange = { startYear: startYear, endYear: endYear };
 
-    this.clampRange();
+    this.clampRange(yearRange);
 
     return yearRange;
   }
@@ -115,7 +115,7 @@ class SearchHelper {
 
     let yearRange = { startYear: startYear, endYear: endYear };
 
-    this.clampRange();
+    this.clampRange(yearRange);
 
     return yearRange;
   }
@@ -205,6 +205,39 @@ class SearchHelper {
       this.gd.inferEventDateQualifier(),
       exactness
     );
+  }
+
+  getYearRangeForLifespan(birthExactness, deathExactness, birthOffset = 0) {
+    const maxLifespan = Number(this.options.search_general_maxLifespan);
+    let range = this.gd.inferPossibleLifeYearRange(maxLifespan, this.runDate);
+    if (range) {
+      if (range.startYear) {
+        let startNum = Number(range.startYear);
+        if (startNum) {
+          startNum += birthOffset;
+          range.startYear = startNum.toString();
+        }
+      }
+    }
+
+    let birthqualifier = this.gd.inferBirthDateQualifier();
+    let deathqualifier = this.gd.inferDeathDateQualifier();
+    if (!birthqualifier) {
+      birthqualifier = dateQualifiers.NONE;
+    }
+    if (!deathqualifier) {
+      deathqualifier = dateQualifiers.NONE;
+    }
+
+    this.adjustYearRangeForQualifiersAndExactness(
+      range,
+      birthExactness,
+      deathExactness,
+      birthqualifier,
+      deathqualifier
+    );
+
+    return range;
   }
 
   setAllowedDateRange(range) {

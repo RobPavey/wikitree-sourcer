@@ -26,5 +26,9 @@
       }
     }
   },
+  "collectionData": {
+    "id": "birth",
+    "registrationNumber": "1875/B/18577"
+  },
   "hasValidData": true
 }

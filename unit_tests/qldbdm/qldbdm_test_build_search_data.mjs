@@ -26,14 +26,48 @@ import { buildSearchData } from "../../extension/site/qldbdm/core/qldbdm_build_s
 import { runBuildSearchDataTests } from "../test_utils/test_build_search_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    // has pref name
-    caseName: "wikitree_stanway-252_read",
-    inputPath: "wikitree/generalized_data/ref/stanway-252_read",
-    typeOfSearch: "Births",
+    caseName: "birth_1875_david_goodwin",
+    inputPath: "qldbdm/generalized_data/ref/birth_1875_david_goodwin",
+    typeOfSearch: "births",
+    optionVariants: [
+      {
+        variantName: "paramDeath",
+        typeOfSearch: "SpecifiedParameters",
+        searchParameters: {
+          category: "deaths",
+          lastNameIndex: 0,
+          spouseIndex: -1,
+          father: true,
+          mother: true,
+        },
+        optionOverrides: {
+          search_qldbdm_birthYearExactness: 5,
+        },
+      },
+    ],
   },
-  */
+  {
+    caseName: "death_1932_david_goodwin",
+    inputPath: "qldbdm/generalized_data/ref/death_1932_david_goodwin",
+    typeOfSearch: "deaths",
+    optionVariants: [
+      {
+        variantName: "paramDeath",
+        typeOfSearch: "SpecifiedParameters",
+        searchParameters: {
+          category: "births",
+          lastNameIndex: 0,
+          spouseIndex: -1,
+          father: true,
+          mother: true,
+        },
+        optionOverrides: {
+          search_qldbdm_birthYearExactness: 5,
+        },
+      },
+    ],
+  },
 ];
 
 async function runTests(testManager) {

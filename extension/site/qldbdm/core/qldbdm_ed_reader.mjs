@@ -141,9 +141,9 @@ class QldbdmEdReader extends ExtractedDataReader {
     }
     let collectionData = { id: id };
 
-    let registrationDetails = this.ed["Registration details"];
+    let registrationDetails = this.ed.recordData["Registration details"];
     if (registrationDetails) {
-      collectionData.registrationDetails = registrationDetails;
+      collectionData.registrationNumber = registrationDetails;
     }
 
     return collectionData;

@@ -26,6 +26,21 @@ import { RC } from "../../../base/core/record_collections.mjs";
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { SearchHelper } from "../../../base/core/search_helper.mjs";
 
+function addAppropriateSurname(gd, parameters, fieldData) {
+  let lastName = "";
+  let lastNamesArray = gd.inferPersonLastNamesArray(gd);
+  if (lastNamesArray.length > 0) {
+    if (lastNamesArray.length == 1) {
+      lastName = lastNamesArray[0];
+    } else if (lastNamesArray.length > parameters.lastNameIndex) {
+      lastName = lastNamesArray[parameters.lastNameIndex];
+    }
+  }
+  if (lastName) {
+    fieldData["subjectfamilyname"] = lastName;
+  }
+}
+
 function buildSearchData(input) {
   let fieldData = {};
   let selectData = {};
@@ -80,9 +95,9 @@ function buildSearchData(input) {
     addAppropriateSurname(gd, parameters, fieldData);
   } else {
     let lastName = gd.inferLastNames();
-    if (typeOfSearch == "Births") {
+    if (typeOfSearch == "births") {
       lastName = gd.inferLastNameAtBirth();
-    } else if (typeOfSearch == "Deaths") {
+    } else if (typeOfSearch == "deaths") {
       lastName = gd.inferLastNameAtDeath();
     }
 
@@ -139,58 +154,128 @@ function buildSearchData(input) {
   }
 
   // date range
-  let birthYear = gd.inferBirthYear();
-  let deathYear = gd.inferDeathYear();
-  let eventYear = gd.inferEventYear();
-  if (refineType == "birth" || refineType == "death") {
-    let range = helper.getYearRangeForBirth(options.search_gensau_birthYearExactness);
+  if (refineType == "birth") {
+    // Note that the search form allows birth date to be specified for deaths
+    // but most death records do not have this data and, if provided, the search fails
+    let range = helper.getYearRangeForBirth(options.search_qldbdm_birthYearExactness);
+
+    if (!range) {
+      // no birth year - calculate range from max lifespan
+      const birthExactness = options.search_qldbdm_birthYearExactness;
+      const deathExactness = options.search_qldbdm_deathYearExactness;
+      range = helper.getYearRangeForLifespan(birthExactness, deathExactness);
+    }
+
     if (range && range.startYear) {
       fieldData["dobfrom"] = range.startYear;
       if (range.endYear && range.endYear != range.startYear) {
-        fieldData["dobto"] = range.startYear;
+        fieldData["dobto"] = range.endYear;
       }
     }
   }
 
   if (refineType == "death") {
-    let range = helper.getYearRangeForDeath(options.search_gensau_deathYearExactness);
+    let range = helper.getYearRangeForDeath(options.search_qldbdm_deathYearExactness);
+
+    if (!range) {
+      // no death year - calculate range from max lifespan
+      const birthExactness = options.search_qldbdm_birthYearExactness;
+      const deathExactness = options.search_qldbdm_deathYearExactness;
+      range = helper.getYearRangeForLifespan(birthExactness, deathExactness);
+    }
+
     if (range && range.startYear) {
       fieldData["doefrom"] = range.startYear;
       if (range.endYear && range.endYear != range.startYear) {
-        fieldData["doeto"] = range.startYear;
+        fieldData["doeto"] = range.endYear;
       }
     }
   }
 
   if (refineType == "marriage") {
-    const maxLifespan = Number(options.search_general_maxLifespan);
-    let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
-    if (range) {
-      if (range.startYear) {
-        let startNum = Number(range.startYear);
-        if (startNum) {
-          startNum += 14;
-          range.startYear = startNum.toString();
-        }
-        fieldData["doefrom"] = range.startYear;
+    if (typeOfSearch == "SameCollection") {
+      let eventYear = gd.inferEventYear();
+      if (eventYear) {
+        fieldData["doefrom"] = eventYear;
       }
-      if (range.endYear) {
-        fieldData["doeto"] = range.endYear;
+    } else {
+      const birthExactness = options.search_qldbdm_birthYearExactness;
+      const deathExactness = options.search_qldbdm_deathYearExactness;
+      const earliestMarriageAge = 14;
+      let range = helper.getYearRangeForLifespan(birthExactness, deathExactness, earliestMarriageAge);
+      if (range) {
+        if (range.startYear) {
+          fieldData["doefrom"] = range.startYear;
+        }
+        if (range.endYear) {
+          fieldData["doeto"] = range.endYear;
+        }
+      }
+
+      if (parameters && parameters.spouseIndex != -1 && gd.spouses) {
+        if (gd.spouses.length > parameters.spouseIndex) {
+          let spouse = gd.spouses[parameters.spouseIndex];
+          if (spouse.name) {
+            let spouseName = spouse.name.inferFullName();
+            if (spouseName) {
+              fieldData["spousename"] = spouseName;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // parents
+  if (refineType == "birth" || refineType == "death") {
+    if (parameters && gd.parents) {
+      if (parameters.father && gd.parents.father && gd.parents.father.name) {
+        let father = gd.parents.father;
+        let fatherName = father.name.inferFullName();
+        if (fatherName) {
+          fieldData["fathersname"] = fatherName;
+        }
+      }
+      if (parameters.mother && gd.parents.mother && gd.parents.mother.name) {
+        let mother = gd.parents.mother;
+        let motherName = mother.name.inferFullName();
+        if (motherName) {
+          fieldData["mothersname"] = motherName;
+        }
       }
     }
   }
 
   // for same collection we can possibly set the registration number
   if (typeOfSearch == "SameCollection" && gd.collectionData) {
-    let regNum = "";
+    let code = "";
     if (gd.collectionData.registrationNumber) {
-      regNum = gd.collectionData.registrationNumber;
+      // this will typically be of the form "1911/B009762"
+      code = gd.collectionData.registrationNumber;
     }
-    if (!regNum && gd.collectionData.referenceNumber) {
-      regNum = gd.collectionData.referenceNumber;
+    if (!code && gd.collectionData.referenceNumber) {
+      // This will typically be of the form "1911/B/9762"
+      code = gd.collectionData.referenceNumber;
     }
-    if (regNum) {
-      //fieldData["historicalSearch-events-registrationNumber-number"] = regNum;
+    if (code) {
+      let regYear = "";
+      let regType = "";
+      let regNum = "";
+
+      let parts = code.split("/");
+
+      if (parts.length == 3) {
+        regYear = parts[0];
+        regType = parts[1];
+        regNum = parts[2];
+      } else if (parts.length == 2) {
+        regYear = parts[0];
+        regType = parts[1][0];
+        regNum = parts[1].substring(1);
+      }
+      fieldData["regyear"] = regYear;
+      fieldData["regtype"] = regType;
+      fieldData["regnum"] = regNum;
     }
   }
 
