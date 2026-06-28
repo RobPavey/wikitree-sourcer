@@ -272,6 +272,46 @@ class CitationParser {
       }
     }
   }
+
+  isValidYear(yearString) {
+    let yearNum = parseInt(yearString);
+    if (isNaN(yearNum)) {
+      return false;
+    }
+
+    if (year < 0) {
+      return false;
+    }
+
+    let now = new Date();
+    let yearNow = now.getFullYear();
+    if (yearNum > yearNow) {
+      return false;
+    }
+  }
 }
 
-export { CitationParser };
+function doesTextMatchForContextPhase(text, phase, phaseMatches) {
+  if (!text) {
+    return false;
+  }
+
+  let isMatch = false;
+  let matches = phaseMatches[phase];
+  for (let matchSet of matches) {
+    let matchesThisSet = true;
+    for (let regex of matchSet) {
+      if (!regex.test(text)) {
+        matchesThisSet = false;
+      }
+    }
+    if (matchesThisSet) {
+      isMatch = true;
+      break;
+    }
+  }
+
+  return isMatch;
+}
+
+export { CitationParser, doesTextMatchForContextPhase };

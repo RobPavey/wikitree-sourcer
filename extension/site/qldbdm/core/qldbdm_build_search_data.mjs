@@ -149,7 +149,9 @@ function buildSearchData(input) {
     }
 
     if (collection) {
-      helper.setAllowedDateRange(collection.dates);
+      let siteCollection = collection.sites.qldbdm;
+      let allowedDates = RC.getCollectionDates(collection, siteCollection);
+      helper.setAllowedDateRange(allowedDates);
     }
   }
 

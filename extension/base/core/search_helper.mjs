@@ -42,11 +42,17 @@ class SearchHelper {
     if (this.allowedDateRange) {
       let from = this.allowedDateRange.from;
       let to = this.allowedDateRange.to;
+      // if yearRange is outside of allowed range then clear it
       if (yearRange.startYear < from) {
         yearRange.startYear = from;
+      } else if (yearRange.startYear > to) {
+        yearRange.startYear = to;
       }
+
       if (yearRange.endYear > to) {
         yearRange.endYear = to;
+      } else if (yearRange.endYear < from) {
+        yearRange.endYear = from;
       }
     }
   }
