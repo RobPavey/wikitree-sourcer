@@ -339,6 +339,7 @@ const CountryData = [
   { stdName: "American Samoa", matches: ["American Samoa"] },
   { stdName: "Papua New Guinea", matches: ["Papua New Guinea"] },
   { stdName: "Colony of Victoria", matches: ["Colony of Victoria"], partOf: ["Australia"] },
+  { stdName: "Colony of Queensland", matches: ["Colony of Queensland", "Queensland"], partOf: ["Australia"] },
   { stdName: "New South Wales", matches: ["New South Wales"] },
 
   // North Africa
