@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Medical Patient''':\n\"South Australia - Hospital, Asylum and Lying-in Home Admissions\"<br/>\nGenealogy SA; Surname: STEWART; Given Names: Mrs; Year: 1916; Notes: Husband=A. DateChildLeft=11 Aug 1916. LeftWith=Mother. LeftTo=Home<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nMrs Stewart on 25 Jul 1916 in Clare Lying-in Home, South Australia, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mrs Stewart was a patient on 25 July 1916 in Clare Lying-in Home, South Australia, Australia.<ref>\n'''Medical Patient''':\n\"South Australia - Hospital, Asylum and Lying-in Home Admissions\"<br/>\nGenealogy SA; Surname: STEWART; Given Names: Mrs; Year: 1916; Notes: Husband=A. DateChildLeft=11 Aug 1916. LeftWith=Mother. LeftTo=Home<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nMrs Stewart on 25 Jul 1916 in Clare Lying-in Home, South Australia, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Medical Patient''': \"South Australia - Hospital, Asylum and Lying-in Home Admissions\"<br/>Genealogy SA; Surname: STEWART; Given Names: Mrs; Year: 1916; Notes: Husband=A. DateChildLeft=11 Aug 1916. LeftWith=Mother. LeftTo=Home<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Mrs Stewart on 25 Jul 1916 in Clare Lying-in Home, South Australia, Australia.",
+    "type": "source"
+  }
+}

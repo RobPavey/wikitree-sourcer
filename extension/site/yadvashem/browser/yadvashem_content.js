@@ -22,4 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`yadvashem`, `site/yadvashem/core/yadvashem_extract_data.mjs`);
+siteContentInit("yadvashem");

@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/irishg/core/irishg_extract_data.mjs";
 import { generalizeData } from "../../extension/site/irishg/core/irishg_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/irishg/core/irishg_build_citation.mjs";
 
@@ -175,7 +174,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("irishg", extractData, regressionData, testManager);
+  await runExtractDataTests("irishg", regressionData, testManager);
 
   await runGeneralizeDataTests("irishg", generalizeData, regressionData, testManager);
 

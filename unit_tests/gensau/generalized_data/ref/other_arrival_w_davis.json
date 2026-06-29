@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "PassengerList",
+  "name": {
+    "lastName": "Davis",
+    "forenames": "W A"
+  },
+  "hasValidData": true
+}

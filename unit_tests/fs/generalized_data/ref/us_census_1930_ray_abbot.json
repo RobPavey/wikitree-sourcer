@@ -121,18 +121,45 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|XMFP-N32}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "XMFP-N32"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|33S7-9R42-G67}}",
-    "{{FamilySearch Record|XMFP-N3X}}",
-    "{{FamilySearch Record|XMFP-N3F}}",
-    "{{FamilySearch Record|XMFP-N3N}}",
-    "{{FamilySearch Record|XMFP-N3J}}",
-    "{{FamilySearch Record|XMFP-N3V}}",
-    "{{FamilySearch Record|XMFP-N3K}}",
-    "{{FamilySearch Record|XMFP-N32}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "33S7-9R42-G67"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "XMFP-N3X"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "XMFP-N3F"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "XMFP-N3N"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "XMFP-N3J"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "XMFP-N3V"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "XMFP-N3K"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "XMFP-N32"
+    }
   ],
   "collectionData": {
     "id": "1810731",

@@ -36,13 +36,25 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|NQXX-QLZ}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "NQXX-QLZ"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|S3HT-6737-3CW}}",
-    "{{FamilySearch Record|NQXX-QL8}}",
-    "{{FamilySearch Record|NQXX-QLD}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "S3HT-6737-3CW"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "NQXX-QL8"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "NQXX-QLD"
+    }
   ],
   "collectionData": {
     "id": "1459684",

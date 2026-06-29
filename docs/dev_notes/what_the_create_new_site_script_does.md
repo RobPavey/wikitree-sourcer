@@ -1,6 +1,6 @@
 # What the create_new_site script does
 
-See the subsections below for what the script does and how they could be done manually if needed. Note you do not normally need to do these - the script does them automatically.
+See the subsections below for what the script does and how they could be done manually if needed. **Note you do not normally need to do these** - the script does them automatically.
 
 ## It creates the extension site folder
 
@@ -13,6 +13,7 @@ There are certain files that all sites will have and they should follow the nami
 In the browser folder:
 
 - `<site>_content.js`
+- `<site>_extract_data.js`
 - `<site>_popup.html`
 - `<site>_popup.mjs`
 - `<site>_popup_search.mjs`
@@ -21,16 +22,16 @@ In the core folder:
 
 - `<site>_build_citation.mjs`
 - `<site>_build_search_url.mjs`
-- `<site>_extract_data.mjs`
 - `<site>_generalize_data.mjs`
 - `<site>_options.mjs`
 - `<site>_uri_builder.mjs` : this one is not always needed, depending on how searches and citations links are created
 
 ## It adds imports in the extension/site/all folder
 
-The only javascript code in the extension that has to be modified for each site added is in the extension/site/all folder. You just need to add one import line to this file:
+The only *javascript* code in the *extension itself* that has to be modified for each site added is in the extension/site/all folder. You just need to add one import line to each of these files:
 
-- `extension/site/all/core/site_names.mjs`
+- `extension/site/all/core/register_site_data.mjs`
+- `extension/site/all/core/register_site_options.mjs`
 
 ## It creates the unit tests site folder
 
@@ -43,7 +44,7 @@ Look at one of the existing ones as an example. There is a main file `<site>\_te
 
 ## It adds the site to scripts/run_test.js
 
-All that is needed is to add one import. This will register the site for testing.
+All that is needed is to add the site name to the `siteNames` array. This will register the site for testing.
 
 ## It adds the site to the manifest.json file(s)
 
@@ -53,13 +54,12 @@ In order for the popup to work on your site you need to add the site to the mani
 * Safari macOS: `browser_variants/safari/macos/manifest.json`
 * Safari: iOS: `browser_variants/safari/ios/manifest.json`
 
-There are actually two places in the manifest file that have to be changed to add a site.
+There os now only one place in the manifest file that have to be changed to add a site.
 
-### Add a section under "content_scripts"
+### Add a line in the "optional_host_permissions" array
 
-This is the obvious one. This is what causes the extensions site-specific content script to be loaded when on this site. Pay close attention to the match section - not all web addresses start with www so make sure that the match string will match both record pages and the search page on your site.
+This allows the extension to access the genealogy pages for the new site - although the user still has to grant permission.
 
-### Add a section under "web_accessible_resources"
+Pay close attention to the match string - not all web addresses start with www so make sure that the match string will match both record pages and the search page on your site.
 
-This is because the `<site>_extract_data.mjs` file is loaded dynamically. Any module loaded dynamically by a content script has to be specified in this section.
 

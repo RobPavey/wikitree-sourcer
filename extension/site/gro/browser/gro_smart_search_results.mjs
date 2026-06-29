@@ -107,11 +107,11 @@ function getFormattedDataValue(extractedData, heading) {
 
 async function exportTable(extractedDataObjs) {
   let tableString = "";
-  const columnSeparator = ` ` + `||` + ` `;
+  const columnSeparator = " " + "||" + " ";
 
   const headingColor = "#E1F0B4";
 
-  tableString += `{|`;
+  tableString += "{|";
 
   tableString += ` border="1"`;
   tableString += ` cellpadding="4"`;
@@ -130,7 +130,7 @@ async function exportTable(extractedDataObjs) {
   let firstCol = true;
   for (let heading of dataHeadings) {
     if (firstCol) {
-      tableString += `| `;
+      tableString += "| ";
       firstCol = false;
     } else {
       tableString += columnSeparator;
@@ -153,7 +153,7 @@ async function exportTable(extractedDataObjs) {
     let firstCol = true;
     for (let heading of dataHeadings) {
       if (firstCol) {
-        tableString += `| `;
+        tableString += "| ";
         firstCol = false;
       } else {
         tableString += columnSeparator;
@@ -176,7 +176,7 @@ async function exportTable(extractedDataObjs) {
     exportedCount++;
   }
 
-  tableString += `|}`;
+  tableString += "|}";
 
   // table string complete, save to clipboard
   try {

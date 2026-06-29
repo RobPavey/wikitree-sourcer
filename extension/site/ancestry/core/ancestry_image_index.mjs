@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { buildCustomTable } from "/base/core/table_builder.mjs";
+import { CD } from "/base/core/country_data.mjs";
 
 function buildTableObject(data, dataObj, fieldNames, objectArray, options) {
   console.log("buildTableObject");
@@ -66,19 +67,25 @@ function buildCensusPageTable(data, dataObj, options) {
 
   let ed = data.extractedData;
 
-  let isVessel = false;
-  if (ed.imageBrowsePath && ed.imageBrowsePath.includes("> Vessels >")) {
-    isVessel = true;
-  }
-  let houseLabel = isVessel ? "Vessel" : "House";
-
   const headingMappings = {
     8978: {
       // England 1841 census
-      Place: {},
+      "No.": {
+        excludeColumn: true,
+      },
+      House: {
+        label: "Place",
+      },
       Name: {
         headings: ["Given Name", "Surname"],
         separator: " ",
+      },
+      Relation: {
+        excludeColumn: true,
+      },
+
+      MS: {
+        excludeColumn: true,
       },
       Age: {
         heading: "Age",
@@ -97,8 +104,8 @@ function buildCensusPageTable(data, dataObj, options) {
     },
     8860: {
       // England 1851 census
-      "House Number": {
-        heading: "Household schedule number",
+      "No.": {
+        heading: "House Number",
       },
       House: {},
       Name: {
@@ -122,7 +129,7 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Birth Place",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
         reverseElements: true,
         separator: ", ",
       },
@@ -153,7 +160,7 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Where born",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
         reverseElements: true,
         separator: ", ",
       },
@@ -185,12 +192,15 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Birth Place",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
+        exclude: "England",
         reverseElements: true,
         separator: ", ",
         replacements: {
           Nk: "N.K.",
+          Nnk: "N.K.",
         },
+        checkUkCountyCountry: true,
       },
     },
     7572: {
@@ -249,7 +259,7 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Birth Place",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
         reverseElements: true,
         separator: ", ",
       },
@@ -281,7 +291,7 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Birth Place",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
         reverseElements: true,
         separator: ", ",
       },
@@ -313,7 +323,7 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Birth Place",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
         reverseElements: true,
         separator: ", ",
       },
@@ -345,7 +355,7 @@ function buildCensusPageTable(data, dataObj, options) {
       },
       "Where Born": {
         heading: "Birth Place",
-        excludeEnding: ", England",
+        excludeEndings: [", England", ", Wales"],
         separator: ", ",
       },
     },
@@ -359,8 +369,12 @@ function buildCensusPageTable(data, dataObj, options) {
       if (mappingObj.heading) {
         let rowValue = row[mappingObj.heading];
         if (rowValue) {
-          if (mappingObj.excludeEnding && rowValue.endsWith(mappingObj.excludeEnding)) {
-            rowValue = rowValue.substring(0, rowValue.length - mappingObj.excludeEnding.length).trim();
+          if (mappingObj.excludeEndings) {
+            for (let ending of mappingObj.excludeEndings) {
+              if (rowValue.endsWith(ending)) {
+                rowValue = rowValue.substring(0, rowValue.length - ending.length).trim();
+              }
+            }
           }
           value = rowValue;
         }
@@ -378,15 +392,72 @@ function buildCensusPageTable(data, dataObj, options) {
         }
       }
 
-      if (mappingObj.reverseElements && mappingObj.separator) {
-        let elements = value.split(mappingObj.separator);
-        elements.reverse();
-        value = elements.join(mappingObj.separator);
-      }
+      if (value) {
+        if (mappingObj.reverseElements && mappingObj.separator) {
+          let elements = value.split(mappingObj.separator);
+          if (elements.length > 1) {
+            elements.reverse();
+            value = elements.join(mappingObj.separator);
+          } else {
+            //console.log("No separator found, value is: " + value);
+            //console.log("mappingObj is:");
+            //console.log(mappingObj);
+            // no separator found, could be something like
+            // "Brompton Kent England"
+            if (mappingObj.checkUkCountyCountry) {
+              let countryInfo = CD.getCountryEndingNoSeparators(value);
+              //console.log("countryInfo is:");
+              //console.log(countryInfo);
+              if (countryInfo) {
+                value = countryInfo.remainder;
+                let countyName = "";
+                let counties = CD.getCountiesForCountry(countryInfo.stdCountryName);
+                //console.log("counties is:");
+                //console.log(counties);
+                if (counties) {
+                  for (let county of counties) {
+                    for (let match of county.matches) {
+                      if (value.endsWith(" " + match)) {
+                        value = value.substring(0, value.length - match.length - 1);
+                        countyName = match;
+                        break;
+                      }
+                    }
+                    if (countyName) {
+                      break;
+                    }
+                  }
+                }
 
-      if (mappingObj.replacements) {
-        for (let key of Object.keys(mappingObj.replacements)) {
-          value = value.replace(key, mappingObj.replacements[key]);
+                if (countyName) {
+                  value = countyName + ", " + value;
+                }
+
+                if (mappingObj.excludeEndings) {
+                  let exclude = false;
+                  for (let ending of mappingObj.excludeEndings) {
+                    if (ending == ", " + countryInfo.noSepMatch) {
+                      exclude = true;
+                    }
+                  }
+                  if (!exclude) {
+                    value = countryInfo.noSepMatch + ", " + value;
+                  }
+                } else {
+                  value = countryInfo.noSepMatch + ", " + value;
+                }
+
+                //console.log("new value is:");
+                //console.log(value);
+              }
+            }
+          }
+        }
+
+        if (mappingObj.replacements) {
+          for (let key of Object.keys(mappingObj.replacements)) {
+            value = value.replace(key, mappingObj.replacements[key]);
+          }
         }
       }
     }
@@ -401,11 +472,26 @@ function buildCensusPageTable(data, dataObj, options) {
     rowObject[fieldName] = value;
   }
 
-  let fieldNames = ["No.", houseLabel, "Name", "Relation", "MS", "Age", "Sex", "Occupation", "Where Born"];
   let headingMapping = headingMappings[ed.dbId];
   if (!headingMapping) {
     return false;
   }
+
+  let isVessel = false;
+  if (ed.imageBrowsePath && ed.imageBrowsePath.includes("> Vessels >")) {
+    isVessel = true;
+  }
+  let houseLabel = "House";
+  if (isVessel) {
+    houseLabel = "Vessel";
+  } else {
+    let mappingObj = headingMapping["House"];
+    if (mappingObj && mappingObj.label) {
+      houseLabel = mappingObj.label;
+    }
+  }
+
+  let fieldNames = ["No.", houseLabel, "Name", "Relation", "MS", "Age", "Sex", "Occupation", "Where Born"];
 
   let objectArray = [];
 
@@ -445,8 +531,11 @@ function buildCensusPageTable(data, dataObj, options) {
       ageString = "age?";
     } else {
       const yearsAndMonthsRegex = /^(\d+) Years (\d+) Months$/;
+      const monthsRegex1 = /^(\d+) Mo$/;
       if (yearsAndMonthsRegex.test(ageString)) {
         ageString = ageString.replace(yearsAndMonthsRegex, "$1y $2m");
+      } else if (monthsRegex1.test(ageString)) {
+        ageString = ageString.replace(monthsRegex1, "$1m");
       }
     }
     setRowField(rowObject, "Age", ageString);
@@ -549,6 +638,10 @@ function buildCensusPageTable(data, dataObj, options) {
       if (!used) {
         useField = false;
       }
+    }
+
+    if (mappingObj && mappingObj.excludeColumn) {
+      useField = false;
     }
     if (useField) {
       usedFieldsNames.push(fieldName);

@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import fs from "fs";
+import path from "path";
 import readline from "node:readline/promises";
 
 const siteFiles = [
@@ -46,6 +47,17 @@ const siteFiles = [
       {
         needsHighlightRow: true,
         templateFileEnd: "_content_hr.js",
+      },
+    ],
+  },
+  {
+    root: "extension/site",
+    mid: "browser",
+    end: "_extract_data.js",
+    variants: [
+      {
+        needsHighlightRow: true,
+        templateFileEnd: "_extract_data_hr.js",
       },
     ],
   },
@@ -88,17 +100,6 @@ const siteFiles = [
     ],
   },
   { root: "extension/site", mid: "core", end: "_ed_reader.mjs" },
-  {
-    root: "extension/site",
-    mid: "core",
-    end: "_extract_data.mjs",
-    variants: [
-      {
-        needsHighlightRow: true,
-        templateFileEnd: "_extract_data_hr.mjs",
-      },
-    ],
-  },
   { root: "extension/site", mid: "core", end: "_generalize_data.mjs" },
   {
     root: "extension/site",
@@ -412,39 +413,146 @@ function addLineToFile(path, lineToAdd) {
   return true;
 }
 
-function updateSiteNamesFile(siteName) {
-  const path = "extension/site/all/core/site_names.mjs";
-  const lineToAdd = '  "' + siteName + '",';
-
+function addLineToFileAndSortAllLinesStartingwithString(path, lineToAdd, startString) {
   // read file
   let text = readFile(path);
   if (!text) {
     return false;
   }
-
   if (text.indexOf(lineToAdd) != -1) {
     // already there
     return false;
   }
 
-  let closeParenIndex = text.indexOf("];");
-  if (closeParenIndex == -1) {
-    // array not found
-    return false;
+  if (!text.endsWith("\n")) {
+    text += "\n";
   }
 
-  let textBeforeInsert = text.substring(0, closeParenIndex);
-  let textAfterInsert = text.substring(closeParenIndex);
-  let textToInsert = lineToAdd + "\n";
+  text += lineToAdd + "\n";
 
-  let newText = textBeforeInsert + textToInsert + textAfterInsert;
+  // now do the sort
+
+  // first check that the new line starts with startString
+  if (lineToAdd.startsWith(startString)) {
+    // loop back a line at a time to find first line that does not start with startString
+
+    let indexOfNewLineBeforeStartOfLine = text.lastIndexOf("\n" + startString, text.length - 1);
+    if (indexOfNewLineBeforeStartOfLine != -1) {
+      let lineStartIndex = indexOfNewLineBeforeStartOfLine + 1;
+      let lineEndIndex = text.indexOf("\n", lineStartIndex);
+      if (lineEndIndex == -1) {
+        lineEndIndex - text.length;
+      }
+      let lines = [];
+      lines.push(text.substring(lineStartIndex, lineEndIndex));
+      let currentPos = indexOfNewLineBeforeStartOfLine - 1;
+      while (true) {
+        indexOfNewLineBeforeStartOfLine = text.lastIndexOf("\n" + startString, currentPos);
+        if (indexOfNewLineBeforeStartOfLine == -1) {
+          break;
+        }
+        let lineStartIndex = indexOfNewLineBeforeStartOfLine + 1;
+        let lineEndIndex = currentPos + 1;
+        lines.push(text.substring(lineStartIndex, lineEndIndex));
+        currentPos = indexOfNewLineBeforeStartOfLine;
+        if (currentPos > 0) {
+          currentPos--; // move back one so lastIndexOf doesn't get the current line
+        }
+      }
+      if (lines.length > 1) {
+        // we have something to sort
+        lines.sort();
+        let newLinesText = "";
+        for (let line of lines) {
+          newLinesText += line + "\n";
+        }
+        let textBeforeLines = text.substring(0, currentPos + 2);
+        text = textBeforeLines + newLinesText;
+      }
+    }
+  } else {
+    console.log("Error: lineToAdd does not start with " + startString);
+  }
 
   // write site file
-  if (!writeFile(path, newText)) {
+  if (!writeFile(path, text)) {
     return false;
   }
 
   return true;
+}
+
+function sortOptionalHostPermissions(permissions) {
+  // this is suprisingly complicated and perhaps there is not correct answer.
+
+  // I worked on various solutions to try to get it to sory by the part of the domain name
+  // that is considered the "brand" e.g. "ancestry" or "geneteka" or "ecpp".
+  // But it didn't really look sorted at first glance. The main purpose of the
+  // sort is to make it look clearly sorted for a reviewer.
+
+  const sortByBrand = false;
+
+  if (sortByBrand) {
+    // These are "suffixes" that shouldn't be considered the brand name
+    const commonTlds = new Set([
+      "com",
+      "co",
+      "org",
+      "net",
+      "gov",
+      "edu",
+      "me",
+      "uk",
+      "ca",
+      "pl",
+      "gc",
+      "gnb",
+      "org",
+      "genealodzy",
+    ]);
+    permissions.sort((a, b) => {
+      const getSortKey = (str) => {
+        const match = str.match(/:\/\/(\*\.)?([^/]+)/);
+        if (!match) return { brand: str, full: str };
+
+        const host = match[2].toLowerCase();
+        const parts = host.split(".");
+
+        // Logic to find the brand:
+        // If the second-to-last part is a common TLD (like 'co' in 'co.uk'),
+        // the brand is the third-to-last part.
+        let brandIndex = parts.length - 2;
+        if (parts.length > 2 && commonTlds.has(parts[parts.length - 2])) {
+          brandIndex = parts.length - 3;
+        }
+
+        return {
+          brand: parts[brandIndex] || host,
+          full: host,
+          original: str,
+        };
+      };
+
+      const partA = getSortKey(a);
+      const partB = getSortKey(b);
+
+      // 1. Sort by Brand (ancestry vs billiongraves)
+      if (partA.brand !== partB.brand) {
+        return partA.brand.localeCompare(partB.brand);
+      }
+
+      // 2. Tie-breaker: Sort by the full host (e.g., .com vs .co.uk)
+      return partA.full.localeCompare(partB.full);
+    });
+  } else {
+    // simple obvious sort
+    permissions.sort((a, b) => {
+      return a.localeCompare(b, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      });
+    });
+  }
 }
 
 function updateManifestFile(siteName, urlMatch, path) {
@@ -457,79 +565,20 @@ function updateManifestFile(siteName, urlMatch, path) {
   let manifestData = JSON.parse(text);
 
   // sanity checks
-  let contentScripts = manifestData.content_scripts;
-  let webAccessibleResources = manifestData.web_accessible_resources;
 
-  if (!(contentScripts && Array.isArray(contentScripts))) {
-    return false;
-  }
-
-  if (!(webAccessibleResources && Array.isArray(webAccessibleResources))) {
-    return false;
-  }
-
-  /*
-    Example content script entry
-    {
-      "matches": ["*://www.wiewaswie.nl/*"],
-      "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/wiewaswie/browser/wiewaswie_content.js"]
-    },
-  */
-  const urlMatches = [urlMatch];
-  const siteContentPath = "site/" + siteName + "/browser/" + siteName + "_content.js";
-  let contentScriptsEntry = {
-    matches: urlMatches,
-    run_at: "document_idle",
-    js: ["base/browser/content/content_common.js", siteContentPath],
-  };
+  let optionalHostPermissions = manifestData.optional_host_permissions;
 
   let alreadyExists = false;
-  for (let entry of contentScripts) {
-    if (entry.matches == urlMatches) {
-      alreadyExists = true;
-    } else if (entry.js.includes(siteContentPath)) {
+  for (let entry of optionalHostPermissions) {
+    if (entry == urlMatch) {
       alreadyExists = true;
     }
   }
   if (!alreadyExists) {
-    contentScripts.push(contentScriptsEntry);
+    optionalHostPermissions.push(urlMatch);
   }
 
-  /*
-    Example web_accessible_resources section:
-    {
-      "resources": ["site/vicbdm/core/vicbdm_extract_data.mjs"],
-      "matches": ["*://*.bdm.vic.gov.au/*"]
-    },
-  */
-
-  // if the urlMatches string cotains any path after the domain that should be removed in the
-  // match for the web_accessible_resources
-  const urlWithPathRegEx = /^([^\/]+\:\/\/[^\/]+)\/.*\/\*$/;
-  let domainMatch = urlMatch;
-  if (urlWithPathRegEx.test(domainMatch)) {
-    domainMatch = domainMatch.replace(urlWithPathRegEx, "$1/*");
-  }
-  const domainMatches = [domainMatch];
-
-  const siteExtractPath = "site/" + siteName + "/core/" + siteName + "_extract_data.mjs";
-  let warEntry = {
-    resources: [siteExtractPath],
-    matches: domainMatches,
-  };
-
-  alreadyExists = false;
-  for (let entry of webAccessibleResources) {
-    if (entry.resources.includes(siteExtractPath)) {
-      alreadyExists = true;
-    } else if (entry.matches == domainMatches) {
-      alreadyExists = true;
-    }
-  }
-  if (!alreadyExists) {
-    webAccessibleResources.push(warEntry);
-  }
+  sortOptionalHostPermissions(optionalHostPermissions);
 
   const newText = JSON.stringify(manifestData, null, 2);
 
@@ -549,11 +598,18 @@ function updateManifestFiles(siteName, urlMatch) {
   return true;
 }
 
+function updateRegisterSiteData(siteName) {
+  const path = "extension/site/all/core/register_site_data.mjs";
+  const lineToAdd = 'import "../../' + siteName + "/core/" + siteName + '_site_data.mjs";';
+
+  return addLineToFileAndSortAllLinesStartingwithString(path, lineToAdd, "import");
+}
+
 function updateRegisterSiteOptions(siteName) {
   const path = "extension/site/all/core/register_site_options.mjs";
   const lineToAdd = 'import "../../' + siteName + "/core/" + siteName + '_options.mjs";';
 
-  return addLineToFile(path, lineToAdd);
+  return addLineToFileAndSortAllLinesStartingwithString(path, lineToAdd, "import");
 }
 
 function updateRunTest(siteName) {
@@ -587,12 +643,27 @@ function updateRunTest(siteName) {
     return false;
   }
 
-  const indexToAddLine = endOfArrayIndex;
+  const arrayStartIndex = text.indexOf("[", siteNamesIndex);
+  const arrayEndIndex = endOfArrayIndex + 1;
+  let arrayText = text.substring(arrayStartIndex, arrayEndIndex);
 
-  const textBefore = text.substring(0, indexToAddLine);
-  const textAfter = text.substring(indexToAddLine);
+  // if there is a comma after the last element of the array that it is not valid JSON
+  let regex = /(,[\s\n]*\])$/;
+  if (regex.test(arrayText)) {
+    arrayText = arrayText.replace(regex, "\n]");
+  }
+  let siteNamesArray = JSON.parse(arrayText);
 
-  text = textBefore + lineToAdd + textAfter;
+  siteNamesArray.push(siteName);
+
+  siteNamesArray.sort();
+
+  let newArrayText = JSON.stringify(siteNamesArray, null, 2);
+
+  const textBefore = text.substring(0, arrayStartIndex);
+  const textAfter = text.substring(arrayEndIndex);
+
+  text = textBefore + newArrayText + textAfter;
 
   // write site file
   if (!writeFile(path, text)) {
@@ -617,6 +688,15 @@ async function createNewSite() {
       parameters.siteDisplayName = process.argv[3];
       if (process.argv.length > 4) {
         parameters.siteUrlMatch = process.argv[4];
+        if (process.argv.length > 5) {
+          parameters.answers = process.argv[5];
+          if (process.argv.length > 6) {
+            let flags = process.argv[6];
+            if (flags.includes("-force")) {
+              parameters.force = true;
+            }
+          }
+        }
       }
     }
   }
@@ -631,49 +711,61 @@ async function createNewSite() {
     return;
   }
 
-  if (checkForExistingSite(parameters)) {
+  if (!parameters.force && checkForExistingSite(parameters)) {
     return;
   }
 
-  // Create a readline interface
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
+  if (parameters.answers) {
+    let answers = parameters.answers.split(",");
+    if (answers.length == 2) {
+      if (answers[0] == "n") {
+        parameters.searchUsingLocalStorage = true;
+      }
+      if (answers[1] == "y") {
+        parameters.needsHighlightRow = true;
+      }
+    }
+  } else {
+    // Create a readline interface
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
 
-  // Ask the user about search capabilities of site
-  let slsAnswer = await rl.question("Does this site support search using URL query? [y/n]: ");
-  //console.log("User entered: " + slsAnswer);
-  if (slsAnswer == "n") {
-    parameters.searchUsingLocalStorage = true;
-  }
+    // Ask the user about search capabilities of site
+    let slsAnswer = await rl.question("Does this site support search using URL query? [y/n]: ");
+    //console.log("User entered: " + slsAnswer);
+    if (slsAnswer == "n") {
+      parameters.searchUsingLocalStorage = true;
+    }
 
-  // Ask the user about search capabilities of site
-  let hrAnswer = await rl.question(
-    "Does this site lack record pages and require selecting a row to cite from search results? [y/n]: "
-  );
-  //console.log("User entered: " + hrAnswer);
-  if (hrAnswer == "y") {
-    parameters.needsHighlightRow = true;
-  }
+    // Ask the user about search capabilities of site
+    let hrAnswer = await rl.question(
+      "Does this site lack record pages and require selecting a row to cite from search results? [y/n]: "
+    );
+    //console.log("User entered: " + hrAnswer);
+    if (hrAnswer == "y") {
+      parameters.needsHighlightRow = true;
+    }
 
-  console.log("About to create the new site's folders and files.");
-  console.log("  siteName is '" + parameters.siteName + "'");
-  console.log("  siteDisplayName is '" + parameters.siteDisplayName + "'");
-  console.log("  siteUrlMatch is '" + parameters.siteUrlMatch + "'");
-  console.log("  searchUsingLocalStorage is '" + parameters.searchUsingLocalStorage + "'");
-  console.log("  needsHighlightRow is '" + parameters.needsHighlightRow + "'");
+    console.log("About to create the new site's folders and files.");
+    console.log("  siteName is '" + parameters.siteName + "'");
+    console.log("  siteDisplayName is '" + parameters.siteDisplayName + "'");
+    console.log("  siteUrlMatch is '" + parameters.siteUrlMatch + "'");
+    console.log("  searchUsingLocalStorage is '" + parameters.searchUsingLocalStorage + "'");
+    console.log("  needsHighlightRow is '" + parameters.needsHighlightRow + "'");
 
-  // Check with the user before continuing
-  let continueAnswer = await rl.question("Continue and create folders and files? [y/n]: ");
-  //console.log("User entered: " + continueAnswer);
-  if (continueAnswer != "y") {
+    // Check with the user before continuing
+    let continueAnswer = await rl.question("Continue and create folders and files? [y/n]: ");
+    //console.log("User entered: " + continueAnswer);
+    if (continueAnswer != "y") {
+      rl.close();
+      return;
+    }
+
+    // Close the readline interface after getting the input
     rl.close();
-    return;
   }
-
-  // Close the readline interface after getting the input
-  rl.close();
 
   // Now create all the folders for the new site
   if (!createSiteFolders(parameters.siteName)) {
@@ -687,7 +779,7 @@ async function createNewSite() {
     return;
   }
 
-  updateSiteNamesFile(parameters.siteName);
+  updateRegisterSiteData(parameters.siteName);
   updateRegisterSiteOptions(parameters.siteName);
   updateRunTest(parameters.siteName);
 

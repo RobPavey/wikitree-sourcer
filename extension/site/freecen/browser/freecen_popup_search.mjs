@@ -23,17 +23,17 @@ SOFTWARE.
 */
 
 import {
-  setupSearchCollectionsSubMenu,
+  setupSearchCollectionsSubmenu,
   addSameRecordMenuItem,
   addBackMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addMenuItem,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
   closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import {
   registerSearchMenuItemFunction,
@@ -42,7 +42,7 @@ import {
 } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
@@ -77,7 +77,7 @@ function freecenDoSearch(input) {
     const checkPermissionsOptions = {
       reason: "To perform a search on FreeCen a content script needs to be loaded on the freecen.org.uk search page.",
     };
-    let allowed = await checkPermissionForSite("*://www.freecen.org.uk/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("freecen", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;
@@ -142,14 +142,14 @@ async function freecenSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addFreecenDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search FreeCen (UK)",
     function (element) {
       freecenSearch(data.generalizedData);
     },
     function () {
-      setupFreecenSearchSubMenu(data, backFunction);
+      setupFreecenSearchSubmenu(data, backFunction);
     }
   );
 
@@ -169,13 +169,13 @@ function addFreecenSameRecordMenuItem(menu, data) {
 
 function addFreecenSearchCollectionsMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search a specific collection...", function (element) {
-    setupSearchCollectionsSubMenu(data, "freecen", freecenSearchCollection, backFunction);
+    setupSearchCollectionsSubmenu(data, "freecen", freecenSearchCollection, backFunction);
   });
 }
 
 function addFreecenSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupFreecenSearchWithParametersSubMenu(data, backFunction);
+    setupFreecenSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -183,9 +183,9 @@ function addFreecenSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupFreecenSearchSubMenu(data, backFunction) {
+async function setupFreecenSearchSubmenu(data, backFunction) {
   let backToHereFunction = function () {
-    setupFreecenSearchSubMenu(data, backFunction);
+    setupFreecenSearchSubmenu(data, backFunction);
   };
 
   let menu = beginMainMenu();
@@ -198,9 +198,9 @@ async function setupFreecenSearchSubMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-async function setupFreecenSearchWithParametersSubMenu(data, backFunction) {
+async function setupFreecenSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/freecen_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.FreecenData, freecenSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.FreecenData, freecenSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

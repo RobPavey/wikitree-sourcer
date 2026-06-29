@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Nova Scotia Births, Marriages, and Deaths\"<br/>\nNumber: 88-00431<br/>\n[https://archives.novascotia.ca/vital-statistics/ItemView/?ImageFile=88-431&Event=death&ID=168930 Nova Scotia Archives] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Unknown died.<ref>\n'''Death Registration''':\n\"Nova Scotia Births, Marriages, and Deaths\"<br/>\nNumber: 88-00431<br/>\n[https://archives.novascotia.ca/vital-statistics/ItemView/?ImageFile=88-431&Event=death&ID=168930 Nova Scotia Archives] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"Nova Scotia Births, Marriages, and Deaths\"<br/>Number: 88-00431<br/>[https://archives.novascotia.ca/vital-statistics/ItemView/?ImageFile=88-431&Event=death&ID=168930 Nova Scotia Archives] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

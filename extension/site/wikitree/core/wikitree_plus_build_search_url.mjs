@@ -114,10 +114,43 @@ function buildTemplateSearchUrl(input) {
   return result;
 }
 
+function buildIdSearchUrl(input) {
+  let idData = input.idData;
+
+  var builder = new WikiTreePlusUriBuilder();
+
+  let query = "";
+  if (idData) {
+    for (let id of idData) {
+      if (query) {
+        query += " OR ";
+      }
+
+      query += id.key + "=" + id.value;
+    }
+  }
+
+  builder.addSearchParameter("Query", query);
+  builder.addSearchParameter("render", "1");
+
+  let url = builder.getUri();
+
+  //console.log("URL is " + url);
+
+  var result = {
+    url: url,
+  };
+
+  return result;
+}
+
 function buildSearchUrl(input) {
   //console.log("buildSearchData, input is:");
   //console.log(input);
 
+  if (input.idData) {
+    return buildIdSearchUrl(input);
+  }
   if (input.templateData) {
     return buildTemplateSearchUrl(input);
   }

@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractDataFromFetch, extractData } from "../../extension/site/fs/core/fs_extract_data.mjs";
 import { generalizeData } from "../../extension/site/fs/core/fs_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/fs/core/fs_build_citation.mjs";
 import { buildHouseholdTable } from "../../extension/base/core/table_builder.mjs";
@@ -334,6 +333,11 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:K438-8WS",
   },
   {
+    // not getting the persons name or the names for census table (saved Mar 2026)
+    caseName: "us_census_1950_barbara_laflame",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6F3R-CFVH?lang=en",
+  },
+  {
     caseName: "us_census_1950_robert_stanton",
     url: "https://www.familysearch.org/ark:/61903/1:1:6XVR-FRK3",
   },
@@ -449,6 +453,14 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:Q2R1-ZVMS",
   },
   {
+    caseName: "us_nc_marriage_1954_nancy_furr",
+    url: "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BV?lang=en",
+  },
+  {
+    caseName: "us_nc_military_draft_1942_nancy_furr",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QVRG-JSDC?lang=en",
+  },
+  {
     caseName: "us_nv_marriage_1965_john_smith",
     url: "https://www.familysearch.org/ark:/61903/1:1:VVVW-XS7",
   },
@@ -476,6 +488,10 @@ const regressionData = [
   {
     caseName: "us_or_spouse_death_1989_leland_churchill",
     url: "https://www.familysearch.org/ark:/61903/1:1:VZ4P-PBP",
+  },
+  {
+    caseName: "us_pa_death_1793_mrs_jacob_mytinger",
+    url: "https://www.familysearch.org/ark:/61903/1:1:H543-TJMM?lang=en",
   },
   {
     caseName: "us_pa_marriage_amanda_duff",
@@ -513,8 +529,17 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:VMSB-3WR",
   },
   {
+    caseName: "us_tx_death_1963_bertha_hatten",
+    url: "https://www.familysearch.org/ark:/61903/1:1:K7D9-F1Z?lang=en",
+  },
+  {
     caseName: "us_tx_divorce_1976_sarah_pate",
     url: "https://www.familysearch.org/ark:/61903/1:1:VYX9-KBH",
+  },
+  {
+    // was not getting event date
+    caseName: "us_ut_child_church_membership_1916_emery_nielson",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6PGW-R2SM?lang=en",
   },
   {
     // was not getting parents
@@ -611,6 +636,11 @@ const imageRegressionData = [
     url: "https://www.familysearch.org/search/catalog/549079?availability=Family%20History%20Library",
   },
   {
+    // Was getting a title of "Image Viewer"
+    caseName: "image_us_de_land_records",
+    url: "https://www.familysearch.org/ark:/61903/3:1:3QS7-99WC-VH6B?cc=2078654&wc=M7HT-Z29%3A358133901%2C358577801&lang=en&i=41",
+  },
+  {
     // Note: I had to edit the saved .html file for many errors.
     caseName: "image_us_ky_marriage_1821",
     url: "https://www.familysearch.org/ark:/61903/3:1:3QS7-89SS-998T?i=31&cc=1804888",
@@ -640,6 +670,13 @@ const personRegressionData = [
     // has nickname
     caseName: "xx_profile_emma_jones_1874_1950",
     url: "https://www.familysearch.org/tree/person/details/L69W-LQL",
+    fetchType: "person",
+  },
+  {
+    // FamilySearch changed what the fetch returned in Apr 2026
+    // No description in dataObj
+    caseName: "xx_profile_garnett_swanson_1907_1990_apr2026fmt",
+    url: "https://www.familysearch.org/en/tree/person/details/L64W-R4Z",
     fetchType: "person",
   },
   {
@@ -729,6 +766,14 @@ const bookRegressionData = [
   },
 ];
 
+const createSourceRegressionData = [
+  {
+    // Synthetic Details page with the Create Source dialog open from the Sources sidebar.
+    caseName: "create_source_from_details_sidebar",
+    url: "https://www.familysearch.org/tree/person/details/TEST-123",
+  },
+];
+
 const optionVariants = [
   {
     variantName: "dataStyle_fsShort_fsCitation",
@@ -791,7 +836,13 @@ const optionVariants = [
 function cleanStaleOutputFiles(testManager) {
   //
   let logger = new LocalErrorLogger(testManager.results, "fs_clean");
-  let testCaseSets = [regressionData, imageRegressionData, personRegressionData, bookRegressionData];
+  let testCaseSets = [
+    regressionData,
+    imageRegressionData,
+    personRegressionData,
+    bookRegressionData,
+    createSourceRegressionData,
+  ];
   removeStaleOutputFiles("fs", "extracted_data", testCaseSets, logger);
   removeStaleOutputFiles("fs", "generalized_data", testCaseSets, logger);
   removeStaleOutputFiles("fs", "citations", testCaseSets, logger);
@@ -803,23 +854,25 @@ async function runTests(testManager) {
   // gets of regressionData that output into the same folders we have to do it here.
   cleanStaleOutputFiles(testManager);
 
-  await runExtractDataTests("fs", extractDataFromFetch, regressionData, testManager, false);
+  await runExtractDataTests("fs", regressionData, testManager, true, false);
   await runGeneralizeDataTests("fs", generalizeData, regressionData, testManager, false);
 
   const functions = { buildCitation: buildCitation, buildTable: buildHouseholdTable };
 
   await runBuildCitationTests("fs", functions, regressionData, testManager, optionVariants, false);
 
-  await runExtractDataTests("fs", extractData, imageRegressionData, testManager, false);
+  await runExtractDataTests("fs", imageRegressionData, testManager, false, false);
   await runGeneralizeDataTests("fs", generalizeData, imageRegressionData, testManager, false);
   await runBuildCitationTests("fs", functions, imageRegressionData, testManager, optionVariants, false);
 
-  await runExtractDataTests("fs", extractDataFromFetch, personRegressionData, testManager, false);
+  await runExtractDataTests("fs", personRegressionData, testManager, true, false);
   await runGeneralizeDataTests("fs", generalizeData, personRegressionData, testManager, false);
 
-  await runExtractDataTests("fs", extractData, bookRegressionData, testManager, false);
+  await runExtractDataTests("fs", bookRegressionData, testManager, false, false);
   await runGeneralizeDataTests("fs", generalizeData, bookRegressionData, testManager, false);
   await runBuildCitationTests("fs", functions, bookRegressionData, testManager, optionVariants, false);
+
+  await runExtractDataTests("fs", createSourceRegressionData, testManager, false, false);
 }
 
 export { runTests };

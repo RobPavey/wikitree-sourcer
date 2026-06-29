@@ -32,8 +32,11 @@
     }
   ],
   "marriageDate": "4 Mar 1873",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|XZJC-SH7}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "XZJC-SH7"
+    }
   ],
   "collectionData": {
     "id": "1854302",

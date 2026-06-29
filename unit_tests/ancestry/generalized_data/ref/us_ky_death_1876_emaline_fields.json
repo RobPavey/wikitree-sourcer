@@ -2,6 +2,13 @@
   "sourceType": "record",
   "recordType": "Death",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Emaline Fields",
+      "Anceline Fields",
+      "Anceline Sloas"
+    ]
+  },
   "name": {
     "name": "Emaline Fields"
   },

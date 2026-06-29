@@ -27,6 +27,7 @@ import { RC } from "./record_collections.mjs";
 import { StringUtils } from "./string_utils.mjs";
 import { DateUtils } from "./date_utils.mjs";
 import { RT, RecordSubtype, Role } from "./record_type.mjs";
+import { NameUtils } from "./name_utils.mjs";
 
 const possibleLifeSpan = 120;
 
@@ -375,6 +376,8 @@ const GD = {
       { standard: "son", starts: ["s."] },
     ];
 
+    const ignoreList = [{ starts: ["private", "<private"] }];
+
     let lc = string.toLowerCase();
 
     let exactValue = exactMap[lc];
@@ -439,6 +442,42 @@ const GD = {
 
       if (match) {
         return match;
+      }
+    }
+
+    let ignore = false;
+    for (let ignoreEntry of ignoreList) {
+      if (ignoreEntry.starts) {
+        for (let start of ignoreEntry.starts) {
+          if (lc.startsWith(start)) {
+            ignore = true;
+            break;
+          }
+        }
+      }
+      if (ignore && ignoreEntry.notContains) {
+        for (let cont of ignoreEntry.notContains) {
+          if (lc.includes(cont)) {
+            ignore = false;
+            break;
+          }
+        }
+      }
+      if (ignore && ignoreEntry.andContains) {
+        let doesContainOne = false;
+        for (let cont of ignoreEntry.andContains) {
+          if (lc.includes(cont)) {
+            doesContainOne = true;
+            break;
+          }
+        }
+        if (!doesContainOne) {
+          ignore = false;
+        }
+      }
+
+      if (ignore) {
+        return "";
       }
     }
 
@@ -720,6 +759,47 @@ class DateObj {
     }
   }
 
+  isSubsetOf(otherDateObj) {
+    if (!otherDateObj) {
+      return false;
+    }
+
+    if (!otherDateObj.dateString && !otherDateObj.yearString) {
+      return false;
+    }
+
+    if (this.dateString && otherDateObj.dateString) {
+      if (this.dateString == otherDateObj.dateString) {
+        return true;
+      }
+
+      let parsedDate = DateUtils.parseDateString(this.dateString);
+      let otherParsedDate = DateUtils.parseDateString(otherDateObj.dateString);
+
+      if (parsedDate.yearNum == otherParsedDate.yearNum) {
+        if (!parsedDate.hasMonth || parsedDate.monthNum == otherParsedDate.monthNum) {
+          if (!parsedDate.hasDay || parsedDate.dayNum == otherParsedDate.dayNum) {
+            return true;
+          }
+        }
+      }
+    } else if (this.dateString && otherDateObj.yearString) {
+      if (this.dateString == otherDateObj.yearString) {
+        return true;
+      }
+    } else if (this.yearString && otherDateObj.dateString) {
+      let otherParsedDate = DateUtils.parseDateString(otherDateObj.dateString);
+      if (this.yearString == otherParsedDate.year) {
+        return true;
+      }
+    } else if (this.yearString && otherDateObj.yearString) {
+      if (this.yearString == otherDateObj.yearString) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   setDateAndQualifierFromString(dateString, isYearString = false) {
     const prefixes = [
       { prefix: "about", qualifier: dateQualifiers.ABOUT },
@@ -882,7 +962,7 @@ class PlaceObj {
     return classObj;
   }
 
-  separatePlaceIntoParts() {
+  separatePlaceIntoParts(defaultCountryStdName) {
     // it can be hard to get the county from the string.
     let country = undefined;
     let placeNameMinusCountry = this.placeString;
@@ -899,6 +979,8 @@ class PlaceObj {
       placeNameMinusCountry = countryExtract.remainder;
 
       result.country = country.stdName;
+    } else {
+      country = CD.matchCountryFromStdCountryName(defaultCountryStdName);
     }
 
     if (country && !country.hasStates && !country.hasCounties) {
@@ -1098,6 +1180,21 @@ class PlaceObj {
     return place;
   }
 
+  inferExtractedPlaceString() {
+    // This is the place string from the extracted record, it may be cleaned
+    // but it has not been standardized or had county/state/country added.
+    // Not all sites set this up yet, in those cases this is the same as inferPlaceString.
+    // So for searching or adding profiles you would use inferPlaceString but for
+    // narrative and dataString you would likely want inferExtractedPlaceString
+    if (Object.hasOwn(this, "extractedPlaceString")) {
+      // Note that this could be an empty string but with still want to return it rather
+      // than returning a string that is just the inferrred state/country
+      return this.extractedPlaceString;
+    }
+
+    return this.inferPlaceString();
+  }
+
   getPreposition(isForFullPlaceIncludingStreetAddress = false, placeStringOverride = "") {
     let prepositionHint = this.prepositionHint;
     if (prepositionHint) {
@@ -1270,19 +1367,6 @@ class NameObj {
     if (!name) {
       return "";
     }
-
-    let wordCount = StringUtils.countWords(name);
-
-    if (isFull) {
-      if (wordCount < 3) {
-        return name;
-      }
-    } else {
-      if (wordCount < 2) {
-        return name;
-      }
-    }
-
     let firstWord = StringUtils.getFirstWord(name);
 
     const titles = [
@@ -1364,27 +1448,37 @@ class NameObj {
     lcFirstWord = lcFirstWord.replace(/\//g, "");
 
     if (titles.includes(lcFirstWord)) {
-      // remove the title unless it would leave the name empty
       let remainder = StringUtils.getWordsAfterFirstWord(name);
-      if (remainder) {
-        if (!titlesThatAreNotPrefixes.includes(lcFirstWord)) {
-          if (this.prefix) {
-            if (!this.prefix.includes(firstWord)) {
-              this.prefix += " " + firstWord;
-            }
-          } else {
-            this.prefix = firstWord;
+      if (!titlesThatAreNotPrefixes.includes(lcFirstWord)) {
+        if (this.prefix) {
+          if (!this.prefix.includes(firstWord)) {
+            this.prefix += " " + firstWord;
           }
         } else {
-          if (!this.nonPrefixHonorific) {
-            this.nonPrefixHonorific = firstWord;
-          }
+          this.prefix = firstWord;
         }
-        return remainder;
+      } else {
+        if (!this.nonPrefixHonorific) {
+          this.nonPrefixHonorific = firstWord;
+        }
       }
+      return remainder;
     }
 
     return name;
+  }
+
+  updateNarrativeName() {
+    if (!this.narrativeName) {
+      if (this.nonPrefixHonorific == "Mrs") {
+        let predictedGender = NameUtils.predictGenderFromGivenNames(this.inferForenames());
+        if (predictedGender == "male") {
+          // this could be a name like "Mrs. Jacob Mytinger" where the husband's name is
+          // used. We never want to refer to this person as "Jacob" for example.
+          this.narrativeName = this.inferFullName();
+        }
+      }
+    }
   }
 
   removeSuffix(name, isFull = false) {
@@ -1476,6 +1570,9 @@ class NameObj {
   }
 
   moveNicknamesFromNameString(nameString) {
+    if (!nameString) {
+      return;
+    }
     let newString = nameString;
     // if the nameString contain a name in quotes then it is a nickname
     let namesArray = nameString.split(/["]/);
@@ -1532,6 +1629,7 @@ class NameObj {
       this.name = this.moveNicknamesFromNameString(this.name);
       this.name = this.removeTitle(this.name, true);
       this.name = this.removeSuffix(this.name, true);
+      this.updateNarrativeName();
     }
   }
 
@@ -1549,6 +1647,7 @@ class NameObj {
       this.forenames = this.cleanName(name);
       this.forenames = this.removeTitle(this.forenames);
       this.moveNicknamesFromForenames();
+      this.updateNarrativeName();
     }
   }
 
@@ -1556,6 +1655,7 @@ class NameObj {
     if (name && isString(name)) {
       this.firstName = this.cleanName(name);
       this.firstName = this.removeTitle(this.firstName);
+      this.updateNarrativeName();
     }
   }
 
@@ -1563,6 +1663,7 @@ class NameObj {
     if (name && isString(name)) {
       this.firstNames = this.cleanName(name);
       this.firstNames = this.removeTitle(this.firstNames);
+      this.updateNarrativeName();
     }
   }
 
@@ -1691,14 +1792,24 @@ class NameObj {
       }
     }
 
-    if (fullName) {
-      if (this.prefix && !fullName.startsWith(this.prefix)) {
+    if (this.prefix && (!fullName || !fullName.startsWith(this.prefix))) {
+      if (fullName) {
         fullName = this.prefix + " " + fullName;
-      } else if (this.nonPrefixHonorific && !fullName.startsWith(this.nonPrefixHonorific)) {
-        fullName = this.nonPrefixHonorific + " " + fullName;
+      } else {
+        fullName = this.prefix;
       }
-      if (this.suffix && !fullName.endsWith(this.suffix)) {
+    } else if (this.nonPrefixHonorific && (!fullName || !fullName.startsWith(this.nonPrefixHonorific))) {
+      if (fullName) {
+        fullName = this.nonPrefixHonorific + " " + fullName;
+      } else {
+        fullName = this.nonPrefixHonorific;
+      }
+    }
+    if (this.suffix && (!fullName || !fullName.endsWith(this.suffix))) {
+      if (fullName) {
         fullName = fullName + " " + this.suffix;
+      } else {
+        fullName = this.suffix;
       }
     }
 
@@ -2108,23 +2219,39 @@ class GeneralizedData {
     return years;
   }
 
-  static getSubtractAgeFromDate(dateString, age) {
-    let parsedDate = DateUtils.parseDateString(dateString);
-    if (!parsedDate.isValid) {
-      return "";
+  static subtractAgeOrTimePeriodFromDate(dateString, age) {
+    if (typeof age === "string") {
+      let parsedAge = DateUtils.parseAgeOrTimePeriod(age);
+      if (!parsedAge.isValid) {
+        return "";
+      }
+
+      if (parsedAge.isRange) {
+        let rangeInYears = parsedAge.endYearsNum - parsedAge.startYearsNum;
+        let halfRange = Math.trunc(rangeInYears / 2);
+        let midYear = parsedAge.startYearsNum + halfRange;
+        return DateUtils.subtractYearsFromDateString(dateString, midYear);
+      } else {
+        if (parsedAge.hasYears) {
+          return DateUtils.subtractYearsFromDateString(dateString, parsedAge.yearsNum);
+        }
+        if (parsedAge.hasMonths) {
+          return DateUtils.subtractMonthsFromDateString(dateString, parsedAge.monthsNum);
+        }
+        if (parsedAge.hasWeeks) {
+          return DateUtils.subtractWeeksFromDateString(dateString, parsedAge.weeksNum);
+        }
+        if (parsedAge.hasDays) {
+          return DateUtils.subtractDaysFromDateString(dateString, parsedAge.daysNum);
+        }
+      }
+    } else if (typeof age === "number") {
+      if (Number.isInteger(age)) {
+        return DateUtils.subtractYearsFromDateString(dateString, age);
+      }
     }
 
-    let ageNum = parseInt(age);
-    if (isNaN(ageNum)) {
-      return "";
-    }
-    parsedDate.yearNum -= ageNum;
-
-    return DateUtils.getStdShortFormDateString(parsedDate);
-  }
-
-  static getSubtractAgeFromDateYear(dateYear, age) {
-    return dateYear - age;
+    return "";
   }
 
   extractNamePartsFromForenames(nameParts) {
@@ -2636,10 +2763,12 @@ class GeneralizedData {
         }
       }
       if (!isNaN(yearsMarried)) {
-        let marriageDateString = GeneralizedData.getSubtractAgeFromDate(eventDate, yearsMarried);
-        let marriageYear = StringUtils.getLastWord(marriageDateString);
-        if (marriageYear) {
-          spouse.marriageDate.yearString = marriageYear;
+        let marriageDateString = GeneralizedData.subtractAgeOrTimePeriodFromDate(eventDate, yearsMarried);
+        if (marriageDateString) {
+          let marriageYear = StringUtils.getLastWord(marriageDateString);
+          if (marriageYear) {
+            spouse.marriageDate.yearString = marriageYear;
+          }
         }
       }
     }
@@ -3233,7 +3362,7 @@ class GeneralizedData {
       if (this.ageAtDeath) {
         let deathDateString = this.deathDate.getDateString();
 
-        let dateString = GeneralizedData.getSubtractAgeFromDate(deathDateString, this.ageAtDeath);
+        let dateString = GeneralizedData.subtractAgeOrTimePeriodFromDate(deathDateString, this.ageAtDeath);
         if (!dateString) {
           return undefined;
         }
@@ -3251,12 +3380,14 @@ class GeneralizedData {
     }
     if (this.eventDate && this.ageAtEvent) {
       let eventDateString = this.eventDate.getDateString();
-      let dateString = GeneralizedData.getSubtractAgeFromDate(eventDateString, this.ageAtEvent);
-      let yearString = StringUtils.getLastWord(dateString);
-      let dateObj = new DateObj();
-      dateObj.yearString = yearString;
-      dateObj.qualifier = dateQualifiers.ABOUT;
-      return dateObj;
+      let dateString = GeneralizedData.subtractAgeOrTimePeriodFromDate(eventDateString, this.ageAtEvent);
+      if (dateString) {
+        let yearString = StringUtils.getLastWord(dateString);
+        let dateObj = new DateObj();
+        dateObj.yearString = yearString;
+        dateObj.qualifier = dateQualifiers.ABOUT;
+        return dateObj;
+      }
     }
     if (this.eventDate && !this.role) {
       if (this.recordType == RT.Baptism) {
@@ -3529,33 +3660,75 @@ class GeneralizedData {
     return "";
   }
 
-  inferEventDateObj() {
+  inferEventDateObj(includeImplied = false) {
     if (this.eventDate) {
       return this.eventDate;
     }
-  }
 
-  inferEventDate() {
-    if (this.eventDate) {
-      return this.eventDate.getDateString();
+    if (includeImplied && this.sourceType == "record" && this.recordType != RT.FamilyTree) {
+      if (this.role && this.role != Role.Primary && this.primaryPerson) {
+        if (this.primaryPerson.deathDate) {
+          return this.primaryPerson.deathDate;
+        } else if (this.primaryPerson.birthDate) {
+          return this.primaryPerson.birthDate;
+        }
+      }
+
+      if (
+        this.recordType == RT.Death ||
+        this.recordType == RT.DeathOrBurial ||
+        this.recordType == RT.DeathRegistration ||
+        this.recordType == RT.Burial ||
+        this.recordType == RT.Cremation ||
+        this.recordType == RT.Obituary
+      ) {
+        if (this.deathDate) {
+          return this.deathDate;
+        }
+      }
+
+      if (
+        this.recordType == RT.Birth ||
+        this.recordType == RT.BirthOrBaptism ||
+        this.recordType == RT.BirthRegistration ||
+        this.recordType == RT.Baptism
+      ) {
+        if (this.birthDate) {
+          return this.birthDate;
+        }
+      }
+
+      if (this.deathDate) {
+        return this.deathDate;
+      }
     }
   }
 
-  inferEventYear() {
-    if (this.eventDate) {
-      return this.eventDate.getYearString();
+  inferEventDate(includeImplied = false) {
+    let eventDate = this.inferEventDateObj(includeImplied);
+    if (eventDate) {
+      return eventDate.getDateString();
     }
   }
 
-  inferEventDateQualifier() {
-    if (this.eventDate) {
-      return this.eventDate.qualifier;
+  inferEventYear(includeImplied = false) {
+    let eventDate = this.inferEventDateObj(includeImplied);
+    if (eventDate) {
+      return eventDate.getYearString();
     }
   }
 
-  inferEventQuarter() {
-    if (this.eventDate) {
-      return this.eventDate.quarter;
+  inferEventDateQualifier(includeImplied = false) {
+    let eventDate = this.inferEventDateObj(includeImplied);
+    if (eventDate) {
+      return eventDate.qualifier;
+    }
+  }
+
+  inferEventQuarter(includeImplied = false) {
+    let eventDate = this.inferEventDateObj(includeImplied);
+    if (eventDate) {
+      return eventDate.quarter;
     }
   }
 
@@ -4334,6 +4507,14 @@ class GeneralizedData {
         defaultTitle: "Encyclopedia",
         sourceMatches: [{ title: "Wikipedia entry", matches: ["wikipedia"] }],
       },
+      {
+        type: RT.Biography,
+        defaultTitle: "Biography",
+      },
+      {
+        type: RT.BiographicalIndex,
+        defaultTitle: "Biographical Index",
+      },
     ];
 
     function lookup(gd, collectionTitle, table) {
@@ -4414,6 +4595,12 @@ class GeneralizedData {
       let relationship = this.getRelationshipOfPrimaryPersonToThisPerson();
       if (refTitle == "Unclassified" || !refTitle) {
         refTitle = "Record";
+      }
+
+      // maybe this could be handled in the table rather than a special case
+      // e.g. "Military of son..." does not sound right
+      if (refTitle == "Military") {
+        refTitle = "Military Record";
       }
 
       refTitle += " of " + relationship;

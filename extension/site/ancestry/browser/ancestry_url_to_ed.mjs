@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractRecord } from "../core/ancestry_extract_data.mjs";
 import { extractRecordHtmlFromUrl } from "./ancestry_fetch.mjs";
 import {
   registerAsyncCacheTag,
@@ -43,8 +42,8 @@ function extractDataFromHtml(htmlText, recordUrl) {
   let extractedData = {};
   extractedData.url = recordUrl;
   extractedData.pageType = "record";
-
   extractRecord(document, recordUrl, extractedData);
+
   return extractedData;
 }
 
@@ -56,7 +55,7 @@ async function getExtractedDataFromRecordUrl(recordUrl) {
 
   let cachedExtractedData = await getCachedAsyncResult(cacheTag, recordUrl);
   if (cachedExtractedData) {
-    let result = { success: true, recordUrl: recordUrl, extractedData: cachedExtractedData };
+    let result = { success: true, wasInCache: true, recordUrl: recordUrl, extractedData: cachedExtractedData };
     //console.log("getExtractedDataFromRecordUrl: found cached result:");
     //console.log(result);
     return result;

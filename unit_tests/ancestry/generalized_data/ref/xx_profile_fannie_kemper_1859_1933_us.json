@@ -41,6 +41,9 @@
   ],
   "lastNameAtBirth": "Kemper",
   "lastNameAtDeath": "Money Barber",
+  "wtSearchTemplates": [
+    "{{Ancestry Tree|11748183|12992988602}}"
+  ],
   "parents": {
     "father": {
       "name": {

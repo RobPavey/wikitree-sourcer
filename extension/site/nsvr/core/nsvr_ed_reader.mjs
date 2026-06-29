@@ -100,8 +100,13 @@ class NsvrEdReader extends ExtractedDataReader {
       }
     }
 
-    let firstName = this.getNameObj().name.split(" ")[0];
-    return NameUtils.predictGenderFromGivenNames(firstName);
+    let nameObj = this.getNameObj();
+    if (nameObj && nameObj.name) {
+      let firstName = nameObj.name.split(" ")[0];
+      return NameUtils.predictGenderFromGivenNames(firstName);
+    }
+
+    return "";
   }
 
   getEventDateObj() {
@@ -126,12 +131,12 @@ class NsvrEdReader extends ExtractedDataReader {
 
   getEventPlaceObj() {
     let fullPlaceName;
-    if (this.ed.town) {
+    if (this.ed.town && this.ed.county) {
       fullPlaceName = this.ed.town.concat(", ", this.ed.county, ", Nova Scotia");
-    } else {
+    } else if (this.ed.county) {
       fullPlaceName = this.ed.county.concat(", Nova Scotia");
     }
-    if (this.getEventDateObj().yearNum > 1866) {
+    if (this.getEventDateObj() && this.getEventDateObj().yearNum > 1866) {
       // Canadian confederation occurred on 1 Jul 1867
       fullPlaceName = fullPlaceName.concat(", Canada");
     }
@@ -151,7 +156,10 @@ class NsvrEdReader extends ExtractedDataReader {
   }
 
   getRegistrationDistrict() {
-    return this.ed.county.concat(" County");
+    if (this.ed.county) {
+      return this.ed.county.concat(" County");
+    }
+    return "";
   }
 
   getRelationshipToHead() {

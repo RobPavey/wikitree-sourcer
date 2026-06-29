@@ -54,12 +54,21 @@
     }
   },
   "marriageDate": "14 January 1861",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|6NX6-GFQG}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "6NX6-GFQG"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CSFT-R9Y5-N}}",
-    "{{FamilySearch Record|6NX6-GFQP}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-CSFT-R9Y5-N"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6NX6-GFQP"
+    }
   ],
   "collectionData": {
     "id": "4469394",

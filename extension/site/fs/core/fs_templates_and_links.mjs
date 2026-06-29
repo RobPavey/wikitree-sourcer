@@ -49,6 +49,22 @@ function extractIdFromFsUrl(url, prefixList, terminatorList) {
   return ""; // no prefix found
 }
 
+function extractFsRecordIdFromUrl(recordUrl) {
+  if (!recordUrl) {
+    return "";
+  }
+
+  // the recordUrl should look like:
+  // https://www.familysearch.org/ark:/61903/1:1:XZDY-NHM
+  let recordId = extractIdFromFsUrl(recordUrl, ["ark:/61903/1:1:"], ["/", "?"]);
+
+  if (recordId.length > 5) {
+    return recordId;
+  }
+
+  return "";
+}
+
 function buildFsRecordLinkOrTemplate(recordUrl) {
   if (!recordUrl) {
     return "";
@@ -59,22 +75,19 @@ function buildFsRecordLinkOrTemplate(recordUrl) {
 
   // the recordUrl should look like:
   // https://www.familysearch.org/ark:/61903/1:1:XZDY-NHM
-  let recordId = extractIdFromFsUrl(recordUrl, ["ark:/61903/1:1:"], ["/", "?"]);
+  let recordId = extractFsRecordIdFromUrl(recordUrl);
 
-  if (recordId.length > 5) {
+  if (recordId) {
     recordLinkOrTemplate = "{{FamilySearch Record|" + recordId + "}}";
   }
 
   return recordLinkOrTemplate;
 }
 
-function buildFsImageLinkOrTemplate(imageUrl) {
+function extractFsImageIdFromUrl(imageUrl) {
   if (!imageUrl) {
     return "";
   }
-
-  // start with the old format link and then try to replace with template
-  let imageLinkOrTemplate = "[" + imageUrl + " FamilySearch Image]";
 
   // the recordUrl should look like one of these:
   // https://www.familysearch.org/ark:/61903/3:1:33S7-9BSH-9W9B?i=7&cc=1473181
@@ -82,14 +95,74 @@ function buildFsImageLinkOrTemplate(imageUrl) {
   let imageId = extractIdFromFsUrl(imageUrl, ["ark:/61903/3:1:"], ["/", "?"]);
 
   if (imageId.length > 5) {
-    imageLinkOrTemplate = "{{FamilySearch Image|" + imageId + "}}";
-  } else {
-    // There are also examples like: https://www.familysearch.org/ark:/61903/3:2:77T2-KFDJ
-    imageId = extractIdFromFsUrl(imageUrl, ["ark:/61903/3:2:", "ark:/61903/3:3:", "ark:/61903/3:4:"], ["/", "?"]);
-    if (imageId.length > 5) {
-      let secondNumber = imageUrl.replace(/^.*ark:\/61903\/3:(\d):.*$/, "$1");
-      if (secondNumber && secondNumber.length == 1) {
-        imageLinkOrTemplate = "{{FamilySearch Image|" + imageId + "|" + secondNumber + "}}";
+    return imageId;
+  }
+
+  // There are also examples like: https://www.familysearch.org/ark:/61903/3:2:77T2-KFDJ
+  imageId = extractIdFromFsUrl(imageUrl, ["ark:/61903/3:2:", "ark:/61903/3:3:", "ark:/61903/3:4:"], ["/", "?"]);
+  if (imageId.length > 5) {
+    return imageId;
+  }
+
+  return "";
+}
+
+function extractFsPersonIdFromUrl(personUrl) {
+  if (!personUrl) {
+    return "";
+  }
+
+  // the recordUrl should look like one of these:
+  // https://www.familysearch.org/en/tree/person/details/L62P-39Y
+  // https://www.familysearch.org/en/tree/person/sources/L62P-39Y
+  let personId = extractIdFromFsUrl(personUrl, ["tree/person/details/", "tree/person/sources/"], ["/", "?"]);
+
+  if (personId.length > 5) {
+    return personId;
+  }
+
+  return "";
+}
+
+function buildFsImageLinkOrTemplate(imageUrl, alwaysUseTemplateIfPossible = false) {
+  if (!imageUrl) {
+    return "";
+  }
+
+  // start with the old format link and then try to replace with template
+  let imageLinkOrTemplate = "[" + imageUrl + " FamilySearch Image]";
+
+  let useTemplateIfPossible = true;
+
+  if (!alwaysUseTemplateIfPossible) {
+    let urlObj = new URL(imageUrl);
+    if (urlObj.search) {
+      let searchParams = urlObj.searchParams;
+      if (searchParams) {
+        const paramsToKeep = ["groupId", "fullText"];
+        for (let param of paramsToKeep) {
+          if (searchParams.has(param)) {
+            useTemplateIfPossible = false;
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  if (useTemplateIfPossible) {
+    let imageId = extractIdFromFsUrl(imageUrl, ["ark:/61903/3:1:"], ["/", "?"]);
+
+    if (imageId) {
+      imageLinkOrTemplate = "{{FamilySearch Image|" + imageId + "}}";
+    } else {
+      // There are also examples like: https://www.familysearch.org/ark:/61903/3:2:77T2-KFDJ
+      imageId = extractIdFromFsUrl(imageUrl, ["ark:/61903/3:2:", "ark:/61903/3:3:", "ark:/61903/3:4:"], ["/", "?"]);
+      if (imageId.length > 5) {
+        let secondNumber = imageUrl.replace(/^.*ark:\/61903\/3:(\d):.*$/, "$1");
+        if (secondNumber && secondNumber.length == 1) {
+          imageLinkOrTemplate = "{{FamilySearch Image|" + imageId + "|" + secondNumber + "}}";
+        }
       }
     }
   }
@@ -97,10 +170,12 @@ function buildFsImageLinkOrTemplate(imageUrl) {
   return imageLinkOrTemplate;
 }
 
-function buildExternalLinkOrTemplate(digitalArtifact) {
-  if (digitalArtifact) {
+function extractFindAGraveMemorialIdFromUrl(url) {
+  if (!url) {
+    return "";
+  }
+  if (url) {
     // Find A Grave example:   "digitalArtifact": "http://www.findagrave.com/cgi-bin/fg.cgi?page=gr&GRid=30569834",
-    let url = digitalArtifact;
     const idParam = "&GRid=";
     if (url.includes("//www.findagrave.com/cgi-bin") && url.includes(idParam)) {
       let paramIndex = url.indexOf(idParam);
@@ -111,12 +186,29 @@ function buildExternalLinkOrTemplate(digitalArtifact) {
         }
 
         let memorialId = url.substring(paramIndex + idParam.length, nextParamIndex);
-        return "{{FindAGrave|" + memorialId + "}}";
+        return memorialId;
       }
-    } else {
-      return url;
     }
   }
+
+  return "";
 }
 
-export { buildFsRecordLinkOrTemplate, buildFsImageLinkOrTemplate, buildExternalLinkOrTemplate };
+function buildExternalLinkOrTemplate(digitalArtifact) {
+  let memorialId = extractFindAGraveMemorialIdFromUrl(digitalArtifact);
+  if (memorialId) {
+    return "{{FindAGrave|" + memorialId + "}}";
+  }
+
+  return digitalArtifact;
+}
+
+export {
+  extractFsRecordIdFromUrl,
+  extractFsImageIdFromUrl,
+  extractFsPersonIdFromUrl,
+  extractFindAGraveMemorialIdFromUrl,
+  buildFsRecordLinkOrTemplate,
+  buildFsImageLinkOrTemplate,
+  buildExternalLinkOrTemplate,
+};

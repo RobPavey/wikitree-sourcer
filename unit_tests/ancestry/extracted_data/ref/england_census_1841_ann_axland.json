@@ -8,7 +8,7 @@
   "titleName": "Ann Axland",
   "titleCollection": "1841 England Census",
   "recordData": {
-    "Name": "Ann Axland [Ann Ackland]",
+    "Name": "Ann Axland",
     "Age": "23",
     "Estimated Birth Year": "abt 1818",
     "Gender": "Female",
@@ -24,6 +24,12 @@
     "Folio": "6",
     "Page Number": "6",
     "Household Members": "Ann Axland 23"
+  },
+  "recordDataAltValues": {
+    "Name": [
+      "Ann Ackland",
+      "Ann Ackland"
+    ]
   },
   "household": {
     "headings": [

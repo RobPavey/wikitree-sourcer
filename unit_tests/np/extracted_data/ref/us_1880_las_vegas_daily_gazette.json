@@ -1,10 +1,11 @@
 {
   "url": "https://www.newspapers.com/article/daily-gazette/121899396/",
   "success": true,
+  "articleTitle": "Article clipped from Daily Gazette",
+  "articleDescription": "Clipping found in The Daily Gazette published in Las Vegas, New Mexico on 6/17/1880. ",
   "newspaperTitle": "Daily Gazette",
   "location": "Las Vegas, New Mexico",
   "publicationDate": "Thu, Jun 17, 1880",
   "pageNumber": "4",
-  "eventDate": "1880-06-17",
-  "articleTitle": "Article clipped from Daily Gazette"
+  "eventDate": "1880-06-17"
 }

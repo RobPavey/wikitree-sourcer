@@ -1,0 +1,1239 @@
+/*
+MIT License
+
+Copyright (c) 2020 Robert M Pavey
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+class WikiTreeSourcerPageModsHelper {
+  constructor(siteConfig) {
+    this.siteName = siteConfig.siteName;
+    this.pageProfiles = siteConfig.pageProfiles;
+    this.domainRegex = siteConfig.domainRegex;
+    this.injectWTSourcerStyles();
+    this.initTooltip();
+    this.addGlobalShield();
+    this.iconDataMap = new WeakMap(); // used to store keys in element attributes
+  }
+
+  initTooltip() {
+    this.tooltip = document.createElement("div");
+    this.tooltip.className = "wt-sourcer-custom-tooltip";
+    document.body.appendChild(this.tooltip);
+
+    let banner = document.createElement("label");
+    banner.textContent = "WikiTree Sourcer";
+    banner.className = "wt-sourcer-custom-tooltip-banner";
+    this.tooltip.appendChild(banner);
+    let sup = document.createElement("sup");
+    sup.innerText = "\u00A0[1]";
+    banner.appendChild(sup);
+
+    let content = document.createElement("div");
+    content.className = "wt-sourcer-custom-tooltip-content";
+    this.tooltip.appendChild(content);
+    this.tooltipContent = content;
+  }
+
+  async copyTextToClipboard(element, clipboardText) {
+    try {
+      // Copy to clipboard
+      await navigator.clipboard.writeText(clipboardText);
+      console.log(`Copied ${clipboardText} to clipboard`);
+
+      // Optional: Provide visual feedback (like a temporary tooltip)
+      this.triggerCopyFeedback(element, "Copied");
+    } catch (err) {
+      if (err.name === "NotAllowedError") {
+        console.log("Clipboard access denied. Ensure the page has focus.");
+        this.triggerCopyFeedback(element, "Copy failed. Click in this page first.", 4000);
+        // Optional: Show a different tooltip like "Click page first!"
+        // showErrorFeedback(element, "Click page first!");
+      } else {
+        console.error("Failed to copy:", err);
+      }
+    }
+  }
+
+  showTooltip(clientX, clientY, iconData, isTouch) {
+    const tooltipData = iconData?.tooltipData;
+    //logDebug(`tooltipData is`, tooltipData);
+    if (tooltipData) {
+      let mainDiv = this.tooltip;
+      let contentDiv = this.tooltipContent;
+
+      contentDiv.replaceChildren();
+
+      let label = document.createElement("label");
+      label.textContent = tooltipData.title;
+      contentDiv.appendChild(label);
+
+      if (tooltipData.listItems.length > 0) {
+        let listElement = document.createElement("ul");
+        for (let listItem of tooltipData.listItems) {
+          let listItemElement = document.createElement("li");
+          listItemElement.textContent = listItem.text;
+          if (listItem.isError) {
+            listItemElement.className = "wt-sourcer-tooltip-error";
+          } else {
+            listItemElement.className = "wt-sourcer-tooltip";
+          }
+          listElement.appendChild(listItemElement);
+        }
+        contentDiv.appendChild(listElement);
+      }
+
+      mainDiv.style.display = "block";
+
+      // The tooltip may already have been used an expanded to fit text
+      // this resets that
+      // 'auto' allows it to shrink-wrap, 'max-content' is even more explicit
+      mainDiv.style.width = "max-content";
+      mainDiv.style.maxWidth = "500px";
+
+      // Force a reflow/repaint to get the NEW dimensions
+      void mainDiv.offsetHeight;
+
+      // --- START NEW BOUNDARY LOGIC ---
+      const gap = isTouch ? 20 : 15;
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      // Set a safe maximum width so it doesn't hug the screen edges
+      const safeMargin = 20;
+      const absoluteMaxWidth = Math.min(500, screenWidth - safeMargin * 2);
+      mainDiv.style.maxWidth = absoluteMaxWidth + "px";
+
+      // Force a reflow to get the actual height/width after setting maxWidth
+      void mainDiv.offsetHeight;
+
+      let tooltipWidth = mainDiv.offsetWidth;
+
+      // Calculate horizontal position
+      let left = clientX + gap;
+      if (left + tooltipWidth > screenWidth - safeMargin) {
+        // Try flipping to the left
+        left = clientX - tooltipWidth - gap;
+
+        // If it's STILL off the left edge (narrow screens),
+        // center it or pin it to the margin
+        if (left < safeMargin) {
+          left = safeMargin;
+
+          if (tooltipWidth > screenWidth - safeMargin * 2) {
+            // If it's this cramped, the width needs to shrink further
+            mainDiv.style.width = screenWidth - safeMargin * 2 + "px";
+          }
+        }
+      }
+
+      // Force a reflow/repaint while the touch is active
+      void mainDiv.offsetHeight;
+      let tooltipHeight = mainDiv.offsetHeight;
+
+      // Calculate vertical position
+      let top = clientY + gap;
+      if (top + tooltipHeight > screenHeight - safeMargin) {
+        // Try flipping vertically
+        top = clientY - tooltipHeight - gap;
+
+        // If it's STILL off the top edge,
+        // center it or pin it to the margin
+        if (top < safeMargin) {
+          top = safeMargin;
+        }
+      }
+
+      // --- END NEW BOUNDARY LOGIC ---
+
+      // Immediate positioning so it doesn't "pop" in from the corner
+      mainDiv.style.left = left + "px";
+      mainDiv.style.top = top + "px";
+    }
+  }
+  hideTooltip(event, iconData) {
+    //logDebug(`hiding tooltip`);
+    this.tooltip.style.display = "none";
+  }
+
+  handleClickOnIcon(iconData) {
+    let option = this.options.ui_pageMods_newTabPos;
+    logDebug("handleClickOnIcon: iconData is", iconData);
+    if (iconData.linkUrl) {
+      chrome.runtime.sendMessage({ type: "openInNewTab", url: iconData.linkUrl, tabOption: option });
+    }
+  }
+
+  handleEventOnIcon(type, e) {
+    function neutralizeParentTitle(element) {
+      let parentWithTitle = element.closest("[title]");
+      // Don't neutralize if it's our own icon's container
+      if (parentWithTitle && !parentWithTitle.classList.contains("wt-sourcer-icon-container")) {
+        parentWithTitle.dataset.wtOldTitle = parentWithTitle.getAttribute("title");
+        parentWithTitle.removeAttribute("title");
+      }
+    }
+
+    function restoreParentTitle(element) {
+      const parentWithTitle = element.closest("[aria-haspopup='true']");
+      // Don't neutralize if it's our own icon's container
+      if (parentWithTitle && !parentWithTitle.classList.contains("wt-sourcer-icon-container")) {
+        if (parentWithTitle.dataset.wtOldTitle) {
+          parentWithTitle.setAttribute("title", parentWithTitle.dataset.wtOldTitle);
+          delete parentWithTitle.dataset.wtOldTitle;
+        }
+      }
+    }
+
+    logDebug(`Shielding ${type} from FamilySearch`);
+    logDebug(`e.target is`, e.target);
+
+    // we want to return as fast as possible if not on an interactable WT icon
+    // but we already check this exists in the caller
+    let iconContainer = e.target.closest(".wt-sourcer-icon-container");
+    if (!iconContainer) {
+      return;
+    }
+
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    e.preventDefault();
+
+    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+    const hoverFilter = `${normalFilter} brightness(1.1)`;
+
+    logDebug(`iconContainer is`, iconContainer);
+    let iconData = this.iconDataMap.get(iconContainer);
+    logDebug(`iconData is`, iconData);
+    if (!iconData) {
+      return;
+    }
+
+    switch (type) {
+      case "mouseover": {
+        // Check if this is a touch event pretending to be a mouse
+        // 'ontouchstart' in window is a quick check, or check e.sourceCapabilities
+        if (window.matchMedia("(pointer: coarse)").matches) {
+          return; // Don't show tooltips on touch devices via hover events
+        }
+
+        // For mouseover: we also need to neutralize the parent title
+        neutralizeParentTitle(iconContainer);
+
+        this.showTooltip(e.clientX, e.clientY, iconData, false);
+
+        let iconElement = iconContainer.querySelector(".wt-sourcer-icon");
+        if (iconElement) {
+          iconElement.style.filter = hoverFilter;
+        }
+        break;
+      }
+      case "mouseout": {
+        restoreParentTitle(iconContainer);
+
+        this.hideTooltip(e, iconData);
+
+        let iconElement = iconContainer.querySelector(".wt-sourcer-icon");
+        if (iconElement) {
+          iconElement.style.filter = normalFilter;
+        }
+        break;
+      }
+      case "contextmenu": {
+        let clipboardText = iconData?.rightClickCopyText;
+        logDebug(`contextmenu event: clipboardText is ${clipboardText}`);
+        if (clipboardText) {
+          this.copyTextToClipboard(iconContainer, clipboardText);
+        }
+        break;
+      }
+      case "click": {
+        logDebug("handleEventOnIcon: detected a click");
+
+        if (this.wasLongPress) {
+          this.wasLongPress = false;
+        } else {
+          this.handleClickOnIcon(iconData);
+        }
+
+        break;
+      }
+      case "touchstart": {
+        // Extract coordinates immediately from the first touch point
+        const touch = e.touches[0];
+        const touchX = touch.clientX;
+        const touchY = touch.clientY;
+
+        // Start the 'Long Press' timer (typically 500ms)
+        this.longPressTimer = setTimeout(() => {
+          // long press in mobile shows the context menu
+          this.showTooltip(touchX, touchY, iconData, true);
+          this.wasLongPress = true;
+        }, 500);
+        break;
+      }
+      case "touchmove":
+      case "touchcancel":
+      case "touchend": {
+        // If they move their finger or lift it before 500ms, cancel the long press
+        if (this.longPressTimer) {
+          clearTimeout(this.longPressTimer);
+          this.longPressTimer = null;
+        }
+
+        if (type != "touchmove") {
+          if (this.wasLongPress) {
+            // Reset the flag after a short delay so the 'click' filter works
+            setTimeout(() => {
+              this.wasLongPress = false;
+            }, 100);
+          } else {
+            // treat this as a click, for touch we will not
+            // also get the click event because we did preventDefault on the touchStart.
+            this.handleClickOnIcon(iconData);
+          }
+        }
+        break;
+      }
+    }
+  }
+
+  handleTouchOutsideIconsAndTooltips() {
+    // Add this to your constructor or a setup method
+    document.addEventListener(
+      "touchstart",
+      (e) => {
+        if (this.tooltip && this.tooltip.style.display === "block") {
+          // Check if the tap hit the icon or the tooltip itself
+          const hitUI =
+            e.target.closest(".wt-sourcer-icon-container") || e.target.closest(".wt-sourcer-custom-tooltip");
+
+          if (!hitUI) {
+            this.hideTooltip();
+            // Optional: clear wasLongPress so the next tap is treated fresh
+            this.wasLongPress = false;
+          }
+        }
+      },
+      { capture: true, passive: true }
+    );
+  }
+
+  addGlobalShield() {
+    // Add these once to the window
+    ["click", "mousedown", "contextmenu", "mouseover", "mouseout", "touchstart", "touchend", "touchmove"].forEach(
+      (type) => {
+        window.addEventListener(
+          type,
+          (e) => {
+            // Use .closest to see if the event started inside or on your icon
+            if (e.target.closest && e.target.closest(".wt-sourcer-icon-container")) {
+              this.handleEventOnIcon(type, e);
+            }
+          },
+          {
+            capture: true, // // TRUE is critical - this is the Capture Phase
+            passive: false, // CRITICAL: Allows e.preventDefault() to work on touch
+          }
+        );
+      }
+    );
+
+    this.handleTouchOutsideIconsAndTooltips();
+  }
+
+  setOptions(options) {
+    this.options = options;
+  }
+
+  getOptions() {
+    return this.options;
+  }
+
+  getOption(leafOptionName) {
+    if (this.options) {
+      return this.options["ui_" + this.siteName + "_" + leafOptionName];
+    }
+  }
+
+  // Define  SVG icons
+
+  static svgRefWtProcessing = `data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="11" fill="rgb(180, 180, 180)" stroke="rgb(130, 130, 130)" stroke-width="1.5"/>
+ 
+  <text x="12" y="17" 
+        font-family="sans-serif" 
+        font-size="16px" 
+        font-weight="bold" 
+        fill="rgb(255, 255, 255)" 
+        text-anchor="middle">
+    ?
+  </text>
+</svg>`;
+
+  static svgRefWtProcessingAnimated = `data:image/svg+xml;utf8,
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgb(255, 175, 2)" />
+      <stop offset="50%" stop-color="rgb(255, 210, 120)" />
+      <stop offset="85%" stop-color="rgb(255, 240, 200)" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="rgb(255, 248, 230)" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="12" cy="12" r="10.5" 
+          fill="rgb(255, 248, 230)" 
+          stroke="url(%23ringGradient)" 
+          stroke-width="2"
+          stroke-dasharray="45, 15">
+    <animateTransform 
+      attributeName="transform" 
+      type="rotate" 
+      from="0 12 12" 
+      to="360 12 12" 
+      dur="1.5s" 
+      repeatCount="indefinite" />
+  </circle>
+  
+  <text x="12" y="18" 
+        font-family="sans-serif" 
+        font-size="16px" 
+        font-weight="bold" 
+        fill="rgb(80, 80, 80)" 
+        text-anchor="middle">
+    ?
+    <animate 
+      attributeName="opacity" 
+      values="1;0.2;1" 
+      dur="1.5s" 
+      repeatCount="indefinite" />
+  </text>
+</svg>`;
+
+  buildIcon(iconConfig) {
+    function styleRoundPath(color, width) {
+      return `
+        stroke="${color}"
+        stroke-width="${width}" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"`;
+    }
+
+    let externalBox = "";
+    let externalArrow = "";
+
+    if (iconConfig.includeExternal) {
+      const shadowStyle = styleRoundPath("rgba(0,0,0,0.4)", 3);
+      const mainStyle = styleRoundPath("white", 1.5);
+      const toExternalArrowPath = `d="M2 20 H8 M8 20 L6 22 M8 20 L6 18"`;
+
+      const toExternalArrow = `
+        <path ${toExternalArrowPath} ${shadowStyle}/>
+        <path ${toExternalArrowPath} ${mainStyle}/>
+      `;
+
+      // Green Source Box (represents a source)
+      externalBox = `
+        <rect x="8" y="16" width="8" height="7" rx="1" fill="#7aa9d0" stroke="black" stroke-width="0.5"/>
+        <line x1="9" y1="18" x2="15" y2="18" stroke="white" stroke-width="0.5" />
+        <line x1="9" y1="21" x2="13" y2="21" stroke="white" stroke-width="0.5" />
+        ${toExternalArrow}
+      `;
+
+      // The Arrow pointing to the Source Box - only shown if there is no main arrow
+      if (iconConfig.mainArrowStyle == "none") {
+        if (iconConfig.includeSourceBox) {
+          // double arrow
+          const doubleArrowPath = `d="M12 7 V17 M12 17 L9 14 M12 17 L15 14 M12 7 L9 10 M12 7 L15 10"`;
+          externalArrow = `
+            <path ${doubleArrowPath} ${shadowStyle}/>
+            <path ${doubleArrowPath} ${mainStyle}/>
+          `;
+        } else {
+          const externalArrowPath = `d="M12 7 V17 M12 17 L9 14 M12 17 L15 14"`;
+          externalArrow = `
+            <path ${externalArrowPath} ${shadowStyle}/>
+            <path ${externalArrowPath} ${mainStyle}/>
+          `;
+        }
+      }
+    }
+
+    let sourceBox = "";
+    let sourceArrow = "";
+
+    if (iconConfig.includeSourceBox) {
+      const shadowStyle = styleRoundPath("rgba(0,0,0,0.4)", 4);
+      const mainStyle = styleRoundPath("white", 2);
+      const link1Path = `d="M2 3.5 H4"`;
+      const link2Path = `d="M6 3.5 H8"`;
+
+      const linkIcon = `
+        <path ${link1Path} ${shadowStyle}/>
+        <path ${link1Path} ${mainStyle}/>
+        <path ${link2Path} ${shadowStyle}/>
+        <path ${link2Path} ${mainStyle}/>
+      `;
+
+      // Green Source Box (represents a source)
+      sourceBox = `
+        <rect x="8" y="1" width="8" height="7" rx="1" fill="#94d07a" stroke="black" stroke-width="0.5"/>
+        <line x1="9" y1="3" x2="15" y2="3" stroke="white" stroke-width="0.5" />
+        <line x1="9" y1="5" x2="13" y2="5" stroke="white" stroke-width="0.5" />
+        ${linkIcon}
+      `;
+
+      // The Arrow pointing to the Source Box - only shown if there is no main arrow
+      if (iconConfig.mainArrowStyle == "none" && !iconConfig.includeExternal) {
+        const sourceArrowPath = iconConfig.isMultiple
+          ? `d="M12 18 V7 M12 7 L8 11 M12 7 L16 11"`
+          : `d="M12 18 V7 M12 7 L9 10 M12 7 L15 10"`;
+
+        sourceArrow = `
+          <path ${sourceArrowPath} ${shadowStyle}/>
+          <path ${sourceArrowPath} ${mainStyle}/>
+        `;
+      }
+    }
+
+    let categoryGroup = "";
+    if (iconConfig.includeCategory) {
+      /* Stacked Index Cards  */
+      if (iconConfig.isConflict) {
+        categoryGroup = `
+          <g stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <path fill="rgb(255, 248, 230)" d="M 7 14.5 H 21 V 18 H 7 Z"/>
+            <path fill="rgb(255, 248, 230)" d="M 7 10.25 H 21 V 13.75 H 7 Z"/>
+            <path fill="none" d="M 5 6 H 19 V 9.5 H 5 Z"/>
+          </g>
+        `;
+      } else {
+        categoryGroup = `
+          <g stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <path fill="none" d="M 5 14.5 H 19 V 18 H 5 Z"/>
+            <path fill="rgb(255, 248, 230)" d="M 7 10.25 H 21 V 13.75 H 7 Z"/>
+            <path fill="none" d="M 5 6 H 19 V 9.5 H 5 Z"/>
+          </g>
+        `;
+      }
+    }
+
+    // The main arrow
+    let mainArrow = "";
+    if (iconConfig.mainArrowStyle != "none") {
+      const shadowStyle = styleRoundPath("rgba(0,0,0,0.4)", 5);
+      const mainStyle = styleRoundPath("white", 2.5);
+
+      const l = 2.5;
+      const r = 16;
+      const y = iconConfig.isMultiple ? 14 : 12;
+      const h = 4;
+
+      switch (iconConfig.mainArrowStyle) {
+        case "in":
+          {
+            const ht = y - h;
+            const hb = y + h;
+            const lhr = l + h;
+            const stem = `M${r} ${y} H${l}`;
+            const lhead = `M${l} ${y} L${lhr} ${ht} M${l} ${y} L${lhr} ${hb}`;
+            const mainArrowPath = `d="${stem} ${lhead}"`;
+            mainArrow = `
+              <path ${mainArrowPath} ${shadowStyle}/>
+              <path ${mainArrowPath} ${mainStyle}/>
+            `;
+          }
+          break;
+        case "out":
+          {
+            const ht = y - h;
+            const hb = y + h;
+            const rhr = r - h;
+            const stem = `M${r} ${y} H${l}`;
+            const rhead = `M${r} ${y} L${rhr} ${ht} M${r} ${y} L${rhr} ${hb}`;
+            const mainArrowPath = `d="${stem} ${rhead}"`;
+            mainArrow = `
+              <path ${mainArrowPath} ${shadowStyle}/>
+              <path ${mainArrowPath} ${mainStyle}/>
+            `;
+          }
+          break;
+        case "both":
+          {
+            const ht = y - h;
+            const hb = y + h;
+            const lhr = l + h;
+            const rhr = r - h;
+            const stem = `M${r} ${y} H${l}`;
+            const lhead = `M${l} ${y} L${lhr} ${ht} M${l} ${y} L${lhr} ${hb}`;
+            const rhead = `M${r} ${y} L${rhr} ${ht} M${r} ${y} L${rhr} ${hb}`;
+            const mainArrowPath = `d="${stem} ${lhead} ${rhead}"`;
+            mainArrow = `
+              <path ${mainArrowPath} ${shadowStyle}/>
+              <path ${mainArrowPath} ${mainStyle}/>
+            `;
+          }
+          break;
+        case "split":
+          {
+            const t = iconConfig.isMultiple ? 12 : 9.5;
+            const b = iconConfig.isMultiple ? 16 : 14.5;
+            const ht = t - h;
+            const hb = b + h;
+            const lhr = l + h;
+            const rhr = r - h;
+            const tstem = `M${r} ${t} H${l}`;
+            const bstem = `M${r} ${b} H${l}`;
+            const lhead = `M${l} ${t} L${lhr} ${ht}`;
+            const rhead = `M${r} ${b} M${r} ${b} L${rhr} ${hb}`;
+
+            const topArrowPath = `d="${tstem} ${lhead}"`;
+            const bottomArrowPath = `d="${bstem} ${rhead}"`;
+            mainArrow = `
+              <path ${topArrowPath} ${shadowStyle}/>
+              <path ${bottomArrowPath} ${shadowStyle}/>
+              <path ${topArrowPath} ${mainStyle}/>
+              <path ${bottomArrowPath} ${mainStyle}/>
+            `;
+          }
+          break;
+      }
+    }
+
+    let circleFront = "";
+    let circleBack = "";
+
+    let fill = `fill="rgb(255, 175, 2)"`;
+    let strokeWidth = `stroke-width="2"`;
+    let stroke = `stroke="white"`;
+    let strokeDashArray = "";
+    let opacity = "";
+
+    if (iconConfig.isConflict) {
+      stroke = `stroke="rgb(255, 0, 0)"`;
+    } else if (iconConfig.isFetchError) {
+      let r = 11;
+      let circum = 2 * Math.PI * r;
+      let dashLen = circum / 10;
+      stroke = `stroke="rgb(255, 0, 0)"`;
+      strokeDashArray = `stroke-dasharray="${dashLen} ${dashLen}"`;
+    } else {
+      strokeWidth = `stroke-width="1.5"`;
+    }
+
+    let style = `${fill} ${strokeDashArray} ${stroke} ${strokeWidth}`;
+
+    if (iconConfig.isMultiple) {
+      circleBack = `
+        <circle cx="15" cy="9" r="8" ${style} opacity="0.6"/>
+      `;
+      circleFront = `
+        <circle cx="10" cy="14" r="9" ${style}/>
+      `;
+    } else {
+      circleFront = `
+        <circle cx="12" cy="12" r="11" ${style}/>
+      `;
+    }
+
+    const svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        ${circleBack}
+        ${circleFront}
+        ${sourceBox}
+        ${externalBox}
+        ${categoryGroup}
+        ${sourceArrow}
+        ${externalArrow}
+        ${mainArrow}
+      </svg>`;
+
+    return `data:image/svg+xml;base64,${btoa(svg)}`;
+  }
+
+  getIcon(iconName) {
+    return WikiTreeSourcerPageModsHelper[iconName];
+  }
+
+  getProcessingIcon(useAnimation) {
+    return useAnimation
+      ? WikiTreeSourcerPageModsHelper.svgRefWtProcessingAnimated
+      : WikiTreeSourcerPageModsHelper.svgRefWtProcessing;
+  }
+
+  addIconAtLocation(location, iconElementToAdd) {
+    let iconPlaceElement = location.iconPlaceElement;
+
+    const iconAddRule = location.locationType.iconAddRule;
+    if (iconAddRule) {
+      let addType = iconAddRule.type;
+      if (addType == "ellipsis") {
+        const container = iconPlaceElement.parentElement;
+
+        // Set container to flex so icon stays visible next to the span
+        container.style.display = "flex";
+        container.style.alignItems = "center";
+        container.style.flexDirection = "row";
+        container.style.width = "100%"; // Ensure it uses the full header width
+
+        // Allow the name to shrink, but keep the icon fixed
+        iconPlaceElement.style.flexShrink = "1";
+        iconPlaceElement.style.minWidth = "0"; // Firefox requirement for flex-shrink on text
+
+        iconElementToAdd.style.flexShrink = "0";
+        iconElementToAdd.style.display = "flex";
+        iconElementToAdd.style.marginLeft = "8px";
+
+        // Append to PARENT so it's not clipped by the span
+        container.appendChild(iconElementToAdd);
+      } else if (addType == "makeFlexAddChild") {
+        // Set container to flex so icon stays visible next to the span
+        iconPlaceElement.style.display = "flex";
+        iconPlaceElement.style.alignItems = "flex-start";
+        iconPlaceElement.style.flexDirection = "row";
+
+        iconElementToAdd.style.flexShrink = "0";
+        iconElementToAdd.style.display = "flex";
+        iconElementToAdd.style.marginLeft = "8px";
+
+        iconPlaceElement.appendChild(iconElementToAdd);
+      } else if (addType == "addFlexChild") {
+        // the iconPlaceElement is a container that we want to append to
+        iconElementToAdd.style.flexShrink = "0";
+        iconElementToAdd.style.display = "flex";
+        iconElementToAdd.style.marginLeft = "8px";
+
+        iconPlaceElement.appendChild(iconElementToAdd);
+      } else if (addType == "addChild") {
+        // the iconPlaceElement is a container that we want to append to
+        iconElementToAdd.style.marginLeft = "0px";
+        iconPlaceElement.appendChild(iconElementToAdd);
+      } else {
+        console.warn("Unknown iconAddRule", iconAddRule);
+      }
+    } else {
+      iconElementToAdd.style.marginLeft = "12px";
+      iconPlaceElement.appendChild(iconElementToAdd);
+    }
+  }
+
+  removeWikiTreeIconAtLocation(location) {
+    //logDebug("removeWikiTreeIconAtLocation", location);
+    let iconPlaceElement = location.iconPlaceElement;
+    //logDebug("removeWikiTreeIconAtLocation: iconPlaceElement is", iconPlaceElement);
+
+    if (iconPlaceElement) {
+      if (iconPlaceElement.isConnected) {
+        let iconParent = this.findExistingIconParent(location);
+        if (iconParent) {
+          //logDebug("removeWikiTreeIconAtLocation, iconParent is", iconParent);
+          let iconElement = iconParent.querySelector(".wt-sourcer-icon-container");
+          //logDebug("removeWikiTreeIconAtLocation, iconElement is", iconElement);
+          if (iconElement && iconElement.isConnected) {
+            //logDebug("removeWikiTreeIconAtLocation, removing iconElement");
+            iconParent.removeChild(iconElement);
+          } else {
+            // This case can happen when switching back and forth between FS pages
+            // It is not really an error and can be safely ignored
+            //console.warn("removeIconAtLocation: no iconElement found for location", location);
+          }
+        } else {
+          console.warn("removeWikiTreeIconAtLocation: no iconParent for location", location);
+        }
+      } else {
+        //console.warn("removeIconAtLocation: iconPlaceElement is no longer part of the document", location);
+      }
+    } else {
+      console.warn("removeWikiTreeIconAtLocation: no iconPlaceElement for location", location);
+    }
+  }
+
+  removeWikiTreeIconsForLocationType(locationType, getElementToAddIconTo) {
+    // this is used to force rebuild of the H1 icon on the sources page when
+    // a new backlink source is added (or any source is added)
+    logDebug("removeWikiTreeIconsForLocationType, locationType is", locationType);
+
+    let candidateElements = document.querySelectorAll(locationType.selector);
+    logDebug("removeWikiTreeIconsForLocationType, candidateElements is", candidateElements);
+    for (let candidateElement of candidateElements) {
+      let candidateLocation = { locationType: locationType, matchedElement: candidateElement };
+
+      if (candidateElement.dataset && candidateElement.dataset.wtIconProcessed) {
+        delete candidateElement.dataset.wtIconProcessed;
+      }
+
+      candidateLocation.iconPlaceElement = getElementToAddIconTo(candidateLocation);
+
+      this.removeWikiTreeIconAtLocation(candidateLocation);
+    }
+  }
+
+  addProcessingIcon(location) {
+    if (!this.getOption("showProcessingIcon")) {
+      return;
+    }
+    const useAnimation = this.getOption("animateProcessingIcon");
+
+    logDebug("addProcessingIcon", location);
+
+    let svgIcon = this.getProcessingIcon(useAnimation);
+
+    const img = document.createElement("img");
+
+    // 3. Set the source to your SVG string
+    img.src = svgIcon;
+
+    // 4. Add styling for alignment and spacing
+    img.style.width = "24px";
+    img.style.height = "24px";
+    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
+    img.style.position = "relative";
+    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
+    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+
+    img.style.cursor = "pointer";
+    img.className = "wt-sourcer-processing-icon"; // Good for your MutationObserver check
+
+    // Set initial filter
+    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+    img.style.filter = normalFilter;
+
+    this.addIconAtLocation(location, img);
+  }
+
+  findExistingIconParent(location) {
+    let iconPlaceElement = location.iconPlaceElement;
+    if (iconPlaceElement) {
+      const iconAddRule = location.locationType.iconAddRule;
+      if (iconAddRule) {
+        let addType = iconAddRule.type;
+        if (addType == "ellipsis") {
+          return iconPlaceElement.parentElement;
+        } else if (addType == "makeFlexAddChild") {
+          return iconPlaceElement;
+        } else if (addType == "addFlexChild") {
+          return iconPlaceElement;
+        } else if (addType == "addChild") {
+          return iconPlaceElement;
+        } else {
+          console.warn("Unknown iconAddRule", iconAddRule);
+        }
+      } else {
+        return iconPlaceElement;
+      }
+    }
+  }
+
+  removeProcessingIcon(location) {
+    if (!this.getOption("showProcessingIcon")) {
+      return;
+    }
+
+    //logDebug("removeProcessingIcon, location is", location);
+
+    let iconPlaceElement = location.iconPlaceElement;
+    if (iconPlaceElement) {
+      if (iconPlaceElement.isConnected) {
+        let iconParent = this.findExistingIconParent(location);
+        if (iconParent) {
+          let iconElement = iconParent.querySelector(".wt-sourcer-processing-icon");
+          if (iconElement && iconElement.isConnected) {
+            // iconParent should be the parent of iconElement but one user got an exception
+            // because it was not - must be some edge case
+            let actualParent = iconElement.parentElement;
+            if (actualParent && actualParent.isConnected) {
+              actualParent.removeChild(iconElement);
+            }
+          } else {
+            // This case can happen when switching back and forth between FS pages
+            // It is not really an error and can be safely ignored
+            //console.warn("removeProcessingIcon: no iconElement found for location", location);
+          }
+        } else {
+          console.warn("removeProcessingIcon: no iconParent for location", location);
+        }
+      } else {
+        //console.warn("removeProcessingIcon: iconPlaceElement is no longer part of the document", location);
+      }
+    } else {
+      console.warn("removeProcessingIcon: no iconPlaceElement for location", location);
+    }
+  }
+
+  createIconElement(svgIcon) {
+    const img = document.createElement("img");
+
+    // 3. Set the source to your SVG string
+    img.src = svgIcon;
+
+    // 4. Add styling for alignment and spacing
+    img.style.width = "24px";
+    img.style.height = "24px";
+    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
+    img.style.position = "relative";
+    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
+    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+
+    img.style.cursor = "pointer";
+    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
+
+    // Set initial filter
+    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
+    img.style.filter = normalFilter;
+    return img;
+  }
+
+  createAnchorWithIconElement(svgIcon, tooltipData, clipboardText, linkUrl) {
+    const img = this.createIconElement(svgIcon);
+
+    // create an anchor-like span element
+    const iconContainer = document.createElement("span");
+    iconContainer.className = "wt-sourcer-icon-container";
+    iconContainer.style.cursor = "pointer";
+    iconContainer.style.display = "inline-block";
+    iconContainer.style.lineHeight = "0"; // Prevents icon from shifting text height
+
+    let rightClickCopyText = "";
+    if (clipboardText && this.getOption("rightClickCopy")) {
+      rightClickCopyText = clipboardText;
+    }
+
+    this.iconDataMap.set(iconContainer, {
+      linkUrl: linkUrl,
+      rightClickCopyText: rightClickCopyText,
+      tooltipData: tooltipData,
+    });
+
+    iconContainer.appendChild(img);
+
+    return iconContainer;
+  }
+
+  wtPlusApiCall(url, referrer) {
+    if (referrer) {
+      url += `&referrer=${referrer}`;
+    }
+    return new Promise((resolve, reject) => {
+      if (!chrome.runtime?.id) {
+        reject("Extension context invalidated");
+        return;
+      }
+      chrome.runtime.sendMessage(
+        {
+          type: "doWtPlusApiCall",
+          url: url,
+        },
+        (response) => {
+          if (response && response.success) {
+            logDebug("wtPlusApiCall: response is:", response);
+            let rawData = response.rawData;
+            if (response.status == 200) {
+              if (rawData.startsWith("{")) {
+                resolve(JSON.parse(rawData));
+              } else {
+                reject({ message: "Not JSON" });
+              }
+            } else {
+              if (response.status == 429) {
+                if (rawData.startsWith("<html>") && rawData.includes("Blocked")) {
+                  reject({ message: "Blocked request", status: response.status });
+                } else {
+                  reject({ message: `Bad fetch status: ${response.status}`, status: response.status });
+                }
+              } else {
+                reject({ message: `Bad fetch status: ${response.status}`, status: response.status });
+              }
+            }
+          } else {
+            if (chrome.runtime.lastError) {
+              reject({ message: chrome.runtime.lastError });
+            } else if (response.error) {
+              reject({ message: response.error });
+            } else {
+              reject({ message: "No response" });
+            }
+          }
+        }
+      );
+    });
+  }
+
+  backgroundFetchJson(fetchUrl, fetchOptions) {
+    console.log("backgroundFetch", fetchUrl, fetchOptions);
+    return new Promise((resolve, reject) => {
+      if (!chrome.runtime?.id) {
+        reject("Extension context invalidated");
+        return;
+      }
+      chrome.runtime.sendMessage(
+        {
+          type: "doFetchJson",
+          fetchUrl: fetchUrl,
+          fetchOptions: fetchOptions,
+        },
+        (response) => {
+          if (response && response.success) {
+            logDebug("backgroundFetch: response is:", response);
+            resolve(response);
+          } else {
+            if (chrome.runtime.lastError) {
+              reject(chrome.runtime.lastError);
+            } else if (response.error) {
+              reject(response.error);
+            } else {
+              reject("No response");
+            }
+          }
+        }
+      );
+    });
+  }
+
+  injectWTSourcerStyles() {
+    const style = document.createElement("style");
+    style.textContent = `
+        /* 1. Kill outline on the parent when icon is clicked/focused */
+        a:has(.wt-sourcer-icon:active),
+        a:has(.wt-sourcer-icon:focus),
+        a:has(.wt-sourcer-icon:focus-within) {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        /* 2. Kill outline on YOUR anchor element specifically */
+        a:has(> .wt-sourcer-icon), 
+        a:has(> .wt-sourcer-icon):focus,
+        a:has(> .wt-sourcer-icon):active {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        /* 3. The "Focus-Visible" bypass */
+        /* This handles the 'after-click' ring modern browsers use */
+        .wt-sourcer-icon:focus-visible,
+        a:has(.wt-sourcer-icon):focus-visible {
+            outline: none !important;
+        }
+
+        .wt-sourcer-icon {
+            cursor: context-menu; /* Signals right-click utility */
+            transition: filter 0.2s ease-in-out;
+        }
+
+        /* The 'success' glow using your WikiTree Orange */
+        .wt-copy-success {
+            filter: drop-shadow(0 0 8px rgba(255, 175, 2, 0.9)) !important;
+        }
+
+        .wt-sourcer-icon-container, 
+        .wt-sourcer-icon-container * {
+            /* Prevents the iOS context menu/preview on long press */
+            -webkit-touch-callout: none !important;
+            /* Prevents text selection which can also trigger on long press */
+            -webkit-user-select: none !important;
+        }
+
+        /* The floating 'Copied!' label */
+        .wt-copy-tooltip {
+            position: absolute;
+            background: #333333;
+            color: #ffffff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: sans-serif;
+            pointer-events: none;
+            z-index: 2147483647; /* Max possible z-index to stay on top */
+            transform: translate(-50%, -120%);
+            animation: wt-fade-out 1.0s ease-in-out forwards;
+        }
+
+        @keyframes wt-fade-out {
+            0% { opacity: 0; }
+            15% { opacity: 1; }  /* Quick fade in */
+            80% { opacity: 1; }  /* Hold visibility */
+            100% { opacity: 0; } /* Fade away */
+        }
+
+        .wt-sourcer-custom-tooltip {
+          position: fixed;
+          display: none;
+          z-index: 2147483647; /* Maximum possible z-index */
+          pointer-events: none;
+          background-color: white;
+          color: black;
+          /*padding: 8px;*/
+          border-radius: 4px;
+          font-size: 12px;
+          line-height: 1.4;
+
+          width: fit-content;
+          max-width: 500px;
+
+          box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+          border: 1px solid #555;
+          font-family: sans-serif;
+
+          box-sizing: border-box; /* Critical for padding not to break width */
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          /* Ensure the list doesn't get cut off when narrow */
+          min-width: 150px;
+        }
+
+        .wt-sourcer-custom-tooltip-content {
+          padding: 0px 8px 8px 8px;
+        }
+
+        .wt-sourcer-custom-tooltip label {
+          display: block;
+          margin: 0 0 4px 0;
+        } 
+        .wt-sourcer-custom-tooltip ul {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+        .wt-sourcer-custom-tooltip li {
+          margin: 0 0 2px 0;
+          padding-left: 0px;
+
+          display: grid;
+          /* Grid column 1 is the bullet, column 2 is the text */
+          grid-template-columns: 1em auto; 
+          align-items: start;
+          line-height: 1.4;
+        }
+
+        /* Re-insert a custom bullet as a pseudo-element */
+        .wt-sourcer-custom-tooltip li::before {
+            margin: 0;
+            content: "•";
+            grid-column: 1;
+            display: inline-block;
+            /* This ensures the bullet is vertically centered with the first line */
+            text-align: left; 
+            /*color: #bbb; /* Subtle bullet color */
+        }
+
+        .wt-sourcer-custom-tooltip-banner {
+          display: block;
+          padding: 2px 8px 0px 8px;
+          margin: 0;
+          vertical-align: middle;
+          color: white;
+          background-color: #699d32;
+          border: none;
+          text-align: left;
+        }
+        .wt-sourcer-custom-tooltip-banner sup {
+          line-height: 0 !important;
+        }
+
+        .wt-sourcer-tooltip-error {
+          color: red;
+        }
+
+        /* Add a media query for very small devices */
+        @media (max-width: 400px) {
+          .wt-sourcer-custom-tooltip {
+            font-size: 11px;
+            padding: 6px;
+          }
+        }
+    `;
+    (document.head || document.documentElement).appendChild(style);
+  }
+
+  triggerCopyFeedback(element, feedbackText, timeOutMs = 800) {
+    // 1. Add the glow effect
+    element.classList.add("wt-copy-success");
+
+    // 2. Create and position the tooltip
+    const rect = element.getBoundingClientRect();
+    const tooltip = document.createElement("div");
+    tooltip.className = "wt-copy-tooltip";
+    tooltip.innerText = feedbackText;
+
+    // Position it relative to the icon's current screen position
+    tooltip.style.left = `${rect.left + rect.width / 2 + window.scrollX}px`;
+    tooltip.style.top = `${rect.top + window.scrollY}px`;
+
+    document.body.appendChild(tooltip);
+
+    // 3. Clean up after the animation finishes
+    setTimeout(() => {
+      element.classList.remove("wt-copy-success");
+      tooltip.remove();
+    }, 800);
+  }
+
+  determinePageProfile(url) {
+    // Remove the start and the domain, leaving the rest of the string untouched
+    url = url.replace(this.domainRegex, "");
+
+    for (let profile of this.pageProfiles) {
+      if (profile.matchRegex.test(url)) {
+        this.pageProfile = profile;
+        return profile;
+      }
+    }
+
+    logDebug(`determinePageProfile, no profile found, url is ${url}, pageProfiles is `, this.pageProfiles);
+  }
+
+  getIdDataFromUrl(url, location) {
+    //logDebug("getIdDataFromUrl ", url);
+
+    // Remove the start and the domain, leaving the rest of the string untouched
+    url = url.replace(this.domainRegex, "");
+
+    for (let profile of this.pageProfiles) {
+      let regex = profile.matchRegex;
+      if (regex.test(url)) {
+        let id = url.replace(regex, "$1");
+        //logDebug(`getIdDataFromUrl: profile is ${profile.pageType} id is: ${id}`);
+
+        let idType = profile.pageIdType;
+
+        if (location && location.locationType && location.locationType.locationIdType) {
+          idType = location.locationType.locationIdType;
+        }
+        return { idType: idType, id: id };
+      }
+    }
+  }
+
+  isLocationTypeEnabled(locationType) {
+    if (locationType.optionKey) {
+      let enabled = this.getOption(locationType.optionKey);
+      return enabled;
+    } else {
+      // no option key
+      console.warn("locationType has no optionKey");
+      return false;
+    }
+  }
+}

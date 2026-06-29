@@ -39,13 +39,15 @@ function shouldShowSearchMenuItem(data, filter) {
     countryList: ["Germany"],
   };
 
-  return false; // Disable all serach functionality for now
+  return false; // Disable all search functionality for now
 
+  /*
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
     return false;
   }
 
   return true;
+  */
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

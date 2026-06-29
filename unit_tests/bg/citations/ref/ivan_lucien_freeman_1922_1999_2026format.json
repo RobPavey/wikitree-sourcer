@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Billion Graves\"<br/>\nSpringvale Botanical Cemetery, Main Drive, Melbourne, Victoria 3171, Australia<br/>\n[https://billiongraves.com/grave/Ivan-Lucien-Freeman/6498843?referrer=myheritage BillionGraves memorial] (accessed 6 May 2021)<br/>\nMemorial page for Ivan Lucien Freeman (6 Aug 1922-13 Dec 1999).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ivan was mentioned on a memorial at Springvale Botanical Cemetery, Main Drive, Melbourne, Victoria 3171, Australia, with a death date of 13 December 1999.<ref>\n'''Memorial''':\n\"Billion Graves\"<br/>\nSpringvale Botanical Cemetery, Main Drive, Melbourne, Victoria 3171, Australia<br/>\n[https://billiongraves.com/grave/Ivan-Lucien-Freeman/6498843?referrer=myheritage BillionGraves memorial] (accessed 6 May 2021)<br/>\nMemorial page for Ivan Lucien Freeman (6 Aug 1922-13 Dec 1999).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': \"Billion Graves\"<br/>Springvale Botanical Cemetery, Main Drive, Melbourne, Victoria 3171, Australia<br/>[https://billiongraves.com/grave/Ivan-Lucien-Freeman/6498843?referrer=myheritage BillionGraves memorial] (accessed 6 May 2021)<br/>Memorial page for Ivan Lucien Freeman (6 Aug 1922-13 Dec 1999).",
+    "type": "source"
+  }
+}

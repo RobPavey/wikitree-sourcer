@@ -29,11 +29,17 @@
     }
   ],
   "marriageDate": "16 Abr 1928",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QVJ8-SFH9}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QVJ8-SFH9"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|939Z-RGVY-V}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "939Z-RGVY-V"
+    }
   ],
   "collectionData": {
     "id": "1682798",

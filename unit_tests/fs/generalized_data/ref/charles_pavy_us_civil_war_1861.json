@@ -14,8 +14,11 @@
   "eventPlace": {
     "placeString": "Indiana, United States"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|FSR5-DJ4}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "FSR5-DJ4"
+    }
   ],
   "collectionData": {
     "id": "1910717",

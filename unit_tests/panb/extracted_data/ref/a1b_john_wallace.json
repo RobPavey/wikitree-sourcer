@@ -2,7 +2,11 @@
   "url": "https://archives2.gnb.ca/Search/VISSE/141A1b.aspx?culture=en-CA&guid=436A96E4-9228-44F6-AE61-5051B00E8613",
   "success": true,
   "databaseID": "RS141A1b",
+<<<<<<< HEAD
   "tableTitle": "Vital Statistics from Government Records (RS141A1b): Index to Late Registration of Births",
+=======
+  "tableTitle": "Index to Late Registration of Births (RS141A1b)",
+>>>>>>> e466a5f4048fec9772f9f4140bb97eb21f4283f6
   "recordData": {
     "Name": "WALLACE, JOHN LESLIE",
     "Sex": "M",

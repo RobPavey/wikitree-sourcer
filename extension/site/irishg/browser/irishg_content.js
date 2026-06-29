@@ -22,4 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`irishg`, `site/irishg/core/irishg_extract_data.mjs`);
+siteContentInit("irishg");

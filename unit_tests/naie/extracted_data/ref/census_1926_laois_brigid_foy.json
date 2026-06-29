@@ -1,0 +1,74 @@
+{
+  "url": "https://nationalarchives.ie/collections/search-the-1926-census/census-record/#census_year=1926&surname__icontains=Foy&updated_sex=F&updated_age__gte=19&updated_age__lte=23&updated_religion=Roman+Catholic&townland=Sleaty&a_id=794186",
+  "success": true,
+  "isPost2025Format": true,
+  "recordId": "794186",
+  "name": "Foy, Brigid",
+  "recordData": {
+    "surname": "Foy",
+    "first_name": "Brigid",
+    "updated_relationship_to_head": "Daughter",
+    "census_year": "1926",
+    "county": "Laois",
+    "townland": "Sleaty",
+    "ded": "Graigue Rural",
+    "updated_age": "20",
+    "updated_sex": "F",
+    "updated_religion": "Roman Catholic",
+    "updated_marriage": "Single"
+  },
+  "household": {
+    "headings": [
+      "Surname",
+      "First Name",
+      "Relationship to Head of Household",
+      "County",
+      "Townland / Street",
+      "DED",
+      "Age",
+      "Sex",
+      "Religion",
+      "Marital Status"
+    ],
+    "members": [
+      {
+        "Surname": "Foy",
+        "First Name": "Michael",
+        "Relationship to Head of Household": "Head",
+        "County": "Laois",
+        "Townland / Street": "Sleaty",
+        "DED": "Graigue Rural",
+        "Age": "63",
+        "Sex": "M",
+        "Religion": "Roman Catholic",
+        "Marital Status": "Married"
+      },
+      {
+        "Surname": "Foy",
+        "First Name": "Julia",
+        "Relationship to Head of Household": "Wife",
+        "County": "Laois",
+        "Townland / Street": "Sleaty",
+        "DED": "Graigue Rural",
+        "Age": "60",
+        "Sex": "F",
+        "Religion": "Roman Catholic",
+        "Marital Status": "Married"
+      },
+      {
+        "Surname": "Foy",
+        "First Name": "Brigid",
+        "Relationship to Head of Household": "Daughter",
+        "County": "Laois",
+        "Townland / Street": "Sleaty",
+        "DED": "Graigue Rural",
+        "Age": "20",
+        "Sex": "F",
+        "Religion": "Roman Catholic",
+        "Marital Status": "Single",
+        "isSelected": true
+      }
+    ]
+  },
+  "imageLink": "https://nationalarchives.ie/collections/search-the-1926-census/view-1926-pdf/?doc=Sleaty_2408_0014_0015_0_00029.pdf"
+}

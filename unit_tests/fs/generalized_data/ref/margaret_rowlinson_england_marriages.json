@@ -32,8 +32,11 @@
       }
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|NN5C-1XR}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "NN5C-1XR"
+    }
   ],
   "collectionData": {
     "id": "1473015",

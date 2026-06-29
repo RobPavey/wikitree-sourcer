@@ -27,7 +27,7 @@ import {
   addBuildCitationMenuItems,
   addMenuItemWithSubtitle,
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addMenuDivider,
   addItalicMessageMenuItem,
   beginMainMenu,
@@ -60,6 +60,7 @@ import {
   addStandardMenuEnd,
   addShowCitationAssistantMenuItem,
   buildMinimalMenuWithMessage,
+  addAlternateSelectorMenuItems,
 } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import { addBuildListsMenuItem } from "/base/browser/popup/popup_build_lists.mjs";
@@ -95,7 +96,7 @@ import { RT } from "../../../base/core/record_type.mjs";
 
 import { GeneralizedData } from "/base/core/generalize_data_utils.mjs";
 
-import { getSiteDataForSite } from "/base/core/site_registry.mjs";
+import { getSiteDataForSite } from "/base/browser/common/site_registry_storage.mjs";
 
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 
@@ -103,6 +104,7 @@ import {
   generalizeData,
   generalizeDataGivenRecordType,
   regeneralizeDataWithLinkedRecords,
+  regeneralizeDataWithAlternatesSelected,
 } from "../core/ancestry_generalize_data.mjs";
 import { buildCitation } from "../core/ancestry_build_citation.mjs";
 import { buildHouseholdTable, buildCustomTable } from "/base/core/table_builder.mjs";
@@ -741,6 +743,57 @@ function getExcludedSourcesString(response, data) {
   return message;
 }
 
+function getIncompleteCitationsString(response) {
+  let message = "";
+
+  message +=
+    "\nWarning: Some data could not be retrieved from Ancestry so the citations may be incomplete or excluded.";
+  if (response.failureCount) {
+    if (response.failureCount == 1) {
+      message += "\n\nThere was " + response.failureCount + " failure getting sources";
+    } else {
+      message += "\n\nThere were " + response.failureCount + " failures getting sources";
+    }
+  }
+  if (response.linkedRecordFailureCount) {
+    if (response.linkedRecordFailureCount == 1) {
+      message += "\n\nThere was " + response.linkedRecordFailureCount + " failure getting linked records";
+    } else {
+      message += "\n\nThere were " + response.linkedRecordFailureCount + " failures getting linked records";
+    }
+  }
+  if (response.sharingLinksFailureCount) {
+    if (response.sharingLinksFailureCount == 1) {
+      message += "\n\nThere was " + response.sharingLinksFailureCount + " failure getting sharing links";
+    } else {
+      message += "\n\nThere were " + response.sharingLinksFailureCount + " failures getting sharing links";
+    }
+  }
+
+  if (response.fetchFailedSources && response.fetchFailedSources.length > 0) {
+    let error429count = 0;
+    for (let source of response.fetchFailedSources) {
+      let status = source.fetchStatus.statusCode;
+      let title = source.title;
+      let uri = source.recordUrl;
+      let reason = " could not be fetched";
+      if (status == 410) {
+        reason = " has been removed from the site";
+      } else if (status == 429) {
+        error429count++;
+      }
+      message += `\n• Source "${title} with URL ${uri} ${reason} (status code: ${status})`;
+    }
+
+    if (error429count) {
+      message +=
+        "\n\n⚠️ Note: Sourcer caches the data that was retrieved, so if you wait a few seconds and try again you may be able to get all of the records that got 429 errors.\n";
+    }
+  }
+
+  return message;
+}
+
 async function ancestryBuildAllCitationsAction(data, citationType) {
   try {
     clearClipboard();
@@ -777,10 +830,14 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
         } else {
           let message = response.citationCount + " citations";
           let message2 = "";
-          if (response.citationsStringType == "source" || response.citationsStringType == "fsPlainSource") {
+          if (response.citationsStringType == "source") {
             message2 = "\nThese are source type citations and should be pasted after the Sources heading.";
           } else {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
+            if (response.citationsStringType == "narrative") {
+              message2 +=
+                "\n\nNote that the narrative strings generated are just starting points for you to add detail.";
+            }
           }
 
           if (excludedSourcesMessage) {
@@ -788,21 +845,13 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
           }
 
           let iconType = "check";
-          if (response.failureCount || response.linkedRecordFailureCount) {
+          let errorMessage = "";
+          if (response.failureCount || response.linkedRecordFailureCount || response.sharingLinksFailureCount) {
             iconType = "warning";
-            message2 +=
-              "\n\nWarning: Some data could not be retreived from Ancestry so the citations may be incomplete.";
-            if (response.failureCount) {
-              message2 += "\n- There were " + response.failureCount + " failures getting sources";
-            }
-            if (response.linkedRecordFailureCount) {
-              message2 += "\n- There were " + response.linkedRecordFailureCount + " failures getting linked records";
-            }
-            message2 +=
-              "\n\nNote: Sourcer caches the data that was retreived, so if you wait a few seconds and try again you may be able to get all of the records and thus get a full list of citations.\n";
+            errorMessage = getIncompleteCitationsString(response);
           }
 
-          writeToClipboard(response.citationsString, message, false, message2, iconType);
+          writeToClipboard(response.citationsString, message, false, message2, iconType, errorMessage);
         }
       } else {
         if (response.failureCount) {
@@ -822,8 +871,6 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
             message2 +=
               " excluded due to option settings because the source person was not a primary person for the event.";
           }
-
-          numExcludedDuplicateSources;
 
           displayMessageWithIcon("warning", message, message2);
         }
@@ -875,6 +922,9 @@ async function ancestryGetAllCitationsForSavePersonData(data) {
       data.allCitationsString = response.citationsString;
       data.allCitationsType = response.citationsStringType;
       data.allCitationsNoteMessage = getExcludedSourcesString(response, data);
+      if (response.failureCount || response.linkedRecordFailureCount || response.sharingLinksFailureCount) {
+        data.allCitationsErrorMessage = getIncompleteCitationsString(response);
+      }
       return { success: true };
     } else {
       // If it fails we want to let the user know
@@ -1027,6 +1077,49 @@ async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citati
         }
         fieldData.note += "Base URL is " + otherSiteData.baseUrl;
       }
+    }
+  } else if (pageType == "personAddSourceCitation") {
+    // this is like createCitation but replaced it when Ancestry changed thier site on Feb 2026
+    fieldData.sourceName = getSourceName(gd, otherSiteData);
+    // details is a required field, of there is no sourceReference then the site's buildCitation must
+    // provide a referenceWithinRepository
+    if (citationObject) {
+      if (citationObject.referenceWithinRepository) {
+        fieldData.detail = citationObject.referenceWithinRepository;
+      } else if (citationObject.sourceReference) {
+        fieldData.detail = citationObject.sourceReference;
+      } else fieldData.otherInfo = citationObject.standardDataString;
+      fieldData.webAddress = citationObject.url;
+      if (gd) {
+        fieldData.date = gd.inferEventDate();
+      }
+    } else if (personData && gd) {
+      if (gd.personRepoRef) {
+        fieldData.detail = gd.personRepoRef;
+      }
+      let ed = personData.extractedData;
+      if (ed) {
+        if (ed.url) {
+          fieldData.webAddress = ed.url;
+        }
+      }
+      // generate some text showing name, birth data and death date
+      let text = "";
+      text += gd.inferFullName();
+      let birthDate = gd.inferBirthDate();
+      let deathDate = gd.inferDeathDate();
+      if (birthDate || deathDate) {
+        text += " (";
+        if (birthDate) {
+          text += birthDate;
+        }
+        text += " - ";
+        if (deathDate) {
+          text += deathDate;
+        }
+        text += ")";
+      }
+      fieldData.text = text;
     }
   } else if (pageType == "personAddWebLink") {
     if (citationObject) {
@@ -1275,7 +1368,7 @@ function addBuildAncestryTreeMediaTemplateMenuItem(menu, data) {
 
 function addBuildAllCitationsMenuItem(menu, data, backFunction) {
   if (data.extractedData.sources && data.extractedData.sources.length > 0) {
-    addMenuItemWithSubMenu(
+    addMenuItemWithSubmenu(
       menu,
       "Build All Citations",
       function (element) {
@@ -1283,7 +1376,7 @@ function addBuildAllCitationsMenuItem(menu, data, backFunction) {
         ancestryBuildAllCitationsAction(data, citationType);
       },
       function () {
-        setupBuildAllCitationsSubMenu(data, backFunction);
+        setupBuildAllCitationsSubmenu(data, backFunction);
       }
     );
   }
@@ -1368,7 +1461,7 @@ async function addFillCreateCitationMenuItems(menu, data, tabId, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function setupBuildAllCitationsSubMenu(data, backFunction) {
+function setupBuildAllCitationsSubmenu(data, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -1399,6 +1492,10 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
 
   let extractedData = data.extractedData;
 
+  if (extractedData.pageType == "record" && data.alternateFieldIndices) {
+    regeneralizeDataWithAlternatesSelected(data);
+  }
+
   let backFunction = function () {
     setupAncestryPopupMenuWithLinkData(data, tabId);
   };
@@ -1420,6 +1517,10 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
       addItalicMessageMenuItem(menu, subMessage, "yellowBackground");
     }
 
+    addAlternateSelectorMenuItems(menu, data.generalizedData, data, function () {
+      setupAncestryPopupMenuWithLinkData(data, tabId);
+    });
+
     await addSearchMenus(menu, data, backFunction, "ancestry");
     addMenuDivider(menu);
 
@@ -1428,6 +1529,11 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
     addAncestryGoToImageMenuItem(menu, data);
     await addAncestryAddCommentMenuItem(menu, data, tabId);
   } else if (extractedData.pageType == "image") {
+    let count = await addSearchMenus(menu, data, backFunction, "ancestry");
+    if (count) {
+      addMenuDivider(menu);
+    }
+
     addAncestryImageBuildCitationMenuItems(menu, data);
     addAncestryBuildSharingTemplateMenuItem(menu, data);
     addAncestryBuildSharingUrlMenuItem(menu, data);
@@ -1445,6 +1551,7 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
     extractedData.pageType == "createCitation" ||
     extractedData.pageType == "createSource" ||
     extractedData.pageType == "createRepository" ||
+    extractedData.pageType == "personAddSourceCitation" ||
     extractedData.pageType == "personAddWebLink"
   ) {
     await addFillCreateCitationMenuItems(menu, data, tabId, backFunction);
@@ -1502,6 +1609,7 @@ async function setupAncestryPopupMenu(extractedData, tabId) {
 
   // do async prefetches
   loadDataCache(ancestryDependencyListener);
+
   if (extractedData.pageType == "record" || extractedData.pageType == "image") {
     // will get an error if we try to do this for pageType == "sharingImageOrRecord" for example
     getAncestrySharingDataObj(data, ancestryDependencyListener);

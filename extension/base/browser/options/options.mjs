@@ -160,9 +160,9 @@ async function buildPage() {
       panelElement: "addMerge-panel",
       buttonElement: "addMerge-tab",
     },
-    context: {
-      panelElement: "context-panel",
-      buttonElement: "context-tab",
+    ui: {
+      panelElement: "ui-panel",
+      buttonElement: "ui-tab",
     },
   };
 

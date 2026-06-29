@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Leslie William Thomas"
+  },
+  "eventDate": {
+    "dateString": "14-Jul-1943"
+  },
+  "birthDate": {
+    "dateString": "13-Jul-1943"
+  },
+  "birthPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Dell"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Albert"
+      }
+    }
+  },
+  "hasValidData": true
+}

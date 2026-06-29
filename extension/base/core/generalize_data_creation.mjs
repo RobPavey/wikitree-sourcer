@@ -68,6 +68,9 @@ function commonGeneralizeData(sourceOfData, edReader) {
   setField("deathDate", edReader.getDeathDateObj());
   setField("deathPlace", edReader.getDeathPlaceObj());
 
+  setField("residenceDate", edReader.getResidenceDateObj());
+  setField("residencePlace", edReader.getResidencePlaceObj());
+
   setField("ageAtEvent", edReader.getAgeAtEvent());
   setField("ageAtDeath", edReader.getAgeAtDeath());
   setField("race", edReader.getRace());

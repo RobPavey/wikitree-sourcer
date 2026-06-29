@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
+import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 
 // Births:
 // Search From Date must be later than 31/12/1839.
@@ -32,7 +33,7 @@ import { NameUtils } from "../../../base/core/name_utils.mjs";
 // Search From Date must be later than 31/12/1839.
 // Marriages:
 // Search From Date must be later than 31/12/1839.
-// Search To Date must not be later than 75 years before today9.
+// Search To Date must not be later than 75 years before today.
 
 function getBirthsDateRange(runDate) {
   let from = { day: 1, month: 1, year: 1840 };
@@ -123,7 +124,7 @@ function constrainDate(date, runDate, allowedDateRange) {
   return date;
 }
 
-function addDateRange(gd, dateString, runDate, options, allowedDateRange) {
+function addDateRange(gd, dateObj, runDate, options, allowedDateRange) {
   const maxLifespan = Number(options.search_general_maxLifespan);
 
   let exactness = 2;
@@ -135,13 +136,13 @@ function addDateRange(gd, dateString, runDate, options, allowedDateRange) {
   }
 
   let fromDate = { day: 1, month: 1, year: 1840 };
-  let toDate = { day: 31, month: 12, year: 2023 };
+  let toDate = { day: 31, month: 12, year: 2026 };
 
-  let usedDateString = false;
-  if (dateString) {
-    let parsedDate = DateUtils.parseDateString(dateString);
+  let usedDateObj = false;
+  if (dateObj) {
+    let parsedDate = DateUtils.parseDateString(dateObj.getDateString());
     if (parsedDate.isValid && parsedDate.yearNum) {
-      usedDateString = true;
+      usedDateObj = true;
 
       let fromDay = parsedDate.hasDay ? parsedDate.dayNum : 1;
       let fromMonth = parsedDate.hasMonth ? parsedDate.monthNum : 1;
@@ -163,12 +164,17 @@ function addDateRange(gd, dateString, runDate, options, allowedDateRange) {
       }
       let toYear = parsedDate.yearNum + exactness;
 
-      fromDate = { day: fromDay, month: fromMonth, year: fromYear };
-      toDate = { day: toDay, month: toMonth, year: toYear };
+      if (dateObj.qualifier != dateQualifiers.BEFORE) {
+        fromDate = { day: fromDay, month: fromMonth, year: fromYear };
+      }
+
+      if (dateObj.qualifier != dateQualifiers.AFTER) {
+        toDate = { day: toDay, month: toMonth, year: toYear };
+      }
     }
   }
 
-  if (!usedDateString) {
+  if (!usedDateObj) {
     let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate, exactness);
 
     if (range.startYear) {
@@ -219,7 +225,7 @@ function buildSearchData(input) {
       fieldData.mfirst = parentNames.motherForenames;
     }
 
-    let dateRange = addDateRange(gd, gd.inferBirthDate(), runDate, options, getBirthsDateRange(runDate));
+    let dateRange = addDateRange(gd, gd.inferBirthDateObj(), runDate, options, getBirthsDateRange(runDate));
     fieldData.cdate_lower = dateRange.fromDate;
     fieldData.cdate_upper = dateRange.toDate;
   } else if (typeOfSearch == "Deaths") {
@@ -229,7 +235,7 @@ function buildSearchData(input) {
     }
     fieldData.dsur = lastName;
     fieldData.dfirst = forenames;
-    let dateRange = addDateRange(gd, gd.inferDeathDate(), runDate, options, getDeathsDateRange(runDate));
+    let dateRange = addDateRange(gd, gd.inferDeathDateObj(), runDate, options, getDeathsDateRange(runDate));
     fieldData.ddate_lower = dateRange.fromDate;
     fieldData.ddate_upper = dateRange.toDate;
   } else {
@@ -241,7 +247,7 @@ function buildSearchData(input) {
       fieldData.brsur = lastName;
       fieldData.brfirst = forenames;
     }
-    let dateRange = addDateRange(gd, "", runDate, options, getMarriagesDateRange(runDate));
+    let dateRange = addDateRange(gd, undefined, runDate, options, getMarriagesDateRange(runDate));
     fieldData.wdate_lower = dateRange.fromDate;
     fieldData.wdate_upper = dateRange.toDate;
   }

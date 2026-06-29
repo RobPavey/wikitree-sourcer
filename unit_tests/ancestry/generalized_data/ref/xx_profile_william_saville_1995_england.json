@@ -13,6 +13,9 @@
     "placeString": "England"
   },
   "personGender": "male",
+  "wtSearchTemplates": [
+    "{{Ancestry Tree|86808578|262406177056}}"
+  ],
   "parents": {
     "father": {
       "name": {

@@ -2,6 +2,12 @@
   "sourceType": "record",
   "recordType": "Death",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Mrs Nellie E Drake",
+      "Mrs Nellie E Putnam"
+    ]
+  },
   "name": {
     "name": "Nellie E Drake",
     "nonPrefixHonorific": "Mrs"

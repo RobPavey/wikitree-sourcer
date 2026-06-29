@@ -1,0 +1,47 @@
+{
+  "sourceType": "record",
+  "role": "Other",
+  "primaryPerson": {
+    "name": {
+      "name": "Ralph Emerson Furr",
+      "lastName": "Furr",
+      "forenames": "Ralph Emerson"
+    }
+  },
+  "recordType": "Military",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Nancy Lee Furr",
+    "nonPrefixHonorific": "Mrs",
+    "lastName": "Furr",
+    "forenames": "Nancy Lee"
+  },
+  "eventDate": {
+    "dateString": "1942",
+    "yearString": "1942"
+  },
+  "eventPlace": {
+    "placeString": "Mecklenburg, North Carolina, United States"
+  },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QVRG-JSDC"
+    }
+  ],
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-C9PN-L4ND"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QVRG-JSDH"
+    }
+  ],
+  "collectionData": {
+    "id": "2431127",
+    "collectionTitle": "North Carolina, First Draft Registration Cards, 1940-1945"
+  },
+  "hasValidData": true
+}

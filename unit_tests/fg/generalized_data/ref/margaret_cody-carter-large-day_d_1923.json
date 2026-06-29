@@ -30,8 +30,11 @@
   "birthPlace": {
     "placeString": "Fort Washakie, Fremont County, Wyoming, USA"
   },
-  "wtSearchTemplates": [
-    "{{FindAGrave|20605336}}"
+  "wtSearchIds": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem20605336"
+    }
   ],
   "hasValidData": true
 }

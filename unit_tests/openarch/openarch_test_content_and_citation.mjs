@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractDataFromFetch } from "../../extension/site/openarch/core/openarch_extract_data.mjs";
 import { generalizeData } from "../../extension/site/openarch/core/openarch_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/openarch/core/openarch_build_citation.mjs";
 
@@ -83,6 +82,10 @@ const regressionData = [
     url: "https://www.openarchieven.nl/frl:034e7de7-24cc-6d54-d435-98c38c0b44c7",
   },
   {
+    caseName: "divorce_1916_marcus_haringman",
+    url: "https://www.openarchieven.nl/nha:F2A40D8C-4067-44ED-BBEB-511E1530AF5F",
+  },
+  {
     // has example of a2a:Place with province
     caseName: "draw_1922_jan_bel",
     url: "https://www.openarchieven.nl/nha:99634afa-4797-4f8d-945c-ac6396063a97",
@@ -114,7 +117,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("openarch", extractDataFromFetch, regressionData, testManager);
+  await runExtractDataTests("openarch", regressionData, testManager, true);
 
   await runGeneralizeDataTests("openarch", generalizeData, regressionData, testManager);
 

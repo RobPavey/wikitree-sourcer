@@ -23,8 +23,8 @@ SOFTWARE.
 */
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 import {
   registerSearchMenuItemFunction,
@@ -62,7 +62,7 @@ async function scotpSearch(generalizedData, parameters) {
   const checkPermissionsOptions = {
     reason: "Sourcer needs to load a content script on the Scotlands People site to complete the search",
   };
-  if (!(await checkPermissionForSite("https://www.scotlandspeople.gov.uk/*", checkPermissionsOptions))) {
+  if (!(await checkPermissionForSiteMatches("scotp", checkPermissionsOptions))) {
     return;
   }
 
@@ -119,7 +119,7 @@ async function scotpSearch(generalizedData, parameters) {
 
 function addScotpDefaultSearchMenuItem(menu, data, backFunction, filter) {
   addMenuItem(menu, "Search ScotlandsPeople...", function (element) {
-    setupScotpSearchSubMenu(data, backFunction);
+    setupScotpSearchSubmenu(data, backFunction);
   });
 
   return true;
@@ -129,9 +129,9 @@ function addScotpDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupScotpSearchSubMenu(data, backFunction) {
+async function setupScotpSearchSubmenu(data, backFunction) {
   let dataModule = await import(`../core/scotp_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.ScotpData, scotpSearch);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.ScotpData, scotpSearch);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

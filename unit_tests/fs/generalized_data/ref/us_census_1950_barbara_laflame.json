@@ -1,0 +1,190 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "lastName": "Laflame",
+    "forenames": "Barbara D"
+  },
+  "birthPlace": {
+    "placeString": "Mass"
+  },
+  "eventDate": {
+    "dateString": "April 10, 1950"
+  },
+  "eventPlace": {
+    "placeString": "Lowell"
+  },
+  "ageAtEvent": "16",
+  "occupation": "New Worker",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Leo Laflame",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "44",
+      "occupation": "Loom Fixer",
+      "birthPlace": "Mass"
+    },
+    {
+      "name": "Lillian Laflame",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "34",
+      "birthPlace": "Mass"
+    },
+    {
+      "name": "Roland L Laflame",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "18",
+      "occupation": "Shipper",
+      "birthPlace": "Mass"
+    },
+    {
+      "name": "Pauline S Laflame",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "17",
+      "occupation": "Quiller",
+      "birthPlace": "Mass"
+    },
+    {
+      "name": "Barbara D Laflame",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "16",
+      "occupation": "New Worker",
+      "birthPlace": "Mass",
+      "isSelected": true
+    },
+    {
+      "name": "Pearl R Laflame",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "12",
+      "birthPlace": "Mass"
+    },
+    {
+      "name": "Bertha J Laflame",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "8",
+      "birthPlace": "Mass"
+    },
+    {
+      "name": "Doris L Laflame",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "7",
+      "birthPlace": "Mass"
+    },
+    {
+      "name": "Larraine R Laflame",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "6",
+      "birthPlace": "Mass"
+    },
+    {
+      "name": "Robert N Laflame",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "4",
+      "birthPlace": "Mass"
+    }
+  ],
+  "maritalStatus": "single",
+  "relationshipToHead": "daughter",
+  "race": "White",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Leo Laflame"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Lillian Laflame"
+      }
+    }
+  },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "6F3R-CFVH"
+    }
+  ],
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QHJ-5QHW-R5TT"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6F3R-CFVS"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6F3R-CFV7"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6F3R-CFV4"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6F3R-CFVM"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6F3R-CFVH"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6F3R-CFV3"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6F3R-CFV9"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6F3R-CFJ1"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6F3R-CFVW"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6F3R-CFVQ"
+    }
+  ],
+  "collectionData": {
+    "id": "4464515",
+    "collectionTitle": "United States, Census, 1950",
+    "page": "21"
+  },
+  "hasValidData": true
+}

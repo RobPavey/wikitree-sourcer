@@ -32,7 +32,7 @@ function addFlowerNote(fieldData) {
   }
 }
 
-async function additionalMessageHandler(request, sender, sendResponse) {
+function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "addFlowerNote") {
     addFlowerNote(request.fieldData);
     sendResponse({ success: true });
@@ -43,8 +43,7 @@ async function additionalMessageHandler(request, sender, sendResponse) {
 }
 
 siteContentInit(
-  `fg`,
-  `site/fg/core/fg_extract_data.mjs`,
+  "fg",
   undefined, // overrideExtractHandler
   additionalMessageHandler
 );

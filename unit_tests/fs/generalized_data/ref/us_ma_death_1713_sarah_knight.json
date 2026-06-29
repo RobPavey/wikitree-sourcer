@@ -27,11 +27,17 @@
       }
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|FH24-9QT}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "FH24-9QT"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QSQ-G97M-59JG-T}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QSQ-G97M-59JG-T"
+    }
   ],
   "collectionData": {
     "id": "2061550",

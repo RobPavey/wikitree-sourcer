@@ -63,6 +63,9 @@
       ]
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Tree|74248219|48290959228}}"
+  ],
   "parents": {
     "father": {
       "name": {

@@ -25,22 +25,7 @@ SOFTWARE.
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 import { DataString } from "../../../base/core/data_string.mjs";
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
-
-function getCleanRecordDataValue(recordData, fieldName) {
-  let value = recordData[fieldName];
-  if (value == undefined) {
-    return value;
-  }
-
-  // sometimes there are values in square brackets after the first value
-  // these make it hard to parse dates, places, names etc so remove them
-  let bracketIndex = value.indexOf("[");
-  if (bracketIndex != -1) {
-    value = value.substring(0, bracketIndex).trim();
-  }
-
-  return value;
-}
+import { getRecordDataValue } from "./ancestry_generalize_data.mjs";
 
 function getRefTitle(ed, gd) {
   const recordTypeToRefTitle = [
@@ -308,7 +293,7 @@ function removeUnwantedKeysForDataString(keys, recordData) {
   return newKeys;
 }
 
-function addReferenceDataToSourceReference(ed, builder, options) {
+function addReferenceDataToSourceReference(ed, gd, builder, options) {
   if (ed.recordData) {
     let keys = Object.keys(ed.recordData);
 
@@ -324,7 +309,7 @@ function addReferenceDataToSourceReference(ed, builder, options) {
     for (let key of keys) {
       let refKeyList = getReferenceKeyListForKey(key);
       if (refKeyList) {
-        let value = ed.recordData[key];
+        let value = getRecordDataValue(ed, gd, key, false);
 
         if (value) {
           // can't just test value since it could be something like "1"
@@ -395,15 +380,6 @@ function cleanSourceReference(builder) {
   builder.sourceReference = string;
 }
 
-function getOneOfPossibleFieldNames(recordData, names) {
-  for (let name of names) {
-    let value = getCleanRecordDataValue(recordData, name);
-    if (value) {
-      return value;
-    }
-  }
-}
-
 function buildCustomDataString(gd, options) {
   let input = {
     generalizedData: gd,
@@ -438,10 +414,12 @@ function buildDataString(ed, gd, dataStyle, options, builder) {
   }
 
   if (recordData) {
+    let includeAllRecordDateVariants = true; // should be an option
+
     let keys = Object.keys(recordData);
     keys = removeUnwantedKeysForDataString(keys, recordData);
     for (let key of keys) {
-      let value = recordData[key];
+      let value = getRecordDataValue(ed, gd, key, includeAllRecordDateVariants);
       if (value) {
         if (dataString != "") {
           dataString += itemSep + " ";
@@ -468,7 +446,7 @@ function buildDataString(ed, gd, dataStyle, options, builder) {
   } else {
     let titleName = ed.titleName;
     if (!titleName && recordData) {
-      let name = getOneOfPossibleFieldNames(recordData, ["Name"]);
+      let name = getRecordDataValue(ed, gd, "Name", false);
       if (name) {
         titleName = name;
       }
@@ -497,6 +475,8 @@ function getAdditionalInfo(ed, gd, citationType, options, builder) {
   }
 
   // style must be table
+  let includeAllRecordDateVariants = true; // should be an option
+
   var result = "";
   let recordData = ed.recordData;
   if (recordData) {
@@ -514,7 +494,8 @@ function getAdditionalInfo(ed, gd, citationType, options, builder) {
         } else {
           result += "|-\n";
         }
-        result += "| " + key + " || " + recordData[key] + "\n";
+        let value = getRecordDataValue(ed, gd, key, includeAllRecordDateVariants);
+        result += "| " + key + " || " + value + "\n";
       }
 
       result += "|}";
@@ -574,12 +555,24 @@ function buildAncestryRecordTemplate(ed, options) {
 
 function buildAncestryImageTemplate(ed, options) {
   let target = options.citation_general_target;
+
+  let url = ed.url;
+  let dbId = ed.dbId;
+  let recordId = ed.recordId;
+
+  if (ed.pageType == "record") {
+    // only comes here if there is no sharingObj
+    url = ed.imageUrl;
+    dbId = ed.imageDbId;
+    recordId = ed.imageRecordId;
+  }
+
   if (target == "plain") {
-    return "Ancestry Image Link: " + ed.url;
+    return "Ancestry Image Link: " + url;
   }
 
   // Note that the Ancestry Image template has no 3rd (domain parameter)
-  return "{{Ancestry Image|" + ed.dbId + "|" + ed.recordId + "}}";
+  return "{{Ancestry Image|" + dbId + "|" + recordId + "}}";
 }
 
 function buildAncestrySharingTemplateFromSharingDataObj(options, dataObj) {
@@ -706,7 +699,7 @@ function buildCoreCitation(ed, gd, options, sharingDataObj, builder) {
 
   builder.sourceTitle = ed.titleCollection;
   buildSourceReference(ed, builder);
-  addReferenceDataToSourceReference(ed, builder, options);
+  addReferenceDataToSourceReference(ed, gd, builder, options);
 
   if (sharingDataObj) {
     let template = buildAncestrySharingTemplateFromSharingDataObj(options, sharingDataObj);
@@ -714,6 +707,10 @@ function buildCoreCitation(ed, gd, options, sharingDataObj, builder) {
     builder.databaseHasImages = true;
 
     builder.plainSharingLink = buildPlainAncestrySharingLinkFromSharingDataObj(sharingDataObj);
+  } else {
+    if (ed.imageRecordId) {
+      builder.sharingLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(ed, options);
+    }
   }
 
   builder.recordLinkOrTemplate = buildAncestryRecordTemplate(ed, options);

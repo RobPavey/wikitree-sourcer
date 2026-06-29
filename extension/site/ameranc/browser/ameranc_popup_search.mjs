@@ -24,7 +24,7 @@ SOFTWARE.
 
 import {
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addBackMenuItem,
   addSameEventMenuItem,
   beginMainMenu,
@@ -34,7 +34,7 @@ import {
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -87,14 +87,14 @@ async function amerancSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addAmerancDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search American Ancestors",
     function (element) {
       amerancSearch(data.generalizedData, "");
     },
     function () {
-      setupAmerancSearchSubMenu(data, backFunction, filter);
+      setupAmerancSearchSubmenu(data, backFunction, filter);
     }
   );
 
@@ -109,7 +109,7 @@ function addAmerancSameEventMenuItem(menu, data) {
 
 function addAmerancSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupAmerancSearchWithParametersSubMenu(data, backFunction);
+    setupAmerancSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -117,7 +117,7 @@ function addAmerancSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupAmerancSearchSubMenu(data, backFunction, filter) {
+async function setupAmerancSearchSubmenu(data, backFunction, filter) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -128,9 +128,9 @@ async function setupAmerancSearchSubMenu(data, backFunction, filter) {
   endMainMenu(menu);
 }
 
-async function setupAmerancSearchWithParametersSubMenu(data, backFunction) {
+async function setupAmerancSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/ameranc_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.AmerancData, amerancSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.AmerancData, amerancSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

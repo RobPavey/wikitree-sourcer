@@ -25,6 +25,10 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "fg",
+  matches: ["*://www.findagrave.com/*"],
+  additionalContentJsFiles: ["base/browser/content/wt_icons_common", "fg_content_wt_icons"],
+  runAt: "document_end",
   repositoryName: "Find a Grave",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +37,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("fg", siteData);
+  registerSite(siteData);
 }
 
-export { register };
+register();

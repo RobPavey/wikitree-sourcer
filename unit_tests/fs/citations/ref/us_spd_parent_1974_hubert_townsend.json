@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_fsShort_fsCitation_narrative": {
-    "citation": "Hubert's daughter Imogene Webb was in a Social Security record.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nHubert A Townsend in entry for Imogene Webb, .\n</ref>",
+    "citation": "Hubert's daughter Imogene Webb was in a Social Security record on 12 April 1999.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nHubert A Townsend in entry for Imogene Webb, .\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_fsCitation_source": {
@@ -16,7 +16,7 @@
     "type": "inline"
   },
   "dataStyle_record_string_narrative": {
-    "citation": "Hubert's daughter Imogene Webb was in a Social Security record.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nHubert A Townsend in Social Security record for daughter Imogene Webb.\n</ref>",
+    "citation": "Hubert's daughter Imogene Webb was in a Social Security record on 12 April 1999.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nHubert A Townsend in Social Security record for daughter Imogene Webb.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_string_source": {
@@ -24,15 +24,15 @@
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nName: Hubert A Townsend.\n</ref>",
+    "citation": "<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nName: Hubert A Townsend; Relationship to fact person: Parent; Fact: SocialProgramCorrespondence; Related person name: Imogene Webb; Related person gender: female; Related person birth date: 20 May 1913.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "Hubert's daughter Imogene Webb was in a Social Security record.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nName: Hubert A Townsend.\n</ref>",
+    "citation": "Hubert's daughter Imogene Webb was in a Social Security record on 12 April 1999.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nName: Hubert A Townsend; Relationship to fact person: Parent; Fact: SocialProgramCorrespondence; Related person name: Imogene Webb; Related person gender: female; Related person birth date: 20 May 1913.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''Social Security record of daughter Imogene Webb''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>Name: Hubert A Townsend.",
+    "citation": "* '''Social Security record of daughter Imogene Webb''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>Name: Hubert A Townsend; Relationship to fact person: Parent; Fact: SocialProgramCorrespondence; Related person name: Imogene Webb; Related person gender: female; Related person birth date: 20 May 1913.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
@@ -40,11 +40,11 @@
     "type": "inline"
   },
   "dataStyle_record_table_narrative": {
-    "citation": "Hubert's daughter Imogene Webb was in a Social Security record.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Hubert A Townsend\n|}\n</ref>",
+    "citation": "Hubert's daughter Imogene Webb was in a Social Security record on 12 April 1999.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Hubert A Townsend\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''Social Security record of daughter Imogene Webb''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>Name: Hubert A Townsend.",
+    "citation": "* '''Social Security record of daughter Imogene Webb''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>Name: Hubert A Townsend; Relationship to fact person: Parent; Fact: SocialProgramCorrespondence; Related person name: Imogene Webb; Related person gender: female; Related person birth date: 20 May 1913.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {
@@ -52,7 +52,7 @@
     "type": "inline"
   },
   "dataStyle_record_fsCitation_narrative": {
-    "citation": "Hubert's daughter Imogene Webb was in a Social Security record.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nHubert A Townsend in entry for Imogene Webb, .\n</ref>",
+    "citation": "Hubert's daughter Imogene Webb was in a Social Security record on 12 April 1999.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nHubert A Townsend in entry for Imogene Webb, .\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_fsCitation_source": {
@@ -64,7 +64,7 @@
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Hubert's daughter Imogene Webb was in a Social Security record.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021).\n</ref>",
+    "citation": "Hubert's daughter Imogene Webb was in a Social Security record on 12 April 1999.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
@@ -76,7 +76,7 @@
     "type": "inline"
   },
   "dataStyle_fsShort_string_narrative": {
-    "citation": "Hubert's daughter Imogene Webb was in a Social Security record.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nHubert A Townsend in Social Security record for daughter Imogene Webb.\n</ref>",
+    "citation": "Hubert's daughter Imogene Webb was in a Social Security record on 12 April 1999.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nHubert A Townsend in Social Security record for daughter Imogene Webb.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_string_source": {
@@ -88,7 +88,7 @@
     "type": "inline"
   },
   "dataStyle_fsLong_fsCitation_narrative": {
-    "citation": "Hubert's daughter Imogene Webb was in a Social Security record.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nHubert A Townsend in entry for Imogene Webb, .\n</ref>",
+    "citation": "Hubert's daughter Imogene Webb was in a Social Security record on 12 April 1999.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)<br/>\nHubert A Townsend in entry for Imogene Webb, .\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsLong_fsCitation_source": {

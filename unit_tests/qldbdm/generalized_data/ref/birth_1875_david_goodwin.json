@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "qldbdm",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "David Patrick Goodwin"
+  },
+  "eventDate": {
+    "dateString": "28 Jan 1875"
+  },
+  "birthPlace": {
+    "placeString": "Queensland, Australia",
+    "state": "Queensland",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Michael Goodwin"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Bridget Walsh"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "birth",
+    "registrationNumber": "1875/B/18577"
+  },
+  "hasValidData": true
+}

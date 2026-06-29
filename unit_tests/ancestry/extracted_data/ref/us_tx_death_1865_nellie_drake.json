@@ -8,7 +8,7 @@
   "titleName": "Mrs Nellie E Drake",
   "titleCollection": "Texas, U.S., Death Certificates, 1903-1982",
   "recordData": {
-    "Name": "Mrs Nellie E Drake [Mrs Nellie E Putnam]",
+    "Name": "Mrs Nellie E Drake",
     "Gender": "Female",
     "Race": "White",
     "Age": "82",
@@ -19,6 +19,11 @@
     "Death Place": "Hamilton, Hamilton, Texas, USA",
     "Father": "Carlas Putnam",
     "Mother": "Lurna Pennie"
+  },
+  "recordDataAltValues": {
+    "Name": [
+      "Mrs Nellie E Putnam"
+    ]
   },
   "linkData": {
     "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2272&h=83886198&indiv=try&viewrecord=1&r=an",

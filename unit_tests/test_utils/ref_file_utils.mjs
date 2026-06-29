@@ -86,6 +86,11 @@ function getTestTextFilePath(siteName, dataDir, testData, variantName = "") {
 }
 
 function writeTestOutputFile(testResultObject, siteName, dataDir, testData, logger) {
+  if (testResultObject === undefined) {
+    logger.logError(testData, "Failed to write output test file, testResultObject is undefined");
+    return false;
+  }
+
   createFolderIfNeeded("test", siteName, dataDir);
 
   // write out result file.
@@ -97,7 +102,7 @@ function writeTestOutputFile(testResultObject, siteName, dataDir, testData, logg
   } catch (err) {
     // An error occurred
     //console.error(err);
-    logger.logError(testData, "Failed to write output test file: " + resultPath);
+    logger.logError(testData, "Failed to write output test file: " + resultPath + ", " + err);
     return false;
   }
 
@@ -105,6 +110,11 @@ function writeTestOutputFile(testResultObject, siteName, dataDir, testData, logg
 }
 
 function writeTestOutputTextFile(testResultText, siteName, dataDir, testData, variantName, logger) {
+  if (testResultText === undefined) {
+    logger.logError(testData, "Failed to write output test file, testResultText is undefined");
+    return false;
+  }
+
   createFolderIfNeeded("test", siteName, dataDir);
 
   // write out result file.
@@ -114,7 +124,7 @@ function writeTestOutputTextFile(testResultText, siteName, dataDir, testData, va
   } catch (err) {
     // An error occurred
     //console.error(err);
-    logger.logError(testData, "Failed to write output test file: " + resultPath);
+    logger.logError(testData, "Failed to write output test file: " + resultPath + ", " + err);
     return false;
   }
 
@@ -269,5 +279,6 @@ export {
   writeTestOutputTextFile,
   readRefTextFile,
   createRefFile,
+  createRefTextFile,
   removeStaleOutputFiles,
 };

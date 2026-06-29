@@ -31,7 +31,7 @@ import {
 } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 const psukStartYear = 1858;
 const psukEndYear = 2100;
@@ -68,7 +68,7 @@ async function psukSearch(generalizedData) {
       reason:
         "To perform a search on Probate Search a content script needs to be loaded on the probatesearch.service.gov.uk search page.",
     };
-    let allowed = await checkPermissionForSite("*://probatesearch.service.gov.uk/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("psuk", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

@@ -23,11 +23,17 @@
   "eventPlace": {
     "placeString": "Surry, Virginia, United States"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|K6Z6-RVT}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "K6Z6-RVT"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|33SQ-GYBK-9SM6}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "33SQ-GYBK-9SM6"
+    }
   ],
   "collectionData": {
     "id": "1968530",

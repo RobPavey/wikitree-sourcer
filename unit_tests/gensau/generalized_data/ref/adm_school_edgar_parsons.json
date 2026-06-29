@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "SchoolRecords",
+  "name": {
+    "lastName": "Parsons",
+    "forenames": "Edgar Eli"
+  },
+  "personGender": "male",
+  "hasValidData": true
+}

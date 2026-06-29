@@ -26,8 +26,11 @@
   "birthPlace": {
     "placeString": "USA"
   },
-  "wtSearchTemplates": [
-    "{{FindAGrave|5135503}}"
+  "wtSearchIds": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem5135503"
+    }
   ],
   "hasValidData": true
 }

@@ -36,11 +36,17 @@
     }
   ],
   "marriageDate": "02 Apr",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|VF9F-FGL}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "VF9F-FGL"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|33SQ-GPXZ-9GJH}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "33SQ-GPXZ-9GJH"
+    }
   ],
   "collectionData": {
     "id": "1589502",

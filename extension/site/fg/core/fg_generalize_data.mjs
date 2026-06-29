@@ -26,28 +26,22 @@ import { GeneralizedData } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 function addWtSearchTemplates(ed, result) {
-  let wtTemplates = [];
-  let wtTemplatesRelated = [];
-
-  function addLinkOrTemplate(templates, linkOrTemplate) {
-    if (linkOrTemplate && linkOrTemplate.startsWith("{{")) {
-      if (!templates.includes(linkOrTemplate)) {
-        templates.push(linkOrTemplate);
-      }
-    }
-  }
+  let wtIds = [];
+  let wtIdsRelated = [];
 
   if (ed.memorialId) {
-    const template = "{{FindAGrave|" + ed.memorialId + "}}";
-    addLinkOrTemplate(wtTemplates, template);
+    wtIds.push({ key: "FindAGrave", value: "fgmem" + ed.memorialId });
   }
 
-  // if there are templates add them to result
-  if (wtTemplates.length) {
-    result.wtSearchTemplates = wtTemplates;
+  // An FG page can have linked records but our extract does not currently
+  // capture those
+
+  // if there are ids add them to result
+  if (wtIds.length) {
+    result.wtSearchIds = wtIds;
   }
-  if (wtTemplatesRelated.length) {
-    result.wtSearchTemplatesRelated = wtTemplatesRelated;
+  if (wtIdsRelated.length) {
+    result.wtSearchIdsRelated = wtIdsRelated;
   }
 }
 

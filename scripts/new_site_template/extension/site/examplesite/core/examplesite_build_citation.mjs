@@ -29,7 +29,7 @@ function buildExamplesiteUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle = "Put Source Title here";
 }
 
 function buildSourceReference(ed, gd, builder) {

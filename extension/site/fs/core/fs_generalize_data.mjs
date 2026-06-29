@@ -34,8 +34,13 @@ import { RT, Role, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
 import { addSpouseOrParentsForSelectedHouseholdMember } from "../../../base/core/structured_household.mjs";
+import { logDebug } from "../../../base/core/log_debug.mjs";
 
 import {
+  extractFsRecordIdFromUrl,
+  extractFsImageIdFromUrl,
+  extractFsPersonIdFromUrl,
+  extractFindAGraveMemorialIdFromUrl,
   buildFsRecordLinkOrTemplate,
   buildFsImageLinkOrTemplate,
   buildExternalLinkOrTemplate,
@@ -173,6 +178,10 @@ const factTypeToRecordType = [
     titleMatches: [{ recordType: RT.ElectoralRegister, matches: ["Electoral Register"] }],
   },
   {
+    type: "Membership",
+    titleMatches: [{ recordType: RT.ChurchRecords, matches: ["Church"] }],
+  },
+  {
     type: "TaxAssessment",
     defaultRT: RT.Tax,
   },
@@ -219,8 +228,7 @@ function determineRecordType(extractedData) {
     { type: RT.Military, matches: ["World War I"] },
   ];
 
-  //console.log("in determineRecordType, factType is");
-  //console.log(extractedData.factType);
+  logDebug("in determineRecordType, factType is", extractedData.factType);
 
   function lookup(factType, collectionTitle, recordData, table) {
     for (let obj of table) {
@@ -647,13 +655,24 @@ function generalizeDataGivenRecordType(ed, result) {
     result.recordType == RT.DeathRegistration
   ) {
     if (result.role != Role.Parent) {
-      if (ed.father) {
-        let father = result.addFather();
-        setParentFields(father, ed.father);
-      }
-      if (ed.mother) {
-        let mother = result.addMother();
-        setParentFields(mother, ed.mother);
+      if (
+        result.recordType == RT.BirthRegistration &&
+        !ed.father &&
+        ed.mother &&
+        ed.mother.surname &&
+        ed.mother.fullName == ed.mother.surname
+      ) {
+        // special case for birth registration where the mother's maiden name has been used as the mother's name
+        result.mothersMaidenName = ed.mother.surname;
+      } else {
+        if (ed.father) {
+          let father = result.addFather();
+          setParentFields(father, ed.father);
+        }
+        if (ed.mother) {
+          let mother = result.addMother();
+          setParentFields(mother, ed.mother);
+        }
       }
 
       // spouse can be specified on a death record for example
@@ -951,6 +970,12 @@ function generalizeDataGivenRecordType(ed, result) {
           householdMember.isClosed = true;
         } else {
           let name = member.fullName;
+          if (!name && member.surname) {
+            name = member.surname;
+            if (member.givenName) {
+              name = member.givenName + " " + name;
+            }
+          }
           if (name) {
             householdMember.name = name;
             fieldsEncountered.name = true;
@@ -1055,15 +1080,19 @@ function generalizeDataGivenRecordType(ed, result) {
   }
 }
 
-function addWtSearchTemplates(ed, result) {
-  let wtTemplates = [];
-  let wtTemplatesRelated = [];
+function addWtSearchIds(ed, result) {
+  let wtIds = [];
+  let wtIdsRelated = [];
 
-  function addLinkOrTemplate(templates, linkOrTemplate) {
-    if (linkOrTemplate && linkOrTemplate.startsWith("{{")) {
-      if (!templates.includes(linkOrTemplate)) {
-        templates.push(linkOrTemplate);
-      }
+  function addFsId(idList, fsId) {
+    if (fsId) {
+      idList.push({ key: "FamilySearch", value: fsId });
+    }
+  }
+
+  function addImageFsId(idList, fsId) {
+    if (fsId) {
+      idList.push({ key: "FamilySearchImage", value: fsId });
     }
   }
 
@@ -1072,44 +1101,49 @@ function addWtSearchTemplates(ed, result) {
     if (!recordUrl) {
       recordUrl = ed.url;
     }
-    addLinkOrTemplate(wtTemplates, buildFsRecordLinkOrTemplate(recordUrl));
-
-    addLinkOrTemplate(wtTemplatesRelated, buildFsImageLinkOrTemplate(ed.fsImageUrl));
+    addFsId(wtIds, extractFsRecordIdFromUrl(recordUrl));
+    addFsId(wtIdsRelated, extractFsImageIdFromUrl(ed.fsImageUrl));
 
     if (ed.collectionTitle == "Find A Grave Index") {
       let memorialId = ed.externalRecordId;
       if (memorialId) {
-        addLinkOrTemplate(wtTemplates, "{{FindAGrave|" + memorialId + "}}");
+        wtIds.push({ key: "FindAGrave", value: "fgmem" + memorialId });
       }
     }
   } else if (ed.pageType == "image") {
-    addLinkOrTemplate(wtTemplates, buildFsImageLinkOrTemplate(ed.url));
+    addImageFsId(wtIds, extractFsImageIdFromUrl(ed.url));
+  } else if (ed.pageType == "person") {
+    addFsId(wtIds, extractFsPersonIdFromUrl(ed.url));
   }
 
   if (ed.digitalArtifact) {
-    addLinkOrTemplate(wtTemplatesRelated, buildExternalLinkOrTemplate(ed.digitalArtifact));
-  }
-
-  addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(ed.relatedPersonLink));
-  addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(ed.relatedPersonSpouseLink));
-  if (ed.father) {
-    addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(ed.father.link));
-  }
-  if (ed.mother) {
-    addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(ed.mother.link));
-  }
-  if (ed.household && ed.household.members) {
-    for (let member of ed.household.members) {
-      addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(member.link));
+    let fgMemorialId = extractFindAGraveMemorialIdFromUrl(ed.digitalArtifact);
+    if (fgMemorialId) {
+      wtIdsRelated.push({ key: "FindAGrave", value: "fgmem" + fgMemorialId });
     }
   }
 
-  // if there are templates add them to result
-  if (wtTemplates.length) {
-    result.wtSearchTemplates = wtTemplates;
+  addFsId(wtIdsRelated, extractFsRecordIdFromUrl(ed.relatedPersonLink));
+  addFsId(wtIdsRelated, extractFsRecordIdFromUrl(ed.relatedPersonSpouseLink));
+
+  if (ed.father) {
+    addFsId(wtIdsRelated, extractFsRecordIdFromUrl(ed.father.link));
   }
-  if (wtTemplatesRelated.length) {
-    result.wtSearchTemplatesRelated = wtTemplatesRelated;
+  if (ed.mother) {
+    addFsId(wtIdsRelated, extractFsRecordIdFromUrl(ed.mother.link));
+  }
+  if (ed.household && ed.household.members) {
+    for (let member of ed.household.members) {
+      addFsId(wtIdsRelated, extractFsRecordIdFromUrl(member.link));
+    }
+  }
+
+  // if there are ids add them to result
+  if (wtIds.length) {
+    result.wtSearchIds = wtIds;
+  }
+  if (wtIdsRelated.length) {
+    result.wtSearchIdsRelated = wtIdsRelated;
   }
 }
 
@@ -1360,8 +1394,9 @@ function generalizeData(input) {
   result.setDeathPlace(deathPlace);
 
   let eventDate = selectDate(ed.eventDate, ed.eventDateOriginal);
+  let eventYear = ed.eventYear;
 
-  if (eventDate && ed.eventYear) {
+  if (eventDate && eventYear) {
     // occasionally the event date is missing the year and should have it added
     // E.g. https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKC?lang=en
     // BUT. Sometime (e.g. on https://www.familysearch.org/ark:/61903/1:1:QGLK-B6K4?lang=en )
@@ -1369,15 +1404,15 @@ function generalizeData(input) {
     // "eventDate": "1 January 1782",
     // "eventYear": "1641-1813",
     // In that case we do not want to include the "eventYear"
-    if (ed.eventYear.length == 4) {
-      if (!eventDate.includes(ed.eventYear)) {
-        eventDate += " " + ed.eventYear;
+    if (eventYear.length == 4) {
+      if (!eventDate.includes(eventYear)) {
+        eventDate += " " + eventYear;
       }
     }
   }
 
   result.setEventDate(eventDate);
-  result.setEventYear(ed.eventYear);
+  result.setEventYear(eventYear);
 
   if (!ed.eventDate && !ed.eventDateOriginal && !ed.eventYear) {
     // this can happen for a census
@@ -1499,6 +1534,7 @@ function generalizeData(input) {
     // For example for US SS Death Index it is the last residence place
     if (
       ed.collectionTitle == "United States Social Security Death Index" ||
+      ed.collectionTitle == "United States, Social Security Death Index" ||
       ed.collectionTitle == "United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007" ||
       ed.factType == "SocialProgramCorrespondence"
     ) {
@@ -1562,7 +1598,7 @@ function generalizeData(input) {
       let yearsMarried = ed.recordData["Cnt Years Married"];
       if (yearsMarried) {
         let censusDate = result.inferEventDate();
-        let marriageDateString = GeneralizedData.getSubtractAgeFromDate(censusDate, yearsMarried);
+        let marriageDateString = GeneralizedData.subtractAgeOrTimePeriodFromDate(censusDate, yearsMarried);
         let marriageYear = StringUtils.getLastWord(marriageDateString);
         if (marriageYear) {
           result.spouses[0].marriageDate.yearString = marriageYear;
@@ -1572,7 +1608,7 @@ function generalizeData(input) {
   }
 
   // Template search data
-  addWtSearchTemplates(ed, result);
+  addWtSearchIds(ed, result);
 
   // Collection
   if (ed.fsCollectionId) {

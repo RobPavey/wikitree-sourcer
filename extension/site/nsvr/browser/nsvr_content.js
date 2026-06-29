@@ -22,4 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`nsvr`, `site/nsvr/core/nsvr_extract_data.mjs`);
+siteContentInit("nsvr");

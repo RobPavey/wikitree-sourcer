@@ -3,7 +3,7 @@
   "sourceType": "record",
   "recordType": "Memorial",
   "eventDate": {
-    "dateString": "26 April 2022"
+    "dateString": "26 Apr 2022"
   },
   "eventPlace": {
     "placeString": "2099 Fullerton Rd, Rowland Heights, California 91748, United States",
@@ -16,10 +16,10 @@
   },
   "lastNameAtDeath": "Elder",
   "birthDate": {
-    "dateString": "29 December 1934"
+    "dateString": "29 Dec 1934"
   },
   "deathDate": {
-    "dateString": "26 April 2022"
+    "dateString": "26 Apr 2022"
   },
   "hasValidData": true
 }

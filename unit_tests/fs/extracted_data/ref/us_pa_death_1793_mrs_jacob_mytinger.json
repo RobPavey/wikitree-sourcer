@@ -1,0 +1,41 @@
+{
+  "url": "https://www.familysearch.org/ark:/61903/1:1:H543-TJMM?lang=en",
+  "recordData": {
+    "Name": "Mrs. Jacob Mytinger",
+    "Burial Date": "November 1793",
+    "Residence Place": "Philadelphia, Phila., Penn.",
+    "Death Date": "11 1793",
+    "Death Place": "Philadelphia, Phila., Penn."
+  },
+  "fullName": "Mrs. Jacob Mytinger",
+  "givenName": "Mrs. Jacob",
+  "surname": "Mytinger",
+  "gender": "female",
+  "residenceOriginal": "Philadelphia, Phila., Penn.",
+  "factType": "Death",
+  "eventDateOriginal": "11 1793",
+  "eventYear": "1793",
+  "eventPlaceOriginal": "Philadelphia, Phila., Penn.",
+  "eventPlace": "Philadelphia, Phila., Penn.",
+  "deathDateOriginal": "11 1793",
+  "deathYear": "1793",
+  "deathMonth": "11",
+  "spouseFullName": "Jacob Mytinger",
+  "spouseGivenName": "Jacob",
+  "spouseSurname": "Mytinger",
+  "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Philadelphia, Phila., Penn.\", \"EVENT_DATE_ALT_ORIG\": \"by 9 Nov 1793\", \"PR_SEX_CODE_ALT_ORIG\": \"F\"}",
+  "referenceData": {
+    "digitalFilmNumber": "007516340",
+    "filmNumber": "381286",
+    "indexingBatchNumber": "B54432-6",
+    "packetLetter": "A",
+    "recordNumber": "877"
+  },
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:WXGR-223Z",
+  "collectionTitle": "Pennsylvania, Deaths and Burials, 1720-1999",
+  "fsCollectionId": "3535178",
+  "citation": "\"Pennsylvania, Deaths and Burials, 1720-1999\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:H543-TJMM : Sat Jul 26 08:45:15 UTC 2025), Entry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793.",
+  "sourceTitleForPerson": "Mrs. Jacob Mytinger, \"Pennsylvania, Deaths and Burials, 1720-1999\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:H543-TJMM",
+  "pageType": "record"
+}

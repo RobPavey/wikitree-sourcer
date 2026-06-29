@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1947 Newspaper''':\n\"South Australia - Newspaper Marriages\"<br/>\nGenealogy SA; Surname: DAWES; Given Names: Bill; Year: 1947; Notice: Anniversary; Source: Advertiser; Publication Date: 12-Apr-1972; Notice: Anniversary<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDawn Simpson on 12 Apr 1947 in Methodist Church Mt Bryan, South Australia, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Dawn was mentioned in a newspaper article on 12 April 1947 in Methodist Church Mt Bryan, South Australia, Australia.<ref>\n'''1947 Newspaper''':\n\"South Australia - Newspaper Marriages\"<br/>\nGenealogy SA; Surname: DAWES; Given Names: Bill; Year: 1947; Notice: Anniversary; Source: Advertiser; Publication Date: 12-Apr-1972; Notice: Anniversary<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDawn Simpson on 12 Apr 1947 in Methodist Church Mt Bryan, South Australia, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1947 Newspaper''': \"South Australia - Newspaper Marriages\"<br/>Genealogy SA; Surname: DAWES; Given Names: Bill; Year: 1947; Notice: Anniversary; Source: Advertiser; Publication Date: 12-Apr-1972; Notice: Anniversary<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Dawn Simpson on 12 Apr 1947 in Methodist Church Mt Bryan, South Australia, Australia.",
+    "type": "source"
+  }
+}

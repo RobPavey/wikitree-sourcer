@@ -28,7 +28,7 @@ import {
   endMainMenu,
   doAsyncActionWithCatch,
   closePopup,
- } from "/base/browser/popup/popup_menu_building.mjs";
+} from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
   registerSearchMenuItemFunction,
@@ -37,7 +37,7 @@ import {
 } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 const panbStartYear = 1658;
 const panbEndYear = 2014;
@@ -47,7 +47,7 @@ function shouldShowSearchMenuItem(data, filter) {
     startYear: panbStartYear,
     endYear: panbEndYear,
     dateTestType: "lived",
-    countryList: ["New Brunswick","Canada"],
+    countryList: ["New Brunswick", "Canada"],
   };
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
     return false;
@@ -64,14 +64,11 @@ async function panbDoSearch(input) {
     let loadedModule = await import(`../core/panb_build_search_data.mjs`);
     let buildResult = loadedModule.buildSearchData(input);
     let fieldData = buildResult.fieldData;
-     const checkPermissionsOptions = {
+    const checkPermissionsOptions = {
       reason:
         "To perform a search on New Brunswick Provincial Archives a content script needs to be loaded on the New Brunswick Provincial Archives search page.",
     };
-    let allowed = await checkPermissionForSite(
-      "https://archives2.gnb.ca/Search/FEDS/Default.aspx?culture=en-CA",
-      checkPermissionsOptions
-    );
+    let allowed = await checkPermissionForSiteMatches("panb", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;
@@ -82,7 +79,7 @@ async function panbDoSearch(input) {
         timeStamp: Date.now(),
         url: searchUrl,
         fieldData: fieldData,
-      }
+      };
       // this stores the search data in local storage which is then picked up by the content script in the new tab/window
       chrome.storage.local.set({ panbSearchData: panbSearchData }, function () {});
     } catch (ex) {

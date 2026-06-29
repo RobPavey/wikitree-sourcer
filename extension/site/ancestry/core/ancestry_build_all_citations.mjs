@@ -31,8 +31,6 @@ import { buildNarrative } from "../../../base/core/narrative_builder.mjs";
 
 import { groupSourcesIntoFacts } from "../../../base/core/group_sources_into_facts.mjs";
 
-import { extractRecord } from "./ancestry_extract_data.mjs";
-import { generalizeData } from "./ancestry_generalize_data.mjs";
 import { buildCitation } from "./ancestry_build_citation.mjs";
 import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
 
@@ -90,6 +88,9 @@ function inferBestEventDateForCompare(gd) {
             eventDate = birthDate;
           }
         }
+      } else {
+        // sometimes an event date can be inferred from a related person
+        eventDate = gd.inferEventDate(true);
       }
     }
   }
@@ -238,25 +239,6 @@ function sortFacts(result) {
 
   // sort the sources
   result.facts.sort(compareFunction);
-}
-
-function buildNarrativeForPlainCitation(source, options) {
-  let narrative = "";
-
-  if (source.prefName) {
-    narrative += source.prefName;
-  } else {
-    narrative += "This person";
-  }
-  narrative += " was in a record";
-  if (source.eventDate) {
-    // could get correct preposition here (see formatDateObj in narrative_builder)
-    narrative += " in " + source.eventDate;
-  } else if (source.sortYear) {
-    narrative += " in " + source.sortYear;
-  }
-  narrative += ".";
-  return narrative;
 }
 
 function generateSourcerCitationsStringForFacts(result, type, options) {
@@ -445,6 +427,7 @@ function filterSourceIdsToSources(result, sourceIds, options) {
   result.sources = [];
 
   for (let sourceId of uniqueSourceIds) {
+    // Note we used to do this:
     let recordUrl = result.urlStart + "/discoveryui-content/view/" + sourceId.recordId + ":" + sourceId.dbId;
     let source = {
       recordUrl: recordUrl,
@@ -498,26 +481,43 @@ function buildSourcerCitation(runDate, source, type, options) {
   }
 }
 
-async function buildSourcerCitations(result, type, options) {
-  try {
-    if (options.buildAll_ancestry_excludeOtherRoleSources) {
-      let newSources = [];
-      for (let source of result.sources) {
-        if (source.citationObject) {
-          const gd = source.generalizedData;
-          if (gd && gd.role && gd.role != Role.Primary) {
-            // exclude this one
-            result.numExcludedOtherRoleSources++;
-          } else {
-            newSources.push(source);
-          }
+function pruneSources(result, options) {
+  // prune out failed source so we don't build citations for them
+  if (result.failureCount) {
+    let prunedSources = [];
+    let failedSources = [];
+    for (let source of result.sources) {
+      if (source.fetchStatus && !source.fetchStatus.success) {
+        failedSources.push(source);
+      } else {
+        prunedSources.push(source);
+      }
+    }
+    result.sources = prunedSources;
+    result.fetchFailedSources = failedSources;
+  }
+
+  if (options.buildAll_ancestry_excludeOtherRoleSources) {
+    let newSources = [];
+    for (let source of result.sources) {
+      if (source.citationObject) {
+        const gd = source.generalizedData;
+        if (gd && gd.role && gd.role != Role.Primary) {
+          // exclude this one
+          result.numExcludedOtherRoleSources++;
         } else {
           newSources.push(source);
         }
+      } else {
+        newSources.push(source);
       }
-      result.sources = newSources;
     }
+    result.sources = newSources;
+  }
+}
 
+async function buildSourcerCitations(result, type, options) {
+  try {
     sortSourcesUsingFetchedRecords(result);
 
     if (type == "source") {
@@ -550,4 +550,4 @@ async function buildSourcerCitations(result, type, options) {
   }
 }
 
-export { buildSourcerCitation, buildSourcerCitations, filterSourceIdsToSources, setUrlStart };
+export { buildSourcerCitation, buildSourcerCitations, filterSourceIdsToSources, setUrlStart, pruneSources };

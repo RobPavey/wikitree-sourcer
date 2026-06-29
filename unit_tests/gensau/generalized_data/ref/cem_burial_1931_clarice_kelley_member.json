@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Kelly",
+    "forenames": "Clarice Eleanor (Ellie)"
+  },
+  "eventDate": {
+    "dateString": "1931"
+  },
+  "eventPlace": {
+    "placeString": "Clare General, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Clare General"
+  },
+  "deathDate": {
+    "dateString": "31-May-1931"
+  },
+  "ageAtEvent": "45",
+  "hasValidData": true
+}

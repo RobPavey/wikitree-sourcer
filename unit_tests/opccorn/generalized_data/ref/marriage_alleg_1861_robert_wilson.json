@@ -6,6 +6,7 @@
     "lastName": "Wilson",
     "forenames": "Robert Parker"
   },
+  "personGender": "male",
   "eventDate": {
     "yearString": "1861",
     "dateString": "2 Mar 1861"
@@ -33,6 +34,10 @@
       },
       "age": "upwards of 21"
     }
+  ],
+  "primaryPersonOptions": [
+    "Robert Parker Wilson (groom)",
+    "Victoria Rebecca Edwards (bride)"
   ],
   "hasValidData": true
 }

@@ -2,6 +2,12 @@
   "sourceType": "record",
   "recordType": "Census",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "John Lago",
+      "Jago"
+    ]
+  },
   "name": {
     "name": "John Lago"
   },

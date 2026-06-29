@@ -37,8 +37,11 @@
     }
   ],
   "divorceDate": "09 Jun 1976",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|VYX9-KBH}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "VYX9-KBH"
+    }
   ],
   "collectionData": {
     "id": "2038378",

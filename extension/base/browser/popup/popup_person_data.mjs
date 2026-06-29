@@ -55,7 +55,7 @@ async function savePersonData(data, getAllCitationsFunction) {
       let response = await getAllCitationsFunction(data);
       if (!response.success) {
         const message = "Could not save person data because could not build all citations.";
-        displayMessageWithIcon("warning", message, response.errorMessage);
+        displayMessageWithIcon("warning", message, "", response.errorMessage);
         return;
       }
     }
@@ -78,7 +78,12 @@ async function savePersonData(data, getAllCitationsFunction) {
     if (data.allCitationsNoteMessage) {
       message2 += data.allCitationsNoteMessage;
     }
-    displayMessageWithIconThenClosePopup("check", message1, message2);
+
+    if (data.allCitationsErrorMessage) {
+      displayMessageWithIcon("warning", message1, message2, data.allCitationsErrorMessage);
+    } else {
+      displayMessageWithIconThenClosePopup("check", message1, message2);
+    }
   });
 }
 

@@ -42,13 +42,25 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|KFP2-VSP}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "KFP2-VSP"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QSQ-G97W-WNS}}",
-    "{{FamilySearch Record|KFP2-VS5}}",
-    "{{FamilySearch Record|KFP2-VSR}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QSQ-G97W-WNS"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KFP2-VS5"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KFP2-VSR"
+    }
   ],
   "collectionData": {
     "id": "2075288",

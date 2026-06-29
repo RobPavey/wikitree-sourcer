@@ -6,6 +6,7 @@
     "lastName": "Scott",
     "forenames": "David Farquharson"
   },
+  "personGender": "male",
   "eventDate": {
     "yearString": "1946",
     "dateString": "29 Jun 1946"
@@ -31,7 +32,14 @@
         "county": "Cornwall",
         "country": "England"
       },
-      "age": "19"
+      "age": "19",
+      "parents": {
+        "father": {
+          "name": {
+            "name": "John"
+          }
+        }
+      }
     }
   ],
   "parents": {
@@ -41,5 +49,9 @@
       }
     }
   },
+  "primaryPersonOptions": [
+    "David Farquharson Scott (groom)",
+    "Muriel May Gardner (bride)"
+  ],
   "hasValidData": true
 }

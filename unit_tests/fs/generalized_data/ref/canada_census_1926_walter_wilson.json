@@ -104,17 +104,41 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QP2W-DC3N}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QP2W-DC3N"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-C395-G94R-Q}}",
-    "{{FamilySearch Record|QP2W-DC3D}}",
-    "{{FamilySearch Record|QP2W-DC36}}",
-    "{{FamilySearch Record|QP2W-DC3X}}",
-    "{{FamilySearch Record|QP2W-DC3F}}",
-    "{{FamilySearch Record|QP2W-DC3N}}",
-    "{{FamilySearch Record|QP2W-DC3J}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-C395-G94R-Q"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QP2W-DC3D"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QP2W-DC36"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QP2W-DC3X"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QP2W-DC3F"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QP2W-DC3N"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QP2W-DC3J"
+    }
   ],
   "collectionData": {
     "id": "3005862",

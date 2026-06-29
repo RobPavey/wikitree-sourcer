@@ -26,28 +26,41 @@ import {
   readFile,
   getRefTextFilePath,
   getTestTextFilePath,
+  createRefTextFile,
   writeTestOutputTextFile,
   readRefTextFile,
 } from "../test_utils/ref_file_utils.mjs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { reportStringDiff } from "../test_utils/compare_result_utils.mjs";
+import { loadExtractDataFromFetchInWrapper } from "../test_utils/test_extract_data_utils.mjs";
 
 import {
   filterAndEnhanceFsSourcesIntoSources,
   buildSourcerCitation,
   buildSourcerCitations,
-  buildFsPlainCitations,
+  buildFsSourceInfoCitations,
+  pruneSources,
 } from "../../extension/site/fs/core/fs_build_all_citations.mjs";
 
-async function testGetSourcerCitation(runDate, savedData, source, type, options) {
+async function testGetSourcerCitation(runDate, savedData, source, type, options, extractDataFromFetch) {
   let uri = source.uri;
 
   let sourceDataObjects = savedData.sourceData[uri];
 
-  buildSourcerCitation(runDate, sourceDataObjects, source, type, options);
+  if (sourceDataObjects) {
+    source.dataObjects = sourceDataObjects;
+
+    let sessionId = "";
+    let extractedData = extractDataFromFetch(undefined, "", source.dataObjects, "record", sessionId, options);
+    if (extractedData) {
+      source.extractedData = extractedData;
+    }
+  }
+
+  buildSourcerCitation(runDate, source, type, options);
 }
 
-async function testGetSourcerCitations(runDate, savedData, result, type, options) {
+async function testGetSourcerCitations(runDate, savedData, result, type, options, extractDataFromFetch) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
@@ -55,13 +68,15 @@ async function testGetSourcerCitations(runDate, savedData, result, type, options
   }
 
   for (let source of result.sources) {
-    await testGetSourcerCitation(runDate, savedData, source, type, options);
+    await testGetSourcerCitation(runDate, savedData, source, type, options, extractDataFromFetch);
   }
 
-  buildSourcerCitations(result, type, options);
+  pruneSources(result, options);
+
+  buildSourcerCitations(result, runDate, type, options);
 }
 
-async function fsTestGetAllCitations(input) {
+async function fsTestGetAllCitations(input, extractDataFromFetch) {
   let savedData = input.savedData;
   let options = input.options;
   let runDate = input.runDate;
@@ -76,16 +91,16 @@ async function fsTestGetAllCitations(input) {
     let citationType = options.buildAll_fs_citationType;
 
     switch (citationType) {
-      case "fsPlainInline":
-        buildFsPlainCitations(result, "inline", options);
+      case "fsSourceInfoInline":
+        buildFsSourceInfoCitations(result, runDate, "inline", options);
         break;
-      case "fsPlainSource":
-        buildFsPlainCitations(result, "source", options);
+      case "fsSourceInfoSource":
+        buildFsSourceInfoCitations(result, runDate, "source", options);
         break;
       case "narrative":
       case "inline":
       case "source":
-        await testGetSourcerCitations(runDate, savedData, result, citationType, options);
+        await testGetSourcerCitations(runDate, savedData, result, citationType, options, extractDataFromFetch);
         break;
     }
   }
@@ -102,6 +117,9 @@ async function runBuildAllCitationsTests(siteName, regressionData, testManager, 
   if (!testEnabled(testManager.parameters, "build_all_citations")) {
     return;
   }
+
+  const extractDataFile = "./extension/site/" + siteName + "/browser/" + siteName + "_extract_data.js";
+  const extractDataFromFetchFunction = loadExtractDataFromFetchInWrapper(extractDataFile);
 
   let testName = siteName + "_build_all_citations";
 
@@ -161,7 +179,7 @@ async function runBuildAllCitationsTests(siteName, regressionData, testManager, 
       input.options = { ...userOptions, ...variant.optionOverrides };
 
       try {
-        result = await fsTestGetAllCitations(input);
+        result = await fsTestGetAllCitations(input, extractDataFromFetchFunction);
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
@@ -183,12 +201,18 @@ async function runBuildAllCitationsTests(siteName, regressionData, testManager, 
       }
 
       if (refText != result.citationsString) {
-        reportStringDiff(refText, result.citationsString);
-        console.log("Result differs from reference. Result is:");
-        console.log(result);
-        let refFile = getRefTextFilePath(siteName, resultDir, testData, variantName);
-        let testFile = getTestTextFilePath(siteName, resultDir, testData, variantName);
-        logger.logError(testData, "Result differs from reference", refFile, testFile);
+        if (testManager.parameters.forceReplaceRefs) {
+          let refPath = getRefTextFilePath(siteName, resultDir, testData);
+          console.log("Force replacing ref file: " + refPath);
+          createRefTextFile(result.citationsString, siteName, resultDir, testData, variantName, logger);
+        } else {
+          reportStringDiff(refText, result.citationsString);
+          console.log("Result differs from reference. Result is:");
+          console.log(result);
+          let refFile = getRefTextFilePath(siteName, resultDir, testData, variantName);
+          let testFile = getTestTextFilePath(siteName, resultDir, testData, variantName);
+          logger.logError(testData, "Result differs from reference", refFile, testFile);
+        }
       }
     }
   }
@@ -214,7 +238,7 @@ const regressionData = [
       {
         variantName: "no_include_notes",
         optionOverrides: {
-          buildAll_fs_citationType: "fsPlainSource",
+          buildAll_fs_citationType: "fsSourceInfoSource",
           buildAll_fs_includeNotes: false,
         },
       },
@@ -248,6 +272,11 @@ const regressionData = [
     // found a bug in mergeDates, has marriage sources with no date
     caseName: "k2b7_nsv_vinnie_shubert",
     url: "https://www.familysearch.org/tree/person/details/K2B7-NSV",
+  },
+  {
+    // Newer version of the FS profile, for testing notes in sources
+    caseName: "k2fn_1vl_william_herron_2026format",
+    url: "https://www.familysearch.org/tree/person/details/K2FN-1VL",
   },
   {
     // bug in sorting, marriage source has no date but its record does
@@ -289,6 +318,10 @@ const regressionData = [
         },
       },
     ],
+  },
+  {
+    caseName: "kc88_qcp_vito_mastrangelo",
+    url: "https://www.familysearch.org/en/tree/person/details/KC88-QCP",
   },
   {
     caseName: "kd7t_dzy_john_baird",
@@ -357,8 +390,12 @@ const regressionData = [
     ],
   },
   {
-    caseName: "m4qy_n7x_walter_leeke",
-    url: "https://www.familysearch.org/tree/person/details/LJJH-F8B",
+    caseName: "lkbm_zx9_randolph_marsh",
+    url: "https://www.familysearch.org/tree/person/details/LKBM-ZX9",
+  },
+  {
+    caseName: "lr97_hcc_dunmore_dameron",
+    url: "https://www.familysearch.org/en/tree/person/sources/LR97-HCC",
     optionVariants: [
       {
         variantName: "exclude_non_fs_sources",
@@ -369,8 +406,41 @@ const regressionData = [
     ],
   },
   {
-    caseName: "lkbm_zx9_randolph_marsh",
-    url: "https://www.familysearch.org/tree/person/details/LKBM-ZX9",
+    caseName: "lrgq_hdv_rebecca_anglin",
+    url: "https://www.familysearch.org/en/tree/person/sources/LRGQ-HDV",
+    optionVariants: [
+      {
+        variantName: "exclude_non_fs_sources",
+        optionOverrides: {
+          buildAll_fs_excludeNonFsSources: true,
+        },
+      },
+      {
+        variantName: "exclude_fs_image_sources",
+        optionOverrides: {
+          buildAll_fs_excludeFsImageSources: true,
+        },
+      },
+    ],
+  },
+  {
+    caseName: "m4qy_n7x_walter_leeke",
+    url: "https://www.familysearch.org/tree/person/details/LJJH-F8B",
+    optionVariants: [
+      {
+        variantName: "exclude_non_fs_sources",
+        optionOverrides: {
+          buildAll_fs_excludeNonFsSources: true,
+        },
+      },
+      {
+        variantName: "plain_text_citation",
+        optionOverrides: {
+          buildAll_fs_citationType: "fsSourceInfoSource",
+          citation_general_target: "plain",
+        },
+      },
+    ],
   },
 ];
 
@@ -396,13 +466,13 @@ const optionVariants = [
   {
     variantName: "fs_plain_inline",
     optionOverrides: {
-      buildAll_fs_citationType: "fsPlainInline",
+      buildAll_fs_citationType: "fsSourceInfoInline",
     },
   },
   {
     variantName: "fs_plain_source",
     optionOverrides: {
-      buildAll_fs_citationType: "fsPlainSource",
+      buildAll_fs_citationType: "fsSourceInfoSource",
     },
   },
 ];

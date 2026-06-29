@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/sosmogov/core/sosmogov_extract_data.mjs";
 import { generalizeData } from "../../extension/site/sosmogov/core/sosmogov_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/sosmogov/core/sosmogov_build_citation.mjs";
 
@@ -63,7 +62,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("sosmogov", extractData, regressionData, testManager);
+  await runExtractDataTests("sosmogov", regressionData, testManager);
 
   await runGeneralizeDataTests("sosmogov", generalizeData, regressionData, testManager);
 

@@ -30,7 +30,7 @@ import {
   shouldShowSiteSearch,
 } from "/base/browser/popup/popup_search.mjs";
 
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -68,10 +68,7 @@ async function sosmogovSearch(generalizedData) {
       reason:
         "To perform a search of Missouri State Archives Death Certificates a content script needs to be loaded on the site's search page.",
     };
-    let allowed = await checkPermissionForSite(
-      "*://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/*", // this is results page match pattern
-      checkPermissionsOptions
-    );
+    let allowed = await checkPermissionForSiteMatches("sosmogov", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

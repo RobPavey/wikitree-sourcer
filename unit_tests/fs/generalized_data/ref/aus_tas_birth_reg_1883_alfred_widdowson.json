@@ -35,13 +35,25 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|Q27M-LKVK}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "Q27M-LKVK"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QS7-89CH-4CN}}",
-    "{{FamilySearch Record|Q27M-LKVT}}",
-    "{{FamilySearch Record|Q27M-LKKQ}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QS7-89CH-4CN"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "Q27M-LKVT"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "Q27M-LKKQ"
+    }
   ],
   "collectionData": {
     "id": "2125029",

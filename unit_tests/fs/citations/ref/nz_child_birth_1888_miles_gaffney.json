@@ -24,15 +24,15 @@
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nName: Miles Gaffney; Ui Source Flag: I-TABLE 2017_11_14;Previously Published.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nName: Miles Gaffney; Ui Source Flag: I-TABLE 2017_11_14;Previously Published; Relationship to fact person: Parent; Fact: Birth; Related person name: Catherine Lucy Gaffney; Event date: 1888; Event place: New Zealand.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "The birth of Miles's child Catherine Lucy Gaffney was registered in 1888 in New Zealand.<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nName: Miles Gaffney; Ui Source Flag: I-TABLE 2017_11_14;Previously Published.\n</ref>",
+    "citation": "The birth of Miles's child Catherine Lucy Gaffney was registered in 1888 in New Zealand.<ref>\n'''Birth Registration of child Catherine Lucy Gaffney''':\n\"New Zealand, Civil Records Indexes, 1800-1966\"<br/>\n{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>\nhttps://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>\nName: Miles Gaffney; Ui Source Flag: I-TABLE 2017_11_14;Previously Published; Relationship to fact person: Parent; Fact: Birth; Related person name: Catherine Lucy Gaffney; Event date: 1888; Event place: New Zealand.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''Birth Registration of child Catherine Lucy Gaffney''': \"New Zealand, Civil Records Indexes, 1800-1966\"<br/>{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>Name: Miles Gaffney; Ui Source Flag: I-TABLE 2017_11_14;Previously Published.",
+    "citation": "* '''Birth Registration of child Catherine Lucy Gaffney''': \"New Zealand, Civil Records Indexes, 1800-1966\"<br/>{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>Name: Miles Gaffney; Ui Source Flag: I-TABLE 2017_11_14;Previously Published; Relationship to fact person: Parent; Fact: Birth; Related person name: Catherine Lucy Gaffney; Event date: 1888; Event place: New Zealand.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
@@ -44,7 +44,7 @@
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''Birth Registration of child Catherine Lucy Gaffney''': \"New Zealand, Civil Records Indexes, 1800-1966\"<br/>{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>Name: Miles Gaffney; Ui Source Flag: I-TABLE 2017_11_14;Previously Published.",
+    "citation": "* '''Birth Registration of child Catherine Lucy Gaffney''': \"New Zealand, Civil Records Indexes, 1800-1966\"<br/>{{FamilySearch Record|Q24K-ZSB8}} (accessed 6 May 2021)<br/>https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search.aspx?Path=%2FqueryEntry.m%3Ftype%3Dbirths<br/>Name: Miles Gaffney; Ui Source Flag: I-TABLE 2017_11_14;Previously Published; Relationship to fact person: Parent; Fact: Birth; Related person name: Catherine Lucy Gaffney; Event date: 1888; Event place: New Zealand.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {

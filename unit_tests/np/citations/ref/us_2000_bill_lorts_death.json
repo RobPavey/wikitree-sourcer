@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''2000 Newspaper''':\n\"Bill Lorts (84), death and funeral notice, , page B6, column 4\" Newspapers.com<br/>\nArizona Republic (Phoenix, Arizona) Wed, May 24, 2000, page 26<br/>\n{{Newspapers.com|194360652}} (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the Arizona Republic on 24 May 2000 in Phoenix, Arizona.<ref>\n'''2000 Newspaper''':\n\"Bill Lorts (84), death and funeral notice, , page B6, column 4\" Newspapers.com<br/>\nArizona Republic (Phoenix, Arizona) Wed, May 24, 2000, page 26<br/>\n{{Newspapers.com|194360652}} (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''2000 Newspaper''': \"Bill Lorts (84), death and funeral notice, , page B6, column 4\" Newspapers.com<br/>Arizona Republic (Phoenix, Arizona) Wed, May 24, 2000, page 26<br/>{{Newspapers.com|194360652}} (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

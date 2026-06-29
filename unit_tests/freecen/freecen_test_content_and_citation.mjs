@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/freecen/core/freecen_extract_data.mjs";
 import { generalizeData } from "../../extension/site/freecen/core/freecen_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/freecen/core/freecen_build_citation.mjs";
 import { buildHouseholdTable } from "../../extension/base/core/table_builder.mjs";
@@ -107,7 +106,7 @@ const optionVariants = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("freecen", extractData, regressionData, testManager);
+  await runExtractDataTests("freecen", regressionData, testManager);
 
   await runGeneralizeDataTests("freecen", generalizeData, regressionData, testManager);
 

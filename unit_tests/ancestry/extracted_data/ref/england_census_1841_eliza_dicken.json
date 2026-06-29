@@ -1,0 +1,93 @@
+{
+  "url": "https://www.ancestry.com/search/collections/8978/records/13492512?tid=86808578&pid=262157331689&ssrc=pt",
+  "pageType": "record",
+  "dbId": "8978",
+  "recordId": "13492512",
+  "ancestryTemplate": "{{Ancestry Record|8978|13492512}}",
+  "domain": "ancestry.com",
+  "titleName": "Eliza Dicken",
+  "titleCollection": "1841 England Census",
+  "recordData": {
+    "Name": "Eliza Dicken",
+    "Age": "6",
+    "Estimated Birth Year": "abt 1835",
+    "Gender": "Female",
+    "Where born": "Somerset, England",
+    "Civil parish": "St George",
+    "Hundred": "Portbury",
+    "County/Island": "Somerset",
+    "Country": "England",
+    "Registration District": "Bedminster",
+    "Sub-registration district": "St George",
+    "Piece": "956",
+    "Book": "5",
+    "Folio": "34",
+    "Page number": "23",
+    "Household Members (Name)<br/>Age": "John Dicken 26<br/>Elizabeth Dicken 28<br/>Eliza Dicken 6<br/>Thomas Dicken 4<br/>John Dicken 2<br/>Thomas Dicken 23"
+  },
+  "recordDataUserValues": {
+    "Name": [
+      "Eliza Dickens"
+    ]
+  },
+  "recordDataAltValues": {
+    "Estimated Birth Year": [
+      "abt 1835"
+    ]
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "John Dicken",
+        "dbId": "8978",
+        "recordId": "13492510",
+        "link": "http://www.ancestry.com/search/collections/8978/records/13492510",
+        "Age": "26"
+      },
+      {
+        "Household Members (Name)": "Elizabeth Dicken",
+        "dbId": "8978",
+        "recordId": "13492511",
+        "link": "http://www.ancestry.com/search/collections/8978/records/13492511",
+        "Age": "28"
+      },
+      {
+        "Household Members (Name)": "Eliza Dicken",
+        "Age": "6"
+      },
+      {
+        "Household Members (Name)": "Thomas Dicken",
+        "dbId": "8978",
+        "recordId": "13492513",
+        "link": "http://www.ancestry.com/search/collections/8978/records/13492513",
+        "Age": "4"
+      },
+      {
+        "Household Members (Name)": "John Dicken",
+        "dbId": "8978",
+        "recordId": "13492514",
+        "link": "http://www.ancestry.com/search/collections/8978/records/13492514",
+        "Age": "2"
+      },
+      {
+        "Household Members (Name)": "Thomas Dicken",
+        "dbId": "8978",
+        "recordId": "13492515",
+        "link": "http://www.ancestry.com/search/collections/8978/records/13492515",
+        "Age": "23"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8978/images/SOMHO107_956_958-0091?pid=13492512&treeid=86808578&personid=262157331689&usePUB=true&usePUBJs=true",
+  "imageDbId": "8978",
+  "imageRecordId": "SOMHO107_956_958-0091",
+  "sourceCitation": "Class: HO107; Piece: 956; Book: 5; Civil Parish: St George; County: Somerset; Enumeration District: 4; Folio: 34; Page: 23; Line: 16; GSU roll: 474603",
+  "sourceInformation": "Ancestry.com. 1841 England Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc, 2010. Original data: Census Returns of England and Wales, 1841. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1841. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1841. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1841. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "sourceDescription": "This database will detail those persons enumerated in the 1841 Census of England and is an every-name index. In addition, the names of those listed on the population schedule are linked to the actual images of the 1841 Census, reproduced by courtesy of The National Archives, London, England. There are 15,000 records accessible through this database. Learn more...",
+  "hasCommentTextArea": true
+}

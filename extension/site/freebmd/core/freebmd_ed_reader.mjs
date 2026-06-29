@@ -26,6 +26,7 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
+import { logDebug } from "../../../base/core/log_debug.mjs";
 
 function freebmdQuarterToGdQuarter(quarter) {
   if (!quarter) {
@@ -109,6 +110,8 @@ class FreebmdEdReader extends ExtractedDataReader {
           break;
       }
     }
+
+    logDebug("recordType is: " + this.recordType);
   }
 
   getMetadataValue(label) {
@@ -329,10 +332,18 @@ class FreebmdEdReader extends ExtractedDataReader {
     if (this.ed.spouse) {
       spouseName = this.makeNameObjFromFullName(this.ed.spouse);
     } else {
-      let spouseSurname = getRecordDataText(this.ed, "Spouse Surname");
-      if (spouseSurname) {
-        if (!spouseSurname.startsWith("No data") && !spouseSurname.startsWith("See Page")) {
-          spouseName = this.makeNameObjFromForenamesAndLastName("", spouseSurname);
+      let spouseNameString = getRecordDataText(this.ed, "Spouse Name");
+      if (spouseNameString) {
+        if (!spouseNameString.startsWith("No data") && !spouseNameString.startsWith("See Page")) {
+          spouseNameString = NameUtils.convertNameFromAllCapsToMixedCase(spouseNameString);
+          spouseName = this.makeNameObjFromFullName(spouseNameString);
+        }
+      } else {
+        let spouseSurname = getRecordDataText(this.ed, "Spouse Surname");
+        if (spouseSurname) {
+          if (!spouseSurname.startsWith("No data") && !spouseSurname.startsWith("See Page")) {
+            spouseName = this.makeNameObjFromForenamesAndLastName("", spouseSurname);
+          }
         }
       }
     }

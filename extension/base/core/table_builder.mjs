@@ -161,9 +161,9 @@ class TableBuilder {
         extraSpacing = "&emsp;";
         break;
     }
-    const columnSeparator = ` ` + extraSpacing + `||` + extraSpacing + ` `;
+    const columnSeparator = " " + extraSpacing + "||" + extraSpacing + " ";
 
-    tableString += `{|`;
+    tableString += "{|";
     if (this.options.table_table_border) {
       tableString += ` border="1"`;
     }
@@ -194,7 +194,7 @@ class TableBuilder {
             if (optHeading == "boldCentered" || optHeading == "bgGreenBoldCentered") {
               tableString += `! `;
             } else {
-              tableString += `| `;
+              tableString += "| ";
             }
             firstCol = false;
           } else {
@@ -223,7 +223,7 @@ class TableBuilder {
           for (let fieldName of this.fieldNames) {
             if (this.includeFieldColumn(fieldName)) {
               if (firstCol) {
-                tableString += `| `;
+                tableString += "| ";
               } else {
                 tableString += columnSeparator;
               }
@@ -270,7 +270,7 @@ class TableBuilder {
                 ) {
                   tableString += `! `;
                 } else {
-                  tableString += `| `;
+                  tableString += "| ";
                 }
               } else {
                 tableString += columnSeparator;
@@ -309,7 +309,7 @@ class TableBuilder {
           for (let fieldName of this.fieldNames) {
             if (this.includeFieldColumn(fieldName)) {
               if (firstCol) {
-                tableString += `| `;
+                tableString += "| ";
               } else {
                 tableString += columnSeparator;
               }
@@ -324,7 +324,7 @@ class TableBuilder {
       }
     }
 
-    tableString += `|}`;
+    tableString += "|}";
 
     return tableString;
   }
@@ -532,7 +532,7 @@ class TableBuilder {
               sentenceString += `,`;
             }
             if (lastPunctOpt == "and" || lastPunctOpt == "commaAnd") {
-              sentenceString += ` and`;
+              sentenceString += " and";
             }
           } else {
             sentenceString += `,`;
@@ -555,7 +555,7 @@ class TableBuilder {
       if (lastPunctOpt == "commaAnd") {
         sentenceString += `,`;
       }
-      sentenceString += ` and others`;
+      sentenceString += " and others";
     }
 
     sentenceString += ".";

@@ -66,6 +66,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "L69W-LQL"
+    }
+  ],
   "personRepoRef": "L69W-LQL",
   "hasValidData": true
 }

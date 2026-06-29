@@ -23,13 +23,14 @@ SOFTWARE.
 */
 
 import { popupState, progressState } from "./popup_state.mjs";
-import { separateUrlIntoParts } from "./popup_utils.mjs";
-import { isSafari } from "/base/browser/common/browser_check.mjs";
+import { isSafari, isChrome } from "../common/browser_check.mjs";
+import { doesUrlMatchChromePattern } from "../common/permissions.mjs";
+import { checkPermissionForSites } from "./popup_permissions.mjs";
+import { getSiteDataForSite, getSites } from "../common/site_registry_storage.mjs";
 
 import {
   setPopupMenuWidth,
   beginMainMenu,
-  addMenuItem,
   endMainMenu,
   addItalicMessageMenuItem,
   addMenuDivider,
@@ -40,11 +41,11 @@ import {
   addOptionsMenuItem,
   addHelpMenuItem,
   addBuyMeACoffeeMenuItem,
-  closePopup,
 } from "./popup_menu_building.mjs";
 
-import { addStandardMenuEnd, addShowCitationAssistantMenuItem } from "/base/browser/popup/popup_menu_blocks.mjs";
-import { addEditCitationMenuItem } from "/base/browser/popup/popup_citation.mjs";
+import { addStandardMenuEnd, addShowCitationAssistantMenuItem } from "./popup_menu_blocks.mjs";
+import { addEditCitationMenuItem } from "./popup_citation.mjs";
+import { logDebug } from "/base/core/log_debug.mjs";
 
 var detectedSupportedSite = false;
 
@@ -68,15 +69,13 @@ function displayOldGoogleBooksMessage() {
 function setupDefaultPopupMenuWhenNoResponseFromContent() {
   popupState.progress = progressState.defaultPopupSiteHasPermissionButNotRecognized;
 
-  //console.log("setupDefaultPopupMenuWhenNoResponseFromContent, popupState is:");
-  //console.log(popupState);
+  logDebug("setupDefaultPopupMenuWhenNoResponseFromContent, popupState is:", popupState);
 
   // Check for some special cases where we can give more helpful messages
   // This a bit site specific but helpful for the user
   if (popupState.initialStateInDefaultPopup && popupState.initialStateInDefaultPopup.tabUrl) {
     let url = popupState.initialStateInDefaultPopup.tabUrl;
-    //console.log("setupDefaultPopupMenuWhenNoResponseFromContent, have url:");
-    //console.log(url);
+    logDebug("setupDefaultPopupMenuWhenNoResponseFromContent, have url:", url);
 
     // Test for Old Google books
     // e.g.: https://books.google.com/books?id=hlA0AQAAMAAJ&newbks=1&newbks_redir=0&printsec=frontcover&q=riddle#v=snippet&q=riddle&f=false
@@ -179,98 +178,336 @@ function setupExtensionPageMenu(url) {
   endMainMenu(menu);
 }
 
-function doesUrlMatchPattern(urlParts, patternParts) {
-  if (!urlParts || !patternParts) {
-    return false;
-  }
-  // example url: https://www.ancestry.com/discoveryui-content/view/187423:1088
-  // example pattern: *://*.ancestry.com/*
+async function injectContentScriptIfMissing(activeTab, contentScript, siteData) {
+  // extension already has permission, no need to ask user
+  // However, sometimes the content script may not be loaded, it SHOULD get loaded
+  // when the user grants permission but sometimes does not for some tabs.
+  // So ping the tab and, if it does not respond, then inject the content scripts.
+  // NOTE: This also fixes the issue when a user can disable the extension and then
+  // re-enable it. In Chrome that results in the content script being missing.
+  if (isChrome()) {
+    let pingSucceeded = false;
+    try {
+      // First, check if content script is already there to avoid double-loading
+      let response = await chrome.tabs.sendMessage(activeTab.id, { type: "ping" });
+      if (chrome.runtime.lastError) {
+        logDebug("ping to content script failed, lastError is", chrome.runtime.lastError);
+      } else if (!response) {
+        logDebug("ping to content script failed, null response is", response);
+      } else if (response.success) {
+        logDebug("ping to content script succeeded.");
+        pingSucceeded = true;
+      } else {
+        logDebug("ping to content script failed, success is false.");
+      }
+    } catch (e) {
+      logDebug("ping to content script failed, error is", e);
+    }
 
-  if (patternParts.scheme != "*" && patternParts.scheme != urlParts.scheme) {
-    return false;
-  }
+    if (!pingSucceeded) {
+      logDebug("ping to content script failed, attempting to inject content script.");
+      // If the ping fails, the script isn't there, so inject it!
+      try {
+        await chrome.scripting.executeScript({
+          target: { tabId: activeTab.id },
+          files: contentScript.js,
+        });
+        logDebug("inject of content script succeeeded");
+      } catch (error) {
+        console.error(`Injection error on tab ${activeTab.id}:`, error);
+      }
 
-  if (patternParts.subdomain != "*" && patternParts.subdomain != urlParts.subdomain) {
-    return false;
-  }
+      // these additional steps are to handle additional content scripts that get loaded in iFrames
+      if (siteData.additionalContentScripts) {
+        // since the script for the tab was not loaded we can assue that the additional scripts are not loaded
+        for (let additionalScript of siteData.additionalContentScripts) {
+          if (additionalScript.allFrames) {
+            const frameResults = await chrome.scripting.executeScript({
+              target: { tabId: activeTab.id, allFrames: true },
+              func: () => {
+                return { url: window.location.href };
+              },
+            });
 
-  if (patternParts.domain != urlParts.domain) {
-    return false;
-  }
-
-  if (patternParts.subdirectory == "*") {
-    return true;
-  }
-
-  let starIndex = patternParts.subdirectory.indexOf("*");
-  if (starIndex != -1) {
-    let subDirectoryToMatch = patternParts.subdirectory.substring(0, starIndex);
-    return urlParts.subdirectory.startsWith(subDirectoryToMatch);
-  } else {
-    return urlParts.subdirectory == patternParts.subdirectory;
+            for (const frame of frameResults) {
+              // Check if frame.result exists and has a url property
+              if (frame.result && frame.result.url) {
+                const frameId = frame.frameId;
+                const frameUrl = frame.result.url;
+                for (let additionalMatch of additionalScript.matches) {
+                  if (doesUrlMatchChromePattern(additionalMatch, frameUrl)) {
+                    logDebug("attempting to inject additional content script.");
+                    // If the ping fails, the script isn't there, so inject it!
+                    try {
+                      await chrome.scripting.executeScript({
+                        target: { tabId: activeTab.id, frameIds: [frameId] },
+                        files: additionalScript.js,
+                      });
+                      logDebug("inject of additional content script succeeeded");
+                    } catch (error) {
+                      console.error(`Injection error on tab ${activeTab.id}:`, error);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
-function determineSiteNameForTab(activeTab) {
+async function checkPermissionsForMatchedContentScript(activeTab, contentScript, match) {
+  logDebug("This tab matches the pattern.");
+
+  // found match, get siteName from the content script id
+  let siteName = contentScript.id;
+
+  // we have a content script dynamically registered for the site.
+  logDebug("We have a content script dynamically registered for the site.");
+
+  let originsToRequest = [match];
+  let siteData = await getSiteDataForSite(siteName);
+  if (siteData && siteData.requiredAdditionalOrigins) {
+    originsToRequest = [...originsToRequest, ...siteData.requiredAdditionalOrigins];
+  }
+
+  displayBusyMessage(`WikiTree Sourcer initializing menu (check permissions for ${siteName}) ...`);
+
+  // Safari can get an error in chrome.permissions.contains when switching from
+  // content_scripts to optional_host_permissions (as Sourcer did in 3.0.0)
+  let hasPermission = false;
+  try {
+    hasPermission = await chrome.permissions.contains({ origins: originsToRequest });
+  } catch (e) {
+    logDebug("Permission check threw error, proceeding to request:", e);
+  }
+
+  if (hasPermission) {
+    logDebug("We have permissions for the site.");
+    displayBusyMessage(`WikiTree Sourcer initializing menu (have permissions for ${siteName}) ...`);
+
+    await injectContentScriptIfMissing(activeTab, contentScript, siteData);
+
+    return siteName;
+  }
+
+  displayBusyMessage(`WikiTree Sourcer initializing menu (requesting permissions for ${siteName}) ...`);
+
+  // ask user for permission
+  const checkPermissionsOptions = {
+    reason: "The extension needs to load a content script in order to extract data from the page.",
+    needsPopupDisplayed: true,
+    userClickedExtensionPopup: true,
+  };
+  if (await checkPermissionForSites(originsToRequest, checkPermissionsOptions)) {
+    // permission was granted but the content script will not be retroactively loaded
+    // so we want to load it manually. However we can't rely on the code getting here
+    // because the chrome permission request dialog can kill the popup, so the
+    // script is injected in the background script using chrome.permissions.onAdded
+
+    displayBusyMessage(`WikiTree Sourcer initializing menu (granted permissions for ${siteName}) ...`);
+
+    await injectContentScriptIfMissing(activeTab, contentScript, siteData);
+
+    return siteName;
+  }
+
+  console.warn(
+    "WikiTree Sourcer: determineSiteNameForTab. Tab matches content script but could not get site name. Content script is:"
+  );
+  console.warn("match pattern is: " + match);
+
+  displayMessageWithIcon(
+    "warning",
+    `This tab looks like it matches the site ${siteName}, but it could not get permission to access the page.`,
+    "Sourcer will not work without the permission."
+  );
+  return "error";
+}
+
+function displayUnexpectedErrorMessage(message) {
+  popupState.progress = progressState.sitePopupDisplayError;
+
+  logDebug("message is: " + message);
+
+  displayMessageWithIcon("warning", "Unexpected error: " + message + ".\n\nPlease try again.");
+}
+
+// Normally this is not required but for early versions of iOS (16,17) the onInstalled
+// message does not seem to be called in the background. So we register the content scripts
+// upon first use of the popup.
+async function registerContentScripts() {
+  try {
+    let response = await chrome.runtime.sendMessage({
+      type: "reregisterContentScripts",
+    });
+
+    logDebug("reregContentScripts got response: ", response);
+
+    // the message should only ever get a successful response but it could be delayed
+    // if the background is asleep.
+    if (chrome.runtime.lastError) {
+      const message = "Failed to reregContentScripts, runtime.lastError is set";
+      displayUnexpectedErrorMessage(message, chrome.runtime.lastError, true);
+      return false;
+    } else if (!response) {
+      let message = "Failed to reregContentScripts, no response from background script.";
+      message += "\nTry disabling and re-enabling the WikiTree Sourcer extension.";
+      displayUnexpectedErrorMessage(message, undefined, false);
+      return false;
+    } else if (!response.success) {
+      const message = "Failed to reregContentScripts, success=false";
+      displayUnexpectedErrorMessage(message, response, true);
+      return false;
+    }
+  } catch (error) {
+    const message = "Failed to open search page, caught exception";
+    displayUnexpectedErrorMessage(message, error, true);
+    return false;
+  }
+
+  return true;
+}
+
+async function checkForLocalSavedPage(activeTab, url) {
+  const localRegex = /^.*unit_tests\/([^\/]+)\/saved_pages\/.*$/;
+  if (!localRegex.test(url)) {
+    return;
+  }
+
+  let siteName = url.replace(localRegex, "$1");
+  if (!siteName) {
+    return;
+  }
+
+  let siteData = await getSiteDataForSite(siteName);
+  if (!siteData) {
+    return;
+  }
+
+  let contentScripts = await chrome.scripting.getRegisteredContentScripts();
+
+  for (let contentScript of contentScripts) {
+    if (contentScript.id == siteName) {
+      await injectContentScriptIfMissing(activeTab, contentScript, siteData);
+    }
+  }
+
+  return siteName;
+}
+
+async function determineSiteNameForTab(activeTab) {
+  logDebug("WikiTree Sourcer: determineSiteNameForTab");
+
+  displayBusyMessage("WikiTree Sourcer initializing menu (determineSiteNameForTab) ...");
+
   let manifest = chrome.runtime.getManifest();
 
-  // Note: the url and pendingUrl properties will be ignored unless the extsnion has the "tabs" permission
+  // Note: the url and pendingUrl properties will be ignored unless the extension has the "tabs" permission
   // or "host_permission" for the site. Chrome has the latter currently.
   // Update: I removed the host_permissions on 19 May 2025 and people started seeing this fail (it would
   // bring up the default popup on wikitree profiles after they had been open a while).
   // It appears that adding the activeTab permission fixes this. That seems easier to maintain than
   // having a host_permission for every site.
 
-  let urlParts = separateUrlIntoParts(activeTab.pendingUrl);
-  if (!urlParts) {
-    urlParts = separateUrlIntoParts(activeTab.url);
+  let url = activeTab.pendingUrl;
+  if (!url) {
+    url = activeTab.url;
   }
 
-  // for a non-supported site these will usually be empty because of permissions
-  if (!urlParts) {
-    return false;
+  // for local debugging only
+  let debugSiteName = await checkForLocalSavedPage(activeTab, url);
+  if (debugSiteName) {
+    logDebug("WikiTree Sourcer: determineSiteNameForTab returning debugSiteName of:", debugSiteName);
+    return debugSiteName;
   }
 
-  //console.log("WikiTree Sourcer: determineSiteNameForTab");
-  let contentScripts = manifest.content_scripts;
+  logDebug("WikiTree Sourcer: determineSiteNameForTab checking content scripts");
 
-  for (let contentScript of contentScripts) {
-    //console.log("contentScript.matches = ")
-    //console.log(contentScript.matches)
+  if (typeof chrome.scripting?.getRegisteredContentScripts !== "function") {
+    displayMessageWithIcon(
+      "warning",
+      "The chrome.scripting API function getRegisteredContentScripts is not supported by this browser version.",
+      "Sourcer will not work in this browser."
+    );
+    return "error";
+  }
 
-    for (let match of contentScript.matches) {
-      let matchParts = separateUrlIntoParts(match);
+  try {
+    displayBusyMessage("WikiTree Sourcer initializing menu (getRegisteredContentScripts) ...");
 
-      let doesTabMatch = doesUrlMatchPattern(urlParts, matchParts);
+    let contentScripts = await chrome.scripting.getRegisteredContentScripts();
 
-      if (doesTabMatch) {
-        // found match, get siteName from the last script name
-        let scripts = contentScript.js;
-        if (scripts && scripts.length > 0) {
-          let lastScript = scripts[scripts.length - 1];
-          // example: "site/fs/browser/fs_content.js"
-          let lastSlashIndex = lastScript.lastIndexOf("/");
-          if (lastSlashIndex != -1) {
-            const suffix = "_content.js";
-            let suffixIndex = lastScript.indexOf(suffix, lastSlashIndex);
-            if (suffixIndex != -1) {
-              let siteName = lastScript.substring(lastSlashIndex + 1, suffixIndex);
-              return siteName;
-            }
-          }
+    logDebug("determineSiteNameForTab: contentScripts is", contentScripts);
+    if (!contentScripts || contentScripts.length == 0) {
+      if (!(await registerContentScripts())) {
+        displayMessageWithIcon(
+          "warning",
+          "There are no registered content scripts for the extension.",
+          "Sourcer will not work in this browser."
+        );
+        return "error";
+      }
+      contentScripts = await chrome.scripting.getRegisteredContentScripts();
+    }
+
+    logDebug("determineSiteNameForTab: contentScripts is ", contentScripts);
+
+    for (let contentScript of contentScripts) {
+      for (let match of contentScript.matches) {
+        let doesTabMatch = doesUrlMatchChromePattern(match, url);
+
+        if (doesTabMatch) {
+          return await checkPermissionsForMatchedContentScript(activeTab, contentScript, match);
         }
 
-        console.log(
-          "WikiTree Sourcer: determineSiteNameForTab. Tab matches content script but could not get site name. Content script is:"
-        );
-        console.log("match pattern is: " + match);
-        return "unknown";
+        logDebug("determineSiteNameForTab: no match is ", match, url);
       }
     }
+  } catch (e) {
+    console.error("WikiTree Sourcer: error in determineSiteNameForTab. URL is: ", url, e);
+
+    let message = "Error when attempting to get registered content scripts and check permissions.\n";
+    openExceptionPage(message, url, e, false);
+    return "error";
   }
 
-  console.log("WikiTree Sourcer: determineSiteNameForTab. Tab has URL but no content script match");
-  console.log("activeTab.url is: " + activeTab.url);
+  // This is normal if extension icon is clicked on an unsupported page
+  logDebug("WikiTree Sourcer: determineSiteNameForTab. Tab has URL but no content script match");
+  logDebug("activeTab.url is: " + activeTab.url);
+
+  // Because of some weird bugs seen in Safari iOS let's double check that this is really an
+  // unsupported site - perhaps something went wrong with registerContentScripts in the background.
+  let siteRegistry = await getSites();
+  if (siteRegistry) {
+    for (let siteName of Object.keys(siteRegistry)) {
+      let siteData = siteRegistry[siteName];
+      for (let match of siteData.matches) {
+        let doesTabMatch = doesUrlMatchChromePattern(match, url);
+        if (doesTabMatch) {
+          // this is an error - it does match a registered site but there was no matching
+          // registered content script
+          displayMessageWithIcon(
+            "warning",
+            `This URL does match a supported site (${siteData.siteName}) but no registered content script was found`,
+            "Something went wrong at Sourcer startup."
+          );
+          return "error";
+        }
+      }
+    }
+  } else {
+    // this is an error - there is no site registry
+    displayMessageWithIcon(
+      "warning",
+      "Sourcer was unable to read its siteRegistry",
+      "Something went wrong at Sourcer startup."
+    );
+    return "error";
+  }
+
   return "unknown";
 }
 
@@ -281,23 +518,21 @@ async function loadPopupModuleForSupportedSite(popupModulePath) {
 
   detectedSupportedSite = true;
 
-  console.log("WikiTree Sourcer: loadPopupModuleForSupportedSite. popupModulePath is:");
-  console.log(popupModulePath);
+  logDebug("WikiTree Sourcer: loadPopupModuleForSupportedSite. popupModulePath is:", popupModulePath);
 
   try {
-    //console.log('WikiTree Sourcer: loadPopupModuleForSupportedSite. importing: ', popupModulePath);
+    logDebug("WikiTree Sourcer: loadPopupModuleForSupportedSite. importing: ", popupModulePath);
     popupState.progress = progressState.defaultPopupLoadingSiteModule;
     // Note: Using chrome.runtime.getURL is considered "sanitizing" the pathName
     // so it avoids a validation warning for Firefox
     let loadedPopupModule = await import(chrome.runtime.getURL(popupModulePath));
     if (!loadedPopupModule) {
-      console.log("WikiTree Sourcer: loadPopupModuleForSupportedSite. failed to import");
+      console.warn("WikiTree Sourcer: loadPopupModuleForSupportedSite. failed to import");
     }
   } catch (e) {
     popupState.progress = progressState.defaultPopupException;
 
-    console.log("WikiTree Sourcer: error in loadPopupModuleForSupportedSite. Path is: ", popupModulePath);
-    console.log(e);
+    console.error("WikiTree Sourcer: error in loadPopupModuleForSupportedSite. Path is: ", popupModulePath, e);
 
     let message = "Error when attempting a dynamic import of the popup module in a the default popup.\n";
     openExceptionPage(message, popupModulePath, e, false);
@@ -322,8 +557,9 @@ const initPopupGivenActiveTabRetryOnCompleteDelay = 100;
 const initPopupGivenActiveTabRetryOnCompleteMaxCount = 5;
 
 async function initPopupGivenActiveTab(activeTab) {
-  console.log("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, active tab is:");
-  console.log(activeTab);
+  displayBusyMessage(`WikiTree Sourcer initializing menu (active tabId) ${activeTab.id}) ...`);
+
+  logDebug("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, active tab is:", activeTab);
 
   if (detectedSupportedSite) {
     // our work here is done
@@ -334,19 +570,17 @@ async function initPopupGivenActiveTab(activeTab) {
 
   if (!activeTab) {
     // this should never happen
-    console.log("WikiTree Sourcer: popup.mjs: setupInitialPopupMenuWithActiveTab, no active tab");
+    console.error("WikiTree Sourcer: popup.mjs: setupInitialPopupMenuWithActiveTab, no active tab");
     setupPopupMenuWhenError("There is no active tab in initPopupGivenActiveTab");
     return;
   }
 
   popupState.recordDefaultPopupActiveTab(activeTab);
 
-  //console.log("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, activeTabId is: " + activeTab.id);
-  //console.log("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, siteName is: " + siteName + ", activeTab is:");
-  //console.log(activeTab);
-  //console.log("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, activeTab.status is: " + activeTab.status);
-  //console.log("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, activeTab.url is: " + activeTab.url);
-  //console.log("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, activeTab.pendingUrl is: " + activeTab.pendingUrl);
+  logDebug("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, activeTabId is: " + activeTab.id);
+  logDebug("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, activeTab.status is: " + activeTab.status);
+  logDebug("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, activeTab.url is: " + activeTab.url);
+  logDebug("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, activeTab.pendingUrl is: " + activeTab.pendingUrl);
 
   // One problem is that in Safari if we bring up the menu very quickly after navigating to a page
   // the tab still thinks it is "complete" and has the old URL. In this case it does appear that
@@ -371,43 +605,29 @@ async function initPopupGivenActiveTab(activeTab) {
 
   // Check if this is an extension page
   let url = activeTab.pendingUrl ? activeTab.pendingUrl : activeTab.url;
-  let views = chrome.extension.getViews({ type: "tab" });
-  let isExtensionPage = false;
-  if (url) {
-    // Firefox will come thrugh here
-    for (let view of views) {
-      if (view.document.documentURI == url) {
-        isExtensionPage = true;
-        break;
-      }
-    }
-  } else {
-    // Chrome will come through here
-    for (let view of views) {
-      let extensionTab = await view.chrome.tabs.getCurrent();
-      if (extensionTab.id == activeTab.id) {
-        isExtensionPage = true;
-        url = view.document.documentURI;
-      }
-    }
-  }
+  let isExtensionPage = url?.startsWith(chrome.runtime.getURL(""));
   if (isExtensionPage) {
     setupExtensionPageMenu(url);
     return;
   }
 
   // this will be empty string if not a supported page
-  let siteName = determineSiteNameForTab(activeTab);
+  let siteName = await determineSiteNameForTab(activeTab);
+
+  if (siteName == "error") {
+    // this means that an error popup is already displayed - just return
+    return;
+  }
 
   if (!siteName) {
     // the url will be blank if we don't have permission to the tab so we can't get site name
-    console.log("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, cannot determine site name");
+    console.warn("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, cannot determine site name");
     setupUnrecognizedSiteMenu(activeTab.id);
     return;
   }
 
   if (siteName != "unknown") {
-    console.log("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, site name is: " + siteName);
+    logDebug("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, site name is: " + siteName);
 
     // we worked out the siteName from the url, switch to the correct popup script
     let popupModulePath = "site/" + siteName + "/browser/" + siteName + "_popup.mjs";
@@ -415,11 +635,10 @@ async function initPopupGivenActiveTab(activeTab) {
     return;
   }
 
-  //console.log("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, UNKNOWN SITE NAME");
+  logDebug("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, unknown site name");
 
-  // We should hopefully never get here. It only happens if the tab has a url (so is supported)
-  // but we could not work out the site name.
-  // For now just bring up an error message popup.
+  // Now that we have the activeTab permission it will normally come through here
+  // when the extension popup is used on an unsupported page
   setupDefaultPopupMenuWhenNoResponseFromContent();
 }
 
@@ -429,7 +648,7 @@ function initPopupWithActiveTab() {
   // it is possible that browser.tabs.querey would work.
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     if (!tabs || tabs.length < 1) {
-      console.log("WikiTree Sourcer: popup.mjs: setupInitialPopupMenu, no tabs returned from chrome.tabs.query");
+      console.warn("WikiTree Sourcer: popup.mjs: setupInitialPopupMenu, no tabs returned from chrome.tabs.query");
     } else {
       initPopupGivenActiveTab(tabs[0]);
     }
@@ -444,10 +663,16 @@ function initPopup() {
 
   setPopupMenuWidth();
 
-  console.log("WikiTree Sourcer: popup.mjs: initPopup");
-  displayBusyMessage("WikiTree Sourcer initializing menu ...");
+  logDebug("WikiTree Sourcer: popup.mjs: initPopup");
+  displayBusyMessage("WikiTree Sourcer initializing menu (initPopup) ...");
 
   initPopupWithActiveTab();
 }
 
-initPopup();
+try {
+  initPopup();
+} catch (e) {
+  console.error("WikiTree Sourcer: error calling initPopup", e);
+  let message = "Error when calling initPopup.\n";
+  openExceptionPage(message, "", e, false);
+}

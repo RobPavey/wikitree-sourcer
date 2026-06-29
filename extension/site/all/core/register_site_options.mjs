@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// We tried making these dynamic imports using the siteNames list.
+// We tried making these dynamic imports using a siteNames list.
 // But dynamic imports throw an error when used from a service worker.
 // The options are used in the background script - there is a "getOptions"
 // message that can be sent to the background from a content script.
@@ -34,25 +34,36 @@ import "../../ameranc/core/ameranc_options.mjs";
 import "../../ancestry/core/ancestry_options.mjs";
 import "../../archion/core/archion_options.mjs";
 import "../../archive/core/archive_options.mjs";
+import "../../arolsenarchives/core/arolsenarchives_options.mjs";
+import "../../ausmem/core/ausmem_options.mjs";
 import "../../baclac/core/baclac_options.mjs";
+import "../../basrhin/core/basrhin_options.mjs";
 import "../../bg/core/bg_options.mjs";
 import "../../cwgc/core/cwgc_options.mjs";
+import "../../dfgviewer/core/dfgviewer_options.mjs";
+import "../../doew/core/doew_options.mjs";
+import "../../ecpp/core/ecpp_options.mjs";
 import "../../eggsabdm/core/eggsabdm_options.mjs";
 import "../../eggsagrvs/core/eggsagrvs_options.mjs";
-import "../../fmp/core/fmp_options.mjs";
-import "../../fs/core/fs_options.mjs";
 import "../../fg/core/fg_options.mjs";
+import "../../finistere/core/finistere_options.mjs";
+import "../../fmp/core/fmp_options.mjs";
 import "../../freebmd/core/freebmd_options.mjs";
 import "../../freecen/core/freecen_options.mjs";
 import "../../freereg/core/freereg_options.mjs";
-import "../../geneteka/core/geneteka_options.mjs";
-import "../../gro/core/gro_options.mjs";
+import "../../fs/core/fs_options.mjs";
 import "../../gbooks/core/gbooks_options.mjs";
+import "../../geneteka/core/geneteka_options.mjs";
+import "../../gensau/core/gensau_options.mjs";
+import "../../gro/core/gro_options.mjs";
 import "../../hathi/core/hathi_options.mjs";
 import "../../irishg/core/irishg_options.mjs";
+import "../../itcadgg/core/itcadgg_options.mjs";
 import "../../jstor/core/jstor_options.mjs";
 import "../../matricula/core/matricula_options.mjs";
+import "../../mdz/core/mdz_options.mjs";
 import "../../mh/core/mh_options.mjs";
+import "../../morbihan/core/morbihan_options.mjs";
 import "../../naie/core/naie_options.mjs";
 import "../../nli/core/nli_options.mjs";
 import "../../noda/core/noda_options.mjs";
@@ -64,26 +75,19 @@ import "../../nzash/core/nzash_options.mjs";
 import "../../nzbdm/core/nzbdm_options.mjs";
 import "../../opccorn/core/opccorn_options.mjs";
 import "../../openarch/core/openarch_options.mjs";
+import "../../panb/core/panb_options.mjs";
 import "../../ppnz/core/ppnz_options.mjs";
 import "../../psuk/core/psuk_options.mjs";
+import "../../qldbdm/core/qldbdm_options.mjs";
 import "../../scotp/core/scotp_options.mjs";
+import "../../sosmogov/core/sosmogov_options.mjs";
+import "../../szukaj/core/szukaj_options.mjs";
 import "../../taslib/core/taslib_options.mjs";
 import "../../thegen/core/thegen_options.mjs";
 import "../../trove/core/trove_options.mjs";
+import "../../ushmm/core/ushmm_options.mjs";
 import "../../vicbdm/core/vicbdm_options.mjs";
 import "../../wiewaswie/core/wiewaswie_options.mjs";
-import "../../wikitree/core/wikitree_options.mjs";
 import "../../wikipedia/core/wikipedia_options.mjs";
-import "../../mdz/core/mdz_options.mjs";
-import "../../basrhin/core/basrhin_options.mjs";
-import "../../dfgviewer/core/dfgviewer_options.mjs";
-import "../../arolsenarchives/core/arolsenarchives_options.mjs";
-import "../../sosmogov/core/sosmogov_options.mjs";
-import "../../doew/core/doew_options.mjs";
+import "../../wikitree/core/wikitree_options.mjs";
 import "../../yadvashem/core/yadvashem_options.mjs";
-import "../../ushmm/core/ushmm_options.mjs";
-import "../../ecpp/core/ecpp_options.mjs";
-import "../../panb/core/panb_options.mjs";
-
-import "../../ausmem/core/ausmem_options.mjs";
-import "../../morbihan/core/morbihan_options.mjs";

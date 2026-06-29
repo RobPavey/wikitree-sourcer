@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/vicbdm/core/vicbdm_extract_data.mjs";
 import { generalizeData } from "../../extension/site/vicbdm/core/vicbdm_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/vicbdm/core/vicbdm_build_citation.mjs";
 
@@ -196,7 +195,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("vicbdm", extractData, regressionData, testManager);
+  await runExtractDataTests("vicbdm", regressionData, testManager);
 
   await runGeneralizeDataTests("vicbdm", generalizeData, regressionData, testManager);
 

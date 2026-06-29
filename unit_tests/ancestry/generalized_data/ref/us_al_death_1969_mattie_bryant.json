@@ -2,6 +2,12 @@
   "sourceType": "record",
   "recordType": "Death",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Mattie W Bryant",
+      "Mattie W Whiteside"
+    ]
+  },
   "name": {
     "name": "Mattie W Bryant"
   },

@@ -1,0 +1,91 @@
+{
+    "Person": [
+        {
+            "@pid": "Person3458439893",
+            "PersonName": {
+                "PersonNameFirstName": "Marcus",
+                "PersonNameLastName": "Haringman"
+            }
+        },
+        {
+            "@pid": "Person3458439892",
+            "PersonName": {
+                "PersonNameFirstName": "Roosje",
+                "PersonNameLastName": "Bolle"
+            }
+        }
+    ],
+    "Event": {
+        "@eid": "Event1",
+        "EventType": "Echtscheiding",
+        "EventDate": {
+            "LiteralDate": "27-03-1916",
+            "Year": "1916",
+            "Month": "03",
+            "Day": "27"
+        },
+        "EventPlace": {
+            "Place": "Amsterdam"
+        }
+    },
+    "RelationEP": [
+        {
+            "PersonKeyRef": "Person3458439893",
+            "EventKeyRef": "Event1",
+            "RelationType": "Bruidegom"
+        },
+        {
+            "PersonKeyRef": "Person3458439892",
+            "EventKeyRef": "Event1",
+            "RelationType": "Bruid"
+        }
+    ],
+    "Source": {
+        "SourcePlace": {
+            "Country": "Nederland",
+            "Place": "Amsterdam"
+        },
+        "SourceIndexDate": {
+            "From": "1916-03-27",
+            "To": "1916-03-27"
+        },
+        "SourceDate": {
+            "LiteralDate": "27-03-1916",
+            "Year": "1916",
+            "Month": "03",
+            "Day": "27"
+        },
+        "SourceType": "BS Huwelijk",
+        "SourceReference": {
+            "Place": "Haarlem",
+            "InstitutionName": "Noord-Hollands Archief",
+            "Archive": "358.6",
+            "Collection": "burgerlijke stand van de gemeente Amsterdam, Archiefdeel van (dubbele) registers van huwelijken v...",
+            "Book": "Huwelijksakten van de gemeente Amsterdam, 1916",
+            "RegistryNumber": "2149",
+            "DocumentNumber": "Reg. 1 fol. 24"
+        },
+        "SourceAvailableScans": {
+            "Scan": {
+                "OrderSequenceNumber": "1",
+                "Uri": "https:\/\/proxy.archieven.nl\/download\/236\/89DDC182D8D74C929F7AD2FA88DD2A88",
+                "UriViewer": "https:\/\/proxy.archieven.nl\/embed\/236\/89DDC182D8D74C929F7AD2FA88DD2A88",
+                "UriPreview": "https:\/\/proxy.archieven.nl\/thumb\/236\/89DDC182D8D74C929F7AD2FA88DD2A88"
+            }
+        },
+        "SourceLastChangeDate": "2024-01-09",
+        "SourceDigitalOriginal": "https:\/\/hdl.handle.net\/21.12102\/F2A40D8C406744EDBBEB511E1530AF5F",
+        "RecordIdentifier": "3458439891",
+        "RecordGUID": "{F2A40D8C-4067-44ED-BBEB-511E1530AF5F}",
+        "SourceRemark": [
+            {
+                "@Key": "Opmerking",
+                "Value": "Gehuwd te Amsterdam 19-11-1902."
+            },
+            {
+                "@Key": "Provenance",
+                "Value": "A2Acollection via https:\/\/opendata.archieven.nl\/dataset\/D76F55D0941E3591E053CA00A8C01391"
+            }
+        ]
+    }
+}

@@ -1,0 +1,89 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Eliza Dicken",
+      "Eliza Dickens"
+    ]
+  },
+  "name": {
+    "name": "Eliza Dickens"
+  },
+  "personGender": "female",
+  "eventPlace": {
+    "country": "England",
+    "placeString": "St George, Somerset, England"
+  },
+  "registrationDistrict": "Bedminster",
+  "birthDate": {
+    "yearString": "1835",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Somerset, England"
+  },
+  "eventDate": {
+    "yearString": "1841"
+  },
+  "ageAtEvent": "6",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "John Dicken",
+      "age": "26",
+      "uid": "http://www.ancestry.com/search/collections/8978/records/13492510"
+    },
+    {
+      "name": "Elizabeth Dicken",
+      "age": "28",
+      "uid": "http://www.ancestry.com/search/collections/8978/records/13492511"
+    },
+    {
+      "name": "Eliza Dicken",
+      "age": "6",
+      "isSelected": true,
+      "gender": "female",
+      "birthPlace": "Somerset, England",
+      "birthYear": "abt 1835"
+    },
+    {
+      "name": "Thomas Dicken",
+      "age": "4",
+      "uid": "http://www.ancestry.com/search/collections/8978/records/13492513"
+    },
+    {
+      "name": "John Dicken",
+      "age": "2",
+      "uid": "http://www.ancestry.com/search/collections/8978/records/13492514"
+    },
+    {
+      "name": "Thomas Dicken",
+      "age": "23",
+      "uid": "http://www.ancestry.com/search/collections/8978/records/13492515"
+    }
+  ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8978|13492512}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|8978|13492510}}",
+    "{{Ancestry Record|8978|13492511}}",
+    "{{Ancestry Record|8978|13492513}}",
+    "{{Ancestry Record|8978|13492514}}",
+    "{{Ancestry Record|8978|13492515}}"
+  ],
+  "collectionData": {
+    "id": "8978",
+    "collectionTitle": "1841 England Census",
+    "page": "23",
+    "folio": "34",
+    "piece": "956",
+    "county": "Somerset"
+  },
+  "hasValidData": true
+}

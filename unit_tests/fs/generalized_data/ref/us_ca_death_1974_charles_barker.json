@@ -25,8 +25,11 @@
   "eventPlace": {
     "placeString": "San Diego, California, United States"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|VPN6-4J4}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "VPN6-4J4"
+    }
   ],
   "collectionData": {
     "id": "2015582",

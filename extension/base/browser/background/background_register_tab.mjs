@@ -23,17 +23,17 @@ SOFTWARE.
 */
 
 // NOTE: because service workers are non-persistent we can't store siteRegistry in a global var
-async function getSiteRegistry() {
+async function getTabRegistry() {
   let value = await chrome.storage.session.get(["backgroundTabIdRegistry"]);
 
-  //console.log("getSiteRegistry, value is:");
+  //console.log("getTabRegistry, value is:");
   //console.log(value);
 
   if (!(value && value.backgroundTabIdRegistry)) {
     return {};
   }
 
-  //console.log("getSiteRegistry, value.backgroundTabIdRegistry is:");
+  //console.log("getTabRegistry, value.backgroundTabIdRegistry is:");
   //console.log(value.backgroundTabIdRegistry);
 
   let siteRegistry = value.backgroundTabIdRegistry;
@@ -51,7 +51,7 @@ async function setSiteRegistry(siteRegistry) {
 async function handleRegisterTabMessage(request, sender, sendResponse) {
   //console.log("handleRegisterTabMessage");
 
-  let siteRegistry = await getSiteRegistry();
+  let siteRegistry = await getTabRegistry();
 
   //console.log("siteRegistry is:");
   //console.log(siteRegistry);
@@ -88,7 +88,7 @@ async function handleUnregisterTabMessage(request, sender, sendResponse) {
   //console.log("sender is:");
   //console.log(sender);
 
-  let siteRegistry = await getSiteRegistry();
+  let siteRegistry = await getTabRegistry();
 
   //console.log("siteRegistry is:");
   //console.log(siteRegistry);
@@ -131,7 +131,7 @@ async function handleUnregisterTabMessage(request, sender, sendResponse) {
 async function handleGetRegisteredTabMessage(request, sender, sendResponse) {
   //console.log("handleGetRegisteredTabMessage, siteName is: " + request.siteName);
 
-  let siteRegistry = await getSiteRegistry();
+  let siteRegistry = await getTabRegistry();
 
   //console.log("handleGetRegisteredTabMessage, siteRegistry is:");
   //console.log(siteRegistry);
@@ -153,7 +153,7 @@ async function handleGetRegisteredTabMessage(request, sender, sendResponse) {
 }
 
 async function handleSendMessageToRegisteredTabMessage(request, sender, sendResponse) {
-  //console.log("handleSendMessageToRegisteredTabMessage, siteName is: " + request.siteName);
+  console.log("handleSendMessageToRegisteredTabMessage, siteName is: " + request.siteName);
 
   let siteName = request.siteName;
   let requestToSend = request.requestToSend;
@@ -175,7 +175,7 @@ async function handleSendMessageToRegisteredTabMessage(request, sender, sendResp
       } else if (!response) {
         console.log("handleSendMessageToRegisteredTabMessage failed, null response");
       } else {
-        //console.log("doSearchInExistingTab message sent OK");
+        //console.log("handleSendMessageToRegisteredTabMessage message sent OK");
         result.success = true;
         result.responseFromTab = response;
       }
@@ -208,33 +208,53 @@ async function handleSendMessageToRegisteredTabMessage(request, sender, sendResp
           // remove the listener now that we know the tab has completed loading
           chrome.tabs.onUpdated.removeListener(tabListener);
 
-          chrome.tabs.sendMessage(tabId, requestToSend, function (response) {
-            if (!response) {
-              console.log("Null response from sending message to tab");
-              sendResponse({
-                success: false,
-                createdTab: createdTab,
-                changeInfo: changeInfo,
-                tabId: tabId,
-                tab: tab,
-                lastError: chrome.runtime.lastError,
-              });
-            } else {
-              //console.log("Response from sending message to tab is:");
-              //console.log(response);
+          try {
+            chrome.tabs.sendMessage(tabId, requestToSend, function (response) {
+              if (chrome.runtime.lastError) {
+                console.log("Error from sending message to tab: ", chrome.runtime.lastError);
+                sendResponse({
+                  success: false,
+                  createdTab: createdTab,
+                  changeInfo: changeInfo,
+                  tabId: tabId,
+                  tab: tab,
+                  lastError: chrome.runtime.lastError,
+                });
+              } else if (!response) {
+                console.log("Null response from sending message to tab");
+                sendResponse({
+                  success: false,
+                  createdTab: createdTab,
+                  changeInfo: changeInfo,
+                  tabId: tabId,
+                  tab: tab,
+                });
+              } else {
+                //console.log("Response from sending message to tab is:");
+                //console.log(response);
 
-              // we send a detailed response back to the caller for debugging this mechanism
-              sendResponse({
-                success: true,
-                createdTab: createdTab,
-                changeInfo: changeInfo,
-                tabId: tabId,
-                tab: tab,
-                responseFromTab: response,
-                lastError: chrome.runtime.lastError,
-              });
-            }
-          });
+                // we send a detailed response back to the caller for debugging this mechanism
+                sendResponse({
+                  success: true,
+                  createdTab: createdTab,
+                  changeInfo: changeInfo,
+                  tabId: tabId,
+                  tab: tab,
+                  responseFromTab: response,
+                  lastError: chrome.runtime.lastError,
+                });
+              }
+            });
+          } catch (error) {
+            console.log("Exception from sending message to tab: ", error);
+            sendResponse({
+              success: false,
+              createdTab: createdTab,
+              changeInfo: changeInfo,
+              tabId: tabId,
+              tab: tab,
+            });
+          }
         }
       });
     }
@@ -242,7 +262,7 @@ async function handleSendMessageToRegisteredTabMessage(request, sender, sendResp
 }
 
 async function getRegisteredTab(siteName) {
-  let siteRegistry = await getSiteRegistry();
+  let siteRegistry = await getTabRegistry();
 
   //console.log("getRegisteredTab, siteRegistry is:");
   //console.log(siteRegistry);
@@ -267,7 +287,7 @@ async function anyTabRemoved(tabId) {
   //console.log("tabId is:");
   //console.log(tabId);
 
-  let siteRegistry = await getSiteRegistry();
+  let siteRegistry = await getTabRegistry();
 
   //console.log("siteRegistry is:");
   //console.log(siteRegistry);

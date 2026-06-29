@@ -26,7 +26,7 @@ import {
   beginMainMenu,
   endMainMenu,
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addBackMenuItem,
   addSameRecordMenuItem,
   doAsyncActionWithCatch,
@@ -38,10 +38,10 @@ import {
   shouldShowSiteSearch,
   openUrlInNewTab,
 } from "/base/browser/popup/popup_search.mjs";
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 const wiewaswieStartYear = 1000; // I have seem lots of dates like 1039 and some of 1000
 const wiewaswieEndYear = 2040;
@@ -77,7 +77,7 @@ async function doWiewaswieSearch(input) {
       reason:
         "To perform a search on WieWasWie a content script needs to be loaded on the www.wiewaswie.nl search page.",
     };
-    let allowed = await checkPermissionForSite("*://www.wiewaswie.nl/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("wiewaswie", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;
@@ -132,14 +132,14 @@ async function wiewaswieSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addWiewaswieDefaultSearchMenuItem(menu, data, backFunction) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search WieWasWie (NL)",
     function (element) {
       wiewaswieSearch(data.generalizedData, "");
     },
     function () {
-      setupWiewaswieSearchSubMenu(data, backFunction);
+      setupWiewaswieSearchSubmenu(data, backFunction);
     }
   );
 
@@ -160,7 +160,7 @@ function addWiewaswieSameRecordMenuItem(menu, data) {
 
 function addWiewaswieSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters", function (element) {
-    setupWiewaswieSearchWithParametersSubMenu(data, backFunction);
+    setupWiewaswieSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -168,7 +168,7 @@ function addWiewaswieSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupWiewaswieSearchSubMenu(data, backFunction) {
+async function setupWiewaswieSearchSubmenu(data, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -179,9 +179,9 @@ async function setupWiewaswieSearchSubMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-async function setupWiewaswieSearchWithParametersSubMenu(data, backFunction) {
+async function setupWiewaswieSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/wiewaswie_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.WiewaswieData, wiewaswieSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.WiewaswieData, wiewaswieSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

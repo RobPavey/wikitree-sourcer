@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/gbooks/core/gbooks_extract_data.mjs";
 import { generalizeData } from "../../extension/site/gbooks/core/gbooks_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/gbooks/core/gbooks_build_citation.mjs";
 
@@ -114,7 +113,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("gbooks", extractData, regressionData, testManager);
+  await runExtractDataTests("gbooks", regressionData, testManager);
 
   await runGeneralizeDataTests("gbooks", generalizeData, regressionData, testManager);
 

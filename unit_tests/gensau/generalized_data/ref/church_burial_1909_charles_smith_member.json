@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Charles Jnr"
+  },
+  "eventDate": {
+    "dateString": "26-Apr-1909"
+  },
+  "eventPlace": {
+    "placeString": "Glen Osmond St Saviours Anglican, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Glen Osmond St Saviours Anglican"
+  },
+  "hasValidData": true
+}

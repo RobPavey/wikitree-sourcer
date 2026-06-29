@@ -31,7 +31,7 @@ import {
 } from "./popup_menu_building.mjs";
 
 import { writeToClipboard, clearClipboard } from "./popup_clipboard.mjs";
-import { options } from "/base/browser/options/options_loader.mjs";
+import { options } from "../options/options_loader.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Building lists
@@ -179,7 +179,7 @@ function addBuildListSubmenuMenuItem(menu, data, text, listType, spouse) {
   });
 }
 
-function setupBuildListsSubMenu(data, backFunction, siblingsNeedExpand) {
+function setupBuildListsSubmenu(data, backFunction, siblingsNeedExpand) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -237,7 +237,7 @@ function addBuildListsMenuItem(menu, data, backFunction, siblingsNeedExpand) {
 
   if (listsAvailable) {
     addMenuItem(menu, "Build Lists...", function () {
-      setupBuildListsSubMenu(data, backFunction, siblingsNeedExpand);
+      setupBuildListsSubmenu(data, backFunction, siblingsNeedExpand);
     });
   }
 }

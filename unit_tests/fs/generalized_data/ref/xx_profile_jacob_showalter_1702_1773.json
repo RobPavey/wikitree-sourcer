@@ -205,6 +205,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "LDL8-2H9"
+    }
+  ],
   "personRepoRef": "LDL8-2H9",
   "hasValidData": true
 }

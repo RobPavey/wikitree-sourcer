@@ -32,8 +32,11 @@
       }
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QV8X-7L1V}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QV8X-7L1V"
+    }
   ],
   "collectionData": {
     "id": "2285732",

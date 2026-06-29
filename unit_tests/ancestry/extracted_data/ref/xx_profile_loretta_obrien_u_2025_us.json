@@ -1,0 +1,21 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/208562775/person/192735105415/facts",
+  "pageType": "personFacts",
+  "givenName": "Loretta",
+  "surname": "O'Brien",
+  "deathDate": "16 MAY 2025",
+  "deathPlace": "Eagleville, Montgomery, Pennsylvania, USA",
+  "gender": "Female",
+  "titleName": "Loretta O'Brien",
+  "spousesAndChildren": [
+    {
+      "name": "Regis W Allen",
+      "children": [
+        {
+          "name": "Private"
+        }
+      ]
+    }
+  ],
+  "ancestryTemplate": "{{Ancestry Tree|208562775|192735105415}}"
+}

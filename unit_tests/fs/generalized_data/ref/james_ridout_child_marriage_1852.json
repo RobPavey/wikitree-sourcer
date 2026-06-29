@@ -40,13 +40,25 @@
       }
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QJDC-577Y}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QJDC-577Y"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|939L-SL93-13}}",
-    "{{FamilySearch Record|QJDC-577T}}",
-    "{{FamilySearch Record|QJDC-577B}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "939L-SL93-13"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QJDC-577T"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QJDC-577B"
+    }
   ],
   "collectionData": {
     "id": "1910806",

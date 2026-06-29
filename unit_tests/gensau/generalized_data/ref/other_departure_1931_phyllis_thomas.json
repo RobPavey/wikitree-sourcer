@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "PassengerList",
+  "name": {
+    "lastName": "Thomas",
+    "forenames": "Phyllis Gwendolen Hewett"
+  },
+  "ageAtEvent": "27",
+  "hasValidData": true
+}

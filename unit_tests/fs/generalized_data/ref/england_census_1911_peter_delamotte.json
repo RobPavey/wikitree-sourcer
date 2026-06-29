@@ -85,14 +85,29 @@
       "marriagePlace": {}
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|XWW2-PF1}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "XWW2-PF1"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|XWW2-PF1}}",
-    "{{FamilySearch Record|XWW2-PNM}}",
-    "{{FamilySearch Record|XWW2-PN9}}",
-    "{{FamilySearch Record|XWW2-PNS}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "XWW2-PF1"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "XWW2-PNM"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "XWW2-PN9"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "XWW2-PNS"
+    }
   ],
   "collectionData": {
     "id": "1921547",

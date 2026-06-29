@@ -29,8 +29,11 @@
   "birthPlace": {
     "placeString": "Belleville, St. Clair County, Illinois, USA"
   },
-  "wtSearchTemplates": [
-    "{{FindAGrave|118913956}}"
+  "wtSearchIds": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem118913956"
+    }
   ],
   "hasValidData": true
 }

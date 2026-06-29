@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/nli/core/nli_extract_data.mjs";
 import { generalizeData, regeneralizeData } from "../../extension/site/nli/core/nli_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/nli/core/nli_build_citation.mjs";
 
@@ -73,7 +72,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("nli", extractData, regressionData, testManager);
+  await runExtractDataTests("nli", regressionData, testManager);
 
   await runGeneralizeDataTests("nli", generalizeData, regressionData, testManager);
 

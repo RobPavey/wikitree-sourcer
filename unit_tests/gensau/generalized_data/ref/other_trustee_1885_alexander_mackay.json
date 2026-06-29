@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Probate",
+  "name": {
+    "lastName": "MacKay",
+    "forenames": "Alexander"
+  },
+  "eventDate": {
+    "dateString": "1885"
+  },
+  "hasValidData": true
+}

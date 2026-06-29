@@ -8,7 +8,7 @@
   "titleName": "James Pavey",
   "titleCollection": "1851 England Census",
   "recordData": {
-    "Name": "[User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]",
+    "Name": "",
     "Age": "83",
     "Estimated Birth Year": "abt 1768",
     "Relation": "Head",
@@ -26,6 +26,18 @@
     "Folio": "246",
     "Page number": "12",
     "Household Members (Name)<br/>Age<br/>Relationship": "James Pavey 83 Head<br/>Sarah Pavey 43 Daughter"
+  },
+  "recordDataAltValues": {
+    "Name": [
+      "Pavey",
+      "Jane"
+    ]
+  },
+  "recordDataUserValues": {
+    "Name": [
+      "jane Pavey",
+      "James Pavey"
+    ]
   },
   "household": {
     "headings": [

@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/thegen/core/thegen_extract_data.mjs";
 import { generalizeData } from "../../extension/site/thegen/core/thegen_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/thegen/core/thegen_build_citation.mjs";
 
@@ -112,7 +111,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("thegen", extractData, regressionData, testManager);
+  await runExtractDataTests("thegen", regressionData, testManager);
 
   await runGeneralizeDataTests("thegen", generalizeData, regressionData, testManager);
 

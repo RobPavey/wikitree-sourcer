@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"South Australia - South Australian Church records - Burials\"<br/>\nGenealogy SA; Surname: SMITH; Given Names: Charles Jnr.; Year: 1909; Source: Parish/Church Records; Notes: No. 111; 9ftx4ft; used for burial July 31st 1908<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nCharles Jnr Smith burial on 26 Apr 1909 in Glen Osmond St Saviours Anglican, South Australia, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Charles was buried on 26 April 1909 in Glen Osmond St Saviours Anglican, South Australia, Australia.<ref>\n'''Burial''':\n\"South Australia - South Australian Church records - Burials\"<br/>\nGenealogy SA; Surname: SMITH; Given Names: Charles Jnr.; Year: 1909; Source: Parish/Church Records; Notes: No. 111; 9ftx4ft; used for burial July 31st 1908<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nCharles Jnr Smith burial on 26 Apr 1909 in Glen Osmond St Saviours Anglican, South Australia, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"South Australia - South Australian Church records - Burials\"<br/>Genealogy SA; Surname: SMITH; Given Names: Charles Jnr.; Year: 1909; Source: Parish/Church Records; Notes: No. 111; 9ftx4ft; used for burial July 31st 1908<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Charles Jnr Smith burial on 26 Apr 1909 in Glen Osmond St Saviours Anglican, South Australia, Australia.",
+    "type": "source"
+  }
+}

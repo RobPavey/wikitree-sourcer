@@ -66,6 +66,6 @@ function extractHandler(request, sendResponse) {
   return extractDataAndRespond(document, location.href, "geneteka", sendResponse, siteSpecificInput);
 }
 
-siteContentInit("geneteka", "site/geneteka/core/geneteka_extract_data.mjs", extractHandler);
+siteContentInit("geneteka", extractHandler);
 
 addClickedRowListener();

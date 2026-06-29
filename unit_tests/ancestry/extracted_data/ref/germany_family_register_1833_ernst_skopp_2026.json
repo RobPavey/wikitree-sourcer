@@ -1,0 +1,36 @@
+{
+  "url": "https://www.ancestry.com/search/collections/61311/records/2913",
+  "pageType": "record",
+  "dbId": "61311",
+  "recordId": "2913",
+  "ancestryTemplate": "{{Ancestry Record|61311|2913}}",
+  "domain": "ancestry.com",
+  "titleName": "Ernst Reinhold Skopp",
+  "titleCollection": "Frankenberg, Germany, Family Registers, 1717-1938",
+  "recordData": {
+    "Name": "Ernst Reinhold Skopp",
+    "Gender": "Male",
+    "Birth Date": "17 Nov 1833",
+    "Residence Place": "Frankenberg, Sachsen (Saxony), Deutschland (Germany)",
+    "Father": "Michael Sk.",
+    "Spouse": "Marie Auguste Skopp",
+    "Child": "Ernst Hermann Skopp Marie Helene Skopp"
+  },
+  "recordDataAltValues": {
+    "Gender": [
+      "Male"
+    ]
+  },
+  "linkData": {
+    "Father": "http://www.ancestry.com/search/collections/61311/records/1050002913",
+    "Spouse": "http://www.ancestry.com/search/collections/61311/records/900002913",
+    "Child": "http://www.ancestry.com/search/collections/61311/records/2914"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/61311/images/45310_b6ai%5Ebd%5E17-00045?pid=2913&usePUB=true&usePUBJs=true",
+  "imageDbId": "61311",
+  "imageRecordId": "45310_b6ai%5Ebd%5E17-00045",
+  "sourceCitation": "Signatur: B6aI Bd 17; Laufende Nummer: 17",
+  "sourceInformation": "Ancestry.com. Frankenberg, Germany, Family Registers, 1717-1938 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2016. Original data: Familienbögen. Stadtarchiv Frankenberg, Frankenberg, Deutschland.",
+  "sourceDescription": "This collection includes civil family registers from Frankenberg, which are sometimes called Familienbögen. Learn more...",
+  "hasCommentTextArea": true
+}

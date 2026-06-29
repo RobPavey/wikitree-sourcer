@@ -126,7 +126,7 @@ const CountryData = [
   { stdName: "Germany", matches: ["Germany", "Deutschland"], hasStates: true },
   { stdName: "German Empire", matches: ["German Empire"] },
   { stdName: "Austria", matches: ["Austria", "Österreich"] },
-  { stdName: "Italy", matches: ["Italy"] },
+  { stdName: "Italy", matches: ["Italy", "Italia", "Italie", "Italien"] },
   { stdName: "Netherlands", matches: ["Netherlands", "Nederland"], hasStates: true },
   { stdName: "Belgium", matches: ["Belgium"] },
   { stdName: "Luxembourg", matches: ["Luxembourg"] },
@@ -339,6 +339,7 @@ const CountryData = [
   { stdName: "American Samoa", matches: ["American Samoa"] },
   { stdName: "Papua New Guinea", matches: ["Papua New Guinea"] },
   { stdName: "Colony of Victoria", matches: ["Colony of Victoria"], partOf: ["Australia"] },
+  { stdName: "Colony of Queensland", matches: ["Colony of Queensland", "Queensland"], partOf: ["Australia"] },
   { stdName: "New South Wales", matches: ["New South Wales"] },
 
   // North Africa
@@ -513,11 +514,11 @@ const CountyData = {
     { stdName: "Cumberland", matches: ["Cumberland"] },
     { stdName: "Cumbria", matches: ["Cumbria"] },
     { stdName: "Derbyshire", matches: ["Derbyshire"] },
-    { stdName: "Devon", matches: ["Devon"] },
+    { stdName: "Devon", matches: ["Devon", "Devonshire"] },
     { stdName: "Dorset", matches: ["Dorset"] },
     { stdName: "Durham", matches: ["County Durham", "Durham"] },
     { stdName: "Essex", matches: ["Essex"] },
-    { stdName: "Gloucestershire", matches: ["Gloucestershire", "Glos"] },
+    { stdName: "Gloucestershire", matches: ["Gloucestershire", "Glos", "Glostershire", "Gloster"] },
     { stdName: "Hampshire", matches: ["Hampshire", "Isle of Wight"] },
     { stdName: "Herefordshire", matches: ["Herefordshire"] },
     { stdName: "Hertfordshire", matches: ["Hertfordshire"] },
@@ -572,7 +573,7 @@ const CountyData = {
     { stdName: "Caernarvonshire", matches: ["Caernarvonshire"] },
     { stdName: "Cardiganshire", matches: ["Cardiganshire"] },
     { stdName: "Carmarthenshire", matches: ["Carmarthenshire"] },
-    { stdName: "Denbighshire", matches: ["Denbighshire"] },
+    { stdName: "Denbighshire", matches: ["Denbighshire", "Denbyshire"] },
     { stdName: "Flintshire", matches: ["Flintshire"] },
     { stdName: "Glamorgan", matches: ["Glamorgan"] },
     { stdName: "Merionethshire", matches: ["Merionethshire"] },
@@ -781,7 +782,7 @@ const StateData = {
     { stdName: "Northern Territory", matches: ["Northern Territory", "NT"] },
     { stdName: "Queensland", matches: ["Queensland", "QLD", "Qld"] },
     { stdName: "Victoria", matches: ["Victoria", "VIC", "Vic"] },
-    { stdName: "South Australia", matches: ["South Australia", "SA", "S Australia"] },
+    { stdName: "South Australia", matches: ["South Australia", "SA", "S Australia", "S A"] },
     { stdName: "Western Australia", matches: ["Western Australia", "WA", "W Australia", "West Australia"] },
     { stdName: "Tasmania", matches: ["Tasmania", "Tas", "TAS"] },
   ],
@@ -799,6 +800,18 @@ const StateData = {
 };
 
 const CD = {
+  matchCountryFromStdCountryName: function (stdName) {
+    if (!stdName) {
+      return "";
+    }
+
+    for (let country of CountryData) {
+      if (stdName == country.stdName) {
+        return country;
+      }
+    }
+  },
+
   matchCountryFromPlaceName: function (placeName) {
     if (!placeName) {
       return "";
@@ -1117,6 +1130,25 @@ const CD = {
       }
     }
     return true;
+  },
+
+  getCountryEndingNoSeparators: function (placeName) {
+    for (let country of CountryData) {
+      for (let match of country.matches) {
+        let noSepMatch = match.replace(", ", " ");
+        if (placeName.endsWith(" " + noSepMatch)) {
+          return {
+            stdCountryName: country.stdName,
+            noSepMatch: noSepMatch,
+            remainder: placeName.substring(0, placeName.length - noSepMatch.length - 1),
+          };
+        }
+      }
+    }
+  },
+
+  getCountiesForCountry: function (stdCountryName) {
+    return CountyData[stdCountryName];
   },
 };
 

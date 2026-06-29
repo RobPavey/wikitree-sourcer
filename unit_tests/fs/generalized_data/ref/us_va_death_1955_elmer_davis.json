@@ -47,13 +47,25 @@
     }
   ],
   "race": "White",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QVRD-74QJ}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QVRD-74QJ"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-C95D-78NZ}}",
-    "{{FamilySearch Record|QVRD-74QV}}",
-    "{{FamilySearch Record|QVRD-74QK}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-C95D-78NZ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QVRD-74QV"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QVRD-74QK"
+    }
   ],
   "collectionData": {
     "id": "2377565",

@@ -2,6 +2,12 @@
   "sourceType": "record",
   "recordType": "Census",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Willm Johnson",
+      "William Johnson"
+    ]
+  },
   "name": {
     "name": "Willm Johnson"
   },

@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Ernst Reinhold Skopp"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "placeString": "Frankenberg, Sachsen (Saxony), Deutschland (Germany)"
+  },
+  "birthDate": {
+    "dateString": "17 Nov 1833"
+  },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61311|2913}}"
+  ],
+  "collectionData": {
+    "id": "61311",
+    "collectionTitle": "Frankenberg, Germany, Family Registers, 1717-1938"
+  },
+  "hasValidData": true
+}

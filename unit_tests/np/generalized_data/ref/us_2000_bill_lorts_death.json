@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "np",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "24 May 2000"
+  },
+  "eventPlace": {
+    "placeString": "Phoenix, Arizona"
+  },
+  "newspaperName": "Arizona Republic",
+  "hasValidData": true
+}

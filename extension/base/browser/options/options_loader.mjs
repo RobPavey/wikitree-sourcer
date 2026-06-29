@@ -366,6 +366,62 @@ function convertOptionsFrom11To12(loadedOptions, optionsRegistry) {
   return convertedOptions;
 }
 
+function convertOptionsFrom12To13(loadedOptions, optionsRegistry) {
+  let convertedOptions = { ...loadedOptions };
+
+  console.log("convertOptionsFrom12To13, before:");
+  console.log(loadedOptions);
+
+  if (convertedOptions.context_general_newTabPos !== undefined) {
+    convertedOptions.ui_context_newTabPos = convertedOptions.context_general_newTabPos;
+    delete convertedOptions.context_general_newTabPos;
+  }
+
+  convertedOptions.options_version = 13;
+
+  console.log("convertOptionsFrom12To13, after:");
+  console.log(convertedOptions);
+
+  return convertedOptions;
+}
+
+function convertOptionsFrom13To14(loadedOptions, optionsRegistry) {
+  let convertedOptions = { ...loadedOptions };
+
+  console.log("convertOptionsFrom13To14, before:");
+  console.log(loadedOptions);
+
+  // ui_pageMods_allowPageMods forced from false to true
+  if (convertedOptions.ui_pageMods_allowPageMods == false) {
+    convertedOptions.ui_pageMods_allowPageMods = true;
+  }
+
+  // citation_ancestry_addEditCitationButton changed to ui_ancestry_addEditCitationButton
+  if (convertedOptions.citation_ancestry_addEditCitationButton !== undefined) {
+    convertedOptions.ui_ancestry_addEditCitationButton = convertedOptions.citation_ancestry_addEditCitationButton;
+    delete convertedOptions.citation_ancestry_addEditCitationButton;
+  }
+
+  // buildAll_fs_citationType values changed name:
+  //  fsPlainInline > fsSourceInfoInline
+  //  fsPlainSource > fsSourceInfoSource
+  let oldValue = convertedOptions.buildAll_fs_citationType;
+  if (oldValue) {
+    if (oldValue == "fsPlainInline") {
+      convertedOptions.buildAll_fs_citationType = "fsSourceInfoInline";
+    } else if (oldValue == "fsPlainSource") {
+      convertedOptions.buildAll_fs_citationType = "fsSourceInfoSource";
+    }
+  }
+
+  convertedOptions.options_version = 14;
+
+  console.log("convertOptionsFrom13To14, after:");
+  console.log(convertedOptions);
+
+  return convertedOptions;
+}
+
 function convertOptions(loadedOptions, defaultOptions, optionsRegistry) {
   let loadedVersion = loadedOptions.options_version;
   let currentVersion = defaultOptions.options_version;
@@ -411,6 +467,12 @@ function convertOptions(loadedOptions, defaultOptions, optionsRegistry) {
   if (loadedVersion < 12) {
     loadedOptions = convertOptionsFrom11To12(loadedOptions, optionsRegistry);
   }
+  if (loadedVersion < 13) {
+    loadedOptions = convertOptionsFrom12To13(loadedOptions, optionsRegistry);
+  }
+  if (loadedVersion < 14) {
+    loadedOptions = convertOptionsFrom13To14(loadedOptions, optionsRegistry);
+  }
 
   return loadedOptions;
 }
@@ -431,6 +493,8 @@ function addNewDefaultsAndRemoveOldOptions(loadedOptions, defaultOptions) {
 }
 
 function updateOptionsToLatestVersion(loadedOptions, defaultOptions, optionsRegistry) {
+  //console.log("updateOptionsToLatestVersion, loadedOptions.options_version is", loadedOptions.options_version);
+
   let optionsObject = undefined;
   if (loadedOptions) {
     if (!loadedOptions.options_version) {

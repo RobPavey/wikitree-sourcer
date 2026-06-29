@@ -25,12 +25,21 @@
   "eventPlace": {
     "placeString": "Turner, Maine, United States"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|2HVK-YCQ}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "2HVK-YCQ"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QSQ-G979-5HG9}}",
-    "{{FamilySearch Record|2HVK-YCW}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QSQ-G979-5HG9"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "2HVK-YCW"
+    }
   ],
   "collectionData": {
     "id": "1803978",

@@ -141,10 +141,6 @@ async function checkForPendingSearch() {
   }
 }
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 async function clearSearchFields() {
   // try to clear form
   let clearButtonElement = document.querySelector("historical-search div.btnRow button.btn-secondary");
@@ -612,11 +608,7 @@ function captureRowData(rowElement) {
     //console.log("rowData is:");
     //console.log(rowData);
 
-    if (loadedExtractDataModule) {
-      if (loadedExtractDataModule.setClickedRowData) {
-        loadedExtractDataModule.setClickedRowData(rowData);
-      }
-    }
+    setClickedRowData(rowData);
   }
 }
 
@@ -788,35 +780,39 @@ function addMutationObserver() {
   observer.observe(mainElement, config);
 }
 
-async function additionalMessageHandler(request, sender, sendResponse) {
+async function doSearchInExistingTab(request, sender, sendResponse) {
+  //console.log("vicbdm: additionalMessageHandler, request is:");
+  //console.log(request);
+
+  pendingSearchData = request.searchData;
+
+  // we originally stored the currentPageType in a global var but that could get
+  // lost if the content script got unloaded somehow (being defensive here) so work it out
+  // here;
+
+  let mainElement = document.querySelector("div.main");
+  if (!mainElement) {
+    sendResponse({ success: false });
+    return;
+  }
+
+  if (mainElement.querySelector("historical-search")) {
+    setSearchingBanner();
+
+    doPendingSearch();
+  } else if (mainElement.querySelector("search-result-details")) {
+    doPendingSearchFromDetailsPage();
+  } else if (mainElement.querySelector("search-results-page")) {
+    doPendingSearchFromSearchResultsPage();
+  }
+
+  sendResponse({ success: true });
+}
+
+function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
-    //console.log("vicbdm: additionalMessageHandler, request is:");
-    //console.log(request);
-
-    pendingSearchData = request.searchData;
-
-    // we originally stored the currentPageType in a global var but that could get
-    // lost if the content script got unloaded somehow (being defensive here) so work it out
-    // here;
-
-    let mainElement = document.querySelector("div.main");
-    if (!mainElement) {
-      sendResponse({ success: false });
-      return { wasHandled: true };
-    }
-
-    if (mainElement.querySelector("historical-search")) {
-      setSearchingBanner();
-
-      doPendingSearch();
-    } else if (mainElement.querySelector("search-result-details")) {
-      doPendingSearchFromDetailsPage();
-    } else if (mainElement.querySelector("search-results-page")) {
-      doPendingSearchFromSearchResultsPage();
-    }
-
-    sendResponse({ success: true });
-    return { wasHandled: true, returnValue: false };
+    doSearchInExistingTab(request, sender, sendResponse);
+    return { wasHandled: true, returnValue: true };
   }
 
   return { wasHandled: false };
@@ -828,8 +824,7 @@ async function checkForSearchThenInit() {
   addMutationObserver();
 
   siteContentInit(
-    `vicbdm`,
-    `site/vicbdm/core/vicbdm_extract_data.mjs`,
+    "vicbdm",
     undefined, // overrideExtractHandler
     additionalMessageHandler
   );

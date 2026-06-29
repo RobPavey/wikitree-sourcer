@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/geneteka/core/geneteka_extract_data.mjs";
 import { generalizeData } from "../../extension/site/geneteka/core/geneteka_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/geneteka/core/geneteka_build_citation.mjs";
 
@@ -74,7 +73,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("geneteka", extractData, regressionData, testManager);
+  await runExtractDataTests("geneteka", regressionData, testManager);
 
   await runGeneralizeDataTests("geneteka", generalizeData, regressionData, testManager);
 

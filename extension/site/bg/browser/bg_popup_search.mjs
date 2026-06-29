@@ -24,9 +24,16 @@ SOFTWARE.
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, dataHasName } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
+
+function shouldShowSearchMenuItem(data, filter) {
+  if (!dataHasName(data)) {
+    return false;
+  }
+  return true;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -69,4 +76,4 @@ function addBgDefaultSearchMenuItem(menu, data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("bg", "Billion Graves", addBgDefaultSearchMenuItem, undefined);
+registerSearchMenuItemFunction("bg", "Billion Graves", addBgDefaultSearchMenuItem, shouldShowSearchMenuItem);

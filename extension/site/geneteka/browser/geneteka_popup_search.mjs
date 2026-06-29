@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
@@ -71,7 +71,7 @@ async function genetekaSearch(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addGenetekaDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search Geneteka...", () => setupGenetekaSearchSubMenu(data, backFunction));
+  addMenuItem(menu, "Search Geneteka...", () => setupGenetekaSearchSubmenu(data, backFunction));
 
   return true;
 }
@@ -80,9 +80,9 @@ function addGenetekaDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupGenetekaSearchSubMenu(data, backFunction) {
+async function setupGenetekaSearchSubmenu(data, backFunction) {
   const { genetekaData } = await import(`../core/geneteka_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, genetekaData, genetekaSearch);
+  setupSearchWithParametersSubmenu(data, backFunction, genetekaData, genetekaSearch);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

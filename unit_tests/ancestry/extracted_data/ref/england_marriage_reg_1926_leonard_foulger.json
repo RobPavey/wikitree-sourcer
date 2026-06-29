@@ -8,14 +8,26 @@
   "titleName": "Leonard J Foulger",
   "titleCollection": "England & Wales, Civil Registration Marriage Index, 1916-2005",
   "recordData": {
-    "Name": "Leonard J Foulger [Leonard James Foulger]",
-    "Registration Date": "Jul 1926 [Aug 1926] [Sep 1926]",
+    "Name": "Leonard J Foulger",
+    "Registration Date": "Jul 1926",
     "Registration Quarter": "Jul-Aug-Sep",
     "Registration District": "Brentford",
     "Inferred County": "Middlesex",
     "Spouse": "Kathleen Broghan",
     "Volume Number": "3a",
     "Page Number": "554"
+  },
+  "recordDataAltValues": {
+    "Name": [
+      "Leonard James Foulger",
+      "Leonard James Foulger"
+    ]
+  },
+  "recordDataUserValues": {
+    "Registration Date": [
+      "Aug 1926",
+      "Sep 1926"
+    ]
   },
   "linkData": {
     "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=ONSmarriage1984&indiv=try&h=62041889"

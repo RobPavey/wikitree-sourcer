@@ -83,8 +83,12 @@ function buildCoreCitation(ed, gd, builder) {
     builder.sourceReference += " (" + ed.location + ")";
   }
 
-  if (ed.publicationDate && ed.pageNumber) {
-    builder.sourceReference += " " + ed.publicationDate + ", page " + ed.pageNumber;
+  if (ed.publicationDate) {
+    builder.sourceReference += " " + ed.publicationDate;
+  }
+
+  if (ed.pageNumber) {
+    builder.sourceReference += ", page " + ed.pageNumber;
   }
 }
 

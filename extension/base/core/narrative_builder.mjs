@@ -78,25 +78,42 @@ class NarrativeBuilder {
   }
 
   getNarrativeAgeString(ageString) {
-    let result = "";
-    if (ageString) {
+    let parsedAge = DateUtils.parseAgeOrTimePeriod(ageString);
+    if (!parsedAge.isValid) {
+      if (ageString && typeof ageString == "string") {
+        ageString = ageString.toLowerCase();
+      }
+      return ageString;
+    }
+
+    let result = ageString;
+    if (ageString && typeof ageString == "string") {
+      result = ageString.toLowerCase();
+    }
+
+    if (parsedAge.isRange) {
+      result = parsedAge.startYearsNum.toString() + " to " + parsedAge.endYearsNum.toString();
+    } else {
       // if it is something like "20 Years 9 months" we just want "20"
-      const yearsAndMonthsRegex = /^(\d+)\s+years\s+(\d+)\s+months[\s\.]*$/i;
-      if (yearsAndMonthsRegex.test(ageString)) {
-        result = ageString.replace(yearsAndMonthsRegex, "$1");
-      } else {
-        // if it is something like "20 years" or "20 years." we just want 20
-        result = ageString.replace(/years?/i, "").trim();
-        if (/^\d+\/12$/.test(result)) {
-          result = result.replace(/\/12/, "").trim();
-          if (result == "1") {
-            result += " month";
-          } else {
-            result += " months";
-          }
+      if (parsedAge.hasYears) {
+        result = parsedAge.yearsNum.toString();
+      } else if (parsedAge.hasMonths) {
+        result = parsedAge.monthsNum.toString() + " month";
+        if (parsedAge.monthsNum != 1) {
+          result += "s";
+        }
+      } else if (parsedAge.hasDays) {
+        result = parsedAge.daysNum.toString() + " day";
+        if (parsedAge.daysNum != 1) {
+          result += "s";
         }
       }
     }
+
+    if (result && parsedAge.isAbout) {
+      result = "about " + result;
+    }
+
     return result;
   }
 
@@ -452,7 +469,7 @@ class NarrativeBuilder {
 
     function tryFirstName() {
       let name = gd.inferFirstName();
-      if (name) {
+      if (name && name.length > 1) {
         result.nameOrPronoun = name;
         return true;
       }
@@ -461,7 +478,7 @@ class NarrativeBuilder {
 
     function tryForenames() {
       let name = gd.inferForenames();
-      if (name) {
+      if (name && name.length > 1) {
         result.nameOrPronoun = name;
         return true;
       }
@@ -582,7 +599,7 @@ class NarrativeBuilder {
     let string = "";
     if (gd.role == Role.Other) {
       string = this.getPersonNameOrPronoun(isMidSentence);
-      string += " was in the record for another person who";
+      string += " was in the record for another person,";
     } else {
       string = this.getPossessiveName(isMidSentence);
       let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
@@ -591,6 +608,9 @@ class NarrativeBuilder {
     let primaryPersonName = gd.inferPrimaryPersonFullName();
     if (primaryPersonName) {
       string += " " + primaryPersonName;
+    }
+    if (gd.role == Role.Other) {
+      string += ", who";
     }
     return string;
   }
@@ -739,6 +759,25 @@ class NarrativeBuilder {
     this.addParentageAsSeparateSentenceGivenParentsAndGender(parentNames, this.personGender);
   }
 
+  addResidenceForMainSentence() {
+    let gd = this.eventGd;
+    let residencePlaceObj = gd.inferResidencePlaceObj();
+    if (residencePlaceObj) {
+      let residencePlaceString = residencePlaceObj.inferExtractedPlaceString();
+      if (residencePlaceString) {
+      }
+    }
+
+    let parentNames = gd.inferParentNamesForDataString();
+    this.addParentageForMainSentenceGivenParentsAndGender(parentNames, this.personGender);
+  }
+
+  addResidenceAsSeparateSentence() {
+    let gd = this.eventGd;
+    let parentNames = gd.inferParentNamesForDataString();
+    this.addParentageAsSeparateSentenceGivenParentsAndGender(parentNames, this.personGender);
+  }
+
   formatDate(dateString, addPreposition, prepSuffix = "") {
     let gd = this.eventGd;
 
@@ -802,6 +841,8 @@ class NarrativeBuilder {
         // it could be something like "of Full Age"
         includeAgeText = false;
         age = age.toLowerCase();
+      } else {
+        age = this.getNarrativeAgeString(age);
       }
 
       let format = this.getSubcatOption("ageFormat");
@@ -845,12 +886,50 @@ class NarrativeBuilder {
       if (age) {
         let sentence = this.getPronounAndPastTenseInitialCaps() + " ";
 
-        if (typeof age == "string" && age.search(/[^0-9]/) != -1) {
+        let parsedAge = DateUtils.parseAgeOrTimePeriod(age);
+
+        if (!parsedAge.isValid) {
           // the age has non numerical characters, it could be something like "of Full Age"
           let lcAge = age.toLowerCase();
           sentence += lcAge;
         } else {
-          sentence += age + " years old";
+          if (parsedAge.isRange) {
+            let start = result.startYearsNum.toString();
+            let end = result.endYearsNum.toString();
+
+            sentence += start + " to " + end + " years old";
+          } else {
+            if (parsedAge.hasYears && !parsedAge.hasMonths) {
+              sentence += parsedAge.yearsNum + " years old";
+            } else {
+              let ageString = "";
+              if (parsedAge.hasYears) {
+                ageString += parsedAge.yearsNum + " years";
+              }
+              if (parsedAge.hasMonths) {
+                if (ageString) {
+                  ageString += " ";
+                }
+                ageString += parsedAge.monthsNum + " months";
+              }
+              if (parsedAge.hasWeeks) {
+                if (ageString) {
+                  ageString += " ";
+                }
+                ageString += parsedAge.weeksNum + " months";
+              }
+              if (parsedAge.hasDays) {
+                if (ageString) {
+                  ageString += " ";
+                }
+                ageString += parsedAge.daysNum + " months";
+              }
+
+              if (ageString) {
+                sentence += ageString;
+              }
+            }
+          }
         }
 
         this.addFullSentence(sentence);
@@ -1249,20 +1328,34 @@ class NarrativeBuilder {
           this.addToSentence(spouseName);
           this.addAgeForMainSentence(spouseAge);
         }
-        let year = gd.inferEventYear();
-        if (dateString != year && !quarter) {
-          this.addDateToSentence(this.formatDateObj(dateObj, true));
-        } else if (year) {
-          if (quarter == "Jan-Feb-Mar") {
-            let yearNum = DateUtils.getYearNumFromYearString(year);
-            if (yearNum) {
-              yearNum -= 1;
-              this.addToSentence("in late " + yearNum + "/early " + year);
+        if (hasAdditionalDate) {
+          if (typeString == "birth") {
+            let birthDateObj = gd.inferBirthDateObj();
+            if (birthDateObj) {
+              this.addDateToSentence(this.formatDateObj(birthDateObj, true));
+            }
+          } else if (typeString == "death") {
+            let deathDateObj = gd.inferDeathDateObj();
+            if (deathDateObj) {
+              this.addDateToSentence(this.formatDateObj(deathDateObj, true));
+            }
+          }
+        } else {
+          let year = gd.inferEventYear();
+          if (dateString != year && !quarter) {
+            this.addDateToSentence(this.formatDateObj(dateObj, true));
+          } else if (year) {
+            if (quarter == "Jan-Feb-Mar") {
+              let yearNum = DateUtils.getYearNumFromYearString(year);
+              if (yearNum) {
+                yearNum -= 1;
+                this.addToSentence("in late " + yearNum + "/early " + year);
+              } else {
+                this.addToSentence("in " + year);
+              }
             } else {
               this.addToSentence("in " + year);
             }
-          } else {
-            this.addToSentence("in " + year);
           }
         }
         let pronoun = this.getPossessivePronounInitialCaps();
@@ -1775,17 +1868,24 @@ class NarrativeBuilder {
       }
     }
 
-    if (deathDateObj) {
+    age = gd.ageAtDeath;
+    if (!age) {
+      age = gd.ageAtEvent;
+    }
+
+    if (deathDateObj || deathPlaceObj) {
       this.startSentence(this.getPersonPronounOrNameIfNoGender() + " died");
 
-      age = gd.ageAtDeath;
-      if (!age) {
-        age = gd.ageAtEvent;
-      }
       this.addAgeForMainSentence(age);
       this.addDateWithPreposition(deathDateObj);
       this.addPlaceWithPreposition(deathPlaceObj);
+    } else if (age) {
+      if (this.getSubcatOption("includeAge") == "inMainSentence") {
+        this.startSentence(this.getPersonPronounOrNameIfNoGender() + " died");
+        this.addToSentence("at the age of " + age);
+      }
     }
+
     this.terminateSentence();
 
     this.addAgeAsSeparateSentence(age);
@@ -2814,9 +2914,7 @@ class NarrativeBuilder {
     let placeObj = gd.inferEventPlaceObj();
 
     if (role && role != Role.Primary) {
-      let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
-      let possessiveName = this.getPossessiveName();
-      this.startSentence(possessiveName + " " + relationship);
+      this.startSentence(this.getPossessiveNamePlusPrimaryPerson());
     } else {
       this.startSentence(this.getPersonNameOrPronoun(false));
     }
@@ -2907,6 +3005,12 @@ class NarrativeBuilder {
       if (arrivalDate && arrivalDate == eventDate) {
         isArrival = true;
       } else if (departureDate && departureDate == eventDate) {
+        isDeparture = true;
+      }
+    } else {
+      if (arrivalDate) {
+        isArrival = true;
+      } else if (departureDate) {
         isDeparture = true;
       }
     }
@@ -3262,7 +3366,7 @@ class NarrativeBuilder {
       }
     }
 
-    let dateObj = gd.inferEventDateObj();
+    let dateObj = gd.inferEventDateObj(true);
     let placeObj = gd.inferEventPlaceObj();
 
     if (gd.role && gd.role != Role.Primary) {

@@ -312,17 +312,6 @@ class TaslibEdReader extends ExtractedDataReader {
     }
   }
 
-  getRecordDataValue(keys) {
-    if (this.ed.recordData) {
-      for (let key of keys) {
-        let value = this.ed.recordData[key];
-        if (value) {
-          return value;
-        }
-      }
-    }
-  }
-
   makeDateObjFromTaslibDateString(dateString, isRegistrationDate) {
     let dateObj = this.makeDateObjFromDateString(dateString);
 
@@ -427,16 +416,7 @@ class TaslibEdReader extends ExtractedDataReader {
   }
 
   getGender() {
-    let gender = this.ed.recordData["Gender"];
-    if (gender) {
-      let lcGender = gender.toLowerCase();
-      if (lcGender == "male") {
-        return "male";
-      } else if (lcGender == "female") {
-        return "female";
-      }
-    }
-    return "";
+    return this.getGenderFromRecordData("Gender", ["male"], ["female"], true);
   }
 
   getEventDateObj() {
@@ -447,7 +427,7 @@ class TaslibEdReader extends ExtractedDataReader {
     let isRegistrationDate = false;
 
     if (this.eventType && this.eventType.eventDateKeys) {
-      dateString = this.getRecordDataValue(this.eventType.eventDateKeys);
+      dateString = this.getRecordDataValueForKeys(this.eventType.eventDateKeys);
     }
 
     if (!dateString) {
@@ -473,7 +453,7 @@ class TaslibEdReader extends ExtractedDataReader {
 
     if (!placeString) {
       if (this.eventType && this.eventType.eventPlaceKeys) {
-        placeString = this.getRecordDataValue(this.eventType.eventPlaceKeys);
+        placeString = this.getRecordDataValueForKeys(this.eventType.eventPlaceKeys);
       }
     }
 

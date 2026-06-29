@@ -2,7 +2,11 @@
   "url": "https://archives2.gnb.ca/Search/RS141C6/Details.aspx?culture=en-CA&record=751",
   "success": true,
   "databaseID": "RS141C6",
+<<<<<<< HEAD
   "tableTitle": "Vital Statistics from Government Records (RS141C6/Details): Index to Death registration of soldiers, 1941-1947",
+=======
+  "tableTitle": "Index to Death registration of soldiers, 1941-1947 (RS141C6/Details)",
+>>>>>>> e466a5f4048fec9772f9f4140bb97eb21f4283f6
   "recordData": {
     "Name": "MITTON, WALTER CAMERON",
     "Residence": "ANAGANCE",

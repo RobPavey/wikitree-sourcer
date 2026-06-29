@@ -34,13 +34,25 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|F46D-1HS}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "F46D-1HS"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QS7-L979-Q94W-1}}",
-    "{{FamilySearch Record|F46D-1H3}}",
-    "{{FamilySearch Record|F46D-1HQ}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QS7-L979-Q94W-1"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "F46D-1H3"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "F46D-1HQ"
+    }
   ],
   "collectionData": {
     "id": "2061550",

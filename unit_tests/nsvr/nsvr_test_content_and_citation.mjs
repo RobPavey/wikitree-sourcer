@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/nsvr/core/nsvr_extract_data.mjs";
 import { generalizeData } from "../../extension/site/nsvr/core/nsvr_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/nsvr/core/nsvr_build_citation.mjs";
 
@@ -40,13 +39,19 @@ const regressionData = [
     url: "https://archives.novascotia.ca/vital-statistics/marriage/?ID=106485",
   },
   {
+    // This is a different type of URL for the image that does not have transcribed data
+    // The corresponding transcribed URL is: https://archives.novascotia.ca/vital-statistics/death/?ID=189503
+    caseName: "d_1931_lively_john",
+    url: "https://archives.novascotia.ca/vital-statistics/ItemView/?ImageFile=88-431&Event=death&ID=168930",
+  },
+  {
     caseName: "d_1958_mcnamara_florence",
     url: "https://archives.novascotia.ca/vital-statistics/death/?ID=411306",
   },
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("nsvr", extractData, regressionData, testManager);
+  await runExtractDataTests("nsvr", regressionData, testManager);
 
   await runGeneralizeDataTests("nsvr", generalizeData, regressionData, testManager);
 

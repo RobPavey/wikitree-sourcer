@@ -1,0 +1,68 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": {
+    "name": {
+      "name": "William Franklin Furr",
+      "lastName": "Furr",
+      "forenames": "William Franklin"
+    },
+    "gender": "male"
+  },
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Nancy L Furr",
+    "lastName": "Furr",
+    "forenames": "Nancy L"
+  },
+  "eventDate": {
+    "dateString": "13 Jun 1954",
+    "yearString": "1954"
+  },
+  "eventPlace": {
+    "placeString": "Charlotte, Mecklenburg, North Carolina, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Wilma Faye Yandle",
+        "lastName": "Yandle",
+        "forenames": "Wilma Faye"
+      },
+      "marriageDate": {
+        "dateString": "13 Jun 1954",
+        "yearString": "1954"
+      },
+      "marriagePlace": {
+        "placeString": "Charlotte, Mecklenburg, North Carolina, United States"
+      }
+    }
+  ],
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "Q28T-D3BV"
+    }
+  ],
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-C91D-93C4-1"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "Q28T-D3BD"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "Q28T-D3BP"
+    }
+  ],
+  "collectionData": {
+    "id": "1726957",
+    "collectionTitle": "North Carolina, County Marriages, 1762-2011 "
+  },
+  "hasValidData": true
+}

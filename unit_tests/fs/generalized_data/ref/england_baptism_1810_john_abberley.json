@@ -29,13 +29,25 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QL3G-Z9Z6}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QL3G-Z9Z6"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QS7-L96J-QQ5H}}",
-    "{{FamilySearch Record|QL3G-Z9ZV}}",
-    "{{FamilySearch Record|QL3G-Z9ZP}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QS7-L96J-QQ5H"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QL3G-Z9ZV"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QL3G-Z9ZP"
+    }
   ],
   "collectionData": {
     "id": "2364451",

@@ -120,17 +120,41 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QYCX-NXN2}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QYCX-NXN2"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|QYCX-NXZM}}",
-    "{{FamilySearch Record|QYCX-NXW2}}",
-    "{{FamilySearch Record|QYCX-NX6Z}}",
-    "{{FamilySearch Record|QYCX-NXN2}}",
-    "{{FamilySearch Record|QYCX-NX2M}}",
-    "{{FamilySearch Record|QYCX-NXPZ}}",
-    "{{FamilySearch Record|QYCX-NX3Z}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "QYCX-NXZM"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QYCX-NXW2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QYCX-NX6Z"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QYCX-NXN2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QYCX-NX2M"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QYCX-NXPZ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QYCX-NX3Z"
+    }
   ],
   "collectionData": {
     "id": "2854327",

@@ -22,4 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`arolsenarchives`, `site/arolsenarchives/core/arolsenarchives_extract_data.mjs`);
+siteContentInit("arolsenarchives");

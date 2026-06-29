@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/np/core/np_extract_data.mjs";
 import { generalizeData } from "../../extension/site/np/core/np_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/np/core/np_build_citation.mjs";
 
@@ -64,10 +63,24 @@ const regressionData = [
     caseName: "us_1972_whittemore_leib_obit",
     url: "https://www.newspapers.com/article/the-day-obituary-for-whittemore-leib/133180369/",
   },
+  {
+    caseName: "us_1991_gladys_mccloskey_obit",
+    url: "https://www.newspapers.com/article/the-bangor-daily-news-obituary-for-glady/194000691/",
+  },
+  {
+    // this looks just the same as when logged in but with a small banner
+    caseName: "us_1991_gladys_mccloskey_obit_loggedout",
+    url: "https://www.newspapers.com/article/the-bangor-daily-news-obituary-for-glady/194000691/",
+  },
+  {
+    // Mar 2026 format
+    caseName: "us_2000_bill_lorts_death",
+    url: "https://www.newspapers.com/article/arizona-republic-bill-lorts-84-death/194360652/",
+  },
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("np", extractData, regressionData, testManager);
+  await runExtractDataTests("np", regressionData, testManager);
   await runGeneralizeDataTests("np", generalizeData, regressionData, testManager);
 
   const functions = { buildCitation: buildCitation };

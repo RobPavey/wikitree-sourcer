@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"South Australia - Newspaper Marriages\"<br/>\nGenealogy SA; Surname: BLACK; Given Names: Cuthbert & Emma Hannah; Notice: Marriage; Notice: Marriage<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nCuthbert & Emma Hannah Black marriage.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Cuthbert married.<ref>\n'''Marriage''':\n\"South Australia - Newspaper Marriages\"<br/>\nGenealogy SA; Surname: BLACK; Given Names: Cuthbert & Emma Hannah; Notice: Marriage; Notice: Marriage<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nCuthbert & Emma Hannah Black marriage.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"South Australia - Newspaper Marriages\"<br/>Genealogy SA; Surname: BLACK; Given Names: Cuthbert & Emma Hannah; Notice: Marriage; Notice: Marriage<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Cuthbert & Emma Hannah Black marriage.",
+    "type": "source"
+  }
+}

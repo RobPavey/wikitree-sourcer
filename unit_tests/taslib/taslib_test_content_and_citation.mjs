@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/taslib/core/taslib_extract_data.mjs";
 import { generalizeData } from "../../extension/site/taslib/core/taslib_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/taslib/core/taslib_build_citation.mjs";
 
@@ -189,7 +188,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("taslib", extractData, regressionData, testManager);
+  await runExtractDataTests("taslib", regressionData, testManager);
 
   await runGeneralizeDataTests("taslib", generalizeData, regressionData, testManager);
 

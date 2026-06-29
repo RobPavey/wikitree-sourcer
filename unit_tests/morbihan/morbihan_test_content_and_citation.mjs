@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/morbihan/core/morbihan_extract_data.mjs";
 import { generalizeData } from "../../extension/site/morbihan/core/morbihan_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/morbihan/core/morbihan_build_citation.mjs";
 
@@ -80,7 +79,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("morbihan", extractData, regressionData, testManager);
+  await runExtractDataTests("morbihan", regressionData, testManager);
 
   await runGeneralizeDataTests("morbihan", generalizeData, regressionData, testManager);
 

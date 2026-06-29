@@ -23,11 +23,17 @@
   "eventPlace": {
     "placeString": "Radcliffe, Lancashire, England, United Kingdom"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|NFJQ-3Z5}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "NFJQ-3Z5"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|NFJQ-3ZG}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "NFJQ-3ZG"
+    }
   ],
   "collectionData": {
     "id": "1473014",

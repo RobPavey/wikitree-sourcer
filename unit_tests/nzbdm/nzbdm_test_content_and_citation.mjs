@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/nzbdm/core/nzbdm_extract_data.mjs";
 import { generalizeData } from "../../extension/site/nzbdm/core/nzbdm_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/nzbdm/core/nzbdm_build_citation.mjs";
 
@@ -98,7 +97,22 @@ const regressionData = [
     ],
   },
   {
+    // age is a range
+    caseName: "death_1928_john_wilson",
+    url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=%2FdeathSelect.m%3Fpage%3D10#matches",
+  },
+  {
     caseName: "death_1935_norman_mcdonald",
+    url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dDeathSearch%26recordsPP%3d30#SearchResults",
+  },
+  {
+    // age in months
+    caseName: "death_1939_john_wilson",
+    url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=%2FdeathSelect.m%3Fpage%3D4#matches",
+  },
+  {
+    // age in days
+    caseName: "death_1954_ann_mccabe",
     url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dDeathSearch%26recordsPP%3d30#SearchResults",
   },
   {
@@ -156,7 +170,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("nzbdm", extractData, regressionData, testManager);
+  await runExtractDataTests("nzbdm", regressionData, testManager);
 
   await runGeneralizeDataTests("nzbdm", generalizeData, regressionData, testManager);
 

@@ -88,7 +88,7 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
   // On Firefox it may return zero any time you use "no-cors"
   if (response.status !== 200) {
     console.log("Looks like there was a problem. Status Code: " + response.status);
-    return { success: false };
+    return { success: false, allowRetry: true };
   }
 
   // Examine the text in the response
@@ -97,7 +97,7 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
   //console.log("data is:");
   //console.log(data);
 
-  if (data.startsWith(`{`)) {
+  if (data.startsWith("{")) {
     const jsonData = data;
     const dataObj = JSON.parse(jsonData);
 
@@ -125,6 +125,7 @@ async function fetchAncestrySharingDataObj(ed) {
   let cachedResult = await getCachedAsyncResult(cacheTag, recordUrl);
   if (cachedResult) {
     //console.log("fetchAncestrySharingDataObj, found in cache");
+    cachedResult.wasInCache = true;
     return cachedResult;
   }
 
@@ -169,6 +170,10 @@ async function fetchAncestrySharingDataObj(ed) {
       //console.log("fetchAncestrySharingDataObj, generated and saving to cache");
       addCachedAsyncResult(cacheTag, recordUrl, result);
     }
+  } else {
+    // there is no image associated with the record
+    // Do not treat this as an error
+    result.success = true;
   }
 
   //console.log("result is:");
@@ -193,6 +198,15 @@ async function fetchAncestryRecordPage(recordUrl) {
     }
 
     //console.log("domain is: " + domain);
+
+    let discoveryRegex = /^(https?\:\/\/[^\.]+\.[^\/]+)\/discoveryui-content\/view\/([a-z0-9]+)\:([a-z0-9]+)$/;
+    if (discoveryRegex.test(recordUrl)) {
+      // https://www.ancestry.com/discoveryui-content/view/1903048:2352
+      // Redirects to: http://www.ancestry.com/search/collections/2352/records/1903048
+      // which redirects to: https://www.ancestry.com/search/collections/2352/records/1903048
+      // So avoid that network traffic by changing the URL here
+      recordUrl = recordUrl.replace(discoveryRegex, "$1/search/collections/$3/records/$2");
+    }
 
     let response = await fetch(recordUrl, {
       headers: {

@@ -22,19 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { options } from "/base/browser/options/options_loader.mjs";
-import { RC } from "/base/core/record_collections.mjs";
-import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
-import { getLatestCitation } from "/base/browser/popup/popup_citation.mjs";
-import { loadDataCache, cachedDataCache } from "/base/browser/common/data_cache.mjs";
+import { options } from "../options/options_loader.mjs";
+import { RC } from "../../core/record_collections.mjs";
+import { getLatestPersonData } from "./popup_person_data.mjs";
+import { getLatestCitation } from "./popup_citation.mjs";
+import { loadDataCache, cachedDataCache } from "../common/data_cache.mjs";
 
-import { clearAsyncResultCache } from "/base/core/async_result_cache.mjs";
-import { isSafari } from "/base/browser/common/browser_check.mjs";
-import { openOrShowOptionsPage } from "/base/browser/common/browser_compat.mjs";
+import { clearAsyncResultCache } from "../../core/async_result_cache.mjs";
+import { isSafari } from "../common/browser_check.mjs";
+import { openOrShowOptionsPage } from "../common/browser_compat.mjs";
 
-import { clearCitation } from "/base/browser/popup/popup_citation.mjs";
+import { clearCitation } from "./popup_citation.mjs";
 
-import { addShowCitationAssistantMenuItem } from "/base/browser/popup/popup_menu_blocks.mjs";
+import { addShowCitationAssistantMenuItem } from "./popup_menu_blocks.mjs";
+
+import { getSites } from "../common/site_registry_storage.mjs";
 
 /**
  * Temporary workaround for secondary monitors on MacOS where redraws don't happen
@@ -127,7 +129,7 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
   }
 
   if (shouldPopupWindowResize) {
-    document.body.style.width = "600px";
+    overrideMenuWidth("600px");
   }
 
   emptyMenu();
@@ -264,7 +266,7 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
   document.getElementById("menu").appendChild(fragment);
 }
 
-async function displayMessageWithIcon(iconType, message1, message2) {
+async function displayMessageWithIcon(iconType, message1, message2, errorMessage1) {
   emptyMenu();
 
   let fragment = document.createDocumentFragment();
@@ -308,6 +310,13 @@ async function displayMessageWithIcon(iconType, message1, message2) {
     label2.className = "messageLabelInDiv";
     label2.innerText = message2;
     labelDiv.appendChild(label2);
+  }
+
+  if (errorMessage1) {
+    let label = document.createElement("label");
+    label.className = "errorMessageLabelInDiv";
+    label.innerText = errorMessage1;
+    labelDiv.appendChild(label);
   }
 
   document.getElementById("menu").appendChild(fragment);
@@ -903,10 +912,10 @@ function addMenuItemWithSubtitle(menu, innerText, onclick, subTitleText) {
   menu.list.appendChild(listItem);
 }
 
-function addMenuItemWithSubMenu(menu, innerText, onclick, onSubMenuClick) {
+function addMenuItemWithSubmenu(menu, innerText, onclick, onSubmenuClick) {
   // create a list item and add it to the list
   let listItem = document.createElement("li");
-  setMenuItemClassName(menu, listItem, "menuItemWithSubMenu");
+  setMenuItemClassName(menu, listItem, "menuItemWithSubmenu");
   menu.list.appendChild(listItem);
 
   let rowDiv = document.createElement("div");
@@ -929,7 +938,7 @@ function addMenuItemWithSubMenu(menu, innerText, onclick, onSubMenuClick) {
 
   let rightButton = document.createElement("button");
   rightButton.className = "menuButton";
-  rightButton.onclick = onSubMenuClick;
+  rightButton.onclick = onSubmenuClick;
   rightButton.innerText = ">";
   labelDiv.appendChild(rightButton);
 
@@ -998,12 +1007,6 @@ function addBackMenuItem(menu, backFunction) {
   menu.list.appendChild(listItem);
 }
 
-function hasBirthOrDeathYear(data) {
-  let birthYear = data.generalizedData.inferBirthYear();
-  let deathYear = data.generalizedData.inferDeathYear();
-  return birthYear != "" || deathYear == "";
-}
-
 function isManualClassificationNeeded(data) {
   let result = {
     isRefTitleNeeded: false,
@@ -1012,7 +1015,7 @@ function isManualClassificationNeeded(data) {
   };
 
   // Note that we can't use RT.Unclassified because the RecordType module is not loaded.
-  if (data.generalizedData.recordType == `Unclassified`) {
+  if (data.generalizedData.recordType == "Unclassified") {
     result.isRecordTypeNeededForNarrative = true;
 
     if (options.citation_general_meaningfulNames != "none") {
@@ -1089,7 +1092,73 @@ function getBuildCitationShortcutForType(type) {
   return shortcut;
 }
 
-function setupBuildCitationSubMenuForRequestedUserInput(
+// This is used for submenu list - it is not as advanced as GeneralizedData.getRefTitle.
+const rtToRefTitle = {
+  Unclassified: "Unknown",
+  Apprenticeship: "Apprenticeship",
+  Baptism: "Baptism",
+  Biography: "Biography",
+  BiographicalIndex: "BiographicalIndex",
+  Birth: "Birth",
+  BirthRegistration: "Birth Registration",
+  Book: "Book",
+  Burial: "Burial",
+  Certificate: "Certificate",
+  Census: "Census",
+  ChurchRecords: "Church Records",
+  ConvictTransportation: "Convict Transportation",
+  CrewList: "Crew List",
+  CriminalRegister: "Criminal Register",
+  Death: "Death",
+  DeathRegistration: "Death Registration",
+  Deed: "Deed",
+  Diary: "Diary",
+  Directory: "Directory",
+  Divorce: "Divorce",
+  ElectoralRegister: "Electoral Register",
+  Encyclopedia: "Encyclopedia",
+  Employment: "Employment",
+  FamHistOrPedigree: "Family History Or Pedigree",
+  FamilyTree: "FamilyTree",
+  FreemasonMembership: "Freemason Membership",
+  GovernmentDocument: "Government Document",
+  Heraldry: "Heraldic Record",
+  Immigration: "Immigration",
+  Imprisonment: "Imprisonment",
+  Inquest: "Inquest",
+  InstitutionInmate: "InstitutionInmate",
+  LandAssessment: "Land Assessment",
+  LandTax: "Land Tax",
+  LandPetition: "Land Petition",
+  LandGrant: "Land Grant",
+  LegalRecord: "Legal Record",
+  Marriage: "Marriage",
+  MarriageRegistration: "Marriage Registration",
+  MedicalPatient: "Medical Patient",
+  MetisScrip: "MetisScrip",
+  Military: "Military",
+  Naturalization: "Naturalization",
+  Newspaper: "Newspaper",
+  NonpopulationCensus: "Nonpopulation Census",
+  Obituary: "Obituary",
+  OtherChurchEvent: "Other Church Event",
+  PassengerList: "Passenger List",
+  PassportApplication: "Passport Application",
+  Pension: "Pension",
+  PopulationRegister: "Population Register",
+  Probate: "Probate",
+  QuarterSession: "Quarter Session",
+  RateBook: "Rate Book",
+  Residence: "Residence",
+  SchoolRecords: "School Records",
+  SlaveSchedule: "Slave Schedule",
+  SocialSecurity: "Social Security",
+  Tax: "Tax",
+  Will: "Will",
+  WorkhouseRecord: "Workhouse Record",
+};
+
+function setupBuildCitationSubmenuForRequestedUserInput(
   data,
   buildFunction,
   backFunction,
@@ -1112,7 +1181,7 @@ function setupBuildCitationSubMenuForRequestedUserInput(
         focusElementId = activeElement.id;
       }
 
-      setupBuildCitationSubMenuForRequestedUserInput(
+      setupBuildCitationSubmenuForRequestedUserInput(
         data,
         buildFunction,
         backFunction,
@@ -1274,7 +1343,7 @@ function setupBuildCitationSubMenuForRequestedUserInput(
   }
 }
 
-function setupBuildCitationSubMenu(
+function setupBuildCitationSubmenu(
   data,
   manualClassification,
   buildFunction,
@@ -1285,7 +1354,7 @@ function setupBuildCitationSubMenu(
   clearCitation();
 
   if (userInputFunction) {
-    setupBuildCitationSubMenuForRequestedUserInput(
+    setupBuildCitationSubmenuForRequestedUserInput(
       data,
       buildFunction,
       backFunction,
@@ -1299,71 +1368,6 @@ function setupBuildCitationSubMenu(
     manualClassification.isRecordTypeNeeded ||
     (manualClassification.isRecordTypeNeededForNarrative && data.type == "narrative");
   let needsRefTitle = manualClassification.isRefTitleNeeded;
-
-  // This is used for submenu list - it is not as advanced as GeneraizedData.getRefTitle.
-  // This isn't alphabetical order
-  const rtToRefTitle = {
-    Unclassified: `Unknown`,
-    Apprenticeship: `Apprenticeship`,
-    Baptism: `Baptism`,
-    Birth: `Birth`,
-    BirthRegistration: `Birth Registration`,
-    Book: `Book`,
-    Burial: `Burial`,
-    Certificate: `Certificate`,
-    Census: `Census`,
-    ConvictTransportation: `Convict Transportation`,
-    CrewList: `Crew List`,
-    CriminalRegister: `Criminal Register`,
-    Death: `Death`,
-    DeathRegistration: `Death Registration`,
-    Deed: `Deed`,
-    Diary: `Diary`,
-    Directory: `Directory`,
-    Divorce: `Divorce`,
-    ElectoralRegister: `Electoral Register`,
-    Encyclopedia: `Encyclopedia`,
-    Employment: `Employment`,
-    FamHistOrPedigree: `Family History Or Pedigree`,
-    FamilyTree: `FamilyTree`,
-    FreemasonMembership: `Freemason Membership`,
-    GovernmentDocument: `Government Document`,
-    Heraldry: `Heraldic Record`,
-    Immigration: `Immigration`,
-    Imprisonment: `Imprisonment`,
-    Inquest: `Inquest`,
-    InstitutionInmate: `InstitutionInmate`,
-    LandAssessment: `Land Assessment`,
-    LandTax: `Land Tax`,
-    LandPetition: `Land Petition`,
-    LandGrant: `Land Grant`,
-    LegalRecord: `Legal Record`,
-    Marriage: `Marriage`,
-    MarriageRegistration: `Marriage Registration`,
-    MedicalPatient: `Medical Patient`,
-    MetisScrip: `MetisScrip`,
-    Military: `Military`,
-    Naturalization: `Naturalization`,
-    Newspaper: `Newspaper`,
-    NonpopulationCensus: `Nonpopulation Census`,
-    Obituary: `Obituary`,
-    OtherChurchEvent: `Other Church Event`,
-    ChurchRecords: `Church Records`,
-    PassengerList: `Passenger List`,
-    PassportApplication: `Passport Application`,
-    Pension: `Pension`,
-    PopulationRegister: `Population Register`,
-    Probate: `Probate`,
-    QuarterSession: `Quarter Session`,
-    RateBook: `Rate Book`,
-    Residence: `Residence`,
-    SchoolRecords: `School Records`,
-    SlaveSchedule: `Slave Schedule`,
-    SocialSecurity: `Social Security`,
-    Tax: `Tax`,
-    Will: `Will`,
-    WorkhouseRecord: `Workhouse Record`,
-  };
 
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
@@ -1490,7 +1494,7 @@ function setupBuildCitationSubMenu(
   endMainMenu(menu);
 }
 
-function setupOtherBuildCitationItemsSubMenu(
+function setupOtherBuildCitationItemsSubmenu(
   data,
   manualClassification,
   buildFunction,
@@ -1590,7 +1594,7 @@ function addBuildCitationMenuItem(
   input.type = type;
 
   let rightArrowClickFunction = function (element) {
-    setupOtherBuildCitationItemsSubMenu(
+    setupOtherBuildCitationItemsSubmenu(
       data,
       manualClassification,
       buildFunction,
@@ -1602,7 +1606,7 @@ function addBuildCitationMenuItem(
   };
 
   let suffixClickFunction = function (element) {
-    setupBuildCitationSubMenu(
+    setupBuildCitationSubmenu(
       input,
       manualClassification,
       buildFunction,
@@ -1620,7 +1624,7 @@ function addBuildCitationMenuItem(
   let mainClickFunction = suffix ? suffixClickFunction : simpleBuildClickFunction;
 
   if (othersOnSubmenu) {
-    addMenuItemWithSubMenu(menu, menuText, mainClickFunction, rightArrowClickFunction);
+    addMenuItemWithSubmenu(menu, menuText, mainClickFunction, rightArrowClickFunction);
   } else {
     addMenuItem(menu, menuText, mainClickFunction, shortcut);
   }
@@ -1674,9 +1678,7 @@ var widthBeforeDebugDisplay = "";
 // Special backFunction for leaving EditCitation
 async function resizeBackFunction(backFunction) {
   // Make the whole window the width it was before (not on iOS)
-  if (shouldPopupWindowResize && widthBeforeDebugDisplay) {
-    document.body.style.width = widthBeforeDebugDisplay;
-  }
+  overrideMenuWidth(widthBeforeDebugDisplay);
 
   backFunction();
 }
@@ -1712,10 +1714,7 @@ async function debugDisplayMenu(object, titleText, backFunction) {
   let displayString = JSON.stringify(object, null, 2); // 2 spaces of indentation
 
   // Make the whole window wider (if not on iOS)
-  if (shouldPopupWindowResize) {
-    widthBeforeDebugDisplay = document.body.style.width;
-    document.body.style.width = "600px";
-  }
+  widthBeforeDebugDisplay = overrideMenuWidth("600px");
 
   displayTextMenu(titleText, displayString, backFunction);
 }
@@ -1782,6 +1781,41 @@ async function clearLocalStorage() {
   chrome.storage.local.clear();
 }
 
+async function removeAllSitePermissions() {
+  let oldPermissions = await chrome.permissions.getAll();
+  console.log("removeAllSitePermissions: oldPermissions is:");
+  console.log(oldPermissions);
+
+  let sites = await getSites();
+  if (!sites) {
+    console.log("removeAllSitePermissions: no siteData found");
+  }
+
+  for (const siteName of Object.keys(sites)) {
+    let siteData = sites[siteName];
+    if (siteData) {
+      if (siteData.matches) {
+        let permission = {
+          origins: siteData.matches,
+        };
+
+        let hasPermission = await chrome.permissions.contains(permission);
+        if (hasPermission) {
+          console.log("removeAllSitePermissions: site " + siteName + " has permission, removing.");
+          await chrome.permissions.remove(permission);
+
+          hasPermission = await chrome.permissions.contains(permission);
+          console.log("removeAllSitePermissions: site " + siteName + " now hasPermission = " + hasPermission);
+        }
+      }
+    }
+  }
+
+  let newPermissions = await chrome.permissions.getAll();
+  console.log("removeAllSitePermissions: newPermissions is:");
+  console.log(newPermissions);
+}
+
 function keepPopupOpenForDebug() {
   keepPopupOpen = true;
 }
@@ -1829,6 +1863,10 @@ function setupDebugSubmenuMenu(data, backFunction) {
     clearLocalStorage();
   });
 
+  addMenuItem(menu, "Remove all site permissions", function (element) {
+    removeAllSitePermissions();
+  });
+
   if (!keepPopupOpen) {
     addMenuItem(menu, "Keep popup open for inspect", function (element) {
       keepPopupOpenForDebug();
@@ -1836,7 +1874,7 @@ function setupDebugSubmenuMenu(data, backFunction) {
   }
 
   if (!saveUnitTestData) {
-    addMenuItem(menu, "Save unit test data", function (element) {
+    addMenuItem(menu, "Enable save of unit test data", function (element) {
       enableSaveUnitTestData();
     });
   }
@@ -1883,7 +1921,7 @@ function setupHelpSubmenuMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFunction, backFunction) {
+async function setupSearchCollectionsSubmenu(data, siteName, searchCollectionFunction, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -1899,9 +1937,9 @@ async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFun
   };
   let collectionArray = RC.findCollectionsForSiteWithinDateRangeAndCountries(siteName, dates, countryArray);
 
-  //console.log("setupSearchCollectionsSubMenu, countryArray is:");
+  //console.log("setupSearchCollectionsSubmenu, countryArray is:");
   //console.log(countryArray);
-  //console.log("setupSearchCollectionsSubMenu, dates is:");
+  //console.log("setupSearchCollectionsSubmenu, dates is:");
   //console.log(dates);
 
   if (collectionArray && collectionArray.length > 0) {
@@ -2003,6 +2041,13 @@ function addSameEventMenuItem(menu, data, searchFunction, subtitle = "") {
 // it resizing back to the smaller size after Edit Citation does not work on iOS.
 var shouldPopupWindowResize = true;
 
+function applyWidthStyle(width) {
+  document.documentElement.style.width = width;
+  document.documentElement.style.minWidth = width;
+  document.body.style.width = width;
+  document.body.style.minWidth = width;
+}
+
 function setPopupMenuWidthForIosOnResize() {
   //console.log("setPopupMenuWidthForIosOnResize, window.innerWidth is:" + window.innerWidth);
   //console.log("setPopupMenuWidthForIosOnResize, window.outerWidth is:" + window.outerWidth);
@@ -2033,7 +2078,7 @@ function setPopupMenuWidthBasedOnPlatform(platformInfo) {
   } else {
     // on all other platforms the window should resize
     shouldPopupWindowResize = true;
-    document.body.style.width = "350px";
+    applyWidthStyle("350px");
   }
 }
 
@@ -2044,19 +2089,28 @@ function setPopupMenuWidth() {
   chrome.runtime.getPlatformInfo(setPopupMenuWidthBasedOnPlatform);
 }
 
+function overrideMenuWidth(width) {
+  // Make the whole window wider (if not on iOS)
+  let widthBeforeEditCitation = document.body.style.width;
+  if (width && shouldPopupWindowResize) {
+    widthBeforeEditCitation = document.body.style.width;
+    applyWidthStyle(width);
+  }
+  return widthBeforeEditCitation;
+}
+
 export {
   addBuildCitationMenuItems,
   addSameRecordMenuItem,
   addSameEventMenuItem,
   setPopupMenuWidth,
-  setupSearchCollectionsSubMenu,
-  hasBirthOrDeathYear,
+  setupSearchCollectionsSubmenu,
   addBackMenuItem,
   addHelpMenuItem,
   addBuyMeACoffeeMenuItem,
   addOptionsMenuItem,
   addItalicMessageMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addMenuItemWithSubtitle,
   addMenuItem,
   addBreak,
@@ -2084,4 +2138,6 @@ export {
   enableSaveUnitTestData,
   clearCachedFetchData,
   displayTextMenu,
+  overrideMenuWidth,
+  rtToRefTitle,
 };

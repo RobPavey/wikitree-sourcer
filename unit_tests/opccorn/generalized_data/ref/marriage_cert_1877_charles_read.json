@@ -6,6 +6,7 @@
     "lastName": "Read",
     "forenames": "Charles Richard"
   },
+  "personGender": "male",
   "eventDate": {
     "yearString": "1877",
     "dateString": "15 Jun 1877"
@@ -33,6 +34,17 @@
       },
       "age": "of full age"
     }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Blackney"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "Charles Richard Read (groom)",
+    "Elizabeth Fanny Weymouth Johns (bride)"
   ],
   "hasValidData": true
 }

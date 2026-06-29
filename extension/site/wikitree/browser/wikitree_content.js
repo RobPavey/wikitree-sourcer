@@ -794,8 +794,7 @@ async function checkForSearchThenInit() {
   await checkForPendingMergeEditData();
 
   siteContentInit(
-    `wikitree`,
-    `site/wikitree/core/wikitree_extract_data.mjs`,
+    "wikitree",
     undefined, // overrideExtractHandler
     additionalMessageHandler
   );

@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Charles Jnr"
+  },
+  "eventDate": {
+    "dateString": "1909"
+  },
+  "hasValidData": true
+}

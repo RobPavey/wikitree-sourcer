@@ -272,10 +272,6 @@ async function doHighlightForRefQuery() {
   doHighlightForRefNumber(refValue, recordType, true);
 }
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 async function doHighlightForRefNumData() {
   // should only do this when the search is completed
 
@@ -1051,7 +1047,7 @@ async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
   await checkForPendingSearch();
 
-  siteContentInit(`scotp`, `site/scotp/core/scotp_extract_data.mjs`);
+  siteContentInit("scotp");
 
   addClickedRowListener();
   doHighlightForRefQuery();

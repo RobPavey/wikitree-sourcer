@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/ausmem/core/ausmem_extract_data.mjs";
 import { generalizeData } from "../../extension/site/ausmem/core/ausmem_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/ausmem/core/ausmem_build_citation.mjs";
 
@@ -42,7 +41,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("ausmem", extractData, regressionData, testManager);
+  await runExtractDataTests("ausmem", regressionData, testManager);
 
   await runGeneralizeDataTests("ausmem", generalizeData, regressionData, testManager);
 

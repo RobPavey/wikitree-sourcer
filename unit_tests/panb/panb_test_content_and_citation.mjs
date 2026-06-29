@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/panb/core/panb_extract_data.mjs";
 import { generalizeData } from "../../extension/site/panb/core/panb_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/panb/core/panb_build_citation.mjs";
 
@@ -80,7 +79,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("panb", extractData, regressionData, testManager);
+  await runExtractDataTests("panb", regressionData, testManager);
 
   await runGeneralizeDataTests("panb", generalizeData, regressionData, testManager);
 

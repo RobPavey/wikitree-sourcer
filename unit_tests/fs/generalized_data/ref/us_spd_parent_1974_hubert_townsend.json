@@ -25,11 +25,17 @@
     "lastName": "Townsend",
     "forenames": "Hubert A"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|6KW3-12J5}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "6KW3-12J5"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|6KW3-12JP}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "6KW3-12JP"
+    }
   ],
   "collectionData": {
     "id": "5000016",

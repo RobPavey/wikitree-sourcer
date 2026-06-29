@@ -779,6 +779,99 @@ function getValuationRollString(gd, options) {
   return dataString;
 }
 
+function getPassengerListString(gd, options) {
+  let dataString = getFullName(gd);
+
+  let eventDate = gd.inferEventDate();
+  let eventPlace = gd.inferEventPlace();
+
+  let arrivalDate = gd.arrivalDate;
+  let arrivalPlace = gd.arrivalPlace;
+  let departureDate = gd.departureDate;
+  let departurePlace = gd.departurePlace;
+  let ageAtEvent = gd.ageAtEvent;
+
+  let isArrival = false;
+  let isDeparture = false;
+  if (eventDate) {
+    if (arrivalDate && arrivalDate == eventDate) {
+      isArrival = true;
+    } else if (departureDate && departureDate == eventDate) {
+      isDeparture = true;
+    }
+  } else {
+    if (arrivalDate) {
+      isArrival = true;
+    } else if (departureDate) {
+      isDeparture = true;
+    }
+  }
+
+  if (ageAtEvent) {
+    dataString += ", age " + ageAtEvent + ",";
+  }
+
+  if (isArrival) {
+    dataString += " arrived";
+
+    if (gd.shipName) {
+      dataString += " on the ship " + gd.shipName;
+    }
+
+    if (arrivalDate) {
+      dataString += " " + arrivalDate;
+    }
+
+    if (arrivalPlace) {
+      dataString += " at " + arrivalPlace;
+    }
+
+    if (departurePlace) {
+      dataString += ", departed from ";
+      dataString += departurePlace;
+      if (departureDate) {
+        dataString += " " + departureDate;
+      }
+    }
+  } else if (isDeparture) {
+    dataString += " departed";
+
+    if (departurePlace) {
+      dataString += " from ";
+      dataString += departurePlace;
+    }
+
+    if (gd.shipName) {
+      dataString += " on ship " + gd.shipName;
+    }
+
+    if (departureDate) {
+      dataString += " " + departureDate;
+    }
+
+    if (arrivalPlace) {
+      dataString += " bound to ";
+      dataString += arrivalPlace;
+    }
+  } else {
+    dataString += " was a passenger";
+
+    if (gd.shipName) {
+      dataString += " on ship " + gd.shipName;
+    }
+
+    if (eventDate) {
+      dataString += " " + eventDate;
+    }
+
+    if (eventPlace) {
+      dataString += " " + getPlaceWithPreposition(eventPlace);
+    }
+  }
+
+  return dataString;
+}
+
 function addRegistrationPlace(gd, options) {
   let placeString = "";
 
@@ -872,9 +965,9 @@ function getBirthRegistrationString(gd, options) {
     // sometimes there is a birth place that contains more info than the registration place
     // e.g.: https://www.ancestry.com/discoveryui-content/view/3027592:2573
     let birthPlace = gd.birthPlace;
-    if (birthPlace && birthPlace.placeString) {
-      let birthPlaceString = birthPlace.placeString;
-      if (!dataString.includes(birthPlaceString)) {
+    if (birthPlace) {
+      let birthPlaceString = birthPlace.inferExtractedPlaceString();
+      if (birthPlaceString && !dataString.includes(birthPlaceString)) {
         dataString += ", birth place " + birthPlaceString;
       }
     }
@@ -886,6 +979,16 @@ function getBirthRegistrationString(gd, options) {
 
     if (gd.mothersMaidenName) {
       dataString += ", mother's maiden name " + gd.mothersMaidenName;
+    }
+
+    // sometimes there is a residence place, it looks better to put this after parents
+    // for a birth
+    let residencePlace = gd.inferResidencePlaceObj();
+    if (residencePlace) {
+      let residencePlaceString = residencePlace.inferExtractedPlaceString();
+      if (residencePlaceString && !dataString.includes(residencePlaceString)) {
+        dataString += ", residence " + residencePlaceString;
+      }
     }
   }
 
@@ -1776,12 +1879,54 @@ function getDivorceString(gd, options) {
 function getDefaultString(gd, options) {
   let dataString = getFullName(gd);
 
-  let date = gd.inferEventDateObj();
-  if (date) {
-    dataString += " " + getDateWithPreposition(date, options, gd);
+  let eventDate = gd.inferEventDateObj();
+  if (eventDate) {
+    dataString += " " + getDateWithPreposition(eventDate, options, gd);
   }
 
   dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
+
+  // birth
+  if (gd.birthDate || gd.birthPlace) {
+    let addedBorn = false;
+    if (gd.birthDate) {
+      let birthDate = gd.inferBirthDateObj();
+      if (birthDate && !birthDate.isSubsetOf(eventDate)) {
+        dataString += ". Born " + getDateWithPreposition(birthDate, options, gd);
+        addedBorn = true;
+      }
+    }
+    if (gd.birthPlace) {
+      let birthPlace = gd.inferBirthPlaceObj();
+      if (birthPlace) {
+        if (!addedBorn) {
+          dataString += ". Born";
+        }
+        dataString += getFullPlaceTermWithPreposition(birthPlace);
+      }
+    }
+  }
+
+  // death
+  if (gd.deathDate || gd.deathPlace) {
+    let addedDied = false;
+    if (gd.deathDate) {
+      let deathDate = gd.inferDeathDateObj();
+      if (deathDate && !deathDate.isSubsetOf(eventDate)) {
+        dataString += ". Died " + getDateWithPreposition(deathDate, options, gd);
+        addedDied = true;
+      }
+    }
+    if (gd.deathPlace) {
+      let deathPlace = gd.inferDeathPlaceObj();
+      if (deathPlace) {
+        if (!addedDied) {
+          dataString += ". Died";
+        }
+        dataString += getFullPlaceTermWithPreposition(deathPlace);
+      }
+    }
+  }
 
   if (dataString == "Unknown") {
     // the only thing is the unknown name - no use for anything.
@@ -1875,6 +2020,10 @@ const DataString = {
       }
       case RT.ValuationRoll: {
         dataString = getValuationRollString(gd, options);
+        break;
+      }
+      case RT.PassengerList: {
+        dataString = getPassengerListString(gd, options);
         break;
       }
     }

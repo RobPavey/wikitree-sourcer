@@ -35,12 +35,21 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|XTXN-PTY}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "XTXN-PTY"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|XTXN-PTB}}",
-    "{{FamilySearch Record|XTXN-PT1}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "XTXN-PTB"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "XTXN-PT1"
+    }
   ],
   "collectionData": {
     "id": "1771030",

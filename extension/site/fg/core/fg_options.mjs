@@ -146,6 +146,107 @@ const citationOptionsGroup = {
   ],
 };
 
+const uiOptionsPageModBehaviourGroup = {
+  category: "ui",
+  subcategory: "fg",
+  tab: "ui",
+  subsection: "fg",
+  subheading: "wtIconPageModBehaviour",
+
+  options: [
+    {
+      optionName: "showProcessingIcon",
+      type: "checkbox",
+      label: "Show a processing icon while determining if a WikiTree usage icon should be shown",
+      defaultValue: true,
+    },
+    {
+      optionName: "animateProcessingIcon",
+      type: "checkbox",
+      label: "Animate the processing icon",
+      defaultValue: true,
+    },
+    {
+      optionName: "rightClickCopy",
+      type: "checkbox",
+      label: "Override right-click on icons to copy the wikiID or other relevant text",
+      defaultValue: true,
+    },
+    {
+      optionName: "modifyCitationOnPage",
+      type: "checkbox",
+      label: "Modify the Source Citation provided by Find A Grave to use a WikiTree template",
+      defaultValue: false,
+    },
+  ],
+};
+
+const uiOptionsPageModLocationsGroup = {
+  category: "ui",
+  subcategory: "fg",
+  tab: "ui",
+  subsection: "fg",
+  subheading: "wtIconPageModLocations",
+
+  options: [
+    {
+      optionName: "memorialShowWtIconH1",
+      type: "checkbox",
+      label: "On memorial pages show icon next to top-level heading",
+      defaultValue: true,
+    },
+    {
+      optionName: "memorialShowWtIconForOutRefH1",
+      type: "checkbox",
+      label: "On memorial pages in icon next to top-level heading, indicate if there are links back to WT",
+      defaultValue: true,
+    },
+    {
+      optionName: "memorialShowWtIconFamilyMember",
+      type: "checkbox",
+      label: "On memorial pages show icon next to family members",
+      defaultValue: true,
+    },
+    {
+      optionName: "memorialSearchShowWtIcon",
+      type: "checkbox",
+      label: "On memorial search pages show icon next to each memorial",
+      defaultValue: true,
+    },
+    {
+      optionName: "cemeterySearchWithinShowWtIcon",
+      type: "checkbox",
+      label: "On search for memorials in a cemetery pages show icon next to each memorial",
+      defaultValue: true,
+    },
+    {
+      optionName: "cemeteryShowWtIconH1",
+      type: "checkbox",
+      label: "On cemetery pages show icon next to top-level heading to indicate if WT profiles reference this cemetery",
+      defaultValue: true,
+    },
+    {
+      optionName: "cemeteryShowWtIconNearby",
+      type: "checkbox",
+      label: "On cemetery pages show icon next to nearby cemeteries to indicate if WT profiles reference this cemetery",
+      defaultValue: false,
+    },
+    {
+      optionName: "cemeterySearchShowWtIconCemetery",
+      type: "checkbox",
+      label: "On search for cemetery pages show icon next to each cemetery",
+      defaultValue: false,
+    },
+    {
+      optionName: "cemeteryShowWtCategoryIcon",
+      type: "checkbox",
+      label:
+        "When an icon is displayed next to a cemetery name, also add an icon to show WT category for this cemetery (if any)",
+      defaultValue: true,
+    },
+  ],
+};
+
 registerSubsectionForOptions("search", "fg", "Find a Grave");
 registerSiteSearchPopupOptionsGroup("fg");
 registerSubheadingForOptions("search", "fg", "parameters", "Search Parameters");
@@ -153,3 +254,19 @@ registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "fg", "Find a Grave");
 registerOptionsGroup(citationOptionsGroup);
+
+registerSubsectionForOptions("ui", "fg", "FindAGrave");
+registerSubheadingForOptions(
+  "ui",
+  "fg",
+  "wtIconPageModBehaviour",
+  "Page Modifications for WikiTree usage icons (behaviour)"
+);
+registerOptionsGroup(uiOptionsPageModBehaviourGroup);
+registerSubheadingForOptions(
+  "ui",
+  "fg",
+  "wtIconPageModLocations",
+  "Page Modifications for WikiTree usage icons (locations)"
+);
+registerOptionsGroup(uiOptionsPageModLocationsGroup);

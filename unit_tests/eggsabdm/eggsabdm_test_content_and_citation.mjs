@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/eggsabdm/core/eggsabdm_extract_data.mjs";
 import { generalizeData } from "../../extension/site/eggsabdm/core/eggsabdm_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/eggsabdm/core/eggsabdm_build_citation.mjs";
 
@@ -441,7 +440,7 @@ const optionVariants = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("eggsabdm", extractData, regressionData, testManager);
+  await runExtractDataTests("eggsabdm", regressionData, testManager);
 
   await runGeneralizeDataTests("eggsabdm", generalizeData, regressionData, testManager);
 

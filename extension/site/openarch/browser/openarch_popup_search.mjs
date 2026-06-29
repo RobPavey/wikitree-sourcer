@@ -26,12 +26,12 @@ import {
   addMenuItem,
   addSameRecordMenuItem,
   addBackMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
@@ -86,14 +86,14 @@ async function openarchSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addOpenarchDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search Open Archives (NL)",
     function (element) {
       openarchSearch(data.generalizedData, "");
     },
     function () {
-      setupOpenarchSearchSubMenu(data, backFunction, filter);
+      setupOpenarchSearchSubmenu(data, backFunction, filter);
     }
   );
 
@@ -114,7 +114,7 @@ function addOpenarchSameRecordMenuItem(menu, data) {
 
 function addOpenarchSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupOpenarchSearchWithParametersSubMenu(data, backFunction);
+    setupOpenarchSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -122,7 +122,7 @@ function addOpenarchSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupOpenarchSearchSubMenu(data, backFunction, filter) {
+async function setupOpenarchSearchSubmenu(data, backFunction, filter) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -133,9 +133,9 @@ async function setupOpenarchSearchSubMenu(data, backFunction, filter) {
   endMainMenu(menu);
 }
 
-async function setupOpenarchSearchWithParametersSubMenu(data, backFunction) {
+async function setupOpenarchSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/openarch_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.OpenarchData, openarchSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.OpenarchData, openarchSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

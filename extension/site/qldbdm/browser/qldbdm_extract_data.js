@@ -1,0 +1,59 @@
+/*
+MIT License
+
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+// No imports or requires allowed. See docs/dev_notes/extract_data_design
+
+function extractData(document, url) {
+  let result = { url: url, success: false };
+
+  const items = document.querySelectorAll("#qg-primary-content div.form > ol > li");
+  if (items.length < 1) {
+    return result;
+  }
+
+  result.recordData = {};
+  let isFirstItem = true;
+  for (let item of items) {
+    const columns = item.querySelectorAll("ul.questions > li");
+    if (columns.length == 2) {
+      let key = columns[0].textContent.trim();
+      const value = columns[1].textContent.trim();
+      if (key.endsWith(":")) {
+        key = key.substring(0, key.length - 1).trim();
+      }
+      if (isFirstItem) {
+        result.recordData["Type"] = key;
+        result.recordData["Name"] = value;
+        isFirstItem = false;
+      } else {
+        result.recordData[key] = value;
+      }
+    }
+  }
+
+  result.success = true;
+  return result;
+}
+
+// No exports allowed. See docs/dev_notes/extract_data_design

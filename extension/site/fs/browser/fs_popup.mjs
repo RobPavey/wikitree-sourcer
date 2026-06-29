@@ -27,7 +27,7 @@ import {
   addBuildCitationMenuItems,
   addMenuItemWithSubtitle,
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addBackMenuItem,
   addMenuDivider,
   beginMainMenu,
@@ -46,6 +46,8 @@ import {
   addShowCitationAssistantMenuItem,
   buildMinimalMenuWithMessage,
 } from "/base/browser/popup/popup_menu_blocks.mjs";
+
+import { logDebug } from "/base/core/log_debug.mjs";
 
 import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 
@@ -82,6 +84,8 @@ import {
 } from "/base/browser/popup/popup_utils.mjs";
 import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 import { getLatestCitation } from "/base/browser/popup/popup_citation.mjs";
+
+var contentTabId;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -231,7 +235,12 @@ function getExcludedSourcesString(response) {
 
   addMessage(
     response.numExcludedNonFsSources,
-    "due to option settings because there was no valid link to a FamilySearch record."
+    "due to option settings because there was no valid link to a FamilySearch page."
+  );
+
+  addMessage(
+    response.numExcludedFsImageSources,
+    "due to option settings because the link was to a FamilySearch image."
   );
 
   addMessage(
@@ -239,9 +248,44 @@ function getExcludedSourcesString(response) {
     "due to option settings because the source person was not a primary person for the event."
   );
 
-  addMessage(response.numExcludedDuplicateSources, "due to option settings because the source is a duplicate.");
+  addMessage(
+    response.numExcludedRetiredSources,
+    "due to option settings because the source is marked as a retired duplicate source."
+  );
+
+  addMessage(response.numExcludedDuplicateSources, "because the source is a duplicate.");
 
   addMessage(response.numExcludedTreeSources, "because the source just references another family tree.");
+
+  addMessage(response.numUserExcludedSources, "by responses to the previous dialogs.");
+
+  return message;
+}
+
+function getIncompleteCitationsString(response) {
+  let message = "";
+
+  if (!response.fetchFailedSources || response.fetchFailedSources.length == 0) {
+    return message;
+  }
+
+  message +=
+    "\nWarning: Some data could not be retrieved from FamilySearch so the citations may be incomplete or excluded. See below:";
+  if (response.failureCount == 1) {
+    message += "\n\nThere was " + response.failureCount + " failure getting sources:";
+  } else {
+    message += "\n\nThere were " + response.failureCount + " failures getting sources:";
+  }
+  for (let source of response.fetchFailedSources) {
+    let status = source.fetchStatus.statusCode;
+    let title = source.title;
+    let uri = source.uri;
+    let reason = " could not be fetched";
+    if (status == 410) {
+      reason = " has been removed from the FamilySearch site";
+    }
+    message += `\n• Source "${title} with URL ${uri} ${reason} (status code: ${status})`;
+  }
 
   return message;
 }
@@ -256,12 +300,14 @@ async function fsBuildAllCitationsAction(data, citationType) {
     input.options = options;
     input.runDate = new Date();
     input.citationType = citationType;
+    input.tabId = contentTabId;
 
     if (saveUnitTestData) {
       // if saving unit test data we don't want to exclude any sources
       let testOptions = await getDefaultOptions();
       testOptions.buildAll_fs_excludeRetiredSources = "never";
       testOptions.buildAll_fs_excludeNonFsSources = false;
+      testOptions.buildAll_fs_excludeFsImageSources = false;
       testOptions.buildAll_fs_excludeOtherRoleSources = false;
       input.options = testOptions;
     }
@@ -281,17 +327,28 @@ async function fsBuildAllCitationsAction(data, citationType) {
         } else {
           let message = response.citationCount + " citations";
           let message2 = "";
-          if (response.citationsStringType == "source" || response.citationsStringType == "fsPlainSource") {
+          if (response.citationsStringType == "source" || response.citationsStringType == "fsSourceInfoSource") {
             message2 = "\nThese are source type citations and should be pasted after the Sources heading.";
           } else {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
+            if (response.citationsStringType == "narrative") {
+              message2 +=
+                "\n\nNote that the narrative strings generated are just starting points for you to add detail.";
+            }
           }
 
           if (excludedSourcesMessage) {
             message2 += excludedSourcesMessage;
           }
 
-          writeToClipboard(response.citationsString, message, false, message2);
+          let iconType = "check";
+          let errorMessage = "";
+          if (response.failureCount) {
+            iconType = "warning";
+            errorMessage = getIncompleteCitationsString(response);
+          }
+
+          writeToClipboard(response.citationsString, message, false, message2, iconType, errorMessage);
         }
       } else {
         const message = "All sources were excluded due to option settings.";
@@ -299,9 +356,6 @@ async function fsBuildAllCitationsAction(data, citationType) {
         displayMessageWithIcon("warning", message, excludedSourcesMessage);
       }
     } else {
-      // It can fail even if there is an image URL, for example findagrave images:
-      // https://www.ancestry.com/discoveryui-content/view/2221897:60527
-      // This is not considered an error there just will be no sharing link
       const message = "An error occurred getting sources.";
       displayMessageWithIcon("warning", message, response.errorMessage);
     }
@@ -342,6 +396,8 @@ async function fsGetAllCitationsForSavePersonData(data) {
       data.allCitationsString = response.citationsString;
       data.allCitationsType = response.citationsStringType;
       data.allCitationsNoteMessage = getExcludedSourcesString(response);
+      data.allCitationsErrorMessage = getIncompleteCitationsString(response);
+
       return { success: true };
     } else {
       // If it fails we want to let the user know
@@ -588,7 +644,7 @@ async function addCreateSourceMenuItems(menu, data, tabId, backFunction) {
 
 function addBuildAllCitationsMenuItem(menu, data, backFunction) {
   if (data.extractedData.sourceIds && data.extractedData.sourceIds.length > 0) {
-    addMenuItemWithSubMenu(
+    addMenuItemWithSubmenu(
       menu,
       "Build All Citations",
       function (element) {
@@ -596,7 +652,7 @@ function addBuildAllCitationsMenuItem(menu, data, backFunction) {
         fsBuildAllCitationsAction(data, citationType);
       },
       function () {
-        setupBuildAllCitationsSubMenu(data, backFunction);
+        setupBuildAllCitationsSubmenu(data, backFunction);
       }
     );
   }
@@ -635,16 +691,26 @@ function addFsImageBuildCitationMenuItems(menu, data) {
   );
 }
 
-function setupBuildAllCitationsSubMenu(data, backFunction) {
+function setupBuildAllCitationsSubmenu(data, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
 
-  addBuildAllCitationsSubmenuMenuItem(menu, data, "Narratives plus Sourcer style inline citations", "narrative");
-  addBuildAllCitationsSubmenuMenuItem(menu, data, "Sourcer style inline citations", "inline");
-  addBuildAllCitationsSubmenuMenuItem(menu, data, "Sourcer style source citations", "source");
-  addBuildAllCitationsSubmenuMenuItem(menu, data, "Inline citations using text on FS Sources page", "fsPlainInline");
-  addBuildAllCitationsSubmenuMenuItem(menu, data, "Source citations using text on FS Sources page", "fsPlainSource");
+  addBuildAllCitationsSubmenuMenuItem(menu, data, "Narratives plus inline citations", "narrative");
+  addBuildAllCitationsSubmenuMenuItem(menu, data, "Inline citations", "inline");
+  addBuildAllCitationsSubmenuMenuItem(menu, data, "Source citations", "source");
+  addBuildAllCitationsSubmenuMenuItem(
+    menu,
+    data,
+    "Inline citations using text on FS Sources page only",
+    "fsSourceInfoInline"
+  );
+  addBuildAllCitationsSubmenuMenuItem(
+    menu,
+    data,
+    "Source citations using text on FS Sources page only",
+    "fsSourceInfoSource"
+  );
 
   endMainMenu(menu);
 }
@@ -657,6 +723,8 @@ async function setupFsPopupMenu(extractedData, tabId) {
   let backFunction = function () {
     setupFsPopupMenu(extractedData);
   };
+
+  contentTabId = tabId;
 
   //console.log("setupFsPopupMenu: extractedData is:");
   //console.log(extractedData);
@@ -691,8 +759,7 @@ async function setupFsPopupMenu(extractedData, tabId) {
     return;
   }
 
-  console.log("generalizedData is");
-  console.log(generalizedData);
+  logDebug("generalizedData is ", generalizedData);
 
   // do async prefetches
   loadDataCache();
@@ -707,6 +774,10 @@ async function setupFsPopupMenu(extractedData, tabId) {
     addFsBuildHouseholdTableMenuItem(menu, data);
     addFsOpenExternalImageMenuItem(menu, data);
   } else if (extractedData.pageType == "image") {
+    let count = await addSearchMenus(menu, data, backFunction, "fs");
+    if (count) {
+      addMenuDivider(menu);
+    }
     addFsImageBuildCitationMenuItems(menu, data);
   } else if (extractedData.pageType == "person") {
     await addSearchMenus(menu, data, backFunction, "fs");

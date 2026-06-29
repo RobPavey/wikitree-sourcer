@@ -1,0 +1,1722 @@
+{
+  "id" : "r_22223303428",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1719854352785,
+    "created" : 1719854352785
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MXN-7CZB?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MXN-7CZB?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MXN-7CZB"
+    }
+  },
+  "description" : "#src_r_22223303428",
+  "persons" : [ {
+    "id" : "p_13982261379",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "297c50dd-8bf6-4164-ba06-5e37e3c96561",
+        "attribution" : {
+          "modified" : 1719854352785,
+          "created" : 1719854352785
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "046ae35d-dfd9-41c9-8554-66a79a37b4c2",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "F",
+          "resource" : "http://gedcomx.org/Female"
+        }, {
+          "id" : "046ae35d-dfd9-41c9-8554-66a79a37b4c2",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Gender?version=1.0.4"
+            },
+            "modified" : 1749510918168,
+            "created" : 1749510918168
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/K7D9-F1C?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MXN-7CZB?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K7D9-F1C" ]
+    },
+    "names" : [ {
+      "id" : "f288ea7a-0f0d-42ee-ac11-d9c659915af5",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1719854352785,
+        "created" : 1719854352785
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Bertha Lou Hatten",
+        "parts" : [ {
+          "id" : "3b01f218-4a1d-4976-90aa-f86cbc4c2f68",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Hatten",
+          "fields" : [ {
+            "id" : "7a94a0e8-1390-4681-8cc8-78d5c67af4ae",
+            "attribution" : {
+              "modified" : 1719854352785,
+              "created" : 1719854352785
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "766770bc-caa7-4a1a-ba00-36e10396d9bc",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Hatten"
+            }, {
+              "id" : "766770bc-caa7-4a1a-ba00-36e10396d9bc",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Hatten",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "c03a3b32-f434-41c8-a94a-cc17a6ac82fb",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Bertha Lou",
+          "fields" : [ {
+            "id" : "fa5f3f62-1a9f-4ce3-98a6-182223e90bf1",
+            "attribution" : {
+              "modified" : 1719854352785,
+              "created" : 1719854352785
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "03048a52-745c-4679-ad42-4716814fc6a4",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Bertha Lou"
+            }, {
+              "id" : "03048a52-745c-4679-ad42-4716814fc6a4",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Bertha Lou",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "6ea067de-747e-444b-a6fa-203f75d4be21",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "12c6b256-addb-4857-b01f-5443064fc78d",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Bertha Lou Hatten"
+          }, {
+            "id" : "12c6b256-addb-4857-b01f-5443064fc78d",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Bertha Lou Hatten",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "a8434a32-d74a-4b38-aae2-8e6daa2a1130",
+      "attribution" : {
+        "modified" : 1719854352785,
+        "created" : 1719854352785
+      },
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "id" : "9a9d76fa-a6c8-4fef-adb6-e99ba9be1480",
+        "original" : "18 July 1963",
+        "formal" : "+1963-07-18",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "fields" : [ {
+          "id" : "fadb190a-5240-446e-9e8d-13dcfbfdf81f",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.4.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "237aaf93-1f8d-466b-ac01-56e0cc01f1ef",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "18 Jul 1963"
+          }, {
+            "id" : "237aaf93-1f8d-466b-ac01-56e0cc01f1ef",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.4.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "18 July 1963",
+            "resource" : "+1963-07-18",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "38c77745-1181-4155-aa0e-1489cc10110f",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "8a09912c-defb-45b9-8f6a-24b4190fd54d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Jul"
+          } ]
+        }, {
+          "id" : "3ed5ec42-0f23-480c-be9f-3abbc985c5d7",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "87c16143-33a8-4b27-a352-1760df009228",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1963"
+          } ]
+        }, {
+          "id" : "310c7658-b382-4833-a996-c70fbaff5c07",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "6bf89f9e-1712-460f-ae82-97c1bfd4ed0d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "18"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "1cbf5259-d049-4561-b3da-bccf5fa027cd",
+        "original" : "Bowie, Montague, Texas, United States",
+        "confidence" : "http://confidence/91",
+        "description" : "#place_5019045",
+        "fields" : [ {
+          "id" : "8c9db1e2-e041-45c4-b126-89df90127542",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "d25acede-bf78-455f-bf98-91214e5fc694",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Bowie"
+          } ]
+        }, {
+          "id" : "5de36c0b-057f-4576-81e2-877c885ac495",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "af8f8b36-4310-431a-bc2d-572e0626a4bc",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Montague"
+          } ]
+        }, {
+          "id" : "fdad7685-0bca-4a01-af56-3e81cf52f069",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "f16f107d-f317-43e0-a28a-b798c66b2833",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.5"
+              },
+              "modified" : 1749510918168,
+              "created" : 1749510918168
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Bowie, Montague"
+          }, {
+            "id" : "f16f107d-f317-43e0-a28a-b798c66b2833",
+            "confidence" : "http://confidence/91",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1719854352765,
+              "created" : 1719854352765
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Bowie, Montague, Texas, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/5019045",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            }, {
+              "value" : "913, 910",
+              "name" : "StdQualifier"
+            } ]
+          }, {
+            "id" : "f16f107d-f317-43e0-a28a-b798c66b2833",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.5"
+              },
+              "modified" : 1749510918168,
+              "created" : 1749510918168
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Bowie, Montague, Texas, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/5019045",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=DC&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          }, {
+            "id" : "f16f107d-f317-43e0-a28a-b798c66b2833",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.5"
+              },
+              "modified" : 1749510918168,
+              "created" : 1749510918168
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Bowie, Montague, Texas, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/5019045",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=DC&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "ab10666b-5211-47a8-87df-d87b72083f62",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://familysearch.org/types/fields/FuneralHome",
+          "values" : [ {
+            "id" : "b9f377f3-48b3-4653-8556-9690bf835044",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_FUNERAL_HOME_ORIG",
+            "text" : "James B. Totten and Son"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "061277f7-5266-44dd-864e-0f4f4cf562ca",
+        "attribution" : {
+          "modified" : 1719854352785,
+          "created" : 1719854352785
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "4a17bfbe-d83b-43a6-a296-2fe564a0fcb1",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Death",
+          "resource" : "http://gedcomx.org/Death"
+        } ]
+      } ]
+    }, {
+      "id" : "1e577a1a-5b38-44e3-bf29-4c6e1fd7c511",
+      "attribution" : {
+        "modified" : 1719854352785,
+        "created" : 1719854352785
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "4af2b121-9f2f-4b5b-901d-e276986b95f6",
+        "original" : "23 Dec 1903",
+        "fields" : [ {
+          "id" : "cf8f7399-2940-4879-b082-2ee841436bc4",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.4.1"
+            },
+            "modified" : 1719854352541,
+            "created" : 1719854352541
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "579b0597-f5a9-4acb-b16b-4742ef84bec2",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1719854352541,
+              "created" : 1719854352541
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "23 Dec 1903",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "579b0597-f5a9-4acb-b16b-4742ef84bec2",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "23 Dec 1903"
+          }, {
+            "id" : "579b0597-f5a9-4acb-b16b-4742ef84bec2",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.4.1"
+              },
+              "modified" : 1719854352541,
+              "created" : 1719854352541
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "23 December 1903",
+            "resource" : "+1903-12-23",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "64df7ab9-0f49-4541-a8f9-cad4e19bfaa9",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "8f644bac-25da-415c-a39a-d7bc8b8dd8fa",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_MONTH_ORIG",
+            "text" : "Dec"
+          } ]
+        }, {
+          "id" : "a28590ff-3a3f-40c1-8efe-d3b70ac65f7d",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "e27a2dbb-dbe9-4235-afb5-48a20e6d45f9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1903"
+          }, {
+            "id" : "e27a2dbb-dbe9-4235-afb5-48a20e6d45f9",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1904"
+          } ]
+        }, {
+          "id" : "5981951f-1e9c-4d18-a8b9-88885d4258d2",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "8db9891d-a4d8-435d-8d41-84aa8b5086fe",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DAY_ORIG",
+            "text" : "23"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "a95b18af-955e-45dc-9193-48755989a050",
+        "original" : "Jackson, Oklahoma",
+        "fields" : [ {
+          "id" : "906ad1fb-d03a-4fb3-83db-1ea089115f33",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://familysearch.org/types/fields/CityOrTown",
+          "values" : [ {
+            "id" : "c70bd441-308c-49e0-bdc5-d7a95ed4eea9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_CITY_TOWN_ORIG",
+            "text" : "Jackson"
+          } ]
+        }, {
+          "id" : "e1e7da7d-6bf5-4f08-9eba-4dbb045f2fa1",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://familysearch.org/types/fields/StateOrCountry",
+          "values" : [ {
+            "id" : "8c919037-b0ff-4144-a806-d3868d6e7539",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_STATE_COUNTRY_ORIG",
+            "text" : "Oklahoma"
+          } ]
+        }, {
+          "id" : "df908d91-c8a6-49e5-9f37-44e5cd6a7319",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "f5e1755a-c918-45ef-9b76-52bc55954e09",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.5"
+              },
+              "modified" : 1749510918168,
+              "created" : 1749510918168
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Jackson, Oklahoma",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "65e00d06-6e7f-453e-a281-d186629933df",
+      "attribution" : {
+        "modified" : 1719854352785,
+        "created" : 1719854352785
+      },
+      "type" : "http://gedcomx.org/Burial",
+      "date" : {
+        "id" : "fe698561-ea70-4a2c-9e83-0a891ee04926",
+        "original" : "18 Jul 1963",
+        "formal" : "+1963-07-18",
+        "fields" : [ {
+          "id" : "e592e2b8-9a6a-4f82-8010-91e462fbfcbd",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "2eb1ad25-af87-46e2-9cb9-d19d7a617555",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BUR_DAY_ORIG",
+            "text" : "18"
+          } ]
+        }, {
+          "id" : "93db1e57-e9c6-4287-a69b-316954279a55",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "5b9babaf-dfb6-4458-b363-24298ace1ee3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BUR_YEAR_ORIG",
+            "text" : "1963"
+          } ]
+        }, {
+          "id" : "2fd14cee-92a9-4d10-96f8-76702fced53a",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.4.1"
+            },
+            "modified" : 1719854352548,
+            "created" : 1719854352548
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "b5dc97a1-83e7-4114-902f-6ca0cb9332a6",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1719854352548,
+              "created" : 1719854352548
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BUR_DATE_ORIG",
+            "text" : "18 July 1963"
+          }, {
+            "id" : "b5dc97a1-83e7-4114-902f-6ca0cb9332a6",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1719854352548,
+              "created" : 1719854352548
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BUR_DATE",
+            "text" : "18 Jul 1963",
+            "resource" : "+1963-07-18",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "b5dc97a1-83e7-4114-902f-6ca0cb9332a6",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.4.1"
+              },
+              "modified" : 1719854352548,
+              "created" : 1719854352548
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BUR_DATE",
+            "text" : "18 July 1963",
+            "resource" : "+1963-07-18",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "85447762-9ef8-4dcc-a75d-e1636ae1c76a",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "3afb9fe9-505e-4109-9f59-7c792344095d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BUR_MONTH_ORIG",
+            "text" : "July"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "8b7e8d3e-a3dd-4df9-a22a-8127e59a8390",
+        "original" : "Electra, Texas",
+        "fields" : [ {
+          "id" : "f0aeb825-0466-452b-bdfe-7dca3b43b97f",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "17cc122f-97c5-4452-b42c-a12dacb9ad24",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BUR_STATE_ORIG",
+            "text" : "Texas"
+          } ]
+        }, {
+          "id" : "2e921f7a-05aa-4858-8125-ea713f3567d7",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Cemetery",
+          "values" : [ {
+            "id" : "5aafe557-a6f6-471f-b374-d8aac23d2737",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BUR_CEMETERY_ORIG",
+            "text" : "Old Electra Cemetery"
+          } ]
+        }, {
+          "id" : "0a15c7fd-2f99-4509-8c34-14b9d3539aae",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "3c1e67e2-7c5f-459e-ab92-f505b9fddc0a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.5"
+              },
+              "modified" : 1749510918168,
+              "created" : 1749510918168
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BUR_PLACE_ORIG",
+            "text" : "Electra, Texas",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "fb82a95b-5210-47ae-9499-5da4007ecaa6",
+          "attribution" : {
+            "modified" : 1719854352785,
+            "created" : 1719854352785
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "9d791434-a1d0-4125-9d15-a55379e8ef88",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BUR_CITY_ORIG",
+            "text" : "Electra"
+          } ]
+        } ]
+      }
+    }, {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "Caucasian",
+      "fields" : [ {
+        "id" : "dcd6055b-44a9-48b4-a35d-7db22a28db1c",
+        "attribution" : {
+          "modified" : 1719854352785,
+          "created" : 1719854352785
+        },
+        "type" : "http://gedcomx.org/Race",
+        "values" : [ {
+          "id" : "7d248c1a-b7f0-4763-809e-ad2d6f8ddc70",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "Caucasian"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Married",
+      "fields" : [ {
+        "id" : "10359cb3-20be-455d-a935-2ebede7cdb83",
+        "attribution" : {
+          "modified" : 1719854352785,
+          "created" : 1719854352785
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "82c2aae4-7b5a-485c-b278-9f67fdb6d394",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "82c2aae4-7b5a-485c-b278-9f67fdb6d394",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Married",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "85afad03-86c6-4b56-a303-69ec428e51cf",
+      "attribution" : {
+        "modified" : 1719854352785,
+        "created" : 1719854352785
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "a212fd15-a8e8-48dc-9cf5-ba345c7cb09d",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "59"
+      }, {
+        "id" : "a212fd15-a8e8-48dc-9cf5-ba345c7cb09d",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.4"
+          },
+          "modified" : 1749510918168,
+          "created" : 1749510918168
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "59 years",
+        "resource" : "P59Y",
+        "qualifiers" : [ {
+          "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+          "name" : "StdQualifier"
+        } ]
+      } ],
+      "qualifiers" : [ {
+        "value" : "91b53c32-b917-4c50-94e2-be8e89eb30b1",
+        "name" : "AgeIdentifier"
+      } ]
+    }, {
+      "id" : "e4c11659-220f-4448-a1c6-85beb1639893",
+      "attribution" : {
+        "modified" : 1719854352785,
+        "created" : 1719854352785
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "8110fd5d-8f66-4466-b201-f596a1fc67dd",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000005144758_00829_00000_0000022223303428_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Bertha Lou Hatten",
+      "gender" : "Female",
+      "birthDate" : "23 Dec 1903",
+      "birthPlace" : "Jackson, Oklahoma",
+      "deathDate" : "18 July 1963",
+      "deathPlace" : "Bowie, Montague, Texas, United States"
+    }
+  }, {
+    "id" : "p_304521366348",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "extracted" : true,
+    "principal" : false,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6YLG-C3LV?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MXN-7CZB?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6YLG-C3LV" ]
+    },
+    "names" : [ {
+      "id" : "c09ec3f2-a8f1-445e-82d0-0a44f0021444",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1719854352785,
+        "created" : 1719854352785
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "James B Totten",
+        "parts" : [ {
+          "id" : "c43c89de-2dc0-4447-920b-8821b098b419",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Totten",
+          "fields" : [ {
+            "id" : "cd125a20-11a9-4710-be74-f6c196911463",
+            "attribution" : {
+              "modified" : 1719854352785,
+              "created" : 1719854352785
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "0b908ef3-7804-4420-b848-2fd0bdc785db",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "FUN_OFFICIATOR_NAME_SURN_ORIG",
+              "text" : "Totten"
+            }, {
+              "id" : "0b908ef3-7804-4420-b848-2fd0bdc785db",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "FUN_OFFICIATOR_NAME_SURN",
+              "text" : "Totten",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "cdeb0df4-5f67-4b4f-b254-1b7b23821624",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "James B",
+          "fields" : [ {
+            "id" : "516c427e-fc32-455f-8f81-12d2e6e4f960",
+            "attribution" : {
+              "modified" : 1719854352785,
+              "created" : 1719854352785
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "411efd54-2734-489f-908f-dc0ce75c8f96",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "FUN_OFFICIATOR_NAME_GN_ORIG",
+              "text" : "James B"
+            }, {
+              "id" : "411efd54-2734-489f-908f-dc0ce75c8f96",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "FUN_OFFICIATOR_NAME_GN",
+              "text" : "James B",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "816207c8-5eaa-4587-bbd7-9e9a5e2114e2",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "8e313369-d5d9-4584-83f9-f3120de57ec1",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "FUN_OFFICIATOR_NAME_ORIG",
+            "text" : "James B Totten"
+          }, {
+            "id" : "8e313369-d5d9-4584-83f9-f3120de57ec1",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "FUN_OFFICIATOR_NAME",
+            "text" : "James B Totten",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "6dbe7ff6-2579-4002-832b-a5eeea2f52d9",
+      "attribution" : {
+        "modified" : 1719854352785,
+        "created" : 1719854352785
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "ab93ff40-c1bd-4495-b9ed-158508d03cf8",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000005144758_00829_00000_0000022223303428_001"
+      } ]
+    }, {
+      "id" : "31f20895-ec89-438f-83be-be112ea392a9",
+      "attribution" : {
+        "modified" : 1719854352785,
+        "created" : 1719854352785
+      },
+      "type" : "http://gedcomx.org/Role",
+      "values" : [ {
+        "id" : "3116ac1a-d41e-434a-833a-178c665be3b8",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FUN_OFFICIATOR_ROLE",
+        "text" : "FUN_OFFICIATOR"
+      } ]
+    } ],
+    "display" : {
+      "name" : "James B Totten"
+    }
+  }, {
+    "id" : "p_304521408545",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "extracted" : true,
+    "principal" : false,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6YLG-Z2V7?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MXN-7CZB?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6YLG-Z2V7" ]
+    },
+    "names" : [ {
+      "id" : "7d50cd17-023d-4235-b33a-36d8d92f9a80",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1719854352785,
+        "created" : 1719854352785
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "F A Hatten",
+        "parts" : [ {
+          "id" : "9cc6a033-0967-4773-9dbf-3fabdbff5fbb",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Hatten",
+          "fields" : [ {
+            "id" : "010fa740-192e-44e9-9875-d33b63de12b6",
+            "attribution" : {
+              "modified" : 1719854352785,
+              "created" : 1719854352785
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "3372d39d-8bf6-41e6-99aa-500fd235226c",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "INFORMANT_NAME_SURN_ORIG",
+              "text" : "Hatten"
+            }, {
+              "id" : "3372d39d-8bf6-41e6-99aa-500fd235226c",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "INFORMANT_NAME_SURN",
+              "text" : "Hatten",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "52e76550-4db2-4a54-890d-961872d955ae",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "F A",
+          "fields" : [ {
+            "id" : "dbb14a13-e8a0-486c-914c-8e31e271407a",
+            "attribution" : {
+              "modified" : 1719854352785,
+              "created" : 1719854352785
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "daf076a1-92af-48fd-ae43-476afb2987ba",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "INFORMANT_NAME_GN_ORIG",
+              "text" : "F A"
+            }, {
+              "id" : "daf076a1-92af-48fd-ae43-476afb2987ba",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "INFORMANT_NAME_GN",
+              "text" : "F A",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "c78e13fe-7289-425f-a58e-45d61b89203b",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "130f49e2-2dcf-492b-a802-800bf96ddfb5",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "INFORMANT_NAME_ORIG",
+            "text" : "F A Hatten"
+          }, {
+            "id" : "130f49e2-2dcf-492b-a802-800bf96ddfb5",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "INFORMANT_NAME",
+            "text" : "F A Hatten",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "e080a988-ba8d-47ae-b906-a998c4b7f84e",
+      "attribution" : {
+        "modified" : 1719854352785,
+        "created" : 1719854352785
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "c8d9c666-3d74-4966-b98a-2b89fd0d2689",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000005144758_00829_00000_0000022223303428_002"
+      } ]
+    }, {
+      "id" : "38bd0231-bbf1-4f55-80db-9f4585ea7f42",
+      "attribution" : {
+        "modified" : 1719854352785,
+        "created" : 1719854352785
+      },
+      "type" : "http://gedcomx.org/Role",
+      "values" : [ {
+        "id" : "3f7e83d5-62a2-49b8-9392-bb6d0020ce42",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "INFORMANT_ROLE",
+        "text" : "INFORMANT"
+      } ]
+    } ],
+    "display" : {
+      "name" : "F A Hatten"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_22223303428",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9MXN-7CZB",
+    "componentOf" : {
+      "description" : "#sd_c_1983324",
+      "descriptionId" : "sd_c_1983324"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1719854352785,
+    "modified" : 1749512372911,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Bowie, Montague, Texas, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/5019045"
+      },
+      "temporal" : {
+        "original" : "18 July 1963",
+        "formal" : "+1963-07-18"
+      },
+      "recordType" : "http://gedcomx.org/Death"
+    } ],
+    "citations" : [ {
+      "value" : "\"Texas, Deaths, 1890-1977\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7D9-F1C : Mon Jun 09 23:39:32 UTC 2025), Entry for Bertha Lou Hatten and James B Totten, 18 July 1963."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Bertha Lou Hatten, \"Texas, Deaths, 1890-1977\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1580129472" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9MXN-7CZB" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/platform/records/collections/1983324?arkName=1:2:9MXN-7CZB"
+    },
+    "statuses" : [ "http://gedcomx.org/Published" ]
+  }, {
+    "id" : "sd_c_1983324",
+    "about" : "https://www.familysearch.org/platform/records/collections/1983324",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223670640,
+    "modified" : 1754378613049,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Texas, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/343"
+      },
+      "temporal" : {
+        "original" : "1890/1977",
+        "formal" : "+1890/+1977"
+      },
+      "recordType" : "http://gedcomx.org/Death"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Texas, Deaths, 1890-1977"
+    }, {
+      "lang" : "zh",
+      "value" : "德克薩斯州死亡紀錄，1890 年 - 1977 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Décès au Texas, 1890-1977"
+    }, {
+      "lang" : "ru",
+      "value" : "Техас, записи о смерти, 1890-1977 гг."
+    }, {
+      "lang" : "no",
+      "value" : "Texas Dødsfall, 1890-1977"
+    }, {
+      "lang" : "es",
+      "value" : "Fallecimientos en Texas, 1890-1977"
+    }, {
+      "lang" : "mn",
+      "value" : "Техас муж улс дахь нас баралт, 1890-1977 он"
+    }, {
+      "lang" : "ko",
+      "value" : "텍사스 사망, 1890-1977"
+    }, {
+      "lang" : "ja",
+      "value" : "テキサス州での死亡、1890年-1977年"
+    }, {
+      "lang" : "it",
+      "value" : "Decessi in Texas, 1890-1977"
+    }, {
+      "lang" : "id",
+      "value" : "Kematian Texas, 1890-1977"
+    }, {
+      "lang" : "hu",
+      "value" : "Texasi halálozások, 1890–1977"
+    }, {
+      "lang" : "sk",
+      "value" : "Úmrtia v Texase, 1890 – 1977"
+    }, {
+      "lang" : "th",
+      "value" : "การเสียชีวิตในเทกซัส, ปี 1890-1977"
+    }, {
+      "lang" : "to",
+      "value" : "Ngaahi Mate ʻi Tekisisi, 1890-1977"
+    }, {
+      "lang" : "bg",
+      "value" : "Тексас, Смъртни случаи, 1890-1977"
+    }, {
+      "lang" : "km",
+      "value" : "មរណភាព​នៅរដ្ឋតិចសាស់, ឆ្នាំ 1890-1977"
+    }, {
+      "lang" : "pl",
+      "value" : "Zgony w Teksasie, 1890-1977"
+    }, {
+      "lang" : "ro",
+      "value" : "Decese din Texas, 1890-1977"
+    }, {
+      "lang" : "sv",
+      "value" : "Dödsfall i Texas, 1890-1977"
+    }, {
+      "lang" : "sm",
+      "value" : "Những Ca Tử Vong ở Texas, 1890-1977"
+    }, {
+      "lang" : "vi",
+      "value" : "Những Ca Tử Vong ở Texas, 1890-1977"
+    }, {
+      "lang" : "sq",
+      "value" : "Teksas Vdekjet, 1890-1977"
+    }, {
+      "lang" : "pt",
+      "value" : "Mortes no Texas, 1890-1977"
+    }, {
+      "lang" : "de",
+      "value" : "Todesfälle in Texas, 1890-1977"
+    }, {
+      "lang" : "uk",
+      "value" : "Техас, записи про смерті, 1890–1977 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Smrti u Teksasu, 1890.-1977."
+    }, {
+      "lang" : "cs",
+      "value" : "Úmrtí v Texasu, 1890-1977"
+    }, {
+      "lang" : "da",
+      "value" : "Dødsfald i Texas, 1890-1977"
+    }, {
+      "lang" : "nl",
+      "value" : "Texas sterfgevallen, 1890-1977"
+    }, {
+      "lang" : "et",
+      "value" : "Texase Surmad, 1890–1977"
+    }, {
+      "lang" : "fj",
+      "value" : "Na mate e Texas ena 1890-1977"
+    }, {
+      "lang" : "fi",
+      "value" : "Texas kuolemat, 1890-1977"
+    }, {
+      "lang" : "tl",
+      "value" : "Mga Kamatayan sa Texas, 1890-1977"
+    }, {
+      "lang" : "mg",
+      "value" : "Fahafatesana tany Texas, 1890-1977"
+    }, {
+      "lang" : "ceb",
+      "value" : "Mga Kamatayon sa Texas, 1890-1977"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1983324" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:33SQ-GY19-W9M7",
+    "componentOf" : {
+      "description" : "#sd_c_1983324",
+      "descriptionId" : "sd_c_1983324"
+    },
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Texas, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/343"
+      },
+      "temporal" : {
+        "original" : "Sep 1963–Oct 1963",
+        "formal" : "+1963-09-01T00:00:00Z/+1963-10-31T23:59:59Z"
+      },
+      "recordType" : "http://familysearch.org/types/records/DeathCertificate"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:33SQ-GY19-W9M7" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/platform/records/collections/1983324?arkName=3:1:33SQ-GY19-W9M7"
+    }
+  }, {
+    "id" : "sd_p_13982261379",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:K7D9-F1C",
+    "componentOf" : {
+      "description" : "#src_r_22223303428",
+      "descriptionId" : "src_r_22223303428"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Texas, Deaths, 1890-1977\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7D9-F1C : Mon Jun 09 23:39:32 UTC 2025), Entry for Bertha Lou Hatten and James B Totten, 18 July 1963."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Bertha Lou Hatten, \"Texas, Deaths, 1890-1977\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Bertha Lou Hatten, \"Texas, Deaths, 1890-1977\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:K7D9-F1C" ]
+    }
+  }, {
+    "id" : "sd_p_304521366348",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6YLG-C3LV",
+    "componentOf" : {
+      "description" : "#src_r_22223303428",
+      "descriptionId" : "src_r_22223303428"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Texas, Deaths, 1890-1977\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7D9-F1C : Mon Jun 09 23:39:32 UTC 2025), Entry for Bertha Lou Hatten and James B Totten, 18 July 1963."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "James B Totten, \"Texas, Deaths, 1890-1977\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "James B Totten, \"Texas, Deaths, 1890-1977\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6YLG-C3LV" ]
+    }
+  }, {
+    "id" : "sd_p_304521408545",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6YLG-Z2V7",
+    "componentOf" : {
+      "description" : "#src_r_22223303428",
+      "descriptionId" : "src_r_22223303428"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Texas, Deaths, 1890-1977\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:K7D9-F1C : Mon Jun 09 23:39:32 UTC 2025), Entry for Bertha Lou Hatten and James B Totten, 18 July 1963."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "F A Hatten, \"Texas, Deaths, 1890-1977\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "F A Hatten, \"Texas, Deaths, 1890-1977\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6YLG-Z2V7" ]
+    }
+  }, {
+    "id" : "sd_auto_M9J1-953",
+    "resourceType" : "http://familysearch.org/types/collection/auto",
+    "coverage" : [ {
+      "spatial" : {
+        "description" : "https://www.familysearch.org/platform/places/description/343"
+      },
+      "temporal" : {
+        "formal" : "+0161-01-01T00:00:00Z/+2026-12-31T23:59:59Z"
+      }
+    } ],
+    "titles" : [ {
+      "value" : "United States, Texas, Deaths, from 0161 to 2026"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "http://group-service.rms.records.service.prod.us-east-1.prod.fslocal.org/group/M9J1-953" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_5019045",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/5019045" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "91685a4b-2cc6-4480-8aff-4523b1aca4c1",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "b3306a38-1b2d-4f8b-a943-3f76c452ebad",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "005144758_00829"
+    } ]
+  }, {
+    "id" : "105826a3-e718-45c1-ae14-089b3d679f75",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "1a922420-aa6d-49d5-b1c5-1b26e019b774",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "8a03e27c-02ba-4764-a2d4-2b8052b159bc",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "e3dcb9db-5d85-4e74-b771-dc08787785de",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "4"
+    } ]
+  }, {
+    "id" : "7e47ddec-54b6-4e8e-a5fd-2d3fa1106051",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "aff97adf-2a3e-4fe2-ba17-0addf7a83158",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "Texas Deaths, 1890-1976, Rework - FSI"
+    } ]
+  }, {
+    "id" : "ab38990c-d874-47db-8792-956eef97044b",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "937acbc1-9b5e-4100-a4d2-6fd7a7cee682",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "11-1493: null - Texas Deaths, 1890-1976, Rework - FSI"
+    } ]
+  }, {
+    "id" : "1b33bbe9-9dc3-4ad1-9504-cfd62c777654",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "d29f8a05-32c5-4dc2-9c76-8b8949d2aa91",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "11-1493"
+    } ]
+  }, {
+    "id" : "9824f984-3920-440b-a576-79817435f082",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/FilmNbr",
+    "values" : [ {
+      "id" : "f8ff1806-b01b-4ce9-8635-8e94f795a3fe",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "2117294"
+    } ]
+  }, {
+    "id" : "3721c49e-e3cd-44b0-bd60-55b7902b635b",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "46e40b11-57d4-4c56-b107-7d715f7fb55f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_IMAGE_APID\":\"TH-1942-25171-162905-11\",\"FS_IMAGE_NBR\":\"829\",\"FS_IMAGE_ID\":\"005144758_00829\",\"FS_EASY_IMAGE_ID\":\"/005144758/005144758_00829.jpg\",\"FS_UNIQUE_ID\":\"1580129472\",\"FS_FOLDER_IMAGE_SEQ\":\"829\"}"
+    } ]
+  }, {
+    "id" : "ce0ea128-7804-48b7-8bde-ddbb687446a6",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/SourceCertificateNbr",
+    "values" : [ {
+      "id" : "7f05de3f-5ad1-4150-9b90-7a3e83611d0f",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_CERTIFICATE_NBR_ORIG",
+      "text" : "59099"
+    } ]
+  }, {
+    "id" : "395eef6b-abca-4e6b-b4e2-8ed560976bc4",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "c6a4375d-a6d8-4d5a-851b-d13e9574948d",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+        },
+        "modified" : 1719854352765,
+        "created" : 1719854352765
+      },
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000005144758_00829_00000_0000022223303428"
+    } ]
+  }, {
+    "id" : "8559364f-e079-4108-926f-d35b3f90e5d4",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "084f4a7f-0183-4900-b156-223d2463277e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "id" : "7e673183-f9b7-4657-ae41-d71bda4a7cea",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "7d80fdb5-0e4f-423e-b55f-6325d16b4fb6",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "8b8f0c6c-2768-454f-b96f-54cb6d6822f1",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "681d9438-50c1-4c99-9b9a-b5321e4f84df",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Texas, United States"
+    } ]
+  }, {
+    "id" : "f8d1ca3e-7ba3-41a6-8f6e-140ba2b0e46c",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/VisStatus",
+    "values" : [ {
+      "id" : "7be1e9d8-e6a1-41a3-9825-4b5d8a2c7ebd",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "id" : "af78882e-ada0-4ca4-b4a3-0e422b2b2dd6",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "30a8ac99-f4cd-478d-af97-24e97b784a27",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:33SQ-GY19-W9M7\",\"FS_COLLECTION_ID\":\"1983324\",\"FS_FOLDER\":\"5144758\"}"
+    } ]
+  }, {
+    "id" : "e229a915-ecb0-4890-9568-92f7dcf7dcd7",
+    "attribution" : {
+      "modified" : 1719854352785,
+      "created" : 1719854352785
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "65fc77a7-8c68-45a1-ac31-b166d8d5124a",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "92390"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "005144758"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "829"
+    } ]
+  } ],
+  "qualifiers" : [ {
+    "value" : "true",
+    "name" : "TreatmentWarnings"
+  } ]
+}

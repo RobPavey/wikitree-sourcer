@@ -35,12 +35,21 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|F4P5-QX7}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "F4P5-QX7"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|F4P5-QXW}}",
-    "{{FamilySearch Record|F4P5-QX4}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "F4P5-QXW"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "F4P5-QX4"
+    }
   ],
   "collectionData": {
     "id": "1675348",

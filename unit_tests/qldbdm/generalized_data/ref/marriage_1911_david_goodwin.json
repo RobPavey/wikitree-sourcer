@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "qldbdm",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "name": "David Patrick Goodwin"
+  },
+  "eventDate": {
+    "dateString": "9 Feb 1911"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Maud Templeton"
+      },
+      "marriageDate": {
+        "dateString": "9 Feb 1911"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "marriage",
+    "registrationNumber": "1911/B/9762"
+  },
+  "hasValidData": true
+}

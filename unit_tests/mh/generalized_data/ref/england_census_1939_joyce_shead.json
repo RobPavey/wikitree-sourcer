@@ -16,7 +16,7 @@
     "dateString": "17 Mar 1922"
   },
   "ageAtEvent": "17",
-  "relationshipToHead": "<private> this record is officially closed",
+  "relationshipToHead": "",
   "maritalStatus": "single",
   "occupation": "Shop Office Girl Lms",
   "householdArrayFields": [
@@ -36,7 +36,7 @@
       "birthYear": "Mar 3 1897"
     },
     {
-      "relationship": "<private> this record is officially closed",
+      "relationship": "",
       "name": "Joyce W. Shead",
       "birthYear": "Mar 17 1922",
       "isSelected": true,
@@ -46,7 +46,7 @@
       "gender": "female"
     },
     {
-      "relationship": "<private> this record is officially closed"
+      "relationship": ""
     }
   ],
   "collectionData": {

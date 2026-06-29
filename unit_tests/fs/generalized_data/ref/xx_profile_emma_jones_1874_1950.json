@@ -218,6 +218,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "L69W-LQL"
+    }
+  ],
   "personRepoRef": "K2V9-JL7",
   "hasValidData": true
 }

@@ -22,11 +22,17 @@
   "eventPlace": {
     "placeString": "Lane, Oregon"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|VZ4P-PBP}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "VZ4P-PBP"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|VZ4P-PBG}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "VZ4P-PBG"
+    }
   ],
   "collectionData": {
     "id": "1946790",

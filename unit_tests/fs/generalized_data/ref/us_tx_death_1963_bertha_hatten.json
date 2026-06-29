@@ -1,0 +1,48 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Bertha Lou Hatten",
+    "lastName": "Hatten",
+    "forenames": "Bertha Lou"
+  },
+  "birthDate": {
+    "dateString": "23 Dec 1903",
+    "yearString": "1904"
+  },
+  "birthPlace": {
+    "placeString": "Jackson, Oklahoma"
+  },
+  "deathDate": {
+    "dateString": "18 Jul 1963",
+    "yearString": "1963"
+  },
+  "eventDate": {
+    "dateString": "18 July 1963",
+    "yearString": "1963"
+  },
+  "eventPlace": {
+    "placeString": "Bowie, Montague, Texas, United States"
+  },
+  "ageAtDeath": "59",
+  "race": "Caucasian",
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "K7D9-F1C"
+    }
+  ],
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "33SQ-GY19-W9M7"
+    }
+  ],
+  "collectionData": {
+    "id": "1983324",
+    "collectionTitle": "Texas, Deaths, 1890-1977"
+  },
+  "hasValidData": true
+}

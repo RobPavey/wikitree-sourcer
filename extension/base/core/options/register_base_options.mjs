@@ -1869,19 +1869,46 @@ const addMergeMergeEditOptionsGroup = {
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// Context Menu options groups
+// UI & Page Mods options groups
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const contextGeneralOptionsGroup = {
-  category: "context",
-  subcategory: "general",
-  tab: "context",
-  subsection: "general",
+const uiContextOptionsGroup = {
+  category: "ui",
+  subcategory: "context",
+  tab: "ui",
+  subsection: "context",
   options: [
     {
       optionName: "newTabPos",
       type: "select",
       label: "Where to open link in new tab",
+      values: [
+        { value: "rightMost", text: "To the right of all existing tabs" },
+        { value: "nextToRight", text: "To the right of the current tab" },
+        { value: "newWindow", text: "In a new window" },
+      ],
+      defaultValue: "rightMost",
+    },
+  ],
+};
+
+const uiPageModsOptionsGroup = {
+  category: "ui",
+  subcategory: "pageMods",
+  tab: "ui",
+  subsection: "pageMods",
+  options: [
+    {
+      optionName: "allowPageMods",
+      type: "checkbox",
+      label: "Enable Sourcer to make web page modifications",
+      defaultValue: true,
+      comment: "This is a master control. If this is not checked then no page modifications will be made.",
+    },
+    {
+      optionName: "newTabPos",
+      type: "select",
+      label: "Where to open a new tab when clicking a Sourcer button/icon",
       values: [
         { value: "rightMost", text: "To the right of all existing tabs" },
         { value: "nextToRight", text: "To the right of the current tab" },
@@ -1949,7 +1976,20 @@ registerSubsectionForOptions("addMerge", "general", "General", "", 1);
 registerSubsectionForOptions("addMerge", "addPerson", "Add Person", "", 2);
 registerSubsectionForOptions("addMerge", "mergeEdit", "Merge/Edit", "", 3);
 
-registerSubsectionForOptions("context", "general", "General", "", 1);
+registerSubsectionForOptions(
+  "ui",
+  "context",
+  "Context menu",
+  "These options apply to the context menu. " + "The context menu is accessed via right-click of the mouse.",
+  1
+);
+registerSubsectionForOptions(
+  "ui",
+  "pageMods",
+  "Page Mods general",
+  "By default Sourcer will not make changes to web pages (except for when filling out search forms at user request or highlighting items in search results).",
+  2
+);
 
 registerOptionsGroup(searchOptionsGroup);
 registerOptionsGroup(citationTargetOptionsGroup);
@@ -1996,4 +2036,5 @@ registerOptionsGroup(addMergeGeneralOptionsGroup);
 registerOptionsGroup(addMergeAddPersonOptionsGroup);
 registerOptionsGroup(addMergeMergeEditOptionsGroup);
 
-registerOptionsGroup(contextGeneralOptionsGroup);
+registerOptionsGroup(uiContextOptionsGroup);
+registerOptionsGroup(uiPageModsOptionsGroup);

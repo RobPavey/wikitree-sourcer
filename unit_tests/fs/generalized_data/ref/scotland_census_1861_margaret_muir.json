@@ -90,17 +90,41 @@
     }
   ],
   "maritalStatus": "married",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|VB4X-MPP}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "VB4X-MPP"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|9398-Z21H-J}}",
-    "{{FamilySearch Record|VB4X-MPG}}",
-    "{{FamilySearch Record|VB4X-MPP}}",
-    "{{FamilySearch Record|VB4X-MP5}}",
-    "{{FamilySearch Record|VB4X-MPR}}",
-    "{{FamilySearch Record|VB4X-MPT}}",
-    "{{FamilySearch Record|VB4X-MPY}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "9398-Z21H-J"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VB4X-MPG"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VB4X-MPP"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VB4X-MP5"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VB4X-MPR"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VB4X-MPT"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VB4X-MPY"
+    }
   ],
   "collectionData": {
     "id": "2028677",

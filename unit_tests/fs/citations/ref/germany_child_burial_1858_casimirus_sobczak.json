@@ -24,15 +24,15 @@
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''Burial of son Franciscus Sobczak''':\n\"Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998\"<br/>\nciting Page: 18; Digital film/folder number: 008021113; Record number: 0<br/>\n{{FamilySearch Record|6FCF-2JPT}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSXN-XK4F}} Image number 00079<br/>\nName: Casimirus Sobczak.\n</ref>",
+    "citation": "<ref>\n'''Burial of son Franciscus Sobczak''':\n\"Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998\"<br/>\nciting Page: 18; Digital film/folder number: 008021113; Record number: 0<br/>\n{{FamilySearch Record|6FCF-2JPT}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSXN-XK4F}} Image number 00079<br/>\nName: Casimirus Sobczak; Relationship to fact person: Parent; Fact: Burial; Related person name: Franciscus Sobczak; Related person gender: male; Related person birth year: 1858; Event place: Posen, Preußen, Deutschland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "Casimirus's son Franciscus Sobczak died on 30 March 1858 and was buried in Posen, Preußen, Deutschland.<ref>\n'''Burial of son Franciscus Sobczak''':\n\"Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998\"<br/>\nciting Page: 18; Digital film/folder number: 008021113; Record number: 0<br/>\n{{FamilySearch Record|6FCF-2JPT}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSXN-XK4F}} Image number 00079<br/>\nName: Casimirus Sobczak.\n</ref>",
+    "citation": "Casimirus's son Franciscus Sobczak died on 30 March 1858 and was buried in Posen, Preußen, Deutschland.<ref>\n'''Burial of son Franciscus Sobczak''':\n\"Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998\"<br/>\nciting Page: 18; Digital film/folder number: 008021113; Record number: 0<br/>\n{{FamilySearch Record|6FCF-2JPT}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSXN-XK4F}} Image number 00079<br/>\nName: Casimirus Sobczak; Relationship to fact person: Parent; Fact: Burial; Related person name: Franciscus Sobczak; Related person gender: male; Related person birth year: 1858; Event place: Posen, Preußen, Deutschland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''Burial of son Franciscus Sobczak''': \"Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998\"<br/>citing Page: 18; Digital film/folder number: 008021113; Record number: 0<br/>{{FamilySearch Record|6FCF-2JPT}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSXN-XK4F}} Image number 00079<br/>Name: Casimirus Sobczak.",
+    "citation": "* '''Burial of son Franciscus Sobczak''': \"Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998\"<br/>citing Page: 18; Digital film/folder number: 008021113; Record number: 0<br/>{{FamilySearch Record|6FCF-2JPT}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSXN-XK4F}} Image number 00079<br/>Name: Casimirus Sobczak; Relationship to fact person: Parent; Fact: Burial; Related person name: Franciscus Sobczak; Related person gender: male; Related person birth year: 1858; Event place: Posen, Preußen, Deutschland.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
@@ -44,7 +44,7 @@
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''Burial of son Franciscus Sobczak''': \"Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998\"<br/>citing Page: 18; Digital film/folder number: 008021113; Record number: 0<br/>{{FamilySearch Record|6FCF-2JPT}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSXN-XK4F}} Image number 00079<br/>Name: Casimirus Sobczak.",
+    "citation": "* '''Burial of son Franciscus Sobczak''': \"Germany, Prussia, Posen, Catholic and Lutheran Church Records, 1430-1998\"<br/>citing Page: 18; Digital film/folder number: 008021113; Record number: 0<br/>{{FamilySearch Record|6FCF-2JPT}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSXN-XK4F}} Image number 00079<br/>Name: Casimirus Sobczak; Relationship to fact person: Parent; Fact: Burial; Related person name: Franciscus Sobczak; Related person gender: male; Related person birth year: 1858; Event place: Posen, Preußen, Deutschland.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {

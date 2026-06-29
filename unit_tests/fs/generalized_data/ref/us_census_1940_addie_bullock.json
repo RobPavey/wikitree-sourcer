@@ -89,16 +89,37 @@
   "maritalStatus": "married",
   "relationshipToHead": "head",
   "race": "White",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|VB3M-FG7}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "VB3M-FG7"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QSQ-G9MR-F72B}}",
-    "{{FamilySearch Record|VB3M-FG7}}",
-    "{{FamilySearch Record|VB3M-FGW}}",
-    "{{FamilySearch Record|VB3M-FG4}}",
-    "{{FamilySearch Record|VB3M-FGH}}",
-    "{{FamilySearch Record|VB3M-FGC}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QSQ-G9MR-F72B"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VB3M-FG7"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VB3M-FGW"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VB3M-FG4"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VB3M-FGH"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "VB3M-FGC"
+    }
   ],
   "collectionData": {
     "id": "2000219",

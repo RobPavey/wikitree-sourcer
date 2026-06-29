@@ -127,19 +127,49 @@
       "marriagePlace": {}
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|K438-8WS}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "K438-8WS"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QS7-L9MY-8D3G}}",
-    "{{FamilySearch Record|K438-8WS}}",
-    "{{FamilySearch Record|K438-8W3}}",
-    "{{FamilySearch Record|K438-8WQ}}",
-    "{{FamilySearch Record|K438-8W7}}",
-    "{{FamilySearch Record|K438-8WW}}",
-    "{{FamilySearch Record|K438-8W4}}",
-    "{{FamilySearch Record|K438-8WH}}",
-    "{{FamilySearch Record|K438-8WC}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QS7-L9MY-8D3G"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K438-8WS"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K438-8W3"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K438-8WQ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K438-8W7"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K438-8WW"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K438-8W4"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K438-8WH"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "K438-8WC"
+    }
   ],
   "collectionData": {
     "id": "2000219",

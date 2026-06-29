@@ -145,22 +145,61 @@
       "marriagePlace": {}
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|KHGF-SX6}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "KHGF-SX6"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CSS1-LW3B-D}}",
-    "{{FamilySearch Record|KHGF-SX6}}",
-    "{{FamilySearch Record|KHGF-SXX}}",
-    "{{FamilySearch Record|KHGF-SXF}}",
-    "{{FamilySearch Record|KHGF-SXN}}",
-    "{{FamilySearch Record|KHGF-SXJ}}",
-    "{{FamilySearch Record|KHGF-SXV}}",
-    "{{FamilySearch Record|KHGF-SXK}}",
-    "{{FamilySearch Record|KHGF-SX2}}",
-    "{{FamilySearch Record|KHGF-SXL}}",
-    "{{FamilySearch Record|KHGF-SXG}}",
-    "{{FamilySearch Record|KHGF-SXP}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-CSS1-LW3B-D"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KHGF-SX6"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KHGF-SXX"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KHGF-SXF"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KHGF-SXN"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KHGF-SXJ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KHGF-SXV"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KHGF-SXK"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KHGF-SX2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KHGF-SXL"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KHGF-SXG"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KHGF-SXP"
+    }
   ],
   "collectionData": {
     "id": "1584557",

@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/nswbdm/core/nswbdm_extract_data.mjs";
 import { generalizeData } from "../../extension/site/nswbdm/core/nswbdm_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/nswbdm/core/nswbdm_build_citation.mjs";
 
@@ -153,7 +152,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("nswbdm", extractData, regressionData, testManager);
+  await runExtractDataTests("nswbdm", regressionData, testManager);
 
   await runGeneralizeDataTests("nswbdm", generalizeData, regressionData, testManager);
 

@@ -2,6 +2,16 @@
   "sourceType": "record",
   "recordType": "Census",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Patsy Louise Neal",
+      "Betsy Louise Neal",
+      "Neal",
+      "Patricia",
+      "Patsy Louise",
+      "Patricia Neal"
+    ]
+  },
   "name": {
     "name": "Patsy Louise Neal"
   },

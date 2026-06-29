@@ -146,41 +146,6 @@ function tabListener(tabId, changeInfo, tab) {
   }
 }
 
-function separateUrlIntoParts(url) {
-  if (!url) {
-    return undefined;
-  }
-
-  const schemeSuffix = "://";
-  let schemeSuffixIndex = url.indexOf(schemeSuffix);
-  if (schemeSuffixIndex == -1) {
-    return undefined;
-  }
-  let scheme = url.substring(0, schemeSuffixIndex);
-  let remainder = url.substring(schemeSuffixIndex + schemeSuffix.length);
-
-  let dotIndex = remainder.indexOf(".");
-  if (dotIndex == -1) {
-    return undefined;
-  }
-  let subdomain = remainder.substring(0, dotIndex);
-  remainder = remainder.substring(dotIndex + 1);
-
-  let slashIndex = remainder.indexOf("/");
-  if (slashIndex == -1) {
-    slashIndex = remainder.length;
-  }
-  let domain = remainder.substring(0, slashIndex);
-  let subdirectory = remainder.substring(slashIndex + 1);
-
-  return {
-    scheme: scheme,
-    subdomain: subdomain,
-    domain: domain,
-    subdirectory: subdirectory,
-  };
-}
-
 chrome.runtime.onMessage.addListener(contentLoadedMessageListener);
 chrome.tabs.onUpdated.addListener(tabListener);
 

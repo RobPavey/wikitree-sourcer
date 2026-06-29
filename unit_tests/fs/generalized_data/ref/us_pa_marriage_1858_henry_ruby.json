@@ -46,13 +46,25 @@
     }
   },
   "marriageDate": "9 November 1858",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|6CYF-SMB5}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "6CYF-SMB5"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CSZL-T3MY-1}}",
-    "{{FamilySearch Record|6CYF-SMBR}}",
-    "{{FamilySearch Record|6CYF-SMBT}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-CSZL-T3MY-1"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6CYF-SMBR"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6CYF-SMBT"
+    }
   ],
   "collectionData": {
     "id": "4138689",

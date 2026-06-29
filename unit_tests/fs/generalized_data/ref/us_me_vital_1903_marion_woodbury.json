@@ -35,13 +35,25 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|KC67-F1Y}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "KC67-F1Y"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|939K-RR9F-MJ}}",
-    "{{FamilySearch Record|KC67-F1R}}",
-    "{{FamilySearch Record|KC67-F1T}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "939K-RR9F-MJ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KC67-F1R"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "KC67-F1T"
+    }
   ],
   "collectionData": {
     "id": "1803978",

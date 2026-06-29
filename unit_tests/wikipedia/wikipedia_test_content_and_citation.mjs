@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/wikipedia/core/wikipedia_extract_data.mjs";
 import { generalizeData } from "../../extension/site/wikipedia/core/wikipedia_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/wikipedia/core/wikipedia_build_citation.mjs";
 
@@ -98,7 +97,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("wikipedia", extractData, regressionData, testManager);
+  await runExtractDataTests("wikipedia", regressionData, testManager);
 
   await runGeneralizeDataTests("wikipedia", generalizeData, regressionData, testManager);
 

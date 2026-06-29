@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/scotp/core/scotp_extract_data.mjs";
 import { generalizeData } from "../../extension/site/scotp/core/scotp_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/scotp/core/scotp_build_citation.mjs";
 
@@ -458,7 +457,7 @@ const optionVariants = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("scotp", extractData, regressionData, testManager);
+  await runExtractDataTests("scotp", regressionData, testManager);
 
   await runGeneralizeDataTests("scotp", generalizeData, regressionData, testManager);
 

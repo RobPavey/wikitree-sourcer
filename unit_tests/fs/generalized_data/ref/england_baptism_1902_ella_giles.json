@@ -28,13 +28,25 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|QGNK-BKRW}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QGNK-BKRW"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|33S7-81LP-51M}}",
-    "{{FamilySearch Record|QGNK-BKRD}}",
-    "{{FamilySearch Record|QGNK-BKTS}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "33S7-81LP-51M"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QGNK-BKRD"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "QGNK-BKTS"
+    }
   ],
   "collectionData": {
     "id": "2384987",

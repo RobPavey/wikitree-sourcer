@@ -6,6 +6,7 @@
     "lastName": "Davis",
     "forenames": "David"
   },
+  "personGender": "male",
   "eventDate": {
     "yearString": "1801",
     "dateString": "31 Mar 1801"
@@ -31,6 +32,10 @@
         "country": "England"
       }
     }
+  ],
+  "primaryPersonOptions": [
+    "David Davis (groom)",
+    "Mary Rawlin (bride)"
   ],
   "hasValidData": true
 }

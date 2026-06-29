@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { siteNames } from "../core/site_names.mjs";
+import { getSites } from "../../../base/browser/common/site_registry_storage.mjs";
 
 // Importing each of these site modules causes them to register their search menu items
 
@@ -30,8 +30,9 @@ import { siteNames } from "../core/site_names.mjs";
 // so the order of imports here does not affect that - unless two sites have the same
 // priority set, in that case the order of import would probably control their order
 
-async function importOptions() {
-  for (const siteName of siteNames) {
+async function importSearchPopups() {
+  let sites = await getSites();
+  for (const siteName of Object.keys(sites)) {
     const pathName = "site/" + siteName + "/browser/" + siteName + "_popup_search.mjs";
     // Note: Using chrome.runtime.getURL is considered "sanitizing" the pathName
     // so it avoids a validation warning for Firefox
@@ -39,4 +40,4 @@ async function importOptions() {
   }
 }
 
-await importOptions();
+await importSearchPopups();

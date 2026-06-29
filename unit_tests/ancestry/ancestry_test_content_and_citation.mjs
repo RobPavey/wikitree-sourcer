@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/ancestry/core/ancestry_extract_data.mjs";
 import { generalizeData } from "../../extension/site/ancestry/core/ancestry_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/ancestry/core/ancestry_build_citation.mjs";
 import { buildHouseholdTable } from "../../extension/base/core/table_builder.mjs";
@@ -236,7 +235,12 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8978&h=16161242&tid=&pid=&queryId=1452d1df2d23a3ad7af1da515159f4bf&usePUB=true&_phsrc=ywU8297&_phstart=successSource",
   },
   {
-    // all of names are user submitted
+    // Saved 2026. I was curious where the ED number came from - it is from the Ancstry Source citation.
+    caseName: "england_census_1841_eliza_dicken",
+    url: "https://www.ancestry.com/search/collections/8978/records/13492512?tid=86808578&pid=262157331689&ssrc=pt",
+  },
+  {
+    // all of names are user submitted but there is a titleName
     caseName: "england_census_1851_james_pavey",
     url: "https://www.ancestry.com/search/collections/8860/records/5626136?tid=&pid=&queryId=bab4f926-478e-4678-a210-2dc321fba07b&_phsrc=Zqm20883&_phstart=successSource",
   },
@@ -721,6 +725,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/68166661:9866",
   },
   {
+    caseName: "germany_family_register_1833_ernst_skopp_2026",
+    url: "https://www.ancestry.com/search/collections/61311/records/2913",
+  },
+  {
     caseName: "germany_family_register_1833_ernst_skopp",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61311&h=2913",
   },
@@ -964,6 +972,14 @@ const regressionData = [
   {
     caseName: "us_federal_census_1920_henry_barral",
     url: "https://www.ancestry.com/discoveryui-content/view/41984770:6061",
+  },
+  {
+    caseName: "us_federal_census_1940_florence_hutchinson_may2026_new",
+    url: "https://www.ancestry.com/search/collections/2442/records/93824254",
+  },
+  {
+    caseName: "us_federal_census_1940_florence_hutchinson_may2026_old",
+    url: "https://www.ancestry.com/search/collections/2442/records/93824254",
   },
   {
     caseName: "us_federal_census_1950_polly_beardsley",
@@ -1319,6 +1335,16 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46591661544/facts",
   },
   {
+    // 2026 format. Was not getting any useful data in extract
+    caseName: "xx_profile_leslie_carnell_england_2026",
+    url: "https://www.ancestry.com/family-tree/person/tree/118431178/person/420175338817/facts",
+  },
+  {
+    // 2026 format. The name O'Briend is causing issues.
+    caseName: "xx_profile_loretta_obrien_u_2025_us",
+    url: "https://www.ancestry.com/family-tree/person/tree/208562775/person/192735105415/facts",
+  },
+  {
     // June 2024 format. Has "Van Wye" as surname
     caseName: "xx_profile_margarete_van_wye_1889_1974_us",
     url: "https://www.ancestry.com/family-tree/person/tree/71402081/person/32242536573/facts",
@@ -1461,7 +1487,7 @@ const optionVariants = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("ancestry", extractData, regressionData, testManager);
+  await runExtractDataTests("ancestry", regressionData, testManager);
 
   await runGeneralizeDataTests("ancestry", generalizeData, regressionData, testManager);
 

@@ -55,13 +55,25 @@
     }
   ],
   "maritalStatus": "married",
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|728V-TTT2}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "728V-TTT2"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|728V-TTPZ}}",
-    "{{FamilySearch Record|728V-TTT2}}",
-    "{{FamilySearch Record|72Q5-F66Z}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "728V-TTPZ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "728V-TTT2"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "72Q5-F66Z"
+    }
   ],
   "collectionData": {
     "id": "2836130",

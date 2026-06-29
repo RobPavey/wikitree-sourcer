@@ -39,21 +39,96 @@ const fullMonths = [
   "December",
 ];
 
+const globalMonthNames = [
+  {
+    lcMatches: ["jan", "january", "ene", "enero", "gen", "gennaio", "janv", "janvier"],
+    standardShortName: "Jan",
+    standardLongName: "January",
+    monthNum: 1,
+  },
+  {
+    lcMatches: ["feb", "february", "febrero", "febbraio", "févr", "fevr", "fév", "fev", "février", "fevrier"],
+    standardShortName: "Feb",
+    standardLongName: "February",
+    monthNum: 2,
+  },
+  {
+    lcMatches: ["mar", "march", "marzo", "mars"],
+    standardShortName: "Mar",
+    standardLongName: "March",
+    monthNum: 3,
+  },
+  {
+    lcMatches: ["apr", "april", "abr", "abril", "aprile", "avr", "avril"],
+    standardShortName: "Apr",
+    standardLongName: "April",
+    monthNum: 4,
+  },
+  {
+    lcMatches: ["may", "may", "mayo", "mag", "maggio", "mai"],
+    standardShortName: "May",
+    standardLongName: "May",
+    monthNum: 5,
+  },
+  {
+    lcMatches: ["jun", "june", "junio", "gui", "giugno", "juin"],
+    standardShortName: "Jun",
+    standardLongName: "June",
+    monthNum: 6,
+  },
+  {
+    lcMatches: ["jul", "july", "julio", "lug", "luglio", "juil", "juill", "juillet"],
+    standardShortName: "Jul",
+    standardLongName: "July",
+    monthNum: 7,
+  },
+  {
+    lcMatches: ["aug", "august", "ago", "agosto", "août", "aout"],
+    standardShortName: "Aug",
+    standardLongName: "August",
+    monthNum: 8,
+  },
+  {
+    lcMatches: ["sep", "september", "set", "sept", "septiembre", "settembre", "septembre"],
+    standardShortName: "Sep",
+    standardLongName: "September",
+    monthNum: 9,
+  },
+  {
+    lcMatches: ["oct", "october", "octubre", "ott", "ottobre", "octobre"],
+    standardShortName: "Oct",
+    standardLongName: "October",
+    monthNum: 10,
+  },
+  {
+    lcMatches: ["nov", "november", "noviembre", "novembre"],
+    standardShortName: "Nov",
+    standardLongName: "November",
+    monthNum: 11,
+  },
+  {
+    lcMatches: ["dec", "december", "dic", "diciembre", "dicembre", "déc", "décembre", "decembre"],
+    standardShortName: "Dec",
+    standardLongName: "December",
+    monthNum: 12,
+  },
+];
+
 const DateUtils = {
   monthStringToMonthNum: function (string) {
     if (!string || string.length < 1) {
       return 0;
     }
 
-    let months = fullMonths;
-    if (string.length == 3) {
-      months = threeLetterMonths;
-    }
-
     let lcString = string.toLowerCase();
-    for (let monthIndex = 0; monthIndex < threeLetterMonths.length; monthIndex++) {
-      if (lcString == months[monthIndex].toLowerCase()) {
-        return monthIndex + 1;
+    let lcStringPlusPeriod = lcString + ".";
+
+    for (let month of globalMonthNames) {
+      if (month.lcMatches.includes(lcString)) {
+        return month.monthNum;
+      }
+      if (month.lcMatches.includes(lcStringPlusPeriod)) {
+        return month.monthNum;
       }
     }
 
@@ -117,6 +192,17 @@ const DateUtils = {
       let startYearString = cleanString.substring(0, 4);
       let endYearString = cleanString.substring(5);
       if (endYearString.length == 2) {
+        // check that the endyear digits are greater than the last two digits of start year
+        let startYearLast2 = startYearString.substring(2, 4);
+        let startNum = parseInt(startYearLast2);
+        let endNum = parseInt(startYearLast2);
+        if (isNaN(startNum) || isNaN(endNum)) {
+          return result;
+        }
+        if (endNum < startNum) {
+          return result;
+        }
+
         endYearString = startYearString.substring(0, 2) + endYearString;
       }
 
@@ -418,6 +504,48 @@ const DateUtils = {
       if (monthNum == 0) {
         return result;
       }
+      result.monthNum = monthNum;
+      result.yearNum = yearNum;
+      result.hasMonth = true;
+      result.isValid = true;
+      return result;
+    }
+
+    // Sometimes we can get a date like: 06-Mar-1913 (e.f. from Genealogy SA)
+    const dayDashMonthDashYearRegex = /^(\d\d?)-([A-Z][a-z][a-z])-(\d\d\d\d)$/;
+    if (dayDashMonthDashYearRegex.test(cleanString)) {
+      let dayString = cleanString.replace(dayDashMonthDashYearRegex, "$1");
+      let monthString = cleanString.replace(dayDashMonthDashYearRegex, "$2");
+      let yearString = cleanString.replace(dayDashMonthDashYearRegex, "$3");
+
+      let dayNum = parseInt(dayString);
+      if (isNaN(dayNum) || !dayNum) {
+        return result;
+      }
+      let monthNum = DateUtils.monthStringToMonthNum(monthString);
+      if (monthNum == 0) {
+        return result;
+      }
+      let yearNum = parseInt(yearString);
+      if (isNaN(yearNum) || !yearNum) {
+        return result;
+      }
+
+      result.dayNum = dayNum;
+      result.monthNum = monthNum;
+      result.yearNum = yearNum;
+      result.hasDay = true;
+      result.hasMonth = true;
+      result.isValid = true;
+      return result;
+    }
+
+    // Sometimes we can get a date like: 11 1793
+    const monthNumYearRegex = /^(\d\d?)+\s+(\d\d\d\d)$/;
+    if (monthNumYearRegex.test(cleanString)) {
+      let monthNum = cleanString.replace(monthNumYearRegex, "$1");
+      let yearNum = cleanString.replace(monthNumYearRegex, "$2");
+
       result.monthNum = monthNum;
       result.yearNum = yearNum;
       result.hasMonth = true;
@@ -782,6 +910,41 @@ const DateUtils = {
     return this.getDateStringFromYearMonthDay(year, month, day);
   },
 
+  getStdShortDateStringFromDayMonthYearString: function (dayMonthYearString, separator = "/") {
+    if (!dayMonthYearString) {
+      return "";
+    }
+
+    let parts = dayMonthYearString.split(separator);
+
+    if (parts.length != 3 || parts[2].length != 4) {
+      return "";
+    }
+
+    let year = Number(parts[2]);
+    if (isNaN(year)) {
+      year = 0;
+    }
+
+    let month = 0;
+    if (parts.length > 1) {
+      month = Number(parts[1]);
+      if (isNaN(month)) {
+        month = 0;
+      }
+    }
+
+    let day = 0;
+    if (parts.length > 2) {
+      day = Number(parts[0]);
+      if (isNaN(day)) {
+        day = 0;
+      }
+    }
+
+    return this.getDateStringFromYearMonthDay(year, month, day);
+  },
+
   compareParsedDates: function (parsedDateA, parsedDateB) {
     if (parsedDateA.isValid) {
       if (parsedDateB.isValid) {
@@ -834,10 +997,77 @@ const DateUtils = {
   },
 
   subtractDaysFromDateString: function (dateString, daysToSubtract) {
-    const msInDay = 1000 * 60 * 60 * 24;
-    const msToSubtract = daysToSubtract * msInDay;
+    let parsedDate = DateUtils.parseDateString(dateString);
+    if (parsedDate.hasDay) {
+      const msInDay = 1000 * 60 * 60 * 24;
+      const msToSubtract = daysToSubtract * msInDay;
 
-    return this.subtractMsFromDateString(dateString, msToSubtract);
+      return this.subtractMsFromDateString(dateString, msToSubtract);
+    } else if (parsedDate.hasMonth) {
+      let monthsToSubtract = Math.trunc((daysToSubtract + 14) / 30);
+      if (monthsToSubtract) {
+        return this.subtractMonthsFromDateString(dateString, monthsToSubtract);
+      } else {
+        return dateString;
+      }
+    } else {
+      let yearsToSubtract = Math.trunc((daysToSubtract + 182) / 365);
+      if (yearsToSubtract) {
+        return this.subtractYearsFromDateString(dateString, yearsToSubtract);
+      } else {
+        return dateString;
+      }
+    }
+  },
+
+  subtractWeeksFromDateString: function (dateString, weeksToSubtract) {
+    let parsedDate = DateUtils.parseDateString(dateString);
+    if (parsedDate.hasDay) {
+      const msInWeek = 1000 * 60 * 60 * 24 * 7;
+      const msToSubtract = weeksToSubtract * msInWeek;
+
+      return this.subtractMsFromDateString(dateString, msToSubtract);
+    } else if (parsedDate.hasMonth) {
+      let monthsToSubtract = Math.trunc((weeksToSubtract + 1) / 4);
+      if (monthsToSubtract) {
+        return this.subtractMonthsFromDateString(dateString, monthsToSubtract);
+      } else {
+        return dateString;
+      }
+    } else {
+      let yearsToSubtract = Math.trunc((weeksToSubtract + 25) / 52);
+      if (yearsToSubtract) {
+        return this.subtractYearsFromDateString(dateString, yearsToSubtract);
+      } else {
+        return dateString;
+      }
+    }
+  },
+
+  subtractMonthsFromDateString: function (dateString, monthsToSubtract) {
+    let parsedDate = DateUtils.parseDateString(dateString);
+
+    if (parsedDate.hasMonth) {
+      if (monthsToSubtract >= 12) {
+        let yearsToSubtract = Math.trunc(monthsToSubtract / 12);
+
+        parsedDate.yearNum -= yearsToSubtract;
+
+        monthsToSubtract = monthsToSubtract % 12;
+      }
+
+      parsedDate.monthNum -= monthsToSubtract;
+
+      let newDateString = this.getStdShortFormDateString(parsedDate);
+      return newDateString;
+    } else if (monthsToSubtract >= 12) {
+      let yearsToSubtract = Math.trunc((monthsToSubtract + 5) / 12);
+      parsedDate.yearNum -= yearsToSubtract;
+      let newDateString = this.getStdShortFormDateString(parsedDate);
+      return newDateString;
+    }
+
+    return dateString;
   },
 
   subtractYearsFromDateString: function (dateString, yearsToSubtract) {
@@ -846,6 +1076,185 @@ const DateUtils = {
     parsedDate.yearNum -= yearsToSubtract;
 
     return parsedDate.yearNum.toString();
+  },
+
+  parseAgeOrTimePeriod(string) {
+    let result = {
+      inputString: string,
+      daysNum: 0,
+      weeksNum: 0,
+      monthsNum: 0,
+      yearsNum: 0,
+      hasDays: false,
+      hasWeeks: false,
+      hasMonths: false,
+      hasYears: false,
+      isValid: false,
+    };
+
+    if (!string) {
+      return result;
+    }
+
+    if (typeof string !== "string") {
+      if (typeof string === "number") {
+        result.hasYears = true;
+        result.yearsNum = string;
+        result.isValid = true;
+      }
+      return result;
+    }
+
+    string = string.trim();
+
+    if (!string) {
+      return result;
+    }
+
+    const range1Regex = /^(\d\d\d?)\s*\-\s*(\d\d\d?)$/;
+    const range2Regex = /^(\d\d\d?)\s*to\s*(\d\d\d?)$/i;
+
+    // check for a year range
+    if (range1Regex.test(string) || range2Regex.test(string)) {
+      const rangeRegex = range1Regex.test(string) ? range1Regex : range2Regex;
+      // it is a year range,
+      let startYearsString = string.replace(rangeRegex, "$1");
+      let endYearsString = string.replace(rangeRegex, "$2");
+
+      let startYearsNum = parseInt(startYearsString);
+      let endYearsNum = parseInt(endYearsString);
+      if (isNaN(startYearsNum) || isNaN(endYearsNum)) {
+        return result;
+      }
+
+      if (startYearsNum >= endYearsNum) {
+        return result;
+      }
+
+      result.isRange = true;
+      result.isValid = true;
+      result.startYearsNum = startYearsNum;
+      result.endYearsNum = endYearsNum;
+      result.yearsNum = startYearsNum;
+      return result;
+    }
+
+    const modifierRegex = /^(\d+)\s*([^\d]+)$/i;
+    const yearRegex = /^\d+$/i;
+    const monthFractionRegex = /^(\d+)\/12$/i;
+    const yearsMonthsDaysRegex = /^(\d+)\s*years?\,?\s*(\d+)\s*months?\,?\s*(\d+)\s*days?$/i;
+    const ymdRegex = /^(\d+)\s*yr?s?\,?\s*(\d+)\s*mo?s?\,?\s*(\d+)\s*dy?s?$/i;
+    const yearsMonthsRegex = /^(\d+)\s*years?\,?\s*(\d+)\s*months?$/i;
+    const ymRegex = /^(\d+)\s*yr?s?\,?\s*(\d+)\s*mo?s?$/i;
+    const monthsDaysRegex = /^(\d+)\s*months?\,?\s*(\d+)\s*days?$/i;
+    const mdRegex = /^(\d+)\s*mo?s?\,?\s*(\d+)\s*dy?s?$/i;
+    if (modifierRegex.test(string)) {
+      // there is a modifier word on the end e.g. "8d" or "2 months"
+      let numberString = string.replace(modifierRegex, "$1");
+      let modifier = string.replace(modifierRegex, "$2");
+      modifier = modifier.toLowerCase();
+
+      let number = parseInt(numberString);
+      if (isNaN(number)) {
+        return result;
+      }
+
+      if (modifier.startsWith("y") || modifier == "jaar") {
+        if (modifier == "ya") {
+          // YA for "years about" is used on nzbdm
+          result.isAbout = true;
+        }
+        result.hasYears = true;
+        result.yearsNum = number;
+        result.isValid = true;
+      } else if (modifier.startsWith("m")) {
+        result.hasMonths = true;
+        result.monthsNum = number;
+        result.isValid = true;
+      } else if (modifier.startsWith("w")) {
+        result.hasWeeks = true;
+        result.weeksNum = number;
+        result.isValid = true;
+      } else if (modifier.startsWith("d")) {
+        result.hasDays = true;
+        result.daysNum = number;
+        result.isValid = true;
+      }
+      return result;
+    } else if (yearRegex.test(string)) {
+      let numInYears = parseInt(string);
+      if (isNaN(numInYears)) {
+        return "";
+      }
+
+      result.hasYears = true;
+      result.yearsNum = numInYears;
+      result.isValid = true;
+      return result;
+    } else if (yearsMonthsDaysRegex.test(string) || ymdRegex.test(string)) {
+      const regex = yearsMonthsDaysRegex.test(string) ? yearsMonthsDaysRegex : ymdRegex;
+
+      let yearsString = string.replace(regex, "$1");
+      let monthsString = string.replace(regex, "$2");
+      let daysString = string.replace(regex, "$3");
+
+      let yearsNum = parseInt(yearsString);
+      let monthsNum = parseInt(monthsString);
+      let daysNum = parseInt(daysString);
+      if (isNaN(yearsNum) || isNaN(monthsNum) || isNaN(daysNum)) {
+        return result;
+      }
+
+      result.hasYears = true;
+      result.hasMonths = true;
+      result.hasDays = true;
+      result.yearsNum = yearsNum;
+      result.monthsNum = monthsNum;
+      result.daysNum = daysNum;
+      result.isValid = true;
+    } else if (yearsMonthsRegex.test(string) || ymRegex.test(string)) {
+      const regex = yearsMonthsRegex.test(string) ? yearsMonthsRegex : ymRegex;
+
+      let yearsString = string.replace(regex, "$1");
+      let monthsString = string.replace(regex, "$2");
+
+      let yearsNum = parseInt(yearsString);
+      let monthsNum = parseInt(monthsString);
+      if (isNaN(yearsNum) || isNaN(monthsNum)) {
+        return result;
+      }
+
+      result.hasYears = true;
+      result.hasMonths = true;
+      result.yearsNum = yearsNum;
+      result.monthsNum = monthsNum;
+      result.isValid = true;
+    } else if (monthsDaysRegex.test(string) || mdRegex.test(string)) {
+      const regex = monthsDaysRegex.test(string) ? monthsDaysRegex : mdRegex;
+
+      let monthsString = string.replace(regex, "$1");
+      let daysString = string.replace(regex, "$2");
+
+      let monthsNum = parseInt(monthsString);
+      let daysNum = parseInt(daysString);
+      if (isNaN(monthsNum) || isNaN(daysNum)) {
+        return result;
+      }
+
+      result.hasMonths = true;
+      result.hasDays = true;
+      result.monthsNum = monthsNum;
+      result.daysNum = daysNum;
+      result.isValid = true;
+    } else if (monthFractionRegex.test(string)) {
+      // there is a modifier word on the end e.g. "8d" or "2 months"
+      let monthsNum = string.replace(monthFractionRegex, "$1");
+      result.hasMonths = true;
+      result.monthsNum = monthsNum;
+      result.isValid = true;
+    }
+
+    return result;
   },
 };
 

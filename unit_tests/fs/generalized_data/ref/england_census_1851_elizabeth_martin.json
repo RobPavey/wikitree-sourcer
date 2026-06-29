@@ -119,19 +119,49 @@
       "marriagePlace": {}
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|SG5F-42W}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "SG5F-42W"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CSQ7-XSNM-K}}",
-    "{{FamilySearch Record|SG5F-427}}",
-    "{{FamilySearch Record|SG5F-42W}}",
-    "{{FamilySearch Record|SG5F-424}}",
-    "{{FamilySearch Record|SG5F-42H}}",
-    "{{FamilySearch Record|SG5F-42C}}",
-    "{{FamilySearch Record|SG5F-42Z}}",
-    "{{FamilySearch Record|SG5F-428}}",
-    "{{FamilySearch Record|SG5F-42D}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-CSQ7-XSNM-K"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG5F-427"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG5F-42W"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG5F-424"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG5F-42H"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG5F-42C"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG5F-42Z"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG5F-428"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "SG5F-42D"
+    }
   ],
   "collectionData": {
     "id": "2563939",

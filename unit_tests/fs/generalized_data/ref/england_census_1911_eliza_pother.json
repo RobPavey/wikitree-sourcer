@@ -93,15 +93,33 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|X75L-1V8}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "X75L-1V8"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Record|X75L-1VZ}}",
-    "{{FamilySearch Record|X75L-1V8}}",
-    "{{FamilySearch Record|X75L-1VD}}",
-    "{{FamilySearch Record|X75L-1V6}}",
-    "{{FamilySearch Record|X75L-1VX}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "X75L-1VZ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "X75L-1V8"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "X75L-1VD"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "X75L-1V6"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "X75L-1VX"
+    }
   ],
   "collectionData": {
     "id": "1921547",

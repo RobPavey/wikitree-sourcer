@@ -22,24 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// This is an image with a person details selected. example URL:
-// https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9MR-NFZL?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AVTHY-ZB3&action=view&groupId=TH-1971-27766-10578-99
-// This is also an image with a person details selected - newer form
-// https://www.familysearch.org/ark:/61903/3:1:3QS7-L9S9-RGHR?view=index&action=view&personArk=%2Fark%3A%2F61903%2F1%3A1%3AQ2Q8-11ZZ
-// there can also be fewer digits in the image id. e.g.:
-// https://www.familysearch.org/ark:/61903/3:1:S3HY-DRVJ-ZJ?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AVFR1-FH4&action=view&cc=1478678
-// Or more like:
-// https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSKX-9798-6?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3A6ZQY-71VD&action=view&cc=1478678
-// Or there can be a shorter image ID like:
-// https://www.familysearch.org/ark:/61903/3:2:77TD-89FK?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AKSLT-3C1&action=view&cc=1910846&lang=en&groupId=
-var imageWithSidebarUrlRegEx =
-  /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:\d\:\w\w\w\w\-\w\w\w\w(?:\-\w\w?\w?\w?)?.*personArk=%2Fark%3A%2F(\d+)%2F1%3A1%3A(\w\w\w\w\-\w\w\w\w?).*$/;
-
-// these can now have a language code like "en" in them
-var personDetailsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/details\/(.*)$/i;
-var personSourcesRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/sources\/(.*$)/i;
-var personVitalsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/vitals\/(.*$)/i;
-
 async function doFetch() {
   //console.log("doFetch, document.location is: " + document.location);
 
@@ -207,41 +189,8 @@ async function doFetch() {
 async function extractDataFromFetchAndRespond(document, dataObjects, fetchType, sessionId, options, sendResponse) {
   //console.log('extractDataFromFetchAndRespond entered');
 
-  if (!isLoadedExtractDataModuleReady) {
-    if (loadedExtractDataModuleFailed) {
-      sendResponse({
-        success: false,
-        errorMessage: "Error loading extract data module",
-      });
-    }
-    // dependencies not ready, wait a few milliseconds and try again
-    else if (loadExtractDataModuleRetries < maxLoadModuleRetries) {
-      loadExtractDataModuleRetries++;
-      console.log("extractDataFromFetchAndRespond. Retry number: ", loadExtractDataModuleRetries);
-      setTimeout(function () {
-        extractDataFromFetchAndRespond(document, dataObjects, fetchType, sessionId, options, sendResponse);
-      }, 10);
-      return true;
-    } else {
-      console.log("extractDataFromFetchAndRespond. Too many retries");
-      sendResponse({
-        success: false,
-        errorMessage: "Extract data module never loaded, tried " + maxLoadModuleRetries + " times",
-        noException: true,
-      });
-    }
-    return false;
-  }
-
   // Extract the data.
-  let extractedData = loadedExtractDataModule.extractDataFromFetch(
-    document,
-    "",
-    dataObjects,
-    fetchType,
-    sessionId,
-    options
-  );
+  let extractedData = extractDataFromFetch(document, "", dataObjects, fetchType, sessionId, options);
 
   // respond with the type of content and the extracted data
   sendResponse({
@@ -318,18 +267,14 @@ function shouldUseFetch() {
   // For thise we return true and it will just fail when it doesn't get JSON data back from the fetch.
 
   let useFetch = false;
+  let createSourceDialog = document.querySelector("div[aria-modal='true'][role='dialog'][aria-label='Create Source']");
 
-  if (personDetailsRegex.test(location.href)) {
+  if (createSourceDialog) {
+    useFetch = false;
+  } else if (personDetailsRegex.test(location.href)) {
     useFetch = true;
   } else if (personSourcesRegex.test(location.href)) {
-    let createSourceDialog = document.querySelector(
-      "div[aria-modal='true'][role='dialog'][aria-label='Create Source']"
-    );
-    if (createSourceDialog) {
-      useFetch = false;
-    } else {
-      useFetch = true;
-    }
+    useFetch = true;
   } else if (imageWithSidebarUrlRegEx.test(location.href)) {
     // This is an image with a person details selected
     useFetch = true;
@@ -387,10 +332,6 @@ async function setFields(fieldData) {
   //console.log(fieldData);
 
   let createSourceDialog = document.querySelector("div[aria-modal='true'][role='dialog'][aria-label='Create Source']");
-
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
 
   async function setTextValue(selector, value, useListBox) {
     let inputElement = createSourceDialog.querySelector(selector);
@@ -465,10 +406,21 @@ function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "setFields") {
     setFields(request.fieldData);
     sendResponse({ success: true });
-    return { wasHandled: true, returnValue: false };
+    return { wasHandled: true, returnValue: true };
+  } else if (request.type == "doFetch") {
+    fetch(request.url, request.options)
+      .then(async (response) => {
+        const status = response.status;
+        const ok = response.ok;
+        const text = await response.text();
+        sendResponse({ success: true, ok: ok, status: status, text: text });
+      })
+      .catch((err) => sendResponse({ success: false, error: err.message }));
+
+    return { wasHandled: true, returnValue: true };
   }
 
   return { wasHandled: false };
 }
 
-siteContentInit(`fs`, `site/fs/core/fs_extract_data.mjs`, extractHandler, additionalMessageHandler);
+siteContentInit("fs", extractHandler, additionalMessageHandler);

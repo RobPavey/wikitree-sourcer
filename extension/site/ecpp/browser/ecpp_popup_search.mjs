@@ -30,7 +30,7 @@ import {
   shouldShowSiteSearch,
 } from "/base/browser/popup/popup_search.mjs";
 
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -66,7 +66,7 @@ async function ecppSearch(generalizedData) {
       reason:
         "To perform a search on Early California Population Project a content script needs to be loaded on the Early California Population Project search page.",
     };
-    let allowed = await checkPermissionForSite("*://ecpp.ucr.edu/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSiteMatches("ecpp", checkPermissionsOptions);
     if (!allowed) {
       closePopup();
       return;

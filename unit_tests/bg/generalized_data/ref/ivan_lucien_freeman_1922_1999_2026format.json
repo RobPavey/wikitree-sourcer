@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "bg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "13 Dec 1999"
+  },
+  "eventPlace": {
+    "placeString": "Main Drive, Melbourne, Victoria 3171, Australia",
+    "streetAddress": "Springvale Botanical Cemetery"
+  },
+  "name": {
+    "name": "Ivan Lucien Freeman",
+    "lastName": "Freeman",
+    "forenames": "Ivan Lucien"
+  },
+  "lastNameAtDeath": "Freeman",
+  "birthDate": {
+    "dateString": "6 Aug 1922"
+  },
+  "deathDate": {
+    "dateString": "13 Dec 1999"
+  },
+  "hasValidData": true
+}

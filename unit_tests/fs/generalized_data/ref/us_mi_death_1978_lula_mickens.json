@@ -23,8 +23,11 @@
   "eventPlace": {
     "placeString": "Battle Creek, Calhoun, Michigan"
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|VZ14-WHX}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "VZ14-WHX"
+    }
   ],
   "collectionData": {
     "id": "1949333",

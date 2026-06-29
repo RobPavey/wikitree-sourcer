@@ -93,16 +93,37 @@
       "marriagePlace": {}
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|6XPH-GLS7}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "6XPH-GLS7"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QHN-GQHW-QD49}}",
-    "{{FamilySearch Record|6XPH-GLSQ}}",
-    "{{FamilySearch Record|6XPH-GLS7}}",
-    "{{FamilySearch Record|6XPZ-SRQ1}}",
-    "{{FamilySearch Record|6XPZ-SR7M}}",
-    "{{FamilySearch Record|6XPZ-SR79}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3QHN-GQHW-QD49"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6XPH-GLSQ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6XPH-GLS7"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6XPZ-SRQ1"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6XPZ-SR7M"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6XPZ-SR79"
+    }
   ],
   "collectionData": {
     "id": "4464515",

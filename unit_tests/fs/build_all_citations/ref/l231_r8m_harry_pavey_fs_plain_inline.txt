@@ -3,7 +3,9 @@
 </ref>
 
 <ref>
-Henry Alfred Pavey, "England and Wales Marriage Registration Index, 1837-2005" "England and Wales Marriage Registration Index, 1837-2005," database, ''FamilySearch'' (https://familysearch.org/ark:/61903/1:1:2D25-D4J : 13 December 2014), Henry Alfred Pavey, 1870; from "England & Wales Marriages, 1837-2005," database, ''findmypast'' (http://www.findmypast.com : 2012); citing 1870, quarter 4, vol. 1B, p. 263, Pancras, London, England, General Register Office, Southport, England.
+Henry Alfred Pavey, "England and Wales Marriage Registration Index, 1837-2005"<br/>
+"England and Wales Marriage Registration Index, 1837-2005," database, ''FamilySearch'' (https://familysearch.org/ark:/61903/1:1:2D25-D4J : 13 December 2014), Henry Alfred Pavey, 1870; from "England & Wales Marriages, 1837-2005," database, ''findmypast'' (http://www.findmypast.com : 2012); citing 1870, quarter 4, vol. 1B, p. 263, Pancras, London, England, General Register Office, Southport, England<br/>
+{{FamilySearch Record|2D25-D4J}} (accessed 15 December 2015).
 </ref>
 
 <ref>
@@ -27,8 +29,9 @@ Henry Alfred Pavey, "England and Wales Marriage Registration Index, 1837-2005" "
 </ref>
 
 <ref>
-"England and Wales Census, 1891," database with images, FamilySearch (https://familysearch.org/ark:/61903/1:1:Q7LV-YMM : accessed 15 December 2015), Harry A Pavey, St Pancras, London, England; from "1891 England, Scotland and Wales census," database and images, findmypast (http://www.findmypast.com : n.d.); citing PRO RG 12, London county, subdistrict, The National Archives of the UK, Kew, Surrey.,  Living with wife and six children in Kentish Town Road, St. Pancras<br/>
-Occupation picture Frame Maker
+"England and Wales Census, 1891," database with images, FamilySearch (https://familysearch.org/ark:/61903/1:1:Q7LV-YMM : accessed 15 December 2015), Harry A Pavey, St Pancras, London, England; from "1891 England, Scotland and Wales census," database and images, findmypast (http://www.findmypast.com : n.d.); citing PRO RG 12, London county, subdistrict, The National Archives of the UK, Kew, Surrey<br/>
+Living with wife and six children in Kentish Town Road, St. Pancras<br/>
+Occupation picture Frame Maker.
 </ref>
 
 <ref>
@@ -36,19 +39,23 @@ Occupation picture Frame Maker
 </ref>
 
 <ref>
-"England and Wales Census, 1911," database, FamilySearch (https://familysearch.org/ark:/61903/1:1:XWLP-S75 : accessed 15 December 2015), Harry Alfred Pavey, Islington, Upper Holloway N, London, England; from "1911 England and Wales census," database and images, findmypast (http://www.findmypast.com : n.d.); citing PRO RG 14, The National Archives of the UK, Kew, Surrey.,  Now living alone in Islington at age 58
+"England and Wales Census, 1911," database, FamilySearch (https://familysearch.org/ark:/61903/1:1:XWLP-S75 : accessed 15 December 2015), Harry Alfred Pavey, Islington, Upper Holloway N, London, England; from "1911 England and Wales census," database and images, findmypast (http://www.findmypast.com : n.d.); citing PRO RG 14, The National Archives of the UK, Kew, Surrey<br/>
+Now living alone in Islington at age 58.
 </ref>
 
 <ref>
-Harry A Pavey, "England and Wales Death Registration Index 1837-2007" "England and Wales Death Registration Index 1837-2007," database, ''FamilySearch'' (https://familysearch.org/ark:/61903/1:1:2JM3-KBF : 31 December 2014), Harry A Pavey, 1914; from "England & Wales Deaths, 1837-2006," database, ''findmypast'' (http://www.findmypast.com : 2012); citing Death, Hampstead, London, England, General Register Office, Southport, England.
+Harry A Pavey, "England and Wales Death Registration Index 1837-2007"<br/>
+"England and Wales Death Registration Index 1837-2007," database, ''FamilySearch'' (https://familysearch.org/ark:/61903/1:1:2JM3-KBF : 31 December 2014), Harry A Pavey, 1914; from "England & Wales Deaths, 1837-2006," database, ''findmypast'' (http://www.findmypast.com : 2012); citing Death, Hampstead, London, England, General Register Office, Southport, England<br/>
+{{FamilySearch Record|2JM3-KBF}} (accessed 9 October 2021).
 </ref>
 
 <ref>
-"England, Devon, Parish Registers, 1538-1912," database with images, FamilySearch (https://familysearch.org/ark:/61903/1:1:KC98-1RD : accessed 15 December 2015), Harry Alfred Pavey, 1855, Baptism; from "Church of England parish registers 1538-1911," database and images, findmypast (http://www.findmypast.com : n.d.); citing Devon, archive reference 358/15/a, images provided by FamilySearch International.,  DOB: 18 (or 10) July 1852<br/>
+"England, Devon, Parish Registers, 1538-1912," database with images, FamilySearch (https://familysearch.org/ark:/61903/1:1:KC98-1RD : accessed 15 December 2015), Harry Alfred Pavey, 1855, Baptism; from "Church of England parish registers 1538-1911," database and images, findmypast (http://www.findmypast.com : n.d.); citing Devon, archive reference 358/15/a, images provided by FamilySearch International<br/>
+DOB: 18 (or 10) July 1852<br/>
 Baptized: 23 Mar 1855<br/>
 Christian Names: Harry Alfred<br/>
 Parents: William Henry and Elizabeth Pavey<br/>
 Abode: Athenaeum Street<br/>
 Profession: Lodging House Keeper<br/>
-Baptized by: G Layton, Curate
+Baptized by: G Layton, Curate.
 </ref>

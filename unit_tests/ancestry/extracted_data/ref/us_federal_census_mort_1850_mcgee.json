@@ -8,7 +8,7 @@
   "titleName": "I N McGee",
   "titleCollection": "U.S., Federal Census Mortality Schedules, 1850-1885",
   "recordData": {
-    "Name": "I N McGee [J N McGee]",
+    "Name": "I N McGee",
     "Gender": "Male",
     "Slave": "Free",
     "Marital Status": "Married",
@@ -20,6 +20,11 @@
     "Census year": "1850",
     "Census Place": "Haywood, North Carolina, USA",
     "Line": "20"
+  },
+  "recordDataUserValues": {
+    "Name": [
+      "J N McGee"
+    ]
   },
   "imageUrl": "https://www.ancestry.com/imageviewer/collections/8756/images/NCM1805_1-0168?pid=2152201&usePUB=true&usePUBJs=true",
   "imageDbId": "8756",

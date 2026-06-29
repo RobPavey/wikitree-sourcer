@@ -68,18 +68,6 @@ class UshmmEdReader extends ExtractedDataReader {
     return undefined;
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
-  }
-
   getBirthDateObj() {
     if (this.ed.fields["date of birth"]) {
       return this.makeDateObjFromDateString(this.ed.fields["date of birth"]);
@@ -138,7 +126,7 @@ class UshmmEdReader extends ExtractedDataReader {
 
   getParents() {
     if (this.ed.fields["father's name"] && this.ed.fields["mother's name"]) {
-      return this.makeParentsFromFullNames(this.ed.fields["father's name"], this.ed.fields["mother's name"])
+      return this.makeParentsFromFullNames(this.ed.fields["father's name"], this.ed.fields["mother's name"]);
     }
     return undefined;
   }

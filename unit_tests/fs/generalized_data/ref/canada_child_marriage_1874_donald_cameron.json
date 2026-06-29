@@ -40,13 +40,25 @@
       }
     }
   ],
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|FMN3-4Z6}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "FMN3-4Z6"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|9Q97-Y39L-C6M}}",
-    "{{FamilySearch Record|FMN3-4ZD}}",
-    "{{FamilySearch Record|FMN3-4ZC}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "9Q97-Y39L-C6M"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "FMN3-4ZD"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "FMN3-4ZC"
+    }
   ],
   "collectionData": {
     "id": "1784216",

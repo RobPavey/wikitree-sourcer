@@ -8,7 +8,7 @@
   "titleName": "Leroy A Whitcomb",
   "titleCollection": "New York, U.S., State Census, 1925",
   "recordData": {
-    "Name": "Leroy A Whitcomb [Leroy A Gleason]",
+    "Name": "Leroy A Whitcomb",
     "Gender": "Male",
     "Color or Race": "White",
     "Age": "43",
@@ -22,6 +22,11 @@
     "Line Number": "46",
     "Page number": "21",
     "Household Members<br/>Age<br/>Relationship": "Robert E Whitcomb 2 Son<br/>Leroy A Whitcomb 43 Head<br/>Hazel Whitcomb 32 Wife<br/>William T Whitcomb 13 Son<br/>John H Whitcomb 8 Son<br/>Leroy A Whitcomb 5 Son"
+  },
+  "recordDataUserValues": {
+    "Name": [
+      "Leroy A Gleason"
+    ]
   },
   "household": {
     "headings": [

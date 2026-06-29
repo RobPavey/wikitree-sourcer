@@ -63,11 +63,10 @@ var internalOptionsRegistry = {
         "It is separate from the citation.",
     },
     {
-      name: "context",
-      label: "Context Menu",
+      name: "ui",
+      label: "UI & Page Mods",
       subsections: [],
-      comment:
-        "These options apply to the context menu. " + "The context menu is accessed via right-click of the mouse.",
+      comment: "These options apply to the UI layout and modifications made to web pages.",
     },
   ],
   optionsGroups: [],

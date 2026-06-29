@@ -84,15 +84,33 @@
       }
     }
   },
-  "wtSearchTemplates": [
-    "{{FamilySearch Record|M7RK-6J2}}"
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "M7RK-6J2"
+    }
   ],
-  "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CSQZ-6C9P-M}}",
-    "{{FamilySearch Record|M7RK-6JJ}}",
-    "{{FamilySearch Record|M7RK-6JV}}",
-    "{{FamilySearch Record|M7RK-6JK}}",
-    "{{FamilySearch Record|M7RK-6J2}}"
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-CSQZ-6C9P-M"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "M7RK-6JJ"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "M7RK-6JV"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "M7RK-6JK"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "M7RK-6J2"
+    }
   ],
   "collectionData": {
     "id": "1493747",

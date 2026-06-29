@@ -23,19 +23,22 @@ SOFTWARE.
 */
 
 import { displayMessageThenClosePopup, emptyMenu, displayMessageWithIcon } from "./popup_menu_building.mjs";
+import { logDebug } from "../../core/log_debug.mjs";
+import { isFirefox } from "../common/browser_check.mjs";
+import {
+  commonCheckPermissionForSite,
+  commonCheckPermissionForSites,
+  commonCheckPermissionForSiteFromUrl,
+  commonCheckPermissionForSiteMatches,
+} from "/base/browser/common/permissions.mjs";
 
 async function requestPermissionsFromUser(permissions, options) {
-  //console.log("requestPermissionsFromUser, permissions is:");
-  //console.log(permissions);
+  logDebug("requestPermissionsFromUser, permissions is:", permissions);
 
   const reasonMessage = options.reason;
   const allowSkip = options.allowSkip;
   const needsPopupDisplayed = options.needsPopupDisplayed;
-
-  function addBreak(fragment) {
-    let br = document.createElement("br");
-    fragment.appendChild(br);
-  }
+  const userClickedExtensionPopup = options.userClickedExtensionPopup;
 
   emptyMenu();
 
@@ -43,7 +46,6 @@ async function requestPermissionsFromUser(permissions, options) {
 
   let messageDiv1 = document.createElement("div");
   messageDiv1.className = "flex-parent jc-center";
-  addBreak(messageDiv1);
 
   let label1 = document.createElement("label");
   label1.className = "messageLabel";
@@ -55,21 +57,53 @@ async function requestPermissionsFromUser(permissions, options) {
   if (reasonMessage) {
     let messageDiv2 = document.createElement("div");
     messageDiv2.className = "flex-parent jc-center";
-    addBreak(messageDiv2);
 
     let label2 = document.createElement("label");
     label2.className = "messageLabel";
     label2.innerText = reasonMessage;
     messageDiv2.appendChild(label2);
 
-    addBreak(messageDiv2);
-
     fragment.appendChild(messageDiv2);
+  }
+
+  if (permissions && permissions.origins) {
+    let messageDivPermissions = document.createElement("div");
+    messageDivPermissions.className = "permissions-div";
+
+    let labelPermissions = document.createElement("label");
+    labelPermissions.className = "messageLabel";
+    labelPermissions.innerText =
+      "The exact permissions requested are these (the browser dialog may simplify them in the UI):";
+    messageDivPermissions.appendChild(labelPermissions);
+
+    let permissionsList = document.createElement("ul");
+    permissionsList.className = "permissions-list";
+    for (let permission of permissions.origins) {
+      let permissionsListItem = document.createElement("li");
+      permissionsListItem.textContent = permission;
+      permissionsList.appendChild(permissionsListItem);
+    }
+    messageDivPermissions.appendChild(permissionsList);
+
+    fragment.appendChild(messageDivPermissions);
+  }
+
+  if (userClickedExtensionPopup && isFirefox()) {
+    let messageDiv2a = document.createElement("div");
+    messageDiv2a.className = "flex-parent jc-center";
+
+    let label2 = document.createElement("label");
+    label2.className = "messageLabel";
+    label2.innerText =
+      "On Firefox just clicking the extension popup icon will have granted" +
+      " temporary permissions for this tab. Click the button below to grant non-temporary permission.";
+    messageDiv2a.appendChild(label2);
+
+    fragment.appendChild(messageDiv2a);
   }
 
   let messageDiv3 = document.createElement("div");
   messageDiv3.className = "flex-parent jc-center";
-  addBreak(messageDiv3);
 
   let label3 = document.createElement("label");
   label3.className = "messageLabel";
@@ -80,8 +114,6 @@ async function requestPermissionsFromUser(permissions, options) {
   }
   label3.innerText = label3Message;
   messageDiv3.appendChild(label3);
-
-  addBreak(messageDiv3);
 
   fragment.appendChild(messageDiv3);
 
@@ -117,7 +149,11 @@ async function requestPermissionsFromUser(permissions, options) {
   return new Promise(function (resolve, reject) {
     requestButton.onclick = async function (element) {
       let savedMenuStyle = menu.style;
+      // needed on Firefox or the popup covers the system dialog asking for confirmation
       menu.style = "display:none";
+
+      logDebug("request button pressed");
+
       try {
         let requestResult = await chrome.permissions.request(permissions);
         menu.style = savedMenuStyle;
@@ -125,16 +161,15 @@ async function requestPermissionsFromUser(permissions, options) {
           displayMessageWithIcon("warning", "Permission request failed");
           resolve(false);
         } else if (chrome.runtime.lastError) {
-          displayMessageWithIcon("warning", "Permission request failed");
+          displayMessageWithIcon("warning", "Permission request failed", chrome.runtime.lastError.message);
           resolve(false);
         } else {
           resolve(true);
         }
       } catch (error) {
-        console.log("Exception caught during chrome.permissions.request.");
-        console.log(error);
-        menu.style = savedMenuStyle;
-        displayMessageThenClosePopup("Permission request failed.");
+        console.error("Exception caught during chrome.permissions.request.", error);
+        //menu.style = savedMenuStyle;
+        displayMessageWithIcon("warning", "Permission request failed with exception.", error.message);
         resolve(false);
       }
     };
@@ -148,70 +183,24 @@ async function requestPermissionsFromUser(permissions, options) {
 }
 
 async function checkPermissionForSites(siteMatches, options) {
-  let permissions = { origins: siteMatches };
-
-  //console.log("checkPermissionForSites, permissions is:");
-  //console.log(permissions);
-
-  let hasPermission = await chrome.permissions.contains(permissions);
-
-  if (hasPermission) {
-    return true;
-  }
-
-  if (options.checkOnly) {
-    return false;
-  }
-
-  // request permission from browser
-  return await requestPermissionsFromUser(permissions, options);
+  return await commonCheckPermissionForSites(siteMatches, options, requestPermissionsFromUser);
 }
 
 async function checkPermissionForSite(matchString, options) {
-  let siteMatches = [matchString];
-  return await checkPermissionForSites(siteMatches, options);
+  return await commonCheckPermissionForSite(matchString, options, requestPermissionsFromUser);
 }
 
 async function checkPermissionForSiteFromUrl(url, options) {
-  //console.log("checkPermissionForSiteFromUrl, url is:");
-  //console.log(url);
-
-  let domain = url.replace(/https?\:\/\/[^\.]+\.([^\/]+)\/.*/, "$1");
-  if (!domain || domain == url) {
-    if (!options.defaultDomain) {
-      return false;
-    }
-    domain = options.defaultDomain;
-  }
-
-  //console.log("checkPermissionForSites, domain is:");
-  //console.log(domain);
-
-  // Note: it is best to use the scheme in the URL rather than "*" because the request
-  // has to be a subset of what is in the manifest. On Safari if there is a content match
-  // for, say, "https://*.wikitree.com/*" and we request "*://*.wikitree.com/*" it will get an
-  // exception.
-  let scheme = url.replace(/(https?)\:\/\/[^\.]+\.[^\/]+\/.*/, "$1");
-  if (!scheme || scheme == url) {
-    scheme = "https";
-  }
-
-  //console.log("checkPermissionForSites, scheme is:");
-  //console.log(scheme);
-
-  // we want a match string like: "*://*.ancestry.com/*"
-
-  let subDomain = "*";
-  if (options.overrideSubdomain) {
-    subDomain = options.overrideSubdomain;
-  }
-
-  let matchString = scheme + "://" + subDomain + "." + domain + "/*";
-
-  //console.log("checkPermissionForSites, matchString is:");
-  //console.log(matchString);
-
-  return await checkPermissionForSite(matchString, options);
+  return await commonCheckPermissionForSiteFromUrl(url, options, requestPermissionsFromUser);
 }
 
-export { checkPermissionForSite, checkPermissionForSites, checkPermissionForSiteFromUrl };
+async function checkPermissionForSiteMatches(siteName, options) {
+  return await commonCheckPermissionForSiteMatches(siteName, options, requestPermissionsFromUser);
+}
+
+export {
+  checkPermissionForSite,
+  checkPermissionForSites,
+  checkPermissionForSiteFromUrl,
+  checkPermissionForSiteMatches,
+};

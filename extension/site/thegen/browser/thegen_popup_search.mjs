@@ -24,7 +24,7 @@ SOFTWARE.
 
 import {
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addBackMenuItem,
   addSameEventMenuItem,
   beginMainMenu,
@@ -34,7 +34,7 @@ import {
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -87,14 +87,14 @@ async function thegenSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addThegenDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search The Genealogist",
     function (element) {
       thegenSearch(data.generalizedData, "");
     },
     function () {
-      setupThegenSearchSubMenu(data, backFunction, filter);
+      setupThegenSearchSubmenu(data, backFunction, filter);
     }
   );
 
@@ -109,7 +109,7 @@ function addThegenSameEventMenuItem(menu, data) {
 
 function addThegenSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupThegenSearchWithParametersSubMenu(data, backFunction);
+    setupThegenSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -117,7 +117,7 @@ function addThegenSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupThegenSearchSubMenu(data, backFunction, filter) {
+async function setupThegenSearchSubmenu(data, backFunction, filter) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -128,9 +128,9 @@ async function setupThegenSearchSubMenu(data, backFunction, filter) {
   endMainMenu(menu);
 }
 
-async function setupThegenSearchWithParametersSubMenu(data, backFunction) {
+async function setupThegenSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/thegen_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.ThegenData, thegenSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.ThegenData, thegenSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

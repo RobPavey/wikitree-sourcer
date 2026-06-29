@@ -207,5 +207,5 @@ async function checkForPendingSearchData() {
 }
 
 checkForPendingSearchData();
-siteContentInit(`psuk`, `site/psuk/core/psuk_extract_data.mjs`);
+siteContentInit("psuk");
 addClickedRowListener();

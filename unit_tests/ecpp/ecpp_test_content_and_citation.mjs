@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/ecpp/core/ecpp_extract_data.mjs";
 import { generalizeData } from "../../extension/site/ecpp/core/ecpp_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/ecpp/core/ecpp_build_citation.mjs";
 
@@ -38,7 +37,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("ecpp", extractData, regressionData, testManager);
+  await runExtractDataTests("ecpp", regressionData, testManager);
 
   await runGeneralizeDataTests("ecpp", generalizeData, regressionData, testManager);
 

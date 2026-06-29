@@ -1,0 +1,1774 @@
+{
+  "id" : "r_102939758206",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1716997871587,
+    "created" : 1716997871587
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QLWW-3K3N?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QLWW-3K3N?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QLWW-3K3N"
+    }
+  },
+  "description" : "#sd_p_102348687558",
+  "persons" : [ {
+    "id" : "p_102348687552",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "7023e437-dd31-476e-9317-e5ef7e4fc2e0",
+        "attribution" : {
+          "modified" : 1716997871587,
+          "created" : 1716997871587
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "55196b41-abf7-439e-9792-a2efc97531b2",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1717194997970,
+            "created" : 1717194997970
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/Q28T-D3BD?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QLWW-3K3N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BD" ]
+    },
+    "names" : [ {
+      "id" : "74a1c536-fd1d-47cd-bce5-1af00db87151",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "William Franklin Furr",
+        "parts" : [ {
+          "id" : "d7d264ee-6524-440b-9204-669983afac90",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Furr",
+          "fields" : [ {
+            "id" : "381f5b5e-d14d-4461-8933-1d8966750ecf",
+            "attribution" : {
+              "modified" : 1716997871587,
+              "created" : 1716997871587
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "4f9af3eb-15a9-4d1c-84c8-cbbaa41b842f",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Furr"
+            }, {
+              "id" : "4f9af3eb-15a9-4d1c-84c8-cbbaa41b842f",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Furr"
+            } ]
+          } ]
+        }, {
+          "id" : "265afe1a-0bb6-428f-ac7f-2f60aef66a5b",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "William Franklin",
+          "fields" : [ {
+            "id" : "1931ddb7-763b-4cc3-be8a-6840c4870807",
+            "attribution" : {
+              "modified" : 1716997871587,
+              "created" : 1716997871587
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "fb21fa97-4ca3-4379-8ba4-16d7901321c3",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "William Franklin"
+            }, {
+              "id" : "fb21fa97-4ca3-4379-8ba4-16d7901321c3",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "William Franklin"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "43b5f03b-7450-400f-9d80-45c83fb68283",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "e9b3b2b9-392b-4b57-aaca-b289dcfc78f7",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "William Franklin Furr"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "4ba5cb98-291d-4403-b7d1-3c95b02d5bc4",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://familysearch.org/types/facts/Unknown",
+      "place" : {
+        "id" : "5f118ecf-000a-42f5-b211-9689b4997f7b",
+        "original" : "Mecklenburg",
+        "fields" : [ {
+          "id" : "deadb470-1d28-46c7-8d46-f74142f0e8d7",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "0218585d-612b-49e0-b771-3c8f99e6e42f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Mecklenburg"
+          } ]
+        }, {
+          "id" : "f0782863-410d-4418-8203-d4b75690e874",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "39a35dc4-e1e6-4080-9ef2-74a2ab0074f7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "North Carolina"
+          } ]
+        } ]
+      },
+      "primary" : true
+    }, {
+      "id" : "94ac47b1-b1e8-4b7e-a2ef-4aec15863a30",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "be375a09-cf58-48f5-9b00-ded42e951881",
+        "original" : "1934",
+        "fields" : [ {
+          "id" : "b5cc9b66-013a-40c3-8d30-9303eb5bf301",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://familysearch.org/types/fields/YearEst",
+          "values" : [ {
+            "id" : "e05c3661-a157-4d5d-9b8b-fd6f053b2319",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1934"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "a7925d40-aea4-4ea7-b68d-cbc1d13e5ba9",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "46da8f98-018e-41b0-94c2-c20fcdbf5dda",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "20"
+      }, {
+        "id" : "46da8f98-018e-41b0-94c2-c20fcdbf5dda",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "20"
+      } ],
+      "qualifiers" : [ {
+        "value" : "3bb04fe2-6b7e-496e-b0aa-189b265c3b45",
+        "name" : "AgeIdentifier"
+      } ]
+    }, {
+      "id" : "060aba96-6197-4812-9fea-81a97d533fa9",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "bb8d56ca-edd1-4a91-8872-002f3229fab1",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_007742014_00218_00000_00013755419900_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "William Franklin Furr",
+      "gender" : "Male",
+      "birthDate" : "1934"
+    }
+  }, {
+    "id" : "p_102348687554",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "4e13421a-2d87-46f8-89c8-c4793e98fb94",
+        "attribution" : {
+          "modified" : 1716997871587,
+          "created" : 1716997871587
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "e293f521-dc73-488b-a418-e38bdff9376e",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1717194997970,
+            "created" : 1717194997970
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/Q28T-D3BX?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QLWW-3K3N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BX" ]
+    },
+    "names" : [ {
+      "id" : "0e7fab46-a20d-4234-b0d2-6c73fac66984",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Ralph Emerson Furr",
+        "parts" : [ {
+          "id" : "e6f8b25a-513d-456c-a35b-b27534ad8589",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Furr",
+          "fields" : [ {
+            "id" : "43f58ce5-6fcd-4fb1-9fed-049852281884",
+            "attribution" : {
+              "modified" : 1716997871587,
+              "created" : 1716997871587
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "e0924645-3bfe-4b9d-9210-0662b20d043a",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Furr"
+            }, {
+              "id" : "e0924645-3bfe-4b9d-9210-0662b20d043a",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Furr"
+            } ]
+          } ]
+        }, {
+          "id" : "9f15901f-36b9-4b79-9aaf-6f8f1287c6b6",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Ralph Emerson",
+          "fields" : [ {
+            "id" : "d4561af4-de03-4471-ac4a-2a056cc51900",
+            "attribution" : {
+              "modified" : 1716997871587,
+              "created" : 1716997871587
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "f78bf134-44db-48a0-b2a0-d3bb762d9199",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Ralph Emerson"
+            }, {
+              "id" : "f78bf134-44db-48a0-b2a0-d3bb762d9199",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Ralph Emerson"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "47184e4a-458a-4432-9e5e-170b87f4a619",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "750fdf30-db01-42bc-b8fb-2f7b2dc9c019",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Ralph Emerson Furr"
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "83815edd-9a8e-4397-bcc3-5a7501a74710",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "f85829bb-e783-417f-9a69-0a18335e299d",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_007742014_00218_00000_00013755419900_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Ralph Emerson Furr",
+      "gender" : "Male"
+    }
+  }, {
+    "id" : "p_102348687558",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "0d3f558c-8c45-44bd-b70a-29f8fbc3e3be",
+        "attribution" : {
+          "modified" : 1716997871587,
+          "created" : 1716997871587
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "d33a7aff-6875-4df1-8271-0916322229a6",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1717194997970,
+            "created" : 1717194997970
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/Q28T-D3BV?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QLWW-3K3N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BV" ]
+    },
+    "names" : [ {
+      "id" : "b5e42a40-58ec-4e30-8aaf-88e02a99de16",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Nancy L Furr",
+        "parts" : [ {
+          "id" : "0e5477ca-7ef9-4874-bcc5-b4ba900874b7",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Furr",
+          "fields" : [ {
+            "id" : "97c975a4-3474-4353-8e5e-fcddf777c3c5",
+            "attribution" : {
+              "modified" : 1716997871587,
+              "created" : 1716997871587
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "6dfc6209-3236-4388-966b-315c33c95dd3",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
+              "text" : "Furr"
+            }, {
+              "id" : "6dfc6209-3236-4388-966b-315c33c95dd3",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Furr"
+            } ]
+          } ]
+        }, {
+          "id" : "9227ef12-26a9-4b85-8477-444330e4cec9",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Nancy L",
+          "fields" : [ {
+            "id" : "0968b5c9-7e0c-43ed-86db-1a5b4d865592",
+            "attribution" : {
+              "modified" : 1716997871587,
+              "created" : 1716997871587
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "73575b86-fedc-4aef-8a4e-c3e5b626d41f",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Nancy L"
+            }, {
+              "id" : "73575b86-fedc-4aef-8a4e-c3e5b626d41f",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Nancy L"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "6894fa27-18f8-42d0-b178-c89b68bc2ed6",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "2c66c3d2-57d3-4ef8-96b8-b345362e83bb",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Nancy L Furr"
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "174053cf-8f23-45ae-a564-e5151ac13c3c",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "daf1e967-fece-4a3c-a562-56631317c052",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_007742014_00218_00000_00013755419900_002"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Nancy L Furr",
+      "gender" : "Female"
+    }
+  }, {
+    "id" : "p_102348687563",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "f6c1eec5-5ac1-4567-9b9d-abec10ee5e47",
+        "attribution" : {
+          "modified" : 1716997871587,
+          "created" : 1716997871587
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "976bb0ad-0749-40fa-b8ee-9c3dd633caff",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1717194997970,
+            "created" : 1717194997970
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/Q28T-D3BP?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QLWW-3K3N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BP" ]
+    },
+    "names" : [ {
+      "id" : "f8b9af3a-7584-42d6-9595-3994c6339d47",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Wilma Faye Yandle",
+        "parts" : [ {
+          "id" : "1d74a3d0-ced8-4291-93ef-44880336622e",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Yandle",
+          "fields" : [ {
+            "id" : "3cc09bbc-dbf7-48df-8a44-f8644c1bce38",
+            "attribution" : {
+              "modified" : 1716997871587,
+              "created" : 1716997871587
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "6f088524-c78b-4c0b-ac6c-2829277f509d",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Yandle"
+            }, {
+              "id" : "6f088524-c78b-4c0b-ac6c-2829277f509d",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Yandle"
+            } ]
+          } ]
+        }, {
+          "id" : "bff37ed0-124a-41a4-b3b3-e27cfe5c1a15",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Wilma Faye",
+          "fields" : [ {
+            "id" : "d4031f52-c0f5-4c67-bbac-1a895b962ed1",
+            "attribution" : {
+              "modified" : 1716997871587,
+              "created" : 1716997871587
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "e4b81ad6-5e94-4c44-a35e-ee79f7dc49ad",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Wilma Faye"
+            }, {
+              "id" : "e4b81ad6-5e94-4c44-a35e-ee79f7dc49ad",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Wilma Faye"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "0e097061-80dc-4697-8686-61ba1c705f29",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "8ef351e3-4ab8-4860-8423-8bc43aa42a03",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Wilma Faye Yandle"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "305c8814-8e8a-4f79-bf31-f7dcc722c01a",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "b8d319a9-1121-47bc-9f22-5cd3f752b016",
+        "original" : "1937",
+        "fields" : [ {
+          "id" : "b2ec5698-7953-4e3f-93a7-f34b0084fed0",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://familysearch.org/types/fields/YearEst",
+          "values" : [ {
+            "id" : "bb3fc44b-b0a2-44cd-8f2e-3ee27cf2aaa9",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_BIR_YEAR_EST",
+            "text" : "1937"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "d00b1210-3746-4bd5-99ee-5aa6854533dd",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "c43c67c7-bb3f-4fed-8f99-b8efebafa7c2",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SP_AGE_ORIG",
+        "text" : "17"
+      }, {
+        "id" : "c43c67c7-bb3f-4fed-8f99-b8efebafa7c2",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "SP_AGE",
+        "text" : "17"
+      } ],
+      "qualifiers" : [ {
+        "value" : "3a567b57-2d95-42ef-80b7-766e84eede0e",
+        "name" : "AgeIdentifier"
+      } ]
+    }, {
+      "id" : "d58d11d1-b975-41e2-b7f6-6f2e0709b349",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "e544a8e3-7229-4ba8-98fd-921454858894",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_007742014_00218_00000_00013755419900_003"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Wilma Faye Yandle",
+      "gender" : "Female",
+      "birthDate" : "1937"
+    }
+  }, {
+    "id" : "p_102348687566",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "2ca7ff98-11b3-494a-bf87-55d7ca18cbcb",
+        "attribution" : {
+          "modified" : 1716997871587,
+          "created" : 1716997871587
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "1aed6647-c73e-464e-ac24-3fc60804a3fd",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1717194997971,
+            "created" : 1717194997971
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_FTHR_SEX_CODE",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/Q28T-D3BT?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QLWW-3K3N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BT" ]
+    },
+    "names" : [ {
+      "id" : "536b90d0-3fa3-46ce-b62e-7893f664f3dc",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Herman William Yandle",
+        "parts" : [ {
+          "id" : "613564a4-2b73-4e1c-8eea-638bec73305d",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Yandle",
+          "fields" : [ {
+            "id" : "32d95a70-79dd-41fc-8b04-c258305ca00b",
+            "attribution" : {
+              "modified" : 1716997871587,
+              "created" : 1716997871587
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "8edec9a6-580c-4bc1-a950-7f7844d1c9ee",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_FTHR_NAME_SURN_ORIG",
+              "text" : "Yandle"
+            }, {
+              "id" : "8edec9a6-580c-4bc1-a950-7f7844d1c9ee",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_FTHR_NAME_SURN",
+              "text" : "Yandle"
+            } ]
+          } ]
+        }, {
+          "id" : "495dd0da-85e6-4384-8939-d6cddb5189f5",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Herman William",
+          "fields" : [ {
+            "id" : "a2d8665b-3286-484d-a977-9f9214509129",
+            "attribution" : {
+              "modified" : 1716997871587,
+              "created" : 1716997871587
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "a76e08c3-3c1f-4ba0-b51c-0055bd36780a",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_FTHR_NAME_GN_ORIG",
+              "text" : "Herman William"
+            }, {
+              "id" : "a76e08c3-3c1f-4ba0-b51c-0055bd36780a",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_FTHR_NAME_GN",
+              "text" : "Herman William"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "d303f3b5-6cfe-444e-9614-d8fd19fab989",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "9873aea7-dce8-4d5c-b462-7f585333f4cb",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_FTHR_NAME",
+            "text" : "Herman William Yandle"
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "19bf42dc-bc05-4ec7-8209-6bf75ef2cd51",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "ad558af5-0af4-4a20-ba5b-f23649308324",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_007742014_00218_00000_00013755419900_004"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Herman William Yandle",
+      "gender" : "Male"
+    }
+  }, {
+    "id" : "p_102348687570",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "128caf96-5aaf-474a-82f9-2abb0a69e6a5",
+        "attribution" : {
+          "modified" : 1716997871587,
+          "created" : 1716997871587
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "5e0642b2-5252-47fc-bf67-b3b6e0755c76",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1717194997971,
+            "created" : 1717194997971
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_MTHR_SEX_CODE",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/Q28T-D31M?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QLWW-3K3N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28T-D31M" ]
+    },
+    "names" : [ {
+      "id" : "07d4933b-8198-431d-8fe4-f9b36a05b424",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Margaret C Yandle",
+        "parts" : [ {
+          "id" : "2a3c6cdb-0b09-4200-b9c8-3938bf924f8b",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Yandle",
+          "fields" : [ {
+            "id" : "f18b4af2-3333-492d-b2ed-9c51644d0f78",
+            "attribution" : {
+              "modified" : 1716997871587,
+              "created" : 1716997871587
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "64380009-0294-4d8d-ad10-b253e573438b",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_MTHR_NAME_SURN_ORIG",
+              "text" : "Yandle"
+            }, {
+              "id" : "64380009-0294-4d8d-ad10-b253e573438b",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_MTHR_NAME_SURN",
+              "text" : "Yandle"
+            } ]
+          } ]
+        }, {
+          "id" : "b59a3d74-80a2-41e8-8930-c6e9e9d0e1f5",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Margaret C",
+          "fields" : [ {
+            "id" : "96815bd0-85e1-4b90-8cf8-4b7c33d3fbfa",
+            "attribution" : {
+              "modified" : 1716997871587,
+              "created" : 1716997871587
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "e17b438c-7486-41b5-9dbc-7abe668f24c3",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_MTHR_NAME_GN_ORIG",
+              "text" : "Margaret C"
+            }, {
+              "id" : "e17b438c-7486-41b5-9dbc-7abe668f24c3",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_MTHR_NAME_GN",
+              "text" : "Margaret C"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "3f3a408e-3999-4d47-9e7f-9ce44b60a16b",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "2945d91b-3c9f-4c19-8ce6-16d1ec2eb221",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_MTHR_NAME",
+            "text" : "Margaret C Yandle"
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "ce41286c-13d7-44f9-bea7-8f75f6dd8a3f",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "b1320ca7-d2c4-47ee-a9de-6d14a06c4417",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_007742014_00218_00000_00013755419900_005"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Margaret C Yandle",
+      "gender" : "Female"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "dfd93a17-1aa7-41f3-a537-0bdc7ef03af4",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_102348687552",
+      "resourceId" : "p_102348687552"
+    },
+    "person2" : {
+      "resource" : "#p_102348687563",
+      "resourceId" : "p_102348687563"
+    },
+    "facts" : [ {
+      "id" : "ac505242-d927-41dc-8b1f-305d8b98c864",
+      "attribution" : {
+        "modified" : 1716997871587,
+        "created" : 1716997871587
+      },
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "id" : "d8352d59-cce1-412d-8037-e42a6444fefe",
+        "original" : "13 Jun 1954",
+        "fields" : [ {
+          "id" : "1c125ac1-f9a2-41fa-a7da-3dfff5c2bc5c",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "45cd2361-a7ce-406a-883d-9531775a3071",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Jun"
+          } ]
+        }, {
+          "id" : "3f5a5a28-7280-4420-b7f0-d3316d33876d",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "9f1c3e50-792f-4ee3-8694-2d92e5dda16e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "13 Jun 1954",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "9f1c3e50-792f-4ee3-8694-2d92e5dda16e",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "13 Jun 1954"
+          } ]
+        }, {
+          "id" : "78554c03-8f21-4514-9822-d974d38554bd",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "e99bd68b-729f-4d97-ab9c-063afea3025e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "13"
+          } ]
+        }, {
+          "id" : "2f68691f-e7f5-4413-9e0b-1f4bcbc5ec94",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "093df441-a457-4c09-af70-94fead1ea7c7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1954"
+          }, {
+            "id" : "093df441-a457-4c09-af70-94fead1ea7c7",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1954"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "fe6516f8-6521-4e14-b34c-b971844237ef",
+        "original" : "Charlotte, Mecklenburg, North Carolina, United States",
+        "confidence" : "http://confidence/99",
+        "description" : "#place_4730266",
+        "fields" : [ {
+          "id" : "aab66b92-6830-4da8-99a4-0410df966f9a",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "e6b89dfd-b5c4-4d54-bb5d-825d1308dd68",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Charlotte"
+          } ]
+        }, {
+          "id" : "5e1c88ac-e13d-4625-a02d-1f1eb35dbbf7",
+          "attribution" : {
+            "modified" : 1716997871587,
+            "created" : 1716997871587
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "b09d61c6-d697-4d17-a587-57d0cac0ad80",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Charlotte"
+          }, {
+            "id" : "b09d61c6-d697-4d17-a587-57d0cac0ad80",
+            "confidence" : "http://confidence/99",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Charlotte, Mecklenburg, North Carolina, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4730266",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            }, {
+              "value" : "1011;1010",
+              "name" : "StdQualifier"
+            }, {
+              "value" : "Charlotte, Mecklenburg, North Carolina, United States",
+              "name" : "Context"
+            } ]
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "b93aa43f-bf21-4f20-a770-7d88f311e086",
+        "attribution" : {
+          "modified" : 1716997871587,
+          "created" : 1716997871587
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "8e6c7f62-79ba-423e-a057-4f0f4f3b37c9",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Marriage",
+          "resource" : "http://gedcomx.org/Marriage"
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "80f1615d-3844-4a65-99bd-0dac6ce35186",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_102348687554",
+      "resourceId" : "p_102348687554"
+    },
+    "person2" : {
+      "resource" : "#p_102348687552",
+      "resourceId" : "p_102348687552"
+    }
+  }, {
+    "id" : "f54ddf8a-4d0c-4732-98f7-4896a7a104c2",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_102348687558",
+      "resourceId" : "p_102348687558"
+    },
+    "person2" : {
+      "resource" : "#p_102348687552",
+      "resourceId" : "p_102348687552"
+    }
+  }, {
+    "id" : "2126be85-bbe7-4874-95b7-0b871b1331f9",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_102348687570",
+      "resourceId" : "p_102348687570"
+    },
+    "person2" : {
+      "resource" : "#p_102348687563",
+      "resourceId" : "p_102348687563"
+    }
+  }, {
+    "id" : "c8f0e2e9-545e-4797-a5f3-18b8e0a69060",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_102348687566",
+      "resourceId" : "p_102348687566"
+    },
+    "person2" : {
+      "resource" : "#p_102348687570",
+      "resourceId" : "p_102348687570"
+    }
+  }, {
+    "id" : "aa8d11f8-99b1-4677-8e5b-18540877c4fd",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_102348687554",
+      "resourceId" : "p_102348687554"
+    },
+    "person2" : {
+      "resource" : "#p_102348687558",
+      "resourceId" : "p_102348687558"
+    }
+  }, {
+    "id" : "be7f90fb-4695-4911-b2d9-255c0d2e8357",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_102348687566",
+      "resourceId" : "p_102348687566"
+    },
+    "person2" : {
+      "resource" : "#p_102348687563",
+      "resourceId" : "p_102348687563"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_102939758206",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:QLWW-3K3N",
+    "componentOf" : {
+      "description" : "#sd_c_1726957",
+      "descriptionId" : "sd_c_1726957"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1716997871587,
+    "modified" : 1717199899635,
+    "coverage" : [ {
+      "recordType" : "http://gedcomx.org/Marriage"
+    } ],
+    "citations" : [ {
+      "value" : "\"North Carolina, County Marriages, 1762-2011 \", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BD : Fri May 31 23:58:19 UTC 2024), Entry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for William Franklin Furr and Wilma Faye Yandle, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/13755419900" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:QLWW-3K3N" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/platform/records/collections/1726957?arkName=1:2:QLWW-3K3N"
+    }
+  }, {
+    "id" : "sd_c_1726957",
+    "about" : "https://www.familysearch.org/platform/records/collections/1726957",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223486672,
+    "modified" : 1777573509617,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "North Carolina, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/337"
+      },
+      "temporal" : {
+        "original" : "1762/2011",
+        "formal" : "+1762/+2011"
+      },
+      "recordType" : "http://gedcomx.org/Marriage"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "North Carolina, County Marriages, 1762-2011 "
+    }, {
+      "lang" : "zh",
+      "value" : "北卡羅來納州，郡級婚姻紀錄，1762 年 - 2011 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Caroline du Nord, Mariages des comtés, 1762-2011"
+    }, {
+      "lang" : "ru",
+      "value" : "Северная Каролина, браки в округе, 1762-2011 гг."
+    }, {
+      "lang" : "no",
+      "value" : "North Carolina, Fylkesekteskap, 1762-2011"
+    }, {
+      "lang" : "es",
+      "value" : "Matrimonios del condado, Carolina del Norte, 1762-2011"
+    }, {
+      "lang" : "mn",
+      "value" : "Хойд Каролина, тойргийн гэрлэлт, 1762-2011"
+    }, {
+      "lang" : "ko",
+      "value" : "노스캐롤라이나, 카운티 혼인, 1762-2011"
+    }, {
+      "lang" : "ja",
+      "value" : "ノースカロライナ州、郡での結婚、1762年-2011年"
+    }, {
+      "lang" : "it",
+      "value" : "Carolina del Nord, Matrimoni nella contea, 1762-2011"
+    }, {
+      "lang" : "id",
+      "value" : "Carolina Utara, Pernikahan Wilayah, 1762-2011"
+    }, {
+      "lang" : "hu",
+      "value" : "Észak-Karolina, Megyei házasságkötések, 1762–2011"
+    }, {
+      "lang" : "sk",
+      "value" : "Severná Karolína, okresné sobáše, 1762 – 2011"
+    }, {
+      "lang" : "th",
+      "value" : "นอร์ทแคโรไลนา, การแต่งงานในเทศมณฑล, ปี 1762-2011"
+    }, {
+      "lang" : "to",
+      "value" : "Noate Kalolaina, Ngaahi Mali ʻi he Vahefonua, 1762-2011"
+    }, {
+      "lang" : "bg",
+      "value" : "Северна Каролина, Бракосъчетания в окръга, 1762-2011"
+    }, {
+      "lang" : "km",
+      "value" : "អាពាហ៍ពិពាហ៍ខោនធីនៅការ៉ូលីណាខាងជើង, ឆ្នាំ 1762-2011"
+    }, {
+      "lang" : "pl",
+      "value" : "Karolina Północna, Śluby w hrabstwie, 1762-2011"
+    }, {
+      "lang" : "ro",
+      "value" : "Carolina de Nord, Căsătorii în ținut, 1762-2011"
+    }, {
+      "lang" : "sv",
+      "value" : "North Carolina, vigslar, 1762–2011"
+    }, {
+      "lang" : "sm",
+      "value" : "North Carolina, Hồ Sơ Kết Hôn Cấp Hạt, 1762-2011"
+    }, {
+      "lang" : "vi",
+      "value" : "North Carolina, Hồ Sơ Kết Hôn Cấp Hạt, 1762-2011"
+    }, {
+      "lang" : "sq",
+      "value" : "North Carolina, Martesat e Qarkut, 1762-2011"
+    }, {
+      "lang" : "pt",
+      "value" : "Carolina do Norte, Casamentos do Condado, 1762-2011"
+    }, {
+      "lang" : "de",
+      "value" : "North Carolina, County Marriages, 1762-2011"
+    }, {
+      "lang" : "uk",
+      "value" : "Північна Кароліна, шлюби в округах, 1762–2011 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Sjeverna Karolina, okružni brakovi, 1762. - 2011."
+    }, {
+      "lang" : "cs",
+      "value" : "Severní Karolína, krajské sňatky, 1762-2011"
+    }, {
+      "lang" : "da",
+      "value" : "North Carolina, amtsvielser, 1762-2011"
+    }, {
+      "lang" : "nl",
+      "value" : "North Carolina, County Huwelijken, 1762-2011"
+    }, {
+      "lang" : "et",
+      "value" : "Põhja-Carolina, Maakonna Abielud, 1762–2011"
+    }, {
+      "lang" : "fj",
+      "value" : "Vakamau ena Yasana o North Carolina, 1762-2011"
+    }, {
+      "lang" : "fi",
+      "value" : "Pohjois-Carolina, piirikunnan avioliitot, 1762-2011"
+    }, {
+      "lang" : "tl",
+      "value" : "North Carolina, Mga Kasal sa County, 1762-2011"
+    }, {
+      "lang" : "mg",
+      "value" : "Fanambadiana tao amin' ny Fivondronan' i Caroline Avaratra, 1762-2011"
+    }, {
+      "lang" : "ceb",
+      "value" : "North Carolina, Mga Kasal sa County, 1762-2011"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1726957" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C91D-93C4-1",
+    "componentOf" : {
+      "description" : "#sd_c_1726957",
+      "descriptionId" : "sd_c_1726957"
+    },
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "title:United States, North Carolina, Mecklenburg",
+        "description" : "https://www.familysearch.org/platform/places/description/393065"
+      },
+      "temporal" : {
+        "original" : "1954-1955",
+        "formal" : "+1954-01-01T00:00:00Z/+1955-12-31T23:59:59Z"
+      },
+      "recordType" : "http://gedcomx.org/MarriageLicense"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C91D-93C4-1" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/platform/records/collections/1726957?arkName=3:1:3Q9M-C91D-93C4-1"
+    }
+  }, {
+    "id" : "sd_p_102348687552",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BD",
+    "componentOf" : {
+      "description" : "#src_r_102939758206",
+      "descriptionId" : "src_r_102939758206"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"North Carolina, County Marriages, 1762-2011 \", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BD : Fri May 31 23:58:19 UTC 2024), Entry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "William Franklin Furr, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "William Franklin Furr, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BD" ]
+    }
+  }, {
+    "id" : "sd_p_102348687570",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:Q28T-D31M",
+    "componentOf" : {
+      "description" : "#src_r_102939758206",
+      "descriptionId" : "src_r_102939758206"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"North Carolina, County Marriages, 1762-2011 \", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BD : Fri May 31 23:58:19 UTC 2024), Entry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Margaret C Yandle, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Margaret C Yandle, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28T-D31M" ]
+    }
+  }, {
+    "id" : "sd_p_102348687554",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BX",
+    "componentOf" : {
+      "description" : "#src_r_102939758206",
+      "descriptionId" : "src_r_102939758206"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"North Carolina, County Marriages, 1762-2011 \", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BD : Fri May 31 23:58:19 UTC 2024), Entry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Ralph Emerson Furr, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Ralph Emerson Furr, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BX" ]
+    }
+  }, {
+    "id" : "sd_p_102348687558",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BV",
+    "componentOf" : {
+      "description" : "#src_r_102939758206",
+      "descriptionId" : "src_r_102939758206"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"North Carolina, County Marriages, 1762-2011 \", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BD : Fri May 31 23:58:19 UTC 2024), Entry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Nancy L Furr, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Nancy L Furr, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BV" ]
+    }
+  }, {
+    "id" : "sd_p_102348687566",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BT",
+    "componentOf" : {
+      "description" : "#src_r_102939758206",
+      "descriptionId" : "src_r_102939758206"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"North Carolina, County Marriages, 1762-2011 \", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BD : Fri May 31 23:58:19 UTC 2024), Entry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Herman William Yandle, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Herman William Yandle, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BT" ]
+    }
+  }, {
+    "id" : "sd_p_102348687563",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BP",
+    "componentOf" : {
+      "description" : "#src_r_102939758206",
+      "descriptionId" : "src_r_102939758206"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"North Carolina, County Marriages, 1762-2011 \", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BD : Fri May 31 23:58:19 UTC 2024), Entry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Wilma Faye Yandle, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Wilma Faye Yandle, \"North Carolina, County Marriages, 1762-2011 \""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BP" ]
+    }
+  }, {
+    "id" : "sd_auto_M9J1-7D7",
+    "resourceType" : "http://familysearch.org/types/collection/auto",
+    "coverage" : [ {
+      "spatial" : {
+        "description" : "https://www.familysearch.org/platform/places/description/337"
+      },
+      "temporal" : {
+        "formal" : "+1790-01-01T00:00:00Z/+1870-12-31T23:59:59Z"
+      }
+    } ],
+    "titles" : [ {
+      "value" : "United States, North Carolina, Marriages, from 1790 to 1870"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "http://group-service.rms.records.service.prod.us-east-1.prod.fslocal.org/group/M9J1-7D7" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_4730266",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/4730266" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "71cdd06a-658f-4737-a1a6-68335ced2c5b",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "06a99e39-c59f-45bd-a9d2-5af57c018327",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "d4c4d3df-bc83-4e71-b45a-9de02d43213e",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "43ee5827-f72f-4d2e-8c69-ed9444a2911c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000_007742014_00218_00000_00013755419900"
+    } ]
+  }, {
+    "id" : "2e69747a-e77b-4122-8375-961b176fc1f9",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "e5d3c76f-8819-464b-a9ec-420e71805c22",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "007742014_00218"
+    } ]
+  }, {
+    "id" : "e04cb287-c78d-40eb-9ced-1c438023d8a8",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "1bfa6f5e-76f3-4c42-8b4c-8bba863c7b05",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "7"
+    } ]
+  }, {
+    "id" : "0ae5572a-f757-452c-80a2-53b2dcc83770",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/FilmNbr",
+    "values" : [ {
+      "id" : "4cb1ee61-17f8-408e-a9a6-759979bcd320",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "002447710"
+    } ]
+  }, {
+    "id" : "c959b35f-9aeb-4eda-ba3e-8c5abc2ddfab",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "17bd9a4c-191f-4fb7-9ca7-7325ac8025d9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "15-1474; 2016-11-14 13:48:47; CarterTP; United States, State and County Marriages, 1750-1990 - FSI (Multicollection)"
+    } ]
+  }, {
+    "id" : "b27d50bd-971e-44c0-8913-8f981e71fee4",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "9d81240a-1b0b-4901-8fcd-bc60c8a87c3f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_IMAGE_APID\":\"TH-909-53461-89339-64\",\"FS_DAS_VERIFY\":\"18-NOV-16\",\"FS_IMAGE_ID\":\"/007742014/007742014_00218.jpg\",\"FS_IMS_IMAGE_ID\":\"007742014_00218\",\"EVENT_PLACE_PARENT_JUR\":\"393065/337/1\",\"FS_IMAGE_NBR\":\"00218\",\"FS_UNIQUE_ID\":\"13755419900\",\"EVENT_PLACE_YEAR_RANGE\":\"1848-1994\",\"EVENT_PLACE_LEVEL_1\":\"United States\",\"FS_FOLDER_IMAGE_SEQ\":\"218\",\"EVENT_PLACE_LEVEL_2\":\"North Carolina\"}"
+    } ]
+  }, {
+    "id" : "9bc9ca1d-c1e3-4cfa-a4af-7e4e406ec31a",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "d454e5c5-f3a0-4ced-8a49-378cadd8ce54",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "15-1474"
+    } ]
+  }, {
+    "id" : "bcf72f03-df27-4a01-b03f-be667be3fe00",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "63404fd7-5b5a-42d7-9a90-86ef9c44957f",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"FS_COLLECTION_ID\":\"1726957\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-C91D-93C4-1\",\"FS_FOLDER\":\"007742014\"}"
+    } ]
+  }, {
+    "id" : "2b745d7c-39c8-45ec-90f3-32c007149398",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "001e6e8e-05d2-4aab-9bb8-dc8964ba2cb2",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "United States, State and County Marriages, 1750-1990 - FSI (Multicollection)"
+    } ]
+  }, {
+    "id" : "b5af846a-f193-4a95-8c22-ee1be4227d2f",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "30fa6ef4-b2cb-4607-bfbe-632343f8481c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "5e9ab81a-a21b-41e7-b9bd-cc9443176c05",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "95579ff6-2e88-488c-960e-52882ba2620c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "North Carolina, United States"
+    } ]
+  }, {
+    "id" : "5bfde2a1-6ef5-40d9-9b9d-c67118088857",
+    "attribution" : {
+      "modified" : 1716997871587,
+      "created" : 1716997871587
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "2614f0b8-32ab-42c9-8a1f-f82764742212",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "40694"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "007742014"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "218"
+    } ]
+  } ]
+}

@@ -2,6 +2,18 @@
   "sourceType": "record",
   "recordType": "SocialSecurity",
   "sourceOfData": "ancestry",
+  "alternateFieldValues": {
+    "Name": [
+      "Francis Lewis Lemoigne",
+      "Francis Louis Lemoigne",
+      "Francis Lemoigne"
+    ],
+    "Birth Place": [
+      "Kalispell FL??, Montana",
+      "Kalispell FL??",
+      "Montana"
+    ]
+  },
   "name": {
     "name": "Francis Lewis Lemoigne"
   },

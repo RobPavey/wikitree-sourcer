@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/bg/core/bg_extract_data.mjs";
 import { generalizeData } from "../../extension/site/bg/core/bg_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/bg/core/bg_build_citation.mjs";
 
@@ -50,6 +49,10 @@ const regressionData = [
   {
     caseName: "isabella_crawford_d_17_dec_1948",
     url: "https://billiongraves.com/grave/Isabella-Crawford/38296403",
+  },
+  {
+    caseName: "ivan_lucien_freeman_1922_1999_2026format",
+    url: "https://billiongraves.com/grave/Ivan-Lucien-Freeman/6498843?referrer=myheritage",
   },
   {
     caseName: "margaret_ann_craney_d_1909",
@@ -94,7 +97,7 @@ const regressionData = [
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("bg", extractData, regressionData, testManager);
+  await runExtractDataTests("bg", regressionData, testManager);
 
   await runGeneralizeDataTests("bg", generalizeData, regressionData, testManager);
 

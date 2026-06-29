@@ -36,6 +36,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "L6BB-ZWD"
+    }
+  ],
   "personRepoRef": "L6BB-ZWD",
   "hasValidData": true
 }

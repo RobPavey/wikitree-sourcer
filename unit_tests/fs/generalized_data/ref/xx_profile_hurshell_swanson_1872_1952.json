@@ -127,6 +127,12 @@
       }
     }
   },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "L67M-27N"
+    }
+  ],
   "personRepoRef": "L67M-27N",
   "hasValidData": true
 }

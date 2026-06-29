@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "MedicalPatient",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Jessie",
+    "nonPrefixHonorific": "Mrs"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1923"
+  },
+  "hasValidData": true
+}

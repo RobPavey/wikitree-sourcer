@@ -25,6 +25,29 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
+  siteName: "gbooks",
+  matches: [
+    "*://*.google.com/books/*",
+    "*://*.google.co.uk/books/*",
+    "*://*.google.ca/books/*",
+    "*://*.google.com.au/books/*",
+    "*://*.google.de/books/*",
+    "*://*.google.ie/books/*",
+    "*://*.google.it/books/*",
+    "*://*.google.fr/books/*",
+    "*://*.google.se/books/*",
+    "*://*.google.mx/books/*",
+  ],
+  // Field to tell the popup: "If you grant one of the above, you MUST also grant this"
+  requiredAdditionalOrigins: ["*://books.google.com/books*"],
+  additionalContentScripts: [
+    {
+      id: "gbooks_content_iframe",
+      matches: ["*://books.google.com/books*"],
+      allFrames: true,
+      js: ["site/gbooks/browser/gbooks_content_iframe.js"],
+    },
+  ],
   repositoryName: "Google Books",
   usPhoneNumber: "",
   email: "",
@@ -33,7 +56,7 @@ const siteData = {
 };
 
 function register() {
-  registerSite("gbooks", siteData);
+  registerSite(siteData);
 }
 
-export { register };
+register();

@@ -25,6 +25,7 @@ SOFTWARE.
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { DataString } from "../../../base/core/data_string.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import {
   buildFsRecordLinkOrTemplate,
   buildFsImageLinkOrTemplate,
@@ -208,6 +209,44 @@ function buildDataString(ed, gd, dataStyle, builder) {
 
   dataString = builder.buildDataList(recordData, removeUnwantedKeysForDataString);
 
+  // sometimes this can be a record for another person and there is very little data in recordData
+  let numKeys = 0;
+  if (recordData) {
+    numKeys = Object.keys(recordData).length;
+  }
+  if (numKeys < 4 && ed.relationshipToFactPerson) {
+    function addPrimaryPersonPart(label, value) {
+      if (value) {
+        dataString = builder.addKeyValuePairToDataListString(dataString, label, value);
+      }
+    }
+    addPrimaryPersonPart("Relationship to fact person", ed.relationshipToFactPerson);
+    addPrimaryPersonPart("Fact", ed.relatedPersonFactType);
+    if (ed.relatedPersonFullName) {
+      addPrimaryPersonPart("Related person name", ed.relatedPersonFullName);
+    } else {
+      addPrimaryPersonPart("Related person given name", ed.relatedPersonGivenName);
+      addPrimaryPersonPart("Related person surname", ed.relatedPersonSurname);
+    }
+    addPrimaryPersonPart("Related person gender", ed.relatedPersonGender);
+    if (ed.relatedPersonBirthDate) {
+      addPrimaryPersonPart("Related person birth date", ed.relatedPersonBirthDate);
+    } else {
+      addPrimaryPersonPart("Related person birth year", ed.relatedPersonBirthYear);
+    }
+    if (ed.relatedPersonSpouseFullName) {
+      addPrimaryPersonPart("Related person spouse name", ed.relatedPersonSpouseFullName);
+    } else {
+      addPrimaryPersonPart("Related person spouse given name", ed.relatedPersonSpouseGivenName);
+      addPrimaryPersonPart("Related person spouse surname", ed.relatedPersonSpouseSurname);
+    }
+    if (ed.eventDate) {
+      addPrimaryPersonPart("Event date", ed.eventDate);
+    } else {
+      addPrimaryPersonPart("Event year", ed.eventYear);
+    }
+    addPrimaryPersonPart("Event place", ed.eventPlace);
+  }
   return dataString;
 }
 
@@ -352,7 +391,7 @@ function buildSourceReferenceFromRecord(ed, gd, options) {
     addValue("Book", refData.sourceBookNbr);
     addValue("Page", refData.sourcePageNbr);
 
-    addValue("Affiliate Name", refData.externalRepositoryName);
+    addValue("Affiliate Name", StringUtils.convertHtmlTagsToWikiMarkup(refData.externalRepositoryName));
     addValue("Affiliate Publication Title", refData.externalPublicationTitle);
     addValue("Affiliate Publication Number", refData.externalPublicationNumber);
     addValue("Affiliate Film Number", refData.externalFilmNumber);
