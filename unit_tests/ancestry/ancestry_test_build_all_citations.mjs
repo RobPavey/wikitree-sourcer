@@ -424,6 +424,12 @@ const regressionData = [
     userOptions: standardOptions,
   },
   {
+    // Saved by Celia in Jun 2026 with the new Ancestry format (which I could not see)
+    caseName: "william_chandler_1783_1842_celia",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262552029306/facts",
+    userOptions: standardOptions,
+  },
+  {
     // Test case that case otherSourced and webLinks - though we ignore them
     caseName: "william_whiting_1864_1940",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262551329535/facts",

@@ -555,12 +555,24 @@ function buildAncestryRecordTemplate(ed, options) {
 
 function buildAncestryImageTemplate(ed, options) {
   let target = options.citation_general_target;
+
+  let url = ed.url;
+  let dbId = ed.dbId;
+  let recordId = ed.recordId;
+
+  if (ed.pageType == "record") {
+    // only comes here if there is no sharingObj
+    url = ed.imageUrl;
+    dbId = ed.imageDbId;
+    recordId = ed.imageRecordId;
+  }
+
   if (target == "plain") {
-    return "Ancestry Image Link: " + ed.url;
+    return "Ancestry Image Link: " + url;
   }
 
   // Note that the Ancestry Image template has no 3rd (domain parameter)
-  return "{{Ancestry Image|" + ed.dbId + "|" + ed.recordId + "}}";
+  return "{{Ancestry Image|" + dbId + "|" + recordId + "}}";
 }
 
 function buildAncestrySharingTemplateFromSharingDataObj(options, dataObj) {
@@ -695,6 +707,10 @@ function buildCoreCitation(ed, gd, options, sharingDataObj, builder) {
     builder.databaseHasImages = true;
 
     builder.plainSharingLink = buildPlainAncestrySharingLinkFromSharingDataObj(sharingDataObj);
+  } else {
+    if (ed.imageRecordId) {
+      builder.sharingLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(ed, options);
+    }
   }
 
   builder.recordLinkOrTemplate = buildAncestryRecordTemplate(ed, options);
