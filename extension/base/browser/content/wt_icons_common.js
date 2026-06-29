@@ -858,7 +858,12 @@ class WikiTreeSourcerPageModsHelper {
         if (iconParent) {
           let iconElement = iconParent.querySelector(".wt-sourcer-processing-icon");
           if (iconElement && iconElement.isConnected) {
-            iconParent.removeChild(iconElement);
+            // iconParent should be the parent of iconElement but one user got an exception
+            // because it was not - must be some edge case
+            let actualParent = iconElement.parentElement;
+            if (actualParent && actualParent.isConnected) {
+              actualParent.removeChild(iconElement);
+            }
           } else {
             // This case can happen when switching back and forth between FS pages
             // It is not really an error and can be safely ignored
