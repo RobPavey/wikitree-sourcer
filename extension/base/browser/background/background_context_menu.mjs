@@ -127,6 +127,7 @@ function openSitePlainText(siteContextModule, phase, tab, text, options) {
         } else {
           openPageUsingSearchData(tab, options, transformed);
         }
+        return true;
       }
     }
   }

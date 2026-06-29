@@ -34,6 +34,14 @@ const regressionData = [
     numPhases: 3,
   },
   {
+    // From https://www.wikitree.com/wiki/Ewers-14
+    // No space after end of reg num
+    caseName: "birth_1909_robert_barrett_wt",
+    inputText: `↑ Qld BDM, Robert Edward Barrett Event date: 12/04/1909 Event type: Birth registration Registration details: 1909/C/7656Mother: Helen May Ewers Father/parent: Henry John Barrett`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
     // From https://www.wikitree.com/wiki/Greentree-15
     caseName: "death_1961_george_greentree_wt",
     inputText: `Death: "Australia, Death Index, 1787-1985"
