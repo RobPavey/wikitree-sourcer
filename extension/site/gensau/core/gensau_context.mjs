@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CitationParser } from "../../../base/core/citation_parser.mjs";
+import { CitationParser, doesTextMatchForContextPhase } from "../../../base/core/citation_parser.mjs";
 import { GensauUriBuilder } from "./gensau_uri_builder.mjs";
 
 const phaseMatches = [
@@ -384,22 +384,7 @@ function transformPlainText(plainText, phase, options) {
     return undefined;
   }
 
-  let isMatch = false;
-  let matches = phaseMatches[phase];
-  for (let matchSet of matches) {
-    let matchesThisSet = true;
-    for (let regex of matchSet) {
-      if (!regex.test(plainText)) {
-        matchesThisSet = false;
-      }
-    }
-    if (matchesThisSet) {
-      isMatch = true;
-      break;
-    }
-  }
-
-  if (!isMatch) {
+  if (!doesTextMatchForContextPhase(plainText, phase, phaseMatches)) {
     return undefined;
   }
 

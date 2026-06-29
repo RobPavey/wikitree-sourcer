@@ -31,8 +31,7 @@ function transformPlainText(plainText, phase, options) {
 
   let lcText = plainText.toLowerCase();
 
-  // check for Victorian BDM (do this last because another site citation might have the given name
-  // Victoria in it).
+  // check for NSW BDM on phase 1
   if (phase != 1) {
     return undefined;
   }
