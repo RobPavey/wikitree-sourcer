@@ -1,0 +1,16 @@
+{
+  "url": "https://www.genealogysa.org.au/index.php?option=com_hikashop&view=product&layout=show&Itemid=223&uid=144387&coid=birth&cid=5",
+  "success": true,
+  "titleSurname": "KEMP",
+  "titleGivenNames": "Abbey",
+  "databaseName": "Birth Registrations",
+  "recordData": {
+    "Surname": "KEMP",
+    "Given Names": "Abbey",
+    "Gender": "F",
+    "Father": "Richard KEMP",
+    "District": "Daly",
+    "Book/Page": "143/400",
+    "Birth Year": "1874"
+  }
+}

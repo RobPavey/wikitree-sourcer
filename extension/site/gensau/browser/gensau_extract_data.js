@@ -56,9 +56,24 @@ function extractData(document, url) {
   }
   result.success = false;
 
-  let headingElement = document.querySelector("div.header div.heading");
+  let headingElement = document.querySelector("div.gsa-record-header");
   if (!headingElement) {
-    return result;
+    // preJun2026 format
+    headingElement = document.querySelector("div.header div.heading");
+    if (!headingElement) {
+      // attempt to be defensive for future changes
+      let contentDiv = document.querySelector("div.content");
+      if (contentDiv) {
+        let headingH2 = contentDiv.querySelector("h2");
+        if (headingH2) {
+          headingElement = headingH2.parentElement;
+        }
+      }
+
+      if (!headingElement) {
+        return result;
+      }
+    }
   }
 
   let headingH2 = headingElement.querySelector("h2");

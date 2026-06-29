@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Kemp",
+    "forenames": "Abbey"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "1874"
+  },
+  "birthPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "registrationDistrict": "Daly",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Richard Kemp"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "birth",
+    "year": "1874",
+    "registrationNumber": "143/400",
+    "volume": "143",
+    "page": "400"
+  },
+  "hasValidData": true
+}
