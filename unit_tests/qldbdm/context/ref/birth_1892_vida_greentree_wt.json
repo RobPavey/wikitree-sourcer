@@ -1,0 +1,13 @@
+{
+  "siteName": "qldbdm",
+  "reuseTab": true,
+  "permissionsMessage": "To perform a search on Queensland BDM a content script needs to be loaded on the familyhistory.bdm.qld.gov.au search page.",
+  "searchData": {
+    "url": "https://www.familyhistory.bdm.qld.gov.au/reset",
+    "fieldData": {
+      "regyear": "1892",
+      "regtype": "C",
+      "regnum": "171"
+    }
+  }
+}

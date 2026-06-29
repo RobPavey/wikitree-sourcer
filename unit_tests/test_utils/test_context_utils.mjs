@@ -81,6 +81,11 @@ async function runContextTests(siteName, regressionData, testManager, cleanStale
       continue;
     }
 
+    // remove any time stamp as that will cause test failures
+    if (result && result.searchData && result.searchData.timeStamp) {
+      delete result.searchData.timeStamp;
+    }
+
     // write out result file.
     if (!writeTestOutputFile(result, siteName, resultDir, testData, logger)) {
       continue;
