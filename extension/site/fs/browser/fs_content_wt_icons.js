@@ -1485,7 +1485,7 @@ if (runningExtensionId === currentExtensionId) {
       iconConfig.isFetchError = true;
       let itemText = `could not get data from the WT+ API`;
       if (error.message == "Blocked request") {
-        itemText += " because your IP address was blocked";
+        itemText += " because your IP address was blocked (see https://plus.wikitree.com/ for details)";
       } else {
         itemText += " due to " + error.message;
       }
