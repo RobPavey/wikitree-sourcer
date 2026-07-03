@@ -83,6 +83,7 @@ const siteNames = [
   "trove",
   "ushmm",
   "vicbdm",
+  "wagovau",
   "wiewaswie",
   "wikipedia",
   "wikitree",

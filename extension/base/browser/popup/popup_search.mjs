@@ -255,6 +255,10 @@ function testGeneralizedDataForDatesAndCountries(gd, siteConstraints) {
 }
 
 function computeDynamicConstraints(constraints) {
+  if (!constraints) {
+    return;
+  }
+
   const now = new Date();
   const yearNow = now.getFullYear();
 
