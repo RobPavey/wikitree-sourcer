@@ -24,30 +24,38 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
+const sourceReferenceFields = ["Registration Number"];
+
 function buildWagovauUrl(ed, builder) {
   return ed.url;
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = "Put Source Title here";
+  builder.sourceTitle = "Western Australian Online Index";
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  builder.sourceReference =
+    "Government of Western Australia; Department of Justice; Registry of Births, Deaths and Marriages";
+  builder.addSourceReferenceFieldsFromRecordData(ed.recordData, sourceReferenceFields);
 }
 
 function buildRecordLink(ed, gd, builder) {
   var wagovauUrl = buildWagovauUrl(ed, builder);
 
-  let recordLink = "[" + wagovauUrl + " Western Australia BDM Record]";
+  let recordLink = "[" + wagovauUrl + " Western Australia Online Search]";
   builder.recordLinkOrTemplate = recordLink;
+}
+
+function buildDataList(ed, gd, builder) {
+  builder.addListDataStringFromRecordData(ed.recordData, sourceReferenceFields);
 }
 
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  buildDataList(ed, gd, builder);
 }
 
 function buildCitation(input) {
