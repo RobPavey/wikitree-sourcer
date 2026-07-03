@@ -1,4 +1,17 @@
 {
   "url": "https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool",
-  "success": true
+  "success": true,
+  "recordType": "birth",
+  "recordData": {
+    "Surname": "Wilson",
+    "Given Names": "William Edward",
+    "Sex": "M",
+    "Father": "William Henry WILSON",
+    "Mother": "Agnes MCKENNA",
+    "Place of Birth": "Kalgoorlie",
+    "Year of Birth": "1913",
+    "Registration District": "East Coolgardie",
+    "Registration Number": "1800308",
+    "Registration Year": "1913"
+  }
 }
