@@ -1,6 +1,39 @@
 {
   "sourceOfData": "wagovau",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "William Edward"
+  },
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "1913"
+  },
+  "birthPlace": {
+    "placeString": "Kalgoorlie, Western Australia, Australia",
+    "state": "Western Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Kalgoorlie"
+  },
+  "registrationDistrict": "East Coolgardie",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Wilson",
+        "forenames": "William Henry"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "McKenna",
+        "forenames": "Agnes"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "birth",
+    "registrationNumber": "1800308"
+  },
   "hasValidData": true
 }

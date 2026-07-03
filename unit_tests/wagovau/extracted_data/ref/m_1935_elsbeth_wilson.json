@@ -1,0 +1,18 @@
+{
+  "url": "https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool",
+  "success": true,
+  "recordType": "marriage",
+  "recordData": {
+    "Surname": "Wilson",
+    "Given Names": "Elspeth Punton",
+    "Sex": "Female",
+    "Spouse Surname": "Smith",
+    "Spouse Given Names": "Alfred Edward Victor",
+    "Spouse Sex": "Male",
+    "Place of Marriage": "Perth",
+    "Year of Marriage": "1935",
+    "Registration District": "Perth",
+    "Registration Number": "101155",
+    "Registration Year": "1935"
+  }
+}

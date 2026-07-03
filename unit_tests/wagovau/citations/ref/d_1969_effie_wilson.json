@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool Western Australia BDM Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool Western Australia BDM Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool Western Australia BDM Record] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

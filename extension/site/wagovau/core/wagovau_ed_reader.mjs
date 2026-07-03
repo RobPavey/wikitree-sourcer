@@ -24,10 +24,118 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
+
+function cleanName(edReader, inputString) {
+  let cleanFamilyName = NameUtils.convertNameFromAllCapsToMixedCase(familyNameString);
+}
+
+const recordTypes = [
+  // BDM
+  {
+    recordType: RT.BirthRegistration,
+    matchData: {
+      type: ["birth"],
+    },
+    rules: {
+      birthDate: {
+        recordDataKeys: ["Year of Birth"],
+      },
+      birthPlace: {
+        recordDataKeys: ["Place of Birth"],
+      },
+    },
+  },
+  {
+    recordType: RT.DeathRegistration,
+    matchData: {
+      type: ["death"],
+    },
+    rules: {
+      deathDate: {
+        recordDataKeys: ["Year of Death"],
+      },
+      deathPlace: {
+        recordDataKeys: ["Place of Death"],
+      },
+    },
+  },
+  {
+    recordType: RT.MarriageRegistration,
+    matchData: {
+      type: ["marriage"],
+    },
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Year of Marriage"],
+      },
+      eventPlace: {
+        recordDataKeys: ["Place of Marriage"],
+      },
+      spouseLastName: {
+        recordDataKeys: ["Spouse Surname"],
+      },
+      spouseForenames: {
+        recordDataKeys: ["Spouse Given Names"],
+      },
+    },
+  },
+];
+
+const baseRecordTypeData = {
+  rules: {
+    lastName: {
+      recordDataKeys: ["Surname"],
+    },
+    forenames: {
+      recordDataKeys: ["Given Names"],
+    },
+    gender: {
+      recordDataKeys: ["Sex"],
+    },
+    motherFullName: {
+      recordDataKeys: ["Mother"],
+    },
+    fatherFullName: {
+      recordDataKeys: ["Father"],
+    },
+    registrationDistrict: {
+      recordDataKeys: ["Registration District"],
+    },
+  },
+  advancedNameRules: {
+    inFullNameLastNamesIsInUpperCase: true,
+  },
+  advancedPlaceRules: {
+    addImpliedPartsToBlankPlace: true,
+    impliedCountryName: "Australia",
+    impliedStateName: "Western Australia",
+  },
+};
+
+const unclassifiedTypeData = {
+  recordType: RT.Unclassified,
+};
 
 class WagovauEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
+    this.baseRecordTypeData = baseRecordTypeData;
+
+    let matchConfig = {
+      type: {
+        matchType: ExtractedDataReader.MatchType.EqualsOneOf,
+        value: ed.recordType,
+      },
+    };
+
+    let recordTypeData = this.getRecordTypeMatch(recordTypes, matchConfig);
+    if (recordTypeData) {
+      this.recordTypeData = recordTypeData;
+      this.recordType = recordTypeData.recordType;
+    } else {
+      this.recordTypeData = unclassifiedTypeData;
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -35,6 +143,25 @@ class WagovauEdReader extends ExtractedDataReader {
   // Note: there are default implementations in ExtractedDataReader and, if using a data-driven
   // style, you may not need to override them here.
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  getCollectionData() {
+    let id = "";
+    if (this.recordType == RT.BirthRegistration) {
+      id = "birth";
+    } else if (this.recordType == RT.DeathRegistration) {
+      id = "death";
+    } else if (this.recordType == RT.MarriageRegistration) {
+      id = "marriage";
+    }
+    let collectionData = { id: id };
+
+    let registrationNumber = this.ed.recordData["Registration Number"];
+    if (registrationNumber) {
+      collectionData.registrationNumber = registrationNumber;
+    }
+
+    return collectionData;
+  }
 }
 
 export { WagovauEdReader };

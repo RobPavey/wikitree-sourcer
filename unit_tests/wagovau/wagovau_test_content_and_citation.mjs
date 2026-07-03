@@ -34,6 +34,14 @@ const regressionData = [
     caseName: "b_1913_william_wilson",
     url: "https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool",
   },
+  {
+    caseName: "d_1969_effie_wilson",
+    url: "https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool",
+  },
+  {
+    caseName: "m_1935_elsbeth_wilson",
+    url: "https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool",
+  },
 ];
 
 async function runTests(testManager) {

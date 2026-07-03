@@ -1,0 +1,39 @@
+{
+  "sourceOfData": "wagovau",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "Effie Olive"
+  },
+  "personGender": "female",
+  "deathDate": {
+    "dateString": "1969"
+  },
+  "deathPlace": {
+    "placeString": "Fremantle, Western Australia, Australia",
+    "state": "Western Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Fremantle"
+  },
+  "registrationDistrict": "Fremantle",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Telfer",
+        "forenames": "Frank"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Telfer",
+        "forenames": "Margaret"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "death",
+    "registrationNumber": "2700454"
+  },
+  "hasValidData": true
+}
