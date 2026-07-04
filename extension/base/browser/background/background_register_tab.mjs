@@ -153,7 +153,8 @@ async function handleGetRegisteredTabMessage(request, sender, sendResponse) {
 }
 
 async function handleSendMessageToRegisteredTabMessage(request, sender, sendResponse) {
-  console.log("handleSendMessageToRegisteredTabMessage, siteName is: " + request.siteName);
+  //console.log("handleSendMessageToRegisteredTabMessage, siteName is: " + request.siteName);
+  //console.log("handleSendMessageToRegisteredTabMessage, urlToCreate is: " + request.urlToCreate);
 
   let siteName = request.siteName;
   let requestToSend = request.requestToSend;

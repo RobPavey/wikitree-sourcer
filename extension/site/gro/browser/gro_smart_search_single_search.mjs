@@ -228,8 +228,8 @@ async function doPostOnGroPage(url, postData) {
         } else if (response.responseFromTab) {
           result.errorCondition = "Failed but response from tab";
           result.status = response.responseFromTab.status;
-        } else if (response.lastError) {
-          result.errorCondition = response.lastError;
+        } else if (response.lastError && response.lastError.message) {
+          result.errorCondition = response.lastError.message;
         } else if (response.error) {
           result.errorCondition = "Exception in background";
           result.error = error;
