@@ -1004,6 +1004,24 @@ const DateUtils = {
     return DateUtils.areParsedDatesEquivalent(parsedDateA, parsedDateB);
   },
 
+  isDateStringMorePreciseThanJustYearOrRange: function (dateString) {
+    let parsedDate = DateUtils.parseDateString(dateString);
+
+    if (!parsedDate.isValid) {
+      return false;
+    }
+
+    if (parsedDate.isRange) {
+      return false;
+    }
+
+    if (!parsedDate.hasMonth) {
+      return false;
+    }
+
+    return true;
+  },
+
   subtractMsFromDateString: function (dateString, msToSubtract) {
     let parsedDate = DateUtils.parseDateString(dateString);
 
