@@ -336,16 +336,20 @@ function pickBestDateForCompare(recordDate, sourceDate, sourceYear) {
 
 // this can be used both for sorting sources and facts
 function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
-  let recordTypeSortPriority = {};
-  recordTypeSortPriority[RT.Birth] = 1;
-  recordTypeSortPriority[RT.Baptism] = 3;
+  let recordTypeSortPriority = {
+    [RT.Birth]: 1,
+    [RT.BirthOrBaptism]: 2,
+    [RT.Baptism]: 3,
 
-  recordTypeSortPriority[RT.Census] = 50;
+    [RT.Census]: 50,
 
-  recordTypeSortPriority[RT.Death] = 90;
-  recordTypeSortPriority[RT.Burial] = 93;
-  recordTypeSortPriority[RT.Will] = 94;
-  recordTypeSortPriority[RT.Probate] = 95;
+    [RT.Death]: 90,
+    [RT.DeathOrBurial]: 91,
+    [RT.Burial]: 92,
+    [RT.Memorial]: 93,
+    [RT.Will]: 95,
+    [RT.Probate]: 96,
+  };
 
   function getEventPriority(source) {
     let priority = 50;
@@ -374,11 +378,15 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
 
   if (eventDateA && eventDateB) {
     let result = DateUtils.compareDateStrings(eventDateA, eventDateB);
-    if (result == 0) {
+    let datesAreSame = DateUtils.areDateStringsEquivalent(eventDateA, eventDateB);
+    if (datesAreSame) {
       // dates are equal, sort by record type
       let priorityA = getEventPriority(sourceA);
       let priorityB = getEventPriority(sourceB);
-      result = priorityA - priorityB;
+      if (priorityA != priorityB) {
+        // if they are the same priority we keep the order from compareDateStrings
+        result = priorityA - priorityB;
+      }
     }
     if (result != 0) {
       return result;

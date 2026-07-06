@@ -970,6 +970,58 @@ const DateUtils = {
     return DateUtils.compareParsedDates(parsedDateA, parsedDateB);
   },
 
+  areParsedDatesEquivalent: function (parsedDateA, parsedDateB) {
+    if (parsedDateA.isValid) {
+      if (parsedDateB.isValid) {
+        if (parsedDateA.yearNum != parsedDateB.yearNum) {
+          return false;
+        }
+
+        if (parsedDateA.hasMonth && parsedDateB.hasMonth) {
+          if (parsedDateA.monthNum != parsedDateB.monthNum) {
+            return false;
+          }
+        }
+
+        if (parsedDateA.hasDay && parsedDateB.hasDay) {
+          if (parsedDateA.dayNum != parsedDateB.dayNum) {
+            return false;
+          }
+        }
+      } else {
+        return false;
+      }
+    } else if (parsedDateB.isValid) {
+      return false;
+    }
+    return true;
+  },
+
+  areDateStringsEquivalent: function (dateStringA, dateStringB) {
+    let parsedDateA = DateUtils.parseDateString(dateStringA);
+    let parsedDateB = DateUtils.parseDateString(dateStringB);
+
+    return DateUtils.areParsedDatesEquivalent(parsedDateA, parsedDateB);
+  },
+
+  isDateStringMorePreciseThanJustYearOrRange: function (dateString) {
+    let parsedDate = DateUtils.parseDateString(dateString);
+
+    if (!parsedDate.isValid) {
+      return false;
+    }
+
+    if (parsedDate.isRange) {
+      return false;
+    }
+
+    if (!parsedDate.hasMonth) {
+      return false;
+    }
+
+    return true;
+  },
+
   subtractMsFromDateString: function (dateString, msToSubtract) {
     let parsedDate = DateUtils.parseDateString(dateString);
 

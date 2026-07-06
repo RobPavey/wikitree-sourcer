@@ -28,14 +28,6 @@ Ancestry {{Ancestry Image|62126|62049_62021000438_0876-00048}} - {{Ancestry Reco
 William Chandler marriage to Sarah Heath. Banns read on 22 Jul 1804 in Lewes St Thomas at Cliffe, Sussex, England.
 </ref>
 
-William died in November 1842 and was buried at St Thomas A Becket Churchyard, Lewes, Lewes District, East Sussex, England.<ref>
-'''Burial''':
-"UK and Ireland, Find a Grave® Index, 1300s-Current"<br/>
-{{FindAGrave|97626131}}<br/>
-{{Ancestry Record|60526|692270}} (accessed 20 July 2023)<br/>
-William Chandler burial (died in Nov 1842) at St Thomas A Becket Churchyard, Lewes, Lewes District, East Sussex, England. Born on 6 Oct 1783.
-</ref>
-
 William died in about 1842 and was buried on 13 November 1842 in Lewes, St Thomas A Becket At Cliffe, Sussex, England.<ref>
 '''Burial''':
 "East Sussex, England, Church of England Deaths and Burials, 1813-1995"<br/>
@@ -44,7 +36,13 @@ Ancestry {{Ancestry Image|62128|par_415-1-5-1_048}} - {{Ancestry Record|62128|13
 William Chandler burial (died in about 1842) on 13 Nov 1842 in Lewes, St Thomas A Becket At Cliffe, Sussex, England. Born in about 1783.
 </ref>
 
-William died in about 1842 and was buried on 13 November 1842 in St. Thomas', Lewes, Sussex, England.<ref>
+William died in November 1842 and was buried on 13 November 1842 at St. Thomas A Becket Churchyard, Lewes, Lewes District, Sussex, England.<ref>
+'''Burial''':
+"UK and Ireland, Find a Grave® Index, 1300s-Current"<br/>
+{{FindAGrave|97626131}}<br/>
+{{Ancestry Record|60526|692270}} (accessed 20 July 2023)<br/>
+William Chandler burial (died in Nov 1842) at St Thomas A Becket Churchyard, Lewes, Lewes District, East Sussex, England. Born on 6 Oct 1783.
+</ref><ref>
 '''Burial''':
 "England, Select Deaths and Burials, 1538-1991"<br/>
 Original data: England Deaths and Burials, 1538-1991. Salt Lake City, Utah: FamilySearch, 2013; FHL Film Number: 1469002<br/>
