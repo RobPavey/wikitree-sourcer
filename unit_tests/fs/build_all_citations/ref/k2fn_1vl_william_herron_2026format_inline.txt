@@ -95,14 +95,6 @@ William Herron (53), married, Postal Clerk, head of household in Pasadena, Los A
 </ref>
 
 <ref>
-'''Burial''':
-"Find a Grave Index"<br/>
-{{FamilySearch Record|QVKV-ZR42}} (accessed 20 July 2023)<br/>
-{{FindAGrave|51993416}}<br/>
-William Herron burial (died on 3 Mar 1974) in 1974 in Colton, San Bernardino, California, United States of America. Born on 10 May 1896.
-</ref>
-
-<ref>
 '''Death''':
 "United States, Social Security Death Index"<br/>
 citing U.S. Social Security Administration, <i>Death Master File</i>, database (Alexandria, Virginia: National Technical Information Service, ongoing)<br/>
@@ -120,4 +112,12 @@ William Herron death 3 Mar 1974 (born 10 May 1896) in Ventura, California, Unite
 The San Bernardino County Sun; Publication Date: 6 Mar 1974; Publication Place: San Bernardino, California, URL: https://cdnc.ucr.edu/?a=d&d=SBS19740306.1.1&e=-------en--20--1--txt-txIN--------<br/>
 https://cdnc.ucr.edu/?a=d&d=SBS19740306.1.1&e=-------en--20--1--txt-txIN-------- (accessed 28 March 2025)<br/>
 Newspaper obituary for William Herron, as well as burial information.
+</ref>
+
+<ref>
+'''Burial''':
+"Find a Grave Index"<br/>
+{{FamilySearch Record|QVKV-ZR42}} (accessed 20 July 2023)<br/>
+{{FindAGrave|51993416}}<br/>
+William Herron burial (died on 3 Mar 1974) in 1974 in Colton, San Bernardino, California, United States of America. Born on 10 May 1896.
 </ref>
