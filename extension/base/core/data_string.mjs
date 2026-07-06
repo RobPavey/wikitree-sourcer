@@ -433,7 +433,28 @@ function getOtherCensusString(gd, options) {
   let maritalStatus = gd.maritalStatus;
   let relationshipToHead = gd.relationshipToHead;
 
+  let useAge = false;
+  let useBirthDate = false;
+
+  let birthDateFormattedString = "";
+  let birthDate = gd.inferBirthDateObj();
+  if (birthDate) {
+    let birthDateString = birthDate.getDateString();
+
+    if (DateUtils.isDateStringMorePreciseThanJustYearOrRange(birthDateString)) {
+      useBirthDate = true;
+    } else {
+      if (!age) {
+        useBirthDate = true;
+      }
+    }
+    birthDateFormattedString = cleanDateObj(birthDate, options, gd);
+  }
   if (age) {
+    useAge = true;
+  }
+
+  if (useAge) {
     dataString += " (" + age + ")";
   }
 
@@ -512,7 +533,13 @@ function getOtherCensusString(gd, options) {
 
   let birthPlace = gd.inferBirthPlace();
   if (birthPlace) {
-    dataString += ". Born in " + birthPlace;
+    if (useBirthDate) {
+      dataString += ". Born " + birthDateFormattedString + " in " + birthPlace;
+    } else {
+      dataString += ". Born in " + birthPlace;
+    }
+  } else if (useBirthDate) {
+    dataString += ". Born " + birthDateFormattedString;
   }
 
   return dataString;

@@ -21,7 +21,7 @@ In the 1900 census Mary (age 8) was the daughter of J Cullan Carrington in Smith
 citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T623; Line: 39; Digital film/folder number: 004117872_003_M9NY-LRS; FHL microfilm: 1241704; Image number: 183; Record number: 32872; Sheet number: 19; Sheet letter: A; Packet letter: A; Indexing batch: N00748-1<br/>
 {{FamilySearch Record|MMFP-XLQ}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|S3HT-DC3W-94W}}<br/>
-Mary E Carrington (8), single daughter, in household of J Cullan Carrington (40) in Smithville, Charlotte, Virginia, United States. Born in Virginia.
+Mary E Carrington (8), single daughter, in household of J Cullan Carrington (40) in Smithville, Charlotte, Virginia, United States. Born Feb 1892 in Virginia.
 </ref>
 
 In the 1910 census Mary (age 18) was the unmarried daughter of John C Carrington at Charlotte Court House, Charlotte, Virginia, United States.<ref>
@@ -63,13 +63,6 @@ Mary Eggleston (47), wife, in household of Purnell B Eggleston (49) in Wilmingto
 Mary's husband Beverly Purnell Eggleston died on 8 June 1942 in Wilmington, New Hanover, North Carolina, United States.<ref>
 '''Death of husband Beverly Purnell Eggleston''':
 "North Carolina Deaths, 1931-1994"<br/>
-citing Digital film/folder number: 004163286; FHL microfilm: 1943216; Image number: 1046; Record number: 223; Packet letter: A; Indexing batch: B06284-4<br/>
-{{FamilySearch Record|FGQS-25P}} (accessed 20 July 2023)<br/>
-{{FamilySearch Image|3QS7-89G8-G1T6}}<br/>
-Mary Elfreth Carrington in death record for husband Beverly Purnell Eggleston 1942 in Wilmington, New Hanover, North Carolina, United States.
-</ref><ref>
-'''Death of husband Beverly Purnell Eggleston''':
-"North Carolina Deaths, 1931-1994"<br/>
 citing Digital film/folder number: 004163486; FHL microfilm: 1953342; Image number: 1046; Record number: 1047; Packet letter: F; Indexing batch: I08332-0<br/>
 {{FamilySearch Record|FGQ2-XY7}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|3QS7-L9G8-G81T}}<br/>
@@ -80,6 +73,13 @@ Mary Elfreth Carrington in death record for husband Beverly Purnell Eggleston 19
 citing Digital film/folder number: 004163486; FHL microfilm: 1953342; Record number: 1047; Packet letter: F<br/>
 {{FamilySearch Record|HH3T-ZN6Z}} (accessed 20 July 2023)<br/>
 Mary Elfreth Carrington in death record for husband Beverly Purnell Eggleston 8 Jun 1942 in Wilmington, New Hanover, North Carolina, United States.
+</ref><ref>
+'''Death of husband Beverly Purnell Eggleston''':
+"North Carolina Deaths, 1931-1994"<br/>
+citing Digital film/folder number: 004163286; FHL microfilm: 1943216; Image number: 1046; Record number: 223; Packet letter: A; Indexing batch: B06284-4<br/>
+{{FamilySearch Record|FGQS-25P}} (accessed 20 July 2023)<br/>
+{{FamilySearch Image|3QS7-89G8-G1T6}}<br/>
+Mary Elfreth Carrington in death record for husband Beverly Purnell Eggleston 1942 in Wilmington, New Hanover, North Carolina, United States.
 </ref>
 
 Mary's husband Beverly Purnell Eggleston was buried on 9 June 1942 in Charlotte Courthouse, Charlotte, Virginia, United States.<ref>
@@ -131,15 +131,6 @@ citing Digital film/folder number: 101167262; Image number: 110; Certificate num
 Mary E Carrington's son Carrington Eggleston marriage to Elsie Virginia Updike on 7 Nov 1953 in Charlottesville, Albemarle, Virginia, United States.
 </ref>
 
-Mary died on 10 December 1967 and was buried in 1967 in Charlotte, Virginia, United States of America.<ref>
-'''Burial''':
-"Find a Grave Index"<br/>
-citing <i>Find a Grave</i><br/>
-{{FamilySearch Record|QVL1-8G1P}} (accessed 20 July 2023)<br/>
-{{FindAGrave|104546256}}<br/>
-Mary Elfreth Carrington Eggleston burial (died on 10 Dec 1967) in 1967 in Charlotte, Virginia, United States of America. Born on 23 Feb 1892.
-</ref>
-
 Mary's death (age 75) on 10 December 1967 (wife of Beverley Purnell Eggleston) was registered on 11 December 1967. She was the daughter of John Cullen Carrington & Mary Elfreth Hannah.<ref>
 '''Death Registration''':
 "Virginia, Death Certificates, 1912-1987"<br/>
@@ -165,6 +156,15 @@ citing Affiliate Name: GenealogyBank, Inc.; Digital film/folder number: 10200145
 {{FamilySearch Record|QP13-55LY}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|3Q9M-CS7G-P3J8-X}}<br/>
 Name: Mary Elfreth Carrington; Residence Date: 10 Dec 1967; Residence Place: Richmond, Virginia; Death Date: 10 Dec 1967; Death Place: Richmond, Virginia; Obituary Date: 12 Dec 1967; Obituary Place: Richmond, Virginia; Burial Date: 2:00 P. M.; Source Newspaper: Richmond Times Dispatch.
+</ref>
+
+Mary died on 10 December 1967 and was buried in 1967 in Charlotte, Virginia, United States of America.<ref>
+'''Burial''':
+"Find a Grave Index"<br/>
+citing <i>Find a Grave</i><br/>
+{{FamilySearch Record|QVL1-8G1P}} (accessed 20 July 2023)<br/>
+{{FindAGrave|104546256}}<br/>
+Mary Elfreth Carrington Eggleston burial (died on 10 Dec 1967) in 1967 in Charlotte, Virginia, United States of America. Born on 23 Feb 1892.
 </ref>
 
 Mary's son Carrington Eggleston was in a Social Security record on 6 January 2001.<ref>

@@ -2453,7 +2453,7 @@ class NarrativeBuilder {
       placeObj = this.makePlaceObjFromString(gd.registrationDistrict);
     }
 
-    if (!year || !placeObj) {
+    if (!year) {
       this.narrative = "";
       return; // do default generate
     }
@@ -2516,6 +2516,12 @@ class NarrativeBuilder {
     addHouseholdPartForMainSentence();
 
     this.addFullPlaceWithPreposition(placeObj);
+
+    // edge case where nothing was added after " was"
+    if (this.narrative.endsWith(" was")) {
+      this.narrative += " recorded";
+    }
+
     this.terminateSentence();
 
     addHouseholdPartAsSeparateSentence();
