@@ -80,12 +80,7 @@ function buildSearchData(input) {
   };
 
   if (gd.name) {
-    let givenNames = gd.name.inferForenamesPlusPreferredAndNicknames(
-      options.search_wagovau_includeMiddleName,
-      options.search_wagovau_includePrefName,
-      options.search_wagovau_includeNicknames
-    );
-
+    let givenNames = gd.name.inferForenames();
     if (givenNames) {
       fieldData["givenNames"] = givenNames;
     }
@@ -217,7 +212,7 @@ function buildSearchData(input) {
           let spouse = gd.spouses[parameters.spouseIndex];
           if (spouse.name) {
             let spouseGivenNames = spouse.name.inferForenames();
-            let spouseSurname = spouse.name.inferLastNames();
+            let spouseSurname = spouse.name.inferLastName();
             if (spouseGivenNames) {
               fieldData["spouseGivenNames"] = spouseGivenNames;
             }

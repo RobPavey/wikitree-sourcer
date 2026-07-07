@@ -170,8 +170,7 @@ async function getAppElement(searchType) {
   }
 }
 
-async function setSearchTextFields(fieldData, appElement, searchButtonElement) {
-  let inputNotFound = false;
+async function setSearchTextFields(fieldData, appElement) {
   // then set the text fields
   for (let key of Object.keys(fieldData)) {
     //console.log("doPendingSearch: key is: " + key);
@@ -201,35 +200,28 @@ async function setSearchTextFields(fieldData, appElement, searchButtonElement) {
           // 2. Wait a brief moment for the mat-autocomplete panel to open and render options
           await sleep(150);
 
-          /*
-          // Crucial for the Date custom dropdown: Simulate hitting 'Enter' or 'Tab'
-          // This tells the combo box overlay to accept the typed value and close itself safely
-          inputElement.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", code: "Enter", bubbles: true }));
-          inputElement.dispatchEvent(new KeyboardEvent("keyup", { key: "Enter", code: "Enter", bubbles: true }));
-
-          // Force a change commit
-          inputElement.dispatchEvent(new Event("change", { bubbles: true }));
-          */
           // 3. Find the matching option in the global overlay container
           const options = document.querySelectorAll("mat-option");
-          let matchedOption = null;
+          if (options.length > 0 && inputElement.getAttribute("aria-autocomplete")) {
+            // Only trigger fallback click if the input element explicitly uses autocomplete wrappers
+            let matchedOption = null;
 
-          for (let option of options) {
-            // Trim whitespace and check if option text matches our search target value
-            if (option.textContent.trim() === String(value).trim()) {
-              matchedOption = option;
-              break;
+            for (let option of options) {
+              // Trim whitespace and check if option text matches our search target value
+              if (option.textContent.trim() === String(value).trim()) {
+                matchedOption = option;
+                break;
+              }
             }
-          }
 
-          // 4. Click the matching dropdown option to properly bind the data to the Angular Form
-          if (matchedOption) {
-            matchedOption.dispatchEvent(new MouseEvent("mousedown", { bubbles: true, button: 0 }));
-            matchedOption.dispatchEvent(new MouseEvent("mouseup", { bubbles: true, button: 0 }));
-            matchedOption.click();
-          } else if (options.length > 0) {
-            // Fallback: If exact match isn't found, pick the very first available option
-            options[0].click();
+            // 4. Click the matching dropdown option to properly bind the data to the Angular Form
+            if (matchedOption) {
+              matchedOption.dispatchEvent(new MouseEvent("mousedown", { bubbles: true, button: 0 }));
+              matchedOption.dispatchEvent(new MouseEvent("mouseup", { bubbles: true, button: 0 }));
+              matchedOption.click();
+            } else {
+              options[0].click();
+            }
           }
 
           // Break the focus cleanly to dismiss the floating list box
@@ -237,16 +229,8 @@ async function setSearchTextFields(fieldData, appElement, searchButtonElement) {
 
           await sleep(50); // Small cooldown to allow the floating UI box to slide shut
         }
-      } else {
-        inputNotFound = true;
-        break;
       }
     }
-  }
-
-  // Refocus the search button at the very end of the cycle rather than during the loops
-  if (searchButtonElement && !inputNotFound) {
-    searchButtonElement.focus();
   }
 }
 
@@ -259,18 +243,15 @@ async function doPendingSearch() {
   console.log(pendingSearchData);
 
   if (pendingSearchData) {
-    const isRetry = pendingSearchData.isRetry;
     const searchType = pendingSearchData.searchType;
     const fieldData = pendingSearchData.fieldData;
 
     console.log("doPendingSearch: fieldData is:");
     console.log(fieldData);
-    console.log("doPendingSearch: isRetry is");
-    console.log(isRetry);
 
     await selectCorrectTab(searchType);
 
-    // 2. CRITICAL: Wait for Angular to destroy the old form and fully mount the new form into the live DOM
+    // CRITICAL: Wait for Angular to destroy the old form and fully mount the new form into the live DOM
     await sleep(300);
 
     const appElement = await getAppElement(searchType);
@@ -279,19 +260,11 @@ async function doPendingSearch() {
     if (searchButtonElement) {
       await setSearchTextFields(fieldData, appElement, searchButtonElement);
 
-      /*
-      let backdropElement = document.querySelector("div.cdk-overlay-container");
-      if (backdropElement) {
-        await sleep(100);
-        backdropElement.click();
-        await sleep(100); // Give the exit animation time to complete
-      }
-        */
-      // 1. Dispatch an Escape key stroke globally to tell Angular to collapse autocomplete panels
+      // Dispatch an Escape key stroke globally to tell Angular to collapse autocomplete panels
       window.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", code: "Escape", bubbles: true }));
       await sleep(50);
 
-      // 2. BRUTE FORCE PROTECTION: If Angular fails to close them, wipe the panes from the DOM
+      // BRUTE FORCE PROTECTION: If Angular fails to close them, wipe the panes from the DOM
       const lingeringPanes = document.querySelectorAll(".cdk-overlay-pane");
       lingeringPanes.forEach((pane) => pane.remove());
       await sleep(50);
@@ -301,6 +274,8 @@ async function doPendingSearch() {
       searchButtonElement.dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
       searchButtonElement.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
       searchButtonElement.dispatchEvent(new MouseEvent("click", { bubbles: true })); // Triggers Angular form submission
+
+      searchButtonElement.scrollIntoView(true);
     }
 
     // clear the pending data so that we don't use it again on refine search

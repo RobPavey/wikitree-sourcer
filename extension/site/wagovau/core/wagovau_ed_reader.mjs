@@ -27,7 +27,8 @@ import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mj
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 
 function cleanName(edReader, inputString) {
-  let cleanFamilyName = NameUtils.convertNameFromAllCapsToMixedCase(familyNameString);
+  let cleanString = inputString.replace(/\s*\(DECEASED\)\s*/i, "");
+  return cleanString;
 }
 
 const recordTypes = [
@@ -95,9 +96,11 @@ const baseRecordTypeData = {
     },
     motherFullName: {
       recordDataKeys: ["Mother"],
+      cleanFunction: cleanName,
     },
     fatherFullName: {
       recordDataKeys: ["Father"],
+      cleanFunction: cleanName,
     },
     registrationDistrict: {
       recordDataKeys: ["Registration District"],
