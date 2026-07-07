@@ -27,6 +27,10 @@ import { registerSite } from "../../../base/core/site_registry.mjs";
 const siteData = {
   siteName: "wagovau",
   matches: ["*://*.wa.gov.au/*"],
+  additionalContentJsFiles: [
+    "base/browser/content/content_register_tab",
+    "base/browser/content/content_pending_search",
+  ],
   repositoryName: "Western Australia BDM",
   usPhoneNumber: "",
   email: "",

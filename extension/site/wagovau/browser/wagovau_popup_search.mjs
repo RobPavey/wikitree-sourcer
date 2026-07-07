@@ -31,13 +31,51 @@ import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_sear
 const searchMenuConfig = {
   siteName: "wagovau",
   siteDisplayName: "Western Australia BDM",
+  siteConstraints: {
+    startYear: 1841,
+    dateTestType: "bmd",
+    countryList: ["Australia", "Colony of Western Australia"],
+  },
   localStorageConfig: {
-    searchUrl: "https://put_your_search_url_here",
+    searchUrl: "https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool",
   },
   defaultMenuItem: {
     menuItemText: "Search Western Australia BDM",
-    includeDefaultSearch: true,
-    includeSearchSubmenu: false,
+    includeDefaultSearch: false,
+    includeSearchSubmenu: true,
+    submenuConfig: {
+      includeSameCollection: true,
+      includeSearchWithParameters: true,
+      submenuMenuItems: [
+        {
+          menuItemText: "Search Births",
+          typeOfSearch: "births",
+          constraints: {
+            startYear: 1841,
+            endYearDynamic: { beforeNow: true, offset: 101 },
+            dateTestType: "born",
+          },
+        },
+        {
+          menuItemText: "Search Deaths",
+          typeOfSearch: "deaths",
+          constraints: {
+            startYear: 1841,
+            endYearDynamic: { beforeNow: true, offset: 31 },
+            dateTestType: "died",
+          },
+        },
+        {
+          menuItemText: "Search Marriages",
+          typeOfSearch: "marriages",
+          constraints: {
+            startYear: 1841,
+            endYearDynamic: { beforeNow: true, offset: 76 },
+            dateTestType: "married",
+          },
+        },
+      ],
+    },
   },
 };
 

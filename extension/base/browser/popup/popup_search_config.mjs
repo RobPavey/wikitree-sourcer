@@ -104,7 +104,7 @@ async function doLocalStorageSearchFromConfig(config, gd, typeOfSearch, paramete
         url: searchUrl,
         fieldData: buildResult.fieldData,
         selectData: buildResult.selectData,
-        searchType: typeOfSearch,
+        searchType: buildResult.searchType ? buildResult.searchType : typeOfSearch,
       };
     } else {
       closePopup();
