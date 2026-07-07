@@ -35,5 +35,7 @@
     "id": "birth",
     "registrationNumber": "1800308"
   },
+  "isDateTheRegistrationDate": false,
+  "isPlaceTheRegistrationPlace": false,
   "hasValidData": true
 }

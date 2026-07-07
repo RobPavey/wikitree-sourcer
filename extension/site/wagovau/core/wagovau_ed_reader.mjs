@@ -165,6 +165,11 @@ class WagovauEdReader extends ExtractedDataReader {
 
     return collectionData;
   }
+
+  setCustomFields(result) {
+    result.isDateTheRegistrationDate = false;
+    result.isPlaceTheRegistrationPlace = false;
+  }
 }
 
 export { WagovauEdReader };

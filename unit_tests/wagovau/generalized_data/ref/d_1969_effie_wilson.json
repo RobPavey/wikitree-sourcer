@@ -35,5 +35,7 @@
     "id": "death",
     "registrationNumber": "2700454"
   },
+  "isDateTheRegistrationDate": false,
+  "isPlaceTheRegistrationPlace": false,
   "hasValidData": true
 }

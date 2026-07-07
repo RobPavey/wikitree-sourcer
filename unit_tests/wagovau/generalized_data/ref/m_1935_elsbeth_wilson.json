@@ -38,5 +38,7 @@
     "id": "marriage",
     "registrationNumber": "101155"
   },
+  "isDateTheRegistrationDate": false,
+  "isPlaceTheRegistrationPlace": false,
   "hasValidData": true
 }

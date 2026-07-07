@@ -1203,9 +1203,13 @@ class NarrativeBuilder {
     }
 
     let isPlaceTheRegistrationPlace = false;
-    let isRegCountry = gd.isRecordInCountry("United Kingdom") || gd.isRecordInCountry("Ireland");
-    if (registrationDistrict && (isRegCountry || !eventPlaceObj)) {
-      isPlaceTheRegistrationPlace = true;
+    if (gd.isPlaceTheRegistrationPlace !== undefined) {
+      isPlaceTheRegistrationPlace = gd.isPlaceTheRegistrationPlace;
+    } else {
+      let isRegCountry = gd.isRecordInCountry("United Kingdom") || gd.isRecordInCountry("Ireland");
+      if (registrationDistrict && (isRegCountry || !eventPlaceObj)) {
+        isPlaceTheRegistrationPlace = true;
+      }
     }
 
     if (!isDateTheRegistrationDate) {
