@@ -5,14 +5,12 @@
   "searchData": {
     "url": "https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool",
     "fieldData": {
-      "surname": "Roe",
-      "givenNames": "John Septimus",
-      "yearFromCtrl": "1876",
-      "yearToCtrl": "1876"
+      "yearFromCtrl": "1859",
+      "yearToCtrl": "1859"
     },
     "searchType": "death",
     "refineData": {
-      "text": "4071"
+      "text": "1306"
     }
   }
 }

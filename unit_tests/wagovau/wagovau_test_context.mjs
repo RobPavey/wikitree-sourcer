@@ -34,12 +34,33 @@ const regressionData = [
     numPhases: 3,
   },
   {
+    // From https://www.wikitree.com/wiki/Wilson-47043
+    caseName: "birth_1899_doris_wilson_wt",
+    inputText: `Source: #S46 1899/Reg 196. Birth Registration Index details for Doris WILSON - Father: George Harmston; Mother: Mcgillebvary Mary; Place: Canningfor; Registration State: W.A. YES`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
+    // From https://www.wikitree.com/wiki/O'Connor-7675
+    caseName: "birth_1912_mary_oconnor_wt",
+    inputText: `Western Australia Birth Index. (Government of Western Australia, Department of Justice, The Registry of Births, Deaths and Marriages, https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool: accessed 7 Oct 2023), index entry for Mary Emma O'Connor (Father: Thomas, Mother: Ida, Place of Birth: Katanning, Registration District: Katanning, Registration Year: 1912, Registration Number: 3500183).`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
     // From https://www.wikitree.com/wiki/Space:WikiTree_Sourcer_Western_Australia_BDM_Examples
     caseName: "birth_1913_william_wilson_so",
     inputText: `↑ Birth Registration: "Western Australian Online Index"
 Government of Western Australia; Department of Justice; Registry of Births, Deaths and Marriages; Registration Number: 1800308
 Western Australia Online Search (accessed 7 July 2026)
 Surname: Wilson; Given Names: William Edward; Sex: M; Father: William Henry WILSON; Mother: Agnes MCKENNA; Place of Birth: Kalgoorlie; Year of Birth: 1913; Registration District: East Coolgardie; Registration Year: 1913.`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
+    // From https://www.wikitree.com/wiki/O'Connor-7527
+    caseName: "death_1859_charles_oconnor_wt",
+    inputText: `WA Death Index 1859/1306, Age: 4M`,
     function: transformPlainText,
     numPhases: 3,
   },
@@ -51,9 +72,24 @@ Surname: Wilson; Given Names: William Edward; Sex: M; Father: William Henry WILS
     numPhases: 3,
   },
   {
+    // From https://www.wikitree.com/wiki/Wilson-47043
+    caseName: "death_1900_doris_wilson_wt",
+    inputText: `↑ Source: #S46 1900/WA Reg. no. 106. 9 Jun 2000 Deaths Reg. Index for Doris WILSON - Father: George Harnisto; Mother: Mcgillivray Mary; Place of death: Canning Di; Age at Death: 10 m. YES`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
     // From https://www.wikitree.com/wiki/Wilson-43986
     caseName: "death_1948_john_wilson_wt",
     inputText: `Death: WA BDM Death Reg: #995/1948`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
+    // There is no punctuation and there are no labels, hard to handle
+    // From https://www.wikitree.com/wiki/Deville-545
+    caseName: "death_1976_ralph_de_ville_wt",
+    inputText: `Death Registration: https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool, Western Australia BDM, 2900012/1977 De Ville Ralph William M 28 William DE VILLE Hannah Melissa RALPH Geraldton 1976 Geraldton 2900012 1977`,
     function: transformPlainText,
     numPhases: 3,
   },

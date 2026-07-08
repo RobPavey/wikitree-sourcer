@@ -25,10 +25,18 @@ SOFTWARE.
 import { CitationParser, doesTextMatchForContextPhase } from "../../../base/core/citation_parser.mjs";
 import { NameObj } from "../../../base/core/generalize_data_utils.mjs";
 
+const minYear = 1841;
+const maxYear = 2000;
+
 const phaseMatches = [
   [[/wa\.gov\.au\/organisation\/department\-of\-justice/i], [/Government of Western Australia/i]],
   [[/Western Australia/i], [/WA BDM/i]],
-  [[/wa/i, /index/i, /registration/i]],
+  [
+    [/wa/i, /index/i, /reg/i],
+    [/w\.\s?a/i, /index/i, /reg/i],
+    [/wa/i, /(birth|death|marriage)/i],
+    [/w\.\s?a/i, /(birth|death|marriage)/i],
+  ],
 ];
 
 const removeMatches = [
@@ -94,20 +102,23 @@ function extractSurname(parser, fieldData) {
       matches: [
         /(?:^|[\s,\n])(?:surname|last name|family name)\s*:?\s*(\w+)/i,
         /entry for\s+([a-z ]+),\s*[a-z]/i, // Aus project case
-        /(?:^|[^a-z']\s+)(?:name|for)[^a-z]+([a-z]+),\s+[a-z ]+/i,
-        /(?:^|[^a-z ']\s+)(?:name|for)[^a-z]+[a-z ]+\s+([a-z]+)/i,
-        /(?:^|[^a-z ']\s+)([a-z]+),\s+[a-z ]*[a-z]\s*,?\s*child of/i,
-        /(?:^|[^a-z ']\s+)[a-z ]*[a-z]\s+([a-z]+)\s*,?\s*child of/i,
+        /(?:^|[^a-z']\s+)(?:name|for)[^a-z]+([a-z']+),\s+[a-z ]+/i,
+        /(?:^|[^a-z ']\s+)(?:name|for)[^a-z]+[a-z ]+\s+([a-z']+)/i,
+        /(?:^|[^a-z ']\s+)([a-z']+),\s+[a-z ]*[a-z]\s*,?\s*child of/i,
+        /(?:^|[^a-z ']\s+)[a-z ]*[a-z]\s+([a-z']+)\s*,?\s*child of/i,
         // "Surname, forenames" at start of whole text (possible with some non-alpha chars before it)
         /^\W*([a-z]+),\s?[a-z ]+/i,
         // "Surname, forenames" at start of line or sentence
-        /(?:\.|\n|<br ?\/?>|<br ?\/?>\n)\s*([a-z]+),\s?[a-z ]+/i,
+        /(?:\.|\n|<br ?\/?>|<br ?\/?>\n)\s*([a-z']+),\s?[a-z ]+/i,
       ],
     },
   };
   let surname = parser.extractMatchingValueFromText(surnameExtractInput);
   if (surname) {
-    return surname.trim();
+    surname = surname.trim();
+    surname = surname.replace(/^'+/g, "");
+    surname = surname.replace(/'+$/g, "");
+    return surname;
   }
 }
 
@@ -130,7 +141,10 @@ function extractGivenNames(parser, fieldData) {
   };
   let givenNames = parser.extractMatchingValueFromText(nameExtractInput);
   if (givenNames) {
-    return givenNames.trim();
+    givenNames = givenNames.trim();
+    givenNames = givenNames.replace(/^'+/g, "");
+    givenNames = givenNames.replace(/'+$/g, "");
+    return givenNames;
   }
 }
 
@@ -138,14 +152,18 @@ function extractFullName(parser, fieldData) {
   const nameExtractInput = {
     wholeText: {
       matches: [
-        /entry for\s+'*([a-z ]+)'*[,;\.]/i, // Aus project case
-        /name: '*([a-z ]+)'+/i,
+        /entry for\s+'*([a-z' ]+)'*[,;\.(|:\-]/i, // Aus project case
+        / for\s+'*([a-z' ]+)'*[,;\.(|:\-]/i,
+        /name: '*([a-z' ]+)'+/i,
       ],
     },
   };
   let fullName = parser.extractMatchingValueFromText(nameExtractInput);
   if (fullName) {
-    return fullName.trim();
+    fullName = fullName.trim();
+    fullName = fullName.replace(/^'+/g, "");
+    fullName = fullName.replace(/'+$/g, "");
+    return fullName;
   }
 }
 
@@ -155,9 +173,12 @@ function extractYear(parser, fieldData, searchType) {
       removeMatches: removeMatches,
     },
     wholeText: {
+      // Note that just the year is more likely than a full date
       matches: [
         // The "year" in this makes the others redundant?
         /(?:year|event year|eventyear|event date|eventdate|date|in)\s*:?\s*(\d\d\d\d)(?:\W|$)/i,
+        // e.g. Source: #S46 1900/WA Reg. no. 106.
+        /(?:^|[^\d])(\d\d\d\d)\//i,
         // e.g. 02/12/1867
         /(?:^|[^\d])\d\d\/\d\d\/(\d\d\d\d)(?:\W|$)/i,
         // e.g. 2-Dec-1980
@@ -267,14 +288,14 @@ function getReferenceNumber(parser, fieldData, refineData) {
       if (num1.length == 4) {
         if (num2.length == 4) {
           // either number could be year
-          if (parser.isValidYear(num1)) {
-            if (!parser.isValidYear(num2)) {
+          if (parser.isValidYear(num1, minYear, maxYear)) {
+            if (!parser.isValidYear(num2, minYear, maxYear)) {
               fieldData["yearFromCtrl"] = num1;
               fieldData["yearToCtrl"] = num1;
               refineData.text = num2;
               foundNum = true;
             }
-          } else if (parser.isValidYear(num2)) {
+          } else if (parser.isValidYear(num2, minYear, maxYear)) {
             fieldData["yearFromCtrl"] = num2;
             fieldData["yearToCtrl"] = num2;
             refineData.text = num1;

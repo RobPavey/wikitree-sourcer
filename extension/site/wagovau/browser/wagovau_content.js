@@ -219,8 +219,6 @@ async function setSearchTextFields(fieldData, appElement) {
               matchedOption.dispatchEvent(new MouseEvent("mousedown", { bubbles: true, button: 0 }));
               matchedOption.dispatchEvent(new MouseEvent("mouseup", { bubbles: true, button: 0 }));
               matchedOption.click();
-            } else {
-              options[0].click();
             }
           }
 

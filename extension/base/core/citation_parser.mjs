@@ -273,21 +273,29 @@ class CitationParser {
     }
   }
 
-  isValidYear(yearString) {
+  isValidYear(yearString, minYear = 0, maxYear = 0) {
     let yearNum = parseInt(yearString);
     if (isNaN(yearNum)) {
       return false;
     }
 
-    if (yearNum < 0) {
+    if (yearNum < minYear) {
       return false;
     }
 
-    let now = new Date();
-    let yearNow = now.getFullYear();
-    if (yearNum > yearNow) {
-      return false;
+    if (maxYear) {
+      if (yearNum > maxYear) {
+        return false;
+      }
+    } else {
+      let now = new Date();
+      let yearNow = now.getFullYear();
+      if (yearNum > yearNow) {
+        return false;
+      }
     }
+
+    return true;
   }
 
   identifyType(extractInput) {
