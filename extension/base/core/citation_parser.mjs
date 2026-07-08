@@ -279,7 +279,7 @@ class CitationParser {
       return false;
     }
 
-    if (year < 0) {
+    if (yearNum < 0) {
       return false;
     }
 
@@ -308,6 +308,16 @@ class CitationParser {
 
     if (extractInput.typeMatches) {
       for (let type of extractInput.typeMatches) {
+        for (let regex of type.matches) {
+          if (regex.test(text)) {
+            return type.searchType;
+          }
+        }
+      }
+    }
+
+    if (extractInput.typeMatches2) {
+      for (let type of extractInput.typeMatches2) {
         for (let regex of type.matches) {
           if (regex.test(text)) {
             return type.searchType;

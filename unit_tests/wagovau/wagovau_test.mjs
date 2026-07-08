@@ -24,10 +24,12 @@ SOFTWARE.
 
 import * as test_content_and_citation from "./wagovau_test_content_and_citation.mjs";
 import * as test_build_search_data from "./wagovau_test_build_search_data.mjs";
+import * as test_context from "./wagovau_test_context.mjs";
 
 async function runTests(testManager) {
   await test_content_and_citation.runTests(testManager);
   await test_build_search_data.runTests(testManager);
+  await test_context.runTests(testManager);
 }
 
 export { runTests };

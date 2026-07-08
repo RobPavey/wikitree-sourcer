@@ -5,6 +5,7 @@
   "searchData": {
     "url": "https://www.familyhistory.bdm.qld.gov.au/reset",
     "fieldData": {
+      "birth": true,
       "regyear": "1892",
       "regtype": "C",
       "regnum": "171"

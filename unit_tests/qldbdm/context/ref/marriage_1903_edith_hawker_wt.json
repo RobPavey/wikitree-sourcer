@@ -5,6 +5,7 @@
   "searchData": {
     "url": "https://www.familyhistory.bdm.qld.gov.au/reset",
     "fieldData": {
+      "marriage": true,
       "regyear": "1903",
       "regtype": "B",
       "regnum": "2859"

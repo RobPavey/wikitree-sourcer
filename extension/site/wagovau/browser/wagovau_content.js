@@ -234,6 +234,107 @@ async function setSearchTextFields(fieldData, appElement) {
   }
 }
 
+function waitForFilterInput(timeout = 60000) {
+  return new Promise((resolve, reject) => {
+    // 1. Check if the element already exists immediately
+    const selector = "mat-card.filterCard input";
+    const immediateElement = document.querySelector(selector);
+    if (immediateElement) return resolve(immediateElement);
+
+    // 2. Set an enforcement safety timer so the script doesn't hang indefinitely
+    const timeoutId = setTimeout(() => {
+      console.log("waitForFilterInput, timed out");
+      observer.disconnect();
+      reject(new Error(`Timeout: Filter input "${selector}" did not appear within ${timeout}ms.`));
+    }, timeout);
+
+    // 3. Define the observer routine
+    const observer = new MutationObserver((mutations) => {
+      //console.log("MutationObserver, mutations is", mutations);
+
+      const targetElement = document.querySelector(selector);
+      console.log("MutationObserver, targetElement is", targetElement);
+      if (targetElement) {
+        clearTimeout(timeoutId);
+        observer.disconnect(); // CRITICAL: Stop watching immediately to optimize performance
+        resolve(targetElement);
+      } else {
+        // if the results are there there could just be one of two results with no filter
+        let tableHeaders = document.querySelectorAll("table.mat-sort thead tr th");
+        if (this.length > 5) {
+          clearTimeout(timeoutId);
+          observer.disconnect(); // CRITICAL: Stop watching immediately to optimize performance
+          resolve(null);
+        }
+      }
+    });
+
+    // 4. Start tracking the entire document lifecycle
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  });
+}
+
+/**
+ * Programmatically filters the live table rows by matching the exact column text.
+ * @param {string} targetRefText - The specific reference number you want to isolate (e.g., "995").
+ * @param {number} columnPosition - The index of the Reference Number column (e.g., 2 if it's the 3rd column).
+ */
+function filterTableByExactColumn(appElement, filterText) {
+  const tableElement = appElement.querySelector("table.mat-sort");
+  if (!tableElement) {
+    return;
+  }
+
+  const headers = appElement.querySelectorAll("thead th");
+  if (!headers.length) {
+    return;
+  }
+
+  let columnIndex = 9;
+  if (columnIndex > headers.length - 1) {
+    columnIndex = headers.length - 1;
+  }
+  for (let headerIndex = 0; headerIndex < headers.length; headerIndex++) {
+    let headerElement = headers[headerIndex];
+    if (headerElement.textContent.trim() == "Registration Number") {
+      columnIndex = headerIndex;
+      break;
+    }
+  }
+
+  // 1. Locate all table rows inside the results body
+  const rows = tableElement.querySelectorAll("tbody tr");
+
+  if (rows.length === 0) {
+    console.log("No rows found in the results table to filter.");
+    return;
+  }
+
+  let visibleCount = 0;
+
+  rows.forEach((row) => {
+    const cells = row.querySelectorAll("td");
+    const targetCell = cells[columnIndex];
+
+    if (targetCell) {
+      const cellText = targetCell.textContent.trim();
+
+      // 2. Check if the cell text explicitly contains or exactly matches the string
+      if (cellText.includes(filterText)) {
+        row.style.display = ""; // Keep the matching row visible
+        visibleCount++;
+      } else {
+        row.style.display = "none"; // Hide the row matching invisible data
+      }
+    }
+  });
+
+  console.log(`Manually isolated ${visibleCount} rows matching "${filterText}" in column ${columnIndex}.`);
+}
+
 async function doPendingSearch() {
   console.log("##############################################################################");
   console.log("doPendingSearch: called");
@@ -275,7 +376,57 @@ async function doPendingSearch() {
         searchButtonElement.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
         searchButtonElement.dispatchEvent(new MouseEvent("click", { bubbles: true })); // Triggers Angular form submission
 
+        // align button with top so search results are visible
         searchButtonElement.scrollIntoView(true);
+
+        // if pendingSearchData.refineData is set then try to refine
+        if (pendingSearchData.refineData && pendingSearchData.refineData.text) {
+          console.log("waiting for filter element");
+          try {
+            let inputElement = await waitForFilterInput();
+            if (inputElement) {
+              console.log("found filter element");
+
+              inputElement.focus();
+              // Clear current content
+              inputElement.value = "";
+
+              // Mimic a physical user typing to keep Angular's UI Engine aligned
+              inputElement.dispatchEvent(new Event("input", { bubbles: true }));
+              inputElement.value = pendingSearchData.refineData.text;
+              inputElement.dispatchEvent(new Event("input", { bubbles: true }));
+
+              // 1. Setup the event data configuration for the Enter Key
+              const enterKeyEventOptions = {
+                key: "Enter",
+                code: "Enter",
+                keyCode: 13,
+                which: 13,
+                bubbles: true,
+                cancelable: true,
+              };
+
+              // 2. Dispatch the exact Enter key sequence
+              inputElement.dispatchEvent(new KeyboardEvent("keydown", enterKeyEventOptions));
+              inputElement.dispatchEvent(new KeyboardEvent("keyup", enterKeyEventOptions));
+
+              // 3. Fire a change commit notification
+              inputElement.dispatchEvent(new Event("change", { bubbles: true }));
+
+              // Drop focus to cleanly lock in the layout
+              inputElement.blur();
+
+              await sleep(50);
+
+              // the Angular filter can get many false positives - do our own additional filter
+              filterTableByExactColumn(appElement, pendingSearchData.refineData.text);
+            }
+          } catch {
+            // do nothing
+          }
+        } else {
+          await sleep(500);
+        }
       }
     }
 

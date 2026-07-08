@@ -23,10 +23,11 @@ SOFTWARE.
 */
 
 import { CitationParser, doesTextMatchForContextPhase } from "../../../base/core/citation_parser.mjs";
+import { NameObj } from "../../../base/core/generalize_data_utils.mjs";
 
 const phaseMatches = [
   [[/wa\.gov\.au\/organisation\/department\-of\-justice/i], [/Government of Western Australia/i]],
-  [[/Western Australia/i]],
+  [[/Western Australia/i], [/WA BDM/i]],
   [[/wa/i, /index/i, /registration/i]],
 ];
 
@@ -46,16 +47,32 @@ const removeMatches = [
 function extractSearchType(parser) {
   const typeMatches = [
     {
-      searchType: "birth",
-      matches: [/Place of Birth/i],
-    },
-    {
       searchType: "death",
-      matches: [/Place of Death/i],
+      matches: [/Death Registration/i, /Place of Death/i],
     },
     {
       searchType: "marriage",
-      matches: [/Place of Marriage/i],
+      matches: [/Marriage Registration/i, /Place of Marriage/i],
+    },
+    // Note birth comes last because a death regeistration could have a birth date
+    {
+      searchType: "birth",
+      matches: [/Birth Registration/i, /Place of Birth/i],
+    },
+  ];
+  const typeMatches2 = [
+    {
+      searchType: "death",
+      matches: [/Death/i],
+    },
+    {
+      searchType: "marriage",
+      matches: [/Marriage/i],
+    },
+    // Note birth comes last because a death regeistration could have a birth date
+    {
+      searchType: "birth",
+      matches: [/Birth/i],
     },
   ];
 
@@ -64,6 +81,7 @@ function extractSearchType(parser) {
       removeMatches: removeMatches,
     },
     typeMatches: typeMatches,
+    typeMatches2: typeMatches2,
   };
 
   const searchType = parser.identifyType(typeExtractInput);
@@ -74,28 +92,27 @@ function extractSurname(parser, fieldData) {
   const surnameExtractInput = {
     wholeText: {
       matches: [
-        /(?:^|[\s,\n])(?:surname|last name)\s*:?\s*(\w+)/i,
+        /(?:^|[\s,\n])(?:surname|last name|family name)\s*:?\s*(\w+)/i,
         /entry for\s+([a-z ]+),\s*[a-z]/i, // Aus project case
         /(?:^|[^a-z']\s+)(?:name|for)[^a-z]+([a-z]+),\s+[a-z ]+/i,
         /(?:^|[^a-z ']\s+)(?:name|for)[^a-z]+[a-z ]+\s+([a-z]+)/i,
         /(?:^|[^a-z ']\s+)([a-z]+),\s+[a-z ]*[a-z]\s*,?\s*child of/i,
         /(?:^|[^a-z ']\s+)[a-z ]*[a-z]\s+([a-z]+)\s*,?\s*child of/i,
-        // "Surname, fornames" at start of whole text (possible with some non-alpha chars before it)
+        // "Surname, forenames" at start of whole text (possible with some non-alpha chars before it)
         /^\W*([a-z]+),\s?[a-z ]+/i,
-        // "Surname, fornames" at start of line or sentence
+        // "Surname, forenames" at start of line or sentence
         /(?:\.|\n|<br ?\/?>|<br ?\/?>\n)\s*([a-z]+),\s?[a-z ]+/i,
       ],
     },
   };
   let surname = parser.extractMatchingValueFromText(surnameExtractInput);
   if (surname) {
-    fieldData["surname"] = surname.trim();
-    return true;
+    return surname.trim();
   }
 }
 
 function extractGivenNames(parser, fieldData) {
-  const surnameExtractInput = {
+  const nameExtractInput = {
     wholeText: {
       matches: [
         /(?:^|[\s,\n])(?:forenames|given names|given name|given name\(s\)|first names|first name|first name\(s\))\s*:?\s*([a-z ]+)/i,
@@ -111,23 +128,28 @@ function extractGivenNames(parser, fieldData) {
       ],
     },
   };
-  let givenNames = parser.extractMatchingValueFromText(surnameExtractInput);
+  let givenNames = parser.extractMatchingValueFromText(nameExtractInput);
   if (givenNames) {
-    fieldData["givenNames"] = givenNames.trim();
+    return givenNames.trim();
+  }
+}
+
+function extractFullName(parser, fieldData) {
+  const nameExtractInput = {
+    wholeText: {
+      matches: [
+        /entry for\s+'*([a-z ]+)'*[,;\.]/i, // Aus project case
+        /name: '*([a-z ]+)'+/i,
+      ],
+    },
+  };
+  let fullName = parser.extractMatchingValueFromText(nameExtractInput);
+  if (fullName) {
+    return fullName.trim();
   }
 }
 
 function extractYear(parser, fieldData, searchType) {
-  const removeMatches = [
-    // e.g. "(Genealogy SA, https://www.genealogysa.org.au : accessed 11 May 2020)
-    /\([^\)]*(?:accessed|viewed|retrieved)[^\)]+\)/i,
-    // e.g. "Daly 143/400, accessed 10 May 2026 via Genealogy SA"
-    /(?:accessed|viewed|retrieved)\s+(?:\d\d?\s+)(?:[a-z]+\s+)?\d\d\d\d\W/i,
-    // remove year ranges. E.g.:
-    // Marriage: "Australia, Marriage Index, 1788-1950"
-    // Australia, Marriage Index, 1788-1950; Page number: 877
-    /\d\d\d\d-\d\d\d\d/gi,
-  ];
   const yearExtractInput = {
     preClean: {
       removeMatches: removeMatches,
@@ -207,7 +229,7 @@ function extractYear(parser, fieldData, searchType) {
       if (year) {
         fieldData["yearFromCtrl"] = year;
         fieldData["yearToCtrl"] = year;
-        return;
+        return true;
       }
     }
   }
@@ -216,7 +238,88 @@ function extractYear(parser, fieldData, searchType) {
   if (year) {
     fieldData["yearFromCtrl"] = year;
     fieldData["yearToCtrl"] = year;
+    return true;
   }
+}
+
+function getReferenceNumber(parser, fieldData, refineData) {
+  const registrationNumberExtractInput = {
+    preClean: {
+      removeMatches: removeMatches,
+    },
+    wholeText: {
+      matches: [
+        // e.g.: , 1892/C/171
+        /registration(?: number)?: (\d+\/\d+)/i,
+        /reg(?: number)?: (\d+\/\d+)/i,
+        /(\d\d\d\d\/\d+)/i,
+        /(\d+\/\d\d\d\d)/i,
+      ],
+    },
+  };
+  let number = parser.extractMatchingValueFromText(registrationNumberExtractInput);
+  if (number) {
+    const parts = number.split("/");
+    if (parts.length == 2) {
+      let foundNum = false;
+      let num1 = parts[0];
+      let num2 = parts[1];
+      if (num1.length == 4) {
+        if (num2.length == 4) {
+          // either number could be year
+          if (parser.isValidYear(num1)) {
+            if (!parser.isValidYear(num2)) {
+              fieldData["yearFromCtrl"] = num1;
+              fieldData["yearToCtrl"] = num1;
+              refineData.text = num2;
+              foundNum = true;
+            }
+          } else if (parser.isValidYear(num2)) {
+            fieldData["yearFromCtrl"] = num2;
+            fieldData["yearToCtrl"] = num2;
+            refineData.text = num1;
+            foundNum = true;
+          }
+        } else {
+          fieldData["yearFromCtrl"] = num1;
+          fieldData["yearToCtrl"] = num1;
+          refineData.text = num2;
+          foundNum = true;
+        }
+      } else if (num2.length == 4) {
+        fieldData["yearFromCtrl"] = num2;
+        fieldData["yearToCtrl"] = num2;
+        refineData.text = num1;
+        foundNum = true;
+      }
+
+      if (foundNum) {
+        return true;
+      }
+    }
+  }
+
+  const singleRegistrationNumberExtractInput = {
+    preClean: {
+      removeMatches: removeMatches,
+    },
+    wholeText: {
+      matches: [
+        // e.g.: , 1892/C/171
+        // e.g.: , 1892/C/171
+        /registration(?: number)?: (\d+)/i,
+        /reg(?: number)?: (\d+)/i,
+      ],
+    },
+  };
+
+  let singleNumber = parser.extractMatchingValueFromText(singleRegistrationNumberExtractInput);
+  if (singleNumber) {
+    refineData.text = singleNumber;
+    return true;
+  }
+
+  return false;
 }
 
 function transformPlainText(plainText, phase, options) {
@@ -224,7 +327,7 @@ function transformPlainText(plainText, phase, options) {
     return undefined;
   }
 
-  console.log("wagovau: transformPlainText: string is a match", plainText);
+  //console.log("wagovau: transformPlainText: string is a match", plainText);
 
   let fieldData = {};
   const searchData = {
@@ -248,13 +351,65 @@ function transformPlainText(plainText, phase, options) {
   }
   searchData.searchType = searchType;
 
-  const gotSurname = extractSurname(parser, fieldData);
-  if (!gotSurname) {
-    return undefined;
+  let gotSurname = false;
+  const surname = extractSurname(parser);
+  const givenNames = extractGivenNames(parser);
+  const fullName = extractFullName(parser);
+  let useFullName = false;
+  if (fullName) {
+    useFullName = true;
+    if (surname && givenNames) {
+      const invalidNames = ["registration", "registry", "department", "sex", "gender", "year", "father", "mother"];
+      let lcSurname = surname.toLowerCase();
+      let lcGivenNames = givenNames.toLowerCase();
+      useFullName = false;
+      for (let invalidName of invalidNames) {
+        if (lcSurname.includes(invalidName) || lcGivenNames.includes(invalidName)) {
+          useFullName = true;
+        }
+      }
+    }
   }
 
-  extractGivenNames(parser, fieldData);
-  extractYear(parser, fieldData, searchType);
+  if (useFullName) {
+    let nameObj = new NameObj();
+    nameObj.setFullName(fullName);
+    let inferredSurname = nameObj.inferLastName();
+    let inferredGivenNames = nameObj.inferForenames();
+    if (inferredSurname) {
+      fieldData["surname"] = inferredSurname;
+      gotSurname = true;
+    }
+    if (inferredGivenNames) {
+      fieldData["givenNames"] = inferredGivenNames;
+    }
+  } else {
+    if (surname) {
+      fieldData["surname"] = surname;
+      gotSurname = true;
+    }
+    if (givenNames) {
+      fieldData["givenNames"] = givenNames;
+    }
+  }
+
+  let refineData = {};
+  let gotYear = false;
+  const gotRefNum = getReferenceNumber(parser, fieldData, refineData);
+  if (gotRefNum) {
+    searchData.refineData = refineData;
+    if (fieldData["yearFromCtrl"]) {
+      gotYear = true;
+    }
+  }
+
+  if (!gotYear) {
+    gotYear = extractYear(parser, fieldData, searchType);
+  }
+
+  if (!gotSurname && !gotYear) {
+    return undefined;
+  }
 
   return result;
 }

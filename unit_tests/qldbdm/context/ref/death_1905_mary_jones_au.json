@@ -6,7 +6,9 @@
     "url": "https://www.familyhistory.bdm.qld.gov.au/reset",
     "fieldData": {
       "death": true,
-      "regnum": "000663"
+      "regyear": "1905",
+      "regtype": "C",
+      "regnum": "3389"
     }
   }
 }
