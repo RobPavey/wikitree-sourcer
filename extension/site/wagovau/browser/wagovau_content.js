@@ -255,27 +255,28 @@ async function doPendingSearch() {
     await sleep(300);
 
     const appElement = await getAppElement(searchType);
+    if (appElement) {
+      let searchButtonElement = appElement.querySelector("button.piSearchBtn[type=submit]");
+      if (searchButtonElement) {
+        await setSearchTextFields(fieldData, appElement, searchButtonElement);
 
-    let searchButtonElement = appElement.querySelector("button.piSearchBtn[type=submit]");
-    if (searchButtonElement) {
-      await setSearchTextFields(fieldData, appElement, searchButtonElement);
+        // Dispatch an Escape key stroke globally to tell Angular to collapse autocomplete panels
+        window.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", code: "Escape", bubbles: true }));
+        await sleep(50);
 
-      // Dispatch an Escape key stroke globally to tell Angular to collapse autocomplete panels
-      window.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", code: "Escape", bubbles: true }));
-      await sleep(50);
+        // BRUTE FORCE PROTECTION: If Angular fails to close them, wipe the panes from the DOM
+        const lingeringPanes = document.querySelectorAll(".cdk-overlay-pane");
+        lingeringPanes.forEach((pane) => pane.remove());
+        await sleep(50);
 
-      // BRUTE FORCE PROTECTION: If Angular fails to close them, wipe the panes from the DOM
-      const lingeringPanes = document.querySelectorAll(".cdk-overlay-pane");
-      lingeringPanes.forEach((pane) => pane.remove());
-      await sleep(50);
+        // do the search
+        searchButtonElement.focus();
+        searchButtonElement.dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
+        searchButtonElement.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
+        searchButtonElement.dispatchEvent(new MouseEvent("click", { bubbles: true })); // Triggers Angular form submission
 
-      // do the search
-      searchButtonElement.focus();
-      searchButtonElement.dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
-      searchButtonElement.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
-      searchButtonElement.dispatchEvent(new MouseEvent("click", { bubbles: true })); // Triggers Angular form submission
-
-      searchButtonElement.scrollIntoView(true);
+        searchButtonElement.scrollIntoView(true);
+      }
     }
 
     // clear the pending data so that we don't use it again on refine search

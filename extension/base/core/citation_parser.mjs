@@ -289,6 +289,33 @@ class CitationParser {
       return false;
     }
   }
+
+  identifyType(extractInput) {
+    let text = this.text;
+
+    if (!text) {
+      return;
+    }
+
+    if (extractInput.preClean) {
+      let clean = extractInput.preClean;
+      if (clean.removeMatches) {
+        for (let regex of clean.removeMatches) {
+          text = text.replace(regex, "");
+        }
+      }
+    }
+
+    if (extractInput.typeMatches) {
+      for (let type of extractInput.typeMatches) {
+        for (let regex of type.matches) {
+          if (regex.test(text)) {
+            return type.searchType;
+          }
+        }
+      }
+    }
+  }
 }
 
 function doesTextMatchForContextPhase(text, phase, phaseMatches) {

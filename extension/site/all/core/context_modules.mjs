@@ -36,6 +36,7 @@ import * as scotpContextModule from "../../../site/scotp/core/scotp_context.mjs"
 import * as thegenContextModule from "../../../site/thegen/core/thegen_context.mjs";
 import * as npContextModule from "../../../site/np/core/np_context.mjs";
 import * as vicbdmContextModule from "../../../site/vicbdm/core/vicbdm_context.mjs";
+import * as wagovauContextModule from "../../../site/wagovau/core/wagovau_context.mjs";
 import * as wikitreeContextModule from "../../../site/wikitree/core/wikitree_context.mjs";
 
 let contextModules = {
@@ -51,6 +52,7 @@ let contextModules = {
   scotp: scotpContextModule,
   thegen: thegenContextModule,
   vicbdm: vicbdmContextModule,
+  wagovau: wagovauContextModule,
   wikitree: wikitreeContextModule,
 };
 
