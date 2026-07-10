@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Index to Provincial Registrations of Births (RS141A5)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Microfilm: F19016; Date:1908-06-04; Place: Saint John, Saint John, New Brunswick, Canada<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/birth/141a5/d9f0d4ad-a048-44e0-b7c2-8022c3c54c7f New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nAlice Frances Wallace birth 4 Jun 1908 in Saint John, Saint John, New Brunswick, Canada, daughter of Frederick Wallace & Ellen Clark.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Alice, daughter of Frederick Wallace & Ellen Clark, was born on 4 June 1908 in Saint John, Saint John, New Brunswick, Canada.<ref>\n'''Birth Registration''':\n\"Index to Provincial Registrations of Births (RS141A5)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Microfilm: F19016; Date:1908-06-04; Place: Saint John, Saint John, New Brunswick, Canada<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/birth/141a5/d9f0d4ad-a048-44e0-b7c2-8022c3c54c7f New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nAlice Frances Wallace birth 4 Jun 1908 in Saint John, Saint John, New Brunswick, Canada, daughter of Frederick Wallace & Ellen Clark.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"Index to Provincial Registrations of Births (RS141A5)\"<br/>Provincial Archives of New Brunswick; Vital Statistics (RS141); Microfilm: F19016; Date:1908-06-04; Place: Saint John, Saint John, New Brunswick, Canada<br/>[https://archives.gnb.ca/en-ca/vital-statistics/birth/141a5/d9f0d4ad-a048-44e0-b7c2-8022c3c54c7f New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>Alice Frances Wallace birth 4 Jun 1908 in Saint John, Saint John, New Brunswick, Canada, daughter of Frederick Wallace & Ellen Clark.",
+    "type": "source"
+  }
+}

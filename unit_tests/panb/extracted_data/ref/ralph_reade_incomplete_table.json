@@ -2,11 +2,8 @@
   "url": "https://archives2.gnb.ca/Search/VISSE/141A5.aspx?culture=en-CA&guid=9AEBD1C0-E23F-4300-ADCB-84C6AAAB1D0B",
   "success": true,
   "databaseID": "RS141A5",
-<<<<<<< HEAD
-  "tableTitle": "Vital Statistics from Government Records (RS141A5): Index to Provincial Registrations of Births",
-=======
+  "sourceTitle": "New Brunswick Provincial Archives; Vital Statistics from Government Records (RS141)",
   "tableTitle": "Index to Provincial Registrations of Births (RS141A5)",
->>>>>>> e466a5f4048fec9772f9f4140bb97eb21f4283f6
   "recordData": {
     "Name": "READE, RALPH RUSSELL",
     "Sex": "M",
@@ -18,8 +15,9 @@
     "Number": "103000",
     "Code": "A5/1928"
   },
+  "webpageFormat": 202601,
+  "numberTableEntries": 9,
   "hasImage": false,
   "imageUrl": "",
-  "numberTableEntries": 9,
   "eventType": "Birth"
 }

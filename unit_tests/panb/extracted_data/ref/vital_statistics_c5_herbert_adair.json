@@ -1,0 +1,21 @@
+{
+  "url": "https://archives.gnb.ca/en-ca/vital-statistics/death/141c5/544356df-20f8-434c-baa4-5b444604869e",
+  "success": true,
+  "databaseID": "RS141C5",
+  "sourceTitle": "Provincial Archives of New Brunswick; Vital Statistics (RS141)",
+  "tableTitle": "Index to Death Certificates (RS141C5)",
+  "recordData": {
+    "Name": "ADAIR, HERBERT",
+    "Sex": "M",
+    "Date": "1946-04-18",
+    "County": "CARLETON",
+    "Registration": "2188",
+    "Volume": "173",
+    "Microfilm": "F19577"
+  },
+  "webpageFormat": 202606,
+  "numberTableEntries": 7,
+  "hasImage": true,
+  "imageUrl": "https://archives.gnb.ca/api/image-handler/digitized-documents/rs141/c5/1946/544356df-20f8-434c-baa4-5b444604869e.jpg",
+  "eventType": "Death"
+}

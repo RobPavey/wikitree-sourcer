@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Index to Death registration of soldiers, 1941-1947 (RS141C6)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Residence: ANAGANCE; Date: 1944-07-04; Place: FRANCE; Microfilm: F20079<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/death/141c6/0040b7d5-4dea-4c5a-b925-845e59e3d9e7 New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nWalter Cameron Mitton of Anagance death (age 21) 4 Jul 1944 in service in France.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Walter Cameron Mitton (age 21) of Anagance died 4 Jul 1944 in service in France.<ref>\n'''Death Registration''':\n\"Index to Death registration of soldiers, 1941-1947 (RS141C6)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Residence: ANAGANCE; Date: 1944-07-04; Place: FRANCE; Microfilm: F20079<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/death/141c6/0040b7d5-4dea-4c5a-b925-845e59e3d9e7 New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nWalter Cameron Mitton of Anagance death (age 21) 4 Jul 1944 in service in France.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"Index to Death registration of soldiers, 1941-1947 (RS141C6)\"<br/>Provincial Archives of New Brunswick; Vital Statistics (RS141); Residence: ANAGANCE; Date: 1944-07-04; Place: FRANCE; Microfilm: F20079<br/>[https://archives.gnb.ca/en-ca/vital-statistics/death/141c6/0040b7d5-4dea-4c5a-b925-845e59e3d9e7 New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>Walter Cameron Mitton of Anagance death (age 21) 4 Jul 1944 in service in France.",
+    "type": "source"
+  }
+}

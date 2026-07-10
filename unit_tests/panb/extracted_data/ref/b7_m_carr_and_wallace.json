@@ -2,11 +2,8 @@
   "url": "https://archives2.gnb.ca/Search/VISSE/141B7.aspx?culture=en-CA&guid=599B423B-6369-42C3-A475-537726F8A403",
   "success": true,
   "databaseID": "RS141B7",
-<<<<<<< HEAD
-  "tableTitle": "Vital Statistics from Government Records (RS141B7): Index to New Brunswick Marriages",
-=======
+  "sourceTitle": "New Brunswick Provincial Archives; Vital Statistics from Government Records (RS141)",
   "tableTitle": "Index to New Brunswick Marriages (RS141B7)",
->>>>>>> e466a5f4048fec9772f9f4140bb97eb21f4283f6
   "recordData": {
     "Name": "CARR, JOHN WALTER",
     "Married": "WALLACE, DALE ALICE",
@@ -17,8 +14,9 @@
     "Code": "B4/1974",
     "Sex": ""
   },
+  "webpageFormat": 202601,
+  "numberTableEntries": 8,
   "hasImage": true,
   "imageUrl": "https://archives2.gnb.ca/DigitizedDocuments/RS141/B7/1974/599b423b-6369-42c3-a475-537726f8a403.jpg",
-  "numberTableEntries": 7,
   "eventType": "Marriage"
 }

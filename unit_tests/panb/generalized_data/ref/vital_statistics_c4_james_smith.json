@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "name": "James Smith"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1892-05-18"
+  },
+  "eventPlace": {
+    "placeString": "Kent, New Brunswick, Canada"
+  },
+  "registrationDistrict": "Kent",
+  "webpageFormat": 202606,
+  "hasValidData": true
+}

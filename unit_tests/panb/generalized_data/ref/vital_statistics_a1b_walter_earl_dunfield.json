@@ -3,28 +3,28 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "name": {
-    "name": "John Leslie Wallace"
+    "name": "Walter Earl Dunfield"
   },
   "personGender": "male",
   "eventDate": {
-    "dateString": "1864-08-19"
+    "dateString": "1902-05-08"
   },
   "eventPlace": {
-    "placeString": "Cummings Cove, Charlotte, New Brunswick Colony"
+    "placeString": "Penobsquis, Kings, New Brunswick, Canada"
   },
-  "registrationDistrict": "Charlotte",
+  "registrationDistrict": "Kings",
   "parents": {
     "father": {
       "name": {
-        "name": "David Wallace"
+        "name": "John Dunfield"
       }
     },
     "mother": {
       "name": {
-        "name": "Emily Wallace"
+        "name": "Lucy Goddard"
       }
     }
   },
-  "webpageFormat": 202601,
+  "webpageFormat": 202606,
   "hasValidData": true
 }
