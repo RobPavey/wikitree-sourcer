@@ -1447,6 +1447,12 @@ function detectPageType(document, result, url) {
     result.pageType = "unknown";
   }
 
+  if (result.pageType == "record") {
+    // check if the comment modal is up
+    let modalElement = document.querySelector("#modal > #modalFixed .bandido-modal-post-share .share-url");
+    result.pageType = "comments";
+  }
+
   //console.log("detectPageType, result.pageType = " + result.pageType);
 }
 

@@ -948,7 +948,7 @@ async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citati
   };
 
   function getSourceNameForCitation(gd, otherSiteData) {
-    // a source name like "Devon Baptisms" is not unique, ther could be
+    // a source name like "Devon Baptisms" is not unique, there could be
     // collections like that on multiple repositories
 
     if (!citationObject.sourceTitle && !citationObject.sourceNameWithinRepository) {
@@ -1200,6 +1200,114 @@ async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citati
   }
 }
 
+async function setCommentFromPersonDataOrCitation(data, personData, tabId, citationObject, backFunction) {
+  displayBusyMessage("Setting fields ...");
+
+  let fieldData = {};
+  let ed = undefined;
+  let gd = undefined;
+
+  if (personData) {
+    ed = personData.extractedData;
+    gd = personData.generalizedData;
+  } else if (citationObject) {
+    gd = citationObject.generalizedData;
+  }
+
+  if (gd) {
+    if (personData) {
+      if (ed && gd.sourceOfData == "wikitree") {
+        if (ed.wikiId) {
+          fieldData.sourceTitle = ed.wikiId + " on WikiTree";
+          fieldData.webPageUrl = "https://www.wikitree.com/wiki/" + ed.wikiId;
+        }
+
+        if (ed.citation) {
+          fieldData.citation = ed.citation;
+        }
+      }
+    } else if (citationObject) {
+      if (gd.eventDate) {
+        fieldData.eventDate = gd.eventDate.getDateString();
+      }
+      fieldData.sourceTitle = citationObject.sourceTitle;
+      fieldData.webPageUrl = citationObject.url;
+      fieldData.citation = citationObject.sourceReference;
+      fieldData.notes = citationObject.standardDataString;
+
+      if (citationObject.plainSharingLink) {
+        fieldData.notes += "\n\nSharing link:\n" + citationObject.plainSharingLink;
+      }
+    }
+
+    if (gd.name) {
+      fieldData.hasNameEvent = true;
+    }
+    if (gd.personGender) {
+      fieldData.hasSexEvent = true;
+    }
+    if (gd.birthDate) {
+      fieldData.hasBirthEvent = true;
+    } else if (gd.recordType == RT.Birth || gd.recordType == RT.BirthRegistration) {
+      fieldData.hasBirthEvent = true;
+    }
+
+    if (gd.recordType == RT.Baptism) {
+      fieldData.hasBaptismEvent = true;
+    }
+
+    if (gd.deathDate) {
+      fieldData.hasDeathEvent = true;
+    } else if (gd.recordType == RT.Death || gd.recordType == RT.DeathRegistration) {
+      fieldData.hasDeathEvent = true;
+    }
+
+    if (gd.recordType == RT.Burial) {
+      fieldData.hasBurialEvent = true;
+    }
+  }
+
+  // send a message to content script
+  try {
+    //console.log("setCreateSourceFieldsFromPersonData");
+    //console.log(tabId);
+    //console.log(fieldData);
+
+    chrome.tabs.sendMessage(tabId, { type: "setFields", fieldData: fieldData }, function (response) {
+      displayBusyMessage("Setting fields ...");
+
+      //console.log("setCreateSourceFieldsFromPersonData, chrome.runtime.lastError is:");
+      //console.log(chrome.runtime.lastError);
+      //console.log("setCreateSourceFieldsFromPersonData, response is:");
+      //console.log(response);
+
+      // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
+      if (chrome.runtime.lastError || !response) {
+        // possibly there is no content script loaded, this could be an error that should be reported
+        // By testing edge cases I have found the if you reload the page and immediately click the
+        // extension button sometimes this will happen. Presumably because the content script
+        // just got unloaded prior to the reload but we got here because the popup had not been reset.
+        // In this case we are seeing the response being undefined.
+        // What to do in this case? Don't want to leave the "Initializing menu..." up.
+        let message = "setCreateSourceFieldsFromPersonData failed";
+        if (chrome.runtime.lastError && chrome.runtime.lastError.message) {
+          message += ": " + chrome.runtime.lastError.message;
+        }
+        displayMessageWithIcon("warning", message);
+      } else if (response.success) {
+        // Used to display a message on success but that meant an extra click to close popup
+        //displayMessageWithIconThenClosePopup("check", "Fields updated");
+        closePopup();
+      } else {
+        let message = response.errorMessage;
+        console.log(message);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -1266,7 +1374,7 @@ function addAncestryGoToImageMenuItem(menu, data) {
 
 async function addAncestryAddCommentMenuItem(menu, data, tabId) {
   let ed = data.extractedData;
-  if (ed.hasCommentTextArea) {
+  if (ed.hasCommentTextArea || ed.pageType == "comments") {
     let personData = await getLatestPersonData();
     if (!personData) {
       return; // no saved data, do not add menu item
@@ -1477,6 +1585,18 @@ function setupBuildAllCitationsSubmenu(data, backFunction) {
 // Main Menu
 //////////////////////////////////////////////////////////////////////////////////////////
 
+async function setupAncestryPopupMenuForComments(data, tabId) {
+  let backFunction = function () {
+    setupAncestryPopupMenuForComments(data, tabId);
+  };
+
+  let menu = beginMainMenu();
+
+  await addAncestryAddCommentMenuItem(menu, data, tabId);
+
+  addStandardMenuEnd(menu, data, backFunction);
+}
+
 // Common function used by both the normal path and the path taken for an unclassified
 // non-primary record.
 async function setupAncestryPopupMenuWithLinkData(data, tabId) {
@@ -1604,6 +1724,11 @@ async function setupAncestryPopupMenu(extractedData, tabId) {
     let message = "WikiTree Sourcer could not interpret the data on this page.";
     message += "\n\nIt looks like a supported Ancestry page but the data generalize failed.";
     buildMinimalMenuWithMessage(message, data, backFunction);
+    return;
+  }
+
+  if (extractedData.pageType == "comments") {
+    setupAncestryPopupMenuForComments(data, tabId);
     return;
   }
 

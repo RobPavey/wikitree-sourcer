@@ -245,6 +245,9 @@ async function setFields(fieldData, sendResponse) {
 
   sendResponse({ success: true });
 }
+function addCommentPreJune2026(fieldData) {}
+
+function addCommentPostJune2026(fieldData) {}
 
 function addComment(fieldData) {
   console.log("addComment, fieldData is:");
