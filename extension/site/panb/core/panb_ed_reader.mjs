@@ -38,11 +38,13 @@ class PanbEdReader extends ExtractedDataReader {
     this.volumeString = this.recordData["Volume"];
     this.referenceString = this.recordData["Reference"];
     this.tableTitle = ed.tableTitle;
+    this.sourceTitle =ed.sourceTitle;
     this.eventType = ed.eventType;
     this.databaseID = ed.databaseID;
     this.hasImage = ed.hasImage;
-    this.imageURL = ed.imageURL;
-
+    this.imageURL = ed.imageURL;      
+    this.webpageFormat = ed.webpageFormat;
+  
     switch (this.eventType) {
       case "Birth":
         this.recordType = RT.BirthRegistration;
@@ -279,17 +281,16 @@ class PanbEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
-    if (this.ed.databaseID == "RS141C6") {
-      let tempString = this.recordData["Date of Death"];
-      return this.makeDateObjFromDateString(tempString);
+    let tempString = "";
+    if (this.ed.databaseID == "RS141C6"  && this.webpageFormat == 202601) {
+      tempString = this.recordData["Date of Death"];
+      //return this.makeDateObjFromDateString(tempString);
     }
-
-    let dateString = this.recordData["Date"];
-    if (!dateString) {
-      return undefined;
-    } else {
-      return this.makeDateObjFromDateString(dateString);
+    else {
+      tempString = this.recordData["Date"];
     }
+    return this.makeDateObjFromDateString(tempString);
+  
   }
 
   getParish() {
@@ -312,7 +313,17 @@ class PanbEdReader extends ExtractedDataReader {
 
   getEventPlaceObj() {
     let placeString = "";
-    if (this.ed.eventType == "Birth" || this.ed.databaseID == "RS141C1") {
+    if (this.ed.eventType == "Birth") {
+      let tempString = "";
+      if (this.webpageFormat == 202606) {
+        tempString =this.recordData["Place of Birth"];
+      }
+      else {
+        tempString =this.recordData["Place"];
+      }  
+      placeString = this.toLeadingCase(tempString) + ", ";
+    }
+    else if (this.ed.databaseID == "RS141C1") {
       let tempString = this.recordData["Place"];
       placeString = this.toLeadingCase(tempString) + ", ";
     } else if (this.ed.eventType == "Marriage") {
@@ -320,9 +331,16 @@ class PanbEdReader extends ExtractedDataReader {
       if (tempString && tempString.slice(0, 1) != "-") {
         placeString = this.toLeadingCase(tempString) + ", ";
       }
-    } else if (this.ed.databaseID == "RS141C6") {
-      let tempString = this.recordData["Killed"];
-      placeString = "service in " + this.toLeadingCase(tempString);
+    }
+    else if (this.ed.databaseID == "RS141C6") {
+      let tempString = "";
+      if (this.webpageFormat == 202606) {
+        tempString = this.recordData["Place"];
+      }
+      else {
+        tempString = this.recordData["Killed"];
+      }
+      placeString = "service in " + tempString; //this.toLeadingCase(tempString);
       return this.makePlaceObjFromFullPlaceName(placeString);
     }
     let countyString = "";
@@ -344,6 +362,21 @@ class PanbEdReader extends ExtractedDataReader {
     }
   }
 
+getResidencePlaceObj() {
+  let tempString = this.recordData["Residence"];  
+  if (!tempString) {
+      return undefined;
+    } else if (tempString != "" && tempString[0] == "-") {
+      let placeString = this.toLeadingCase(tempString);
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      return placeObj;
+    } 
+    else {
+      return undefined;
+    }
+
+  } 
+
   getBirthPlaceObj() {
     if (this.ed.databaseID != "RS141C1") {
       return undefined;
@@ -351,7 +384,7 @@ class PanbEdReader extends ExtractedDataReader {
     let tempString = this.recordData["Place of Birth"];
     if (!tempString) {
       return undefined;
-    } else if (tempString != "" && tempString != "-----") {
+    } else if (tempString != "" && tempString[0] == "-") {
       let placeString = this.toLeadingCase(tempString) + ", ";
       let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
       return placeObj;
@@ -361,14 +394,15 @@ class PanbEdReader extends ExtractedDataReader {
   }
 
   getDeathDateObj() {
-    return undefined;
+    let deathDateObj = this.getEventDateObj();
+    return this.deathDateObj;
   }
 
   getDeathPlaceObj() {
-    if (this.ed.databaseID == "RS141C6") {
+  /*   if (this.ed.databaseID == "RS141C6") {
       return undefined;
     }
-    let deathPlaceObj = this.getEventPlaceObj();
+  */   let deathPlaceObj = this.getEventPlaceObj();
     return this.deathPlaceObj;
   }
 
@@ -533,6 +567,119 @@ class PanbEdReader extends ExtractedDataReader {
   getCollectionData() {
     return undefined;
   }
+
+  setCustomFields(gd) {
+    if (this.ed.webpageFormat) {
+      gd.webpageFormat = this.ed.webpageFormat;
+    }
+
+    if (this.databaseID == "RS141C6") { 
+      let residenceString = "";
+      let tempResidenceString = this.recordData["Residence"];
+      if (tempResidenceString && tempResidenceString != "") {
+        residenceString = " of " + tempResidenceString[0] + tempResidenceString.slice(1).toLowerCase();
+      }
+      
+      let tempLabel = "Date";
+      if (gd.webpageFormat == 202601) {
+        tempLabel = "Date of Death";
+      }
+      let tempString = this.recordData[tempLabel];
+      let deathDateObj = this.makeDateObjFromDateString(tempString);
+      let deathDateString = "" + deathDateObj.getDataStringFormat("short", false);
+      let killedPlaceString = "";
+      tempLabel = "Place";
+      if (gd.webpageFormat == 202601) {
+        tempLabel = "Killed";
+      }
+      let deathPlaceString = "";
+      let killedPlace
+      let tempKilledPlaceString = this.recordData[tempLabel];
+      if (tempKilledPlaceString && tempKilledPlaceString != "") {
+        deathPlaceString = tempKilledPlaceString[0] + tempKilledPlaceString.slice(1).toLowerCase();
+        if (deathPlaceString != "Overseas") {
+          killedPlaceString = " in service in " + deathPlaceString;
+        }
+        else {
+          killedPlaceString = " in service " + deathPlaceString;
+        }
+      }
+      let ageString = "";
+      if (gd.ageAtDeath && gd.ageAtDeath != "") {
+        ageString = " (age " + gd.ageAtDeath + ")";
+      }
+      gd.userOverrideForNarrative = gd.name.name + ageString + residenceString + " died " + deathDateString + killedPlaceString + ".";
+    }
+    else if (gd.webpageFormat == 202606 && this.databaseID == "RS141C1") {
+      let tempLabel = "Residence";
+      let residenceString = "";
+      let tempResidenceString = this.recordData[tempLabel];
+      if (tempResidenceString && tempResidenceString != "") {
+        residenceString = ", now of " +tempResidenceString[0] + tempResidenceString.slice(1).toLowerCase();
+      }
+      tempLabel = "County of Residence";
+      tempResidenceString = this.recordData[tempLabel];
+      if (tempResidenceString && tempResidenceString != "") {
+        if (residenceString != "") {
+          residenceString += ", ";
+        }
+        else {
+          residenceString += ", now of ";
+        }
+        residenceString += tempResidenceString[0] + tempResidenceString.slice(1).toLowerCase();
+      }
+      tempLabel = "Date";
+      let tempString = this.recordData[tempLabel];
+      let deathDateObj = this.makeDateObjFromDateString(tempString);
+      let deathDateString = deathDateObj.getDataStringFormat("short", false);
+
+      tempLabel = "Place";
+      let deathPlaceString = "";
+      let tempdiedPlaceString = this.recordData[tempLabel];
+      if (tempdiedPlaceString && tempdiedPlaceString != "") {
+        deathPlaceString = " in " + tempdiedPlaceString[0] + tempdiedPlaceString.slice(1).toLowerCase();
+      }
+      tempLabel = "County of Death";
+      tempdiedPlaceString = this.recordData[tempLabel];
+      if (tempdiedPlaceString && tempdiedPlaceString != "") {
+        if (deathPlaceString != "") {
+          deathPlaceString += ", ";
+        }
+        else {
+          deathPlaceString = ", in ";
+        }
+        deathPlaceString += tempdiedPlaceString[0] + tempdiedPlaceString.slice(1).toLowerCase();
+      }
+      if (deathPlaceString != "") {
+        deathPlaceString += ", New Brunswick";
+      }
+
+      tempLabel = "Place of Birth";
+      let bornPlaceString = "";
+      let tempbornPlaceString = this.recordData[tempLabel];
+      if (tempbornPlaceString && tempbornPlaceString != "") {
+        bornPlaceString = ", born in " + tempbornPlaceString[0] + tempbornPlaceString.slice(1).toLowerCase();
+      }
+      tempLabel = "County of Birth";
+      tempbornPlaceString = this.recordData[tempLabel];
+      if (tempbornPlaceString && tempbornPlaceString != "") {
+        if (bornPlaceString != "") {
+          bornPlaceString += ", ";
+        }
+        else {
+          bornPlaceString = ", born in ";
+        }
+        bornPlaceString += tempbornPlaceString[0] + tempbornPlaceString.slice(1).toLowerCase();
+      }
+      let ageString = gd.ageAtDeath;
+      let deathAgeString = "";
+      if (ageString && ageString != "") {
+        deathAgeString = " at age " + ageString;
+      }
+      gd.userOverrideForNarrative = gd.name.name + bornPlaceString + residenceString + ", died " + deathDateString + deathAgeString + deathPlaceString + ".";
+    }
+  }
 }
+
 
 export { PanbEdReader };

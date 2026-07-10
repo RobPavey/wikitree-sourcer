@@ -3,28 +3,28 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "name": {
-    "name": "John Leslie Wallace"
+    "name": "William Lewis Rafferty"
   },
   "personGender": "male",
   "eventDate": {
-    "dateString": "1864-08-19"
+    "dateString": "1867-02-18"
   },
   "eventPlace": {
-    "placeString": "Cummings Cove, Charlotte, New Brunswick Colony"
+    "placeString": "Saint John, Saint John, New Brunswick Colony"
   },
-  "registrationDistrict": "Charlotte",
+  "registrationDistrict": "Saint John",
   "parents": {
     "father": {
       "name": {
-        "name": "David Wallace"
+        "name": "William Rafferty"
       }
     },
     "mother": {
       "name": {
-        "name": "Emily Wallace"
+        "name": "Margaret Mcguire"
       }
     }
   },
-  "webpageFormat": 202601,
+  "webpageFormat": 202606,
   "hasValidData": true
 }

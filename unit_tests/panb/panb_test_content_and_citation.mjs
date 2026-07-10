@@ -30,7 +30,7 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  {
+ {
     caseName: "a1b_john_wallace",
     url: "https://archives2.gnb.ca/Search/VISSE/141A1b.aspx?culture=en-CA&guid=436A96E4-9228-44F6-AE61-5051B00E8613",
   },
@@ -76,6 +76,47 @@ const regressionData = [
     caseName: "walter_earl_dunfield_b_1902",
     url: "https://archives2.gnb.ca/Search/VISSE/141A1b.aspx?culture=en-CA&guid=D740BC74-0DEC-47C4-85E9-D5122DC81D96",
   },
+  
+  {
+   caseName: "vital_statistics_a1b_walter_earl_dunfield",
+    url: "https://archives.gnb.ca/en-ca/vital-statistics/birth/141a1b/d740bc74-0dec-47c4-85e9-d5122dc81d96",
+  }, 
+  
+  {
+   caseName: "vital_statistics_a2-2_william_lewisLrafferty",
+    url: "https://archives.gnb.ca/en-ca/vital-statistics/birth/141a2_2/7b9c7302-3ac5-42b4-b1b1-f11ac4102a2c",
+  }, 
+  
+  {
+   caseName: "vital_statistics_a5_alice_frances_wallace",
+    url: "https://archives.gnb.ca/en-ca/vital-statistics/birth/141a5/d9f0d4ad-a048-44e0-b7c2-8022c3c54c7f",
+  }, 
+  
+  {
+   caseName: "vital_statistics_b7_boyd_g-macarthur",
+    url: "https://archives.gnb.ca/en-ca/vital-statistics/marriage/141b7/7c9b2dd7-8180-4ae6-a1e5-01fc95bbb82f",
+  },
+
+  {
+   caseName: "vital_statistics_c1_george_carr",
+    url: "https://archives.gnb.ca/en-ca/vital-statistics/death/141c1/b87d6d0f-e221-45cc-9ba2-3435ae99ee79",
+  }, 
+   
+  {
+   caseName: "vital_statistics_c4_james_smith",
+    url: "https://archives.gnb.ca/en-ca/vital-statistics/death/141c4/25d15839-7f37-4301-8177-d49fc59f5391",
+  }, 
+   
+  {
+   caseName: "vital_statistics_c5_herbert_adair",
+    url: "https://archives.gnb.ca/en-ca/vital-statistics/death/141c5/544356df-20f8-434c-baa4-5b444604869e",
+  }, 
+   
+  {
+   caseName: "vital_statistics_c6_walter_cameron_mitton",
+    url: "https://archives.gnb.ca/en-ca/vital-statistics/death/141c6/0040b7d5-4dea-4c5a-b925-845e59e3d9e7",
+  }, 
+
 ];
 
 async function runTests(testManager) {

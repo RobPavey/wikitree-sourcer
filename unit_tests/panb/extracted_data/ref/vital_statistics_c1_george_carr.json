@@ -1,0 +1,27 @@
+{
+  "url": "https://archives.gnb.ca/en-ca/vital-statistics/death/141c1/b87d6d0f-e221-45cc-9ba2-3435ae99ee79",
+  "success": true,
+  "databaseID": "RS141C1",
+  "sourceTitle": "Provincial Archives of New Brunswick; Vital Statistics (RS141)",
+  "tableTitle": "Index to County Death Registers (RS141C1)",
+  "recordData": {
+    "Name": "Carr, George",
+    "Sex": "M",
+    "Age": "3",
+    "Date": "1888-??-??",
+    "Residence": "Muniac",
+    "County of Residence": "VICTORIA",
+    "Place": "Muniac",
+    "County of Death": "VICTORIA",
+    "Place of Birth": "Muniac",
+    "County of Birth": "VICTORIA",
+    "Page": "73",
+    "Line": "0",
+    "Microfilm": "F13644"
+  },
+  "webpageFormat": 202606,
+  "numberTableEntries": 13,
+  "hasImage": true,
+  "imageUrl": "https://archives.gnb.ca/api/image-handler/digitized-documents/rs141/c1/1888/b87d6d0f-e221-45cc-9ba2-3435ae99ee79.jpg",
+  "eventType": "Death"
+}

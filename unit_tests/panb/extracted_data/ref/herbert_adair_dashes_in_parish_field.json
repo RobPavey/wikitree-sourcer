@@ -2,6 +2,7 @@
   "url": "https://archives2.gnb.ca/Search/VISSE/141B7.aspx?culture=en-CA&guid=ACF4DB10-1361-4280-836E-3400938EECD7",
   "success": true,
   "databaseID": "RS141B7",
+  "sourceTitle": "New Brunswick Provincial Archives; Vital Statistics from Government Records (RS141)",
   "tableTitle": "Index to New Brunswick Marriages (RS141B7)",
   "recordData": {
     "Name": "ADAIR, HERBERT",
@@ -14,8 +15,9 @@
     "Microfilm": "F15588",
     "Sex": ""
   },
+  "webpageFormat": 202601,
+  "numberTableEntries": 9,
   "hasImage": true,
   "imageUrl": "https://archives2.gnb.ca/DigitizedDocuments/RS141/B7/1899/acf4db10-1361-4280-836e-3400938eecd7.jpg",
-  "numberTableEntries": 8,
   "eventType": "Marriage"
 }
