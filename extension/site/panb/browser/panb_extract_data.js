@@ -46,7 +46,7 @@ const result = { headers, values };
 
 return result;
 }
- //=================REMOVE==================
+
 function getTextOfImmediateTextNodes(element) {
   let text = "";
   for (let child of element.childNodes) {
@@ -58,7 +58,7 @@ function getTextOfImmediateTextNodes(element) {
 
   return text;
 }
-//================================================================
+
 function extractCardBodyData(cardBodyElement, leadSuffix) {
   const result = {};
  
