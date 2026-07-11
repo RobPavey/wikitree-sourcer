@@ -34,6 +34,91 @@ function getSelectedRow(document) {
   }
 }
 
+function extractTwoRowTable(document) {
+  const table = document.querySelector('table.table.table-sm.mt-4.w-auto');
+  const headers = [...table.querySelectorAll('thead tr th')]
+  .map(th => th.textContent.trim());
+
+  const values = [...table.querySelectorAll('tbody tr td')]
+  .map(td => parseInt(td.textContent.trim(), 10));
+
+const result = { headers, values };
+
+return result;
+}
+
+function getTextOfImmediateTextNodes(element) {
+  let text = "";
+  for (let child of element.childNodes) {
+    if (child.nodeType === 3) {
+      // Node.TEXT_NODE not available in Node.js
+      text += child.textContent;
+    }
+  }
+
+  return text;
+}
+
+function extractCardBodyData(cardBodyElement, leadSuffix) {
+  const result = {};
+ 
+  // Select all label divs
+  const labels = cardBodyElement.querySelectorAll(".small.text-muted, .small.text-muted.mt-2");
+
+  labels.forEach((labelDiv) => {
+    // Extract ONLY text nodes (ignore buttons, icons, etc.)
+    let label = Array.from(labelDiv.childNodes)
+      .filter((node) => node.nodeType === 3)              //Node.TEXT_NODE)
+      .map((node) => node.textContent.trim())
+      .join(" ")
+      .trim();
+    if (!label.startsWith("Need") && !label.startsWith("Have")) {
+      if (label.startsWith("Date ")) {
+        label = "Date";
+      }
+      else if (leadSuffix == "A") {
+        if (label == "Child") {
+          label = "Name";
+        }
+        //else if (label.startsWith("Place of Birth")) {
+        //  label = "Place";
+        //}
+      }
+      else if (leadSuffix == "B") {
+        if (label == "Spouse") {
+          label = "Married";
+        }
+      }
+      else if (leadSuffix == "C") {
+        if (label.startsWith("Registration")) {
+          label = "Registration";
+        }
+        else if (label == 'Where Killed' || label == 'Where Died') {
+          label = "Place";
+        }
+        else if (label.startsWith("Place of Death")) {
+          label = "Place";
+        }        
+      }
+
+      const valueDiv = labelDiv.nextElementSibling;
+
+      // Extract the main value from <strong>
+      const strong = valueDiv.querySelector("strong");
+      let value = strong ? strong.textContent.trim() : valueDiv.textContent.trim();
+
+      // Optional: extract link if present
+      //const link = valueDiv.querySelector('a')?.href || null;
+
+      if (value.startsWith("-")) {
+        value = "";
+      }
+      result[label] = value; // {value, link };
+    }
+  });
+  return result;
+}
+
 function extractData(document, url) {
   var result = {};
   if (url) {
@@ -43,27 +128,50 @@ function extractData(document, url) {
 
   // At this time we will restrict data extraction to NB Vital Statistics from Government Records (RS141)
   let indexName = "";
+  let suffix = "";
   result.databaseID = "this is not";
   let startIndexName = url.indexOf("141");
   if (startIndexName < 0) {
     //  This is not a New Brunswick Provincial Archives Vital Statistics Database.
     return result;
-  } else {
-    let endSuffix = url.indexOf(".aspx");
-    indexName = "RS" + url.slice(startIndexName, endSuffix);
   }
 
-  const choices = new Set(["A1b", "A5", "A2/2", "A2_2", "B5", "B7", "C4", "C5", "C1", "C6"]); // more to be added later
-  let suffix = indexName.slice(5);
+  let isNewURL = false;
+  let leadSuffix = "";
+  let endSuffix = url.indexOf(".aspx", startIndexName);
+  if (endSuffix < 0) {
+    endSuffix = url.indexOf("/", startIndexName);
+    if (endSuffix < 0) {
+      //  This is not a New Brunswick Provincial Archives Vital Statistics Database.
+      return result;
+    }
+    isNewURL = true;
+    let tempSuffix = url.slice(startIndexName + 3, endSuffix);
+    if(!tempSuffix || tempSuffix.length < 1) {
+      //  This is not a New Brunswick Provincial Archives Vital Statistics Database.
+      return result;
+    }
+    leadSuffix = tempSuffix[0].toUpperCase();
+    indexName = "RS141" + leadSuffix + tempSuffix.slice(1);
+  }
+  else {
+    indexName = "RS" + url.slice(startIndexName, endSuffix);
+  }
+  suffix = indexName.slice(5);
+  //result.tableTitle = suffix;
 
-  if (suffix == "A2_2") {
+  const choices = new Set(["A1b", "A5", "A2/2", "A2_2", "B5", "B7", "C4", "C5", "C1", "C6"]); // more to be added later
+
+  if (suffix == "A2_2" || suffix == "A2") {
     suffix = "A2/2";
+    indexName = "RS141" + suffix;
   }
 
   // RS141C6 has a different structure for its Url
   if (suffix == "C6/Details") {
     suffix = "C6";
-  }
+    indexName = "RS141" + suffix;
+ }
 
   if (!choices.has(suffix)) {
     // not yet a supported New Brunswick Provincial Archives Federated Database site.
@@ -72,6 +180,13 @@ function extractData(document, url) {
   }
 
   result.databaseID = "RS141" + suffix;
+ 
+  if (isNewURL) {
+    result.sourceTitle = "Provincial Archives of New Brunswick; Vital Statistics (RS141)";
+  }
+  else {
+    result.sourceTitle = "New Brunswick Provincial Archives; Vital Statistics from Government Records (RS141)";
+  }
   let recordTableTitle = "";
   switch (suffix) {
     case "A5":
@@ -102,45 +217,71 @@ function extractData(document, url) {
       recordTableTitle = "Index to County Death Registers";
       break;
     case "C6":
-      recordTableTitle = "Index to Death registration of soldiers, 1941-1947";
+    recordTableTitle = "Index to Death registration of soldiers, 1941-1947";
   }
   result.tableTitle = recordTableTitle + " (" + indexName + ")";
 
-  // We expect to find a single table of 2 to 3 columns and up to 12 rows
-  let directTables = document.querySelector("table.Details");
-
-  if (!directTables) {
-    // No record tables were found.\nNB Provincial Archive may have been changed.
-    result.databaseID = indexName + "has lack of required table stucture and is no longer a supported";
-    return result;
-  }
-
-  const tables = Array.from(document.body.querySelectorAll("table"));
-  const embededTable = tables[0];
-
-  // If the first row starts with "Name" we will recognize the table as from a standard RS141 Vital Record
-  const firstRow = embededTable.rows[0];
-  const tableRowLength = firstRow.cells.length;
-  const firstCell = firstRow.cells[0].textContent.trim();
-  if (firstCell != "Name") {
-    // This table does not have the expected RS141 record construction. NB Provincial Archive may have been changed.;
-    result.databaseID = indexName + "table stucture was changed and is no longer a supported";
-    return result;
-  }
-
-  //  Here we use approach of the working table being created as a pair of arrays of length equal to the number of rows in the first 2 columns in the table on the web page
-  const columnLength = embededTable.rows.length;
   result.recordData = {};
 
-  for (let index = 0; index < columnLength; index++) {
-    let nextRow = embededTable.rows[index];
-    let headingNode = nextRow.cells[0];
-    let valueNode = nextRow.cells[1];
-    let heading = headingNode.textContent.trim();
-    let value = valueNode.textContent.trim();
-    if (heading) {
-      result.recordData[heading] = value;
+  // Check to see if this is the new PANB  RS141 web page format
+  const panbCard = document.querySelector(".card-body");
+
+  if (panbCard) {
+    result.webpageFormat = 202606;
+    result.recordData = extractCardBodyData(panbCard, leadSuffix);
+  
+  // we need to extract the small table of data from the web page for RS141CA2/2
+    if (suffix == "A2/2") {
+      const {headers, values} = extractTwoRowTable(document);
+      let rowCount = values.length;
+      if (rowCount >= 2) {
+        for (let index = 0; index < rowCount; index++) {
+          result.recordData[headers[index]] = values[index];
+        }
+      }
     }
+    result.numberTableEntries = Object.keys(result.recordData).length;
+  }
+  else {
+
+    // We expect to find a single table of 2 to 3 columns and up to 12 rows
+    let directTables = document.querySelector("table.Details");
+
+    if (!directTables) {
+      // No record tables were found.\nNB Provincial Archive may have been changed.
+      result.databaseID = indexName + "has lack of required table stucture and is no longer a supported";
+      return result;
+    }
+  
+    const tables = Array.from(document.body.querySelectorAll("table"));
+    const embededTable = tables[0];
+
+    // If the first row starts with "Name" we will recognize the table as from a standard RS141 Vital Record
+    const firstRow = embededTable.rows[0];
+    const tableRowLength = firstRow.cells.length;
+    const firstCell = firstRow.cells[0].textContent.trim();
+    if (firstCell != "Name") {
+      // This table does not have the expected RS141 record construction. NB Provincial Archive may have been changed.;
+      result.databaseID = indexName + "table stucture was changed and is no longer a supported";
+      return result;
+    }
+
+    //  Here we use approach of the working table being created as a pair of arrays of length equal to the number of rows in the first 2 columns in the table on the web page
+    const columnLength = embededTable.rows.length;
+    result.webpageFormat = 202601;
+    result.recordData = {};
+
+    for (let index = 0; index < columnLength; index++) {
+      let nextRow = embededTable.rows[index];
+      let headingNode = nextRow.cells[0];
+      let valueNode = nextRow.cells[1];
+      let heading = headingNode.textContent.trim();
+      let value = valueNode.textContent.trim();
+      if (heading) {
+        result.recordData[heading] = value;
+      }
+    }
+    result.numberTableEntries = columnLength;
   }
 
   // finally check if an image is attached
@@ -160,16 +301,19 @@ function extractData(document, url) {
   if (!result.hasImage) {
     result.imageUrl = "";
   }
-  result.numberTableEntries = columnLength;
   const suffixType = suffix.slice(0, 1);
   if (suffixType == "A") {
     result.eventType = "Birth";
-  } else if (suffixType == "B") {
+  }
+  else if (suffixType == "B") {
     result.eventType = "Marriage";
     result.recordData["Sex"] = "";
-  } else if (suffixType == "C") {
+    result.numberTableEntries += 1;
+  }
+  else if (suffixType == "C") {
     result.eventType = "Death";
-  } else {
+  }
+  else {
     result.eventType = "Unclassified";
   }
   result.success = true;

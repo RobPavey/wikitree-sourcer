@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Index to County Birth Registers (RS141A2/2)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Book identifcation: 1-1; Page: 198; Birth Number: 504; Microfilm: F23160; Date:1867-02-18; Place: Saint John, Saint John, New Brunswick Colony<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/birth/141a2_2/7b9c7302-3ac5-42b4-b1b1-f11ac4102a2c New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nWilliam Lewis Rafferty birth 18 Feb 1867 in Saint John, Saint John, New Brunswick Colony, son of William Rafferty & Margaret Mcguire.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "William, son of William Rafferty & Margaret Mcguire, was born on 18 February 1867 in Saint John, Saint John, New Brunswick Colony.<ref>\n'''Birth Registration''':\n\"Index to County Birth Registers (RS141A2/2)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Book identifcation: 1-1; Page: 198; Birth Number: 504; Microfilm: F23160; Date:1867-02-18; Place: Saint John, Saint John, New Brunswick Colony<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/birth/141a2_2/7b9c7302-3ac5-42b4-b1b1-f11ac4102a2c New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nWilliam Lewis Rafferty birth 18 Feb 1867 in Saint John, Saint John, New Brunswick Colony, son of William Rafferty & Margaret Mcguire.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"Index to County Birth Registers (RS141A2/2)\"<br/>Provincial Archives of New Brunswick; Vital Statistics (RS141); Book identifcation: 1-1; Page: 198; Birth Number: 504; Microfilm: F23160; Date:1867-02-18; Place: Saint John, Saint John, New Brunswick Colony<br/>[https://archives.gnb.ca/en-ca/vital-statistics/birth/141a2_2/7b9c7302-3ac5-42b4-b1b1-f11ac4102a2c New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>William Lewis Rafferty birth 18 Feb 1867 in Saint John, Saint John, New Brunswick Colony, son of William Rafferty & Margaret Mcguire.",
+    "type": "source"
+  }
+}

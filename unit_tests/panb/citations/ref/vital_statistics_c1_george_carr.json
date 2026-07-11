@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Index to County Death Registers (RS141C1)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Page: 73; Line: 0; Microfilm: F13644; Date:1888-??-??; Place: Muniac, Victoria, New Brunswick, Canada<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/death/141c1/b87d6d0f-e221-45cc-9ba2-3435ae99ee79 New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nGeorge Carr of Muniac, Victoria born in Muniac, Victoria death (age 3) 1888-??-?? in Muniac, Victoria.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "George Carr, born in Muniac, Victoria, now of Muniac, Victoria, died 1888-??-?? at age 3 in Muniac, Victoria, New Brunswick.<ref>\n'''Death Registration''':\n\"Index to County Death Registers (RS141C1)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Page: 73; Line: 0; Microfilm: F13644; Date:1888-??-??; Place: Muniac, Victoria, New Brunswick, Canada<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/death/141c1/b87d6d0f-e221-45cc-9ba2-3435ae99ee79 New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nGeorge Carr of Muniac, Victoria born in Muniac, Victoria death (age 3) 1888-??-?? in Muniac, Victoria.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"Index to County Death Registers (RS141C1)\"<br/>Provincial Archives of New Brunswick; Vital Statistics (RS141); Page: 73; Line: 0; Microfilm: F13644; Date:1888-??-??; Place: Muniac, Victoria, New Brunswick, Canada<br/>[https://archives.gnb.ca/en-ca/vital-statistics/death/141c1/b87d6d0f-e221-45cc-9ba2-3435ae99ee79 New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>George Carr of Muniac, Victoria born in Muniac, Victoria death (age 3) 1888-??-?? in Muniac, Victoria.",
+    "type": "source"
+  }
+}
