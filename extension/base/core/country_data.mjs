@@ -258,6 +258,38 @@ const CountryData = [
 
   // Canada predecessors and colonies
   {
+    stdName: "Acadia",
+    matches: ["Acadia", "Acadie"],
+    hasStates: false,
+    validDateRange: { startYear: 1604, endYear: 1713 },
+  },
+  {
+    stdName: "Canada East",
+    matches: ["Canada East"],
+    hasStates: false,
+    validDateRange: { startYear: 1841, endYear: 1867 },
+  },
+  {
+    stdName: "Canada West",
+    matches: ["Canada West"],
+    hasStates: false,
+    validDateRange: { startYear: 1840, endYear: 1867 },
+  },
+  {
+    stdName: "Lower Canada",
+    matches: ["Lower Canada", "Bas Canada", "Province of Lower Canada", "Province du Bas Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1791, endYear: 1841 },
+  },
+  {
+    stdName: "New Brunswick",
+    matches: ["New Brunswick", "Province of New Brunswick", "Colony of New Brunswick", "New Ireland"],
+    hasStates: false,
+    usesMiddleNames: true,
+    wifeChangesName: true,
+    validDateRange: { startYear: 1784, endYear: 1867 },
+  },
+  {
     stdName: "Nova Scotia",
     matches: ["Nova Scotia"],
     hasStates: false,
@@ -266,10 +298,28 @@ const CountryData = [
     validDateRange: { startYear: 1713, endYear: 1867 },
   },
   {
-    stdName: "Acadia",
-    matches: ["Acadia"],
+    stdName: "Prince Edward Island",
+    matches: ["Prince Edward Island"],
     hasStates: false,
-    validDateRange: { startYear: 1604, endYear: 1713 },
+    validDateRange: { startYear: 1798, endYear: 1873 },
+  },
+  {
+    stdName: "Province of Quebec",
+    matches: ["Province of Quebec", "Province du Quebec", "Quebec"],
+    hasStates: false,
+    validDateRange: { startYear: 1763, endYear: 1791 },
+  },
+  {
+    stdName: "St. John's Island",
+    matches: ["St. John's Island"],
+    hasStates: false,
+    validDateRange: { startYear: 1769, endYear: 1798 },
+  },
+  {
+    stdName: "Upper Canada",
+    matches: ["Upper Canada", "Province of Upper Canada", "Province du Haut-Canada", "Haut-Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1791, endYear: 1840 },
   },
 
   { stdName: "Mexico", matches: ["Mexico"], hasStates: true },
