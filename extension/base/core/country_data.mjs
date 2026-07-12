@@ -121,13 +121,19 @@ const CountryData = [
     wifeChangesName: true,
   }, // must come after ones it contains
 
-  { stdName: "Ireland", matches: ["Ireland", "Éire"], hasCounties: true, usesMiddleNames: true, wifeChangesName: true },
+  {
+    stdName: "Ireland",
+    matches: ["Ireland", "Éire", "Republic of Ireland"],
+    hasCounties: true,
+    usesMiddleNames: true,
+    wifeChangesName: true,
+  },
   { stdName: "France", matches: ["France"], hasStates: true },
   { stdName: "Germany", matches: ["Germany", "Deutschland"], hasStates: true },
   { stdName: "German Empire", matches: ["German Empire"] },
   { stdName: "Austria", matches: ["Austria", "Österreich"] },
   { stdName: "Italy", matches: ["Italy", "Italia", "Italie", "Italien"] },
-  { stdName: "Netherlands", matches: ["Netherlands", "Nederland"], hasStates: true },
+  { stdName: "Netherlands", matches: ["Netherlands", "Nederland", "The Netherlands", "Holland"], hasStates: true },
   { stdName: "Belgium", matches: ["Belgium"] },
   { stdName: "Luxembourg", matches: ["Luxembourg"] },
   {
@@ -146,6 +152,11 @@ const CountryData = [
   },
   { stdName: "Portugal", matches: ["Portugal", "República Portuguesa"] },
   { stdName: "Andorra", matches: ["Andorra"] },
+  { stdName: "Liechtenstein", matches: ["Liechtenstein"] },
+  { stdName: "Malta", matches: ["Malta"] },
+  { stdName: "Monaco", matches: ["Monaco"] },
+  { stdName: "San Marino", matches: ["San Marino"] },
+  { stdName: "Vatican City", matches: ["Vatican City", "Holy See"] },
 
   { stdName: "Sweden", matches: ["Sweden", "Sverige"] },
   { stdName: "Denmark", matches: ["Denmark"] },
@@ -155,7 +166,7 @@ const CountryData = [
   { stdName: "Greenland", matches: ["Greenland", "Kalaallit Nunaat"] },
 
   { stdName: "Czechoslovakia", matches: ["Czechoslovakia"] },
-  { stdName: "Czechia", matches: ["Czechia"], partOf: ["Czechoslovakia"] },
+  { stdName: "Czechia", matches: ["Czechia", "Czech Republic"], partOf: ["Czechoslovakia"] },
   { stdName: "Slovakia", matches: ["Slovakia"], partOf: ["Czechoslovakia"] },
 
   { stdName: "Hungary", matches: ["Hungary", "Magyarország"] },
@@ -186,7 +197,8 @@ const CountryData = [
   { stdName: "Greece", matches: ["Greece", "Ελλάδα"] },
 
   // Middle East
-  { stdName: "Turkey", matches: ["Turkey"] },
+  { stdName: "Turkey", matches: ["Turkey", "Türkiye", "Republic of Turkey"] },
+  { stdName: "Palestine", matches: ["Palestine", "State of Palestine", "Palestinian Territories"] },
   { stdName: "Syria", matches: ["Syria"] },
   { stdName: "Lebanon", matches: ["Lebanon"] },
   { stdName: "Israel", matches: ["Israel"] },
@@ -238,6 +250,7 @@ const CountryData = [
   { stdName: "Singapore", matches: ["Singapore"] },
   { stdName: "Brunei", matches: ["Brunei"] },
   { stdName: "Indonesia", matches: ["Indonesia"] },
+  { stdName: "Timor-Leste", matches: ["Timor-Leste", "East Timor", "Timor"] },
 
   // North America
   {
@@ -422,6 +435,7 @@ const CountryData = [
   { stdName: "Togo", matches: ["Togo"] },
   { stdName: "Benin", matches: ["Benin"] },
   { stdName: "Nigeria", matches: ["Nigeria"] },
+  { stdName: "Cape Verde", matches: ["Cape Verde", "Cabo Verde"] },
 
   // Central Africa
   { stdName: "Cameroon", matches: ["Cameroon"] },
