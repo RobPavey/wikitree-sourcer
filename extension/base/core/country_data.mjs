@@ -282,6 +282,12 @@ const CountryData = [
     validDateRange: { startYear: 1791, endYear: 1841 },
   },
   {
+    stdName: "Newfoundland",
+    matches: ["Newfoundland", "Newfoundland Colony", "Colony of Newfoundland", "Terre-Neuve", "Nunatsuak"],
+    hasStates: false,
+    validDateRange: { startYear: 1620, endYear: 1867 },
+  },
+  {
     stdName: "New Brunswick",
     matches: ["New Brunswick", "Province of New Brunswick", "Colony of New Brunswick", "New Ireland"],
     hasStates: false,
@@ -842,7 +848,10 @@ const StateData = {
     { stdName: "British Columbia", matches: ["British Columbia"] },
     { stdName: "Manitoba", matches: ["Manitoba"] },
     { stdName: "New Brunswick", matches: ["New Brunswick"] },
-    { stdName: "Newfoundland and Labrador", matches: ["Newfoundland and Labrador"] },
+    {
+      stdName: "Newfoundland and Labrador",
+      matches: ["Newfoundland and Labrador", "Newfoundland", "Labrador", "Terre-Neuve-et-Labrador"],
+    },
     { stdName: "Nova Scotia", matches: ["Nova Scotia"] },
     { stdName: "Ontario", matches: ["Ontario"] },
     { stdName: "Prince Edward Island", matches: ["Prince Edward Island", "PEI", "P.E.I."] },
@@ -1184,17 +1193,37 @@ const CD = {
     let yearNum = parsedDate.yearNum;
 
     for (let country of CountryData) {
-      if (country.stdName == stdName) {
-        if (country.validDateRange) {
-          if (country.validDateRange.startYear && country.validDateRange.startYear > yearNum) {
-            return false;
+      if (country.stdName != stdName) {
+        continue;
+      }
+
+      if (country.validDateRange) {
+        if (country.validDateRange.startYear && country.validDateRange.startYear > yearNum) {
+          return false;
+        }
+        if (country.validDateRange.endYear && country.validDateRange.endYear < yearNum) {
+          return false;
+        }
+      } else if (country.validDateRanges) {
+        let isValidDate = false;
+        for (let range of country.validDateRanges) {
+          let isInRange = true;
+          if (range.startYear && range.startYear > yearNum) {
+            isInRange = false;
           }
-          if (country.validDateRange.endYear && country.validDateRange.endYear < yearNum) {
-            return false;
+          if (range.endYear && range.endYear < yearNum) {
+            isInRange = false;
+          }
+          if (isInRange) {
+            isValidDate = true;
+            break;
           }
         }
-        break;
+        if (!isValidDate) {
+          return false;
+        }
       }
+      break;
     }
     return true;
   },
