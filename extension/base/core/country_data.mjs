@@ -836,6 +836,23 @@ const StateData = {
     { stdName: "Western Australia", matches: ["Western Australia", "WA", "W Australia", "West Australia"] },
     { stdName: "Tasmania", matches: ["Tasmania", "Tas", "TAS"] },
   ],
+  Canada: [
+    // provinces
+    { stdName: "Alberta", matches: ["Alberta"] },
+    { stdName: "British Columbia", matches: ["British Columbia"] },
+    { stdName: "Manitoba", matches: ["Manitoba"] },
+    { stdName: "New Brunswick", matches: ["New Brunswick"] },
+    { stdName: "Newfoundland and Labrador", matches: ["Newfoundland and Labrador"] },
+    { stdName: "Nova Scotia", matches: ["Nova Scotia"] },
+    { stdName: "Ontario", matches: ["Ontario"] },
+    { stdName: "Prince Edward Island", matches: ["Prince Edward Island", "PEI", "P.E.I."] },
+    { stdName: "Quebec", matches: ["Quebec"] },
+    { stdName: "Saskatchewan", matches: ["Saskatchewan"] },
+    // territories
+    { stdName: "Northwest Territories", matches: ["Northwest Territories"] },
+    { stdName: "Nunavut", matches: ["Nunavut", "Nunavut Territory"] },
+    { stdName: "Yukon", matches: ["Yukon", "Yukon Territory"] },
+  ],
   "South Africa": [
     { stdName: "Western Cape", matches: ["Western Cape", "Wes-Kaap"] },
     { stdName: "Eastern Cape,", matches: ["Eastern Cape", "Oos-Kaap"] },
