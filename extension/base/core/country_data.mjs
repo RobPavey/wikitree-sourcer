@@ -469,7 +469,7 @@ const CountryData = [
     matches: ["Cabo de Goede Hoop", "de Caep de Goede Hoop"],
     validDateRanges: [
       { startYear: 1652, endYear: 1795 },
-      { startYear: 1803, endYear: 17918065 },
+      { startYear: 1803, endYear: 1806 },
     ],
   },
   {
