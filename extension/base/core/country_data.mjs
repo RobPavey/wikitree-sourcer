@@ -355,7 +355,6 @@ const CountryData = [
     matches: ["Province of Massachusetts Bay"],
     partOf: ["British America"],
     becamePartOf: ["United States"],
-    wasPartOf: ["Plymouth Colony", "Massachusetts Bay Colony"],
     hasStates: false,
     validDateRange: { startYear: 1691, endYear: 1776 },
   },
