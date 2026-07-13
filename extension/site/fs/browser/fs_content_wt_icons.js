@@ -1818,6 +1818,10 @@ if (runningExtensionId === currentExtensionId) {
           linkUrl = buildWtPlusUrlForSet(imageFsIds, "image");
         }
 
+        if (iconConfig.mainArrowStyle == "none") {
+          iconConfig.isMultiple = true;
+        }
+
         if (!clipboardText) {
           for (let wikiId of imageWikiIds) {
             if (clipboardText) {
