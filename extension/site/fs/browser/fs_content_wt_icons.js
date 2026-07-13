@@ -1712,6 +1712,9 @@ if (runningExtensionId === currentExtensionId) {
 
       if (attachedSourceWikiIdCount) {
         iconConfig.includeSourceBox = true;
+        if (numRecordsUsedOnWt == 0) {
+          iconConfig.sourceIsImage = true;
+        }
       }
 
       if (recordWikiIds.size == 1) {

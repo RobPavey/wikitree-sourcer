@@ -488,20 +488,37 @@ class WikiTreeSourcerPageModsHelper {
       const link1Path = `d="M2 3.5 H4"`;
       const link2Path = `d="M6 3.5 H8"`;
 
-      const linkIcon = `
+      if (iconConfig.sourceIsImage) {
+        const linkIcon = `
+        <path ${link1Path} ${shadowStyle}/>
+        <path ${link1Path} ${mainStyle}/>
+      `;
+
+        // Film strip (represents a source image)
+        sourceBox = `
+        <rect x="4" y="1" width="16" height="5" rx="0" fill="#ffffff" stroke="black" stroke-width="1"/>
+        <line x1="9.33" y1="1" x2="9.33" y2="6" stroke="black" stroke-width="1" />
+        <line x1="14.66" y1="1" x2="14.66" y2="6" stroke="black" stroke-width="1" />
+        <line x1="3.5" y1="1" x2="21" y2="1" stroke="white" stroke-width="0.5" stroke-dasharray="1 1" />
+        <line x1="3.5" y1="6" x2="21" y2="6" stroke="white" stroke-width="0.5" stroke-dasharray="1 1" />
+        ${linkIcon}
+      `;
+      } else {
+        const linkIcon = `
         <path ${link1Path} ${shadowStyle}/>
         <path ${link1Path} ${mainStyle}/>
         <path ${link2Path} ${shadowStyle}/>
         <path ${link2Path} ${mainStyle}/>
       `;
 
-      // Green Source Box (represents a source)
-      sourceBox = `
+        // Green Source Box (represents a source)
+        sourceBox = `
         <rect x="8" y="1" width="8" height="7" rx="1" fill="#94d07a" stroke="black" stroke-width="0.5"/>
         <line x1="9" y1="3" x2="15" y2="3" stroke="white" stroke-width="0.5" />
         <line x1="9" y1="5" x2="13" y2="5" stroke="white" stroke-width="0.5" />
         ${linkIcon}
       `;
+      }
 
       // The Arrow pointing to the Source Box - only shown if there is no main arrow
       if (iconConfig.mainArrowStyle == "none" && !iconConfig.includeExternal) {
