@@ -695,10 +695,16 @@ const CountryData = [
 
   // South Africa predecessors and colonies
   // See: https://www.wikitree.com/wiki/Project:South_African_Roots/Sources2
-  { stdName: "Basutoland", matches: ["Basutoland"], validDateRange: { startYear: 1884, endYear: 1966 } },
+  {
+    stdName: "Basutoland",
+    matches: ["Basutoland"],
+    becamePartOf: ["South Africa"],
+    validDateRange: { startYear: 1884, endYear: 1966 },
+  },
   {
     stdName: "Cabo de Goede Hoop",
     matches: ["Cabo de Goede Hoop", "de Caep de Goede Hoop"],
+    becamePartOf: ["South Africa", "Cape of Good Hope Colony"],
     validDateRanges: [
       { startYear: 1652, endYear: 1795 },
       { startYear: 1803, endYear: 1806 },
@@ -707,81 +713,97 @@ const CountryData = [
   {
     stdName: "Cape of Good Hope Colony",
     matches: ["Cape of Good Hope Colony", "Cape of Good Hope"],
+    becamePartOf: ["South Africa", "Cabo de Goede Hoop"],
     validDateRange: { startYear: 1795, endYear: 1803 },
   },
   {
     stdName: "Cape Colony",
     matches: ["Cape Colony", "Kaapkolonie"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1806, endYear: 1910 },
   },
   {
     stdName: "Zululand",
     matches: ["Zululand", "Zoeloeland"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1816, endYear: 1897 },
   },
   {
     stdName: "Republic of the Port of Natal",
     matches: ["Republic of the Port of Natal", "Republiek van Port Natal"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1838, endYear: 1839 },
   },
   {
     stdName: "Natalia Republic",
     matches: ["Natalia Republic", "Natalia Republiek"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1839, endYear: 1843 },
   },
   {
     stdName: "Natal Colony",
     matches: ["Natal Colony", "Natal Kolonie"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1843, endYear: 1856 },
   },
   {
     stdName: "Natal",
     matches: ["Natal", "Natal Kolonie"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1843, endYear: 1856 },
   },
   {
     stdName: "Transvaal Republic",
     matches: ["Transvaal Republic", "Transvaal Republiek"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1844, endYear: 1852 },
   },
   {
     stdName: "Zuid-Afrikaansche Republic",
     matches: ["Zuid-Afrikaansche Republic", "Zuid-Afrikaansche Republiek"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1852, endYear: 1902 },
   },
   {
     stdName: "Transvaal Colony",
     matches: ["Transvaal Colony", "Transvaalse Kolonie"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1902, endYear: 1910 },
   },
   {
     stdName: "Transoranje",
     matches: ["Transoranje"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1848, endYear: 1852 },
   },
   {
     stdName: "Oranje Vrijstaat",
     matches: ["Oranje Vrijstaat", "Oranje Vrijstat", "Orange Free State"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1852, endYear: 1900 },
   },
   {
     stdName: "Oranjerivierkolonie",
     matches: ["Oranjerivierkolonie", "Orange River Colony"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1900, endYear: 1902 },
   },
   {
     stdName: "Orange River Colony",
     matches: ["Orange River Colony"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1900, endYear: 1910 },
   },
   {
     stdName: "Oranje Unie",
     matches: ["Oranje Unie"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1902, endYear: 1910 },
   },
   {
     stdName: "Union of South Africa",
     matches: ["South Africa", "Union of South Africa", "Unie van Suid Afrika"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1910, endYear: 1961 },
   },
 ];
