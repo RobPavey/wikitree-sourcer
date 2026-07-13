@@ -34,7 +34,7 @@ const searchMenuConfig = {
   siteConstraints: {
     startYear: 1841,
     dateTestType: "bmd",
-    countryList: ["Australia", "Colony of Western Australia"],
+    countryList: ["Australia", "Colony of Western Australia", "Swan River Colony"],
   },
   localStorageConfig: {
     searchUrl: "https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool",

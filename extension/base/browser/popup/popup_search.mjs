@@ -148,7 +148,12 @@ function testFilterForDatesAndCountries(filter, siteConstraints) {
     } else {
       for (let country of filter.countryArray) {
         for (let targetCountry of siteCountryList) {
-          if (country == targetCountry || CD.isPartOf(country, targetCountry)) {
+          if (
+            country == targetCountry ||
+            CD.isPartOf(country, targetCountry) ||
+            CD.wasPartOf(country, targetCountry) ||
+            CD.becamePartOf(country, targetCountry)
+          ) {
             countryMatch = true;
             break;
           }

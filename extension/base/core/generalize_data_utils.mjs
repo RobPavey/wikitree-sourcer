@@ -5046,7 +5046,12 @@ class GeneralizedData {
     if (countryArray.length > 0) {
       for (let country of countryArray) {
         for (let searchCountry of searchCountryArray) {
-          if (country == searchCountry || CD.isPartOf(country, searchCountry)) {
+          if (
+            country == searchCountry ||
+            CD.isPartOf(country, searchCountry) ||
+            CD.wasPartOf(country, searchCountry) ||
+            CD.becamePartOf(country, searchCountry)
+          ) {
             return true;
           }
         }

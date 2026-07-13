@@ -43,7 +43,7 @@ function shouldShowSearchMenuItem(data, filter) {
     startYear: taslibStartYear,
     endYear: taslibEndYear,
     dateTestType: "bmd",
-    countryList: ["Australia"],
+    countryList: ["Australia", "Van Diemen's Land", "Tasmania"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
