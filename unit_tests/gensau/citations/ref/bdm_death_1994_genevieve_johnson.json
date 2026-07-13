@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Surname: JOHNSON; Given Names: Genevieve Ray; Year: 1994<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nGenevieve Ray Johnson death 1994.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Genevieve died in 1994 in South Australia, Australia.<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Surname: JOHNSON; Given Names: Genevieve Ray; Year: 1994<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nGenevieve Ray Johnson death 1994.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"South Australia - Death Registrations\"<br/>Genealogy SA; Surname: JOHNSON; Given Names: Genevieve Ray; Year: 1994<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Genevieve Ray Johnson death 1994.",
+    "type": "source"
+  }
+}
