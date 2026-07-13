@@ -290,7 +290,7 @@ const CountryData = [
   {
     stdName: "British America",
     matches: ["British North America", "British America"],
-    invalidWikiTreeCountryName: true,
+    invalidCountryName: true, // we never want to use this as a country name in a placename or a search
     hasStates: false,
     validDateRange: { startYear: 1585, endYear: 1907 },
   },
@@ -1488,7 +1488,7 @@ const CD = {
         continue;
       }
 
-      if (country.invalidWikiTreeCountryName) {
+      if (country.invalidCountryName) {
         continue;
       }
 
