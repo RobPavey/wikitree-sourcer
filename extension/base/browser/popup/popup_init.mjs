@@ -226,7 +226,7 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
             const retryDelay = 200;
             numRetriesToExtractContent++;
             popupState.progress = progressState.sitePopupRetryExtractTimeout;
-            chrome.runtime.lastError("data may be incomplete, retry: " + numRetriesToExtractContent);
+            logDebug("data may be incomplete, retry: " + numRetriesToExtractContent);
             let timeWaited = (numRetriesToExtractContent * retryDelay) / 1000;
             if (timeWaited > 1) {
               let timeWaitedString = timeWaited.toFixed(2) + " seconds";
