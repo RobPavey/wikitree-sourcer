@@ -107,6 +107,8 @@ function contentLoadedMessageListener(request, sender, sendResponse) {
     if (popupState.onContentLoaded) {
       popupState.onContentLoaded(sender.tab, request.siteName);
     }
+
+    sendResponse({ success: true });
   }
 }
 

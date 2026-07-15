@@ -62,7 +62,11 @@ function extractDataFromHtml(htmlText, recordUrl) {
   extractedData.url = recordUrl;
   extractedData.pageType = "record";
 
-  extractRecord(document, recordUrl, extractedData);
+  // Note: this will not be loaded if popup.html was loaded rather than ancestry_popup.html
+  // It would be better to use a message to background for this
+  if (extractRecord) {
+    extractRecord(document, recordUrl, extractedData);
+  }
   return extractedData;
 }
 

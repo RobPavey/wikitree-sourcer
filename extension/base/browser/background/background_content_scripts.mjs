@@ -26,6 +26,7 @@ import "/site/all/core/register_site_data.mjs";
 import { getSites, storeSiteRegistry } from "../common/site_registry_storage.mjs";
 import { isChrome, isFirefox, isSafari } from "../common/browser_check.mjs";
 import { logDebug } from "../../core/log_debug.mjs";
+import { doesUrlMatchChromePattern } from "./background_common.mjs";
 
 // Helper to convert Chrome Match Patterns to Regex
 // This tests whether a match pattern from a registered content script matches
@@ -42,21 +43,6 @@ function doesContentScriptOriginMatchGrantedOrigin(contentStringOrigin, grantedO
 
   const regex = new RegExp(`^${regexString}$`);
   return regex.test(testUrl);
-}
-
-// Helper to convert Chrome Match Patterns to Regex
-// This tests whether a match pattern from a registered content script matches
-// a URL
-function doesUrlMatchChromePattern(pattern, url) {
-  if (pattern === "<all_urls>") return true;
-
-  // Prepare the pattern by escaping special regex characters except *
-  let regexString = pattern
-    .replace(/[.+^${}()|[\]\\]/g, "\\$&") // Escape all regex specials
-    .replace(/\*/g, ".*"); // Convert * to .*
-
-  const regex = new RegExp(`^${regexString}$`);
-  return regex.test(url);
 }
 
 async function injectContentScriptsIntoExistingTab(tab, contentScriptJs, allFrames) {
