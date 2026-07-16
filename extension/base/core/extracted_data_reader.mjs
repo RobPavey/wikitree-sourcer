@@ -401,9 +401,17 @@ class ExtractedDataReader {
       return this.makeNameObjFromForenamesAndLastName(forenames, lastName);
     }
 
+    let advanced = this.getRecordTypeProperty("advancedNameRules");
+
     let fullName = this.getValueUsingRecordTypeData(fullNameKey);
 
     if (fullName) {
+      if (advanced && advanced.inFullNameLastNamesIsInUpperCase) {
+        let parts = NameUtils.convertFullNameWithLastNameInUpperCaseToForenamesAndLastNames(fullName);
+        if (parts.success) {
+          return this.makeNameObjFromForenamesAndLastName(parts.forenames, parts.lastName);
+        }
+      }
       return this.makeNameObjFromFullName(fullName);
     }
 

@@ -46,7 +46,7 @@ function shouldShowSearchMenuItem(data, filter) {
     startYear: amerancStartYear,
     endYear: amerancEndYear,
     dateTestType: "lived",
-    countryList: ["United States"],
+    countryList: ["United States", "British America"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {

@@ -118,19 +118,19 @@ function scrollResultsIntoViewWhenReady() {
 }
 
 async function doPendingSearch() {
-  console.log("##############################################################################");
-  console.log("doPendingSearch: called");
-  console.log("doPendingSearch: URL is");
-  console.log(document.URL);
+  //console.log("##############################################################################");
+  //console.log("doPendingSearch: called");
+  //console.log("doPendingSearch: URL is");
+  //console.log(document.URL);
 
   if (pendingSearchData) {
     let isRetry = pendingSearchData.isRetry;
     let fieldData = pendingSearchData.fieldData;
 
-    console.log("doPendingSearch: fieldData is:");
-    console.log(fieldData);
-    console.log("doPendingSearch: isRetry is");
-    console.log(isRetry);
+    //console.log("doPendingSearch: fieldData is:");
+    //console.log(fieldData);
+    //console.log("doPendingSearch: isRetry is");
+    //console.log(isRetry);
 
     let searchButtonElement = document.getElementById("search");
 

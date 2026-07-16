@@ -90,6 +90,7 @@ import "../../thegen/core/thegen_site_data.mjs";
 import "../../trove/core/trove_site_data.mjs";
 import "../../ushmm/core/ushmm_site_data.mjs";
 import "../../vicbdm/core/vicbdm_site_data.mjs";
+import "../../wagovau/core/wagovau_site_data.mjs";
 import "../../wiewaswie/core/wiewaswie_site_data.mjs";
 import "../../wikipedia/core/wikipedia_site_data.mjs";
 import "../../wikitree/core/wikitree_site_data.mjs";

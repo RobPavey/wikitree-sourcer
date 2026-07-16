@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Index to Late Registration of Births (RS141A1b)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Microfilm: F18903; Date:1902-05-08; Place: Penobsquis, Kings, New Brunswick, Canada<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/birth/141a1b/d740bc74-0dec-47c4-85e9-d5122dc81d96 New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nWalter Earl Dunfield birth 8 May 1902 in Penobsquis, Kings, New Brunswick, Canada, son of John Dunfield & Lucy Goddard.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Walter, son of John Dunfield & Lucy Goddard, was born on 8 May 1902 in Penobsquis, Kings, New Brunswick, Canada.<ref>\n'''Birth Registration''':\n\"Index to Late Registration of Births (RS141A1b)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Microfilm: F18903; Date:1902-05-08; Place: Penobsquis, Kings, New Brunswick, Canada<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/birth/141a1b/d740bc74-0dec-47c4-85e9-d5122dc81d96 New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nWalter Earl Dunfield birth 8 May 1902 in Penobsquis, Kings, New Brunswick, Canada, son of John Dunfield & Lucy Goddard.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"Index to Late Registration of Births (RS141A1b)\"<br/>Provincial Archives of New Brunswick; Vital Statistics (RS141); Microfilm: F18903; Date:1902-05-08; Place: Penobsquis, Kings, New Brunswick, Canada<br/>[https://archives.gnb.ca/en-ca/vital-statistics/birth/141a1b/d740bc74-0dec-47c4-85e9-d5122dc81d96 New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>Walter Earl Dunfield birth 8 May 1902 in Penobsquis, Kings, New Brunswick, Canada, son of John Dunfield & Lucy Goddard.",
+    "type": "source"
+  }
+}

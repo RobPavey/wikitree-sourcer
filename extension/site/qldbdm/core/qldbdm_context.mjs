@@ -43,6 +43,50 @@ const removeMatches = [
   /Births, Deaths(?:,| and) Marriages/i,
 ];
 
+function extractSearchType(parser) {
+  const typeMatches = [
+    {
+      searchType: "death",
+      matches: [/Death Registration/i, /Place of Death/i],
+    },
+    {
+      searchType: "marriage",
+      matches: [/Marriage Registration/i, /Place of Marriage/i],
+    },
+    // Note birth comes last because a death regeistration could have a birth date
+    {
+      searchType: "birth",
+      matches: [/Birth Registration/i, /Place of Birth/i],
+    },
+  ];
+  const typeMatches2 = [
+    {
+      searchType: "death",
+      matches: [/Death/i],
+    },
+    {
+      searchType: "marriage",
+      matches: [/Marriage/i],
+    },
+    // Note birth comes last because a death regeistration could have a birth date
+    {
+      searchType: "birth",
+      matches: [/Birth/i],
+    },
+  ];
+
+  const typeExtractInput = {
+    preClean: {
+      removeMatches: removeMatches,
+    },
+    typeMatches: typeMatches,
+    typeMatches2: typeMatches2,
+  };
+
+  const searchType = parser.identifyType(typeExtractInput);
+  return searchType;
+}
+
 function getReferenceNumber(parser, fieldData) {
   const registrationDetailsExtractInput = {
     wholeText: {
@@ -145,7 +189,7 @@ function transformPlainText(plainText, phase, options) {
     return undefined;
   }
 
-  //console.log("gensau: transformPlainText: string is a match", plainText);
+  //console.log("qldbdm: transformPlainText: string is a match", plainText);
 
   let fieldData = {};
   const searchData = {
@@ -162,6 +206,11 @@ function transformPlainText(plainText, phase, options) {
   };
 
   let parser = new CitationParser(plainText);
+
+  let refineType = extractSearchType(parser);
+  if (refineType) {
+    fieldData[refineType] = true;
+  }
 
   let gotRefNum = getReferenceNumber(parser, fieldData);
 

@@ -14485,6 +14485,37 @@ const NameUtils = {
     return resultString;
   },
 
+  convertFullNameWithLastNameInUpperCaseToForenamesAndLastNames: function (fullName) {
+    let result = {
+      success: false,
+    };
+
+    // split into parts
+    let parts = fullName.split(" ");
+    let lastNameIndex = -1;
+    for (let partIndex = 0; partIndex < parts.length; partIndex++) {
+      let part = parts[partIndex];
+      if (StringUtils.isAllUppercase(part)) {
+        lastNameIndex = partIndex;
+      } else {
+        lastNameIndex = -1;
+      }
+    }
+
+    if (lastNameIndex != -1 && lastNameIndex > 0) {
+      let forenames = parts.slice(0, lastNameIndex).join(" ");
+      let lastNames = parts.slice(lastNameIndex).join(" ");
+      lastNames = NameUtils.convertNameFromAllCapsToMixedCase(lastNames);
+      if (forenames && lastNames) {
+        result.forenames = forenames;
+        result.lastName = lastNames;
+        result.success = true;
+      }
+    }
+
+    return result;
+  },
+
   convertEnglishGivenNameFromAbbrevationToFull: function (abbrev, gender) {
     if (!abbrev) {
       return "";

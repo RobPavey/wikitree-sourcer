@@ -102,6 +102,10 @@ const baseRecordTypeData = {
   },
 };
 
+const unclassifiedTypeData = {
+  recordType: RT.Unclassified,
+};
+
 class QldbdmEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);

@@ -1712,6 +1712,9 @@ if (runningExtensionId === currentExtensionId) {
 
       if (attachedSourceWikiIdCount) {
         iconConfig.includeSourceBox = true;
+        if (numRecordsUsedOnWt == 0) {
+          iconConfig.sourceIsImage = true;
+        }
       }
 
       if (recordWikiIds.size == 1) {
@@ -1813,6 +1816,10 @@ if (runningExtensionId === currentExtensionId) {
       } else if (imageWikiIds.size > 1) {
         if (!linkUrl) {
           linkUrl = buildWtPlusUrlForSet(imageFsIds, "image");
+        }
+
+        if (iconConfig.mainArrowStyle == "none") {
+          iconConfig.isMultiple = true;
         }
 
         if (!clipboardText) {

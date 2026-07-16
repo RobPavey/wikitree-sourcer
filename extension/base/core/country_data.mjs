@@ -121,13 +121,19 @@ const CountryData = [
     wifeChangesName: true,
   }, // must come after ones it contains
 
-  { stdName: "Ireland", matches: ["Ireland", "Éire"], hasCounties: true, usesMiddleNames: true, wifeChangesName: true },
+  {
+    stdName: "Ireland",
+    matches: ["Ireland", "Éire", "Republic of Ireland"],
+    hasCounties: true,
+    usesMiddleNames: true,
+    wifeChangesName: true,
+  },
   { stdName: "France", matches: ["France"], hasStates: true },
   { stdName: "Germany", matches: ["Germany", "Deutschland"], hasStates: true },
   { stdName: "German Empire", matches: ["German Empire"] },
   { stdName: "Austria", matches: ["Austria", "Österreich"] },
   { stdName: "Italy", matches: ["Italy", "Italia", "Italie", "Italien"] },
-  { stdName: "Netherlands", matches: ["Netherlands", "Nederland"], hasStates: true },
+  { stdName: "Netherlands", matches: ["Netherlands", "Nederland", "The Netherlands", "Holland"], hasStates: true },
   { stdName: "Belgium", matches: ["Belgium"] },
   { stdName: "Luxembourg", matches: ["Luxembourg"] },
   {
@@ -146,6 +152,11 @@ const CountryData = [
   },
   { stdName: "Portugal", matches: ["Portugal", "República Portuguesa"] },
   { stdName: "Andorra", matches: ["Andorra"] },
+  { stdName: "Liechtenstein", matches: ["Liechtenstein"] },
+  { stdName: "Malta", matches: ["Malta"] },
+  { stdName: "Monaco", matches: ["Monaco"] },
+  { stdName: "San Marino", matches: ["San Marino"] },
+  { stdName: "Vatican City", matches: ["Vatican City", "Holy See"] },
 
   { stdName: "Sweden", matches: ["Sweden", "Sverige"] },
   { stdName: "Denmark", matches: ["Denmark"] },
@@ -155,7 +166,7 @@ const CountryData = [
   { stdName: "Greenland", matches: ["Greenland", "Kalaallit Nunaat"] },
 
   { stdName: "Czechoslovakia", matches: ["Czechoslovakia"] },
-  { stdName: "Czechia", matches: ["Czechia"], partOf: ["Czechoslovakia"] },
+  { stdName: "Czechia", matches: ["Czechia", "Czech Republic"], partOf: ["Czechoslovakia"] },
   { stdName: "Slovakia", matches: ["Slovakia"], partOf: ["Czechoslovakia"] },
 
   { stdName: "Hungary", matches: ["Hungary", "Magyarország"] },
@@ -185,8 +196,18 @@ const CountryData = [
   { stdName: "Albania", matches: ["Albania", "Shqipëria"] },
   { stdName: "Greece", matches: ["Greece", "Ελλάδα"] },
 
+  // - predecessor names
+  { stdName: "Kingdom of Prussia", matches: ["Kingdom of Prussia", "Prussia", "Königreich Preußen", "Preußen"] },
+  { stdName: "Kingdom of Hanover", matches: ["Kingdom of Hanover", "Hanover", "Königreich Hannover", "Hannover"] },
+  { stdName: "Kingdom of Sardinia", matches: ["Kingdom of Sardinia", "Sardinia", "Kingdom of Sardinia and Corsica"] },
+  {
+    stdName: "Dutch Republic",
+    matches: ["Dutch Republic", "Republic of the Seven United Netherlands", "United Provinces"],
+  },
+
   // Middle East
-  { stdName: "Turkey", matches: ["Turkey"] },
+  { stdName: "Turkey", matches: ["Turkey", "Türkiye", "Republic of Turkey"] },
+  { stdName: "Palestine", matches: ["Palestine", "State of Palestine", "Palestinian Territories"] },
   { stdName: "Syria", matches: ["Syria"] },
   { stdName: "Lebanon", matches: ["Lebanon"] },
   { stdName: "Israel", matches: ["Israel"] },
@@ -219,10 +240,14 @@ const CountryData = [
   { stdName: "Japan", matches: ["Japan", "日本"] },
   { stdName: "Philippines", matches: ["Philippines"] },
 
+  // - predecessors
+  { stdName: "Hong Kong", matches: ["Hong Kong"] },
+
   // South Asia
   { stdName: "India", matches: ["India"] },
   { stdName: "Pakistan", matches: ["Pakistan", "پاکستان"] },
   { stdName: "Sri Lanka", matches: ["Sri Lanka"] },
+  { stdName: "Ceylon", matches: ["Ceylon"] },
   { stdName: "Bangladesh", matches: ["Bangladesh", "বাংলাদেশ"] },
   { stdName: "Nepal", matches: ["Nepal", "नेपाल"] },
   { stdName: "Bhutan", matches: ["Bhutan"] },
@@ -238,6 +263,10 @@ const CountryData = [
   { stdName: "Singapore", matches: ["Singapore"] },
   { stdName: "Brunei", matches: ["Brunei"] },
   { stdName: "Indonesia", matches: ["Indonesia"] },
+  { stdName: "Timor-Leste", matches: ["Timor-Leste", "East Timor", "Timor"] },
+
+  // - predecessors
+  { stdName: "Straits Settlements", matches: ["Straits Settlements"] },
 
   // North America
   {
@@ -255,24 +284,380 @@ const CountryData = [
     usesMiddleNames: true,
     wifeChangesName: true,
   },
+  { stdName: "Mexico", matches: ["Mexico"], hasStates: true },
 
-  // Canada predecessors and colonies
+  // - USA predecessors and colonies (see https://en.wikipedia.org/wiki/British_North_America)
+  {
+    stdName: "British America",
+    matches: ["British North America", "British America"],
+    invalidCountryName: true, // we never want to use this as a country name in a placename or a search
+    hasStates: false,
+    validDateRange: { startYear: 1585, endYear: 1907 },
+  },
+  {
+    stdName: "Roanoke Colony",
+    matches: ["Roanoke Colony"],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1585, endYear: 1590 },
+  },
+  {
+    stdName: "Connecticut Colony",
+    matches: ["Connecticut Colony", "Colony of Connecticut", "Connecticut River Colony"],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1636, endYear: 1776 },
+  },
+  {
+    stdName: "Delaware Colony",
+    matches: ["Delaware Colony", "Colony of Delaware", "The Three Lower Counties on the Delaware River"],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1664, endYear: 1776 },
+  },
+  {
+    stdName: "Massachusetts Bay Colony",
+    matches: ["Massachusetts Bay Colony", "Colony of Massachusetts Bay", "Massachusetts Bay"],
+    partOf: ["British America"],
+    becamePartOf: ["United States", "Province of Massachusetts Bay"],
+    hasStates: false,
+    validDateRange: { startYear: 1628, endYear: 1691 },
+  },
+  {
+    stdName: "Province of Georgia",
+    matches: ["Province of Georgia", "Colony of Georgia", "Georgia Colony"],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1732, endYear: 1776 },
+  },
+  {
+    stdName: "Province of Maryland",
+    matches: ["Province of Maryland", "Colony of Maryland", "Maryland Colony"],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1634, endYear: 1776 },
+  },
+  {
+    stdName: "Plymouth Colony",
+    matches: ["Plymouth Colony", "Plimouth Colony"],
+    partOf: ["British America"],
+    becamePartOf: ["United States", "Province of Massachusetts Bay"],
+    hasStates: false,
+    validDateRange: { startYear: 1620, endYear: 1691 },
+  },
+  {
+    stdName: "Province of Massachusetts Bay",
+    matches: ["Province of Massachusetts Bay"],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1691, endYear: 1776 },
+  },
+  {
+    stdName: "Province of New Hampshire",
+    matches: ["Province of New Hampshire", "Colony of New Hampshire", "New Hampshire Colony"],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1629, endYear: 1776 },
+  },
+  {
+    stdName: "Province of New Jersey",
+    matches: ["Province of New Jersey", "Colony of New Jersey", "New Jersey Colony"],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1664, endYear: 1776 },
+  },
+  {
+    stdName: "Province of New York",
+    matches: ["Province of New York", "Colony of New York", "New York Colony"],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1664, endYear: 1783 },
+  },
+  {
+    stdName: "Province of North Carolina",
+    matches: [
+      "Province of North Carolina",
+      "Colony of North Carolina",
+      "North Carolina Colony",
+      "Albemarle Settlements",
+    ],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1712, endYear: 1776 },
+  },
+  {
+    stdName: "Province of Pennsylvania",
+    matches: ["Province of Pennsylvania", "Colony of Pennsylvania", "Pennsylvania Colony"],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1681, endYear: 1776 },
+  },
+  {
+    stdName: "Colony of Rhode Island",
+    matches: [
+      "Colony of Rhode Island",
+      "Rhode Island Colony",
+      "Province of Rhode Island",
+      "Colony of Rhode Island and Providence Plantations",
+    ],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1636, endYear: 1776 },
+  },
+  {
+    stdName: "Province of South Carolina",
+    matches: ["Province of South Carolina", "Colony of South Carolina", "South Carolina Colony", "Clarendon Province"],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1712, endYear: 1776 },
+  },
+  {
+    stdName: "Colony of Virginia",
+    matches: ["Colony of Virginia", "Virginia Colony", "Province of Virginia", "Dominion and Colony of Virginia"],
+    partOf: ["British America"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1606, endYear: 1776 },
+  },
+  {
+    stdName: "Republic of Texas",
+    matches: ["Republic of Texas"],
+    becamePartOf: ["United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1836, endYear: 1846 },
+  },
+
+  // - Canada predecessors and colonies
+  {
+    stdName: "Acadia",
+    matches: ["Acadia", "Acadie"],
+    becamePartOf: ["Canada", "United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1604, endYear: 1713 },
+  },
+  {
+    stdName: "Beothuk Lands",
+    matches: ["Beothuk Lands", "Onoake"],
+    becamePartOf: ["Canada", "Newfoundland"],
+    hasStates: false,
+    validDateRange: { endYear: 1829 },
+  },
+  {
+    stdName: "Cape Breton Island",
+    matches: ["Cape Breton Island", "Colony of Cape Breton Island", "Unama'ki"],
+    becamePartOf: ["Canada", "Nova Scotia"],
+    hasStates: false,
+    validDateRange: { startYear: 1763, endYear: 1820 },
+  },
+  {
+    stdName: "Colony of British Columbia",
+    matches: ["Colony of British Columbia", "British Columbia"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1858, endYear: 1871 },
+  },
+  {
+    stdName: "Colony of Vancouver Island",
+    matches: ["Colony of Vancouver Island", "Vancouver Island"],
+    becamePartOf: ["Canada", "Colony of British Columbia"],
+    hasStates: false,
+    validDateRange: { startYear: 1849, endYear: 1866 },
+  },
+  {
+    stdName: "Columbia Department",
+    matches: ["Columbia Department"],
+    becamePartOf: ["Canada", "United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1821, endYear: 1846 },
+  },
+  {
+    stdName: "Columbia District",
+    matches: ["Columbia District"],
+    becamePartOf: ["Canada", "United States"],
+    hasStates: false,
+    validDateRange: { startYear: 1810, endYear: 1821 },
+  },
+  {
+    stdName: "District of Keewatin",
+    matches: ["District of Keewatin", "kīwēhtin", "giiwedin"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1876, endYear: 1899 },
+  },
+  {
+    stdName: "Canada East",
+    matches: ["Canada East"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1841, endYear: 1867 },
+  },
+  {
+    stdName: "Canada West",
+    matches: ["Canada West"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1840, endYear: 1867 },
+  },
+  {
+    stdName: "Île Royale",
+    matches: ["Île Royale", "Ile Royale"],
+    becamePartOf: ["Canada", "Nova Scotia", "Cape Breton Island"],
+    hasStates: false,
+    validDateRange: { startYear: 1713, endYear: 1758 },
+  },
+  {
+    stdName: "Île Saint-Jean",
+    matches: ["Île Saint-Jean", "Ile Saint-Jean"],
+    partOf: ["Acadia"],
+    becamePartOf: ["Canada", "Prince Edward Island"],
+    hasStates: false,
+    validDateRange: { startYear: 1713, endYear: 1758 },
+  },
+  {
+    stdName: "Lower Canada",
+    matches: ["Lower Canada", "Bas Canada", "Province of Lower Canada", "Province du Bas Canada"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1791, endYear: 1841 },
+  },
+  {
+    stdName: "Mi'kma'ki",
+    matches: ["Mi'kma'ki", "Onoake"],
+    becamePartOf: ["Canada", "United States", "Newfoundland", "Nova Scotia", "New Brunswick"],
+    hasStates: false,
+  },
+  {
+    stdName: "Newfoundland",
+    matches: [
+      "Newfoundland",
+      "Newfoundland Colony",
+      "Colony of Newfoundland",
+      "Province of Newfoundland",
+      "Terre-Neuve",
+      "Nunatsuak",
+      "Dominion of Newfoundland",
+    ],
+    partOf: ["British America"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1620, endYear: 1867 },
+  },
+  {
+    stdName: "New Brunswick",
+    matches: [
+      "New Brunswick",
+      "New Brunswick Colony",
+      "Province of New Brunswick",
+      "Colony of New Brunswick",
+      "New Ireland",
+    ],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    usesMiddleNames: true,
+    wifeChangesName: true,
+    validDateRange: { startYear: 1784, endYear: 1867 },
+  },
+  {
+    stdName: "New France",
+    becamePartOf: ["Canada"],
+    matches: ["New France", "French Quebec", "Nouvelle France", "Nouvelle-France"],
+    hasStates: false,
+    validDateRange: { startYear: 1534, endYear: 1763 },
+  },
   {
     stdName: "Nova Scotia",
-    matches: ["Nova Scotia"],
+    matches: ["Nova Scotia", "Colony of Nova Scotia"],
+    becamePartOf: ["Canada"],
     hasStates: false,
     usesMiddleNames: true,
     wifeChangesName: true,
     validDateRange: { startYear: 1713, endYear: 1867 },
   },
   {
-    stdName: "Acadia",
-    matches: ["Acadia"],
+    stdName: "Plaisance",
+    matches: ["Plaisance"],
+    partOf: ["New France", "Terre-Neuve"],
+    becamePartOf: ["Canada", "Newfoundland"],
     hasStates: false,
-    validDateRange: { startYear: 1604, endYear: 1713 },
+    validDateRange: { startYear: 1655, endYear: 1713 },
   },
-
-  { stdName: "Mexico", matches: ["Mexico"], hasStates: true },
+  {
+    stdName: "Prince Edward Island",
+    matches: ["Prince Edward Island"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1798, endYear: 1873 },
+  },
+  {
+    stdName: "Province of Canada",
+    matches: ["Province of Canada", "United Province of Canada", "United Canadas"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1841, endYear: 1867 },
+  },
+  {
+    stdName: "Province of Quebec",
+    matches: ["Province of Quebec", "Province du Quebec", "Quebec"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1763, endYear: 1791 },
+  },
+  {
+    stdName: "Red River Colony",
+    matches: ["Red River Colony", "Assiniboia", "Selkirk Settlement", "Rivière-Rouge", "Otipemisiwak"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1812, endYear: 1870 },
+  },
+  {
+    stdName: "Rupert's Land",
+    matches: ["Rupert's Land", "Terre de Rupert", "Prince Rupert's Land"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1670, endYear: 1870 },
+  },
+  {
+    stdName: "St. John's Island",
+    matches: ["St. John's Island"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1769, endYear: 1798 },
+  },
+  {
+    stdName: "Stikine Territory",
+    matches: ["Stikine Territory"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1862, endYear: 1863 },
+  },
+  {
+    stdName: "Terre-Neuve",
+    matches: ["Terre-Neuve", "The Colony of Terre-Neuve"],
+    partOf: "New France",
+    becamePartOf: ["Canada", "Newfoundland"],
+    hasStates: false,
+    validDateRange: { startYear: 1655, endYear: 1713 },
+  },
+  {
+    stdName: "Upper Canada",
+    matches: ["Upper Canada", "Province of Upper Canada", "Province du Haut-Canada", "Haut-Canada"],
+    becamePartOf: ["Canada"],
+    hasStates: false,
+    validDateRange: { startYear: 1791, endYear: 1840 },
+  },
 
   // Central America
   { stdName: "Costa Rica", matches: ["Costa Rica"] },
@@ -288,7 +673,7 @@ const CountryData = [
   { stdName: "Aruba", matches: ["Aruba"] },
   { stdName: "Bahamas", matches: ["Bahamas"] },
   { stdName: "Barbados", matches: ["Barbados"] },
-  { stdName: "Bermuda", matches: ["Bermuda"] },
+  { stdName: "Bermuda", matches: ["Bermuda"], wasPartOf: ["British America"] },
   { stdName: "British Virgin Islands", matches: ["British Virgin Islands"] },
   { stdName: "Caribbean Netherlands", matches: ["Caribbean Netherlands"] },
   { stdName: "Cayman Islands", matches: ["Cayman Islands"] },
@@ -311,6 +696,9 @@ const CountryData = [
   { stdName: "Trinidad and Tobago", matches: ["Trinidad and Tobago"] },
   { stdName: "Turks and Caicos Islands", matches: ["Turks and Caicos Islands"] },
   { stdName: "United States Virgin Islands", matches: ["United States Virgin Islands"] },
+
+  // - Predecessor names
+  { stdName: "British Guiana", matches: ["British Guiana"] },
 
   // South America
   { stdName: "Colombia", matches: ["Colombia"] },
@@ -338,9 +726,14 @@ const CountryData = [
   { stdName: "New Zealand", matches: ["New Zealand"], usesMiddleNames: true, wifeChangesName: true },
   { stdName: "American Samoa", matches: ["American Samoa"] },
   { stdName: "Papua New Guinea", matches: ["Papua New Guinea"] },
+
+  // Predecessors of Australia
   { stdName: "Colony of Victoria", matches: ["Colony of Victoria"], partOf: ["Australia"] },
   { stdName: "Colony of Queensland", matches: ["Colony of Queensland", "Queensland"], partOf: ["Australia"] },
-  { stdName: "New South Wales", matches: ["New South Wales"] },
+  { stdName: "New South Wales", matches: ["New South Wales", "Colony of New South Wales"] },
+  { stdName: "Colony of South Australia", matches: ["Colony of South Australia"] },
+  { stdName: "Colony of Western Australia", matches: ["Colony of Western Australia", "Swan River Colony"] },
+  { stdName: "Van Diemen's Land", matches: ["Van Diemen's Land", "Tasmania", "Colony of Tasmania"] },
 
   // North Africa
   { stdName: "Algeria", matches: ["Algeria"] },
@@ -366,6 +759,7 @@ const CountryData = [
   { stdName: "Togo", matches: ["Togo"] },
   { stdName: "Benin", matches: ["Benin"] },
   { stdName: "Nigeria", matches: ["Nigeria"] },
+  { stdName: "Cape Verde", matches: ["Cape Verde", "Cabo Verde"] },
 
   // Central Africa
   { stdName: "Cameroon", matches: ["Cameroon"] },
@@ -395,13 +789,13 @@ const CountryData = [
     matches: ["South Africa", "Republic of South Africa", "Republiek van Suid Afrika", "Suid Afrika"],
     validDateRange: { startYear: 1961 },
   },
-  { stdName: "Zimbabwe", matches: ["Zimbabwe"] },
+  { stdName: "Zimbabwe", matches: ["Zimbabwe", "Rhodesia", "Northern Rhodesia", "Southern Rhodesia"] },
   { stdName: "Angola", matches: ["Angola"] },
   { stdName: "Zambia", matches: ["Zambia"] },
   { stdName: "Malawi", matches: ["Malawi"] },
   { stdName: "Mozambique", matches: ["Mozambique"] },
   { stdName: "Namibia", matches: ["Namibia"] },
-  { stdName: "Botswana", matches: ["Botswana"] },
+  { stdName: "Botswana", matches: ["Botswana", "Bechuanaland Protectorate", "Bechuanaland"] },
   { stdName: "Lesotho", matches: ["Lesotho"] },
   { stdName: "Eswatini", matches: ["Eswatini", "Swaziland"] },
   { stdName: "Madagascar", matches: ["Madagascar"] },
@@ -409,86 +803,114 @@ const CountryData = [
   // South Africa predecessors and colonies
   // See: https://www.wikitree.com/wiki/Project:South_African_Roots/Sources2
   {
+    stdName: "Basutoland",
+    matches: ["Basutoland"],
+    becamePartOf: ["South Africa"],
+    validDateRange: { startYear: 1884, endYear: 1966 },
+  },
+  {
     stdName: "Cabo de Goede Hoop",
     matches: ["Cabo de Goede Hoop", "de Caep de Goede Hoop"],
+    becamePartOf: ["South Africa", "Cape of Good Hope Colony"],
     validDateRanges: [
       { startYear: 1652, endYear: 1795 },
-      { startYear: 1803, endYear: 17918065 },
+      { startYear: 1803, endYear: 1806 },
     ],
   },
   {
     stdName: "Cape of Good Hope Colony",
     matches: ["Cape of Good Hope Colony", "Cape of Good Hope"],
+    becamePartOf: ["South Africa", "Cabo de Goede Hoop"],
     validDateRange: { startYear: 1795, endYear: 1803 },
   },
   {
     stdName: "Cape Colony",
     matches: ["Cape Colony", "Kaapkolonie"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1806, endYear: 1910 },
   },
   {
     stdName: "Zululand",
     matches: ["Zululand", "Zoeloeland"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1816, endYear: 1897 },
   },
   {
     stdName: "Republic of the Port of Natal",
     matches: ["Republic of the Port of Natal", "Republiek van Port Natal"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1838, endYear: 1839 },
   },
   {
     stdName: "Natalia Republic",
     matches: ["Natalia Republic", "Natalia Republiek"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1839, endYear: 1843 },
   },
   {
     stdName: "Natal Colony",
     matches: ["Natal Colony", "Natal Kolonie"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1843, endYear: 1856 },
   },
   {
     stdName: "Natal",
     matches: ["Natal", "Natal Kolonie"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1843, endYear: 1856 },
   },
   {
     stdName: "Transvaal Republic",
     matches: ["Transvaal Republic", "Transvaal Republiek"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1844, endYear: 1852 },
   },
   {
     stdName: "Zuid-Afrikaansche Republic",
     matches: ["Zuid-Afrikaansche Republic", "Zuid-Afrikaansche Republiek"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1852, endYear: 1902 },
   },
   {
     stdName: "Transvaal Colony",
     matches: ["Transvaal Colony", "Transvaalse Kolonie"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1902, endYear: 1910 },
   },
   {
     stdName: "Transoranje",
     matches: ["Transoranje"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1848, endYear: 1852 },
   },
   {
     stdName: "Oranje Vrijstaat",
     matches: ["Oranje Vrijstaat", "Oranje Vrijstat", "Orange Free State"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1852, endYear: 1900 },
   },
   {
     stdName: "Oranjerivierkolonie",
-    matches: ["Oranjerivierkolonie"],
+    matches: ["Oranjerivierkolonie", "Orange River Colony"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1900, endYear: 1902 },
+  },
+  {
+    stdName: "Orange River Colony",
+    matches: ["Orange River Colony"],
+    becamePartOf: ["South Africa"],
+    validDateRange: { startYear: 1900, endYear: 1910 },
   },
   {
     stdName: "Oranje Unie",
     matches: ["Oranje Unie"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1902, endYear: 1910 },
   },
   {
     stdName: "Union of South Africa",
     matches: ["South Africa", "Union of South Africa", "Unie van Suid Afrika"],
+    becamePartOf: ["South Africa"],
     validDateRange: { startYear: 1910, endYear: 1961 },
   },
 ];
@@ -786,6 +1208,30 @@ const StateData = {
     { stdName: "Western Australia", matches: ["Western Australia", "WA", "W Australia", "West Australia"] },
     { stdName: "Tasmania", matches: ["Tasmania", "Tas", "TAS"] },
   ],
+  Canada: [
+    // provinces
+    { stdName: "Alberta", matches: ["Alberta", "District of Alberta"] },
+    { stdName: "British Columbia", matches: ["British Columbia", "B.C.", "S'ólh Téméxw", "Illaheechuk"] },
+    { stdName: "Manitoba", matches: ["Manitoba", "Province of Manitoba"] },
+    { stdName: "New Brunswick", matches: ["New Brunswick"] },
+    {
+      stdName: "Newfoundland and Labrador",
+      matches: ["Newfoundland and Labrador", "Newfoundland", "Labrador", "Terre-Neuve-et-Labrador"],
+    },
+    {
+      stdName: "Northwest Territories",
+      matches: ["North-West Territories", "NWT", "Northwest Territories", "North-Western Territory"],
+    },
+    { stdName: "Nova Scotia", matches: ["Nova Scotia"] },
+    { stdName: "Ontario", matches: ["Ontario"] },
+    { stdName: "Prince Edward Island", matches: ["Prince Edward Island", "PEI", "P.E.I."] },
+    { stdName: "Quebec", matches: ["Quebec"] },
+    { stdName: "Saskatchewan", matches: ["Saskatchewan"] },
+    // territories
+    { stdName: "Northwest Territories", matches: ["Northwest Territories"] },
+    { stdName: "Nunavut", matches: ["Nunavut", "Nunavut Territory"] },
+    { stdName: "Yukon", matches: ["Yukon", "Yukon Territory"] },
+  ],
   "South Africa": [
     { stdName: "Western Cape", matches: ["Western Cape", "Wes-Kaap"] },
     { stdName: "Eastern Cape,", matches: ["Eastern Cape", "Oos-Kaap"] },
@@ -853,6 +1299,38 @@ const CD = {
       if (country.stdName == ownedCountryName) {
         if (country.partOf != undefined) {
           for (let owner of country.partOf) {
+            if (owner == owningCountryName) {
+              return true;
+            }
+          }
+        }
+        break;
+      }
+    }
+    return false;
+  },
+
+  wasPartOf: function (ownedCountryName, owningCountryName) {
+    for (let country of CountryData) {
+      if (country.stdName == ownedCountryName) {
+        if (country.wasPartOf != undefined) {
+          for (let owner of country.wasPartOf) {
+            if (owner == owningCountryName) {
+              return true;
+            }
+          }
+        }
+        break;
+      }
+    }
+    return false;
+  },
+
+  becamePartOf: function (ownedCountryName, owningCountryName) {
+    for (let country of CountryData) {
+      if (country.stdName == ownedCountryName) {
+        if (country.becamePartOf != undefined) {
+          for (let owner of country.becamePartOf) {
             if (owner == owningCountryName) {
               return true;
             }
@@ -1117,17 +1595,41 @@ const CD = {
     let yearNum = parsedDate.yearNum;
 
     for (let country of CountryData) {
-      if (country.stdName == stdName) {
-        if (country.validDateRange) {
-          if (country.validDateRange.startYear && country.validDateRange.startYear > yearNum) {
-            return false;
+      if (country.stdName != stdName) {
+        continue;
+      }
+
+      if (country.invalidCountryName) {
+        continue;
+      }
+
+      if (country.validDateRange) {
+        if (country.validDateRange.startYear && country.validDateRange.startYear > yearNum) {
+          return false;
+        }
+        if (country.validDateRange.endYear && country.validDateRange.endYear < yearNum) {
+          return false;
+        }
+      } else if (country.validDateRanges) {
+        let isValidDate = false;
+        for (let range of country.validDateRanges) {
+          let isInRange = true;
+          if (range.startYear && range.startYear > yearNum) {
+            isInRange = false;
           }
-          if (country.validDateRange.endYear && country.validDateRange.endYear < yearNum) {
-            return false;
+          if (range.endYear && range.endYear < yearNum) {
+            isInRange = false;
+          }
+          if (isInRange) {
+            isValidDate = true;
+            break;
           }
         }
-        break;
+        if (!isValidDate) {
+          return false;
+        }
       }
+      break;
     }
     return true;
   },

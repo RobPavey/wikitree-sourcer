@@ -273,20 +273,65 @@ class CitationParser {
     }
   }
 
-  isValidYear(yearString) {
+  isValidYear(yearString, minYear = 0, maxYear = 0) {
     let yearNum = parseInt(yearString);
     if (isNaN(yearNum)) {
       return false;
     }
 
-    if (year < 0) {
+    if (yearNum < minYear) {
       return false;
     }
 
-    let now = new Date();
-    let yearNow = now.getFullYear();
-    if (yearNum > yearNow) {
-      return false;
+    if (maxYear) {
+      if (yearNum > maxYear) {
+        return false;
+      }
+    } else {
+      let now = new Date();
+      let yearNow = now.getFullYear();
+      if (yearNum > yearNow) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  identifyType(extractInput) {
+    let text = this.text;
+
+    if (!text) {
+      return;
+    }
+
+    if (extractInput.preClean) {
+      let clean = extractInput.preClean;
+      if (clean.removeMatches) {
+        for (let regex of clean.removeMatches) {
+          text = text.replace(regex, "");
+        }
+      }
+    }
+
+    if (extractInput.typeMatches) {
+      for (let type of extractInput.typeMatches) {
+        for (let regex of type.matches) {
+          if (regex.test(text)) {
+            return type.searchType;
+          }
+        }
+      }
+    }
+
+    if (extractInput.typeMatches2) {
+      for (let type of extractInput.typeMatches2) {
+        for (let regex of type.matches) {
+          if (regex.test(text)) {
+            return type.searchType;
+          }
+        }
+      }
     }
   }
 }

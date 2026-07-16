@@ -1,0 +1,16 @@
+{
+  "siteName": "wagovau",
+  "reuseTab": true,
+  "permissionsMessage": "To perform a search on Western Australia BDM a content script needs to be loaded on the www.wa.gov.au/organisation/department-of-justice/online-index-search-tool search page.",
+  "searchData": {
+    "url": "https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool",
+    "fieldData": {
+      "yearFromCtrl": "1977",
+      "yearToCtrl": "1977"
+    },
+    "searchType": "death",
+    "refineData": {
+      "text": "0012"
+    }
+  }
+}

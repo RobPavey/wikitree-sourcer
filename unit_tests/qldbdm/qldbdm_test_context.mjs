@@ -42,6 +42,13 @@ const regressionData = [
     numPhases: 3,
   },
   {
+    // From https://www.wikitree.com/wiki/Space:Sources_and_Citations_-_Queensland
+    caseName: "death_1905_mary_jones_au",
+    inputText: `Queensland Government, Births, Deaths, Marriages. Mary Jones. Death. Date: 1 Sep 1905. Birth: 1867. Registration number: 1905/C/3389. Mother: Bridget. Father: Martin Hassett.Mary Jones Death Index`,
+    function: transformPlainText,
+    numPhases: 3,
+  },
+  {
     // From https://www.wikitree.com/wiki/Greentree-15
     caseName: "death_1961_george_greentree_wt",
     inputText: `Death: "Australia, Death Index, 1787-1985"

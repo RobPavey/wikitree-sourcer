@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "William Lewis Rafferty"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1867-02-18"
+  },
+  "eventPlace": {
+    "placeString": "Saint John, Saint John, New Brunswick Colony"
+  },
+  "registrationDistrict": "Saint John",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Rafferty"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Margaret Mcguire"
+      }
+    }
+  },
+  "webpageFormat": 202606,
+  "hasValidData": true
+}

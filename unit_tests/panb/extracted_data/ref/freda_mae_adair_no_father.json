@@ -2,6 +2,7 @@
   "url": "https://archives2.gnb.ca/Search/VISSE/141A5.aspx?culture=en-CA&guid=9B31BD24-7673-46D5-9299-0794C0CC577E",
   "success": true,
   "databaseID": "RS141A5",
+  "sourceTitle": "New Brunswick Provincial Archives; Vital Statistics from Government Records (RS141)",
   "tableTitle": "Index to Provincial Registrations of Births (RS141A5)",
   "recordData": {
     "Name": "ADAIR, FREDA MAY",
@@ -14,8 +15,9 @@
     "Number": "39660",
     "Code": "A5/1925"
   },
+  "webpageFormat": 202601,
+  "numberTableEntries": 9,
   "hasImage": true,
   "imageUrl": "https://archives2.gnb.ca/DigitizedDocuments/RS141/A5/1925/9b31bd24-7673-46d5-9299-0794c0cc577e.jpg",
-  "numberTableEntries": 9,
   "eventType": "Birth"
 }

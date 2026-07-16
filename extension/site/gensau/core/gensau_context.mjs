@@ -189,7 +189,7 @@ function extractGivenNames(parser, builder) {
         /(?:^|[^a-z ']\s+)([a-z ]*[a-z])\s+[a-z]+\s*,?\s*child of/i,
         // "Surname, fornames" at start of whole text (possible with some non-alpha chars before it)
         /^\W*[a-z]+,\s?([a-z ]+)/i,
-        // "Surname, fornames" at start of line or sentence
+        // "Surname, forenames" at start of line or sentence
         /(?:\.|\n|<br ?\/?>|<br ?\/?>\n)\s*[a-z]+,\s?([a-z ]+)/i,
       ],
     },

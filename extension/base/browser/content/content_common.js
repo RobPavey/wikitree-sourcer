@@ -36,7 +36,7 @@ SOFTWARE.
 
 function logDebug(...args) {
   const debugConfig = {
-    enabled: false,
+    enabled: true,
 
     showTimestamp: false,
     showDebugText: false,
@@ -184,66 +184,30 @@ function extractDataAndRespond(document, url, contentType, sendResponse, siteSpe
   return false;
 }
 
-function retryMessageToBackground(siteName, prefersDark) {
-  logDebug("retryMessageToBackground, siteName is : " + siteName);
+function sendContentLoadedMessage(siteName) {
+  // We used to use this to set the popup and icon by sending a message to the background
+  // But we don't need to do that anymore.
+  // However the popup (if any) does listen for this message so we briadcast it out anyway.
 
-  // Send the message a second time. Sometimes this is needed on Safari when the background script
-  // has just started up. See notes in background_bootstrap.js
-  // It is caused by a Safari bug with module type background scripts
-  // NOTE: this may not be required after switching to MV3 on Safari.
-  chrome.runtime.sendMessage(
-    { type: "contentLoaded", siteName: siteName, prefersDark: prefersDark },
-    function (response) {
-      // nothing to do, the message needs to send a response though to avoid console error message
+  chrome.runtime.sendMessage({ type: "contentLoaded", siteName: siteName }, function (response) {
+    // we need to be sure that the background script got the message and set the popup
+    logDebug("sendContentLoadedMessage, received response from contentLoaded message, siteName is: " + siteName);
+    logDebug("response is:", response);
+    if (response) {
+      logDebug("response.success is: " + response.success);
+    }
+    if (chrome.runtime.lastError) {
+      // we could get this if there is no listener, no problem, may be no popup
       logDebug(
-        "retryMessageToBackground 2nd attempt, received response from contentLoaded message, siteName is " + siteName
+        "sendContentLoadedMessage: No response from background script. lastError message is:",
+        chrome.runtime.lastError.message
       );
-      logDebug(response);
-      if (chrome.runtime.lastError) {
-        // possibly there is no background script loaded, this should never happen
-        logDebug(
-          "retryMessageToBackground: No response from background script, lastError message is:",
-          chrome.runtime.lastError.message
-        );
-      }
+    } else if (!response || !response.success) {
+      // This is fine - there may be no popup listening
+    } else {
+      logDebug("sendContentLoadedMessage, have response from popup, siteName is: " + siteName);
     }
-  );
-}
-
-function setPopupAndIcon(siteName) {
-  // We could do setPopup etc here rather than sending a message to the background.
-  // The reason for the message is to get the tab id (which gets put in sender.tab.id).
-  // Apparently chrome.tabs.query is not available in the content script.
-
-  let prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-  chrome.runtime.sendMessage(
-    { type: "contentLoaded", siteName: siteName, prefersDark: prefersDark },
-    function (response) {
-      // we need to be sure that the background script got the message and set the popup
-      logDebug("setPopupAndIcon, received response from contentLoaded message, siteName is: " + siteName);
-      logDebug("response is:", response);
-      if (response) {
-        logDebug("response.success is: " + response.success);
-      }
-      if (chrome.runtime.lastError) {
-        // possibly there is no background script loaded, this should never happen
-        logDebug(
-          "setPopupAndIcon: No response from background script. lastError message is:",
-          chrome.runtime.lastError.message
-        );
-      } else if (!response || !response.success) {
-        // This typically means that the background script was not listening yet and did not set
-        // the popup. It is critical that it does so we keep retrying
-        const contentLoadedTimeoutDelay = 500;
-        setTimeout(function () {
-          retryMessageToBackground(siteName, prefersDark);
-        }, contentLoadedTimeoutDelay);
-      } else {
-        logDebug("setPopupAndIcon, have response from bg, siteName is: " + siteName);
-      }
-    }
-  );
+  });
 }
 
 function contentMessageListener(
@@ -311,7 +275,7 @@ function siteContentInit(siteName, overrideExtractHandler, additionalMessageHand
   // siteContentInit is called when the user responds but the response from the contentLoaded
   // message not received until the extension icon is clicked again (weird can be minutes later!).
 
-  setPopupAndIcon(siteName);
+  sendContentLoadedMessage(siteName);
 
   // Listen for messages (from the popup script mostly)
   try {

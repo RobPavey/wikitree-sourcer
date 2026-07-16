@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Western Australian Online Index\"<br/>\nGovernment of Western Australia; Department of Justice; Registry of Births, Deaths and Marriages; Registration Number: 2700454<br/>\n[https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool Western Australia Online Search] (accessed 6 May 2021)<br/>\nSurname: Wilson; Given Names: Effie Olive; Sex: F; Age: 82; Father: Frank TELFER; Mother: Margaret TELFER; Place of Death: Fremantle; Year of Death: 1969; Registration District: Fremantle; Registration Year: 1969.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Effie, daughter of Frank Telfer & Margaret Telfer, died in 1969 in Fremantle, Western Australia, Australia.<ref>\n'''Death Registration''':\n\"Western Australian Online Index\"<br/>\nGovernment of Western Australia; Department of Justice; Registry of Births, Deaths and Marriages; Registration Number: 2700454<br/>\n[https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool Western Australia Online Search] (accessed 6 May 2021)<br/>\nSurname: Wilson; Given Names: Effie Olive; Sex: F; Age: 82; Father: Frank TELFER; Mother: Margaret TELFER; Place of Death: Fremantle; Year of Death: 1969; Registration District: Fremantle; Registration Year: 1969.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"Western Australian Online Index\"<br/>Government of Western Australia; Department of Justice; Registry of Births, Deaths and Marriages; Registration Number: 2700454<br/>[https://www.wa.gov.au/organisation/department-of-justice/online-index-search-tool Western Australia Online Search] (accessed 6 May 2021)<br/>Surname: Wilson; Given Names: Effie Olive; Sex: F; Age: 82; Father: Frank TELFER; Mother: Margaret TELFER; Place of Death: Fremantle; Year of Death: 1969; Registration District: Fremantle; Registration Year: 1969.",
+    "type": "source"
+  }
+}

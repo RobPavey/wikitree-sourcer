@@ -429,8 +429,22 @@ const baseRecordTypeData = {
       recordDataKeys: ["Father"],
       convertNameFromAllCapsToMixedCase: true,
     },
+    fatherForenames: {
+      recordDataKeys: ["Father's Given Names"],
+    },
+    fatherLastName: {
+      recordDataKeys: ["Father's Surname"],
+      convertNameFromAllCapsToMixedCase: true,
+    },
     motherFullName: {
       recordDataKeys: ["Mother"],
+      convertNameFromAllCapsToMixedCase: true,
+    },
+    motherForenames: {
+      recordDataKeys: ["Mother's Given Names"],
+    },
+    motherLastName: {
+      recordDataKeys: ["Mother's Surname"],
       convertNameFromAllCapsToMixedCase: true,
     },
     parentNames: {
@@ -580,15 +594,22 @@ class GensauEdReader extends ExtractedDataReader {
     if (id) {
       let registrationNumber = this.ed.recordData["Book/Page"];
 
-      let volume = "";
-      let page = "";
-      let parts = registrationNumber.split("/");
-      if (parts.length == 2) {
-        volume = parts[0].trim();
-        page = parts[1].trim();
+      let collectionData = { id: id, year: year };
+
+      if (registrationNumber) {
+        collectionData.registrationNumber = registrationNumber;
+        let volume = "";
+        let page = "";
+        let parts = registrationNumber.split("/");
+        if (parts.length == 2) {
+          volume = parts[0].trim();
+          page = parts[1].trim();
+
+          collectionData.volume = volume;
+          collectionData.page = page;
+        }
       }
 
-      let collectionData = { id: id, year: year, registrationNumber: registrationNumber, volume: volume, page: page };
       return collectionData;
     }
     return undefined;

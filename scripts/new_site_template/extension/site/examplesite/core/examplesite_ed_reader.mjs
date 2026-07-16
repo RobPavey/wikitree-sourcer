@@ -33,7 +33,7 @@ class ExamplesiteEdReader extends ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   // Note: there are default implementations in ExtractedDataReader and, if using a data-driven
-  // style you may not need to override them here.
+  // style, you may not need to override them here.
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 

@@ -339,12 +339,13 @@ function displayUnexpectedErrorMessage(message) {
 // message does not seem to be called in the background. So we register the content scripts
 // upon first use of the popup.
 async function registerContentScripts() {
+  logDebug("registerContentScripts");
   try {
     let response = await chrome.runtime.sendMessage({
       type: "reregisterContentScripts",
     });
 
-    logDebug("reregContentScripts got response: ", response);
+    logDebug("reregisterContentScripts got response: ", response);
 
     // the message should only ever get a successful response but it could be delayed
     // if the background is asleep.

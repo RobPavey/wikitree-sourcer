@@ -38,13 +38,19 @@ import {
 } from "./background_content_scripts.mjs";
 import { logDebug } from "/base/core/log_debug.mjs";
 
-function setPopup(tab, popupPage) {
-  //console.log("WikiTree Sourcer, background script (MV3), set popup on tab " + tab + " to: " + popupPage);
-  chrome.action.setPopup({ tabId: tab, popup: popupPage });
-}
+// Helper to convert Chrome Match Patterns to Regex
+// This tests whether a match pattern from a registered content script matches
+// a URL
+function doesUrlMatchChromePattern(pattern, url) {
+  if (pattern === "<all_urls>") return true;
 
-function setIcon(tab, iconPath) {
-  chrome.action.setIcon({ tabId: tab, path: iconPath });
+  // Prepare the pattern by escaping special regex characters except *
+  let regexString = pattern
+    .replace(/[.+^${}()|[\]\\]/g, "\\$&") // Escape all regex specials
+    .replace(/\*/g, ".*"); // Convert * to .*
+
+  const regex = new RegExp(`^${regexString}$`);
+  return regex.test(url);
 }
 
 async function handleGetPlatformInfoMessage(request, sendResponse) {
@@ -125,10 +131,7 @@ function messageHandler(request, sender, sendResponse) {
 
   logDebug("background messageHandler, request is:", request);
 
-  if (request.type == "contentLoaded") {
-    //console.log("WikiTree Sourcer, background script, received contentLoaded message");
-    handleContentLoadedMessage(request, sender, sendResponse, setPopup, setIcon);
-  } else if (request.type == "registerTab") {
+  if (request.type == "registerTab") {
     //console.log("WikiTree Sourcer, background script, received registerTab message");
     handleRegisterTabMessage(request, sender, sendResponse);
     return true;
@@ -200,4 +203,4 @@ function openInNewTab(link, currentTab, tabOption) {
   }
 }
 
-export { messageHandler, openInNewTab };
+export { messageHandler, openInNewTab, doesUrlMatchChromePattern };

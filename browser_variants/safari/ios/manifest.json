@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "WikiTree Sourcer",
-  "version": "3.3.2",
+  "version": "3.4.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "icons": {
     "16": "images/wikitree_sourcer16.png",
@@ -106,6 +106,7 @@
     "*://*.thegenealogist.co.uk/*",
     "*://*.thegenealogist.com/*",
     "*://*.ushmm.org/*",
+    "*://*.wa.gov.au/*",
     "*://*.wiewaswie.nl/*",
     "*://*.wikipedia.org/*",
     "*://*.wikitree.com/*",
