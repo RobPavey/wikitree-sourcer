@@ -67,7 +67,11 @@ async function getExtractedDataFromRecordUrl(recordUrl) {
   //console.log(extractResult);
 
   if (extractResult.success) {
-    let extractedData = extractDataFromHtml(extractResult.htmlText, recordUrl);
+    let url = recordUrl;
+    if (extractResult.redirected) {
+      url = extractResult.redirectedUrl;
+    }
+    let extractedData = extractDataFromHtml(extractResult.htmlText, url);
     addCachedAsyncResult(cacheTag, recordUrl, extractedData);
 
     extractResult.extractedData = extractedData;

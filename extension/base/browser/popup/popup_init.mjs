@@ -35,6 +35,7 @@ import {
   macSecondMonitorWorkaround,
   openExceptionPage,
   displayMessageWithIcon,
+  displayMessageWithIconAndWaitForContinue,
 } from "./popup_menu_building.mjs";
 import { logDebug } from "../../core/log_debug.mjs";
 
@@ -64,6 +65,13 @@ class LoggerToTabConsole {
 }
 
 var logger = new LoggerToTabConsole(undefined);
+
+async function checkForDebugPause() {
+  const message1 = "Paused to attach debugger";
+  const message2 = "Press continue after inspect and set breakpoint";
+
+  await displayMessageWithIconAndWaitForContinue("warning", message1, message2);
+}
 
 function displaySiteNameChangedMessage(popupSiteName, contentSiteName) {
   popupState.progress = progressState.sitePopupDisplayError;
@@ -463,9 +471,11 @@ async function callFunctionWithActiveTab(func) {
   });
 }
 
-function initPopupInternal(siteName, menuSetupFunction) {
+async function initPopupInternal(siteName, menuSetupFunction) {
   macSecondMonitorWorkaround();
   setPopupMenuWidth();
+
+  await checkForDebugPause();
 
   displayBusyMessageAfterDelay("WikiTree Sourcer initializing menu ...");
 
@@ -484,7 +494,7 @@ async function initPopup(siteName, menuSetupFunction) {
   logDebug("popupState.didStartFromDefaultPopup is: " + popupState.didStartFromDefaultPopup);
 
   try {
-    initPopupInternal(siteName, menuSetupFunction);
+    await initPopupInternal(siteName, menuSetupFunction);
   } catch (e) {
     console.error("WikiTree Sourcer: initPopup, exception occurred, e is:", e);
     openExceptionPage("Error during creating popup menu for content.", siteName, e, true);

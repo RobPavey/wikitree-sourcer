@@ -273,6 +273,11 @@ async function fetchAncestryRecordPage(recordUrl) {
     result.htmlText = data;
     result.success = true;
 
+    if (response.redirected) {
+      result.redirected = true;
+      result.redirectedUrl = response.url;
+    }
+
     //console.log("result is: ");
     //console.log(result);
   } catch (error) {
