@@ -30,6 +30,14 @@ const regressionData = [
   {
     // has closed entries
     caseName: "england_1939_register_john_smith",
+    optionVariants: [
+      {
+        variantName: "citation",
+        optionOverrides: {
+          table_table_caption: "titlePlace",
+        },
+      },
+    ],
   },
   {
     caseName: "england_1939_register_pavey-452",
@@ -47,6 +55,17 @@ const regressionData = [
         variantName: "citationInCaption",
         optionOverrides: {
           table_general_autoGenerate: "citationInTableCaption",
+          table_table_caption: "titlePlace",
+        },
+      },
+    ],
+  },
+  {
+    caseName: "england_census_1921_gertrude_berry",
+    optionVariants: [
+      {
+        variantName: "citation",
+        optionOverrides: {
           table_table_caption: "titlePlace",
         },
       },
