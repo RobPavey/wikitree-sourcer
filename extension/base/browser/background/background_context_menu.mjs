@@ -85,8 +85,8 @@ async function openPageUsingSearchData(tab, options, input) {
 }
 
 async function openPageUsingComplexSearchData(tab, options, input) {
-  //console.log("openPageUsingComplexSearchData, input is:");
-  //console.log(input);
+  console.log("openPageUsingComplexSearchData, input is:");
+  console.log(input);
 
   let siteName = input.siteName;
 
@@ -102,6 +102,12 @@ async function openPageUsingComplexSearchData(tab, options, input) {
     for (let searchData of input.searchDataList) {
       await chrome.storage.local.set(searchData);
     }
+
+    if (!input.url) {
+      console.warn("openPageUsingComplexSearchData: no search url found");
+      return false;
+    }
+
     const tabOption = options.search_general_newTabPos;
     openInNewTab(input.url, tab, tabOption);
     return true;
@@ -116,12 +122,13 @@ async function openPageUsingComplexSearchData(tab, options, input) {
 function openSitePlainText(siteContextModule, phase, tab, text, options) {
   if (siteContextModule && siteContextModule.transformPlainText) {
     let transformed = siteContextModule.transformPlainText(text, phase, options);
+    console.log("openSitePlainText: transformed = ", transformed);
     if (transformed) {
       if (transformed.link) {
         const tabOption = options.context_general_newTabPos;
         openInNewTab(transformed.link, tab, tabOption);
         return true;
-      } else if (transformed.searchData) {
+      } else if (transformed.searchData || transformed.searchDataList) {
         if (transformed.isComplexSearchData) {
           openPageUsingComplexSearchData(tab, options, transformed);
         } else {
