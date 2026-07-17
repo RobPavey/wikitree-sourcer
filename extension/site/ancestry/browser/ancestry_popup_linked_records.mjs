@@ -60,6 +60,7 @@ function extractDataFromHtml(htmlText, recordUrl) {
 
   let extractedData = {};
   extractedData.url = recordUrl;
+
   extractedData.pageType = "record";
 
   // Note: this will not be loaded if popup.html was loaded rather than ancestry_popup.html

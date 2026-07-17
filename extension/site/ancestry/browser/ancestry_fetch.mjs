@@ -287,6 +287,103 @@ async function fetchAncestryRecordPage(recordUrl) {
   return result;
 }
 
+async function fetchJson(url) {
+  let result = { success: false, recordUrl: url };
+
+  if (!url) {
+    return result;
+  }
+
+  try {
+    let mode = "cors";
+
+    let domain = url.replace(/https?\:\/\/[^\.]+\.([^\/]+)\/.*/, "$1");
+    if (!domain || domain == url) {
+      domain = "ancestry.com";
+    }
+
+    //console.log("domain is: " + domain);
+
+    let discoveryRegex = /^(https?\:\/\/[^\.]+\.[^\/]+)\/discoveryui-content\/view\/([a-z0-9]+)\:([a-z0-9]+)$/;
+    if (discoveryRegex.test(url)) {
+      // https://www.ancestry.com/discoveryui-content/view/1903048:2352
+      // Redirects to: http://www.ancestry.com/search/collections/2352/records/1903048
+      // which redirects to: https://www.ancestry.com/search/collections/2352/records/1903048
+      // So avoid that network traffic by changing the URL here
+      url = url.replace(discoveryRegex, "$1/search/collections/$3/records/$2");
+    }
+
+    let response = await fetch(url, {
+      headers: {
+        accept: "application/x-gedcomx-v1+json, application/json",
+        "accept-language": "en",
+      },
+      referrer: "https://search." + domain + "/",
+      referrerPolicy: "origin-when-cross-origin",
+      body: null,
+      method: "GET",
+      mode: mode,
+      credentials: "include",
+    }).catch((err) => {
+      console.log("Fetch threw an exception, message is: " + err.message);
+      console.log(err);
+      result.allowRetry = true;
+      return result; // Note this returns from this catch function, not fetchAncestryRecordPage
+    });
+
+    if (chrome.runtime.lastError) {
+      console.log("LastError set on fetch");
+      console.log(chrome.runtime.lastError);
+      result.allowRetry = true;
+      return result;
+    }
+
+    // On Firefox it may return zero any time you use "no-cors"
+    if (!response || response.status !== 200) {
+      console.log("Looks like there was a problem. Status Code: " + response.status);
+      // it would be nice if the response told us how long to wait but it does not
+      // as of 6 Nov 2023
+      //console.log("Full response is : ");
+      //console.log(response);
+      result.allowRetry = true;
+      result.statusCode = response.status;
+      return result;
+    }
+
+    //console.log("response is");
+    //console.log(response);
+
+    // Examine the text in the response
+    let data = await response.text();
+
+    //console.log("data is:");
+    //console.log(data);
+
+    // There are different ways to try to parse it.
+
+    if (data.startsWith("{")) {
+      const jsonData = data;
+      const dataObj = JSON.parse(jsonData);
+
+      //console.log("dataObj is:");
+      //console.log(dataObj);
+
+      if (dataObj) {
+        return { success: true, dataObj: dataObj };
+      }
+    } else {
+      console.log("response does not look like JSON");
+    }
+
+    //console.log("result is: ");
+    //console.log(result);
+  } catch (error) {
+    console.log("WikiTree Sourcer:: fetchJson, failed. Error message is: " + error.message);
+  }
+
+  return result;
+}
+
 async function extractRecordHtmlFromUrl(recordUrl) {
   //console.log("extractRecordFromUrl, recordUrl is: " + recordUrl);
 
@@ -298,4 +395,19 @@ async function extractRecordHtmlFromUrl(recordUrl) {
   return result;
 }
 
-export { fetchAncestrySharingDataObj, extractRecordHtmlFromUrl };
+async function extractJsonFromUrl(url) {
+  //console.log("extractJsonFromUrl, url is: " + url);
+
+  let result = await fetchJson(url);
+
+  //console.log("extractJsonFromUrl, sending response: ");
+  //console.log(result);
+
+  if (result.success) {
+    return result.dataObj;
+  }
+
+  return null;
+}
+
+export { fetchAncestrySharingDataObj, extractRecordHtmlFromUrl, extractJsonFromUrl };

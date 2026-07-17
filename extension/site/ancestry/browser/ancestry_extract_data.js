@@ -919,7 +919,40 @@ function extractImagePageTitle(document, result) {
   result.titleName = titleName;
 }
 
-function extractImageBrowsePath(document, result) {
+function extractJsonFromScript(scriptText) {
+  // 1. Find the start of the JSON object
+  const startIndex = scriptText.indexOf("{");
+  if (startIndex === -1) return null;
+
+  // 2. Iterate to find the matching closing brace
+  let balance = 0;
+  for (let i = startIndex; i < scriptText.length; i++) {
+    if (scriptText[i] === "{") balance++;
+    else if (scriptText[i] === "}") balance--;
+
+    // When balance hits 0, we've found the end of the root object
+    if (balance === 0) {
+      const jsonString = scriptText.substring(startIndex, i + 1);
+      try {
+        return JSON.parse(jsonString);
+      } catch (e) {
+        console.error("Found potential JSON but parse failed:", e);
+        return null;
+      }
+    }
+  }
+  return null;
+}
+
+function extractImageSpaState(document) {
+  const scriptElement = document.getElementById("spaStateScript");
+  if (scriptElement) {
+    const data = extractJsonFromScript(scriptElement.textContent);
+    return data;
+  }
+}
+
+function extractImageBrowsePath(document, spaState, result) {
   var wrapperNode = document.querySelector("div.browse-path-header > div.breadcrumbWrapper");
   let browsePath = "";
   if (wrapperNode) {
@@ -934,8 +967,32 @@ function extractImageBrowsePath(document, result) {
     }
   }
 
+  if (!browsePath && spaState) {
+    if (spaState.viewer && spaState.viewer.imageInfo) {
+      const browsePathArray = spaState.viewer.imageInfo.localizedBrowsePath;
+      console.log("Localized Path:", browsePathArray);
+      if (browsePathArray && browsePathArray.length > 0) {
+        browsePath = browsePathArray[0];
+        for (let index = 1; index < browsePathArray.length; index++) {
+          browsePath += " > " + browsePathArray[index];
+        }
+      }
+    }
+  }
+
   if (browsePath) {
     result.imageBrowsePath = browsePath;
+  }
+}
+
+function extractImagePId(spaState, result) {
+  if (spaState) {
+    if (spaState.queryParamsInfo && spaState.queryParamsInfo.data) {
+      let pId = spaState.queryParamsInfo.data.pId;
+      if (pId) {
+        result.pId = pId;
+      }
+    }
   }
 }
 
@@ -1450,7 +1507,9 @@ function detectPageType(document, result, url) {
   if (result.pageType == "record") {
     // check if the comment modal is up
     let modalElement = document.querySelector("#modal > #modalFixed .bandido-modal-post-share .share-url");
-    result.pageType = "comments";
+    if (modalElement) {
+      result.pageType = "comments";
+    }
   }
 
   //console.log("detectPageType, result.pageType = " + result.pageType);
@@ -2488,6 +2547,22 @@ function extractRecord(document, url, result) {
   extractRecordData(document, result);
   extractImageThumb(document, result);
   extractRecordSourceCitation(document, result);
+  extractImagePId(document, result);
+}
+
+function extractImage(document, url, result) {
+  const spaState = extractImageSpaState(document);
+
+  extractImagePageTitle(document, result);
+  extractImageTemplate(result, url);
+
+  extractImageBrowsePath(document, spaState, result);
+  extractImagePId(spaState, result);
+
+  extractImageNumberAndTotal(document, result);
+  extractImageHasIndex(document, result);
+  extractImageSourceCitation(document, result);
+  extractImageIndex(document, result);
 }
 
 function extractData(document, url) {

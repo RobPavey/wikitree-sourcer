@@ -475,7 +475,8 @@ async function initPopupInternal(siteName, menuSetupFunction) {
   macSecondMonitorWorkaround();
   setPopupMenuWidth();
 
-  await checkForDebugPause();
+  // Uncomment this to pause at start of popup init for debugging
+  //await checkForDebugPause();
 
   displayBusyMessageAfterDelay("WikiTree Sourcer initializing menu ...");
 
