@@ -35,6 +35,8 @@ function transformPlainText(plainText, phase, options) {
   }
 
   let scotpResult = buildScotlandsPeopleContextSearchData(plainText);
+  console.log("scotp: transformPlainText, scotpResult = ", scotpResult);
+
   if (scotpResult.messages) {
     console.log(scotpResult.messages);
   }
@@ -61,6 +63,7 @@ function transformPlainText(plainText, phase, options) {
   let recordType = searchData.recordType;
 
   const searchUrl = "https://www.scotlandspeople.gov.uk/search-records/" + formData.urlPart;
+  result.url = searchUrl;
 
   const scotpSearchData = {
     timeStamp: Date.now(),

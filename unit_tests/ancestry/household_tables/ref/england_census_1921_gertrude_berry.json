@@ -1,0 +1,8 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Sex || Status || Age || Birth Place || Occupation || Employer\n|-\n| J G Berry || Head ||  ||  || 58 Years 9 Months ||  ||  || \n|-\n| Eliza Gertrude Berry || Wife ||  ||  || 58 Years 3 Months ||  ||  || \n|-\n| '''Gertrude Berry''' || '''Daughter''' || '''F''' || '''Single''' || '''20 Years 9 Months''' || '''Pill, Somerset, England''' || '''Shorthand Typist''' || '''Messrs Edward Stock & Sons Ltd Ship Brokers 70 Queen Square Bristol'''\n|-\n| Olive Berry || Daughter ||  ||  || 18 Years 6 Months ||  ||  || \n|}"
+  },
+  "citation": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|+ 1921 Census of England: 30 Birch Rd, Southville, Bristol, Gloucestershire, England\n|- bgcolor=#E1F0B4\n| Name || Relation || Sex || Status || Age || Birth Place || Occupation || Employer\n|-\n| J G Berry || Head ||  ||  || 58 Years 9 Months ||  ||  || \n|-\n| Eliza Gertrude Berry || Wife ||  ||  || 58 Years 3 Months ||  ||  || \n|-\n| '''Gertrude Berry''' || '''Daughter''' || '''F''' || '''Single''' || '''20 Years 9 Months''' || '''Pill, Somerset, England''' || '''Shorthand Typist''' || '''Messrs Edward Stock & Sons Ltd Ship Brokers 70 Queen Square Bristol'''\n|-\n| Olive Berry || Daughter ||  ||  || 18 Years 6 Months ||  ||  || \n|}"
+  }
+}
