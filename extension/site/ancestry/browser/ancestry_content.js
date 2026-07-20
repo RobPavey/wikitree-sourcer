@@ -192,6 +192,28 @@ async function setFields(fieldData, sendResponse) {
     }
   }
 
+  async function setCommentValueExec(initSelector, editSelector, fieldName) {
+    if (fieldData[fieldName]) {
+      let initNode = document.querySelector(initSelector);
+      let editNode = document.querySelector(editSelector);
+      if (initNode && editNode) {
+        // Focus and click to trigger any attached event listeners
+        initNode.focus();
+        initNode.click();
+        sleep(50);
+
+        // Remove the hiding class if it's still present
+        editNode.classList.remove("noDisplay");
+
+        // Set the comment text
+        editNode.textContent = fieldData[fieldName];
+
+        // Dispatch an input event so the web app updates its internal state/buttons
+        editNode.dispatchEvent(new Event("input", { bubbles: true }));
+      }
+    }
+  }
+
   function setFocusOnSaveButton() {
     let formElement = document.querySelector("#form_AddCitation");
     if (!formElement) {
@@ -241,6 +263,12 @@ async function setFields(fieldData, sendResponse) {
   } else if (fieldData.pageType == "personAddWebLink") {
     setValueExec("#webLink", "webAddress");
     setValueExec("#webLinkName", "linkName");
+  } else if (fieldData.pageType == "comments") {
+    setCommentValueExec(
+      "#modalFixed textarea.addCommentTextAreaInit",
+      ".commentTextAreaWrapper [contenteditable]",
+      "commentText"
+    );
   }
 
   sendResponse({ success: true });
@@ -296,9 +324,14 @@ function additionalMessageHandler(request, sender, sendResponse) {
     setFields(request.fieldData, sendResponse);
     return { wasHandled: true, returnValue: true };
   } else if (request.type == "addComment") {
-    addComment(request.fieldData);
-    sendResponse({ success: true });
-    return { wasHandled: true, returnValue: false };
+    if (request.fieldData && request.fieldData.pageType == "comments") {
+      setFields(request.fieldData, sendResponse);
+      return { wasHandled: true, returnValue: true };
+    } else {
+      addComment(request.fieldData);
+      sendResponse({ success: true });
+      return { wasHandled: true, returnValue: false };
+    }
   }
 
   return { wasHandled: false };

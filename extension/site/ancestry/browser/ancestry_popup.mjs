@@ -570,6 +570,7 @@ async function ancestryAddLinkBuilderComment(data, personData, tabId) {
   let fieldData = {
     wikiId: wikiId,
     commentText: commentText,
+    pageType: data.extractedData.pageType,
   };
 
   // send a message to content script

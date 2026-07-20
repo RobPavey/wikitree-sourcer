@@ -1506,7 +1506,7 @@ function detectPageType(document, result, url) {
 
   if (result.pageType == "record") {
     // check if the comment modal is up
-    let modalElement = document.querySelector("#modal > #modalFixed .bandido-modal-post-share .share-url");
+    let modalElement = document.querySelector("#modal > #modalFixed div.commentsModal");
     if (modalElement) {
       result.pageType = "comments";
     }
