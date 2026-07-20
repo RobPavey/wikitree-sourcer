@@ -66,16 +66,13 @@ function extractData(document, url) {
       } else if (key) {
         result.recordData[key] = value;
       }
-    } else if (columns.length == 4) {
-      const key1 = cleanKey(columns[0].textContent);
-      const value1 = cleanValue(columns[1].textContent);
-      if (key1) {
-        result.recordData[key1] = value1;
-      }
-      const key2 = cleanKey(columns[2].textContent);
-      const value2 = cleanValue(columns[3].textContent);
-      if (key2) {
-        result.recordData[key2] = value2;
+    } else if (columns.length % 2 == 0) {
+      for (let colIndex = 0; colIndex < columns.length; colIndex += 2) {
+        const key = cleanKey(columns[colIndex].textContent);
+        const value = cleanValue(columns[colIndex + 1].textContent);
+        if (key) {
+          result.recordData[key] = value;
+        }
       }
     }
   }
