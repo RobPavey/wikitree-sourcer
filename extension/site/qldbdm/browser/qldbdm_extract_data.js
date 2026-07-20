@@ -24,6 +24,23 @@ SOFTWARE.
 
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
+function cleanKey(key) {
+  if (key) {
+    key = key.trim();
+    if (key.endsWith(":")) {
+      key = key.substring(0, key.length - 1).trim();
+    }
+  }
+  return key;
+}
+
+function cleanValue(value) {
+  if (value) {
+    value = value.trim();
+  }
+  return value;
+}
+
 function extractData(document, url) {
   let result = { url: url, success: false };
 
@@ -35,19 +52,30 @@ function extractData(document, url) {
   result.recordData = {};
   let isFirstItem = true;
   for (let item of items) {
+    if (item.classList.contains("section")) {
+      continue;
+    }
     const columns = item.querySelectorAll("ul.questions > li");
     if (columns.length == 2) {
-      let key = columns[0].textContent.trim();
-      const value = columns[1].textContent.trim();
-      if (key.endsWith(":")) {
-        key = key.substring(0, key.length - 1).trim();
-      }
+      const key = cleanKey(columns[0].textContent);
+      const value = cleanValue(columns[1].textContent);
       if (isFirstItem) {
         result.recordData["Type"] = key;
         result.recordData["Name"] = value;
         isFirstItem = false;
-      } else {
+      } else if (key) {
         result.recordData[key] = value;
+      }
+    } else if (columns.length == 4) {
+      const key1 = cleanKey(columns[0].textContent);
+      const value1 = cleanValue(columns[1].textContent);
+      if (key1) {
+        result.recordData[key1] = value1;
+      }
+      const key2 = cleanKey(columns[2].textContent);
+      const value2 = cleanValue(columns[3].textContent);
+      if (key2) {
+        result.recordData[key2] = value2;
       }
     }
   }

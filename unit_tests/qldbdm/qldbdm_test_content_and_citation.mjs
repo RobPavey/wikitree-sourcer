@@ -35,12 +35,16 @@ const regressionData = [
     url: "https://www.familyhistory.bdm.qld.gov.au/details/e843f279987a200c81d6abf6f171a98d923deb5d30516e586021d2e877ebf2c4",
   },
   {
-    caseName: "marriage_1911_david_goodwin",
-    url: "https://www.familyhistory.bdm.qld.gov.au/details/dca99bfee4e642d2a9f04ee11b0104bb611ca7aa3b53e6d01ed1994b80d1e9ea",
+    caseName: "death_1900_sarah_wehmeier",
+    url: "https://www.familyhistory.bdm.qld.gov.au/details/be5648a2a2d788c9b278ed4758906b8336567c21b801530966b82dc96410bebc",
   },
   {
     caseName: "death_1932_david_goodwin",
     url: "https://www.familyhistory.bdm.qld.gov.au/details/0da2d05cc67cc4663ee8b7b19d98b9bb5947624669463ad727636041604b397e",
+  },
+  {
+    caseName: "marriage_1911_david_goodwin",
+    url: "https://www.familyhistory.bdm.qld.gov.au/details/dca99bfee4e642d2a9f04ee11b0104bb611ca7aa3b53e6d01ed1994b80d1e9ea",
   },
 ];
 
