@@ -2592,7 +2592,7 @@ function extractData(document, url) {
   } else if (result.pageType == "image") {
     extractImagePageTitle(document, result);
     extractImageTemplate(result, url);
-    extractImageBrowsePath(document, result);
+    extractImageBrowsePath(document, null, result);
     extractImageNumberAndTotal(document, result);
     extractImageHasIndex(document, result);
     extractImageSourceCitation(document, result);
