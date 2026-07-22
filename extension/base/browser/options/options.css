@@ -260,30 +260,56 @@ dialog::backdrop {
   margin: 0px;
   border: 1px solid var(--text-color);
   max-width: 400px;
-  max-height: 400px; /* Constrains height for your 50+ item list */
-  overflow-y: auto; /* Enables internal scrolling */
+  max-height: 400px;
+  overflow-y: auto;
   position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 li.draggableListItem {
-  background-color: var(--bg-close-color); /* Prevents Safari transparency ghost bug */
-  padding: 3px;
-  margin: 3px;
+  background-color: var(--bg-close-color);
+  padding: 4px 8px;
+  margin: 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: none; /* Changed from pan-y to none so iOS allows touch dragging everywhere on the row */
 }
 
 li.draggableListItem.beingDragged {
-  z-index: 1000;
-  background-color: var(--bg-close-color);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  opacity: 0.85; /* Visual cue that it's being dragged */
+  opacity: 0.4;
+  background-color: #cccccc;
 }
 
+/* Container for the grip handle bars */
 .draggableIconContainer {
+  cursor: grab;
+  touch-action: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+li.draggableListItem.beingDragged .draggableIconContainer {
+  cursor: grabbing;
+}
+
+/* The individual grip lines inside the handle */
+.draggableIconBar {
   display: block;
-  width: 25px;
-  padding: 0;
+  width: 14px;
+  height: 2px;
+  margin: 2px 0;
+  background-color: var(--text-color);
+  pointer-events: none;
 }

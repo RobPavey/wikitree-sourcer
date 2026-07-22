@@ -32,6 +32,7 @@ function createDraggableListElement(document) {
     const listItem = e.target.closest(".draggableListItem");
     if (!listItem || listItem.parentElement !== listElement) return;
 
+    // Prevent default scrolling/selection behavior immediately on touch/click
     e.preventDefault();
 
     activeItem = listItem;
@@ -55,8 +56,8 @@ function createDraggableListElement(document) {
     e.preventDefault();
 
     const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+    if (!clientY) return;
 
-    // Reorder DOM elements dynamically based on current cursor position
     const afterElement = getDragAfterElement(listElement, clientY);
     if (afterElement == null) {
       listElement.appendChild(activeItem);
@@ -64,7 +65,6 @@ function createDraggableListElement(document) {
       listElement.insertBefore(activeItem, afterElement);
     }
 
-    // Auto-scroll the list container if dragging near top/bottom edges
     handleAutoScroll(clientY);
   }
 
@@ -102,7 +102,6 @@ function createDraggableListElement(document) {
     window.removeEventListener("pointerup", endDrag);
     window.removeEventListener("pointercancel", endDrag);
 
-    // Trigger change event to save options
     const event = new Event("change", { bubbles: true });
     listElement.dispatchEvent(event);
 
