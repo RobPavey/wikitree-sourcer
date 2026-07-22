@@ -258,56 +258,32 @@ dialog::backdrop {
   list-style-type: none;
   padding: 0;
   margin: 0px;
-
   border: 1px solid var(--text-color);
   max-width: 400px;
+  max-height: 400px; /* Constrains height for your 50+ item list */
+  overflow-y: auto; /* Enables internal scrolling */
+  position: relative;
 }
 
 li.draggableListItem {
-  background-color: var(--bg-close-color);
+  background-color: var(--bg-close-color); /* Prevents Safari transparency ghost bug */
   padding: 3px;
   margin: 3px;
-  cursor: grab;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 }
 
-li.draggableListItem > label {
-  cursor: grab;
-}
-
-.beingDragged {
-  color: var(--text-color);
+li.draggableListItem.beingDragged {
+  z-index: 1000;
   background-color: var(--bg-close-color);
-}
-
-.draggableIconBar {
-  display: block;
-  width: 20px;
-  height: 2px;
-  margin: 3px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: var(--text-color);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  opacity: 0.85; /* Visual cue that it's being dragged */
 }
 
 .draggableIconContainer {
   display: block;
   width: 25px;
   padding: 0;
-}
-
-.draggableIcon {
-  padding: 0;
-  display: block;
-  background-color: var(--bg-close-color);
-  border: 0px;
-  cursor: grab;
-}
-
-.draggableListItemComment {
-  font-style: italic;
-  font-size: 10px;
 }

@@ -22,105 +22,96 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Code based on this page:
-// https://www.geeksforgeeks.org/create-a-drag-and-drop-sortable-list-using-html-css-javascript/
-
-let draggedItem = null;
-let startingAfterElement = null;
-
-function touchHandler(event) {
-  console.log("touchHandler called, event is:");
-  console.log(event);
-
-  // stop the scroll from happening
-  event.preventDefault();
-
-  var touches = event.changedTouches,
-    first = touches[0],
-    type = "";
-  switch (event.type) {
-    case "touchstart":
-      type = "mousedown";
-      break;
-    case "touchmove":
-      type = "mousemove";
-      break;
-    case "touchend":
-      type = "mouseup";
-      break;
-    default:
-      return;
-  }
-
-  const simulatedEvent = new MouseEvent(type, {
-    bubbles: true,
-    cancelable: true,
-    screenX: first.screenX,
-    screenY: first.screenY,
-    clientX: first.clientX,
-    clientY: first.clientY,
-    button: 0, // Left mouse button
-  });
-
-  console.log("touchHandler called, simulatedEvent is:");
-  console.log(simulatedEvent);
-
-  console.log("touchHandler called, first.target is:");
-  console.log(first.target);
-
-  first.target.dispatchEvent(simulatedEvent);
-}
-
-function createDraggableListElement(document, option) {
+function createDraggableListElement(document) {
   let listElement = document.createElement("ul");
+  let isDragging = false;
+  let activeItem = null;
+  let scrollInterval = null;
 
-  listElement.addEventListener("dragstart", (e) => {
-    console.log("dragStart");
-    draggedItem = e.target;
-    startingAfterElement = draggedItem.nextElementSibling;
-    setTimeout(() => {
-      //e.target.style.display = "none";
-      e.target.classList.add("beingDragged");
-    }, 0);
-  });
-
-  listElement.addEventListener("dragend", (e) => {
-    console.log("dragEnd");
-    setTimeout(() => {
-      //e.target.style.display = "";
-      e.target.classList.remove("beingDragged");
-      draggedItem = null;
-    }, 0);
-    if (e.dataTransfer.dropEffect == "none") {
-      // the drag was cancelled, put it back
-      if (startingAfterElement == null) {
-        listElement.appendChild(draggedItem);
-      } else {
-        listElement.insertBefore(draggedItem, startingAfterElement);
-      }
-    } else {
-      // trigger a change event so that the options are saved
-      //console.log("createDraggableListElement: dispatching change event");
-      const event = new Event("change", { bubbles: true });
-      listElement.dispatchEvent(event);
-    }
-  });
-
-  listElement.addEventListener("dragover", (e) => {
-    console.log("dragover");
+  function startDrag(e) {
+    const listItem = e.target.closest(".draggableListItem");
+    if (!listItem || listItem.parentElement !== listElement) return;
 
     e.preventDefault();
-    const afterElement = getDragAfterElement(listElement, e.clientY);
-    const currentElement = document.querySelector(".dragging");
-    if (afterElement == null) {
-      listElement.appendChild(draggedItem);
-    } else {
-      listElement.insertBefore(draggedItem, afterElement);
+
+    activeItem = listItem;
+    isDragging = true;
+
+    activeItem.classList.add("beingDragged");
+
+    if (e.pointerId) {
+      try {
+        activeItem.setPointerCapture(e.pointerId);
+      } catch (err) {}
     }
-  });
+
+    window.addEventListener("pointermove", onMove, { passive: false });
+    window.addEventListener("pointerup", endDrag);
+    window.addEventListener("pointercancel", endDrag);
+  }
+
+  function onMove(e) {
+    if (!isDragging || !activeItem) return;
+    e.preventDefault();
+
+    const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+
+    // Reorder DOM elements dynamically based on current cursor position
+    const afterElement = getDragAfterElement(listElement, clientY);
+    if (afterElement == null) {
+      listElement.appendChild(activeItem);
+    } else {
+      listElement.insertBefore(activeItem, afterElement);
+    }
+
+    // Auto-scroll the list container if dragging near top/bottom edges
+    handleAutoScroll(clientY);
+  }
+
+  function handleAutoScroll(clientY) {
+    const rect = listElement.getBoundingClientRect();
+    const threshold = 40;
+
+    clearInterval(scrollInterval);
+
+    if (clientY < rect.top + threshold) {
+      scrollInterval = setInterval(() => {
+        listElement.scrollTop -= 12;
+      }, 16);
+    } else if (clientY > rect.bottom - threshold) {
+      scrollInterval = setInterval(() => {
+        listElement.scrollTop += 12;
+      }, 16);
+    }
+  }
+
+  function endDrag(e) {
+    if (!isDragging || !activeItem) return;
+
+    clearInterval(scrollInterval);
+
+    if (e && e.pointerId) {
+      try {
+        activeItem.releasePointerCapture(e.pointerId);
+      } catch (err) {}
+    }
+
+    activeItem.classList.remove("beingDragged");
+
+    window.removeEventListener("pointermove", onMove);
+    window.removeEventListener("pointerup", endDrag);
+    window.removeEventListener("pointercancel", endDrag);
+
+    // Trigger change event to save options
+    const event = new Event("change", { bubbles: true });
+    listElement.dispatchEvent(event);
+
+    isDragging = false;
+    activeItem = null;
+  }
 
   const getDragAfterElement = (container, y) => {
-    const draggableElements = [...container.querySelectorAll("li:not(.dragging)")];
+    const draggableElements = [...container.querySelectorAll("li.draggableListItem:not(.beingDragged)")];
 
     return draggableElements.reduce(
       (closest, child) => {
@@ -141,14 +132,7 @@ function createDraggableListElement(document, option) {
     ).element;
   };
 
-  /*
-  Attemp to make it work on iPad - not working
-
-  listElement.addEventListener("touchstart", touchHandler, true);
-  listElement.addEventListener("touchmove", touchHandler, true);
-  listElement.addEventListener("touchend", touchHandler, true);
-  listElement.addEventListener("touchcancel", touchHandler, true);
-*/
+  listElement.addEventListener("pointerdown", startDrag);
 
   return listElement;
 }
