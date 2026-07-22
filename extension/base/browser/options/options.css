@@ -282,10 +282,18 @@ li.draggableListItem {
 }
 
 li.draggableListItem.beingDragged {
-  opacity: 0.4;
-  background-color: #cccccc;
+  opacity: 0.85;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+@media (prefers-color-scheme: dark) {
+  li.draggableListItem.beingDragged {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--text-color);
+  }
+}
 /* Container for the grip handle bars */
 .draggableIconContainer {
   cursor: grab;
