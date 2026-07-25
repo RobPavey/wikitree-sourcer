@@ -216,6 +216,7 @@ const buildAllCitationsOptionsGroup = {
       type: "checkbox",
       label: "Exclude sources that do not have a valid link to a FamilySearch page",
       defaultValue: false,
+      comment: "Note that sources that link to WikiTree are always excluded.",
     },
     {
       optionName: "excludeFsImageSources",

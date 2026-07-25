@@ -402,6 +402,7 @@ async function fsGetAllCitations(input) {
   result.numExcludedNonFsSources = 0;
   result.numExcludedFsImageSources = 0;
   result.numExcludedTreeSources = 0;
+  result.numExcludedWikiTreeSources = 0;
   result.numUserExcludedSources = 0;
 
   // request permission if needed

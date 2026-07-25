@@ -259,6 +259,8 @@ function getExcludedSourcesString(response) {
 
   addMessage(response.numUserExcludedSources, "by responses to the previous dialogs.");
 
+  addMessage(response.numExcludedWikiTreeSources, "because the source is a link to WikiTree.");
+
   return message;
 }
 

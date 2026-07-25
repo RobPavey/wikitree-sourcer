@@ -394,6 +394,10 @@ const regressionData = [
     url: "https://www.familysearch.org/tree/person/details/LKBM-ZX9",
   },
   {
+    caseName: "ll9j_xjt_claude_fletcher",
+    url: "https://www.familysearch.org/en/tree/person/details/LL9J-XJT",
+  },
+  {
     caseName: "lr97_hcc_dunmore_dameron",
     url: "https://www.familysearch.org/en/tree/person/sources/LR97-HCC",
     optionVariants: [

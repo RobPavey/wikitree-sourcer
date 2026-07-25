@@ -43,6 +43,32 @@ import {
   buildExternalLinkOrTemplate,
 } from "./fs_templates_and_links.mjs";
 
+function extractSingleYear(str) {
+  // Matches 4-digit numbers (typically years starting with 10-20)
+  // \b ensures we match whole words, avoiding IDs like Fletcher-22118
+  const regex = /\b(1[0-9]{3}|2[0-9]{3})\b/g;
+
+  // Find all matches in the string
+  const matches = str.match(regex);
+
+  // We only want a match if there is EXACTLY ONE 4-digit number found
+  if (!matches || matches.length !== 1) {
+    return null;
+  }
+
+  const year = matches[0];
+  const yearIndex = str.indexOf(year);
+
+  // Check the characters immediately surrounding the year to ensure it's not a range (e.g., 1882-84)
+  // Look at the character just after the year
+  const charAfter = str[yearIndex + 4];
+  if (charAfter === "-" || charAfter === "–" || charAfter === "/") {
+    return null;
+  }
+
+  return year;
+}
+
 function inferEventDate(source) {
   // there is no date, this can cause sort issues. Sometimes we can infer one
 
@@ -60,10 +86,9 @@ function inferEventDate(source) {
   }
 
   if (source.title) {
-    // get any years in title
-    let years = source.title.match(/\d\d\d\d/g);
-    if (years && years.length == 1) {
-      return years[0];
+    let year = extractSingleYear(source.title);
+    if (year) {
+      return year;
     }
   }
 
@@ -144,6 +169,21 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
         //sourceObj.uriUpdatedDate = date.toLocaleDateString("en-GB", options);
         sourceObj.uriUpdatedDate = getDateString(date);
       }
+    }
+
+    // check for source that is a link to a wikitree profile, these are always excluded
+    if (sourceObj.uri) {
+      let wikitreeLinkIndex = sourceObj.uri.search(/wikitree\.com\//i);
+      if (wikitreeLinkIndex != -1) {
+        result.numExcludedWikiTreeSources++;
+        continue;
+      }
+    } else if (source.citation && source.citation.includes("WikiTree")) {
+      result.numExcludedWikiTreeSources++;
+      continue;
+    } else if (source.title && source.title.includes("WikiTree")) {
+      result.numExcludedWikiTreeSources++;
+      continue;
     }
 
     if (options.buildAll_fs_excludeNonFsSources) {
