@@ -638,7 +638,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       return Role.Child;
     } else if (relationship == "Son" || relationship == "Daughter") {
       return Role.Child;
-    } else if (relationship == "Spouse" || relationship == "Wife") {
+    } else if (relationship == "Spouse" || relationship == "Wife" || relationship == "Spouse or Partner") {
       return Role.Spouse;
     } else if (relationship == "Father") {
       return Role.Parent;
@@ -647,6 +647,13 @@ function determineRoleGivenRecordType(extractedData, result) {
     } else if (relationship == "Sibling" || relationship == "Siblings") {
       return Role.Sibling;
     }
+  }
+
+  function hasSpouseField() {
+    if (extractedData.recordData["Spouse"] || extractedData.recordData["Spouse or Partner"]) {
+      return true;
+    }
+    return false;
   }
 
   let recordType = result.recordType;
@@ -693,7 +700,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       if (extractedData.recordData["Child"]) {
         result.role = Role.Parent;
         result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Child"));
-      } else if (extractedData.recordData["Spouse"]) {
+      } else if (hasSpouseField()) {
         if (
           !extractedData.recordData["Death Date"] &&
           !extractedData.recordData["Death Place"] &&
@@ -702,7 +709,8 @@ function determineRoleGivenRecordType(extractedData, result) {
           !extractedData.recordData["Burial Place"]
         ) {
           result.role = Role.Spouse;
-          result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Spouse"));
+          let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse or Partner"]);
+          result.setPrimaryPersonFullName(spouseName);
         }
       }
     }
@@ -745,9 +753,10 @@ function determineRoleGivenRecordType(extractedData, result) {
           result.role = Role.Parent;
           result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Child"));
         }
-      } else if (extractedData.recordData["Spouse"]) {
+      } else if (hasSpouseField()) {
         result.role = Role.Spouse;
-        result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Spouse"));
+        let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse or Partner"]);
+        result.setPrimaryPersonFullName(spouseName);
       }
     } else {
       let hasBaptismOrBurialKey = testForWordsInRecordDataKeys(extractedData, [
@@ -776,9 +785,10 @@ function determineRoleGivenRecordType(extractedData, result) {
       if (extractedData.recordData["Child"]) {
         result.role = Role.Parent;
         result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Child"));
-      } else if (extractedData.recordData["Spouse"]) {
+      } else if (hasSpouseField()) {
         result.role = Role.Spouse;
-        result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Spouse"));
+        let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse or Partner"]);
+        result.setPrimaryPersonFullName(spouseName);
       } else if (extractedData.recordData["Father"]) {
         result.role = Role.Child;
         result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Father"));
@@ -1579,7 +1589,7 @@ function generalizeDataGivenRecordType(ed, result) {
     buildParents(ed, result);
 
     if (result.role && result.role == Role.Parent) {
-      let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse"]);
+      let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse or Partner"]);
       if (spouseName) {
         let name = new NameObj();
 
@@ -1993,7 +2003,12 @@ function generalizeDataGivenRecordType(ed, result) {
     );
     buildParents(ed, result);
 
-    let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse Name", "Spouse's Name"]);
+    let spouseName = getCleanValueForRecordDataList(ed, result, [
+      "Spouse",
+      "Spouse Name",
+      "Spouse's Name",
+      "Spouse or Partner",
+    ]);
 
     // occasionally there is no field for the spouse name but there is a Household Members sections
     // that lists the bride and groom. us_pa_marriage_1761_patience_brown is an example.
@@ -2104,8 +2119,7 @@ function generalizeDataGivenRecordType(ed, result) {
     }
     result.setFieldIfValueExists("ageAtEvent", getCleanValueForRecordDataList(ed, result, ["Marriage Age", "Age"]));
 
-    let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse Name"]);
-
+    let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse Name", "Spouse or Partner"]);
     if (!spouseName) {
       // For a UK marriage registration, if there are only two records on page, we can infer spouse
       if (ed.recordData) {
@@ -2393,7 +2407,7 @@ function generalizeDataGivenRecordType(ed, result) {
     );
     result.setEventPlace(getCleanValueForRecordDataList(ed, result, ["Divorce Place", "Decree Place", "Location"]));
 
-    let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse Name"]);
+    let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse Name", "Spouse or Partner"]);
 
     if (spouseName) {
       let spouse = result.addSpouse();
@@ -2558,7 +2572,12 @@ function generalizeDataGivenRecordType(ed, result) {
     }
 
     // sometimes a military record can contain a spouse name and possibly a marriage date
-    let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse Name", "Spouse's Name"]);
+    let spouseName = getCleanValueForRecordDataList(ed, result, [
+      "Spouse",
+      "Spouse Name",
+      "Spouse's Name",
+      "Spouse or Partner",
+    ]);
     if (spouseName) {
       let spouse = result.addSpouse();
       spouse.name.name = spouseName;
