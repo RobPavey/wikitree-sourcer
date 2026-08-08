@@ -445,6 +445,22 @@ const regressionData = [
       },
     ],
   },
+  {
+    // Test case for August 2026 record page changes
+    caseName: "william_whiting_1864_1940_aug2026",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262551329535/facts",
+    userOptions: standardOptions,
+    optionVariants: [
+      {
+        variantName: "limitTables",
+        optionOverrides: {
+          table_general_maxLimit: 7,
+          table_general_limitStyleRelated: "relatedPlusCapped",
+          table_general_limitStyleUnrelated: "headSelectedCapped",
+        },
+      },
+    ],
+  },
 ];
 
 async function runTests(testManager) {

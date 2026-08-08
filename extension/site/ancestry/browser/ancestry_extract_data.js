@@ -353,6 +353,14 @@ function extractRecordPageTitle(document, result) {
     }
   }
 
+  if (!titleCollection) {
+    // handle Aug 2026 change
+    let titleLinkElement = document.querySelector("a.collectionTitle");
+    if (titleLinkElement) {
+      titleCollection = titleLinkElement.textContent.trim();
+    }
+  }
+
   result.titleName = titleName;
   result.titleCollection = titleCollection;
 }
@@ -408,14 +416,265 @@ function addRecordDataUserValue(result, key, value) {
   result.recordDataUserValues[key].push(value);
 }
 
+function extractRecordDataRow(document, labelElement, dataElement, result) {
+  let label = labelElement ? labelElement.textContent : "";
+  if (label != "") {
+    label = cleanLabel(label);
+    let numChildren = dataElement.children.length;
+
+    if (numChildren == 0) {
+      let value = dataElement.textContent;
+      value = value.replace(/\s+/g, " ").trim();
+
+      // clean up height field
+      if (label == "Height") {
+        // example: https://www.ancestry.com/search/collections/2238/records/303556213
+        // has height of: 5''8 1/2 "
+        // which should be: 5' 8 1/2"
+        if (value.includes("''") && value.includes('"')) {
+          value = value.replace(/''/g, "'");
+          value = value.replace(/ "/g, '"');
+        }
+      }
+
+      if (!value.startsWith("Search for")) {
+        //console.log(label + " " + value);
+        result.recordData[label] = value;
+      }
+    } else {
+      // there are children. There are several cases to handle here
+      if (dataElement.classList.contains("p_embedTableTd")) {
+        // Sub-tables are used for Household Members in census and Records on page in Marriage Reg
+        // If possible put each of the rows of the sub-table in the recordData with line breaks
+        if (label.includes("Household")) {
+          result.household = {};
+          let headings = row.querySelectorAll("td.p_embedTableTd th.p_embedTableHead");
+          if (headings.length > 0) {
+            result.household.headings = [];
+            result.household.members = [];
+            for (let heading of headings) {
+              result.household.headings.push(cleanText(heading.textContent));
+            }
+          }
+        }
+
+        let subTableRows = dataElement.querySelectorAll("td.p_embedTableTd tr.p_embedTableRow");
+        let value = "";
+        for (let subRow of subTableRows) {
+          if (value) {
+            value += "<br/>";
+          }
+          value += cleanText(subRow.textContent);
+
+          if (result.household !== undefined && result.household.members !== undefined) {
+            let member = {};
+            let subRowCells = subRow.querySelectorAll("td");
+            if (subRowCells.length > 0) {
+              for (let cellIndex = 0; cellIndex < subRowCells.length; cellIndex++) {
+                let cell = subRowCells[cellIndex];
+                let memberText = cleanText(cell.textContent);
+                let heading = result.household.headings[cellIndex];
+                member[heading] = memberText;
+                let linkNode = cell.querySelector("a");
+                if (linkNode) {
+                  let link = getAbsoluteLinkUrl(linkNode, document, result);
+                  let extractResult = {};
+                  extractDbAndRecordId(extractResult, link);
+                  member.dbId = extractResult.dbId;
+                  member.recordId = extractResult.recordId;
+                  member.link = link; // used to fetch additional records if needed
+                }
+              }
+            }
+
+            result.household.members.push(member);
+          }
+        }
+        if (value) {
+          result.recordData[label] = value;
+        }
+      } else {
+        // for now just get the text of all the children.
+        // there can be multiple children for "Name:" in death reg
+        // It can also happen for "Inferred Spouse:" in 1939 reg.
+        // We used to have code to handle more than one child and one child
+        // differently but now we threat then the same
+        // An example where this does not work is:
+        // https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61311&h=2913
+        let value = dataElement.textContent;
+        value = cleanText(value);
+        if (value) {
+          if (!value.startsWith("Search for") && !value.startsWith("View ")) {
+            // extra test - sometime the text includes a script. We definitely don't want to include that
+            let scriptNode = dataElement.querySelector("script");
+            if (!scriptNode) {
+              // If this is a link we also store the link - this is case we need to read that
+              // additional record (e.g. for a child baptism)
+              let linkNode = dataElement.querySelector("a");
+
+              // in some old files there could ba a link for an alternate value
+              let altSpan = dataElement.querySelector("span[title='Click to see details about alternate names']");
+              if (linkNode && !altSpan) {
+                // there are some links that are for viewing maps or ordering copies
+                // It seems that these links have 'class="link"' so if that is there ignore
+                // this row
+                if (linkNode.className != "link") {
+                  result.recordData[label] = value;
+
+                  let linkText = linkNode.textContent;
+                  // ignore links for alternate names
+                  if (!linkText || !linkText.startsWith("[")) {
+                    let link = getAbsoluteLinkUrl(linkNode, document, result);
+                    if (!result.linkData) {
+                      result.linkData = {};
+                    }
+                    result.linkData[label] = link;
+                  }
+                }
+              } else {
+                // no link just use all child text
+                let spans = dataElement.querySelectorAll("span");
+                if (spans.length > 0) {
+                  let mainSpan = dataElement.querySelector("span.srchHit");
+                  if (mainSpan) {
+                    let firstNode = mainSpan.childNodes[0];
+                    let mainText = firstNode.textContent;
+                    result.recordData[label] = mainText.trim();
+
+                    let altSpans = mainSpan.querySelectorAll("span");
+                    for (let altSpan of altSpans) {
+                      let altText = altSpan.textContent;
+                      addRecordDataAltValue(result, label, altText);
+                    }
+                    let userSpans = dataElement.querySelectorAll("span[title^='This value was member submitted'");
+                    for (let userSpan of userSpans) {
+                      let userText = userSpan.textContent;
+                      addRecordDataUserValue(result, label, userText);
+                    }
+                  } else {
+                    let firstNode = dataElement.childNodes[0];
+                    let mainText = firstNode.textContent;
+                    result.recordData[label] = mainText.trim();
+                    let userSpans = dataElement.querySelectorAll("span");
+                    for (let userSpan of userSpans) {
+                      let userText = userSpan.textContent;
+                      addRecordDataUserValue(result, label, userText);
+                    }
+                  }
+                } else {
+                  result.recordData[label] = value;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  } else {
+    // this row doesn't have a <th> label. Could be something like "Household members"
+    if (row.classList.contains("tableContainerRow")) {
+      let table = row.querySelector("table");
+
+      // collect all the headings and put them in a string with line breaks between them
+      let headings = table.querySelectorAll(":scope thead tr th");
+      let label = "";
+      for (let heading of headings) {
+        if (label) {
+          label += "<br/>";
+        }
+        label += cleanText(heading.textContent);
+      }
+
+      // now get each row of data and put them all in one string with line breaks between rows
+      let subTableRows = table.querySelectorAll(":scope tbody tr");
+      let value = "";
+      for (let subRow of subTableRows) {
+        if (value) {
+          value += "<br/>";
+        }
+        value += cleanText(subRow.textContent);
+      }
+      if (value) {
+        result.recordData[label] = value;
+      }
+
+      if (label.includes("Household") || label.includes("Others Listed")) {
+        result.household = {};
+        if (headings.length > 0) {
+          result.household.headings = [];
+          result.household.members = [];
+          for (let heading of headings) {
+            result.household.headings.push(cleanText(heading.textContent));
+          }
+        }
+
+        for (let subRow of subTableRows.values()) {
+          if (result.household !== undefined && result.household.members !== undefined) {
+            let member = {};
+            let subRowCells = subRow.querySelectorAll("td");
+            if (subRowCells.length > 0) {
+              for (let cellIndex = 0; cellIndex < subRowCells.length; cellIndex++) {
+                let cell = subRowCells[cellIndex];
+                let memberText = cleanText(cell.textContent);
+
+                if (cellIndex == 0) {
+                  // check for a closed record
+                  let lcText = memberText.toLowerCase();
+
+                  if (
+                    lcText == "this record is officially closed." ||
+                    (lcText.includes("record") && lcText.includes("closed"))
+                  ) {
+                    member.isClosed = true;
+                    memberText = "Closed Record";
+                  }
+                }
+
+                let heading = result.household.headings[cellIndex];
+                member[heading] = memberText;
+
+                let linkNode = cell.querySelector("a");
+                if (linkNode) {
+                  let link = getAbsoluteLinkUrl(linkNode, document, result);
+                  let extractResult = {};
+                  extractDbAndRecordId(extractResult, link);
+                  member.dbId = extractResult.dbId;
+                  member.recordId = extractResult.recordId;
+                  member.link = link; // used to fetch additional records if needed
+                }
+              }
+            }
+
+            result.household.members.push(member);
+          }
+        }
+      }
+    }
+  }
+}
+
 function extractRecordData(document, result) {
   result.recordData = Object.create(null);
+
+  // August 2026 change - most record data is now in a description list rather than a table
+  // bit census households still use tables
+  let descriptionList = document.querySelector("#recordData dl.table");
+  if (descriptionList) {
+    let labelElements = descriptionList.querySelectorAll("dt");
+    for (let labelElement of labelElements) {
+      let dataElement = labelElement.nextElementSibling;
+      if (dataElement && dataElement.tagName == "DD") {
+        extractRecordDataRow(document, labelElement, dataElement, result);
+      }
+    }
+  }
 
   var recordDataRows = document.querySelectorAll("#recordData table > tbody > tr");
 
   for (let row of recordDataRows.values()) {
     // Get the label of the row (must be immediate child)
     let labelNode = row.querySelector(":scope > th");
+
     let label = labelNode ? labelNode.textContent : "";
     if (label != "") {
       label = cleanLabel(label);
@@ -721,15 +980,17 @@ function extractRecordSourceCitation(document, result) {
         for (let index = 0; index < sourceAreaSections.length; index++) {
           let section = sourceAreaSections[index];
           let citationTitleNode = section.querySelector("h4.citationTitle");
-          let sourceTextNode = section.querySelector("div.sourceText");
-          if (citationTitleNode && sourceTextNode) {
-            let citationTitle = citationTitleNode.textContent;
-            if (citationTitle == "Source Citation") {
-              setSourceCitation(result, sourceTextNode);
-            } else if (citationTitle == "Source Information") {
-              setSourceInformation(result, sourceTextNode);
-            } else if (citationTitle == "Description") {
-              setSourceDescription(result, sourceTextNode);
+          if (citationTitleNode) {
+            let sourceTextNode = section.querySelector("div.sourceText");
+            if (sourceTextNode) {
+              let citationTitle = citationTitleNode.textContent;
+              if (citationTitle == "Source Citation" || citationTitle == "Citation") {
+                setSourceCitation(result, sourceTextNode);
+              } else if (citationTitle == "Source Information" || citationTitle == "Information") {
+                setSourceInformation(result, sourceTextNode);
+              } else if (citationTitle == "Description" || citationTitle == "Collection description") {
+                setSourceDescription(result, sourceTextNode);
+              }
             }
           }
         }

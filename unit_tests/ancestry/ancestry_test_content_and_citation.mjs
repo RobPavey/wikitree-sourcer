@@ -354,6 +354,10 @@ const regressionData = [
     ],
   },
   {
+    caseName: "england_census_1891_chaplin-1740_aug2026",
+    url: "https://www.ancestry.com/search/collections/6598/records/7866657?_phsrc=ywU8188&_phstart=successSource&gsfn=Blanche%20Amelia&gsln=Radcliffe&ml_rpos=1&queryid=47f46742e730e73a9fca2c081ec3a0df",
+  },
+  {
     caseName: "england_census_1891_chaplin-1740",
     url: "https://www.ancestry.com/discoveryui-content/view/7866657:6598?_phsrc=ywU8188&_phstart=successSource&gsfn=Blanche+Amelia&gsln=Radcliffe&ml_rpos=1&queryId=47f46742e730e73a9fca2c081ec3a0df",
   },
