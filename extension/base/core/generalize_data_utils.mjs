@@ -650,6 +650,10 @@ const GD = {
       return ""; // no country recognized
     }
 
+    if (!placeNameMinusCountry) {
+      return "";
+    }
+
     //console.log("inferCountyNameFromPlaceString, placeNameMinusCountry is : " + placeNameMinusCountry);
 
     let countyName = undefined;
@@ -688,6 +692,10 @@ const GD = {
       }
     } else {
       return ""; // no country recognized
+    }
+
+    if (!placeNameMinusCountry) {
+      return "";
     }
 
     //console.log("inferCountyNameFromPlaceString, placeNameMinusCountry is : " + placeNameMinusCountry);
@@ -987,6 +995,10 @@ class PlaceObj {
       return result;
     }
 
+    if (!placeNameMinusCountry) {
+      return result;
+    }
+
     // treat states and counties the same for now
     let placeNameMinusCounty = "";
 
@@ -1048,6 +1060,10 @@ class PlaceObj {
   }
 
   inferTown() {
+    if (!this.placeString) {
+      return "";
+    }
+
     // it can be hard to get the county from the string, the town is harder
     // this is not always going to work but can be useful if you can check it later
     let country = undefined;
@@ -1061,6 +1077,10 @@ class PlaceObj {
       if (country.hasStates) {
         return "";
       }
+    }
+
+    if (!placeNameMinusCountry) {
+      return "";
     }
 
     let countyName = undefined;

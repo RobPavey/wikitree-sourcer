@@ -159,7 +159,7 @@ async function generatePermaLink(ed) {
       return;
     }
 
-    ed.pageData.pageId = await extractPageDataFromDocument(ed.uid, ed.url, ed.pageData.page);
+    ed.pageData.pageId = await extractPageDataFromDocument(ed.uid, ed.url, ed.pageData.pageIdx);
     ed.permalinkBase = await extractPermalinkBaseUrl(ed.url);
 
     if (ed.pageData.pageId == -1 || ed.permalinkBase == null) {
