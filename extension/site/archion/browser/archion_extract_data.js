@@ -121,7 +121,7 @@ function extractData(document, url) {
       alert("The page number contains invalid characters. Please report this issue.");
       return result;
     }
-    const entry = pageSelect.querySelector("option[value='" + pageSelect.value + "'");
+    const entry = pageSelect.querySelector("option[value='" + pageSelect.value + "']");
     result.pageData = {
       page: parseInt(entry.text),
       pageIdx: Array.from(entry.parentNode.children).indexOf(entry),
