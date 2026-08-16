@@ -124,6 +124,7 @@ function extractData(document, url) {
     const entry = pageSelect.querySelector("option[value='" + pageSelect.value + "'");
     result.pageData = {
       page: parseInt(entry.text),
+      pageIdx: Array.from(entry.parentNode.children).indexOf(entry),
     };
   }
 
