@@ -309,7 +309,7 @@ async function doPendingSearch() {
           //console.log("about to click button");
 
           // now submit the form to do the search
-          //searchButtonElement.click();
+          searchButtonElement.click();
 
           submitted = true;
         }
