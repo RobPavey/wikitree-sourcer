@@ -1089,6 +1089,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/3941667:8745",
   },
   {
+    caseName: "us_ma_death_index_1926_magnus_vonloesecke",
+    url: "https://www.ancestry.com/search/collections/3659/records/2700444?tid=&pid=&queryId=55faadce-bec6-45dc-9c94-e90d7f3fd796&_phsrc=jLh19482&_phstart=successSource",
+  },
+  {
     caseName: "us_ma_birth_1642_increase_sumner",
     url: "https://www.ancestry.com/discoveryui-content/view/46470693:2495",
   },

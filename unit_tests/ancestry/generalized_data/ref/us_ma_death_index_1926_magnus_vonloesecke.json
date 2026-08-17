@@ -1,0 +1,29 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Magnus F S Vonloesecke"
+  },
+  "eventDate": {
+    "dateString": "1926"
+  },
+  "deathDate": {
+    "dateString": "1926"
+  },
+  "eventPlace": {
+    "placeString": "Arlington, Massachusetts, USA"
+  },
+  "lastNameAtDeath": "Vonloesecke",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|3659|2700444}}"
+  ],
+  "collectionData": {
+    "id": "3659",
+    "collectionTitle": "Massachusetts, U.S., Death Index, 1901-1980",
+    "volume": "3",
+    "page": "140",
+    "referenceNumber": "F63.M363 v.87"
+  },
+  "hasValidData": true
+}

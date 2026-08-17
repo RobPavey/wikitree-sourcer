@@ -442,128 +442,79 @@ function extractRecordDataRow(document, labelElement, dataElement, result) {
         result.recordData[label] = value;
       }
     } else {
-      // there are children. There are several cases to handle here
-      if (dataElement.classList.contains("p_embedTableTd")) {
-        // Sub-tables are used for Household Members in census and Records on page in Marriage Reg
-        // If possible put each of the rows of the sub-table in the recordData with line breaks
-        if (label.includes("Household")) {
-          result.household = {};
-          let headings = row.querySelectorAll("td.p_embedTableTd th.p_embedTableHead");
-          if (headings.length > 0) {
-            result.household.headings = [];
-            result.household.members = [];
-            for (let heading of headings) {
-              result.household.headings.push(cleanText(heading.textContent));
-            }
-          }
-        }
+      // there are children. In old format this could contain a subtable but that is now a separate
+      // top-level table so ignore this for the household case.
 
-        let subTableRows = dataElement.querySelectorAll("td.p_embedTableTd tr.p_embedTableRow");
-        let value = "";
-        for (let subRow of subTableRows) {
-          if (value) {
-            value += "<br/>";
-          }
-          value += cleanText(subRow.textContent);
+      // Else, for now just get the text of all the children. (this may be redundant because they also seem to be
+      // in a separate table)
+      // there can be multiple children for "Name:" in death reg
+      // It can also happen for "Inferred Spouse:" in 1939 reg.
+      // We used to have code to handle more than one child and one child
+      // differently but now we threat then the same
+      // An example where this does not work is:
+      // https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61311&h=2913
+      let value = dataElement.textContent;
+      value = cleanText(value);
+      if (value) {
+        if (!value.startsWith("Search for") && !value.startsWith("View ")) {
+          // extra test - sometime the text includes a script. We definitely don't want to include that
+          let scriptNode = dataElement.querySelector("script");
+          if (!scriptNode) {
+            // If this is a link we also store the link - this is case we need to read that
+            // additional record (e.g. for a child baptism)
+            let linkNode = dataElement.querySelector("a");
 
-          if (result.household !== undefined && result.household.members !== undefined) {
-            let member = {};
-            let subRowCells = subRow.querySelectorAll("td");
-            if (subRowCells.length > 0) {
-              for (let cellIndex = 0; cellIndex < subRowCells.length; cellIndex++) {
-                let cell = subRowCells[cellIndex];
-                let memberText = cleanText(cell.textContent);
-                let heading = result.household.headings[cellIndex];
-                member[heading] = memberText;
-                let linkNode = cell.querySelector("a");
-                if (linkNode) {
+            // in some old files there could ba a link for an alternate value
+            let altSpan = dataElement.querySelector("span[title='Click to see details about alternate names']");
+            if (linkNode && !altSpan) {
+              // there are some links that are for viewing maps or ordering copies
+              // It seems that these links have 'class="link"' so if that is there ignore
+              // this row
+              if (linkNode.className != "link") {
+                result.recordData[label] = value;
+
+                let linkText = linkNode.textContent;
+                // ignore links for alternate names
+                if (!linkText || !linkText.startsWith("[")) {
                   let link = getAbsoluteLinkUrl(linkNode, document, result);
-                  let extractResult = {};
-                  extractDbAndRecordId(extractResult, link);
-                  member.dbId = extractResult.dbId;
-                  member.recordId = extractResult.recordId;
-                  member.link = link; // used to fetch additional records if needed
+                  if (!result.linkData) {
+                    result.linkData = {};
+                  }
+                  result.linkData[label] = link;
                 }
               }
-            }
+            } else {
+              // no link just use all child text
+              let spans = dataElement.querySelectorAll("span");
+              if (spans.length > 0) {
+                let mainSpan = dataElement.querySelector("span.srchHit");
+                if (mainSpan) {
+                  let firstNode = mainSpan.childNodes[0];
+                  let mainText = firstNode.textContent;
+                  result.recordData[label] = mainText.trim();
 
-            result.household.members.push(member);
-          }
-        }
-        if (value) {
-          result.recordData[label] = value;
-        }
-      } else {
-        // for now just get the text of all the children.
-        // there can be multiple children for "Name:" in death reg
-        // It can also happen for "Inferred Spouse:" in 1939 reg.
-        // We used to have code to handle more than one child and one child
-        // differently but now we threat then the same
-        // An example where this does not work is:
-        // https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61311&h=2913
-        let value = dataElement.textContent;
-        value = cleanText(value);
-        if (value) {
-          if (!value.startsWith("Search for") && !value.startsWith("View ")) {
-            // extra test - sometime the text includes a script. We definitely don't want to include that
-            let scriptNode = dataElement.querySelector("script");
-            if (!scriptNode) {
-              // If this is a link we also store the link - this is case we need to read that
-              // additional record (e.g. for a child baptism)
-              let linkNode = dataElement.querySelector("a");
-
-              // in some old files there could ba a link for an alternate value
-              let altSpan = dataElement.querySelector("span[title='Click to see details about alternate names']");
-              if (linkNode && !altSpan) {
-                // there are some links that are for viewing maps or ordering copies
-                // It seems that these links have 'class="link"' so if that is there ignore
-                // this row
-                if (linkNode.className != "link") {
-                  result.recordData[label] = value;
-
-                  let linkText = linkNode.textContent;
-                  // ignore links for alternate names
-                  if (!linkText || !linkText.startsWith("[")) {
-                    let link = getAbsoluteLinkUrl(linkNode, document, result);
-                    if (!result.linkData) {
-                      result.linkData = {};
-                    }
-                    result.linkData[label] = link;
+                  let altSpans = mainSpan.querySelectorAll("span");
+                  for (let altSpan of altSpans) {
+                    let altText = altSpan.textContent;
+                    addRecordDataAltValue(result, label, altText);
+                  }
+                  let userSpans = dataElement.querySelectorAll("span[title^='This value was member submitted'");
+                  for (let userSpan of userSpans) {
+                    let userText = userSpan.textContent;
+                    addRecordDataUserValue(result, label, userText);
+                  }
+                } else {
+                  let firstNode = dataElement.childNodes[0];
+                  let mainText = firstNode.textContent;
+                  result.recordData[label] = mainText.trim();
+                  let userSpans = dataElement.querySelectorAll("span");
+                  for (let userSpan of userSpans) {
+                    let userText = userSpan.textContent;
+                    addRecordDataUserValue(result, label, userText);
                   }
                 }
               } else {
-                // no link just use all child text
-                let spans = dataElement.querySelectorAll("span");
-                if (spans.length > 0) {
-                  let mainSpan = dataElement.querySelector("span.srchHit");
-                  if (mainSpan) {
-                    let firstNode = mainSpan.childNodes[0];
-                    let mainText = firstNode.textContent;
-                    result.recordData[label] = mainText.trim();
-
-                    let altSpans = mainSpan.querySelectorAll("span");
-                    for (let altSpan of altSpans) {
-                      let altText = altSpan.textContent;
-                      addRecordDataAltValue(result, label, altText);
-                    }
-                    let userSpans = dataElement.querySelectorAll("span[title^='This value was member submitted'");
-                    for (let userSpan of userSpans) {
-                      let userText = userSpan.textContent;
-                      addRecordDataUserValue(result, label, userText);
-                    }
-                  } else {
-                    let firstNode = dataElement.childNodes[0];
-                    let mainText = firstNode.textContent;
-                    result.recordData[label] = mainText.trim();
-                    let userSpans = dataElement.querySelectorAll("span");
-                    for (let userSpan of userSpans) {
-                      let userText = userSpan.textContent;
-                      addRecordDataUserValue(result, label, userText);
-                    }
-                  }
-                } else {
-                  result.recordData[label] = value;
-                }
+                result.recordData[label] = value;
               }
             }
           }
@@ -571,85 +522,8 @@ function extractRecordDataRow(document, labelElement, dataElement, result) {
       }
     }
   } else {
-    // this row doesn't have a <th> label. Could be something like "Household members"
-    if (row.classList.contains("tableContainerRow")) {
-      let table = row.querySelector("table");
-
-      // collect all the headings and put them in a string with line breaks between them
-      let headings = table.querySelectorAll(":scope thead tr th");
-      let label = "";
-      for (let heading of headings) {
-        if (label) {
-          label += "<br/>";
-        }
-        label += cleanText(heading.textContent);
-      }
-
-      // now get each row of data and put them all in one string with line breaks between rows
-      let subTableRows = table.querySelectorAll(":scope tbody tr");
-      let value = "";
-      for (let subRow of subTableRows) {
-        if (value) {
-          value += "<br/>";
-        }
-        value += cleanText(subRow.textContent);
-      }
-      if (value) {
-        result.recordData[label] = value;
-      }
-
-      if (label.includes("Household") || label.includes("Others Listed")) {
-        result.household = {};
-        if (headings.length > 0) {
-          result.household.headings = [];
-          result.household.members = [];
-          for (let heading of headings) {
-            result.household.headings.push(cleanText(heading.textContent));
-          }
-        }
-
-        for (let subRow of subTableRows.values()) {
-          if (result.household !== undefined && result.household.members !== undefined) {
-            let member = {};
-            let subRowCells = subRow.querySelectorAll("td");
-            if (subRowCells.length > 0) {
-              for (let cellIndex = 0; cellIndex < subRowCells.length; cellIndex++) {
-                let cell = subRowCells[cellIndex];
-                let memberText = cleanText(cell.textContent);
-
-                if (cellIndex == 0) {
-                  // check for a closed record
-                  let lcText = memberText.toLowerCase();
-
-                  if (
-                    lcText == "this record is officially closed." ||
-                    (lcText.includes("record") && lcText.includes("closed"))
-                  ) {
-                    member.isClosed = true;
-                    memberText = "Closed Record";
-                  }
-                }
-
-                let heading = result.household.headings[cellIndex];
-                member[heading] = memberText;
-
-                let linkNode = cell.querySelector("a");
-                if (linkNode) {
-                  let link = getAbsoluteLinkUrl(linkNode, document, result);
-                  let extractResult = {};
-                  extractDbAndRecordId(extractResult, link);
-                  member.dbId = extractResult.dbId;
-                  member.recordId = extractResult.recordId;
-                  member.link = link; // used to fetch additional records if needed
-                }
-              }
-            }
-
-            result.household.members.push(member);
-          }
-        }
-      }
-    }
+    // this row doesn't have a <th> label. In old layout it could be something like "Household members"
+    // But that is now a separate table. So ignore it.
   }
 }
 
