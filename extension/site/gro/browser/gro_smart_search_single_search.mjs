@@ -287,6 +287,7 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
   let mmnMatches = singleSearchParameters.mmnMatches;
   let year = singleSearchParameters.year;
   let yearRange = singleSearchParameters.yearRange;
+  let hasAge = singleSearchParameters.hasAge;
   let age = singleSearchParameters.age;
   let ageRange = singleSearchParameters.ageRange;
   let gender = singleSearchParameters.gender;
@@ -308,7 +309,7 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
   //console.log("doSingleSearch, singleSearchParameters has:");
   //console.log("  year: " + year);
   //console.log("  yearRange: " + yearRange);
-  if (age) {
+  if (hasAge) {
     //console.log("  age: " + age);
     //console.log("  ageRange: " + ageRange);
   }
@@ -345,7 +346,7 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
   if (type == "births") {
     builder.addMothersSurname(mmn);
     builder.addMothersSurnameMatches(mmnMatches);
-  } else {
+  } else if (hasAge) {
     builder.addAge(age);
     builder.addAgeRange(ageRange);
   }
