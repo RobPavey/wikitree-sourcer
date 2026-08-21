@@ -24,16 +24,20 @@ SOFTWARE.
 
 class EggsaGrvsCommon {
   static searchAreas = [
-    { name: "Eastern Province", urlPart: "ecsearchGraves" },
-    { name: "Free State", urlPart: "fssearchGraves" },
-    { name: "Gauteng", urlPart: "ggsearchGraves" },
-    { name: "Kwazulu-Natal", urlPart: "kwasearchGraves" },
-    { name: "Limpopo", urlPart: "limsearchGraves" },
-    { name: "Mpumalanga", urlPart: "mpsearchGraves" },
-    { name: "Northern Cape", urlPart: "ncsearchGraves" },
-    { name: "Northwest", urlPart: "nwsearchGraves" },
-    { name: "Western Cape", urlPart: "wcsearchGraves" },
-    { name: "Worldwide", urlPart: "wosearchGraves" },
+    { name: "Eastern Province", searchUrl: EggsaGrvsCommon.formUrl("graveseastcape", "ecsearchGraves") },
+    { name: "Free State", searchUrl: EggsaGrvsCommon.formUrl("gravesfreestate", "fssearchGraves") },
+    { name: "Gauteng", searchUrl: EggsaGrvsCommon.formUrl("gravesgauteng", "ggsearchGraves") },
+    { name: "Kwazulu-Natal", searchUrl: EggsaGrvsCommon.formUrl("natalgraves", "kwasearchGraves") },
+    { name: "Limpopo", searchUrl: EggsaGrvsCommon.formUrl("graveslimpopo", "limsearchGraves") },
+    { name: "Mpumalanga", searchUrl: EggsaGrvsCommon.formUrl("gravesmpumalanga", "new_mpsearchGraves") },
+    { name: "Northern Cape", searchUrl: EggsaGrvsCommon.formUrl("gravesnortherncape", "new_ncsearchGraves") },
+    { name: "Northwest", searchUrl: EggsaGrvsCommon.formUrl("gravesnorthwest", "new_nwsearchGraves") },
+    { name: "Western Cape", searchUrl: EggsaGrvsCommon.formUrl("graveswcape", "wcsearchGraves") },
+    { name: "Worldwide", searchUrl: EggsaGrvsCommon.formUrl("gravesworld", "wosearchGraves") },
   ];
+
+  static formUrl(urlStart, urlPart) {
+    return `https://${urlStart}.eggsa.org/Search/${urlPart}.htm`;
+  }
 }
 export { EggsaGrvsCommon };

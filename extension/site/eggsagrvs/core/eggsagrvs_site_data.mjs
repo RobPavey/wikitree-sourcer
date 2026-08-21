@@ -26,7 +26,7 @@ import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
   siteName: "eggsagrvs",
-  matches: ["*://graves.eggsa.org/*", "*://www.graves.eggsa.org/*"],
+  matches: ["*://graves.eggsa.org/*", "*://*.eggsa.org/*"],
   runAt: "document_end",
   repositoryName: "eGGSA Graves",
   usPhoneNumber: "",
