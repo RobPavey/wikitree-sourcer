@@ -83,11 +83,10 @@ function eggsagrvsDoSearch(input) {
       return;
     }
 
-    const searchUrl = `https://graves.eggsa.org/Search/${buildResult.urlPart}.htm`;
     try {
       const eggsagrvsSearchData = {
         timeStamp: Date.now(),
-        url: searchUrl,
+        url: buildResult.searchUrl,
         fieldData: fieldData,
       };
 
@@ -101,14 +100,14 @@ function eggsagrvsDoSearch(input) {
       console.log("storeDataCache failed");
     }
 
-    openUrlInNewTab(searchUrl);
+    openUrlInNewTab(buildResult.searchUrl);
     closePopup();
   });
 }
 
-async function eggsagrvsSearch(generalizedData, urlPart) {
+async function eggsagrvsSearch(generalizedData, searchUrl) {
   const input = {
-    urlPart: urlPart,
+    searchUrl: searchUrl,
     generalizedData: generalizedData,
     options: options,
   };
@@ -148,7 +147,7 @@ function addEggsagrvsDefaultSearchMenuItem(menu, data, backFunction, filter) {
 
 function addEggsagrvsAreaMenuItem(menu, generalizedData, item) {
   addMenuItem(menu, `Search eGSSA ${item.name} Graves`, function (element) {
-    eggsagrvsSearch(generalizedData, item.urlPart);
+    eggsagrvsSearch(generalizedData, item.searchUrl);
   });
 }
 

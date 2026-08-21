@@ -34,18 +34,18 @@ const regressionData = [
   // & separator, 2nd surname is multi-word
   {
     caseName: "conradie_jan_and_johanna_van_veyeren",
-    url: "https://www.graves.eggsa.org/easterncape/Aberdeen-urban/Aberdeen%20main/C%20-%20Surnames%20__%20Vanne%20-%20C/CONRADIE%20Jan/ABRD+0100a.JPG",
+    url: "https://graveseastcape.eggsa.org/Aberdeen-urban/Aberdeen%20main/C%20-%20Surnames%20__%20Vanne%20-%20C/CONRADIE%20Jan/ABRD+0100a.JPG",
   },
   // DILLON Garrett Maurice 1884-1954 & Emma Valentine Eva 1898-1971
   // & separator, 2nd name without surname
   {
     caseName: "dillon_garret_and_emma_p0",
-    url: "https://www.graves.eggsa.org/gauteng/Johannesburg-urban/Braamfontein/Braamfontein-Main-cem/S%20-%20Surnames%20__%20Vanne%20-%20S/SCOTT/DSCF0166.JPG",
+    url: "https://gravesgauteng.eggsa.org/Johannesburg-urban/Braamfontein/Braamfontein-Main-cem/S%20-%20Surnames%20__%20Vanne%20-%20S/SCOTT/DSCF0166.JPG",
     pageFile: "./unit_tests/eggsagrvs/saved_pages/dillon_garret_and_emma.html",
   },
   {
     caseName: "dillon_garret_and_emma_p1",
-    url: "https://www.graves.eggsa.org/gauteng/Johannesburg-urban/Braamfontein/Braamfontein-Main-cem/S%20-%20Surnames%20__%20Vanne%20-%20S/SCOTT/DSCF0166.JPG",
+    url: "https://gravesgauteng.eggsa.org/Johannesburg-urban/Braamfontein/Braamfontein-Main-cem/S%20-%20Surnames%20__%20Vanne%20-%20S/SCOTT/DSCF0166.JPG",
     pageFile: "./unit_tests/eggsagrvs/saved_pages/dillon_garret_and_emma.html",
     primaryPersonIndex: 1,
   },
@@ -53,12 +53,12 @@ const regressionData = [
   // :: separator, both names multi-word
   {
     caseName: "eeden_bessie_van_p0",
-    url: "https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG",
+    url: "https://graveswcape.eggsa.org/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG",
     pageFile: "./unit_tests/eggsagrvs/saved_pages/eeden_bessie_van.html",
   },
   {
     caseName: "eeden_bessie_van_p1",
-    url: "https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG",
+    url: "https://graveswcape.eggsa.org/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG",
     pageFile: "./unit_tests/eggsagrvs/saved_pages/eeden_bessie_van.html",
     primaryPersonIndex: 1,
   },
@@ -66,33 +66,33 @@ const regressionData = [
   // Kenya, & separator, 2nd name no last name, no dates
   {
     caseName: "engelbrecht_koos_en_hannie",
-    url: "https://www.graves.eggsa.org/world/Kenya/Eldoret/0717036%20Eldoret%20Kenya_%20Elize%20Church%20FB/0005.jpg",
+    url: "https://gravesworld.eggsa.org/Kenya/Eldoret/0717036%20Eldoret%20Kenya_%20Elize%20Church%20FB/0005.jpg",
   },
   // ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908
   // Namibia, shortened multi-name
   {
     caseName: "erckert_friedrich_v",
-    url: "https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg",
+    url: "https://gravesworld.eggsa.org/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg",
   },
   // FRITTELLI Lena neé JANSE VAN RENSBURG -1945
   // neé Janse van Rensburg
   {
     caseName: "frittelli_nee_janse_van_rensburg",
-    url: "https://www.graves.eggsa.org/westerncape/Riversdale_Urban/Riversdal-ou-begraafplaas/ou-NGK-begraafplaas/Block-B/WC-Riversale-TdV-0283.JPG",
+    url: "https://graveswcape.eggsa.org/Riversdale_Urban/Riversdal-ou-begraafplaas/ou-NGK-begraafplaas/Block-B/WC-Riversale-TdV-0283.JPG",
   },
   // 09. Gedenkmuur / Memorial wall _9
   // Real information is a list of 61 people below the normal H2 names.
   {
     //VUREN Lettie, v. nee TRUTER 1908-1987
     caseName: "gedenkmuur_lettie_van_vuuren",
-    url: "https://www.graves.eggsa.org/freestate/BLOEMFONTEIN_Urban/bloemf-memorium-concentration-camp/gedenkmuur/overview/P1760076.JPG",
+    url: "https://gravesfreestate.eggsa.org/BLOEMFONTEIN_Urban/bloemf-memorium-concentration-camp/gedenkmuur/overview/P1760076.JPG",
     pageFile: "./unit_tests/eggsagrvs/saved_pages/gedenkmuur.html",
     primaryPersonIndex: 36,
   },
   {
     // NIEKERK G., van 1931-1987 & M.L.M.
     caseName: "gedenkmuur_mlm_van_niekerk",
-    url: "https://www.graves.eggsa.org/freestate/BLOEMFONTEIN_Urban/bloemf-memorium-concentration-camp/gedenkmuur/overview/P1760076.JPG",
+    url: "https://gravesfreestate.eggsa.org/BLOEMFONTEIN_Urban/bloemf-memorium-concentration-camp/gedenkmuur/overview/P1760076.JPG",
     pageFile: "./unit_tests/eggsagrvs/saved_pages/gedenkmuur.html",
     primaryPersonIndex: 35,
   },
@@ -100,43 +100,43 @@ const regressionData = [
   // geb. in stead of nee
   {
     caseName: "helberg_helena_geb_smith",
-    url: "https://www.graves.eggsa.org/limpopo/MODJADJISKLOOF-DUIWELSKLOOF-Urban/Duiwelskloof%202/H%20-%20Vanne%20__%20Surnames%20-%20H/P1010148.JPG",
+    url: "https://graveslimpopo.eggsa.org/MODJADJISKLOOF-DUIWELSKLOOF-Urban/Duiwelskloof%202/H%20-%20Vanne%20__%20Surnames%20-%20H/P1010148.JPG",
   },
   // HERMANN -1905
   // Namibia, single name, no birth year
   {
     caseName: "herman_1905",
-    url: "https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0732.jpeg",
+    url: "https://gravesworld.eggsa.org/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0732.jpeg",
   },
   // RENSBURG Gil, Janse van 1908-1995 :: JANSE VAN RENSBURG Susie 1925-1996
   // Janse van Rensburg (:: separator, 1st and 2nd person)
   {
     caseName: "janse_van_rensburg",
-    url: "https://www.graves.eggsa.org/westerncape/Riversdale_Urban/NuweBP/R%20-%20Vanne%20__%20Surnames%20-%20R/WC-Riversdale-nuweBP-ALouw-0026.JPG",
+    url: "https://graveswcape.eggsa.org/Riversdale_Urban/NuweBP/R%20-%20Vanne%20__%20Surnames%20-%20R/WC-Riversdale-nuweBP-ALouw-0026.JPG",
   },
   // KEYTER :: SMITH. (but real info is below it:
   // KEYTER Petrus Ignatius 1884-1934 :: KEYTER Susanna Juliana Theodora 1875-1958 :: SMITH Susanna Juliana Dorothea nee KEYTER 1897-1968
   {
     caseName: "keyter_smith",
-    url: "https://www.graves.eggsa.org/easterncape/Port_Elizabeth_Urban/Northend_Cemetery_Port_Elizabeth/K/KE/KEYTER%20Petrus%20Ignatius%201884-1934%20_amp_%20Susanna%20Juliana%20Theodora%201875-1958%20_amp_%20SMITH%20Susanna%20Juliana%20Dorothea%20KEYTER%201897-1.JPG",
+    url: "https://graveseastcape.eggsa.org/Port_Elizabeth_Urban/Northend_Cemetery_Port_Elizabeth/K/KE/KEYTER%20Petrus%20Ignatius%201884-1934%20_amp_%20Susanna%20Juliana%20Theodora%201875-1958%20_amp_%20SMITH%20Susanna%20Juliana%20Dorothea%20KEYTER%201897-1.JPG",
     primaryPersonIndex: 2,
   },
   // 5. KIRSTEN
   // VAN DER POLL Hendrik 1817-1894 VAN DER POLL Johanna Jacomina nee KIRSTEN 1820-1893 KIRSTEN Hendrik Van Der Poll 1850-1930  etc.
   {
     caseName: "kirsten_family_hendrik_van_der_poll",
-    url: "https://www.graves.eggsa.org/westerncape/Cape-town-urban/Plumstead/Plumstead-MAIN/4Kirsten-familie/IMG_4044.JPG",
+    url: "https://graveswcape.eggsa.org/Cape-town-urban/Plumstead/Plumstead-MAIN/4Kirsten-familie/IMG_4044.JPG",
     pageFile: "./unit_tests/eggsagrvs/saved_pages/kirsten_family.html",
   },
   {
     caseName: "kirsten_family_hendrik_van_der_poll_kirsten",
-    url: "https://www.graves.eggsa.org/westerncape/Cape-town-urban/Plumstead/Plumstead-MAIN/4Kirsten-familie/IMG_4044.JPG",
+    url: "https://graveswcape.eggsa.org/Cape-town-urban/Plumstead/Plumstead-MAIN/4Kirsten-familie/IMG_4044.JPG",
     pageFile: "./unit_tests/eggsagrvs/saved_pages/kirsten_family.html",
     primaryPersonIndex: 2,
   },
   {
     caseName: "kirsten_family_johanna_van_der_poll_nee_kirsten",
-    url: "https://www.graves.eggsa.org/westerncape/Cape-town-urban/Plumstead/Plumstead-MAIN/4Kirsten-familie/IMG_4044.JPG",
+    url: "https://graveswcape.eggsa.org/Cape-town-urban/Plumstead/Plumstead-MAIN/4Kirsten-familie/IMG_4044.JPG",
     pageFile: "./unit_tests/eggsagrvs/saved_pages/kirsten_family.html",
     primaryPersonIndex: 1,
   },
@@ -145,37 +145,37 @@ const regressionData = [
   // multiple formerly and nee
   {
     caseName: "landsberg_esa_formerly_formerly",
-    url: "https://www.graves.eggsa.org/limpopo/MODJADJISKLOOF-DUIWELSKLOOF-Urban/Duiwelskloof%202/L%20-%20Vanne%20__%20Surnames%20-%20L/IMG-20150204-WA0005.jpg",
+    url: "https://graveslimpopo.eggsa.org/MODJADJISKLOOF-DUIWELSKLOOF-Urban/Duiwelskloof%202/L%20-%20Vanne%20__%20Surnames%20-%20L/IMG-20150204-WA0005.jpg",
   },
   // LITH Martha Louisa, van der formerly OLIVIER nee JOUBERT 1899-1980
   // formerly and nee, multi-word surname prefix
   {
     caseName: "lith_martha_van_der_formerly_olivier",
-    url: "https://www.graves.eggsa.org/limpopo/MODJADJISKLOOF-DUIWELSKLOOF-Urban/Duiwelskloof%202/L%20-%20Vanne%20__%20Surnames%20-%20L/P1010076.JPG",
+    url: "https://graveslimpopo.eggsa.org/MODJADJISKLOOF-DUIWELSKLOOF-Urban/Duiwelskloof%202/L%20-%20Vanne%20__%20Surnames%20-%20L/P1010076.JPG",
   },
   // MEET Jan J., van der 1861 1940 & F.J.J. HUDDLESTONE 1867-1942
   // & separator, 2nd person with single word last name
   {
     caseName: "meet_jan_van_der_and_huddlestone",
-    url: "https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/M%20-%20Surnames%20__%20Vanne%20-%20M/Van+der+Meet_+Jan+J+en+Huddelstone_+FJJ.jpg",
+    url: "https://graveswcape.eggsa.org/Bredasdorp_Urban/Bredasdorp-nuwe-BP/M%20-%20Surnames%20__%20Vanne%20-%20M/Van+der+Meet_+Jan+J+en+Huddelstone_+FJJ.jpg",
   },
 
   // MERWE Izak Wilhelmus, van der 1869-1942 & Debora Petronella Jacoba van der MERWE 1873-1951 :: van der MERWE Bettie 1909-2000
   // Mixture of & and :: and multi-name surnames
   {
     caseName: "merwe_wilhelmus_and_debore_and_bettie_p0",
-    url: "https://www.graves.eggsa.org/westerncape/CERES-Urban/abc/Ceres%20Owenstraat%20Oos%20Ljh_012/SA101359.JPG",
+    url: "https://graveswcape.eggsa.org/CERES-Urban/abc/Ceres%20Owenstraat%20Oos%20Ljh_012/SA101359.JPG",
     pageFile: "./unit_tests/eggsagrvs/saved_pages/merwe_wilhelmus_and_debore_and_bettie.html",
   },
   {
     caseName: "merwe_wilhelmus_and_debore_and_bettie_p1",
-    url: "https://www.graves.eggsa.org/westerncape/CERES-Urban/abc/Ceres%20Owenstraat%20Oos%20Ljh_012/SA101359.JPG",
+    url: "https://graveswcape.eggsa.org/CERES-Urban/abc/Ceres%20Owenstraat%20Oos%20Ljh_012/SA101359.JPG",
     pageFile: "./unit_tests/eggsagrvs/saved_pages/merwe_wilhelmus_and_debore_and_bettie.html",
     primaryPersonIndex: 1,
   },
   {
     caseName: "merwe_wilhelmus_and_debore_and_bettie_p2",
-    url: "https://www.graves.eggsa.org/westerncape/CERES-Urban/abc/Ceres%20Owenstraat%20Oos%20Ljh_012/SA101359.JPG",
+    url: "https://graveswcape.eggsa.org/CERES-Urban/abc/Ceres%20Owenstraat%20Oos%20Ljh_012/SA101359.JPG",
     pageFile: "./unit_tests/eggsagrvs/saved_pages/merwe_wilhelmus_and_debore_and_bettie.html",
     primaryPersonIndex: 2,
   },
@@ -184,37 +184,37 @@ const regressionData = [
   // multi-word surname and nee
   {
     caseName: "merwe_rachel_van_der",
-    url: "https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/M%20-%20Surnames%20__%20Vanne%20-%20M/DSCF3557.JPG",
+    url: "https://graveswcape.eggsa.org/Bredasdorp_Urban/Bredasdorp-nuwe-BP/M%20-%20Surnames%20__%20Vanne%20-%20M/DSCF3557.JPG",
   },
   // NEL Lena, VAN ROOYEN 1929-2014
   // multi-word surname as surname prefix (probably an error on the site)
   {
     caseName: "nel_lena_van_rooyen",
-    url: "https://www.graves.eggsa.org/limpopo/MOKOPANE-POTGIETERSRUS-Rural/Houtbosrivier_1/IMG-20160629-WA0000.jpg",
+    url: "https://graveslimpopo.eggsa.org/MOKOPANE-POTGIETERSRUS-Rural/Houtbosrivier_1/IMG-20160629-WA0000.jpg",
   },
   // PLESSIS Gert Johannes, du 1886-19?9, DU PLESSIS Andries Gerhardus
   // (but for now I have changed the separator to a ::)
   {
     caseName: "plessis_gert_du",
-    url: "https://www.graves.eggsa.org/limpopo/MODJADJISKLOOF-DUIWELSKLOOF-Urban/Duiwelskloof%202/P%20-%20Vanne%20__%20Surnames%20-%20P/IM000022.JPG",
+    url: "https://graveslimpopo.eggsa.org/MODJADJISKLOOF-DUIWELSKLOOF-Urban/Duiwelskloof%202/P%20-%20Vanne%20__%20Surnames%20-%20P/IM000022.JPG",
   },
   // PURDON Kenneth Trevelyn 1919-2007 :: PURDON Sylvia Anne nee NOVELLA 1939-2014 :: WIGGIN Dorothy Merle nee PURDON 1922-2012
   // :: separator, 3 names, 2nd and 3rd with nee
   {
     caseName: "purdon_kenneth_sylvia_dorothy",
-    url: "https://www.graves.eggsa.org/easterncape/BATHURST-Urban/Bathurst-Weslyan/PURDON/IMG_1241.JPG",
+    url: "https://graveseastcape.eggsa.org/BATHURST-Urban/Bathurst-Weslyan/PURDON/IMG_1241.JPG",
   },
   // SLEATH Walter 1870-1947 & Lizzie Florence 1864-1909 & Eleanor 1872-1925 & Elizabeth 1870-1941
   // & separator, 4 people, only first with last name, pick 2nd person
   {
     caseName: "sleath_and_family",
-    url: "https://www.graves.eggsa.org/gauteng/Johannesburg-urban/Braamfontein/Braamfontein-Main-cem/S%20-%20Surnames%20__%20Vanne%20-%20S/IMGP5541.JPG",
+    url: "https://gravesgauteng.eggsa.org/Johannesburg-urban/Braamfontein/Braamfontein-Main-cem/S%20-%20Surnames%20__%20Vanne%20-%20S/IMGP5541.JPG",
     primaryPersonIndex: 1,
   },
   // ? Dad :: ? Mother -1913 :: Walter -1907 :: ? Stella :: ? Lallie :: ? Scott
   {
     caseName: "unknown_lastnames",
-    url: "https://www.graves.eggsa.org/gauteng/Johannesburg-urban/Braamfontein/Braamfontein-Main-cem/S%20-%20Surnames%20__%20Vanne%20-%20S/Skinn/LDH00476.jpg",
+    url: "https://gravesgauteng.eggsa.org/Johannesburg-urban/Braamfontein/Braamfontein-Main-cem/S%20-%20Surnames%20__%20Vanne%20-%20S/Skinn/LDH00476.jpg",
   },
   /*   
   {

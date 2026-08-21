@@ -43,7 +43,7 @@ function buildSearchData(input) {
     // Search with parameters
     //
     const parameters = input.searchParameters;
-    result.urlPart = parameters.urlPart;
+    result.searchUrl = parameters.searchUrl;
     // "lastName": "Toijt",
     // "surnameMode": "1",
     // "includeFirstName_Johannes": true,
@@ -66,7 +66,7 @@ function buildSearchData(input) {
     //
     // Default search
     //
-    result.urlPart = input.urlPart;
+    result.searchUrl = input.searchUrl;
     // First name
     const optFullFirstname = options.search_eggsagrvs_fullFirstname;
     const firstName = optFullFirstname ? gd.inferForenames() : gd.inferFirstName();
