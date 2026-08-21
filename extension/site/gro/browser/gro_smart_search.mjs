@@ -246,6 +246,7 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
 
   const year = singleSearchParameters.year;
   const yearRange = singleSearchParameters.yearRange;
+  const hasAge = singleSearchParameters.hasAge;
   const age = singleSearchParameters.age;
   const ageRange = singleSearchParameters.ageRange;
   const quarter = singleSearchParameters.quarter;
@@ -258,7 +259,7 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
   function updateSearchProgressMessage(pageNumber) {
     let progressMessage = "Found " + totalFetchResults.resultCount + " records.";
     progressMessage += "\nNow searching " + year + " +/-" + yearRange + ", " + gender;
-    if (age) {
+    if (hasAge) {
       progressMessage += ", age " + age + " +/-" + ageRange;
     }
     if (quarter) {
@@ -445,6 +446,7 @@ async function doSmartSearch() {
   for (let range of yearRanges) {
     singleSearchParameters.year = range.year;
     singleSearchParameters.yearRange = range.range;
+    singleSearchParameters.hasAge = range.hasAge;
     if (range.hasAge) {
       singleSearchParameters.age = range.age;
       singleSearchParameters.ageRange = range.ageRange;
