@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "riksark",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "dateString": "1860"
+  },
+  "eventPlace": {
+    "placeString": "Anga, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Anga"
+  },
+  "hasValidData": true
+}

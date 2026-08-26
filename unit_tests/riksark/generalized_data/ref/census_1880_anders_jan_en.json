@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "riksark",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Anders Jan"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "placeString": "Hellstad, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Hellstad"
+  },
+  "birthDate": {
+    "dateString": "1838"
+  },
+  "birthPlace": {
+    "placeString": "Hällstad Älvsborgs län, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Hällstad Älvsborgs län"
+  },
+  "maritalStatus": "single",
+  "hasValidData": true
+}

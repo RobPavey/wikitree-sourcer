@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "riksark",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Leif"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "placeString": "Undersåker med Järpens m:e, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Undersåker med Järpens m:e"
+  },
+  "birthDate": {
+    "dateString": "1920"
+  },
+  "maritalStatus": "single",
+  "hasValidData": true
+}

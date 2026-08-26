@@ -1,0 +1,48 @@
+{
+  "url": "https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=6&postid=Doda_1221956&tab=post#tab",
+  "success": true,
+  "recordTitle": "Olga Henriette",
+  "recordType": "Death records",
+  "recordData": {
+    "The deceased": {
+      "text": "Olga Henriette"
+    },
+    "Place of residence": {
+      "text": "Hannover 17"
+    },
+    "Parish": {
+      "text": "Helsingborg Stad"
+    },
+    "Date": {
+      "text": "1890-01-06 (död)"
+    },
+    "Age": {
+      "text": "7 month(-s) 13 day(-s)"
+    },
+    "Cause of death": {
+      "text": "bronchitis capillaris"
+    },
+    "Relative's name": {
+      "text": "fader Möller Nielsen, Jörginius"
+    },
+    "Relative's occupation": {
+      "text": "murare"
+    },
+    "Note": {
+      "text": "Moder:Severina Paulina Johnsson hfl s 1269,3"
+    },
+    "Archive": {
+      "text": "Helsingborgs stadsförsamlings (Maria) kyrkoarkiv (SE/LLA/13171)"
+    },
+    "Volume": {
+      "text": "F I:8"
+    },
+    "Register": {
+      "text": "Dödregister - Skåne, Blekinge och Hallands län"
+    },
+    "Created by": {
+      "text": "Riksarkivet i Lund"
+    }
+  },
+  "imageLink": "https://sok.riksarkivet.se/bildvisning/00124973"
+}

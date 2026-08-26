@@ -1,0 +1,36 @@
+{
+  "url": "https://sok.riksarkivet.se/en?Sokord=lars&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=34&postid=Bouppteckningar_24AB01CD-D91E-487F-909F-AC8C76A59452-0310A21F-B472-4E35-9A47-FAFDA24BF17F&tab=post#tab",
+  "success": true,
+  "recordTitle": "Lars",
+  "recordType": "Inventory of estates",
+  "recordData": {
+    "Name": {
+      "text": "Lars"
+    },
+    "Place of residence": {
+      "text": "Fjälls Stora"
+    },
+    "Home parish": {
+      "text": "Endre"
+    },
+    "Year": {
+      "text": "1736-11-18"
+    },
+    "Note": {
+      "text": "Med resolution etc."
+    },
+    "Archive": {
+      "text": "Gotlands norra häradsrätts arkiv (-1899) (SE/ViLA/20056)"
+    },
+    "Volume": {
+      "text": "F 2 A:9, nr 372"
+    },
+    "Register": {
+      "text": "Bouppteckningsregister - Landsarkivet i Visby"
+    },
+    "Created by": {
+      "text": "Landsarkivet i Visby"
+    }
+  },
+  "imageLink": "https://sok.riksarkivet.se/bildvisning/J0000092_00171"
+}

@@ -1,0 +1,97 @@
+{
+  "url": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564745&tab=post#tab",
+  "success": true,
+  "recordTitle": "Johansson, Anders Peter",
+  "recordType": "Census 1880",
+  "recordData": {
+    "Name": {
+      "text": "Johansson, Anders Peter"
+    },
+    "Home parish": {
+      "text": "Hellstad"
+    },
+    "Place of residence": {
+      "text": "Hellstad Påfvag. 1 mtl"
+    },
+    "Deanery": {
+      "text": "Åhs"
+    },
+    "County": {
+      "text": "Älvsborg"
+    },
+    "Birth year": {
+      "text": "1829"
+    },
+    "Birth parish": {
+      "text": "Hällstad Älvsborgs län"
+    },
+    "Occupation": {
+      "text": "Hemmansägare"
+    },
+    "Marital status": {
+      "text": "Gift"
+    },
+    "Gender": {
+      "text": "Man"
+    },
+    "Family status code": {
+      "text": "Far/man"
+    },
+    "Family no": {
+      "text": "1"
+    },
+    "Page": {
+      "text": "17"
+    },
+    "Row": {
+      "text": "33"
+    },
+    "Created by": {
+      "text": "Riksarkivet SVAR-Svensk arkivinformation"
+    },
+    "About the household": {
+      "text": "Persons in the household"
+    },
+    "Fam. no 1": {
+      "multipleValues": [
+        {
+          "text": "Johansson, Anders Peter, b. 1829 in Hällstad Älvsborgs län",
+          "italicEndText": "Hemmansägare"
+        },
+        {
+          "text": "Svensdotter, Maja Stina, b. 1833 in Hällstad Älvsborgs län",
+          "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564746&tab=post#tab"
+        },
+        {
+          "text": "Alexander, b. 1854 in Hällstad Älvsborgs län",
+          "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564747&tab=post#tab"
+        },
+        {
+          "text": "Anna Mathilda, b. 1857 in Hällstad Älvsborgs län",
+          "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564748&tab=post#tab"
+        },
+        {
+          "text": "Josefina, b. 1861 in Hällstad Älvsborgs län",
+          "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564749&tab=post#tab"
+        },
+        {
+          "text": "Johan Albert, b. 1864 in Hällstad Älvsborgs län",
+          "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564750&tab=post#tab"
+        },
+        {
+          "text": "Klas Wilhelm, b. 1867 in Hällstad Älvsborgs län",
+          "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564751&tab=post#tab"
+        },
+        {
+          "text": "Karl Edgar, b. 1869 in Hällstad Älvsborgs län",
+          "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564752&tab=post#tab"
+        },
+        {
+          "text": "Selma Elisabeth, b. 1874 in Hällstad Älvsborgs län",
+          "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564753&tab=post#tab"
+        }
+      ]
+    }
+  },
+  "imageLink": "https://sok.riksarkivet.se/bildvisning/Folk_815089-017"
+}

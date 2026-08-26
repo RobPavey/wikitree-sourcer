@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "riksark",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Johansson",
+    "forenames": "Anders Peter"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "placeString": "Hellstad, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Hellstad"
+  },
+  "birthDate": {
+    "dateString": "1829"
+  },
+  "birthPlace": {
+    "placeString": "Hällstad Älvsborgs län, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Hällstad Älvsborgs län"
+  },
+  "maritalStatus": "married",
+  "occupation": "Hemmansägare",
+  "hasValidData": true
+}

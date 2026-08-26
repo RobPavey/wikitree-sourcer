@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Lars''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/en?Sokord=lars&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=34&postid=Bouppteckningar_24AB01CD-D91E-487F-909F-AC8C76A59452-0310A21F-B472-4E35-9A47-FAFDA24BF17F&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nLars.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Lars was in a record.<ref>\n'''Record of Lars''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/en?Sokord=lars&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=34&postid=Bouppteckningar_24AB01CD-D91E-487F-909F-AC8C76A59452-0310A21F-B472-4E35-9A47-FAFDA24BF17F&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nLars.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Lars''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://sok.riksarkivet.se/en?Sokord=lars&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=34&postid=Bouppteckningar_24AB01CD-D91E-487F-909F-AC8C76A59452-0310A21F-B472-4E35-9A47-FAFDA24BF17F&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>Lars.",
+    "type": "source"
+  }
+}

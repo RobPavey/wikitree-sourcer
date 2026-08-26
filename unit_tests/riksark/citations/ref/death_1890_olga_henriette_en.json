@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=6&postid=Doda_1221956&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nOlga Henriette death 6 Jan 1890 in Helsingborg Stad, Sweden.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Olga died on 6 January 1890 in Helsingborg Stad, Sweden.<ref>\n'''Death''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=6&postid=Doda_1221956&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nOlga Henriette death 6 Jan 1890 in Helsingborg Stad, Sweden.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=6&postid=Doda_1221956&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>Olga Henriette death 6 Jan 1890 in Helsingborg Stad, Sweden.",
+    "type": "source"
+  }
+}

@@ -82,6 +82,7 @@ import "../../panb/core/panb_site_data.mjs";
 import "../../ppnz/core/ppnz_site_data.mjs";
 import "../../psuk/core/psuk_site_data.mjs";
 import "../../qldbdm/core/qldbdm_site_data.mjs";
+import "../../riksark/core/riksark_site_data.mjs";
 import "../../scotp/core/scotp_site_data.mjs";
 import "../../sosmogov/core/sosmogov_site_data.mjs";
 import "../../szukaj/core/szukaj_site_data.mjs";

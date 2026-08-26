@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&DatumFran=1820&DatumTill=1860&AvanceradSok=true&page=45&postid=Vigsel_22716&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nAnd Pet Johansson marriage to Anna Susanna Pehrsdotter on 3 Jun 1844 in Resele, Sweden.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "And married Anna Susanna Pehrsdotter on 3 June 1844 in Resele, Sweden.<ref>\n'''Marriage''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&DatumFran=1820&DatumTill=1860&AvanceradSok=true&page=45&postid=Vigsel_22716&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nAnd Pet Johansson marriage to Anna Susanna Pehrsdotter on 3 Jun 1844 in Resele, Sweden.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&DatumFran=1820&DatumTill=1860&AvanceradSok=true&page=45&postid=Vigsel_22716&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>And Pet Johansson marriage to Anna Susanna Pehrsdotter on 3 Jun 1844 in Resele, Sweden.",
+    "type": "source"
+  }
+}

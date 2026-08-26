@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "riksark",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "name": "Olga Henriette"
+  },
+  "eventPlace": {
+    "placeString": "Helsingborg Stad, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Helsingborg Stad"
+  },
+  "deathDate": {
+    "dateString": "1890-01-06"
+  },
+  "deathPlace": {
+    "placeString": "Helsingborg Stad, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Helsingborg Stad"
+  },
+  "hasValidData": true
+}

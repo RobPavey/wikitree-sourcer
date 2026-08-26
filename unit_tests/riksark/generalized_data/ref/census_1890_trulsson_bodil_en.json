@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "riksark",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Trulsson",
+    "forenames": "Bodil"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "placeString": "Grydts, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Grydts"
+  },
+  "birthDate": {
+    "dateString": "1819"
+  },
+  "birthPlace": {
+    "placeString": "Knislinge Kristianstads län, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Knislinge Kristianstads län"
+  },
+  "maritalStatus": "married",
+  "occupation": "Åbo",
+  "hasValidData": true
+}

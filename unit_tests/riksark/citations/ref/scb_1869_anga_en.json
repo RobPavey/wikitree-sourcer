@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1860 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/?Sokord=f%C3%B6rsamlingsutdrag&EndastDigitaliserat=false&TranskriberadText=false&Fritext=f%C3%B6rsamlingsutdrag&DatumFran=1860&DatumTill=1860&AvanceradSok=true&page=4&postid=Scb_827143&tab=post Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nUnknown in Anga, Sweden.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1860 census unknown was in Anga, Sweden.<ref>\n'''1860 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/?Sokord=f%C3%B6rsamlingsutdrag&EndastDigitaliserat=false&TranskriberadText=false&Fritext=f%C3%B6rsamlingsutdrag&DatumFran=1860&DatumTill=1860&AvanceradSok=true&page=4&postid=Scb_827143&tab=post Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nUnknown in Anga, Sweden.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1860 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://sok.riksarkivet.se/?Sokord=f%C3%B6rsamlingsutdrag&EndastDigitaliserat=false&TranskriberadText=false&Fritext=f%C3%B6rsamlingsutdrag&DatumFran=1860&DatumTill=1860&AvanceradSok=true&page=4&postid=Scb_827143&tab=post Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>Unknown in Anga, Sweden.",
+    "type": "source"
+  }
+}

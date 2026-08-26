@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/en?Sokord=bodil&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=77&postid=Folk_102052652&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nBodil Trulsson, married, Åbo, in Grydts, Sweden. Born 1819 in Knislinge Kristianstads län, Sweden.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Bodil was in a record in Grydts, Sweden.<ref>\n'''Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/en?Sokord=bodil&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=77&postid=Folk_102052652&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nBodil Trulsson, married, Åbo, in Grydts, Sweden. Born 1819 in Knislinge Kristianstads län, Sweden.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://sok.riksarkivet.se/en?Sokord=bodil&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=77&postid=Folk_102052652&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>Bodil Trulsson, married, Åbo, in Grydts, Sweden. Born 1819 in Knislinge Kristianstads län, Sweden.",
+    "type": "source"
+  }
+}

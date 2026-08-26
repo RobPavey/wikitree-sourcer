@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=7&postid=Fodelse_1621999&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nOlga Henriette born on 22 May 1889, child of Jörginus Möller Nielsen & Severina Paulina Johnsson, in Helsingborg Stad, Sweden.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Olga, child of Jörginus Möller Nielsen & Severina Paulina Johnsson, was born on 22 May 1889 in Helsingborg Stad, Sweden.<ref>\n'''Birth''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=7&postid=Fodelse_1621999&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nOlga Henriette born on 22 May 1889, child of Jörginus Möller Nielsen & Severina Paulina Johnsson, in Helsingborg Stad, Sweden.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=7&postid=Fodelse_1621999&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>Olga Henriette born on 22 May 1889, child of Jörginus Möller Nielsen & Severina Paulina Johnsson, in Helsingborg Stad, Sweden.",
+    "type": "source"
+  }
+}

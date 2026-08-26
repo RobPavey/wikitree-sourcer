@@ -1,0 +1,30 @@
+{
+  "url": "https://sok.riksarkivet.se/?Sokord=f%C3%B6rsamlingsutdrag&EndastDigitaliserat=false&TranskriberadText=false&Fritext=f%C3%B6rsamlingsutdrag&DatumFran=1860&DatumTill=1860&AvanceradSok=true&page=4&postid=Scb_827143&tab=post",
+  "success": true,
+  "recordTitle": "Anga, Församlingsutdrag 1860",
+  "recordType": "Register till SCB",
+  "recordData": {
+    "Församling": {
+      "text": "Anga"
+    },
+    "Län": {
+      "text": "Gotlands län"
+    },
+    "Innehåll": {
+      "text": "Församlingsutdrag"
+    },
+    "Årtal": {
+      "text": "1860"
+    },
+    "Arkiv": {
+      "text": "Statistiska Centralbyrån (SCB) - samlingspost (SE/RA/420401)"
+    },
+    "Volymens referenskod": {
+      "text": "SE/RA/420401/03/H 1 A/48"
+    },
+    "Upprättad av": {
+      "text": "Riksarkivet SVAR-Svensk arkivinformation"
+    }
+  },
+  "imageLink": "https://sok.riksarkivet.se/bildvisning/A0056053_00260"
+}

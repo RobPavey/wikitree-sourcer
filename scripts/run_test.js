@@ -75,6 +75,7 @@ const siteNames = [
   "ppnz",
   "psuk",
   "qldbdm",
+  "riksark",
   "scotp",
   "sosmogov",
   "szukaj",

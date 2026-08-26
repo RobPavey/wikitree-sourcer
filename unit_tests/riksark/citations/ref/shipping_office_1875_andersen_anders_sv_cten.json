@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Anders Namn Andersen''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/?Sokord=Anders+andersen&page=10&postid=Sjoman_liggare_200626&tab=post Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nAnders Namn Andersen.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Anders was in a record.<ref>\n'''Record of Anders Namn Andersen''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/?Sokord=Anders+andersen&page=10&postid=Sjoman_liggare_200626&tab=post Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nAnders Namn Andersen.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Anders Namn Andersen''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://sok.riksarkivet.se/?Sokord=Anders+andersen&page=10&postid=Sjoman_liggare_200626&tab=post Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>Anders Namn Andersen.",
+    "type": "source"
+  }
+}

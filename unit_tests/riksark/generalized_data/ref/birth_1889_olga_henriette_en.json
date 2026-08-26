@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "riksark",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "name": "Olga Henriette"
+  },
+  "eventPlace": {
+    "placeString": "Helsingborg Stad, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Helsingborg Stad"
+  },
+  "birthDate": {
+    "dateString": "1889-05-22"
+  },
+  "birthPlace": {
+    "placeString": "Helsingborg Stad, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Helsingborg Stad"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Möller Nielsen",
+        "forenames": "Jörginus"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Johnsson",
+        "forenames": "Severina Paulina"
+      }
+    }
+  },
+  "hasValidData": true
+}

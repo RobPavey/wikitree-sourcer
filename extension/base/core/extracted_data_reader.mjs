@@ -200,7 +200,7 @@ class ExtractedDataReader {
   }
 
   getMaritalStatus() {
-    return "";
+    return this.getValueUsingRecordTypeData("maritalStatus");
   }
 
   getOccupation() {
@@ -291,7 +291,7 @@ class ExtractedDataReader {
       if (this.recordType == RT.Marriage || this.recordType == RT.MarriageRegistration) {
         eventDateObj = this.getEventDateObj();
         eventPlaceObj = this.getEventPlaceObj();
-        age = this.getAgeAtEvent();
+        age = this.getValueUsingRecordTypeData("spouseAge");
       }
 
       return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age)];
@@ -406,10 +406,17 @@ class ExtractedDataReader {
     let fullName = this.getValueUsingRecordTypeData(fullNameKey);
 
     if (fullName) {
-      if (advanced && advanced.inFullNameLastNamesIsInUpperCase) {
-        let parts = NameUtils.convertFullNameWithLastNameInUpperCaseToForenamesAndLastNames(fullName);
-        if (parts.success) {
-          return this.makeNameObjFromForenamesAndLastName(parts.forenames, parts.lastName);
+      if (advanced) {
+        if (advanced.inFullNameLastNamesIsInUpperCase) {
+          let parts = NameUtils.convertFullNameWithLastNameInUpperCaseToForenamesAndLastNames(fullName);
+          if (parts.success) {
+            return this.makeNameObjFromForenamesAndLastName(parts.forenames, parts.lastName);
+          }
+        } else if (advanced.fullNameCanBeLastNameCommaForenames) {
+          let nameObj = this.makeNameObjFromLastNameCommaForenames(fullName);
+          if (nameObj) {
+            return nameObj;
+          }
         }
       }
       return this.makeNameObjFromFullName(fullName);

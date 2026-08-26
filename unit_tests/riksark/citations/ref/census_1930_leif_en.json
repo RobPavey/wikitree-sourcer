@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505852&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nLeif, single, in Undersåker med Järpens m:e, Sweden. Born 1920.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Leif was in a record in Undersåker med Järpens m:e, Sweden.<ref>\n'''Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505852&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nLeif, single, in Undersåker med Järpens m:e, Sweden. Born 1920.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505852&tab=post#tab Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>Leif, single, in Undersåker med Järpens m:e, Sweden. Born 1920.",
+    "type": "source"
+  }
+}

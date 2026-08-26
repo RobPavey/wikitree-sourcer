@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "riksark",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Johansson",
+    "forenames": "And Pet"
+  },
+  "eventDate": {
+    "dateString": "1844-06-03"
+  },
+  "eventPlace": {
+    "placeString": "Resele, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Resele"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Pehrsdotter",
+        "forenames": "Anna Susanna"
+      },
+      "marriageDate": {
+        "dateString": "1844-06-03"
+      },
+      "marriagePlace": {
+        "placeString": "Resele, Sweden",
+        "country": "Sweden",
+        "extractedPlaceString": "Resele"
+      }
+    }
+  ],
+  "hasValidData": true
+}

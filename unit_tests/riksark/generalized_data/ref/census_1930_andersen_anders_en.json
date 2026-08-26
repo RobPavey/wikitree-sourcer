@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "riksark",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Andersen",
+    "forenames": "Anders"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "placeString": "Vätö, Sweden",
+    "country": "Sweden",
+    "extractedPlaceString": "Vätö"
+  },
+  "birthDate": {
+    "dateString": "1877"
+  },
+  "maritalStatus": "single",
+  "occupation": "Stenhuggare",
+  "hasValidData": true
+}
