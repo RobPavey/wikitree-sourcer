@@ -1,6 +1,9 @@
 {
   "sourceOfData": "riksark",
   "sourceType": "image",
-  "recordType": "Unclassified",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1880"
+  },
   "hasValidData": true
 }

@@ -278,7 +278,7 @@ class RiksarkEdReader extends ExtractedDataReader {
       if (ed.imageType == "archive") {
       } else if (ed.imageType == "dataset") {
         if (ed.imageDatasetName.startsWith("Census") || ed.imageDatasetName.startsWith("Folkräkning")) {
-          ed.recordType = RT.Census;
+          this.recordType = RT.Census;
           const regex = /\w+\s+(\d\d\d\d)/;
           const match = ed.imageDatasetName.match(regex);
           if (match) {
