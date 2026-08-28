@@ -24,9 +24,7 @@ SOFTWARE.
 
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
-function extractData(document, url) {
-  let result = { url: url, success: false };
-
+function extractRecord(document, url, result) {
   const resultListDiv = document.querySelector("#resultlist");
   if (!resultListDiv) {
     return result;
@@ -129,7 +127,104 @@ function extractData(document, url) {
     result.imageLink = imageLinkElement.getAttribute("href");
   }
 
+  result.pageType = "record";
   result.success = true;
+  return result;
+}
+
+function extractImage(document, url, result) {
+  const imageTitleElement = document.querySelector("div.mainPanel > div.centerPanel > h1.title");
+  if (!imageTitleElement) {
+    return result;
+  }
+
+  const imageContentElement = document.querySelector("#content > div.viewer");
+  if (!imageContentElement) {
+    return result;
+  }
+
+  result.pageType = "image";
+
+  let title = imageTitleElement.textContent.trim();
+  if (title) {
+    result.imageTitle = title;
+    // the title is fairly freeform. e.g:
+    // Folkräkning 1880 - Hällestads församling, Älvsborgs län
+    // Gotlands norra häradsrätts arkiv (-1899), Bouppteckningar, "lösa serien", SE/ViLA/20056/F 2 A/9 (1735-1737)
+    // Helsingborgs stadsförsamlings (Maria) kyrkoarkiv, Födelse- och dopböcker, SE/LLA/13171/C I/15 (1887-1889)
+
+    // first check for am archive reference code.
+    const archiveCodeIndex = title.search(/SE\/[A-Z]{3}\/\d/);
+    if (archiveCodeIndex != -1) {
+      result.imageType = "archive";
+      let part1 = title.substring(0, archiveCodeIndex).trim();
+      let part2 = title.substring(archiveCodeIndex).trim();
+      if (part1) {
+        const commaIndex = part1.indexOf(",");
+        if (commaIndex !== -1) {
+          result.imageArchiveName = part1
+            .substring(0, commaIndex)
+            .replace(/\s*,\s*$/, "")
+            .trim();
+          result.imageCollectionName = part1
+            .substring(commaIndex + 1)
+            .replace(/\s*,\s*$/, "")
+            .trim();
+        } else {
+          // Fallback if there's no comma at all
+          result.imageCollectionName = part1.trim();
+        }
+      }
+      if (part2) {
+        // Capture Group 1: The archive code (e.g., SE/LLA/13171/C I/15)
+        // Capture Group 2: The date range including parentheses (e.g., (1887-1889))
+        const match = part2.match(/^(SE\/[A-Z]{3}\/[\dA-Za-z \/]+?)\s*(\([\d\-]+\))?$/);
+
+        if (match) {
+          let archiveCode = match[1] ? match[1].trim() : "";
+          let dateRange = match[2] ? match[2].trim() : "";
+
+          result.imageArchiveCode = archiveCode;
+          result.imageDateRange = dateRange; // if you want to store the dates too
+        }
+      }
+    } else {
+      result.imageType = "dataset";
+      const hyphenIndex = title.indexOf("-");
+      if (hyphenIndex !== -1) {
+        result.imageDatasetName = title.substring(0, hyphenIndex).trim();
+        result.imageLocation = title.substring(hyphenIndex + 1).trim();
+      } else {
+        // Fallback if there's no hyphen at all
+        result.imageLocation = title.trim();
+      }
+    }
+  }
+
+  const imageSelect = document.querySelector("select.image-selectionbox");
+  if (imageSelect) {
+    const selectedText = imageSelect.selectedOptions[0].text;
+    result.imageNumber = selectedText;
+  }
+
+  result.success = true;
+  return result;
+}
+
+function extractData(document, url) {
+  let result = { url: url, success: false };
+
+  const resultListDiv = document.querySelector("#resultlist");
+  if (resultListDiv) {
+    return extractRecord(document, url, result);
+  }
+
+  const imageTitleElement = document.querySelector("div.mainPanel > div.centerPanel > h1.title");
+  const imageContentElement = document.querySelector("#content > div.viewer");
+  if (imageTitleElement && imageContentElement) {
+    return extractImage(document, url, result);
+  }
+
   return result;
 }
 

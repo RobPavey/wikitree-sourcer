@@ -86,6 +86,20 @@ const regressionData = [
     caseName: "shipping_office_1875_andersen_anders_sv_cten",
     url: "https://sok.riksarkivet.se/?Sokord=Anders+andersen&page=10&postid=Sjoman_liggare_200626&tab=post",
   },
+
+  // image pages
+  {
+    caseName: "zz_birth_1889_helsingborg_sv",
+    url: "https://sok.riksarkivet.se/bildvisning/00124893_00001#?xywh=-23%2C-863%2C3047%2C3856",
+  },
+  {
+    caseName: "zz_census_1880_hallestad_alvsborg_en",
+    url: "https://sok.riksarkivet.se/bildvisning/Folk_815089-017#?cv=16&xywh=-986%2C0%2C2771%2C1360",
+  },
+  {
+    caseName: "zz_census_1880_hallestad_alvsborg_sv",
+    url: "https://sok.riksarkivet.se/bildvisning/Folk_815089-017#?cv=16&xywh=-986%2C0%2C2771%2C1360",
+  },
 ];
 
 async function runTests(testManager) {

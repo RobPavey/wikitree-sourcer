@@ -256,21 +256,37 @@ const unclassifiedTypeData = {
 class RiksarkEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
-    this.baseRecordTypeData = baseRecordTypeData;
 
-    let matchConfig = {
-      type: {
-        matchType: ExtractedDataReader.MatchType.EqualsOneOf,
-        value: ed.recordType,
-      },
-    };
+    if (ed.pageType == "record") {
+      this.baseRecordTypeData = baseRecordTypeData;
 
-    let recordTypeData = this.getRecordTypeMatch(recordTypes, matchConfig);
-    if (recordTypeData) {
-      this.recordTypeData = recordTypeData;
-      this.recordType = recordTypeData.recordType;
-    } else {
-      this.recordTypeData = unclassifiedTypeData;
+      let matchConfig = {
+        type: {
+          matchType: ExtractedDataReader.MatchType.EqualsOneOf,
+          value: ed.recordType,
+        },
+      };
+
+      let recordTypeData = this.getRecordTypeMatch(recordTypes, matchConfig);
+      if (recordTypeData) {
+        this.recordTypeData = recordTypeData;
+        this.recordType = recordTypeData.recordType;
+      } else {
+        this.recordTypeData = unclassifiedTypeData;
+      }
+    } else if (ed.pageType == "image") {
+      if (ed.imageType == "archive") {
+      } else if (ed.imageType == "dataset") {
+        if (ed.imageDatasetName.startsWith("Census") || ed.imageDatasetName.startsWith("Folkräkning")) {
+          ed.recordType = RT.Census;
+          const regex = /\w+\s+(\d\d\d\d)/;
+          const match = ed.imageDatasetName.match(regex);
+          if (match) {
+            let year = match[1].trim();
+            this.imageYear = year;
+          }
+        }
+      }
     }
   }
 
@@ -279,6 +295,27 @@ class RiksarkEdReader extends ExtractedDataReader {
   // Note: there are default implementations in ExtractedDataReader and, if using a data-driven
   // style, you may not need to override them here.
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  getSourceType() {
+    if (this.ed.pageType == "record") {
+      return "record";
+    }
+    if (this.ed.pageType == "image") {
+      return "image";
+    }
+
+    return "unknown";
+  }
+
+  getEventDateObj() {
+    if (this.ed.pageType == "image") {
+      if (this.imageYear) {
+        return this.makeDateObjFromYear(this.imageYear);
+      }
+    } else {
+      return super.getEventDateObj();
+    }
+  }
 }
 
 export { RiksarkEdReader };
