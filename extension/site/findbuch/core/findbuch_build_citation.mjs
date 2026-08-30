@@ -53,6 +53,10 @@ function buildSourceReference(ed, gd, builder) {
     value += ", " + ed.attributes["signature"];
   }
 
+  if (ed.selection) {
+    value += ", Image " + ed.selection;
+  }
+
   builder.sourceReference = value.substring(2);
 }
 

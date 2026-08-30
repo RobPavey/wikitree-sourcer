@@ -31,7 +31,7 @@ const siteData = {
   usPhoneNumber: "",
   email: "",
   address: "",
-  baseUrl: "",
+  baseUrl: "https://www.findbuch.net/",
 };
 
 function register() {
