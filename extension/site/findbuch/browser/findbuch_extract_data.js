@@ -27,12 +27,29 @@ SOFTWARE.
 function extractData(document, url) {
   let result = { url: url, success: false };
 
-  /*
-  const items = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  if (items.length < 1) {
+  if (!url.match("findbuch.net/php/view.php")) {
     return result;
   }
-  */
+
+  let details = document.querySelector("div#viewer_left div#details div#details_fields");
+  result["attributes"] = {};
+
+  let key = null;
+  for (let element of details.children) {
+    if (key == null && element.nodeName == "DIV") {
+      key = element.textContent;
+    }
+    else if (element.nodeName == "DIV") {
+      result["attributes"][key] = element.textContent;
+      key = null;
+    }
+  }
+
+  let pageListing = document.querySelector("div#viewer_right div#liste table.full_width.viewer_right_table");
+  let currSelection = pageListing.querySelector("a[style=\"word-break: break-all; padding: 2px; border: 1px solid black; background: white; color: red;\"]");
+  if (currSelection) {
+    result["selection"] = currSelection.textContent;
+  }
 
   result.success = true;
   return result;
