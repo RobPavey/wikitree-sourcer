@@ -42,6 +42,7 @@ const siteNames = [
   "eggsabdm",
   "eggsagrvs",
   "fg",
+  "findbuch",
   "finistere",
   "fmp",
   "freebmd",
