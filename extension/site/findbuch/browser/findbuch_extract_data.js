@@ -37,10 +37,13 @@ function extractData(document, url) {
   let key = null;
   for (let element of details.children) {
     if (key == null && element.nodeName == "DIV") {
-      key = element.textContent;
+      key = element.textContent.trim();
+      if (key[key.length - 1] == ":") {
+        key = key.substring(0, key.length - 1).trim();
+      }
     }
     else if (element.nodeName == "DIV") {
-      result["attributes"][key] = element.textContent;
+      result["attributes"][key] = element.textContent.trim();
       key = null;
     }
   }
