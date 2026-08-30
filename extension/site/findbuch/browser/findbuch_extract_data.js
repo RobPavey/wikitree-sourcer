@@ -24,6 +24,13 @@ SOFTWARE.
 
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
+const KEY_TRANSFORMS = {
+  "Bestand": "collection",
+  "Datierung": "date-range",
+  "Titel": "title",
+  "Signatur": "signature",
+};
+
 function extractData(document, url) {
   let result = { url: url, success: false };
 
@@ -32,7 +39,7 @@ function extractData(document, url) {
   }
 
   let details = document.querySelector("div#viewer_left div#details div#details_fields");
-  result["attributes"] = {};
+  result.attributes = {};
 
   let key = null;
   for (let element of details.children) {
@@ -41,9 +48,11 @@ function extractData(document, url) {
       if (key[key.length - 1] == ":") {
         key = key.substring(0, key.length - 1).trim();
       }
+
+      key = KEY_TRANSFORMS[key];
     }
     else if (element.nodeName == "DIV") {
-      result["attributes"][key] = element.textContent.trim();
+      result.attributes[key] = element.textContent.trim();
       key = null;
     }
   }

@@ -29,11 +29,31 @@ function buildFindbuchUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = "Put Source Title here";
+  let value = "";
+
+  if (ed.attributes["title"]) {
+    value += ", " + ed.attributes["title"];
+  }
+
+  if (ed.attributes["date-range"]) {
+    value += "  (" + ed.attributes["date-range"] + ")";
+  }
+
+  builder.sourceTitle = value.substring(2);
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  let value = "";
+
+  if (ed.attributes["collection"]) {
+    value += ", " + ed.attributes["collection"];
+  }
+
+  if (ed.attributes["signature"]) {
+    value += ", " + ed.attributes["signature"];
+  }
+
+  builder.sourceReference = value.substring(2);
 }
 
 function buildRecordLink(ed, gd, builder) {
