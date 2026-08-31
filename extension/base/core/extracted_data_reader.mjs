@@ -933,6 +933,58 @@ class ExtractedDataReader {
     return true;
   }
 
+  testForStartsWithOneOf(matchConfig, matchValues) {
+    let value = matchConfig.value;
+    if (!value) {
+      return false;
+    }
+
+    if (!matchConfig.isCaseSensitive) {
+      value = value.toLowerCase();
+    }
+
+    let matchFound = false;
+    for (let matchValue of matchValues) {
+      if (!matchConfig.isCaseSensitive) {
+        matchValue = matchValue.toLowerCase();
+      }
+      if (value.startsWith(matchValue)) {
+        matchFound = true;
+        break;
+      }
+    }
+    if (!matchFound) {
+      return false;
+    }
+    return true;
+  }
+
+  testForIncludesOneOf(matchConfig, matchValues) {
+    let value = matchConfig.value;
+    if (!value) {
+      return false;
+    }
+
+    if (!matchConfig.isCaseSensitive) {
+      value = value.toLowerCase();
+    }
+
+    let matchFound = false;
+    for (let matchValue of matchValues) {
+      if (!matchConfig.isCaseSensitive) {
+        matchValue = matchValue.toLowerCase();
+      }
+      if (value.includes(matchValue)) {
+        matchFound = true;
+        break;
+      }
+    }
+    if (!matchFound) {
+      return false;
+    }
+    return true;
+  }
+
   testForStringIncludesAllFromOneSet(matchConfig, matchSets) {
     let value = matchConfig.value;
     if (!value) {
@@ -1058,6 +1110,8 @@ class ExtractedDataReader {
   // Defining the "enum" inside the class using static properties
   static MatchType = Object.freeze({
     EqualsOneOf: "EqualsOneOf",
+    StartsWithOneOf: "StartsWithOneOf",
+    IncludesOneOf: "IncludesOneOf",
     StringIncludesAllFromOneSet: "StringIncludesAllFromOneSet",
     ArrayIncludesAllFromOneSet: "ArrayIncludesAllFromOneSet",
     ObjectHasAllFromOneSet: "ObjectHasAllFromOneSet",
@@ -1082,6 +1136,12 @@ class ExtractedDataReader {
               switch (matchConfig.matchType) {
                 case ExtractedDataReader.MatchType.EqualsOneOf:
                   testPassed = this.testForEqualsOneOf(matchConfig, matchValues);
+                  break;
+                case ExtractedDataReader.MatchType.StartsWithOneOf:
+                  testPassed = this.testForStartsWithOneOf(matchConfig, matchValues);
+                  break;
+                case ExtractedDataReader.MatchType.IncludesOneOf:
+                  testPassed = this.testForIncludesOneOf(matchConfig, matchValues);
                   break;
                 case ExtractedDataReader.MatchType.StringIncludesAllFromOneSet:
                   testPassed = this.testForStringIncludesAllFromOneSet(matchConfig, matchValues);

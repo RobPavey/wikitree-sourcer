@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth or Baptism''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/bildvisning/00124893_00001#?xywh=-23%2C-863%2C3047%2C3856 Riksarkivet (Sweden) Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Unknown was born or baptised.<ref>\n'''Birth or Baptism''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/bildvisning/00124893_00001#?xywh=-23%2C-863%2C3047%2C3856 Riksarkivet (Sweden) Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth or Baptism''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://sok.riksarkivet.se/bildvisning/00124893_00001#?xywh=-23%2C-863%2C3047%2C3856 Riksarkivet (Sweden) Record] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

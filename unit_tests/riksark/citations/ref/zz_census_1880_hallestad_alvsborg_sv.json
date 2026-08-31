@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/bildvisning/Folk_815089-017#?cv=16&xywh=-986%2C0%2C2771%2C1360 Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nUnknown in 1880.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1880 census unknown was recorded.<ref>\n'''1880 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://sok.riksarkivet.se/bildvisning/Folk_815089-017#?cv=16&xywh=-986%2C0%2C2771%2C1360 Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>\nUnknown in 1880.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1880 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://sok.riksarkivet.se/bildvisning/Folk_815089-017#?cv=16&xywh=-986%2C0%2C2771%2C1360 Riksarkivet (Sweden) Record] (accessed 6 May 2021)<br/>Unknown in 1880.",
+    "type": "source"
+  }
+}

@@ -207,6 +207,21 @@ function extractImage(document, url, result) {
     result.imageNumber = selectedText;
   }
 
+  function getItemData(result, key, classNames) {
+    let itemElement = null;
+    for (let className of classNames) {
+      itemElement = document.querySelector(`div.item.${className}`);
+    }
+    if (itemElement) {
+      const valueElement = itemElement.querySelector("div.value");
+      if (valueElement) {
+        result[key] = valueElement.textContent.trim();
+      }
+    }
+  }
+
+  getItemData(result, "imageId", ["_image-_i_d", "_bildid"]);
+
   result.success = true;
   return result;
 }

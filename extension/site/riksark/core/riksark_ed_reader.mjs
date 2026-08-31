@@ -249,6 +249,72 @@ const baseRecordTypeData = {
   },
 };
 
+const imageArchiveRecordTypes = [
+  {
+    recordType: RT.BirthOrBaptism,
+    matchData: {
+      type: ["Födelse- och dopböcker"],
+    },
+  },
+  {
+    recordType: RT.Birth,
+    matchData: {
+      type: ["Födelse"],
+    },
+  },
+  {
+    recordType: RT.Baptism,
+    matchData: {
+      type: ["Dopböcker", "Dop"],
+    },
+  },
+  {
+    recordType: RT.Census,
+    matchData: {
+      type: ["Folkräkning", "Census"],
+    },
+  },
+  {
+    recordType: RT.Probate,
+    matchData: {
+      type: ["Bouppteckning", "Probate"],
+    },
+  },
+  {
+    recordType: RT.Marriage,
+    matchData: {
+      type: ["Vigsel", "Marriage"],
+    },
+  },
+  {
+    recordType: RT.Death,
+    matchData: {
+      type: ["Död", "Death"],
+    },
+  },
+  {
+    recordType: RT.Burial,
+    matchData: {
+      type: ["Begravning", "Burial"],
+    },
+  },
+  {
+    recordType: RT.Census,
+    matchData: {
+      type: ["Husförhör", "Församlingsbok"],
+    },
+  },
+];
+
+const imageDatasetRecordTypes = [
+  {
+    recordType: RT.Census,
+    matchData: {
+      type: ["Census", "Folkräkning"],
+    },
+  },
+];
+
 const unclassifiedTypeData = {
   recordType: RT.Unclassified,
 };
@@ -276,9 +342,36 @@ class RiksarkEdReader extends ExtractedDataReader {
       }
     } else if (ed.pageType == "image") {
       if (ed.imageType == "archive") {
+        let matchConfig = {
+          type: {
+            matchType: ExtractedDataReader.MatchType.IncludesOneOf,
+            value: ed.imageCollectionName,
+          },
+        };
+        let recordTypeData = this.getRecordTypeMatch(imageArchiveRecordTypes, matchConfig);
+        if (recordTypeData) {
+          this.recordTypeData = recordTypeData;
+          this.recordType = recordTypeData.recordType;
+        } else {
+          this.recordTypeData = unclassifiedTypeData;
+        }
       } else if (ed.imageType == "dataset") {
-        if (ed.imageDatasetName.startsWith("Census") || ed.imageDatasetName.startsWith("Folkräkning")) {
-          this.recordType = RT.Census;
+        let matchConfig = {
+          type: {
+            matchType: ExtractedDataReader.MatchType.StartsWithOneOf,
+            value: ed.imageDatasetName,
+          },
+        };
+
+        let recordTypeData = this.getRecordTypeMatch(imageDatasetRecordTypes, matchConfig);
+        if (recordTypeData) {
+          this.recordTypeData = recordTypeData;
+          this.recordType = recordTypeData.recordType;
+        } else {
+          this.recordTypeData = unclassifiedTypeData;
+        }
+
+        if (this.recordType == RT.Census) {
           const regex = /\w+\s+(\d\d\d\d)/;
           const match = ed.imageDatasetName.match(regex);
           if (match) {
