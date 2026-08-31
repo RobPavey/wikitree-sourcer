@@ -31,6 +31,10 @@ const KEY_TRANSFORMS = {
   "Signatur": "signature",
 };
 
+const ARCHIVE_NAME_TRANSFORM = {
+  "xn--kirchenbcher-sdtirol-wecg": "kirchenbücher-südtirol"
+};
+
 function extractData(document, url) {
   let result = { url: url, success: false };
 
@@ -62,6 +66,15 @@ function extractData(document, url) {
   if (currSelection) {
     result["selection"] = currSelection.textContent;
   }
+
+  // e.g. https://www.kirchenbücher-südtirol.findbuch.net/php/view.php?link=4b425f4c41545a464f4e535f4c415a464f4e53x1#&path=www.a-pics.findbuch.net/ks/W.._13_3._~ARCHIVALIEN_A._~AA6._~KIRCHENBUECHER._~KB_LATZFONS_LAZFONS._~197_03._~197_03_003.jpg
+
+  let archive_name = url.split(".")[1];
+  if (ARCHIVE_NAME_TRANSFORM[archive_name]) {
+    archive_name = ARCHIVE_NAME_TRANSFORM[archive_name];
+  }
+  result["archive-name"] = archive_name;
+
 
   result.success = true;
   return result;

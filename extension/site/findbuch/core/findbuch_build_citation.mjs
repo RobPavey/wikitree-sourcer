@@ -63,7 +63,12 @@ function buildSourceReference(ed, gd, builder) {
 function buildRecordLink(ed, gd, builder) {
   var findbuchUrl = buildFindbuchUrl(ed, builder);
 
-  let recordLink = "[" + findbuchUrl + " Findbuch.net Record]";
+  let archive = ed["archive-name"];
+  if (archive == undefined) {
+    archive = "findbuch.net";
+  }
+
+  let recordLink = "[" + findbuchUrl + " " + archive + " Record]";
   builder.recordLinkOrTemplate = recordLink;
 }
 
