@@ -25,6 +25,7 @@ SOFTWARE.
 // NOTE: Chrome does not support dynamic module import. But we want to keep the site details out
 // of the core code as much as possible.
 import * as ancestryContextModule from "../../../site/ancestry/core/ancestry_context.mjs";
+import * as ecppContextModule from "../../../site/ecpp/core/ecpp_context.mjs";
 import * as fgContextModule from "../../../site/fg/core/fg_context.mjs";
 import * as fmpContextModule from "../../../site/fmp/core/fmp_context.mjs";
 import * as fsContextModule from "../../../site/fs/core/fs_context.mjs";
@@ -41,6 +42,7 @@ import * as wikitreeContextModule from "../../../site/wikitree/core/wikitree_con
 
 let contextModules = {
   ancestry: ancestryContextModule,
+  ecpp: ecppContextModule,
   fg: fgContextModule,
   fmp: fmpContextModule,
   fs: fsContextModule,
