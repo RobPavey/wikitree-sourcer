@@ -194,9 +194,9 @@ function getSharingPageRefTitle(titleCollection) {
 function modifyValueForUrl(builder, value) {
   let target = builder.getOptions().citation_general_target;
 
-  if (value.startsWith("https://www.findagrave.com/memorial")) {
+  if (value.includes("findagrave.com/memorial")) {
     if (target == "wikitree") {
-      let memorialId = value.replace(/^https\:\/\/www\.findagrave\.com\/memorial\/(\d+)\/.*$/, "$1");
+      let memorialId = value.replace(/^https\:\/\/\w+\.findagrave\.com\/memorial\/(\d+)\/.*$/, "$1");
       if (memorialId && memorialId != value) {
         return "{{FindAGrave|" + memorialId + "}}";
       }
