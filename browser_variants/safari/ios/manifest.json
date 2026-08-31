@@ -139,7 +139,7 @@
     "*://www.arcinsys.niedersachsen.de/*",
     "*://www.digitale-sammlungen.de/*",
     "*://www.doew.at/*",
-    "*://www.findagrave.com/*",
+    "*://*.findagrave.com/*",
     "*://www.freecen.org.uk/*",
     "*://www.freereg.org.uk/*",
     "*://www.gda.bayern.de/*",
