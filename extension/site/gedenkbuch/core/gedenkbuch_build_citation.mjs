@@ -29,17 +29,17 @@ function buildGedenkbuchUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = "Put Source Title here";
+  // builder.sourceTitle = "Put Source Title here";
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  builder.sourceReference = "Gedenkbuch des Bundesarchivs, " + ed.name;
 }
 
 function buildRecordLink(ed, gd, builder) {
   var gedenkbuchUrl = buildGedenkbuchUrl(ed, builder);
 
-  let recordLink = "[" + gedenkbuchUrl + " Bundesarchiv Gedenkbuch Record]";
+  let recordLink = "[" + gedenkbuchUrl + " Database]";
   builder.recordLinkOrTemplate = recordLink;
 }
 

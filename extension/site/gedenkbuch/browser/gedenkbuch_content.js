@@ -139,6 +139,11 @@ async function doPendingSearch() {
     // insert code here to do the search by filling out the form and submitting it
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+    document.querySelector("input[id=\"mainForm:j_idt130:searchTerm_field:searchTerm\"]").value = fieldData.name;
+    
+    let button = document.querySelector("button[id=\"mainForm:j_idt130:searchBtn\"]");
+    button.click();
+
     // clear the pending data so that we don't use it again on refine search
     pendingSearchData = undefined;
   }

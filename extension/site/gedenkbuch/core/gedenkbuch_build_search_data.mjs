@@ -39,6 +39,10 @@ function buildSearchData(input) {
   // - extension/site/nswbdm/core/nswbdm_build_search_data.mjs
   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+  if (gd.name) {
+    fieldData.name = gd.name.inferFullName();
+  }
+
   //console.log("fieldData is:");
   //console.log(fieldData);
 

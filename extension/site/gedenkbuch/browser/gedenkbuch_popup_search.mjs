@@ -30,9 +30,9 @@ import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_sear
 
 const searchMenuConfig = {
   siteName: "gedenkbuch",
-  siteDisplayName: "Bundesarchiv Gedenkbuch",
+  siteDisplayName: "Bundesarchiv Memorial Book",
   localStorageConfig: {
-    searchUrl: "https://put_your_search_url_here",
+    searchUrl: "https://apps.bundesarchiv.de/gedenkbuch/",
   },
   defaultMenuItem: {
     menuItemText: "Search Bundesarchiv Gedenkbuch",
