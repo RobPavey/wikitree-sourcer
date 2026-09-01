@@ -35,6 +35,49 @@ class GedenkbuchEdReader extends ExtractedDataReader {
   // Note: there are default implementations in ExtractedDataReader and, if using a data-driven
   // style, you may not need to override them here.
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  getNameObj() {
+    let parts = this.ed.name.split(",");
+    return this.makeNameObjFromForenamesAndLastName(parts[1].trim(), parts[0].trim());
+  }
+
+  getBirthDateObj() {
+    let dateString = this.ed.birth_date;
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
+    return undefined;
+  }
+
+  getBirthPlaceObj() {
+    let placeString = this.ed.birth_place;
+
+    if (placeString || this.recordType == RT.Birth || this.recordType == RT.BirthRegistration) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
+    return undefined;
+  }
+
+  getResidencePlaceObj() {
+    let placeString = this.ed.residence;
+
+    if (placeString) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
+    return undefined;
+  }
+
 }
 
 export { GedenkbuchEdReader };
