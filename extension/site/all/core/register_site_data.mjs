@@ -57,6 +57,7 @@ import "../../freecen/core/freecen_site_data.mjs";
 import "../../freereg/core/freereg_site_data.mjs";
 import "../../fs/core/fs_site_data.mjs";
 import "../../gbooks/core/gbooks_site_data.mjs";
+import "../../gedenkbuch/core/gedenkbuch_site_data.mjs";
 import "../../geneteka/core/geneteka_site_data.mjs";
 import "../../gensau/core/gensau_site_data.mjs";
 import "../../gro/core/gro_site_data.mjs";
