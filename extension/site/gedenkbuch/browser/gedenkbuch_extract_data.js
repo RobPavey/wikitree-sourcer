@@ -28,8 +28,12 @@ function extractData(document, url) {
   let result = { url: url, success: false };
 
   result.name = document.querySelector('span[id=\"fieldset_gedenkbuch_data:personName:personName\"]').textContent.trim();
+
   result.birth_date = document.querySelector('span[id=\"fieldset_gedenkbuch_data:geborenAmDate\"]').textContent.trim();
   result.birth_place = (" " + document.querySelector('span[id=\"fieldset_gedenkbuch_data:geborenIn:text\"]').textContent).replaceAll(" in ", "").trim();
+
+  result.death_date = document.querySelector('span[id=\"fieldset_gedenkbuch_data:j_idt415:todesdatum\"]').textContent.trim();
+  result.death_place = (" " + document.querySelector('span[id=\"fieldset_gedenkbuch_data:j_idt485:todesort\"]').textContent).replaceAll(" in ", "").trim();
 
   let residence = document.querySelector('span[id=\"fieldset_gedenkbuch_data:wohnort\"]').textContent.trim();
   residence = (" " + residence.replace("wohnhaft", "").replace("residing", "")).replaceAll(" in ", "").replaceAll("  ", " ").trim();

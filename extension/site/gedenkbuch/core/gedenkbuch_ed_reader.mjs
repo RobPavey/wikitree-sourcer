@@ -66,6 +66,31 @@ class GedenkbuchEdReader extends ExtractedDataReader {
     return undefined;
   }
 
+  getDeathDateObj() {
+    let dateString = this.ed.death_date;
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
+    return undefined;
+  }
+
+  getDeathPlaceObj() {
+    let placeString = this.ed.death_place;
+
+    if (placeString || this.recordType == RT.Birth || this.recordType == RT.BirthRegistration) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
+    return undefined;
+  }
+
   getResidencePlaceObj() {
     let placeString = this.ed.residence;
 
