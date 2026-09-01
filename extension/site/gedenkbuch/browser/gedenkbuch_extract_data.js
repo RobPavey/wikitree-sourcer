@@ -27,12 +27,13 @@ SOFTWARE.
 function extractData(document, url) {
   let result = { url: url, success: false };
 
-  /*
-  const items = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  if (items.length < 1) {
-    return result;
-  }
-  */
+  result.name = document.querySelector('span[id=\"fieldset_gedenkbuch_data:personName:personName\"]').textContent.trim();
+  result.birth_date = document.querySelector('span[id=\"fieldset_gedenkbuch_data:geborenAmDate\"]').textContent.trim();
+  result.birth_place = (" " + document.querySelector('span[id=\"fieldset_gedenkbuch_data:geborenIn:text\"]').textContent).replaceAll(" in ", "").trim();
+
+  let residence = document.querySelector('span[id=\"fieldset_gedenkbuch_data:wohnort\"]').textContent.trim();
+  residence = (" " + residence.replace("wohnhaft", "").replace("residing", "")).replaceAll(" in ", "").replaceAll("  ", " ").trim();
+  result.residence = residence;
 
   result.success = true;
   return result;
