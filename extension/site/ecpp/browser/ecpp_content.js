@@ -232,6 +232,8 @@ function additionalMessageHandler(request, sender, sendResponse) {
 }
 
 async function checkForSearchThenInit() {
+  registerTabWithBackground();
+
   checkForPendingSearch();
 
   siteContentInit(
