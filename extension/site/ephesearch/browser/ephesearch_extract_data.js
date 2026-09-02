@@ -27,12 +27,74 @@ SOFTWARE.
 function extractData(document, url) {
   let result = { url: url, success: false };
 
-  /*
-  const items = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  if (items.length < 1) {
+  if (!url.match("www.ephemerasearch.com/ephemera/")) {
     return result;
   }
-  */
+
+  let recipient = document.querySelector("input[id=\"recipient\"]");
+  if (recipient != null) {
+    result.recipient_names = recipient.value.trim();
+  }
+
+  let sender = document.querySelector("input[id=\"sender\"]");
+  if (sender != null) {
+    result.sender_names = sender.value.trim();
+  }
+
+  let year = document.querySelector("input[id=\"year\"]");
+  if (year != null) {
+    result.year = year.value.trim();
+  }
+
+  let edit_row = document.querySelector("div[class=\"transcription narrow container\"]");
+  if (edit_row != null) {
+    result.description = edit_row.children[1].textContent.trim();
+    result.description = result.description.replace("Description from eBay: ", "").trim();
+
+    for (let element of edit_row.children[2].children) {
+      const key = element.querySelector("label").textContent.trim().toLowerCase().replaceAll(" ", "_");
+      const value = element.querySelector("div[class=\"form-control tx-trigger h-100 emotion-cache-no-speedy-5bs01k\"]");
+      if (value != null) {
+        result[key] = value.textContent.trim();
+      }
+    }
+  }
+
+  let places = document.querySelector("div[class=\"ephPlaces flex-wrap list-group list-group-horizontal\"]");
+  if (places != null) {
+    result.places = [];
+    for (let place of places.children) {
+      result.places.push(place.querySelector("button").childNodes[1].textContent.trim());
+    }
+  }
+
+  let tags = document.querySelector("div[class=\"tags mb-0 form-group col\"]");
+  if (tags != null) {
+    result.tags = [];
+    for (let button of tags.querySelectorAll("button")) {
+      let tag_text = null;
+      if (button.childNodes.length < 2) {
+        tag_text = button.textContent.trim();
+      } else {
+        tag_text = button.childNodes[1].textContent.trim();
+      }
+      result.tags.push(tag_text);
+    }
+  }
+
+  let collections = document.querySelector("#editor-row > div.transcription.narrow.container > form > div:nth-child(7) > div > div.tags.mb-0.form-group.col");
+  if (collections != null) {
+    result.collections = [];
+    for (let button of collections.querySelectorAll("button")) {
+      let collection_text = null;
+      if (button.childNodes.length < 2) {
+        collection_text = button.textContent.trim();
+      } else {
+        collection_text = button.childNodes[1].textContent.trim();
+      }
+      result.collections.push(collection_text);
+    }
+  }
 
   result.success = true;
   return result;
