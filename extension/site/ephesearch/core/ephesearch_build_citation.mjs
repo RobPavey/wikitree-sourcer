@@ -29,17 +29,31 @@ function buildEphesearchUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = "Put Source Title here";
+  builder.sourceTitle = ed.description;
+
+  if (ed.places) {
+    builder.sourceTitle += " (" + ed.places.join(", ") + ")";
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  let parts = [];
+  if (ed.seller) {
+    parts.push("Seller: " + ed.seller);
+  }
+  if (ed.year) {
+    parts.push("Year: " + ed.year);
+  }
+
+  if (parts.length > 0) {
+    builder.sourceReference = parts.join(", ");
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
   var ephesearchUrl = buildEphesearchUrl(ed, builder);
 
-  let recordLink = "[" + ephesearchUrl + " EphemeraSearch Record]";
+  let recordLink = "[" + ephesearchUrl + " EphemeraSearch]";
   builder.recordLinkOrTemplate = recordLink;
 }
 

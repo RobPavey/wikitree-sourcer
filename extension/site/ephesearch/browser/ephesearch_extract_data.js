@@ -94,6 +94,13 @@ function extractData(document, url) {
       }
       result.collections.push(collection_text);
     }
+
+    for (let collection of result.collections) {
+      if (collection.match(/\[eBay\]/)) {
+        result.seller = collection.replace(/\[eBay\]/, "").trim();
+        break;
+      }
+    }
   }
 
   result.success = true;
