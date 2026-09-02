@@ -207,10 +207,57 @@ function extractImage(document, url, result) {
     result.imageNumber = selectedText;
   }
 
-  function getItemData(result, key, classNames) {
+  function getGroup(labels) {
+    let groups = document.querySelectorAll(`div.main > article > div.groups > div.group`);
+    let itemElement = null;
+    for (let group of groups) {
+      const headerElement = group.querySelector(`div.header`);
+      if (headerElement) {
+        let headerLabel = headerElement.textContent;
+
+        for (let label of labels) {
+          if (headerLabel == label) {
+            return group;
+          }
+        }
+      }
+    }
+  }
+
+  function getItemData(result, group, key, classNames, labels) {
     let itemElement = null;
     for (let className of classNames) {
-      itemElement = document.querySelector(`div.item.${className}`);
+      if (className) {
+        itemElement = group.querySelector(`div.item.${className}`);
+        if (itemElement) {
+          break;
+        }
+      }
+    }
+
+    if (!itemElement) {
+      // try labels
+      let items = group.querySelectorAll(`div.item`);
+      for (item of items) {
+        const labelElement = item.querySelector(`div.label`);
+        if (labelElement) {
+          // Find the first direct text node child
+          const itemLabel = Array.from(labelElement.childNodes)
+            .filter((node) => node.nodeType === 3)
+            .map((node) => node.textContent.trim())
+            .join("");
+
+          for (let label of labels) {
+            if (itemLabel == label) {
+              itemElement = item;
+              break;
+            }
+          }
+        }
+        if (itemElement) {
+          break;
+        }
+      }
     }
     if (itemElement) {
       const valueElement = itemElement.querySelector("div.value");
@@ -220,7 +267,65 @@ function extractImage(document, url, result) {
     }
   }
 
-  getItemData(result, "imageId", ["_image-_i_d", "_bildid"]);
+  const itemGroup = getGroup(["About the item", "Om objektet"]);
+  const pageGroup = getGroup(["Page", "Sida"]);
+
+  getItemData(result, itemGroup, "imageItemArchive", ["_archive", "_arkiv"], ["Archive", "Arkiv"]);
+  getItemData(result, itemGroup, "imageItemSeries", ["_series", "_serie"], ["Series", "Serie"]);
+  getItemData(
+    result,
+    itemGroup,
+    "imageItemReferenceCode",
+    ["_reference-code", "_referenskod"],
+    ["Reference code", "Referenskod"]
+  );
+  getItemData(result, itemGroup, "imageItemDate", ["_date", "_datering"], ["Date", "Datering"]);
+  getItemData(result, itemGroup, "imageItemRemark", ["_remark", "_anm__00e4rkning"], ["Remark", "Anmärkning"]);
+
+  // Used in a census
+  getItemData(result, itemGroup, "imageItemParish", ["_parish", "_f__00f6rsamling"], ["Parish", "Församling"]);
+  getItemData(
+    result,
+    itemGroup,
+    "imageItemCensusYear",
+    ["_census-year", "_folkr__00e4knings__00e5r"],
+    ["Census year", "Folkräkningsår"]
+  );
+  getItemData(result, itemGroup, "imageItemCounty", ["_county", "_l__00e4n"], ["County", "Län"]);
+
+  // common ones
+  getItemData(
+    result,
+    itemGroup,
+    "imageItemSourceReference",
+    ["_source-reference", "_k__00e4llh__00e4nvisning"],
+    ["Source reference", "Källhänvisning"]
+  );
+  getItemData(
+    result,
+    itemGroup,
+    "imageItemLicense",
+    ["", "_r__00e4ttigheter-f__00f6r-digital-reproduktion"],
+    ["", "Rättigheter för digital reproduktion"]
+  );
+  getItemData(
+    result,
+    itemGroup,
+    "imageItemIiifManifest",
+    ["_i_i_i_f-_manifest", "_i_i_i_f__002dmanifest"],
+    ["IIIF Manifest", "IIIF-manifest"]
+  );
+
+  // Page/Sida group
+  getItemData(result, pageGroup, "imagePageId", ["_image-_i_d", "_bildid"], ["Image ID", "Bildid"]);
+  getItemData(result, pageGroup, "imagePageLink", ["_link", "_l__00e4nk"], ["Link", "Länk"]);
+  getItemData(
+    result,
+    pageGroup,
+    "imagePageSourceReference",
+    ["_source-reference", "_k__00e4llh__00e4nvisning"],
+    ["Source reference", "Källhänvisning"]
+  );
 
   result.success = true;
   return result;
