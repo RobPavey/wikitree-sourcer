@@ -46,11 +46,77 @@ function extractRecord(document, url, result) {
 
   let rows = hitRow.querySelectorAll("div.post_middle div.row-fluid.hidden-print");
 
+  function addRecordData(label, value) {
+    if (label && value) {
+      if (result.recordData[label]) {
+        // duplicate label. This sometime happens. See Namn in
+        // https://sok.riksarkivet.se/?Sokord=Anders+andersen&page=10&postid=Sjoman_liggare_200626&tab=post#tab
+        // In that case it is the name of the ship, but we don't want to work out the semantics here.
+        let suffix = 1;
+        let newLabel = label + suffix;
+        while (result.recordData[newLabel]) {
+          suffix++;
+          newLabel = label + suffix;
+        }
+
+        if (!result.duplicateValues) {
+          result.duplicateValues = {};
+        }
+        result.duplicateValues[newLabel] = label;
+
+        label = newLabel;
+      }
+
+      result.recordData[label] = value;
+    }
+  }
+
+  let currentHousehold = null;
+
+  function addHouseholdItem(label, value, valueElement) {
+    let valueObj = {};
+    valueObj.text = value;
+
+    // italic part on end?
+    let italicElement = valueElement.querySelector("i");
+    if (italicElement) {
+      let italicText = italicElement.textContent.trim();
+      if (value.endsWith(italicText)) {
+        value = value.substring(0, value.length - italicText.length).trim();
+        if (value.endsWith(",")) {
+          value = value.substring(0, value.length - 1).trim();
+        }
+        valueObj.text = value;
+        valueObj.italicEndText = italicText;
+      }
+    }
+
+    let linkElement = valueElement.querySelector("a");
+    if (linkElement) {
+      valueObj.link = linkElement.getAttribute("href");
+      valueObj.linkText = linkElement.textContent;
+    }
+
+    if (label) {
+      if (!result.households) {
+        result.households = {};
+      }
+      result.households[label] = [];
+      currentHousehold = result.households[label];
+    }
+
+    if (currentHousehold) {
+      currentHousehold.push(valueObj);
+    }
+  }
+
   if (rows.length) {
     result.recordData = {};
     let lastLabel = "";
     let lastValueObj = null;
 
+    const householdHeadings = ["About the household", "Om hushållet"];
+    let inHousehold = false;
     for (let row of rows) {
       let labelElement = row.querySelector("div.post_ledtext");
       let valueElement = row.querySelector("div.post_faltdata");
@@ -59,63 +125,23 @@ function extractRecord(document, url, result) {
         let label = labelElement.textContent.trim();
         let value = valueElement.textContent.trim();
 
-        if (value) {
-          let valueObj = {};
-          valueObj.text = value;
-
-          // italic part on end?
-          let italicElement = valueElement.querySelector("i");
-          if (italicElement) {
-            let italicText = italicElement.textContent.trim();
-            if (value.endsWith(italicText)) {
-              value = value.substring(0, value.length - italicText.length).trim();
-              if (value.endsWith(",")) {
-                value = value.substring(0, value.length - 1).trim();
-              }
-              valueObj.text = value;
-              valueObj.italicEndText = italicText;
-            }
+        if (value && label) {
+          // the value can start with the label again (the "visible-phone" part)
+          if (value.startsWith(label)) {
+            value = value.substring(label.length).trim();
           }
+        }
 
-          let linkElement = valueElement.querySelector("a");
-          if (linkElement) {
-            valueObj.link = linkElement.getAttribute("href");
-          }
+        if (label && householdHeadings.includes(label)) {
+          inHousehold = true;
+          addRecordData(label, value);
+          continue;
+        }
 
-          if (!label) {
-            if (lastValueObj && lastLabel) {
-              if (!lastValueObj.multipleValues) {
-                let newValueObj = {};
-                newValueObj.multipleValues = [lastValueObj];
-                lastValueObj = newValueObj;
-              }
-              lastValueObj.multipleValues.push(valueObj);
-              result.recordData[lastLabel] = lastValueObj;
-            }
-          } else {
-            // the value can start with the label again (the "visible-phone" part)
-            if (value.startsWith(label)) {
-              value = value.substring(label.length);
-              valueObj.text = value.trim();
-            }
-            if (result.recordData[label]) {
-              // duplicate label. This sometime happens. See Namn in
-              // https://sok.riksarkivet.se/?Sokord=Anders+andersen&page=10&postid=Sjoman_liggare_200626&tab=post#tab
-              // In that case it is the name of the ship, but we don't want to work out the semantics here.
-              valueObj.originalLabel = label;
-              let suffix = 1;
-              let newLabel = label + suffix;
-              while (result.recordData[newLabel]) {
-                suffix++;
-                newLabel = label + suffix;
-              }
-              label = newLabel;
-            }
-            result.recordData[label] = valueObj;
-
-            lastValueObj = valueObj;
-            lastLabel = label;
-          }
+        if (inHousehold) {
+          addHouseholdItem(label, value, valueElement);
+        } else {
+          addRecordData(label, value);
         }
       }
     }

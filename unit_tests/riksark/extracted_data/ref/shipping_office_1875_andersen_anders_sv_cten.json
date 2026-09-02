@@ -4,52 +4,24 @@
   "recordTitle": "Andersen, Anders",
   "recordType": "Sailor's house - sleeper",
   "recordData": {
-    "Name": {
-      "text": "Namn\n                    Andersen, Anders"
-    },
-    "Date of birth": {
-      "text": "Födelsedatum\n                    1875"
-    },
-    "Birth parish": {
-      "text": "Födelseförsamling\n                    Arendal"
-    },
-    "Home church": {
-      "text": "Hemförsamling\n                    Arendal"
-    },
-    "Registration number": {
-      "text": "Inskrivningsnummer\n                    H. 6220"
-    },
-    "Rent/salary": {
-      "text": "Hyra/lön\n                    36 kr"
-    },
-    "Position/Profession": {
-      "text": "Befattning/Yrke\n                    Light sailor"
-    },
-    "Patterned": {
-      "text": "Påmönstrad\n                    1890-11-27 in Arendal"
-    },
-    "Deregistered": {
-      "text": "Avmönstrad\n                    1891-01-21 in Västervik (Demobilized)"
-    },
-    "Name1": {
-      "text": "Namn\n                    Gemma (Ship)",
-      "originalLabel": "Name"
-    },
-    "Home port": {
-      "text": "Hemmahamn\n                    Arendal"
-    },
-    "Captain": {
-      "text": "Kapten\n                    A. Jacobsen"
-    },
-    "Archives": {
-      "text": "Arkiv\n                    The Seaman's House in Västervik archive (SE/VALA/00671)"
-    },
-    "Volume": {
-      "text": "Volym\n                    DIb: 2 p. 45"
-    },
-    "Established by": {
-      "text": "Upprättad av\n                    National Archives SVAR-Swedish archive information"
-    }
+    "Name": "Namn\n                    Andersen, Anders",
+    "Date of birth": "Födelsedatum\n                    1875",
+    "Birth parish": "Födelseförsamling\n                    Arendal",
+    "Home church": "Hemförsamling\n                    Arendal",
+    "Registration number": "Inskrivningsnummer\n                    H. 6220",
+    "Rent/salary": "Hyra/lön\n                    36 kr",
+    "Position/Profession": "Befattning/Yrke\n                    Light sailor",
+    "Patterned": "Påmönstrad\n                    1890-11-27 in Arendal",
+    "Deregistered": "Avmönstrad\n                    1891-01-21 in Västervik (Demobilized)",
+    "Name1": "Namn\n                    Gemma (Ship)",
+    "Home port": "Hemmahamn\n                    Arendal",
+    "Captain": "Kapten\n                    A. Jacobsen",
+    "Archives": "Arkiv\n                    The Seaman's House in Västervik archive (SE/VALA/00671)",
+    "Volume": "Volym\n                    DIb: 2 p. 45",
+    "Established by": "Upprättad av\n                    National Archives SVAR-Swedish archive information"
+  },
+  "duplicateValues": {
+    "Name1": "Name"
   },
   "pageType": "record"
 }

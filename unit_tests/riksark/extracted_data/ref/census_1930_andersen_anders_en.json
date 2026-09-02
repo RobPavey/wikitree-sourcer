@@ -4,82 +4,38 @@
   "recordTitle": "Andersen, Anders",
   "recordType": "Census 1930",
   "recordData": {
-    "Name": {
-      "text": "Andersen, Anders"
-    },
-    "Home parish": {
-      "text": "Vätö"
-    },
-    "Place of residence": {
-      "text": "Vätöberg Sthlm. stads stenhuggeri"
-    },
-    "Page in the parish register": {
-      "text": "319"
-    },
-    "Deanery": {
-      "text": "Lyhundra"
-    },
-    "County": {
-      "text": "Stockholm"
-    },
-    "Birth year": {
-      "text": "1877"
-    },
-    "Birth place": {
-      "text": "Naesodden"
-    },
-    "Birth country": {
-      "text": "Norge"
-    },
-    "Occupation": {
-      "text": "Stenhuggare"
-    },
-    "Marital status": {
-      "text": "Ogift"
-    },
-    "Year of arrival": {
-      "text": "1903"
-    },
-    "Arrived from": {
-      "text": "Oslo Norge"
-    },
-    "Gender": {
-      "text": "Man"
-    },
-    "Family status code": {
-      "text": "Ensamstående"
-    },
-    "Family no": {
-      "text": "1"
-    },
-    "Other": {
-      "text": "Folkskola"
-    },
-    "Nationality": {
-      "text": "Svensk medborgare 1/7 21"
-    },
-    "Education": {
-      "text": "3 (småskola, folkskola)"
-    },
-    "Income": {
-      "text": "2300"
-    },
-    "Page": {
-      "text": "26"
-    },
-    "Row": {
-      "text": "15"
-    },
-    "Created by": {
-      "text": "Riksarkivet SVAR-Svensk arkivinformation"
-    },
-    "About the household": {
-      "text": "Persons in the household"
-    },
-    "Fam. no 1": {
-      "text": "Andersen, Anders, b. 1877 in Naesodden, Norge",
-      "italicEndText": "Stenhuggare"
-    }
+    "Name": "Andersen, Anders",
+    "Home parish": "Vätö",
+    "Place of residence": "Vätöberg Sthlm. stads stenhuggeri",
+    "Page in the parish register": "319",
+    "Deanery": "Lyhundra",
+    "County": "Stockholm",
+    "Birth year": "1877",
+    "Birth place": "Naesodden",
+    "Birth country": "Norge",
+    "Occupation": "Stenhuggare",
+    "Marital status": "Ogift",
+    "Year of arrival": "1903",
+    "Arrived from": "Oslo Norge",
+    "Gender": "Man",
+    "Family status code": "Ensamstående",
+    "Family no": "1",
+    "Other": "Folkskola",
+    "Nationality": "Svensk medborgare 1/7 21",
+    "Education": "3 (småskola, folkskola)",
+    "Income": "2300",
+    "Page": "26",
+    "Row": "15",
+    "Created by": "Riksarkivet SVAR-Svensk arkivinformation",
+    "About the household": "Persons in the household"
+  },
+  "households": {
+    "Fam. no 1": [
+      {
+        "text": "Andersen, Anders, b. 1877 in Naesodden, Norge",
+        "italicEndText": "Stenhuggare"
+      }
+    ]
   },
   "imageLink": "https://sok.riksarkivet.se/bildvisning/B0001042_00288",
   "pageType": "record"

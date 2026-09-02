@@ -4,45 +4,19 @@
   "recordTitle": "Olga Henriette",
   "recordType": "Birth records",
   "recordData": {
-    "Name": {
-      "text": "Olga Henriette"
-    },
-    "Birth date": {
-      "text": "1889-05-22 (födelse)"
-    },
-    "Parish": {
-      "text": "Helsingborg Stad"
-    },
-    "Father's name": {
-      "text": "Möller Nielsen, Jörginus"
-    },
-    "Father's occupation": {
-      "text": "murare"
-    },
-    "Father's place of residence": {
-      "text": "Hannover 17"
-    },
-    "Mother's name": {
-      "text": "Johnsson, Severina Paulina"
-    },
-    "Mother's birthdate/age": {
-      "text": "25"
-    },
-    "Note": {
-      "text": "Fadern 23 år."
-    },
-    "Archive": {
-      "text": "Helsingborgs stadsförsamlings (Maria) kyrkoarkiv (SE/LLA/13171)"
-    },
-    "Volume": {
-      "text": "C I:15"
-    },
-    "Register": {
-      "text": "Födelseregister - Skåne, Blekinge och Hallands län"
-    },
-    "Created by": {
-      "text": "Riksarkivet i Lund"
-    }
+    "Name": "Olga Henriette",
+    "Birth date": "1889-05-22 (födelse)",
+    "Parish": "Helsingborg Stad",
+    "Father's name": "Möller Nielsen, Jörginus",
+    "Father's occupation": "murare",
+    "Father's place of residence": "Hannover 17",
+    "Mother's name": "Johnsson, Severina Paulina",
+    "Mother's birthdate/age": "25",
+    "Note": "Fadern 23 år.",
+    "Archive": "Helsingborgs stadsförsamlings (Maria) kyrkoarkiv (SE/LLA/13171)",
+    "Volume": "C I:15",
+    "Register": "Födelseregister - Skåne, Blekinge och Hallands län",
+    "Created by": "Riksarkivet i Lund"
   },
   "imageLink": "https://sok.riksarkivet.se/bildvisning/00124893",
   "pageType": "record"

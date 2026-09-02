@@ -26,25 +26,25 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 
-function cleanName(edReader, valueObj) {
-  let cleanString = valueObj.text;
+function cleanName(edReader, value) {
+  let cleanString = value;
   return cleanString;
 }
 
-function cleanDate(edReader, valueObj) {
-  let cleanString = valueObj.text;
+function cleanDate(edReader, value) {
+  let cleanString = value;
   cleanString = cleanString.replace(/\s*\(död\)\s*/i, "");
   cleanString = cleanString.replace(/\s*\(födelse\)\s*/i, "");
   return cleanString;
 }
 
-function cleanPlace(edReader, valueObj) {
-  let cleanString = valueObj.text;
+function cleanPlace(edReader, value) {
+  let cleanString = value;
   return cleanString;
 }
 
-function cleanGender(edReader, valueObj) {
-  let cleanString = valueObj.text;
+function cleanGender(edReader, value) {
+  let cleanString = value;
   if (cleanString == "Man") {
     cleanString = "male";
   } else if (cleanString == "Kvinna") {
@@ -53,8 +53,8 @@ function cleanGender(edReader, valueObj) {
   return cleanString;
 }
 
-function cleanMaritalStatus(edReader, valueObj) {
-  let cleanString = valueObj.text;
+function cleanMaritalStatus(edReader, value) {
+  let cleanString = value;
   if (cleanString == "Ogift") {
     cleanString = "single";
   } else if (cleanString == "Gift") {
@@ -69,13 +69,13 @@ function cleanMaritalStatus(edReader, valueObj) {
   return cleanString;
 }
 
-function cleanOccupation(edReader, valueObj) {
-  let cleanString = valueObj.text;
+function cleanOccupation(edReader, value) {
+  let cleanString = value;
   return cleanString;
 }
 
-function cleanMarriageDate(edReader, valueObj) {
-  let cleanString = valueObj.text;
+function cleanMarriageDate(edReader, value) {
+  let cleanString = value;
   let inIndex = cleanString.indexOf(" i ");
   if (inIndex != -1) {
     cleanString = cleanString.substring(0, inIndex).trim();
@@ -83,8 +83,8 @@ function cleanMarriageDate(edReader, valueObj) {
   return cleanString;
 }
 
-function cleanMarriagePlace(edReader, valueObj) {
-  let cleanString = valueObj.text;
+function cleanMarriagePlace(edReader, value) {
+  let cleanString = value;
   let inIndex = cleanString.indexOf(" i ");
   if (inIndex != -1) {
     cleanString = cleanString.substring(inIndex + 3).trim();

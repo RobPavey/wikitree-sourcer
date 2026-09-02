@@ -4,52 +4,24 @@
   "recordTitle": "Andersen, Anders",
   "recordType": "Sjömanshus - liggare",
   "recordData": {
-    "Namn": {
-      "text": "Andersen, Anders"
-    },
-    "Födelsedatum": {
-      "text": "1875"
-    },
-    "Födelseförsamling": {
-      "text": "Arendal"
-    },
-    "Hemförsamling": {
-      "text": "Arendal"
-    },
-    "Inskrivningsnummer": {
-      "text": "H. 6220"
-    },
-    "Hyra/lön": {
-      "text": "36 Kr"
-    },
-    "Befattning/Yrke": {
-      "text": "Lättmatros"
-    },
-    "Påmönstrad": {
-      "text": "1890-11-27 i Arendal"
-    },
-    "Avmönstrad": {
-      "text": "1891-01-21 i Västervik (Avmönstrad)"
-    },
-    "Namn1": {
-      "text": "Gemma (Skepp)",
-      "originalLabel": "Namn"
-    },
-    "Hemmahamn": {
-      "text": "Arendal"
-    },
-    "Kapten": {
-      "text": "A. Jacobsen"
-    },
-    "Arkiv": {
-      "text": "Sjömanshusets i Västervik arkiv (SE/VALA/00671)"
-    },
-    "Volym": {
-      "text": "DIb: 2 s. 45"
-    },
-    "Upprättad av": {
-      "text": "Riksarkivet SVAR-Svensk arkivinformation"
-    }
+    "Namn": "Andersen, Anders",
+    "Födelsedatum": "1875",
+    "Födelseförsamling": "Arendal",
+    "Hemförsamling": "Arendal",
+    "Inskrivningsnummer": "H. 6220",
+    "Hyra/lön": "36 Kr",
+    "Befattning/Yrke": "Lättmatros",
+    "Påmönstrad": "1890-11-27 i Arendal",
+    "Avmönstrad": "1891-01-21 i Västervik (Avmönstrad)",
+    "Namn1": "Gemma (Skepp)",
+    "Hemmahamn": "Arendal",
+    "Kapten": "A. Jacobsen",
+    "Arkiv": "Sjömanshusets i Västervik arkiv (SE/VALA/00671)",
+    "Volym": "DIb: 2 s. 45",
+    "Upprättad av": "Riksarkivet SVAR-Svensk arkivinformation"
+  },
+  "duplicateValues": {
+    "Namn1": "Namn"
   },
   "pageType": "record"
 }

@@ -4,45 +4,19 @@
   "recordTitle": "Johansson, And. Pet. - Pehrsdotter, Anna Susanna",
   "recordType": "Marriage records",
   "recordData": {
-    "Groom's name": {
-      "text": "Johansson, And. Pet."
-    },
-    "Groom's occupation": {
-      "text": "bonde tillträdande"
-    },
-    "Groom's home place": {
-      "text": "Norrtannflo"
-    },
-    "Groom's birthdate/age": {
-      "text": "1817"
-    },
-    "Date": {
-      "text": "1844-06-03 i Resele"
-    },
-    "Bride's name": {
-      "text": "Pehrsdotter, Anna Susanna"
-    },
-    "Bride's occupation": {
-      "text": "bondedotter"
-    },
-    "Bride's home place": {
-      "text": "Mo"
-    },
-    "Bride's birthdate/age": {
-      "text": "1819"
-    },
-    "Archive": {
-      "text": "Resele kyrkoarkiv (SE/HLA/1010161)"
-    },
-    "Volume": {
-      "text": "C:2 s. 173"
-    },
-    "Register": {
-      "text": "Vigselregister - Sollefteå kommun"
-    },
-    "Created by": {
-      "text": "Riksarkivet SVAR-Svensk arkivinformation"
-    }
+    "Groom's name": "Johansson, And. Pet.",
+    "Groom's occupation": "bonde tillträdande",
+    "Groom's home place": "Norrtannflo",
+    "Groom's birthdate/age": "1817",
+    "Date": "1844-06-03 i Resele",
+    "Bride's name": "Pehrsdotter, Anna Susanna",
+    "Bride's occupation": "bondedotter",
+    "Bride's home place": "Mo",
+    "Bride's birthdate/age": "1819",
+    "Archive": "Resele kyrkoarkiv (SE/HLA/1010161)",
+    "Volume": "C:2 s. 173",
+    "Register": "Vigselregister - Sollefteå kommun",
+    "Created by": "Riksarkivet SVAR-Svensk arkivinformation"
   },
   "pageType": "record"
 }

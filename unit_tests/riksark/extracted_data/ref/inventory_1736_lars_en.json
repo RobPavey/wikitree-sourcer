@@ -4,33 +4,15 @@
   "recordTitle": "Lars",
   "recordType": "Inventory of estates",
   "recordData": {
-    "Name": {
-      "text": "Lars"
-    },
-    "Place of residence": {
-      "text": "Fjälls Stora"
-    },
-    "Home parish": {
-      "text": "Endre"
-    },
-    "Year": {
-      "text": "1736-11-18"
-    },
-    "Note": {
-      "text": "Med resolution etc."
-    },
-    "Archive": {
-      "text": "Gotlands norra häradsrätts arkiv (-1899) (SE/ViLA/20056)"
-    },
-    "Volume": {
-      "text": "F 2 A:9, nr 372"
-    },
-    "Register": {
-      "text": "Bouppteckningsregister - Landsarkivet i Visby"
-    },
-    "Created by": {
-      "text": "Landsarkivet i Visby"
-    }
+    "Name": "Lars",
+    "Place of residence": "Fjälls Stora",
+    "Home parish": "Endre",
+    "Year": "1736-11-18",
+    "Note": "Med resolution etc.",
+    "Archive": "Gotlands norra häradsrätts arkiv (-1899) (SE/ViLA/20056)",
+    "Volume": "F 2 A:9, nr 372",
+    "Register": "Bouppteckningsregister - Landsarkivet i Visby",
+    "Created by": "Landsarkivet i Visby"
   },
   "imageLink": "https://sok.riksarkivet.se/bildvisning/J0000092_00171",
   "pageType": "record"

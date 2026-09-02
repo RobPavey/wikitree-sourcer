@@ -4,83 +4,58 @@
   "recordTitle": "Anders Jan",
   "recordType": "Folkräkningar (Sveriges befolkning) 1880",
   "recordData": {
-    "Namn": {
-      "text": "Anders Jan"
-    },
-    "Hemförsamling": {
-      "text": "Hellstad"
-    },
-    "Hemort": {
-      "text": "Hellstad Påfvag. 1 mtl"
-    },
-    "Kontrakt": {
-      "text": "Åhs"
-    },
-    "Län": {
-      "text": "Älvsborg"
-    },
-    "Födelseår": {
-      "text": "1838"
-    },
-    "Födelseförsamling": {
-      "text": "Hällstad Älvsborgs län"
-    },
-    "Civilstånd": {
-      "text": "Ogift"
-    },
-    "Kön": {
-      "text": "Man"
-    },
-    "Familjeställning": {
-      "text": "s."
-    },
-    "Famstkod": {
-      "text": "Barn"
-    },
-    "Familj nr": {
-      "text": "1"
-    },
-    "Sida": {
-      "text": "17"
-    },
-    "Rad": {
-      "text": "16"
-    },
-    "Upprättad av": {
-      "text": "Riksarkivet SVAR-Svensk arkivinformation"
-    },
-    "Om hushållet": {
-      "text": "Personer i hushållet"
-    },
-    "Fam. nr 1": {
-      "multipleValues": [
-        {
-          "text": "Andersson, Andreas, f. 1802 i Murum Älvsborgs län",
-          "italicEndText": "Hemmansägare",
-          "link": "https://sok.riksarkivet.se/?postid=Folk_118564727#tab"
-        },
-        {
-          "text": "Anders Jan, f. 1838 i Hällstad Älvsborgs län"
-        },
-        {
-          "text": "Samuel, f. 1842 i Hällstad Älvsborgs län",
-          "link": "https://sok.riksarkivet.se/?postid=Folk_118564729#tab"
-        },
-        {
-          "text": "Anna Charlotta, f. 1853 i Hällstad Älvsborgs län",
-          "link": "https://sok.riksarkivet.se/?postid=Folk_118564730#tab"
-        },
-        {
-          "text": "Fredrik, f. 1859 i Hällstad Älvsborgs län",
-          "link": "https://sok.riksarkivet.se/?postid=Folk_118564731#tab"
-        }
-      ]
-    },
-    "Fam. nr 2": {
-      "text": "Håkansdotter, Britta, f. 1824 i Toarp Älvsborgs län",
-      "italicEndText": "Piga",
-      "link": "https://sok.riksarkivet.se/?postid=Folk_118564732#tab"
-    }
+    "Namn": "Anders Jan",
+    "Hemförsamling": "Hellstad",
+    "Hemort": "Hellstad Påfvag. 1 mtl",
+    "Kontrakt": "Åhs",
+    "Län": "Älvsborg",
+    "Födelseår": "1838",
+    "Födelseförsamling": "Hällstad Älvsborgs län",
+    "Civilstånd": "Ogift",
+    "Kön": "Man",
+    "Familjeställning": "s.",
+    "Famstkod": "Barn",
+    "Familj nr": "1",
+    "Sida": "17",
+    "Rad": "16",
+    "Upprättad av": "Riksarkivet SVAR-Svensk arkivinformation",
+    "Om hushållet": "Personer i hushållet"
+  },
+  "households": {
+    "Fam. nr 1": [
+      {
+        "text": "Andersson, Andreas, f. 1802 i Murum Älvsborgs län",
+        "italicEndText": "Hemmansägare",
+        "link": "https://sok.riksarkivet.se/?postid=Folk_118564727#tab",
+        "linkText": "Andersson, Andreas"
+      },
+      {
+        "text": "Anders Jan, f. 1838 i Hällstad Älvsborgs län"
+      },
+      {
+        "text": "Samuel, f. 1842 i Hällstad Älvsborgs län",
+        "link": "https://sok.riksarkivet.se/?postid=Folk_118564729#tab",
+        "linkText": "Samuel"
+      },
+      {
+        "text": "Anna Charlotta, f. 1853 i Hällstad Älvsborgs län",
+        "link": "https://sok.riksarkivet.se/?postid=Folk_118564730#tab",
+        "linkText": "Anna Charlotta"
+      },
+      {
+        "text": "Fredrik, f. 1859 i Hällstad Älvsborgs län",
+        "link": "https://sok.riksarkivet.se/?postid=Folk_118564731#tab",
+        "linkText": "Fredrik"
+      }
+    ],
+    "Fam. nr 2": [
+      {
+        "text": "Håkansdotter, Britta, f. 1824 i Toarp Älvsborgs län",
+        "italicEndText": "Piga",
+        "link": "https://sok.riksarkivet.se/?postid=Folk_118564732#tab",
+        "linkText": "Håkansdotter, Britta"
+      }
+    ]
   },
   "imageLink": "https://sok.riksarkivet.se/bildvisning/Folk_815089-017",
   "pageType": "record"

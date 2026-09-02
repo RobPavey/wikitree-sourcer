@@ -4,52 +4,24 @@
   "recordTitle": "Andersen, Anders",
   "recordType": "Shipping office - ledger",
   "recordData": {
-    "Name": {
-      "text": "Andersen, Anders"
-    },
-    "Birth date": {
-      "text": "1875"
-    },
-    "Birth parish": {
-      "text": "Arendal"
-    },
-    "Home parish": {
-      "text": "Arendal"
-    },
-    "Enrollment numbers": {
-      "text": "H. 6220"
-    },
-    "Salary": {
-      "text": "36 Kr"
-    },
-    "Occupation": {
-      "text": "Lättmatros"
-    },
-    "Date of enrollment": {
-      "text": "1890-11-27 i Arendal"
-    },
-    "Date of discharge": {
-      "text": "1891-01-21 i Västervik (Avmönstrad)"
-    },
-    "Name1": {
-      "text": "Gemma (Skepp)",
-      "originalLabel": "Name"
-    },
-    "Port of registry": {
-      "text": "Arendal"
-    },
-    "Captain": {
-      "text": "A. Jacobsen"
-    },
-    "Archive": {
-      "text": "Sjömanshusets i Västervik arkiv (SE/VALA/00671)"
-    },
-    "Volume": {
-      "text": "DIb: 2 s. 45"
-    },
-    "Created by": {
-      "text": "Riksarkivet SVAR-Svensk arkivinformation"
-    }
+    "Name": "Andersen, Anders",
+    "Birth date": "1875",
+    "Birth parish": "Arendal",
+    "Home parish": "Arendal",
+    "Enrollment numbers": "H. 6220",
+    "Salary": "36 Kr",
+    "Occupation": "Lättmatros",
+    "Date of enrollment": "1890-11-27 i Arendal",
+    "Date of discharge": "1891-01-21 i Västervik (Avmönstrad)",
+    "Name1": "Gemma (Skepp)",
+    "Port of registry": "Arendal",
+    "Captain": "A. Jacobsen",
+    "Archive": "Sjömanshusets i Västervik arkiv (SE/VALA/00671)",
+    "Volume": "DIb: 2 s. 45",
+    "Created by": "Riksarkivet SVAR-Svensk arkivinformation"
+  },
+  "duplicateValues": {
+    "Name1": "Name"
   },
   "pageType": "record"
 }

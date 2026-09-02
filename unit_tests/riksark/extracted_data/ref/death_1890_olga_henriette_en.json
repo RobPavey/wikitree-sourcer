@@ -4,45 +4,19 @@
   "recordTitle": "Olga Henriette",
   "recordType": "Death records",
   "recordData": {
-    "The deceased": {
-      "text": "Olga Henriette"
-    },
-    "Place of residence": {
-      "text": "Hannover 17"
-    },
-    "Parish": {
-      "text": "Helsingborg Stad"
-    },
-    "Date": {
-      "text": "1890-01-06 (död)"
-    },
-    "Age": {
-      "text": "7 month(-s) 13 day(-s)"
-    },
-    "Cause of death": {
-      "text": "bronchitis capillaris"
-    },
-    "Relative's name": {
-      "text": "fader Möller Nielsen, Jörginius"
-    },
-    "Relative's occupation": {
-      "text": "murare"
-    },
-    "Note": {
-      "text": "Moder:Severina Paulina Johnsson hfl s 1269,3"
-    },
-    "Archive": {
-      "text": "Helsingborgs stadsförsamlings (Maria) kyrkoarkiv (SE/LLA/13171)"
-    },
-    "Volume": {
-      "text": "F I:8"
-    },
-    "Register": {
-      "text": "Dödregister - Skåne, Blekinge och Hallands län"
-    },
-    "Created by": {
-      "text": "Riksarkivet i Lund"
-    }
+    "The deceased": "Olga Henriette",
+    "Place of residence": "Hannover 17",
+    "Parish": "Helsingborg Stad",
+    "Date": "1890-01-06 (död)",
+    "Age": "7 month(-s) 13 day(-s)",
+    "Cause of death": "bronchitis capillaris",
+    "Relative's name": "fader Möller Nielsen, Jörginius",
+    "Relative's occupation": "murare",
+    "Note": "Moder:Severina Paulina Johnsson hfl s 1269,3",
+    "Archive": "Helsingborgs stadsförsamlings (Maria) kyrkoarkiv (SE/LLA/13171)",
+    "Volume": "F I:8",
+    "Register": "Dödregister - Skåne, Blekinge och Hallands län",
+    "Created by": "Riksarkivet i Lund"
   },
   "imageLink": "https://sok.riksarkivet.se/bildvisning/00124973",
   "pageType": "record"

@@ -4,74 +4,45 @@
   "recordTitle": "Trulsson, Bodil",
   "recordType": "Census 1890",
   "recordData": {
-    "Name": {
-      "text": "Trulsson, Bodil"
-    },
-    "Home parish": {
-      "text": "Grydts"
-    },
-    "Place of residence": {
-      "text": "Westra Olinge"
-    },
-    "Deanery": {
-      "text": "Ö. Göinge"
-    },
-    "County": {
-      "text": "Kristianstad"
-    },
-    "Birth year": {
-      "text": "1819"
-    },
-    "Birth parish": {
-      "text": "Knislinge Kristianstads län"
-    },
-    "Occupation": {
-      "text": "Åbo"
-    },
-    "Marital status": {
-      "text": "Gift"
-    },
-    "Gender": {
-      "text": "Man"
-    },
-    "Family status code": {
-      "text": "Far/man"
-    },
-    "Family no": {
-      "text": "1"
-    },
-    "Page": {
-      "text": "3"
-    },
-    "Row": {
-      "text": "27"
-    },
-    "Created by": {
-      "text": "Riksarkivet SVAR-Svensk arkivinformation"
-    },
-    "About the household": {
-      "text": "Persons in the household"
-    },
-    "Fam. no 1": {
-      "multipleValues": [
-        {
-          "text": "Trulsson, Bodil, b. 1819 in Knislinge Kristianstads län",
-          "italicEndText": "Åbo"
-        },
-        {
-          "text": "Svensdotter, Bengta, b. 1823 in Österslöv Kristianstads län",
-          "link": "https://sok.riksarkivet.se/en?Sokord=bodil&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=77&postid=Folk_102052653&tab=post#tab"
-        },
-        {
-          "text": "Per, b. 1861 in Grydts",
-          "link": "https://sok.riksarkivet.se/en?Sokord=bodil&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=77&postid=Folk_102052654&tab=post#tab"
-        },
-        {
-          "text": "Gunild, b. 1849 in Knislinge Kristianstads län",
-          "link": "https://sok.riksarkivet.se/en?Sokord=bodil&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=77&postid=Folk_102052655&tab=post#tab"
-        }
-      ]
-    }
+    "Name": "Trulsson, Bodil",
+    "Home parish": "Grydts",
+    "Place of residence": "Westra Olinge",
+    "Deanery": "Ö. Göinge",
+    "County": "Kristianstad",
+    "Birth year": "1819",
+    "Birth parish": "Knislinge Kristianstads län",
+    "Occupation": "Åbo",
+    "Marital status": "Gift",
+    "Gender": "Man",
+    "Family status code": "Far/man",
+    "Family no": "1",
+    "Page": "3",
+    "Row": "27",
+    "Created by": "Riksarkivet SVAR-Svensk arkivinformation",
+    "About the household": "Persons in the household"
+  },
+  "households": {
+    "Fam. no 1": [
+      {
+        "text": "Trulsson, Bodil, b. 1819 in Knislinge Kristianstads län",
+        "italicEndText": "Åbo"
+      },
+      {
+        "text": "Svensdotter, Bengta, b. 1823 in Österslöv Kristianstads län",
+        "link": "https://sok.riksarkivet.se/en?Sokord=bodil&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=77&postid=Folk_102052653&tab=post#tab",
+        "linkText": "Svensdotter, Bengta"
+      },
+      {
+        "text": "Per, b. 1861 in Grydts",
+        "link": "https://sok.riksarkivet.se/en?Sokord=bodil&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=77&postid=Folk_102052654&tab=post#tab",
+        "linkText": "Per"
+      },
+      {
+        "text": "Gunild, b. 1849 in Knislinge Kristianstads län",
+        "link": "https://sok.riksarkivet.se/en?Sokord=bodil&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=77&postid=Folk_102052655&tab=post#tab",
+        "linkText": "Gunild"
+      }
+    ]
   },
   "imageLink": "https://sok.riksarkivet.se/bildvisning/Folk_911068-003",
   "pageType": "record"

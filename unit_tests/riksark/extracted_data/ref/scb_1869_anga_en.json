@@ -4,27 +4,13 @@
   "recordTitle": "Anga, Församlingsutdrag 1860",
   "recordType": "Register till SCB",
   "recordData": {
-    "Församling": {
-      "text": "Anga"
-    },
-    "Län": {
-      "text": "Gotlands län"
-    },
-    "Innehåll": {
-      "text": "Församlingsutdrag"
-    },
-    "Årtal": {
-      "text": "1860"
-    },
-    "Arkiv": {
-      "text": "Statistiska Centralbyrån (SCB) - samlingspost (SE/RA/420401)"
-    },
-    "Volymens referenskod": {
-      "text": "SE/RA/420401/03/H 1 A/48"
-    },
-    "Upprättad av": {
-      "text": "Riksarkivet SVAR-Svensk arkivinformation"
-    }
+    "Församling": "Anga",
+    "Län": "Gotlands län",
+    "Innehåll": "Församlingsutdrag",
+    "Årtal": "1860",
+    "Arkiv": "Statistiska Centralbyrån (SCB) - samlingspost (SE/RA/420401)",
+    "Volymens referenskod": "SE/RA/420401/03/H 1 A/48",
+    "Upprättad av": "Riksarkivet SVAR-Svensk arkivinformation"
   },
   "imageLink": "https://sok.riksarkivet.se/bildvisning/A0056053_00260",
   "pageType": "record"
