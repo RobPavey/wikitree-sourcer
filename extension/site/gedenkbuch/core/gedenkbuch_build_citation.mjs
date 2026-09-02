@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,34 +22,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function transformLink(linkText, phase, options) {
-  if (phase != 1) {
-    return null;
-  }
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-  let link = linkText;
-
-  if (!link.includes("thegenealogist")) {
-    return null;
-  }
-
-  let domain = link.replace(/^https?\:\/\/[^\.]+\.(thegenealogist[^\/]+)\/.*/, "$1");
-
-  //console.log("openThegenLink, domain is: " + domain);
-  if (domain && domain != link) {
-    let desiredDomain = options.search_thegen_domain;
-    //console.log("openThegenLink, desiredDomain is: " + desiredDomain);
-
-    if (desiredDomain != "none" && desiredDomain != domain) {
-      let newLink = link.replace(domain, desiredDomain);
-
-      if (newLink && newLink != link) {
-        return { link: newLink, reuseTab: false };
-      }
-    }
-  }
-
-  return null;
+function buildGedenkbuchUrl(ed, builder) {
+  return ed.url;
 }
 
-export { transformLink };
+function buildSourceTitle(ed, gd, builder) {
+  // builder.sourceTitle = "Put Source Title here";
+}
+
+function buildSourceReference(ed, gd, builder) {
+  builder.sourceReference = "Gedenkbuch des Bundesarchivs, " + ed.name;
+}
+
+function buildRecordLink(ed, gd, builder) {
+  var gedenkbuchUrl = buildGedenkbuchUrl(ed, builder);
+
+  let recordLink = "[" + gedenkbuchUrl + " Database]";
+  builder.recordLinkOrTemplate = recordLink;
+}
+
+function buildCoreCitation(ed, gd, builder) {
+  buildSourceTitle(ed, gd, builder);
+  buildSourceReference(ed, gd, builder);
+  buildRecordLink(ed, gd, builder);
+  builder.addStandardDataString(gd);
+}
+
+function buildCitation(input) {
+  return simpleBuildCitationWrapper(input, buildCoreCitation);
+}
+
+export { buildCitation };

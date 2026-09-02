@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,34 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function transformLink(linkText, phase, options) {
-  if (phase != 1) {
-    return null;
-  }
+import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { generalizeData } from "../core/gedenkbuch_generalize_data.mjs";
+import { buildCitation } from "../core/gedenkbuch_build_citation.mjs";
 
-  let link = linkText;
-
-  if (!link.includes("thegenealogist")) {
-    return null;
-  }
-
-  let domain = link.replace(/^https?\:\/\/[^\.]+\.(thegenealogist[^\/]+)\/.*/, "$1");
-
-  //console.log("openThegenLink, domain is: " + domain);
-  if (domain && domain != link) {
-    let desiredDomain = options.search_thegen_domain;
-    //console.log("openThegenLink, desiredDomain is: " + desiredDomain);
-
-    if (desiredDomain != "none" && desiredDomain != domain) {
-      let newLink = link.replace(domain, desiredDomain);
-
-      if (newLink && newLink != link) {
-        return { link: newLink, reuseTab: false };
-      }
-    }
-  }
-
-  return null;
+async function setupGedenkbuchPopupMenu(extractedData) {
+  let input = {
+    extractedData: extractedData,
+    extractFailedMessage: "It looks like a Bundesarchiv Gedenkbuch page but not a record page.",
+    generalizeFailedMessage: "It looks like a Bundesarchiv Gedenkbuch page but does not contain the required data.",
+    generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
+    siteNameToExcludeFromSearch: "gedenkbuch",
+  };
+  setupSimplePopupMenu(input);
 }
 
-export { transformLink };
+initPopup("gedenkbuch", setupGedenkbuchPopupMenu);

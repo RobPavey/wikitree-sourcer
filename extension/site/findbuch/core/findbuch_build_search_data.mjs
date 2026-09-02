@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,34 +22,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function transformLink(linkText, phase, options) {
-  if (phase != 1) {
-    return null;
-  }
+function buildSearchData(input) {
+  const gd = input.generalizedData;
 
-  let link = linkText;
+  let fieldData = {};
+  let selectData = {};
 
-  if (!link.includes("thegenealogist")) {
-    return null;
-  }
+  //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
+  // Add code here to populate the search data that is used to fill out the search form
+  // The fieldData typically will be used for text fields
+  // while the selectData will be for select controls
+  // In these structures use the names of the elements in the search form that need to be
+  // filled
+  // For examples see:
+  // - extension/site/vicbdm/core/vicbdm_build_search_data.mjs
+  // - extension/site/nswbdm/core/nswbdm_build_search_data.mjs
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-  let domain = link.replace(/^https?\:\/\/[^\.]+\.(thegenealogist[^\/]+)\/.*/, "$1");
+  //console.log("fieldData is:");
+  //console.log(fieldData);
 
-  //console.log("openThegenLink, domain is: " + domain);
-  if (domain && domain != link) {
-    let desiredDomain = options.search_thegen_domain;
-    //console.log("openThegenLink, desiredDomain is: " + desiredDomain);
+  var result = {
+    fieldData: fieldData,
+    selectData: selectData,
+  };
 
-    if (desiredDomain != "none" && desiredDomain != domain) {
-      let newLink = link.replace(domain, desiredDomain);
-
-      if (newLink && newLink != link) {
-        return { link: newLink, reuseTab: false };
-      }
-    }
-  }
-
-  return null;
+  return result;
 }
 
-export { transformLink };
+export { buildSearchData };

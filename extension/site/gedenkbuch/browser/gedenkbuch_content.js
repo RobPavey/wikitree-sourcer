@@ -29,19 +29,19 @@ SOFTWARE.
 async function unregisterTabWithBackground() {
   //console.log("unregisterTabWithBackground");
 
-  // send message to background script that we have a ecpp tab open
+  // send message to background script that we have a gedenkbuch tab open
   let unregisterResponse = await chrome.runtime.sendMessage({
     type: "unregisterTab",
-    siteName: "ecpp",
+    siteName: "gedenkbuch",
     tab: registeredTabId,
   });
 
-  //console.log("ecpp, response from unregisterTab message");
+  //console.log("gedenkbuch, response from unregisterTab message");
   //console.log(unregisterResponse);
 
   if (chrome.runtime.lastError) {
     // possibly there is no background script loaded, this should never happen
-    console.log("ecpp: No response from background script, lastError message is:");
+    console.log("gedenkbuch: No response from background script, lastError message is:");
     console.log(chrome.runtime.lastError.message);
   }
 }
@@ -49,21 +49,14 @@ async function unregisterTabWithBackground() {
 var registeredTabId = undefined;
 
 async function registerTabWithBackground() {
-  // only register if this is one of the tabs that requires captcha
-  // e.g.: https://ecpp.ucr.edu/ecpp/app/user/view/records/death/47173
-  const url = document.URL;
-  if (!url.startsWith("https://ecpp.ucr.edu/ecpp/app/user/view/records")) {
-    return;
-  }
-
-  // send message to background script that we have a ecpp tab open
+  // send message to background script that we have a gedenkbuch tab open
   // This can fail with the error:
   //  Uncaught (in promise) Error: Extension context invalidated.
   // if the extension has been updated. So we do a try/catch
   try {
-    let registerResponse = await chrome.runtime.sendMessage({ type: "registerTab", siteName: "ecpp" });
+    let registerResponse = await chrome.runtime.sendMessage({ type: "registerTab", siteName: "gedenkbuch" });
 
-    //console.log("ecpp, response from registerTab message");
+    //console.log("gedenkbuch, response from registerTab message");
     //console.log(registerResponse);
 
     // we remember the tabId because in Firefox when we try to unregister
@@ -74,7 +67,7 @@ async function registerTabWithBackground() {
 
     if (chrome.runtime.lastError) {
       // possibly there is no background script loaded, this should never happen
-      console.log("ecpp: No response from background script, lastError message is:");
+      console.log("gedenkbuch: No response from background script, lastError message is:");
       console.log(chrome.runtime.lastError.message);
     } else {
       //console.log("addng event listener for unregister");
@@ -91,7 +84,7 @@ async function registerTabWithBackground() {
   } catch (error) {
     // possibly there is no background script loaded, this should never happen
     // Could also be that the extension was just reloaded/updated
-    console.log("ecpp: No response from background script, error is:");
+    console.log("gedenkbuch: No response from background script, error is:");
     console.log(error);
   }
 }
@@ -145,6 +138,11 @@ async function doPendingSearch() {
     //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
     // insert code here to do the search by filling out the form and submitting it
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    document.querySelector("input[id=\"mainForm:j_idt130:searchTerm_field:searchTerm\"]").value = fieldData.name;
+    
+    let button = document.querySelector("button[id=\"mainForm:j_idt130:searchBtn\"]");
+    button.click();
 
     // clear the pending data so that we don't use it again on refine search
     pendingSearchData = undefined;
@@ -229,6 +227,7 @@ async function doSearchInExistingTab(request, sender, sendResponse) {
   sendResponse({ success: true });
 }
 
+// NOTE: this function must not be async
 function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
     doSearchInExistingTab(request, sender, sendResponse);
@@ -239,12 +238,10 @@ function additionalMessageHandler(request, sender, sendResponse) {
 }
 
 async function checkForSearchThenInit() {
-  registerTabWithBackground();
-
   checkForPendingSearch();
 
   siteContentInit(
-    "ecpp",
+    "gedenkbuch",
     undefined, // overrideExtractHandler
     additionalMessageHandler
   );

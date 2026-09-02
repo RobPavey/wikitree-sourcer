@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,34 +22,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function transformLink(linkText, phase, options) {
-  if (phase != 1) {
-    return null;
+import { RT } from "../../../base/core/record_type.mjs";
+import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+
+class FindbuchEdReader extends ExtractedDataReader {
+  constructor(ed) {
+    super(ed);
   }
 
-  let link = linkText;
-
-  if (!link.includes("thegenealogist")) {
-    return null;
-  }
-
-  let domain = link.replace(/^https?\:\/\/[^\.]+\.(thegenealogist[^\/]+)\/.*/, "$1");
-
-  //console.log("openThegenLink, domain is: " + domain);
-  if (domain && domain != link) {
-    let desiredDomain = options.search_thegen_domain;
-    //console.log("openThegenLink, desiredDomain is: " + desiredDomain);
-
-    if (desiredDomain != "none" && desiredDomain != domain) {
-      let newLink = link.replace(domain, desiredDomain);
-
-      if (newLink && newLink != link) {
-        return { link: newLink, reuseTab: false };
-      }
-    }
-  }
-
-  return null;
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Overrides of the relevant get functions used in commonGeneralizeData
+  // Note: there are default implementations in ExtractedDataReader and, if using a data-driven
+  // style, you may not need to override them here.
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
-export { transformLink };
+export { FindbuchEdReader };

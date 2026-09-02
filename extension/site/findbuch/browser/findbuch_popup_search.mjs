@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,34 +22,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function transformLink(linkText, phase, options) {
-  if (phase != 1) {
-    return null;
-  }
+import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_search_config.mjs";
 
-  let link = linkText;
+//////////////////////////////////////////////////////////////////////////////////////////
+// Configuration
+//////////////////////////////////////////////////////////////////////////////////////////
 
-  if (!link.includes("thegenealogist")) {
-    return null;
-  }
+const searchMenuConfig = {
+  siteName: "findbuch",
+  siteDisplayName: "Findbuch.net",
+  localStorageConfig: {
+    searchUrl: "https://put_your_search_url_here",
+  },
+  defaultMenuItem: {
+    menuItemText: "Search Findbuch.net",
+    includeDefaultSearch: true,
+    includeSearchSubmenu: false,
+  },
+};
 
-  let domain = link.replace(/^https?\:\/\/[^\.]+\.(thegenealogist[^\/]+)\/.*/, "$1");
+//////////////////////////////////////////////////////////////////////////////////////////
+// Register the search menu - it can be used on the popup for lots of sites
+//////////////////////////////////////////////////////////////////////////////////////////
 
-  //console.log("openThegenLink, domain is: " + domain);
-  if (domain && domain != link) {
-    let desiredDomain = options.search_thegen_domain;
-    //console.log("openThegenLink, desiredDomain is: " + desiredDomain);
-
-    if (desiredDomain != "none" && desiredDomain != domain) {
-      let newLink = link.replace(domain, desiredDomain);
-
-      if (newLink && newLink != link) {
-        return { link: newLink, reuseTab: false };
-      }
-    }
-  }
-
-  return null;
-}
-
-export { transformLink };
+registerSearchMenuItemFromConfig(searchMenuConfig);

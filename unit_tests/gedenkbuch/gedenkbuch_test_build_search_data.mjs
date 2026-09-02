@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,34 +22,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function transformLink(linkText, phase, options) {
-  if (phase != 1) {
-    return null;
-  }
+import { buildSearchData } from "../../extension/site/gedenkbuch/core/gedenkbuch_build_search_data.mjs";
+import { runBuildSearchDataTests } from "../test_utils/test_build_search_utils.mjs";
 
-  let link = linkText;
+const regressionData = [
+  /*
+  {
+    // has pref name
+    caseName: "wikitree_stanway-252_read",
+    inputPath: "wikitree/generalized_data/ref/stanway-252_read",
+    typeOfSearch: "Births",
+  },
+  */
+];
 
-  if (!link.includes("thegenealogist")) {
-    return null;
-  }
-
-  let domain = link.replace(/^https?\:\/\/[^\.]+\.(thegenealogist[^\/]+)\/.*/, "$1");
-
-  //console.log("openThegenLink, domain is: " + domain);
-  if (domain && domain != link) {
-    let desiredDomain = options.search_thegen_domain;
-    //console.log("openThegenLink, desiredDomain is: " + desiredDomain);
-
-    if (desiredDomain != "none" && desiredDomain != domain) {
-      let newLink = link.replace(domain, desiredDomain);
-
-      if (newLink && newLink != link) {
-        return { link: newLink, reuseTab: false };
-      }
-    }
-  }
-
-  return null;
+async function runTests(testManager) {
+  await runBuildSearchDataTests("gedenkbuch", buildSearchData, regressionData, testManager);
 }
 
-export { transformLink };
+export { runTests };

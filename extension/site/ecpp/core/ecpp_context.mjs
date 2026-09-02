@@ -23,48 +23,46 @@ SOFTWARE.
 */
 
 function transformLink(linkText, phase, options) {
-  // linkUrl: "https://search.findmypast.co.uk/record/browse?id=GBC/1881/4362252/00449&parentid=GBC/1881/0023259406"
+  // http://missions.huntington.org/MarriageData.aspx?ID=6097
+  // https://ecpp.ucr.edu/ecpp/app/user/view/records/marriage/6097
+
+  // http://missions.huntington.org/BaptismalData.aspx?ID=84159
+  // https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/84159
 
   if (phase != 1) {
     return null;
   }
 
-  let link = linkText;
+  if (/ecpp\.ucr\.edu/i.test(linkText)) {
+    return { link: linkText, reuseTab: true };
+  }
 
-  if (!link.includes("findmypast")) {
+  if (!/missions\.huntington\.org/i.test(linkText)) {
     return null;
   }
 
-  let domain = "";
-  // FMP can be accessed through NLS
-  // https://www-findmypast-co-uk.nls.idm.oclc.org/transcript?id=R_693518389
-  const nlsDomain = "www-findmypast-co-uk.nls.idm.oclc.org";
-  if (link.includes("nls.idm.oclc.org")) {
-    domain = nlsDomain;
-  } else {
-    domain = link.replace(/^https?\:\/\/[^\.]+\.(findmypast[^\/]+)\/.*/, "$1");
-  }
-  //console.log("openFmpLink, domain is: " + domain);
-  if (domain && domain != link) {
-    let desiredDomain = options.search_fmp_domain;
-    //console.log("openFmpLink, desiredDomain is: " + desiredDomain);
+  // http://missions.huntington.org/MarriageData.aspx?ID=6097
+  const fullOldUrlRegex = /^.*missions\.huntington\.org\/(\w+)Data\.aspx\?ID\=(\d+).*$/i;
 
-    if (desiredDomain != "none" && desiredDomain != domain) {
-      let newLink = "";
-      if (domain == nlsDomain) {
-        newLink = link.replace(domain, "www." + desiredDomain);
-      } else {
-        if (desiredDomain == nlsDomain) {
-          newLink = link.replace("www." + domain, desiredDomain);
-        } else {
-          newLink = link.replace(domain, desiredDomain);
-        }
-      }
+  if (fullOldUrlRegex.test(linkText)) {
+    let type = linkText.replace(fullOldUrlRegex, "$1");
+    if (type && type != linkText) {
+      type = type.trim();
+      type = type.toLowerCase();
 
-      if (newLink && newLink != link) {
-        return { link: newLink, reuseTab: false };
+      let id = linkText.replace(fullOldUrlRegex, "$2");
+      if (id && id != linkText) {
+        id = id.trim();
+
+        // https://ecpp.ucr.edu/ecpp/app/user/view/records/marriage/6097
+        let link = `https://ecpp.ucr.edu/ecpp/app/user/view/records/${type}/${id}`;
+        return { link: link, reuseTab: true };
       }
     }
+  } else {
+    // could be a partial link
+    let link = `https://ecpp.ucr.edu/`;
+    return { link: link, reuseTab: true };
   }
 
   return null;
