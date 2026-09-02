@@ -41,6 +41,7 @@ const siteNames = [
   "ecpp",
   "eggsabdm",
   "eggsagrvs",
+  "ephesearch",
   "fg",
   "findbuch",
   "finistere",
