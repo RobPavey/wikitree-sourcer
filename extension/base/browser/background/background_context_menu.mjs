@@ -33,25 +33,45 @@ import { logDebug } from "../../core/log_debug.mjs";
 
 import { contextModules } from "../../../site/all/core/context_modules.mjs";
 
-function openSiteLink(siteContextModule, phase, tab, link, options) {
+async function openLinkInNewOrExistingTab(siteName, tab, link, reuseTab, options) {
+  if (reuseTab) {
+    let existingTab = await getRegisteredTab(siteName);
+    console.log("openLinkInNewOrExistingTab, existing tab is", existingTab);
+    if (existingTab) {
+      let updatedTab = chrome.tabs.update(existingTab, { url: link, active: true });
+      if (updatedTab && !chrome.runtime.lastError) {
+        return;
+      }
+    }
+  }
+
+  const tabOption = options.context_general_newTabPos;
+  openInNewTab(link, tab, tabOption);
+}
+
+function openSiteLink(siteName, siteContextModule, phase, tab, link, options) {
   if (siteContextModule && siteContextModule.transformLink) {
-    let newLink = siteContextModule.transformLink(link, phase, options);
-    if (newLink) {
-      const tabOption = options.context_general_newTabPos;
-      openInNewTab(newLink, tab, tabOption);
-      return true;
+    let transformed = siteContextModule.transformLink(link, phase, options);
+    if (transformed) {
+      let newLink = transformed.link;
+      if (newLink) {
+        openLinkInNewOrExistingTab(siteName, tab, newLink, transformed.reuseTab, options);
+        return true;
+      }
     }
   }
   return false;
 }
 
-function openSiteTemplate(siteContextModule, tab, text, options) {
+function openSiteTemplate(siteName, siteContextModule, tab, text, options) {
   if (siteContextModule && siteContextModule.transformTemplateToLink) {
-    let newLink = siteContextModule.transformTemplateToLink(text, options);
-    if (newLink) {
-      const tabOption = options.context_general_newTabPos;
-      openInNewTab(newLink, tab, tabOption);
-      return true;
+    let transformed = siteContextModule.transformTemplateToLink(text, options);
+    if (transformed) {
+      let newLink = transformed.link;
+      if (newLink) {
+        openLinkInNewOrExistingTab(siteName, tab, newLink, transformed.reuseTab, options);
+        return true;
+      }
     }
   }
   return false;
@@ -71,7 +91,10 @@ async function openPageUsingSearchData(tab, options, input) {
     };
     let allowed = await checkPermissionForSiteMatches(siteName, checkPermissionsOptions);
     if (!allowed) {
-      return false;
+      let success = await doSearchInExistingTab(existingTab, searchData);
+      if (success) {
+        return;
+      }
     }
 
     doSearchGivenSearchData(searchData, tab, options, existingTab, reuseTabIfPossible);
@@ -149,7 +172,7 @@ function openLink(info, tab, options) {
   function findMatchingSiteAndOpenLink(phase) {
     for (let siteName of Object.keys(contextModules)) {
       let siteContextModule = contextModules[siteName];
-      if (openSiteLink(siteContextModule, phase, tab, link, options)) {
+      if (openSiteLink(siteName, siteContextModule, phase, tab, link, options)) {
         return true;
       }
     }
@@ -191,7 +214,7 @@ function openTemplate(info, tab, options) {
 
   for (let siteName of Object.keys(contextModules)) {
     let siteContextModule = contextModules[siteName];
-    if (openSiteTemplate(siteContextModule, tab, text, options)) {
+    if (openSiteTemplate(siteName, siteContextModule, tab, text, options)) {
       return true;
     }
   }

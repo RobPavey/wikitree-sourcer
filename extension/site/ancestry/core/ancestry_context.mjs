@@ -37,11 +37,11 @@ function transformLink(linkText, phase, options) {
   let link = linkText;
 
   if (phase != 1) {
-    return "";
+    return null;
   }
 
   if (!/ancestry/i.test(linkText)) {
-    return "";
+    return null;
   }
 
   // do not redirect sharing links when using library edition since that does not work
@@ -49,7 +49,7 @@ function transformLink(linkText, phase, options) {
     let desiredDomain = options.search_ancestry_domain;
     const tabOption = options.context_general_newTabPos;
     if (desiredDomain.includes("library")) {
-      return link;
+      return { link: link, reuseTab: false };
     }
   }
 
@@ -178,13 +178,13 @@ function transformLink(linkText, phase, options) {
     }
   }
 
-  return link;
+  return { link: link, reuseTab: false };
 }
 
 function transformTemplateToLink(text, options) {
   const templateRegex = /ancestry/i;
   if (!templateRegex.test(text)) {
-    return "";
+    return null;
   }
 
   let desiredDomain = options.search_ancestry_domain;
@@ -249,7 +249,7 @@ function transformTemplateToLink(text, options) {
     }
   }
 
-  return link;
+  return { link: link, reuseTab: false };
 }
 
 export { transformLink, transformTemplateToLink };

@@ -24,13 +24,13 @@ SOFTWARE.
 
 function transformLink(linkText, phase, options) {
   if (phase != 1) {
-    return "";
+    return null;
   }
 
   let link = linkText;
 
   if (!link.includes("thegenealogist")) {
-    return "";
+    return null;
   }
 
   let domain = link.replace(/^https?\:\/\/[^\.]+\.(thegenealogist[^\/]+)\/.*/, "$1");
@@ -44,12 +44,12 @@ function transformLink(linkText, phase, options) {
       let newLink = link.replace(domain, desiredDomain);
 
       if (newLink && newLink != link) {
-        return newLink;
+        return { link: newLink, reuseTab: false };
       }
     }
   }
 
-  return "";
+  return null;
 }
 
 export { transformLink };
