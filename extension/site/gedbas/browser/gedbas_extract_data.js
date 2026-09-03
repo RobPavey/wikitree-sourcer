@@ -27,12 +27,92 @@ SOFTWARE.
 function extractData(document, url) {
   let result = { url: url, success: false };
 
-  /*
-  const items = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  if (items.length < 1) {
-    return result;
+  const characteristics = document.querySelector("table[id=\"characteristics\"] > tbody");
+  for (let characteristic of characteristics.children) {
+    let key = characteristic.children[0].textContent.trim();
+    let value = characteristic.children[1].textContent.trim();
+    let date = characteristic.children[2].textContent.trim();
+    let place = characteristic.children[3].textContent.replaceAll("Personen in diesem Ort suchen", "").trim();
+    let sources = characteristic.children[4];
+
+    if (key && value) {
+      let entry = {value: value};
+
+      if (date) {
+        entry.date = date;
+      }
+      if (place) {
+        entry.place = place;
+      }
+
+      if (sources) {
+        let soure_list = [];
+        for (let source of sources.querySelectorAll("span")) {
+          soure_list.push(source.textContent.trim());
+        }
+
+        if (soure_list.length > 0) {
+          entry.sources = soure_list;
+        }
+      }
+
+      result[key] = entry;
+    }
   }
-  */
+
+  const events = document.querySelector("table[id=\"events\"] > tbody");
+  for (let event of events.children) {
+    let key = event.children[0].textContent.trim();
+    let date = event.children[1].textContent.trim();
+    let place = event.children[2].textContent.replaceAll("Personen in diesem Ort suchen", "").trim();
+    let sources = event.children[3];
+
+    if (key) {
+      let entry = {};
+
+      if (date) {
+        entry.date = date;
+      }
+      if (place) {
+        entry.place = place;
+      }
+
+      if (sources) {
+        let soure_list = [];
+        for (let source of sources.querySelectorAll("span")) {
+          soure_list.push(source.textContent.trim());
+        }
+
+        if (soure_list.length > 0) {
+          entry.sources = soure_list;
+        }
+      }
+
+      result[key] = entry;
+    }
+  }
+
+  const sources = document.querySelector("div[id=\"gedbas-sources\"] > table > tbody");
+  result.sources = {};
+  for (let source of sources.children) {
+    let key = source.children[0].textContent.trim();
+    if (!key) continue;
+
+    let data = {};
+    const source_data = source.children[1];
+    data.title = source_data.children[0].textContent.trim();
+    for (let i = 1; i < source_data.children.length; i++) {
+      const entry = source_data.children[i];
+      if (entry.children.length == 0) continue;
+      
+      const key = entry.childNodes[1].textContent.trim();
+      const value = entry.childNodes[3].textContent.trim();
+      if (!key && !value) continue;
+      data[key] = value;
+    }
+
+    result.sources[key] = data;
+  }
 
   result.success = true;
   return result;
