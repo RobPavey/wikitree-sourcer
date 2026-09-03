@@ -29,17 +29,17 @@ function buildGedbasUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = "Put Source Title here";
+  builder.sourceTitle = ed.dbInfo.Titel;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  // builder.sourceReference = "Put Source Reference here";
 }
 
 function buildRecordLink(ed, gd, builder) {
   var gedbasUrl = buildGedbasUrl(ed, builder);
 
-  let recordLink = "[" + gedbasUrl + " Gedbas Record]";
+  let recordLink = "[" + gedbasUrl + " GEDBAS Database]";
   builder.recordLinkOrTemplate = recordLink;
 }
 

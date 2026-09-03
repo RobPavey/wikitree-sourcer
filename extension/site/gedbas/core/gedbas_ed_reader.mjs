@@ -30,11 +30,90 @@ class GedbasEdReader extends ExtractedDataReader {
     super(ed);
   }
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
-  // Overrides of the relevant get functions used in commonGeneralizeData
-  // Note: there are default implementations in ExtractedDataReader and, if using a data-driven
-  // style, you may not need to override them here.
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  getSourceType() {
+    return "database";
+  }
+
+  getNameObj() {
+    if (!this.ed.primaryPerson.Name) return undefined;
+    return this.makeNameObjFromFullName(this.ed.primaryPerson.Name.value);
+  }
+
+  getBirthDateObj() {
+    let dateString = this.ed.primaryPerson.Geburt.date
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
+    return undefined;
+  }
+
+  getBirthPlaceObj() {
+    let placeString = this.ed.primaryPerson.Geburt.place;
+
+    if (placeString || this.recordType == RT.Birth || this.recordType == RT.BirthRegistration) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
+    return undefined;
+  }
+
+  getDeathDateObj() {
+    let dateString = this.ed.primaryPerson.Tod.date;
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
+    return undefined;
+  }
+
+  getDeathPlaceObj() {
+    let placeString = this.ed.primaryPerson.Tod.place;
+
+    if (placeString || this.recordType == RT.Death || this.recordType == RT.DeathRegistration) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
+    return undefined;
+  }
+
+  getOccupation() {
+    if (!this.ed.primaryPerson.Beruf) return undefined;
+    return this.ed.primaryPerson.Beruf.value;
+  }
+
+  getSpouses() {
+    let spouses = [];
+    for (let family of this.ed.families) {
+      let nameObj = this.makeNameObjFromFullName(family.partner.name);
+      let marriageDate = this.makeDateObjFromDateString(family.marriageDate);
+      let marriagePlace = this.makePlaceObjFromFullPlaceName(family.marriagePlace);
+      spouses.push(this.makeSpouseObj(nameObj, marriageDate, marriagePlace, undefined));
+    }
+    return spouses;
+  }
+
+  getParents() {
+    if (this.ed.parents.length == 0) return undefined;
+
+    let parentData = this.ed.parents[0];
+    return this.makeParentsFromFullNames(
+      parentData.father.name,
+      parentData.mother.name,
+    )
+  }
 }
 
 export { GedbasEdReader };
