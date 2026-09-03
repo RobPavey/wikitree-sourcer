@@ -33,7 +33,7 @@ let KEY_TRANSLATIONS = {
 function extractData(document, url) {
   let result = { url: url, success: false };
 
-  if (!url.match("/search/show/")) return result;
+  if (!url.match("/search/show/") && !url.match("/search/uuid/")) return result;
 
   const table = document.querySelector("table[class=\"table table-striped\"] > tbody");
   for (let element of table.children) {
@@ -51,6 +51,10 @@ function extractData(document, url) {
 
   const uuid = document.querySelector("#entry-uuid");
   result.uuid = uuid.textContent.trim();
+
+  if (result.uuid) {
+    result.url = "https://des.genealogy.net/search/uuid/" + result.uuid;
+  }
 
   result.success = true;
   return result;

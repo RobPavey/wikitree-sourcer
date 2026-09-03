@@ -29,11 +29,17 @@ function buildSearchUrl(buildUrlInput) {
 
   var builder = new CompdesUriBuilder();
 
-  // call methods on builder here
+  const lastName = gd.inferLastName();
+  if (lastName) {
+    builder.addLastname(lastName);
+  }
+
+  const givenNames = gd.inferForenames();
+  if (givenNames) {
+    builder.addFirstname(givenNames);
+  }
 
   const url = builder.getUri();
-
-  //console.log("URL is " + url);
 
   var result = {
     url: url,
