@@ -33,6 +33,93 @@ class CompdesEdReader extends ExtractedDataReader {
   getNameObj() {
     return this.makeNameObjFromForenamesAndLastName(this.ed.Vorname, this.ed.Nachname);
   }
+
+  getEventDateObj() {
+    let dateString = this.ed.Datum;
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
+    return undefined;
+  }
+
+  getBirthPlaceObj() {
+    let placeString = this.ed.Geburtsort;
+
+    if (placeString || this.recordType == RT.Birth || this.recordType == RT.BirthRegistration) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
+    return undefined;
+  }
+
+  getBirthDateObj() {
+    let dateString = this.ed.Geburtsdatum;
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
+    return undefined;
+  }
+
+  getDeathPlaceObj() {
+    let placeString = this.ed.Sterbeort;
+
+    if (placeString || this.recordType == RT.Death || this.recordType == RT.DeathRegistration) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
+    return undefined;
+  }
+
+  getDeathDateObj() {
+    let dateString = this.ed.Sterbedatum;
+
+    if (dateString) {
+      let dateObj = this.makeDateObjFromDateString(dateString);
+      if (dateObj) {
+        return dateObj;
+      }
+    }
+
+    return undefined;
+  }
+
+  getResidencePlaceObj() {
+    let placeString = this.ed.Adresse || this.ed.Ort;
+
+    if (placeString) {
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      if (placeObj) {
+        return placeObj;
+      }
+    }
+    return undefined;
+  }
+
+  getOccupation() {
+    return this.ed.Beruf;
+  }
+
+  getUnit() {
+    return this.ed.Regiment;
+  }
+
+  getRank() {
+    return this.ed.Dienstgrad;
+  }
 }
 
 export { CompdesEdReader };

@@ -28,6 +28,12 @@ let KEY_TRANSLATIONS = {
   "Page Number": "Seitenzahl",
   "Last name": "Nachname",
   "First name": "Vorname",
+  "Beruf o. ä.": "Beruf",
+  "Reg. o.ä.": "Regiment",
+  "Geburtstag": "Geburtsdatum",
+  "Todestag": "Sterbedatum",
+  "Sterbetag": "Sterbedatum",
+  "Todesdatum": "Sterbedatum",
 };
 
 function extractData(document, url) {
