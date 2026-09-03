@@ -111,6 +111,35 @@ function extractData(document, url) {
     });
   }
 
+  result.families = [];
+  const families = document.querySelector("div[id=\"gedbas-families\"] > table > tbody");
+  for (let familyIdx = 1; familyIdx < families.children.length; familyIdx++) {
+    const familyData = families.children[familyIdx];
+
+    let family = {};
+    const marriageDate = familyData.children[0].children[0].textContent.trim();
+    if (marriageDate) family.marriageDate = marriageDate;
+    const marriagePlace = familyData.children[0].children[2].textContent.trim();
+    if (marriagePlace) family.marriagePlace = marriagePlace;
+
+    family.partner = {
+      name: familyData.children[1].children[0].textContent.trim(),
+      url: familyData.children[1].children[0].href,
+    }
+
+    family.children = [];
+    for (let childData of familyData.children[2].children[0].children) {
+      let child = {};
+      const birthDate = childData.querySelector("span").textContent.trim();
+      if (birthDate) child.birthDate = birthDate;
+      child.name = childData.querySelector("a").textContent.trim();
+      child.link = childData.querySelector("a").href;
+      family.children.push(child);
+    }
+
+    result.families.push(family);
+  }
+
   const sources = document.querySelector("div[id=\"gedbas-sources\"] > table > tbody");
   result.sources = {};
   for (let source of sources.children) {
