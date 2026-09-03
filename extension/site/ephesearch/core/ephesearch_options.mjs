@@ -24,26 +24,9 @@ SOFTWARE.
 
 import {
   registerSubsectionForOptions,
-  registerSubheadingForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
-
-const searchBehaviorOptionsGroup = {
-  category: "search",
-  subcategory: "ephesearch",
-  tab: "search",
-  subsection: "ephesearch",
-  subheading: "behavior",
-  options: [
-    {
-      optionName: "reuseExistingTab",
-      type: "checkbox",
-      label: "Do search in existing EphemeraSearch tab if present",
-      defaultValue: true,
-    },
-  ],
-};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -55,8 +38,6 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "ephesearch", "EphemeraSearch");
 registerSiteSearchPopupOptionsGroup("ephesearch");
-registerSubheadingForOptions("search", "ephesearch", "behavior", "Search Behavior");
-registerOptionsGroup(searchBehaviorOptionsGroup);
 
 registerSubsectionForOptions("citation", "ephesearch", "EphemeraSearch");
 registerOptionsGroup(citationOptionsGroup);

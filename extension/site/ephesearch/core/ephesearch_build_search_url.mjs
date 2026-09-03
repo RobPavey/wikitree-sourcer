@@ -22,22 +22,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { buildSearchData } from "../../extension/site/ephesearch/core/ephesearch_build_search_data.mjs";
-import { runBuildSearchDataTests } from "../test_utils/test_build_search_utils.mjs";
+import { EphesearchUriBuilder } from "./ephesearch_uri_builder.mjs";
 
-const regressionData = [
-  /*
-  {
-    // has pref name
-    caseName: "wikitree_stanway-252_read",
-    inputPath: "wikitree/generalized_data/ref/stanway-252_read",
-    typeOfSearch: "Births",
-  },
-  */
-];
+function buildSearchUrl(buildUrlInput) {
+  const gd = buildUrlInput.generalizedData;
 
-async function runTests(testManager) {
-  await runBuildSearchDataTests("ephesearch", buildSearchData, regressionData, testManager);
+  var builder = new EphesearchUriBuilder();
+
+  builder.addText(gd.inferFullName());
+
+  const url = builder.getUri();
+
+  //console.log("URL is " + url);
+
+  var result = {
+    url: url,
+  };
+
+  return result;
 }
 
-export { runTests };
+export { buildSearchUrl };

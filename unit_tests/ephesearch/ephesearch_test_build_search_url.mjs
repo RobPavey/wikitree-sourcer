@@ -22,25 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function buildSearchData(input) {
-  const gd = input.generalizedData;
+import { buildSearchUrl } from "../../extension/site/ephesearch/core/ephesearch_build_search_url.mjs";
+import { runBuildSearchUrlTests } from "../test_utils/test_build_search_utils.mjs";
 
-  let fieldData = {};
-  let selectData = {};
+const regressionData = [
+  /*
+  {
+    caseName: "england_marriage_reg_handford-3_sc",
+    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
+    typeOfSearch: "SameCollection",
+  },
+  */
+];
 
-  if (gd.name) {
-    fieldData.name = gd.name.inferFullName();
-  }
-
-  //console.log("fieldData is:");
-  //console.log(fieldData);
-
-  var result = {
-    fieldData: fieldData,
-    selectData: selectData,
-  };
-
-  return result;
+async function runTests(testManager) {
+  await runBuildSearchUrlTests("ephesearch", buildSearchUrl, regressionData, testManager);
 }
 
-export { buildSearchData };
+export { runTests };

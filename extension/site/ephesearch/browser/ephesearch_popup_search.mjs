@@ -31,9 +31,6 @@ import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_sear
 const searchMenuConfig = {
   siteName: "ephesearch",
   siteDisplayName: "EphemeraSearch",
-  localStorageConfig: {
-    searchUrl: "https://www.ephemerasearch.com/search/ephemera/",
-  },
   defaultMenuItem: {
     menuItemText: "Search EphemeraSearch",
     includeDefaultSearch: true,
