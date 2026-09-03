@@ -29,17 +29,17 @@ function buildCompdesUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = "Put Source Title here";
+  builder.sourceTitle = ed.title;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  // builder.sourceReference = "Put Source Reference here";
 }
 
 function buildRecordLink(ed, gd, builder) {
   var compdesUrl = buildCompdesUrl(ed, builder);
 
-  let recordLink = "[" + compdesUrl + " CompGen - Dateneingabesystem (DES) Record]";
+  let recordLink = "[" + compdesUrl + " CompGen DES Database Entry]";
   builder.recordLinkOrTemplate = recordLink;
 }
 
