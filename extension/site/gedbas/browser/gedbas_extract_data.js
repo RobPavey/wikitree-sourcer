@@ -27,6 +27,10 @@ SOFTWARE.
 function extractData(document, url) {
   let result = { url: url, success: false };
 
+  if (!url.match("/person/show/")) return result;
+
+  result.primaryPerson = {};
+
   const characteristics = document.querySelector("table[id=\"characteristics\"] > tbody");
   for (let characteristic of characteristics.children) {
     let key = characteristic.children[0].textContent.trim();
@@ -56,7 +60,7 @@ function extractData(document, url) {
         }
       }
 
-      result[key] = entry;
+      result.primaryPerson[key] = entry;
     }
   }
 
@@ -88,8 +92,23 @@ function extractData(document, url) {
         }
       }
 
-      result[key] = entry;
+      result.primaryPerson[key] = entry;
     }
+  }
+
+  result.parents = [];
+  const parents = document.querySelector("div[id=\"gedbas-parents\"] > table > tbody");
+  for (let parent_data of parents.children) {
+    result.parents.push({
+      father: {
+        name: parent_data.children[0].children[0].textContent.trim(),
+        url: parent_data.children[0].children[0].href,
+      },
+      mother: {
+        name: parent_data.children[1].children[0].textContent.trim(),
+        url: parent_data.children[1].children[0].href,
+      },
+    });
   }
 
   const sources = document.querySelector("div[id=\"gedbas-sources\"] > table > tbody");
@@ -112,6 +131,17 @@ function extractData(document, url) {
     }
 
     result.sources[key] = data;
+  }
+
+  result.dbInfo = {};
+  const gedbasInfo = document.querySelector("div[id=\"gedbas-database\"] > table > tbody");
+  for (let entry of gedbasInfo.children) {
+    if (entry.children.length != 2) continue;
+
+    const key = entry.children[0].textContent.trim();
+    const value = entry.children[1].textContent.replace("Profilseite besuchen", "").trim();
+    if (!key && !value) continue;
+    result.dbInfo[key] = value;
   }
 
   result.success = true;
