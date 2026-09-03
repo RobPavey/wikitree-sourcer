@@ -54,6 +54,7 @@ import "../../freecen/core/freecen_options.mjs";
 import "../../freereg/core/freereg_options.mjs";
 import "../../fs/core/fs_options.mjs";
 import "../../gbooks/core/gbooks_options.mjs";
+import "../../gedbas/core/gedbas_options.mjs";
 import "../../gedenkbuch/core/gedenkbuch_options.mjs";
 import "../../geneteka/core/geneteka_options.mjs";
 import "../../gensau/core/gensau_options.mjs";

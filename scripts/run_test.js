@@ -50,6 +50,7 @@ const siteNames = [
   "freereg",
   "fs",
   "gbooks",
+  "gedbas",
   "gedenkbuch",
   "geneteka",
   "gensau",
