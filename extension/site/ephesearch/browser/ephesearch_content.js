@@ -135,10 +135,10 @@ async function doPendingSearch() {
     //console.log("doPendingSearch: isRetry is");
     //console.log(isRetry);
 
-    sleep(2000);
-
     if (fieldData.name) {
-      document.querySelector("#searchbox > form > input").value = fieldData.name;
+      setTimeout(() => { 
+        document.querySelector("#searchbox > form > input").value = fieldData.name;
+      }, 8000);
     }
 
     // clear the pending data so that we don't use it again on refine search

@@ -47,6 +47,9 @@ function extractData(document, url) {
   }
 
   let edit_row = document.querySelector("div[class=\"transcription narrow container\"]");
+  if (edit_row == null) {
+    edit_row = document.querySelector("div[class=\"transcription wide container\"]");
+  }
   if (edit_row != null) {
     let description = null, elements = null;
     if (edit_row.children.length > 2) {
