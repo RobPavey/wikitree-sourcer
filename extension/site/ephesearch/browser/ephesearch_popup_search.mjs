@@ -32,7 +32,7 @@ const searchMenuConfig = {
   siteName: "ephesearch",
   siteDisplayName: "EphemeraSearch",
   localStorageConfig: {
-    searchUrl: "https://put_your_search_url_here",
+    searchUrl: "https://www.ephemerasearch.com/search/ephemera/",
   },
   defaultMenuItem: {
     menuItemText: "Search EphemeraSearch",

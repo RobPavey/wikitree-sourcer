@@ -30,11 +30,15 @@ class EphesearchEdReader extends ExtractedDataReader {
     super(ed);
   }
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
-  // Overrides of the relevant get functions used in commonGeneralizeData
-  // Note: there are default implementations in ExtractedDataReader and, if using a data-driven
-  // style, you may not need to override them here.
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  getNameObj() {
+    if (this.ed.recipient_names) {
+      return this.makeNameObjFromFullName(this.ed.recipient_names);
+    }
+    if (this.ed.sender_names) {
+      return this.makeNameObjFromFullName(this.ed.sender_names);
+    }
+    return undefined;
+  }
 }
 
 export { EphesearchEdReader };

@@ -135,9 +135,11 @@ async function doPendingSearch() {
     //console.log("doPendingSearch: isRetry is");
     //console.log(isRetry);
 
-    //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-    // insert code here to do the search by filling out the form and submitting it
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    sleep(2000);
+
+    if (fieldData.name) {
+      document.querySelector("#searchbox > form > input").value = fieldData.name;
+    }
 
     // clear the pending data so that we don't use it again on refine search
     pendingSearchData = undefined;

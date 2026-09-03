@@ -48,14 +48,28 @@ function extractData(document, url) {
 
   let edit_row = document.querySelector("div[class=\"transcription narrow container\"]");
   if (edit_row != null) {
-    result.description = edit_row.children[1].textContent.trim();
+    let description = null, elements = null;
+    if (edit_row.children.length > 2) {
+      description = edit_row.children[1];
+      elements = edit_row.children[2];
+    }
+    else {
+      description = edit_row.children[0];
+      elements = edit_row.children[1];
+    }
+
+    result.description = description.textContent.trim();
     result.description = result.description.replace("Description from eBay: ", "").trim();
 
-    for (let element of edit_row.children[2].children) {
+    for (let element of elements.children) {
       const key = element.querySelector("label").textContent.trim().toLowerCase().replaceAll(" ", "_");
       const value = element.querySelector("div[class=\"form-control tx-trigger h-100 emotion-cache-no-speedy-5bs01k\"]");
-      if (value != null) {
-        result[key] = value.textContent.trim();
+      if (value == null) {
+        continue;
+      }
+      value = value.textContent.trim();
+      if (value != null && value != "") {
+        result[key] = value;
       }
     }
   }
