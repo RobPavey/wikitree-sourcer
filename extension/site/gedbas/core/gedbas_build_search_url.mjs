@@ -29,7 +29,8 @@ function buildSearchUrl(buildUrlInput) {
 
   var builder = new GedbasUriBuilder();
 
-  // call methods on builder here
+  builder.addGivenNames(gd.name.inferForenames());
+  builder.addSurname(gd.inferLastName());
 
   const url = builder.getUri();
 
