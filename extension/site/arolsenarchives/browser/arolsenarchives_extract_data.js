@@ -53,7 +53,24 @@ function extractData(document, url) {
     return result;
   }
 
-  result.doc_id = url.substring(url.lastIndexOf("/") + 1);
+  if (url.match("/document/")) {
+    result.doc_id = url.substring(url.lastIndexOf("/") + 1);
+
+    let collectionDisplay = document.querySelector("mat-grid-tile.ng-tns-c169-3:nth-child(1) > figure:nth-child(1) > a:nth-child(2)");
+    if (collectionDisplay) {
+      result.collectionUrl = collectionDisplay.href;
+    }
+  }
+  else if (url.match("/archive/")) {
+    result.collectionUrl = url;
+
+    let imageViewer = document.querySelector("viewer-one-image");
+    if (imageViewer) {
+      result.doc_id = document.querySelector("div.title:nth-child(1)").textContent.replace("DocID:", "").trim();
+    }
+
+    result.citeCollection = true;
+  }
 
   let breadcrum_string = "";
   const breadcrum_item = document.querySelector('div[class="fd-tree-path"]');
