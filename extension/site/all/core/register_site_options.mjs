@@ -39,6 +39,7 @@ import "../../ausmem/core/ausmem_options.mjs";
 import "../../baclac/core/baclac_options.mjs";
 import "../../basrhin/core/basrhin_options.mjs";
 import "../../bg/core/bg_options.mjs";
+import "../../compdes/core/compdes_options.mjs";
 import "../../cwgc/core/cwgc_options.mjs";
 import "../../dfgviewer/core/dfgviewer_options.mjs";
 import "../../doew/core/doew_options.mjs";

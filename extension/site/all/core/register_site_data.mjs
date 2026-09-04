@@ -42,6 +42,7 @@ import "../../ausmem/core/ausmem_site_data.mjs";
 import "../../baclac/core/baclac_site_data.mjs";
 import "../../basrhin/core/basrhin_site_data.mjs";
 import "../../bg/core/bg_site_data.mjs";
+import "../../compdes/core/compdes_site_data.mjs";
 import "../../cwgc/core/cwgc_site_data.mjs";
 import "../../dfgviewer/core/dfgviewer_site_data.mjs";
 import "../../doew/core/doew_site_data.mjs";
