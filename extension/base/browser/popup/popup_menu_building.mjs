@@ -1040,7 +1040,8 @@ function isManualClassificationNeeded(data) {
       data.generalizedData.sourceOfData == "noda" ||
       data.generalizedData.sourceOfData == "archion" ||
       data.generalizedData.sourceOfData == "matricula" ||
-      data.generalizedData.sourceOfData == "arolsenarchives"
+      data.generalizedData.sourceOfData == "arolsenarchives" ||
+      data.generalizedData.sourceOfData == "dfgviewer"
     ) {
       result.isRecordTypeNeeded = true;
     }

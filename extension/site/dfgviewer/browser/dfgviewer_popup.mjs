@@ -360,6 +360,9 @@ export async function parseMetadata(extractData) {
   }
 }
 
+async function regeneralize(ed, result) {
+}
+
 async function setupDfgviewerPopupMenu(extractedData) {
   const url = extractedData.url.toString();
   const url_parsed = new URL(url);
@@ -378,6 +381,7 @@ async function setupDfgviewerPopupMenu(extractedData) {
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "dfgviewer",
+    regeneralizeFunction: regeneralize,
   };
 
   setupSimplePopupMenu(input);
