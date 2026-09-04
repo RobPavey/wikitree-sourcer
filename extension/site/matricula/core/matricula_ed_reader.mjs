@@ -28,6 +28,12 @@ import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mj
 class MatriculaEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
+
+    if (this.ed.recordTypeCandidates && this.ed.recordTypeCandidates.length == 2) {
+      this.recordType = this.ed.recordTypeCandidates[1];
+    } else {
+      this.recordType = "Unclassified";
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,8 +44,6 @@ class MatriculaEdReader extends ExtractedDataReader {
     if (!this.ed.success) {
       return false; //the extract failed, GeneralizedData is not even normally called in this case
     }
-
-    this.recordType = this.ed.recordTypeCandidates.length != 2 ? "Unclassified" : this.ed.recordTypeCandidates[1];
 
     return true;
   }
