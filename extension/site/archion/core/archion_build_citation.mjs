@@ -62,10 +62,7 @@ function buildCoreCitation(ed, gd, builder) {
 }
 
 function customLableFunction(ed, gd) {
-  if (ed.bookType) {
-    return ed.bookType;
-  }
-  return "Churchbook";
+  return ed.recordType || "Church Record";
 }
 
 function buildCitation(input) {

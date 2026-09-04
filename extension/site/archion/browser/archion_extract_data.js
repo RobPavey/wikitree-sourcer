@@ -26,65 +26,78 @@ SOFTWARE.
 
 function title2type(title) {
   title = title.toLowerCase();
-  let result = "";
+  let result = [];
 
+  if (title.includes("geburt")) {
+    result.push("Birth");
+  }
   if (title.includes("tauf")) {
-    result += ", Christening";
+    result.push("Baptism");
   }
   if (title.includes("trau") || title.includes("heirat") || title.includes("eheprotokoll")) {
-    result += ", Marriage";
+    result.push("Marriage");
   }
   if (title.includes("proklamation")) {
-    result += ", Proclamation";
+    result.push("Proclamation");
   }
   if (
     title.includes("tod") ||
-    title.includes("tot") ||
+    title.includes("tot")
+  ) {
+    result.push("Death");
+  }
+  if (
     title.includes("bestattung") ||
     title.includes("begraben") ||
     title.includes("begräbnis") ||
     title.includes("beerdigung")
   ) {
-    result += ", Death";
+    result.push("Burial");
   }
   if (title.includes("kommunikant") || title.includes("abendmahl")) {
-    result += ", Communion";
+    result.push("Communion");
   }
   if (title.includes("konfirmand") || title.includes("konfirmant") || title.includes("konfirmation")) {
-    result += ", Confirmand";
+    result.push("Confirmand");
   }
 
   if (title.includes("verschmähung")) {
-    result += ", Disdain";
+    result.push("Disdain");
   }
   if (title.includes("versagung")) {
-    result += ", Refusal";
+    result.push("Refusal");
   }
 
   if (title.includes("eintritt")) {
-    result += ", Church entry";
+    result.push("Church Enty");
   }
   if (title.includes("austritt")) {
-    result += ", Church withdrawal";
+    result.push("Church Withdrawal");
   }
 
   let drop_register_item = false;
   if (title.includes("kirchstuhl")) {
-    result += ", Church Chair Register";
+    result.push("Church Chair Register");
     drop_register_item = true;
   }
   if (title.includes("familie") || title.includes("seele")) {
-    result += ", Family Register";
+    result.push("Family Register");
     drop_register_item = true;
   }
   if (!drop_register_item && (title.includes("register") || title.includes("index"))) {
-    result += ", Name Register";
+    let extraResults = [];
+    for (let item of result) {
+      extraResults.push("Name Register (" + item + ")");
+    }
+
+    result.push("Name Register");
+    result = result.concat(extraResults);
   }
 
-  if (result) {
-    return result.substring(2);
+  if (result.length == 0) {
+    return undefined;
   }
-  return "Churchbook";
+  return ["Church Record"].concat(result);
 }
 
 function extractData(document, url) {
@@ -112,7 +125,7 @@ function extractData(document, url) {
 
   result.pathComponents = pathComponents.slice(0, -1);
   result.book = pathComponents[pathComponents.length - 1];
-  result.bookType = title2type(result.book);
+  result.recordTypeCandidates = title2type(result.book);
   result.pageType = "image";
 
   const pageSelect = document.querySelector("select");
