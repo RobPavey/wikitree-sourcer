@@ -1039,7 +1039,8 @@ function isManualClassificationNeeded(data) {
       data.generalizedData.sourceOfData == "wiewaswie" ||
       data.generalizedData.sourceOfData == "noda" ||
       data.generalizedData.sourceOfData == "archion" ||
-      data.generalizedData.sourceOfData == "matricula"
+      data.generalizedData.sourceOfData == "matricula" ||
+      data.generalizedData.sourceOfData == "arolsenarchives"
     ) {
       result.isRecordTypeNeeded = true;
     }
