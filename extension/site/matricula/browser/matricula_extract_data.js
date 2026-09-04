@@ -24,68 +24,80 @@ SOFTWARE.
 
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
-function extractTypeSet(text) {
-  text = text.trim().toLowerCase();
+function title2type(title) {
+  title = title.toLowerCase();
+  let result = [];
 
-  let typeSet = "";
-
-  if (text.includes("geburt")) {
-    typeSet += ", Birth";
+  if (title.includes("geburt")) {
+    result.push("Birth");
   }
-  if (text.includes("tauf")) {
-    typeSet += ", Baptism";
+  if (title.includes("tauf")) {
+    result.push("Baptism");
   }
-  if (text.includes("trauu") || text.includes("heirat") || text.includes("eheschließung") || text.includes("ehebuch")) {
-    typeSet += ", Marriage";
+  if (title.includes("trau") || title.includes("heirat") || title.includes("eheprotokoll")) {
+    result.push("Marriage");
   }
-  if (text.includes("verlobung")) {
-    typeSet += ", Engagement";
+  if (title.includes("proklamation")) {
+    result.push("Proclamation");
   }
   if (
-    text.includes("sterbe") ||
-    text.includes("tod") ||
-    text.includes("tot") ||
-    text.includes("begräbnis") ||
-    text.includes("begraben") ||
-    text.includes("beerdigung")
+    title.includes("tod") ||
+    title.includes("tot")
   ) {
-    typeSet += ", Death";
+    result.push("Death");
   }
-  if (text.includes("kommunion")) {
-    typeSet += ", First Communion";
+  if (
+    title.includes("bestattung") ||
+    title.includes("begraben") ||
+    title.includes("begräbnis") ||
+    title.includes("beerdigung")
+  ) {
+    result.push("Burial");
   }
-  if (text.includes("firmung")) {
-    typeSet += ", Confirmation (Firmung)";
+  if (title.includes("kommunikant") || title.includes("abendmahl")) {
+    result.push("Communion");
   }
-  if (text.includes("notizen") || text.includes("anmerkung")) {
-    typeSet += ", Notes";
+  if (title.includes("konfirmand") || title.includes("konfirmant") || title.includes("konfirmation")) {
+    result.push("Confirmand");
   }
-  if (text.includes("register") || text.includes("index")) {
-    typeSet += ", Name Register";
+
+  if (title.includes("verschmähung")) {
+    result.push("Disdain");
   }
-  if (text.includes("umschlag")) {
-    typeSet += ", Envelope";
+  if (title.includes("versagung")) {
+    result.push("Refusal");
   }
-  if (text.includes("familie")) {
-    typeSet += ", Family Book";
+
+  if (title.includes("eintritt")) {
+    result.push("Church Enty");
   }
-  if (text.includes("grundbuch")) {
-    typeSet += ", Land Register";
+  if (title.includes("austritt")) {
+    result.push("Church Withdrawal");
   }
-  if (text.includes("lose blätter")) {
-    if (typeSet) {
-      typeSet += ", Loose Sheets";
-    } else {
-      typeSet += ", Loose Sheets (Church Records)";
+
+  let drop_register_item = false;
+  if (title.includes("kirchstuhl")) {
+    result.push("Church Chair Register");
+    drop_register_item = true;
+  }
+  if (title.includes("familie") || title.includes("seele")) {
+    result.push("Family Register");
+    drop_register_item = true;
+  }
+  if (!drop_register_item && (title.includes("register") || title.includes("index"))) {
+    let extraResults = [];
+    for (let item of result) {
+      extraResults.push("Name Register (" + item + ")");
     }
+
+    result.push("Name Register");
+    result = result.concat(extraResults);
   }
-  if (text.includes("einband")) {
-    typeSet += ", Cover";
+
+  if (result.length == 0) {
+    return undefined;
   }
-  if (text.includes("sonstiges")) {
-    typeSet += ", Miscellaneous";
-  }
-  return typeSet.substring(2);
+  return ["Church Record"].concat(result);
 }
 
 function extractData(document, url) {
@@ -141,10 +153,7 @@ function extractData(document, url) {
       const page = text.split("_")[1];
       result.page = Number(page).toString();
       result.sectionNumber = Number(text.split("-")[0]).toString();
-      result.typeSet = extractTypeSet(text);
-      if (result.typeSet == "") {
-        result.typeSet = extractTypeSet(bookTitle);
-      }
+      result.recordTypeCandidates = title2type(text) || title2type(bookTitle);
     }
   }
 
@@ -154,7 +163,7 @@ function extractData(document, url) {
       const text = selectedComponent.text;
       const page = text.substring("Seite ".length);
       result.page = page;
-      result.typeSet = extractTypeSet(bookTitle);
+      result.recordTypeCandidates = title2type(bookTitle);
     }
   }
 
@@ -170,10 +179,7 @@ function extractData(document, url) {
         page = page.substring("fol.".length).trim();
       }
       result.page = page;
-      result.typeSet = extractTypeSet(text.split("-")[0]);
-      if (result.typeSet == "") {
-        result.typeSet = extractTypeSet(bookTitle);
-      }
+      result.recordTypeCandidates = title2type(text.split("-")[0]) || title2type(bookTitle);
     }
   }
 
@@ -184,10 +190,7 @@ function extractData(document, url) {
       const page = text.substring(text.lastIndexOf("-") + 1).trim();
       result.page = Number(page).toString();
       result.sectionNumber = Number(text.split("-")[0]).toString();
-      result.typeSet = extractTypeSet(text);
-      if (result.typeSet == "") {
-        result.typeSet = extractTypeSet(bookTitle);
-      }
+      result.recordTypeCandidates = title2type(text) || title2type(bookTitle);
     }
   }
 
@@ -197,7 +200,7 @@ function extractData(document, url) {
       const text = selectedComponent.text;
       const page = text.split("_")[0].trim();
       result.page = page;
-      result.typeSet = extractTypeSet(bookTitle);
+      result.recordTypeCandidates = title2type(bookTitle);
     }
   }
 
@@ -207,7 +210,7 @@ function extractData(document, url) {
     if (lastComponent.substring(0, 4) == "?pg=") {
       result.page = lastComponent.substring(4).split("&")[0];
     }
-    result.typeSet = extractTypeSet(bookTitle);
+    result.recordTypeCandidates = title2type(bookTitle);
   }
 
   result.success = true;

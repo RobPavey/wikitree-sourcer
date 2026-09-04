@@ -1038,7 +1038,8 @@ function isManualClassificationNeeded(data) {
       data.generalizedData.sourceOfData == "openarch" ||
       data.generalizedData.sourceOfData == "wiewaswie" ||
       data.generalizedData.sourceOfData == "noda" ||
-      data.generalizedData.sourceOfData == "archion"
+      data.generalizedData.sourceOfData == "archion" ||
+      data.generalizedData.sourceOfData == "matricula"
     ) {
       result.isRecordTypeNeeded = true;
     }

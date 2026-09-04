@@ -45,7 +45,7 @@ class ArchionEdReader extends ExtractedDataReader {
   }
 
   getSourceType() {
-    return "record";
+    return "image";
   }
 }
 
