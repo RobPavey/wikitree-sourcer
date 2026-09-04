@@ -33,7 +33,18 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Document #" + ed.doc_id;
+  if (ed.doc_id && !ed.citeCollection) {
+    builder.sourceReference = "Document #" + ed.doc_id;
+
+    if (ed.collectionUrl) {
+      let collectionParts = ed.collectionUrl.split("/");
+      builder.sourceReference += " (Collection " + collectionParts[collectionParts.length - 1] + ")";
+    }
+  }
+  else if (ed.collectionUrl) {
+    let collectionParts = ed.collectionUrl.split("/");
+      builder.sourceReference += "Collection " + collectionParts[collectionParts.length - 1];
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
