@@ -20,5 +20,46 @@
     "extractedPlaceString": "Hällstad Älvsborgs län"
   },
   "maritalStatus": "single",
+  "householdArrayFields": [
+    "name",
+    "birthYear",
+    "birthPlace",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Andersson, Andreas",
+      "birthYear": "1802",
+      "birthPlace": "Murum Älvsborgs län",
+      "occupation": "Hemmansägare",
+      "link": "https://sok.riksarkivet.se/en/?postid=Folk_118564727#tab"
+    },
+    {
+      "name": "Anders Jan",
+      "birthYear": "1838",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "isSelected": true,
+      "maritalStatus": "single",
+      "gender": "male"
+    },
+    {
+      "name": "Samuel",
+      "birthYear": "1842",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "link": "https://sok.riksarkivet.se/en/?postid=Folk_118564729#tab"
+    },
+    {
+      "name": "Anna Charlotta",
+      "birthYear": "1853",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "link": "https://sok.riksarkivet.se/en/?postid=Folk_118564730#tab"
+    },
+    {
+      "name": "Fredrik",
+      "birthYear": "1859",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "link": "https://sok.riksarkivet.se/en/?postid=Folk_118564731#tab"
+    }
+  ],
   "hasValidData": true
 }

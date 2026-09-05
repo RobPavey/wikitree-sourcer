@@ -22,5 +22,70 @@
   },
   "maritalStatus": "married",
   "occupation": "Hemmansägare",
+  "householdArrayFields": [
+    "name",
+    "birthYear",
+    "birthPlace",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Johansson, Anders Peter",
+      "birthYear": "1829",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "occupation": "Hemmansägare",
+      "isSelected": true,
+      "maritalStatus": "married",
+      "gender": "male"
+    },
+    {
+      "name": "Svensdotter, Maja Stina",
+      "birthYear": "1833",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564746&tab=post#tab"
+    },
+    {
+      "name": "Alexander",
+      "birthYear": "1854",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564747&tab=post#tab"
+    },
+    {
+      "name": "Anna Mathilda",
+      "birthYear": "1857",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564748&tab=post#tab"
+    },
+    {
+      "name": "Josefina",
+      "birthYear": "1861",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564749&tab=post#tab"
+    },
+    {
+      "name": "Johan Albert",
+      "birthYear": "1864",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564750&tab=post#tab"
+    },
+    {
+      "name": "Klas Wilhelm",
+      "birthYear": "1867",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564751&tab=post#tab"
+    },
+    {
+      "name": "Karl Edgar",
+      "birthYear": "1869",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564752&tab=post#tab"
+    },
+    {
+      "name": "Selma Elisabeth",
+      "birthYear": "1874",
+      "birthPlace": "Hällstad Älvsborgs län",
+      "link": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&Ort=H%c3%a4llestads%2c+%c3%84lvsborgs+l%c3%a4n&DatumFran=1880&DatumTill=1880&AvanceradSok=true&page=2&postid=Folk_118564753&tab=post#tab"
+    }
+  ],
   "hasValidData": true
 }

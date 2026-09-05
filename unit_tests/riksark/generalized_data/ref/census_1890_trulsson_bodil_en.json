@@ -22,5 +22,40 @@
   },
   "maritalStatus": "married",
   "occupation": "Åbo",
+  "householdArrayFields": [
+    "name",
+    "birthYear",
+    "birthPlace",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Trulsson, Bodil",
+      "birthYear": "1819",
+      "birthPlace": "Knislinge Kristianstads län",
+      "occupation": "Åbo",
+      "isSelected": true,
+      "maritalStatus": "married",
+      "gender": "male"
+    },
+    {
+      "name": "Svensdotter, Bengta",
+      "birthYear": "1823",
+      "birthPlace": "Österslöv Kristianstads län",
+      "link": "https://sok.riksarkivet.se/en?Sokord=bodil&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=77&postid=Folk_102052653&tab=post#tab"
+    },
+    {
+      "name": "Per",
+      "birthYear": "1861",
+      "birthPlace": "Grydts",
+      "link": "https://sok.riksarkivet.se/en?Sokord=bodil&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=77&postid=Folk_102052654&tab=post#tab"
+    },
+    {
+      "name": "Gunild",
+      "birthYear": "1849",
+      "birthPlace": "Knislinge Kristianstads län",
+      "link": "https://sok.riksarkivet.se/en?Sokord=bodil&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=false&page=77&postid=Folk_102052655&tab=post#tab"
+    }
+  ],
   "hasValidData": true
 }

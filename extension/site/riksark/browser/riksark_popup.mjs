@@ -26,6 +26,7 @@ import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs"
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/riksark_generalize_data.mjs";
 import { buildCitation } from "../core/riksark_build_citation.mjs";
+import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
 async function setupRiksarkPopupMenu(extractedData) {
   let input = {
@@ -34,6 +35,7 @@ async function setupRiksarkPopupMenu(extractedData) {
     generalizeFailedMessage: "It looks like a Riksarkivet (Sweden) page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
+    buildHouseholdTableFunction: buildHouseholdTable,
     siteNameToExcludeFromSearch: "riksark",
   };
   setupSimplePopupMenu(input);

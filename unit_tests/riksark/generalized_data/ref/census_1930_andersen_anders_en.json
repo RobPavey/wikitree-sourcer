@@ -17,5 +17,22 @@
   },
   "maritalStatus": "single",
   "occupation": "Stenhuggare",
+  "householdArrayFields": [
+    "name",
+    "birthYear",
+    "birthPlace",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Andersen, Anders",
+      "birthYear": "1877",
+      "birthPlace": "Naesodden, Norge",
+      "occupation": "Stenhuggare",
+      "isSelected": true,
+      "maritalStatus": "single",
+      "gender": "male"
+    }
+  ],
   "hasValidData": true
 }

@@ -409,6 +409,92 @@ class RiksarkEdReader extends ExtractedDataReader {
       return super.getEventDateObj();
     }
   }
+
+  getHousehold() {
+    if (this.recordType != RT.Census) {
+      return undefined;
+    }
+
+    if (!this.ed.households) {
+      return undefined;
+    }
+
+    let familyNumEntry = this.getRecordDataKeyAndValueForKeys(["Family no", "Familj nr"]);
+    if (!familyNumEntry) {
+      return undefined;
+    }
+
+    // "Family no" of "1" means the household key is "Fam. no 1"
+    // "Familj nr" of "1" means the household key is "Fam. nr 1"
+    let householdKey = "";
+    let lang = "en";
+    if (familyNumEntry.key == "Family no") {
+      householdKey = "Fam. no " + familyNumEntry.value;
+      lang = "en";
+    } else if (familyNumEntry.key == "Familj nr") {
+      householdKey = "Fam. nr " + familyNumEntry.value;
+      lang = "sv";
+    }
+
+    if (!householdKey) {
+      return undefined;
+    }
+
+    let household = this.ed.households[householdKey];
+    if (!household) {
+      return undefined;
+    }
+
+    let headings = ["name", "birthYear", "birthPlace", "occupation"];
+    let householdArray = [];
+
+    let selectedPerson = null;
+
+    for (let person of household) {
+      let text = person.text;
+      let occupation = person.italicEndText;
+      let link = person.link;
+      let linkText = person.linkText;
+
+      let householdMember = {};
+
+      // the text has the occupation removes and is usuall of the form:
+      // sv: "Andersson, Andreas, f. 1802 i Murum Älvsborgs län"
+      // en: "Andersson, Andreas, b. 1802 in Murum Älvsborgs län"
+
+      let enRegex = /^(.*)\,\sb\.\s(\d+)\sin\s(.*)$/;
+      let svRegex = /^(.*)\,\sf\.\s(\d+)\si\s(.*)$/;
+      let regex = enRegex;
+      if (lang == "sv") {
+        regex = svRegex;
+      }
+      if (regex.test(text)) {
+        householdMember.name = text.replace(regex, "$1");
+        householdMember.birthYear = text.replace(regex, "$2");
+        householdMember.birthPlace = text.replace(regex, "$3");
+      }
+
+      if (occupation) {
+        householdMember.occupation = occupation;
+      }
+
+      if (link) {
+        householdMember.link = link;
+      }
+
+      if (!link && !selectedPerson) {
+        householdMember.isSelected = true;
+      }
+
+      householdArray.push(householdMember);
+    }
+
+    let result = {};
+    result.fields = headings;
+    result.members = householdArray;
+
+    return result;
+  }
 }
 
 export { RiksarkEdReader };

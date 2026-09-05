@@ -15,5 +15,52 @@
     "dateString": "1920"
   },
   "maritalStatus": "single",
+  "householdArrayFields": [
+    "name",
+    "birthYear",
+    "birthPlace",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Andersson, Erik Vollrath",
+      "birthYear": "1896",
+      "birthPlace": "Ljusnarsberg Örebro län",
+      "occupation": "Mureriarbetare v. sulfitfabr.",
+      "link": "https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505848&tab=post#tab"
+    },
+    {
+      "name": "Eriksen Gren, Olda Maria",
+      "birthYear": "1894",
+      "birthPlace": "Buksnes, Norge",
+      "link": "https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505849&tab=post#tab"
+    },
+    {
+      "name": "Mary",
+      "birthYear": "1921",
+      "birthPlace": "Buksnes, Norge",
+      "link": "https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505850&tab=post#tab"
+    },
+    {
+      "name": "Odd",
+      "birthYear": "1925",
+      "birthPlace": "Undersåker Jämtlands län",
+      "link": "https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505851&tab=post#tab"
+    },
+    {
+      "name": "Leif",
+      "birthYear": "1920",
+      "birthPlace": "Tronhiem, Norge",
+      "isSelected": true,
+      "maritalStatus": "single",
+      "gender": "male"
+    },
+    {
+      "name": "Asta",
+      "birthYear": "1929",
+      "birthPlace": "Undersåker Jämtlands län",
+      "link": "https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505853&tab=post#tab"
+    }
+  ],
   "hasValidData": true
 }
