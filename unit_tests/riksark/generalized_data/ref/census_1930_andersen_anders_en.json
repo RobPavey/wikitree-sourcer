@@ -7,8 +7,12 @@
     "forenames": "Anders"
   },
   "personGender": "male",
+  "eventDate": {
+    "yearString": "1930"
+  },
   "eventPlace": {
-    "placeString": "Vätö, Sweden",
+    "placeString": "Vätö, Stockholm, Sweden",
+    "county": "Stockholm",
     "country": "Sweden",
     "extractedPlaceString": "Vätö"
   },

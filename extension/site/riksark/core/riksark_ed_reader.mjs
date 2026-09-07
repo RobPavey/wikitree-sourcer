@@ -40,6 +40,7 @@ function cleanDate(edReader, value) {
 
 function cleanPlace(edReader, value) {
   let cleanString = value;
+
   return cleanString;
 }
 
@@ -219,6 +220,10 @@ const baseRecordTypeData = {
       recordDataKeys: ["Parish", "Församling"],
       cleanFunction: cleanPlace,
     },
+    county: {
+      recordDataKeys: ["County", "Län"],
+      cleanFunction: cleanPlace,
+    },
     gender: {
       recordDataKeys: ["Gender", "Kön"],
       cleanFunction: cleanGender,
@@ -245,6 +250,9 @@ const baseRecordTypeData = {
   },
   advancedPlaceRules: {
     addImpliedPartsToBlankPlace: true,
+    useCountyKeys: true,
+    ignoreCountyKeyIfAlreadyInPlaceName: true,
+    additionalCountyWords: ["county", "län"], // must be lowercase
     impliedCountryName: "Sweden",
   },
 };
@@ -406,7 +414,19 @@ class RiksarkEdReader extends ExtractedDataReader {
         return this.makeDateObjFromYear(this.imageYear);
       }
     } else {
-      return super.getEventDateObj();
+      let dateObj = super.getEventDateObj();
+
+      if (!dateObj) {
+        let recordType = this.ed.recordType;
+        if (recordType) {
+          const match = recordType.match(/\s\d{4}$/);
+          if (match) {
+            let year = match[0].trim();
+            dateObj = this.makeDateObjFromYear(year);
+          }
+        }
+      }
+      return dateObj;
     }
   }
 

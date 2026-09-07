@@ -33,6 +33,38 @@ const regressionData = [
   {
     caseName: "birth_1889_olga_henriette_en",
     url: "https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=7&postid=Fodelse_1621999&tab=post#tab",
+    optionVariants: [
+      {
+        variantName: "includeLink_none",
+        optionOverrides: {
+          citation_riksark_includeLink: "none",
+        },
+      },
+      {
+        variantName: "includeLink_separate",
+        optionOverrides: {
+          citation_riksark_includeLink: "separate",
+        },
+      },
+      {
+        variantName: "includeLink_separateOneLink",
+        optionOverrides: {
+          citation_riksark_includeLink: "separateOneLink",
+        },
+      },
+      {
+        variantName: "includeLink_inSourceTitleOnly",
+        optionOverrides: {
+          citation_riksark_includeLink: "inSourceTitleOnly",
+        },
+      },
+      {
+        variantName: "includeLink_inSourceTitlePlus",
+        optionOverrides: {
+          citation_riksark_includeLink: "inSourceTitlePlus",
+        },
+      },
+    ],
   },
   {
     caseName: "census_1880_anders_jan_en",

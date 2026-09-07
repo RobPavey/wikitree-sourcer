@@ -23,30 +23,97 @@ SOFTWARE.
 */
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { RiksarkEdReader } from "./riksark_ed_reader.mjs";
 
 function buildRiksarkUrl(ed, builder) {
   return ed.url;
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = "Put Source Title here";
+  builder.sourceTitle = "Riksarkivet";
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  function addSourceReferenceKeyValuePair(edReader, keys) {
+    let entry = edReader.getRecordDataKeyAndValueForKeys(keys);
+    if (entry) {
+      builder.addSourceReferenceField(entry.key, entry.value);
+    }
+  }
+
+  if (gd.sourceType == "image") {
+    if (ed.imagePageSourceReference) {
+      builder.sourceReference = ed.imagePageSourceReference;
+    }
+  } else {
+    builder.sourceReference = ed.recordType;
+    if (ed.recordData) {
+      let edReader = new RiksarkEdReader(ed);
+      if (edReader.hasValidData()) {
+        addSourceReferenceKeyValuePair(edReader, ["Archive", "Arkiv", "Archives"]);
+        addSourceReferenceKeyValuePair(edReader, ["Volume", "Volym"]);
+        addSourceReferenceKeyValuePair(edReader, ["Volume's reference code", "Volymens referenskod"]);
+        addSourceReferenceKeyValuePair(edReader, ["Register"]);
+        addSourceReferenceKeyValuePair(edReader, ["Created by", "Upprättad av"]);
+      }
+    }
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var riksarkUrl = buildRiksarkUrl(ed, builder);
+  let linkOption = builder.options.citation_riksark_includeLink;
 
-  let recordLink = "[" + riksarkUrl + " Riksarkivet (Sweden) Record]";
-  builder.recordLinkOrTemplate = recordLink;
+  if (linkOption == "none") {
+    return;
+  }
+
+  let riksarkUrl = buildRiksarkUrl(ed, builder);
+
+  let recordLink = "";
+
+  if (linkOption == "inSourceTitleOnly" || linkOption == "inSourceTitlePlus") {
+    builder.putRecordLinkInTitle = true;
+    recordLink = riksarkUrl;
+  } else if (linkOption == "separate" || linkOption == "separateOneLink") {
+    if (gd.sourceType == "image") {
+      recordLink = "[" + riksarkUrl + " Riksarkivet Image]";
+    } else {
+      recordLink = "[" + riksarkUrl + " Riksarkivet Record]";
+    }
+  }
+
+  if (recordLink) {
+    builder.recordLinkOrTemplate = recordLink;
+  }
+}
+
+function buildImageLink(ed, gd, builder) {
+  let linkOption = builder.options.citation_riksark_includeLink;
+  if (linkOption == "none") {
+    return;
+  }
+
+  if (linkOption == "separateOneLink" || linkOption == "inSourceTitleOnly") {
+    return;
+  }
+
+  if (ed.imageLink) {
+    let url = ed.imageLink;
+
+    if (!url.startsWith("http")) {
+      url = "https://sok.riksarkivet.se" + url;
+    }
+
+    let imageLink = "[" + url + " Riksarkivet Image]";
+    builder.imageLink = imageLink;
+  }
 }
 
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
+  buildImageLink(ed, gd, builder);
   builder.addStandardDataString(gd);
 }
 

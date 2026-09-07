@@ -7,8 +7,12 @@
     "forenames": "Bodil"
   },
   "personGender": "male",
+  "eventDate": {
+    "yearString": "1890"
+  },
   "eventPlace": {
-    "placeString": "Grydts, Sweden",
+    "placeString": "Grydts, Kristianstad, Sweden",
+    "county": "Kristianstad",
     "country": "Sweden",
     "extractedPlaceString": "Grydts"
   },

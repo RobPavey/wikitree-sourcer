@@ -6,8 +6,12 @@
     "name": "Anders Jan"
   },
   "personGender": "male",
+  "eventDate": {
+    "yearString": "1880"
+  },
   "eventPlace": {
-    "placeString": "Hellstad, Sweden",
+    "placeString": "Hellstad, Älvsborg, Sweden",
+    "county": "Älvsborg",
     "country": "Sweden",
     "extractedPlaceString": "Hellstad"
   },

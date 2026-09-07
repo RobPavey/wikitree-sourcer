@@ -33,7 +33,21 @@ const citationOptionsGroup = {
   subcategory: "riksark",
   tab: "citation",
   subsection: "riksark",
-  options: [],
+  options: [
+    {
+      optionName: "includeLink",
+      type: "select",
+      label: "Include link to Riksarkivet site",
+      values: [
+        { value: "none", text: "No" },
+        { value: "separate", text: "As separate external link(s)" },
+        { value: "separateOneLink", text: "As separate external link (no additional link)" },
+        { value: "inSourceTitleOnly", text: "In source title (no separate image link)" },
+        { value: "inSourceTitlePlus", text: "In source title (can be a separate image link)" },
+      ],
+      defaultValue: "separate",
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "riksark", "Riksarkivet (Sweden)");

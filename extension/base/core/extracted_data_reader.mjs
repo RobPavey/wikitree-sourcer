@@ -724,7 +724,7 @@ class ExtractedDataReader {
       }
     }
 
-    function addImpliedParts(placeObj) {
+    function addImpliedParts(reader, placeObj) {
       if (advanced) {
         if (!placeString && !advanced.addImpliedPartsToBlankPlace) {
           return;
@@ -732,6 +732,62 @@ class ExtractedDataReader {
 
         placeObj.placeString = placeString;
         let existingParts = placeObj.separatePlaceIntoParts(advanced.impliedCountryName);
+
+        if (advanced.useCountyKeys && !existingParts.county) {
+          let countyName = reader.getValueUsingRecordTypeData("county");
+          if (countyName) {
+            if (advanced.ignoreCountyKeyIfAlreadyInPlaceName) {
+              if (placeString.includes(countyName)) {
+                let index = placeString.indexOf(countyName);
+                let endIndex = placeString.indexOf(",", index);
+                if (endIndex == -1) {
+                  endIndex = placeString.length;
+                }
+                index += countyName.length;
+                let possCountyWord = placeString.substring(index, endIndex).trim().toLowerCase();
+                if (possCountyWord.startsWith("s ")) {
+                  // make it so a countyName of "Kristianstad" matches "Kristianstads län"
+                  possCountyWord = possCountyWord.substring(2);
+                }
+                if (possCountyWord) {
+                  if (advanced.additionalCountyWords.includes(possCountyWord)) {
+                    countyName = "";
+                  }
+                } else {
+                  countyName = "";
+                }
+              } else if (advanced.additionalCountyWords) {
+                // perhaps the county name is "Kristianstads län" r "Kristianstad län"
+                // and the place string is "Knislinge Kristianstad" or  "Knislinge Kristianstad"
+                // in those case we don't want to add the county name
+                let countyNameLc = countyName.toLowerCase();
+                for (let countyWord of advanced.additionalCountyWords) {
+                  if (countyNameLc.endsWith(" " + countyWord)) {
+                    let bareCountyName = countyName.substring(0, countyName.length - countyWord.length).trim();
+                    if (placeString.includes(bareCountyName)) {
+                      let index = placeString.indexOf(countyName);
+                      let endIndex = placeString.indexOf(",", index);
+                      if (endIndex == -1) {
+                        endIndex = placeString.length;
+                      }
+                      index += countyName.length;
+                      let remainder = placeString.substring(index, endIndex).trim();
+                      if (!remainder) {
+                        countyName = "";
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            if (countyName) {
+              existingParts.county = countyName;
+              placeObj.county = countyName;
+              addPart(countyName);
+            }
+          }
+        }
 
         if (advanced.impliedStateName) {
           if (existingParts.county) {
@@ -758,7 +814,7 @@ class ExtractedDataReader {
     }
 
     let placeObj = new PlaceObj();
-    addImpliedParts(placeObj);
+    addImpliedParts(this, placeObj);
     placeObj.placeString = placeString;
 
     if (placeString) {

@@ -6,7 +6,8 @@
     "dateString": "1860"
   },
   "eventPlace": {
-    "placeString": "Anga, Sweden",
+    "placeString": "Anga, Gotlands län, Sweden",
+    "county": "Gotlands län",
     "country": "Sweden",
     "extractedPlaceString": "Anga"
   },

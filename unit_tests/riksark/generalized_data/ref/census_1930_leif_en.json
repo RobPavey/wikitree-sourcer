@@ -6,8 +6,12 @@
     "name": "Leif"
   },
   "personGender": "male",
+  "eventDate": {
+    "yearString": "1930"
+  },
   "eventPlace": {
-    "placeString": "Undersåker med Järpens m:e, Sweden",
+    "placeString": "Undersåker med Järpens m:e, Jämtland, Sweden",
+    "county": "Jämtland",
     "country": "Sweden",
     "extractedPlaceString": "Undersåker med Järpens m:e"
   },
