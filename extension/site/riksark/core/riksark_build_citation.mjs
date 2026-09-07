@@ -114,7 +114,10 @@ function buildCoreCitation(ed, gd, builder) {
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
   buildImageLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+
+  if (gd.sourceType != "image" || gd.name) {
+    builder.addStandardDataString(gd);
+  }
 }
 
 function buildCitation(input) {
