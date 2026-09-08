@@ -42,7 +42,8 @@ function title2type(title) {
   }
   if (
     title.includes("tod") ||
-    title.includes("tot")
+    title.includes("tot") ||
+    title.includes("sterbe")
   ) {
     result.push("Death");
   }

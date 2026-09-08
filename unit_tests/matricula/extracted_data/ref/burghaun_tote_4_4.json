@@ -10,5 +10,8 @@
   "book": "Totenbuch - 4-03",
   "page": "4",
   "sectionNumber": "2",
-  "typeSet": "Death"
+  "recordTypeCandidates": [
+    "Church Record",
+    "Death"
+  ]
 }

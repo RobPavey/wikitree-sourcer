@@ -9,5 +9,10 @@
   ],
   "book": "Taufen – Heiraten – Sterbefälle – 1779 - 1793 - KB-12",
   "page": "13",
-  "typeSet": "Baptism, Marriage, Death"
+  "recordTypeCandidates": [
+    "Church Record",
+    "Baptism",
+    "Marriage",
+    "Death"
+  ]
 }

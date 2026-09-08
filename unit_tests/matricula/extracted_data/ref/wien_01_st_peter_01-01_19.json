@@ -10,5 +10,8 @@
   "book": "Taufbuch - 01-01",
   "page": "16",
   "sectionNumber": "2",
-  "typeSet": "Baptism"
+  "recordTypeCandidates": [
+    "Church Record",
+    "Baptism"
+  ]
 }
