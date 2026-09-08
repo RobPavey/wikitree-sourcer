@@ -25,7 +25,27 @@ SOFTWARE.
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { RiksarkEdReader } from "./riksark_ed_reader.mjs";
 
-function buildRiksarkUrl(ed, builder) {
+function buildRiksarkUrl(ed, gd, builder) {
+  if (gd.sourceType == "image") {
+    if (ed.imagePageLink) {
+      return ed.imagePageLink;
+    }
+  } else {
+    // Rather than this:
+    // https://sok.riksarkivet.se/en/?Sokord=f%C3%B6rsamlingsutdrag&EndastDigitaliserat=false&TranskriberadText=false&Fritext=f%C3%B6rsamlingsutdrag&DatumFran=1860&DatumTill=1860&AvanceradSok=true&page=4&postid=Scb_827143&tab=post
+    // we want:
+    // https://sok.riksarkivet.se/en/?postid=Scb_827143
+    const url = new URL(ed.url);
+    let postId = ed.postId;
+    if (!ed.postId) {
+      postId = url.searchParams.get("postid");
+    }
+
+    if (postId) {
+      url.search = "postid=" + ed.postId;
+      return url.toString();
+    }
+  }
   return ed.url;
 }
 
@@ -67,7 +87,7 @@ function buildRecordLink(ed, gd, builder) {
     return;
   }
 
-  let riksarkUrl = buildRiksarkUrl(ed, builder);
+  let riksarkUrl = buildRiksarkUrl(ed, gd, builder);
 
   let recordLink = "";
 

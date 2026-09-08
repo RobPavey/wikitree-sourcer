@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1930 Census''':\n\"Riksarkivet\"<br/>\nCensus 1930; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/bildvisning/B0001207_00053 Riksarkivet Image] - [https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505852&tab=post#tab Riksarkivet Record] (accessed 6 May 2021)<br/>\nLeif, single, in Undersåker med Järpens m:e, Jämtland, Sweden. Born 1920.\n</ref>",
+    "citation": "<ref>\n'''1930 Census''':\n\"Riksarkivet\"<br/>\nCensus 1930; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/bildvisning/B0001207_00053 Riksarkivet Image] - [https://sok.riksarkivet.se/en?postid=Folk_129505852#tab Riksarkivet Record] (accessed 6 May 2021)<br/>\nLeif, single, in Undersåker med Järpens m:e, Jämtland, Sweden. Born 1920.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1930 census Leif was recorded as single in Undersåker med Järpens m:e, Jämtland, Sweden.<ref>\n'''1930 Census''':\n\"Riksarkivet\"<br/>\nCensus 1930; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/bildvisning/B0001207_00053 Riksarkivet Image] - [https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505852&tab=post#tab Riksarkivet Record] (accessed 6 May 2021)<br/>\nLeif, single, in Undersåker med Järpens m:e, Jämtland, Sweden. Born 1920.\n</ref>",
+    "citation": "In the 1930 census Leif was recorded as single in Undersåker med Järpens m:e, Jämtland, Sweden.<ref>\n'''1930 Census''':\n\"Riksarkivet\"<br/>\nCensus 1930; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/bildvisning/B0001207_00053 Riksarkivet Image] - [https://sok.riksarkivet.se/en?postid=Folk_129505852#tab Riksarkivet Record] (accessed 6 May 2021)<br/>\nLeif, single, in Undersåker med Järpens m:e, Jämtland, Sweden. Born 1920.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1930 Census''': \"Riksarkivet\"<br/>Census 1930; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>[https://sok.riksarkivet.se/bildvisning/B0001207_00053 Riksarkivet Image] - [https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505852&tab=post#tab Riksarkivet Record] (accessed 6 May 2021)<br/>Leif, single, in Undersåker med Järpens m:e, Jämtland, Sweden. Born 1920.",
+    "citation": "* '''1930 Census''': \"Riksarkivet\"<br/>Census 1930; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>[https://sok.riksarkivet.se/bildvisning/B0001207_00053 Riksarkivet Image] - [https://sok.riksarkivet.se/en?postid=Folk_129505852#tab Riksarkivet Record] (accessed 6 May 2021)<br/>Leif, single, in Undersåker med Järpens m:e, Jämtland, Sweden. Born 1920.",
     "type": "source"
   }
 }

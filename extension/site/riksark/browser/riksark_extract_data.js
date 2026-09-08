@@ -153,6 +153,14 @@ function extractRecord(document, url, result) {
     result.imageLink = imageLinkElement.getAttribute("href");
   }
 
+  let postIdElement = document.querySelector("#postid");
+  if (!postIdElement) {
+    postIdElement = document.querySelector("#id");
+  }
+  if (postIdElement) {
+    result.postId = postIdElement.value;
+  }
+
   result.pageType = "record";
   result.success = true;
   return result;

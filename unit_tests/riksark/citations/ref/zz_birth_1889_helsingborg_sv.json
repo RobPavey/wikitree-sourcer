@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Birth or Baptism''':\n\"Riksarkivet\"<br/>\nHelsingborgs stadsförsamlings (Maria) kyrkoarkiv, Födelse- och dopböcker, SE/LLA/13171/C I/15 (1887-1889), bildid: 00124893_00001<br/>\n[https://sok.riksarkivet.se/bildvisning/00124893_00001#?xywh=-23%2C-863%2C3047%2C3856 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Birth or Baptism''':\n\"Riksarkivet\"<br/>\nHelsingborgs stadsförsamlings (Maria) kyrkoarkiv, Födelse- och dopböcker, SE/LLA/13171/C I/15 (1887-1889), bildid: 00124893_00001<br/>\n[https://sok.riksarkivet.se/bildvisning/00124893_00001 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Unknown was born or baptised.<ref>\n'''Birth or Baptism''':\n\"Riksarkivet\"<br/>\nHelsingborgs stadsförsamlings (Maria) kyrkoarkiv, Födelse- och dopböcker, SE/LLA/13171/C I/15 (1887-1889), bildid: 00124893_00001<br/>\n[https://sok.riksarkivet.se/bildvisning/00124893_00001#?xywh=-23%2C-863%2C3047%2C3856 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "Unknown was born or baptised.<ref>\n'''Birth or Baptism''':\n\"Riksarkivet\"<br/>\nHelsingborgs stadsförsamlings (Maria) kyrkoarkiv, Födelse- och dopböcker, SE/LLA/13171/C I/15 (1887-1889), bildid: 00124893_00001<br/>\n[https://sok.riksarkivet.se/bildvisning/00124893_00001 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Birth or Baptism''': \"Riksarkivet\"<br/>Helsingborgs stadsförsamlings (Maria) kyrkoarkiv, Födelse- och dopböcker, SE/LLA/13171/C I/15 (1887-1889), bildid: 00124893_00001<br/>[https://sok.riksarkivet.se/bildvisning/00124893_00001#?xywh=-23%2C-863%2C3047%2C3856 Riksarkivet Image] (accessed 6 May 2021).",
+    "citation": "* '''Birth or Baptism''': \"Riksarkivet\"<br/>Helsingborgs stadsförsamlings (Maria) kyrkoarkiv, Födelse- och dopböcker, SE/LLA/13171/C I/15 (1887-1889), bildid: 00124893_00001<br/>[https://sok.riksarkivet.se/bildvisning/00124893_00001 Riksarkivet Image] (accessed 6 May 2021).",
     "type": "source"
   }
 }
