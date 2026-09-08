@@ -9,5 +9,8 @@
   ],
   "book": "Sterbebuch 1 - AT-ADF Batschuns Sterbebuch 1",
   "page": "3",
-  "typeSet": "Death"
+  "recordTypeCandidates": [
+    "Church Record",
+    "Death"
+  ]
 }

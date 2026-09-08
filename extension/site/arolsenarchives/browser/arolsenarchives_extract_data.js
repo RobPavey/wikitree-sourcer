@@ -65,7 +65,7 @@ function extractData(document, url) {
     result.collectionUrl = url;
 
     let imageViewer = document.querySelector("viewer-one-image");
-    if (imageViewer) {
+    if (imageViewer && document.querySelector("div.title:nth-child(1)") != null) {
       result.doc_id = document.querySelector("div.title:nth-child(1)").textContent.replace("DocID:", "").trim();
     }
 

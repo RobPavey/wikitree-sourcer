@@ -9,5 +9,8 @@
   ],
   "book": "Trauungen - KB 483",
   "page": "6",
-  "typeSet": "Marriage"
+  "recordTypeCandidates": [
+    "Church Record",
+    "Marriage"
+  ]
 }
