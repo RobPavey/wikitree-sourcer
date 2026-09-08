@@ -9,5 +9,8 @@
   ],
   "book": "Taufe - 0421, Section 01",
   "page": "101",
-  "typeSet": "Baptism"
+  "recordTypeCandidates": [
+    "Church Record",
+    "Baptism"
+  ]
 }
