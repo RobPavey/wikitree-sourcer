@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1880 Census''':\n\"Riksarkivet\"<br/>\nCensus 1880 - Hällestads församling, Älvsborgs län, Image ID: Folk_815089-017<br/>\n[https://sok.riksarkivet.se/bildvisning/Folk_815089-017 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''1880 Census''':\n\"Census 1880, Hällestads församling, Älvsborgs län\"<br/>\nFolk_815089-017, Image 1<br/>\n[https://sok.riksarkivet.se/bildvisning/Folk_815089-017 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1880 census unknown was recorded.<ref>\n'''1880 Census''':\n\"Riksarkivet\"<br/>\nCensus 1880 - Hällestads församling, Älvsborgs län, Image ID: Folk_815089-017<br/>\n[https://sok.riksarkivet.se/bildvisning/Folk_815089-017 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "In the 1880 census unknown was recorded.<ref>\n'''1880 Census''':\n\"Census 1880, Hällestads församling, Älvsborgs län\"<br/>\nFolk_815089-017, Image 1<br/>\n[https://sok.riksarkivet.se/bildvisning/Folk_815089-017 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1880 Census''': \"Riksarkivet\"<br/>Census 1880 - Hällestads församling, Älvsborgs län, Image ID: Folk_815089-017<br/>[https://sok.riksarkivet.se/bildvisning/Folk_815089-017 Riksarkivet Image] (accessed 6 May 2021).",
+    "citation": "* '''1880 Census''': \"Census 1880, Hällestads församling, Älvsborgs län\"<br/>Folk_815089-017, Image 1<br/>[https://sok.riksarkivet.se/bildvisning/Folk_815089-017 Riksarkivet Image] (accessed 6 May 2021).",
     "type": "source"
   }
 }

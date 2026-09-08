@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Riksarkivet\"<br/>\nMarriage records; Archive: Resele kyrkoarkiv (SE/HLA/1010161); Volume: C:2 s. 173; Register: Vigselregister - Sollefteå kommun; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/en?postid=Vigsel_22716#tab Riksarkivet Record] (accessed 6 May 2021)<br/>\nAnd Pet Johansson marriage to Anna Susanna Pehrsdotter on 3 Jun 1844 in Resele, Sweden.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Johansson, And. Pet. - Pehrsdotter, Anna Susanna, Marriage records\"<br/>\nRiksarkivet; Archive: Resele kyrkoarkiv (SE/HLA/1010161); Volume: C:2 s. 173; Register: Vigselregister - Sollefteå kommun; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/en?postid=Vigsel_22716#tab Riksarkivet Record] (accessed 6 May 2021)<br/>\nAnd Pet Johansson marriage to Anna Susanna Pehrsdotter on 3 Jun 1844 in Resele, Sweden.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "And married Anna Susanna Pehrsdotter on 3 June 1844 in Resele, Sweden.<ref>\n'''Marriage''':\n\"Riksarkivet\"<br/>\nMarriage records; Archive: Resele kyrkoarkiv (SE/HLA/1010161); Volume: C:2 s. 173; Register: Vigselregister - Sollefteå kommun; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/en?postid=Vigsel_22716#tab Riksarkivet Record] (accessed 6 May 2021)<br/>\nAnd Pet Johansson marriage to Anna Susanna Pehrsdotter on 3 Jun 1844 in Resele, Sweden.\n</ref>",
+    "citation": "And married Anna Susanna Pehrsdotter on 3 June 1844 in Resele, Sweden.<ref>\n'''Marriage''':\n\"Johansson, And. Pet. - Pehrsdotter, Anna Susanna, Marriage records\"<br/>\nRiksarkivet; Archive: Resele kyrkoarkiv (SE/HLA/1010161); Volume: C:2 s. 173; Register: Vigselregister - Sollefteå kommun; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/en?postid=Vigsel_22716#tab Riksarkivet Record] (accessed 6 May 2021)<br/>\nAnd Pet Johansson marriage to Anna Susanna Pehrsdotter on 3 Jun 1844 in Resele, Sweden.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Marriage''': \"Riksarkivet\"<br/>Marriage records; Archive: Resele kyrkoarkiv (SE/HLA/1010161); Volume: C:2 s. 173; Register: Vigselregister - Sollefteå kommun; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>[https://sok.riksarkivet.se/en?postid=Vigsel_22716#tab Riksarkivet Record] (accessed 6 May 2021)<br/>And Pet Johansson marriage to Anna Susanna Pehrsdotter on 3 Jun 1844 in Resele, Sweden.",
+    "citation": "* '''Marriage''': \"Johansson, And. Pet. - Pehrsdotter, Anna Susanna, Marriage records\"<br/>Riksarkivet; Archive: Resele kyrkoarkiv (SE/HLA/1010161); Volume: C:2 s. 173; Register: Vigselregister - Sollefteå kommun; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>[https://sok.riksarkivet.se/en?postid=Vigsel_22716#tab Riksarkivet Record] (accessed 6 May 2021)<br/>And Pet Johansson marriage to Anna Susanna Pehrsdotter on 3 Jun 1844 in Resele, Sweden.",
     "type": "source"
   }
 }

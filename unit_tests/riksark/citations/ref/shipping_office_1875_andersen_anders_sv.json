@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record of Anders Andersen''':\n\"Riksarkivet\"<br/>\nSjömanshus - liggare; Arkiv: Sjömanshusets i Västervik arkiv (SE/VALA/00671); Volym: DIb: 2 s. 45; Upprättad av: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/?postid=Sjoman_liggare_200626 Riksarkivet Record] (accessed 6 May 2021)<br/>\nAnders Andersen.\n</ref>",
+    "citation": "<ref>\n'''Record of Anders Andersen''':\n\"Andersen, Anders, Sjömanshus - liggare\"<br/>\nRiksarkivet; Arkiv: Sjömanshusets i Västervik arkiv (SE/VALA/00671); Volym: DIb: 2 s. 45; Upprättad av: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/?postid=Sjoman_liggare_200626 Riksarkivet Record] (accessed 6 May 2021)<br/>\nAnders Andersen.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Anders was in a record.<ref>\n'''Record of Anders Andersen''':\n\"Riksarkivet\"<br/>\nSjömanshus - liggare; Arkiv: Sjömanshusets i Västervik arkiv (SE/VALA/00671); Volym: DIb: 2 s. 45; Upprättad av: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/?postid=Sjoman_liggare_200626 Riksarkivet Record] (accessed 6 May 2021)<br/>\nAnders Andersen.\n</ref>",
+    "citation": "Anders was in a record.<ref>\n'''Record of Anders Andersen''':\n\"Andersen, Anders, Sjömanshus - liggare\"<br/>\nRiksarkivet; Arkiv: Sjömanshusets i Västervik arkiv (SE/VALA/00671); Volym: DIb: 2 s. 45; Upprättad av: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/?postid=Sjoman_liggare_200626 Riksarkivet Record] (accessed 6 May 2021)<br/>\nAnders Andersen.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record of Anders Andersen''': \"Riksarkivet\"<br/>Sjömanshus - liggare; Arkiv: Sjömanshusets i Västervik arkiv (SE/VALA/00671); Volym: DIb: 2 s. 45; Upprättad av: Riksarkivet SVAR-Svensk arkivinformation<br/>[https://sok.riksarkivet.se/?postid=Sjoman_liggare_200626 Riksarkivet Record] (accessed 6 May 2021)<br/>Anders Andersen.",
+    "citation": "* '''Record of Anders Andersen''': \"Andersen, Anders, Sjömanshus - liggare\"<br/>Riksarkivet; Arkiv: Sjömanshusets i Västervik arkiv (SE/VALA/00671); Volym: DIb: 2 s. 45; Upprättad av: Riksarkivet SVAR-Svensk arkivinformation<br/>[https://sok.riksarkivet.se/?postid=Sjoman_liggare_200626 Riksarkivet Record] (accessed 6 May 2021)<br/>Anders Andersen.",
     "type": "source"
   }
 }

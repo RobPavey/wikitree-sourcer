@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1880 Census''':\n\"Riksarkivet\"<br/>\nCensus 1880; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/bildvisning/Folk_815089-017 Riksarkivet Image] - [https://sok.riksarkivet.se/en?postid=Folk_118564745#tab Riksarkivet Record] (accessed 6 May 2021)<br/>\nAnders Peter Johansson, married, Hemmansägare, in Hellstad, Älvsborg, Sweden. Born 1829 in Hällstad Älvsborgs län, Sweden.\n</ref>",
+    "citation": "<ref>\n'''1880 Census''':\n\"Johansson, Anders Peter, Census 1880\"<br/>\nRiksarkivet; Family no: 1; Page: 17; Row: 33; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/bildvisning/Folk_815089-017 Riksarkivet Image] - [https://sok.riksarkivet.se/en?postid=Folk_118564745#tab Riksarkivet Record] (accessed 6 May 2021)<br/>\nAnders Peter Johansson, married, Hemmansägare, in Hellstad, Älvsborg, Sweden. Born 1829 in Hällstad Älvsborgs län, Sweden.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1880 census Anders, Hemmansägare, was recorded as married in Hellstad, Älvsborg, Sweden.<ref>\n'''1880 Census''':\n\"Riksarkivet\"<br/>\nCensus 1880; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/bildvisning/Folk_815089-017 Riksarkivet Image] - [https://sok.riksarkivet.se/en?postid=Folk_118564745#tab Riksarkivet Record] (accessed 6 May 2021)<br/>\nAnders Peter Johansson, married, Hemmansägare, in Hellstad, Älvsborg, Sweden. Born 1829 in Hällstad Älvsborgs län, Sweden.\n</ref>",
+    "citation": "In the 1880 census Anders, Hemmansägare, was recorded as married in Hellstad, Älvsborg, Sweden.<ref>\n'''1880 Census''':\n\"Johansson, Anders Peter, Census 1880\"<br/>\nRiksarkivet; Family no: 1; Page: 17; Row: 33; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/bildvisning/Folk_815089-017 Riksarkivet Image] - [https://sok.riksarkivet.se/en?postid=Folk_118564745#tab Riksarkivet Record] (accessed 6 May 2021)<br/>\nAnders Peter Johansson, married, Hemmansägare, in Hellstad, Älvsborg, Sweden. Born 1829 in Hällstad Älvsborgs län, Sweden.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1880 Census''': \"Riksarkivet\"<br/>Census 1880; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>[https://sok.riksarkivet.se/bildvisning/Folk_815089-017 Riksarkivet Image] - [https://sok.riksarkivet.se/en?postid=Folk_118564745#tab Riksarkivet Record] (accessed 6 May 2021)<br/>Anders Peter Johansson, married, Hemmansägare, in Hellstad, Älvsborg, Sweden. Born 1829 in Hällstad Älvsborgs län, Sweden.",
+    "citation": "* '''1880 Census''': \"Johansson, Anders Peter, Census 1880\"<br/>Riksarkivet; Family no: 1; Page: 17; Row: 33; Created by: Riksarkivet SVAR-Svensk arkivinformation<br/>[https://sok.riksarkivet.se/bildvisning/Folk_815089-017 Riksarkivet Image] - [https://sok.riksarkivet.se/en?postid=Folk_118564745#tab Riksarkivet Record] (accessed 6 May 2021)<br/>Anders Peter Johansson, married, Hemmansägare, in Hellstad, Älvsborg, Sweden. Born 1829 in Hällstad Älvsborgs län, Sweden.",
     "type": "source"
   }
 }

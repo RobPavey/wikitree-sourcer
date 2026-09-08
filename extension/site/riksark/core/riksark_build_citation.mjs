@@ -50,6 +50,29 @@ function buildRiksarkUrl(ed, gd, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
+  if (gd.sourceType == "image") {
+    if (ed.imageType == "archive" && ed.imageArchiveName && ed.imageCollectionName) {
+      builder.sourceTitle = ed.imageArchiveName + ", " + ed.imageCollectionName;
+      return;
+    } else if (ed.imageType == "dataset" && ed.imageDatasetName && ed.imageLocation) {
+      builder.sourceTitle = ed.imageDatasetName + ", " + ed.imageLocation;
+      return;
+    }
+    if (ed.imageTitle) {
+      builder.sourceTitle = ed.imageTitle;
+      return;
+    }
+  } else if (gd.sourceType == "record") {
+    if (ed.recordTitle && ed.recordType) {
+      builder.sourceTitle = ed.recordTitle + ", " + ed.recordType;
+      return;
+    }
+    if (ed.recordTitle) {
+      builder.sourceTitle = ed.recordTitle;
+      return;
+    }
+  }
+
   builder.sourceTitle = "Riksarkivet";
 }
 
@@ -62,11 +85,31 @@ function buildSourceReference(ed, gd, builder) {
   }
 
   if (gd.sourceType == "image") {
-    if (ed.imagePageSourceReference) {
-      builder.sourceReference = ed.imagePageSourceReference;
+    if (ed.imageType == "archive" && ed.imageArchiveName && ed.imageCollectionName) {
+      if (ed.imageArchiveCode && ed.imageDateRange) {
+        builder.sourceReference = ed.imageArchiveCode + " " + ed.imageDateRange;
+        if (ed.imageItemReferenceCode && ed.imageItemReferenceCode != ed.imageArchiveCode) {
+          builder.sourceReference += ", Image ID: " + ed.imagePageId;
+        }
+        if (ed.imagePageId) {
+          builder.sourceReference += ", Image ID: " + ed.imagePageId;
+        }
+        if (ed.imageNumber) {
+          builder.sourceReference += ", " + ed.imageNumber;
+        }
+        return;
+      }
+    } else if (ed.imageType == "dataset" && ed.imageDatasetName && ed.imageLocation) {
+      if (ed.imagePageId) {
+        builder.sourceReference = ed.imagePageId;
+        if (ed.imageNumber) {
+          builder.sourceReference += ", " + ed.imageNumber;
+        }
+        return;
+      }
     }
-  } else {
-    builder.sourceReference = ed.recordType;
+  } else if (gd.sourceType == "record") {
+    builder.sourceReference = "Riksarkivet";
     if (ed.recordData) {
       let edReader = new RiksarkEdReader(ed);
       if (edReader.hasValidData()) {
@@ -74,6 +117,9 @@ function buildSourceReference(ed, gd, builder) {
         addSourceReferenceKeyValuePair(edReader, ["Volume", "Volym"]);
         addSourceReferenceKeyValuePair(edReader, ["Volume's reference code", "Volymens referenskod"]);
         addSourceReferenceKeyValuePair(edReader, ["Register"]);
+        addSourceReferenceKeyValuePair(edReader, ["Family no", "Familj nr"]);
+        addSourceReferenceKeyValuePair(edReader, ["Page", "Sida"]);
+        addSourceReferenceKeyValuePair(edReader, ["Row", "Rad"]);
         addSourceReferenceKeyValuePair(edReader, ["Created by", "Upprättad av"]);
       }
     }

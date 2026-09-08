@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1860 Census''':\n\"Riksarkivet\"<br/>\nRegister till SCB; Arkiv: Statistiska Centralbyrån (SCB) - samlingspost (SE/RA/420401); Volymens referenskod: SE/RA/420401/03/H 1 A/48; Upprättad av: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/bildvisning/A0056053_00260 Riksarkivet Image] - [https://sok.riksarkivet.se/?postid=Scb_827143 Riksarkivet Record] (accessed 6 May 2021)<br/>\nUnknown in Anga, Gotlands län, Sweden.\n</ref>",
+    "citation": "<ref>\n'''1860 Census''':\n\"Anga, Församlingsutdrag 1860, Register till SCB\"<br/>\nRiksarkivet; Arkiv: Statistiska Centralbyrån (SCB) - samlingspost (SE/RA/420401); Volymens referenskod: SE/RA/420401/03/H 1 A/48; Upprättad av: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/bildvisning/A0056053_00260 Riksarkivet Image] - [https://sok.riksarkivet.se/?postid=Scb_827143 Riksarkivet Record] (accessed 6 May 2021)<br/>\nUnknown in Anga, Gotlands län, Sweden.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1860 census unknown was in Anga, Gotlands län, Sweden.<ref>\n'''1860 Census''':\n\"Riksarkivet\"<br/>\nRegister till SCB; Arkiv: Statistiska Centralbyrån (SCB) - samlingspost (SE/RA/420401); Volymens referenskod: SE/RA/420401/03/H 1 A/48; Upprättad av: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/bildvisning/A0056053_00260 Riksarkivet Image] - [https://sok.riksarkivet.se/?postid=Scb_827143 Riksarkivet Record] (accessed 6 May 2021)<br/>\nUnknown in Anga, Gotlands län, Sweden.\n</ref>",
+    "citation": "In the 1860 census unknown was in Anga, Gotlands län, Sweden.<ref>\n'''1860 Census''':\n\"Anga, Församlingsutdrag 1860, Register till SCB\"<br/>\nRiksarkivet; Arkiv: Statistiska Centralbyrån (SCB) - samlingspost (SE/RA/420401); Volymens referenskod: SE/RA/420401/03/H 1 A/48; Upprättad av: Riksarkivet SVAR-Svensk arkivinformation<br/>\n[https://sok.riksarkivet.se/bildvisning/A0056053_00260 Riksarkivet Image] - [https://sok.riksarkivet.se/?postid=Scb_827143 Riksarkivet Record] (accessed 6 May 2021)<br/>\nUnknown in Anga, Gotlands län, Sweden.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1860 Census''': \"Riksarkivet\"<br/>Register till SCB; Arkiv: Statistiska Centralbyrån (SCB) - samlingspost (SE/RA/420401); Volymens referenskod: SE/RA/420401/03/H 1 A/48; Upprättad av: Riksarkivet SVAR-Svensk arkivinformation<br/>[https://sok.riksarkivet.se/bildvisning/A0056053_00260 Riksarkivet Image] - [https://sok.riksarkivet.se/?postid=Scb_827143 Riksarkivet Record] (accessed 6 May 2021)<br/>Unknown in Anga, Gotlands län, Sweden.",
+    "citation": "* '''1860 Census''': \"Anga, Församlingsutdrag 1860, Register till SCB\"<br/>Riksarkivet; Arkiv: Statistiska Centralbyrån (SCB) - samlingspost (SE/RA/420401); Volymens referenskod: SE/RA/420401/03/H 1 A/48; Upprättad av: Riksarkivet SVAR-Svensk arkivinformation<br/>[https://sok.riksarkivet.se/bildvisning/A0056053_00260 Riksarkivet Image] - [https://sok.riksarkivet.se/?postid=Scb_827143 Riksarkivet Record] (accessed 6 May 2021)<br/>Unknown in Anga, Gotlands län, Sweden.",
     "type": "source"
   }
 }

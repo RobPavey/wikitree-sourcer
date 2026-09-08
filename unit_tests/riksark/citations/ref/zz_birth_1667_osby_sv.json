@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Birth or Baptism''':\n\"Riksarkivet\"<br/>\nOsby kyrkoarkiv, Födelse- och dopböcker, SE/LLA/13300/C I/1 (1647-1690), Image ID: C0061532_00152,…<br/>\n[https://sok.riksarkivet.se/bildvisning/C0061532_00152 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Birth or Baptism''':\n\"Osby kyrkoarkiv, Födelse- och dopböcker\"<br/>\nSE/LLA/13300/C I/1 (1647-1690), Image ID: C0061532_00152, Image 1<br/>\n[https://sok.riksarkivet.se/bildvisning/C0061532_00152 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Unknown was born or baptised.<ref>\n'''Birth or Baptism''':\n\"Riksarkivet\"<br/>\nOsby kyrkoarkiv, Födelse- och dopböcker, SE/LLA/13300/C I/1 (1647-1690), Image ID: C0061532_00152,…<br/>\n[https://sok.riksarkivet.se/bildvisning/C0061532_00152 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "Unknown was born or baptised.<ref>\n'''Birth or Baptism''':\n\"Osby kyrkoarkiv, Födelse- och dopböcker\"<br/>\nSE/LLA/13300/C I/1 (1647-1690), Image ID: C0061532_00152, Image 1<br/>\n[https://sok.riksarkivet.se/bildvisning/C0061532_00152 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Birth or Baptism''': \"Riksarkivet\"<br/>Osby kyrkoarkiv, Födelse- och dopböcker, SE/LLA/13300/C I/1 (1647-1690), Image ID: C0061532_00152,…<br/>[https://sok.riksarkivet.se/bildvisning/C0061532_00152 Riksarkivet Image] (accessed 6 May 2021).",
+    "citation": "* '''Birth or Baptism''': \"Osby kyrkoarkiv, Födelse- och dopböcker\"<br/>SE/LLA/13300/C I/1 (1647-1690), Image ID: C0061532_00152, Image 1<br/>[https://sok.riksarkivet.se/bildvisning/C0061532_00152 Riksarkivet Image] (accessed 6 May 2021).",
     "type": "source"
   }
 }
