@@ -121,6 +121,10 @@ const regressionData = [
 
   // image pages
   {
+    caseName: "zz_birth_1667_osby_sv",
+    url: "https://sok.riksarkivet.se/bildvisning/C0061532_00154#?cv=153&xywh=2244%2C3509%2C1807%2C1525&rid=https%3A%2F%2Flbiiif.riksarkivet.se%2Farkis!C0061532%2Frange%2Fr1-2-21",
+  },
+  {
     caseName: "zz_birth_1889_helsingborg_sv",
     url: "https://sok.riksarkivet.se/bildvisning/00124893_00001#?xywh=-23%2C-863%2C3047%2C3856",
   },

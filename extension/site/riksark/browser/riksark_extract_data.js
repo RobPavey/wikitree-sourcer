@@ -296,7 +296,15 @@ function extractImage(document, url, result) {
     if (itemElement) {
       const valueElement = itemElement.querySelector("div.value");
       if (valueElement) {
-        result[key] = valueElement.textContent.trim();
+        // Find the first direct text node child
+        const textValue = Array.from(valueElement.childNodes)
+          .filter((node) => node.nodeType === 3)
+          .map((node) => node.textContent.trim())
+          .join("");
+
+        // this could be truncated, in this case it will end in "..." so no need to check
+        // if there is a "more" toggle.
+        result[key] = textValue;
       }
     }
   }
