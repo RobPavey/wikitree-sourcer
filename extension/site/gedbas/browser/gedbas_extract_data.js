@@ -32,109 +32,117 @@ function extractData(document, url) {
   result.primaryPerson = {};
 
   const characteristics = document.querySelector("table[id=\"characteristics\"] > tbody");
-  for (let characteristic of characteristics.children) {
-    let key = characteristic.children[0].textContent.trim();
-    let value = characteristic.children[1].textContent.trim();
-    let date = characteristic.children[2].textContent.trim();
-    let place = characteristic.children[3].textContent.replaceAll("Personen in diesem Ort suchen", "").trim();
-    let sources = characteristic.children[4];
+  if (characteristics) {
+    for (let characteristic of characteristics.children) {
+      let key = characteristic.children[0].textContent.trim();
+      let value = characteristic.children[1].textContent.trim();
+      let date = characteristic.children[2].textContent.trim();
+      let place = characteristic.children[3].textContent.replaceAll("Personen in diesem Ort suchen", "").trim();
+      let sources = characteristic.children[4];
 
-    if (key && value) {
-      let entry = {value: value};
+      if (key && value) {
+        let entry = {value: value};
 
-      if (date) {
-        entry.date = date;
-      }
-      if (place) {
-        entry.place = place;
-      }
-
-      if (sources) {
-        let soure_list = [];
-        for (let source of sources.querySelectorAll("span")) {
-          soure_list.push(source.textContent.trim());
+        if (date) {
+          entry.date = date;
+        }
+        if (place) {
+          entry.place = place;
         }
 
-        if (soure_list.length > 0) {
-          entry.sources = soure_list;
-        }
-      }
+        if (sources) {
+          let soure_list = [];
+          for (let source of sources.querySelectorAll("span")) {
+            soure_list.push(source.textContent.trim());
+          }
 
-      result.primaryPerson[key] = entry;
+          if (soure_list.length > 0) {
+            entry.sources = soure_list;
+          }
+        }
+
+        result.primaryPerson[key] = entry;
+      }
     }
   }
 
   const events = document.querySelector("table[id=\"events\"] > tbody");
-  for (let event of events.children) {
-    let key = event.children[0].textContent.trim();
-    let date = event.children[1].textContent.trim();
-    let place = event.children[2].textContent.replaceAll("Personen in diesem Ort suchen", "").trim();
-    let sources = event.children[3];
+  if (events) {
+    for (let event of events.children) {
+      let key = event.children[0].textContent.trim();
+      let date = event.children[1].textContent.trim();
+      let place = event.children[2].textContent.replaceAll("Personen in diesem Ort suchen", "").trim();
+      let sources = event.children[3];
 
-    if (key) {
-      let entry = {};
+      if (key) {
+        let entry = {};
 
-      if (date) {
-        entry.date = date;
-      }
-      if (place) {
-        entry.place = place;
-      }
-
-      if (sources) {
-        let soure_list = [];
-        for (let source of sources.querySelectorAll("span")) {
-          soure_list.push(source.textContent.trim());
+        if (date) {
+          entry.date = date;
+        }
+        if (place) {
+          entry.place = place;
         }
 
-        if (soure_list.length > 0) {
-          entry.sources = soure_list;
-        }
-      }
+        if (sources) {
+          let soure_list = [];
+          for (let source of sources.querySelectorAll("span")) {
+            soure_list.push(source.textContent.trim());
+          }
 
-      result.primaryPerson[key] = entry;
+          if (soure_list.length > 0) {
+            entry.sources = soure_list;
+          }
+        }
+
+        result.primaryPerson[key] = entry;
+      }
     }
   }
 
   result.parents = [];
   const parents = document.querySelector("div[id=\"gedbas-parents\"] > table > tbody");
-  for (let parent_data of parents.children) {
-    result.parents.push({
-      father: {
-        name: parent_data.children[0].children[0].textContent.trim(),
-        url: parent_data.children[0].children[0].href,
-      },
-      mother: {
-        name: parent_data.children[1].children[0].textContent.trim(),
-        url: parent_data.children[1].children[0].href,
-      },
-    });
+  if (parents) {
+    for (let parent_data of parents.children) {
+      result.parents.push({
+        father: {
+          name: parent_data.children[0].children[0].textContent.trim(),
+          url: parent_data.children[0].children[0].href,
+        },
+        mother: {
+          name: parent_data.children[1].children[0].textContent.trim(),
+          url: parent_data.children[1].children[0].href,
+        },
+      });
+    }
   }
 
   result.families = [];
   const families = document.querySelector("div[id=\"gedbas-families\"] > table > tbody");
-  for (let familyIdx = 1; familyIdx < families.children.length; familyIdx++) {
-    const familyData = families.children[familyIdx];
+  if (families) {
+    for (let familyIdx = 1; familyIdx < families.children.length; familyIdx++) {
+      const familyData = families.children[familyIdx];
 
-    let family = {};
-    const marriageDate = familyData.children[0].children[0].textContent.trim();
-    if (marriageDate) family.marriageDate = marriageDate;
-    const marriagePlace = familyData.children[0].children[2].textContent.trim();
-    if (marriagePlace) family.marriagePlace = marriagePlace;
+      let family = {};
+      const marriageDate = familyData.children[0].children[0].textContent.trim();
+      if (marriageDate) family.marriageDate = marriageDate;
+      const marriagePlace = familyData.children[0].children[2].textContent.trim();
+      if (marriagePlace) family.marriagePlace = marriagePlace;
 
-    family.partner = {
-      name: familyData.children[1].children[0].textContent.trim(),
-      url: familyData.children[1].children[0].href,
-    }
+      family.partner = {
+        name: familyData.children[1].children[0].textContent.trim(),
+        url: familyData.children[1].children[0].href,
+      }
 
-    family.children = [];
-    for (let childData of familyData.children[2].children[0].children) {
-      let child = {};
-      const birthDate = childData.querySelector("span").textContent.trim();
-      if (birthDate) child.birthDate = birthDate;
-      child.name = childData.querySelector("a").textContent.trim();
-      child.link = childData.querySelector("a").href;
-      family.children.push(child);
+      family.children = [];
+      for (let childData of familyData.children[2].children[0].children) {
+        let child = {};
+        const birthDate = childData.querySelector("span").textContent.trim();
+        if (birthDate) child.birthDate = birthDate;
+        child.name = childData.querySelector("a").textContent.trim();
+        child.link = childData.querySelector("a").href;
+        family.children.push(child);
+      }
     }
 
     result.families.push(family);
