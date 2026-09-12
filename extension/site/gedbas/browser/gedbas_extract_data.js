@@ -143,9 +143,9 @@ function extractData(document, url) {
         child.link = childData.querySelector("a").href;
         family.children.push(child);
       }
-    }
 
-    result.families.push(family);
+      result.families.push(family);
+    }
   }
 
   const sources = document.querySelector("div[id=\"gedbas-sources\"] > table > tbody");
