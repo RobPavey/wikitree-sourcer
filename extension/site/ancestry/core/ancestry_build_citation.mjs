@@ -222,7 +222,9 @@ const referenceKeys = [
   ["fhl film number", "microfilm"],
   ["schedule", "schedule number", "household schedule number"],
   ["parish number"],
-  ["household number"],
+  ["household number", "household no"],
+  ["dwelling number", "dwelling no"],
+  ["family number", "family no"],
   ["sub schedule number", "sub-schedule number"],
   ["registration district number"],
   ["ed, institution, or vessel"], // this always seems to be a number

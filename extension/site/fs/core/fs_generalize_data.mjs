@@ -522,6 +522,15 @@ function cleanPlace(placeString) {
   if (cleanPlace) {
     placeString = cleanPlace.trim();
   }
+  // Sometimes the place starts of ends with commas
+  cleanPlace = placeString.replace(/^\s*\,\s*/, ""); // remove leading commas
+  if (cleanPlace) {
+    placeString = cleanPlace.trim();
+  }
+  cleanPlace = placeString.replace(/\s*\,\s*$/, ""); // remove railing commas
+  if (cleanPlace) {
+    placeString = cleanPlace.trim();
+  }
   cleanPlace = placeString.replace(/\s*,\s*$/g, ""); // remove trailing commas
   if (cleanPlace) {
     placeString = cleanPlace.trim();
@@ -946,6 +955,15 @@ function generalizeDataGivenRecordType(ed, result) {
       result.setTypeSpecficDataValue("race", race);
     }
   } else if (result.recordType == RT.Burial) {
+    // For the FS FindAGrave Index the event place is usually incorrect and the burial place
+    // is correct.
+    if (ed.fsCollectionId && ed.fsCollectionId == "2221801") {
+      if (ed.recordData && ed.recordData["Burial Place"]) {
+        let burialPlace = ed.recordData["Burial Place"];
+        result.setEventPlace(cleanPlace(burialPlace));
+      }
+    }
+
     // sometimes there is a cemetary name in the document record data
     // e.g. https://www.familysearch.org/ark:/61903/1:1:QVVG-NP36?lang=en
     if (result.eventPlace && ed.documentRecordData && ed.documentRecordData["Cemetery"]) {
