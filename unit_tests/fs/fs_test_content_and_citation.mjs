@@ -486,6 +486,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B",
   },
   {
+    caseName: "us_oh_death_fg_1929_daniel_abbott",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QVKF-MXLS?lang=en",
+  },
+  {
     caseName: "us_or_spouse_death_1989_leland_churchill",
     url: "https://www.familysearch.org/ark:/61903/1:1:VZ4P-PBP",
   },
