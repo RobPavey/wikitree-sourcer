@@ -26,10 +26,7 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class RiksarkUriBuilder {
   constructor() {
-    //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-    // Change the URL below to the start of the search URL for your site
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    this.uri = "https://www.riksark.org/search";
+    this.uri = "https://sok.riksarkivet.se/en";
     this.searchTermAdded = false;
   }
 
@@ -60,47 +57,29 @@ class RiksarkUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
+  addFreeText(string) {
+    this.addSearchParameter("Sokord", string);
+    this.addSearchParameter("Fritext", string);
   }
 
-  addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
+  addName(string) {
+    this.addSearchParameter("Namn", string);
   }
 
-  addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
+  addPlace(string) {
+    this.addSearchParameter("Ort", string);
   }
 
   addStartYear(string) {
-    this.addSearchParameter("start", string);
+    this.addSearchParameter("DatumFran", string);
   }
 
   addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+    this.addSearchParameter("DatumTill", string);
   }
 
   getUri() {
+    this.addSearchParameter("AvanceradSok", "true");
     return this.uri;
   }
 }

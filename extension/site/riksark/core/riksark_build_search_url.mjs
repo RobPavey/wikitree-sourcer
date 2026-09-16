@@ -24,12 +24,24 @@ SOFTWARE.
 
 import { RiksarkUriBuilder } from "./riksark_uri_builder.mjs";
 
+// Example search:
+//	https://sok.riksarkivet.se/en?Sokord=Persson&f=True&EndastDigitaliserat=false&TranskriberadText=false&Fritext=Persson&Namn=Bodil+H%C3%A5kansdotter&Ort=Muggehult&DatumFran=1780&DatumTill=1800&AvanceradSok=true
+//		Search? - free text
+//		Fritext - free text
+//		Namn - name
+// 		Ort - place
+//		DatumFran  - From date
+//		DatumTill - To date
+
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
 
   var builder = new RiksarkUriBuilder();
 
   // call methods on builder here
+  builder.addName(gd.inferFullName());
+  builder.addStartYear(gd.inferBirthYear());
+  builder.addEndYear(gd.inferDeathYear());
 
   const url = builder.getUri();
 
