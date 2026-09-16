@@ -136,6 +136,14 @@ const regressionData = [
     caseName: "zz_census_1880_hallestad_alvsborg_sv",
     url: "https://sok.riksarkivet.se/bildvisning/Folk_815089-017#?cv=16&xywh=-986%2C0%2C2771%2C1360",
   },
+  {
+    caseName: "zz_he_1836_breds_sv",
+    url: "https://sok.riksarkivet.se/bildvisning/C0003150_00013#?xywh=-1136%2C-1%2C8303%2C4832&cv=12",
+  },
+  {
+    caseName: "zz_marriage_1864_stora_sv",
+    url: "https://sok.riksarkivet.se/bildvisning/C0018327_00114#?cv=113&xywh=-1280%2C-1781%2C5382%2C8575",
+  },
 ];
 
 async function runTests(testManager) {

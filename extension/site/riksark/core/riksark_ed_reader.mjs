@@ -261,7 +261,7 @@ const imageArchiveRecordTypes = [
   {
     recordType: RT.BirthOrBaptism,
     matchData: {
-      type: ["Födelse- och dopböcker"],
+      type: ["Födelse- och dopböcker", "Födelse och dop"],
     },
   },
   {
@@ -291,7 +291,13 @@ const imageArchiveRecordTypes = [
   {
     recordType: RT.Marriage,
     matchData: {
-      type: ["Vigsel", "Marriage"],
+      type: ["Lysning och vigsel", "Vigsel", "Marriage"],
+    },
+  },
+  {
+    recordType: RT.DeathOrBurial,
+    matchData: {
+      type: ["Död och begravning", "Death or burial"],
     },
   },
   {
@@ -349,43 +355,64 @@ class RiksarkEdReader extends ExtractedDataReader {
         this.recordTypeData = unclassifiedTypeData;
       }
     } else if (ed.pageType == "image") {
-      if (ed.imageType == "archive") {
+      if (ed.treeItemTitle) {
         let matchConfig = {
           type: {
             matchType: ExtractedDataReader.MatchType.IncludesOneOf,
-            value: ed.imageCollectionName,
+            value: ed.treeItemTitle,
           },
         };
         let recordTypeData = this.getRecordTypeMatch(imageArchiveRecordTypes, matchConfig);
         if (recordTypeData) {
           this.recordTypeData = recordTypeData;
           this.recordType = recordTypeData.recordType;
-        } else {
-          this.recordTypeData = unclassifiedTypeData;
         }
-      } else if (ed.imageType == "dataset") {
-        let matchConfig = {
-          type: {
-            matchType: ExtractedDataReader.MatchType.StartsWithOneOf,
-            value: ed.imageDatasetName,
-          },
-        };
-
-        let recordTypeData = this.getRecordTypeMatch(imageDatasetRecordTypes, matchConfig);
-        if (recordTypeData) {
-          this.recordTypeData = recordTypeData;
-          this.recordType = recordTypeData.recordType;
-        } else {
-          this.recordTypeData = unclassifiedTypeData;
-        }
-
-        if (this.recordType == RT.Census) {
-          const regex = /\w+\s+(\d\d\d\d)/;
-          const match = ed.imageDatasetName.match(regex);
-          if (match) {
-            let year = match[1].trim();
-            this.imageYear = year;
+      }
+      if (!this.recordTypeData) {
+        if (ed.imageType == "archive") {
+          let matchConfig = {
+            type: {
+              matchType: ExtractedDataReader.MatchType.IncludesOneOf,
+              value: ed.imageCollectionName,
+            },
+          };
+          let recordTypeData = this.getRecordTypeMatch(imageArchiveRecordTypes, matchConfig);
+          if (recordTypeData) {
+            this.recordTypeData = recordTypeData;
+            this.recordType = recordTypeData.recordType;
+          } else {
+            this.recordTypeData = unclassifiedTypeData;
           }
+        } else if (ed.imageType == "dataset") {
+          let matchConfig = {
+            type: {
+              matchType: ExtractedDataReader.MatchType.StartsWithOneOf,
+              value: ed.imageDatasetName,
+            },
+          };
+
+          let recordTypeData = this.getRecordTypeMatch(imageDatasetRecordTypes, matchConfig);
+          if (recordTypeData) {
+            this.recordTypeData = recordTypeData;
+            this.recordType = recordTypeData.recordType;
+          } else {
+            this.recordTypeData = unclassifiedTypeData;
+          }
+
+          if (this.recordType == RT.Census) {
+            const regex = /\w+\s+(\d\d\d\d)/;
+            const match = ed.imageDatasetName.match(regex);
+            if (match) {
+              let year = match[1].trim();
+              this.imageYear = year;
+            }
+          }
+        }
+      }
+
+      if (!this.imageYear && ed.treeItemYears) {
+        if (ed.treeItemYears.length == 4) {
+          this.imageYear = ed.treeItemYears;
         }
       }
     }

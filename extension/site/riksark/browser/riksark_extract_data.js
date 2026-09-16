@@ -188,7 +188,7 @@ function extractImage(document, url, result) {
     // Helsingborgs stadsförsamlings (Maria) kyrkoarkiv, Födelse- och dopböcker, SE/LLA/13171/C I/15 (1887-1889)
 
     // first check for am archive reference code.
-    const archiveCodeIndex = title.search(/SE\/[A-Z]{3}\/\d/);
+    const archiveCodeIndex = title.search(/SE\/[A-Z]+\/\d/);
     if (archiveCodeIndex != -1) {
       result.imageType = "archive";
       let part1 = title.substring(0, archiveCodeIndex).trim();
@@ -368,6 +368,58 @@ function extractImage(document, url, result) {
     ["_source-reference", "_k__00e4llh__00e4nvisning"],
     ["Source reference", "Källhänvisning"]
   );
+
+  // Extract data from the tree view on the left. This is needed to determin the record type
+  // since a church book can caintain multiple types of records.
+  const treeView = document.querySelector("div.views > div.treeView");
+  if (treeView) {
+    // first try to find the selected item. This is the best approach since it can't be changed
+    // without affecting the page displayed
+    const selectedItem = treeView.querySelector("ul.tree a.selected");
+    if (selectedItem) {
+      let selectedLinkText = selectedItem.getAttribute("title");
+      if (selectedLinkText) {
+        // this is often just the year(s)
+        if (/^[0-9\-\(\)]+$/.test(selectedLinkText)) {
+          result.treeItemYears = selectedLinkText;
+          // try the next level up
+          let selectedListItem = selectedItem.closest("li");
+          if (selectedListItem) {
+            const prevListItem = selectedListItem.previousElementSibling;
+            if (prevListItem && prevListItem.tagName == "LI") {
+              const childList = prevListItem.querySelector("ul");
+              if (!childList) {
+                const linkItem = prevListItem.querySelector("a");
+                if (linkItem) {
+                  let treeItemTitle = linkItem.getAttribute("title");
+                  if (treeItemTitle) {
+                    result.treeItemTitle = treeItemTitle.trim();
+                  }
+                }
+              }
+            }
+          }
+        } else {
+          result.treeItemTitle = selectedLinkText.trim();
+        }
+      }
+    }
+
+    // If that failed we can use the expanded item
+    const expandedL2ItemToggle = treeView.querySelector("ul.tree > li > ul > li > div.toggle.expanded");
+    if (expandedL2ItemToggle) {
+      const expandedL2Item = expandedL2ItemToggle.closest("li");
+      if (expandedL2Item) {
+        const linkItem = expandedL2Item.querySelector("a");
+        if (linkItem) {
+          let treeItemTitle = linkItem.getAttribute("title");
+          if (treeItemTitle) {
+            result.treeItemTitle = treeItemTitle.trim();
+          }
+        }
+      }
+    }
+  }
 
   result.success = true;
   return result;
