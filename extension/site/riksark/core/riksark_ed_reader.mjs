@@ -224,6 +224,10 @@ const baseRecordTypeData = {
       recordDataKeys: ["County", "Län"],
       cleanFunction: cleanPlace,
     },
+    streetAddress: {
+      recordDataKeys: ["Place of residence", "Hemort"],
+      cleanFunction: cleanPlace,
+    },
     gender: {
       recordDataKeys: ["Gender", "Kön"],
       cleanFunction: cleanGender,
@@ -253,6 +257,9 @@ const baseRecordTypeData = {
     useCountyKeys: true,
     ignoreCountyKeyIfAlreadyInPlaceName: true,
     additionalCountyWords: ["county", "län"], // must be lowercase
+    countyWordToIncludeInPlaceString: "län",
+    countyIsGenitivePlaceString: true,
+    useStreetAddressKeys: true,
     impliedCountryName: "Sweden",
   },
 };

@@ -11,8 +11,9 @@
     "yearString": "1890"
   },
   "eventPlace": {
-    "placeString": "Grydts, Kristianstad, Sweden",
+    "placeString": "Grydts, Kristianstads län, Sweden",
     "county": "Kristianstad",
+    "streetAddress": "Westra Olinge",
     "country": "Sweden",
     "extractedPlaceString": "Grydts"
   },
@@ -21,6 +22,8 @@
   },
   "birthPlace": {
     "placeString": "Knislinge Kristianstads län, Sweden",
+    "county": "Kristianstad",
+    "streetAddress": "Westra Olinge",
     "country": "Sweden",
     "extractedPlaceString": "Knislinge Kristianstads län"
   },

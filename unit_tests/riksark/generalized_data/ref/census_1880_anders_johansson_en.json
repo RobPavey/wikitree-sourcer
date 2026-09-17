@@ -11,8 +11,9 @@
     "yearString": "1880"
   },
   "eventPlace": {
-    "placeString": "Hellstad, Älvsborg, Sweden",
+    "placeString": "Hellstad, Älvsborgs län, Sweden",
     "county": "Älvsborg",
+    "streetAddress": "Hellstad Påfvag. 1 mtl",
     "country": "Sweden",
     "extractedPlaceString": "Hellstad"
   },
@@ -21,6 +22,8 @@
   },
   "birthPlace": {
     "placeString": "Hällstad Älvsborgs län, Sweden",
+    "county": "Älvsborg",
+    "streetAddress": "Hellstad Påfvag. 1 mtl",
     "country": "Sweden",
     "extractedPlaceString": "Hällstad Älvsborgs län"
   },

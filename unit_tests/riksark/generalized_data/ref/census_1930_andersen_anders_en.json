@@ -11,8 +11,9 @@
     "yearString": "1930"
   },
   "eventPlace": {
-    "placeString": "Vätö, Stockholm, Sweden",
+    "placeString": "Vätö, Stockholms län, Sweden",
     "county": "Stockholm",
+    "streetAddress": "Vätöberg Sthlm. stads stenhuggeri",
     "country": "Sweden",
     "extractedPlaceString": "Vätö"
   },

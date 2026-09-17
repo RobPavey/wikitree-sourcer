@@ -725,6 +725,19 @@ class ExtractedDataReader {
     }
 
     function addImpliedParts(reader, placeObj) {
+      function extractCountyWordFromCountyName(countyName) {
+        if (advanced.additionalCountyWords) {
+          let countyNameLc = countyName.toLowerCase();
+          for (let countyWord of advanced.additionalCountyWords) {
+            if (countyNameLc.endsWith(" " + countyWord)) {
+              let bareCountyName = countyName.substring(0, countyName.length - countyWord.length).trim();
+              let realCaseCountyWord = countyName.substring(countyName.length - countyWord.length).trim();
+              return { countyWord: realCaseCountyWord, bareCountyName: bareCountyName };
+            }
+          }
+        }
+      }
+
       if (advanced) {
         if (!placeString && !advanced.addImpliedPartsToBlankPlace) {
           return;
@@ -735,6 +748,8 @@ class ExtractedDataReader {
 
         if (advanced.useCountyKeys && !existingParts.county) {
           let countyName = reader.getValueUsingRecordTypeData("county");
+          let separateCountyName = countyName; // no suffix added
+
           if (countyName) {
             if (advanced.ignoreCountyKeyIfAlreadyInPlaceName) {
               if (placeString.includes(countyName)) {
@@ -760,21 +775,19 @@ class ExtractedDataReader {
                 // perhaps the county name is "Kristianstads län" r "Kristianstad län"
                 // and the place string is "Knislinge Kristianstad" or  "Knislinge Kristianstad"
                 // in those case we don't want to add the county name
-                let countyNameLc = countyName.toLowerCase();
-                for (let countyWord of advanced.additionalCountyWords) {
-                  if (countyNameLc.endsWith(" " + countyWord)) {
-                    let bareCountyName = countyName.substring(0, countyName.length - countyWord.length).trim();
-                    if (placeString.includes(bareCountyName)) {
-                      let index = placeString.indexOf(countyName);
-                      let endIndex = placeString.indexOf(",", index);
-                      if (endIndex == -1) {
-                        endIndex = placeString.length;
-                      }
-                      index += countyName.length;
-                      let remainder = placeString.substring(index, endIndex).trim();
-                      if (!remainder) {
-                        countyName = "";
-                      }
+                const extract = extractCountyWordFromCountyName(countyName);
+                if (extract) {
+                  let bareCountyName = extract.bareCountyName;
+                  if (placeString.includes(bareCountyName)) {
+                    let index = placeString.indexOf(countyName);
+                    let endIndex = placeString.indexOf(",", index);
+                    if (endIndex == -1) {
+                      endIndex = placeString.length;
+                    }
+                    index += countyName.length;
+                    let remainder = placeString.substring(index, endIndex).trim();
+                    if (!remainder) {
+                      countyName = "";
                     }
                   }
                 }
@@ -782,10 +795,46 @@ class ExtractedDataReader {
             }
 
             if (countyName) {
+              if (advanced.countyWordToIncludeInPlaceString) {
+                const extract = extractCountyWordFromCountyName(countyName);
+                if (!extract) {
+                  if (advanced.countyIsGenitivePlaceString) {
+                    if (!countyName.endsWith("s")) {
+                      countyName += "s";
+                    }
+                  }
+                  countyName += " " + advanced.countyWordToIncludeInPlaceString;
+                }
+              }
               existingParts.county = countyName;
-              placeObj.county = countyName;
               addPart(countyName);
             }
+
+            if (separateCountyName) {
+              let removedCountyWord = false;
+              const extract = extractCountyWordFromCountyName(countyName);
+              if (extract) {
+                separateCountyName = extract.bareCountyName;
+                removedCountyWord = true;
+              }
+
+              if (removedCountyWord) {
+                if (advanced.countyIsGenitivePlaceString) {
+                  if (separateCountyName.endsWith("s")) {
+                    separateCountyName = separateCountyName.substring(0, separateCountyName.length - 1);
+                  }
+                }
+              }
+
+              placeObj.county = separateCountyName; // should this ever have county word on end?
+            }
+          }
+        }
+
+        if (advanced.useStreetAddressKeys && !existingParts.streetAddress) {
+          let streetAddress = reader.getValueUsingRecordTypeData("streetAddress");
+          if (streetAddress) {
+            placeObj.streetAddress = streetAddress;
           }
         }
 
