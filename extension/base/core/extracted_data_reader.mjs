@@ -341,8 +341,10 @@ class ExtractedDataReader {
   }
 
   setCustomFields(gd) {
-    if (this.recordTypeData.overrideRefTitle) {
-      gd.overrideRefTitle = this.recordTypeData.overrideRefTitle;
+    if (this.recordTypeData) {
+      if (this.recordTypeData.overrideRefTitle) {
+        gd.overrideRefTitle = this.recordTypeData.overrideRefTitle;
+      }
     }
   }
 
