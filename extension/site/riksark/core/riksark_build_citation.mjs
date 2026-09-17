@@ -36,6 +36,7 @@ function buildRiksarkUrl(ed, gd, builder) {
     // we want:
     // https://sok.riksarkivet.se/en/?postid=Scb_827143
     const url = new URL(ed.url);
+    url.hash = "";
     let postId = ed.postId;
     if (!ed.postId) {
       postId = url.searchParams.get("postid");
@@ -43,8 +44,8 @@ function buildRiksarkUrl(ed, gd, builder) {
 
     if (postId) {
       url.search = "postid=" + ed.postId;
-      return url.toString();
     }
+    return url.toString();
   }
   return ed.url;
 }

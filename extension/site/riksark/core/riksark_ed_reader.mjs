@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { RT } from "../../../base/core/record_type.mjs";
+import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 
@@ -321,8 +321,10 @@ const imageArchiveRecordTypes = [
   },
   {
     recordType: RT.Census,
+    recordSubtype: RecordSubtype.HouseholdClericalSurveys,
+    overrideRefTitle: "Household Examination Rolls",
     matchData: {
-      type: ["Husförhör", "Församlingsbok"],
+      type: ["Husförhör", "Husförhörslängder", "Församlingsbok"],
     },
   },
 ];
@@ -355,12 +357,7 @@ class RiksarkEdReader extends ExtractedDataReader {
       };
 
       let recordTypeData = this.getRecordTypeMatch(recordTypes, matchConfig);
-      if (recordTypeData) {
-        this.recordTypeData = recordTypeData;
-        this.recordType = recordTypeData.recordType;
-      } else {
-        this.recordTypeData = unclassifiedTypeData;
-      }
+      this.setRecordData(recordTypeData, unclassifiedTypeData);
     } else if (ed.pageType == "image") {
       if (ed.treeItemTitle) {
         let matchConfig = {
@@ -371,8 +368,7 @@ class RiksarkEdReader extends ExtractedDataReader {
         };
         let recordTypeData = this.getRecordTypeMatch(imageArchiveRecordTypes, matchConfig);
         if (recordTypeData) {
-          this.recordTypeData = recordTypeData;
-          this.recordType = recordTypeData.recordType;
+          this.setRecordData(recordTypeData, unclassifiedTypeData);
         }
       }
       if (!this.recordTypeData) {
@@ -384,12 +380,7 @@ class RiksarkEdReader extends ExtractedDataReader {
             },
           };
           let recordTypeData = this.getRecordTypeMatch(imageArchiveRecordTypes, matchConfig);
-          if (recordTypeData) {
-            this.recordTypeData = recordTypeData;
-            this.recordType = recordTypeData.recordType;
-          } else {
-            this.recordTypeData = unclassifiedTypeData;
-          }
+          this.setRecordData(recordTypeData, unclassifiedTypeData);
         } else if (ed.imageType == "dataset") {
           let matchConfig = {
             type: {
@@ -399,12 +390,7 @@ class RiksarkEdReader extends ExtractedDataReader {
           };
 
           let recordTypeData = this.getRecordTypeMatch(imageDatasetRecordTypes, matchConfig);
-          if (recordTypeData) {
-            this.recordTypeData = recordTypeData;
-            this.recordType = recordTypeData.recordType;
-          } else {
-            this.recordTypeData = unclassifiedTypeData;
-          }
+          this.setRecordData(recordTypeData, unclassifiedTypeData);
 
           if (this.recordType == RT.Census) {
             const regex = /\w+\s+(\d\d\d\d)/;

@@ -340,7 +340,11 @@ class ExtractedDataReader {
     return undefined;
   }
 
-  setCustomFields(gd) {}
+  setCustomFields(gd) {
+    if (this.recordTypeData.overrideRefTitle) {
+      gd.overrideRefTitle = this.recordTypeData.overrideRefTitle;
+    }
+  }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Helper functions to reduce code in derived classes
@@ -957,6 +961,18 @@ class ExtractedDataReader {
       parents.father = {};
       parents.father.name = this.makeNameObjFromFullName(fatherFullName);
       return parents;
+    }
+  }
+
+  setRecordData(recordTypeData, defaultRecordTypeData) {
+    if (recordTypeData) {
+      this.recordTypeData = recordTypeData;
+      this.recordType = recordTypeData.recordType;
+      if (recordTypeData.recordSubtype) {
+        this.recordSubtype = recordTypeData.recordSubtype;
+      }
+    } else if (defaultRecordTypeData) {
+      this.recordTypeData = defaultRecordTypeData;
     }
   }
 

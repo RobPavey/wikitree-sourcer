@@ -2,5 +2,7 @@
   "sourceOfData": "riksark",
   "sourceType": "image",
   "recordType": "Census",
+  "recordSubtype": "HouseholdClericalSurveys",
+  "overrideRefTitle": "Household Examination Rolls",
   "hasValidData": true
 }

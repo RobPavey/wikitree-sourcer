@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Census''':\n\"Breds kyrkoarkiv, Husförhörslängder\"<br/>\nSE/ULA/10142/A I/12 (1836-1840), Image ID: C0003150_00013, Bild 1<br/>\n[https://sok.riksarkivet.se/bildvisning/C0003150_00013 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Household Examination Rolls''':\n\"Breds kyrkoarkiv, Husförhörslängder\"<br/>\nSE/ULA/10142/A I/12 (1836-1840), Image ID: C0003150_00013, Bild 1<br/>\n[https://sok.riksarkivet.se/bildvisning/C0003150_00013 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Census''':\n\"Breds kyrkoarkiv, Husförhörslängder\"<br/>\nSE/ULA/10142/A I/12 (1836-1840), Image ID: C0003150_00013, Bild 1<br/>\n[https://sok.riksarkivet.se/bildvisning/C0003150_00013 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Household Examination Rolls''':\n\"Breds kyrkoarkiv, Husförhörslängder\"<br/>\nSE/ULA/10142/A I/12 (1836-1840), Image ID: C0003150_00013, Bild 1<br/>\n[https://sok.riksarkivet.se/bildvisning/C0003150_00013 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Census''': \"Breds kyrkoarkiv, Husförhörslängder\"<br/>SE/ULA/10142/A I/12 (1836-1840), Image ID: C0003150_00013, Bild 1<br/>[https://sok.riksarkivet.se/bildvisning/C0003150_00013 Riksarkivet Image] (accessed 6 May 2021).",
+    "citation": "* '''Household Examination Rolls''': \"Breds kyrkoarkiv, Husförhörslängder\"<br/>SE/ULA/10142/A I/12 (1836-1840), Image ID: C0003150_00013, Bild 1<br/>[https://sok.riksarkivet.se/bildvisning/C0003150_00013 Riksarkivet Image] (accessed 6 May 2021).",
     "type": "source"
   }
 }
