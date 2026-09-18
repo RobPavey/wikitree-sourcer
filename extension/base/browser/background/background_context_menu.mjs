@@ -275,7 +275,7 @@ function setupContextMenu() {
 
   chrome.contextMenus.onClicked.addListener(contextClick);
 
-  let title = "Sourcer: Open Link in New Tab";
+  let title = "Sourcer: Open Link or Selected Text";
 
   chrome.contextMenus.removeAll(() => {
     chrome.contextMenus.create({
