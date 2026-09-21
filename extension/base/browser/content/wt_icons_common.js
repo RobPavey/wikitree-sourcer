@@ -639,26 +639,39 @@ class WikiTreeSourcerPageModsHelper {
 
     let circleFront = "";
     let circleBack = "";
+    let circleFront2 = "";
+    let circleBack2 = "";
 
     let fill = `fill="rgb(255, 175, 2)"`;
-    let strokeWidth = `stroke-width="2"`;
+    let fill2 = `fill="none"`;
+
+    let strokeWidth = `stroke-width="1.5"`;
     let stroke = `stroke="white"`;
     let strokeDashArray = "";
-    let opacity = "";
+
+    let strokeWidth2 = "";
+    let stroke2 = "";
+    let strokeDashArray2 = "";
 
     if (iconConfig.isConflict) {
       stroke = `stroke="rgb(255, 0, 0)"`;
-    } else if (iconConfig.isFetchError) {
+      strokeWidth = `stroke-width="2"`;
+    } else if (iconConfig.isPartial) {
       let r = 11;
       let circum = 2 * Math.PI * r;
-      let dashLen = circum / 10;
+      //let dashLen = circum / 20;
+      //stroke = `stroke="rgb(37, 129, 233)"`;
+      let dashLen = circum / 30;
+      stroke2 = `stroke="rgb(128, 128, 128)"`;
+      strokeWidth2 = `stroke-width="1.5"`;
+      strokeDashArray2 = `stroke-dasharray="${dashLen} ${dashLen}"`;
+    } else if (iconConfig.isFetchError) {
       stroke = `stroke="rgb(255, 0, 0)"`;
-      strokeDashArray = `stroke-dasharray="${dashLen} ${dashLen}"`;
-    } else {
-      strokeWidth = `stroke-width="1.5"`;
+      strokeWidth = `stroke-width="2"`;
     }
 
     let style = `${fill} ${strokeDashArray} ${stroke} ${strokeWidth}`;
+    let style2 = `${fill2} ${strokeDashArray2} ${stroke2} ${strokeWidth2}`;
 
     if (iconConfig.isMultiple) {
       circleBack = `
@@ -667,22 +680,56 @@ class WikiTreeSourcerPageModsHelper {
       circleFront = `
         <circle cx="10" cy="14" r="9" ${style}/>
       `;
+      if (stroke2) {
+        circleBack2 = `
+        <circle cx="15" cy="9" r="8" ${style2} opacity="0.6"/>
+      `;
+        circleFront2 = `
+        <circle cx="10" cy="14" r="9" ${style2}/>
+      `;
+      }
     } else {
       circleFront = `
         <circle cx="12" cy="12" r="11" ${style}/>
       `;
+
+      if (stroke2) {
+        circleFront2 = `
+        <circle cx="12" cy="12" r="11" ${style2}/>
+      `;
+      }
+    }
+
+    let slash = "";
+    if (iconConfig.isFetchError) {
+      const slashStyle = styleRoundPath("rgb(255, 0, 0)", 2);
+
+      // circle is always single, centered at 12, 12, radius 11
+      // slash starts at to left. Offset from center is r * sqrt(2)/2
+      const offset = (11 * Math.sqrt(2)) / 2;
+
+      const p1 = 12 - offset;
+      const p2 = 12 + offset;
+      const line = `M${p1} ${p1} L${p2} ${p2}`;
+      const slashPath = `d="${line}"`;
+      slash = `
+              <path ${slashPath} ${slashStyle}/>
+            `;
     }
 
     const svg = `
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         ${circleBack}
+        ${circleBack2}
         ${circleFront}
+        ${circleFront2}
         ${sourceBox}
         ${externalBox}
         ${categoryGroup}
         ${sourceArrow}
         ${externalArrow}
         ${mainArrow}
+        ${slash}
       </svg>`;
 
     return `data:image/svg+xml;base64,${btoa(svg)}`;

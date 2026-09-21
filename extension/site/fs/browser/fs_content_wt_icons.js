@@ -1606,6 +1606,13 @@ if (runningExtensionId === currentExtensionId) {
       if (location.idType == "person" || location.idType == "record") {
         iconConfig.isConflict = true;
         tooltipListItem.isError = true;
+      } else if (pageIdType == "person" && locationTypeName == "sourceRow" && currentPageWikiIds) {
+        if (currentPageWikiIds.length && currentPageWikiIds.length == 1) {
+          if (!wikiIds.includes(currentPageWikiIds[0])) {
+            iconConfig.isPartial = true;
+            tooltipListItem.text += ` but not profile ${currentPageWikiIds[0]}`;
+          }
+        }
       }
     } else if (wikiIds.length == 1) {
       iconConfig.mainArrowStyle = "in";
@@ -1621,10 +1628,11 @@ if (runningExtensionId === currentExtensionId) {
       allWikiIds.add(wikiIds[0]);
 
       if (pageIdType == "person" && locationTypeName == "sourceRow" && currentPageWikiIds) {
-        if (currentPageWikiIds.length == 1 && currentPageWikiIds[0] != wikiIds[0]) {
-          iconConfig.isConflict = true;
-          tooltipListItem.text += ` which is different to profile ${currentPageWikiIds[0]}`;
-          tooltipListItem.isError = true;
+        if (currentPageWikiIds.length && currentPageWikiIds.length == 1) {
+          if (currentPageWikiIds[0] != wikiIds[0]) {
+            iconConfig.isPartial = true;
+            tooltipListItem.text += ` but not profile ${currentPageWikiIds[0]}`;
+          }
         }
       }
     }
@@ -2346,6 +2354,9 @@ if (runningExtensionId === currentExtensionId) {
 
         // we have changed page so kill any pending locations
         pendingLocationsBatch = {};
+
+        // clear globals
+        currentPageWikiIds = [];
 
         pageMods.determinePageProfile(document.URL);
         let idData = pageMods.getIdDataFromUrl(document.URL);
