@@ -1,0 +1,18 @@
+{
+  "sourceType": "record",
+  "recordType": "ChurchRecords",
+  "useLinkedRecordsToDetermineRole": true,
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Jean Baptiste Laflamme"
+  },
+  "personGender": "male",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1091|379943751}}"
+  ],
+  "collectionData": {
+    "id": "1091",
+    "collectionTitle": "Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968"
+  },
+  "hasValidData": true
+}

@@ -84,6 +84,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/8614064:8991",
   },
   {
+    caseName: "canada_child_baptism_1886_jean_laflamme",
+    url: "https://www.ancestry.com/search/collections/1091/records/379943751?tid=16392435&pid=1110187097&ssrc=pt",
+  },
+  {
     caseName: "canada_father_obituary_2007_sandra_bowman",
     url: "https://www.ancestry.com/discoveryui-content/view/686307572:62226?tid=&pid=&queryId=fb8fd94e57b84ebb42d63eedfb7d7fd2&_phsrc=XJK6813&_phstart=successSource",
   },

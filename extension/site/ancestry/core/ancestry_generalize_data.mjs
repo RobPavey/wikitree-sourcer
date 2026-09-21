@@ -825,6 +825,18 @@ function determineRoleGivenRecordType(extractedData, result) {
         }
       }
     }
+  } else if (extractedData.linkData) {
+    // we can't determine a role given the current recordType
+    // but there are linked records
+    // this is pretty common. For example a birth registration could have a link to the father
+    // but we don't need to do anything more. But for certain record types, where key data such as date
+    // is missing we should fetch the linked records and delve deeper.
+    // This could be expanded but the only cases where it is found to be needed are handled below
+    if (recordType == RT.ChurchRecords) {
+      if (!extractedData.recordData["Record Type"]) {
+        result.useLinkedRecordsToDetermineRole = true;
+      }
+    }
   }
 
   //console.log("determineRoleGivenRecordType. role is: " + result.role);
@@ -3310,6 +3322,88 @@ function setExtraGdHouseholdFields(extractedData, result, generalizedMember, fie
   setMemberData("employer", ["Employer"]);
 }
 
+function regeneralizeDataGivenNewPrimaryPerson(result, generalizedData) {
+  //console.log("regeneralizeDataWithLinkedRecords, primaryLinkedRecord generalizedData is:");
+  //console.log(generalizedData);
+
+  // even if we have an event date and place the one from the linked record should be better.
+  // For example the parent in a child birth record can have a birth place which has been
+  // interpreted as the event place incorrectly e.g.:
+  // https://www.ancestry.com/discoveryui-content/view/300065623:8703
+  if (generalizedData.eventPlace) {
+    result.eventPlace = generalizedData.eventPlace;
+  }
+  if (generalizedData.eventDate) {
+    result.eventDate = generalizedData.eventDate;
+  }
+
+  // because the linked record has more data it will have a more accurate recordType
+  // For example the existing one might be BirthOrBaptism but the linked one may have
+  // Baptism because it has a BaptismDate.
+  // But we have to be careful in case it is an unclassified event
+  if (generalizedData.recordType && generalizedData.recordType != RT.Unclassified) {
+    result.recordType = generalizedData.recordType;
+
+    if (result.overrideRefTitle) {
+      // this means that we asked the user to specify the recordType because it was unclassified
+      // But now we have a recordType from the linkedRecord.
+      // So we didn't need to ask. If we leave the overrideRefTitle we can end up with
+      // contradictory data in the citation if they picked the wrong type.
+      delete result.overrideRefTitle;
+    }
+  }
+
+  let currentPrimaryPersonGender = result.inferPrimaryPersonGender();
+  if (generalizedData.personGender && !currentPrimaryPersonGender) {
+    result.setPrimaryPersonGender(generalizedData.personGender);
+  }
+
+  // For a child marriage we want to get the spouse,
+  // This is a bit confusing - we store this in result.spouses even though it is
+  // the spouse of the child not this person
+  if (generalizedData.spouses) {
+    result.spouses = generalizedData.spouses;
+
+    if (generalizedData.ageAtEvent) {
+      result.setPrimaryPersonAge(generalizedData.ageAtEvent);
+    }
+  } else {
+    // for a child birth/baptism we want to get the other parent and put that in spouses
+    let otherParent = undefined;
+    if (generalizedData.parents) {
+      if (result.personGender == "male") {
+        if (generalizedData.parents.mother) {
+          otherParent = generalizedData.parents.mother;
+        }
+      } else if (result.personGender == "female") {
+        if (generalizedData.parents.father) {
+          otherParent = generalizedData.parents.father;
+        }
+      } else if (result.name && result.name.name) {
+        // don't know gender so have to compare our name with parent names
+        let fatherName = "";
+        let motherName = "";
+        if (generalizedData.parents.father && generalizedData.parents.father.name) {
+          fatherName = generalizedData.parents.father.name.name;
+        }
+        if (generalizedData.parents.mother && generalizedData.parents.mother.name) {
+          motherName = generalizedData.parents.mother.name.name;
+        }
+        if (result.name.name == fatherName && generalizedData.parents.mother) {
+          otherParent = generalizedData.parents.mother;
+        } else if (result.name.name == motherName && generalizedData.parents.father) {
+          otherParent = generalizedData.parents.father;
+        }
+      }
+    }
+
+    if (otherParent && otherParent.name) {
+      result.spouses = [];
+      result.spouses.push(otherParent);
+    }
+  }
+}
+
 function regeneralizeDataWithLinkedRecords(input) {
   let ed = input.extractedData;
   let result = input.generalizedData;
@@ -3427,82 +3521,7 @@ function regeneralizeDataWithLinkedRecords(input) {
         //console.log("regeneralizeDataWithLinkedRecords, primaryLinkedRecord generalizedData is:");
         //console.log(generalizedData);
 
-        // even if we have an event date and place the one from the linked record should be better.
-        // For example the parent in a child birth record can have a birth place which has been
-        // interpreted as the event place incorrectly e.g.:
-        // https://www.ancestry.com/discoveryui-content/view/300065623:8703
-        if (generalizedData.eventPlace) {
-          result.eventPlace = generalizedData.eventPlace;
-        }
-        if (generalizedData.eventDate) {
-          result.eventDate = generalizedData.eventDate;
-        }
-
-        // because the linked record has more data it will have a more accurate recordType
-        // For example the existing one might be BirthOrBaptism but the linked one may have
-        // Baptism because it has a BaptismDate.
-        // But we have to be careful in case it is an unclassified event
-        if (generalizedData.recordType && generalizedData.recordType != RT.Unclassified) {
-          result.recordType = generalizedData.recordType;
-
-          if (result.overrideRefTitle) {
-            // this means that we asked the user to specify the recordType because it was unclassified
-            // But now we have a recordType from the linkedRecord.
-            // So we didn't need to ask. If we leave the overrideRefTitle we can end up with
-            // contradictory data in the citation if they picked the wrong type.
-            delete result.overrideRefTitle;
-          }
-        }
-
-        let currentPrimaryPersonGender = result.inferPrimaryPersonGender();
-        if (generalizedData.personGender && !currentPrimaryPersonGender) {
-          result.setPrimaryPersonGender(generalizedData.personGender);
-        }
-
-        // For a child marriage we want to get the spouse,
-        // This is a bit confusing - we store this in result.spouses even though it is
-        // the spouse of the child not this person
-        if (generalizedData.spouses) {
-          result.spouses = generalizedData.spouses;
-
-          if (generalizedData.ageAtEvent) {
-            result.setPrimaryPersonAge(generalizedData.ageAtEvent);
-          }
-        } else {
-          // for a child birth/baptism we want to get the other parent and put that in spouses
-          let otherParent = undefined;
-          if (generalizedData.parents) {
-            if (result.personGender == "male") {
-              if (generalizedData.parents.mother) {
-                otherParent = generalizedData.parents.mother;
-              }
-            } else if (result.personGender == "female") {
-              if (generalizedData.parents.father) {
-                otherParent = generalizedData.parents.father;
-              }
-            } else if (result.name && result.name.name) {
-              // don't know gender so have to compare our name with parent names
-              let fatherName = "";
-              let motherName = "";
-              if (generalizedData.parents.father && generalizedData.parents.father.name) {
-                fatherName = generalizedData.parents.father.name.name;
-              }
-              if (generalizedData.parents.mother && generalizedData.parents.mother.name) {
-                motherName = generalizedData.parents.mother.name.name;
-              }
-              if (result.name.name == fatherName && generalizedData.parents.mother) {
-                otherParent = generalizedData.parents.mother;
-              } else if (result.name.name == motherName && generalizedData.parents.father) {
-                otherParent = generalizedData.parents.father;
-              }
-            }
-          }
-
-          if (otherParent && otherParent.name) {
-            result.spouses = [];
-            result.spouses.push(otherParent);
-          }
-        }
+        regeneralizeDataGivenNewPrimaryPerson(result, generalizedData);
       }
     }
   } else if (ed.household) {
@@ -3526,6 +3545,43 @@ function regeneralizeDataWithLinkedRecords(input) {
 
         result.setPrimaryPersonGender(generalizedData.personGender);
       }
+    }
+  } else if (ed.linkData && result.useLinkedRecordsToDetermineRole) {
+    // we may be able to improve the record type and role
+    // There are many possible cases, to be as flexible as possible we do generalizeData on
+    // all of the linkedRecords
+    let linkedGeneralizedData = [];
+    for (let linkedRecord of linkedRecords) {
+      if (linkedRecord.extractedData) {
+        // Now we can look for extra data
+        let gdInput = {};
+        gdInput.extractedData = linkedRecord.extractedData;
+        linkedRecord.generalizedData = generalizeData(gdInput);
+      }
+    }
+
+    let currentGd = result;
+    let primaryGd = null;
+    let primaryRole = "";
+    for (let linkedRecord of linkedRecords) {
+      if (linkedRecord.generalizedData) {
+        let linkGd = linkedRecord.generalizedData;
+        if (!currentGd.eventDate && linkGd.eventDate) {
+          primaryGd = linkGd;
+          primaryRole = linkedRecord.name;
+          break;
+        }
+      }
+    }
+
+    if (primaryGd) {
+      if (primaryRole == "Child") {
+        result.role = Role.Parent;
+      }
+      let primaryPersonName = primaryGd.inferFullName();
+      result.setPrimaryPersonFullName(primaryPersonName);
+
+      regeneralizeDataGivenNewPrimaryPerson(result, primaryGd);
     }
   }
 

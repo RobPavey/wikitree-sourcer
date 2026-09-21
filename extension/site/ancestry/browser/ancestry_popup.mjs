@@ -1744,6 +1744,9 @@ async function setupAncestryPopupMenu(extractedData, tabId) {
   if (generalizedData.sourceType == "record" && generalizedData.recordType == RT.Unclassified && generalizedData.role) {
     // use linked record to try to determine record type
     useLinkedRecordsToDetermineType(data, tabId);
+  } else if (generalizedData.useLinkedRecordsToDetermineRole) {
+    // the linkData could affect the recordType and role
+    useLinkedRecordsToDetermineType(data, tabId);
   } else {
     setupAncestryPopupMenuWithLinkData(data, tabId);
   }

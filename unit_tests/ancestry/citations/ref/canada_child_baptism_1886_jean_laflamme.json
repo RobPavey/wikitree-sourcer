@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Church Records''':\n\"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\"<br/>\nInstitut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp<br/>\nAncestry {{Ancestry Image|1091|d13p_6310459}} - {{Ancestry Record|1091|379943751}} (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Jean was in a church record.<ref>\n'''Church Records''':\n\"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\"<br/>\nInstitut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp<br/>\nAncestry {{Ancestry Image|1091|d13p_6310459}} - {{Ancestry Record|1091|379943751}} (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Church Records''': \"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\"<br/>Institut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp<br/>Ancestry {{Ancestry Image|1091|d13p_6310459}} - {{Ancestry Record|1091|379943751}} (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Church Records''':\n\"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\"<br/>\nInstitut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp<br/>\nAncestry {{Ancestry Image|1091|d13p_6310459}} - {{Ancestry Record|1091|379943751}} (accessed 6 May 2021)<br/>\nName: Jean Baptiste Laflamme; Gender: Homme (Male); Spouse: Henriette Dubois; Child: Albert Napoléon Laflamme; Legitimate: Y.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Jean was in a church record.<ref>\n'''Church Records''':\n\"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\"<br/>\nInstitut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp<br/>\nAncestry {{Ancestry Image|1091|d13p_6310459}} - {{Ancestry Record|1091|379943751}} (accessed 6 May 2021)<br/>\nName: Jean Baptiste Laflamme; Gender: Homme (Male); Spouse: Henriette Dubois; Child: Albert Napoléon Laflamme; Legitimate: Y.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Church Records''': \"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\"<br/>Institut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp<br/>Ancestry {{Ancestry Image|1091|d13p_6310459}} - {{Ancestry Record|1091|379943751}} (accessed 6 May 2021)<br/>Name: Jean Baptiste Laflamme; Gender: Homme (Male); Spouse: Henriette Dubois; Child: Albert Napoléon Laflamme; Legitimate: Y.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Church Records''':\n\"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\"<br/>\nInstitut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp<br/>\nAncestry {{Ancestry Image|1091|d13p_6310459}} - {{Ancestry Record|1091|379943751}} (accessed 6 May 2021)<br/>\nName: Jean Baptiste Laflamme; Gender: Homme (Male); Spouse: Henriette Dubois; Child: Albert Napoléon Laflamme; Legitimate: Y.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Jean was in a church record.<ref>\n'''Church Records''':\n\"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\"<br/>\nInstitut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp<br/>\nAncestry {{Ancestry Image|1091|d13p_6310459}} - {{Ancestry Record|1091|379943751}} (accessed 6 May 2021)<br/>\nName: Jean Baptiste Laflamme; Gender: Homme (Male); Spouse: Henriette Dubois; Child: Albert Napoléon Laflamme; Legitimate: Y.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Church Records''': \"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\"<br/>Institut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp<br/>Ancestry {{Ancestry Image|1091|d13p_6310459}} - {{Ancestry Record|1091|379943751}} (accessed 6 May 2021)<br/>Name: Jean Baptiste Laflamme; Gender: Homme (Male); Spouse: Henriette Dubois; Child: Albert Napoléon Laflamme; Legitimate: Y.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Church Records''':\n\"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\"<br/>\nInstitut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp<br/>\nAncestry {{Ancestry Image|1091|d13p_6310459}} - {{Ancestry Record|1091|379943751}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Jean Baptiste Laflamme\n|-\n| Gender || Homme (Male)\n|-\n| Spouse || Henriette Dubois\n|-\n| Child || Albert Napoléon Laflamme\n|-\n| Legitimate || Y\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Jean was in a church record.<ref>\n'''Church Records''':\n\"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\"<br/>\nInstitut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp<br/>\nAncestry {{Ancestry Image|1091|d13p_6310459}} - {{Ancestry Record|1091|379943751}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Jean Baptiste Laflamme\n|-\n| Gender || Homme (Male)\n|-\n| Spouse || Henriette Dubois\n|-\n| Child || Albert Napoléon Laflamme\n|-\n| Legitimate || Y\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Church Records''': \"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\"<br/>Institut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp<br/>Ancestry {{Ancestry Image|1091|d13p_6310459}} - {{Ancestry Record|1091|379943751}} (accessed 6 May 2021)<br/>Name: Jean Baptiste Laflamme; Gender: Homme (Male); Spouse: Henriette Dubois; Child: Albert Napoléon Laflamme; Legitimate: Y.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968,\" database, Ancestry {{Ancestry Image|1091|d13p_6310459}} - ({{Ancestry Record|1091|379943751}} : accessed 6 May 2021), Name Jean Baptiste Laflamme, Gender Homme (Male), Spouse Henriette Dubois, Child Albert Napoléon Laflamme, Legitimate Y; citing Institut Généalogique Drouin, Montreal, Quebec, Canada, Drouin Collection, Author Gabriel Drouin, Comp.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Jean was in a church record.<ref>\"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968,\" database, Ancestry {{Ancestry Image|1091|d13p_6310459}} - ({{Ancestry Record|1091|379943751}} : accessed 6 May 2021), Name Jean Baptiste Laflamme, Gender Homme (Male), Spouse Henriette Dubois, Child Albert Napoléon Laflamme, Legitimate Y; citing Institut Généalogique Drouin, Montreal, Quebec, Canada, Drouin Collection, Author Gabriel Drouin, Comp.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968,\" database, Ancestry {{Ancestry Image|1091|d13p_6310459}} - ({{Ancestry Record|1091|379943751}} : accessed 6 May 2021), Name Jean Baptiste Laflamme, Gender Homme (Male), Spouse Henriette Dubois, Child Albert Napoléon Laflamme, Legitimate Y; citing Institut Généalogique Drouin, Montreal, Quebec, Canada, Drouin Collection, Author Gabriel Drouin, Comp.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Church Records'':\n\"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\", database, \nInstitut Généalogique Drouin, Montreal, Quebec, Canada, Drouin Collection, Author Gabriel Drouin, Comp, \nAncestry {{Ancestry Image|1091|d13p_6310459}} - ({{Ancestry Record|1091|379943751}} : accessed 6 May 2021), \nName: Jean Baptiste Laflamme; Gender: Homme (Male); Spouse: Henriette Dubois; Child: Albert Napoléon Laflamme; Legitimate: Y.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Jean was in a church record.<ref>\n''Church Records'':\n\"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\", database, \nInstitut Généalogique Drouin, Montreal, Quebec, Canada, Drouin Collection, Author Gabriel Drouin, Comp, \nAncestry {{Ancestry Image|1091|d13p_6310459}} - ({{Ancestry Record|1091|379943751}} : accessed 6 May 2021), \nName: Jean Baptiste Laflamme; Gender: Homme (Male); Spouse: Henriette Dubois; Child: Albert Napoléon Laflamme; Legitimate: Y.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Church Records'': \"Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968\", database, Institut Généalogique Drouin, Montreal, Quebec, Canada, Drouin Collection, Author Gabriel Drouin, Comp, Ancestry {{Ancestry Image|1091|d13p_6310459}} - ({{Ancestry Record|1091|379943751}} : accessed 6 May 2021), Name: Jean Baptiste Laflamme; Gender: Homme (Male); Spouse: Henriette Dubois; Child: Albert Napoléon Laflamme; Legitimate: Y.",
+    "type": "source"
+  }
+}

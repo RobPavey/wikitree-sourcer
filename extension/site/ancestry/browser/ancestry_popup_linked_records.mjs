@@ -298,6 +298,13 @@ async function processWithFetchedLinkData(data, processFunction, tabId) {
       let primaryMember = data.extractedData.household.members[0];
       pushLinkedRecord(linkedRecords, primaryMember.link, "Primary person");
     }
+  } else if (data.generalizedData.useLinkedRecordsToDetermineRole) {
+    // there is linkData but no role
+    // it is possible that if we fetched the linkData and regeneralized we could detrmine a role
+    for (let key of Object.keys(linkData)) {
+      let link = linkData[key];
+      pushLinkedRecord(linkedRecords, linkData[key], key);
+    }
   }
 
   //console.log("processWithFetchedLinkData. linkedRecords is : ");
