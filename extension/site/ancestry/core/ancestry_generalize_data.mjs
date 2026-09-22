@@ -159,6 +159,7 @@ const recordTypeByFields = [
   { type: RT.Will, labels: ["Will Date"] },
   { type: RT.Will, labels: ["Others Listed (Name)<br/>Relationship"] },
   { type: RT.Death, labels: ["Death Date", "Death Place"] },
+  { type: RT.Death, labels: ["Death Date", "Death County"] },
   { type: RT.Death, labels: ["Death Date", "Cause of Death"] },
 ];
 
@@ -260,8 +261,11 @@ function determineRecordType(extractedData) {
     },
     {
       type: RT.Death,
-      matches: ["Deaths", "Death Records", "Death Index", "Deaths Index"],
-      requiredData: [["Death Date", "Death Place"]],
+      matches: ["Deaths", "Death Records", "Death Index", "Deaths Index", "Death Registers"],
+      requiredData: [
+        ["Death Date", "Death Place"],
+        ["Death Date", "Death County"],
+      ],
     },
     {
       type: RT.DeathRegistration,
@@ -282,7 +286,7 @@ function determineRecordType(extractedData) {
     },
     {
       type: RT.Death,
-      matches: ["Deaths", "Death Records", "Scotland, Local Heritage Index"],
+      matches: ["Deaths", "Death Records", "Scotland, Local Heritage Index", "Death Registers"],
       requiredData: [["Death Date"]],
     },
     {
@@ -293,6 +297,7 @@ function determineRecordType(extractedData) {
         "U.S., Death Record",
         "Index to Deceased Estate Files",
         "Death Notice",
+        "Death Registers",
         "Canada, Deaths",
       ],
     },

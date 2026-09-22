@@ -1279,6 +1279,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/23886198:2272",
   },
   {
+    caseName: "us_ut_death_1900_stephen_hunter",
+    url: "https://www.ancestry.co.uk/search/collections/6967/records/303158",
+  },
+  {
     caseName: "us_va_census_1782_abel_wakefield",
     url: "https://www.ancestry.com/discoveryui-content/view/32837506:3578",
   },
