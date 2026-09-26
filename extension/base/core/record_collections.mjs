@@ -1446,7 +1446,7 @@ const RecordCollectionData = [
   },
   {
     wtsId: "CanadaCensus1916Prairie",
-    title: "1916 Census of Manitoba",
+    title: "1916 Census of the Prairie Provinces",
     country: "Canada",
     dates: { year: 1916 },
     sites: {
@@ -1457,7 +1457,7 @@ const RecordCollectionData = [
   },
   {
     wtsId: "CanadaCensus1926Prairie",
-    title: "1926 Census of Manitoba",
+    title: "1926 Census of the Prairie Provinces",
     country: "Canada",
     dates: { year: 1926 },
     sites: {
