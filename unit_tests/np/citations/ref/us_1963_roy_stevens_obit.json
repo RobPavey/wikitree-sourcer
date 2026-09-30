@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1963 Newspaper''':\n\"Roy Lee Stevens (47), obituary, ''The Charlotte Observer'' , page 9B, column 8\" Newspapers.com<br/>\nThe Charlotte Observer (Charlotte, North Carolina, United States) 25 Jun 1963, page 21<br/>\n{{Newspapers.com|206715732}} (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the The Charlotte Observer on 25 June 1963 in Charlotte, North Carolina, United States.<ref>\n'''1963 Newspaper''':\n\"Roy Lee Stevens (47), obituary, ''The Charlotte Observer'' , page 9B, column 8\" Newspapers.com<br/>\nThe Charlotte Observer (Charlotte, North Carolina, United States) 25 Jun 1963, page 21<br/>\n{{Newspapers.com|206715732}} (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1963 Newspaper''': \"Roy Lee Stevens (47), obituary, ''The Charlotte Observer'' , page 9B, column 8\" Newspapers.com<br/>The Charlotte Observer (Charlotte, North Carolina, United States) 25 Jun 1963, page 21<br/>{{Newspapers.com|206715732}} (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

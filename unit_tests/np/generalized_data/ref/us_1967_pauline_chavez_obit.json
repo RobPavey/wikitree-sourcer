@@ -3,10 +3,10 @@
   "sourceType": "record",
   "recordType": "Newspaper",
   "eventDate": {
-    "dateString": "1967-05-20"
+    "dateString": "20 May 1967"
   },
   "eventPlace": {
-    "placeString": "Albuquerque, New Mexico"
+    "placeString": "Albuquerque, New Mexico, United States"
   },
   "newspaperName": "Albuquerque Journal",
   "hasValidData": true

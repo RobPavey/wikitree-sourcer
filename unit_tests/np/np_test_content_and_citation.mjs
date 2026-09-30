@@ -29,13 +29,11 @@ import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
+// These were all resaved (except the loggedout one) in Septemver 2026
+// The code was getting way to complicated supporting all the old formats
 const regressionData = [
   {
     caseName: "england_1929_arthur_pavey",
-    url: "https://www.newspapers.com/clip/111121391/wedding-of-emmeline-brain-and-arthur/",
-  },
-  {
-    caseName: "england_1929_arthur_pavey_2023_format",
     url: "https://www.newspapers.com/clip/111121391/wedding-of-emmeline-brain-and-arthur/",
   },
   {
@@ -47,13 +45,16 @@ const regressionData = [
     url: "https://www.newspapers.com/clip/111420722/fleetwood-shot-his-arm-off/",
   },
   {
-    // File saved for me December 2025 when format changed
     caseName: "us_1919_rose_sears_drowning",
     url: "https://www.newspapers.com/article/the-enterprise-and-vermonter-rose-garra/186692258/",
   },
   {
     caseName: "us_1929_macon_missouri",
     url: "https://www.newspapers.com/article/116219279/tom-turners-sons-visit/",
+  },
+  {
+    caseName: "us_1963_roy_stevens_obit",
+    url: "https://www.newspapers.com/article/the-charlotte-observer-roy-lee-stevens/206715732/",
   },
   {
     caseName: "us_1967_pauline_chavez_obit",
@@ -69,11 +70,16 @@ const regressionData = [
   },
   {
     // this looks just the same as when logged in but with a small banner
+    // This was saved with a pre-2026 format since I had hit my 5 free article limit when I tried to resave this
     caseName: "us_1991_gladys_mccloskey_obit_loggedout",
     url: "https://www.newspapers.com/article/the-bangor-daily-news-obituary-for-glady/194000691/",
   },
   {
-    // Mar 2026 format
+    // this has a big banner at the bottom saying "You've reached your 5-article limit"
+    caseName: "us_1991_gladys_mccloskey_obit_loggedout_hit_limit",
+    url: "https://www.newspapers.com/article/the-bangor-daily-news-obituary-for-glady/194000691/",
+  },
+  {
     caseName: "us_2000_bill_lorts_death",
     url: "https://www.newspapers.com/article/arizona-republic-bill-lorts-84-death/194360652/",
   },

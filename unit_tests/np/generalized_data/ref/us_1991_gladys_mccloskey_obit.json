@@ -3,10 +3,10 @@
   "sourceType": "record",
   "recordType": "Newspaper",
   "eventDate": {
-    "dateString": "2 Jul 1991"
+    "dateString": "02 Jul 1991"
   },
   "eventPlace": {
-    "placeString": "Bangor, Maine"
+    "placeString": "Bangor, Maine, United States"
   },
   "newspaperName": "The Bangor Daily News",
   "hasValidData": true

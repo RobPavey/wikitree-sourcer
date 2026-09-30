@@ -3,11 +3,11 @@
   "sourceType": "record",
   "recordType": "Newspaper",
   "eventDate": {
-    "dateString": "24 May 2000"
+    "dateString": "25 Jun 1963"
   },
   "eventPlace": {
-    "placeString": "Phoenix, Arizona, United States"
+    "placeString": "Charlotte, North Carolina, United States"
   },
-  "newspaperName": "Arizona Republic",
+  "newspaperName": "The Charlotte Observer",
   "hasValidData": true
 }

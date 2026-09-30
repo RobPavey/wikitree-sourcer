@@ -3,11 +3,11 @@
   "sourceType": "record",
   "recordType": "Newspaper",
   "eventDate": {
-    "dateString": "1913-06-21"
+    "dateString": "02 Jul 1991"
   },
   "eventPlace": {
-    "placeString": "Tamworth, Staffordshire, England"
+    "placeString": "Bangor, Maine, United States"
   },
-  "newspaperName": "The Tamworth Herald, etc.",
+  "newspaperName": "The Bangor Daily News",
   "hasValidData": true
 }

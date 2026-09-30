@@ -67,6 +67,72 @@ function extractFromNeededNodes(result, publisherNode, locationNode, dateNode, p
   }
 }
 
+function extractMissingDataFromNavNodes(document, result) {
+  let mainContentNode = document.querySelector("#mainContent");
+  if (mainContentNode) {
+    let navNode = mainContentNode.querySelector("nav[aria-label='Breadcrumb']");
+    if (navNode) {
+      let listItems = navNode.querySelectorAll("ol > li");
+      if (listItems.length > 0) {
+        // the breadcrumbs can be:
+        // country, state, place, newspaper name, year, month, day, page, "arcticle clipped..."
+        // But that is probably not always true.
+        if (listItems.length == 9) {
+          let year = listItems[4].textContent.trim();
+          let day = listItems[6].textContent.trim();
+          const yearRegex = /^\d\d\d\d$/;
+          const dayRegex = /^\d\d?$/;
+          if (yearRegex.test(year) && dayRegex.test(day)) {
+            let month = listItems[5].textContent.trim();
+            let date = day + " " + month + " " + year;
+            result.publicationDate = date;
+
+            let newTitle = listItems[3].textContent.trim();
+            if (!result.newspaperTitle && newTitle && !newTitle.endsWith("…")) {
+              result.newspaperTitle = newTitle;
+            }
+
+            let country = listItems[0].textContent.trim();
+            let state = listItems[1].textContent.trim();
+            let town = listItems[2].textContent.trim();
+            if (country && state && town) {
+              let newLocation = town + ", " + state + ", " + country;
+              if (!result.location) {
+                result.location = newLocation;
+              } else if (newLocation.length > result.location.length) {
+                // it could be a better location but could be worse.
+                // e.g. result.location can be "Tamworth, Staffordshire, England" and
+                // newLocation can be "Tamworth, England, United Kingdom"
+                // But sometimes it is better
+                // e.g. result.location can be "Vergennes, Vermont" and
+                // newLocation can be "Vergennes, Vermont, United States"
+                if (newLocation.startsWith(result.location)) {
+                  result.location = newLocation;
+                }
+              }
+            }
+
+            if (!result.pageNumber) {
+              let pageString = listItems[7].textContent.trim();
+              if (pageString) {
+                pageString = pageString.replace(/^page\s*/i, ""); // remove "Page " from start
+                result.pageNumber = pageString;
+              }
+            }
+
+            if (!result.articleTitle) {
+              let articleTitleFromBreadCrumbs = listItems[8].textContent.trim();
+              if (!articleTitleFromBreadCrumbs.startsWith("Article clipped from")) {
+                result.articleTitle = articleTitleFromBreadCrumbs;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 function extractMar2026Format(document, result) {
   let metaDescription = document.querySelector("meta[name='description']");
   let metaTitle = document.querySelector("meta[property='og:title']");
@@ -96,10 +162,18 @@ function extractMar2026Format(document, result) {
     // Clipping found in The Bangor Daily News published in Bangor, Maine on 7/2/1991. Obituary for Gladys T. McCloskey
     if (result.articleDescription) {
       let desc = result.articleDescription;
-      const regex = /^Clipping found in (.*) published in (.*) on ([^.]+)\.(.*)$/;
-      if (regex.test(desc)) {
+      const regexNew = /^Clipping found in (.*) published in (.*) on ([^.]+)\.\s*(.*)$/;
+      const regexOld = /^Clipping found in (.*) in (.*) on ([^.]+)\.\s*(.*)$/;
+      let regex = "";
+      if (regexNew.test(desc)) {
+        regex = regexNew;
+      } else if (regexOld.test(desc)) {
+        regex = regexOld;
+      }
+
+      if (regex) {
         let matches = desc.match(regex);
-        if (matches.length == 5 && matches[4] == result.articleTitle) {
+        if (matches.length == 5) {
           result.publicationDate = matches[3];
           result.newspaperTitle = matches[1];
           result.location = matches[2];
@@ -107,7 +181,18 @@ function extractMar2026Format(document, result) {
         }
       }
     }
-    return;
+
+    extractMissingDataFromNavNodes(document, result);
+
+    // extra checks that should only be used on old saved files but kept defensively
+    // for page changes
+
+    if (!result.pageNumber) {
+      let pageNumberElement = document.querySelector("[itemprop='position']");
+      if (pageNumberElement) {
+        result.pageNumber = pageNumberElement.innerHTML.split(" ")[1];
+      }
+    }
   } else {
     if (dateTimeElement) {
       result.publicationDate = dateTimeElement.textContent;
@@ -134,6 +219,8 @@ function extractMar2026Format(document, result) {
       }
     }
   }
+
+  // some things can be extracted better from the na
 
   result.success = true;
 }

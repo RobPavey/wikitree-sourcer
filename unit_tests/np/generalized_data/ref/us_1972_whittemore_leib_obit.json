@@ -3,10 +3,10 @@
   "sourceType": "record",
   "recordType": "Newspaper",
   "eventDate": {
-    "dateString": "1972-11-01"
+    "dateString": "01 Nov 1972"
   },
   "eventPlace": {
-    "placeString": "New London, Connecticut"
+    "placeString": "New London, Connecticut, United States"
   },
   "newspaperName": "The Day",
   "hasValidData": true
