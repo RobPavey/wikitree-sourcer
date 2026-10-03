@@ -38,11 +38,16 @@ function extractData(document, url) {
     return;
   }
 
-  const page_selector = document.querySelector('select[name="tx_dlf[page]"]');
-  let page_selected = page_selector.querySelector('option[selected="selected"]').text;
-
-  if (page_selected[0] == "[") {
-    page_selected = page_selected.substring(1, page_selected.length - 1);
+  let page_selector = document.querySelector('select[name="tx_dlf[page]"]') || document.querySelector("select[name=\"tx_dlf_navigation[pageSelectForm][page]\"]");
+  let page_selected;
+  if (page_selector != undefined) {
+    page_selected = page_selector.querySelector('option[selected="selected"]').text;
+    if (page_selected[0] == "[") {
+      page_selected = page_selected.substring(1, page_selected.length - 1);
+    }
+  }
+  else {
+    page_selected = "0";
   }
 
   result.page_number = page_selected;
