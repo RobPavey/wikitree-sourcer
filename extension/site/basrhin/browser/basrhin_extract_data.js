@@ -24,6 +24,21 @@ SOFTWARE.
 
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
+function checkForDuplicatedText(inputText) {
+  // sometimes the commune name is duplicated separated by a comma
+  let text = inputText;
+  if (text) {
+    let textLength = text.length;
+    if (textLength && text.substring((textLength - 1) / 2, (textLength - 1) / 2 + 1) == ",") {
+      // if there's a comma in the center of the text, remove duplicated info, if any
+      //  1. Split by comma, 2. Filter duplicates using Set, 3. Join back
+      let uniqueString = [...new Set(text.split(","))].join(", ");
+      return uniqueString;
+    }
+  }
+  return text;
+}
+
 function cleanText(inputText) {
   let text = inputText;
   if (text) {
@@ -31,7 +46,7 @@ function cleanText(inputText) {
     text = text.replace(/(\r\n|\n|\r)/gm, "");
     text = text.trim();
   }
-  return text;
+  return checkForDuplicatedText(text);
 }
 
 function extractData(document, url) {

@@ -540,7 +540,7 @@ class CitationBuilder {
       }
     } else if (this.imageLink) {
       citation += this.imageLink;
-      if (this.recordLinkOrTemplate) {
+      if (this.recordLinkOrTemplate && !this.putRecordLinkInTitle) {
         citation += " - "; // separate the two links with a hyphen for space
       }
     }

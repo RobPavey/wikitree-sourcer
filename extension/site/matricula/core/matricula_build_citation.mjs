@@ -61,10 +61,7 @@ function buildCoreCitation(ed, gd, builder) {
 }
 
 function customLableFunction(ed, gd) {
-  if (ed.typeSet) {
-    return ed.typeSet;
-  }
-  return "Churchbook";
+  return gd.recordType;
 }
 
 function buildCitation(input) {

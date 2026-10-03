@@ -1037,7 +1037,11 @@ function isManualClassificationNeeded(data) {
     } else if (
       data.generalizedData.sourceOfData == "openarch" ||
       data.generalizedData.sourceOfData == "wiewaswie" ||
-      data.generalizedData.sourceOfData == "noda"
+      data.generalizedData.sourceOfData == "noda" ||
+      data.generalizedData.sourceOfData == "archion" ||
+      data.generalizedData.sourceOfData == "matricula" ||
+      data.generalizedData.sourceOfData == "arolsenarchives" ||
+      data.generalizedData.sourceOfData == "dfgviewer"
     ) {
       result.isRecordTypeNeeded = true;
     }
@@ -1384,11 +1388,11 @@ function setupBuildCitationSubmenu(
       selector.removeChild(selector.firstChild);
     }
 
-    const keys = Object.keys(rtToRefTitle);
+    const keys = data.extractedData.recordTypeCandidates || Object.keys(rtToRefTitle);
     for (const key of keys) {
       let option = document.createElement("option");
       option.value = key;
-      option.text = rtToRefTitle[key];
+      option.text = rtToRefTitle[key] || key;
       selector.appendChild(option);
     }
   }

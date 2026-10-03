@@ -49,6 +49,13 @@ async function unregisterTabWithBackground() {
 var registeredTabId = undefined;
 
 async function registerTabWithBackground() {
+  // only register if this is one of the tabs that requires captcha
+  // e.g.: https://ecpp.ucr.edu/ecpp/app/user/view/records/death/47173
+  const url = document.URL;
+  if (!url.startsWith("https://ecpp.ucr.edu/ecpp/app/user/view/records")) {
+    return;
+  }
+
   // send message to background script that we have a ecpp tab open
   // This can fail with the error:
   //  Uncaught (in promise) Error: Extension context invalidated.
@@ -232,6 +239,8 @@ function additionalMessageHandler(request, sender, sendResponse) {
 }
 
 async function checkForSearchThenInit() {
+  registerTabWithBackground();
+
   checkForPendingSearch();
 
   siteContentInit(

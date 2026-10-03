@@ -110,7 +110,7 @@ Also, other code like buildCitation can get data from ed directly currently. If 
 - Has a `generalizeDataGivenRecordType` function used after user selects record type
 - This is passed into `addBuildCitationMenuItems`
 
-## MyHeritage
+### MyHeritage
 
 - User can select a record type and it then regeneralizes by calling `generalizeDataGivenRecordType`
 - This `generalizeDataGivenRecordType` is passed into `setupSimplePopupMenu` as `regeneralizeFunction`

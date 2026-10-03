@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Daniel Webster Abbott",
+    "lastName": "Abbott",
+    "forenames": "Daniel Webster"
+  },
+  "birthDate": {
+    "dateString": "21 Mar 1884",
+    "yearString": "1884"
+  },
+  "deathDate": {
+    "dateString": "19 January 1929",
+    "yearString": "1929"
+  },
+  "eventPlace": {
+    "placeString": "Collinsville, Tulsa, Oklahoma, United States of America",
+    "streetAddress": "Ridgelawn Cemetery"
+  },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "QVKF-MXLS"
+    }
+  ],
+  "wtSearchIdsRelated": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem38648452"
+    }
+  ],
+  "collectionData": {
+    "id": "2221801",
+    "collectionTitle": "Find a Grave Index"
+  },
+  "hasValidData": true
+}

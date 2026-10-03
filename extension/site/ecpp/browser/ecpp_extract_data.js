@@ -41,6 +41,10 @@ function extractData(document, url) {
   result.sections = {};
 
   let mainFormRow = document.querySelector("app-edit > form > div.form-row");
+  if (!mainFormRow) {
+    mainFormRow = document.querySelector("app-edit > form > div.row");
+  }
+
   if (mainFormRow) {
     let section = {};
     result.sections.main = section;

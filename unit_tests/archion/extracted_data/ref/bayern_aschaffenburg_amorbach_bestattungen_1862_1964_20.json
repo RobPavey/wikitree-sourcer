@@ -8,7 +8,10 @@
     "Amorbach"
   ],
   "book": "Bestattungen 1862 - 1964",
-  "bookType": "Death",
+  "recordTypeCandidates": [
+    "Church Record",
+    "Burial"
+  ],
   "pageType": "image",
   "uid": "290910",
   "permalink": "https://www.archion.de/p/d9576172e0/"

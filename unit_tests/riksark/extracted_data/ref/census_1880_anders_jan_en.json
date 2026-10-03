@@ -1,0 +1,63 @@
+{
+  "url": "https://sok.riksarkivet.se/en?postid=Folk_118564728",
+  "success": true,
+  "recordTitle": "Anders Jan",
+  "recordType": "Census 1880",
+  "recordData": {
+    "Name": "Anders Jan",
+    "Home parish": "Hellstad",
+    "Place of residence": "Hellstad Påfvag. 1 mtl",
+    "Deanery": "Åhs",
+    "County": "Älvsborg",
+    "Birth year": "1838",
+    "Birth parish": "Hällstad Älvsborgs län",
+    "Marital status": "Ogift",
+    "Gender": "Man",
+    "Family status": "s.",
+    "Family status code": "Barn",
+    "Family no": "1",
+    "Page": "17",
+    "Row": "16",
+    "Created by": "Riksarkivet SVAR-Svensk arkivinformation",
+    "About the household": "Persons in the household"
+  },
+  "households": {
+    "Fam. no 1": [
+      {
+        "text": "Andersson, Andreas, b. 1802 in Murum Älvsborgs län",
+        "italicEndText": "Hemmansägare",
+        "link": "https://sok.riksarkivet.se/en/?postid=Folk_118564727#tab",
+        "linkText": "Andersson, Andreas"
+      },
+      {
+        "text": "Anders Jan, b. 1838 in Hällstad Älvsborgs län"
+      },
+      {
+        "text": "Samuel, b. 1842 in Hällstad Älvsborgs län",
+        "link": "https://sok.riksarkivet.se/en/?postid=Folk_118564729#tab",
+        "linkText": "Samuel"
+      },
+      {
+        "text": "Anna Charlotta, b. 1853 in Hällstad Älvsborgs län",
+        "link": "https://sok.riksarkivet.se/en/?postid=Folk_118564730#tab",
+        "linkText": "Anna Charlotta"
+      },
+      {
+        "text": "Fredrik, b. 1859 in Hällstad Älvsborgs län",
+        "link": "https://sok.riksarkivet.se/en/?postid=Folk_118564731#tab",
+        "linkText": "Fredrik"
+      }
+    ],
+    "Fam. no 2": [
+      {
+        "text": "Håkansdotter, Britta, b. 1824 in Toarp Älvsborgs län",
+        "italicEndText": "Piga",
+        "link": "https://sok.riksarkivet.se/en/?postid=Folk_118564732#tab",
+        "linkText": "Håkansdotter, Britta"
+      }
+    ]
+  },
+  "imageLink": "https://sok.riksarkivet.se/bildvisning/Folk_815089-017",
+  "postId": "Folk_118564728",
+  "pageType": "record"
+}

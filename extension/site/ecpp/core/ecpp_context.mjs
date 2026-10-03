@@ -30,15 +30,15 @@ function transformLink(linkText, phase, options) {
   // https://ecpp.ucr.edu/ecpp/app/user/view/records/baptismal/84159
 
   if (phase != 1) {
-    return "";
+    return null;
   }
 
   if (/ecpp\.ucr\.edu/i.test(linkText)) {
-    return linkText;
+    return { link: linkText, reuseTab: true };
   }
 
   if (!/missions\.huntington\.org/i.test(linkText)) {
-    return "";
+    return null;
   }
 
   // http://missions.huntington.org/MarriageData.aspx?ID=6097
@@ -56,16 +56,16 @@ function transformLink(linkText, phase, options) {
 
         // https://ecpp.ucr.edu/ecpp/app/user/view/records/marriage/6097
         let link = `https://ecpp.ucr.edu/ecpp/app/user/view/records/${type}/${id}`;
-        return link;
+        return { link: link, reuseTab: true };
       }
     }
   } else {
     // could be a partial link
     let link = `https://ecpp.ucr.edu/`;
-    return link;
+    return { link: link, reuseTab: true };
   }
 
-  return "";
+  return null;
 }
 
 export { transformLink };

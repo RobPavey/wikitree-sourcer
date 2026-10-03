@@ -853,7 +853,7 @@ function extractRecordSourceCitation(document, result) {
       if (sourceAreaSections.length > 0) {
         for (let index = 0; index < sourceAreaSections.length; index++) {
           let section = sourceAreaSections[index];
-          let citationTitleNode = section.querySelector("h4.citationTitle");
+          let citationTitleNode = section.querySelector(".citationTitle");
           if (citationTitleNode) {
             let sourceTextNode = section.querySelector("div.sourceText");
             if (sourceTextNode) {

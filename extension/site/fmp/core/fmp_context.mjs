@@ -26,13 +26,13 @@ function transformLink(linkText, phase, options) {
   // linkUrl: "https://search.findmypast.co.uk/record/browse?id=GBC/1881/4362252/00449&parentid=GBC/1881/0023259406"
 
   if (phase != 1) {
-    return "";
+    return null;
   }
 
   let link = linkText;
 
   if (!link.includes("findmypast")) {
-    return "";
+    return null;
   }
 
   let domain = "";
@@ -62,12 +62,12 @@ function transformLink(linkText, phase, options) {
       }
 
       if (newLink && newLink != link) {
-        return newLink;
+        return { link: newLink, reuseTab: false };
       }
     }
   }
 
-  return "";
+  return null;
 }
 
 export { transformLink };

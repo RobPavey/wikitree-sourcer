@@ -9,5 +9,8 @@
   ],
   "book": "Sterbefälle - KB 485",
   "page": "7",
-  "typeSet": "Death"
+  "recordTypeCandidates": [
+    "Church Record",
+    "Death"
+  ]
 }

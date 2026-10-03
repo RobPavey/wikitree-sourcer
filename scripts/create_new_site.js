@@ -707,7 +707,7 @@ async function createNewSite() {
     console.log("E.g.:");
     console.log(`node scripts/create_new_site.js qldbdm "Queensland BDM (Aus)" "*://*.familyhistory.bdm.qld.gov.au/*"`);
     console.log(`answers is optional and is in the form: "y,n"`);
-    console.log(`the only flag is -force which will run evel if folders/files already exist`);
+    console.log(`the only flag is -force which will run even if folders/files already exist`);
     return;
   }
 

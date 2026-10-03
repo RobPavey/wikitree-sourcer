@@ -9,5 +9,8 @@
   ],
   "book": "Alphabetisches Register - KB 475, Section 7",
   "page": "7",
-  "typeSet": "Name Register"
+  "recordTypeCandidates": [
+    "Church Record",
+    "Name Register"
+  ]
 }

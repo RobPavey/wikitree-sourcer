@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Stora Åby kyrkoarkiv, Födelse- och dopböcker\"<br/>\n[https://sok.riksarkivet.se/bildvisning/C0018327_00114 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Unknown married in 1864.<ref>\n'''Marriage''':\n\"Stora Åby kyrkoarkiv, Födelse- och dopböcker\"<br/>\n[https://sok.riksarkivet.se/bildvisning/C0018327_00114 Riksarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Stora Åby kyrkoarkiv, Födelse- och dopböcker\"<br/>[https://sok.riksarkivet.se/bildvisning/C0018327_00114 Riksarkivet Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

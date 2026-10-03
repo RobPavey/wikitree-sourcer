@@ -25,17 +25,18 @@ SOFTWARE.
 function transformTemplateToLink(text, options) {
   const templateRegex = /\{\{\s*FindAGrave\s*\|\s*([^}|\s]+)[^}]*\}\}/i;
   if (!templateRegex.test(text)) {
-    return "";
+    return null;
   }
 
   // {{FindAGrave| 158706349}}
   let id = text.replace(templateRegex, "$1");
   if (id && id != text) {
     // https://www.findagrave.com/memorial/158706349
-    return "https://www.findagrave.com/memorial/" + id;
+    const link = "https://www.findagrave.com/memorial/" + id;
+    return { link: link, reuseTab: false };
   }
 
-  return "";
+  return null;
 }
 
 export { transformTemplateToLink };

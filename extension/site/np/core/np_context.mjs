@@ -25,17 +25,18 @@ SOFTWARE.
 function transformTemplateToLink(text, options) {
   const templateRegex = /\{\{\s*Newspapers\.com\s*\|\s*([^}|\s]+)[^}]*\}\}/i;
   if (!templateRegex.test(text)) {
-    return "";
+    return null;
   }
 
   // {{Newspapers.com|194360652}}
   let id = text.replace(templateRegex, "$1");
   if (id && id != text) {
     // https://www.newspapers.com/article/194360652
-    return "https://www.newspapers.com/article/" + id;
+    const link = "https://www.newspapers.com/article/" + id;
+    return { link: link, reuseTab: false };
   }
 
-  return "";
+  return null;
 }
 
 export { transformTemplateToLink };

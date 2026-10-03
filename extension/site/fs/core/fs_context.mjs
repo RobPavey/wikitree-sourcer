@@ -25,7 +25,7 @@ SOFTWARE.
 function transformTemplateToLink(text, options) {
   const templateRegex = /FamilySearch/i;
   if (!templateRegex.test(text)) {
-    return "";
+    return null;
   }
 
   if (text.includes("FamilySearch Record")) {
@@ -33,7 +33,8 @@ function transformTemplateToLink(text, options) {
     let id = text.replace(/\{\{FamilySearch Record\|([^}|]+)[^}]*\}\}/, "$1");
     if (id && id != text) {
       // https://www.familysearch.org/ark:/61903/1:1:XHLN-69H
-      return "https://www.familysearch.org/ark:/61903/1:1:" + id;
+      const link = "https://www.familysearch.org/ark:/61903/1:1:" + id;
+      return { link: link, reuseTab: false };
     }
   } else if (text.includes("FamilySearch Image")) {
     // {{FamilySearch Image|33S7-9BSH-9W9B}}
@@ -41,19 +42,21 @@ function transformTemplateToLink(text, options) {
       let id = text.replace(/\{\{FamilySearch Image\|([^}|]+)[^}|]*\}\}/, "$1");
       if (id && id != text) {
         // https://www.familysearch.org/ark:/61903/3:1:33S7-9BSH-9W9B
-        return "https://www.familysearch.org/ark:/61903/3:1:" + id;
+        const link = "https://www.familysearch.org/ark:/61903/3:1:" + id;
+        return { link: link, reuseTab: false };
       }
     } else if (/\{\{FamilySearch Image\|[^}|]+\|[^}|]+\}\}/.test(text)) {
       let id = text.replace(/\{\{FamilySearch Image\|([^}|]+)[^}]*\}\}/, "$1");
       let param3 = text.replace(/\{\{FamilySearch Image\|[^}|]+\|([^}]+)\}\}/, "$1");
       if (id && id != text && param3 && param3 != text) {
         // https://www.familysearch.org/ark:/61903/3:1:33S7-9BSH-9W9B
-        return "https://www.familysearch.org/ark:/61903/3:" + param3 + ":" + id;
+        const link = "https://www.familysearch.org/ark:/61903/3:" + param3 + ":" + id;
+        return { link: link, reuseTab: false };
       }
     }
   }
 
-  return "";
+  return null;
 }
 
 export { transformTemplateToLink };

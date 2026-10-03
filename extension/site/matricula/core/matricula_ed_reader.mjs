@@ -28,6 +28,12 @@ import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mj
 class MatriculaEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
+
+    if (this.ed.recordTypeCandidates && this.ed.recordTypeCandidates.length == 2) {
+      this.recordType = this.ed.recordTypeCandidates[1];
+    } else {
+      this.recordType = "Unclassified";
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -44,78 +50,6 @@ class MatriculaEdReader extends ExtractedDataReader {
 
   getSourceType() {
     return "image";
-  }
-
-  getNameObj() {
-    return undefined;
-  }
-
-  getGender() {
-    return "";
-  }
-
-  getEventDateObj() {
-    return undefined;
-  }
-
-  getEventPlaceObj() {
-    return undefined;
-  }
-
-  getBirthDateObj() {
-    return undefined;
-  }
-
-  getBirthPlaceObj() {
-    return undefined;
-  }
-
-  getDeathDateObj() {
-    return undefined;
-  }
-
-  getDeathPlaceObj() {
-    return undefined;
-  }
-
-  getAgeAtEvent() {
-    return "";
-  }
-
-  getAgeAtDeath() {
-    return "";
-  }
-
-  getRegistrationDistrict() {
-    return "";
-  }
-
-  getRelationshipToHead() {
-    return "";
-  }
-
-  getMaritalStatus() {
-    return "";
-  }
-
-  getOccupation() {
-    return "";
-  }
-
-  getSpouses() {
-    return undefined;
-  }
-
-  getParents() {
-    return undefined;
-  }
-
-  getHousehold() {
-    return undefined;
-  }
-
-  getCollectionData() {
-    return undefined;
   }
 }
 

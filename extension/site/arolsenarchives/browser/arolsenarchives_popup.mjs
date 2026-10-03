@@ -185,6 +185,8 @@ async function setupSearchPersonPopupMenu(extractedData, tabId) {
   addStandardMenuEnd(menu, data, backFunction);
 }
 
+function regeneralize() {}
+
 async function setupArolsenarchivesPopupMenu(extractedData, tabId) {
   if (extractedData.page_type == "searchPerson") {
     setupSearchPersonPopupMenu(extractedData, tabId);
@@ -202,6 +204,7 @@ async function setupArolsenarchivesPopupMenu(extractedData, tabId) {
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "arolsenarchives",
+    regeneralizeFunction: regeneralize,
   };
 
   if (extractedData.has_disqus) {
