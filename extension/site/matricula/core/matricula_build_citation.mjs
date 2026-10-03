@@ -40,7 +40,7 @@ function buildSourceTitle(ed, gd, builder) {
 
 function buildSourceReference(ed, gd, builder) {
   builder.addSourceReferenceText(ed.book);
-  if (ed.sectionNumber != null) {
+  if (ed.sectionNumber != null && ed.sectionNumber != NaN) {
     builder.addSourceReferenceField("Section", ed.sectionNumber);
   }
   builder.addSourceReferenceField("Page", ed.page);
