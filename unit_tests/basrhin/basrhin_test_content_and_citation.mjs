@@ -130,6 +130,16 @@ const regressionData = [
     ],
   },
   {
+    caseName: "recensement_de_population_kutzenhausen_7_m_486_-_1866_img_17",
+    url: "https://archives67.alsace.eu/ark:/78665/595172.949830/img:FRAD067_0099NUM25400080_17",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
     caseName: "roeschwoog_mariages_1688-1732_3_e_405_5_img_34",
     url: "https://archives67.alsace.eu/ark:/78665/2035165/dao/0/1/idsearch:RECH_4ac1fcc01bfe5e1a56e1c5a02a0993e0?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F2035165%2Fcanvas%2F0%2F34",
     optionVariants: [

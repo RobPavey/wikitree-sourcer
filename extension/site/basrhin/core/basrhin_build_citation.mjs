@@ -44,11 +44,9 @@ function buildSourceTitle(ed, gd, builder) {
   builder.sourceTitle = "Documents numérisés"; // default
   if (ed.ogTitle.includes("Recensement")) {
     builder.sourceTitle = "Recensements de population";
-  }
-  if (ed.ogTitle.includes("successions et absences")) {
+  } else if (ed.ogTitle.includes("successions et absences")) {
     builder.sourceTitle = "Tables des successions et absences";
-  }
-  if (
+  } else if (
     ed.ogTitle.includes("Baptêmes") ||
     ed.ogTitle.includes("Sépultures") ||
     ed.ogTitle.includes("Mariages") || // including Publications de Mariages
@@ -56,17 +54,15 @@ function buildSourceTitle(ed, gd, builder) {
     ed.ogTitle.includes("Décès")
   ) {
     builder.sourceTitle = "Registres paroissiaux et documents d'état civil";
-  } else {
+  } else if (
     // for parish/civil records, ed.ogTitle may not include acte type, check description
-    if (
-      ed.description.includes("baptêmes") ||
-      ed.description.includes("sépultures") ||
-      ed.description.includes("mariages") || // including publications de mariages
-      ed.description.includes("naissances") ||
-      ed.description.includes("décès")
-    ) {
-      builder.sourceTitle = "Registres paroissiaux et documents d'état civil";
-    }
+    ed.description.includes("baptêmes") ||
+    ed.description.includes("sépultures") ||
+    ed.description.includes("mariages") || // including publications de mariages
+    ed.description.includes("naissances") ||
+    ed.description.includes("décès")
+  ) {
+    builder.sourceTitle = "Registres paroissiaux et documents d'état civil";
   }
 }
 

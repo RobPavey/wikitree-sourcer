@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<!-- saved from url=(0159)https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=6&postid=Doda_1221956&tab=post#tab -->
+<html lang="en" style="" class=" cssvhunit cssvwunit"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="Shortcut Icon" sizes="16x16 24x24 32x32 64x64" href="https://sok.riksarkivet.se/Content/images/janus.ico">
+    
+    <meta name="description" content="Riksarkivet bevarar samhällets arkivinformation och ser till att den kan användas. Sök i arkiv från statlig förvaltning, privata företag, föreningar och personer.">
+    <link rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+    <meta name="DC.Identifier" content="http://purl.org/dc/terms/identifier" scheme="URL">
+    <meta name="DC.Title" content="Riksarkivet - Sök i arkiven">
+    <meta name="DC.Publisher" content="Riksarkivet">
+    <meta name="DC.Creator" content="Riksarkivet">
+    <meta name="DC.Description" content="Riksarkivet bevarar samhällets arkivinformation och ser till att den kan användas. Sök i arkiv från statlig förvaltning, privata företag, föreningar och personer.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Olga Henriette - Riksarkivet - Search the collections</title>
+
+    <link href="./death_1890_olga_henriette_en_files/jquery-treeview" rel="stylesheet">
+
+    <link href="./death_1890_olga_henriette_en_files/jquery-ui" rel="stylesheet">
+
+    <link href="./death_1890_olga_henriette_en_files/bootstrap" rel="stylesheet">
+
+
+<link href="./death_1890_olga_henriette_en_files/main-extern" rel="stylesheet">
+
+    <link href="./death_1890_olga_henriette_en_files/captcha" rel="stylesheet">
+
+
+    <link href="./death_1890_olga_henriette_en_files/print" rel="stylesheet" type="text/css" media="print">
+
+
+    
+
+    <script src="./death_1890_olga_henriette_en_files/jquerytools"></script>
+
+    <script src="./death_1890_olga_henriette_en_files/bootstrap(1)"></script>
+
+    <script src="./death_1890_olga_henriette_en_files/othertools"></script>
+
+
+    <script src="./death_1890_olga_henriette_en_files/datumValidering.js" type="text/javascript"></script>
+<script src="./death_1890_olga_henriette_en_files/utokningSok.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+         $(document).ready(function () {
+             $("#nojsSubmit").hide();
+
+             $("#ValdSortering, #PageSize").on('change', function () {
+                 $(this).parents('form').trigger('submit');
+             });
+         });
+
+    </script>
+<script type="text/javascript">
+        if (false == true)
+        {
+            $(document).ready(function () {
+                $('#headerID').addClass('partial-view-post');
+            });
+        }
+
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+               results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        $(function () {
+             $("#historik").on('click', function () {
+
+                 var visible = $("#historikText").is(":visible");
+
+                 $("span", $(this)).html(visible ? "Show history" : "Hide history");
+                 $("#ikon-pil").removeClass(visible ? "icon-arrow-up" : "icon-arrow-down");
+                 $('#ikon-pil').addClass(visible ? 'icon-arrow-down' : 'icon-arrow-up');
+                 if (visible) {
+                     $("#historikText").slideUp('slow')
+                     $("#historikTextPrint").hide();
+                 } else {
+                     $("#historikText").slideDown('slow');
+                     $("#historikTextPrint").show();
+                 }
+                 return false;
+             });
+            $("#rapportlank").on('click', function (e) {
+                e.preventDefault();
+                //$('input[type=text], textarea', $("#felrapport-form")).val('');
+                $("#Meddelande", $("#felrapport-form")).val('');
+                $("#Kod", $("#felrapport-form")).val('');
+                $('input:checkbox', $("#felrapport-form")).attr('checked', false);
+
+                $('html, body').animate({ scrollTop: $(this).offset().top }, 2000);
+                $("#felrapport-form").slideToggle('slow', function () {
+                    $("#Meddelande", $("#felrapport-form")).trigger('focus');
+                });
+
+            });
+            $("#felrapport-form").on('submit', function () {
+
+                var meddelande = $("#Meddelande", $("#felrapport-form")).val().trim();
+
+                if (meddelande.length == 0) {
+                    alert("Please write a message.");
+                    $("#Meddelande", $("#felrapport-form")).trigger('focus');
+                    return false;
+                }
+
+                if ($("#FelrapportNamn", $("#felrapport-form")).length == 1) {
+                    var namn = $("#FelrapportNamn", $("#felrapport-form")).val().trim();
+                    if (namn.length == 0) {
+                        alert("Please write your name.");
+                        $("#FelrapportNamn", $("#felrapport-form")).trigger('focus');
+                        return false;
+                    }
+                }
+
+                if ($("#FelrapportEpost", $("#felrapport-form")).length == 1) {
+                    var epost = $("#FelrapportEpost", $("#felrapport-form")).val().trim();
+                    if (epost.length == 0) {
+                        alert("Please write your e-mail adress.");
+                        $("#FelrapportEpost", $("#felrapport-form")).trigger('focus');
+                        return false;
+                    }
+                    if (!(/^[\w-]+([^@,\s\<\>\(\)]*[\w-]+)?\@[\w-]+(\.[\w-]+)*\.[a-z]{2,}$/i).test(epost)) {
+                        alert("Please write an valid e-mail adress.");
+                        return false;
+                    }
+                }
+
+                var typ = $("#Typ", $("#felrapport-form")).val();
+
+                if (typ == 0) {
+                    alert("Please select type of report.");
+                    $("#Typ", $("#felrapport-form")).trigger('focus');
+                    return false;
+                }
+
+                var ErrorReportAuthification = "True";
+
+                if ($("#Kod", $("#felrapport-form")).length == 1 && ErrorReportAuthification == "True") {
+                    var kod = $("#Kod", $("#felrapport-form")).val().trim();
+                    if (!(/[0-9]{5}$/i).test(kod)) {
+                        alert("The verification code must contain 5 digits.");
+                        $("#Kod", $("#felrapport-form")).trigger('focus');
+                        return false;
+                    }
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: $(this).children('form').attr('action') + 'Ajax',
+                    data: $(this).children('form').serialize(),
+                    success: function (result) {
+                        if (result.Success) {
+                            alert("Thank you for reporting error/comment");
+                            $('#FelrapportMeddelande').slideUp("fast");
+                            $("#felrapport-form").slideUp('slow', function () {
+                                $("#Meddelande", $("#felrapport-form")).val('');
+                                $('input:checkbox', $(this)).attr('checked', false);
+                            });
+                        } else {
+                            //alert("The report isn&#39;t sent because of an unexpected error.");
+                            $('#FelrapportMeddelande').empty().html(result.Meddelande);
+                            $('#FelrapportMeddelande').slideDown("fast");
+                            $("#Kod", $("#felrapport-form")).val('')
+                        }
+                    }
+                });
+                return false;
+            });
+
+        });
+    </script>
+<script type="text/javascript">
+         $(function () {
+             $("a[data-hanv-url]").on('click', function (event) {
+                 if ($(this).data("hanvUrl").length > 0)
+                     window.open($(this).data("hanvUrl"), '_blank');
+             });
+         });
+    </script>
+<script type="text/javascript">
+        $(function () {
+            $("#advancedSearchHolder").utokningSok({
+                datumValidering: true,
+                keepButton: true,
+                dateRange: {
+                    min: 800,
+                    max: 2026},
+                values: [800, 2026],
+                onShowLess: function () {
+                    $("#DatumFran").val('');
+                    $("#DatumTill").val('');
+                }
+            });
+
+            $("#clearSearch").off('click').on('click', function (e) {
+                e.preventDefault();
+
+                $("#advancedSearchHolder").utokningSok('reset');
+                $("#advancedSearchController_").show();
+                $("input[type=text]").val('');
+                $("#EndastDigitaliserat").prop("checked", false);
+                $("#TranskriberadText").prop("checked", false);
+                $("#Sokord").trigger('focus');
+            });
+        });
+
+        $(window).on('load', function () {
+            if ($("#TranskriberadText").is(":checked")) {
+                $("#advancedSearchController_").hide();
+            }
+        });
+
+        $(document).ready(function () {
+            $("#TranskriberadText").click(function () {
+                if (this.checked) {
+                    document.getElementById('advancedShowLess').click();
+                    $("#EndastDigitaliserat").prop("checked", true);
+                    $("#advancedSearchController_").hide();
+                } else {
+                    $("#EndastDigitaliserat").prop("checked", false);
+                    $("#advancedSearchController_").show();
+                }
+            });
+
+            $("#EndastDigitaliserat").click(function () {
+                if (!this.checked) {
+                    $("#TranskriberadText").prop("checked", false);
+                    $("#advancedSearchController_").show();
+                }
+            });
+        });
+    </script>
+<script type="text/javascript">
+        $(document).ready(function () {
+             if (location.href.indexOf("#") > -1) {
+                 return;
+             }
+             else if (scrollIntoView() && $("#tabheader")[0].innerHTML.trim().length > 0 && location.search != "?Sok=true" && location.search.indexOf("utm_source") == -1 && location.search.indexOf("location=top") == -1) {
+                 $("#tabheader")[0].scrollIntoView();
+             }
+             else
+                 $("form:not('#form-special-sok')").find('input[type=text],textarea,select').filter(':visible:first').trigger('focus');
+         });
+
+         function scrollIntoView() {
+             const segments = window.location.pathname.split('/').filter(segment => segment.length > 0);
+             return segments.length > 1 || window.location.search;
+         }
+    </script>
+
+<style id="__altcha-css">@keyframes overlay-slidein{to{opacity:1;top:50%}}@keyframes altcha-spinner{to{transform:rotate(360deg)}}.altcha{background:var(--altcha-color-base, transparent);border:var(--altcha-border-width, 1px) solid var(--altcha-color-border, #a0a0a0);border-radius:var(--altcha-border-radius, 3px);color:var(--altcha-color-text, currentColor);display:flex;flex-direction:column;max-width:var(--altcha-max-width, 260px);position:relative}.altcha:focus-within{border-color:var(--altcha-color-border-focus, currentColor)}.altcha[data-floating]{background:var(--altcha-color-base, white);display:none;filter:drop-shadow(3px 3px 6px rgba(0,0,0,.2));left:-100%;position:fixed;top:-100%;width:var(--altcha-max-width, 260px);z-index:999999}.altcha[data-floating=top] .altcha-anchor-arrow{border-bottom-color:transparent;border-top-color:var(--altcha-color-border, #a0a0a0);bottom:-12px;top:auto}.altcha[data-floating=bottom]:focus-within::after{border-bottom-color:var(--altcha-color-border-focus, currentColor)}.altcha[data-floating=top]:focus-within::after{border-top-color:var(--altcha-color-border-focus, currentColor)}.altcha[data-floating]:not([data-state=unverified]){display:block}.altcha-anchor-arrow{border:6px solid transparent;border-bottom-color:var(--altcha-color-border, #a0a0a0);content:"";height:0;left:12px;position:absolute;top:-12px;width:0}.altcha-main{align-items:center;display:flex;gap:.4rem;padding:.7rem;position:relative}.altcha-code-challenge{background:var(--altcha-color-base, white);border:1px solid var(--altcha-color-border-focus, currentColor);border-radius:var(--altcha-border-radius, 3px);filter:drop-shadow(3px 3px 6px rgba(0,0,0,.2));padding:.5rem;position:absolute;top:2.5rem;z-index:9999999}.altcha-code-challenge>form{display:flex;flex-direction:column;gap:.5rem}.altcha-code-challenge-input{border:1px solid currentColor;border-radius:3px;box-sizing:border-box;outline:0;font-size:16px;padding:.35rem;width:220px}.altcha-code-challenge-input:focus{outline:2px solid color-mix(in srgb,var(--altcha-color-active, #1D1DC9) 20%,transparent)}.altcha-code-challenge-input:disabled{opacity:.7}.altcha-code-challenge-image{background-color:#fff;border:1px solid currentColor;border-radius:3px;box-sizing:border-box;object-fit:contain;height:50px;width:220px}.altcha-code-challenge-audio,.altcha-code-challenge-reload{background:color-mix(in srgb,var(--altcha-color-text, currentColor) 10%,transparent);border:0;border-radius:3px;color:var(--altcha-color-text, currentColor);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:.35rem}.altcha-code-challenge-audio:disabled,.altcha-code-challenge-reload:disabled,.altcha-code-challenge-verify:disabled{opacity:.7;pointer-events:none}.altcha-code-challenge-audio>*,.altcha-code-challenge-reload>*{height:20px;width:20px}.altcha-code-challenge-buttons{display:flex;justify-content:space-between}.altcha-code-challenge-buttons-left{display:flex;gap:.25rem}.altcha-code-challenge-verify{align-items:center;background:var(--altcha-color-active, #1D1DC9);border:0;border-radius:3px;color:#fff;cursor:pointer;display:flex;gap:.5rem;font-size:100%;padding:.35rem 1rem}.altcha-code-challenge-arrow{border:6px solid transparent;border-bottom-color:var(--altcha-color-border, currentColor);content:"";height:0;left:.15rem;position:absolute;top:-12px;width:0}.altcha[data-floating=top] .altcha-code-challenge{top:-150px}.altcha[data-floating=top] .altcha-code-challenge-arrow{border-bottom-color:transparent;border-top-color:var(--altcha-color-border, currentColor);bottom:-12px;top:auto}.altcha-label{cursor:pointer;flex-grow:1}.altcha-logo{color:currentColor!important;opacity:.7}.altcha-footer:hover,.altcha-logo:hover{opacity:1}.altcha-error{color:var(--altcha-color-error-text, #f23939);display:flex;font-size:.85rem;gap:.3rem;padding:0 .7rem .7rem}.altcha-footer{align-items:center;background-color:var(--altcha-color-footer-bg, transparent);display:flex;font-size:.75rem;opacity:.7;justify-content:end;padding:.2rem .7rem}.altcha-footer a{color:currentColor}.altcha-checkbox{display:flex;align-items:center;justify-content:center;height:24px;position:relative;width:24px}.altcha-checkbox .altcha-spinner{bottom:0;left:0;position:absolute;right:0;top:0}.altcha-checkbox input{width:18px;height:18px;margin:0}.altcha-checkbox-verifying input{appearance:none;opacity:0;pointer-events:none}.altcha-spinner{animation:altcha-spinner .75s infinite linear;transform-origin:center}.altcha-overlay{--altcha-color-base:#fff;--altcha-color-text:#000;animation:overlay-slidein .5s forwards;display:flex;flex-direction:column;gap:.5rem;left:50%;width:260px;opacity:0;position:fixed;top:45%;transform:translate(-50%,-50%)}.altcha-overlay-backdrop{background:rgba(0,0,0,.5);bottom:0;display:none;left:0;position:fixed;right:0;top:0;z-index:99999999}.altcha-overlay-close-button{align-self:flex-end;background:0 0;border:0;padding:.25rem;cursor:pointer;color:currentColor;font-size:130%;line-height:1;opacity:.7}@media (max-height:450px){.altcha-overlay{top:10%!important;transform:translate(-50%,0)}}</style></head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+        <!-- Matomo Tag Manager -->
+        <script type="text/plain" data-cookiecategory="analytics">
+            var _mtm = window._mtm = window._mtm || [];
+            _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+            (function() {
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src='https://matomo.riksarkivet.se/js/container_d6Ktc4gC.js'; s.parentNode.insertBefore(g,s);
+            })();
+        </script>
+        <!-- End Matomo Tag Manager -->
+    <noscript>
+        <div id="noscript-warning" class="alert hidden-print" style="margin-bottom: 0px;">
+            <div class="container-fluid">
+                Riksarkivets söktjänst fungerar bäst med javaskript påslaget i din webbläsare.
+            </div>
+        </div>
+    </noscript>
+
+    <div id="compatibility_box" class="alert hidden-print" style="margin-bottom:0px;display:none;">
+        <div class="container-fluid">
+            Riksarkivets söktjänst fungerar bäst med kompatibilitetsvy avslagen i din webbläsare.
+        </div>
+    </div>
+
+    
+
+<header class="header">
+    <div class="container-fluid">
+        <div class="header-inner row-fluid">
+            <div class="pull-left span4">
+                <div>
+                    <a accesskey="1" href="https://sok.riksarkivet.se/en" class="riksarkiveturl">
+                        <img src="./death_1890_olga_henriette_en_files/logo2.png">
+                    </a>
+                </div>
+                <div>
+                    <span class="mellanrum-left-stort"><font color="black">Search the collections</font></span>
+                </div>
+            </div>
+            <div id="mobile-panel" class="pull-left visible-phone hidden-print mellanrum-left-tjugo">
+                <script>
+                    $('#mobile-panel').removeClass("noscript");
+                </script>
+                <a id="btn-shortcuts" class="toggle" href="https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=6&amp;postid=Doda_1221956&amp;tab=post#nav-shortcuts" data-toggle="collapse">Shortcuts <i id="IkonPlusMinus" class="icon-plus icon-white"></i></a>
+                <a id="btn-menu" class="btn btn-primary toggle" href="https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=6&amp;postid=Doda_1221956&amp;tab=post#nav-collapse" data-toggle="collapse">
+                    MENU
+                    <button id="menyknapp" class="btn btn-navbar" type="button">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </a>
+
+                <a href="https://lasesalsbestallning.riksarkivet.se/" target="riksarkivet-digital-bestallning" class="kundvagn-mobil hidden">
+                    <img src="./death_1890_olga_henriette_en_files/kundvagn.png" alt=" Shopping cart">
+                    <span class="badge" id="laneorder-antal-mobil">0</span>
+                </a>
+
+                <!--<div class="kundvagn kundvagn-mobil hidden">
+                    <img src="~/Content/images/kundvagn/kundvagn.png" alt=" Shopping cart" />
+                    <span class="badge" id="laneorder-antal-mobil">0</span>
+                </div>-->
+
+            </div>
+            <noscript class="visible-phone">
+                <nav>
+                    <div class="span8">
+                        <ul class="nav nav-pills">
+                            <li id="StartItem" class="active navHasNoChildren clickMenu">
+                                <span class="hide">Visas:</span>
+                                <a href="/en" title="Home"><span class="mellanrum-left-tjugo mellanrum-right-tjugo">Start</span></a>
+                            </li>
+
+                            <li id="DfItem" class="navHasNoChildren clickMenu">
+                                <a href="/en/digitala-forskarsalen" title="Digital Research Room">Digital Research Room</a>
+                            </li>
+
+                            <li id="NadItem" class="navHasNoChildren clickMenu">
+                                <a href="/en/nad/" title="National Archives Database">National Archives Database</a>
+                            </li>
+                            <li class="menylankar" href="/en/om-soktjansten/">About the search service</li>
+                            <li id="OmItems">
+                                
+                            </li>
+                            <li><a href="http://riksarkivet.se" target="_blank" title="To the National Archives of Sweden&#39;s homepage">National Archives</a></li>
+                            <li><a href="http://webbutik.riksarkivet.se" target="_blank" title="To the National Archives of Sweden&#39;s web shop">Shop online</a></li>
+                            <ul class="nav nav-pills">
+                                <li><a href="/en?Sprak=Engelska">English</a></li>
+                                <li><a href="/en?Sprak=Svenska">Svenska</a></li>
+                            </ul>
+                            <li class="visible-phone"><a href="http://riksarkivet.se" target="_blank" title="To the National Archives of Sweden&#39;s homepage">National Archives</a></li>
+                            <li class="visible-phone"><a href="http://webbutik.riksarkivet.se" target="_blank" title="To the National Archives of Sweden&#39;s web shop">Shop online</a></li>
+                            
+        <li>
+            <a href="/en/login?returnUrl=%2Fen%2F%3FSokord%3Dolga%2Bnielsen%26EndastDigitaliserat%3Dfalse%26TranskriberadText%3Dfalse%26AvanceradSok%3DFalse%26page%3D6%26postid%3DDoda_1221956%26tab%3Dpost&amp;avanceradSok=False" id="LogIn">Sign in</a>
+        </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </noscript>
+
+            <nav class="span8">
+                <div class="row hidden-print hidden-phone">
+                    <div id="nav-webbutik" class="nav-collapse collapse pull-right">
+                        <ul class="nav nav-pills">
+                            <li><a href="http://riksarkivet.se/" target="_blank" title="To the National Archives of Sweden&#39;s homepage">National Archives</a></li>
+                            <li><a href="http://webbutik.riksarkivet.se/" target="_blank" title="To the National Archives of Sweden&#39;s web shop">Shop online</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row hidden-print upp">
+                    <div id="nav-shortcuts" class="nav-collapse collapse">
+                        <hr>
+                        <noscript>
+                            <ul class="nav nav-pills">
+                                <li><a href="/en?Sprak=Engelska">English</a></li>
+                                <li><a href="/en?Sprak=Svenska">Svenska</a></li>
+                            </ul>
+                        </noscript>
+                        <ul class="nav nav-pills">
+                            
+        <li>
+            <a href="https://sok.riksarkivet.se/en/login?returnUrl=%2Fen%2F%3FSokord%3Dolga%2Bnielsen%26EndastDigitaliserat%3Dfalse%26TranskriberadText%3Dfalse%26AvanceradSok%3DFalse%26page%3D6%26postid%3DDoda_1221956%26tab%3Dpost&amp;avanceradSok=False" id="LogIn">Sign in</a>
+        </li>
+
+                            <li id="otherLanguagesDropBox" class="dropdown">
+                                <a class="dropdown-toggle" id="dLabel" role="link" data-toggle="dropdown" data-target="#language" href="https://sok.riksarkivet.se/page.html">Other languages<i class="icon-caret-down"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                        <li><a href="https://sok.riksarkivet.se/en?Sprak=Svenska&amp;returnUrl=https%3A%2F%2Fsok.riksarkivet.se%2F%3FSokord%3Dolga%2Bnielsen%26EndastDigitaliserat%3Dfalse%26TranskriberadText%3Dfalse%26AvanceradSok%3DFalse%26page%3D6%26postid%3DDoda_1221956%26tab%3Dpost">Svenska</a></li>
+
+                                        <li class="active"><span class="selected-language">English <i class="icon-ok"></i></span></li>
+
+                                </ul>
+
+                                
+                            </li>                          
+                            <li class="visible-phone"><a href="http://riksarkivet.se/" target="_blank" title="To the National Archives of Sweden&#39;s homepage">National Archives</a></li>
+                            <li class="visible-phone"><a href="http://webbutik.riksarkivet.se/" target="_blank" title="To the National Archives of Sweden&#39;s web shop">Shop online</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div id="laneordrar" class="pull-right hidden">
+                        <ul class="nav nav-pills">
+                            <li>
+
+                                <a href="https://lasesalsbestallning.riksarkivet.se/" target="riksarkivet-digital-bestallning" style="text-decoration: none">
+                                    <div>
+                                        <img src="./death_1890_olga_henriette_en_files/kundvagn.png" alt=" Shopping cart">
+                                        <span class="badge sokhjalpIkon" title="Reading room | Click the shopping cart to order objects to a reading room" id="laneorder-antal">0</span>
+                                    </div>
+                                    <span id="lasesaltext">To reading room</span>
+                                </a>
+
+                                <!--<div class="kundvagn" style="text-decoration: none">
+                                    <div>
+                                        <img src="~/Content/images/kundvagn/kundvagn.png" alt=" Shopping cart" />
+                                        <span class="badge sokhjalpIkon" title="Reading room | Click the shopping cart to order objects to a reading room" id="laneorder-antal">0</span>
+                                    </div>
+                                    <span id="lasesaltext">To reading room</span>
+                                </div>-->
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="colorbar hidden-print"></div>
+
+    <!--<div id="kundvagn-dialog" style="display:none;padding:0;overflow-y:hidden">
+        
+        <iframe id="kundvagn-frame" src="https://lasesalsbestallning.riksarkivet.se/" style="height:100%;width:100%;border:none"></iframe>
+    </div>-->
+
+    <nav class="navbar navbar-top hidden-print" data-target=".nav-collapse" data-toggle="collapse">
+        <div class="container-fluid navbar-inner">
+            <div id="nav-collapse" class="nav-collapse collapse">
+                <ul class="nav" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+                    <li class="divider-vertical">
+                    </li><li id="StartItem" class="active navHasNoChildren clickMenu">
+                        <span class="hide">Visas:</span>
+                        <a href="https://sok.riksarkivet.se/en" title="Home"><span class="mellanrum-left-tjugo mellanrum-right-tjugo">Start</span></a>
+                    </li>
+                    <li class="divider-vertical">
+                    </li><li id="DfItem" class="navHasNoChildren clickMenu">
+                        <a href="https://sok.riksarkivet.se/en/digitala-forskarsalen" title="Digital Research Room">Digital Research Room</a>
+                    </li>
+                    <li class="divider-vertical">
+                    </li><li id="NadItem" class="navHasNoChildren clickMenu">
+                        <a href="https://sok.riksarkivet.se/en/nad/" title="National Archives Database">National Archives Database</a>
+                    </li>
+                    <li class="divider-vertical">
+                    </li><li id="OmItem" class="navHasNoChildren clickMenu hidden-phone">
+                        <a href="https://sok.riksarkivet.se/en/om-soktjansten/" title="About the search service">About the search service</a>
+                    </li>
+                    <li id="OmItem" class="navHasChildren clickMenu span12 visible-phone">
+                        <span>
+                            <a class="menylankar omSoktjansten" href="https://sok.riksarkivet.se/en/om-soktjansten/">About the search service</a>
+                            <i id="OmMenyPlusMinus" class="icon-plus icon-white"></i>
+                        </span>
+                        <div id="OmItems" class="hidden-phone">
+                            
+                        </div>
+                    </li>
+                    <li class="divider-vertical">
+                </li></ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById("otherLanguagesDropBox").className = "dropdown";
+    }
+    $(function () {
+        $("#btn-shortcuts").on('click', function (e) {
+            changePlusMinusIcon("#IkonPlusMinus");
+        });
+
+        $("#kundvagn-dialog").dialog({
+            // TODO: fix x on close button
+            title: 'Beställning till läsesal',
+            autoOpen: false,
+            modal: true,
+            height: '800',
+            width: '1000',
+            maxWidth: 'auto',
+            position: { my: 'top', at: 'top', of: $('#nav-collapse') },
+        });
+
+        $('.kundvagn').on('click', function () {
+            // TODO: would be nice to make height dynamic according to iframe height
+            $('#kundvagn-dialog').dialog('open');
+        });
+
+        $('.clickMenu').on('click', function (e) {
+            e.stopPropagation();
+        });
+
+        $("#OmItem").on('click', function (e) {
+            $("#omLankar").removeClass('hidden-phone').addClass('visible-phone');
+            $("#nav-shortcuts").closest('div').addClass('hidden-phone');
+            e.stopPropagation();
+        });
+
+        $("#OmMenyPlusMinus").on('click', function (e) {
+            showHideSubMenu("#OmItems")
+            changePlusMinusIcon("#OmMenyPlusMinus");
+        });
+
+        $("#NadMenyPlusMinus").on('click', function (e) {
+            showHideSubMenu("#NadItems")
+            changePlusMinusIcon("#NadMenyPlusMinus");
+        });
+
+        $("#ForskarsalMenyPlusMinus").on('click', function (e) {
+            showHideSubMenu("#ForskarsalItems");
+            changePlusMinusIcon("#ForskarsalMenyPlusMinus");
+        });
+
+        var showHideSubMenu = function (subMenuId) {
+            if ($(subMenuId).hasClass("hidden-phone")) {
+                $(subMenuId).removeClass('hidden-phone').addClass('visible-phone');
+            }
+            else {
+                $(subMenuId).addClass("hidden-phone")
+            }
+        }
+
+        var changePlusMinusIcon = function (dropdownElement) {
+
+            if ($(dropdownElement).hasClass('icon-plus')) {
+                $(dropdownElement).removeClass("icon-plus");
+                $(dropdownElement).addClass('icon-minus');
+            }
+            else {
+                $(dropdownElement).removeClass('icon-minus');
+                $(dropdownElement).addClass("icon-plus");
+            };
+        }
+
+
+    });
+</script>
+    <main id="homeContainer" class="content container-fluid ">
+        <br>
+        <section class="hidden-print">
+        <div class="visible-phone">
+            
+        </div>
+<section role="search" id="wide_search" class="standardsok alert alert-info control-panel">
+    <div class="content">
+        <fieldset class="mellanrum-top-tio">
+            <legend>
+                Search
+         
+    <label class="pull-right">
+            <a href="https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=6&amp;postid=Doda_1221956&amp;tab=post#" class="sokhjalpIkon hidden-phone" style="font-family: Verdana,Arial,Helvetica;font-size: small;" title="Search tips|&lt;b&gt;Simple search&lt;/b&gt;&lt;p&gt;Enter one or more keywords. To generate a hit all words must appear in the record.&lt;/p&gt;&lt;b&gt;Truncation&lt;/b&gt;&lt;p&gt;Use asterisk (*) to find words with a varying ending or beginning. Searching for rose* will find rosebud, rosebush, roseship, rosemary etc. Searching for *house will find greenhouse, dollhouse and steakhouse etc.&lt;/p&gt;&lt;b&gt;Exact phrases&lt;/b&gt;&lt;p&gt;Use quotation marks (“ “) when searching for exact phrases. E.g. a search for “Swedish kings” will generate hits where the words appear together and in that particular order.&lt;/p&gt;&lt;b&gt;Wildcard (character)&lt;/b&gt;&lt;p&gt;Use question mark (?) when searching for spelling variations of a word. The question mark is used to replace any single character. E.g. a search for wom?n will find both woman and women.&lt;/p&gt;&lt;b&gt;Exclude a word&lt;/b&gt;&lt;p&gt;Use minus sign (-) to exclude a search word. E.g. a search for Uppsala – castle will find all records containing the word Uppsala but not the records which at the same time contain the word castle.&lt;/p&gt;">Search tips</a>
+    </label>
+
+            </legend>
+        </fieldset>
+        <div>Search all archives and records in the National Archives Database and the Digital Research Room's online collections.</div>
+    </div>
+<form action="https://sok.riksarkivet.se/en" method="get">        <div class="content row-fluid">
+            <div id="sokrutan" class="span9">
+                <div id="searchboxandlabel" class="row-fluid">
+                    <div class="span10">
+                        <input class="input-full" id="Sokord" name="Sokord" type="text" value="olga nielsen">
+                        <input id="f" name="f" type="hidden" value="True">
+                        <div class="row-fluid">
+                            <div class="span6" style="margin-left:0;">
+                                <div class="endastDigitaliserat">
+    <div class="checkbox">
+        <div id="endastdigitaliseratboxandlabel" title="Refine search result to what has been digitised">
+            <input id="EndastDigitaliserat" name="EndastDigitaliserat" tabindex="4" type="checkbox" value="true"><input name="EndastDigitaliserat" type="hidden" value="false">
+            <label for="EndastDigitaliserat">
+                Digitised material only
+                    <img class="sokhjalpIkon hidden-phone" title="Digitised material only|If you check the box, you will only see the National Archives digitised volumes. " src="./death_1890_olga_henriette_en_files/info.png" alt="Info">
+            </label>
+        </div>
+    </div>
+    <span>
+        <img id="digitaliseratHjalpIkon" class="visible-phone" src="./death_1890_olga_henriette_en_files/info.png" alt="Info">
+    </span>
+</div>
+ 
+    <div id="digitaliseratHjalp" class="alert-block alert content" style="display: none">
+        <div id="closeInfo" class="close">×</div>
+        If you check the box, you will only see the National Archives digitised volumes. 
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#digitaliseratHjalpIkon").on('click', function () {
+                $("#digitaliseratHjalp").slideToggle(300);
+                return false;
+            });
+
+            $("#closeInfo").on('click', function (e) {
+                $("#digitaliseratHjalp").slideToggle(300);
+                return false;
+            });
+        });
+    </script>
+                            </div>
+                            <div class="span6" style="margin-left:0;">
+                                <div class="transkriberadText">
+    <div class="checkbox">
+        <div id="transkriberadtextboxandlabel" title="Refine search result to transcribed text">
+            <input id="TranskriberadText" name="TranskriberadText" tabindex="5" type="checkbox" value="true"><input name="TranskriberadText" type="hidden" value="false">
+            <label for="TranskriberadText">
+                Transcribed material only BETA
+                <img class="sokhjalpIkon hidden-phone" title="Transcribed material only|&lt;p&gt;If the box is checked, you will get results on material where the searched word appears in the text. &lt;/p&gt;&lt;p&gt;The texts are transcribed with AI-technology. &lt;/p&gt;&lt;p&gt;The feature is in BETA and is still being refined and improved.&lt;/p&gt;" src="./death_1890_olga_henriette_en_files/info.png" alt="Info">
+            </label>
+        </div>
+    </div>
+    <span>
+        <img id="transkriberadTextHjalpIkon" class="visible-phone" src="./death_1890_olga_henriette_en_files/info.png" alt="Info">
+    </span>
+</div>
+
+
+<div id="transkriberadTextHjalp" class="alert-block alert content" style="display: none">
+    <div id="closeInfo" class="close">×</div>
+    <p>If the box is checked, you will get results on material where the searched word appears in the text. </p><p>The texts are transcribed with AI-technology. </p><p>The feature is in BETA and is still being refined and improved.</p>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#transkriberadTextHjalpIkon").on('click', function () {
+            $("#transkriberadTextHjalp").slideToggle(300);
+            return false;
+        });
+
+        $("#closeInfo").on('click', function (e) {
+            $("#transkriberadTextHjalp").slideToggle(300);
+            return false;
+        });
+    });
+</script>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="advancedSearchHolder" style="display:none;">
+            <div id="advancedSearchTop" class="content row-fluid">
+                <div id="fritext" class="span3">
+    <label for="Freetext">
+        <span>
+        
+                        <strong>Free text</strong>
+
+        </span>
+    </label>
+
+<div id="sokhjalpFreetext" class="alert-block alert content" style="display: none">    
+    <div id="closeInfoFreetext" class="close">×</div>
+     
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(document).ready(function () {            
+            var model = {"Formular":"Standard","LabelFor":"Freetext","Label":"Free text","IsRubrik":false,"NoLabels":false,"Hjalptext":""};
+            var sokhjalpIkon = "#sokhjalpIkon" + model.LabelFor;
+            var toggleElement = "#sokhjalp" + model.LabelFor;
+            var closeInfo = "#closeInfo" + model.LabelFor;
+    
+            $(sokhjalpIkon).on('click', function () {
+                if (model.Label == 'Söktips' || model.Label == 'Search tips')
+                {
+                    $(toggleElement).addClass('alert-margin');
+                }
+                $(toggleElement).slideToggle(300);
+                return false;
+            });
+
+            $(closeInfo).on('click', function (e) {
+                $(toggleElement).slideToggle(300);
+                return false;
+            });
+        });
+
+
+    });
+</script>
+
+                    <input id="Fritext" name="Fritext" type="text" value="">
+                </div>
+                <div class="span3">
+    <label for="Name">
+        <span>
+        
+                        <strong>Name</strong>
+
+        </span>
+    </label>
+
+<div id="sokhjalpName" class="alert-block alert content" style="display: none">    
+    <div id="closeInfoName" class="close">×</div>
+     
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(document).ready(function () {            
+            var model = {"Formular":"Standard","LabelFor":"Name","Label":"Name","IsRubrik":false,"NoLabels":false,"Hjalptext":""};
+            var sokhjalpIkon = "#sokhjalpIkon" + model.LabelFor;
+            var toggleElement = "#sokhjalp" + model.LabelFor;
+            var closeInfo = "#closeInfo" + model.LabelFor;
+    
+            $(sokhjalpIkon).on('click', function () {
+                if (model.Label == 'Söktips' || model.Label == 'Search tips')
+                {
+                    $(toggleElement).addClass('alert-margin');
+                }
+                $(toggleElement).slideToggle(300);
+                return false;
+            });
+
+            $(closeInfo).on('click', function (e) {
+                $(toggleElement).slideToggle(300);
+                return false;
+            });
+        });
+
+
+    });
+</script>
+
+                    <input id="Namn" name="Namn" type="text" value="">
+                </div>
+                <div class="span3">
+    <label for="Place">
+        <span>
+        
+                        <strong>Place</strong>
+
+        </span>
+    </label>
+
+<div id="sokhjalpPlace" class="alert-block alert content" style="display: none">    
+    <div id="closeInfoPlace" class="close">×</div>
+     
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(document).ready(function () {            
+            var model = {"Formular":"Standard","LabelFor":"Place","Label":"Place","IsRubrik":false,"NoLabels":false,"Hjalptext":""};
+            var sokhjalpIkon = "#sokhjalpIkon" + model.LabelFor;
+            var toggleElement = "#sokhjalp" + model.LabelFor;
+            var closeInfo = "#closeInfo" + model.LabelFor;
+    
+            $(sokhjalpIkon).on('click', function () {
+                if (model.Label == 'Söktips' || model.Label == 'Search tips')
+                {
+                    $(toggleElement).addClass('alert-margin');
+                }
+                $(toggleElement).slideToggle(300);
+                return false;
+            });
+
+            $(closeInfo).on('click', function (e) {
+                $(toggleElement).slideToggle(300);
+                return false;
+            });
+        });
+
+
+    });
+</script>
+
+                    <input id="Ort" name="Ort" type="text" value="">
+                </div>
+            </div>
+            <div id="advancedSearchMiddle" class="content row-fluid">
+                <div class="span6 dates">
+    <label for="Date">
+        <span>
+        
+                        <strong>Date</strong>
+
+        </span>
+    </label>
+
+<div id="sokhjalpDate" class="alert-block alert content" style="display: none">    
+    <div id="closeInfoDate" class="close">×</div>
+     
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(document).ready(function () {            
+            var model = {"Formular":"Standard","LabelFor":"Date","Label":"Date","IsRubrik":false,"NoLabels":false,"Hjalptext":""};
+            var sokhjalpIkon = "#sokhjalpIkon" + model.LabelFor;
+            var toggleElement = "#sokhjalp" + model.LabelFor;
+            var closeInfo = "#closeInfo" + model.LabelFor;
+    
+            $(sokhjalpIkon).on('click', function () {
+                if (model.Label == 'Söktips' || model.Label == 'Search tips')
+                {
+                    $(toggleElement).addClass('alert-margin');
+                }
+                $(toggleElement).slideToggle(300);
+                return false;
+            });
+
+            $(closeInfo).on('click', function (e) {
+                $(toggleElement).slideToggle(300);
+                return false;
+            });
+        });
+
+
+    });
+</script>
+
+                    <div>
+                        <input class="lfloat input-small" id="DatumFran" maxlength="4" name="DatumFran" type="text" value="">
+                        <span class="lfloat" style="margin-top: 7px;">-</span>
+                        <input class="lfloat input-small" id="DatumTill" maxlength="4" name="DatumTill" type="text" value="">
+                    </div>
+                </div>
+            </div>
+            <div id="advancedErrorMessage">
+                <font color="red"></font>
+            </div>
+        </div>
+           <div id="buttonholder" class="padding-top-medium row-fluid">
+                <div class="span9">
+                    <div id="searchButtons">
+                        <button id="SokKnappLeft" class="btn btn-primary" type="submit" title="Search" tabindex="50">Search<i class="icon-search mellanrum-left"></i></button>
+                        <button id="clearSearch" class="btn " type="reset" title="Clear all searchfields" tabindex="51">Clear<i class="icon-remove mellanrum-left"></i></button>
+                        <span>
+    <span>
+            <a id="sokhjalpIkonSearchtipsFacetter" href="https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=6&amp;postid=Doda_1221956&amp;tab=post#" class="visible-phone pull-right">Search tips</a>
+    </span>
+
+<div id="sokhjalpSearchtipsFacetter" class="alert-block alert content" style="display: none">    
+    <div id="closeInfoSearchtipsFacetter" class="close">×</div>
+    <p><b>Simple search:</b> Enter one or more keywords. To generate a hit all words must appear in the record.</p>
+<p><b>Truncation: </b> Use asterisk (*) to find words with a varying ending or beginning. Searching for rose* will find rosebud, rosebush, roseship, rosemary etc. Searching for *house will find greenhouse, dollhouse and steakhouse etc.</p>
+<p><b>Exact phrases: </b> Use quotation marks ('' '') when searching for exact phrases. E.g. a search for ''Swedish kings'' will generate hits where the words appear together and in that particular order.</p>
+<p><b>Wildcard (character): </b> Use question mark (?) when searching for spelling variations of a word. The question mark is used to replace any single character. E.g. a search for wom?n will find both woman and women.</p>
+<p><b>Exclude a word: </b> Use minus sign (-) to exclude a search word. E.g. a search for Uppsala – castle will find all records containing the word Uppsala but not the records which at the same time contain the word castle.</p>
+ 
+ 
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(document).ready(function () {            
+            var model = {"Formular":"Gemensam","LabelFor":"SearchtipsFacetter","Label":"Search tips","IsRubrik":false,"NoLabels":true,"Hjalptext":"\u003cp\u003e\u003cb\u003eSimple search:\u003c/b\u003e Enter one or more keywords. To generate a hit all words must appear in the record.\u003c/p\u003e\r\n\u003cp\u003e\u003cb\u003eTruncation: \u003c/b\u003e Use asterisk (*) to find words with a varying ending or beginning. Searching for rose* will find rosebud, rosebush, roseship, rosemary etc. Searching for *house will find greenhouse, dollhouse and steakhouse etc.\u003c/p\u003e\r\n\u003cp\u003e\u003cb\u003eExact phrases: \u003c/b\u003e Use quotation marks (\u0027\u0027 \u0027\u0027) when searching for exact phrases. E.g. a search for \u0027\u0027Swedish kings\u0027\u0027 will generate hits where the words appear together and in that particular order.\u003c/p\u003e\r\n\u003cp\u003e\u003cb\u003eWildcard (character): \u003c/b\u003e Use question mark (?) when searching for spelling variations of a word. The question mark is used to replace any single character. E.g. a search for wom?n will find both woman and women.\u003c/p\u003e\r\n\u003cp\u003e\u003cb\u003eExclude a word: \u003c/b\u003e Use minus sign (-) to exclude a search word. E.g. a search for Uppsala – castle will find all records containing the word Uppsala but not the records which at the same time contain the word castle.\u003c/p\u003e\r\n \r\n"};
+            var sokhjalpIkon = "#sokhjalpIkon" + model.LabelFor;
+            var toggleElement = "#sokhjalp" + model.LabelFor;
+            var closeInfo = "#closeInfo" + model.LabelFor;
+    
+            $(sokhjalpIkon).on('click', function () {
+                if (model.Label == 'Söktips' || model.Label == 'Search tips')
+                {
+                    $(toggleElement).addClass('alert-margin');
+                }
+                $(toggleElement).slideToggle(300);
+                return false;
+            });
+
+            $(closeInfo).on('click', function (e) {
+                $(toggleElement).slideToggle(300);
+                return false;
+            });
+        });
+
+
+    });
+</script>
+                        </span>
+                    </div>
+                        <div id="advancedSearchController_" class="pull-left">
+                                <br><a id="advancedShowMore" title="Show more search variables" href="https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=True&amp;page=6&amp;postid=Doda_1221956&amp;tab=post" class="">More options&nbsp;<i class="icon-arrow-down"></i></a>
+                            <a id="advancedShowLess" title="Show less search variables" href="https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=6&amp;postid=Doda_1221956&amp;tab=post" class="hidden" style="display: none;">Close&nbsp;<i class="icon-arrow-up"></i></a>
+                        </div>
+                </div>
+            </div> 
+
+<input data-val="true" data-val-required="The Boolean field is required." id="AvanceradSok" name="AvanceradSok" type="hidden" value="False"></form></section>
+
+
+
+
+
+</section>
+        <nav id="tabheader" class="row-fluid hidden-print">
+            
+    <ul class="nav nav-tabs"><li><a href="https://sok.riksarkivet.se/en?Sokord=olga+nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=6&amp;postid=Doda_1221956&amp;tab=info#tab" name="tab" title="Home">Home</a></li><li><a href="https://sok.riksarkivet.se/en?Sokord=olga+nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=1&amp;tab=hit#6" title="Back to list">List</a></li><li class="active"><a title="Record">Record</a></li><li class="tab-link"><a href="https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=6&amp;postid=Doda_1221956&amp;tab=post#">Up to the search form&nbsp;<i class="icon-arrow-up"></i></a></li></ul>
+
+        </nav>
+        <div id="content">
+            <div id="body-content" class="content row-fluid">
+                
+
+
+<div id="mainContentPad">
+
+    <div id="result" class="index">
+        <div id="resultlist" class="">
+            <div class="row-fluid" id="extern">
+                    <div id="hitRowsRegister" class="span12">
+                        <nav>
+
+<form action="https://sok.riksarkivet.se/en" method="get">    <div id="resultHeader" class="row-fluid hidden-print">
+            <div class="pull-right upp hidden-phone">
+                <div class="pagination pull-right hidden-print"><ul><li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=1&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-fast-backward"></i></a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=5&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-step-backward"></i></a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=3&amp;postid=postvisningsbladdring&amp;tab=post#tab">3</a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=4&amp;postid=postvisningsbladdring&amp;tab=post#tab">4</a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=5&amp;postid=postvisningsbladdring&amp;tab=post#tab">5</a></li> <li><span>6</span></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=7&amp;postid=postvisningsbladdring&amp;tab=post#tab">7</a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=8&amp;postid=postvisningsbladdring&amp;tab=post#tab">8</a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=9&amp;postid=postvisningsbladdring&amp;tab=post#tab">9</a></li>  <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=7&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-step-forward"></i></a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=35&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-fast-forward"></i></a></li></ul></div>
+            </div>
+            <div class="span10 pull-left visible-phone">
+                <div class="pagination pull-left hidden-print"><ul><li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=1&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-fast-backward"></i></a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=5&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-step-backward"></i></a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=5&amp;postid=postvisningsbladdring&amp;tab=post#tab">5</a></li> <li><span>6</span></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=7&amp;postid=postvisningsbladdring&amp;tab=post#tab">7</a></li>  <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=7&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-step-forward"></i></a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=35&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-fast-forward"></i></a></li></ul></div>
+            </div>
+            <div id="postvisningPagination" class="paginationBlock">
+                <span class="facetRubrikAndPaginationLeft">Showing record 6 of 35</span><br>
+                <span class="pull-left">    <div class="page-functions">
+        <span id="print2" class="hidden-phone hidden-print"><a href="https://sok.riksarkivet.se/en/?Sokord=olga+nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=6&amp;postid=Doda_1221956&amp;tab=post#" onclick="window.print();">Print <i class="icon-print"></i></a></span>
+    </div></span>
+            </div>
+        <input id="InfoSida" name="InfoSida" type="hidden" value="">
+    </div>
+<input id="Sokord" name="Sokord" type="hidden" value="olga nielsen"><input id="EndastDigitaliserat" name="EndastDigitaliserat" type="hidden" value="false"><input id="TranskriberadText" name="TranskriberadText" type="hidden" value="false"><input id="FacettFilter" name="FacettFilter" type="hidden" value=""><input id="FacettState" name="FacettState" type="hidden" value=""><input id="FacettLimits" name="FacettLimits" type="hidden" value="">    <input id="typAvLista" name="typAvLista" type="hidden" value="Standard">
+<input data-val="true" data-val-required="The Boolean field is required." id="AvanceradSok" name="AvanceradSok" type="hidden" value="False"></form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <hr>
+                        </nav>
+                        
+
+<article class="hitRow">
+    <div id="advancedErrorMessage" class="clearfix">
+        <font color="red"></font>
+    </div>
+
+    <div class="post_header">
+
+        <h1 class="post_title">
+Olga Henriette
+        </h1>
+        <div class="post_type">
+Death records
+        </div>
+        <br>
+        <div class="hit_left hidden-print">
+                <a href="https://sok.riksarkivet.se/dodregister">To read more and search the database</a>
+                    </div>
+    </div>
+
+    <div class="post_middle">
+        <div id="headerID">
+            <div class="doda post">
+                            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>The deceased</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">The deceased</b>
+                    Olga Henriette<br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>The deceased</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+Olga Henriette                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>Place of residence</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">Place of residence</b>
+                    Hannover 17<br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>Place of residence</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+Hannover 17                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>Parish</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">Parish</b>
+                    Helsingborg Stad<br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>Parish</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+Helsingborg Stad                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>Date</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">Date</b>
+                    1890-01-06 (död)<br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>Date</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+1890-01-06 (död)                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>Age</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">Age</b>
+                    7 month(-s) 13 day(-s) <br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>Age</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+7 month(-s) 13 day(-s)                         </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>Cause of death</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">Cause of death</b>
+                    bronchitis capillaris<br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>Cause of death</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+bronchitis capillaris                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>Relative's name</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">Relative's name</b>
+                    fader Möller Nielsen, Jörginius<br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>Relative's name</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+fader Möller Nielsen, Jörginius                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>Relative's occupation</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">Relative's occupation</b>
+                    murare<br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>Relative's occupation</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+murare                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>Note</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">Note</b>
+                    Moder:Severina Paulina Johnsson hfl s 1269,3<br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>Note</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+Moder:Severina Paulina Johnsson hfl s 1269,3                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>Archive</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">Archive</b>
+                    Helsingborgs stadsförsamlings (Maria) kyrkoarkiv (SE/LLA/13171)<br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>Archive</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+Helsingborgs stadsförsamlings (Maria) kyrkoarkiv (SE/LLA/13171)                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>Volume</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">Volume</b>
+                    F I:8<br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>Volume</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+F I:8                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>Register</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">Register</b>
+                    Dödregister - Skåne, Blekinge och Hallands län<br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>Register</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+Dödregister - Skåne, Blekinge och Hallands län                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="row-fluid hidden-print">
+                <div class="span3 text-right post_ledtext hidden-phone">
+                    <b>Created by</b>
+                </div>
+                <div class="span7 post_faltdata">
+                    <b class="visible-phone">Created by</b>
+                    Riksarkivet i Lund<br>
+                </div>
+            </div>
+            <div class="row-fluid visible-print hidden">
+                <table>
+                    <tbody><tr>
+                        <td class="post_ledtext text-right utskrift_ledtext">
+                            <b>Created by</b>
+                        </td>
+                        <td class="post_faltdata utskrift_faltdata">
+Riksarkivet i Lund                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+
+
+                    <div class="row-fluid hidden-print">
+        <div class="span3 text-right hidden-phone">
+            <br>
+        </div>
+        <div class="span8 post_faltdata post_faltButton post">
+            <br>
+                <a class="btn btn-small btn-success link-image" rel="nofollow" target="_blank" href="https://sok.riksarkivet.se/bildvisning/00124973">
+
+                    Image
+
+                </a>
+
+
+        </div>
+    </div>
+                                                            </div>
+            <div class="kommentarer">
+                                            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+            </div>
+            <div class="row-fluid">
+                    <div class="span10 pull-left visible-phone">
+                        <div class="pagination pull-left hidden-print"><ul><li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=1&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-fast-backward"></i></a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=5&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-step-backward"></i></a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=5&amp;postid=postvisningsbladdring&amp;tab=post#tab">5</a></li> <li><span>6</span></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=7&amp;postid=postvisningsbladdring&amp;tab=post#tab">7</a></li>  <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=7&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-step-forward"></i></a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=35&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-fast-forward"></i></a></li></ul></div>
+                    </div>
+                    <div id="postvisningPagination" class="hidden-phone">
+                        <hr>
+                        <div><div class="pagination pull-right hidden-print"><ul><li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=1&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-fast-backward"></i></a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=5&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-step-backward"></i></a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=3&amp;postid=postvisningsbladdring&amp;tab=post#tab">3</a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=4&amp;postid=postvisningsbladdring&amp;tab=post#tab">4</a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=5&amp;postid=postvisningsbladdring&amp;tab=post#tab">5</a></li> <li><span>6</span></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=7&amp;postid=postvisningsbladdring&amp;tab=post#tab">7</a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=8&amp;postid=postvisningsbladdring&amp;tab=post#tab">8</a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=9&amp;postid=postvisningsbladdring&amp;tab=post#tab">9</a></li>  <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=7&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-step-forward"></i></a></li> <li><a href="https://sok.riksarkivet.se/en?Sokord=olga%20nielsen&amp;EndastDigitaliserat=false&amp;TranskriberadText=false&amp;AvanceradSok=False&amp;page=35&amp;postid=postvisningsbladdring&amp;tab=post#tab"><i class="icon-fast-forward"></i></a></li></ul></div></div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div id="orderbestallningSuccessContainer">
+        <div id="orderbestallningSuccessMessage" class="alert alert-success" role="alert">
+            <strong>Success!</strong> You have made an order!
+        </div>
+    </div>
+    <div id="orderbestallningErrorContainer">
+        <div id="orderbestallningErrorMessage" class="alert alert-error" role="alert">
+            An error ocurred!
+        </div>
+    </div>
+<input id="postid" name="postid" type="hidden" value="Doda_1221956"></div>
+
+
+
+            </div>
+        </div>
+    </main>
+<footer id="pnlFooter" class="footer hidden-print">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span4">
+                <p>
+                    <strong>Riksarkivet</strong><br>
+                    Box 7223<br>
+                    187 13 Täby<br>
+                </p>
+            </div>
+            <div class="span4">
+                    <p>
+                        <strong>Contact us</strong><br>
+                        Tel 010-476 70 00&nbsp;<i class="icon-phone"></i><br>
+                        kundtjanst[at]riksarkivet.se<br>
+                        <a href="https://sok.riksarkivet.se/en/kontakta-oss/">Contact form</a>
+                    </p>
+            </div>
+            <div class="span4">
+                <p class="lank-lista">
+                    <strong>About the search service</strong> <br>
+    <a href="https://sok.riksarkivet.se/en/om-soktjansten/om-bildvisningen">Image viewer</a> <br>
+    <a href="https://sok.riksarkivet.se/en/om-soktjansten/fragor-och-svar">Frequently Asked Questions (FAQs)(in Swedish)</a> <br>
+    <a href="https://riksarkivet.se/om-riksarkivet/om-webbplatsen/kakor">Cookies (in Swedish) <i class="icon-external-link"></i></a><br>
+    <a href="https://riksarkivet.se/om-riksarkivet/kontakta-oss/behandling-av-personuppgifter">About personal data (in Swedish) <i class="icon-external-link"></i></a><br>
+    <a href="https://sok.riksarkivet.se/en/om-soktjansten/tillganglighet">Digital accessibility (in Swedish) </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<link href="./death_1890_olga_henriette_en_files/cookieconsent" rel="stylesheet">
+<script src="./death_1890_olga_henriette_en_files/cookieconsent(1)"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on("click", "span.paramTag>img", function () {
+                $(this).parent().remove();
+            });
+
+            $(document).on("click", "input[type='reset'], button[type='reset']", function () {
+                $("span.paramTag").remove();
+            });
+            if ((navigator.userAgent.indexOf("Trident/4") > -1 || navigator.userAgent.indexOf("Trident/5") > -1 || navigator.userAgent.indexOf("Trident/6") > -1 || navigator.userAgent.indexOf("Trident/7") > -1) && navigator.userAgent.indexOf("MSIE 7.0") > -1) {
+                $("#compatibility_box").show();
+            }
+        });
+    </script>
+
+<script type="module" src="./death_1890_olga_henriette_en_files/altcha.min.js"></script>
+<script>
+    var CaptchaHandler = (function ($) {
+        'use strict';
+
+        const CAPTCHA_API = 'https://altcha.riksarkivet.se/api/captcha';
+
+        function hasCaptchaCookie() {
+            return document.cookie.includes('altcha_verified=');
+        }
+
+        function getCaptchaStrings() {
+            return {
+                label: 'I&#39;m not a robot',
+                verifying: 'Verifying...',
+                verified: 'Verified',
+                error: 'Verification failed'
+            };
+        }
+
+        function createAltchaWidget() {
+            var altcha = document.createElement('altcha-widget');
+            altcha.setAttribute('challengeurl', CAPTCHA_API + '/challenge');
+            altcha.setAttribute('hidelogo', 'true');
+            altcha.setAttribute('strings', JSON.stringify(getCaptchaStrings()));
+            return altcha;
+        }
+
+        function verifyCaptcha(payload, onSuccess, onError) {
+            $.ajax({
+                url: CAPTCHA_API + '/verify',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ payload: payload }),
+                xhrFields: { withCredentials: true },
+                success: function (response) {
+                    if (response.success) {
+                        if (onSuccess) onSuccess();
+                    } else {
+                        if (onError) onError('Verification failed. Please try again.');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    if (onError) onError('Verification failed');
+                }
+            });
+        }
+
+        function showCaptchaModal($form) {
+            var $dialog = $('<dialog>', {
+                'class': 'captcha-dialog',
+                html: '<article>' +
+                    '<header>' +
+                    '<h2>Verify that you are a human</h2>' +
+                    '</header>' +
+                    '<section>' +
+                    '<p>Please check the box below to continue.</p>' +
+                    '<div class="captcha-container"></div>' +
+                    '</section>' +
+                    '</article>'
+            });
+
+            $('body').append($dialog);
+
+            var altcha = createAltchaWidget();
+            $dialog.find('.captcha-container').append(altcha);
+            $dialog[0].showModal();
+
+            altcha.addEventListener('statechange', function (ev) {
+                if (ev.detail.state === 'verified') {
+                    verifyCaptcha(ev.detail.payload,
+                        function() {
+                            $dialog[0].close();
+                            $dialog.remove();
+                            $form.submit();
+                        },
+                        function(errorMsg) {
+                            alert(errorMsg);
+                            $dialog[0].close();
+                            $dialog.remove();
+                        }
+                    );
+                }
+            });
+        }
+
+        function initFormInterceptor() {
+            $('form:not(.no-captcha)').on('submit', function (e) {
+                var $form = $(this);
+
+                if (hasCaptchaCookie()) {
+                    return true;
+                }
+
+                e.preventDefault();
+                showCaptchaModal($form);
+                return false;
+            });
+        }
+
+        function initStandaloneCaptcha(containerId, returnUrl) {
+            var container = document.getElementById(containerId);
+            if (!container) return;
+
+            var altcha = createAltchaWidget();
+            container.appendChild(altcha);
+
+            altcha.addEventListener('statechange', function (ev) {
+                if (ev.detail.state === 'verified') {
+                    verifyCaptcha(ev.detail.payload,
+                        function() {
+                            window.location.href = returnUrl || '/';
+                        },
+                        function(errorMsg) {
+                            alert(errorMsg);
+                        }
+                    );
+                }
+            });
+        }
+
+        return {
+            hasCaptchaCookie: hasCaptchaCookie,
+            showModal: showCaptchaModal,
+            initFormInterceptor: initFormInterceptor,
+            initStandalone: initStandaloneCaptcha
+        };
+
+    })(jQuery);
+
+    $(document).ready(function () {
+        CaptchaHandler.initFormInterceptor();
+    });
+</script>
+
+
+<div id="tooltip" class="tooltip-1792 shadow" style="position: absolute; display: none; z-index: 10; width: 275px; height: auto;"><div id="tooltip-inner"><h3 id="tooltip-title"></h3><div id="tooltip-content"></div></div></div><div id="tooltip" class="tooltip-2496 shadow" style="position: absolute; display: none; z-index: 10; width: 275px; height: auto;"><div id="tooltip-inner"><h3 id="tooltip-title"></h3><div id="tooltip-content"></div></div></div><div id="cc--main" style="position: fixed; z-index: 1000000;" class="c--anim"><!--[if lt IE 9 ]><div id="cc_div" class="cc_div ie"></div><![endif]--><!--[if (gt IE 8)|!(IE)]><!--><div id="cc_div" class="cc_div"><div id="s-cnt" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="s-ttl" class="slide" style="visibility: hidden;"><div id="c-vln"><div id="cs"><div id="c-s-in"><div id="s-inr" class="bns-t"><div id="s-hdr"><div id="s-ttl" role="heading">Cookie preferences</div><div id="s-c-bnc"><button type="button" id="s-c-bn" class="c-bn" aria-label="Close"></button></div></div><div id="s-bl"><div class="c-bl"><div class="title"><div class="b-tl" role="heading" aria-level="3">Cookie usage</div></div><div class="desc"><div class="p">We use cookies to ensure the basic functionalities of Riksarkivet's websites and to enhance your online experience. Using the choices below you can withdraw your consent and turn off/on non-essential cookies.</div></div></div><div class="c-bl b-ex"><div class="title b-bn"><button type="button" class="b-tl exp" aria-expanded="false" aria-controls="c-ac-1">Strictly necessary cookies</button><label class="b-tg"><input class="c-tgl" type="checkbox" value="necessary" disabled=""><span class="c-tg c-ro" aria-hidden="true"><span class="on-i"></span><span class="off-i"></span></span><span class="t-lb">Strictly necessary cookies</span></label></div><div class="desc b-acc" id="c-ac-1" aria-hidden="true"><div class="p">These cookies are essential for the proper functioning of our websites and cannot be turned off. They help with security and functionality, for example secure login. Without these cookies, the websites would not work properly.</div></div></div><div class="c-bl b-ex"><div class="title b-bn"><button type="button" class="b-tl exp" aria-expanded="false" aria-controls="c-ac-2">Analytics cookies</button><label class="b-tg"><input class="c-tgl" type="checkbox" value="analytics"><span class="c-tg" aria-hidden="true"><span class="on-i"></span><span class="off-i"></span></span><span class="t-lb">Analytics cookies</span></label></div><div class="desc b-acc" id="c-ac-2" aria-hidden="true"><div class="p">These cookies are helpful in understanding how visitors interact with our websites by collecting and reporting information anonymously.</div></div></div><div class="c-bl"><div class="title"><div class="b-tl" role="heading" aria-level="3">More information</div></div><div class="desc"><div class="p">Read more about our cookie policy on the page <a class="cc-link" href="https://riksarkivet.se/kakor-cookies">about cookies (om kakor)</a>.</div></div></div></div><div id="s-bns"><button type="button" id="s-all-bn" class="c-bn">Accept all</button><button type="button" id="s-rall-bn" class="c-bn">Reject all except necessary</button><button type="button" id="s-sv-bn" class="c-bn">Save settings</button></div></div></div></div></div></div><div id="cs-ov" style="visibility: hidden; opacity: 0;"></div></div><!--<![endif]--></div></body></html>

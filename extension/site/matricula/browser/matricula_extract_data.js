@@ -153,7 +153,7 @@ function extractData(document, url) {
       const text = selectedComponent.text;
       const page = text.split("_")[1];
       result.page = Number(page).toString();
-      result.sectionNumber = Number(text.split("-")[0]).toString();
+      result.sectionNumber = text.split("_")[0].split("-")[0];
       result.recordTypeCandidates = title2type(text) || title2type(bookTitle);
     }
   }

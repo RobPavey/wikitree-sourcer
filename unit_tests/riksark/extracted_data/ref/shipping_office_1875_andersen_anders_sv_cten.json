@@ -1,0 +1,28 @@
+{
+  "url": "https://sok.riksarkivet.se/?Sokord=Anders+andersen&page=10&postid=Sjoman_liggare_200626&tab=post",
+  "success": true,
+  "recordTitle": "Andersen, Anders",
+  "recordType": "Sailor's house - sleeper",
+  "recordData": {
+    "Name": "Namn\n                    Andersen, Anders",
+    "Date of birth": "Födelsedatum\n                    1875",
+    "Birth parish": "Födelseförsamling\n                    Arendal",
+    "Home church": "Hemförsamling\n                    Arendal",
+    "Registration number": "Inskrivningsnummer\n                    H. 6220",
+    "Rent/salary": "Hyra/lön\n                    36 kr",
+    "Position/Profession": "Befattning/Yrke\n                    Light sailor",
+    "Patterned": "Påmönstrad\n                    1890-11-27 in Arendal",
+    "Deregistered": "Avmönstrad\n                    1891-01-21 in Västervik (Demobilized)",
+    "Name1": "Namn\n                    Gemma (Ship)",
+    "Home port": "Hemmahamn\n                    Arendal",
+    "Captain": "Kapten\n                    A. Jacobsen",
+    "Archives": "Arkiv\n                    The Seaman's House in Västervik archive (SE/VALA/00671)",
+    "Volume": "Volym\n                    DIb: 2 p. 45",
+    "Established by": "Upprättad av\n                    National Archives SVAR-Swedish archive information"
+  },
+  "duplicateValues": {
+    "Name1": "Name"
+  },
+  "postId": "Sjoman_liggare_200626",
+  "pageType": "record"
+}

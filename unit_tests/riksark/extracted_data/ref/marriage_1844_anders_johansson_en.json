@@ -1,0 +1,23 @@
+{
+  "url": "https://sok.riksarkivet.se/en?EndastDigitaliserat=false&TranskriberadText=false&Namn=Anders+Peter+Johansson&DatumFran=1820&DatumTill=1860&AvanceradSok=true&page=45&postid=Vigsel_22716&tab=post#tab",
+  "success": true,
+  "recordTitle": "Johansson, And. Pet. - Pehrsdotter, Anna Susanna",
+  "recordType": "Marriage records",
+  "recordData": {
+    "Groom's name": "Johansson, And. Pet.",
+    "Groom's occupation": "bonde tillträdande",
+    "Groom's home place": "Norrtannflo",
+    "Groom's birthdate/age": "1817",
+    "Date": "1844-06-03 i Resele",
+    "Bride's name": "Pehrsdotter, Anna Susanna",
+    "Bride's occupation": "bondedotter",
+    "Bride's home place": "Mo",
+    "Bride's birthdate/age": "1819",
+    "Archive": "Resele kyrkoarkiv (SE/HLA/1010161)",
+    "Volume": "C:2 s. 173",
+    "Register": "Vigselregister - Sollefteå kommun",
+    "Created by": "Riksarkivet SVAR-Svensk arkivinformation"
+  },
+  "postId": "Vigsel_22716",
+  "pageType": "record"
+}

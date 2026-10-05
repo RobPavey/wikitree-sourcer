@@ -200,7 +200,7 @@ class ExtractedDataReader {
   }
 
   getMaritalStatus() {
-    return "";
+    return this.getValueUsingRecordTypeData("maritalStatus");
   }
 
   getOccupation() {
@@ -291,7 +291,7 @@ class ExtractedDataReader {
       if (this.recordType == RT.Marriage || this.recordType == RT.MarriageRegistration) {
         eventDateObj = this.getEventDateObj();
         eventPlaceObj = this.getEventPlaceObj();
-        age = this.getAgeAtEvent();
+        age = this.getValueUsingRecordTypeData("spouseAge");
       }
 
       return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age)];
@@ -340,7 +340,13 @@ class ExtractedDataReader {
     return undefined;
   }
 
-  setCustomFields(gd) {}
+  setCustomFields(gd) {
+    if (this.recordTypeData) {
+      if (this.recordTypeData.overrideRefTitle) {
+        gd.overrideRefTitle = this.recordTypeData.overrideRefTitle;
+      }
+    }
+  }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Helper functions to reduce code in derived classes
@@ -406,10 +412,17 @@ class ExtractedDataReader {
     let fullName = this.getValueUsingRecordTypeData(fullNameKey);
 
     if (fullName) {
-      if (advanced && advanced.inFullNameLastNamesIsInUpperCase) {
-        let parts = NameUtils.convertFullNameWithLastNameInUpperCaseToForenamesAndLastNames(fullName);
-        if (parts.success) {
-          return this.makeNameObjFromForenamesAndLastName(parts.forenames, parts.lastName);
+      if (advanced) {
+        if (advanced.inFullNameLastNamesIsInUpperCase) {
+          let parts = NameUtils.convertFullNameWithLastNameInUpperCaseToForenamesAndLastNames(fullName);
+          if (parts.success) {
+            return this.makeNameObjFromForenamesAndLastName(parts.forenames, parts.lastName);
+          }
+        } else if (advanced.fullNameCanBeLastNameCommaForenames) {
+          let nameObj = this.makeNameObjFromLastNameCommaForenames(fullName);
+          if (nameObj) {
+            return nameObj;
+          }
         }
       }
       return this.makeNameObjFromFullName(fullName);
@@ -717,7 +730,20 @@ class ExtractedDataReader {
       }
     }
 
-    function addImpliedParts(placeObj) {
+    function addImpliedParts(reader, placeObj) {
+      function extractCountyWordFromCountyName(countyName) {
+        if (advanced.additionalCountyWords) {
+          let countyNameLc = countyName.toLowerCase();
+          for (let countyWord of advanced.additionalCountyWords) {
+            if (countyNameLc.endsWith(" " + countyWord)) {
+              let bareCountyName = countyName.substring(0, countyName.length - countyWord.length).trim();
+              let realCaseCountyWord = countyName.substring(countyName.length - countyWord.length).trim();
+              return { countyWord: realCaseCountyWord, bareCountyName: bareCountyName };
+            }
+          }
+        }
+      }
+
       if (advanced) {
         if (!placeString && !advanced.addImpliedPartsToBlankPlace) {
           return;
@@ -725,6 +751,98 @@ class ExtractedDataReader {
 
         placeObj.placeString = placeString;
         let existingParts = placeObj.separatePlaceIntoParts(advanced.impliedCountryName);
+
+        if (advanced.useCountyKeys && !existingParts.county) {
+          let countyName = reader.getValueUsingRecordTypeData("county");
+          let separateCountyName = countyName; // no suffix added
+
+          if (countyName) {
+            if (advanced.ignoreCountyKeyIfAlreadyInPlaceName) {
+              if (placeString.includes(countyName)) {
+                let index = placeString.indexOf(countyName);
+                let endIndex = placeString.indexOf(",", index);
+                if (endIndex == -1) {
+                  endIndex = placeString.length;
+                }
+                index += countyName.length;
+                let possCountyWord = placeString.substring(index, endIndex).trim().toLowerCase();
+                if (possCountyWord.startsWith("s ")) {
+                  // make it so a countyName of "Kristianstad" matches "Kristianstads län"
+                  possCountyWord = possCountyWord.substring(2);
+                }
+                if (possCountyWord) {
+                  if (advanced.additionalCountyWords.includes(possCountyWord)) {
+                    countyName = "";
+                  }
+                } else {
+                  countyName = "";
+                }
+              } else if (advanced.additionalCountyWords) {
+                // perhaps the county name is "Kristianstads län" r "Kristianstad län"
+                // and the place string is "Knislinge Kristianstad" or  "Knislinge Kristianstad"
+                // in those case we don't want to add the county name
+                const extract = extractCountyWordFromCountyName(countyName);
+                if (extract) {
+                  let bareCountyName = extract.bareCountyName;
+                  if (placeString.includes(bareCountyName)) {
+                    let index = placeString.indexOf(countyName);
+                    let endIndex = placeString.indexOf(",", index);
+                    if (endIndex == -1) {
+                      endIndex = placeString.length;
+                    }
+                    index += countyName.length;
+                    let remainder = placeString.substring(index, endIndex).trim();
+                    if (!remainder) {
+                      countyName = "";
+                    }
+                  }
+                }
+              }
+            }
+
+            if (countyName) {
+              if (advanced.countyWordToIncludeInPlaceString) {
+                const extract = extractCountyWordFromCountyName(countyName);
+                if (!extract) {
+                  if (advanced.countyIsGenitivePlaceString) {
+                    if (!countyName.endsWith("s")) {
+                      countyName += "s";
+                    }
+                  }
+                  countyName += " " + advanced.countyWordToIncludeInPlaceString;
+                }
+              }
+              existingParts.county = countyName;
+              addPart(countyName);
+            }
+
+            if (separateCountyName) {
+              let removedCountyWord = false;
+              const extract = extractCountyWordFromCountyName(countyName);
+              if (extract) {
+                separateCountyName = extract.bareCountyName;
+                removedCountyWord = true;
+              }
+
+              if (removedCountyWord) {
+                if (advanced.countyIsGenitivePlaceString) {
+                  if (separateCountyName.endsWith("s")) {
+                    separateCountyName = separateCountyName.substring(0, separateCountyName.length - 1);
+                  }
+                }
+              }
+
+              placeObj.county = separateCountyName; // should this ever have county word on end?
+            }
+          }
+        }
+
+        if (advanced.useStreetAddressKeys && !existingParts.streetAddress) {
+          let streetAddress = reader.getValueUsingRecordTypeData("streetAddress");
+          if (streetAddress) {
+            placeObj.streetAddress = streetAddress;
+          }
+        }
 
         if (advanced.impliedStateName) {
           if (existingParts.county) {
@@ -751,7 +869,7 @@ class ExtractedDataReader {
     }
 
     let placeObj = new PlaceObj();
-    addImpliedParts(placeObj);
+    addImpliedParts(this, placeObj);
     placeObj.placeString = placeString;
 
     if (placeString) {
@@ -848,6 +966,18 @@ class ExtractedDataReader {
     }
   }
 
+  setRecordData(recordTypeData, defaultRecordTypeData) {
+    if (recordTypeData) {
+      this.recordTypeData = recordTypeData;
+      this.recordType = recordTypeData.recordType;
+      if (recordTypeData.recordSubtype) {
+        this.recordSubtype = recordTypeData.recordSubtype;
+      }
+    } else if (defaultRecordTypeData) {
+      this.recordTypeData = defaultRecordTypeData;
+    }
+  }
+
   getFirstFoundProperty(dataObject, fieldNames) {
     let result = undefined;
     for (let fieldName of fieldNames) {
@@ -916,6 +1046,58 @@ class ExtractedDataReader {
         matchValue = matchValue.toLowerCase();
       }
       if (value == matchValue) {
+        matchFound = true;
+        break;
+      }
+    }
+    if (!matchFound) {
+      return false;
+    }
+    return true;
+  }
+
+  testForStartsWithOneOf(matchConfig, matchValues) {
+    let value = matchConfig.value;
+    if (!value) {
+      return false;
+    }
+
+    if (!matchConfig.isCaseSensitive) {
+      value = value.toLowerCase();
+    }
+
+    let matchFound = false;
+    for (let matchValue of matchValues) {
+      if (!matchConfig.isCaseSensitive) {
+        matchValue = matchValue.toLowerCase();
+      }
+      if (value.startsWith(matchValue)) {
+        matchFound = true;
+        break;
+      }
+    }
+    if (!matchFound) {
+      return false;
+    }
+    return true;
+  }
+
+  testForIncludesOneOf(matchConfig, matchValues) {
+    let value = matchConfig.value;
+    if (!value) {
+      return false;
+    }
+
+    if (!matchConfig.isCaseSensitive) {
+      value = value.toLowerCase();
+    }
+
+    let matchFound = false;
+    for (let matchValue of matchValues) {
+      if (!matchConfig.isCaseSensitive) {
+        matchValue = matchValue.toLowerCase();
+      }
+      if (value.includes(matchValue)) {
         matchFound = true;
         break;
       }
@@ -1051,6 +1233,8 @@ class ExtractedDataReader {
   // Defining the "enum" inside the class using static properties
   static MatchType = Object.freeze({
     EqualsOneOf: "EqualsOneOf",
+    StartsWithOneOf: "StartsWithOneOf",
+    IncludesOneOf: "IncludesOneOf",
     StringIncludesAllFromOneSet: "StringIncludesAllFromOneSet",
     ArrayIncludesAllFromOneSet: "ArrayIncludesAllFromOneSet",
     ObjectHasAllFromOneSet: "ObjectHasAllFromOneSet",
@@ -1075,6 +1259,12 @@ class ExtractedDataReader {
               switch (matchConfig.matchType) {
                 case ExtractedDataReader.MatchType.EqualsOneOf:
                   testPassed = this.testForEqualsOneOf(matchConfig, matchValues);
+                  break;
+                case ExtractedDataReader.MatchType.StartsWithOneOf:
+                  testPassed = this.testForStartsWithOneOf(matchConfig, matchValues);
+                  break;
+                case ExtractedDataReader.MatchType.IncludesOneOf:
+                  testPassed = this.testForIncludesOneOf(matchConfig, matchValues);
                   break;
                 case ExtractedDataReader.MatchType.StringIncludesAllFromOneSet:
                   testPassed = this.testForStringIncludesAllFromOneSet(matchConfig, matchValues);

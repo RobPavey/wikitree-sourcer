@@ -1,0 +1,65 @@
+{
+  "url": "https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505852&tab=post#tab",
+  "success": true,
+  "recordTitle": "Leif",
+  "recordType": "Census 1930",
+  "recordData": {
+    "Name": "Leif",
+    "Home parish": "Undersåker med Järpens m:e",
+    "Place of residence": "Järpens municipal Skansegan",
+    "Page in the parish register": "453",
+    "Deanery": "Undersåker",
+    "County": "Jämtland",
+    "Birth year": "1920",
+    "Birth place": "Tronhiem",
+    "Birth country": "Norge",
+    "Marital status": "Ogift",
+    "Year of arrival": "1925",
+    "Arrived from": "Lademon Trondhjem Norge",
+    "Gender": "Man",
+    "Family status": "s.",
+    "Family status code": "Barn",
+    "Family no": "1",
+    "Education": "y (ingen uppgift alls)",
+    "Page": "13",
+    "Row": "24",
+    "Created by": "Riksarkivet SVAR-Svensk arkivinformation",
+    "About the household": "Persons in the household"
+  },
+  "households": {
+    "Fam. no 1": [
+      {
+        "text": "Andersson, Erik Vollrath, b. 1896 in Ljusnarsberg Örebro län",
+        "italicEndText": "Mureriarbetare v. sulfitfabr.",
+        "link": "https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505848&tab=post#tab",
+        "linkText": "Andersson, Erik Vollrath"
+      },
+      {
+        "text": "Eriksen Gren, Olda Maria, b. 1894 in Buksnes, Norge",
+        "link": "https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505849&tab=post#tab",
+        "linkText": "Eriksen Gren, Olda Maria"
+      },
+      {
+        "text": "Mary, b. 1921 in Buksnes, Norge",
+        "link": "https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505850&tab=post#tab",
+        "linkText": "Mary"
+      },
+      {
+        "text": "Odd, b. 1925 in Undersåker Jämtlands län",
+        "link": "https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505851&tab=post#tab",
+        "linkText": "Odd"
+      },
+      {
+        "text": "Leif, b. 1920 in Tronhiem, Norge"
+      },
+      {
+        "text": "Asta, b. 1929 in Undersåker Jämtlands län",
+        "link": "https://sok.riksarkivet.se/en?Sokord=leif+eriksen&EndastDigitaliserat=false&TranskriberadText=false&AvanceradSok=False&page=1&postid=Folk_129505853&tab=post#tab",
+        "linkText": "Asta"
+      }
+    ]
+  },
+  "imageLink": "https://sok.riksarkivet.se/bildvisning/B0001207_00053",
+  "postId": "Folk_129505852",
+  "pageType": "record"
+}
