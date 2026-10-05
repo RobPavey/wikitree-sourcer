@@ -1,0 +1,39 @@
+{
+  "sourceOfData": "wadigarch",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "lastName": "Peasley",
+    "forenames": "Lyle Hamilton"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "13 Sep 1902"
+  },
+  "eventPlace": {
+    "placeString": "Thurston County, Washington, United States"
+  },
+  "lastNameAtBirth": "Peasley",
+  "mothersMaidenName": "Ames",
+  "birthDate": {
+    "dateString": "13 Sep 1902"
+  },
+  "birthPlace": {
+    "placeString": "Thurston County, Washington, United States"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Peasley",
+        "forenames": "Vernon D L"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Ames",
+        "forenames": "Mary C"
+      }
+    }
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "wadigarch",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "name": "Laurence L Anderson"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "31 Oct 1953"
+  },
+  "eventPlace": {
+    "placeString": "Grays Harbor County, Washington, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Naomi L Robinson"
+      },
+      "marriageDate": {
+        "dateString": "31 Oct 1953"
+      },
+      "marriagePlace": {
+        "placeString": "Grays Harbor County, Washington, United States"
+      }
+    }
+  ],
+  "hasValidData": true
+}

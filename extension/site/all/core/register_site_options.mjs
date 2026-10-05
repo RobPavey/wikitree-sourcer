@@ -93,6 +93,7 @@ import "../../thegen/core/thegen_options.mjs";
 import "../../trove/core/trove_options.mjs";
 import "../../ushmm/core/ushmm_options.mjs";
 import "../../vicbdm/core/vicbdm_options.mjs";
+import "../../wadigarch/core/wadigarch_options.mjs";
 import "../../wagovau/core/wagovau_options.mjs";
 import "../../wiewaswie/core/wiewaswie_options.mjs";
 import "../../wikipedia/core/wikipedia_options.mjs";
