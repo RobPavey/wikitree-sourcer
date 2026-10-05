@@ -66,6 +66,20 @@ const regressionData = [
     inputPath: "wikitree/generalized_data/ref/pavey-459_read_2025",
     typeOfSearch: "marriages",
   },
+  {
+    // woman with two spouses. This is her first marriage so her maiden name is used
+    caseName: "wikitree_ireland_connors-569_marriages_spouse_0",
+    inputPath: "wikitree/generalized_data/ref/ireland_connors-569_read",
+    typeOfSearch: "marriages",
+    searchParameters: { spouseIndex: 0 },
+  },
+  {
+    // woman with two spouses. This is her second marriage so the bride's last name is left blank
+    caseName: "wikitree_ireland_connors-569_marriages_spouse_1",
+    inputPath: "wikitree/generalized_data/ref/ireland_connors-569_read",
+    typeOfSearch: "marriages",
+    searchParameters: { spouseIndex: 1 },
+  },
 ];
 
 async function runTests(testManager) {

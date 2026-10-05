@@ -99,6 +99,37 @@ function getSpouse(gd, parameters) {
   return undefined;
 }
 
+function getMarriageYearNum(spouse) {
+  if (spouse && spouse.marriageDate) {
+    let yearNum = parseInt(spouse.marriageDate.getYearString());
+    if (!isNaN(yearNum)) {
+      return yearNum;
+    }
+  }
+  return undefined;
+}
+
+// Returns true if the person has another marriage that was (or could have been) before the one
+// with the given spouse. If the date of this marriage is not known and another marriage has
+// a date then we can't tell which came first so we assume that she was married before.
+function wasMarriedBefore(gd, spouse) {
+  if (!gd.spouses || !spouse) {
+    return false;
+  }
+
+  let thisYear = getMarriageYearNum(spouse);
+  for (let otherSpouse of gd.spouses) {
+    if (otherSpouse === spouse) {
+      continue;
+    }
+    let otherYear = getMarriageYearNum(otherSpouse);
+    if (otherYear && (!thisYear || otherYear < thisYear)) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function addYearRange(fieldData, range) {
   if (range && range.startYear) {
     fieldData["StartYear"] = range.startYear;
@@ -179,9 +210,15 @@ function buildSearchData(input) {
       }
     }
 
-    addNameFields(fieldData, personPrefix, firstName, lastName);
-
     let spouse = getSpouse(gd, parameters);
+
+    if (searchType == "marriages" && gd.personGender == "female" && wasMarriedBefore(gd, spouse)) {
+      // The last name on the marriage record would be the name from her previous marriage
+      // and that is not usually known, so do not search on the bride's last name
+      lastName = "";
+    }
+
+    addNameFields(fieldData, personPrefix, firstName, lastName);
     if (spouse && spouse.name) {
       addNameFields(fieldData, spousePrefix, getFirstForename(spouse.name), spouse.name.inferLastName());
     }
