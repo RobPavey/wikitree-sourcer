@@ -192,10 +192,8 @@ async function checkForPendingSearch() {
   //console.log("checkForPendingSearch: called");
   //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
 
-  if (document.referrer) {
-    // when this page was opened by the extension referrer is an empty string
-    return;
-  }
+  // Note: when this page was opened by the extension referrer is an empty string but when we call
+  // window.open to reuse a tab it will not be empty so we cannot return if there is a referrer.
 
   //console.log("checkForPendingSearch: URL is");
   //console.log(document.URL);

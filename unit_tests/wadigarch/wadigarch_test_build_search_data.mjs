@@ -46,6 +46,26 @@ const regressionData = [
     inputPath: "wikitree/generalized_data/ref/ellacott-59_read",
     typeOfSearch: "divorces",
   },
+  {
+    // two spouses, the first is chosen
+    caseName: "wikitree_pavey-459_marriages_spouse_0",
+    inputPath: "wikitree/generalized_data/ref/pavey-459_read_2025",
+    typeOfSearch: "marriages",
+    searchParameters: { spouseIndex: 0 },
+  },
+  {
+    // two spouses, the second is chosen
+    caseName: "wikitree_pavey-459_marriages_spouse_1",
+    inputPath: "wikitree/generalized_data/ref/pavey-459_read_2025",
+    typeOfSearch: "marriages",
+    searchParameters: { spouseIndex: 1 },
+  },
+  {
+    // two spouses and none chosen so no marriage year
+    caseName: "wikitree_pavey-459_marriages_no_spouse",
+    inputPath: "wikitree/generalized_data/ref/pavey-459_read_2025",
+    typeOfSearch: "marriages",
+  },
 ];
 
 async function runTests(testManager) {

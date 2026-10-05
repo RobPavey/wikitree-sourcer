@@ -49,8 +49,18 @@ const searchMenuConfig = {
       submenuMenuItems: [
         { menuItemText: "Search Births", typeOfSearch: "births", constraints: { dateTestType: "born" } },
         { menuItemText: "Search Deaths", typeOfSearch: "deaths", constraints: { dateTestType: "died" } },
-        { menuItemText: "Search Marriages", typeOfSearch: "marriages", constraints: { dateTestType: "married" } },
-        { menuItemText: "Search Divorces", typeOfSearch: "divorces", constraints: { dateTestType: "married" } },
+        {
+          menuItemText: "Search Marriages",
+          typeOfSearch: "marriages",
+          chooseSpouse: true,
+          constraints: { dateTestType: "married" },
+        },
+        {
+          menuItemText: "Search Divorces",
+          typeOfSearch: "divorces",
+          chooseSpouse: true,
+          constraints: { dateTestType: "married" },
+        },
       ],
     },
   },

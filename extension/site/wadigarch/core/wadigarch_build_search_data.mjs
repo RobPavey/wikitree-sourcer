@@ -67,7 +67,7 @@ function getPrimaryLastName(gd, searchType, parameters) {
     }
   }
 
-  if (parameters) {
+  if (parameters && parameters.lastNameIndex != undefined) {
     let lastNamesArray = gd.inferPersonLastNamesArray(gd);
     if (lastNamesArray.length > 0) {
       if (lastNamesArray.length == 1) {
@@ -81,18 +81,33 @@ function getPrimaryLastName(gd, searchType, parameters) {
 }
 
 function getSpouse(gd, parameters) {
-  if (parameters && parameters.spouseIndex != undefined && parameters.spouseIndex != -1 && gd.spouses) {
-    if (gd.spouses.length > parameters.spouseIndex) {
+  if (!gd.spouses || gd.spouses.length == 0) {
+    return undefined;
+  }
+
+  if (parameters && parameters.spouseIndex != undefined) {
+    // the user chose a spouse (or -1 for none)
+    if (parameters.spouseIndex >= 0 && parameters.spouseIndex < gd.spouses.length) {
       return gd.spouses[parameters.spouseIndex];
     }
+    return undefined;
   }
+
+  if (gd.spouses.length == 1) {
+    return gd.spouses[0];
+  }
+  return undefined;
 }
 
 function addYearRange(fieldData, range) {
   if (range && range.startYear) {
     fieldData["StartYear"] = range.startYear;
-    if (range.endYear && range.endYear != range.startYear) {
+    // A start year with no end year on the form means "from that year onwards"
+    // so, for an exact year, the end year must still be set
+    if (range.endYear) {
       fieldData["EndYear"] = range.endYear;
+    } else {
+      fieldData["EndYear"] = range.startYear;
     }
   }
 }
@@ -171,8 +186,20 @@ function buildSearchData(input) {
       addNameFields(fieldData, spousePrefix, getFirstForename(spouse.name), spouse.name.inferLastName());
     }
 
-    const earliestMarriageAge = 14;
-    addYearRange(fieldData, helper.getYearRangeForLifespan(birthExactness, deathExactness, earliestMarriageAge));
+    let range = undefined;
+    if (searchType == "marriages" && spouse && spouse.marriageDate) {
+      // use the year of the marriage from the profile
+      range = helper.getYearRangeForYearStringQualifiersAndExactness(
+        spouse.marriageDate.getYearString(),
+        spouse.marriageDate.qualifier,
+        options.search_wadigarch_marriageYearExactness
+      );
+    }
+    if (!range) {
+      const earliestMarriageAge = 14;
+      range = helper.getYearRangeForLifespan(birthExactness, deathExactness, earliestMarriageAge);
+    }
+    addYearRange(fieldData, range);
   }
 
   var result = {
