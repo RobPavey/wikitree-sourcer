@@ -1,11 +1,14 @@
 {
   "std": {
     "fieldData": {
-      "FirstName": "Elizabeth",
-      "LastName": "Ellacott"
+      "BrideFirstName": "Elizabeth",
+      "BrideLastName": "Ellacott",
+      "StartYear": 1817,
+      "EndYear": 1887
     },
     "selectData": {
-      "NameSearchRecordSeries": "1"
-    }
+      "RecordSeries": "1"
+    },
+    "searchType": "marriages"
   }
 }

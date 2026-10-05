@@ -39,6 +39,10 @@ const regressionData = [
     url: "https://digitalarchives.wa.gov/Record/View/A768BE7D261FC99BB94E6FD3B8FB87C7",
   },
   {
+    caseName: "dv_2016_naomie_boesel",
+    url: "https://digitalarchives.wa.gov/Record/View/8CB57B0E2C798B6939E89382131D5062",
+  },
+  {
     caseName: "m_1953_laurence_anderson",
     url: "https://digitalarchives.wa.gov/Record/View/838CF6AA22783642E42F1992562B930B",
   },

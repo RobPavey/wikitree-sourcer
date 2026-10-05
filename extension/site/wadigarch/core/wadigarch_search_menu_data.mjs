@@ -26,22 +26,20 @@ const categories = [
   { value: "births", text: "Births" },
   { value: "deaths", text: "Deaths" },
   { value: "marriages", text: "Marriages" },
-  { value: "all", text: "All Collections" },
+  { value: "divorces", text: "Divorces" },
 ];
 
-// The Digital Archives name search only has first name, last name and collection so there
-// are no parameters for parents or spouses.
 const SearchWithParametersData = {
   includeCategories: function (generalizedData, parameters) {
     return true;
   },
 
   includeSpouses: function (generalizedData, parameters) {
-    return false;
+    return parameters.category == "marriages" || parameters.category == "divorces";
   },
 
   includeParents: function (generalizedData, parameters) {
-    return false;
+    return parameters.category == "births";
   },
 
   getCategories: function (generalizedData, parameters, options) {

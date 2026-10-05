@@ -1,0 +1,35 @@
+{
+  "url": "https://digitalarchives.wa.gov/Record/View/8CB57B0E2C798B6939E89382131D5062",
+  "success": true,
+  "recordSeries": "Divorce Records",
+  "collection": "Department of Health, Divorce Index, 1969-2017",
+  "county": "Statewide",
+  "recordData": {
+    "Reference Number": "DoH_DivIndx_2015_2017_06614",
+    "Spousealegallastname": "BOESEL",
+    "Spouseafirstname": "NAOMIE",
+    "Spouseamiddlename": "C",
+    "Spouseabirthlastname": "PEASLEY",
+    "Spouseblegallastname": "BOESEL",
+    "Spousebfirstname": "BRICE",
+    "Spousebmiddlename": "L",
+    "Decreedate": "4/26/2016",
+    "Num-Of-Children": "2",
+    "Cnty-Of-Decree": "Okanogan County",
+    "Div-Plaintiff": "1"
+  },
+  "recordId": "8CB57B0E2C798B6939E89382131D5062",
+  "title": "Department of Health, Divorce Index, 1969-2017 - Boesel - Naomie - Brice - Et Al.",
+  "preferredCitation": "[Identification of item], Department of Health, Divorce Index, 1969-2017, Washington State Archives, Digital Archives, http://digitalarchives.wa.gov, [date accessed].",
+  "ambiguousPerson": true,
+  "ambiguousPersonArray": [
+    {
+      "name": "Naomie Boesel (spouse A)",
+      "id": "spouseA"
+    },
+    {
+      "name": "Brice Boesel (spouse B)",
+      "id": "spouseB"
+    }
+  ]
+}

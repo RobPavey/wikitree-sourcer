@@ -42,9 +42,9 @@ const regressionData = [
     typeOfSearch: "marriages",
   },
   {
-    caseName: "wikitree_ellacott-59_all",
+    caseName: "wikitree_ellacott-59_divorces",
     inputPath: "wikitree/generalized_data/ref/ellacott-59_read",
-    typeOfSearch: "all",
+    typeOfSearch: "divorces",
   },
 ];
 

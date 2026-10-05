@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "wadigarch",
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "name": {
+    "lastName": "Boesel",
+    "forenames": "Naomie C"
+  },
+  "eventDate": {
+    "dateString": "26 Apr 2016"
+  },
+  "eventPlace": {
+    "placeString": "Okanogan County, Washington, United States"
+  },
+  "lastNameAtBirth": "Peasley",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Boesel",
+        "forenames": "Brice L"
+      }
+    }
+  ],
+  "hasValidData": true
+}

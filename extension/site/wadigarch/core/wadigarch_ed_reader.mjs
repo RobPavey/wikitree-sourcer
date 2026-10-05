@@ -44,6 +44,21 @@ const recordSeriesData = {
     recordType: RT.Marriage,
     eventDateKeys: ["Marriage Date"],
   },
+  "Divorce Records": {
+    recordType: RT.Divorce,
+    eventDateKeys: ["Decreedate"],
+    eventPlaceKeys: ["Cnty-Of-Decree"],
+    spouseA: {
+      forenamesKeys: ["Spouseafirstname", "Spouseamiddlename"],
+      lastNameKeys: ["Spousealegallastname", "Spouseabirthlastname"],
+      birthLastNameKeys: ["Spouseabirthlastname"],
+    },
+    spouseB: {
+      forenamesKeys: ["Spousebfirstname", "Spousebmiddlename"],
+      lastNameKeys: ["Spouseblegallastname", "Spousebbirthlastname"],
+      birthLastNameKeys: ["Spousebbirthlastname"],
+    },
+  },
   "Death Records": {
     recordType: RT.Death,
     forenamesKeys: ["First Name", "Middle Name"],
@@ -100,6 +115,20 @@ class WadigarchEdReader extends ExtractedDataReader {
     return parts.join(" ");
   }
 
+  // for divorces: the person data for the primary person and the other person
+  getDivorcePersonData(wantPrimary) {
+    let primaryId = this.ed.ambiguousPersonResolvedId;
+    let primaryIsA = !primaryId || primaryId == "spouseA";
+    return primaryIsA == wantPrimary ? this.typeData.spouseA : this.typeData.spouseB;
+  }
+
+  getDivorceName(personData) {
+    let forenames = this.getNamePartsValue(personData.forenamesKeys);
+    // the legal last name comes first in the keys. If it is empty the birth last name is used.
+    let lastName = fixNameCase(this.getRecordDataValueForKeys(personData.lastNameKeys));
+    return this.makeNameObjFromForenamesAndLastName(forenames, lastName);
+  }
+
   isGroom() {
     let primaryId = this.ed.ambiguousPersonResolvedId;
     if (!primaryId) {
@@ -118,10 +147,22 @@ class WadigarchEdReader extends ExtractedDataReader {
     }
 
     // other record series are not supported (yet)
-    return this.typeData != undefined;
+    if (!this.typeData) {
+      return false;
+    }
+
+    if (this.recordType == RT.Divorce) {
+      let nameObj = this.getDivorceName(this.getDivorcePersonData(true));
+      return nameObj != undefined && nameObj.inferFullName() != "";
+    }
+    return true;
   }
 
   getNameObj() {
+    if (this.recordType == RT.Divorce) {
+      return this.getDivorceName(this.getDivorcePersonData(true));
+    }
+
     if (this.recordType == RT.Marriage) {
       let key = this.isGroom() ? "Groom's Name" : "Bride's Name";
       let fullName = this.getRecordDataValue(key);
@@ -137,11 +178,15 @@ class WadigarchEdReader extends ExtractedDataReader {
     if (this.recordType == RT.Marriage) {
       return this.isGroom() ? "male" : "female";
     }
+    if (!this.typeData.genderKeys) {
+      return "";
+    }
     let genderString = this.getRecordDataValueForKeys(this.typeData.genderKeys);
     return this.getGenderFromString(genderString, ["male", "m"], ["female", "f"], true);
   }
 
   getEventDateObj() {
+    // dates are m/d/yyyy, in the DoH divorce index they have no leading zeros
     let dateString = this.getRecordDataValueForKeys(this.typeData.eventDateKeys);
     return this.makeDateObjFromMmddyyyyDate(dateString, "/");
   }
@@ -158,6 +203,10 @@ class WadigarchEdReader extends ExtractedDataReader {
   }
 
   getLastNameAtBirth() {
+    if (this.recordType == RT.Divorce) {
+      return fixNameCase(this.getRecordDataValueForKeys(this.getDivorcePersonData(true).birthLastNameKeys));
+    }
+
     if (this.recordType == RT.Birth) {
       return this.getNamePartsValue(this.typeData.lastNameKeys);
     }
@@ -207,6 +256,14 @@ class WadigarchEdReader extends ExtractedDataReader {
   }
 
   getSpouses() {
+    if (this.recordType == RT.Divorce) {
+      let spouseNameObj = this.getDivorceName(this.getDivorcePersonData(false));
+      if (spouseNameObj && spouseNameObj.inferFullName()) {
+        return [this.makeSpouseObj(spouseNameObj)];
+      }
+      return undefined;
+    }
+
     if (this.recordType == RT.Marriage) {
       let key = this.isGroom() ? "Bride's Name" : "Groom's Name";
       let spouseName = fixNameCase(this.getRecordDataValue(key));

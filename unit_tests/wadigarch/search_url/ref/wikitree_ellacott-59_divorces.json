@@ -1,0 +1,14 @@
+{
+  "std": {
+    "fieldData": {
+      "SpouseAFirstName": "Elizabeth",
+      "SpouseALastName": "Ellacott",
+      "StartYear": 1817,
+      "EndYear": 1887
+    },
+    "selectData": {
+      "RecordSeries": "44"
+    },
+    "searchType": "divorces"
+  }
+}

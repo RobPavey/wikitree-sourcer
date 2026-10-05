@@ -2,10 +2,13 @@
   "std": {
     "fieldData": {
       "FirstName": "Elizabeth",
-      "LastName": "Ellacott"
+      "LastName": "Ellacott",
+      "StartYear": 1803,
+      "EndYear": 1808
     },
     "selectData": {
-      "NameSearchRecordSeries": "5"
-    }
+      "RecordSeries": "5"
+    },
+    "searchType": "births"
   }
 }

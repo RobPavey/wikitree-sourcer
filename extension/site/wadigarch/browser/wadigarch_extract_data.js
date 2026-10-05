@@ -31,6 +31,16 @@ function cleanText(text) {
   return text.replace(/\s+/g, " ").trim();
 }
 
+function fixCase(text) {
+  // some indexes have names in all caps
+  if (text && text == text.toUpperCase()) {
+    return text.toLowerCase().replace(/(^|[\s'-])([a-z])/g, function (match, sep, letter) {
+      return sep + letter.toUpperCase();
+    });
+  }
+  return text;
+}
+
 function extractData(document, url) {
   let result = { url: url, success: false };
 
@@ -104,6 +114,19 @@ function extractData(document, url) {
       { name: groomName + " (groom)", id: "groom" },
       { name: brideName + " (bride)", id: "bride" },
     ];
+  }
+
+  // Divorce records (in the Department of Health index) have Spouse A and Spouse B
+  if (result.recordSeries == "Divorce Records") {
+    let nameA = [recordData["Spouseafirstname"], recordData["Spousealegallastname"]].join(" ").trim();
+    let nameB = [recordData["Spousebfirstname"], recordData["Spouseblegallastname"]].join(" ").trim();
+    if (nameA && nameB) {
+      result.ambiguousPerson = true;
+      result.ambiguousPersonArray = [
+        { name: fixCase(nameA) + " (spouse A)", id: "spouseA" },
+        { name: fixCase(nameB) + " (spouse B)", id: "spouseB" },
+      ];
+    }
   }
 
   result.success = true;

@@ -114,25 +114,26 @@ async function getPendingSearch() {
 
 function setSearchingBanner() {
   // Modify the page to say it is a WikiTree Sourcer search
-  let searchPanel = document.querySelector("#searchPanel");
-  if (searchPanel && !document.querySelector("#wikitreeSourcerSearchBanner")) {
+  let container = document.querySelector("#Content");
+  if (container && !document.querySelector("#wikitreeSourcerSearchBanner")) {
     let banner = document.createElement("div");
     banner.id = "wikitreeSourcerSearchBanner";
     banner.style.cssText = "background: #ffd; border: 1px solid #cc9; padding: 6px; margin-bottom: 6px;";
-    banner.textContent = "WikiTree Sourcer is filling out the name search form. Please wait...";
-    searchPanel.insertBefore(banner, searchPanel.firstChild);
+    banner.textContent = "WikiTree Sourcer is filling out the search form. Please wait...";
+    container.insertBefore(banner, container.firstChild);
   }
 }
 
-async function waitForNameSearchForm(timeoutMs = 10000) {
+async function waitForElement(selector, timeoutMs = 10000) {
   const pollMs = 100;
   for (let waited = 0; waited < timeoutMs; waited += pollMs) {
-    if (document.querySelector("#nameSearch input[name=FirstName]")) {
-      return true;
+    let element = document.querySelector(selector);
+    if (element) {
+      return element;
     }
     await sleep(pollMs);
   }
-  return false;
+  return undefined;
 }
 
 async function doPendingSearch() {
@@ -145,32 +146,42 @@ async function doPendingSearch() {
     // clear the pending data so that we don't use it again
     pendingSearchData = undefined;
 
-    // The name search form is on the home page
-    let formFound = await waitForNameSearchForm();
-    if (!formFound) {
-      console.log("wadigarch: doPendingSearch: name search form not found");
+    // The fields on the detailed search form depend on the record series. So first select the
+    // record series, which makes the page load the fields for that series.
+    let recordSeriesSelect = await waitForElement("select#RecordSeries");
+    if (!recordSeriesSelect || !selectData || !selectData.RecordSeries) {
+      console.log("wadigarch: doPendingSearch: record series select not found");
       return;
     }
 
-    if (fieldData) {
-      for (let name of Object.keys(fieldData)) {
-        let input = document.querySelector("#nameSearch input[name=" + name + "]");
-        if (input) {
-          input.value = fieldData[name];
-        }
+    let recordSeriesId = selectData.RecordSeries;
+    recordSeriesSelect.value = recordSeriesId;
+    recordSeriesSelect.dispatchEvent(new Event("change", { bubbles: true }));
+
+    const formSelector = "#detailSearchOptions input[name=RecordSeriesID][value='" + recordSeriesId + "']";
+    let formLoaded = await waitForElement(formSelector, 20000);
+    if (!formLoaded) {
+      console.log("wadigarch: doPendingSearch: search fields did not load");
+      return;
+    }
+
+    for (let name of Object.keys(fieldData)) {
+      let input = document.querySelector("#detailSearchOptions input[name=" + name + "]");
+      if (input) {
+        input.value = fieldData[name];
       }
     }
 
-    if (selectData) {
-      for (let name of Object.keys(selectData)) {
-        let select = document.querySelector("#nameSearch select[name=" + name + "]");
+    for (let name of Object.keys(selectData)) {
+      if (name != "RecordSeries") {
+        let select = document.querySelector("#detailSearchOptions select[name=" + name + "]");
         if (select) {
           select.value = selectData[name];
         }
       }
     }
 
-    let submitButton = document.querySelector("#nameSearchSubmit");
+    let submitButton = document.querySelector("#detailSearchOptions button[type=submit]");
     if (submitButton) {
       submitButton.click();
     }

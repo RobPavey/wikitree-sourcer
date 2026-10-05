@@ -37,7 +37,7 @@ const searchMenuConfig = {
     countryList: ["United States"],
   },
   localStorageConfig: {
-    searchUrl: "https://digitalarchives.wa.gov/",
+    searchUrl: "https://digitalarchives.wa.gov/Search",
   },
   defaultMenuItem: {
     menuItemText: "Search Washington State Digital Archives (US)",
@@ -50,7 +50,7 @@ const searchMenuConfig = {
         { menuItemText: "Search Births", typeOfSearch: "births", constraints: { dateTestType: "born" } },
         { menuItemText: "Search Deaths", typeOfSearch: "deaths", constraints: { dateTestType: "died" } },
         { menuItemText: "Search Marriages", typeOfSearch: "marriages", constraints: { dateTestType: "married" } },
-        { menuItemText: "Search All Collections", typeOfSearch: "all" },
+        { menuItemText: "Search Divorces", typeOfSearch: "divorces", constraints: { dateTestType: "married" } },
       ],
     },
   },

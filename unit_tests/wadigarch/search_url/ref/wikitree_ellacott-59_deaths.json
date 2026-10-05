@@ -2,10 +2,13 @@
   "std": {
     "fieldData": {
       "FirstName": "Elizabeth",
-      "LastName": "Pavey"
+      "LastName": "Pavey",
+      "StartYear": 1883,
+      "EndYear": 1887
     },
     "selectData": {
-      "NameSearchRecordSeries": "4"
-    }
+      "RecordSeries": "4"
+    },
+    "searchType": "deaths"
   }
 }
