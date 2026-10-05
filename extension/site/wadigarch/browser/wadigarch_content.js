@@ -29,20 +29,26 @@ SOFTWARE.
 async function unregisterTabWithBackground() {
   //console.log("unregisterTabWithBackground");
 
-  // send message to background script that we have a wadigarch tab open
-  let unregisterResponse = await chrome.runtime.sendMessage({
-    type: "unregisterTab",
-    siteName: "wadigarch",
-    tab: registeredTabId,
-  });
+  // send message to background script that we no longer have a wadigarch tab open
+  // This can fail with an error like "Extension context invalidated" (or chrome.runtime being
+  // undefined) if the extension was reloaded or updated while this page was open. So we do a try/catch
+  try {
+    let unregisterResponse = await chrome.runtime.sendMessage({
+      type: "unregisterTab",
+      siteName: "wadigarch",
+      tab: registeredTabId,
+    });
 
-  //console.log("wadigarch, response from unregisterTab message");
-  //console.log(unregisterResponse);
+    //console.log("wadigarch, response from unregisterTab message");
+    //console.log(unregisterResponse);
 
-  if (chrome.runtime.lastError) {
-    // possibly there is no background script loaded, this should never happen
-    console.log("wadigarch: No response from background script, lastError message is:");
-    console.log(chrome.runtime.lastError.message);
+    if (chrome.runtime.lastError) {
+      // possibly there is no background script loaded, this should never happen
+      console.log("wadigarch: No response from background script, lastError message is:");
+      console.log(chrome.runtime.lastError.message);
+    }
+  } catch (error) {
+    // Most likely the extension was just reloaded/updated. There is nothing to unregister from.
   }
 }
 
