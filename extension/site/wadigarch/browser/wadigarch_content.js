@@ -130,6 +130,24 @@ function setSearchingBanner() {
   }
 }
 
+function removeSearchingBanner() {
+  let banner = document.querySelector("#wikitreeSourcerSearchBanner");
+  if (banner) {
+    banner.remove();
+  }
+}
+
+async function waitForHashChange(startHash, timeoutMs = 8000) {
+  const pollMs = 200;
+  for (let waited = 0; waited < timeoutMs; waited += pollMs) {
+    if (location.hash != startHash) {
+      return true;
+    }
+    await sleep(pollMs);
+  }
+  return false;
+}
+
 async function waitForElement(selector, timeoutMs = 10000) {
   const pollMs = 100;
   for (let waited = 0; waited < timeoutMs; waited += pollMs) {
@@ -157,6 +175,7 @@ async function doPendingSearch() {
     let recordSeriesSelect = await waitForElement("select#RecordSeries");
     if (!recordSeriesSelect || !selectData || !selectData.RecordSeries) {
       console.log("wadigarch: doPendingSearch: record series select not found");
+      removeSearchingBanner();
       return;
     }
 
@@ -168,6 +187,7 @@ async function doPendingSearch() {
     let formLoaded = await waitForElement(formSelector, 20000);
     if (!formLoaded) {
       console.log("wadigarch: doPendingSearch: search fields did not load");
+      removeSearchingBanner();
       return;
     }
 
@@ -189,8 +209,25 @@ async function doPendingSearch() {
 
     let submitButton = document.querySelector("#detailSearchOptions button[type=submit]");
     if (submitButton) {
+      // When the search is submitted the page posts the form and then changes the hash of the URL
+      // to the id of the search (e.g. #3) and shows the results below the form.
+      let startHash = location.hash;
       submitButton.click();
+
+      if (!(await waitForHashChange(startHash))) {
+        // the search does not seem to have started so try again once
+        console.log("wadigarch: doPendingSearch: search did not start, submitting the form again");
+        let form = submitButton.closest("form");
+        if (form && form.requestSubmit) {
+          form.requestSubmit();
+        } else {
+          submitButton.click();
+        }
+        await waitForHashChange(startHash);
+      }
     }
+
+    removeSearchingBanner();
   }
 }
 
