@@ -54,6 +54,18 @@ const regressionData = [
     url: "https://digitalarchives.wa.gov/Record/View/838CF6AA22783642E42F1992562B930B",
   },
   {
+    // Department of Health collection: separate name fields and the bride was married before.
+    // The saved page has the PDF link that the page adds once the PDF has been generated.
+    caseName: "m_1968_firman_robinson",
+    url: "https://digitalarchives.wa.gov/Record/View/2380F76B99658569BB01AC99C19AFA0F",
+  },
+  {
+    caseName: "m_1968_firman_robinson_p1",
+    url: "https://digitalarchives.wa.gov/Record/View/2380F76B99658569BB01AC99C19AFA0F",
+    pageFile: "./unit_tests/wadigarch/saved_pages/m_1968_firman_robinson.html",
+    primaryPersonIndex: 1,
+  },
+  {
     // the bride is the primary person
     caseName: "m_1953_laurence_anderson_p1",
     url: "https://digitalarchives.wa.gov/Record/View/838CF6AA22783642E42F1992562B930B",

@@ -89,10 +89,21 @@ function extractData(document, url) {
     result.preferredCitation = cleanText(preferredCitationElement.textContent);
   }
 
-  // Not all records have images. The images are PDFs that are requested using a reCAPTCHA token
-  // so there is no stable URL for them that we can extract.
+  // Not all records have images. The images are PDFs that the page requests in the background
+  // (using a reCAPTCHA token) when it is loaded. When the PDF is ready the page sets the href of the
+  // link to /DigitalObject/Download/<id>. If the popup is opened before that the link will not be there yet.
   if (document.querySelector("#digitalObjectList .document-download")) {
     result.hasImage = true;
+
+    let imageLink = document.querySelector("#digitalObjectList .document-download a[href^='/DigitalObject/Download/']");
+    if (imageLink) {
+      let href = imageLink.getAttribute("href");
+      try {
+        result.imageUrl = new URL(href, url ? url : "https://digitalarchives.wa.gov/").href;
+      } catch (e) {
+        result.imageUrl = "https://digitalarchives.wa.gov" + href;
+      }
+    }
   }
 
   result.success = true;

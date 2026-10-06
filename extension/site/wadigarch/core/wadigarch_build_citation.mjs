@@ -47,6 +47,17 @@ function buildSourceReference(ed, gd, builder) {
   builder.addSourceReferenceFieldsFromRecordData(ed.recordData, sourceReferenceFields);
 }
 
+function buildImageLink(ed, gd, builder, options) {
+  if (ed.imageUrl) {
+    builder.databaseHasImages = true;
+    if (options.citation_wadigarch_includeImageLink) {
+      builder.imageLink = "[" + ed.imageUrl + " Washington State Digital Archives Image (PDF)]";
+    }
+  } else if (ed.hasImage) {
+    builder.databaseHasImages = true;
+  }
+}
+
 function buildRecordLink(ed, gd, builder) {
   var wadigarchUrl = buildWadigarchUrl(ed, builder);
 
@@ -61,6 +72,7 @@ function buildDataList(ed, gd, builder) {
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
+  buildImageLink(ed, gd, builder, builder.getOptions());
   buildRecordLink(ed, gd, builder);
   buildDataList(ed, gd, builder);
 }

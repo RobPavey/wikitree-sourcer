@@ -43,6 +43,24 @@ const recordSeriesData = {
   "Marriage Records": {
     recordType: RT.Marriage,
     eventDateKeys: ["Marriage Date"],
+    eventPlaceKeys: ["Countyceremony", "Countyissuelicense"],
+    // Some collections have a full name for each person and others have separate fields.
+    // In the Department of Health collection the "Bride's Maiden Name" is the surname that she used
+    // before this marriage (it may be from an earlier marriage) and "Spousebbirthname" is her birth name.
+    groom: {
+      fullNameKeys: ["Groom's Name"],
+      forenamesKeys: ["Groom's First Name", "Groom's Middle Name"],
+      lastNameKeys: ["Groom's Last Name"],
+      birthLastNameKeys: ["Spouseabirthname"],
+      label: "groom",
+    },
+    bride: {
+      fullNameKeys: ["Bride's Name"],
+      forenamesKeys: ["Bride's First Name", "Bride's Middle Name"],
+      lastNameKeys: ["Bride's Maiden Name", "Bride's Last Name"],
+      birthLastNameKeys: ["Spousebbirthname"],
+      label: "bride",
+    },
   },
   "Divorce Records": {
     recordType: RT.Divorce,
@@ -131,6 +149,24 @@ class WadigarchEdReader extends ExtractedDataReader {
     return this.makeNameObjFromForenamesAndLastName(forenames, lastName);
   }
 
+  getMarriagePersonData(wantPrimary) {
+    return this.isGroom() == wantPrimary ? this.typeData.groom : this.typeData.bride;
+  }
+
+  getMarriageName(personData) {
+    let fullName = this.getRecordDataValueForKeys(personData.fullNameKeys);
+    if (fullName) {
+      return this.makeNameObjFromFullName(fixNameCase(fullName));
+    }
+
+    let forenames = this.getNamePartsValue(personData.forenamesKeys);
+    let lastName = fixNameCase(this.getRecordDataValueForKeys(personData.lastNameKeys));
+    if (forenames || lastName) {
+      return this.makeNameObjFromForenamesAndLastName(forenames, lastName);
+    }
+    return undefined;
+  }
+
   isGroom() {
     return this.primaryPersonIndex != 1;
   }
@@ -162,9 +198,7 @@ class WadigarchEdReader extends ExtractedDataReader {
     }
 
     if (this.recordType == RT.Marriage) {
-      let key = this.isGroom() ? "Groom's Name" : "Bride's Name";
-      let fullName = this.getRecordDataValue(key);
-      return this.makeNameObjFromFullName(fixNameCase(fullName));
+      return this.getMarriageName(this.getMarriagePersonData(true));
     }
 
     let forenames = this.getNamePartsValue(this.typeData.forenamesKeys);
@@ -190,19 +224,25 @@ class WadigarchEdReader extends ExtractedDataReader {
   }
 
   getEventPlaceObj() {
-    // for births and marriages the county is the county of the auditor that recorded the event
-    let placeString = "";
+    // for births and marriages in county collections the county is the county of the auditor that recorded the event
+    let county = undefined;
     if (this.typeData.eventPlaceKeys) {
-      placeString = countyToPlaceString(this.getRecordDataValueForKeys(this.typeData.eventPlaceKeys));
-    } else {
-      placeString = countyToPlaceString(this.ed.county);
+      county = this.getRecordDataValueForKeys(this.typeData.eventPlaceKeys);
     }
+    if (!county) {
+      county = this.ed.county;
+    }
+    let placeString = countyToPlaceString(county);
     return this.makePlaceObjFromFullPlaceName(placeString);
   }
 
   getLastNameAtBirth() {
     if (this.recordType == RT.Divorce) {
       return fixNameCase(this.getRecordDataValueForKeys(this.getDivorcePersonData(true).birthLastNameKeys));
+    }
+
+    if (this.recordType == RT.Marriage) {
+      return fixNameCase(this.getRecordDataValueForKeys(this.getMarriagePersonData(true).birthLastNameKeys));
     }
 
     if (this.recordType == RT.Birth) {
@@ -263,10 +303,8 @@ class WadigarchEdReader extends ExtractedDataReader {
     }
 
     if (this.recordType == RT.Marriage) {
-      let key = this.isGroom() ? "Bride's Name" : "Groom's Name";
-      let spouseName = fixNameCase(this.getRecordDataValue(key));
-      if (spouseName) {
-        let spouseNameObj = this.makeNameObjFromFullName(spouseName);
+      let spouseNameObj = this.getMarriageName(this.getMarriagePersonData(false));
+      if (spouseNameObj) {
         return [this.makeSpouseObj(spouseNameObj, this.getEventDateObj(), this.getEventPlaceObj())];
       }
     }
@@ -275,10 +313,12 @@ class WadigarchEdReader extends ExtractedDataReader {
 
   getPrimaryPersonOptions() {
     if (this.recordType == RT.Marriage) {
-      let groomName = this.getRecordDataValue("Groom's Name");
-      let brideName = this.getRecordDataValue("Bride's Name");
+      let groomNameObj = this.getMarriageName(this.typeData.groom);
+      let brideNameObj = this.getMarriageName(this.typeData.bride);
+      let groomName = groomNameObj ? groomNameObj.inferFullName() : "";
+      let brideName = brideNameObj ? brideNameObj.inferFullName() : "";
       if (groomName && brideName) {
-        return [fixNameCase(groomName) + " (groom)", fixNameCase(brideName) + " (bride)"];
+        return [groomName + " (groom)", brideName + " (bride)"];
       }
     } else if (this.recordType == RT.Divorce) {
       let nameObjA = this.getDivorceName(this.typeData.spouseA);
