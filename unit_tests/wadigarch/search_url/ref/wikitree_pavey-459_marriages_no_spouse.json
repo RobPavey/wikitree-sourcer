@@ -1,0 +1,14 @@
+{
+  "std": {
+    "fieldData": {
+      "GroomFirstName": "Ralph",
+      "GroomLastName": "Pavey",
+      "StartYear": 1903,
+      "EndYear": 1960
+    },
+    "selectData": {
+      "RecordSeries": "1"
+    },
+    "searchType": "marriages"
+  }
+}

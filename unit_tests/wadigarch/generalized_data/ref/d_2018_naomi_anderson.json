@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "wadigarch",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Anderson",
+    "forenames": "Naomi L"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "18 Jun 2018"
+  },
+  "eventPlace": {
+    "placeString": "Thurston County, Washington, United States"
+  },
+  "deathDate": {
+    "dateString": "18 Jun 2018"
+  },
+  "deathPlace": {
+    "placeString": "Thurston County, Washington, United States"
+  },
+  "ageAtDeath": "89",
+  "hasValidData": true
+}

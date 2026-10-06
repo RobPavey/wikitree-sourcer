@@ -1,0 +1,25 @@
+{
+  "url": "https://digitalarchives.wa.gov/Record/View/B02454FCE9F3FDCA509AFE934DE64318",
+  "success": true,
+  "recordSeries": "Birth Records",
+  "collection": "Thurston County Auditor, Birth Returns, 1891-1907",
+  "county": "Thurston",
+  "recordData": {
+    "Reference Number": "sw334-2-11-birthreturns-02645",
+    "Child's First Name": "Lyle",
+    "Child's Middle Name": "Hamilton",
+    "Child's Last Name": "Peasley",
+    "Birth Date": "09/13/1902",
+    "Child's Gender": "Male",
+    "Father's First Name": "Vernon",
+    "Father's Middle Name": "D L",
+    "Father's Last Name": "Peasley",
+    "Mother's First Name": "Mary",
+    "Mother's Middle Name": "C",
+    "Mother's Maiden Name": "Ames"
+  },
+  "recordId": "B02454FCE9F3FDCA509AFE934DE64318",
+  "title": "Thurston County Auditor, Birth Returns, 1891-1907 - Lyle - Hamilton - Peasley - Et Al.",
+  "preferredCitation": "[Identification of item], Thurston County Auditor, Birth Returns, 1891-1907, Washington State Archives, Digital Archives, http://digitalarchives.wa.gov, [date accessed].",
+  "hasImage": true
+}
