@@ -35,6 +35,10 @@ const regressionData = [
     url: "https://digitalarchives.wa.gov/Record/View/B02454FCE9F3FDCA509AFE934DE64318",
   },
   {
+    caseName: "bu_1991_firman_robinson",
+    url: "https://digitalarchives.wa.gov/Record/View/29E4607DE2B2EEBFF18C3835A2EF0647",
+  },
+  {
     caseName: "d_2018_naomi_anderson",
     url: "https://digitalarchives.wa.gov/Record/View/A768BE7D261FC99BB94E6FD3B8FB87C7",
   },

@@ -31,6 +31,7 @@ const recordSeriesIds = {
   deaths: "4",
   marriages: "1",
   divorces: "44",
+  cemeteries: "34",
 };
 
 function getFirstForename(nameObj) {
@@ -57,7 +58,7 @@ function getPrimaryLastName(gd, searchType, parameters) {
   let lastName = gd.inferLastName();
   if (searchType == "births") {
     lastName = gd.inferLastNameAtBirth();
-  } else if (searchType == "deaths") {
+  } else if (searchType == "deaths" || searchType == "cemeteries") {
     lastName = gd.inferLastNameAtDeath();
   } else if (searchType == "marriages" && gd.personGender == "female") {
     // the name on a marriage record is almost always the maiden name
@@ -188,6 +189,9 @@ function buildSearchData(input) {
         addNameFields(fieldData, "Mother", getFirstForename(mother), mother.inferLastName());
       }
     }
+  } else if (searchType == "cemeteries") {
+    // The cemetery records have no year range on the search form
+    addNameFields(fieldData, "", firstName, lastName);
   } else if (searchType == "deaths") {
     addNameFields(fieldData, "", firstName, lastName);
 

@@ -77,6 +77,12 @@ const recordSeriesData = {
       birthLastNameKeys: ["Spousebbirthlastname"],
     },
   },
+  "Cemetery Records": {
+    recordType: RT.Burial,
+    fullNameKeys: ["Name"],
+    eventDateKeys: ["Burial Or Cremation Year"],
+    cemeteryKeys: ["Cemetery"],
+  },
   "Death Records": {
     recordType: RT.Death,
     forenamesKeys: ["First Name", "Middle Name"],
@@ -118,6 +124,13 @@ class WadigarchEdReader extends ExtractedDataReader {
     this.typeData = recordSeriesData[ed.recordSeries];
     if (this.typeData) {
       this.recordType = this.typeData.recordType;
+
+      if (this.recordType == RT.Burial) {
+        let burialOrCremation = this.getRecordDataValue("Burial Or Cremation");
+        if (burialOrCremation && /cremat/i.test(burialOrCremation)) {
+          this.recordType = RT.Cremation;
+        }
+      }
     }
   }
 
@@ -201,6 +214,11 @@ class WadigarchEdReader extends ExtractedDataReader {
       return this.getMarriageName(this.getMarriagePersonData(true));
     }
 
+    if (this.typeData.fullNameKeys) {
+      let fullName = fixNameCase(this.getRecordDataValueForKeys(this.typeData.fullNameKeys));
+      return this.makeNameObjFromFullName(fullName);
+    }
+
     let forenames = this.getNamePartsValue(this.typeData.forenamesKeys);
     let lastName = this.getNamePartsValue(this.typeData.lastNameKeys);
     return this.makeNameObjFromForenamesAndLastName(forenames, lastName);
@@ -220,6 +238,10 @@ class WadigarchEdReader extends ExtractedDataReader {
   getEventDateObj() {
     // dates are m/d/yyyy, in the DoH divorce index they have no leading zeros
     let dateString = this.getRecordDataValueForKeys(this.typeData.eventDateKeys);
+    if (dateString && /^\d{4}$/.test(dateString)) {
+      // cemetery records only have a year
+      return this.makeDateObjFromYear(dateString);
+    }
     return this.makeDateObjFromMmddyyyyDate(dateString, "/");
   }
 
@@ -233,6 +255,12 @@ class WadigarchEdReader extends ExtractedDataReader {
       county = this.ed.county;
     }
     let placeString = countyToPlaceString(county);
+    if (this.typeData.cemeteryKeys) {
+      let cemetery = this.getRecordDataValueForKeys(this.typeData.cemeteryKeys);
+      if (cemetery) {
+        placeString = placeString ? cemetery + ", " + placeString : cemetery;
+      }
+    }
     return this.makePlaceObjFromFullPlaceName(placeString);
   }
 

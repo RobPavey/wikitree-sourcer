@@ -47,6 +47,11 @@ const regressionData = [
     typeOfSearch: "divorces",
   },
   {
+    caseName: "wikitree_ellacott-59_cemeteries",
+    inputPath: "wikitree/generalized_data/ref/ellacott-59_read",
+    typeOfSearch: "cemeteries",
+  },
+  {
     // two spouses, the first is chosen
     caseName: "wikitree_pavey-459_marriages_spouse_0",
     inputPath: "wikitree/generalized_data/ref/pavey-459_read_2025",
