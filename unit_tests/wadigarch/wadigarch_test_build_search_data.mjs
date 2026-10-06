@@ -80,6 +80,20 @@ const regressionData = [
     typeOfSearch: "marriages",
     searchParameters: { spouseIndex: 1 },
   },
+  {
+    // the "Search with specified parameters" menu gives the spouse index as a string
+    caseName: "wikitree_pavey-459_marriages_spouse_index_string",
+    inputPath: "wikitree/generalized_data/ref/pavey-459_read_2025",
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: { category: "marriages", spouseIndex: "1", lastNameIndex: 0 },
+  },
+  {
+    // "None" is chosen as the spouse
+    caseName: "wikitree_pavey-459_marriages_spouse_none",
+    inputPath: "wikitree/generalized_data/ref/pavey-459_read_2025",
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: { category: "marriages", spouseIndex: "-1", lastNameIndex: 0 },
+  },
 ];
 
 async function runTests(testManager) {

@@ -52,13 +52,13 @@ const searchMenuConfig = {
         {
           menuItemText: "Search Marriages",
           typeOfSearch: "marriages",
-          chooseSpouse: true,
+
           constraints: { dateTestType: "married" },
         },
         {
           menuItemText: "Search Divorces",
           typeOfSearch: "divorces",
-          chooseSpouse: true,
+
           constraints: { dateTestType: "married" },
         },
       ],

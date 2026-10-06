@@ -33,7 +33,6 @@ import {
   addMenuItemWithSubmenu,
   addSameRecordMenuItem,
   addBackMenuItem,
-  addItalicMessageMenuItem,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
@@ -134,38 +133,7 @@ async function doSearchFromConfig(config, gd, typeOfSearch, parameters) {
   }
 }
 
-function setupChooseSpouseSubmenuFromConfig(data, backFunction, config, menuItemConfig) {
-  let gd = data.generalizedData;
-
-  let menu = beginMainMenu();
-  addBackMenuItem(menu, backFunction);
-  addItalicMessageMenuItem(menu, "Choose which spouse to search for:");
-
-  for (let spouseIndex = 0; spouseIndex < gd.spouses.length; ++spouseIndex) {
-    let spouse = gd.spouses[spouseIndex];
-    let spouseName = spouse.name ? spouse.name.inferFullName() : "Unknown";
-    let marriageYear = spouse.marriageDate ? spouse.marriageDate.getYearString() : "";
-    let labelText = marriageYear ? spouseName + " (m. " + marriageYear + ")" : spouseName;
-    addMenuItem(menu, labelText, function (element) {
-      doSearchFromConfig(config, gd, menuItemConfig.typeOfSearch, { spouseIndex: spouseIndex });
-    });
-  }
-
-  endMainMenu(menu);
-}
-
 function addSearchMenuItemFromConfig(menu, data, backFunction, filter, config, menuItemConfig) {
-  // If the profile has several spouses then the user has to choose which one to search for
-  if (menuItemConfig.chooseSpouse) {
-    let spouses = data.generalizedData.spouses;
-    if (spouses && spouses.length > 1) {
-      addMenuItem(menu, menuItemConfig.menuItemText + "...", function (element) {
-        setupChooseSpouseSubmenuFromConfig(data, backFunction, config, menuItemConfig);
-      });
-      return;
-    }
-  }
-
   let includeDefaultSearch = menuItemConfig.includeDefaultSearch;
   let includeSearchSubmenu = menuItemConfig.includeSearchSubmenu;
 
