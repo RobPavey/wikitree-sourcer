@@ -37,6 +37,7 @@ import "../../ameranc/core/ameranc_site_data.mjs";
 import "../../ancestry/core/ancestry_site_data.mjs";
 import "../../archion/core/archion_site_data.mjs";
 import "../../archive/core/archive_site_data.mjs";
+import "../../archivesnz/core/archivesnz_site_data.mjs";
 import "../../arolsenarchives/core/arolsenarchives_site_data.mjs";
 import "../../ausmem/core/ausmem_site_data.mjs";
 import "../../baclac/core/baclac_site_data.mjs";

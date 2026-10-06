@@ -30,6 +30,7 @@ const siteNames = [
   "ancestry",
   "archion",
   "archive",
+  "archivesnz",
   "arolsenarchives",
   "ausmem",
   "baclac",
@@ -94,7 +95,7 @@ const siteNames = [
   "wiewaswie",
   "wikipedia",
   "wikitree",
-  "yadvashem"
+  "yadvashem",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {
