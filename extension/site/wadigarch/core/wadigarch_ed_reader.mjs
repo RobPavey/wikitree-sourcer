@@ -91,8 +91,11 @@ function countyToPlaceString(county) {
 }
 
 class WadigarchEdReader extends ExtractedDataReader {
-  constructor(ed) {
+  constructor(ed, primaryPersonIndex) {
     super(ed);
+
+    // Marriage and divorce records have two people and the user can choose which is the primary person
+    this.primaryPersonIndex = primaryPersonIndex;
 
     this.typeData = recordSeriesData[ed.recordSeries];
     if (this.typeData) {
@@ -117,8 +120,7 @@ class WadigarchEdReader extends ExtractedDataReader {
 
   // for divorces: the person data for the primary person and the other person
   getDivorcePersonData(wantPrimary) {
-    let primaryId = this.ed.ambiguousPersonResolvedId;
-    let primaryIsA = !primaryId || primaryId == "spouseA";
+    let primaryIsA = this.primaryPersonIndex != 1;
     return primaryIsA == wantPrimary ? this.typeData.spouseA : this.typeData.spouseB;
   }
 
@@ -130,11 +132,7 @@ class WadigarchEdReader extends ExtractedDataReader {
   }
 
   isGroom() {
-    let primaryId = this.ed.ambiguousPersonResolvedId;
-    if (!primaryId) {
-      primaryId = "groom";
-    }
-    return primaryId == "groom";
+    return this.primaryPersonIndex != 1;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -270,6 +268,25 @@ class WadigarchEdReader extends ExtractedDataReader {
       if (spouseName) {
         let spouseNameObj = this.makeNameObjFromFullName(spouseName);
         return [this.makeSpouseObj(spouseNameObj, this.getEventDateObj(), this.getEventPlaceObj())];
+      }
+    }
+    return undefined;
+  }
+
+  getPrimaryPersonOptions() {
+    if (this.recordType == RT.Marriage) {
+      let groomName = this.getRecordDataValue("Groom's Name");
+      let brideName = this.getRecordDataValue("Bride's Name");
+      if (groomName && brideName) {
+        return [fixNameCase(groomName) + " (groom)", fixNameCase(brideName) + " (bride)"];
+      }
+    } else if (this.recordType == RT.Divorce) {
+      let nameObjA = this.getDivorceName(this.typeData.spouseA);
+      let nameObjB = this.getDivorceName(this.typeData.spouseB);
+      let nameA = nameObjA ? nameObjA.inferFullName() : "";
+      let nameB = nameObjB ? nameObjB.inferFullName() : "";
+      if (nameA && nameB) {
+        return [nameA + " (spouse A)", nameB + " (spouse B)"];
       }
     }
     return undefined;

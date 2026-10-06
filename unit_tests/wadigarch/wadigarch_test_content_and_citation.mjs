@@ -43,8 +43,22 @@ const regressionData = [
     url: "https://digitalarchives.wa.gov/Record/View/8CB57B0E2C798B6939E89382131D5062",
   },
   {
+    // spouse B is the primary person
+    caseName: "dv_2016_naomie_boesel_p1",
+    url: "https://digitalarchives.wa.gov/Record/View/8CB57B0E2C798B6939E89382131D5062",
+    pageFile: "./unit_tests/wadigarch/saved_pages/dv_2016_naomie_boesel.html",
+    primaryPersonIndex: 1,
+  },
+  {
     caseName: "m_1953_laurence_anderson",
     url: "https://digitalarchives.wa.gov/Record/View/838CF6AA22783642E42F1992562B930B",
+  },
+  {
+    // the bride is the primary person
+    caseName: "m_1953_laurence_anderson_p1",
+    url: "https://digitalarchives.wa.gov/Record/View/838CF6AA22783642E42F1992562B930B",
+    pageFile: "./unit_tests/wadigarch/saved_pages/m_1953_laurence_anderson.html",
+    primaryPersonIndex: 1,
   },
 ];
 

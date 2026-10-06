@@ -27,7 +27,7 @@ import { WadigarchEdReader } from "./wadigarch_ed_reader.mjs";
 
 // This function generalizes the data extracted from the page content.
 function generalizeData(input) {
-  let edReader = new WadigarchEdReader(input.extractedData);
+  let edReader = new WadigarchEdReader(input.extractedData, input.primaryPersonIndex);
   return commonGeneralizeData("wadigarch", edReader);
 }
 

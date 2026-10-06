@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Department of Health, Divorce Index, 1969-2017\"<br/>\nWashington State Archives, Digital Archives; Reference Number: DoH_DivIndx_2015_2017_06614<br/>\n[https://digitalarchives.wa.gov/Record/View/8CB57B0E2C798B6939E89382131D5062 Washington State Digital Archives Record] (accessed 6 May 2021)<br/>\nSpousealegallastname: BOESEL; Spouseafirstname: NAOMIE; Spouseamiddlename: C; Spouseabirthlastname: PEASLEY; Spouseblegallastname: BOESEL; Spousebfirstname: BRICE; Spousebmiddlename: L; Decreedate: 4/26/2016; Num-Of-Children: 2; Cnty-Of-Decree: Okanogan County; Div-Plaintiff: 1.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Brice was divorced from Naomie C Boesel on 26 April 2016 in Okanogan County, Washington, United States.<ref>\n'''Divorce''':\n\"Department of Health, Divorce Index, 1969-2017\"<br/>\nWashington State Archives, Digital Archives; Reference Number: DoH_DivIndx_2015_2017_06614<br/>\n[https://digitalarchives.wa.gov/Record/View/8CB57B0E2C798B6939E89382131D5062 Washington State Digital Archives Record] (accessed 6 May 2021)<br/>\nSpousealegallastname: BOESEL; Spouseafirstname: NAOMIE; Spouseamiddlename: C; Spouseabirthlastname: PEASLEY; Spouseblegallastname: BOESEL; Spousebfirstname: BRICE; Spousebmiddlename: L; Decreedate: 4/26/2016; Num-Of-Children: 2; Cnty-Of-Decree: Okanogan County; Div-Plaintiff: 1.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Divorce''': \"Department of Health, Divorce Index, 1969-2017\"<br/>Washington State Archives, Digital Archives; Reference Number: DoH_DivIndx_2015_2017_06614<br/>[https://digitalarchives.wa.gov/Record/View/8CB57B0E2C798B6939E89382131D5062 Washington State Digital Archives Record] (accessed 6 May 2021)<br/>Spousealegallastname: BOESEL; Spouseafirstname: NAOMIE; Spouseamiddlename: C; Spouseabirthlastname: PEASLEY; Spouseblegallastname: BOESEL; Spousebfirstname: BRICE; Spousebmiddlename: L; Decreedate: 4/26/2016; Num-Of-Children: 2; Cnty-Of-Decree: Okanogan County; Div-Plaintiff: 1.",
+    "type": "source"
+  }
+}
