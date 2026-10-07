@@ -23,6 +23,8 @@ SOFTWARE.
 */
 
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 function buildYorkshireburialsUrl(ed, builder) {
   if (ed.recordUrl) {
@@ -64,8 +66,24 @@ function formatDate(gd, dateObj, format, highlight) {
   return gd.getNarrativeDateFormat(dateObj, format, highlight, false);
 }
 
-function getPossessivePronoun(ed) {
-  const sex = ed.sex ? ed.sex.toLowerCase() : "";
+function getPossessivePronoun(ed, gd) {
+  let sex = ed.sex ? ed.sex.toLowerCase() : "";
+  if (sex != "male" && sex != "female") {
+    // Older registers have no sex column so predict it from the forenames
+    let forenames = gd.inferForenames();
+    if (forenames && StringUtils.isAllUppercase(forenames)) {
+      forenames = NameUtils.convertNameFromAllCapsToMixedCase(forenames);
+    }
+    sex = NameUtils.predictGenderFromGivenNames(forenames);
+    if (!sex && forenames) {
+      // Registers often abbreviate names, e.g. "Wm" or "Thos."
+      let expanded = forenames.split(" ").map((name) => {
+        let base = name.replace(/\.$/, "");
+        return NameUtils.convertEnglishGivenNameFromAbbrevationToFull(base) || base;
+      });
+      sex = NameUtils.predictGenderFromGivenNames(expanded.join(" "));
+    }
+  }
   if (sex == "male") {
     return "His";
   }
@@ -214,7 +232,7 @@ function buildNarrativeText(ed, gd, options) {
 
   const residence = getFullResidence(ed, gd);
   if (residence) {
-    narrative += " " + getPossessivePronoun(ed) + " last residence was " + residence + ".";
+    narrative += " " + getPossessivePronoun(ed, gd) + " last residence was " + residence + ".";
   }
 
   return narrative;

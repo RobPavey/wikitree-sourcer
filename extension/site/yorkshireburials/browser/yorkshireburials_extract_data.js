@@ -43,7 +43,7 @@ const fieldLabels = {
   ],
   sex: ["sex", "gender"],
   eventType: ["event type"],
-  burialDate: ["date of burial", "burial date", "date buried", "event date", "date"],
+  burialDate: ["date of burial", "when buried", "burial date", "date buried", "event date", "date"],
   deathDate: ["date of death", "death date", "died"],
   age: ["age", "age at death"],
   birthYear: ["birth year", "year of birth"],
@@ -85,7 +85,7 @@ const fieldLabels = {
   minister: ["officiating minister", "minister", "by whom buried", "ceremony performed by"],
 };
 
-const ignoredLabels = ["no. buried this year", "no buried this year"];
+const ignoredLabels = ["no. buried this year", "no buried this year", "uuid"];
 
 const missingValues = ["-", "–", "—", "unknown"];
 
@@ -99,8 +99,17 @@ function cleanText(inputText) {
   return text;
 }
 
+// Each value cell on the record page has click-to-copy feedback text that is in the DOM
+// even when it is not visible, e.g. "William BATTERSBY Copied!"
+function removeCopyFeedbackText(text) {
+  if (!text) {
+    return text;
+  }
+  return text.replace(/\s*\bcopied!/gi, "");
+}
+
 function cleanLabel(inputText) {
-  let label = cleanText(inputText);
+  let label = cleanText(removeCopyFeedbackText(inputText));
   if (label) {
     // Record page labels end in a full stop, e.g. "Date of Death." or "No. of Grave."
     label = label.replace(/\s*[:.]+$/, "");
@@ -127,7 +136,7 @@ function isKnownLabel(label) {
 
 function addRecordDataValue(result, label, value) {
   label = cleanLabel(label);
-  value = cleanText(value);
+  value = cleanText(removeCopyFeedbackText(value));
   if (!label || ignoredLabels.includes(label.toLowerCase())) {
     return;
   }
@@ -148,6 +157,11 @@ function getCellText(cell, label) {
   const clone = cell.cloneNode(true);
   for (let element of clone.querySelectorAll("script, style, button, input, select, textarea")) {
     element.remove();
+  }
+  for (let element of clone.querySelectorAll("*")) {
+    if (/^\s*(?:copied!?|copy)\s*$/i.test(element.textContent)) {
+      element.remove();
+    }
   }
 
   if (cleanLabel(label).toLowerCase() == "cemetery") {

@@ -43,6 +43,10 @@ const regressionData = [
     url: "https://yorkshireburials.uk/records/?surname=smith&surname_match=exact&forenames=john+edward&event_year=1875&year_range=0",
   },
   {
+    caseName: "bur_1886_william_battersby",
+    url: "https://yorkshireburials.uk/records/view_record.php?uuid=844e975b-30d9-11f0-848c-02013c789f03",
+  },
+  {
     caseName: "bur_1931_alan_smith",
     url: "https://yorkshireburials.uk/records/view_record.php?uuid=00000000-0000-0000-0000-000000000000",
   },
