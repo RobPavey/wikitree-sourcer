@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Divorce Case File''':\nBurns, Peter John Cullen v Burns, Grete, Auckland Divorce files (Series 4985), Box 2246, Record number: D335/1969, Years: 1969 - 1969, Auckland repository<br/>\n{{Archives New Zealand|R22751256}} (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was named in a divorce case file in 1969.<ref>\n'''Divorce Case File''':\nBurns, Peter John Cullen v Burns, Grete, Auckland Divorce files (Series 4985), Box 2246, Record number: D335/1969, Years: 1969 - 1969, Auckland repository<br/>\n{{Archives New Zealand|R22751256}} (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Divorce Case File''': Burns, Peter John Cullen v Burns, Grete, Auckland Divorce files (Series 4985), Box 2246, Record number: D335/1969, Years: 1969 - 1969, Auckland repository<br/>{{Archives New Zealand|R22751256}} (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "std": {
+    "fieldData": {
+      "BrideFirstName": "Margaret",
+      "GroomFirstName": "John",
+      "GroomLastName": "Long",
+      "StartYear": 1907,
+      "EndYear": 1907
+    },
+    "selectData": {
+      "RecordSeries": "1"
+    },
+    "searchType": "marriages"
+  }
+}

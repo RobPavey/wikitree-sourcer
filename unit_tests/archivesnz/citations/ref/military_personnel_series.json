@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Military Personnel Record''':\nCULLEN, Peter Leo - WWI 27233, WWII 806614 - Army, Military Personnel Files (Series 18805), Box 17, Record number: 0030739, Years: 1914 - 1945, Wellington repository<br/>\n{{Archives New Zealand|R24055565}} (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person's military service was recorded in a personnel file between 1914 and 1945.<ref>\n'''Military Personnel Record''':\nCULLEN, Peter Leo - WWI 27233, WWII 806614 - Army, Military Personnel Files (Series 18805), Box 17, Record number: 0030739, Years: 1914 - 1945, Wellington repository<br/>\n{{Archives New Zealand|R24055565}} (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Military Personnel Record''': CULLEN, Peter Leo - WWI 27233, WWII 806614 - Army, Military Personnel Files (Series 18805), Box 17, Record number: 0030739, Years: 1914 - 1945, Wellington repository<br/>{{Archives New Zealand|R24055565}} (accessed 6 May 2021).",
+    "type": "source"
+  }
+}
