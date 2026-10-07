@@ -26,7 +26,7 @@ import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
   siteName: "yorkshireburials",
-  matches: ["*://*.yorkshireburials.uk/*"],
+  matches: ["*://yorkshireburials.uk/*", "*://www.yorkshireburials.uk/*"],
   repositoryName: "Yorkshire Burials",
   usPhoneNumber: "",
   email: "",
