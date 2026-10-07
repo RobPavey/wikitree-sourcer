@@ -87,6 +87,20 @@ function buildRecordLink(ed, gd, builder) {
   builder.recordLinkOrTemplate = ed.channelUrl ? ed.channelUrl : "https://www.youtube.com/watch?v=" + ed.videoId;
 }
 
+// The first sentences of the description, up to about 300 characters
+function buildDescriptionExcerpt(description) {
+  const maxLength = 300;
+  if (description.length <= maxLength) {
+    return description;
+  }
+  const truncated = description.substring(0, maxLength);
+  const lastSentenceEnd = truncated.lastIndexOf(". ");
+  if (lastSentenceEnd > maxLength / 2) {
+    return truncated.substring(0, lastSentenceEnd + 1);
+  }
+  return truncated.substring(0, truncated.lastIndexOf(" ")) + "...";
+}
+
 // e.g. YouTube video, 3:18:59. Posted Sunday, April 13, 1997. {{YouTube|9WEDlSvW1KY}}
 function buildDataString(ed, gd, builder) {
   let dataString = "YouTube video";
@@ -100,6 +114,10 @@ function buildDataString(ed, gd, builder) {
     if (postedDate) {
       dataString += " Posted " + postedDate + ".";
     }
+  }
+
+  if (ed.includeDescription && ed.description) {
+    dataString += ' Description: "' + buildDescriptionExcerpt(ed.description) + '"';
   }
 
   // The start time is not part of a citation of the video
@@ -116,9 +134,10 @@ function buildCoreCitation(ed, gd, builder) {
 }
 
 function buildCitation(input) {
-  // There is no person in a video to write a narrative about so a narrative citation is the same as an inline one
+  // A narrative needs a person, which the user enters. Without one it is the same as an inline citation.
   const requestedType = input.type;
-  if (requestedType == "narrative") {
+  const gd = input.generalizedData;
+  if (requestedType == "narrative" && !(gd.userOverrideForNarrative && gd.userOverrideForNarrative.trim())) {
     input = { ...input, type: "inline" };
   }
 

@@ -89,6 +89,24 @@ function extractVideoDetailsFromHtml(html, videoId) {
       parseInt(durationMatch[3] || "0", 10);
   }
 
+  // The first paragraph of the description is often a summary of the video, e.g. who is in it
+  const descriptionMatch = html.match(/"shortDescription":"((?:[^"\\]|\\.)*)"/);
+  if (descriptionMatch) {
+    try {
+      const fullDescription = JSON.parse('"' + descriptionMatch[1] + '"');
+      const firstParagraph = fullDescription
+        .trim()
+        .split(/\n\s*\n/)[0]
+        .replace(/\s+/g, " ")
+        .trim();
+      if (firstParagraph) {
+        details.description = firstParagraph.substring(0, 1000);
+      }
+    } catch (e) {
+      // The description is optional so just leave it out
+    }
+  }
+
   return details;
 }
 

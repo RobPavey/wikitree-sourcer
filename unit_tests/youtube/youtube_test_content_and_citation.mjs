@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { generalizeData } from "../../extension/site/youtube/core/youtube_generalize_data.mjs";
+import { generalizeData, regeneralizeData } from "../../extension/site/youtube/core/youtube_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/youtube/core/youtube_build_citation.mjs";
 import { buildYoutubeTemplate, parseStartTime } from "../../extension/site/youtube/core/youtube_build_template.mjs";
 
@@ -54,6 +54,18 @@ const regressionData = [
     // The citation is built from the channel, upload date and duration. The channel is in a template.
     caseName: "usc_shoah_franz_wohlfahrt",
     url: "https://www.youtube.com/watch?v=9WEDlSvW1KY",
+    optionVariants: [
+      {
+        // The user enters the person in the video and asks for the start of the description
+        variantName: "person",
+        newData: { personName: "Franz Wohlfahrt", personAction: "interviewed", includeDescription: "yes" },
+      },
+    ],
+  },
+  {
+    // No title, so the template has no link text unless it is needed to hold the place of the start time
+    caseName: "no_title_with_playlist",
+    url: "https://www.youtube.com/watch?v=fyYpCuoJEWw&list=PLEqK4ICkQWXRBBVI7xaL0AIIPck_x0TcC",
   },
   {
     // The head of the page is left over from a different video so its details must not be used
@@ -117,7 +129,7 @@ async function runTests(testManager) {
 
   await runGeneralizeDataTests("youtube", generalizeData, regressionData, testManager);
 
-  const functions = { buildCitation: buildCitation };
+  const functions = { buildCitation: buildCitation, regeneralizeData: regeneralizeData };
   await runBuildCitationTests("youtube", functions, regressionData, testManager);
 
   await runBuildTemplateTests(testManager);
