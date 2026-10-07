@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Cremation''':\n\"Yorkshire Burials\"<br/>\nLawnswood Cemetery & Crematorium, Leeds, Yorkshire; Register: Cremation Reg. Vol 011, Page 18, Entry 6337<br/>\n[https://yorkshireburials.uk/records/view_record.php?uuid=84f847e5-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>\nWilliam John Battersby died on 22 Apr 1945 at age 78, and was cremated on 25 Apr 1945 at Lawnswood Cemetery & Crematorium, Leeds, Yorkshire, England.<br/>\nRank/Profession: clerk in Holy Orders<br/>\nMarital status: widower<br/>\nDeath registered in: Leeds Burmantofts<br/>\nAshes: removed to be interred at Penshaw church, Co. Durh<br/>\nApplicant: Felix John Battersby (executor) of Watendlath, Tinshill Lane, Horsforth.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "William John Battersby died on 22 Apr 1945 at age 78, and was cremated on 25 Apr 1945 at Lawnswood Cemetery & Crematorium, Leeds, Yorkshire, England.<ref>\n'''Cremation''':\n\"Yorkshire Burials\"<br/>\nLawnswood Cemetery & Crematorium, Leeds, Yorkshire; Register: Cremation Reg. Vol 011, Page 18, Entry 6337<br/>\n[https://yorkshireburials.uk/records/view_record.php?uuid=84f847e5-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>\nWilliam John Battersby died on 22 Apr 1945 at age 78, and was cremated on 25 Apr 1945 at Lawnswood Cemetery & Crematorium, Leeds, Yorkshire, England.<br/>\nRank/Profession: clerk in Holy Orders<br/>\nMarital status: widower<br/>\nDeath registered in: Leeds Burmantofts<br/>\nAshes: removed to be interred at Penshaw church, Co. Durh<br/>\nApplicant: Felix John Battersby (executor) of Watendlath, Tinshill Lane, Horsforth.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Cremation''': \"Yorkshire Burials\"<br/>Lawnswood Cemetery & Crematorium, Leeds, Yorkshire; Register: Cremation Reg. Vol 011, Page 18, Entry 6337<br/>[https://yorkshireburials.uk/records/view_record.php?uuid=84f847e5-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>William John Battersby died on 22 Apr 1945 at age 78, and was cremated on 25 Apr 1945 at Lawnswood Cemetery & Crematorium, Leeds, Yorkshire, England.<br/>Rank/Profession: clerk in Holy Orders<br/>Marital status: widower<br/>Death registered in: Leeds Burmantofts<br/>Ashes: removed to be interred at Penshaw church, Co. Durh<br/>Applicant: Felix John Battersby (executor) of Watendlath, Tinshill Lane, Horsforth.",
+    "type": "source"
+  }
+}

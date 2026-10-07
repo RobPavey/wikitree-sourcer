@@ -100,3 +100,4 @@ import "../../wiewaswie/core/wiewaswie_options.mjs";
 import "../../wikipedia/core/wikipedia_options.mjs";
 import "../../wikitree/core/wikitree_options.mjs";
 import "../../yadvashem/core/yadvashem_options.mjs";
+import "../../yorkshireburials/core/yorkshireburials_options.mjs";

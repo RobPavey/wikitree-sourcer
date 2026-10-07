@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "yorkshireburials",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Alan"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "17 November 1931"
+  },
+  "eventPlace": {
+    "placeString": "Leeds General Cemetery (Woodhouse), Leeds, Yorkshire, England",
+    "county": "Yorkshire",
+    "country": "England"
+  },
+  "lastNameAtDeath": "Smith",
+  "birthPlace": {
+    "placeString": "Leeds"
+  },
+  "deathDate": {
+    "dateString": "13 November 1931"
+  },
+  "residencePlace": {
+    "placeString": "5 Graham View, Cardigan Road, Leeds, Yorkshire, England",
+    "streetAddress": "5 Graham View, Cardigan Road",
+    "county": "Yorkshire",
+    "country": "England"
+  },
+  "ageAtDeath": "3 years 3 months",
+  "occupation": "Boy",
+  "hasValidData": true
+}
