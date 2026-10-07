@@ -1,0 +1,26 @@
+{
+  "url": "https://yorkshireburials.uk/records/?surname=smith&surname_match=exact&forenames=john+edward&event_year=1875&year_range=0",
+  "success": true,
+  "recordData": {
+    "Name": "John Edward SMITH",
+    "Sex": "Male",
+    "Age": "35 years",
+    "Birth Year": "1840",
+    "Event Date": "13 January 1875",
+    "Area": "Leeds",
+    "Cemetery": "Hunslet Cemetery",
+    "Grave": "Unconsecrated, Sec Old, No. 501"
+  },
+  "pageType": "searchResult",
+  "recordUrl": "https://yorkshireburials.uk/records/view_record.php?uuid=849bcea7-30d9-11f0-848c-02013c789f03",
+  "burialDateIso": "1875-01-13",
+  "name": "John Edward SMITH",
+  "sex": "Male",
+  "burialDate": "13 January 1875",
+  "age": "35 years",
+  "birthYear": "1840",
+  "cemetery": "Hunslet Cemetery",
+  "parish": "Leeds",
+  "county": "Yorkshire",
+  "graveReference": "Unconsecrated, Sec Old, No. 501"
+}

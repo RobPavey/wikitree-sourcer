@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Yorkshire Burials\"<br/>\nHunslet Cemetery, Leeds, Yorkshire; Grave: Unconsecrated, Sec Old, No. 5928<br/>\n[https://yorkshireburials.uk/records/view_record.php?uuid=849bb965-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>\nJohn Smith burial (died age 12 days) on 20 Feb 1875 at Hunslet Cemetery, Leeds, Yorkshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John (age 12 days) was buried on 20 February 1875 at Hunslet Cemetery, Leeds, Yorkshire, England.<ref>\n'''Burial''':\n\"Yorkshire Burials\"<br/>\nHunslet Cemetery, Leeds, Yorkshire; Grave: Unconsecrated, Sec Old, No. 5928<br/>\n[https://yorkshireburials.uk/records/view_record.php?uuid=849bb965-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>\nJohn Smith burial (died age 12 days) on 20 Feb 1875 at Hunslet Cemetery, Leeds, Yorkshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Yorkshire Burials\"<br/>Hunslet Cemetery, Leeds, Yorkshire; Grave: Unconsecrated, Sec Old, No. 5928<br/>[https://yorkshireburials.uk/records/view_record.php?uuid=849bb965-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>John Smith burial (died age 12 days) on 20 Feb 1875 at Hunslet Cemetery, Leeds, Yorkshire, England.",
+    "type": "source"
+  }
+}
