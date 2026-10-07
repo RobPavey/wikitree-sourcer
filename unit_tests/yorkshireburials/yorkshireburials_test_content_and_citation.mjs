@@ -47,6 +47,14 @@ const regressionData = [
     url: "https://yorkshireburials.uk/records/view_record.php?uuid=844e975b-30d9-11f0-848c-02013c789f03",
   },
   {
+    caseName: "cre_1945_william_john_battersby",
+    url: "https://yorkshireburials.uk/records/view_record.php?uuid=84f847e5-30d9-11f0-848c-02013c789f03",
+  },
+  {
+    caseName: "bur_1918_annie_bagshaw",
+    url: "https://yorkshireburials.uk/records/view_record.php?uuid=8619f067-30d9-11f0-848c-02013c789f03",
+  },
+  {
     caseName: "bur_1931_alan_smith",
     url: "https://yorkshireburials.uk/records/view_record.php?uuid=00000000-0000-0000-0000-000000000000",
   },

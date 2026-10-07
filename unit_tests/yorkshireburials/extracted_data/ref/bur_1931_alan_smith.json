@@ -18,11 +18,13 @@
     "Residence": "5 Graham View, Cardigan Road",
     "Where Born": "Leeds",
     "Christian Name and Surname of Father and Mother": "Thomas & Eliza SMITH",
-    "Addition of Father or Mother": "Crane Driver"
+    "Addition of Father or Mother": "Crane Driver",
+    "Transcriber's Notes": "Informants Signature: A Clayforth"
   },
   "pageType": "record",
   "recordUrl": "https://yorkshireburials.uk/records/view_record.php?uuid=00000000-0000-0000-0000-000000000000",
   "name": "Alan SMITH",
+  "eventType": "Burial",
   "sex": "Male",
   "burialDate": "17 November 1931",
   "deathDate": "13 November 1931",
@@ -35,6 +37,8 @@
   "whereBorn": "Leeds",
   "parentsNames": "Thomas & Eliza SMITH",
   "parentsOccupation": "Crane Driver",
+  "transcriberNotes": "Informants Signature: A Clayforth",
+  "informant": "A Clayforth",
   "county": "Yorkshire",
   "graveReference": "No. 7254",
   "registerReference": "Reg. 23 1930-1936, Page 46"

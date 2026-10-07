@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
+import { RT } from "../../../base/core/record_type.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
@@ -66,7 +67,27 @@ function formatDate(gd, dateObj, format, highlight) {
   return gd.getNarrativeDateFormat(dateObj, format, highlight, false);
 }
 
-function getPossessivePronoun(ed, gd) {
+function isCremation(gd) {
+  return gd.recordType == RT.Cremation;
+}
+
+// e.g. "Felix John BATTERSBY" becomes "Felix John Battersby"
+function getMixedCaseName(name) {
+  if (!name) {
+    return "";
+  }
+  return name
+    .split(" ")
+    .map((word) => {
+      if (/^[A-Z][A-Z'’-]*[A-Z]$/.test(word)) {
+        return NameUtils.convertNameFromAllCapsToMixedCase(word);
+      }
+      return word;
+    })
+    .join(" ");
+}
+
+function getSex(ed, gd) {
   let sex = ed.sex ? ed.sex.toLowerCase() : "";
   if (sex != "male" && sex != "female") {
     // Older registers have no sex column so predict it from the forenames
@@ -84,6 +105,11 @@ function getPossessivePronoun(ed, gd) {
       sex = NameUtils.predictGenderFromGivenNames(expanded.join(" "));
     }
   }
+  return sex == "male" || sex == "female" ? sex : "";
+}
+
+function getPossessivePronoun(ed, gd) {
+  const sex = getSex(ed, gd);
   if (sex == "male") {
     return "His";
   }
@@ -91,6 +117,22 @@ function getPossessivePronoun(ed, gd) {
     return "Her";
   }
   return "Their";
+}
+
+// e.g. "Felix John Battersby (executor) of Watendlath, Tinshill Lane, Horsforth"
+function getApplicantString(ed) {
+  if (!ed.applicantName) {
+    return "";
+  }
+  let applicant = getMixedCaseName(ed.applicantName);
+  const details = [ed.applicantRelation, ed.applicantOccupation].filter(Boolean);
+  if (details.length) {
+    applicant += " (" + details.join(", ") + ")";
+  }
+  if (ed.applicantAddress) {
+    applicant += " of " + ed.applicantAddress.replace(/[\s.,]+$/, "");
+  }
+  return applicant;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -130,38 +172,83 @@ function buildRecordLink(ed, gd, builder) {
   builder.recordLinkOrTemplate = "[" + yorkshireburialsUrl + " " + linkText + "]";
 }
 
-// e.g. "Alan Smith burial (died age 41) on 20 Apr 1875 in Beckett Street Cemetery, Leeds, Yorkshire, England."
-function buildDataSentence(ed, gd, builder) {
-  const options = builder.getOptions();
+// e.g. "Annie Bagshaw died on 31 Oct 1918 at age 29, and was buried on 4 Nov 1918 in Leeds General Cemetery
+// (Woodhouse), Leeds, Yorkshire, England." or, with no death date,
+// "John Smith was buried on 20 Apr 1875 at age 41 in Beckett Street Cemetery, Leeds, Yorkshire, England."
+function getEventSentence(ed, gd, options) {
   const dateFormat = options.citation_general_dataStringDateFormat;
-
-  let dataString = getFullName(ed, gd) + " burial";
+  const cremation = isCremation(gd);
 
   const age = getAgeString(gd);
-  const burialDate = formatDate(gd, gd.eventDate, dateFormat, false);
+  const ageString = age ? " at age " + age : "";
+  const eventDate = formatDate(gd, gd.eventDate, dateFormat, false);
   const deathDate = formatDate(gd, gd.deathDate, dateFormat, false);
 
-  if (burialDate) {
-    if (age) {
-      dataString += " (died age " + age + ")";
-    }
-    dataString += " on " + burialDate;
-  } else if (deathDate) {
-    dataString += " (died on " + deathDate;
-    if (age) {
-      dataString += " at age " + age;
-    }
-    dataString += ")";
-  } else if (age) {
-    dataString += " (died age " + age + ")";
+  let sentence = getFullName(ed, gd);
+  let eventClause = cremation ? "was cremated" : "was buried";
+  if (eventDate) {
+    eventClause += " on " + eventDate;
+  }
+
+  if (deathDate) {
+    sentence += " died on " + deathDate + ageString + ", and " + eventClause;
+  } else {
+    sentence += " " + eventClause + ageString;
   }
 
   const place = getPlaceString(gd);
   if (place) {
-    dataString += " in " + place;
+    sentence += (cremation ? " at " : " in ") + place;
+  }
+  return sentence + ".";
+}
+
+function buildDataSentence(ed, gd, builder) {
+  const options = builder.getOptions();
+  let dataString = getEventSentence(ed, gd, options);
+
+  if (options.citation_yorkshireburials_includeAdditionalDetails) {
+    const details = getAdditionalDetails(ed, gd);
+    if (details.length) {
+      const useBreaks = options.citation_general_target == "wikitree" && options.citation_general_addBreaksWithinBody;
+      let separator = useBreaks ? "<br/>" : "; ";
+      if (useBreaks && builder.type != "source" && options.citation_general_addNewlinesWithinBody) {
+        separator += "\n";
+      }
+      dataString += (useBreaks ? separator : " ") + details.join(separator);
+    }
   }
 
-  builder.dataString = dataString + ".";
+  builder.dataString = dataString;
+}
+
+function getParentsString(ed) {
+  if (!ed.parentsNames) {
+    return "";
+  }
+  let parents = getMixedCaseName(ed.parentsNames);
+  if (ed.parentsOccupation) {
+    parents += " (" + ed.parentsOccupation + ")";
+  }
+  return parents;
+}
+
+// e.g. ["Parents' names: James & Jane Ellen Holmes (Iron Founder)", "Where born: Leeds"]
+function getAdditionalDetails(ed, gd) {
+  const fields = [
+    { label: "Parents' names", value: getParentsString(ed) },
+    { label: "Where born", value: ed.whereBorn },
+    { label: "Residence", value: getFullResidence(ed, gd) },
+    { label: "Disease", value: ed.disease },
+    { label: "Rank/Profession", value: ed.trade },
+    { label: "Marital status", value: ed.maritalStatus },
+    { label: "Death registered in", value: ed.deathRegistrationDistrict },
+    { label: "Ashes", value: ed.ashesDisposal },
+    { label: "Applicant", value: getApplicantString(ed) },
+    { label: "Informant", value: getMixedCaseName(ed.informant) },
+    { label: "Minister", value: ed.minister },
+  ];
+  return fields.filter((field) => field.value).map((field) => field.label + ": " + field.value);
 }
 
 function buildDataList(ed, gd, builder) {
@@ -171,14 +258,20 @@ function buildDataList(ed, gd, builder) {
     { key: "Age", value: ed.age },
     { key: "Date of Death", value: ed.deathDate },
     { key: "Date of Burial", value: ed.burialDate },
+    { key: "Date of Cremation", value: ed.cremationDate },
+    { key: "District where Death Registered", value: ed.deathRegistrationDistrict },
     { key: "Disease", value: ed.disease },
-    { key: "Rank, Trade, or Profession", value: ed.trade },
+    { key: "Occupation", value: ed.trade },
+    { key: "Marital Status", value: ed.maritalStatus },
     { key: "Residence", value: getFullResidence(ed, gd) },
     { key: "Where Born", value: ed.whereBorn },
     { key: "Parents", value: ed.parentsNames },
     { key: "Addition of Father or Mother", value: ed.parentsOccupation },
     { key: "Informant", value: ed.informant },
     { key: "Officiating Minister", value: ed.minister },
+    { key: "Applicant for Cremation", value: getApplicantString(ed) },
+    { key: "How Ashes were Disposed of", value: ed.ashesDisposal },
+    { key: "Receipt No.", value: ed.receiptNumber },
   ];
   builder.addListDataString(fields.filter((field) => field.value));
 }
@@ -197,38 +290,19 @@ function buildDataString(ed, gd, builder) {
 // Narrative
 ////////////////////////////////////////////////////////////////////////////////
 
-// e.g. "Alan Smith (age 41) died on 16 April 1875 and was buried on 20 April 1875 in
-// Beckett Street Cemetery, Leeds, Yorkshire, England. His last residence was Cavalier Street."
+// The other details are only included in the citation, e.g.
+// "Alan Smith burial (died on 16 Apr 1875 at age 41) on 20 Apr 1875 in Beckett Street Cemetery, Leeds,
+// Yorkshire, England. Cause of death: Phthisis. His last residence was Cavalier Street, Leeds, Yorkshire, England."
 function buildNarrativeText(ed, gd, options) {
-  const dateFormat = options.narrative_general_dateFormat;
-  const highlight = options.narrative_general_dateHighlight;
-
-  const burialDate = formatDate(gd, gd.eventDate, dateFormat, highlight);
-  const deathDate = formatDate(gd, gd.deathDate, dateFormat, highlight);
-  if (!burialDate && !deathDate) {
+  if (!gd.eventDate && !gd.deathDate) {
     return "";
   }
 
-  let narrative = getFullName(ed, gd);
+  let narrative = getEventSentence(ed, gd, options);
 
-  const age = getAgeString(gd);
-  if (age) {
-    narrative += " (age " + age + ")";
+  if (ed.disease) {
+    narrative += " Cause of death: " + ed.disease.replace(/[\s.]+$/, "") + ".";
   }
-
-  if (deathDate && burialDate) {
-    narrative += " died on " + deathDate + " and was buried on " + burialDate;
-  } else if (burialDate) {
-    narrative += " was buried on " + burialDate;
-  } else {
-    narrative += " died on " + deathDate;
-  }
-
-  const place = getPlaceString(gd);
-  if (place) {
-    narrative += " in " + place;
-  }
-  narrative += ".";
 
   const residence = getFullResidence(ed, gd);
   if (residence) {

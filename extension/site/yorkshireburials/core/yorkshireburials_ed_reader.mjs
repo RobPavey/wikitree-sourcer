@@ -43,7 +43,7 @@ const baseRecordTypeData = {
       edKeys: ["sex"],
     },
     eventDate: {
-      edKeys: ["burialDate"],
+      edKeys: ["burialDate", "cremationDate"],
     },
     deathDate: {
       edKeys: ["deathDate"],
@@ -58,6 +58,17 @@ const burialRecordTypeData = {
   recordType: RT.Burial,
 };
 
+const cremationRecordTypeData = {
+  recordType: RT.Cremation,
+};
+
+function isCremation(ed) {
+  if (ed.eventType) {
+    return /cremation/i.test(ed.eventType);
+  }
+  return ed.cremationDate && !ed.burialDate ? true : false;
+}
+
 function getCorrectlyCasedPlaceName(placeName) {
   if (placeName && StringUtils.isAllUppercase(placeName)) {
     return NameUtils.convertNameFromAllCapsToMixedCase(placeName);
@@ -69,8 +80,13 @@ class YorkshireburialsEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
     this.baseRecordTypeData = baseRecordTypeData;
-    this.recordTypeData = burialRecordTypeData;
-    this.recordType = RT.Burial;
+    if (isCremation(ed)) {
+      this.recordTypeData = cremationRecordTypeData;
+      this.recordType = RT.Cremation;
+    } else {
+      this.recordTypeData = burialRecordTypeData;
+      this.recordType = RT.Burial;
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -170,6 +186,14 @@ class YorkshireburialsEdReader extends ExtractedDataReader {
 
   getOccupation() {
     return this.ed.trade;
+  }
+
+  getMaritalStatus() {
+    return this.ed.maritalStatus;
+  }
+
+  getRegistrationDistrict() {
+    return this.ed.deathRegistrationDistrict;
   }
 }
 

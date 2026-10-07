@@ -44,21 +44,25 @@ const fieldLabels = {
   sex: ["sex", "gender"],
   eventType: ["event type"],
   burialDate: ["date of burial", "when buried", "burial date", "date buried", "event date", "date"],
+  cremationDate: ["date of cremation", "cremation date", "when cremated"],
   deathDate: ["date of death", "death date", "died"],
+  maritalStatus: ["whether married or unmarried", "marital status", "condition"],
   age: ["age", "age at death"],
   birthYear: ["birth year", "year of birth"],
   cemetery: ["cemetery", "burial ground", "churchyard", "church"],
   parish: ["parish", "area", "township"],
   county: ["county"],
   grave: ["grave", "grave reference", "grave details", "grave ref", "plot"],
-  graveType: ["grave type", "consecration"],
+  graveType: ["grave type", "consecration", "type"],
   graveSection: ["grave section", "section"],
-  graveNumber: ["no. of grave", "no of grave", "grave number", "grave no", "grave no."],
+  graveNumber: ["no. of grave", "no of grave", "grave number", "grave no", "grave no.", "number"],
   register: ["register", "register book", "register volume"],
   registerPage: ["page", "register page", "page no", "page no."],
-  registerEntry: ["register entry", "entry", "entry no", "entry no.", "entry number"],
+  registerEntry: ["register entry", "entry", "entry no", "entry no.", "entry number", "no"],
+  receiptNumber: ["receipt no", "receipt number"],
   disease: ["disease", "cause of death"],
   trade: [
+    "occupation of deceased",
     "rank, trade, or profession",
     "rank, trade or profession",
     "rank, profession or occupation",
@@ -68,7 +72,13 @@ const fieldLabels = {
     "profession",
     "description",
   ],
-  residence: ["residence", "abode", "address", "last residence"],
+  residence: ["residence of deceased", "residence", "abode", "address", "last residence"],
+  deathRegistrationDistrict: ["district where death has been registered", "district where death registered"],
+  ashesDisposal: ["how ashes were disposed of", "disposal of ashes"],
+  applicantName: ["name of person who applied for cremation"],
+  applicantOccupation: ["occupation of person who applied for cremation"],
+  applicantAddress: ["address of person who applied for cremation"],
+  applicantRelation: ["relation of person who applied for cremation"],
   whereBorn: ["where born", "place of birth", "birth place", "birthplace"],
   parentsNames: [
     "christian name and surname of father and mother",
@@ -83,6 +93,7 @@ const fieldLabels = {
   ],
   informant: ["signature of informant", "informant"],
   minister: ["officiating minister", "minister", "by whom buried", "ceremony performed by"],
+  transcriberNotes: ["transcriber's notes", "transcriber’s notes", "transcriber notes", "notes"],
 };
 
 const ignoredLabels = ["no. buried this year", "no buried this year", "uuid"];
@@ -284,9 +295,12 @@ function setStandardFields(result) {
   }
 
   const simpleFields = [
+    "eventType",
     "sex",
     "burialDate",
+    "cremationDate",
     "deathDate",
+    "maritalStatus",
     "age",
     "birthYear",
     "cemetery",
@@ -299,11 +313,28 @@ function setStandardFields(result) {
     "parentsOccupation",
     "informant",
     "minister",
+    "deathRegistrationDistrict",
+    "ashesDisposal",
+    "applicantName",
+    "applicantOccupation",
+    "applicantAddress",
+    "applicantRelation",
+    "receiptNumber",
+    "transcriberNotes",
   ];
   for (let fieldName of simpleFields) {
     let value = getRecordDataValueForField(recordData, fieldName);
     if (value) {
       result[fieldName] = value;
+    }
+  }
+
+  if (!result.informant && result.transcriberNotes) {
+    // The informant is sometimes only in the notes, e.g. "Informants Signature: A. Bagshaw"
+    const informantRegex = /(?:informant'?s?\s+signature|signature\s+of\s+informant|informant)\s*:\s*([^;\n]+)/i;
+    const informantMatch = result.transcriberNotes.match(informantRegex);
+    if (informantMatch) {
+      result.informant = cleanText(informantMatch[1]).replace(/[.,]$/, "");
     }
   }
 
@@ -501,12 +532,27 @@ function extractLabelValuePairsFromBoldLabels(container, result) {
   }
 }
 
+// The notes are in the separate "Transcription Details" table
+function extractTranscriberNotes(container, recordTable, result) {
+  for (let table of container.querySelectorAll("table")) {
+    if (table == recordTable) {
+      continue;
+    }
+    for (let row of getTableRows(table)) {
+      const cells = getRowCells(row);
+      if (cells.length == 2 && fieldLabels.transcriberNotes.includes(cleanLabel(cells[0].textContent).toLowerCase())) {
+        addRecordDataValue(result, cells[0].textContent, getCellText(cells[1], cells[0].textContent));
+      }
+    }
+  }
+}
+
 function extractNameFromHeading(container) {
-  const genericHeadingWords = /yorkshire burials|burial record|record details|search|report/i;
+  const genericHeadingWords = /yorkshire burials|burial record|cremation record|record details|search|report/i;
   const headings = container.querySelectorAll("h1, h2");
   for (let heading of headings) {
-    // e.g. "Burial Record: Alan SMITH"
-    const text = cleanText(heading.textContent).replace(/^burial record\s*:\s*/i, "");
+    // e.g. "Burial Record: Alan SMITH" or "Cremation Record: William John BATTERSBY"
+    const text = cleanText(heading.textContent).replace(/^\w+ record\s*:\s*/i, "");
     if (text && !genericHeadingWords.test(text)) {
       return text;
     }
@@ -526,6 +572,7 @@ function extractDataFromRecordPage(document, result) {
   const recordTable = findRecordTable(container);
   if (recordTable) {
     extractLabelValuePairsFromTable(recordTable, result);
+    extractTranscriberNotes(container, recordTable, result);
   } else {
     extractLabelValuePairsFromTables(container, result);
     extractLabelValuePairsFromDefinitionLists(container, result);

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Yorkshire Burials\"<br/>\nLeeds General Cemetery (Woodhouse), Leeds, Yorkshire; Grave: No. 739; Register: Reg. 20 1915-1918, Page 137<br/>\n[https://yorkshireburials.uk/records/view_record.php?uuid=8619f067-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>\nAnnie Bagshaw died on 31 Oct 1918 at age 29, and was buried on 4 Nov 1918 in Leeds General Cemetery (Woodhouse), Leeds, Yorkshire, England.<br/>\nParents' names: James & Jane Ellen Holmes (Iron Founder)<br/>\nWhere born: Leeds<br/>\nResidence: 38 Harold View, Leeds, Yorkshire, England<br/>\nDisease: Influenza, Pneumonia<br/>\nRank/Profession: Wife<br/>\nInformant: A. Bagshaw.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Annie Bagshaw died on 31 Oct 1918 at age 29, and was buried on 4 Nov 1918 in Leeds General Cemetery (Woodhouse), Leeds, Yorkshire, England. Cause of death: Influenza, Pneumonia. Her last residence was 38 Harold View, Leeds, Yorkshire, England.<ref>\n'''Burial''':\n\"Yorkshire Burials\"<br/>\nLeeds General Cemetery (Woodhouse), Leeds, Yorkshire; Grave: No. 739; Register: Reg. 20 1915-1918, Page 137<br/>\n[https://yorkshireburials.uk/records/view_record.php?uuid=8619f067-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>\nAnnie Bagshaw died on 31 Oct 1918 at age 29, and was buried on 4 Nov 1918 in Leeds General Cemetery (Woodhouse), Leeds, Yorkshire, England.<br/>\nParents' names: James & Jane Ellen Holmes (Iron Founder)<br/>\nWhere born: Leeds<br/>\nResidence: 38 Harold View, Leeds, Yorkshire, England<br/>\nDisease: Influenza, Pneumonia<br/>\nRank/Profession: Wife<br/>\nInformant: A. Bagshaw.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Yorkshire Burials\"<br/>Leeds General Cemetery (Woodhouse), Leeds, Yorkshire; Grave: No. 739; Register: Reg. 20 1915-1918, Page 137<br/>[https://yorkshireburials.uk/records/view_record.php?uuid=8619f067-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>Annie Bagshaw died on 31 Oct 1918 at age 29, and was buried on 4 Nov 1918 in Leeds General Cemetery (Woodhouse), Leeds, Yorkshire, England.<br/>Parents' names: James & Jane Ellen Holmes (Iron Founder)<br/>Where born: Leeds<br/>Residence: 38 Harold View, Leeds, Yorkshire, England<br/>Disease: Influenza, Pneumonia<br/>Rank/Profession: Wife<br/>Informant: A. Bagshaw.",
+    "type": "source"
+  }
+}

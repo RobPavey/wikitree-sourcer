@@ -115,6 +115,12 @@ const citationOptionsGroup = {
       ],
       defaultValue: "string",
     },
+    {
+      optionName: "includeAdditionalDetails",
+      type: "checkbox",
+      label: "Add other details (parents, where born, residence, disease etc.) after the data sentence",
+      defaultValue: true,
+    },
   ],
 };
 
