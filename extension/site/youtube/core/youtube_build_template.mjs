@@ -73,10 +73,13 @@ function buildYoutubeTemplate(ed, startSeconds, useTitleAsText = true) {
   }
 
   // The link text is optional. If it is left out the template uses its own text and an icon that links to the video.
-  const title = useTitleAsText && ed.title ? escapeTemplateParameter(ed.title.trim()) : "";
-
-  if (title || startSeconds !== undefined) {
-    // the start time is the third parameter so the text, even if empty, holds its place
+  let title = useTitleAsText && ed.title ? escapeTemplateParameter(ed.title.trim()) : "";
+  if (!title && startSeconds !== undefined) {
+    // The start time is the third parameter so there has to be a second one to hold its place. Use the
+    // template's own default text rather than leaving it empty.
+    title = "video";
+  }
+  if (title) {
     template += "|" + title;
   }
 
