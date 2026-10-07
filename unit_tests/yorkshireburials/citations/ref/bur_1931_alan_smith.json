@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Yorkshire Burials\"<br/>\nLeeds General Cemetery (Woodhouse), Leeds, Yorkshire; Grave: No. 7254; Register: Reg. 23 1930-1936, Page 46<br/>\n[https://yorkshireburials.uk/records/view_record.php?uuid=00000000-0000-0000-0000-000000000000 Yorkshire Burials Record] (accessed 6 May 2021)<br/>\nAlan Smith burial (died age 3 years 3 months) on 17 Nov 1931 in Leeds General Cemetery (Woodhouse), Leeds, Yorkshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Alan Smith (age 3 years 3 months) died on 13 November 1931 and was buried on 17 November 1931 in Leeds General Cemetery (Woodhouse), Leeds, Yorkshire, England. His last residence was 5 Graham View, Cardigan Road, Leeds, Yorkshire, England.<ref>\n'''Burial''':\n\"Yorkshire Burials\"<br/>\nLeeds General Cemetery (Woodhouse), Leeds, Yorkshire; Grave: No. 7254; Register: Reg. 23 1930-1936, Page 46<br/>\n[https://yorkshireburials.uk/records/view_record.php?uuid=00000000-0000-0000-0000-000000000000 Yorkshire Burials Record] (accessed 6 May 2021)<br/>\nAlan Smith burial (died age 3 years 3 months) on 17 Nov 1931 in Leeds General Cemetery (Woodhouse), Leeds, Yorkshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Yorkshire Burials\"<br/>Leeds General Cemetery (Woodhouse), Leeds, Yorkshire; Grave: No. 7254; Register: Reg. 23 1930-1936, Page 46<br/>[https://yorkshireburials.uk/records/view_record.php?uuid=00000000-0000-0000-0000-000000000000 Yorkshire Burials Record] (accessed 6 May 2021)<br/>Alan Smith burial (died age 3 years 3 months) on 17 Nov 1931 in Leeds General Cemetery (Woodhouse), Leeds, Yorkshire, England.",
+    "type": "source"
+  }
+}

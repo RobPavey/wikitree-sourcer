@@ -42,6 +42,7 @@ const fieldLabels = {
     "first names",
   ],
   sex: ["sex", "gender"],
+  eventType: ["event type"],
   burialDate: ["date of burial", "burial date", "date buried", "event date", "date"],
   deathDate: ["date of death", "death date", "died"],
   age: ["age", "age at death"],
@@ -56,9 +57,37 @@ const fieldLabels = {
   register: ["register", "register book", "register volume"],
   registerPage: ["page", "register page", "page no", "page no."],
   registerEntry: ["register entry", "entry", "entry no", "entry no.", "entry number"],
-  abode: ["abode", "address", "residence"],
-  trade: ["trade", "occupation", "description"],
+  disease: ["disease", "cause of death"],
+  trade: [
+    "rank, trade, or profession",
+    "rank, trade or profession",
+    "rank, profession or occupation",
+    "rank or profession",
+    "trade",
+    "occupation",
+    "profession",
+    "description",
+  ],
+  residence: ["residence", "abode", "address", "last residence"],
+  whereBorn: ["where born", "place of birth", "birth place", "birthplace"],
+  parentsNames: [
+    "christian name and surname of father and mother",
+    "christian names and surname of father and mother",
+    "names of parents",
+    "parents",
+  ],
+  parentsOccupation: [
+    "addition of father or mother",
+    "addition of father and mother",
+    "occupation of father or mother",
+  ],
+  informant: ["signature of informant", "informant"],
+  minister: ["officiating minister", "minister", "by whom buried", "ceremony performed by"],
 };
+
+const ignoredLabels = ["no. buried this year", "no buried this year"];
+
+const missingValues = ["-", "–", "—", "unknown"];
 
 function cleanText(inputText) {
   let text = inputText;
@@ -73,17 +102,74 @@ function cleanText(inputText) {
 function cleanLabel(inputText) {
   let label = cleanText(inputText);
   if (label) {
-    label = label.replace(/\s*:$/, "");
+    // Record page labels end in a full stop, e.g. "Date of Death." or "No. of Grave."
+    label = label.replace(/\s*[:.]+$/, "");
   }
   return label;
+}
+
+function isMissingValue(value) {
+  return !value || missingValues.includes(value.toLowerCase());
+}
+
+function isKnownLabel(label) {
+  const lcLabel = cleanLabel(label).toLowerCase();
+  if (ignoredLabels.includes(lcLabel)) {
+    return true;
+  }
+  for (let fieldName of Object.keys(fieldLabels)) {
+    if (fieldLabels[fieldName].includes(lcLabel)) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function addRecordDataValue(result, label, value) {
   label = cleanLabel(label);
   value = cleanText(value);
-  if (label && value && !result.recordData[label]) {
+  if (!label || ignoredLabels.includes(label.toLowerCase())) {
+    return;
+  }
+  if (!isMissingValue(value) && !result.recordData[label]) {
     result.recordData[label] = value;
   }
+}
+
+function cleanCemeteryName(cemetery) {
+  // The cemetery cell can have a summary after the name, e.g.
+  // "Beckett Street Cemetery 2 sections · 25 registers"
+  let name = cemetery.replace(/\s*[·•|].*$/, "");
+  name = name.replace(/\s+\d+\s+(?:sections?|registers?|records?|burials?)\b.*$/i, "");
+  return cleanText(name);
+}
+
+function getCellText(cell, label) {
+  const clone = cell.cloneNode(true);
+  for (let element of clone.querySelectorAll("script, style, button, input, select, textarea")) {
+    element.remove();
+  }
+
+  if (cleanLabel(label).toLowerCase() == "cemetery") {
+    // The cemetery name may be a link followed by secondary links or muted subtext
+    const link = clone.querySelector("a");
+    if (link && cleanText(link.textContent)) {
+      return cleanCemeteryName(link.textContent);
+    }
+    for (let element of clone.querySelectorAll("small, .small, .text-muted, .form-text")) {
+      element.remove();
+    }
+    let text = "";
+    for (let node of clone.childNodes) {
+      if (node.nodeName == "BR") {
+        break;
+      }
+      text += node.textContent;
+    }
+    return cleanCemeteryName(text);
+  }
+
+  return clone.textContent;
 }
 
 function getRecordDataValueForField(recordData, fieldName) {
@@ -183,7 +269,23 @@ function setStandardFields(result) {
     result.forenames = forenames;
   }
 
-  const simpleFields = ["sex", "burialDate", "deathDate", "age", "birthYear", "cemetery", "parish", "abode", "trade"];
+  const simpleFields = [
+    "sex",
+    "burialDate",
+    "deathDate",
+    "age",
+    "birthYear",
+    "cemetery",
+    "parish",
+    "disease",
+    "trade",
+    "residence",
+    "whereBorn",
+    "parentsNames",
+    "parentsOccupation",
+    "informant",
+    "minister",
+  ];
   for (let fieldName of simpleFields) {
     let value = getRecordDataValueForField(recordData, fieldName);
     if (value) {
@@ -244,7 +346,8 @@ function extractDataFromSearchResultRow(resultsTable, row, result) {
   }
 
   for (let index = 0; index < cells.length; index++) {
-    addRecordDataValue(result, headings[index].textContent, cells[index].textContent);
+    const label = headings[index].textContent;
+    addRecordDataValue(result, label, getCellText(cells[index], label));
 
     const link = cells[index].querySelector("a[href*='view_record']");
     if (link) {
@@ -267,21 +370,58 @@ function isHeaderOnlyRow(row) {
   return cells.length > 0 && row.querySelectorAll("th").length == cells.length;
 }
 
-function extractLabelValuePairsFromTables(container, result) {
-  const rows = container.querySelectorAll("table tr");
+function getRowCells(row) {
+  // only direct cells so that nested tables are not mixed in
+  return Array.from(row.children).filter((cell) => cell.tagName == "TH" || cell.tagName == "TD");
+}
+
+function getTableRows(table) {
+  return Array.from(table.querySelectorAll("tr")).filter((row) => row.closest("table") == table);
+}
+
+function countKnownLabelsInTable(table) {
+  let count = 0;
+  for (let row of getTableRows(table)) {
+    for (let cell of getRowCells(row)) {
+      if (isKnownLabel(cell.textContent)) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+function findRecordTable(container) {
+  // The record page can have other tables (e.g. other burials in the grave) so pick the
+  // table that has the most recognized field labels
+  let bestTable = undefined;
+  let bestCount = 0;
+  for (let table of container.querySelectorAll("table")) {
+    const count = countKnownLabelsInTable(table);
+    if (count > bestCount) {
+      bestTable = table;
+      bestCount = count;
+    }
+  }
+  return bestTable;
+}
+
+function extractLabelValuePairsFromTable(table, result) {
+  const rows = getTableRows(table);
   for (let rowIndex = 0; rowIndex < rows.length; rowIndex++) {
     const row = rows[rowIndex];
-    const cells = row.querySelectorAll("th, td");
+    const cells = getRowCells(row);
 
     // Column layout: a row of labels followed by a row of values
     // e.g. | Register | Page | No. of Grave |
     //      | 12       | 34   | 5678         |
     if (isHeaderOnlyRow(row) && cells.length > 2 && rowIndex + 1 < rows.length) {
       const valueRow = rows[rowIndex + 1];
-      const valueCells = valueRow.querySelectorAll("td");
+      const valueCells = getRowCells(valueRow);
       if (!isHeaderOnlyRow(valueRow) && valueCells.length == cells.length) {
         for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
-          addRecordDataValue(result, cells[cellIndex].textContent, valueCells[cellIndex].textContent);
+          const label = cells[cellIndex].textContent;
+          addRecordDataValue(result, label, getCellText(valueCells[cellIndex], label));
         }
         rowIndex++;
         continue;
@@ -292,9 +432,16 @@ function extractLabelValuePairsFromTables(container, result) {
     // e.g. | Date of Burial | 20 April 1875 | Date of Death | 17 April 1875 |
     if (cells.length >= 2 && cells.length % 2 == 0) {
       for (let cellIndex = 0; cellIndex < cells.length; cellIndex += 2) {
-        addRecordDataValue(result, cells[cellIndex].textContent, cells[cellIndex + 1].textContent);
+        const label = cells[cellIndex].textContent;
+        addRecordDataValue(result, label, getCellText(cells[cellIndex + 1], label));
       }
     }
+  }
+}
+
+function extractLabelValuePairsFromTables(container, result) {
+  for (let table of container.querySelectorAll("table")) {
+    extractLabelValuePairsFromTable(table, result);
   }
 }
 
@@ -344,7 +491,8 @@ function extractNameFromHeading(container) {
   const genericHeadingWords = /yorkshire burials|burial record|record details|search|report/i;
   const headings = container.querySelectorAll("h1, h2");
   for (let heading of headings) {
-    const text = cleanText(heading.textContent);
+    // e.g. "Burial Record: Alan SMITH"
+    const text = cleanText(heading.textContent).replace(/^burial record\s*:\s*/i, "");
     if (text && !genericHeadingWords.test(text)) {
       return text;
     }
@@ -361,9 +509,14 @@ function extractDataFromRecordPage(document, result) {
     return;
   }
 
-  extractLabelValuePairsFromTables(container, result);
-  extractLabelValuePairsFromDefinitionLists(container, result);
-  extractLabelValuePairsFromBoldLabels(container, result);
+  const recordTable = findRecordTable(container);
+  if (recordTable) {
+    extractLabelValuePairsFromTable(recordTable, result);
+  } else {
+    extractLabelValuePairsFromTables(container, result);
+    extractLabelValuePairsFromDefinitionLists(container, result);
+    extractLabelValuePairsFromBoldLabels(container, result);
+  }
 
   if (!getRecordDataValueForField(result.recordData, "name")) {
     const name = extractNameFromHeading(container);

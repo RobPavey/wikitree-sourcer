@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 
 function buildYorkshireburialsUrl(ed, builder) {
   if (ed.recordUrl) {
@@ -30,6 +30,54 @@ function buildYorkshireburialsUrl(ed, builder) {
   }
   return ed.url;
 }
+
+function getFullName(ed, gd) {
+  const fullName = gd.inferFullName();
+  if (fullName) {
+    return fullName;
+  }
+  return ed.name;
+}
+
+function getPlaceString(gd) {
+  if (gd.eventPlace && gd.eventPlace.placeString) {
+    return gd.eventPlace.placeString;
+  }
+  return "";
+}
+
+function getFullResidence(ed, gd) {
+  if (gd.residencePlace && gd.residencePlace.placeString) {
+    return gd.residencePlace.placeString;
+  }
+  return ed.residence ? ed.residence.replace(/[\s.,]+$/, "") : "";
+}
+
+function getAgeString(gd) {
+  return gd.ageAtDeath ? gd.ageAtDeath : "";
+}
+
+function formatDate(gd, dateObj, format, highlight) {
+  if (!dateObj) {
+    return "";
+  }
+  return gd.getNarrativeDateFormat(dateObj, format, highlight, false);
+}
+
+function getPossessivePronoun(ed) {
+  const sex = ed.sex ? ed.sex.toLowerCase() : "";
+  if (sex == "male") {
+    return "His";
+  }
+  if (sex == "female") {
+    return "Her";
+  }
+  return "Their";
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Citation parts
+////////////////////////////////////////////////////////////////////////////////
 
 function buildSourceTitle(ed, gd, builder) {
   builder.sourceTitle = "Yorkshire Burials";
@@ -64,15 +112,55 @@ function buildRecordLink(ed, gd, builder) {
   builder.recordLinkOrTemplate = "[" + yorkshireburialsUrl + " " + linkText + "]";
 }
 
+// e.g. "Alan Smith burial (died age 41) on 20 Apr 1875 in Beckett Street Cemetery, Leeds, Yorkshire, England."
+function buildDataSentence(ed, gd, builder) {
+  const options = builder.getOptions();
+  const dateFormat = options.citation_general_dataStringDateFormat;
+
+  let dataString = getFullName(ed, gd) + " burial";
+
+  const age = getAgeString(gd);
+  const burialDate = formatDate(gd, gd.eventDate, dateFormat, false);
+  const deathDate = formatDate(gd, gd.deathDate, dateFormat, false);
+
+  if (burialDate) {
+    if (age) {
+      dataString += " (died age " + age + ")";
+    }
+    dataString += " on " + burialDate;
+  } else if (deathDate) {
+    dataString += " (died on " + deathDate;
+    if (age) {
+      dataString += " at age " + age;
+    }
+    dataString += ")";
+  } else if (age) {
+    dataString += " (died age " + age + ")";
+  }
+
+  const place = getPlaceString(gd);
+  if (place) {
+    dataString += " in " + place;
+  }
+
+  builder.dataString = dataString + ".";
+}
+
 function buildDataList(ed, gd, builder) {
   const fields = [
     { key: "Name", value: ed.name },
     { key: "Sex", value: ed.sex },
     { key: "Age", value: ed.age },
-    { key: "Death Date", value: ed.deathDate },
-    { key: "Burial Date", value: ed.burialDate },
-    { key: "Abode", value: ed.abode },
-    { key: "Trade", value: ed.trade },
+    { key: "Date of Death", value: ed.deathDate },
+    { key: "Date of Burial", value: ed.burialDate },
+    { key: "Disease", value: ed.disease },
+    { key: "Rank, Trade, or Profession", value: ed.trade },
+    { key: "Residence", value: getFullResidence(ed, gd) },
+    { key: "Where Born", value: ed.whereBorn },
+    { key: "Parents", value: ed.parentsNames },
+    { key: "Addition of Father or Mother", value: ed.parentsOccupation },
+    { key: "Informant", value: ed.informant },
+    { key: "Officiating Minister", value: ed.minister },
   ];
   builder.addListDataString(fields.filter((field) => field.value));
 }
@@ -81,11 +169,75 @@ function buildDataString(ed, gd, builder) {
   const dataStyle = builder.getOptions().citation_yorkshireburials_dataStyle;
 
   if (dataStyle == "string") {
-    builder.addStandardDataString(gd);
+    buildDataSentence(ed, gd, builder);
   } else if (dataStyle == "list") {
     buildDataList(ed, gd, builder);
   }
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// Narrative
+////////////////////////////////////////////////////////////////////////////////
+
+// e.g. "Alan Smith (age 41) died on 16 April 1875 and was buried on 20 April 1875 in
+// Beckett Street Cemetery, Leeds, Yorkshire, England. His last residence was Cavalier Street."
+function buildNarrativeText(ed, gd, options) {
+  const dateFormat = options.narrative_general_dateFormat;
+  const highlight = options.narrative_general_dateHighlight;
+
+  const burialDate = formatDate(gd, gd.eventDate, dateFormat, highlight);
+  const deathDate = formatDate(gd, gd.deathDate, dateFormat, highlight);
+  if (!burialDate && !deathDate) {
+    return "";
+  }
+
+  let narrative = getFullName(ed, gd);
+
+  const age = getAgeString(gd);
+  if (age) {
+    narrative += " (age " + age + ")";
+  }
+
+  if (deathDate && burialDate) {
+    narrative += " died on " + deathDate + " and was buried on " + burialDate;
+  } else if (burialDate) {
+    narrative += " was buried on " + burialDate;
+  } else {
+    narrative += " died on " + deathDate;
+  }
+
+  const place = getPlaceString(gd);
+  if (place) {
+    narrative += " in " + place;
+  }
+  narrative += ".";
+
+  const residence = getFullResidence(ed, gd);
+  if (residence) {
+    narrative += " " + getPossessivePronoun(ed) + " last residence was " + residence + ".";
+  }
+
+  return narrative;
+}
+
+function addNarrative(ed, gd, builder, dataCache) {
+  const options = builder.getOptions();
+
+  // A narrative the user has edited in the popup takes priority
+  if (!(gd.userOverrideForNarrative && gd.userOverrideForNarrative.trim())) {
+    const narrative = buildNarrativeText(ed, gd, options);
+    if (narrative) {
+      builder.narrative = narrative;
+      return;
+    }
+  }
+
+  builder.addNarrative(gd, dataCache, options);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Main entry point
+////////////////////////////////////////////////////////////////////////////////
 
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
@@ -95,7 +247,23 @@ function buildCoreCitation(ed, gd, builder) {
 }
 
 function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
+  const ed = input.extractedData;
+  const gd = input.generalizedData;
+  const type = input.type; // "inline", "narrative" or "source"
+
+  let builder = new CitationBuilder(type, input.runDate, input.options);
+  if (input.householdTableString) {
+    builder.householdTableString = input.householdTableString;
+  }
+
+  buildCoreCitation(ed, gd, builder);
+  builder.meaningfulTitle = gd.getRefTitle();
+
+  if (type == "narrative") {
+    addNarrative(ed, gd, builder, input.dataCache);
+  }
+
+  return builder.getCitationObject(gd, ed.url);
 }
 
 export { buildCitation };

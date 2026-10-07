@@ -122,6 +122,38 @@ class YorkshireburialsEdReader extends ExtractedDataReader {
     return undefined;
   }
 
+  getResidencePlaceObj() {
+    // e.g. "5 Graham View, Cardigan Road" becomes "5 Graham View, Cardigan Road, Leeds, Yorkshire, England"
+    let residence = this.ed.residence;
+    if (!residence) {
+      return undefined;
+    }
+
+    let parts = [residence.replace(/[\s.,]+$/, "")];
+    for (let part of [this.ed.parish, this.ed.county, "England"]) {
+      if (part && !parts.join(", ").toLowerCase().includes(part.toLowerCase())) {
+        parts.push(getCorrectlyCasedPlaceName(part));
+      }
+    }
+
+    let placeObj = this.makePlaceObjFromFullPlaceName(parts.join(", "));
+    if (placeObj) {
+      placeObj.streetAddress = residence;
+      if (this.ed.county) {
+        placeObj.county = this.ed.county;
+      }
+      placeObj.country = "England";
+    }
+    return placeObj;
+  }
+
+  getBirthPlaceObj() {
+    if (this.ed.whereBorn) {
+      return this.makePlaceObjFromFullPlaceName(getCorrectlyCasedPlaceName(this.ed.whereBorn));
+    }
+    return undefined;
+  }
+
   getAgeAtDeath() {
     let age = this.ed.age;
     if (!age) {
