@@ -103,3 +103,4 @@ import "../../wiewaswie/core/wiewaswie_site_data.mjs";
 import "../../wikipedia/core/wikipedia_site_data.mjs";
 import "../../wikitree/core/wikitree_site_data.mjs";
 import "../../yadvashem/core/yadvashem_site_data.mjs";
+import "../../youtube/core/youtube_site_data.mjs";
