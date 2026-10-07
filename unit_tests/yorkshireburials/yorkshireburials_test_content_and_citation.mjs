@@ -42,6 +42,10 @@ const regressionData = [
     caseName: "bur_1875_john_edward_smith_single",
     url: "https://yorkshireburials.uk/records/?surname=smith&surname_match=exact&forenames=john+edward&event_year=1875&year_range=0",
   },
+  {
+    caseName: "bur_record_page_field_table",
+    url: "https://yorkshireburials.uk/records/view_record.php?uuid=83e0d2ab-30d9-11f0-848c-02013c789f03",
+  },
 ];
 
 async function runTests(testManager) {

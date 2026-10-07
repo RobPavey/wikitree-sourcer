@@ -30,11 +30,20 @@ const defaultCounty = "Yorkshire";
 // Maps the ed field names to the labels that the site uses for them.
 // Search result column headings and record page labels are both included.
 const fieldLabels = {
-  name: ["name", "full name", "deceased"],
+  name: ["christian name and surname", "christian name & surname", "name", "full name", "deceased"],
   surname: ["surname", "last name"],
-  forenames: ["forenames", "forename", "forename(s)", "given names", "first names"],
+  forenames: [
+    "forenames",
+    "forename",
+    "forename(s)",
+    "christian name",
+    "christian names",
+    "given names",
+    "first names",
+  ],
   sex: ["sex", "gender"],
-  burialDate: ["burial date", "date of burial", "date buried", "event date", "date"],
+  burialDate: ["date of burial", "burial date", "date buried", "event date", "date"],
+  deathDate: ["date of death", "death date", "died"],
   age: ["age", "age at death"],
   birthYear: ["birth year", "year of birth"],
   cemetery: ["cemetery", "burial ground", "churchyard", "church"],
@@ -43,8 +52,9 @@ const fieldLabels = {
   grave: ["grave", "grave reference", "grave details", "grave ref", "plot"],
   graveType: ["grave type", "consecration"],
   graveSection: ["grave section", "section"],
-  graveNumber: ["grave number", "grave no", "grave no."],
+  graveNumber: ["no. of grave", "no of grave", "grave number", "grave no", "grave no."],
   register: ["register", "register book", "register volume"],
+  registerPage: ["page", "register page", "page no", "page no."],
   registerEntry: ["register entry", "entry", "entry no", "entry no.", "entry number"],
   abode: ["abode", "address", "residence"],
   trade: ["trade", "occupation", "description"],
@@ -77,10 +87,13 @@ function addRecordDataValue(result, label, value) {
 }
 
 function getRecordDataValueForField(recordData, fieldName) {
-  const labels = fieldLabels[fieldName];
-  for (let key of Object.keys(recordData)) {
-    if (labels.includes(key.toLowerCase())) {
-      return recordData[key];
+  // labels are in priority order, e.g. "date of burial" is preferred over a generic "date"
+  const keys = Object.keys(recordData);
+  for (let label of fieldLabels[fieldName]) {
+    for (let key of keys) {
+      if (key.toLowerCase() == label) {
+        return recordData[key];
+      }
     }
   }
   return "";
@@ -116,9 +129,13 @@ function buildRegisterReference(result) {
   if (register) {
     parts.push(register);
   }
+  let registerPage = getRecordDataValueForField(result.recordData, "registerPage");
+  if (registerPage) {
+    parts.push("Page " + registerPage);
+  }
   let registerEntry = getRecordDataValueForField(result.recordData, "registerEntry");
   if (registerEntry) {
-    if (register) {
+    if (parts.length) {
       parts.push("Entry " + registerEntry);
     } else {
       parts.push(registerEntry);
@@ -166,7 +183,7 @@ function setStandardFields(result) {
     result.forenames = forenames;
   }
 
-  const simpleFields = ["sex", "burialDate", "age", "birthYear", "cemetery", "parish", "abode", "trade"];
+  const simpleFields = ["sex", "burialDate", "deathDate", "age", "birthYear", "cemetery", "parish", "abode", "trade"];
   for (let fieldName of simpleFields) {
     let value = getRecordDataValueForField(recordData, fieldName);
     if (value) {
@@ -245,12 +262,38 @@ function extractDataFromSearchResultRow(resultsTable, row, result) {
 // Record page
 ////////////////////////////////////////////////////////////////////////////////
 
+function isHeaderOnlyRow(row) {
+  const cells = row.querySelectorAll("th, td");
+  return cells.length > 0 && row.querySelectorAll("th").length == cells.length;
+}
+
 function extractLabelValuePairsFromTables(container, result) {
   const rows = container.querySelectorAll("table tr");
-  for (let row of rows) {
+  for (let rowIndex = 0; rowIndex < rows.length; rowIndex++) {
+    const row = rows[rowIndex];
     const cells = row.querySelectorAll("th, td");
-    if (cells.length == 2) {
-      addRecordDataValue(result, cells[0].textContent, cells[1].textContent);
+
+    // Column layout: a row of labels followed by a row of values
+    // e.g. | Register | Page | No. of Grave |
+    //      | 12       | 34   | 5678         |
+    if (isHeaderOnlyRow(row) && cells.length > 2 && rowIndex + 1 < rows.length) {
+      const valueRow = rows[rowIndex + 1];
+      const valueCells = valueRow.querySelectorAll("td");
+      if (!isHeaderOnlyRow(valueRow) && valueCells.length == cells.length) {
+        for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
+          addRecordDataValue(result, cells[cellIndex].textContent, valueCells[cellIndex].textContent);
+        }
+        rowIndex++;
+        continue;
+      }
+    }
+
+    // Row layout: one or more label/value pairs per row
+    // e.g. | Date of Burial | 20 April 1875 | Date of Death | 17 April 1875 |
+    if (cells.length >= 2 && cells.length % 2 == 0) {
+      for (let cellIndex = 0; cellIndex < cells.length; cellIndex += 2) {
+        addRecordDataValue(result, cells[cellIndex].textContent, cells[cellIndex + 1].textContent);
+      }
     }
   }
 }
@@ -336,10 +379,23 @@ function extractDataFromRecordPage(document, result) {
 // Main entry point
 ////////////////////////////////////////////////////////////////////////////////
 
+function isRecordPage(url) {
+  if (!url) {
+    return false;
+  }
+
+  const recordPathRegex = /\/records\/view_record\.php$/i;
+  try {
+    return recordPathRegex.test(new URL(url).pathname);
+  } catch (error) {
+    return /\/records\/view_record\.php(?:[?#]|$)/i.test(url);
+  }
+}
+
 function extractData(document, url) {
   let result = { url: url, success: false, recordData: {} };
 
-  if (url && url.includes("view_record.php")) {
+  if (isRecordPage(url)) {
     result.pageType = "record";
     extractDataFromRecordPage(document, result);
   } else {

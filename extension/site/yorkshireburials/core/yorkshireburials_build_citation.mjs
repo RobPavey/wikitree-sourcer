@@ -50,7 +50,7 @@ function buildSourceReference(ed, gd, builder) {
     builder.addSourceReferenceField("Grave", ed.graveReference);
   }
   if (options.citation_yorkshireburials_includeRegisterReference) {
-    builder.addSourceReferenceField("Register Entry", ed.registerReference);
+    builder.addSourceReferenceField("Register", ed.registerReference);
   }
 }
 
@@ -69,6 +69,7 @@ function buildDataList(ed, gd, builder) {
     { key: "Name", value: ed.name },
     { key: "Sex", value: ed.sex },
     { key: "Age", value: ed.age },
+    { key: "Death Date", value: ed.deathDate },
     { key: "Burial Date", value: ed.burialDate },
     { key: "Abode", value: ed.abode },
     { key: "Trade", value: ed.trade },

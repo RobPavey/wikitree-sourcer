@@ -45,6 +45,9 @@ const baseRecordTypeData = {
     eventDate: {
       edKeys: ["burialDate"],
     },
+    deathDate: {
+      edKeys: ["deathDate"],
+    },
   },
   advancedNameRules: {
     inFullNameLastNamesIsInUpperCase: true,
