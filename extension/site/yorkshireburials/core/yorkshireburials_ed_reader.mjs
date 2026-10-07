@@ -144,6 +144,8 @@ class YorkshireburialsEdReader extends ExtractedDataReader {
     if (!residence) {
       return undefined;
     }
+    // e.g. "4, Industrial Terrace" becomes "4 Industrial Terrace"
+    residence = residence.replace(/^(\d+[a-z]?),\s*/i, "$1 ");
 
     let parts = [residence.replace(/[\s.,]+$/, "")];
     for (let part of [this.ed.parish, this.ed.county, "England"]) {
