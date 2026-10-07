@@ -3422,6 +3422,12 @@ function regeneralizeDataWithLinkedRecords(input) {
   //console.log(linkedRecords);
 
   if (ed.household && result.householdArray) {
+    // There is an Ancestry bug that can order the household incorrectly
+    // by putting those on subsequent pages first
+    // So we want to use the page numbers to update the order.
+    let reorderedArray = [];
+    let currentFirstPageNum = "";
+
     for (let extractedMember of ed.household.members) {
       if (extractedMember.link) {
         // find the same member in the generalized data
@@ -3459,6 +3465,21 @@ function regeneralizeDataWithLinkedRecords(input) {
             //console.log("regeneralizeDataWithLinkedRecords. Extracted data is :");
             //console.log(memberData);
             setExtraGdHouseholdFields(memberData, result, generalizedMember, result.householdArrayFields);
+
+            let pageNumString = getCleanValueForRecordDataList(ed, result, ["Page number"]);
+            if (pageNumString) {
+              let pageNum = Number(pageNumString);
+              if (!isNaN(pageNum)) {
+                if (currentFirstPageNum) {
+                  if (currentFirstPageNum > pageNum) {
+                    // Needs re-ordering
+                  }
+                } else {
+                  currentFirstPageNum = pageNum;
+                  reorderedArray.push(generalizedMember);
+                }
+              }
+            }
           }
         }
       }
