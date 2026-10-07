@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n\"Roots | Branches = Family {Tree}.\"<br/>\nhttps://www.youtube.com/watch?v=1lgIQmGPAd4 (accessed 6 May 2021)<br/>\nYouTube video. {{YouTube|1lgIQmGPAd4}}\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "<ref>\n\"Roots | Branches = Family {Tree}.\"<br/>\nhttps://www.youtube.com/watch?v=1lgIQmGPAd4 (accessed 6 May 2021)<br/>\nYouTube video. {{YouTube|1lgIQmGPAd4}}\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* \"Roots | Branches = Family {Tree}.\"<br/>https://www.youtube.com/watch?v=1lgIQmGPAd4 (accessed 6 May 2021)<br/>YouTube video. {{YouTube|1lgIQmGPAd4}}",
+    "type": "source"
+  }
+}

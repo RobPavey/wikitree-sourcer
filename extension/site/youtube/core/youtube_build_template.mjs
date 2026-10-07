@@ -64,18 +64,23 @@ function escapeTemplateParameter(text) {
 // Builds the WikiTree {{YouTube}} template call for the extracted data.
 // See https://www.wikitree.com/wiki/Template:YouTube
 // startSeconds is optional and overrides any start time found in the URL.
-function buildYoutubeTemplate(ed, startSeconds) {
+// If useTitleAsText is false the link text is left out so the template uses its default text.
+function buildYoutubeTemplate(ed, startSeconds, useTitleAsText = true) {
   let template = "{{YouTube|" + ed.videoId;
-
-  let title = ed.title ? escapeTemplateParameter(ed.title.trim()) : "";
-  if (!title) {
-    title = "video";
-  }
-  template += "|" + title;
 
   if (startSeconds === undefined) {
     startSeconds = parseStartTime(ed.startTime);
   }
+
+  let title = useTitleAsText && ed.title ? escapeTemplateParameter(ed.title.trim()) : "";
+  if (!title && useTitleAsText) {
+    title = "video";
+  }
+  if (title || startSeconds !== undefined) {
+    // the start time is the third parameter so the text is needed to hold its place
+    template += "|" + title;
+  }
+
   if (startSeconds !== undefined) {
     template += "|" + startSeconds;
   }

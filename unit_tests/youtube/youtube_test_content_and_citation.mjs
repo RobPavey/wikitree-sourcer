@@ -23,10 +23,12 @@ SOFTWARE.
 */
 
 import { generalizeData } from "../../extension/site/youtube/core/youtube_generalize_data.mjs";
+import { buildCitation } from "../../extension/site/youtube/core/youtube_build_citation.mjs";
 import { buildYoutubeTemplate, parseStartTime } from "../../extension/site/youtube/core/youtube_build_template.mjs";
 
 import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
+import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 import { readInputFile, writeTestOutputFile, removeStaleOutputFiles } from "../test_utils/ref_file_utils.mjs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
@@ -47,6 +49,16 @@ const regressionData = [
     // No playlist and a title containing characters that are special in a template
     caseName: "title_with_template_characters",
     url: "https://www.youtube.com/watch?v=1lgIQmGPAd4",
+  },
+  {
+    // The citation is built from the channel, upload date and duration. The channel is in a template.
+    caseName: "usc_shoah_franz_wohlfahrt",
+    url: "https://www.youtube.com/watch?v=9WEDlSvW1KY",
+  },
+  {
+    // The head of the page is left over from a different video so its details must not be used
+    caseName: "stale_page_details",
+    url: "https://www.youtube.com/watch?v=fyYpCuoJEWw",
   },
 ];
 
@@ -104,6 +116,9 @@ async function runTests(testManager) {
   await runExtractDataTests("youtube", regressionData, testManager);
 
   await runGeneralizeDataTests("youtube", generalizeData, regressionData, testManager);
+
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("youtube", functions, regressionData, testManager);
 
   await runBuildTemplateTests(testManager);
 }

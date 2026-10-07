@@ -22,4 +22,46 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit("youtube");
+// If the page was not loaded directly (YouTube is a single page app) the details of the video, like the
+// channel and upload date, can't be read from the page so get them by fetching the video page.
+async function addVideoDetailsFromFetch(extractedData) {
+  try {
+    const response = await fetch("https://www.youtube.com/watch?v=" + extractedData.videoId, {
+      credentials: "same-origin",
+    });
+    if (response.status == 200) {
+      const html = await response.text();
+      Object.assign(extractedData, extractVideoDetailsFromHtml(html, extractedData.videoId));
+    }
+  } catch (error) {
+    // The template can still be built without these details so this is not an error
+    console.log("WikiTree Sourcer: could not fetch the video page for the video details");
+  }
+}
+
+async function extractDataFetchAndRespond(sendResponse) {
+  try {
+    let extractedData = extractData(document, document.location.href);
+    if (extractedData.success && !extractedData.uploadDate) {
+      await addVideoDetailsFromFetch(extractedData);
+    }
+    sendResponse({
+      success: true,
+      contentType: "youtube",
+      extractedData: extractedData,
+    });
+  } catch (error) {
+    openExceptionPageForContentScript("Error while performing extractData", document.location.href, error, true);
+    sendResponse({
+      success: false,
+      exceptionWasReported: true,
+    });
+  }
+}
+
+function extractHandler(request, sendResponse) {
+  extractDataFetchAndRespond(sendResponse);
+  return true; // will respond async
+}
+
+siteContentInit("youtube", extractHandler);

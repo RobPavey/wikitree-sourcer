@@ -25,6 +25,7 @@ SOFTWARE.
 import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/youtube_generalize_data.mjs";
+import { buildCitation } from "../core/youtube_build_citation.mjs";
 import { buildYoutubeTemplate, parseStartTime } from "../core/youtube_build_template.mjs";
 import { writeToClipboard } from "/base/browser/popup/popup_clipboard.mjs";
 import {
@@ -100,6 +101,7 @@ async function setupYoutubePopupMenu(extractedData) {
     extractFailedMessage: "It looks like a YouTube page but not a video page.",
     generalizeFailedMessage: "It looks like a YouTube page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "youtube",
     doNotIncludeSearch: true,
   };
