@@ -3424,14 +3424,17 @@ function regeneralizeDataWithLinkedRecords(input) {
   if (ed.household && result.householdArray) {
     // There is an Ancestry bug that can order the household incorrectly
     // by putting those on subsequent pages first
+    // e.g. https://www.ancestry.com/search/collections/7619/records/917937
     // So we want to use the page numbers to update the order.
     let reorderedArray = [];
-    let currentFirstPageNum = "";
+    let allHavePageNumbers = true;
 
     for (let extractedMember of ed.household.members) {
+      let generalizedMember = undefined;
+      let memberExtractedData = undefined;
+
       if (extractedMember.link) {
         // find the same member in the generalized data
-        let generalizedMember = undefined;
         for (let member of result.householdArray) {
           //console.log("regeneralizeDataWithLinkedRecords extractedMember.link is:" + extractedMember.link);
           if (member.uid == extractedMember.link) {
@@ -3441,12 +3444,11 @@ function regeneralizeDataWithLinkedRecords(input) {
         }
 
         if (generalizedMember) {
-          let memberData = undefined;
           if (generalizedMember.isSelected) {
             // we don't have a linked record for the primary member
             // But we want to do some similar filling out of fields
             //console.log("regeneralizeDataWithLinkedRecords member is selected");
-            memberData = ed;
+            memberExtractedData = ed;
           } else {
             let memberLinkedRecord = undefined;
             for (let linkedRecord of linkedRecords) {
@@ -3456,33 +3458,59 @@ function regeneralizeDataWithLinkedRecords(input) {
               }
             }
             if (memberLinkedRecord) {
-              memberData = memberLinkedRecord.extractedData;
+              memberExtractedData = memberLinkedRecord.extractedData;
             }
           }
 
-          if (memberData) {
+          if (memberExtractedData) {
             //console.log("regeneralizeDataWithLinkedRecords found matching member. Name is:" + generalizedMember.name);
             //console.log("regeneralizeDataWithLinkedRecords. Extracted data is :");
-            //console.log(memberData);
-            setExtraGdHouseholdFields(memberData, result, generalizedMember, result.householdArrayFields);
-
-            let pageNumString = getCleanValueForRecordDataList(ed, result, ["Page number"]);
-            if (pageNumString) {
-              let pageNum = Number(pageNumString);
-              if (!isNaN(pageNum)) {
-                if (currentFirstPageNum) {
-                  if (currentFirstPageNum > pageNum) {
-                    // Needs re-ordering
-                  }
-                } else {
-                  currentFirstPageNum = pageNum;
-                  reorderedArray.push(generalizedMember);
-                }
-              }
-            }
+            //console.log(memberExtractedData);
+            setExtraGdHouseholdFields(memberExtractedData, result, generalizedMember, result.householdArrayFields);
+          }
+        }
+      } else {
+        // no link - could be selected member
+        memberExtractedData = ed;
+        for (let member of result.householdArray) {
+          //console.log("regeneralizeDataWithLinkedRecords extractedMember.link is:" + extractedMember.link);
+          if (member.isSelected) {
+            generalizedMember = member;
+            break;
           }
         }
       }
+
+      // get pageNum for reordering
+      if (memberExtractedData && generalizedMember) {
+        let hasPageNum = false;
+        if (memberExtractedData.recordData) {
+          let pageNumString = memberExtractedData.recordData["Page number"];
+          if (pageNumString) {
+            let pageNum = Number(pageNumString.trim());
+            if (!isNaN(pageNum)) {
+              let reorderElement = { pageNum: pageNum, generalizedMember: generalizedMember };
+              reorderedArray.push(reorderElement);
+              hasPageNum = true;
+            }
+          }
+        }
+
+        if (!hasPageNum) {
+          allHavePageNumbers = false;
+        }
+      }
+    }
+
+    if (allHavePageNumbers && reorderedArray.length == result.householdArray.length) {
+      // we can reorder, this is a stable sort so if two members have the same pageNum
+      // their order will not change
+      reorderedArray.sort((a, b) => a.pageNum - b.pageNum);
+      let newhouseholdArray = [];
+      for (let reorderedMember of reorderedArray) {
+        newhouseholdArray.push(reorderedMember.generalizedMember);
+      }
+      result.householdArray = newhouseholdArray;
     }
   } else if (ed.linkData && result.role) {
     // if there are linkData and this person is not the primary person on the record
