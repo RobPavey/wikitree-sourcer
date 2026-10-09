@@ -59,7 +59,7 @@ function title2type(title) {
     result.push("Communion");
   }
   if (title.includes("konfirmand") || title.includes("konfirmant") || title.includes("konfirmation")) {
-    result.push("Confirmand");
+    result.push("Confirmation");
   }
 
   if (title.includes("verschmähung")) {

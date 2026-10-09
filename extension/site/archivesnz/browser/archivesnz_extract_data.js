@@ -57,7 +57,7 @@ function extractData(document, url) {
       const label = labelElement.textContent.replace(/:\s*$/, "").trim();
       const link = valueElement.querySelector("a.arena-field-link");
       const value = (link ? link.textContent : valueElement.textContent).trim();
-      if (label && value) {
+      if (label && value && !(label in fields)) {
         fields[label] = value;
       }
       if (label === "View online" && link && link.href) {

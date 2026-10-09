@@ -35,6 +35,28 @@ const regressionData = [
     url: "https://collections.archives.govt.nz/en/web/arena/search#/entity/aims-archive/R22059776/cullen-peter-smith---mataura---retired-farmer",
   },
   {
+    caseName: "probate_item_with_accession_years",
+    pageFile: "./unit_tests/archivesnz/saved_pages/probate_item_with_accession_years.html",
+    url: "https://collections.archives.govt.nz/en/web/arena/search#/entity/aims-archive/R22213838/mckelvey-william",
+    extraExtractedDataFields: {
+      title: "McKELVEY, William",
+      itemFields: {
+        "Record number": "3681",
+        Years: "1891 - 1891",
+        "Box number": "67",
+        Location: "Wellington repository",
+        "Access status": "Open",
+      },
+      seriesFields: {
+        "Series name": "Wellington probate files (first sequence)",
+        Code: "6029",
+        "Holdings years": "1843 - 1939",
+        Location: "Wellington repository",
+      },
+      imageUrl: "https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE63680665",
+    },
+  },
+  {
     caseName: "dunedin_probate_file",
     pageFile: "./unit_tests/archivesnz/saved_pages/divorce_item_without_image.html",
     url: "https://collections.archives.govt.nz/en/web/arena/search#/entity/aims-archive/R22042760/smith-stephen---goodwood---settler",

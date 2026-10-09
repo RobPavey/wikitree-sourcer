@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "yorkshireburials",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Battersby",
+    "forenames": "William"
+  },
+  "eventDate": {
+    "dateString": "16 October 1886"
+  },
+  "eventPlace": {
+    "placeString": "Hunslet Cemetery, Leeds, Yorkshire, England",
+    "county": "Yorkshire",
+    "country": "England"
+  },
+  "lastNameAtDeath": "Battersby",
+  "residencePlace": {
+    "placeString": "38 Derby Crescent, Hunslet, Leeds, Yorkshire, England",
+    "streetAddress": "38 Derby Crescent, Hunslet",
+    "county": "Yorkshire",
+    "country": "England"
+  },
+  "ageAtDeath": "40",
+  "occupation": "Forge Man",
+  "hasValidData": true
+}
