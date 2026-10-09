@@ -27,6 +27,7 @@ const categories = [
   { value: "deaths", text: "Deaths" },
   { value: "marriages", text: "Marriages" },
   { value: "divorces", text: "Divorces" },
+  { value: "cemeteries", text: "Cemeteries" },
 ];
 
 const SearchWithParametersData = {

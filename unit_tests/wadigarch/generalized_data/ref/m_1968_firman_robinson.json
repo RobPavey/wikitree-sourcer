@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "wadigarch",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Robinson",
+    "forenames": "Firman J"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "5 Oct 1968"
+  },
+  "eventPlace": {
+    "placeString": "Pierce County, Washington, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Allen",
+        "forenames": "Erma"
+      },
+      "marriageDate": {
+        "dateString": "5 Oct 1968"
+      },
+      "marriagePlace": {
+        "placeString": "Pierce County, Washington, United States"
+      }
+    }
+  ],
+  "primaryPersonOptions": [
+    "Firman J Robinson (groom)",
+    "Erma Allen (bride)"
+  ],
+  "hasValidData": true
+}

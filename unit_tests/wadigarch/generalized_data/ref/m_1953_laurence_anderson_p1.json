@@ -3,9 +3,9 @@
   "sourceType": "record",
   "recordType": "Marriage",
   "name": {
-    "name": "Laurence L Anderson"
+    "name": "Naomi L Robinson"
   },
-  "personGender": "male",
+  "personGender": "female",
   "eventDate": {
     "dateString": "31 Oct 1953"
   },
@@ -15,7 +15,7 @@
   "spouses": [
     {
       "name": {
-        "name": "Naomi L Robinson"
+        "name": "Laurence L Anderson"
       },
       "marriageDate": {
         "dateString": "31 Oct 1953"

@@ -35,6 +35,10 @@ const regressionData = [
     url: "https://digitalarchives.wa.gov/Record/View/B02454FCE9F3FDCA509AFE934DE64318",
   },
   {
+    caseName: "bu_1991_firman_robinson",
+    url: "https://digitalarchives.wa.gov/Record/View/29E4607DE2B2EEBFF18C3835A2EF0647",
+  },
+  {
     caseName: "d_2018_naomi_anderson",
     url: "https://digitalarchives.wa.gov/Record/View/A768BE7D261FC99BB94E6FD3B8FB87C7",
   },
@@ -43,8 +47,34 @@ const regressionData = [
     url: "https://digitalarchives.wa.gov/Record/View/8CB57B0E2C798B6939E89382131D5062",
   },
   {
+    // spouse B is the primary person
+    caseName: "dv_2016_naomie_boesel_p1",
+    url: "https://digitalarchives.wa.gov/Record/View/8CB57B0E2C798B6939E89382131D5062",
+    pageFile: "./unit_tests/wadigarch/saved_pages/dv_2016_naomie_boesel.html",
+    primaryPersonIndex: 1,
+  },
+  {
     caseName: "m_1953_laurence_anderson",
     url: "https://digitalarchives.wa.gov/Record/View/838CF6AA22783642E42F1992562B930B",
+  },
+  {
+    // Department of Health collection: separate name fields and the bride was married before.
+    // The saved page has the PDF link that the page adds once the PDF has been generated.
+    caseName: "m_1968_firman_robinson",
+    url: "https://digitalarchives.wa.gov/Record/View/2380F76B99658569BB01AC99C19AFA0F",
+  },
+  {
+    caseName: "m_1968_firman_robinson_p1",
+    url: "https://digitalarchives.wa.gov/Record/View/2380F76B99658569BB01AC99C19AFA0F",
+    pageFile: "./unit_tests/wadigarch/saved_pages/m_1968_firman_robinson.html",
+    primaryPersonIndex: 1,
+  },
+  {
+    // the bride is the primary person
+    caseName: "m_1953_laurence_anderson_p1",
+    url: "https://digitalarchives.wa.gov/Record/View/838CF6AA22783642E42F1992562B930B",
+    pageFile: "./unit_tests/wadigarch/saved_pages/m_1953_laurence_anderson.html",
+    primaryPersonIndex: 1,
   },
 ];
 

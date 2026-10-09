@@ -108,7 +108,14 @@ const citationOptionsGroup = {
   subcategory: "wadigarch",
   tab: "citation",
   subsection: "wadigarch",
-  options: [],
+  options: [
+    {
+      optionName: "includeImageLink",
+      type: "checkbox",
+      label: "Include a link to the image (PDF) in the citation if the record has one",
+      defaultValue: true,
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "wadigarch", "Washington State Digital Archives (US)");

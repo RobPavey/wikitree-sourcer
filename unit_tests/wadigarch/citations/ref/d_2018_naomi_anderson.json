@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Department of Health, Death Index, 1907-1960; 1965-2024\"<br/>\nWashington State Archives, Digital Archives; Reference Number: DOH_Death_2018_14408<br/>\n[https://digitalarchives.wa.gov/Record/View/A768BE7D261FC99BB94E6FD3B8FB87C7 Washington State Digital Archives Record] (accessed 6 May 2021)<br/>\nFirst Name: Naomi; Middle Name: L; Last Name: Anderson; Death Location: Thurston County; Death Date: 06/18/2018; Sex: F; Residencecounty: Thurston County; Age-Primary: 89.\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Department of Health, Death Index, 1907-1960; 1965-2024\"<br/>\nWashington State Archives, Digital Archives; Reference Number: DOH_Death_2018_14408<br/>\n[https://digitalarchives.wa.gov/Record/View/A768BE7D261FC99BB94E6FD3B8FB87C7 Washington State Digital Archives Record] (accessed 6 May 2021)<br/>\nFirst Name: Naomi; Middle Name: L; Last Name: Anderson; Death Location: Thurston County; Death Date: 06/18/2018; Sex: F; Residence County: Thurston County; Age: 89.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Naomi died (age 89) on 18 June 2018 in Thurston County, Washington, United States.<ref>\n'''Death''':\n\"Department of Health, Death Index, 1907-1960; 1965-2024\"<br/>\nWashington State Archives, Digital Archives; Reference Number: DOH_Death_2018_14408<br/>\n[https://digitalarchives.wa.gov/Record/View/A768BE7D261FC99BB94E6FD3B8FB87C7 Washington State Digital Archives Record] (accessed 6 May 2021)<br/>\nFirst Name: Naomi; Middle Name: L; Last Name: Anderson; Death Location: Thurston County; Death Date: 06/18/2018; Sex: F; Residencecounty: Thurston County; Age-Primary: 89.\n</ref>",
+    "citation": "Naomi died (age 89) on 18 June 2018 in Thurston County, Washington, United States.<ref>\n'''Death''':\n\"Department of Health, Death Index, 1907-1960; 1965-2024\"<br/>\nWashington State Archives, Digital Archives; Reference Number: DOH_Death_2018_14408<br/>\n[https://digitalarchives.wa.gov/Record/View/A768BE7D261FC99BB94E6FD3B8FB87C7 Washington State Digital Archives Record] (accessed 6 May 2021)<br/>\nFirst Name: Naomi; Middle Name: L; Last Name: Anderson; Death Location: Thurston County; Death Date: 06/18/2018; Sex: F; Residence County: Thurston County; Age: 89.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death''': \"Department of Health, Death Index, 1907-1960; 1965-2024\"<br/>Washington State Archives, Digital Archives; Reference Number: DOH_Death_2018_14408<br/>[https://digitalarchives.wa.gov/Record/View/A768BE7D261FC99BB94E6FD3B8FB87C7 Washington State Digital Archives Record] (accessed 6 May 2021)<br/>First Name: Naomi; Middle Name: L; Last Name: Anderson; Death Location: Thurston County; Death Date: 06/18/2018; Sex: F; Residencecounty: Thurston County; Age-Primary: 89.",
+    "citation": "* '''Death''': \"Department of Health, Death Index, 1907-1960; 1965-2024\"<br/>Washington State Archives, Digital Archives; Reference Number: DOH_Death_2018_14408<br/>[https://digitalarchives.wa.gov/Record/View/A768BE7D261FC99BB94E6FD3B8FB87C7 Washington State Digital Archives Record] (accessed 6 May 2021)<br/>First Name: Naomi; Middle Name: L; Last Name: Anderson; Death Location: Thurston County; Death Date: 06/18/2018; Sex: F; Residence County: Thurston County; Age: 89.",
     "type": "source"
   }
 }

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Department of Health, Marriage Certificates, 1968-1998\"<br/>\nWashington State Archives, Digital Archives; Reference Number: MA_1968031608<br/>\n[https://digitalarchives.wa.gov/DigitalObject/Download/d2e88ad7-9ab9-4748-b431-f6d6631eb2a0 Washington State Digital Archives Image (PDF)] - [https://digitalarchives.wa.gov/Record/View/2380F76B99658569BB01AC99C19AFA0F Washington State Digital Archives Record] (accessed 6 May 2021)<br/>\nGroom's First Name: Firman; Groom's Middle Name: J; Groom's Last Name: Robinson; Bride's First Name: Erma; Bride's Maiden Name: Allen; Marriage Date: 10/05/1968; Bride's Birth Name: Showalter; County of Ceremony: Pierce; County that Issued License: Pierce; Certificate Year: 1968; Sequence Number: 031608.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Erma married Firman J Robinson on 5 October 1968 in Pierce County, Washington, United States.<ref>\n'''Marriage''':\n\"Department of Health, Marriage Certificates, 1968-1998\"<br/>\nWashington State Archives, Digital Archives; Reference Number: MA_1968031608<br/>\n[https://digitalarchives.wa.gov/DigitalObject/Download/d2e88ad7-9ab9-4748-b431-f6d6631eb2a0 Washington State Digital Archives Image (PDF)] - [https://digitalarchives.wa.gov/Record/View/2380F76B99658569BB01AC99C19AFA0F Washington State Digital Archives Record] (accessed 6 May 2021)<br/>\nGroom's First Name: Firman; Groom's Middle Name: J; Groom's Last Name: Robinson; Bride's First Name: Erma; Bride's Maiden Name: Allen; Marriage Date: 10/05/1968; Bride's Birth Name: Showalter; County of Ceremony: Pierce; County that Issued License: Pierce; Certificate Year: 1968; Sequence Number: 031608.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Department of Health, Marriage Certificates, 1968-1998\"<br/>Washington State Archives, Digital Archives; Reference Number: MA_1968031608<br/>[https://digitalarchives.wa.gov/DigitalObject/Download/d2e88ad7-9ab9-4748-b431-f6d6631eb2a0 Washington State Digital Archives Image (PDF)] - [https://digitalarchives.wa.gov/Record/View/2380F76B99658569BB01AC99C19AFA0F Washington State Digital Archives Record] (accessed 6 May 2021)<br/>Groom's First Name: Firman; Groom's Middle Name: J; Groom's Last Name: Robinson; Bride's First Name: Erma; Bride's Maiden Name: Allen; Marriage Date: 10/05/1968; Bride's Birth Name: Showalter; County of Ceremony: Pierce; County that Issued License: Pierce; Certificate Year: 1968; Sequence Number: 031608.",
+    "type": "source"
+  }
+}
