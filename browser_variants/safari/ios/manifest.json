@@ -156,7 +156,8 @@
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://www.landesarchiv-nrw.de/*",
     "*://www.scotlandspeople.gov.uk/*",
-    "*://www.szukajwarchiwach.gov.pl/*"
+    "*://www.szukajwarchiwach.gov.pl/*",
+    "*://www.youtube.com/*"
   ],
   "commands": {
     "_execute_action": {

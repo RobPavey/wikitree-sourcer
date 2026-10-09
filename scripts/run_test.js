@@ -96,7 +96,8 @@ const siteNames = [
   "wikipedia",
   "wikitree",
   "yadvashem",
-  "yorkshireburials"
+  "yorkshireburials",
+  "youtube",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {
