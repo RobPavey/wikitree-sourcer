@@ -46,6 +46,9 @@ const regressionData = [
     caseName: "england_census_1861_hon_wm_camper",
   },
   {
+    caseName: "england_census_1871_albert_densham",
+  },
+  {
     caseName: "england_census_1871_grosvenor_hood",
   },
   {

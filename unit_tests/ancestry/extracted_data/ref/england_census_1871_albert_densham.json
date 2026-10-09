@@ -1,0 +1,140 @@
+{
+  "url": "https://www.ancestry.com/search/collections/7619/records/917937",
+  "pageType": "record",
+  "dbId": "7619",
+  "recordId": "917937",
+  "ancestryTemplate": "{{Ancestry Record|7619|917937}}",
+  "domain": "ancestry.com",
+  "titleName": "Albert S Densham",
+  "titleCollection": "1871 England Census",
+  "recordData": {
+    "Name": "Albert S Densham",
+    "Age": "30",
+    "Estimated Birth Year": "1841",
+    "Relation": "Servant",
+    "Gender": "Male",
+    "Where born": "Newbury Somerset England",
+    "Civil parish": "Portbury",
+    "Ecclesiastical parish": "Pill",
+    "Town": "Pill",
+    "County/Island": "Somerset",
+    "Country": "England",
+    "Registration District": "Bedminster",
+    "Sub-registration district": "St George",
+    "ED, institution, or vessel": "6",
+    "Household schedule number": "83",
+    "Piece": "2517",
+    "Folio": "87",
+    "Page number": "18",
+    "Household Members (Name)<br/>Age<br/>Relationship": "Jame Adams 16 Servant<br/>Fanny Bennett 26 Servant<br/>Fanny Hill 30 Servant<br/>Mary N Hivell 39 Servant<br/>Isabella West 15 Servant<br/>Elizabeth Ambler 16 Servant<br/>William H Miles 40 Head<br/>Mary F Miles 30 Wife<br/>Agatha M Miles 7 Daughter<br/>Ethel C Miles 6 Daughter<br/>Annette Burton 18<br/>Albert S Densham 30 Servant"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "Jame Adams",
+        "dbId": "7619",
+        "recordId": "917939",
+        "link": "http://www.ancestry.com/search/collections/7619/records/917939",
+        "Age": "16",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Fanny Bennett",
+        "dbId": "7619",
+        "recordId": "917941",
+        "link": "http://www.ancestry.com/search/collections/7619/records/917941",
+        "Age": "26",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Fanny Hill",
+        "dbId": "7619",
+        "recordId": "917943",
+        "link": "http://www.ancestry.com/search/collections/7619/records/917943",
+        "Age": "30",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Mary N Hivell",
+        "dbId": "7619",
+        "recordId": "917945",
+        "link": "http://www.ancestry.com/search/collections/7619/records/917945",
+        "Age": "39",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Isabella West",
+        "dbId": "7619",
+        "recordId": "917947",
+        "link": "http://www.ancestry.com/search/collections/7619/records/917947",
+        "Age": "15",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Elizabeth Ambler",
+        "dbId": "7619",
+        "recordId": "917949",
+        "link": "http://www.ancestry.com/search/collections/7619/records/917949",
+        "Age": "16",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "William H Miles",
+        "dbId": "7619",
+        "recordId": "917927",
+        "link": "http://www.ancestry.com/search/collections/7619/records/917927",
+        "Age": "40",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members (Name)": "Mary F Miles",
+        "dbId": "7619",
+        "recordId": "917929",
+        "link": "http://www.ancestry.com/search/collections/7619/records/917929",
+        "Age": "30",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members (Name)": "Agatha M Miles",
+        "dbId": "7619",
+        "recordId": "917931",
+        "link": "http://www.ancestry.com/search/collections/7619/records/917931",
+        "Age": "7",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members (Name)": "Ethel C Miles",
+        "dbId": "7619",
+        "recordId": "917933",
+        "link": "http://www.ancestry.com/search/collections/7619/records/917933",
+        "Age": "6",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members (Name)": "Annette Burton",
+        "dbId": "7619",
+        "recordId": "917935",
+        "link": "http://www.ancestry.com/search/collections/7619/records/917935",
+        "Age": "18",
+        "Relationship": ""
+      },
+      {
+        "Household Members (Name)": "Albert S Densham",
+        "Age": "30",
+        "Relationship": "Servant"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7619/images/SOMRG10_2515_2518-0458?pid=917937&usePUB=true&usePUBJs=true",
+  "imageDbId": "7619",
+  "imageRecordId": "SOMRG10_2515_2518-0458",
+  "sourceCitation": "The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 2517; Folio: 87; Page: 18; GSU roll: 835250",
+  "sourceInformation": "Ancestry.com. 1871 England Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc, 2004. Original data: Census Returns of England and Wales, 1871. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1871. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1871. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1871. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1871 Census for England. The census contains detailed information on each individual who spent the night in each household including name, relationship to the head of the family, marital status, age at last birthday, gender, occupation, and birthplace. Additional information about the dwelling and property was collected. Each name in this index is linked to actual images of the 1871 England Census. Learn more..."
+}

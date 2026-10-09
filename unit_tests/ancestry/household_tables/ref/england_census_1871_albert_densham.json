@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| Jame Adams || Servant ||  ||  || 16 ||  || \n|-\n| Fanny Bennett || Servant ||  ||  || 26 ||  || \n|-\n| Fanny Hill || Servant ||  ||  || 30 ||  || \n|-\n| Mary N Hivell || Servant ||  ||  || 39 ||  || \n|-\n| Isabella West || Servant ||  ||  || 15 ||  || \n|-\n| Elizabeth Ambler || Servant ||  ||  || 16 ||  || \n|-\n| William H Miles || Head ||  ||  || 40 ||  || \n|-\n| Mary F Miles || Wife ||  ||  || 30 ||  || \n|-\n| Agatha M Miles || Daughter ||  ||  || 7 ||  || \n|-\n| Ethel C Miles || Daughter ||  ||  || 6 ||  || \n|-\n| Annette Burton ||  ||  ||  || 18 ||  || \n|-\n| '''Albert S Densham''' || '''Servant''' ||  || '''M''' || '''30''' ||  || '''Newbury Somerset England'''\n|}"
+  }
+}

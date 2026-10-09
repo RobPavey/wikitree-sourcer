@@ -257,6 +257,10 @@ const regressionData = [
     url: "https://www.ancestry.com/search/collections/8767/records/8067946",
   },
   {
+    caseName: "england_census_1871_albert_densham",
+    url: "https://www.ancestry.com/search/collections/7619/records/917937",
+  },
+  {
     caseName: "england_census_1871_cole-650",
     url: "https://www.ancestry.com/discoveryui-content/view/11291260:7619",
   },
