@@ -1,5 +1,5 @@
 {
-  "url": "https://archives67.alsace.eu/ark:/78665/1877641/dao/0/1/idsearch:RECH_dce6b9d50fb712e8756c98b87bbd3fa2?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F1877641%2Fcanvas%2F0%2F8",
+  "url": "https://archives67.alsace.eu/ark:/78665/1904672/dao/0/1/idsearch:RECH_414328ae3e9d6ad522e44b232ca75cd5?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F1904672%2Fcanvas%2F0%2F8",
   "success": true,
   "repository": "Archives d'Alsace Site de Strasbourg",
   "ogTitle": "1793-An IV - 1793-An IV",
@@ -10,6 +10,8 @@
   "keyValueData": {
     "Présentation du contenu": "An III en déficit ; registres partiellement tenus en double.",
     "Importance matérielle": "11",
-    "Lieu": "CROETTWILLER"
-  }
+    "Lieu": "CROETTWILLER",
+    "Contexte": "Registres paroissiaux et documents d’état civil de la commune de Croettwiller > Etat civil > Registres d'état civil > Mariages > 1793-1838"
+  },
+  "lastFifParamItem": "FRAD067_0098NUM07900180_08"
 }

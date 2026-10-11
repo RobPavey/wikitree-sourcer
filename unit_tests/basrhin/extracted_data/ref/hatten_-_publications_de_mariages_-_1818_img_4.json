@@ -1,5 +1,5 @@
 {
-  "url": "https://archives67.alsace.eu/ark:/78665/1928043/dao/0/1/idsearch:RECH_848ddb366ad8fb18f59e88b418d091c2?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F1928043%2Fcanvas%2F0%2F4",
+  "url": "https://archives67.alsace.eu/ark:/78665/1955074/dao/0/1/idsearch:RECH_d4fc1b6c2f85246dbf47e310ff253aa1?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F1955074%2Fcanvas%2F0%2F4",
   "success": true,
   "repository": "Archives d'Alsace Site de Strasbourg",
   "ogTitle": "1818 - 1818",
@@ -9,6 +9,8 @@
   "imageNumMax": "9",
   "keyValueData": {
     "Importance matérielle": "9",
-    "Lieu": "HATTEN"
-  }
+    "Lieu": "HATTEN",
+    "Contexte": "Registres paroissiaux et documents d’état civil de la commune de Hatten > Etat civil > Registres d'état civil > Publications de mariages > 1817-1825"
+  },
+  "lastFifParamItem": "FRAD067_0098NUM18401520_4"
 }

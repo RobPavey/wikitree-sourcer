@@ -1,5 +1,5 @@
 {
-  "url": "https://archives67.alsace.eu/ark:/78665/1927867/dao/0/1/idsearch:RECH_6b436cd4ce5bb979b6374fe22b03fa7a?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F1927867%2Fcanvas%2F0%2F150",
+  "url": "https://archives67.alsace.eu/ark:/78665/1954898/dao/0/1/idsearch:RECH_9b96ef675332313a257a7a5d11edbe09?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F1954898%2Fcanvas%2F0%2F150",
   "success": true,
   "repository": "Archives d'Alsace Site de Strasbourg",
   "ogTitle": "3 E 183 /3 - Baptêmes - 1736-1767",
@@ -10,6 +10,8 @@
   "keyValueData": {
     "Présentation du contenu": "Erreur de pagination (p.100-103).",
     "Importance matérielle": "265",
-    "Lieu": "HATTEN"
-  }
+    "Lieu": "HATTEN",
+    "Contexte": "Registres paroissiaux et documents d’état civil de la commune de Hatten > Registres paroissiaux > Paroisse protestante"
+  },
+  "lastFifParamItem": "FRAD067_0098NUM18400120_150"
 }
