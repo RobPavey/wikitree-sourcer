@@ -1645,7 +1645,7 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
     await addSearchMenus(menu, data, backFunction, "ancestry");
     addMenuDivider(menu);
 
-    addBuildCitationMenuItems(menu, data, ancestryBuildCitation, backFunction, generalizeDataGivenRecordType);
+    await addBuildCitationMenuItems(menu, data, ancestryBuildCitation, backFunction, generalizeDataGivenRecordType);
     addAncestryBuildHouseholdTableMenuItem(menu, data);
     addAncestryGoToImageMenuItem(menu, data);
     await addAncestryAddCommentMenuItem(menu, data, tabId);

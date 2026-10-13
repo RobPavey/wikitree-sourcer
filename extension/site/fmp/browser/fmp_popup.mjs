@@ -204,7 +204,7 @@ async function setupFmpPopupMenu(extractedData) {
     // do async prefetches
     loadDataCache();
 
-    addBuildCitationMenuItems(menu, data, fmpBuildCitation, backFunction, generalizeDataGivenRecordType);
+    await addBuildCitationMenuItems(menu, data, fmpBuildCitation, backFunction, generalizeDataGivenRecordType);
     addFmpBuildHouseholdTableMenuItem(menu, data);
   } else if (isProfile) {
     await addSearchMenus(menu, data, backFunction, "fmp");
@@ -213,7 +213,7 @@ async function setupFmpPopupMenu(extractedData) {
   } else if (isImageShare) {
     // do async prefetches
     loadDataCache();
-    addBuildCitationMenuItems(menu, data, fmpBuildCitation, backFunction, generalizeDataGivenRecordType);
+    await addBuildCitationMenuItems(menu, data, fmpBuildCitation, backFunction, generalizeDataGivenRecordType);
   } else {
     addMenuDivider(menu);
     addShowCitationAssistantMenuItem(menu);

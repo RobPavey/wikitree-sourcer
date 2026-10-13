@@ -1634,7 +1634,85 @@ function addBuildCitationMenuItem(
   }
 }
 
-function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, regeneralizeFunction, userInputFunction) {
+async function getCollectedCitations() {
+  //console.log("getCollectedCitations");
+
+  return new Promise((resolve, reject) => {
+    try {
+      chrome.storage.local.get(["collectedCitations"], function (value) {
+        //console.log("getPendingSearch resolve");
+        resolve(value.collectedCitations);
+      });
+    } catch (ex) {
+      console.log("getCollectedCitations catch");
+      reject(ex);
+    }
+  });
+}
+
+async function startCollectingCitations() {
+  let collectedCitations = {
+    citations: [],
+  };
+
+  let items = { collectedCitations: collectedCitations };
+  chrome.storage.local.set(items);
+}
+
+async function stopCollectingCitations() {
+  chrome.storage.local.remove("collectedCitations", function () {
+    console.log("collectedCitations is removed");
+  });
+}
+
+async function setupCollectCitationsSubmenu(data, backFunction) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, function () {
+    backFunction;
+  });
+
+  addMenuItem(menu, "Stop collecting citations", function (element) {
+    stopCollectingCitations();
+    closePopup();
+  });
+  addMenuItem(menu, "Save Person Data", function (element) {
+    closePopup();
+  });
+  addMenuItem(menu, "Save All Citations", function (element) {
+    closePopup();
+  });
+
+  endMainMenu(menu);
+}
+
+async function addCollectCitationsMenuItem(menu, data, backFunction) {
+  let collectingCitations = false;
+  let collectedCitations = await getCollectedCitations();
+  if (collectedCitations) {
+    collectingCitations = true;
+  }
+
+  if (collectingCitations) {
+    addMenuItem(menu, "Collecting citations...", function (element) {
+      setupCollectCitationsSubmenu(data, backFunction);
+    });
+  } else {
+    addMenuItem(menu, "Start collecting citations", function (element) {
+      startCollectingCitations();
+      closePopup();
+    });
+  }
+}
+
+async function addBuildCitationMenuItems(
+  menu,
+  data,
+  buildFunction,
+  backFunction,
+  regeneralizeFunction,
+  userInputFunction
+) {
   let gd = data.generalizedData;
   if (gd.sourceType && !(gd.sourceType == "record" || gd.sourceType == "image")) {
     addShowCitationAssistantMenuItem(menu);
@@ -1668,6 +1746,8 @@ function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, rege
       );
     }
   }
+
+  await addCollectCitationsMenuItem(menu, data);
 
   if (gd.sourceType == "image") {
     // Images typically do not have a lot of info for a citation

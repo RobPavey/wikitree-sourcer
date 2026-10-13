@@ -68,6 +68,13 @@ async function saveCitation(citationObject) {
     //console.log('latestCitation is set to ' + citation);
   });
 
+  // if we are collecting citations save to the collected citations
+  let items = await chrome.storage.local.get(["collectedCitations"]);
+  if (items && items.collectedCitations && items.collectedCitations.citations) {
+    items.collectedCitations.citations.push(citationObject);
+    chrome.storage.local.set(items);
+  }
+
   // Make the whole window the width it was before (not on iOS)
   overrideMenuWidth(widthBeforeEditCitation);
 
