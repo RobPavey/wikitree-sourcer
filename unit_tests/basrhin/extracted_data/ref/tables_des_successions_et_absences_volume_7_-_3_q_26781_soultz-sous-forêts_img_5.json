@@ -1,5 +1,5 @@
 {
-  "url": "https://archives67.alsace.eu/ark:/78665/1186916.1196658/dao/0/1/idsearch:RECH_b9e48e86e4223c0d0593f601ffed8483?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F1186916.1196658%2Fcanvas%2F0%2F5",
+  "url": "https://archives67.alsace.eu/ark:/78665/1186916.1196658/dao/0/5?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F1186916.1196658%2Fcanvas%2F0%2F5&vx=3528.5&vy=-2702&vr=0&vz=1.93158",
   "success": true,
   "repository": "Archives d'Alsace Site de Strasbourg",
   "ogTitle": "3 Q 26781 - Tables des successions et absences, [volume 7] - 1er janvier 1856 - 18 octobre 1864",
@@ -9,5 +9,6 @@
   "imageNumMax": "205",
   "keyValueData": {
     "Lieu": "Soultz-sous-Forêts"
-  }
+  },
+  "lastFifParamItem": "FRAD067_0209NUM0438_0004"
 }

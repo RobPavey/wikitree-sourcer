@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Décès''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg; Décès - 1810 - 1810; Image 8 sur 9; Présentation du contenu: Original en mairie.; Lieu: NIEDERBETSCHDORF; Contexte: Registres paroissiaux et documents d’état civil de la commune de Niederbetschdorf > Etat civil > Registres d'état civil > Décès > 1793-1821<br/>\n[https://archives67.alsace.eu/ark:/78665/2023531/img:FRAD067_0098NUM97001010_8 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Décès''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg; Décès - 1810 - 1810; Image 8 sur 9; Présentation du contenu: Original en mairie.; Lieu: NIEDERBETSCHDORF; Contexte: Registres paroissiaux et documents d’état civil de la commune de Niederbetschdorf > Etat civil > Registres d'état civil > Décès > 1793-1821<br/>\n[https://archives67.alsace.eu/ark:/78665/2023531/img:FRAD067_0098NUM97001010_8 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Décès''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives d'Alsace Site de Strasbourg; Décès - 1810 - 1810; Image 8 sur 9; Présentation du contenu: Original en mairie.; Lieu: NIEDERBETSCHDORF; Contexte: Registres paroissiaux et documents d’état civil de la commune de Niederbetschdorf > Etat civil > Registres d'état civil > Décès > 1793-1821<br/>[https://archives67.alsace.eu/ark:/78665/2023531/img:FRAD067_0098NUM97001010_8 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Décès''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg, Décès - 1810 - 1810, Image 8 sur 9, Présentation du contenu Original en mairie., Lieu NIEDERBETSCHDORF, Contexte Registres paroissiaux et documents d’état civil de la commune de Niederbetschdorf > Etat civil > Registres d'état civil > Décès > 1793-1821<br/>\n[https://archives67.alsace.eu/ark:/78665/2023531/img:FRAD067_0098NUM97001010_8 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Décès''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives d'Alsace Site de Strasbourg, Décès - 1810 - 1810, Image 8 sur 9, Présentation du contenu Original en mairie., Lieu NIEDERBETSCHDORF, Contexte Registres paroissiaux et documents d’état civil de la commune de Niederbetschdorf > Etat civil > Registres d'état civil > Décès > 1793-1821<br/>\n[https://archives67.alsace.eu/ark:/78665/2023531/img:FRAD067_0098NUM97001010_8 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Décès''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives d'Alsace Site de Strasbourg, Décès - 1810 - 1810, Image 8 sur 9, Présentation du contenu Original en mairie., Lieu NIEDERBETSCHDORF, Contexte Registres paroissiaux et documents d’état civil de la commune de Niederbetschdorf > Etat civil > Registres d'état civil > Décès > 1793-1821<br/>[https://archives67.alsace.eu/ark:/78665/2023531/img:FRAD067_0098NUM97001010_8 Archives d'Alsace Site de Strasbourg Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}
