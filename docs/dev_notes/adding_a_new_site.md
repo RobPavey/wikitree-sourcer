@@ -63,8 +63,7 @@ You can see this [separate doc](what_the_create_new_site_script_does.md) for the
 
 The `site URL match string` that you passed as an argument to the `create_new_site` script gets put in three places.
 - It is added to the `optional_host_permissions` in the `manifest.json` files
-- It is put in the `matches` array in the `siteData` object in `<site>_site_data.mjs` file. This is used to register the content scripts so you need to match any URL where the content script should be loaded.
-- If your site requires filling out a form to perform a search then it is put in the call to `checkPermissionForSite` in `<site>_popup_search.mjs`
+- It is put in the `matches` array in the `siteData` object in `<site>_site_data.mjs` file. This is used to register the content scripts so you need to match any URL where the content script should be loaded and, if your site requires filling out a form to perform a search, it is used to check permissions.
 
 You may need to tweak these places to get everything to work well on the new site.
 
