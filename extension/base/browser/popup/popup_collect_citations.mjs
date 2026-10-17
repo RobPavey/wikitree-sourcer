@@ -31,7 +31,7 @@ import {
   endMainMenu,
   addBreak,
 } from "./popup_menu_building.mjs";
-import { addSavePersonDataMenuItem } from "./popup_person_data.mjs";
+import { savePersonData } from "./popup_person_data.mjs";
 
 import { getSites } from "../common/site_registry_storage.mjs";
 
@@ -244,6 +244,68 @@ async function startCollectingCitations() {
 async function stopCollectingCitations() {
   chrome.storage.local.remove("collectedCitations", function () {
     console.log("collectedCitations is removed");
+  });
+}
+
+async function saveCollectedCitationsPersonData(savePersonGd, fields, getAllCitationsFunction) {
+  // put the selected field options in the gd
+  if (fields.lnab.options.length) {
+    let bestOption = fields.lnab.options[fields.lnab.selectedValue];
+    savePersonGd.lastNameAtBirth = bestOption.text;
+  }
+  if (fields.cln.options.length) {
+    let bestOption = fields.cln.options[fields.cln.selectedValue];
+    savePersonGd.lastNameAtDeath = bestOption.text;
+  }
+  if (fields.forenames.options.length) {
+    let bestOption = fields.forenames.options[fields.forenames.selectedValue];
+    let nameObj = new NameObj();
+    nameObj.setForenames(bestOption.text);
+    if (savePersonGd.lastNameAtBirth) {
+      nameObj.setLastName(savePersonGd.lastNameAtBirth);
+    } else if (savePersonGd.lastNameAtDeath) {
+      nameObj.setLastName(savePersonGd.lastNameAtDeath);
+    }
+    savePersonGd.name = nameObj;
+  }
+
+  if (fields.birthDate.options.length) {
+    let bestOption = fields.birthDate.options[fields.birthDate.selectedValue];
+    savePersonGd.birthDate = bestOption.valueObj;
+  }
+
+  if (fields.birthLocation.options.length) {
+    let bestOption = fields.birthLocation.options[fields.birthLocation.selectedValue];
+    savePersonGd.setBirthPlace(bestOption.text);
+  }
+
+  if (fields.deathDate.options.length) {
+    let bestOption = fields.deathDate.options[fields.deathDate.selectedValue];
+    savePersonGd.deathDate = bestOption.valueObj;
+  }
+
+  if (fields.deathLocation.options.length) {
+    let bestOption = fields.deathLocation.options[fields.deathLocation.selectedValue];
+    savePersonGd.setDeathPlace(bestOption.text);
+  }
+
+  if (fields.sex.options.length) {
+    let bestOption = fields.sex.options[fields.sex.selectedValue];
+    savePersonGd.setPersonGender(bestOption.text);
+  }
+
+  // Create the personData object that savePersonData expects
+  const personData = {
+    extractedData: {},
+    generalizedData: savePersonGd,
+  };
+
+  savePersonData(personData, getAllCitationsFunction);
+}
+
+function addCollectedCitationsSavePersonDataMenuItem(menu, fields, savePersonGd) {
+  addMenuItem(menu, "Save Person Data", function (element) {
+    saveCollectedCitationsPersonData(savePersonGd, fields);
   });
 }
 
@@ -463,43 +525,14 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
         // work out the best option
         chooseBestOption(field);
 
+        field.selectedValue = field.defaultValue;
+
         // create the field in menu
         addSelectField(field);
       }
     }
 
-    if (fields.lnab.options.length) {
-      let bestOption = fields.lnab.options[fields.lnab.defaultValue];
-      savePersonGd.lastNameAtBirth = bestOption.text;
-    }
-    if (fields.cln.options.length) {
-      let bestOption = fields.cln.options[fields.cln.defaultValue];
-      savePersonGd.lastNameAtDeath = bestOption.text;
-    }
-    if (fields.forenames.options.length) {
-      let bestOption = fields.forenames.options[fields.forenames.defaultValue];
-      let nameObj = new NameObj();
-      nameObj.setForenames(bestOption.text);
-      if (savePersonGd.lastNameAtBirth) {
-        nameObj.setLastName(savePersonGd.lastNameAtBirth);
-      } else if (savePersonGd.lastNameAtDeath) {
-        nameObj.setLastName(savePersonGd.lastNameAtDeath);
-      }
-      savePersonGd.name = nameObj;
-    }
-
-    if (fields.birthDate.options.length) {
-      let bestOption = fields.birthDate.options[fields.birthDate.defaultValue];
-      savePersonGd.birthDate = bestOption.valueObj;
-    }
-
-    // add a button to save the person data
-    const personData = {
-      extractedData: {},
-      generalizedData: savePersonGd,
-    };
-
-    addSavePersonDataMenuItem(menu, personData);
+    addCollectedCitationsSavePersonDataMenuItem(menu, fields, savePersonGd);
   }
   endMainMenu(menu);
 }

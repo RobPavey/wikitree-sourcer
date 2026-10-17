@@ -93,4 +93,4 @@ function addSavePersonDataMenuItem(menu, data, getAllCitationsFunction = undefin
   });
 }
 
-export { addSavePersonDataMenuItem, getLatestPersonData };
+export { addSavePersonDataMenuItem, getLatestPersonData, savePersonData };
