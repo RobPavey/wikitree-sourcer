@@ -121,9 +121,6 @@ function compareGds(gdA, gdB) {
     [RT.Probate]: 96,
   };
 
-  gdA = GeneralizedData.createFromPlainObject(gdA);
-  gdB = GeneralizedData.createFromPlainObject(gdB);
-
   function getEventPriority(generalizedData) {
     let priority = 50;
     if (generalizedData) {
@@ -247,7 +244,37 @@ async function stopCollectingCitations() {
   });
 }
 
-async function saveCollectedCitationsPersonData(savePersonGd, fields, getAllCitationsFunction) {
+function getAllCitationsFunction(data) {
+  let citationObjs = data.citations;
+  let gd = data.generalizedData;
+
+  // each citation object already has a type
+  // for now treat them all as narrative/inline but eventually we will want to separate source
+  // ones out
+
+  // The citations are already sorted by event date
+
+  let citationsString = "";
+  for (let citationObj of citationObjs) {
+    if (citationsString) {
+      citationsString += "\n";
+    }
+    citationsString += citationObj.citation;
+    citationsString += "\n";
+  }
+
+  // If there is a marriage citation then we should add the details to the personGD in
+  // case we are adding a spouse
+
+  data.allCitationsCount = citationObjs.length;
+  data.allCitationsString = citationsString;
+  data.allCitationsType = "narrative";
+
+  return { success: true };
+}
+
+async function saveCollectedCitationsPersonData(data, fields) {
+  const savePersonGd = data.savePersonGd;
   // put the selected field options in the gd
   if (fields.lnab.options.length) {
     let bestOption = fields.lnab.options[fields.lnab.selectedValue];
@@ -298,14 +325,15 @@ async function saveCollectedCitationsPersonData(savePersonGd, fields, getAllCita
   const personData = {
     extractedData: {},
     generalizedData: savePersonGd,
+    citations: data.citations,
   };
 
   savePersonData(personData, getAllCitationsFunction);
 }
 
-function addCollectedCitationsSavePersonDataMenuItem(menu, fields, savePersonGd) {
+function addCollectedCitationsSavePersonDataMenuItem(menu, fields, data) {
   addMenuItem(menu, "Save Person Data", function (element) {
-    saveCollectedCitationsPersonData(savePersonGd, fields);
+    saveCollectedCitationsPersonData(data, fields);
   });
 }
 
@@ -472,12 +500,20 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
       field.options = [];
     }
 
+    // since collectedCitations was read from local storage we need to convert GDs into class
+    // objects
+    for (let citationObj of collectedCitations.citations) {
+      if (citationObj.generalizedData) {
+        citationObj.generalizedData = GeneralizedData.createFromPlainObject(citationObj.generalizedData);
+      }
+    }
+
     // sort the citations by event date
     sortCitationObjects(collectedCitations.citations);
 
     // for each citation, if it has a value a field then add it as an option for that field
     for (let citationObj of collectedCitations.citations) {
-      let gd = GeneralizedData.createFromPlainObject(citationObj.generalizedData);
+      let gd = citationObj.generalizedData;
       if (gd) {
         let title = getTitleForHoverText(sites, citationObj, gd);
 
@@ -532,7 +568,12 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
       }
     }
 
-    addCollectedCitationsSavePersonDataMenuItem(menu, fields, savePersonGd);
+    let data = {
+      savePersonGd: savePersonGd,
+      citations: collectedCitations.citations,
+    };
+
+    addCollectedCitationsSavePersonDataMenuItem(menu, fields, data);
   }
   endMainMenu(menu);
 }
