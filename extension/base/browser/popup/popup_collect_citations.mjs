@@ -213,14 +213,14 @@ function getTitleForHoverText(sites, citationObj, gd) {
   return title;
 }
 
-async function getCollectedCitations() {
+async function getCollectedCitations(key) {
   //console.log("getCollectedCitations");
 
   return new Promise((resolve, reject) => {
     try {
-      chrome.storage.local.get(["collectedCitations"], function (value) {
+      chrome.storage.local.get([key], function (value) {
         //console.log("getPendingSearch resolve");
-        resolve(value.collectedCitations);
+        resolve(value[key]);
       });
     } catch (ex) {
       console.log("getCollectedCitations catch");
@@ -235,13 +235,40 @@ async function startCollectingCitations() {
   };
 
   let items = { collectedCitations: collectedCitations };
-  chrome.storage.local.set(items);
+  await chrome.storage.local.set(items);
+
+  closePopup();
+}
+
+async function restoreCollectedCitations() {
+  let collectedCitations = await getCollectedCitations("previousCollectedCitations");
+  if (collectedCitations && collectedCitations.citations && collectedCitations.citations.length) {
+    let items = { collectedCitations: collectedCitations };
+    await chrome.storage.local.set(items);
+
+    await chrome.storage.local.remove("previousCollectedCitations");
+  }
+
+  closePopup();
 }
 
 async function stopCollectingCitations() {
-  chrome.storage.local.remove("collectedCitations", function () {
-    console.log("collectedCitations is removed");
-  });
+  console.log("stopCollectingCitations");
+
+  let collectedCitations = await getCollectedCitations("collectedCitations");
+  console.log("collectedCitations is ", collectedCitations);
+  if (collectedCitations && collectedCitations.citations && collectedCitations.citations.length) {
+    let items = { previousCollectedCitations: collectedCitations };
+    await chrome.storage.local.set(items);
+    console.log("collectedCitations set previousCollectedCitations to ", collectedCitations);
+  }
+
+  await chrome.storage.local.remove("collectedCitations");
+  console.log("stopCollectingCitations, removed");
+
+  closePopup();
+
+  console.log("stopCollectingCitations, end");
 }
 
 function getAllCitationsFunction(data) {
@@ -328,6 +355,8 @@ async function saveCollectedCitationsPersonData(data, fields) {
     citations: data.citations,
   };
 
+  await stopCollectingCitations();
+
   savePersonData(personData, getAllCitationsFunction);
 }
 
@@ -349,7 +378,7 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
     backFunction();
   });
 
-  let collectedCitations = await getCollectedCitations();
+  let collectedCitations = await getCollectedCitations("collectedCitations");
   if (collectedCitations && collectedCitations.citations) {
     let numCitations = collectedCitations.citations.length;
     let message = `There are ${numCitations} collected citations`;
@@ -578,9 +607,9 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
   endMainMenu(menu);
 }
 
-async function setupCollectCitationsSubmenu(data, backFunction) {
+async function setupCollectCitationsSubmenu(data, collectedCitations, backFunction) {
   let backToHereFunction = function () {
-    setupCollectCitationsSubmenu(data, backFunction);
+    setupCollectCitationsSubmenu(data, collectedCitations, backFunction);
   };
 
   let menu = beginMainMenu();
@@ -589,32 +618,43 @@ async function setupCollectCitationsSubmenu(data, backFunction) {
     backFunction();
   });
 
-  addMenuItem(menu, "Stop collecting citations", function (element) {
+  let numCollectedCitations = collectedCitations?.citations?.length ?? 0;
+
+  let previousCollectedCitations = await getCollectedCitations("previousCollectedCitations");
+  let numPreviousCollectedCitations = previousCollectedCitations?.citations?.length ?? 0;
+
+  if (numCollectedCitations) {
+    addMenuItem(menu, "Save Person Data...", function (element) {
+      setupSavePersonDataFromCollectedCitationsSubmenu(backToHereFunction);
+    });
+  }
+  addMenuItem(menu, `Stop collecting citations (${numCollectedCitations})`, function (element) {
     stopCollectingCitations();
-    closePopup();
   });
-  addMenuItem(menu, "Save Person Data...", function (element) {
-    setupSavePersonDataFromCollectedCitationsSubmenu(backToHereFunction);
-  });
+  if (numPreviousCollectedCitations) {
+    addMenuItem(menu, `Restore previous collected citations (${numPreviousCollectedCitations})`, function (element) {
+      restoreCollectedCitations();
+    });
+  }
 
   endMainMenu(menu);
 }
 
 async function addCollectCitationsMenuItem(menu, data, backFunction) {
   let collectingCitations = false;
-  let collectedCitations = await getCollectedCitations();
+  let collectedCitations = await getCollectedCitations("collectedCitations");
   if (collectedCitations) {
     collectingCitations = true;
   }
 
   if (collectingCitations) {
-    addMenuItem(menu, "Collecting citations...", function (element) {
-      setupCollectCitationsSubmenu(data, backFunction);
+    const numCitations = collectedCitations.citations ? collectedCitations.citations.length : 0;
+    addMenuItem(menu, `Collecting citations (${numCitations})...`, function (element) {
+      setupCollectCitationsSubmenu(data, collectedCitations, backFunction);
     });
   } else {
     addMenuItem(menu, "Start collecting citations", function (element) {
       startCollectingCitations();
-      closePopup();
     });
   }
 }
