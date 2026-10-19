@@ -446,11 +446,15 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
         } else if (field.type == "date") {
           let dateObj = option.valueObj;
           let bestDateObj = bestOption.valueObj;
+
           if (dateObj && bestDateObj) {
+            const bestQualifier = bestDateObj.qualifier ?? dateQualifiers.NONE;
+            const thisQualifier = dateObj.qualifier ?? dateQualifiers.NONE;
+            let parsedDate = DateUtils.parseDateString(dateObj.getDateString());
+            let parsedBestDate = DateUtils.parseDateString(bestDateObj.getDateString());
+
             if (bestDateObj.isSubsetOf(dateObj)) {
               if (dateObj.dateString != bestDateObj.dateString) {
-                let parsedDate = DateUtils.parseDateString(dateObj.dateString);
-                let parsedBestDate = DateUtils.parseDateString(bestDateObj.dateString);
                 if (parsedDate.hasDay && !parsedBestDate.hasDay) {
                   useThisOption = true;
                 } else if (parsedDate.hasMonth && !parsedBestDate.hasMonth) {
@@ -459,31 +463,31 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
               } else {
                 // same string, if one is less qualified use that
                 // they are different. If one is less qualified use that
-                if (bestDateObj.qualifier == dateQualifiers.ABOUT) {
-                  if (dateObj.qualifier != dateQualifiers.ABOUT) {
+                if (bestQualifier == dateQualifiers.ABOUT) {
+                  if (thisQualifier != dateQualifiers.ABOUT) {
                     useThisOption = true;
                   }
-                } else if (
-                  bestDateObj.qualifier == dateQualifiers.BEFORE ||
-                  bestDateObj.qualifier == dateQualifiers.AFTER
-                ) {
-                  if (dateObj.qualifier == dateQualifiers.NONE || dateObj.qualifier == dateQualifiers.EXACT) {
-                    useThiususeThisOptioneThisOptionsDate = true;
+                } else if (bestQualifier == dateQualifiers.BEFORE || bestQualifier == dateQualifiers.AFTER) {
+                  if (thisQualifier == dateQualifiers.NONE || thisQualifier == dateQualifiers.EXACT) {
+                    useThisOption = true;
                   }
                 }
               }
             } else {
-              // they are different. If one is less qualified use that
-              if (bestDateObj.qualifier == dateQualifiers.ABOUT) {
-                if (dateObj.qualifier != dateQualifiers.ABOUT) {
+              // they are different. If one has more detail (like day) then use that
+              // // else if one is less qualified use that
+              if (parsedDate.hasDay && !parsedBestDate.hasDay) {
+                useThisOption = true;
+              }
+              if (!parsedDate.hasDay && parsedBestDate.hasDay) {
+                useThisOption = false;
+              } else if (bestQualifier == dateQualifiers.ABOUT) {
+                if (thisQualifier != dateQualifiers.ABOUT) {
                   useThisOption = true;
                 }
-              } else if (
-                bestDateObj.qualifier == dateQualifiers.BEFORE ||
-                bestDateObj.qualifier == dateQualifiers.AFTER
-              ) {
-                if (dateObj.qualifier == dateQualifiers.NONE || dateObj.qualifier == dateQualifiers.EXACT) {
-                  useThiususeThisOptioneThisOptionsDate = true;
+              } else if (bestQualifier == dateQualifiers.BEFORE || bestQualifier == dateQualifiers.AFTER) {
+                if (thisQualifier == dateQualifiers.NONE || thisQualifier == dateQualifiers.EXACT) {
+                  useThisOption = true;
                 }
               }
             }
