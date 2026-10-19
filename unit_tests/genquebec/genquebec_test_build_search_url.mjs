@@ -22,32 +22,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function buildSearchData(input) {
-  const gd = input.generalizedData;
+import { buildSearchUrl } from "../../extension/site/genquebec/core/genquebec_build_search_url.mjs";
+import { runBuildSearchUrlTests } from "../test_utils/test_build_search_utils.mjs";
 
-  let fieldData = {};
-  let selectData = {};
+const regressionData = [
+  {
+    caseName: "ancestry_canada_child_baptism_1886_jean_laflamme",
+    inputPath: "ancestry/generalized_data/ref/canada_child_baptism_1886_jean_laflamme",
+  },
+  {
+    caseName: "ancestry_canada_marriage_1859_honora_buckley",
+    inputPath: "ancestry/generalized_data/ref/canada_marriage_1859_honora_buckley",
+  },
+  {
+    caseName: "ancestry_england_birth_reg_1887_emmeline_brain",
+    inputPath: "ancestry/generalized_data/ref/england_birth_reg_1887_emmeline_brain",
+  },
+];
 
-  //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-  // Add code here to populate the search data that is used to fill out the search form
-  // The fieldData typically will be used for text fields
-  // while the selectData will be for select controls
-  // In these structures use the names of the elements in the search form that need to be
-  // filled
-  // For examples see:
-  // - extension/site/vicbdm/core/vicbdm_build_search_data.mjs
-  // - extension/site/nswbdm/core/nswbdm_build_search_data.mjs
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  //console.log("fieldData is:");
-  //console.log(fieldData);
-
-  var result = {
-    fieldData: fieldData,
-    selectData: selectData,
-  };
-
-  return result;
+async function runTests(testManager) {
+  await runBuildSearchUrlTests("genquebec", buildSearchUrl, regressionData, testManager);
 }
 
-export { buildSearchData };
+export { runTests };

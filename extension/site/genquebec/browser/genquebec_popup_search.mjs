@@ -31,9 +31,6 @@ import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_sear
 const searchMenuConfig = {
   siteName: "genquebec",
   siteDisplayName: "Genealogie Quebec",
-  localStorageConfig: {
-    searchUrl: "https://put_your_search_url_here",
-  },
   defaultMenuItem: {
     menuItemText: "Search Genealogie Quebec",
     includeDefaultSearch: true,
