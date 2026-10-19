@@ -26,14 +26,14 @@ import { buildSearchData } from "../../extension/site/prdh/core/prdh_build_searc
 import { runBuildSearchDataTests } from "../test_utils/test_build_search_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    // has pref name
-    caseName: "wikitree_stanway-252_read",
-    inputPath: "wikitree/generalized_data/ref/stanway-252_read",
-    typeOfSearch: "Births",
+    caseName: "ancestry_canada_child_baptism_1886_jean_laflamme",
+    inputPath: "ancestry/generalized_data/ref/canada_child_baptism_1886_jean_laflamme",
   },
-  */
+  {
+    caseName: "ancestry_canada_marriage_1859_honora_buckley",
+    inputPath: "ancestry/generalized_data/ref/canada_marriage_1859_honora_buckley",
+  },
 ];
 
 async function runTests(testManager) {

@@ -32,7 +32,7 @@ const searchMenuConfig = {
   siteName: "prdh",
   siteDisplayName: "PRDH (Quebec)",
   localStorageConfig: {
-    searchUrl: "https://put_your_search_url_here",
+    searchUrl: "https://www.prdh-igd.com/Gratuit/en/PRDH/Recherche/Acte",
   },
   defaultMenuItem: {
     menuItemText: "Search PRDH (Quebec)",

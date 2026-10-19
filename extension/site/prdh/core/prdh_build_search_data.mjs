@@ -28,19 +28,23 @@ function buildSearchData(input) {
   let fieldData = {};
   let selectData = {};
 
-  //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-  // Add code here to populate the search data that is used to fill out the search form
-  // The fieldData typically will be used for text fields
-  // while the selectData will be for select controls
-  // In these structures use the names of the elements in the search form that need to be
-  // filled
-  // For examples see:
-  // - extension/site/vicbdm/core/vicbdm_build_search_data.mjs
-  // - extension/site/nswbdm/core/nswbdm_build_search_data.mjs
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // The keys are the element ids on the PRDH "Search for an individual" form
+  const lastName = gd.inferLastName();
+  if (lastName) {
+    fieldData["MainContent_MainContent_NomMentionTextBox"] = lastName;
+  }
 
-  //console.log("fieldData is:");
-  //console.log(fieldData);
+  const forenames = gd.inferForenames();
+  if (forenames) {
+    fieldData["MainContent_MainContent_PrenomMentionTextBox"] = forenames;
+  }
+
+  // PRDH covers 1621-1861 (marriages to 1871) so only use the life range inside that
+  const range = gd.inferPossibleLifeYearRange(100, new Date(), 0);
+  if (range && range.startYear && range.endYear && range.startYear <= 1871 && range.endYear >= 1621) {
+    fieldData["MainContent_MainContent_AnneeMinTextBox"] = String(Math.max(range.startYear, 1621));
+    fieldData["MainContent_MainContent_AnneeMaxTextBox"] = String(Math.min(range.endYear, 1871));
+  }
 
   var result = {
     fieldData: fieldData,
