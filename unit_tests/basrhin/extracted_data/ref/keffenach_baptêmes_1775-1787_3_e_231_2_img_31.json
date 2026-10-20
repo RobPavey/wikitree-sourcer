@@ -1,5 +1,5 @@
 {
-  "url": "https://archives67.alsace.eu/ark:/78665/1950629/dao/0/1?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F1950629%2Fcanvas%2F0%2F31",
+  "url": "https://archives67.alsace.eu/ark:/78665/1977660/dao/0/1/idsearch:RECH_6a26a0ab633eb36889ff0ef9e305fa16?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F1977660%2Fcanvas%2F0%2F31",
   "success": true,
   "repository": "Archives d'Alsace Site de Strasbourg",
   "ogTitle": "3 E 231 /2 - Baptêmes - 1775-1787",
@@ -9,8 +9,8 @@
   "imageNumMax": "39",
   "keyValueData": {
     "Importance matérielle": "39",
-    "Réfèrence des originaux": "Cote du microfilm : 5 Mi 231 /1",
-    "Sujet": "18e siècle",
-    "Lieu": "KEFFENACH"
-  }
+    "Lieu": "KEFFENACH",
+    "Contexte": "Registres paroissiaux et documents d’état civil de la commune de Keffenach > Registres paroissiaux > Paroisse catholique"
+  },
+  "lastFifParamItem": "FRAD067_0098NUM23200040_31"
 }

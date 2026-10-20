@@ -1,0 +1,38 @@
+{
+  "hasValidData": true,
+  "firstNames": "David",
+  "prefNames": "",
+  "middleNames": "John",
+  "lnab": "McDonald",
+  "currentLastName": "Tennant",
+  "mothersMaidenName": "McLeod",
+  "birthDate": "18 Apr 1971",
+  "birthDateStatus": "none",
+  "deathDate": "",
+  "deathDateStatus": "none",
+  "birthLocation": "Bathgate, West Lothian, Scotland",
+  "deathLocation": "",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Moffett-327",
+      "name": "Georgia (Moffett) Tennant",
+      "marriageDate": "30 Dec 2011",
+      "marriagePlace": "United Kingdom"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/McDonald-5567",
+  "pageType": "read",
+  "wikiId": "McDonald-5567",
+  "name": "David (McDonald) Tennant20Â°",
+  "parents": {
+    "father": {
+      "wikiId": "McDonald-5568",
+      "name": "Alexander McDonald"
+    },
+    "mother": {
+      "wikiId": "McLeod-1336",
+      "name": "Helen McLeod"
+    }
+  }
+}

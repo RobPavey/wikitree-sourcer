@@ -133,6 +133,11 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Littlemore-13",
   },
   {
+    // Private with a public family tree. The current last name is the first of two surname links: Tennant formerly McDonald
+    caseName: "mcdonald-5567_private_2025",
+    url: "https://www.wikitree.com/wiki/McDonald-5567",
+  },
+  {
     caseName: "marsh-9608_private_2025",
     url: "https://www.wikitree.com/wiki/Marsh-9608",
   },

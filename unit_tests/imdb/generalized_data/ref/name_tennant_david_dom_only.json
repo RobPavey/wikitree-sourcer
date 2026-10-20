@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "imdb",
+  "sourceType": "record",
+  "recordType": "BiographicalIndex",
+  "name": {
+    "name": "David Tennant"
+  },
+  "birthDate": {
+    "dateString": "April 18, 1971"
+  },
+  "birthPlace": {
+    "placeString": "Bathgate, West Lothian, Scotland, UK"
+  },
+  "hasValidData": true
+}

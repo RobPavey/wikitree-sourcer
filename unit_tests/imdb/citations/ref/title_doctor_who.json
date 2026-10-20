@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\nIMDb: \"Doctor Who\"<br/>\n[https://www.imdb.com/title/tt0056751/ IMDb Title] (accessed 6 May 2021)<br/>\nTV series, 1963–1989. Created by Sydney Newman, C.E. Webber, Donald Wilson.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\nIMDb: \"Doctor Who\"<br/>\n[https://www.imdb.com/title/tt0056751/ IMDb Title] (accessed 6 May 2021)<br/>\nTV series, 1963–1989. Created by Sydney Newman, C.E. Webber, Donald Wilson.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': IMDb: \"Doctor Who\"<br/>[https://www.imdb.com/title/tt0056751/ IMDb Title] (accessed 6 May 2021)<br/>TV series, 1963–1989. Created by Sydney Newman, C.E. Webber, Donald Wilson.",
+    "type": "source"
+  }
+}
