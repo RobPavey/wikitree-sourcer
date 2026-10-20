@@ -6,6 +6,7 @@
     "lastName": "Marsh"
   },
   "lastNameAtBirth": "Marsh",
+  "lastNameAtDeath": "Marsh",
   "personGender": "female",
   "birthDate": {
     "dateString": "1975",
