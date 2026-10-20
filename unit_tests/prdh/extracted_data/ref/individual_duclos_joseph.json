@@ -1,0 +1,33 @@
+{
+  "url": "https://www.prdh-igd.com/Membership/en/PRDH/Individu/633835",
+  "success": true,
+  "pageType": "individual",
+  "recordId": "633835",
+  "forenames": "Joseph",
+  "lastName": "DUCLOS",
+  "fatherForenames": "Joseph",
+  "fatherLastName": "DUCLOS",
+  "motherForenames": "Louise",
+  "motherLastName": "FORTIER",
+  "birthDate": "19-Dec-1790",
+  "birthPlace": "",
+  "baptism": "Baptism :20-Dec-1790Lauzon (St-Joseph-de-la-Pointe-Lévy)",
+  "deathDate": "",
+  "deathPlace": "",
+  "death": "Death :27-Jun-1832",
+  "burial": "Burial :28-Jun-1832Lauzon (St-Joseph-de-la-Pointe-Lévy)",
+  "unions": [
+    {
+      "marriageDate": "29-Oct-1816",
+      "marriagePlace": "Lauzon (St-Joseph-de-la-Pointe-Lévy)",
+      "marriage": "First marriage",
+      "familyId": "129417",
+      "spouseForenames": "Genevieve",
+      "spouseLastName": "CARRIER",
+      "spouseFatherForenames": "Jean Baptiste",
+      "spouseFatherLastName": "CARRIER",
+      "spouseMotherForenames": "Marie Anne",
+      "spouseMotherLastName": "POIRE"
+    }
+  ]
+}

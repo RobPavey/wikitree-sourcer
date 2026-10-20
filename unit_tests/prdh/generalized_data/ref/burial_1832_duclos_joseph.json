@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "prdh",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Duclos",
+    "forenames": "Joseph"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "28 June 1832"
+  },
+  "eventPlace": {
+    "placeString": "Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada"
+  },
+  "deathDate": {
+    "dateString": "27 June 1832"
+  },
+  "ageAtDeath": "41",
+  "maritalStatus": "married",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Carrier",
+        "forenames": "Genevieve"
+      }
+    }
+  ],
+  "hasValidData": true
+}

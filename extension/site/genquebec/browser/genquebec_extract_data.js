@@ -27,12 +27,71 @@ SOFTWARE.
 function extractData(document, url) {
   let result = { url: url, success: false };
 
-  /*
-  const items = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  if (items.length < 1) {
+  const rows = document.querySelectorAll(".detailed-result-row");
+  if (rows.length < 1) {
     return result;
   }
-  */
+
+  function getText(element) {
+    let clone = element.cloneNode(true);
+    for (let child of clone.querySelectorAll("a, svg, script, style")) {
+      child.remove();
+    }
+    return clone.textContent.replace(/\s+/g, " ").trim();
+  }
+
+  // The details are a list of label/value rows, the label depends on the type of record
+  let fields = {};
+  let prdhIndividualIds = {};
+  for (let row of rows) {
+    let labelElement = row.querySelector(".detailed-result-row-left");
+    let valueElement = row.querySelector(".detailed-result-row-right");
+    if (!labelElement || !valueElement) {
+      continue;
+    }
+    let label = getText(labelElement);
+    let value = getText(valueElement);
+    if (label && value) {
+      fields[label] = value;
+    }
+
+    let prdhLink = valueElement.querySelector("a[href*='prdh-igd.com']");
+    if (label && prdhLink) {
+      let match = prdhLink.getAttribute("href").match(/\/Individu\/(\d+)/i);
+      if (match) {
+        prdhIndividualIds[label] = match[1];
+      }
+    }
+  }
+  result.fields = fields;
+  if (Object.keys(prdhIndividualIds).length > 0) {
+    result.prdhIndividualIds = prdhIndividualIds;
+  }
+
+  let canonicalElement = document.querySelector("link[rel='canonical']");
+  if (canonicalElement && canonicalElement.getAttribute("href")) {
+    result.url = canonicalElement.getAttribute("href");
+  }
+
+  let headingElement = document.querySelector(".details-page-header h1");
+  if (headingElement) {
+    result.heading = getText(headingElement);
+  }
+
+  // e.g. "Death, LaFrance"
+  let indexElement = document.querySelector("[id$='indexHeader']");
+  if (indexElement) {
+    result.indexHeader = getText(indexElement);
+  }
+
+  let sourceElement = document.querySelector(".source-texte-bottom, [id$='sourceTexteBottom']");
+  if (sourceElement) {
+    let lines = sourceElement.innerHTML.split(/<br\s*\/?>/i).map((line) => line.replace(/<[^>]*>/g, "").trim());
+    let index = lines.findIndex((line) => line == "Original source");
+    if (index != -1 && lines[index + 1]) {
+      result.originalSource = lines[index + 1];
+    }
+  }
 
   result.success = true;
   return result;

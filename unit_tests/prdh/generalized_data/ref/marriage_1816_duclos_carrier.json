@@ -1,0 +1,45 @@
+{
+  "sourceOfData": "prdh",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Duclos",
+    "forenames": "Joseph"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "29 October 1816"
+  },
+  "eventPlace": {
+    "placeString": "Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Carrier",
+        "forenames": "Genevieve"
+      },
+      "marriageDate": {
+        "dateString": "29 October 1816"
+      },
+      "marriagePlace": {
+        "placeString": "Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Duclos",
+        "forenames": "Joseph"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Fortier",
+        "forenames": "Marie Louise"
+      }
+    }
+  },
+  "hasValidData": true
+}

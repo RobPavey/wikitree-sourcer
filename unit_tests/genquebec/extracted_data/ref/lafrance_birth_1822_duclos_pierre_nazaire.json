@@ -1,0 +1,22 @@
+{
+  "url": "https://www.genealogiequebec.com/en/lafrance_naissances/2713307",
+  "success": true,
+  "fields": {
+    "Name": "Pierre Nazaire Duclos",
+    "Gender": "Male",
+    "Birth date": "30 July 1822",
+    "Baptism date": "30 July 1822",
+    "Baptism location": "Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada",
+    "Father": "Jean Baptiste Duclos",
+    "Father's occupation": "menuisier",
+    "Mother": "Suzanne Begin"
+  },
+  "prdhIndividualIds": {
+    "Name": "790941",
+    "Father": "637418",
+    "Mother": "637419"
+  },
+  "heading": "Pierre Nazaire Duclos",
+  "indexHeader": "Birth, LaFrance",
+  "originalSource": "Drouin Genealogical Institute and PRDH"
+}

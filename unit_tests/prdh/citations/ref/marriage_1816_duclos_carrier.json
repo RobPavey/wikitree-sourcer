@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"PRDH-IGD: Marriage\"<br/>\nProgramme de recherche en démographie historique (PRDH-IGD), Université de Montréal, record # 5710099. Original document: [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/5710099 Généalogie Québec]<br/>\n[https://www.prdh-igd.com/Membership/en/PRDH/Acte/5710099 PRDH (Quebec) Record] (accessed 6 May 2021)<br/>\nJoseph Duclos, son of Joseph Duclos & Marie Louise Fortier, marriage to Genevieve Carrier on 29 Oct 1816 in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Joseph, son of Joseph Duclos & Marie Louise Fortier, married Genevieve Carrier on 29 October 1816 in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.<ref>\n'''Marriage''':\n\"PRDH-IGD: Marriage\"<br/>\nProgramme de recherche en démographie historique (PRDH-IGD), Université de Montréal, record # 5710099. Original document: [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/5710099 Généalogie Québec]<br/>\n[https://www.prdh-igd.com/Membership/en/PRDH/Acte/5710099 PRDH (Quebec) Record] (accessed 6 May 2021)<br/>\nJoseph Duclos, son of Joseph Duclos & Marie Louise Fortier, marriage to Genevieve Carrier on 29 Oct 1816 in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"PRDH-IGD: Marriage\"<br/>Programme de recherche en démographie historique (PRDH-IGD), Université de Montréal, record # 5710099. Original document: [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/5710099 Généalogie Québec]<br/>[https://www.prdh-igd.com/Membership/en/PRDH/Acte/5710099 PRDH (Quebec) Record] (accessed 6 May 2021)<br/>Joseph Duclos, son of Joseph Duclos & Marie Louise Fortier, marriage to Genevieve Carrier on 29 Oct 1816 in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.",
+    "type": "source"
+  }
+}

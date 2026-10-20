@@ -30,12 +30,22 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.genquebec.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+    caseName: "lafrance_birth_1822_duclos_pierre_nazaire",
+    url: "https://www.genealogiequebec.com/en/lafrance_naissances/2713307",
   },
-  */
+  {
+    caseName: "lafrance_death_1832_duclos_joseph",
+    url: "https://www.genealogiequebec.com/en/lafrance_deces/4645450",
+  },
+  {
+    caseName: "lafrance_marriage_1842_duclos_desrues",
+    url: "https://www.genealogiequebec.com/en/lafrance_mariages/13385869",
+  },
+  {
+    caseName: "abcd_marriage_1841_duclos_samson",
+    url: "https://www.genealogiequebec.com/en/abcd_mariages/6296723",
+  },
 ];
 
 async function runTests(testManager) {

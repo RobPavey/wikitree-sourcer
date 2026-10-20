@@ -1,0 +1,105 @@
+{
+  "url": "https://www.prdh-igd.com/Membership/en/PRDH/Acte/5710099",
+  "success": true,
+  "pageType": "marriage",
+  "recordId": "5710099",
+  "recordTypeLabel": "Marriage",
+  "eventDate": "29-Oct-1816",
+  "mrc": "MRC: Lévis / Région: Chaudière-Appalaches",
+  "birthOrDeathLabel": "",
+  "birthOrDeathDate": "",
+  "imageUrl": "https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/5710099",
+  "parish": "Lauzon (St-Joseph-de-la-Pointe-Lévy)",
+  "mentions": [
+    {
+      "rank": "01",
+      "name": "Joseph DUCLOS",
+      "individualId": "633835",
+      "age": "maj",
+      "maritalStatus": "---",
+      "presence": "p",
+      "sex": "m",
+      "relations": [
+        {
+          "type": "SPOUSE",
+          "rank": "02"
+        }
+      ]
+    },
+    {
+      "rank": "02",
+      "name": "Genevieve CARRIER",
+      "individualId": "633836",
+      "age": "maj",
+      "maritalStatus": "---",
+      "presence": "p",
+      "sex": "f",
+      "relations": [
+        {
+          "type": "SPOUSE",
+          "rank": "01"
+        }
+      ]
+    },
+    {
+      "rank": "03",
+      "name": "Joseph DUCLOS",
+      "individualId": "51583",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "d",
+      "sex": "m",
+      "relations": [
+        {
+          "type": "FATHER",
+          "rank": "01"
+        }
+      ]
+    },
+    {
+      "rank": "04",
+      "name": "Marie Louise FORTIER",
+      "individualId": "51884",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "---",
+      "sex": "f",
+      "relations": [
+        {
+          "type": "MOTHER",
+          "rank": "01"
+        }
+      ]
+    },
+    {
+      "rank": "05",
+      "name": "Jean Baptiste CARRIER",
+      "individualId": "96115",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "---",
+      "sex": "m",
+      "relations": [
+        {
+          "type": "FATHER",
+          "rank": "02"
+        }
+      ]
+    },
+    {
+      "rank": "06",
+      "name": "Marie Anne POIRE",
+      "individualId": "83661",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "---",
+      "sex": "f",
+      "relations": [
+        {
+          "type": "MOTHER",
+          "rank": "02"
+        }
+      ]
+    }
+  ]
+}

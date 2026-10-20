@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"PRDH-IGD: Baptism\"<br/>\nProgramme de recherche en démographie historique (PRDH-IGD), Université de Montréal, record # 474795. Original document: [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/474795 Généalogie Québec]<br/>\n[https://www.prdh-igd.com/Membership/en/PRDH/Acte/474795 PRDH (Quebec) Record] (accessed 6 May 2021)<br/>\nJoseph Duclos baptism on 20 Dec 1790 (born 19 Dec 1790), son of Joseph Duclos & Louise Fortier, in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Joseph, son of Joseph Duclos & Louise Fortier, was born on 19 December 1790 and baptised on 20 December 1790 in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.<ref>\n'''Baptism''':\n\"PRDH-IGD: Baptism\"<br/>\nProgramme de recherche en démographie historique (PRDH-IGD), Université de Montréal, record # 474795. Original document: [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/474795 Généalogie Québec]<br/>\n[https://www.prdh-igd.com/Membership/en/PRDH/Acte/474795 PRDH (Quebec) Record] (accessed 6 May 2021)<br/>\nJoseph Duclos baptism on 20 Dec 1790 (born 19 Dec 1790), son of Joseph Duclos & Louise Fortier, in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"PRDH-IGD: Baptism\"<br/>Programme de recherche en démographie historique (PRDH-IGD), Université de Montréal, record # 474795. Original document: [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/474795 Généalogie Québec]<br/>[https://www.prdh-igd.com/Membership/en/PRDH/Acte/474795 PRDH (Quebec) Record] (accessed 6 May 2021)<br/>Joseph Duclos baptism on 20 Dec 1790 (born 19 Dec 1790), son of Joseph Duclos & Louise Fortier, in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.",
+    "type": "source"
+  }
+}

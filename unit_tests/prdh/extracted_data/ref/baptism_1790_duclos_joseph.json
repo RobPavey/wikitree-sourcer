@@ -1,0 +1,54 @@
+{
+  "url": "https://www.prdh-igd.com/Membership/en/PRDH/Acte/474795",
+  "success": true,
+  "pageType": "baptism",
+  "recordId": "474795",
+  "recordTypeLabel": "Baptism",
+  "eventDate": "20-Dec-1790",
+  "mrc": "MRC: Lévis / Région: Chaudière-Appalaches",
+  "birthOrDeathLabel": "Birth",
+  "birthOrDeathDate": "19-Dec-1790",
+  "imageUrl": "https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/474795",
+  "parish": "Lauzon (St-Joseph-de-la-Pointe-Lévy)",
+  "mentions": [
+    {
+      "rank": "01",
+      "name": "Joseph DUCLOS",
+      "individualId": "633835",
+      "age": "---",
+      "maritalStatus": "c",
+      "presence": "p",
+      "sex": "m"
+    },
+    {
+      "rank": "02",
+      "name": "Joseph DUCLOS",
+      "individualId": "51583",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "p",
+      "sex": "m",
+      "relations": [
+        {
+          "type": "FATHER",
+          "rank": "01"
+        }
+      ]
+    },
+    {
+      "rank": "03",
+      "name": "Louise FORTIER",
+      "individualId": "51884",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "p",
+      "sex": "f",
+      "relations": [
+        {
+          "type": "MOTHER",
+          "rank": "01"
+        }
+      ]
+    }
+  ]
+}

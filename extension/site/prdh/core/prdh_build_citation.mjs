@@ -29,11 +29,25 @@ function buildPrdhUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = "Put Source Title here";
+  const typeLabels = {
+    baptism: "Baptism",
+    burial: "Burial",
+    marriage: "Marriage",
+    individual: "Individual",
+    family: "Family",
+  };
+  let typeLabel = typeLabels[ed.pageType] ? typeLabels[ed.pageType] : "Record";
+  builder.sourceTitle = "PRDH-IGD: " + typeLabel;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  let reference =
+    "Programme de recherche en démographie historique (PRDH-IGD), Université de Montréal, record # " + ed.recordId;
+  if (ed.imageUrl) {
+    // Original document images are hosted on Généalogie Québec
+    reference += ". Original document: [" + ed.imageUrl + " Généalogie Québec]";
+  }
+  builder.sourceReference = reference;
 }
 
 function buildRecordLink(ed, gd, builder) {

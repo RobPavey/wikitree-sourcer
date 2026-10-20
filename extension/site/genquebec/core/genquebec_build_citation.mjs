@@ -29,17 +29,26 @@ function buildGenquebecUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = "Put Source Title here";
+  // e.g. "Death, LaFrance", the collection that the record came from
+  let title = "Généalogie Québec";
+  if (ed.indexHeader) {
+    title += ": " + ed.indexHeader;
+  }
+  builder.sourceTitle = title;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  let reference = "GenealogyQuebec.com, Drouin Genealogical Institute";
+  if (ed.originalSource) {
+    reference += ". Original source: " + ed.originalSource;
+  }
+  builder.sourceReference = reference;
 }
 
 function buildRecordLink(ed, gd, builder) {
   var genquebecUrl = buildGenquebecUrl(ed, builder);
 
-  let recordLink = "[" + genquebecUrl + " Genealogie Quebec Record]";
+  let recordLink = "[" + genquebecUrl + " Généalogie Québec Record]";
   builder.recordLinkOrTemplate = recordLink;
 }
 

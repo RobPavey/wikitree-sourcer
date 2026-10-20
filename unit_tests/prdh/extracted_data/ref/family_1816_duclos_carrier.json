@@ -1,0 +1,26 @@
+{
+  "url": "https://www.prdh-igd.com/Membership/en/PRDH/Famille/129417",
+  "success": true,
+  "pageType": "family",
+  "recordId": "129417",
+  "husband": "Joseph DUCLOS",
+  "wife": "Genevieve CARRIER",
+  "husbandParents": "Father : Joseph DUCLOSMother : Louise FORTIERFamily",
+  "wifeParents": "Father : Jean Baptiste CARRIERMother : Marie Anne POIREFamily",
+  "marriageDate": "29-Oct-1816",
+  "marriagePlace": "Lauzon (St-Joseph-de-la-Pointe-Lévy)",
+  "children": [
+    {
+      "sexAndDates": "m",
+      "forenames": "Joseph"
+    },
+    {
+      "sexAndDates": "f",
+      "forenames": "Genevieve"
+    },
+    {
+      "sexAndDates": "f",
+      "forenames": "Caroline"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "url": "https://www.prdh-igd.com/Membership/en/PRDH/Acte/4645450",
+  "success": true,
+  "pageType": "burial",
+  "recordId": "4645450",
+  "recordTypeLabel": "Burial",
+  "eventDate": "28-Jun-1832",
+  "mrc": "MRC: Lévis / Région: Chaudière-Appalaches",
+  "birthOrDeathLabel": "Death",
+  "birthOrDeathDate": "27-Jun-1832",
+  "imageUrl": "https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/4645450",
+  "parish": "Lauzon (St-Joseph-de-la-Pointe-Lévy)",
+  "mentions": [
+    {
+      "rank": "01",
+      "name": "Joseph DUCLOS",
+      "individualId": "633835",
+      "age": "041",
+      "maritalStatus": "m",
+      "presence": "d",
+      "sex": "m"
+    },
+    {
+      "rank": "02",
+      "name": "Genevieve CARRIER",
+      "individualId": "633836",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "---",
+      "sex": "f",
+      "relations": [
+        {
+          "type": "SPOUSE",
+          "rank": "01"
+        }
+      ]
+    }
+  ]
+}

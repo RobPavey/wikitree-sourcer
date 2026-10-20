@@ -1,0 +1,23 @@
+{
+  "url": "https://www.genealogiequebec.com/en/lafrance_deces/4645450",
+  "success": true,
+  "fields": {
+    "Name": "Joseph Duclos",
+    "Gender": "Male",
+    "Age": "041",
+    "Civil status": "Married",
+    "Death date": "27 June 1832",
+    "Burial date": "28 June 1832",
+    "Burial location": "Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada",
+    "Spouse": "Genevieve Carrier",
+    "Spouse's gender": "Female",
+    "Complementary information": "Du choléra."
+  },
+  "prdhIndividualIds": {
+    "Name": "633835",
+    "Spouse": "633836"
+  },
+  "heading": "Joseph Duclos",
+  "indexHeader": "Death, LaFrance",
+  "originalSource": "Drouin Genealogical Institute and PRDH"
+}

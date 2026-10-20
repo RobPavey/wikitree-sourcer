@@ -30,12 +30,26 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.prdh.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+    caseName: "baptism_1790_duclos_joseph",
+    url: "https://www.prdh-igd.com/Membership/en/PRDH/Acte/474795",
   },
-  */
+  {
+    caseName: "burial_1832_duclos_joseph",
+    url: "https://www.prdh-igd.com/Membership/en/PRDH/Acte/4645450",
+  },
+  {
+    caseName: "marriage_1816_duclos_carrier",
+    url: "https://www.prdh-igd.com/Membership/en/PRDH/Acte/5710099",
+  },
+  {
+    caseName: "family_1816_duclos_carrier",
+    url: "https://www.prdh-igd.com/Membership/en/PRDH/Famille/129417",
+  },
+  {
+    caseName: "individual_duclos_joseph",
+    url: "https://www.prdh-igd.com/Membership/en/PRDH/Individu/633835",
+  },
 ];
 
 async function runTests(testManager) {

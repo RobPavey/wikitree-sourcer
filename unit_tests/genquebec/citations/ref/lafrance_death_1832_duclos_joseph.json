@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Généalogie Québec: Death, LaFrance\"<br/>\nGenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Genealogical Institute and PRDH<br/>\n[https://www.genealogiequebec.com/en/lafrance_deces/4645450 Généalogie Québec Record] (accessed 6 May 2021)<br/>\nJoseph Duclos burial (died on 27 Jun 1832 at age 41) on 28 Jun 1832 in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Joseph (age 41) died on 27 June 1832 and was buried on 28 June 1832 in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.<ref>\n'''Burial''':\n\"Généalogie Québec: Death, LaFrance\"<br/>\nGenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Genealogical Institute and PRDH<br/>\n[https://www.genealogiequebec.com/en/lafrance_deces/4645450 Généalogie Québec Record] (accessed 6 May 2021)<br/>\nJoseph Duclos burial (died on 27 Jun 1832 at age 41) on 28 Jun 1832 in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Généalogie Québec: Death, LaFrance\"<br/>GenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Genealogical Institute and PRDH<br/>[https://www.genealogiequebec.com/en/lafrance_deces/4645450 Généalogie Québec Record] (accessed 6 May 2021)<br/>Joseph Duclos burial (died on 27 Jun 1832 at age 41) on 28 Jun 1832 in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.",
+    "type": "source"
+  }
+}
