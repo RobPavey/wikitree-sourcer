@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Biographical Index''':\nIMDb: \"William Hartnell\"<br/>\n{{IMDb|nm0367156}}<br/>\n(https://www.imdb.com/ : accessed 6 May 2021)<br/>\nActor, Additional Crew. Born 8 January 1908 in St. Pancras, London, England, UK. Died 23 April 1975 in Marden, Kent, England, UK.\n</ref>",
+    "citation": "<ref>\n'''Biographical Index''':\nIMDb: \"William Hartnell\"<br/>\n{{IMDb|nm0367156}} (accessed 6 May 2021)<br/>\nActor, Additional Crew. Born 8 January 1908 in St. Pancras, London, England, UK. Died 23 April 1975 in Marden, Kent, England, UK.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "William was in a record on 23 April 1975.<ref>\n'''Biographical Index''':\nIMDb: \"William Hartnell\"<br/>\n{{IMDb|nm0367156}}<br/>\n(https://www.imdb.com/ : accessed 6 May 2021)<br/>\nActor, Additional Crew. Born 8 January 1908 in St. Pancras, London, England, UK. Died 23 April 1975 in Marden, Kent, England, UK.\n</ref>",
+    "citation": "William was in a record on 23 April 1975.<ref>\n'''Biographical Index''':\nIMDb: \"William Hartnell\"<br/>\n{{IMDb|nm0367156}} (accessed 6 May 2021)<br/>\nActor, Additional Crew. Born 8 January 1908 in St. Pancras, London, England, UK. Died 23 April 1975 in Marden, Kent, England, UK.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Biographical Index''': IMDb: \"William Hartnell\"<br/>{{IMDb|nm0367156}}<br/>(https://www.imdb.com/ : accessed 6 May 2021)<br/>Actor, Additional Crew. Born 8 January 1908 in St. Pancras, London, England, UK. Died 23 April 1975 in Marden, Kent, England, UK.",
+    "citation": "* '''Biographical Index''': IMDb: \"William Hartnell\"<br/>{{IMDb|nm0367156}} (accessed 6 May 2021)<br/>Actor, Additional Crew. Born 8 January 1908 in St. Pancras, London, England, UK. Died 23 April 1975 in Marden, Kent, England, UK.",
     "type": "source"
   }
 }

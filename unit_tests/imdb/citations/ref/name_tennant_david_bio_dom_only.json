@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Biographical Index''':\nIMDb: \"David Tennant\"<br/>\n{{IMDb|nm0855039}}<br/>\n(https://www.imdb.com/ : accessed 6 May 2021)<br/>\nBorn 18 April 1971 in Bathgate, West Lothian, Scotland, UK. Birth name David John McDonald. Parents: Sandy McDonald, Essdale Helen (McLeod). Spouse: Georgia Tennant (December 30, 2011 - present). Children: Red Tennant, Doris Tennant, Ty Tennant, Olive Tennant, Birdie Tennant. Relatives: Blair (Sibling), Karen (Sibling).\n</ref>",
+    "citation": "<ref>\n'''Biographical Index''':\nIMDb: \"David Tennant\"<br/>\n{{IMDb|nm0855039}} (accessed 6 May 2021)<br/>\nBorn 18 April 1971 in Bathgate, West Lothian, Scotland, UK. Birth name David John McDonald. Parents: Sandy McDonald, Essdale Helen (McLeod). Spouse: Georgia Tennant (December 30, 2011 - present). Children: Red Tennant, Doris Tennant, Ty Tennant, Olive Tennant, Birdie Tennant. Relatives: Blair (Sibling), Karen (Sibling).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "David was in a record.<ref>\n'''Biographical Index''':\nIMDb: \"David Tennant\"<br/>\n{{IMDb|nm0855039}}<br/>\n(https://www.imdb.com/ : accessed 6 May 2021)<br/>\nBorn 18 April 1971 in Bathgate, West Lothian, Scotland, UK. Birth name David John McDonald. Parents: Sandy McDonald, Essdale Helen (McLeod). Spouse: Georgia Tennant (December 30, 2011 - present). Children: Red Tennant, Doris Tennant, Ty Tennant, Olive Tennant, Birdie Tennant. Relatives: Blair (Sibling), Karen (Sibling).\n</ref>",
+    "citation": "David was in a record.<ref>\n'''Biographical Index''':\nIMDb: \"David Tennant\"<br/>\n{{IMDb|nm0855039}} (accessed 6 May 2021)<br/>\nBorn 18 April 1971 in Bathgate, West Lothian, Scotland, UK. Birth name David John McDonald. Parents: Sandy McDonald, Essdale Helen (McLeod). Spouse: Georgia Tennant (December 30, 2011 - present). Children: Red Tennant, Doris Tennant, Ty Tennant, Olive Tennant, Birdie Tennant. Relatives: Blair (Sibling), Karen (Sibling).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Biographical Index''': IMDb: \"David Tennant\"<br/>{{IMDb|nm0855039}}<br/>(https://www.imdb.com/ : accessed 6 May 2021)<br/>Born 18 April 1971 in Bathgate, West Lothian, Scotland, UK. Birth name David John McDonald. Parents: Sandy McDonald, Essdale Helen (McLeod). Spouse: Georgia Tennant (December 30, 2011 - present). Children: Red Tennant, Doris Tennant, Ty Tennant, Olive Tennant, Birdie Tennant. Relatives: Blair (Sibling), Karen (Sibling).",
+    "citation": "* '''Biographical Index''': IMDb: \"David Tennant\"<br/>{{IMDb|nm0855039}} (accessed 6 May 2021)<br/>Born 18 April 1971 in Bathgate, West Lothian, Scotland, UK. Birth name David John McDonald. Parents: Sandy McDonald, Essdale Helen (McLeod). Spouse: Georgia Tennant (December 30, 2011 - present). Children: Red Tennant, Doris Tennant, Ty Tennant, Olive Tennant, Birdie Tennant. Relatives: Blair (Sibling), Karen (Sibling).",
     "type": "source"
   }
 }

@@ -78,15 +78,12 @@ function buildSourceTitle(ed, gd, builder) {
   builder.putSourceTitleInQuotes = false;
 }
 
-// For a person the WikiTree {{IMDb}} template is the link to the profile, and the link that follows it is just the
-// address of the site, giving e.g.
-//   {{IMDb|nm0855039}}<br/>(https://www.imdb.com/ : accessed 19 October 2026)
+// For a person the WikiTree {{IMDb}} template is the link to the profile, e.g. {{IMDb|nm0855039}}.
 // A title has no template so it has a link to the page.
 function buildRecordLink(ed, gd, builder) {
   const template = buildImdbTemplate(ed);
   if (template) {
-    builder.templateBeforeRecordLink = template;
-    builder.recordLinkOrTemplate = "https://www.imdb.com/";
+    builder.recordLinkOrTemplate = template;
   } else {
     builder.recordLinkOrTemplate = "[" + buildImdbUrl(ed) + " IMDb Title]";
   }

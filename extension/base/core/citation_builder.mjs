@@ -46,9 +46,6 @@ class CitationBuilder {
     this.sourceReference = "";
     this.sharingLinkOrTemplate = "";
     this.recordLinkOrTemplate = "";
-    // A WikiTree template (e.g. {{IMDb|nm0000001}}) that goes on its own line before the recordLinkOrTemplate
-    // when the record link is just the address of the site, e.g. "https://www.imdb.com/"
-    this.templateBeforeRecordLink = "";
     this.externalSiteLink = "";
     this.dataString = "";
     this.includeSubscriptionRequired = "none";
@@ -415,16 +412,9 @@ class CitationBuilder {
 
     let citation = "";
 
-    // If there is a template before the record link then the record link is only the address of the site
-    // so the accessed date is put in the same parentheses: "(https://www.imdb.com/ : accessed 19 October 2026)".
-    let accessedDateStyle = options.citation_general_addAccessedDate;
-    if (this.templateBeforeRecordLink && accessedDateStyle == "parenAfterLink") {
-      accessedDateStyle = "parenBeforeLink";
-    }
-
     function addAccessedDateToRecordLink(recordLinkOrTemplate) {
       let result = "";
-      if (accessedDateStyle == "parenAfterLink") {
+      if (options.citation_general_addAccessedDate == "parenAfterLink") {
         result += recordLinkOrTemplate;
 
         if (subReqString) {
@@ -432,7 +422,7 @@ class CitationBuilder {
         } else {
           result += " (accessed " + accessedDate + ")";
         }
-      } else if (accessedDateStyle == "parenBeforeLink") {
+      } else if (options.citation_general_addAccessedDate == "parenBeforeLink") {
         result += "(";
         result += recordLinkOrTemplate;
 
@@ -553,11 +543,6 @@ class CitationBuilder {
       if (this.recordLinkOrTemplate && !this.putRecordLinkInTitle) {
         citation += " - "; // separate the two links with a hyphen for space
       }
-    }
-
-    if (this.templateBeforeRecordLink) {
-      citation += this.templateBeforeRecordLink;
-      citation = this.addBreakNewlineOrAlternatives(citation);
     }
 
     if (this.recordLinkOrTemplate && !this.putRecordLinkInTitle) {

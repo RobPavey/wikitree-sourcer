@@ -119,6 +119,26 @@ class ImdbEdReader extends ExtractedDataReader {
     return spouses.length > 0 ? spouses : undefined;
   }
 
+  // A name on the bio page like "Essdale Helen (McLeod)" has the maiden name in parentheses
+  makeParentNameObj(name) {
+    const match = name.match(/^(.*?)\s*\(([^()]+)\)\s*$/);
+    if (match && match[1]) {
+      return this.makeNameObjFromForenamesAndLastName(match[1], match[2]);
+    }
+    return this.makeNameObjFromFullName(name);
+  }
+
+  // IMDb lists the parents without saying which is the father and which is the mother. This assumes that the
+  // father is listed first, as it is on the pages seen so far, and only if there are two. If there is just
+  // one the role is not known so no parents are set. This is mainly useful for searching other sites.
+  getParents() {
+    const parents = this.ed.parents;
+    if (!parents || parents.length != 2) {
+      return undefined;
+    }
+    return this.makeParentsFromNameObjs(this.makeParentNameObj(parents[0]), this.makeParentNameObj(parents[1]));
+  }
+
   getOccupation() {
     if (this.ed.jobTitles && this.ed.jobTitles.length > 0) {
       return this.ed.jobTitles.join(", ");

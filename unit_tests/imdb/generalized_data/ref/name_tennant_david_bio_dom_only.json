@@ -19,5 +19,18 @@
       }
     }
   ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Sandy McDonald"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "McLeod",
+        "forenames": "Essdale Helen"
+      }
+    }
+  },
   "hasValidData": true
 }
