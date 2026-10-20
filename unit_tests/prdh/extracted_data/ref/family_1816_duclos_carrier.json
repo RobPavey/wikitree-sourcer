@@ -12,15 +12,36 @@
   "children": [
     {
       "sexAndDates": "m",
-      "forenames": "Joseph"
+      "birthDate": "1819-02-18",
+      "marriageDate": "",
+      "deathDate": "1819-05-07",
+      "birthPlace": "Lauzon (St-Joseph-de-la-Pointe-Lévy)",
+      "marriagePlace": "",
+      "deathPlace": "Lauzon (St-Joseph-de-la-Pointe-Lévy)",
+      "forenames": "Joseph",
+      "spouse": ""
     },
     {
       "sexAndDates": "f",
-      "forenames": "Genevieve"
+      "birthDate": "1821-06-02",
+      "marriageDate": "1853-09-06",
+      "deathDate": "",
+      "birthPlace": "Lauzon (St-Joseph-de-la-Pointe-Lévy)",
+      "marriagePlace": "Lévis (Notre-Dame-de-la-Victoire)",
+      "deathPlace": "",
+      "forenames": "Genevieve",
+      "spouse": "Philippe MORIN"
     },
     {
       "sexAndDates": "f",
-      "forenames": "Caroline"
+      "birthDate": "1827-04-26",
+      "marriageDate": "",
+      "deathDate": "",
+      "birthPlace": "Lauzon (St-Joseph-de-la-Pointe-Lévy)",
+      "marriagePlace": "",
+      "deathPlace": "",
+      "forenames": "Caroline",
+      "spouse": ""
     }
   ]
 }

@@ -163,9 +163,28 @@ function extractData(document, url) {
     for (let row of document.querySelectorAll("tr[id*='EnfantsListView_ItemTemplateTr_']")) {
       let child = {};
       child.sexAndDates = text(row, "[id*='EnfantsListView_SexeEnfantLabel_']");
+      let companionRow = row.nextElementSibling;
+      let cells = row.querySelectorAll("td");
+      let companionCells = companionRow ? companionRow.querySelectorAll("td") : [];
+      function dateFromCell(cell) {
+        return cell ? cell.textContent.replace(/\s*\([^)]*\)\s*$/, "").trim() : "";
+      }
+      function placeFromCell(cell) {
+        return cell ? cell.textContent.replace(/\s+/g, " ").trim() : "";
+      }
+      child.birthDate = dateFromCell(cells[1]);
+      child.marriageDate = dateFromCell(cells[2]);
+      child.deathDate = dateFromCell(cells[3]);
+      child.birthPlace = placeFromCell(companionCells[1]);
+      child.marriagePlace = placeFromCell(companionCells[2]);
+      child.deathPlace = placeFromCell(companionCells[3]);
       let nameLink = row.querySelector("a[id*='EnfantsListView_PrenomEnfantHyperLink_']");
       if (nameLink) {
         child.forenames = nameLink.textContent.replace(/\s+/g, " ").trim();
+      }
+      let spouseCell = companionCells[4];
+      if (spouseCell) {
+        child.spouse = spouseCell.textContent.replace(/^\s*\[Family\]\s*/, "").replace(/\s+/g, " ").trim();
       }
       children.push(child);
     }
