@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "imdb",
+  "sourceType": "record",
+  "recordType": "BiographicalIndex",
+  "name": {
+    "name": "William Hartnell"
+  },
+  "birthDate": {
+    "dateString": "8 Jan 1908"
+  },
+  "birthPlace": {
+    "placeString": "St. Pancras, London, England, UK"
+  },
+  "deathDate": {
+    "dateString": "23 Apr 1975"
+  },
+  "deathPlace": {
+    "placeString": "Marden, Kent, England, UK"
+  },
+  "occupation": "Actor, Additional Crew",
+  "hasValidData": true
+}

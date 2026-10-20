@@ -1,0 +1,59 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "David",
+    "middleNames": "John",
+    "lastName": "McDonald"
+  },
+  "lastNameAtBirth": "McDonald",
+  "lastNameAtDeath": "Tennant",
+  "mothersMaidenName": "McLeod",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "18 Apr 1971",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Bathgate, West Lothian, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Alexander McDonald",
+        "lastName": "McDonald",
+        "forenames": "Alexander"
+      },
+      "lastNameAtBirth": "McDonald",
+      "lastNameAtDeath": "McDonald"
+    },
+    "mother": {
+      "name": {
+        "name": "Helen McLeod",
+        "lastName": "McLeod",
+        "forenames": "Helen"
+      },
+      "lastNameAtBirth": "McLeod",
+      "lastNameAtDeath": "McLeod"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Georgia",
+        "lastName": "Moffett",
+        "name": "Georgia Moffett"
+      },
+      "lastNameAtBirth": "Moffett",
+      "lastNameAtDeath": "Tennant",
+      "marriageDate": {
+        "dateString": "30 Dec 2011"
+      },
+      "marriagePlace": {
+        "placeString": "United Kingdom"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "McDonald-5567"
+}

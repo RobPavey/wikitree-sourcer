@@ -1,0 +1,39 @@
+{
+  "url": "https://www.imdb.com/name/nm0855039/bio",
+  "success": true,
+  "pageType": "name",
+  "id": "nm0855039",
+  "isBioPage": true,
+  "canonicalUrl": "https://www.imdb.com/name/nm0855039/bio",
+  "birthDateText": "April 18, 1971",
+  "birthPlace": "Bathgate, West Lothian, Scotland, UK",
+  "birthName": "David John McDonald",
+  "parents": [
+    "Sandy McDonald",
+    "Essdale Helen (McLeod)"
+  ],
+  "children": [
+    "Red Tennant",
+    "Doris Tennant",
+    "Ty Tennant",
+    "Olive Tennant",
+    "Birdie Tennant"
+  ],
+  "spouses": [
+    {
+      "name": "Georgia Tennant",
+      "fromDate": "December 30, 2011"
+    }
+  ],
+  "relatives": [
+    {
+      "name": "Blair",
+      "relationship": "Sibling"
+    },
+    {
+      "name": "Karen",
+      "relationship": "Sibling"
+    }
+  ],
+  "name": "David Tennant"
+}
