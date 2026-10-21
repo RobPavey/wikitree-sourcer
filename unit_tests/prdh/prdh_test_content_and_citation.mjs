@@ -24,6 +24,8 @@ SOFTWARE.
 
 import { generalizeData } from "../../extension/site/prdh/core/prdh_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/prdh/core/prdh_build_citation.mjs";
+import assert from "node:assert/strict";
+import { readInputFile } from "../test_utils/ref_file_utils.mjs";
 
 import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
@@ -56,6 +58,18 @@ async function runTests(testManager) {
   await runExtractDataTests("prdh", regressionData, testManager);
 
   await runGeneralizeDataTests("prdh", generalizeData, regressionData, testManager);
+  let marriageData = readInputFile(
+    "prdh",
+    "extracted_data",
+    regressionData.find((test) => test.caseName == "marriage_1816_duclos_carrier"),
+    undefined
+  );
+  let marriageGeneralizedData = generalizeData({ extractedData: marriageData });
+  assert.equal(
+    marriageGeneralizedData.spouses[0].parents.father.name.inferFullName(),
+    "Jean Baptiste Carrier"
+  );
+  assert.equal(marriageGeneralizedData.spouses[0].parents.mother.name.inferFullName(), "Marie Anne Poire");
 
   const functions = { buildCitation: buildCitation };
   await runBuildCitationTests("prdh", functions, regressionData, testManager);

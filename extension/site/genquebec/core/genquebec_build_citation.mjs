@@ -42,6 +42,9 @@ function buildSourceReference(ed, gd, builder) {
   if (ed.originalSource) {
     reference += ". Original source: " + ed.originalSource;
   }
+  if (ed.imageUrl) {
+    reference += ". [" + new URL(ed.imageUrl, ed.url).href + " View original document]";
+  }
   builder.sourceReference = reference;
 }
 
@@ -52,11 +55,63 @@ function buildRecordLink(ed, gd, builder) {
   builder.recordLinkOrTemplate = recordLink;
 }
 
+function getSupplementalCitationFields(ed) {
+  const usedFields = new Set([
+    "name",
+    "gender",
+    "age",
+    "father",
+    "mother",
+    "spouse",
+    "husband",
+    "wife",
+    "man's name",
+    "woman's name",
+    "birth date",
+    "baptism date",
+    "baptism location",
+    "death date",
+    "burial date",
+    "burial location",
+    "marriage date",
+    "marriage location",
+    "civil status",
+    "husband's age",
+    "wife's age",
+    "man's age",
+    "woman's age",
+    "husband's civil status",
+    "wife's civil status",
+    "man's civil status",
+    "woman's civil status",
+  ]);
+
+  return Object.entries(ed.fields || {})
+    .filter(([key, value]) => {
+      if (!key || !value) {
+        return false;
+      }
+      let normalizedKey = key.toLowerCase();
+      if (usedFields.has(normalizedKey)) {
+        return false;
+      }
+      if (
+        /^marriage/i.test(ed.indexHeader || "") &&
+        ["occupation", "husband's occupation", "man's occupation"].includes(normalizedKey)
+      ) {
+        return false;
+      }
+      return true;
+    })
+    .map(([key, value]) => ({ key, value }));
+}
+
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
   builder.addStandardDataString(gd);
+  builder.addListDataString(getSupplementalCitationFields(ed));
 }
 
 function buildCitation(input) {

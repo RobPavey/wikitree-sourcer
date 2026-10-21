@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Généalogie Québec: Birth, LaFrance\"<br/>\nGenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Institute, LAFRANCE. [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/2960930 View original document]<br/>\n[https://www.genealogiequebec.com/Membership/LAFRANCE/acte/2960930 Généalogie Québec Record] (accessed 6 May 2021)<br/>\nPaul Chateauvieu Gamelin baptism on 31 Aug 1822 (born 31 Aug 1822), son of Antoine Chateauvieu Gamelin & Marie Goddin, in St-François-du-Lac (St-François-Xavier), Centre-du-Québec, Québec, Canada.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Paul, son of Antoine Chateauvieu Gamelin & Marie Goddin, was born on 31 August 1822 and baptised on 31 August 1822 in St-François-du-Lac (St-François-Xavier), Centre-du-Québec, Québec, Canada.<ref>\n'''Baptism''':\n\"Généalogie Québec: Birth, LaFrance\"<br/>\nGenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Institute, LAFRANCE. [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/2960930 View original document]<br/>\n[https://www.genealogiequebec.com/Membership/LAFRANCE/acte/2960930 Généalogie Québec Record] (accessed 6 May 2021)<br/>\nPaul Chateauvieu Gamelin baptism on 31 Aug 1822 (born 31 Aug 1822), son of Antoine Chateauvieu Gamelin & Marie Goddin, in St-François-du-Lac (St-François-Xavier), Centre-du-Québec, Québec, Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"Généalogie Québec: Birth, LaFrance\"<br/>GenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Institute, LAFRANCE. [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/2960930 View original document]<br/>[https://www.genealogiequebec.com/Membership/LAFRANCE/acte/2960930 Généalogie Québec Record] (accessed 6 May 2021)<br/>Paul Chateauvieu Gamelin baptism on 31 Aug 1822 (born 31 Aug 1822), son of Antoine Chateauvieu Gamelin & Marie Goddin, in St-François-du-Lac (St-François-Xavier), Centre-du-Québec, Québec, Canada.",
+    "type": "source"
+  }
+}

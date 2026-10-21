@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "genquebec",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Labonte",
+    "forenames": "Flavien"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "15 April 1850"
+  },
+  "eventPlace": {
+    "placeString": "Beloeil (St-Mathieu), Montérégie, Québec, Canada"
+  },
+  "deathDate": {
+    "dateString": "13 April 1850"
+  },
+  "ageAtDeath": "6j",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Labonte",
+        "forenames": "Flavien"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Duclos",
+        "forenames": "Onezyme"
+      }
+    }
+  },
+  "hasValidData": true
+}

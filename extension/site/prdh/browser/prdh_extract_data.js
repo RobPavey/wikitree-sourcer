@@ -77,6 +77,21 @@ function extractData(document, url) {
       mention.presence = text(row, "[id*='MentionsListView_PresenceLabel_']");
       // e.g. "f DU CHOLÉRA." the first letter is the sex and the rest is a note from the record
       mention.sex = text(row, "[id*='MentionsListView_SexeLabel_']");
+      let sexNote = mention.sex.replace(/^[mf]\s*/i, "").trim();
+      if (sexNote) {
+        mention.complementaryInformation = sexNote;
+      }
+      let occupation = text(row, "[id*='Profession'], [id*='Occupation']");
+      if (occupation) {
+        mention.occupation = occupation.replace(/^(Occupation|Profession)\s*:\s*/i, "");
+      }
+      let complementaryInfo = text(row, "[id*='Complement']");
+      if (complementaryInfo) {
+        mention.complementaryInformation = complementaryInfo.replace(
+          /^(Complementary information|Information complémentaire)\s*:?\s*/i,
+          ""
+        );
+      }
 
       let relations = [];
       for (let relationLabel of row.querySelectorAll("[id*='CodeLabelLabel_']")) {

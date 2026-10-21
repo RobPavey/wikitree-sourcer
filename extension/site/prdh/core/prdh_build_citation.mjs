@@ -45,8 +45,7 @@ function buildSourceReference(ed, gd, builder) {
   let reference =
     "Programme de recherche en démographie historique (PRDH-IGD), Université de Montréal, record # " + ed.recordId;
   if (ed.imageUrl) {
-    // Original document images are hosted on Généalogie Québec
-    reference += ". Original document: [" + ed.imageUrl + " Généalogie Québec]";
+    reference += ". [" + new URL(ed.imageUrl, ed.url).href + " View original document]";
   }
   builder.sourceReference = reference;
 }
@@ -56,6 +55,19 @@ function buildRecordLink(ed, gd, builder) {
 
   let recordLink = "[" + prdhUrl + " PRDH (Quebec) Record]";
   builder.recordLinkOrTemplate = recordLink;
+}
+
+function buildAdditionalCitationFields(ed) {
+  let fields = [];
+  for (let mention of ed.mentions || []) {
+    if (mention.occupation) {
+      fields.push({ key: mention.name + "'s occupation", value: mention.occupation });
+    }
+    if (mention.complementaryInformation) {
+      fields.push({ key: "Complementary information", value: mention.complementaryInformation });
+    }
+  }
+  return fields;
 }
 
 function formatPersonName(fullName) {
@@ -241,6 +253,7 @@ function buildCoreCitation(ed, gd, builder) {
     builder.dataString = buildFamilyCitationDataString(ed);
   } else {
     builder.addStandardDataString(gd);
+    builder.addListDataString(buildAdditionalCitationFields(ed));
   }
 }
 

@@ -22,6 +22,19 @@
       },
       "marriagePlace": {
         "placeString": "St-Joseph-de-Lauzon, Lévis"
+      },
+      "personGender": "female",
+      "parents": {
+        "father": {
+          "name": {
+            "name": "François Samson"
+          }
+        },
+        "mother": {
+          "name": {
+            "name": "Carrier"
+          }
+        }
       }
     }
   ],

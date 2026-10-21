@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class GenquebecEdReader extends ExtractedDataReader {
   constructor(ed) {
@@ -36,7 +37,10 @@ class GenquebecEdReader extends ExtractedDataReader {
       this.recordType = RT.Baptism;
     } else if (/^Death/i.test(header)) {
       this.recordType = RT.Burial;
-    } else if (/^Marriage/i.test(header)) {
+    } else if (
+      /^Marriage/i.test(header) ||
+      (/^Couple file/i.test(header) && (this.fields["Marriage date"] || this.fields["Marriage location"]))
+    ) {
       this.recordType = RT.Marriage;
     }
 
@@ -60,12 +64,51 @@ class GenquebecEdReader extends ExtractedDataReader {
     return this.getField(this.groomPrefix + "'s " + suffix);
   }
 
+  getBrideField(suffix) {
+    return this.getField(this.bridePrefix + "'s " + suffix);
+  }
+
   makeName(fullName) {
-    return fullName ? this.makeNameObjFromFullName(fullName) : undefined;
+    if (!fullName) {
+      return undefined;
+    }
+    let commaIndex = fullName.indexOf(",");
+    if (commaIndex >= 0) {
+      let lastName = fullName.substring(0, commaIndex).trim();
+      let forenames = fullName.substring(commaIndex + 1).trim();
+      return this.makeNameObjFromForenamesAndLastName(
+        forenames,
+        StringUtils.toInitialCapsEachWord(lastName, true)
+      );
+    }
+    return this.makeNameObjFromFullName(fullName);
   }
 
   makeDate(dateString) {
-    return dateString ? this.makeDateObjFromDateString(dateString) : undefined;
+    if (!dateString) {
+      return undefined;
+    }
+    let match = dateString.match(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/);
+    if (match) {
+      let months = {
+        Jan: "January",
+        Feb: "February",
+        Mar: "March",
+        Apr: "April",
+        May: "May",
+        Jun: "June",
+        Jul: "July",
+        Aug: "August",
+        Sep: "September",
+        Oct: "October",
+        Nov: "November",
+        Dec: "December",
+      };
+      if (months[match[2]]) {
+        dateString = match[1] + " " + months[match[2]] + " " + match[3];
+      }
+    }
+    return this.makeDateObjFromDateString(dateString);
   }
 
   makePlace(placeString) {
@@ -150,18 +193,19 @@ class GenquebecEdReader extends ExtractedDataReader {
   getSpouses() {
     if (this.isMarriage) {
       let spouseNameObj = this.makeName(this.getField("Wife", "Woman's name"));
-      let age = this.getField(this.bridePrefix + "'s age");
+      let age = this.getBrideField("age");
       if (!/\d/.test(age)) {
         age = "";
       }
-      return [
-        this.makeSpouseObj(
-          spouseNameObj,
-          this.getEventDateObj(),
-          this.getEventPlaceObj(),
-          age
-        ),
-      ];
+      let spouse = this.makeSpouseObj(spouseNameObj, this.getEventDateObj(), this.getEventPlaceObj(), age);
+      if (spouse) {
+        spouse.personGender = "female";
+        spouse.parents = this.makeParentsFromNameObjs(
+          this.makeName(this.getBrideField("father")),
+          this.makeName(this.getBrideField("mother"))
+        );
+      }
+      return [spouse];
     }
 
     let spouseNameObj = this.makeName(this.getField("Spouse"));

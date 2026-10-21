@@ -1,0 +1,32 @@
+{
+  "url": "https://www.genealogiequebec.com/Membership/LAFRANCE/acte/13496435",
+  "success": true,
+  "pageType": "membership-lafrance",
+  "recordId": "13496435",
+  "indexHeader": "Marriage, LaFrance",
+  "fields": {
+    "Husband": "LAFORCE, Paul",
+    "Husband's age": "maj",
+    "Husband's civil status": "single",
+    "Husband's occupation": "CULTIVATEUR",
+    "Husband's residence": "INDETERMINE",
+    "Wife": "BOUDRIEAU LABONTE, Zoe",
+    "Wife's age": "min",
+    "Wife's civil status": "single",
+    "Wife's residence": "INDETERMINE",
+    "Marriage date": "10-Jan-1832",
+    "Marriage location": "Drummondville (St-Frédéric), Centre-du-Québec, Québec, Canada",
+    "Husband's father": "LAFORCE, Jean",
+    "Husband's father's residence": "SHIPTON CANTON",
+    "Husband's mother": "BOISVERT, Angelique",
+    "Husband's mother's residence": "SHIPTON CANTON",
+    "Wife's father": "BOUDRIEAU LABONTE, Francois",
+    "Wife's father's occupation": "CULTIVATEUR",
+    "Wife's father's residence": "SHIPTON CANTON",
+    "Wife's mother": "DECELLES DUCLOS, Marie",
+    "Wife's mother's residence": "SHIPTON CANTON"
+  },
+  "heading": "LAFORCE, Paul and BOUDRIEAU LABONTE, Zoe",
+  "originalSource": "Drouin Institute, LAFRANCE",
+  "imageUrl": "../img/acte/13496435"
+}

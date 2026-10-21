@@ -330,14 +330,20 @@ class PrdhEdReader extends ExtractedDataReader {
       }
       let spouseNameObj = this.makeNameObjFromPrdhName(spouseMention.name);
       if (this.recordType == RT.Marriage) {
-        return [
-          this.makeSpouseObj(
-            spouseNameObj,
-            this.getEventDateObj(),
-            this.getEventPlaceObj(),
-            this.getMentionAge(spouseMention)
-          ),
-        ];
+        let spouse = this.makeSpouseObj(
+          spouseNameObj,
+          this.getEventDateObj(),
+          this.getEventPlaceObj(),
+          this.getMentionAge(spouseMention)
+        );
+        spouse.personGender = this.getMentionGender(spouseMention);
+        let spouseFather = this.findRelatedMentions(spouseMention, fatherRelations)[0];
+        let spouseMother = this.findRelatedMentions(spouseMention, motherRelations)[0];
+        spouse.parents = this.makeParentsFromNameObjs(
+          spouseFather ? this.makeNameObjFromPrdhName(spouseFather.name) : undefined,
+          spouseMother ? this.makeNameObjFromPrdhName(spouseMother.name) : undefined
+        );
+        return [spouse];
       }
       return [this.makeSpouseObj(spouseNameObj)];
     } else if (this.pageType == "individual") {

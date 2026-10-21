@@ -24,6 +24,21 @@
       },
       "marriagePlace": {
         "placeString": "Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada"
+      },
+      "personGender": "female",
+      "parents": {
+        "father": {
+          "name": {
+            "lastName": "Carrier",
+            "forenames": "Jean Baptiste"
+          }
+        },
+        "mother": {
+          "name": {
+            "lastName": "Poire",
+            "forenames": "Marie Anne"
+          }
+        }
       }
     }
   ],

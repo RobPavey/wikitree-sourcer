@@ -1,0 +1,21 @@
+{
+  "url": "https://www.genealogiequebec.com/Membership/LAFRANCE/acte/5470196",
+  "success": true,
+  "pageType": "membership-lafrance",
+  "recordId": "5470196",
+  "indexHeader": "Death, LaFrance",
+  "fields": {
+    "Name": "LABONTE, Flavien",
+    "Gender": "male",
+    "Age": "06j",
+    "Father": "LABONTE, Flavien",
+    "Father's occupation": "JOURNALIER",
+    "Mother": "DUCLOS, Onezyme",
+    "Burial date": "15-Apr-1850",
+    "Burial location": "Beloeil (St-Mathieu), Montérégie, Québec, Canada",
+    "Death date": "13-Apr-1850"
+  },
+  "heading": "LABONTE, Flavien",
+  "originalSource": "Drouin Institute, LAFRANCE",
+  "imageUrl": "../img/acte/5470196"
+}
