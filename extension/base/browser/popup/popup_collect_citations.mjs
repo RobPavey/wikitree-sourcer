@@ -37,7 +37,7 @@ import { getSites } from "../common/site_registry_storage.mjs";
 
 import { dateQualifiers, GeneralizedData, NameObj } from "../../core/generalize_data_utils.mjs";
 import { DateUtils } from "../../core/date_utils.mjs";
-import { RT } from "../../core/record_type.mjs";
+import { RT, Role } from "../../core/record_type.mjs";
 import { RC } from "../../core/record_collections.mjs";
 
 function inferBestEventDateForCompare(gd) {
@@ -422,10 +422,10 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
       return selector;
     }
 
-    function addOptionForField(field, text, title, valueObj) {
+    function addOptionForField(field, gd, text, title, valueObj) {
       if (text) {
         let value = field.options.length;
-        let option = { valueObj: valueObj, value: value, text: text, title: title };
+        let option = { valueObj: valueObj, value: value, text: text, title: title, gd: gd };
         field.options.push(option);
         if (!field.defaultValue) {
           field.defaultValue = value;
@@ -433,7 +433,226 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
       }
     }
 
+    function chooseBestLnab(field) {
+      // we want the last name at birth if possible
+      // if no death then name of spouse or name in latest record
+
+      // first look for births/baptisms etc
+      let birthOptions = [];
+      for (let index = 0; index < field.options.length; index++) {
+        let option = field.options[index];
+        let gd = option.gd;
+        if (!gd.role || gd.role == Role.Primary) {
+          if (
+            gd.recordType == RT.Birth ||
+            gd.recordType == RT.BirthRegistration ||
+            gd.recordType == RT.Baptism ||
+            gd.recordType == RT.BirthOrBaptism
+          ) {
+            birthOptions.push({ index: index, option: option });
+          }
+        }
+      }
+      if (birthOptions.length) {
+        if (birthOptions.length == 1) {
+          field.defaultValue = birthOptions[0].index;
+          return;
+        }
+
+        let uniqueNames = {};
+        for (let birthOption of birthOptions) {
+          let name = birthOption.option.text;
+          if (!uniqueNames[name]) {
+            uniqueNames[name] = { name: name, count: 1, score: 0, index: birthOption.index };
+          } else {
+            uniqueNames[name].count++;
+          }
+          if (birthOption.option.gd.recordType == RT.BirthRegistration) {
+            score += 2;
+          } else if (birthOption.option.gd.recordType == RT.Birth) {
+            score += 1;
+          }
+        }
+
+        let bestName = "";
+        let bestCount = 1;
+        let bestScore = 0;
+        // chose the name with the most occurences
+        for (let key of Object.keys(uniqueNames)) {
+          let uniqueName = uniqueNames[key];
+          if (uniqueName.count > bestCount) {
+            bestName = key;
+            bestCount = uniqueName.count;
+            bestScore = uniqueName.score;
+          } else if (uniqueName.count > 1 && uniqueName.count == bestCount) {
+            if (uniqueName.score > bestScore) {
+              bestName = key;
+              bestScore = uniqueName.score;
+            }
+          }
+        }
+
+        if (bestName) {
+          field.defaultValue = uniqueNames[bestName].index;
+          return;
+        }
+
+        // use score
+        bestScore = 0;
+        for (let key of Object.keys(uniqueNames)) {
+          let uniqueName = uniqueNames[key];
+          if (uniqueName.score > bestScore) {
+            bestName = key;
+            bestScore = uniqueName.score;
+          }
+        }
+        if (bestName) {
+          field.defaultValue = uniqueNames[bestName].index;
+          return;
+        } else {
+          field.defaultValue = Object.values(uniqueNames)[0].index;
+        }
+      }
+
+      // using births didn't work
+
+      // if this is a woman look for the first marriage
+      for (let index = 0; index < field.options.length; index++) {
+        let option = field.options[index];
+        if (option.text) {
+          if (option.gd.recordType == RT.Marriage || option.gd.recordType == RT.MarriageRegistration) {
+            if (option.gd.personGender == "female") {
+              field.defaultValue = index;
+              return;
+            }
+          }
+        }
+      }
+
+      // use the earliest option with a last name
+      for (let index = 0; index < field.options.length; index++) {
+        let option = field.options[index];
+        if (option.text) {
+          field.defaultValue = index;
+          return;
+        }
+      }
+    }
+
+    function chooseBestCln(field) {
+      // we want the last name at death is possible
+      // if no death then name of spouse or name in latest record
+
+      // first look for deaths/burials etc
+      let deathOptions = [];
+      for (let index = 0; index < field.options.length; index++) {
+        let option = field.options[index];
+        let gd = option.gd;
+        if (!gd.role || gd.role == Role.Primary) {
+          if (
+            gd.recordType == RT.Death ||
+            gd.recordType == RT.DeathRegistration ||
+            gd.recordType == RT.Burial ||
+            gd.recordType == RT.Probate
+          ) {
+            deathOptions.push({ index: index, option: option });
+          }
+        }
+      }
+      if (deathOptions.length) {
+        if (deathOptions.length == 1) {
+          field.defaultValue = deathOptions[0].index;
+          return;
+        }
+
+        let uniqueNames = {};
+        for (let deathOption of deathOptions) {
+          let name = deathOption.option.text;
+          if (!uniqueNames[name]) {
+            uniqueNames[name] = { name: name, count: 1, score: 0, index: deathOption.index };
+          } else {
+            uniqueNames[name].count++;
+          }
+          if (deathOption.option.gd.recordType == RT.DeathRegistration) {
+            score += 2;
+          } else if (deathOption.option.gd.recordType == RT.Death) {
+            score += 1;
+          } else if (deathOption.option.gd.recordType == RT.Probate) {
+            score += 1;
+          }
+        }
+
+        let bestName = "";
+        let bestCount = 1;
+        let bestScore = 0;
+        // chose the name with the most occurences
+        for (let key of Object.keys(uniqueNames)) {
+          let uniqueName = uniqueNames[key];
+          if (uniqueName.count > bestCount) {
+            bestName = key;
+            bestCount = uniqueName.count;
+            bestScore = uniqueName.score;
+          } else if (uniqueName.count > 1 && uniqueName.count == bestCount) {
+            if (uniqueName.score > bestScore) {
+              bestName = key;
+              bestScore = uniqueName.score;
+            }
+          }
+        }
+
+        if (bestName) {
+          field.defaultValue = uniqueNames[bestName].index;
+          return;
+        }
+
+        // use score
+        bestScore = 0;
+        for (let key of Object.keys(uniqueNames)) {
+          let uniqueName = uniqueNames[key];
+          if (uniqueName.score > bestScore) {
+            bestName = key;
+            bestScore = uniqueName.score;
+          }
+        }
+        if (bestName) {
+          field.defaultValue = uniqueNames[bestName].index;
+          return;
+        }
+      }
+
+      // using deaths didn't work
+
+      // if this is a woman look for the last marriage
+      for (let index = field.options.length - 1; index >= 0; index--) {
+        let option = field.options[index];
+        if (option.text) {
+          if (option.gd.recordType == RT.Marriage || option.gd.recordType == RT.MarriageRegistration) {
+            // We would want the spouse last name (if this is a woman)
+            // But the option doesn't select that name. Hmm...
+          }
+        }
+      }
+
+      // using deaths didn't work
+      // use the latest option with a last name
+      for (let index = field.options.length - 1; index >= 0; index--) {
+        let option = field.options[index];
+        if (option.text) {
+          field.defaultValue = index;
+          return;
+        }
+      }
+    }
+
     function chooseBestOption(field) {
+      if (field.type == "lnab") {
+        chooseBestLnab(field);
+        return;
+      } else if (field.type == "cln") {
+        chooseBestCln(field);
+        return;
+      }
+
       let bestOptionIndex = 0;
       let bestOption = field.options[0];
       for (let index = 1; index < field.options.length; index++) {
@@ -519,8 +738,8 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
 
     let fields = {
       forenames: { id: "forenamesSelector", label: "Forenames", type: "string" },
-      lnab: { id: "lnabSelector", label: "Last Name at Birth", type: "string" },
-      cln: { id: "clnSelector", label: "Current/Married Last Name", type: "string" },
+      lnab: { id: "lnabSelector", label: "Last Name at Birth", type: "lnab" },
+      cln: { id: "clnSelector", label: "Current/Married Last Name", type: "cln" },
       birthDate: { id: "birthDateSelector", label: "Birth Date", type: "date" },
       birthLocation: { id: "birthLocationSelector", label: "Birth Location", type: "string" },
       deathDate: { id: "deathDateSelector", label: "Death Date", type: "date" },
@@ -550,9 +769,9 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
       if (gd) {
         let title = getTitleForHoverText(sites, citationObj, gd);
 
-        addOptionForField(fields.forenames, gd.inferForenames(), title);
-        addOptionForField(fields.lnab, gd.inferLastNameAtBirth(), title);
-        addOptionForField(fields.cln, gd.inferLastNameAtDeath(), title);
+        addOptionForField(fields.forenames, gd, gd.inferForenames(), title);
+        addOptionForField(fields.lnab, gd, gd.inferLastNameAtBirth(), title);
+        addOptionForField(fields.cln, gd, gd.inferLastNameAtDeath(), title);
 
         let birthDateObj = gd.inferBirthDateObj();
         if (birthDateObj) {
@@ -561,11 +780,11 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
             if (birthDateObj.qualifier) {
               dateString = birthDateObj.getQualifiedDateString(dateString, birthDateObj.qualifier);
             }
-            addOptionForField(fields.birthDate, dateString, title, birthDateObj);
+            addOptionForField(fields.birthDate, gd, dateString, title, birthDateObj);
           }
         }
 
-        addOptionForField(fields.birthLocation, gd.inferBirthPlace(), title);
+        addOptionForField(fields.birthLocation, gd, gd.inferBirthPlace(), title);
 
         let deathDateObj = gd.inferDeathDateObj();
         if (deathDateObj) {
@@ -574,13 +793,13 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
             if (deathDateObj.qualifier) {
               dateString = deathDateObj.getQualifiedDateString(dateString, deathDateObj.qualifier);
             }
-            addOptionForField(fields.deathDate, dateString, title, deathDateObj);
+            addOptionForField(fields.deathDate, gd, dateString, title, deathDateObj);
           }
         }
 
-        addOptionForField(fields.deathLocation, gd.inferDeathPlace(), title);
+        addOptionForField(fields.deathLocation, gd, gd.inferDeathPlace(), title);
 
-        addOptionForField(fields.sex, gd.inferPersonGender(), title);
+        addOptionForField(fields.sex, gd, gd.inferPersonGender(), title);
       }
     }
 
