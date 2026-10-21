@@ -767,7 +767,7 @@ function determineRoleGivenRecordType(extractedData, result) {
         }
       } else if (hasSpouseField()) {
         result.role = Role.Spouse;
-        let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse or Partner"]);
+        let spouseName = getCleanValueForRecordDataList(extractedData, result, ["Spouse", "Spouse or Partner"]);
         result.setPrimaryPersonFullName(spouseName);
       }
     } else {
