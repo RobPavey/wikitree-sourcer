@@ -703,7 +703,7 @@ function buildCoreCitation(ed, gd, options, sharingDataObj, builder) {
   buildSourceReference(ed, builder);
   addReferenceDataToSourceReference(ed, gd, builder, options);
 
-  if (sharingDataObj) {
+  if (sharingDataObj && options.citation_ancestry_includeSharingTemplate) {
     let template = buildAncestrySharingTemplateFromSharingDataObj(options, sharingDataObj);
     builder.sharingLinkOrTemplate = template;
     builder.databaseHasImages = true;
