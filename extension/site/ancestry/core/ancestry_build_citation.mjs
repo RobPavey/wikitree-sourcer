@@ -741,7 +741,7 @@ function buildImageCitation(ed, options, sharingDataObj, builder) {
     builder.sourceReference = sourceReference;
   }
 
-  if (sharingDataObj) {
+  if (sharingDataObj && options.citation_ancestry_includeSharingTemplate) {
     let template = buildAncestrySharingTemplateFromSharingDataObj(options, sharingDataObj);
     builder.sharingLinkOrTemplate = template;
   }
@@ -765,7 +765,7 @@ function buildSharingPageCitation(ed, options, builder) {
   }
 
   if (ed.dbId && ed.recordId) {
-    // determin if the ed.recordId is actually an image ID
+    // determine if the ed.recordId is actually an image ID
     let isImageId = false;
     if (ed.sharingType == "v1") {
       isImageId = true;
