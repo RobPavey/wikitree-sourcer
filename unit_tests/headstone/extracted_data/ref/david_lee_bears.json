@@ -1,0 +1,34 @@
+{
+  "url": "http://localhost:8777/person/969672412ee8",
+  "success": true,
+  "givenNames": "David Lee",
+  "lastName": "Bears",
+  "maidenName": "",
+  "suffix": "",
+  "birthDate": "1860-00-00",
+  "deathDate": "1925-02-12",
+  "cemetery": {
+    "name": "Fairmont Cemetery",
+    "space": "Fairmont_Cemetery_Raton_NM_USA",
+    "city": "Raton",
+    "county": "Colfax",
+    "state": "New Mexico",
+    "country": "United States of America"
+  },
+  "gps": {
+    "lat": 36.90411666666667,
+    "lon": -104.43029666666666
+  },
+  "photographer": {
+    "name": "Azure Robinson",
+    "wikitreeId": "Robinson-27225"
+  },
+  "takenAt": "2020:11:23 07:48:44",
+  "inscription": "DAVID LEE BEARS\n1860 ~ 1925",
+  "ids": {
+    "wikitree": "",
+    "findagrave": "12345678",
+    "familysearch": "ABCD-123"
+  },
+  "citation": "*Monumental inscription. United States of America. [[Space:Fairmont_Cemetery_Raton_NM_USA|Fairmont Cemetery]], Raton, Colfax, New Mexico. 1925 (1860). BEARS, David Lee. GPS: 36.904117, -104.430297. Photographed by: [[Robinson-27225|Azure Robinson]]: taken 23 Nov 2020."
+}

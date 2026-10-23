@@ -66,6 +66,7 @@ import "../../geneteka/core/geneteka_site_data.mjs";
 import "../../gensau/core/gensau_site_data.mjs";
 import "../../gro/core/gro_site_data.mjs";
 import "../../hathi/core/hathi_site_data.mjs";
+import "../../headstone/core/headstone_site_data.mjs";
 import "../../imdb/core/imdb_site_data.mjs";
 import "../../irishg/core/irishg_site_data.mjs";
 import "../../itcadgg/core/itcadgg_site_data.mjs";

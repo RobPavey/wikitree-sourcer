@@ -59,6 +59,7 @@ const siteNames = [
   "gensau",
   "gro",
   "hathi",
+  "headstone",
   "imdb",
   "irishg",
   "itcadgg",
@@ -98,7 +99,7 @@ const siteNames = [
   "wikitree",
   "yadvashem",
   "yorkshireburials",
-  "youtube",
+  "youtube"
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {
