@@ -34,6 +34,14 @@ import {
 import { savePersonData } from "./popup_person_data.mjs";
 
 import { getSites } from "../common/site_registry_storage.mjs";
+import {
+  startNewCollectedCitations,
+  getCollectedCitations,
+  getPreviousCollectedCitations,
+  stopCollectingCitations,
+  restoreCollectedCitations,
+  removeLastCitationFromCollectedCitations,
+} from "../common/collected_citations.mjs";
 
 import { dateQualifiers, GeneralizedData, NameObj } from "../../core/generalize_data_utils.mjs";
 import { DateUtils } from "../../core/date_utils.mjs";
@@ -213,64 +221,6 @@ function getTitleForHoverText(sites, citationObj, gd) {
   return title;
 }
 
-async function getCollectedCitations(key) {
-  //console.log("getCollectedCitations");
-
-  return new Promise((resolve, reject) => {
-    try {
-      chrome.storage.local.get([key], function (value) {
-        //console.log("getPendingSearch resolve");
-        resolve(value[key]);
-      });
-    } catch (ex) {
-      console.log("getCollectedCitations catch");
-      reject(ex);
-    }
-  });
-}
-
-async function startCollectingCitations() {
-  let collectedCitations = {
-    citations: [],
-  };
-
-  let items = { collectedCitations: collectedCitations };
-  await chrome.storage.local.set(items);
-
-  closePopup();
-}
-
-async function restoreCollectedCitations() {
-  let collectedCitations = await getCollectedCitations("previousCollectedCitations");
-  if (collectedCitations && collectedCitations.citations && collectedCitations.citations.length) {
-    let items = { collectedCitations: collectedCitations };
-    await chrome.storage.local.set(items);
-
-    await chrome.storage.local.remove("previousCollectedCitations");
-  }
-
-  closePopup();
-}
-
-async function stopCollectingCitations() {
-  console.log("stopCollectingCitations");
-
-  let collectedCitations = await getCollectedCitations("collectedCitations");
-  console.log("collectedCitations is ", collectedCitations);
-  if (collectedCitations && collectedCitations.citations && collectedCitations.citations.length) {
-    let items = { previousCollectedCitations: collectedCitations };
-    await chrome.storage.local.set(items);
-    console.log("collectedCitations set previousCollectedCitations to ", collectedCitations);
-  }
-
-  await chrome.storage.local.remove("collectedCitations");
-  console.log("stopCollectingCitations, removed");
-
-  closePopup();
-
-  console.log("stopCollectingCitations, end");
-}
-
 function getAllCitationsFunction(data) {
   let citationObjs = data.citations;
   let gd = data.generalizedData;
@@ -348,6 +298,32 @@ async function saveCollectedCitationsPersonData(data, fields) {
     savePersonGd.setPersonGender(bestOption.text);
   }
 
+  // add any marriages to the save person data to help fill the marriage details
+  for (let citation of data.citations) {
+    if (citation.generalizedData && citation.generalizedData.spouses) {
+      let spouses = citation.generalizedData.spouses;
+      if (!savePersonGd.spouses) {
+        savePersonGd.spouses = spouses;
+      } else {
+        for (let spouse of spouses) {
+          // it doesn't really matter if we add duplicates, when we fill the fields we just look
+          // for a marriage where the name matches the name of the person we are adding a spouse to.
+          // Ideally, we would pick the citation with the most accurate marriage date and place.
+          let isDuplicate = false;
+          for (let existingSpouse of savePersonGd.spouses) {
+            if (existingSpouse.name && spouse.name && spouse.name.name == existingSpouse.name.name) {
+              isDuplicate = true;
+              break;
+            }
+          }
+          if (!isDuplicate) {
+            savePersonGd.spouses.push(spouse);
+          }
+        }
+      }
+    }
+  }
+
   // Create the personData object that savePersonData expects
   const personData = {
     extractedData: {},
@@ -378,7 +354,7 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
     backFunction();
   });
 
-  let collectedCitations = await getCollectedCitations("collectedCitations");
+  let collectedCitations = await getCollectedCitations();
   if (collectedCitations && collectedCitations.citations) {
     let numCitations = collectedCitations.citations.length;
     let message = `There are ${numCitations} collected citations`;
@@ -843,7 +819,7 @@ async function setupCollectCitationsSubmenu(data, collectedCitations, backFuncti
 
   let numCollectedCitations = collectedCitations?.citations?.length ?? 0;
 
-  let previousCollectedCitations = await getCollectedCitations("previousCollectedCitations");
+  let previousCollectedCitations = await getPreviousCollectedCitations();
   let numPreviousCollectedCitations = previousCollectedCitations?.citations?.length ?? 0;
 
   if (numCollectedCitations) {
@@ -851,13 +827,27 @@ async function setupCollectCitationsSubmenu(data, collectedCitations, backFuncti
       setupSavePersonDataFromCollectedCitationsSubmenu(backToHereFunction);
     });
   }
-  addMenuItem(menu, `Stop collecting citations (${numCollectedCitations})`, function (element) {
-    stopCollectingCitations();
+  addMenuItem(menu, `Stop collecting citations (${numCollectedCitations})`, async function (element) {
+    await stopCollectingCitations();
+    closePopup();
   });
-  if (numPreviousCollectedCitations) {
-    addMenuItem(menu, `Restore previous collected citations (${numPreviousCollectedCitations})`, function (element) {
-      restoreCollectedCitations();
+
+  if (numCollectedCitations) {
+    addMenuItem(menu, "Remove last citation...", async function (element) {
+      await removeLastCitationFromCollectedCitations();
+      closePopup();
     });
+  }
+
+  if (numPreviousCollectedCitations) {
+    addMenuItem(
+      menu,
+      `Restore previous collected citations (${numPreviousCollectedCitations})`,
+      async function (element) {
+        await restoreCollectedCitations();
+        closePopup();
+      }
+    );
   }
 
   endMainMenu(menu);
@@ -865,7 +855,7 @@ async function setupCollectCitationsSubmenu(data, collectedCitations, backFuncti
 
 async function addCollectCitationsMenuItem(menu, data, backFunction) {
   let collectingCitations = false;
-  let collectedCitations = await getCollectedCitations("collectedCitations");
+  let collectedCitations = await getCollectedCitations();
   if (collectedCitations) {
     collectingCitations = true;
   }
@@ -876,8 +866,9 @@ async function addCollectCitationsMenuItem(menu, data, backFunction) {
       setupCollectCitationsSubmenu(data, collectedCitations, backFunction);
     });
   } else {
-    addMenuItem(menu, "Start collecting citations", function (element) {
-      startCollectingCitations();
+    addMenuItem(menu, "Start collecting citations", async function (element) {
+      await startNewCollectedCitations();
+      closePopup();
     });
   }
 }
