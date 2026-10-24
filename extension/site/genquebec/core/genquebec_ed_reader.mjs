@@ -30,8 +30,6 @@ class GenquebecEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
 
-    this.fields = ed.fields ? ed.fields : {};
-
     let header = ed.indexHeader ? ed.indexHeader : "";
     if (/^Birth/i.test(header)) {
       this.recordType = RT.Baptism;
@@ -39,80 +37,36 @@ class GenquebecEdReader extends ExtractedDataReader {
       this.recordType = RT.Burial;
     } else if (
       /^Marriage/i.test(header) ||
-      (/^Couple file/i.test(header) && (this.fields["Marriage date"] || this.fields["Marriage location"]))
+      (/^Couple file/i.test(header) && this.getRecordDataValueForKeys(["Marriage date", "Marriage location"]))
     ) {
       this.recordType = RT.Marriage;
     }
 
     // Marriage records have a groom and a bride, the labels vary by collection
     this.isMarriage = this.recordType == RT.Marriage;
-    this.groomPrefix = this.fields["Husband"] ? "Husband" : "Man";
-    this.bridePrefix = this.fields["Wife"] ? "Wife" : "Woman";
-  }
-
-  getField(...labels) {
-    for (let label of labels) {
-      if (this.fields[label]) {
-        return this.fields[label];
-      }
-    }
-    return "";
+    this.groomPrefix = this.getRecordDataValueForKeys(["Husband"]) ? "Husband" : "Man";
+    this.bridePrefix = this.getRecordDataValueForKeys(["Wife"]) ? "Wife" : "Woman";
   }
 
   getGroomField(suffix) {
     // e.g. "Husband's age" or "Man's father"
-    return this.getField(this.groomPrefix + "'s " + suffix);
+    return this.getRecordDataValueForKeys([this.groomPrefix + "'s " + suffix]) || "";
   }
 
   getBrideField(suffix) {
-    return this.getField(this.bridePrefix + "'s " + suffix);
+    return this.getRecordDataValueForKeys([this.bridePrefix + "'s " + suffix]) || "";
   }
 
   makeName(fullName) {
     if (!fullName) {
       return undefined;
     }
-    let commaIndex = fullName.indexOf(",");
-    if (commaIndex >= 0) {
-      let lastName = fullName.substring(0, commaIndex).trim();
-      let forenames = fullName.substring(commaIndex + 1).trim();
-      return this.makeNameObjFromForenamesAndLastName(
-        forenames,
-        StringUtils.toInitialCapsEachWord(lastName, true)
-      );
+    let name = this.makeNameObjFromLastNameCommaForenames(fullName);
+    if (name) {
+      name.setLastName(StringUtils.toInitialCapsEachWord(name.inferLastName(), true));
+      return name;
     }
     return this.makeNameObjFromFullName(fullName);
-  }
-
-  makeDate(dateString) {
-    if (!dateString) {
-      return undefined;
-    }
-    let match = dateString.match(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/);
-    if (match) {
-      let months = {
-        Jan: "January",
-        Feb: "February",
-        Mar: "March",
-        Apr: "April",
-        May: "May",
-        Jun: "June",
-        Jul: "July",
-        Aug: "August",
-        Sep: "September",
-        Oct: "October",
-        Nov: "November",
-        Dec: "December",
-      };
-      if (months[match[2]]) {
-        dateString = match[1] + " " + months[match[2]] + " " + match[3];
-      }
-    }
-    return this.makeDateObjFromDateString(dateString);
-  }
-
-  makePlace(placeString) {
-    return placeString ? this.makePlaceObjFromFullPlaceName(placeString) : undefined;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -121,48 +75,49 @@ class GenquebecEdReader extends ExtractedDataReader {
 
   getNameObj() {
     if (this.isMarriage) {
-      return this.makeName(this.getField("Husband", "Man's name"));
+      return this.makeName(this.getRecordDataValueForKeys(["Husband", "Man's name"]));
     }
-    return this.makeName(this.getField("Name"));
+    return this.makeName(this.getRecordDataValueForKeys(["Name"]));
   }
 
   getGender() {
     if (this.isMarriage) {
       return "male";
     }
-    return this.getField("Gender");
+    return this.getRecordDataValueForKeys(["Gender"]) || "";
   }
 
   getEventDateObj() {
     if (this.recordType == RT.Baptism) {
-      return this.makeDate(this.getField("Baptism date", "Birth date"));
+      return this.makeDateObjFromDateString(this.getRecordDataValueForKeys(["Baptism date", "Birth date"]));
     } else if (this.recordType == RT.Burial) {
-      return this.makeDate(this.getField("Burial date", "Death date"));
+      return this.makeDateObjFromDateString(this.getRecordDataValueForKeys(["Burial date", "Death date"]));
     }
-    return this.makeDate(this.getField("Marriage date"));
+    return this.makeDateObjFromDateString(this.getRecordDataValueForKeys(["Marriage date"]));
   }
 
   getEventPlaceObj() {
-    return this.makePlace(this.getField("Baptism location", "Burial location", "Marriage location"));
+    let place = this.getRecordDataValueForKeys(["Baptism location", "Burial location", "Marriage location"]);
+    return place ? this.makePlaceObjFromFullPlaceName(place) : undefined;
   }
 
   getBirthDateObj() {
     if (this.recordType == RT.Baptism) {
-      return this.makeDate(this.getField("Birth date"));
+      return this.makeDateObjFromDateString(this.getRecordDataValueForKeys(["Birth date"]));
     }
     return undefined;
   }
 
   getDeathDateObj() {
     if (this.recordType == RT.Burial) {
-      return this.makeDate(this.getField("Death date"));
+      return this.makeDateObjFromDateString(this.getRecordDataValueForKeys(["Death date"]));
     }
     return undefined;
   }
 
   getAgeAtDeath() {
     if (this.recordType == RT.Burial) {
-      return this.getField("Age").replace(/^0+(?=\d)/, "");
+      return (this.getRecordDataValueForKeys(["Age"]) || "").replace(/^0+(?=\d)/, "");
     }
     return "";
   }
@@ -180,7 +135,7 @@ class GenquebecEdReader extends ExtractedDataReader {
     if (this.isMarriage) {
       return this.getGroomField("civil status");
     }
-    return this.getField("Civil status");
+    return this.getRecordDataValueForKeys(["Civil status"]);
   }
 
   getOccupation() {
@@ -192,7 +147,7 @@ class GenquebecEdReader extends ExtractedDataReader {
 
   getSpouses() {
     if (this.isMarriage) {
-      let spouseNameObj = this.makeName(this.getField("Wife", "Woman's name"));
+      let spouseNameObj = this.makeName(this.getRecordDataValueForKeys(["Wife", "Woman's name"]));
       let age = this.getBrideField("age");
       if (!/\d/.test(age)) {
         age = "";
@@ -208,7 +163,7 @@ class GenquebecEdReader extends ExtractedDataReader {
       return [spouse];
     }
 
-    let spouseNameObj = this.makeName(this.getField("Spouse"));
+    let spouseNameObj = this.makeName(this.getRecordDataValueForKeys(["Spouse"]));
     if (spouseNameObj) {
       return [this.makeSpouseObj(spouseNameObj)];
     }
@@ -222,8 +177,8 @@ class GenquebecEdReader extends ExtractedDataReader {
       father = this.getGroomField("father");
       mother = this.getGroomField("mother");
     } else {
-      father = this.getField("Father");
-      mother = this.getField("Mother");
+      father = this.getRecordDataValueForKeys(["Father"]);
+      mother = this.getRecordDataValueForKeys(["Mother"]);
     }
     return this.makeParentsFromNameObjs(this.makeName(father), this.makeName(mother));
   }

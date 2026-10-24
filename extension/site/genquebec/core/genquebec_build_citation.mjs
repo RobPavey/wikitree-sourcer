@@ -86,7 +86,7 @@ function getSupplementalCitationFields(ed) {
     "woman's civil status",
   ]);
 
-  return Object.entries(ed.fields || {})
+  return Object.entries(ed.recordData || {})
     .filter(([key, value]) => {
       if (!key || !value) {
         return false;

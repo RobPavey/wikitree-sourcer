@@ -26,33 +26,6 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
-const monthNames = {
-  Jan: "January",
-  Feb: "February",
-  Mar: "March",
-  Apr: "April",
-  May: "May",
-  Jun: "June",
-  Jul: "July",
-  Aug: "August",
-  Sep: "September",
-  Oct: "October",
-  Nov: "November",
-  Dec: "December",
-};
-
-// PRDH dates are like "20-Dec-1790"
-function normalizeDate(dateString) {
-  if (!dateString) {
-    return "";
-  }
-  let match = dateString.match(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/);
-  if (match && monthNames[match[2]]) {
-    return match[1] + " " + monthNames[match[2]] + " " + match[3];
-  }
-  return dateString;
-}
-
 // Surnames are in capitals on PRDH: "Marie Louise FORTIER"
 function splitName(fullName) {
   let tokens = fullName.trim().split(/\s+/);
@@ -122,11 +95,6 @@ class PrdhEdReader extends ExtractedDataReader {
       forenames,
       StringUtils.toInitialCapsEachWord(lastName, true)
     );
-  }
-
-  makeDate(dateString) {
-    let normalized = normalizeDate(dateString);
-    return normalized ? this.makeDateObjFromDateString(normalized) : undefined;
   }
 
   // "Lauzon (St-Joseph-de-la-Pointe-Lévy)" is a place and the parish in that place
@@ -246,9 +214,9 @@ class PrdhEdReader extends ExtractedDataReader {
 
   getEventDateObj() {
     if (this.isRecord) {
-      return this.makeDate(this.ed.eventDate);
+      return this.makeDateObjFromDateString(this.ed.eventDate);
     } else if (this.pageType == "family") {
-      return this.makeDate(this.ed.marriageDate);
+      return this.makeDateObjFromDateString(this.ed.marriageDate);
     }
     return undefined;
   }
@@ -264,9 +232,9 @@ class PrdhEdReader extends ExtractedDataReader {
 
   getBirthDateObj() {
     if (this.recordType == RT.Baptism && /birth|naissance/i.test(this.ed.birthOrDeathLabel)) {
-      return this.makeDate(this.ed.birthOrDeathDate);
+      return this.makeDateObjFromDateString(this.ed.birthOrDeathDate);
     } else if (this.pageType == "individual") {
-      return this.makeDate(this.ed.birthDate);
+      return this.makeDateObjFromDateString(this.ed.birthDate);
     }
     return undefined;
   }
@@ -280,9 +248,9 @@ class PrdhEdReader extends ExtractedDataReader {
 
   getDeathDateObj() {
     if (this.recordType == RT.Burial && /death|d[ée]c[èe]s/i.test(this.ed.birthOrDeathLabel)) {
-      return this.makeDate(this.ed.birthOrDeathDate);
+      return this.makeDateObjFromDateString(this.ed.birthOrDeathDate);
     } else if (this.pageType == "individual") {
-      return this.makeDate(this.ed.deathDate || this.splitDateAndPlace(this.ed.death).date);
+      return this.makeDateObjFromDateString(this.ed.deathDate || this.splitDateAndPlace(this.ed.death).date);
     }
     return undefined;
   }
@@ -354,7 +322,7 @@ class PrdhEdReader extends ExtractedDataReader {
       for (let union of this.ed.unions) {
         let spouse = this.makeSpouseObj(
           this.makeNameObjFromPrdhParts(union.spouseForenames, union.spouseLastName),
-          this.makeDate(union.marriageDate),
+          this.makeDateObjFromDateString(union.marriageDate),
           this.makePlaceFromParish(union.marriagePlace)
         );
         if (spouse) {

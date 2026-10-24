@@ -7,10 +7,10 @@
     "forenames": "Joseph"
   },
   "birthDate": {
-    "dateString": "19 December 1790"
+    "dateString": "19-Dec-1790"
   },
   "deathDate": {
-    "dateString": "27 June 1832"
+    "dateString": "27-Jun-1832"
   },
   "spouses": [
     {
@@ -19,7 +19,7 @@
         "forenames": "Genevieve"
       },
       "marriageDate": {
-        "dateString": "29 October 1816"
+        "dateString": "29-Oct-1816"
       },
       "marriagePlace": {
         "placeString": "Lauzon (St-Joseph-de-la-Pointe-Lévy), Québec, Canada"

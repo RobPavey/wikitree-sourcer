@@ -83,7 +83,7 @@ async function runTests(testManager) {
       success: true,
       pageType: "record",
       indexHeader: "Couple file",
-      fields: {
+      recordData: {
         Husband: "Jean Dupont",
         Wife: "Marie Tremblay",
         "Marriage location": "Québec",
@@ -98,7 +98,7 @@ async function runTests(testManager) {
     extractedData: {
       success: true,
       indexHeader: "Couple file",
-      fields: {
+      recordData: {
         Husband: "Jean Dupont",
         Wife: "Marie Tremblay",
         "Marriage date": "12 May 1880",
@@ -110,7 +110,7 @@ async function runTests(testManager) {
     extractedData: {
       success: true,
       indexHeader: "Couple file",
-      fields: { Husband: "Jean Dupont", Wife: "Marie Tremblay" },
+      recordData: { Husband: "Jean Dupont", Wife: "Marie Tremblay" },
     },
   });
   assert.notEqual(nonMarriageCoupleFile.recordType, "Marriage");

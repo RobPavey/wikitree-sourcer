@@ -8,13 +8,13 @@
   },
   "personGender": "male",
   "eventDate": {
-    "dateString": "20 December 1790"
+    "dateString": "20-Dec-1790"
   },
   "eventPlace": {
     "placeString": "Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada"
   },
   "birthDate": {
-    "dateString": "19 December 1790"
+    "dateString": "19-Dec-1790"
   },
   "parents": {
     "father": {

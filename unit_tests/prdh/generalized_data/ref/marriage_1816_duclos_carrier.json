@@ -8,7 +8,7 @@
   },
   "personGender": "male",
   "eventDate": {
-    "dateString": "29 October 1816"
+    "dateString": "29-Oct-1816"
   },
   "eventPlace": {
     "placeString": "Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada"
@@ -20,7 +20,7 @@
         "forenames": "Genevieve"
       },
       "marriageDate": {
-        "dateString": "29 October 1816"
+        "dateString": "29-Oct-1816"
       },
       "marriagePlace": {
         "placeString": "Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada"

@@ -169,7 +169,7 @@ function extractData(document, url) {
       }
     }
 
-    result.fields = fields;
+    result.recordData = fields;
     result.heading = mentions
       .filter((mention) => mention.role == "subject")
       .map((mention) => mention.name)
@@ -210,7 +210,7 @@ function extractData(document, url) {
       }
     }
   }
-  result.fields = fields;
+  result.recordData = fields;
   if (Object.keys(prdhIndividualIds).length > 0) {
     result.prdhIndividualIds = prdhIndividualIds;
   }

@@ -8,13 +8,13 @@
   },
   "personGender": "male",
   "eventDate": {
-    "dateString": "15 April 1850"
+    "dateString": "15-Apr-1850"
   },
   "eventPlace": {
     "placeString": "Beloeil (St-Mathieu), Montérégie, Québec, Canada"
   },
   "deathDate": {
-    "dateString": "13 April 1850"
+    "dateString": "13-Apr-1850"
   },
   "ageAtDeath": "6j",
   "parents": {
