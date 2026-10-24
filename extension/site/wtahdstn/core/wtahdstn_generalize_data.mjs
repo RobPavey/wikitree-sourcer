@@ -22,20 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { registerSite } from "../../../base/core/site_registry.mjs";
+import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
+import { WtahdstnEdReader } from "./wtahdstn_ed_reader.mjs";
 
-const siteData = {
-  siteName: "headstone",
-  matches: ["*://apps.wikitree.com/apps/*/headstone-tool/*"],
-  repositoryName: "Headstone Photo Tool",
-  usPhoneNumber: "",
-  email: "",
-  address: "",
-  baseUrl: "",
-};
-
-function register() {
-  registerSite(siteData);
+// This function generalizes the data extracted from the page content.
+function generalizeData(input) {
+  let edReader = new WtahdstnEdReader(input.extractedData);
+  return commonGeneralizeData("wtahdstn", edReader);
 }
 
-register();
+export { generalizeData };

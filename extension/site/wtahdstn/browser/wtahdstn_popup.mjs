@@ -24,19 +24,19 @@ SOFTWARE.
 
 import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
-import { generalizeData } from "../core/headstone_generalize_data.mjs";
-import { buildCitation } from "../core/headstone_build_citation.mjs";
+import { generalizeData } from "../core/wtahdstn_generalize_data.mjs";
+import { buildCitation } from "../core/wtahdstn_build_citation.mjs";
 
-async function setupHeadstonePopupMenu(extractedData) {
+async function setupWtahdstnPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
     extractFailedMessage: "It looks like a Headstone Photo Tool page but not a record page.",
     generalizeFailedMessage: "It looks like a Headstone Photo Tool page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
-    siteNameToExcludeFromSearch: "headstone",
+    siteNameToExcludeFromSearch: "wtahdstn",
   };
   setupSimplePopupMenu(input);
 }
 
-initPopup("headstone", setupHeadstonePopupMenu);
+initPopup("wtahdstn", setupWtahdstnPopupMenu);

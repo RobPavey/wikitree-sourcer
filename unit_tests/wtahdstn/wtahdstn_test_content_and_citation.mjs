@@ -22,10 +22,33 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import * as test_content_and_citation from "./headstone_test_content_and_citation.mjs";
+import { generalizeData } from "../../extension/site/wtahdstn/core/wtahdstn_generalize_data.mjs";
+import { buildCitation } from "../../extension/site/wtahdstn/core/wtahdstn_build_citation.mjs";
+
+import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
+import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
+import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
+
+const regressionData = [
+  {
+    // Full death date, birth year only, GPS and photo date, Find a Grave and FamilySearch IDs entered
+    caseName: "david_lee_bears",
+    url: "http://localhost:8777/person/969672412ee8",
+  },
+  {
+    // A single date on the stone, assumed to be the death
+    caseName: "mary_a_moclain",
+    url: "http://localhost:8777/person/mary_a_moclain",
+  },
+];
 
 async function runTests(testManager) {
-  await test_content_and_citation.runTests(testManager);
+  await runExtractDataTests("wtahdstn", regressionData, testManager);
+
+  await runGeneralizeDataTests("wtahdstn", generalizeData, regressionData, testManager);
+
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("wtahdstn", functions, regressionData, testManager);
 }
 
 export { runTests };

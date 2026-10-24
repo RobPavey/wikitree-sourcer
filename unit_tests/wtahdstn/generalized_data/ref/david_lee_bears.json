@@ -1,17 +1,20 @@
 {
-  "sourceOfData": "headstone",
+  "sourceOfData": "wtahdstn",
   "sourceType": "record",
   "recordType": "Burial",
   "name": {
-    "lastName": "Moclain",
-    "forenames": "Mary A"
+    "lastName": "Bears",
+    "forenames": "David Lee"
   },
   "eventPlace": {
     "placeString": "Fairmont Cemetery, Raton, Colfax, New Mexico, United States of America"
   },
-  "lastNameAtDeath": "Moclain",
+  "lastNameAtDeath": "Bears",
+  "birthDate": {
+    "dateString": "1860"
+  },
   "deathDate": {
-    "dateString": "1847"
+    "dateString": "12 Feb 1925"
   },
   "hasValidData": true
 }

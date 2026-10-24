@@ -59,7 +59,6 @@ const siteNames = [
   "gensau",
   "gro",
   "hathi",
-  "headstone",
   "imdb",
   "irishg",
   "itcadgg",
@@ -97,6 +96,7 @@ const siteNames = [
   "wiewaswie",
   "wikipedia",
   "wikitree",
+  "wtahdstn",
   "yadvashem",
   "yorkshireburials",
   "youtube"

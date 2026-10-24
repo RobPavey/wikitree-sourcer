@@ -41,7 +41,7 @@ function worklistDateToString(iso) {
   return month ? monthNames[month - 1] + " " + m[1] : m[1];
 }
 
-class HeadstoneEdReader extends ExtractedDataReader {
+class WtahdstnEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
 
@@ -144,4 +144,4 @@ class HeadstoneEdReader extends ExtractedDataReader {
   }
 }
 
-export { HeadstoneEdReader };
+export { WtahdstnEdReader };
