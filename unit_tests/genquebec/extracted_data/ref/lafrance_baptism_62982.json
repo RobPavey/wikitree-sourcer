@@ -1,0 +1,27 @@
+{
+  "url": "https://www.genealogiequebec.com/Membership/LAFRANCE/acte/62982",
+  "success": true,
+  "pageType": "membership-lafrance",
+  "recordId": "62982",
+  "indexHeader": "Birth, LaFrance",
+  "recordData": {
+    "Arrondissement": "La Cité-Limoilou",
+    "MRC": "Québec",
+    "Région": "Capitale-Nationale",
+    "Name": "BAILLY, Francois Augustin",
+    "Gender": "male",
+    "Age": "",
+    "Father": "BAILLY DEMASSIN, Nicolas",
+    "Father's occupation": "ENSEIGNE DANS LES TROUPES DE LA MARINE",
+    "Mother": "BONHOMME, Anne",
+    "Francois Augustin DEJOANNES's occupation": "BARON, LIEUTENANT DANS LES TROUPES DE LA MARINE",
+    "POCQUET's occupation": "CURE",
+    "Other individuals listed": "Francois Augustin DEJOANNES, Marie Madeleine LEVASSEUR, POCQUET",
+    "Baptism date": "21-Aug-1709",
+    "Baptism location": "Québec (Notre-Dame-de-Québec)",
+    "Birth date": "20-Aug-1709"
+  },
+  "heading": "BAILLY, Francois Augustin",
+  "originalSource": "Drouin Institute, LAFRANCE",
+  "imageUrl": "../img/acte/62982"
+}

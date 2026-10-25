@@ -70,6 +70,16 @@ const regressionData = [
     pageFile: "./unit_tests/genquebec/saved_pages/lafrance_marriage_150026_new.html",
     url: "https://www.genealogiequebec.com/en/lafrance_mariages/150026",
   },
+  {
+    caseName: "lafrance_baptism_62982",
+    pageFile: "./unit_tests/genquebec/saved_pages/lafrance_baptism_62982.html",
+    url: "https://www.genealogiequebec.com/Membership/LAFRANCE/acte/62982",
+  },
+  {
+    caseName: "lafrance_burial_378954",
+    pageFile: "./unit_tests/genquebec/saved_pages/lafrance_burial_378954.html",
+    url: "https://www.genealogiequebec.com/Membership/LAFRANCE/acte/378954",
+  },
 ];
 
 async function runTests(testManager) {
@@ -126,7 +136,7 @@ async function runTests(testManager) {
     assert.ok(citation.citation.includes("Complementary information:"));
     assert.ok(citation.citation.includes("View original document"));
     if (testCase.endsWith("_old")) {
-      assert.ok(citation.citation.includes("DAILLEBOUT DARGENTEUIL, Jean's occupation: ECUYER"));
+      assert.ok(citation.citation.includes("Jean DAILLEBOUT DARGENTEUIL's occupation: ECUYER"));
       assert.ok(citation.citation.includes("Arrondissement: Ville-Marie"));
     }
   }

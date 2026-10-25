@@ -163,7 +163,7 @@ function extractData(document, url) {
           otherIndividuals.push(formatMentionName(mention.name));
           for (let key of ["occupation", "residence", "origin", "status"]) {
             if (mention[key]) {
-              fields[mention.name + "'s " + key] = mention[key];
+              fields[formatMentionName(mention.name) + "'s " + key] = mention[key];
             }
           }
         }
@@ -177,6 +177,16 @@ function extractData(document, url) {
         fields.Name = subject.name;
         fields.Gender = /^f/i.test(subject.sex || "") ? "female" : /^m/i.test(subject.sex || "") ? "male" : "";
         fields.Age = subject.age || "";
+        for (let [key, label] of [
+          ["occupation", "Occupation"],
+          ["residence", "Residence"],
+          ["origin", "Origin"],
+          ["status", "Status"],
+        ]) {
+          if (subject[key]) {
+            fields[label] = subject[key];
+          }
+        }
       }
       let father = mentions.find((mention) => mention.role == "father");
       let mother = mentions.find((mention) => mention.role == "mother");
@@ -191,6 +201,24 @@ function extractData(document, url) {
         if (mother.occupation) {
           fields["Mother's occupation"] = mother.occupation;
         }
+      }
+      let otherIndividuals = [];
+      for (let mention of mentions) {
+        if (["subject", "father", "mother"].includes(mention.role)) {
+          continue;
+        }
+        otherIndividuals.push(formatMentionName(mention.name));
+        if (mention.role) {
+          fields[formatMentionName(mention.name) + "'s role"] = mention.role;
+        }
+        for (let key of ["occupation", "residence", "origin", "status"]) {
+          if (mention[key]) {
+            fields[formatMentionName(mention.name) + "'s " + key] = mention[key];
+          }
+        }
+      }
+      if (otherIndividuals.length > 0) {
+        fields["Other individuals listed"] = otherIndividuals.join(", ");
       }
 
       if (normalizedType == "baptism") {

@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "genquebec",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Massin Bailly",
+    "forenames": "Francois Augustin"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "04-Apr-1771"
+  },
+  "eventPlace": {
+    "placeString": "Varennes (Ste-Anne)"
+  },
+  "deathDate": {
+    "dateString": "02-Apr-1771"
+  },
+  "ageAtDeath": "61",
+  "hasValidData": true
+}
