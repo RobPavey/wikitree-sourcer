@@ -103,6 +103,8 @@ import "../../wagovau/core/wagovau_site_data.mjs";
 import "../../wiewaswie/core/wiewaswie_site_data.mjs";
 import "../../wikipedia/core/wikipedia_site_data.mjs";
 import "../../wikitree/core/wikitree_site_data.mjs";
+import "../../wol/core/wol_site_data.mjs";
+import "../../wtahdstn/core/wtahdstn_site_data.mjs";
 import "../../yadvashem/core/yadvashem_site_data.mjs";
 import "../../yorkshireburials/core/yorkshireburials_site_data.mjs";
 import "../../youtube/core/youtube_site_data.mjs";
