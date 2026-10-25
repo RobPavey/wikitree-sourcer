@@ -99,7 +99,9 @@ function wolGetPagesFromPageMarkers(document) {
 }
 
 // Some articles have a byline in the paragraph after the title. e.g. "As told by Max Liebster" or
-// "By Awake! correspondent in Germany". The text is only recognized in English.
+// "By Awake! correspondent in Germany". A life story can instead end with it, e.g.
+// "And down to this day, Jehovah has done just that!—As told by Simone Arnold Liebster."
+// The text is only recognized in English.
 function wolGetByline(document) {
   const paragraphs = document.querySelectorAll("div.scalableui > p");
   for (let i = 0; i < paragraphs.length && i < 4; i++) {
@@ -115,6 +117,21 @@ function wolGetByline(document) {
     match = text.match(/^by (.+)$/i);
     if (match) {
       return { type: "by", name: match[1].trim() };
+    }
+  }
+
+  // At the end the text has to follow a dash and end the paragraph, so that a mention in the text of the article
+  // (e.g. a reference to another article "as told by ...") is not used.
+  let numChecked = 0;
+  for (let i = paragraphs.length - 1; i >= 0 && numChecked < 4; i--) {
+    const text = wolCleanText(paragraphs[i].textContent);
+    if (!text) {
+      continue;
+    }
+    numChecked++;
+    const match = text.match(/[\u2014\u2013-]\s*as told by ([^.\u2014\u2013]+?)\.?$/i);
+    if (match) {
+      return { type: "told by", name: match[1].trim() };
     }
   }
   return undefined;
