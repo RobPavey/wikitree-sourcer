@@ -34,7 +34,11 @@ function buildSourceTitle(ed, gd, builder) {
   if (year) {
     builder.sourceTitle += year + " ";
   }
-  builder.sourceTitle += "Census of Ireland";
+  if (year === 1926 || year === "1926") {
+    builder.sourceTitle += "Census of the Irish Free State";
+  } else {
+    builder.sourceTitle += "Census of Ireland";
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {
