@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''DeathRegistration''':\n\"Missouri Death Certificates, 1910 - 1975\"<br/>\nMissouri State Archives; Deceased: Frank A. Rother; Date of Death: October 06, 1968; County: St. Louis City<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1968/1968_00042794.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nSpouse: Erple Rother; Father: Rother; Age: 65; Certificate Number: 42794; Last Four SSN: 7472.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Frank, child of Rother, died (age 65) on 6 October 1968 in St. Louis City, Missouri, United States of America.<ref>\n'''DeathRegistration''':\n\"Missouri Death Certificates, 1910 - 1975\"<br/>\nMissouri State Archives; Deceased: Frank A. Rother; Date of Death: October 06, 1968; County: St. Louis City<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1968/1968_00042794.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nSpouse: Erple Rother; Father: Rother; Age: 65; Certificate Number: 42794; Last Four SSN: 7472.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''DeathRegistration''': \"Missouri Death Certificates, 1910 - 1975\"<br/>Missouri State Archives; Deceased: Frank A. Rother; Date of Death: October 06, 1968; County: St. Louis City<br/>[https://www.sos.mo.gov/images/archives/deathcerts/1968/1968_00042794.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>Spouse: Erple Rother; Father: Rother; Age: 65; Certificate Number: 42794; Last Four SSN: 7472.",
+    "type": "source"
+  }
+}

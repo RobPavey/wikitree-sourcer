@@ -88,7 +88,7 @@ function extractData(document, url) {
     return result;
   }
 
-  const tableHeader = deathCertTable.querySelector("tr[data-sortable]"); // retrieve result table header row
+  const tableHeader = deathCertTable.querySelector("thead > tr"); // retrieve result table header row
   if (!tableHeader) {
     return result;
   }
@@ -98,9 +98,9 @@ function extractData(document, url) {
     return result;
   } else {
     for (let headerCell of headerCells) {
-      let key = headerCell.className.trim();
+      let key = headerCell.className.replace(/ sortable$/, "");
       if (key != "Image") {
-        let value = headerCell.querySelector("span").textContent.trim();
+        let value = headerCell.querySelector("a").textContent.trim();
         if (key && value) {
           headerKeyValuePairs[key] = value;
         }
@@ -108,7 +108,7 @@ function extractData(document, url) {
     }
   }
 
-  const tableRows = deathCertTable.querySelectorAll("tr:not([data-sortable])"); // retrieve the rest of the result table rows
+  const tableRows = deathCertTable.querySelectorAll("tbody > tr"); // retrieve the rest of the result table rows
   if (tableRows.length < 1) {
     return result;
   }
