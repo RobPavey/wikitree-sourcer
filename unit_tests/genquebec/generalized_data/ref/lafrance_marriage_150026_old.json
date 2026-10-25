@@ -1,0 +1,63 @@
+{
+  "sourceOfData": "genquebec",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Bailly Demassin",
+    "forenames": "Francois Augustin"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "13-Jan-1740"
+  },
+  "eventPlace": {
+    "placeString": "Montréal (Notre-Dame-de-Montréal)"
+  },
+  "ageAtEvent": "030",
+  "maritalStatus": "single",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Desgoutin",
+        "forenames": "Marie Anne"
+      },
+      "marriageDate": {
+        "dateString": "13-Jan-1740"
+      },
+      "marriagePlace": {
+        "placeString": "Montréal (Notre-Dame-de-Montréal)"
+      },
+      "age": "017",
+      "personGender": "female",
+      "parents": {
+        "father": {
+          "name": {
+            "lastName": "Desgoutin",
+            "forenames": "Francois Marie"
+          }
+        },
+        "mother": {
+          "name": {
+            "lastName": "Aubert Delachenay",
+            "forenames": "Angelique"
+          }
+        }
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Bailly Demassin",
+        "forenames": "Nicolas"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Bonhomme",
+        "forenames": "Marie Anne"
+      }
+    }
+  },
+  "hasValidData": true
+}

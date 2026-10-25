@@ -17,8 +17,10 @@
       "individualId": "633835",
       "age": "---",
       "maritalStatus": "c",
-      "presence": "p",
-      "sex": "m"
+      "presence": "Present",
+      "sex": "m",
+      "residence": "",
+      "origin": ""
     },
     {
       "rank": "02",
@@ -26,8 +28,10 @@
       "individualId": "51583",
       "age": "---",
       "maritalStatus": "---",
-      "presence": "p",
+      "presence": "Present",
       "sex": "m",
+      "residence": "",
+      "origin": "",
       "relations": [
         {
           "type": "FATHER",
@@ -41,8 +45,10 @@
       "individualId": "51884",
       "age": "---",
       "maritalStatus": "---",
-      "presence": "p",
+      "presence": "Present",
       "sex": "f",
+      "residence": "",
+      "origin": "",
       "relations": [
         {
           "type": "MOTHER",

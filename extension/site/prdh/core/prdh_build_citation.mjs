@@ -59,13 +59,66 @@ function buildRecordLink(ed, gd, builder) {
 
 function buildAdditionalCitationFields(ed) {
   let fields = [];
-  for (let mention of ed.mentions || []) {
-    if (mention.occupation) {
-      fields.push({ key: mention.name + "'s occupation", value: mention.occupation });
+  let administrativeAreaRegex = /(?:^|\/)\s*(MRC|Région|Region|Arrondissement)\s*:\s*([^/]+)/gi;
+  let match;
+  while ((match = administrativeAreaRegex.exec(ed.mrc || ""))) {
+    fields.push({ key: match[1], value: match[2].trim() });
+  }
+  let mentions = ed.mentions || [];
+  let husband = mentions.find((mention) => mention.relations?.some((relation) => relation.type == "SPOUSE"));
+  let wife = mentions.find(
+    (mention) => mention.relations?.some((relation) => relation.type == "SPOUSE") && mention !== husband
+  );
+  for (let [personLabel, mention] of [
+    ["Husband", husband],
+    ["Wife", wife],
+  ]) {
+    if (mention?.residence) {
+      fields.push({ key: personLabel + "'s residence", value: mention.residence });
+    }
+    if (mention?.origin) {
+      fields.push({ key: personLabel + "'s origin", value: mention.origin });
+    }
+  }
+
+  let otherIndividuals = [];
+  for (let mention of mentions) {
+    let relation = mention.relations?.[0];
+    if (relation && ["SPOUSE", "FATHER", "MOTHER"].includes(relation.type)) {
+      let spouseLabel = relation.rank == "01" ? "Husband" : relation.rank == "02" ? "Wife" : "";
+      let parentType = relation.type == "FATHER" ? "father" : relation.type == "MOTHER" ? "mother" : "";
+      if (spouseLabel && parentType && mention.occupation) {
+        fields.push({ key: spouseLabel + "'s " + parentType + "'s occupation", value: mention.occupation });
+      }
+      if (spouseLabel && parentType && mention.residence) {
+        fields.push({ key: spouseLabel + "'s " + parentType + "'s residence", value: mention.residence });
+      }
+      if (spouseLabel && parentType && mention.presence && mention.presence != "inconnue") {
+        fields.push({ key: spouseLabel + "'s " + parentType + "'s status", value: mention.presence });
+      }
+      continue;
+    }
+
+    if (mention !== husband && mention !== wife) {
+      otherIndividuals.push(mention.name);
+      for (let key of ["occupation", "residence", "origin"]) {
+        if (mention[key]) {
+          fields.push({ key: mention.name + "'s " + key, value: mention[key] });
+        }
+      }
+      if (mention.presence && mention.presence != "inconnue") {
+        fields.push({ key: mention.name + "'s presence", value: mention.presence });
+      }
     }
     if (mention.complementaryInformation) {
-      fields.push({ key: "Complementary information", value: mention.complementaryInformation });
+      fields.push({ key: mention.name + "'s complementary information", value: mention.complementaryInformation });
     }
+  }
+  if (otherIndividuals.length > 0) {
+    fields.push({ key: "Other individuals listed", value: otherIndividuals.join(", ") });
+  }
+  if (ed.complementaryInformation) {
+    fields.push({ key: "Complementary information", value: ed.complementaryInformation });
   }
   return fields;
 }

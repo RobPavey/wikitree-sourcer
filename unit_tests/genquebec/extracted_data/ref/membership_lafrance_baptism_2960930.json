@@ -5,13 +5,15 @@
   "recordId": "2960930",
   "indexHeader": "Birth, LaFrance",
   "recordData": {
+    "MRC": "Nicolet-Yamaska",
+    "Région": "Centre-du-Québec",
     "Name": "CHATEAUVIEU GAMELIN, Paul",
     "Gender": "male",
     "Age": "",
     "Father": "CHATEAUVIEU GAMELIN, Antoine",
     "Mother": "GODDIN, Marie",
     "Baptism date": "31-Aug-1822",
-    "Baptism location": "St-François-du-Lac (St-François-Xavier), Centre-du-Québec, Québec, Canada",
+    "Baptism location": "St-François-du-Lac (St-François-Xavier)",
     "Birth date": "31-Aug-1822"
   },
   "heading": "CHATEAUVIEU GAMELIN, Paul",

@@ -38,6 +38,29 @@ function extractData(document, url) {
     return clone.textContent.replace(/\s+/g, " ").trim();
   }
 
+  function addAdministrativeAreas(fields, text) {
+    let areaRegex = /(?:^|\/)\s*(MRC|Région|Region|Arrondissement)\s*:\s*([^/]+)/gi;
+    let match;
+    while ((match = areaRegex.exec(text))) {
+      fields[match[1]] = match[2].trim();
+    }
+  }
+
+  function getPanelValue(panel, selector, labels) {
+    let value = getText(panel.querySelector(selector));
+    if (labels) {
+      value = value.replace(labels, "");
+    }
+    return value.trim();
+  }
+
+  function formatMentionName(name) {
+    let commaIndex = name.indexOf(",");
+    return commaIndex < 0
+      ? name
+      : (name.slice(commaIndex + 1).trim() + " " + name.slice(0, commaIndex).trim()).trim();
+  }
+
   let membershipHeader = document.querySelector("[id$='ActeListView_ctrl0_ActeHeaderPanel']");
   if (membershipHeader) {
     let type = getText(membershipHeader.querySelector("h1"));
@@ -53,42 +76,47 @@ function extractData(document, url) {
     result.indexHeader = indexType + ", LaFrance";
 
     let parish = getText(membershipHeader.querySelector("a.paroisse"));
-    let mrc = getText(membershipHeader.querySelector("[id$='MrcPanel']"));
-    let regionMatch = mrc.match(/Région:\s*([^/]+)/i);
+    let administrativeAreas = [
+      getText(membershipHeader.querySelector("[id$='ArrondissementPanel']")),
+      getText(membershipHeader.querySelector("[id$='MrcPanel']")),
+    ].join(" / ");
     let location = parish;
-    if (regionMatch && regionMatch[1].trim()) {
-      location += ", " + regionMatch[1].trim();
-    }
-    if (location) {
-      location += ", Québec, Canada";
-    }
 
     let headerDate = getText(membershipHeader.querySelector("[id$='DatePanel']"));
     let eventDateText = getText(membershipHeader.querySelector("[id$='DateEvenementPanel']"));
     let eventDate = eventDateText.replace(/^.*?:\s*/, "");
     let imageLink = membershipHeader.querySelector("[id$='ImageHyperLink']");
     let fields = {};
+    addAdministrativeAreas(fields, administrativeAreas);
     let mentions = [];
     for (let panel of document.querySelectorAll("div[id*='ListViewMentions_ctrl'][id$='_MentionPanel']")) {
       let role = getText(panel.querySelector("[id$='_RolePanel'] span.role"));
       let name = getText(panel.querySelector(".mention .nom"));
       if (!role || !name) {
-        continue;
+        if (!name) {
+          continue;
+        }
       }
       let mention = { role: role.toLowerCase(), name: name };
       for (let [key, selector] of [
         ["age", "[id$='_AgePanel'] strong"],
         ["sex", "[id$='_SexePanel'] strong"],
         ["civilStatus", "[id$='_EtatCivilPanel'] strong"],
-        ["occupation", "[id$='_ProfessionPanel']"],
-        ["residence", "[id$='_ResidencePanel']"],
       ]) {
         let valueElement = panel.querySelector(selector);
         let value = valueElement ? getText(valueElement) : "";
-        if (value && (key == "occupation" || key == "residence")) {
-          value = value.replace(/^(Occupation|Residence)\s*:\s*/i, "");
-        }
         if (value && value != role && value != name) {
+          mention[key] = value;
+        }
+      }
+      for (let [key, selector, labelPattern] of [
+        ["occupation", "[id$='_ProfessionPanel']", /^(Occupation|Profession)\s*:\s*/i],
+        ["residence", "[id$='_ResidencePanel']", /^Residence\s*:\s*/i],
+        ["origin", "[id$='_OriginePanel']", /^Origin\s*:\s*/i],
+        ["status", "[id$='_DecesPanel']", /^death\s*/i],
+      ]) {
+        let value = getPanelValue(panel, selector, labelPattern);
+        if (value) {
           mention[key] = value;
         }
       }
@@ -103,15 +131,19 @@ function extractData(document, url) {
         fields["Husband's civil status"] = subjects[0].civilStatus || "";
         fields["Husband's occupation"] = subjects[0].occupation || "";
         fields["Husband's residence"] = subjects[0].residence || "";
+        fields["Husband's origin"] = subjects[0].origin || "";
       }
       if (subjects[1]) {
         fields.Wife = subjects[1].name;
         fields["Wife's age"] = subjects[1].age || "";
         fields["Wife's civil status"] = subjects[1].civilStatus || "";
+        fields["Wife's occupation"] = subjects[1].occupation || "";
         fields["Wife's residence"] = subjects[1].residence || "";
+        fields["Wife's origin"] = subjects[1].origin || "";
       }
       fields["Marriage date"] = headerDate;
       fields["Marriage location"] = location;
+      let otherIndividuals = [];
       for (let mention of mentions) {
         let roleMatch = mention.role.match(/^(father|mother) of the (groom|bride)$/);
         if (roleMatch) {
@@ -124,7 +156,20 @@ function extractData(document, url) {
           if (mention.residence) {
             fields[partner + "'s " + parent + "'s residence"] = mention.residence;
           }
+          if (mention.status) {
+            fields[partner + "'s " + parent + "'s status"] = mention.status;
+          }
+        } else if (mention.role != "subject") {
+          otherIndividuals.push(formatMentionName(mention.name));
+          for (let key of ["occupation", "residence", "origin", "status"]) {
+            if (mention[key]) {
+              fields[mention.name + "'s " + key] = mention[key];
+            }
+          }
         }
+      }
+      if (otherIndividuals.length > 0) {
+        fields["Other individuals listed"] = otherIndividuals.join(", ");
       }
     } else {
       let subject = mentions.find((mention) => mention.role == "subject");
@@ -159,14 +204,18 @@ function extractData(document, url) {
       }
     }
 
-    let complementaryInfo = Array.from(document.querySelectorAll("[id], [class]")).find((element) =>
-      /complementary|compl[eé]ment/i.test(element.id + " " + element.className)
-    );
-    if (complementaryInfo) {
-      let info = getText(complementaryInfo).replace(/^Complementary information\s*:?\s*/i, "");
-      if (info) {
-        fields["Complementary information"] = info;
+    let complementaryInfo = [...document.querySelectorAll("[id*='ActeCommentaireListView'] li")].map(getText);
+    if (complementaryInfo.length == 0) {
+      let infoElement = Array.from(document.querySelectorAll("[id], [class]")).find((element) =>
+        /complementary|compl[eé]ment/i.test(element.id + " " + element.className)
+      );
+      if (infoElement) {
+        complementaryInfo.push(getText(infoElement).replace(/^Complementary information\s*:?\s*/i, ""));
       }
+    }
+    let info = complementaryInfo.filter(Boolean).join("; ");
+    if (info) {
+      fields["Complementary information"] = info;
     }
 
     result.recordData = fields;
@@ -198,6 +247,13 @@ function extractData(document, url) {
     }
     let label = getText(labelElement);
     let value = getText(valueElement);
+    if (label == "Other individuals listed") {
+      value = value
+        .split(",")
+        .map((name) => name.trim())
+        .filter(Boolean)
+        .join(", ");
+    }
     if (label && value) {
       fields[label] = value;
     }
@@ -238,6 +294,11 @@ function extractData(document, url) {
     if (index != -1 && lines[index + 1]) {
       result.originalSource = lines[index + 1];
     }
+  }
+
+  let originalDocumentLink = document.querySelector("a[href*='/Membership/LAFRANCE/img/acte/']");
+  if (originalDocumentLink) {
+    result.imageUrl = originalDocumentLink.getAttribute("href");
   }
 
   result.success = true;

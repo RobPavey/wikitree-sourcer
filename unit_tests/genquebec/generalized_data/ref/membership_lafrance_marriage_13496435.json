@@ -11,7 +11,7 @@
     "dateString": "10-Jan-1832"
   },
   "eventPlace": {
-    "placeString": "Drummondville (St-Frédéric), Centre-du-Québec, Québec, Canada"
+    "placeString": "Drummondville (St-Frédéric)"
   },
   "maritalStatus": "single",
   "occupation": "CULTIVATEUR",
@@ -25,7 +25,7 @@
         "dateString": "10-Jan-1832"
       },
       "marriagePlace": {
-        "placeString": "Drummondville (St-Frédéric), Centre-du-Québec, Québec, Canada"
+        "placeString": "Drummondville (St-Frédéric)"
       },
       "personGender": "female",
       "parents": {

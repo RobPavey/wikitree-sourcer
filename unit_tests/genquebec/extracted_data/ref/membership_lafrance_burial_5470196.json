@@ -5,6 +5,8 @@
   "recordId": "5470196",
   "indexHeader": "Death, LaFrance",
   "recordData": {
+    "MRC": "La Vallée-du-Richelieu",
+    "Région": "Montérégie",
     "Name": "LABONTE, Flavien",
     "Gender": "male",
     "Age": "06j",
@@ -12,7 +14,7 @@
     "Father's occupation": "JOURNALIER",
     "Mother": "DUCLOS, Onezyme",
     "Burial date": "15-Apr-1850",
-    "Burial location": "Beloeil (St-Mathieu), Montérégie, Québec, Canada",
+    "Burial location": "Beloeil (St-Mathieu)",
     "Death date": "13-Apr-1850"
   },
   "heading": "LABONTE, Flavien",

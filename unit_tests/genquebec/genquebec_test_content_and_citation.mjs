@@ -60,6 +60,16 @@ const regressionData = [
     caseName: "membership_lafrance_marriage_13496435",
     url: "https://www.genealogiequebec.com/Membership/LAFRANCE/acte/13496435",
   },
+  {
+    caseName: "lafrance_marriage_150026_old",
+    pageFile: "./unit_tests/genquebec/saved_pages/lafrance_marriage_150026_old.html",
+    url: "https://www.genealogiequebec.com/Membership/LAFRANCE/acte/150026",
+  },
+  {
+    caseName: "lafrance_marriage_150026_new",
+    pageFile: "./unit_tests/genquebec/saved_pages/lafrance_marriage_150026_new.html",
+    url: "https://www.genealogiequebec.com/en/lafrance_mariages/150026",
+  },
 ];
 
 async function runTests(testManager) {
@@ -78,6 +88,49 @@ async function runTests(testManager) {
     marriageGeneralizedData.spouses[0].parents.mother.name.inferFullName(),
     "Catherine Sabourin"
   );
+  let membershipBaptismTest = regressionData.find(
+    (test) => test.caseName == "membership_lafrance_baptism_2960930"
+  );
+  let membershipBaptismData = readInputFile("genquebec", "extracted_data", membershipBaptismTest, undefined);
+  let membershipBaptismGeneralizedData = generalizeData({ extractedData: membershipBaptismData });
+  assert.equal(
+    membershipBaptismGeneralizedData.eventPlace.placeString,
+    "St-François-du-Lac (St-François-Xavier)"
+  );
+  assert.ok(membershipBaptismData.recordData["Région"]);
+  let membershipBaptismCitation = await buildCitation({
+    extractedData: membershipBaptismData,
+    generalizedData: membershipBaptismGeneralizedData,
+    runDate: new Date("6 May 2021"),
+    options: testManager.options,
+    type: "inline",
+  });
+  assert.ok(
+    membershipBaptismCitation.citation.includes(
+      "in St-François-du-Lac (St-François-Xavier). MRC: Nicolet-Yamaska; Région: Centre-du-Québec."
+    )
+  );
+
+  for (let testCase of ["lafrance_marriage_150026_old", "lafrance_marriage_150026_new"]) {
+    let testData = regressionData.find((test) => test.caseName == testCase);
+    let extractedData = readInputFile("genquebec", "extracted_data", testData, undefined);
+    let generalizedData = generalizeData({ extractedData: extractedData });
+    let citation = await buildCitation({
+      extractedData: extractedData,
+      generalizedData: generalizedData,
+      runDate: new Date("6 May 2021"),
+      options: testManager.options,
+      type: "inline",
+    });
+    assert.ok(citation.citation.includes("Other individuals listed:"));
+    assert.ok(citation.citation.includes("Complementary information:"));
+    assert.ok(citation.citation.includes("View original document"));
+    if (testCase.endsWith("_old")) {
+      assert.ok(citation.citation.includes("DAILLEBOUT DARGENTEUIL, Jean's occupation: ECUYER"));
+      assert.ok(citation.citation.includes("Arrondissement: Ville-Marie"));
+    }
+  }
+
   let coupleFileGeneralizedData = generalizeData({
     extractedData: {
       success: true,

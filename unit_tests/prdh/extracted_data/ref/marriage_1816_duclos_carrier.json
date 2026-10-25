@@ -17,8 +17,10 @@
       "individualId": "633835",
       "age": "maj",
       "maritalStatus": "---",
-      "presence": "p",
+      "presence": "Present",
       "sex": "m",
+      "residence": "",
+      "origin": "",
       "relations": [
         {
           "type": "SPOUSE",
@@ -32,8 +34,10 @@
       "individualId": "633836",
       "age": "maj",
       "maritalStatus": "---",
-      "presence": "p",
+      "presence": "Present",
       "sex": "f",
+      "residence": "",
+      "origin": "",
       "relations": [
         {
           "type": "SPOUSE",
@@ -47,8 +51,10 @@
       "individualId": "51583",
       "age": "---",
       "maritalStatus": "---",
-      "presence": "d",
+      "presence": "Deceased",
       "sex": "m",
+      "residence": "",
+      "origin": "",
       "relations": [
         {
           "type": "FATHER",
@@ -62,8 +68,10 @@
       "individualId": "51884",
       "age": "---",
       "maritalStatus": "---",
-      "presence": "---",
+      "presence": "inconnue",
       "sex": "f",
+      "residence": "",
+      "origin": "",
       "relations": [
         {
           "type": "MOTHER",
@@ -77,8 +85,10 @@
       "individualId": "96115",
       "age": "---",
       "maritalStatus": "---",
-      "presence": "---",
+      "presence": "inconnue",
       "sex": "m",
+      "residence": "",
+      "origin": "",
       "relations": [
         {
           "type": "FATHER",
@@ -92,8 +102,10 @@
       "individualId": "83661",
       "age": "---",
       "maritalStatus": "---",
-      "presence": "---",
+      "presence": "inconnue",
       "sex": "f",
+      "residence": "",
+      "origin": "",
       "relations": [
         {
           "type": "MOTHER",
@@ -101,5 +113,6 @@
         }
       ]
     }
-  ]
+  ],
+  "complementaryInformation": "3E AU 4E"
 }

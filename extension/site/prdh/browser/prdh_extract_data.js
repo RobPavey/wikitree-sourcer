@@ -49,7 +49,12 @@ function extractData(document, url) {
     // e.g. "Baptism #" or "Marriage couple #"
     result.recordTypeLabel = text(document, "[id$='ActeListView_TypeLabel_0']").replace(/\s*#$/, "");
     result.eventDate = text(document, "[id$='ActeListView_DateTableCell_0']");
-    result.mrc = text(document, "[id$='ActeListView_MrcTableRow_0']");
+    result.mrc = [
+      text(document, "[id$='ActeListView_ArrondissementTableRow_0']"),
+      text(document, "[id$='ActeListView_MrcTableRow_0']"),
+    ]
+      .filter(Boolean)
+      .join(" / ");
     result.birthOrDeathLabel = text(document, "[id$='ActeListView_DateEvtLabel_0']").replace(/\s*:$/, "");
     result.birthOrDeathDate = text(document, "[id$='ActeListView_DateEvenementLabel_0']");
 
@@ -64,19 +69,36 @@ function extractData(document, url) {
       let mention = {};
       mention.rank = text(row, "[id*='MentionsListView_RangLabel_']");
       let nameLink = row.querySelector("a.nomSujetMention, a.nomMention");
-      mention.name = nameLink ? nameLink.textContent.replace(/\s+/g, " ").trim() : "";
+      if (nameLink) {
+        mention.name = nameLink.textContent.replace(/\s+/g, " ").trim();
+      } else {
+        let nameCell = row.querySelector("td:nth-child(2)");
+        if (nameCell) {
+          let nameCellClone = nameCell.cloneNode(true);
+          for (let details of nameCellClone.querySelectorAll("[id*='RelationParente'], [id*='ProfessionPanel'], [id*='ResidencePanel'], [id*='OriginePanel']")) {
+            details.remove();
+          }
+          mention.name = nameCellClone.textContent.replace(/\s+/g, " ").trim();
+        }
+      }
       if (!mention.rank || !mention.name) {
         continue;
       }
-      let individualMatch = nameLink.getAttribute("href").match(/Individu\/(\d+)/i);
+      let individualHref = nameLink ? nameLink.getAttribute("href") : "";
+      let individualMatch = individualHref ? individualHref.match(/Individu\/(\d+)/i) : undefined;
       if (individualMatch) {
         mention.individualId = individualMatch[1];
       }
       mention.age = text(row, "[id*='MentionsListView_AgeLabel_']");
       mention.maritalStatus = text(row, "[id*='MentionsListView_EtatMatrimonialLabel_']");
-      mention.presence = text(row, "[id*='MentionsListView_PresenceLabel_']");
+      let presenceElement = row.querySelector("[id*='MentionsListView_PresenceLabel_']");
+      mention.presence = presenceElement
+        ? presenceElement.getAttribute("title") || presenceElement.textContent.replace(/\s+/g, " ").trim()
+        : "";
       // e.g. "f DU CHOLÉRA." the first letter is the sex and the rest is a note from the record
       mention.sex = text(row, "[id*='MentionsListView_SexeLabel_']");
+      mention.residence = text(row, "[id*='MentionsListView_ResidenceLabel_']");
+      mention.origin = text(row, "[id*='MentionsListView_OrigineLabel_']");
       let sexNote = mention.sex.replace(/^[mf]\s*/i, "").trim();
       if (sexNote) {
         mention.complementaryInformation = sexNote;
@@ -111,6 +133,12 @@ function extractData(document, url) {
       return result;
     }
     result.mentions = mentions;
+    let comments = [...document.querySelectorAll("[id*='ActeCommentaireListView'] li")]
+      .map((element) => element.textContent.replace(/\s+/g, " ").trim())
+      .filter(Boolean);
+    if (comments.length > 0) {
+      result.complementaryInformation = comments.join("; ");
+    }
   } else if (pageType == "individual") {
     if (!document.querySelector("[id$='IndividuTable']")) {
       return result;

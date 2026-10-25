@@ -17,8 +17,10 @@
       "individualId": "633835",
       "age": "041",
       "maritalStatus": "m",
-      "presence": "d",
-      "sex": "m"
+      "presence": "Deceased",
+      "sex": "m",
+      "residence": "",
+      "origin": ""
     },
     {
       "rank": "02",
@@ -26,8 +28,10 @@
       "individualId": "633836",
       "age": "---",
       "maritalStatus": "---",
-      "presence": "---",
+      "presence": "inconnue",
       "sex": "f",
+      "residence": "",
+      "origin": "",
       "relations": [
         {
           "type": "SPOUSE",
@@ -35,5 +39,6 @@
         }
       ]
     }
-  ]
+  ],
+  "complementaryInformation": "DU CHOLÉRA."
 }

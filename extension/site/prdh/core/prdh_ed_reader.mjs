@@ -102,19 +102,7 @@ class PrdhEdReader extends ExtractedDataReader {
     if (!parish) {
       return undefined;
     }
-    let region = "";
-    if (this.ed.mrc) {
-      let regionMatch = this.ed.mrc.match(/(?:Région|Region):\s*(.*)$/);
-      if (regionMatch) {
-        region = regionMatch[1].trim();
-      }
-    }
-    let placeString = parish;
-    if (region) {
-      placeString += ", " + region;
-    }
-    placeString += ", Québec, Canada";
-    return this.makePlaceObjFromFullPlaceName(placeString);
+    return this.makePlaceObjFromFullPlaceName(parish);
   }
 
   // e.g. "Baptism : 20-Dec-1790 Lauzon (St-Joseph-de-la-Pointe-Lévy)"
