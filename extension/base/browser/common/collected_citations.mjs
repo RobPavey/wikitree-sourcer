@@ -64,7 +64,11 @@ async function addCitationToCollectedCitations(citationObject) {
       if (existingCitationObject.url == citationObject.url) {
         if (existingCitationObject.sourceReference == citationObject.sourceReference) {
           if (existingCitationObject.sourceTitle == citationObject.sourceTitle) {
-            return;
+            if (existingCitationObject.sourceNameWithinRepository == citationObject.sourceNameWithinRepository) {
+              if (existingCitationObject.referenceWithinRepository == citationObject.referenceWithinRepository) {
+                return;
+              }
+            }
           }
         }
       }

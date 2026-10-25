@@ -27,11 +27,14 @@ import {
   closePopup,
   addBackMenuItem,
   addMessageMenuItem,
+  addButtonMenuItem,
   beginMainMenu,
   endMainMenu,
   addBreak,
 } from "./popup_menu_building.mjs";
 import { savePersonData } from "./popup_person_data.mjs";
+import { options } from "../options/options_loader.mjs";
+import { addSearchMenus } from "./popup_search.mjs";
 
 import { getSites } from "../common/site_registry_storage.mjs";
 import {
@@ -47,6 +50,8 @@ import { dateQualifiers, GeneralizedData, NameObj } from "../../core/generalize_
 import { DateUtils } from "../../core/date_utils.mjs";
 import { RT, Role } from "../../core/record_type.mjs";
 import { RC } from "../../core/record_collections.mjs";
+import { groupSourcesIntoFacts } from "../../core/group_sources_into_facts.mjs";
+import { buildNarrative } from "../../core/narrative_builder.mjs";
 
 function inferBestEventDateForCompare(gd) {
   let eventDate = "";
@@ -229,28 +234,83 @@ function getAllCitationsFunction(data) {
   // for now treat them all as narrative/inline but eventually we will want to separate source
   // ones out
 
+  // separate the source citations from the inline or narratives ones.
+  let inlineCitationObjs = [];
+  let sourceCitationObjs = [];
+  for (let citationObj of citationObjs) {
+    if (citationObj.type == "source") {
+      sourceCitationObjs.push(citationObj);
+    } else {
+      inlineCitationObjs.push(citationObj);
+    }
+  }
+
   // The citations are already sorted by event date
 
+  let groupingData = { sources: inlineCitationObjs };
+  groupSourcesIntoFacts(groupingData, "narrative", options);
+
   let citationsString = "";
-  for (let citationObj of citationObjs) {
-    if (citationsString) {
+  for (let fact of groupingData.facts) {
+    if (fact.sources.length > 1) {
+      // may need to regenerate narrative from the combined generalizedObject.
+      // see if any of the sources are type narrative.
+      let combinedRefs = "";
+      let needsNarrative = false;
+      for (let source of fact.sources) {
+        let refIndex = source.citation.indexOf("<ref>");
+        if (refIndex != -1) {
+          combinedRefs += source.citation.substring(refIndex);
+        }
+        if (source.type == "narrative") {
+          needsNarrative = true;
+        }
+      }
+      let citationString = combinedRefs;
+      if (needsNarrative) {
+        let input = {
+          eventGeneralizedData: fact.generalizedData,
+          options: options,
+        };
+        let narrative = buildNarrative(input);
+        citationString = narrative + combinedRefs;
+      }
+      if (citationsString) {
+        citationsString += "\n";
+      }
+      citationsString += citationString;
+      citationsString += "\n";
+    } else {
+      if (citationsString) {
+        citationsString += "\n";
+      }
+      citationsString += fact.sources[0].citation;
       citationsString += "\n";
     }
-    citationsString += citationObj.citation;
-    citationsString += "\n";
+  }
+
+  let separateSourceCitationsString = "";
+
+  for (let citationObj of sourceCitationObjs) {
+    if (separateSourceCitationsString) {
+      separateSourceCitationsString += "\n";
+    }
+    separateSourceCitationsString += citationObj.citation;
+    separateSourceCitationsString += "\n";
   }
 
   // If there is a marriage citation then we should add the details to the personGD in
   // case we are adding a spouse
 
-  data.allCitationsCount = citationObjs.length;
+  data.allCitationsCount = inlineCitationObjs.length;
   data.allCitationsString = citationsString;
+  data.allSeparateSourceCitationsString = separateSourceCitationsString;
   data.allCitationsType = "narrative";
 
   return { success: true };
 }
 
-async function saveCollectedCitationsPersonData(data, fields) {
+function buildPersonDataFromFields(data, fields) {
   const savePersonGd = data.savePersonGd;
   // put the selected field options in the gd
   if (fields.lnab.options.length) {
@@ -331,18 +391,23 @@ async function saveCollectedCitationsPersonData(data, fields) {
     citations: data.citations,
   };
 
+  return personData;
+}
+
+async function saveCollectedCitationsPersonData(data, fields) {
+  // Create the personData object that savePersonData expects
+  const personData = buildPersonDataFromFields(data, fields);
+
   await stopCollectingCitations();
 
   savePersonData(personData, getAllCitationsFunction);
 }
 
-function addCollectedCitationsSavePersonDataMenuItem(menu, fields, data) {
-  addMenuItem(menu, "Save Person Data", function (element) {
-    saveCollectedCitationsPersonData(data, fields);
-  });
-}
+async function setupSelectValuesSubmenu(backFunction, addActionFunction) {
+  let backToHereFunction = function () {
+    setupSelectValuesSubmenu(backFunction, addActionFunction);
+  };
 
-async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
   let sites = await getSites();
   if (!sites) {
     console.log("setupSavePersonDataFromCollectedCitationsSubmenu: no siteData found");
@@ -357,7 +422,7 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
   let collectedCitations = await getCollectedCitations();
   if (collectedCitations && collectedCitations.citations) {
     let numCitations = collectedCitations.citations.length;
-    let message = `There are ${numCitations} collected citations`;
+    let message = `There are ${numCitations} collected citations, select values to use`;
     addMessageMenuItem(menu, message);
 
     function addSelectField(field) {
@@ -444,9 +509,9 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
             uniqueNames[name].count++;
           }
           if (birthOption.option.gd.recordType == RT.BirthRegistration) {
-            score += 2;
+            uniqueNames[name].score += 2;
           } else if (birthOption.option.gd.recordType == RT.Birth) {
-            score += 1;
+            uniqueNames[name].score += 1;
           }
         }
 
@@ -550,11 +615,11 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
             uniqueNames[name].count++;
           }
           if (deathOption.option.gd.recordType == RT.DeathRegistration) {
-            score += 2;
+            uniqueNames[name].score += 2;
           } else if (deathOption.option.gd.recordType == RT.Death) {
-            score += 1;
+            uniqueNames[name].score += 1;
           } else if (deathOption.option.gd.recordType == RT.Probate) {
-            score += 1;
+            uniqueNames[name].score += 1;
           }
         }
 
@@ -620,12 +685,82 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
       }
     }
 
+    function chooseBestForenames(field) {
+      // there are different criteria we could use
+      // - We could choose the fornames that occur most in the options
+      //   But if most are "John" and 1 or 2 are "John William" and some are "John W"
+      //   Then we should choose "John William"
+
+      // if there is only one optin choose that
+      if (field.options.length == 1) {
+        field.defaultValue = 0;
+        return;
+      }
+
+      // build a list of unique names and for each record the count of uses
+
+      let uniqueNames = {};
+      for (let index = 0; index < field.options.length; index++) {
+        let option = field.options[index];
+        let name = option.text;
+        if (!uniqueNames[name]) {
+          uniqueNames[name] = { name: name, count: 1, score: 0, index: index };
+        } else {
+          uniqueNames[name].count++;
+        }
+      }
+
+      // assign a score to each name and record ones with equal scores
+      let bestScoringNames = [];
+      let bestScore = 0;
+      for (let uniqueNameKey of Object.keys(uniqueNames)) {
+        let uniqueNameObj = uniqueNames[uniqueNameKey];
+        let name = uniqueNameObj.name;
+        let score = 0;
+        let nameParts = name.split(" ");
+        score += nameParts.length;
+        for (let part of nameParts) {
+          if (part.length > 2) {
+            score += 1;
+          }
+        }
+        if (score == bestScore) {
+          bestScoringNames.push(uniqueNameObj);
+        } else if (score > bestScore) {
+          bestScoringNames = [uniqueNameObj];
+          bestScore = score;
+        }
+      }
+
+      if (bestScoringNames.length == 1) {
+        field.defaultValue = bestScoringNames[0].index;
+        return;
+      }
+
+      let bestName = null;
+      let bestCount = 0;
+      // chose the name with the most occurences
+      for (let uniqueName of bestScoringNames) {
+        if (uniqueName.count > bestCount) {
+          bestName = uniqueName;
+          bestCount = uniqueName.count;
+        }
+      }
+
+      if (bestName) {
+        field.defaultValue = bestName.index;
+      }
+    }
+
     function chooseBestOption(field) {
       if (field.type == "lnab") {
         chooseBestLnab(field);
         return;
       } else if (field.type == "cln") {
         chooseBestCln(field);
+        return;
+      } else if (field.type == "forenames") {
+        chooseBestForenames(field);
         return;
       }
 
@@ -713,7 +848,7 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
     // Sex at birth
 
     let fields = {
-      forenames: { id: "forenamesSelector", label: "Forenames", type: "string" },
+      forenames: { id: "forenamesSelector", label: "Forenames", type: "forenames" },
       lnab: { id: "lnabSelector", label: "Last Name at Birth", type: "lnab" },
       cln: { id: "clnSelector", label: "Current/Married Last Name", type: "cln" },
       birthDate: { id: "birthDateSelector", label: "Birth Date", type: "date" },
@@ -801,9 +936,47 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
       citations: collectedCitations.citations,
     };
 
-    addCollectedCitationsSavePersonDataMenuItem(menu, fields, data);
+    addActionFunction(menu, fields, data, backToHereFunction);
   }
   endMainMenu(menu);
+}
+
+function addCollectedCitationsSavePersonDataMenuItem(menu, fields, data) {
+  addButtonMenuItem(menu, "Save Person Data and Stop Collecting Citations", function (element) {
+    saveCollectedCitationsPersonData(data, fields);
+  });
+}
+
+async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
+  setupSelectValuesSubmenu(backFunction, addCollectedCitationsSavePersonDataMenuItem);
+}
+
+async function setupSearchUsingCollectedCitationsSubmenu(data, fields, backFunction) {
+  let backToHereFunction = function () {
+    setupSearchUsingCollectedCitationsSubmenu(data, fields, backFunction);
+  };
+
+  const personData = buildPersonDataFromFields(data, fields);
+
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, function () {
+    backFunction();
+  });
+
+  await addSearchMenus(menu, personData, backToHereFunction);
+
+  endMainMenu(menu);
+}
+
+function addCollectedCitationsSearchMenuItem(menu, fields, data, backFunction) {
+  addButtonMenuItem(menu, "Search using Collected Citations", function (element) {
+    setupSearchUsingCollectedCitationsSubmenu(data, fields, backFunction);
+  });
+}
+
+async function setupSearchFromCollectedCitationsSubmenu(backFunction) {
+  setupSelectValuesSubmenu(backFunction, addCollectedCitationsSearchMenuItem);
 }
 
 async function setupCollectCitationsSubmenu(data, collectedCitations, backFunction) {
@@ -823,11 +996,14 @@ async function setupCollectCitationsSubmenu(data, collectedCitations, backFuncti
   let numPreviousCollectedCitations = previousCollectedCitations?.citations?.length ?? 0;
 
   if (numCollectedCitations) {
-    addMenuItem(menu, "Save Person Data...", function (element) {
+    addMenuItem(menu, "Save Person Data Using Collected Data...", function (element) {
       setupSavePersonDataFromCollectedCitationsSubmenu(backToHereFunction);
     });
+    addMenuItem(menu, "Search Using Collected Data...", function (element) {
+      setupSearchFromCollectedCitationsSubmenu(backToHereFunction);
+    });
   }
-  addMenuItem(menu, `Stop collecting citations (${numCollectedCitations})`, async function (element) {
+  addMenuItem(menu, `Stop Collecting Citations (${numCollectedCitations})`, async function (element) {
     await stopCollectingCitations();
     closePopup();
   });
@@ -862,11 +1038,11 @@ async function addCollectCitationsMenuItem(menu, data, backFunction) {
 
   if (collectingCitations) {
     const numCitations = collectedCitations.citations ? collectedCitations.citations.length : 0;
-    addMenuItem(menu, `Collecting citations (${numCitations})...`, function (element) {
+    addMenuItem(menu, `Collecting Citations (${numCitations})...`, function (element) {
       setupCollectCitationsSubmenu(data, collectedCitations, backFunction);
     });
   } else {
-    addMenuItem(menu, "Start collecting citations", async function (element) {
+    addMenuItem(menu, "Start Collecting Citations", async function (element) {
       await startNewCollectedCitations();
       closePopup();
     });

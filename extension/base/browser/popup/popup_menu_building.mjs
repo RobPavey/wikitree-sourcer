@@ -981,6 +981,31 @@ function addHelpMenuItem(menu, data, backFunction) {
   });
 }
 
+function addButtonMenuItem(menu, innerText, onclick, shortcut) {
+  // create a list item and add it to the list
+  let listItem = document.createElement("li");
+  setMenuItemClassName(menu, listItem, "menuItem");
+  //listItem.innerText = innerText;
+  //listItem.onclick = onclick;
+
+  if (shortcut) {
+    innerText = innerText + " [" + shortcut + "]";
+  }
+
+  let button = document.createElement("button");
+  button.className = "dialogButton";
+  button.onclick = onclick;
+  button.innerText = innerText;
+  button.setAttribute("aria-keyshortcuts", shortcut);
+  listItem.appendChild(button);
+
+  menu.list.appendChild(listItem);
+
+  if (shortcut) {
+    addShortcut(shortcut, onclick);
+  }
+}
+
 function addBuyMeACoffeeMenuItem(menu) {
   if (isSafari()) {
     return; // no donations on Safari version
@@ -2121,6 +2146,7 @@ export {
   setupSearchCollectionsSubmenu,
   addBackMenuItem,
   addHelpMenuItem,
+  addButtonMenuItem,
   addBuyMeACoffeeMenuItem,
   addOptionsMenuItem,
   addItalicMessageMenuItem,
