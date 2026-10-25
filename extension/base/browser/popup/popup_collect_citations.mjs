@@ -422,7 +422,11 @@ async function setupSelectValuesSubmenu(backFunction, addActionFunction) {
   let collectedCitations = await getCollectedCitations();
   if (collectedCitations && collectedCitations.citations) {
     let numCitations = collectedCitations.citations.length;
-    let message = `There are ${numCitations} collected citations, select values to use`;
+    // Note if there is only one citation there is really no point giving the option to select values
+    // to use for Save Person Data - though if we have an option for "none" in search it makes sense.
+    let verb = numCitations == 1 ? "is" : "are";
+    let plural = numCitations == 1 ? "" : "s";
+    let message = `There ${verb} ${numCitations} collected citation${plural}, select values to use`;
     addMessageMenuItem(menu, message);
 
     function addSelectField(field) {
@@ -1030,6 +1034,10 @@ async function setupCollectCitationsSubmenu(data, collectedCitations, backFuncti
 }
 
 async function addCollectCitationsMenuItem(menu, data, backFunction) {
+  if (!options.citation_general_showCollectCitations) {
+    return;
+  }
+
   let collectingCitations = false;
   let collectedCitations = await getCollectedCitations();
   if (collectedCitations) {

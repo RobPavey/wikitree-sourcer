@@ -248,6 +248,12 @@ const citationPopupOptionsGroup = {
       defaultValue: "all",
     },
     {
+      optionName: "showCollectCitations",
+      type: "checkbox",
+      label: "Show menu items for collecting a group of citations",
+      defaultValue: true,
+    },
+    {
       optionName: "addShortcuts",
       type: "checkbox",
       label: "Add keyboard shortcuts to Build Citation menu items",
