@@ -75,6 +75,11 @@ class WolEdReader extends ExtractedDataReader {
   }
 
   setCustomFields(gd) {
+    // In a life story the name is the person the article is about, not the author
+    if (this.getNameObj()) {
+      gd.isAboutNamedPerson = true;
+    }
+
     const publicationTitle = getPublicationTitle(this.ed);
     if (this.recordType == RT.Journal) {
       if (publicationTitle) {
