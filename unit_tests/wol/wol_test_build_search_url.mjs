@@ -45,6 +45,10 @@ const regressionData = [
         optionOverrides: { search_wol_language: "de" },
       },
       {
+        variantName: "both_last_names",
+        typeOfSearch: "name:Elizabeth Ellacott Pavey",
+      },
+      {
         variantName: "name_variant",
         typeOfSearch: "name:Mary Ellacott",
       },

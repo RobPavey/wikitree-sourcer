@@ -66,6 +66,10 @@ function buildNameVariants(gd) {
 
   add("current last name", first, currentLastName);
   add("last name at birth", first, birthLastName);
+  // The publications name a married woman with both, e.g. "Simone Arnold Liebster"
+  if (birthLastName && currentLastName && birthLastName.toLowerCase() != currentLastName.toLowerCase()) {
+    add("last name at birth and current last name", first, birthLastName + " " + currentLastName);
+  }
   add("all forenames and current last name", forenames, currentLastName);
   add("all forenames and last name at birth", forenames, birthLastName);
   for (let preferredName of preferredNames) {

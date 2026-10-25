@@ -47,17 +47,15 @@ function buildWolUrl(ed, builder) {
 }
 
 // e.g. "Deliverance! Proving Ourselves Grateful" (as told by Max Liebster)
+// or   “A Beam of Light in a Dark Age” (by Awake! correspondent in Germany)
+// The byline is not always a person so it is in parentheses, as it is on the page, rather than in front as an author.
 function buildSourceTitle(ed, gd, builder) {
   // Some titles are a quotation and already have the quotation marks, e.g. “Oh, Jehovah, Keep My Young Girl Faithful!”
   const titleHasQuotes = /^[\u201c"\u00ab]/.test(ed.title);
   let sourceTitle = titleHasQuotes ? ed.title : '"' + ed.title + '"';
 
   if (ed.bylineName) {
-    if (ed.bylineType == "told by") {
-      sourceTitle += " (as told by " + ed.bylineName + ")";
-    } else {
-      sourceTitle = ed.bylineName + ", " + sourceTitle;
-    }
+    sourceTitle += (ed.bylineType == "told by" ? " (as told by " : " (by ") + ed.bylineName + ")";
   }
 
   builder.sourceTitle = sourceTitle;

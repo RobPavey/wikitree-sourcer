@@ -46,6 +46,11 @@ const regressionData = [
     url: "https://wol.jw.org/en/wol/d/r1/lp-e/101993684",
   },
   {
+    // a byline that is not a person
+    caseName: "article_g97_a_beam_of_light_in_a_dark_age",
+    url: "https://wol.jw.org/en/wol/d/r1/lp-e/101997446",
+  },
+  {
     caseName: "article_w85_my_familys_love_for_god",
     url: "https://wol.jw.org/en/wol/d/r1/lp-e/1985644",
   },

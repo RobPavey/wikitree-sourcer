@@ -66,7 +66,7 @@ const searchOptionsGroup = {
     {
       optionName: "includeBirthName",
       type: "checkbox",
-      label: "Also search for the first name with the last name at birth (if it is different)",
+      label: "Also search for the first name with the last name at birth, and with both last names (if different)",
       defaultValue: true,
     },
   ],

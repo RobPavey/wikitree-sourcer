@@ -31,7 +31,7 @@ function quote(name) {
 
 // The typeOfSearch can be "name:<name to search for>" to search for one of the variants of the name.
 // Otherwise the search is for the first name and current last name. If the option is set, and the last name at birth
-// is different, then the first name and last name at birth is also searched for.
+// is different, then the first name with the last name at birth, and with both last names, is also searched for.
 // Each name is searched for as an exact phrase. The library has the operator "|" for "or".
 function buildQuery(gd, typeOfSearch, options) {
   if (typeOfSearch && typeOfSearch.startsWith("name:")) {
@@ -46,9 +46,11 @@ function buildQuery(gd, typeOfSearch, options) {
 
   let names = [variants[0].name];
   if (options && options.search_wol_includeBirthName) {
-    const birthVariant = variants.find((variant) => variant.label == "last name at birth");
-    if (birthVariant) {
-      names.push(birthVariant.name);
+    const birthLabels = ["last name at birth", "last name at birth and current last name"];
+    for (let variant of variants) {
+      if (birthLabels.includes(variant.label)) {
+        names.push(variant.name);
+      }
     }
   }
   return names.map(quote).join(" | ");
