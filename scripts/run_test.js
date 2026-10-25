@@ -96,6 +96,7 @@ const siteNames = [
   "wiewaswie",
   "wikipedia",
   "wikitree",
+  "wol",
   "yadvashem",
   "yorkshireburials",
   "youtube",

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Journal''':\n\"My Family’s Love for God Despite Prison and Death\" (as told by Magdalena Kusserow Reuter)<br/>\n''The Watchtower Announcing Jehovah’s Kingdom''; 1 September 1985; pp. 10-15<br/>\n[https://www.jw.org/finder?wtlocale=E&docid=1985644&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the journal ''The Watchtower Announcing Jehovah’s Kingdom'' on 1 September 1985.<ref>\n'''Journal''':\n\"My Family’s Love for God Despite Prison and Death\" (as told by Magdalena Kusserow Reuter)<br/>\n''The Watchtower Announcing Jehovah’s Kingdom''; 1 September 1985; pp. 10-15<br/>\n[https://www.jw.org/finder?wtlocale=E&docid=1985644&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Journal''': \"My Family’s Love for God Despite Prison and Death\" (as told by Magdalena Kusserow Reuter)<br/>''The Watchtower Announcing Jehovah’s Kingdom''; 1 September 1985; pp. 10-15<br/>[https://www.jw.org/finder?wtlocale=E&docid=1985644&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}
