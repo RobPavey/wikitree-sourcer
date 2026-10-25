@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Journal''':\n“A Beam of Light in a Dark Age” (by Awake! correspondent in Germany)<br/>\n''Awake!''; 22 June 1997; pp. 14-15<br/>\n[https://www.jw.org/finder?wtlocale=E&docid=101997446&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the journal ''Awake!'' on 22 June 1997.<ref>\n'''Journal''':\n“A Beam of Light in a Dark Age” (by Awake! correspondent in Germany)<br/>\n''Awake!''; 22 June 1997; pp. 14-15<br/>\n[https://www.jw.org/finder?wtlocale=E&docid=101997446&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Journal''': “A Beam of Light in a Dark Age” (by Awake! correspondent in Germany)<br/>''Awake!''; 22 June 1997; pp. 14-15<br/>[https://www.jw.org/finder?wtlocale=E&docid=101997446&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

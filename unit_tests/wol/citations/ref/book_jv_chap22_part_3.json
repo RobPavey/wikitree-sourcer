@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Book''':\n\"Part 3—Witnesses to the Most Distant Part of the Earth\"<br/>\n''Jehovah’s Witnesses—Proclaimers of God’s Kingdom''; chap. 22; pp. 444-461<br/>\n[https://www.jw.org/finder?wtlocale=E&docid=1101993029&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the book ''Jehovah’s Witnesses—Proclaimers of God’s Kingdom''.<ref>\n'''Book''':\n\"Part 3—Witnesses to the Most Distant Part of the Earth\"<br/>\n''Jehovah’s Witnesses—Proclaimers of God’s Kingdom''; chap. 22; pp. 444-461<br/>\n[https://www.jw.org/finder?wtlocale=E&docid=1101993029&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Book''': \"Part 3—Witnesses to the Most Distant Part of the Earth\"<br/>''Jehovah’s Witnesses—Proclaimers of God’s Kingdom''; chap. 22; pp. 444-461<br/>[https://www.jw.org/finder?wtlocale=E&docid=1101993029&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}
