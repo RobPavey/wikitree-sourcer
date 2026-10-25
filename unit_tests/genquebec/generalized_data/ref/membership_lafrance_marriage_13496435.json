@@ -1,0 +1,62 @@
+{
+  "sourceOfData": "genquebec",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Laforce",
+    "forenames": "Paul"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "10-Jan-1832"
+  },
+  "eventPlace": {
+    "placeString": "Drummondville (St-Frédéric)"
+  },
+  "maritalStatus": "single",
+  "occupation": "CULTIVATEUR",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Boudrieau Labonte",
+        "forenames": "Zoe"
+      },
+      "marriageDate": {
+        "dateString": "10-Jan-1832"
+      },
+      "marriagePlace": {
+        "placeString": "Drummondville (St-Frédéric)"
+      },
+      "personGender": "female",
+      "parents": {
+        "father": {
+          "name": {
+            "lastName": "Boudrieau Labonte",
+            "forenames": "Francois"
+          }
+        },
+        "mother": {
+          "name": {
+            "lastName": "Decelles Duclos",
+            "forenames": "Marie"
+          }
+        }
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Laforce",
+        "forenames": "Jean"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Boisvert",
+        "forenames": "Angelique"
+      }
+    }
+  },
+  "hasValidData": true
+}

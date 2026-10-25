@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Généalogie Québec: Marriage, ABCD\"<br/>\nGenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Genealogical Institute and Jean-Pierre Pepin<br/>\n[https://www.genealogiequebec.com/en/abcd_mariages/6296723 Généalogie Québec Record] (accessed 6 May 2021)<br/>\nPierre-Lazarre Duclos, son of Jean-Baptiste Duclos & Suzanne Begin, marriage to Catherine Samson, daughter of François Samson & Carrier, on 10 Aug 1841 in St-Joseph-de-Lauzon, Lévis. Man's father: Jean-Baptiste Duclos; Man's mother: Suzanne Begin; Woman's father: François Samson; Woman's mother: Carrier.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Pierre-Lazarre, son of Jean-Baptiste Duclos & Suzanne Begin, married Catherine Samson, daughter of François Samson & Carrier, on 10 August 1841 in St-Joseph-de-Lauzon, Lévis.<ref>\n'''Marriage''':\n\"Généalogie Québec: Marriage, ABCD\"<br/>\nGenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Genealogical Institute and Jean-Pierre Pepin<br/>\n[https://www.genealogiequebec.com/en/abcd_mariages/6296723 Généalogie Québec Record] (accessed 6 May 2021)<br/>\nPierre-Lazarre Duclos, son of Jean-Baptiste Duclos & Suzanne Begin, marriage to Catherine Samson, daughter of François Samson & Carrier, on 10 Aug 1841 in St-Joseph-de-Lauzon, Lévis. Man's father: Jean-Baptiste Duclos; Man's mother: Suzanne Begin; Woman's father: François Samson; Woman's mother: Carrier.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Généalogie Québec: Marriage, ABCD\"<br/>GenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Genealogical Institute and Jean-Pierre Pepin<br/>[https://www.genealogiequebec.com/en/abcd_mariages/6296723 Généalogie Québec Record] (accessed 6 May 2021)<br/>Pierre-Lazarre Duclos, son of Jean-Baptiste Duclos & Suzanne Begin, marriage to Catherine Samson, daughter of François Samson & Carrier, on 10 Aug 1841 in St-Joseph-de-Lauzon, Lévis. Man's father: Jean-Baptiste Duclos; Man's mother: Suzanne Begin; Woman's father: François Samson; Woman's mother: Carrier.",
+    "type": "source"
+  }
+}

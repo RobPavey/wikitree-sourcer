@@ -1,0 +1,54 @@
+{
+  "sourceOfData": "genquebec",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "name": "Pierre-Lazarre Duclos"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "10 August 1841"
+  },
+  "eventPlace": {
+    "placeString": "St-Joseph-de-Lauzon, Lévis"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Catherine Samson"
+      },
+      "marriageDate": {
+        "dateString": "10 August 1841"
+      },
+      "marriagePlace": {
+        "placeString": "St-Joseph-de-Lauzon, Lévis"
+      },
+      "personGender": "female",
+      "parents": {
+        "father": {
+          "name": {
+            "name": "François Samson"
+          }
+        },
+        "mother": {
+          "name": {
+            "name": "Carrier"
+          }
+        }
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Jean-Baptiste Duclos"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Suzanne Begin"
+      }
+    }
+  },
+  "hasValidData": true
+}
