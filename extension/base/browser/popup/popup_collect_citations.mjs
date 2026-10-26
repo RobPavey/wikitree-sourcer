@@ -690,6 +690,13 @@ async function setupSelectValuesSubmenu(backFunction, addActionFunction) {
       // use the latest option with a last name
       for (let index = field.options.length - 1; index >= 0; index--) {
         let option = field.options[index];
+        // sometimes records can have an old last name for a woman
+        if (option.gd.personGender == "female") {
+          if (option.gd.recordType == RT.Military) {
+            // can be a record of who the soldier married some time ago with her maiden name
+            continue;
+          }
+        }
         if (option.text) {
           field.defaultValue = index;
           return;
