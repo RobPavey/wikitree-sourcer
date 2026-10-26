@@ -673,7 +673,15 @@ async function setupSelectValuesSubmenu(backFunction, addActionFunction) {
         if (option.text) {
           if (option.gd.recordType == RT.Marriage || option.gd.recordType == RT.MarriageRegistration) {
             // We would want the spouse last name (if this is a woman)
-            // But the option doesn't select that name. Hmm...
+            if (option.gd.personGender == "female") {
+              if (option.gd.spouses && option.gd.spouses.length == 1) {
+                let nameObj = option.gd.spouses[0].name;
+                if (nameObj) {
+                  field.defaultValue = index;
+                  return;
+                }
+              }
+            }
           }
         }
       }
