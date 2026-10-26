@@ -1,0 +1,16 @@
+{
+  "url": "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
+  "success": true,
+  "collectionName": "Missouri Death Certificates, 1910 - 1975",
+  "recordData": {
+    "Deceased": "Frank A. Rother",
+    "Spouse": "Erple  Rother",
+    "Father": "Rother",
+    "Age": "65",
+    "Date of Death": "October 06, 1968",
+    "County": "St. Louis City",
+    "Certificate Number": "42794",
+    "Last Four SSN": "7472",
+    "Image": "https://www.sos.mo.gov/images/archives/deathcerts/1968/1968_00042794.PDF"
+  }
+}

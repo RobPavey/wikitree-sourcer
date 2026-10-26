@@ -73,7 +73,7 @@ function addClickedRowListener() {
       }
 
       // get the (non-header) table row of the selected element
-      selectedRow = ev.target.closest("tr:not([data-sortable])");
+      selectedRow = ev.target.closest("tbody > tr");
       if (selectedRow) {
         highlightRow(selectedRow);
       }
@@ -173,12 +173,14 @@ async function getPendingSearch() {
 
 function setSearchingBanner() {
   // Modify the page to say that WikiTree Sourcer filled the search fields
-  let mainElement = document.querySelector("#main");
-  let containerElement = document.querySelector("#main > div#crumbs");
-  if (mainElement && containerElement) {
+  let formActionElement = document.querySelector("form[action='/Records/Archives/ArchivesMvc/']");
+  let containerElement = document.querySelector("div.card");
+  if (formActionElement && containerElement) {
+    // sosmogov
+    console.log("sosmogov => setSearchingBanner => #main and div.card elements found");
     let message =
       "WikiTree Sourcer filled in the search fields. Please make any desired changes and click the Search button.";
-    let existingSpan = mainElement.querySelector("#sourcerWaitMessage");
+    let existingSpan = formActionElement.querySelector("#sourcerWaitMessage");
     if (!existingSpan) {
       let fragment = document.createDocumentFragment();
 
@@ -197,7 +199,7 @@ function setSearchingBanner() {
       span.style.color = "green";
       h1.appendChild(span);
 
-      mainElement.insertBefore(fragment, containerElement);
+      formActionElement.insertBefore(fragment, containerElement);
     }
   }
 }
