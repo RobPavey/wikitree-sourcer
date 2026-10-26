@@ -43,6 +43,10 @@ const regressionData = [
     url: "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
   },
   {
+    caseName: "death_1968_frank_a_rother",
+    url: "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
+  },
+  {
     caseName: "death_1972_harry_s_truman",
     url: "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
   },

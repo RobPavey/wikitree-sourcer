@@ -1,0 +1,39 @@
+{
+  "sourceOfData": "sosmogov",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Rother",
+    "middleName": "A",
+    "firstName": "Frank"
+  },
+  "eventDate": {
+    "dateString": "October 06, 1968",
+    "qualifier": 1
+  },
+  "lastNameAtDeath": "Rother",
+  "deathDate": {
+    "dateString": "October 06, 1968",
+    "qualifier": 1
+  },
+  "deathPlace": {
+    "placeString": "St. Louis City, Missouri, United States of America"
+  },
+  "ageAtDeath": "65",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Rother",
+        "firstNames": "Erple"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Rother"
+      }
+    }
+  },
+  "hasValidData": true
+}
