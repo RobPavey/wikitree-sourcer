@@ -1,0 +1,38 @@
+{
+  "url": "https://www.genealogiequebec.com/en/lafrance_mariages/13385869",
+  "success": true,
+  "recordData": {
+    "Husband": "Pierre Duclos",
+    "Husband's age": "maj",
+    "Husband's civil status": "Single",
+    "Husband's residence": "INDETERMINE",
+    "Husband's occupation": "macon",
+    "Wife": "Catherine Desrues",
+    "Wife's age": "min",
+    "Wife's civil status": "Single",
+    "Wife's residence": "INDETERMINE",
+    "Marriage date": "13 June 1842",
+    "Marriage location": "Ville-Marie, Montréal (Notre-Dame-de-Montréal), Montréal, Québec, Canada",
+    "Husband's father": "Nicolas Duclos",
+    "Husband's father's residence": "MONTREAL",
+    "Husband's mother": "Marguerite Forget Despatis",
+    "Husband's mother's residence": "MONTREAL",
+    "Wife's father": "Michel Desrues",
+    "Wife's father's residence": "MONTREAL",
+    "Wife's father's occupation": "tonnelier",
+    "Wife's mother": "Catherine Sabourin",
+    "Wife's mother's residence": "MONTREAL"
+  },
+  "prdhIndividualIds": {
+    "Husband": "798409",
+    "Wife": "798410",
+    "Husband's father": "590945",
+    "Husband's mother": "590946",
+    "Wife's father": "612406",
+    "Wife's mother": "612407"
+  },
+  "heading": "Pierre Duclos and Catherine Desrues",
+  "indexHeader": "Marriage, LaFrance",
+  "originalSource": "Drouin Genealogical Institute and PRDH",
+  "imageUrl": "/Membership/LAFRANCE/img/acte/13385869"
+}

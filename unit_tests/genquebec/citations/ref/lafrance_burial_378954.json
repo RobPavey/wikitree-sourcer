@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Généalogie Québec: Death, LaFrance\"<br/>\nGenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Institute, LAFRANCE. [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/378954 View original document]<br/>\n[https://www.genealogiequebec.com/Membership/LAFRANCE/acte/378954 Généalogie Québec Record] (accessed 6 May 2021)<br/>\nFrancois Augustin Massin Bailly burial (died on 2 Apr 1771 at age 61) on 4 Apr 1771 in Varennes (Ste-Anne). MRC: Marguerite-D'Youville; Région: Montérégie; Occupation: NEGOCIANT EN CETTE PAROISSE.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Francois (age 61) died on 2 April 1771 and was buried on 4 April 1771 in Varennes (Ste-Anne).<ref>\n'''Burial''':\n\"Généalogie Québec: Death, LaFrance\"<br/>\nGenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Institute, LAFRANCE. [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/378954 View original document]<br/>\n[https://www.genealogiequebec.com/Membership/LAFRANCE/acte/378954 Généalogie Québec Record] (accessed 6 May 2021)<br/>\nFrancois Augustin Massin Bailly burial (died on 2 Apr 1771 at age 61) on 4 Apr 1771 in Varennes (Ste-Anne). MRC: Marguerite-D'Youville; Région: Montérégie; Occupation: NEGOCIANT EN CETTE PAROISSE.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Généalogie Québec: Death, LaFrance\"<br/>GenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Institute, LAFRANCE. [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/378954 View original document]<br/>[https://www.genealogiequebec.com/Membership/LAFRANCE/acte/378954 Généalogie Québec Record] (accessed 6 May 2021)<br/>Francois Augustin Massin Bailly burial (died on 2 Apr 1771 at age 61) on 4 Apr 1771 in Varennes (Ste-Anne). MRC: Marguerite-D'Youville; Région: Montérégie; Occupation: NEGOCIANT EN CETTE PAROISSE.",
+    "type": "source"
+  }
+}

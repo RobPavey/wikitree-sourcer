@@ -1,0 +1,60 @@
+{
+  "sourceOfData": "prdh",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Duclos",
+    "forenames": "Joseph"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "29-Oct-1816"
+  },
+  "eventPlace": {
+    "placeString": "Lauzon (St-Joseph-de-la-Pointe-Lévy)"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Carrier",
+        "forenames": "Genevieve"
+      },
+      "marriageDate": {
+        "dateString": "29-Oct-1816"
+      },
+      "marriagePlace": {
+        "placeString": "Lauzon (St-Joseph-de-la-Pointe-Lévy)"
+      },
+      "personGender": "female",
+      "parents": {
+        "father": {
+          "name": {
+            "lastName": "Carrier",
+            "forenames": "Jean Baptiste"
+          }
+        },
+        "mother": {
+          "name": {
+            "lastName": "Poire",
+            "forenames": "Marie Anne"
+          }
+        }
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Duclos",
+        "forenames": "Joseph"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Fortier",
+        "forenames": "Marie Louise"
+      }
+    }
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "wadigarch",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "name": "Firman Joseph Robinson"
+  },
+  "eventDate": {
+    "yearString": "1991"
+  },
+  "eventPlace": {
+    "placeString": "Fern Hill Cemetery, Grays Harbor County, Washington, United States"
+  },
+  "hasValidData": true
+}

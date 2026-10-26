@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Probate Record''':\nCULLEN Peter Smith - Mataura - Retired Farmer, Probates and Letters of Administration (Series 9068), Box 135, Record number: 3976, Years: 1950 - 1950, Dunedin repository<br/>\n{{Archives New Zealand|R22059776}} (accessed 6 May 2021)<br/>\n[https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE43476083 Image].\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was named in a probate record in 1950.<ref>\n'''Probate Record''':\nCULLEN Peter Smith - Mataura - Retired Farmer, Probates and Letters of Administration (Series 9068), Box 135, Record number: 3976, Years: 1950 - 1950, Dunedin repository<br/>\n{{Archives New Zealand|R22059776}} (accessed 6 May 2021)<br/>\n[https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE43476083 Image].\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Probate Record''': CULLEN Peter Smith - Mataura - Retired Farmer, Probates and Letters of Administration (Series 9068), Box 135, Record number: 3976, Years: 1950 - 1950, Dunedin repository<br/>{{Archives New Zealand|R22059776}} (accessed 6 May 2021)<br/>[https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE43476083 Image].",
+    "type": "source"
+  }
+}

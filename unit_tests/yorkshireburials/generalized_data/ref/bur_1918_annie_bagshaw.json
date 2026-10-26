@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "yorkshireburials",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Bagshaw",
+    "forenames": "Annie"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "4 November 1918"
+  },
+  "eventPlace": {
+    "placeString": "Leeds General Cemetery (Woodhouse), Leeds, Yorkshire, England",
+    "county": "Yorkshire",
+    "country": "England"
+  },
+  "lastNameAtDeath": "Bagshaw",
+  "birthPlace": {
+    "placeString": "Leeds"
+  },
+  "deathDate": {
+    "dateString": "31 October 1918"
+  },
+  "residencePlace": {
+    "placeString": "38 Harold View, Leeds, Yorkshire, England",
+    "streetAddress": "38 Harold View",
+    "county": "Yorkshire",
+    "country": "England"
+  },
+  "ageAtDeath": "29",
+  "occupation": "Wife",
+  "hasValidData": true
+}

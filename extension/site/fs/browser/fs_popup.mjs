@@ -772,7 +772,7 @@ async function setupFsPopupMenu(extractedData, tabId) {
     await addSearchMenus(menu, data, backFunction, "fs");
     addMenuDivider(menu);
 
-    addBuildCitationMenuItems(menu, data, fsBuildCitation, backFunction, generalizeDataGivenRecordType);
+    await addBuildCitationMenuItems(menu, data, fsBuildCitation, backFunction, generalizeDataGivenRecordType);
     addFsBuildHouseholdTableMenuItem(menu, data);
     addFsOpenExternalImageMenuItem(menu, data);
   } else if (extractedData.pageType == "image") {

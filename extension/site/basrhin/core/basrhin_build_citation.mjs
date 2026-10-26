@@ -26,15 +26,27 @@ import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.
 
 function buildBasrhinUrl(ed, builder) {
   let citationUrl = "";
-  const substringToFind = "dao/0/";
-  const index = ed.url.indexOf(substringToFind);
-  if (index !== -1 && ed.imageNumNow) {
-    // Substring found in url and we have the current image num,
-    // truncate the string after the substring and append current image num
-    citationUrl = ed.url.slice(0, index + substringToFind.length) + ed.imageNumNow;
+  if (ed.permalink) {
+    citationUrl = ed.permalink; // if permalink exists on the image web page, use the permalink for the citation URL
   } else {
-    // otherwise, keep the original string
-    citationUrl = ed.url;
+    const substringToFind = "dao/0/";
+    const index = ed.url.indexOf(substringToFind);
+    if (index !== -1) {
+      // Substring found in url, so try to build the URL
+      if (ed.lastFifParamItem) {
+        // if lastFifParamItem exists then build the permalink to use for the citation URL
+        citationUrl = ed.url.slice(0, index) + "img:" + ed.lastFifParamItem;
+      } else if (ed.imageNumNow) {
+        // if not, and we have the current image num, truncate the string after the substring and append current image num
+        citationUrl = ed.url.slice(0, index + substringToFind.length) + ed.imageNumNow;
+      } else {
+        // if we don't have the current image num, keep the original string
+        citationUrl = ed.url;
+      }
+    } else {
+      // if substr not found in url, keep the original string
+      citationUrl = ed.url;
+    }
   }
 
   return citationUrl;

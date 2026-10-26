@@ -1,0 +1,32 @@
+{
+  "url": "https://yorkshireburials.uk/records/view_record.php?uuid=844e975b-30d9-11f0-848c-02013c789f03",
+  "success": true,
+  "recordData": {
+    "Area": "Leeds",
+    "Cemetery": "Hunslet Cemetery",
+    "Event Type": "Burial",
+    "Register": "UNCON Reg. 1 1845-1892",
+    "Page": "390",
+    "Entry": "15591",
+    "Name": "William BATTERSBY",
+    "Abode": "38 Derby Crescent, Hunslet",
+    "Description": "Forge Man",
+    "When Buried": "16 October 1886",
+    "Age": "40 years",
+    "Grave Section": "Old",
+    "Grave No": "5137"
+  },
+  "pageType": "record",
+  "recordUrl": "https://yorkshireburials.uk/records/view_record.php?uuid=844e975b-30d9-11f0-848c-02013c789f03",
+  "name": "William BATTERSBY",
+  "eventType": "Burial",
+  "burialDate": "16 October 1886",
+  "age": "40 years",
+  "cemetery": "Hunslet Cemetery",
+  "parish": "Leeds",
+  "trade": "Forge Man",
+  "residence": "38 Derby Crescent, Hunslet",
+  "county": "Yorkshire",
+  "graveReference": "Sec Old, No. 5137",
+  "registerReference": "UNCON Reg. 1 1845-1892, Page 390, Entry 15591"
+}

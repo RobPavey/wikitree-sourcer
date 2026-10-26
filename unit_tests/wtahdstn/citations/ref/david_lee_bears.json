@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>Monumental inscription. United States of America. [[Space:Fairmont_Cemetery_Raton_NM_USA|Fairmont Cemetery]], Raton, Colfax, New Mexico. 1925 (1860). BEARS, David Lee. GPS: 36.904117, -104.430297. Photographed by: [[Robinson-27225|Azure Robinson]]: taken 23 Nov 2020.</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "David died on 12 February 1925 and was buried at Fairmont Cemetery, Raton, Colfax, New Mexico, United States of America.<ref>Monumental inscription. United States of America. [[Space:Fairmont_Cemetery_Raton_NM_USA|Fairmont Cemetery]], Raton, Colfax, New Mexico. 1925 (1860). BEARS, David Lee. GPS: 36.904117, -104.430297. Photographed by: [[Robinson-27225|Azure Robinson]]: taken 23 Nov 2020.</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "*Monumental inscription. United States of America. [[Space:Fairmont_Cemetery_Raton_NM_USA|Fairmont Cemetery]], Raton, Colfax, New Mexico. 1925 (1860). BEARS, David Lee. GPS: 36.904117, -104.430297. Photographed by: [[Robinson-27225|Azure Robinson]]: taken 23 Nov 2020.",
+    "type": "source"
+  }
+}

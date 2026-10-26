@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Probate Record''':\nSMITH Stephen - Goodwood - Settler, Dunedin probate files (Series 9073), Box 2, Record number: 37, Years: 1860 - 1860, Dunedin repository<br/>\n{{Archives New Zealand|R22042760}} (accessed 6 May 2021)<br/>\n[https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE76142462 Image].\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was named in a probate record in 1860.<ref>\n'''Probate Record''':\nSMITH Stephen - Goodwood - Settler, Dunedin probate files (Series 9073), Box 2, Record number: 37, Years: 1860 - 1860, Dunedin repository<br/>\n{{Archives New Zealand|R22042760}} (accessed 6 May 2021)<br/>\n[https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE76142462 Image].\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Probate Record''': SMITH Stephen - Goodwood - Settler, Dunedin probate files (Series 9073), Box 2, Record number: 37, Years: 1860 - 1860, Dunedin repository<br/>{{Archives New Zealand|R22042760}} (accessed 6 May 2021)<br/>[https://ndhadeliver.natlib.govt.nz/delivery/DeliveryManagerServlet?dps_pid=IE76142462 Image].",
+    "type": "source"
+  }
+}

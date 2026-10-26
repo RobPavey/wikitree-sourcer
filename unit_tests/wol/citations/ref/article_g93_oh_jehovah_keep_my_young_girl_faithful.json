@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Journal''':\n“Oh, Jehovah, Keep My Young Girl Faithful!” (as told by Simone Arnold Liebster)<br/>\n''Awake!''; 22 September 1993; pp. 15-19<br/>\n[https://www.jw.org/finder?wtlocale=E&docid=101993684&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Simone was mentioned in the journal ''Awake!'' on 22 September 1993.<ref>\n'''Journal''':\n“Oh, Jehovah, Keep My Young Girl Faithful!” (as told by Simone Arnold Liebster)<br/>\n''Awake!''; 22 September 1993; pp. 15-19<br/>\n[https://www.jw.org/finder?wtlocale=E&docid=101993684&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Journal''': “Oh, Jehovah, Keep My Young Girl Faithful!” (as told by Simone Arnold Liebster)<br/>''Awake!''; 22 September 1993; pp. 15-19<br/>[https://www.jw.org/finder?wtlocale=E&docid=101993684&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

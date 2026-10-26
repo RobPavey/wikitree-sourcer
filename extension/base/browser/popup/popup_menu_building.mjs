@@ -35,6 +35,7 @@ import { openOrShowOptionsPage } from "../common/browser_compat.mjs";
 import { clearCitation } from "./popup_citation.mjs";
 
 import { addShowCitationAssistantMenuItem } from "./popup_menu_blocks.mjs";
+import { addCollectCitationsMenuItem } from "./popup_collect_citations.mjs";
 
 import { getSites } from "../common/site_registry_storage.mjs";
 
@@ -980,6 +981,31 @@ function addHelpMenuItem(menu, data, backFunction) {
   });
 }
 
+function addButtonMenuItem(menu, innerText, onclick, shortcut) {
+  // create a list item and add it to the list
+  let listItem = document.createElement("li");
+  setMenuItemClassName(menu, listItem, "menuItem");
+  //listItem.innerText = innerText;
+  //listItem.onclick = onclick;
+
+  if (shortcut) {
+    innerText = innerText + " [" + shortcut + "]";
+  }
+
+  let button = document.createElement("button");
+  button.className = "dialogButton";
+  button.onclick = onclick;
+  button.innerText = innerText;
+  button.setAttribute("aria-keyshortcuts", shortcut);
+  listItem.appendChild(button);
+
+  menu.list.appendChild(listItem);
+
+  if (shortcut) {
+    addShortcut(shortcut, onclick);
+  }
+}
+
 function addBuyMeACoffeeMenuItem(menu) {
   if (isSafari()) {
     return; // no donations on Safari version
@@ -1634,7 +1660,14 @@ function addBuildCitationMenuItem(
   }
 }
 
-function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, regeneralizeFunction, userInputFunction) {
+async function addBuildCitationMenuItems(
+  menu,
+  data,
+  buildFunction,
+  backFunction,
+  regeneralizeFunction,
+  userInputFunction
+) {
   let gd = data.generalizedData;
   if (gd.sourceType && !(gd.sourceType == "record" || gd.sourceType == "image")) {
     addShowCitationAssistantMenuItem(menu);
@@ -1668,6 +1701,8 @@ function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, rege
       );
     }
   }
+
+  await addCollectCitationsMenuItem(menu, data, backFunction);
 
   if (gd.sourceType == "image") {
     // Images typically do not have a lot of info for a citation
@@ -2111,6 +2146,7 @@ export {
   setupSearchCollectionsSubmenu,
   addBackMenuItem,
   addHelpMenuItem,
+  addButtonMenuItem,
   addBuyMeACoffeeMenuItem,
   addOptionsMenuItem,
   addItalicMessageMenuItem,
@@ -2143,5 +2179,6 @@ export {
   clearCachedFetchData,
   displayTextMenu,
   overrideMenuWidth,
+  addMessageMenuItem,
   rtToRefTitle,
 };

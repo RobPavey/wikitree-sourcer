@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "yorkshireburials",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "20 April 1875"
+  },
+  "eventPlace": {
+    "placeString": "Burmantofts Cemetery (Beckett Street Cemetery), Leeds, Yorkshire, England",
+    "county": "Yorkshire",
+    "country": "England"
+  },
+  "lastNameAtDeath": "Smith",
+  "ageAtDeath": "41",
+  "hasValidData": true
+}

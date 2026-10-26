@@ -1,0 +1,17 @@
+{
+  "sourceOfData": "wtahdstn",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Moclain",
+    "forenames": "Mary A"
+  },
+  "eventPlace": {
+    "placeString": "Fairmont Cemetery, Raton, Colfax, New Mexico, United States of America"
+  },
+  "lastNameAtDeath": "Moclain",
+  "deathDate": {
+    "dateString": "1847"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Book''':\n\"Germany (Nazi)\"<br/>\n''Watch Tower Publications Index 1986-2026''<br/>\n[https://www.jw.org/finder?wtlocale=E&docid=1200272375&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the book ''Watch Tower Publications Index 1986-2026''.<ref>\n'''Book''':\n\"Germany (Nazi)\"<br/>\n''Watch Tower Publications Index 1986-2026''<br/>\n[https://www.jw.org/finder?wtlocale=E&docid=1200272375&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Book''': \"Germany (Nazi)\"<br/>''Watch Tower Publications Index 1986-2026''<br/>[https://www.jw.org/finder?wtlocale=E&docid=1200272375&srctype=wol&srcid=share Watchtower Online Library] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

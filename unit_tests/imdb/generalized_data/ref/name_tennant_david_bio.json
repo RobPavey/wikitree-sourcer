@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "imdb",
+  "sourceType": "record",
+  "recordType": "BiographicalIndex",
+  "name": {
+    "name": "David Tennant"
+  },
+  "lastNameAtBirth": "McDonald",
+  "birthDate": {
+    "dateString": "18 Apr 1971"
+  },
+  "birthPlace": {
+    "placeString": "Bathgate, West Lothian, Scotland, UK"
+  },
+  "occupation": "Actor, Producer, Director",
+  "spouses": [
+    {
+      "name": {
+        "name": "Georgia Tennant"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Sandy McDonald"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "McLeod",
+        "forenames": "Essdale Helen"
+      }
+    }
+  },
+  "hasValidData": true
+}

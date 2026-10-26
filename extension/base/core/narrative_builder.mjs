@@ -3109,12 +3109,21 @@ class NarrativeBuilder {
     this.terminateSentence();
   }
 
+  // The name on a book or journal record is usually the author. A site can set isAboutNamedPerson if the name
+  // is of the person that the publication is about, e.g. a life story, so that the name is used in the sentence.
+  getMentionedInStart(gd) {
+    if (gd.isAboutNamedPerson) {
+      return this.getPersonNameOrPronoun(false, true) + " was mentioned in";
+    }
+    return "This person was mentioned in";
+  }
+
   buildBookString() {
     let gd = this.eventGd;
 
     let dateObj = gd.inferEventDateObj();
 
-    this.startSentence("This person was mentioned in");
+    this.startSentence(this.getMentionedInStart(gd));
 
     if (gd.bookTitle) {
       this.addToSentence("the book ''" + gd.bookTitle + "''");
@@ -3131,7 +3140,7 @@ class NarrativeBuilder {
 
     let dateObj = gd.inferEventDateObj();
 
-    this.startSentence("This person was mentioned in");
+    this.startSentence(this.getMentionedInStart(gd));
 
     if (gd.journalName) {
       this.addToSentence("the journal ''" + gd.journalName + "''");

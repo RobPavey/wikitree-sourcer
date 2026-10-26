@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Family Tree''':\n\"PRDH-IGD: Individual\"<br/>\nProgramme de recherche en démographie historique (PRDH-IGD), Université de Montréal, record # 633835<br/>\n[https://www.prdh-igd.com/Membership/en/PRDH/Individu/633835 PRDH (Quebec) Record] (accessed 6 May 2021)<br/>\nJoseph Duclos. Born on 19 Dec 1790. Died on 27 Jun 1832.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Joseph was in a family tree.<ref>\n'''Family Tree''':\n\"PRDH-IGD: Individual\"<br/>\nProgramme de recherche en démographie historique (PRDH-IGD), Université de Montréal, record # 633835<br/>\n[https://www.prdh-igd.com/Membership/en/PRDH/Individu/633835 PRDH (Quebec) Record] (accessed 6 May 2021)<br/>\nJoseph Duclos. Born on 19 Dec 1790. Died on 27 Jun 1832.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Family Tree''': \"PRDH-IGD: Individual\"<br/>Programme de recherche en démographie historique (PRDH-IGD), Université de Montréal, record # 633835<br/>[https://www.prdh-igd.com/Membership/en/PRDH/Individu/633835 PRDH (Quebec) Record] (accessed 6 May 2021)<br/>Joseph Duclos. Born on 19 Dec 1790. Died on 27 Jun 1832.",
+    "type": "source"
+  }
+}

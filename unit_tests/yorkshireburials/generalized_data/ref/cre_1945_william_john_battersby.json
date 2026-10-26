@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "yorkshireburials",
+  "sourceType": "record",
+  "recordType": "Cremation",
+  "name": {
+    "lastName": "Battersby",
+    "forenames": "William John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "25 April 1945"
+  },
+  "eventPlace": {
+    "placeString": "Lawnswood Cemetery & Crematorium, Leeds, Yorkshire, England",
+    "county": "Yorkshire",
+    "country": "England"
+  },
+  "lastNameAtDeath": "Battersby",
+  "deathDate": {
+    "dateString": "22 April 1945"
+  },
+  "ageAtDeath": "78",
+  "registrationDistrict": "Leeds Burmantofts",
+  "maritalStatus": "widowed",
+  "occupation": "clerk in Holy Orders",
+  "hasValidData": true
+}

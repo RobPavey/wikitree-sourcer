@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Thurston County Auditor, Birth Returns, 1891-1907\"<br/>\nWashington State Archives, Digital Archives; Reference Number: sw334-2-11-birthreturns-02645<br/>\n[https://digitalarchives.wa.gov/Record/View/B02454FCE9F3FDCA509AFE934DE64318 Washington State Digital Archives Record] (accessed 6 May 2021)<br/>\nChild's First Name: Lyle; Child's Middle Name: Hamilton; Child's Last Name: Peasley; Birth Date: 09/13/1902; Child's Gender: Male; Father's First Name: Vernon; Father's Middle Name: D L; Father's Last Name: Peasley; Mother's First Name: Mary; Mother's Middle Name: C; Mother's Maiden Name: Ames.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Lyle, son of Vernon D L Peasley & Mary C Ames, was born on 13 September 1902 in Thurston County, Washington, United States.<ref>\n'''Birth''':\n\"Thurston County Auditor, Birth Returns, 1891-1907\"<br/>\nWashington State Archives, Digital Archives; Reference Number: sw334-2-11-birthreturns-02645<br/>\n[https://digitalarchives.wa.gov/Record/View/B02454FCE9F3FDCA509AFE934DE64318 Washington State Digital Archives Record] (accessed 6 May 2021)<br/>\nChild's First Name: Lyle; Child's Middle Name: Hamilton; Child's Last Name: Peasley; Birth Date: 09/13/1902; Child's Gender: Male; Father's First Name: Vernon; Father's Middle Name: D L; Father's Last Name: Peasley; Mother's First Name: Mary; Mother's Middle Name: C; Mother's Maiden Name: Ames.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth''': \"Thurston County Auditor, Birth Returns, 1891-1907\"<br/>Washington State Archives, Digital Archives; Reference Number: sw334-2-11-birthreturns-02645<br/>[https://digitalarchives.wa.gov/Record/View/B02454FCE9F3FDCA509AFE934DE64318 Washington State Digital Archives Record] (accessed 6 May 2021)<br/>Child's First Name: Lyle; Child's Middle Name: Hamilton; Child's Last Name: Peasley; Birth Date: 09/13/1902; Child's Gender: Male; Father's First Name: Vernon; Father's Middle Name: D L; Father's Last Name: Peasley; Mother's First Name: Mary; Mother's Middle Name: C; Mother's Maiden Name: Ames.",
+    "type": "source"
+  }
+}

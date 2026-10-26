@@ -1,0 +1,26 @@
+{
+  "url": "https://yorkshireburials.uk/records/?surname=smith&surname_match=exact&forenames=john&event_year=1880&year_range=5",
+  "success": true,
+  "recordData": {
+    "Name": "John SMITH",
+    "Sex": "Male",
+    "Age": "12 Days",
+    "Birth Year": "1875",
+    "Event Date": "20 February 1875",
+    "Area": "Leeds",
+    "Cemetery": "Hunslet Cemetery",
+    "Grave": "Unconsecrated, Sec Old, No. 5928"
+  },
+  "pageType": "searchResult",
+  "recordUrl": "https://yorkshireburials.uk/records/view_record.php?uuid=849bb965-30d9-11f0-848c-02013c789f03",
+  "burialDateIso": "1875-02-20",
+  "name": "John SMITH",
+  "sex": "Male",
+  "burialDate": "20 February 1875",
+  "age": "12 Days",
+  "birthYear": "1875",
+  "cemetery": "Hunslet Cemetery",
+  "parish": "Leeds",
+  "county": "Yorkshire",
+  "graveReference": "Unconsecrated, Sec Old, No. 5928"
+}
