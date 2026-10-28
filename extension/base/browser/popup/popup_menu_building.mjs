@@ -888,6 +888,8 @@ function addMenuItem(menu, innerText, onclick, shortcut) {
   if (shortcut) {
     addShortcut(shortcut, onclick);
   }
+
+  return listItem;
 }
 
 function addMenuItemWithSubtitle(menu, innerText, onclick, subTitleText) {

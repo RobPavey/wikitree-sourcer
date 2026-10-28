@@ -149,6 +149,9 @@ button.linkButton {
   color: red;
   margin: 0px;
 }
+.menuItem.bordered {
+  border: 1px solid rgb(21, 181, 21);
+}
 /* The three below are used to display menu items with a submenu link on right */
 ul.list li.menuItemWithSubmenu {
   padding: 0px;

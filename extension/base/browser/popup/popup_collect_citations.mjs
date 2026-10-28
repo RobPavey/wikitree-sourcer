@@ -1061,13 +1061,16 @@ async function addCollectCitationsMenuItem(menu, data, backFunction) {
 
   if (collectingCitations) {
     const numCitations = collectedCitations.citations ? collectedCitations.citations.length : 0;
-    addMenuItem(menu, `Collecting Citations (${numCitations})...`, function (element) {
+    let menuItem = addMenuItem(menu, `Collecting Citations (${numCitations})...`, function (element) {
       setupCollectCitationsSubmenu(data, collectedCitations, backFunction);
     });
+    menuItem.classList.add("bordered");
   } else {
     addMenuItem(menu, "Start Collecting Citations", async function (element) {
       await startNewCollectedCitations();
-      closePopup();
+      // rather than closing the popup go back to main menu as the normal thing to do next
+      // is build a citation
+      backFunction();
     });
   }
 }
