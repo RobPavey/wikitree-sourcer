@@ -1,0 +1,44 @@
+{
+  "sourceOfData": "wagovau",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "Elspeth Punton"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1935"
+  },
+  "eventPlace": {
+    "placeString": "Perth, Western Australia, Australia",
+    "state": "Western Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Perth"
+  },
+  "registrationDistrict": "Perth",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Smith",
+        "forenames": "Alfred Edward Victor"
+      },
+      "marriageDate": {
+        "dateString": "1935"
+      },
+      "marriagePlace": {
+        "placeString": "Perth, Western Australia, Australia",
+        "state": "Western Australia",
+        "country": "Australia",
+        "extractedPlaceString": "Perth"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "marriage",
+    "registrationNumber": "101155"
+  },
+  "isDateTheRegistrationDate": false,
+  "isPlaceTheRegistrationPlace": false,
+  "hasValidData": true
+}

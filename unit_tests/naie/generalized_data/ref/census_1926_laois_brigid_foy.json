@@ -1,0 +1,47 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1926"
+  },
+  "eventPlace": {
+    "placeString": "Sleaty, Graigue Rural, Laois, Ireland"
+  },
+  "name": {
+    "lastName": "Foy",
+    "forenames": "Brigid"
+  },
+  "ageAtEvent": "20",
+  "relationshipToHead": "daughter",
+  "maritalStatus": "single",
+  "personGender": "female",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "gender",
+    "maritalStatus"
+  ],
+  "householdArray": [
+    {
+      "name": "Michael Foy",
+      "age": "63",
+      "gender": "male",
+      "maritalStatus": "married"
+    },
+    {
+      "name": "Julia Foy",
+      "age": "60",
+      "gender": "female",
+      "maritalStatus": "married"
+    },
+    {
+      "name": "Brigid Foy",
+      "age": "20",
+      "gender": "female",
+      "maritalStatus": "single",
+      "isSelected": true
+    }
+  ],
+  "hasValidData": true
+}

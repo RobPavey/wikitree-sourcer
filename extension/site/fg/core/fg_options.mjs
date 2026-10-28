@@ -172,6 +172,12 @@ const uiOptionsPageModBehaviourGroup = {
       label: "Override right-click on icons to copy the wikiID or other relevant text",
       defaultValue: true,
     },
+    {
+      optionName: "modifyCitationOnPage",
+      type: "checkbox",
+      label: "Modify the Source Citation provided by Find A Grave to use a WikiTree template",
+      defaultValue: false,
+    },
   ],
 };
 
@@ -180,7 +186,7 @@ const uiOptionsPageModLocationsGroup = {
   subcategory: "fg",
   tab: "ui",
   subsection: "fg",
-  subheading: "wtIconPageModLocactions",
+  subheading: "wtIconPageModLocations",
 
   options: [
     {
@@ -208,21 +214,34 @@ const uiOptionsPageModLocationsGroup = {
       defaultValue: true,
     },
     {
+      optionName: "cemeterySearchWithinShowWtIcon",
+      type: "checkbox",
+      label: "On search for memorials in a cemetery pages show icon next to each memorial",
+      defaultValue: true,
+    },
+    {
       optionName: "cemeteryShowWtIconH1",
       type: "checkbox",
       label: "On cemetery pages show icon next to top-level heading to indicate if WT profiles reference this cemetery",
       defaultValue: true,
     },
     {
-      optionName: "cemeteryShowWtCategoryIconH1",
+      optionName: "cemeteryShowWtIconNearby",
       type: "checkbox",
-      label: "On cemetery pages show icon next to top-level heading to show WT category for this cemetery",
-      defaultValue: true,
+      label: "On cemetery pages show icon next to nearby cemeteries to indicate if WT profiles reference this cemetery",
+      defaultValue: false,
     },
     {
-      optionName: "cemeterySearchShowWtIcon",
+      optionName: "cemeterySearchShowWtIconCemetery",
       type: "checkbox",
-      label: "On cemetery search pages show icon next to each memorial",
+      label: "On search for cemetery pages show icon next to each cemetery",
+      defaultValue: false,
+    },
+    {
+      optionName: "cemeteryShowWtCategoryIcon",
+      type: "checkbox",
+      label:
+        "When an icon is displayed next to a cemetery name, also add an icon to show WT category for this cemetery (if any)",
       defaultValue: true,
     },
   ],
@@ -247,7 +266,7 @@ registerOptionsGroup(uiOptionsPageModBehaviourGroup);
 registerSubheadingForOptions(
   "ui",
   "fg",
-  "wtIconPageModLocactions",
+  "wtIconPageModLocations",
   "Page Modifications for WikiTree usage icons (locations)"
 );
 registerOptionsGroup(uiOptionsPageModLocationsGroup);

@@ -213,10 +213,6 @@ function setSearchingBanner() {
   }
 }
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 var inputElementsAwaitingMutation = [];
 
 function addMutationObserver(inputElement) {

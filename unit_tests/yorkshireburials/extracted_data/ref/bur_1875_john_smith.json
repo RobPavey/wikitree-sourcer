@@ -1,0 +1,26 @@
+{
+  "url": "https://yorkshireburials.uk/records/?surname=smith&surname_match=exact&forenames=john&event_year=1880&year_range=5",
+  "success": true,
+  "recordData": {
+    "Name": "John SMITH",
+    "Sex": "Male",
+    "Age": "41 years",
+    "Birth Year": "1834",
+    "Event Date": "20 April 1875",
+    "Area": "Leeds",
+    "Cemetery": "Burmantofts Cemetery (Beckett Street Cemetery)",
+    "Grave": "Unconsecrated, No. 19055"
+  },
+  "pageType": "searchResult",
+  "recordUrl": "https://yorkshireburials.uk/records/view_record.php?uuid=83e0d2ab-30d9-11f0-848c-02013c789f03",
+  "burialDateIso": "1875-04-20",
+  "name": "John SMITH",
+  "sex": "Male",
+  "burialDate": "20 April 1875",
+  "age": "41 years",
+  "birthYear": "1834",
+  "cemetery": "Burmantofts Cemetery (Beckett Street Cemetery)",
+  "parish": "Leeds",
+  "county": "Yorkshire",
+  "graveReference": "Unconsecrated, No. 19055"
+}

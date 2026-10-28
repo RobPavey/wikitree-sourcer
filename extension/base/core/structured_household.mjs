@@ -178,6 +178,7 @@ class StructuredHousehold {
       if (relationship == "head") {
         setHead(householdMember);
       } else if (relationship == "wife") {
+        // work out if this is really the wife of the head of household or of the previous person
         confirmGender(householdMember, "female");
         if (lastHead && (numPeopleSinceHead == 1 || (hasOutOfOrderHead && lastHead.gdMember.relationship == "head"))) {
           lastWifeOfHead = householdMember;
@@ -191,10 +192,32 @@ class StructuredHousehold {
             setHead(householdMember);
           } else {
             // could be the wife of a son
-            if (lastHouseholdMember.gdMember.relationship == "son") {
+            let prevMember = lastHouseholdMember.gdMember;
+            let prevRelationship = prevMember.relationship;
+            let prevAge = prevMember.age;
+            let prevLastName = StringUtils.getLastWord(prevMember.name);
+            let thisMember = householdMember.gdMember;
+            let thisLastName = StringUtils.getLastWord(thisMember.name);
+            let thisAge = thisMember.age;
+            let prevAgeDiff = thisAge - prevAge;
+            if (prevRelationship == "son" && prevAge >= 16 && prevAgeDiff < 14 && prevLastName == thisLastName) {
               lastHouseholdMember.wife = householdMember;
               householdMember.husband = lastHouseholdMember;
               householdMember.relationTo = lastHouseholdMember;
+            } else if (lastHead && lastHead.gdMember) {
+              let lastHeadMember = lastHead.gdMember;
+              let lastHeadRelationship = lastHeadMember.relationship;
+              let lastHeadAge = lastHeadMember.age;
+              let lastHeadLastName = StringUtils.getLastWord(lastHeadMember.name);
+              let lastHeadAgeDiff = thisAge - lastHeadAge;
+              if (lastHeadRelationship == "head" && lastHeadAgeDiff < 14 && lastHeadLastName == thisLastName) {
+                // not the wife of a son - looks like wife of the lastHead
+                lastWifeOfHead = householdMember;
+                lastHead.wife = householdMember;
+                householdMember.husband = lastHead;
+                confirmGender(lastHead, "male");
+                householdMember.relationTo = lastHead;
+              }
             }
           }
         }
@@ -338,7 +361,7 @@ function addSpouseOrParentsForSelectedHouseholdMember(gd) {
       }
     }
     if (!isNaN(yearsMarried)) {
-      let marriageDateString = GeneralizedData.getSubtractAgeFromDate(eventDate, yearsMarried);
+      let marriageDateString = GeneralizedData.subtractAgeOrTimePeriodFromDate(eventDate, yearsMarried);
       let marriageYear = StringUtils.getLastWord(marriageDateString);
       if (marriageYear) {
         spouse.marriageDate.yearString = marriageYear;

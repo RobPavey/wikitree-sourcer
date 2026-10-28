@@ -1,0 +1,43 @@
+{
+  "url": "https://sok.riksarkivet.se/en/?Sokord=Anders+andersen&page=1&postid=Folk_129416358&tab=post",
+  "success": true,
+  "recordTitle": "Andersen, Anders",
+  "recordType": "Census 1930",
+  "recordData": {
+    "Name": "Andersen, Anders",
+    "Home parish": "Vätö",
+    "Place of residence": "Vätöberg Sthlm. stads stenhuggeri",
+    "Page in the parish register": "319",
+    "Deanery": "Lyhundra",
+    "County": "Stockholm",
+    "Birth year": "1877",
+    "Birth place": "Naesodden",
+    "Birth country": "Norge",
+    "Occupation": "Stenhuggare",
+    "Marital status": "Ogift",
+    "Year of arrival": "1903",
+    "Arrived from": "Oslo Norge",
+    "Gender": "Man",
+    "Family status code": "Ensamstående",
+    "Family no": "1",
+    "Other": "Folkskola",
+    "Nationality": "Svensk medborgare 1/7 21",
+    "Education": "3 (småskola, folkskola)",
+    "Income": "2300",
+    "Page": "26",
+    "Row": "15",
+    "Created by": "Riksarkivet SVAR-Svensk arkivinformation",
+    "About the household": "Persons in the household"
+  },
+  "households": {
+    "Fam. no 1": [
+      {
+        "text": "Andersen, Anders, b. 1877 in Naesodden, Norge",
+        "italicEndText": "Stenhuggare"
+      }
+    ]
+  },
+  "imageLink": "https://sok.riksarkivet.se/bildvisning/B0001042_00288",
+  "postId": "Folk_129416358",
+  "pageType": "record"
+}

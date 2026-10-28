@@ -151,7 +151,7 @@ function addFreebmdDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log(data);
 
   addMenuItem(menu, "Search FreeBMD (UK)...", function (element) {
-    setupFreebmdSearchSubMenu(data, backFunction, filter);
+    setupFreebmdSearchSubmenu(data, backFunction, filter);
   });
 
   return true;
@@ -411,9 +411,9 @@ function addFreebmdSearchPossibleDeathsMenuItem(menu, data, filter) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupFreebmdSearchSubMenu(data, backFunction, filter) {
+async function setupFreebmdSearchSubmenu(data, backFunction, filter) {
   let backToHereFunction = function () {
-    setupFreebmdSearchSubMenu(data, backFunction, filter);
+    setupFreebmdSearchSubmenu(data, backFunction, filter);
   };
 
   let menu = beginMainMenu();

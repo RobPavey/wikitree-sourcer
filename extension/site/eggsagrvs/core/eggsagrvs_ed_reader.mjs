@@ -33,14 +33,14 @@ import { EggsaCommon } from "./eggsa_common.mjs";
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function getCountry(url) {
-  // Check if path contains /world/
-  if (url.includes("/world/")) {
+  // Check if path contains "world.eggsa.org"
+  const worldEggsa = "world.eggsa.org";
+  if (url.includes(worldEggsa)) {
     const parsed = new URL(url);
     const pathParts = parsed.pathname.split("/");
 
-    // Find where "world" is and take the next part as country
-    const worldIndex = pathParts.indexOf("world");
-    const country = pathParts[worldIndex + 1];
+    // Take the 2nd part of the URL pathname as the country
+    const country = pathParts[1];
 
     return country;
   } else {

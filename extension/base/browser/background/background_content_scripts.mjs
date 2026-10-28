@@ -22,10 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import "../../../site/all/core/register_site_data.mjs";
+import "/site/all/core/register_site_data.mjs";
 import { getSites, storeSiteRegistry } from "../common/site_registry_storage.mjs";
 import { isChrome, isFirefox, isSafari } from "../common/browser_check.mjs";
 import { logDebug } from "../../core/log_debug.mjs";
+import { doesUrlMatchChromePattern } from "./background_common.mjs";
 
 // Helper to convert Chrome Match Patterns to Regex
 // This tests whether a match pattern from a registered content script matches
@@ -42,21 +43,6 @@ function doesContentScriptOriginMatchGrantedOrigin(contentStringOrigin, grantedO
 
   const regex = new RegExp(`^${regexString}$`);
   return regex.test(testUrl);
-}
-
-// Helper to convert Chrome Match Patterns to Regex
-// This tests whether a match pattern from a registered content script matches
-// a URL
-function doesUrlMatchChromePattern(pattern, url) {
-  if (pattern === "<all_urls>") return true;
-
-  // Prepare the pattern by escaping special regex characters except *
-  let regexString = pattern
-    .replace(/[.+^${}()|[\]\\]/g, "\\$&") // Escape all regex specials
-    .replace(/\*/g, ".*"); // Convert * to .*
-
-  const regex = new RegExp(`^${regexString}$`);
-  return regex.test(url);
 }
 
 async function injectContentScriptsIntoExistingTab(tab, contentScriptJs, allFrames) {
@@ -326,6 +312,12 @@ async function registerContentScripts() {
   let scripts = [];
 
   let sites = await getSites();
+  logDebug("registerContentScripts: sites is", sites);
+
+  if (!sites) {
+    return;
+  }
+
   for (const siteName of Object.keys(sites)) {
     let siteData = sites[siteName];
     if (siteData) {
@@ -334,13 +326,19 @@ async function registerContentScripts() {
         let id = siteName;
         let extractPath = "site/" + id + "/browser/" + id + "_extract_data.js";
         let contentScriptPath = "site/" + id + "/browser/" + id + "_content.js";
-        let js = [extractPath, commonPath, contentScriptPath];
+        let js = [extractPath, commonPath];
         if (siteData.additionalContentJsFiles) {
           for (let addJs of siteData.additionalContentJsFiles) {
-            let addJsPath = "site/" + id + "/browser/" + addJs + ".js";
+            let addJsPath;
+            if (addJs.includes("/")) {
+              addJsPath = addJs + ".js";
+            } else {
+              addJsPath = "site/" + id + "/browser/" + addJs + ".js";
+            }
             js.push(addJsPath);
           }
         }
+        js.push(contentScriptPath); // always put <site>_content.js last
 
         let runAt = "document_idle";
         if (siteData.runAt) {

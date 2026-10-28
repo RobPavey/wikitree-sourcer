@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "Alice Frances Wallace"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1908-06-04"
+  },
+  "eventPlace": {
+    "placeString": "Saint John, Saint John, New Brunswick, Canada"
+  },
+  "registrationDistrict": "Saint John",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Frederick Wallace"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ellen Clark"
+      }
+    }
+  },
+  "webpageFormat": 202606,
+  "hasValidData": true
+}

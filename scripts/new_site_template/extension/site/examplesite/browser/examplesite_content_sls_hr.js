@@ -158,10 +158,6 @@ async function registerTabWithBackground() {
 // Do the search
 ////////////////////////////////////////////////////////////////////////////////
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 var pendingSearchData;
 
 async function getPendingSearch() {

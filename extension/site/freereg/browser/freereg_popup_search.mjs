@@ -30,7 +30,7 @@ import {
   doAsyncActionWithCatch,
   closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import {
   registerSearchMenuItemFunction,
@@ -128,7 +128,7 @@ async function freeregSearchWithParameters(generalizedData, parameters) {
 
 function addFreeregDefaultSearchMenuItem(menu, data, backFunction, filter) {
   addMenuItem(menu, "Search FreeReg (UK)...", function (element) {
-    setupFreeregSearchSubMenu(data, backFunction, filter);
+    setupFreeregSearchSubmenu(data, backFunction, filter);
   });
 
   return true;
@@ -204,7 +204,7 @@ function addFreeregSearchAllTypesMenuItem(menu, data, filter) {
 
 function addFreeregSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupFreeregSearchWithParametersSubMenu(data, backFunction);
+    setupFreeregSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -212,9 +212,9 @@ function addFreeregSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupFreeregSearchSubMenu(data, backFunction, filter) {
+async function setupFreeregSearchSubmenu(data, backFunction, filter) {
   let backToHereFunction = function () {
-    setupFreeregSearchSubMenu(data, backFunction);
+    setupFreeregSearchSubmenu(data, backFunction);
   };
 
   let menu = beginMainMenu();
@@ -229,9 +229,9 @@ async function setupFreeregSearchSubMenu(data, backFunction, filter) {
   endMainMenu(menu);
 }
 
-async function setupFreeregSearchWithParametersSubMenu(data, backFunction) {
+async function setupFreeregSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/freereg_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.FreeregData, freeregSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.FreeregData, freeregSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

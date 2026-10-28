@@ -332,10 +332,18 @@ class FreebmdEdReader extends ExtractedDataReader {
     if (this.ed.spouse) {
       spouseName = this.makeNameObjFromFullName(this.ed.spouse);
     } else {
-      let spouseSurname = getRecordDataText(this.ed, "Spouse Surname");
-      if (spouseSurname) {
-        if (!spouseSurname.startsWith("No data") && !spouseSurname.startsWith("See Page")) {
-          spouseName = this.makeNameObjFromForenamesAndLastName("", spouseSurname);
+      let spouseNameString = getRecordDataText(this.ed, "Spouse Name");
+      if (spouseNameString) {
+        if (!spouseNameString.startsWith("No data") && !spouseNameString.startsWith("See Page")) {
+          spouseNameString = NameUtils.convertNameFromAllCapsToMixedCase(spouseNameString);
+          spouseName = this.makeNameObjFromFullName(spouseNameString);
+        }
+      } else {
+        let spouseSurname = getRecordDataText(this.ed, "Spouse Surname");
+        if (spouseSurname) {
+          if (!spouseSurname.startsWith("No data") && !spouseSurname.startsWith("See Page")) {
+            spouseName = this.makeNameObjFromForenamesAndLastName("", spouseSurname);
+          }
         }
       }
     }

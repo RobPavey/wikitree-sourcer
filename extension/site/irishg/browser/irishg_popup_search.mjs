@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
@@ -82,7 +82,7 @@ async function irishgSearch(generalizedData, parameters) {
 
 function addIrishgDefaultSearchMenuItem(menu, data, backFunction, filter) {
   addMenuItem(menu, "Search IrishGenealogy.ie...", function (element) {
-    setupIrishgSearchSubMenu(data, backFunction, filter);
+    setupIrishgSearchSubmenu(data, backFunction, filter);
   });
 
   return true;
@@ -92,9 +92,9 @@ function addIrishgDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupIrishgSearchSubMenu(data, backFunction, filter) {
+async function setupIrishgSearchSubmenu(data, backFunction, filter) {
   let dataModule = await import(`../core/irishg_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.IrishgData, irishgSearch);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.IrishgData, irishgSearch);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

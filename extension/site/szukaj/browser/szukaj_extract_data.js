@@ -27,12 +27,16 @@ SOFTWARE.
 const ATTRIBUTE_TRANSLATIONS = {
   sygnatura: "reference code",
   signatur: "reference code",
+  "архивный шифр": "reference code",
   daty: "dates",
   daten: "dates",
+  "даты": "dates",
   archiwum: "archives",
   archiv: "archives",
+  "архив": "archives",
   zespół: "fonds",
   bestand: "fonds",
+  "коллекция": "fonds",
 };
 
 function extractData(document, url) {
@@ -56,13 +60,13 @@ function extractData(document, url) {
     let title = attribute.querySelector("div.title").textContent.trim().toLowerCase();
     title = ATTRIBUTE_TRANSLATIONS[title] || title;
     let value = attribute.querySelector("div.value").textContent.trim();
-    result.attributes[title] = value.replace("Expand", "").replace("Collapse", "").trim();
+    result.attributes[title] = value.replace("Rozwiń", "").replace("Zwiń", "").replace("Expand", "").replace("Collapse", "").replace("Einklappen", "").replace("Ausklappen", "").replace("Развернуть", "").replace("Свернуть", "").trim();
   }
   for (let attribute of attributes.querySelectorAll('div[class="border-left col-md-3 col-sm-12"]')) {
     let title = attribute.querySelector("div.title").textContent.trim().toLowerCase();
     title = ATTRIBUTE_TRANSLATIONS[title] || title;
     let value = attribute.querySelector("div.value").textContent.trim();
-    result.attributes[title] = value.replace("Expand", "").replace("Collapse", "").trim();
+    result.attributes[title] = value.replace("Rozwiń", "").replace("Zwiń", "").replace("Expand", "").replace("Collapse", "").replace("Einklappen", "").replace("Ausklappen", "").replace("Развернуть", "").replace("Свернуть", "").trim();
   }
 
   let viewer_frame = document.querySelector("iframe.ps-iframe");

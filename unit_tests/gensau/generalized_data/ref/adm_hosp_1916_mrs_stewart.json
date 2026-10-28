@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "MedicalPatient",
+  "name": {
+    "lastName": "Stewart",
+    "nonPrefixHonorific": "Mrs"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1916"
+  },
+  "hasValidData": true
+}

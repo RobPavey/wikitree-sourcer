@@ -33,11 +33,17 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 // http://www.census.nationalarchives.ie/search/results.jsp?searchMoreVisible=&census_year=1901&surname=Connors&firstname=Margaret&county19011911=&county1821=&county1831=&county1841=&county1851=&parish=&ward=&barony=&townland=&houseNumber=&ded=&age=31&sex=F&search=Search&ageInMonths=&relationToHead=&religion=&education=&occupation=&marriageStatus=&yearsMarried=&birthplace=&nativeCountry=&language=&deafdumb=&causeOfDeath=&yearOfDeath=&familiesNumber=&malesNumber=&femalesNumber=&maleServNumber=&femaleServNumber=&estChurchNumber=&romanCatNumber=&presbNumber=&protNumber=&marriageYears=&childrenBorn=&childrenLiving=
 // http://www.census.nationalarchives.ie/search/results.jsp?census_year=1901&surname=Connors&firstname=Margaret&county19011911=&county1821=&county1831=&county1841=&county1851=&parish=&ward=&barony=&townland=&houseNumber=&ded=&age=31&sex=F&search=Search
 
+// the 1926 census is a special case
+// https://nationalarchives.ie/collections/search-the-1926-census/search-results/#surname__icontains=Foy&first_name__icontains=Bridget&limit=30
+
 class NaieUriBuilder {
-  constructor(usePre2025Site) {
+  constructor(usePre2025Site, search1926Census) {
     this.usePre2025Site = usePre2025Site;
     if (usePre2025Site) {
       this.uri = "http://www.census.nationalarchives.ie/search/results.jsp";
+    } else if (search1926Census) {
+      this.uri = "http://nationalarchives.ie/collections/search-the-1926-census/search-results/";
+      this.search1926Census = true;
     } else {
       this.uri = "http://nationalarchives.ie/collections/search-the-census/search-results/";
     }
@@ -87,7 +93,7 @@ class NaieUriBuilder {
   addGivenNames(string) {
     if (this.usePre2025Site) {
       this.addSearchParameter("firstname", StringUtils.removeExtendedAsciiCharacters(string));
-    } else {
+    } else if (!this.search1926Census) {
       this.addSearchParameter("firstname__icontains", StringUtils.removeExtendedAsciiCharacters(string));
     }
   }
@@ -102,10 +108,19 @@ class NaieUriBuilder {
             minAgeNum = 0;
           }
           let maxAgeNum = ageNum + range;
-          this.addSearchParameter("age__gte", minAgeNum);
-          this.addSearchParameter("age__lte", maxAgeNum);
+          if (this.search1926Census) {
+            this.addSearchParameter("updated_age__gte", minAgeNum);
+            this.addSearchParameter("updated_age__lte", maxAgeNum);
+          } else {
+            this.addSearchParameter("age__gte", minAgeNum);
+            this.addSearchParameter("age__lte", maxAgeNum);
+          }
           return;
         }
+      } else if (this.search1926Census) {
+        this.addSearchParameter("updated_age__gte", string);
+        this.addSearchParameter("updated_age__lte", string);
+        return;
       }
     }
 
@@ -120,7 +135,12 @@ class NaieUriBuilder {
     } else {
       return;
     }
-    this.addSearchParameter("sex", gender);
+
+    if (this.search1926Census) {
+      this.addSearchParameter("updated_sex", gender);
+    } else {
+      this.addSearchParameter("sex", gender);
+    }
   }
 
   addCounty(censusYear, county) {

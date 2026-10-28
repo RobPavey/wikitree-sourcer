@@ -190,6 +190,20 @@ function extractData(document, url) {
 
   setFromLabelWithId(result, memEvents, "#plotValueLabel", "plot");
   setFromLabelWithId(result, memEvents, "#memNumberLabel", "memorialId");
+  if (!result.memorialId) {
+    // For memorial pages that have just been created it may not have a line for the memorial ID
+    // yet. In that case we can get it from the URL which is of the form:
+    // https://www.findagrave.com/memorial/307774493/wanda-louise-hasenstab
+    const urlObject = new URL(url);
+    const path = urlObject.pathname;
+    if (path) {
+      let pathParts = path.split("/");
+      if (pathParts.length >= 3 && pathParts[1] == "memorial") {
+        const memorialId = pathParts[2];
+        result.memorialId = memorialId;
+      }
+    }
+  }
 
   extractInscription(result, document);
 

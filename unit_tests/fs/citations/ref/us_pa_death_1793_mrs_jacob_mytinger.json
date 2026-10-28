@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>\nEntry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Mrs Jacob Mytinger died in November 1793 in Philadelphia, Phila., Penn.<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>\nEntry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Death''': \"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>citing Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>Entry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>\nMrs Jacob Mytinger death Nov 1793, wife of Jacob Mytinger, in Philadelphia, Phila., Penn..\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Mrs Jacob Mytinger died in November 1793 in Philadelphia, Phila., Penn.<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>\nMrs Jacob Mytinger death Nov 1793, wife of Jacob Mytinger, in Philadelphia, Phila., Penn..\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Death''': \"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>citing Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>Mrs Jacob Mytinger death Nov 1793, wife of Jacob Mytinger, in Philadelphia, Phila., Penn..",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>\nName: Mrs. Jacob Mytinger; Burial Date: November 1793; Residence Place: Philadelphia, Phila., Penn.; Death Date: 11 1793; Death Place: Philadelphia, Phila., Penn.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Mrs Jacob Mytinger died in November 1793 in Philadelphia, Phila., Penn.<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>\nName: Mrs. Jacob Mytinger; Burial Date: November 1793; Residence Place: Philadelphia, Phila., Penn.; Death Date: 11 1793; Death Place: Philadelphia, Phila., Penn.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Death''': \"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>citing Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>Name: Mrs. Jacob Mytinger; Burial Date: November 1793; Residence Place: Philadelphia, Phila., Penn.; Death Date: 11 1793; Death Place: Philadelphia, Phila., Penn.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mrs. Jacob Mytinger\n|-\n| Burial Date || November 1793\n|-\n| Residence Place || Philadelphia, Phila., Penn.\n|-\n| Death Date || 11 1793\n|-\n| Death Place || Philadelphia, Phila., Penn.\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Mrs Jacob Mytinger died in November 1793 in Philadelphia, Phila., Penn.<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Mrs. Jacob Mytinger\n|-\n| Burial Date || November 1793\n|-\n| Residence Place || Philadelphia, Phila., Penn.\n|-\n| Death Date || 11 1793\n|-\n| Death Place || Philadelphia, Phila., Penn.\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Death''': \"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>citing Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>Name: Mrs. Jacob Mytinger; Burial Date: November 1793; Residence Place: Philadelphia, Phila., Penn.; Death Date: 11 1793; Death Place: Philadelphia, Phila., Penn.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>\nEntry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Mrs Jacob Mytinger died in November 1793 in Philadelphia, Phila., Penn.<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>\nEntry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Death''': \"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>citing Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>Entry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Mrs Jacob Mytinger died in November 1793 in Philadelphia, Phila., Penn.<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Death''': \"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>citing Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>\nMrs Jacob Mytinger death Nov 1793, wife of Jacob Mytinger, in Philadelphia, Phila., Penn..\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Mrs Jacob Mytinger died in November 1793 in Philadelphia, Phila., Penn.<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>\nMrs Jacob Mytinger death Nov 1793, wife of Jacob Mytinger, in Philadelphia, Phila., Penn..\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Death''': \"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>citing Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>Mrs Jacob Mytinger death Nov 1793, wife of Jacob Mytinger, in Philadelphia, Phila., Penn..",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>\nEntry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Mrs Jacob Mytinger died in November 1793 in Philadelphia, Phila., Penn.<ref>\n'''Death''':\n\"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>\nciting Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>\n{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>\nEntry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Death''': \"Pennsylvania, Deaths and Burials, 1720-1999\"<br/>citing Digital film/folder number: 007516340; FHL microfilm: 381286; Record number: 877; Packet letter: A; Indexing batch: B54432-6<br/>{{FamilySearch Record|H543-TJMM}} (accessed 6 May 2021)<br/>Entry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793.",
+    "type": "source"
+  }
+}

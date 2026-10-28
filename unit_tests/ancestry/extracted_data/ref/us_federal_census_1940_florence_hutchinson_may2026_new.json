@@ -1,0 +1,92 @@
+{
+  "url": "https://www.ancestry.com/search/collections/2442/records/93824254",
+  "pageType": "record",
+  "dbId": "2442",
+  "recordId": "93824254",
+  "ancestryTemplate": "{{Ancestry Record|2442|93824254}}",
+  "domain": "ancestry.com",
+  "titleName": "Florence Hutchinson",
+  "titleCollection": "1940 United States Federal Census",
+  "recordData": {
+    "Name": "Florence Hutchinson",
+    "Respondent": "Yes",
+    "Age": "46",
+    "Estimated Birth Year": "abt 1894",
+    "Gender": "Female",
+    "Race": "White",
+    "Birthplace": "Massachusetts",
+    "Marital Status": "Married",
+    "Relation to Head of House": "Wife",
+    "Home in 1940": "Taunton, Bristol, Massachusetts",
+    "Map of Home in 1940": "Taunton, Bristol, Massachusetts",
+    "Street": "Wilbur",
+    "House Number": "17",
+    "Inferred Residence in 1935": "Taunton, Bristol, Massachusetts",
+    "Residence in 1935": "Taunton",
+    "Resident on farm in 1935": "No",
+    "Sheet Number": "4B",
+    "Father's Birthplace": "New Hampshire",
+    "Mother's Birthplace": "Massachusetts",
+    "Woman Marriages": "No",
+    "Woman Age at First Marriage": "26",
+    "Number of Children": "4",
+    "Attended School or College": "No",
+    "Highest Grade Completed": "Elementary school, 1st to 8th grade",
+    "Native Language": "English",
+    "Veteran": "Yes",
+    "Military service": "World War",
+    "Social Security Number": "No",
+    "Usual Occupation": "Housewife",
+    "Household Members (Name)<br/>Age<br/>Relationship": "John Hutchinson 50 Head<br/>Florence Hutchinson 46 Wife<br/>Beatrice Hutchinson 16 Daughter<br/>John Hutchinson 14 Son"
+  },
+  "recordDataAltValues": {
+    "Estimated Birth Year": [
+      "abt 1894"
+    ]
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "John Hutchinson",
+        "dbId": "2442",
+        "recordId": "93824253",
+        "link": "http://www.ancestry.com/search/collections/2442/records/93824253",
+        "Age": "50",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members (Name)": "Florence Hutchinson",
+        "Age": "46",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members (Name)": "Beatrice Hutchinson",
+        "dbId": "2442",
+        "recordId": "93824255",
+        "link": "http://www.ancestry.com/search/collections/2442/records/93824255",
+        "Age": "16",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members (Name)": "John Hutchinson",
+        "dbId": "2442",
+        "recordId": "93824256",
+        "link": "http://www.ancestry.com/search/collections/2442/records/93824256",
+        "Age": "14",
+        "Relationship": "Son"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2442/images/m-t0627-01575-00119?pid=93824254&usePUB=true&usePUBJs=true",
+  "imageDbId": "2442",
+  "imageRecordId": "m-t0627-01575-00119",
+  "sourceCitation": "Year: 1940; Census Place: Taunton, Bristol, Massachusetts; Roll: m-t0627-01575; Page: 4B; Enumeration District: 3-125",
+  "sourceInformation": "Ancestry.com. 1940 United States Federal Census [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2012. Original data: United States of America, Bureau of the Census. Sixteenth Census of the United States, 1940. Washington, D.C.: National Archives and Records Administration, 1940. T627, 4,643 rolls.",
+  "originalData": "United States of America, Bureau of the Census. Sixteenth Census of the United States, 1940. Washington, D.C.: National Archives and Records Administration, 1940. T627, 4,643 rolls.",
+  "sourceDescription": "The 1940 United States Federal Census is the largest census released to date and the most recent census available for public access. The census gives us a glimpse into the lives of Americans in 1940, with details about a household’s occupants that include birthplaces, occupations, education, citizenship, and income. Learn more..."
+}

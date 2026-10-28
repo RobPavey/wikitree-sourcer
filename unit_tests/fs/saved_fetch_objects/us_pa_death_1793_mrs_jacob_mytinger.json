@@ -1,0 +1,1122 @@
+{
+  "id" : "r_141981408100",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1690823902869,
+    "created" : 1690823902869
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:WXGR-223Z?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:WXGR-223Z?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:WXGR-223Z"
+    }
+  },
+  "description" : "#sd_p_192629247300",
+  "persons" : [ {
+    "id" : "p_192629247300",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "280c3247-92bd-40ba-9f3b-b4fa77e0d0ac",
+        "attribution" : {
+          "modified" : 1690823902869,
+          "created" : 1690823902869
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "be0bd320-c2d6-4649-af59-582e78e1052a",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        }, {
+          "id" : "be0bd320-c2d6-4649-af59-582e78e1052a",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1690857569097,
+            "created" : 1690857569097
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/H543-TJMM?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/WXGR-223Z?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:H543-TJMM" ]
+    },
+    "names" : [ {
+      "id" : "6591ecca-02e2-41ba-8d57-f69f389ac502",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1690823902869,
+        "created" : 1690823902869
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Mrs. Jacob Mytinger",
+        "parts" : [ {
+          "id" : "be711d31-5283-4967-8d6b-ccffa8bd972b",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Mrs. Jacob",
+          "fields" : [ {
+            "id" : "e5d3efc4-85c2-4de4-8845-0b23fbd9a2f9",
+            "attribution" : {
+              "modified" : 1690823902869,
+              "created" : 1690823902869
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "4d40d42a-99e6-4e54-80c1-64dd63240de9",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Mrs. Jacob"
+            }, {
+              "id" : "4d40d42a-99e6-4e54-80c1-64dd63240de9",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Mrs. Jacob",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "ef288271-6f6c-42a1-a627-931ae1200304",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Mytinger",
+          "fields" : [ {
+            "id" : "7b44c2fb-fa48-4429-96cf-78a6385edcbb",
+            "attribution" : {
+              "modified" : 1690823902869,
+              "created" : 1690823902869
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "bf4fc5c4-c56f-47b1-910c-67adc1fc7238",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Mytinger"
+            }, {
+              "id" : "bf4fc5c4-c56f-47b1-910c-67adc1fc7238",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Mytinger",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "6c5d9855-1499-4a99-b389-39aa7b8d2e48",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "7e07f889-0dad-45da-8ca5-59f995656d32",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Mrs. Jacob Mytinger"
+          }, {
+            "id" : "7e07f889-0dad-45da-8ca5-59f995656d32",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Mrs. Jacob Mytinger",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "ec300112-80b0-4b83-8cdd-ef62135c4081",
+      "attribution" : {
+        "modified" : 1690823902869,
+        "created" : 1690823902869
+      },
+      "type" : "http://gedcomx.org/Burial",
+      "date" : {
+        "id" : "234900f7-e34d-48bb-bc77-1e564a76f54c",
+        "original" : "November 1793",
+        "formal" : "+1793-11",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "fields" : [ {
+          "id" : "158fb982-fea3-4116-b363-bb72abc03e70",
+          "attribution" : {
+            "modified" : 1690823902869,
+            "created" : 1690823902869
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "7ef83f6d-b31d-4b28-bbba-4f125d993028",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1594338160789,
+              "created" : 1594338160789
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BUR_MONTH",
+            "text" : "11"
+          } ]
+        }, {
+          "id" : "80d9a33e-3bdd-4308-9194-b26dc5d4c21e",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.4.1"
+            },
+            "modified" : 1594338160789,
+            "created" : 1594338160789
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "92454c2c-5f0d-4900-a1e3-2345debe488f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BUR_DATE_ORIG",
+            "text" : "Nov 1793"
+          }, {
+            "id" : "92454c2c-5f0d-4900-a1e3-2345debe488f",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.4.1"
+              },
+              "modified" : 1594338160789,
+              "created" : 1594338160789
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BUR_DATE",
+            "text" : "November 1793",
+            "resource" : "+1793-11",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "5527df1e-dd5c-4b79-ac1e-0f5850edc6fa",
+          "attribution" : {
+            "modified" : 1690823902869,
+            "created" : 1690823902869
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "e264b6a0-089f-4420-8188-74bef84e2a05",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1594338160789,
+              "created" : 1594338160789
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BUR_YEAR",
+            "text" : "1793"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "75ffcf1e-0687-4514-ab72-e47b6d5ae22f",
+      "attribution" : {
+        "modified" : 1690823902869,
+        "created" : 1690823902869
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "id" : "f1079908-37a5-4f60-90cd-b0c317957bac",
+        "original" : "Philadelphia, Phila., Penn.",
+        "fields" : [ {
+          "id" : "c1b0ba20-d423-4278-96b0-450f35b10734",
+          "attribution" : {
+            "modified" : 1690823902869,
+            "created" : 1690823902869
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "922571b1-5e58-4114-8cd4-b1bab39010d8",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_PLACE_ORIG",
+            "text" : "Philadelphia, Phila., Penn."
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "9e67230d-f966-48fe-8e6c-0172b436d084",
+      "attribution" : {
+        "modified" : 1690823902869,
+        "created" : 1690823902869
+      },
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "id" : "84e52144-8a50-4631-bb29-5aead1e1a29e",
+        "original" : "11 1793",
+        "fields" : [ {
+          "id" : "062a08b4-ec76-417e-8a2c-51ba8aa20c7b",
+          "attribution" : {
+            "modified" : 1690823902869,
+            "created" : 1690823902869
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "8da9a276-e6a3-4799-b10d-74575b3c91e8",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1581003636417,
+              "created" : 1581003636417
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1793"
+          } ]
+        }, {
+          "id" : "9f469c72-fbb3-4ba0-b17b-a8f5089a9f55",
+          "attribution" : {
+            "modified" : 1690823902869,
+            "created" : 1690823902869
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "37376dbe-af40-428f-8a16-43e20655b8ef",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1581003636417,
+              "created" : 1581003636417
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "11"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "6b449287-fd80-4ae8-a246-1bd47b86d5ab",
+        "original" : "Philadelphia, Phila., Penn.",
+        "confidence" : "http://confidence/96",
+        "description" : "#place_8016253",
+        "fields" : [ {
+          "id" : "a48a6195-c25c-4474-90ff-9edfd0274069",
+          "attribution" : {
+            "modified" : 1690823902869,
+            "created" : 1690823902869
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "3d717563-de18-4c22-ba3d-b45e949586ad",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Philadelphia, Phila., Penn."
+          }, {
+            "id" : "3d717563-de18-4c22-ba3d-b45e949586ad",
+            "confidence" : "http://confidence/96",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1581003636436,
+              "created" : 1581003636436
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Philadelphia, Phila., Penn.",
+            "resource" : "https://www.familysearch.org/platform/places/description/8016253",
+            "qualifiers" : [ {
+              "value" : "1013, 1010",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "a160cd16-46ab-4155-b363-eb3700b8d89a",
+        "attribution" : {
+          "modified" : 1690823902869,
+          "created" : 1690823902869
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "b456edfa-90d2-4a54-a686-cfa066f6010e",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Death",
+          "resource" : "http://gedcomx.org/Death"
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "6c191cdb-4313-4598-8701-9a0aa47a059a",
+      "attribution" : {
+        "modified" : 1690823902869,
+        "created" : 1690823902869
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "f77dcbd7-e55e-478f-b9ab-01634d1ed797",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000007516340_00000_00877_0000141981408100_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Mrs. Jacob Mytinger",
+      "gender" : "Female",
+      "deathDate" : "1793",
+      "deathPlace" : "Philadelphia, Phila., Penn."
+    }
+  }, {
+    "id" : "p_192629247400",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "20f352aa-3e1a-4d09-ac6e-74c954c030c4",
+        "attribution" : {
+          "modified" : 1690823902869,
+          "created" : 1690823902869
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "34c363da-c2ce-4931-a75b-84b33b2d2e73",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "SP_SEX_CODE_ORIG",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        }, {
+          "id" : "34c363da-c2ce-4931-a75b-84b33b2d2e73",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1690857569097,
+            "created" : 1690857569097
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_SEX_CODE",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/H543-TJ3Z?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/WXGR-223Z?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:H543-TJ3Z" ]
+    },
+    "names" : [ {
+      "id" : "0f081d85-a18e-4a9b-8761-1b320a03b8d1",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1690823902869,
+        "created" : 1690823902869
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Jacob Mytinger",
+        "parts" : [ {
+          "id" : "1bc499a9-4298-48a9-bd65-86fb5db8c0a4",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Jacob",
+          "fields" : [ {
+            "id" : "05aee9a3-3745-4705-8a0d-53d71ea46b35",
+            "attribution" : {
+              "modified" : 1690823902869,
+              "created" : 1690823902869
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "5d068b4e-271e-46ec-bfeb-e11261e09ad0",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Jacob"
+            }, {
+              "id" : "5d068b4e-271e-46ec-bfeb-e11261e09ad0",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Jacob",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "f6560078-edd0-4565-a217-d2f3871ad756",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Mytinger",
+          "fields" : [ {
+            "id" : "91a9a5ef-8802-4850-b8d7-2b853f00d515",
+            "attribution" : {
+              "modified" : 1690823902869,
+              "created" : 1690823902869
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "64332763-56bf-4dbf-819f-48de7ccebedc",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Mytinger"
+            }, {
+              "id" : "64332763-56bf-4dbf-819f-48de7ccebedc",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Mytinger",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "a3e9e922-a2e1-419b-b1bc-9e8db9c98841",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "8bd11552-ab3c-4135-a3b1-45e7216b019e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_NAME_ORIG",
+            "text" : "Jacob Mytinger"
+          }, {
+            "id" : "8bd11552-ab3c-4135-a3b1-45e7216b019e",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.2"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Jacob Mytinger",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "4b8c425a-499e-45fa-8ada-09012ae956b4",
+      "attribution" : {
+        "modified" : 1690823902869,
+        "created" : 1690823902869
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "dfcf9aeb-8e56-4602-8eb3-9d147932c6fd",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000007516340_00000_00877_0000141981408100_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Jacob Mytinger",
+      "gender" : "Male"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "e31c80d4-37d9-4ffc-b583-7ccbc073780b",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_192629247300",
+      "resourceId" : "p_192629247300"
+    },
+    "person2" : {
+      "resource" : "#p_192629247400",
+      "resourceId" : "p_192629247400"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_141981408100",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:WXGR-223Z",
+    "componentOf" : {
+      "description" : "#sd_c_3535178",
+      "descriptionId" : "sd_c_3535178"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1690823902869,
+    "modified" : 1753519515566,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Philadelphia, Phila., Penn.",
+        "description" : "https://www.familysearch.org/platform/places/description/8016253"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Pennsylvania, Deaths and Burials, 1720-1999\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:H543-TJMM : Sat Jul 26 08:45:15 UTC 2025), Entry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Mrs. Jacob Mytinger, \"Pennsylvania, Deaths and Burials, 1720-1999\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/78975311" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:WXGR-223Z" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/platform/records/collections/3535178?arkName=1:2:WXGR-223Z"
+    },
+    "statuses" : [ "http://gedcomx.org/Published" ]
+  }, {
+    "id" : "sd_c_3535178",
+    "about" : "https://www.familysearch.org/platform/records/collections/3535178",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1576180955269,
+    "modified" : 1733241229695,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Pennsylvania, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/338"
+      },
+      "temporal" : {
+        "original" : "1720/1999",
+        "formal" : "+1720/+1999"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Pennsylvania, Deaths and Burials, 1720-1999"
+    }, {
+      "lang" : "zh",
+      "value" : "賓夕法尼亞州死亡和埋葬紀錄，1720 年 - 1999 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Décès et inhumations en Pennsylvanie, 1720-1999"
+    }, {
+      "lang" : "ru",
+      "value" : "Пенсильвания, смерти и захоронения, 1720-1999 гг."
+    }, {
+      "lang" : "no",
+      "value" : "Dødsfall og begravelser i Pennsylvania, 1720-1999"
+    }, {
+      "lang" : "es",
+      "value" : "Defunciones y entierros en Pensilvania, 1720-1999"
+    }, {
+      "lang" : "mn",
+      "value" : "Пенсильвани муж улс дахь нас баралт ба оршуулга, 1720-1999 он"
+    }, {
+      "lang" : "ko",
+      "value" : "펜실베이니아 사망 및 매장, 1720-1999"
+    }, {
+      "lang" : "ja",
+      "value" : "ペンシルベニア州での死亡と埋葬、1720年-1999年"
+    }, {
+      "lang" : "it",
+      "value" : "Decessi e sepolture in Pennsylvania, 1720-1999"
+    }, {
+      "lang" : "id",
+      "value" : "Kematian dan Pemakaman Pennsylvania, 1720-1999"
+    }, {
+      "lang" : "hu",
+      "value" : "Pennsylvania, Elalálozások és temetések, 1720-1999"
+    }, {
+      "lang" : "sk",
+      "value" : "Úmrtia a pohreby v Pensylvánii, 1720 – 1999"
+    }, {
+      "lang" : "th",
+      "value" : "การเสียชีวิตและการฝังศพเพนซิลเวเนีย, ปี 1720-1999"
+    }, {
+      "lang" : "to",
+      "value" : "Ngaahi Pekia mo e Telio 'i Pennsylvania, 1720-1999"
+    }, {
+      "lang" : "bg",
+      "value" : "Пенсилвания, смъртни случаи и погребения, 1720–1999."
+    }, {
+      "lang" : "km",
+      "value" : "មរណភាព និងការបញ្ចុះសពនៅរដ្ឋផេនស៊ីលវ៉ានី, ឆ្នាំ 1720-1999"
+    }, {
+      "lang" : "pl",
+      "value" : "Zgony i pochówki w Pensylwanii, 1720-1999"
+    }, {
+      "lang" : "ro",
+      "value" : "Decese și înmormântări din Pennsylvania, 1720-1999"
+    }, {
+      "lang" : "sv",
+      "value" : "Pennsylvania dödsfall och begravningar, 1720-1999"
+    }, {
+      "lang" : "sm",
+      "value" : "Hồ Sơ Báo Tử và Tang Lễ Pennsylvania, 1720-1999"
+    }, {
+      "lang" : "vi",
+      "value" : "Hồ Sơ Báo Tử và Tang Lễ Pennsylvania, 1720-1999"
+    }, {
+      "lang" : "sq",
+      "value" : "Vdekjet dhe Varrimet në Pensilvani, 1720-1999"
+    }, {
+      "lang" : "pt",
+      "value" : "Mortes e enterros da Pensilvânia, 1720-1999"
+    }, {
+      "lang" : "de",
+      "value" : "Pennsylvania, Deaths and Burials, 1720-1999"
+    }, {
+      "lang" : "uk",
+      "value" : "Пенсильванія, записи про смерті й поховання, 1720–1999 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Smrti i pogrebi u Pennsylvaniji, 1720. – 1999."
+    }, {
+      "lang" : "cs",
+      "value" : "Pensylvánie, úmrtí a pohřby, 1720–1999"
+    }, {
+      "lang" : "nl",
+      "value" : "Overlijdensgevallen en begrafenissen in Pennsylvania, 1720-1999"
+    }, {
+      "lang" : "et",
+      "value" : "Pennsylvania Surmad ja Matmised, 1720–1999"
+    }, {
+      "lang" : "fj",
+      "value" : "Mate o Pennsylvania kei na Bulubulu, 1720-1999"
+    }, {
+      "lang" : "fi",
+      "value" : "Kuolleet ja haudatut Pennsylvaniassa, 1720–1999"
+    }, {
+      "lang" : "tl",
+      "value" : "Mga Kamatayan at Libing sa Pennsylvania 1720-1999"
+    }, {
+      "lang" : "mg",
+      "value" : "Fahafatesana sy Fandevenana tany Pennsylvanie, 1720-1999"
+    }, {
+      "lang" : "ceb",
+      "value" : "Mga Kamatayon ug Paglubong sa Pennsylvania, 1720-1999"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/3535178" ]
+    }
+  }, {
+    "id" : "sd_p_192629247300",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:H543-TJMM",
+    "componentOf" : {
+      "description" : "#src_r_141981408100",
+      "descriptionId" : "src_r_141981408100"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Pennsylvania, Deaths and Burials, 1720-1999\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:H543-TJMM : Sat Jul 26 08:45:15 UTC 2025), Entry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Mrs. Jacob Mytinger, \"Pennsylvania, Deaths and Burials, 1720-1999\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Mrs. Jacob Mytinger, \"Pennsylvania, Deaths and Burials, 1720-1999\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:H543-TJMM" ]
+    }
+  }, {
+    "id" : "sd_p_192629247400",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:H543-TJ3Z",
+    "componentOf" : {
+      "description" : "#src_r_141981408100",
+      "descriptionId" : "src_r_141981408100"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Pennsylvania, Deaths and Burials, 1720-1999\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:H543-TJMM : Sat Jul 26 08:45:15 UTC 2025), Entry for Mrs. Jacob Mytinger and Jacob Mytinger, 11 1793."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Jacob Mytinger, \"Pennsylvania, Deaths and Burials, 1720-1999\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Jacob Mytinger, \"Pennsylvania, Deaths and Burials, 1720-1999\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:H543-TJ3Z" ]
+    }
+  }, {
+    "id" : "sd_auto_M9J1-S4J",
+    "resourceType" : "http://familysearch.org/types/collection/auto",
+    "coverage" : [ {
+      "spatial" : {
+        "description" : "https://www.familysearch.org/platform/places/description/338"
+      },
+      "temporal" : {
+        "formal" : "+1847-01-01T00:00:00Z/+1902-12-31T23:59:59Z"
+      }
+    } ],
+    "titles" : [ {
+      "value" : "United States, Pennsylvania, Births, from 1847 to 1902"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "http://group-service.rms.records.service.prod.us-east-1.prod.fslocal.org/group/M9J1-S4J" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_8016253",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/8016253" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "3a3e5003-2946-4174-acd2-55619bd733c0",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "c8a3bc83-3628-47c7-a27a-c21087d5c80d",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "id" : "79d18abc-87cc-4d0e-ad82-df90be81dada",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "25f50b72-6837-4672-b0ce-269f6649c6c7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "1ce9ec2a-709e-4cca-9604-770ec7ea8fb3",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "d05426bc-8a00-43d7-998b-88e39a197631",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{ \"EVENT_PLACE_ALT_ORIG\": \"Philadelphia, Phila., Penn.\", \"EVENT_DATE_ALT_ORIG\": \"by 9 Nov 1793\", \"PR_SEX_CODE_ALT_ORIG\": \"F\"}"
+    }, {
+      "id" : "d05426bc-8a00-43d7-998b-88e39a197631",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "{\"FS_COLLECTION_ID\":\"3535178\"}"
+    } ]
+  }, {
+    "id" : "c2b7d5c9-9b57-4ac2-a426-3ad0fdbec977",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/SourceComposite",
+    "values" : [ {
+      "id" : "80eb0756-7cd9-49b1-a581-008124663d5d",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_COMPOSITE_ORIG",
+      "text" : "60"
+    } ]
+  }, {
+    "id" : "86e000a5-4c3e-4124-a224-3a4627cb1c45",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "id" : "c259d66d-4571-43bc-a4a3-b97c0eed4190",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "007516340"
+    } ]
+  }, {
+    "id" : "bdaabb05-f1d2-449b-82d2-71e2b6bb4d40",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "1985c029-b4e6-4cb7-b02b-5e62ab23227d",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "Pennsylvania-EASy"
+    } ]
+  }, {
+    "id" : "2fc55c94-6b33-41c8-9a68-f4862429ac98",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/FilmNbr",
+    "values" : [ {
+      "id" : "406b7f67-69ed-4a5c-a003-aeb121169ec6",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "381286"
+    } ]
+  }, {
+    "id" : "5ded341a-9f77-449b-8d61-53bc71486ff0",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "ee8b4556-4131-426e-af30-73c1c4e88459",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "57617"
+    } ]
+  }, {
+    "id" : "0b5eb8a8-98ea-492c-ab92-ad99e384f924",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "831379e8-154c-49fb-98f2-10e644d06903",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "2"
+    } ]
+  }, {
+    "id" : "fb7a7943-7545-4646-a4a1-339fb00f12ab",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/SystemOfOrigin",
+    "values" : [ {
+      "id" : "41e70a1e-a5dc-4d39-8f5d-7ab1e782545b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_ORIGIN",
+      "text" : "EASY"
+    } ]
+  }, {
+    "id" : "39abd6f4-e17a-46d3-a55d-d36a1dea85a4",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "95da4e86-497c-4490-8f13-e85cfde791be",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Philadelphia, Philadelphia, Pennsylvania, United States"
+    } ]
+  }, {
+    "id" : "03459d97-b0c4-4d6b-9283-3be79c61ae86",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "2e8924dd-7e77-40a7-a9fd-304286576e25",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+        },
+        "modified" : 1581003636436,
+        "created" : 1581003636436
+      },
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000007516340_00000_00877_0000141981408100"
+    } ]
+  }, {
+    "id" : "ffc18813-503a-4d32-be7f-ebeb944705ca",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/VisStatus",
+    "values" : [ {
+      "id" : "b0bdb2d3-1b0a-4651-8009-8da5e00ac5b9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "id" : "436c8078-bc39-4582-b0bc-c9034988c1da",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/UdeBatchNbr",
+    "values" : [ {
+      "id" : "965cd3dc-c919-4b17-9e2a-e70acd713289",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UDE_BATCH_NBR",
+      "text" : "B54432-6"
+    } ]
+  }, {
+    "id" : "4f64f940-f125-462e-bb05-bb1884cf96df",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/PacketLtr",
+    "values" : [ {
+      "id" : "14338926-85bb-4cfa-93e2-2020fd973e1a",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PACKET_LTR",
+      "text" : "A"
+    } ]
+  }, {
+    "id" : "75674950-f019-4750-a56c-decbc192a308",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "e0f92cf6-b621-4b89-846e-c5974fcd7e8d",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "7ce5326a-52b0-4d33-bf66-ef27eea58860",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/RecordNbr",
+    "values" : [ {
+      "id" : "2c2dcade-4e08-4f8d-b511-99604ee53ab1",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "877"
+    } ]
+  }, {
+    "id" : "f5caf101-a916-417c-8325-e1e53f27d953",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "id" : "19a12a2f-31e0-4e3f-b922-e636ac4e41a4",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "101190"
+    } ]
+  }, {
+    "id" : "b654d826-b0bf-46a0-8066-1337ee8820db",
+    "attribution" : {
+      "modified" : 1690823902869,
+      "created" : 1690823902869
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "95aa3b05-ac7d-473c-8450-37aa276919c0",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_UNIQUE_ID\":\"78975311\"}"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  } ],
+  "qualifiers" : [ {
+    "value" : "true",
+    "name" : "TreatmentWarnings"
+  } ]
+}

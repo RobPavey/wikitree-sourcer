@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptême''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 1267 E DEPOT 1/1 - 1564-1592 - 1564-1592; Image 133 sur 177; Lieu: Spézet (Finistère); Type de document: registre paroissial, baptême<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1480476/daoloc/0/133 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Baptême''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 1267 E DEPOT 1/1 - 1564-1592 - 1564-1592; Image 133 sur 177; Lieu: Spézet (Finistère); Type de document: registre paroissial, baptême<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1480476/daoloc/0/133 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptême''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère; 1267 E DEPOT 1/1 - 1564-1592 - 1564-1592; Image 133 sur 177; Lieu: Spézet (Finistère); Type de document: registre paroissial, baptême<br/>[https://recherche.archives.finistere.fr/ark:/72506/1480476/daoloc/0/133 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Baptême''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 1267 E DEPOT 1/1 - 1564-1592 - 1564-1592, Image 133 sur 177, Lieu Spézet (Finistère), Type de document registre paroissial, baptême<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1480476/daoloc/0/133 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Baptême''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 1267 E DEPOT 1/1 - 1564-1592 - 1564-1592, Image 133 sur 177, Lieu Spézet (Finistère), Type de document registre paroissial, baptême<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1480476/daoloc/0/133 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Baptême''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère, 1267 E DEPOT 1/1 - 1564-1592 - 1564-1592, Image 133 sur 177, Lieu Spézet (Finistère), Type de document registre paroissial, baptême<br/>[https://recherche.archives.finistere.fr/ark:/72506/1480476/daoloc/0/133 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

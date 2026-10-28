@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Grays Harbor County Auditor, Marriage Records, 1871-Present\"<br/>\nWashington State Archives, Digital Archives; Document Number: swgrhmc22489<br/>\n[https://digitalarchives.wa.gov/Record/View/838CF6AA22783642E42F1992562B930B Washington State Digital Archives Record] (accessed 6 May 2021)<br/>\nGroom's Name: Laurence L Anderson; Bride's Name: Naomi L Robinson; Marriage Date: 10/31/1953.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Laurence married Naomi L Robinson on 31 October 1953 in Grays Harbor County, Washington, United States.<ref>\n'''Marriage''':\n\"Grays Harbor County Auditor, Marriage Records, 1871-Present\"<br/>\nWashington State Archives, Digital Archives; Document Number: swgrhmc22489<br/>\n[https://digitalarchives.wa.gov/Record/View/838CF6AA22783642E42F1992562B930B Washington State Digital Archives Record] (accessed 6 May 2021)<br/>\nGroom's Name: Laurence L Anderson; Bride's Name: Naomi L Robinson; Marriage Date: 10/31/1953.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Grays Harbor County Auditor, Marriage Records, 1871-Present\"<br/>Washington State Archives, Digital Archives; Document Number: swgrhmc22489<br/>[https://digitalarchives.wa.gov/Record/View/838CF6AA22783642E42F1992562B930B Washington State Digital Archives Record] (accessed 6 May 2021)<br/>Groom's Name: Laurence L Anderson; Bride's Name: Naomi L Robinson; Marriage Date: 10/31/1953.",
+    "type": "source"
+  }
+}

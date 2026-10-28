@@ -1,0 +1,14 @@
+{
+  "std": {
+    "url": "https://www.genealogysa.org.au/index.php?option=com_gsa&view=gsa&layout=essearch&Itemid=193&collection_id=birth&Surname=Stanway&GivenName=Frances&year_from=1861&accuracy=2"
+  },
+  "birthsExactness1": {
+    "url": "https://www.genealogysa.org.au/index.php?option=com_gsa&view=gsa&layout=essearch&Itemid=193&collection_id=birth&Surname=Stanway&GivenName=Frances&year_from=1861&accuracy=1"
+  },
+  "deathsExactnessExact": {
+    "url": "https://www.genealogysa.org.au/index.php?option=com_gsa&view=gsa&layout=essearch&Itemid=193&collection_id=death&Surname=Nicholson&GivenName=Frances&year_from=1939&accuracy=0"
+  },
+  "parametersDeathLastName1": {
+    "url": "https://www.genealogysa.org.au/index.php?option=com_gsa&view=gsa&layout=essearch&Itemid=193&collection_id=death&Surname=Nicholson&GivenName=Frances&year_from=1939&accuracy=2"
+  }
+}

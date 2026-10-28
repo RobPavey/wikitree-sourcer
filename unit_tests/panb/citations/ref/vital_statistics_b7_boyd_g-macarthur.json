@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Index to New Brunswick Marriages (RS141B7)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Registration Number: 2287; Microfilm: F20001; Date:1935-10-24; Place: Chatham, Northumberland, New Brunswick, Canada<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/marriage/141b7/7c9b2dd7-8180-4ae6-a1e5-01fc95bbb82f New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nBoyd G Macarthur marriage to Hilde Kanner on 24 Oct 1935 in Chatham, Northumberland, New Brunswick, Canada.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Boyd married Hilde Kanner on 24 October 1935 in Chatham, Northumberland, New Brunswick, Canada.<ref>\n'''Marriage Registration''':\n\"Index to New Brunswick Marriages (RS141B7)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Registration Number: 2287; Microfilm: F20001; Date:1935-10-24; Place: Chatham, Northumberland, New Brunswick, Canada<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/marriage/141b7/7c9b2dd7-8180-4ae6-a1e5-01fc95bbb82f New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nBoyd G Macarthur marriage to Hilde Kanner on 24 Oct 1935 in Chatham, Northumberland, New Brunswick, Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"Index to New Brunswick Marriages (RS141B7)\"<br/>Provincial Archives of New Brunswick; Vital Statistics (RS141); Registration Number: 2287; Microfilm: F20001; Date:1935-10-24; Place: Chatham, Northumberland, New Brunswick, Canada<br/>[https://archives.gnb.ca/en-ca/vital-statistics/marriage/141b7/7c9b2dd7-8180-4ae6-a1e5-01fc95bbb82f New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>Boyd G Macarthur marriage to Hilde Kanner on 24 Oct 1935 in Chatham, Northumberland, New Brunswick, Canada.",
+    "type": "source"
+  }
+}

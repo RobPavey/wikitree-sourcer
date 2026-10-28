@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n\"YouTube video.\"<br/>\nhttps://www.youtube.com/watch?v=fyYpCuoJEWw (accessed 6 May 2021)<br/>\nYouTube video. {{YouTube|fyYpCuoJEWw|playlist=Hacktoberfest2026}}\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "<ref>\n\"YouTube video.\"<br/>\nhttps://www.youtube.com/watch?v=fyYpCuoJEWw (accessed 6 May 2021)<br/>\nYouTube video. {{YouTube|fyYpCuoJEWw|playlist=Hacktoberfest2026}}\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* \"YouTube video.\"<br/>https://www.youtube.com/watch?v=fyYpCuoJEWw (accessed 6 May 2021)<br/>YouTube video. {{YouTube|fyYpCuoJEWw|playlist=Hacktoberfest2026}}",
+    "type": "source"
+  }
+}

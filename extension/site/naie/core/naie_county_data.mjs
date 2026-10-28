@@ -134,6 +134,36 @@ const counties1901_1911 = [
   "Wicklow",
 ];
 
+// 1851
+const counties1926 = [
+  "Carlow",
+  "Cavan",
+  "Clare",
+  "Cork",
+  "Donegal",
+  "Dublin",
+  "Galway",
+  "Kerry",
+  "Kildare",
+  "Kilkenny",
+  "Laois",
+  "Leitrim",
+  "Limerick",
+  "Longford",
+  "Louth",
+  "Mayo",
+  "Meath",
+  "Monaghan",
+  "Offaly",
+  "Roscommon",
+  "Sligo",
+  "Tipperary",
+  "Waterford",
+  "Westmeath",
+  "Wexford",
+  "Wicklow",
+];
+
 const countiesForYear = {
   1821: counties1821,
   1831: counties1831,
@@ -141,6 +171,7 @@ const countiesForYear = {
   1851: counties1851,
   1901: counties1901_1911,
   1911: counties1901_1911,
+  1926: counties1926,
 };
 
 function getMatchingCensusCounty(censusYear, countyName) {

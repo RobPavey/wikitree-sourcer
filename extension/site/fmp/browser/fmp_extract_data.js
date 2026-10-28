@@ -1305,15 +1305,46 @@ function extractImageShareData(document, result) {
         result.detailText = cleanText(paraNode.textContent);
       }
     }
+  } else {
+    // new format July 2026
+    let detailPara = mainNode.querySelector("div > div > a > div > div > p");
+    if (detailPara) {
+      result.detailText = cleanText(detailPara.textContent);
+    }
   }
 
-  // we want to get the description that can be added by the user.
-  let contentNode = mainNode.querySelector("#content");
-  if (contentNode) {
-    let descriptionPara = contentNode.querySelector("p");
-    if (descriptionPara) {
-      result.description = cleanText(descriptionPara.textContent);
+  let metaTitle = document.querySelector('meta[name="og:title"]');
+  if (metaTitle) {
+    result.title = metaTitle.getAttribute("content");
+  }
+
+  let description = "";
+  {
+    // update for July 2026 format
+    // Finds the next sibling element that is a para
+    let sibling = h1Node.nextElementSibling;
+
+    while (sibling) {
+      if (sibling.matches("p")) {
+        description = sibling.textContent;
+        break;
+      }
+      sibling = sibling.nextElementSibling;
     }
+  }
+
+  if (!description) {
+    // we want to get the description that can be added by the user.
+    let contentNode = mainNode.querySelector("#content");
+    if (contentNode) {
+      let descriptionPara = contentNode.querySelector("p");
+      if (descriptionPara) {
+        description = cleanText(descriptionPara.textContent);
+      }
+    }
+  }
+  if (description) {
+    result.description = cleanText(description);
   }
 
   result.success = true;

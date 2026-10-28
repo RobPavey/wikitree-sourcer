@@ -242,7 +242,7 @@ async function setupSimplePopupMenu(input) {
     addSavePersonDataMenuItem(menu, data);
   } else {
     if (input.buildCitationFunction) {
-      addBuildCitationMenuItems(
+      await addBuildCitationMenuItems(
         menu,
         data,
         simplePopupBuildCitation,

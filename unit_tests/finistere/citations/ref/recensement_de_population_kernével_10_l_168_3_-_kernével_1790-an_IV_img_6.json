@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nArchives départementales du Finistère; 10 L 168/3 - Kernével - 1790-an IV; Image 6 sur 11; Lieu: Kernével (Rosporden, Finistère)<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1157858/daogrp/0/6 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nArchives départementales du Finistère; 10 L 168/3 - Kernével - 1790-an IV; Image 6 sur 11; Lieu: Kernével (Rosporden, Finistère)<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1157858/daogrp/0/6 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Recensement''': \"Recensements de population\"<br/>Archives départementales du Finistère; 10 L 168/3 - Kernével - 1790-an IV; Image 6 sur 11; Lieu: Kernével (Rosporden, Finistère)<br/>[https://recherche.archives.finistere.fr/ark:/72506/1157858/daogrp/0/6 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nArchives départementales du Finistère, 10 L 168/3 - Kernével - 1790-an IV, Image 6 sur 11, Lieu Kernével (Rosporden, Finistère)<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1157858/daogrp/0/6 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Recensement''':\n\"Recensements de population\"<br/>\nArchives départementales du Finistère, 10 L 168/3 - Kernével - 1790-an IV, Image 6 sur 11, Lieu Kernével (Rosporden, Finistère)<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1157858/daogrp/0/6 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Recensement''': \"Recensements de population\"<br/>Archives départementales du Finistère, 10 L 168/3 - Kernével - 1790-an IV, Image 6 sur 11, Lieu Kernével (Rosporden, Finistère)<br/>[https://recherche.archives.finistere.fr/ark:/72506/1157858/daogrp/0/6 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "url": "https://www.familysearch.org/ark:/61903/1:1:6PGW-R2SM?lang=en",
+  "recordData": {
+    "Name": "Emery"
+  },
+  "eventPlaceOriginal": "Duchesne, Utah, United States",
+  "eventPlace": "Duchesne, Utah, United States",
+  "fullName": "Emery",
+  "givenName": "Emery",
+  "gender": "male",
+  "relatedPersonFactType": "Membership",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "Nielson",
+  "relatedPersonSurname": "Nielson",
+  "relatedPersonGender": "male",
+  "relatedPersonLink": "https://www.familysearch.org/ark:/61903/1:1:6PGW-R291",
+  "relatedPersonBirthDate": "30 November 1916",
+  "relatedPersonBirthYear": "1916",
+  "extData": "{\"FS_IDX_PROJECT_ID\":\"84d4be3f-d2c6-49d4-b842-8c6813b92591\",\"FS_IDX_TEMPLATE_ID\":\"template://idx-template/templates/entity/template;entitytype=PROJECT;entityid=84d4be3f-d2c6-49d4-b842-8c6813b92591;name=dac7ea6d-2142-4025-bebb-b8024ba27a18\",\"FS_COLLECTION_ID\":\"3714676\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-C3HM-NQCW\"}",
+  "referenceData": {
+    "externalPublicationTitle": "Record of Members, 1836-1970",
+    "recordNumber": "36",
+    "externalPublicationNumber": "CR 375 8/b2240/f0001",
+    "digitalFilmNumber": "106199957_006_M9N9-32W",
+    "imageNumber": "4"
+  },
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:HQ83-ZP99",
+  "collectionTitle": "The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970",
+  "fsCollectionId": "3714676",
+  "citation": "\"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6PGW-R291 : Fri Mar 27 04:11:19 UTC 2026), Entry for Nielson and Emery.",
+  "sourceTitleForPerson": "Emery, \"The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:6PGW-R2SM",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C3HM-NQCW",
+  "pageType": "record"
+}

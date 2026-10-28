@@ -194,9 +194,9 @@ function getSharingPageRefTitle(titleCollection) {
 function modifyValueForUrl(builder, value) {
   let target = builder.getOptions().citation_general_target;
 
-  if (value.startsWith("https://www.findagrave.com/memorial")) {
+  if (value.includes("findagrave.com/memorial")) {
     if (target == "wikitree") {
-      let memorialId = value.replace(/^https\:\/\/www\.findagrave\.com\/memorial\/(\d+)\/.*$/, "$1");
+      let memorialId = value.replace(/^https\:\/\/\w+\.findagrave\.com\/memorial\/(\d+)\/.*$/, "$1");
       if (memorialId && memorialId != value) {
         return "{{FindAGrave|" + memorialId + "}}";
       }
@@ -222,7 +222,9 @@ const referenceKeys = [
   ["fhl film number", "microfilm"],
   ["schedule", "schedule number", "household schedule number"],
   ["parish number"],
-  ["household number"],
+  ["household number", "household no"],
+  ["dwelling number", "dwelling no"],
+  ["family number", "family no"],
   ["sub schedule number", "sub-schedule number"],
   ["registration district number"],
   ["ed, institution, or vessel"], // this always seems to be a number
@@ -555,12 +557,24 @@ function buildAncestryRecordTemplate(ed, options) {
 
 function buildAncestryImageTemplate(ed, options) {
   let target = options.citation_general_target;
+
+  let url = ed.url;
+  let dbId = ed.dbId;
+  let recordId = ed.recordId;
+
+  if (ed.pageType == "record") {
+    // only comes here if there is no sharingObj
+    url = ed.imageUrl;
+    dbId = ed.imageDbId;
+    recordId = ed.imageRecordId;
+  }
+
   if (target == "plain") {
-    return "Ancestry Image Link: " + ed.url;
+    return "Ancestry Image Link: " + url;
   }
 
   // Note that the Ancestry Image template has no 3rd (domain parameter)
-  return "{{Ancestry Image|" + ed.dbId + "|" + ed.recordId + "}}";
+  return "{{Ancestry Image|" + dbId + "|" + recordId + "}}";
 }
 
 function buildAncestrySharingTemplateFromSharingDataObj(options, dataObj) {
@@ -689,12 +703,16 @@ function buildCoreCitation(ed, gd, options, sharingDataObj, builder) {
   buildSourceReference(ed, builder);
   addReferenceDataToSourceReference(ed, gd, builder, options);
 
-  if (sharingDataObj) {
+  if (sharingDataObj && options.citation_ancestry_includeSharingTemplate) {
     let template = buildAncestrySharingTemplateFromSharingDataObj(options, sharingDataObj);
     builder.sharingLinkOrTemplate = template;
     builder.databaseHasImages = true;
 
     builder.plainSharingLink = buildPlainAncestrySharingLinkFromSharingDataObj(sharingDataObj);
+  } else {
+    if (ed.imageRecordId) {
+      builder.sharingLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(ed, options);
+    }
   }
 
   builder.recordLinkOrTemplate = buildAncestryRecordTemplate(ed, options);
@@ -723,7 +741,7 @@ function buildImageCitation(ed, options, sharingDataObj, builder) {
     builder.sourceReference = sourceReference;
   }
 
-  if (sharingDataObj) {
+  if (sharingDataObj && options.citation_ancestry_includeSharingTemplate) {
     let template = buildAncestrySharingTemplateFromSharingDataObj(options, sharingDataObj);
     builder.sharingLinkOrTemplate = template;
   }
@@ -747,7 +765,7 @@ function buildSharingPageCitation(ed, options, builder) {
   }
 
   if (ed.dbId && ed.recordId) {
-    // determin if the ed.recordId is actually an image ID
+    // determine if the ed.recordId is actually an image ID
     let isImageId = false;
     if (ed.sharingType == "v1") {
       isImageId = true;

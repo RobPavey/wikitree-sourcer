@@ -1,6 +1,7 @@
 <ref>
-Legacy NFS Source: William Herron - Memory of Someone: birth: about May 1896; Pennsylvania, United States,  Memory of Someone: birth: about May 1896; Pennsylvania, United States<br/>
-Memory of Someone: birth-name: William Herron
+"Legacy NFS Source: William Herron - Memory of Someone: birth: about May 1896; Pennsylvania, United States"<br/>
+Memory of Someone: birth: about May 1896; Pennsylvania, United States<br/>
+Memory of Someone: birth-name: William Herron.
 </ref>
 
 <ref>
@@ -8,11 +9,15 @@ Memory of Someone: birth-name: William Herron
 </ref>
 
 <ref>
-1900 US Census US Census 1900 ED 434 Precinct 2 McKeesport city Ward 8, Allegheny, Pennsylvania (https://familysearch.org/ark:/61903/3:1:S3HY-DCP9-BPT?cc=1325221&wc=MMPN-12F%3An1313059202 : 14 March 2017),  William Herron Sheet no. 90A Lines 2-6 Head: William Herron, Wife: Nancy, Sons William, Robert, and Allie
+"1900 US Census"<br/>
+US Census 1900 ED 434 Precinct 2 McKeesport city Ward 8, Allegheny, Pennsylvania<br/>
+{{FamilySearch Image|S3HY-DCP9-BPT}} (accessed 14 March 2017)<br/>
+William Herron Sheet no. 90A Lines 2-6 Head: William Herron, Wife: Nancy, Sons William, Robert, and Allie.
 </ref>
 
 <ref>
-"United States Census, 1900", , ''FamilySearch'' (https://www.familysearch.org/ark:/61903/1:1:M3M4-NG3 : Thu Apr 11 20:15:12 UTC 2024), Entry for William Herron and Nancy Herron, 1900. (https://familysearch.org/ark:/61903/1:1:M3M4-NG7 : 10 October 2015)
+"United States Census, 1900", , ''FamilySearch'' (https://www.familysearch.org/ark:/61903/1:1:M3M4-NG3 : Thu Apr 11 20:15:12 UTC 2024), Entry for William Herron and Nancy Herron, 1900<br/>
+{{FamilySearch Record|M3M4-NG7}} (accessed 10 October 2015).
 </ref>
 
 <ref>
@@ -20,11 +25,17 @@ Memory of Someone: birth-name: William Herron
 </ref>
 
 <ref>
-1920 US Census US Census Fulton, Georgia, Camp Jesup (https://familysearch.org/ark:/61903/3:1:S3HT-DZT7-GQG?cc=1488411&wc=12017845 : 14 March 2017),  William Herron Sheet no. 5B Soldier: W Herron
+"1920 US Census"<br/>
+US Census Fulton, Georgia, Camp Jesup<br/>
+{{FamilySearch Image|S3HT-DZT7-GQG}} (accessed 14 March 2017)<br/>
+William Herron Sheet no. 5B Soldier: W Herron.
 </ref>
 
 <ref>
-1930 US Census US Census 1930 Los Angeles, California, Los Angeles assembly district no. 64 (https://familysearch.org/ark:/61903/3:1:9Q97-Y339-SJ9K?cc=1810731&wc=MMPS-DZQ%3An816686703 : 14 March 2017),  William Herron Sheet no. 20B lines 82,82 Head: William Herron, Wife Florence
+"1930 US Census"<br/>
+US Census 1930 Los Angeles, California, Los Angeles assembly district no. 64<br/>
+{{FamilySearch Image|9Q97-Y339-SJ9K}} (accessed 14 March 2017)<br/>
+William Herron Sheet no. 20B lines 82,82 Head: William Herron, Wife Florence.
 </ref>
 
 <ref>
@@ -32,7 +43,10 @@ Memory of Someone: birth-name: William Herron
 </ref>
 
 <ref>
-1940 US Census Untied States Census 1940, Los Angeles, California. Councilmanic District 13, Los Angeles (https://familysearch.org/ark:/61903/3:1:3QSQ-G9MT-JLH?cc=2000219&wc=MMYH-N8V%3A1720595464 : 14 March 2017),  William Herron sheet no. 10A Lines 22-25 Head: Wm Herron, Wife: Flora, Daughter: Christina, Sister-in-law" Hazel Buckley
+"1940 US Census"<br/>
+Untied States Census 1940, Los Angeles, California. Councilmanic District 13, Los Angeles<br/>
+{{FamilySearch Image|3QSQ-G9MT-JLH}} (accessed 14 March 2017)<br/>
+William Herron sheet no. 10A Lines 22-25 Head: Wm Herron, Wife: Flora, Daughter: Christina, Sister-in-law" Hazel Buckley.
 </ref>
 
 <ref>
@@ -40,11 +54,13 @@ Memory of Someone: birth-name: William Herron
 </ref>
 
 <ref>
-William Herron, "United States Census, 1950" "United States Census, 1950", , ''FamilySearch'' (https://www.familysearch.org/ark:/61903/1:1:6XG6-6FBC : Fri Oct 06 11:16:55 UTC 2023), Entry for William Herron and Flora C Herron, 8 April 1950.
+William Herron, "United States Census, 1950"<br/>
+"United States Census, 1950", , ''FamilySearch'' (https://www.familysearch.org/ark:/61903/1:1:6XG6-6FBC : Fri Oct 06 11:16:55 UTC 2023), Entry for William Herron and Flora C Herron, 8 April 1950<br/>
+{{FamilySearch Record|6XG6-6FBC}} (accessed 27 December 2022).
 </ref>
 
 <ref>
-"Find a Grave Index," database, ''FamilySearch'' (https://www.familysearch.org/ark:/61903/1:1:QVKV-ZR42 : 30 May 2020), William Herron, 1974; Burial, , ; citing record ID , ''Find a Grave'', http://www.findagrave.com.
+"Find a Grave Index," database, ''FamilySearch'' (https://www.familysearch.org/ark:/61903/1:1:QVKV-ZR42 : 30 May 2020), William Herron, 1974; Burial, , ; citing record ID , ''Find a Grave'', http://www.findagrave.com
 </ref>
 
 <ref>

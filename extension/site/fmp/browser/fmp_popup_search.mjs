@@ -23,16 +23,16 @@ SOFTWARE.
 */
 
 import {
-  setupSearchCollectionsSubMenu,
+  setupSearchCollectionsSubmenu,
   addSameRecordMenuItem,
   addBackMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addMenuItem,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import {
   doSearch,
@@ -103,14 +103,14 @@ async function fmpSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addFmpDefaultSearchMenuItem(menu, data, backFunction) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search FindMyPast",
     function (element) {
       fmpSearch(data.generalizedData, "");
     },
     function () {
-      setupFmpSearchSubMenu(data, backFunction);
+      setupFmpSearchSubmenu(data, backFunction);
     }
   );
 
@@ -125,7 +125,7 @@ function addFmpSameRecordMenuItem(menu, data) {
 
 function addFmpSearchCollectionsMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search a specific collection...", function (element) {
-    setupSearchCollectionsSubMenu(data, "fmp", fmpSearchCollection, backFunction);
+    setupSearchCollectionsSubmenu(data, "fmp", fmpSearchCollection, backFunction);
   });
 }
 
@@ -137,7 +137,7 @@ function addFmpSearchTreeMenuItem(menu, data) {
 
 function addFmpSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupFmpSearchWithParametersSubMenu(data, backFunction);
+    setupFmpSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
@@ -145,9 +145,9 @@ function addFmpSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupFmpSearchSubMenu(data, backFunction) {
+async function setupFmpSearchSubmenu(data, backFunction) {
   let backToHereFunction = function () {
-    setupFmpSearchSubMenu(data, backFunction);
+    setupFmpSearchSubmenu(data, backFunction);
   };
 
   let menu = beginMainMenu();
@@ -161,9 +161,9 @@ async function setupFmpSearchSubMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-async function setupFmpSearchWithParametersSubMenu(data, backFunction) {
+async function setupFmpSearchWithParametersSubmenu(data, backFunction) {
   let dataModule = await import(`../core/fmp_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.FmpData, fmpSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.FmpData, fmpSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

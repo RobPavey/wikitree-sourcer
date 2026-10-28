@@ -1,0 +1,25 @@
+{
+  "url": "https://www.imdb.com/title/tt0056751/",
+  "success": true,
+  "pageType": "title",
+  "id": "tt0056751",
+  "canonicalUrl": "https://www.imdb.com/title/tt0056751/",
+  "name": "Doctor Who",
+  "titleType": "TVSeries",
+  "datePublished": "1963-11-23",
+  "directors": [],
+  "creators": [
+    "Sydney Newman",
+    "C.E. Webber",
+    "Donald Wilson"
+  ],
+  "actors": [
+    "William Hartnell",
+    "Patrick Troughton",
+    "Jon Pertwee"
+  ],
+  "description": "The adventures in time and space of the Doctor, a Time Lord who changes appearance and personality by regenerating when near death, and is joined by companions in battles against aliens and other megalomaniacs.",
+  "releaseYear": "1963",
+  "endYear": "1989",
+  "titleTypeText": "TV Series"
+}

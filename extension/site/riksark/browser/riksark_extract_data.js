@@ -1,0 +1,445 @@
+/*
+MIT License
+
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+// No imports or requires allowed. See docs/dev_notes/extract_data_design
+
+function extractRecord(document, url, result) {
+  const resultListDiv = document.querySelector("#resultlist");
+  if (!resultListDiv) {
+    return result;
+  }
+
+  const hitRow = document.querySelector("article.hitRow");
+  if (!hitRow) {
+    return result;
+  }
+
+  let titleElement = hitRow.querySelector("div.post_header > h1.post_title");
+  if (titleElement) {
+    result.recordTitle = titleElement.textContent.trim();
+  }
+  let typeElement = hitRow.querySelector("div.post_header > div.post_type");
+  if (typeElement) {
+    result.recordType = typeElement.textContent.trim();
+  }
+
+  let rows = hitRow.querySelectorAll("div.post_middle div.row-fluid.hidden-print");
+
+  function addRecordData(label, value) {
+    if (label && value) {
+      if (result.recordData[label]) {
+        // duplicate label. This sometime happens. See Namn in
+        // https://sok.riksarkivet.se/?Sokord=Anders+andersen&page=10&postid=Sjoman_liggare_200626&tab=post#tab
+        // In that case it is the name of the ship, but we don't want to work out the semantics here.
+        let suffix = 1;
+        let newLabel = label + suffix;
+        while (result.recordData[newLabel]) {
+          suffix++;
+          newLabel = label + suffix;
+        }
+
+        if (!result.duplicateValues) {
+          result.duplicateValues = {};
+        }
+        result.duplicateValues[newLabel] = label;
+
+        label = newLabel;
+      }
+
+      result.recordData[label] = value;
+    }
+  }
+
+  let currentHousehold = null;
+
+  function addHouseholdItem(label, value, valueElement) {
+    let valueObj = {};
+    valueObj.text = value;
+
+    // italic part on end?
+    let italicElement = valueElement.querySelector("i");
+    if (italicElement) {
+      let italicText = italicElement.textContent.trim();
+      if (value.endsWith(italicText)) {
+        value = value.substring(0, value.length - italicText.length).trim();
+        if (value.endsWith(",")) {
+          value = value.substring(0, value.length - 1).trim();
+        }
+        valueObj.text = value;
+        valueObj.italicEndText = italicText;
+      }
+    }
+
+    let linkElement = valueElement.querySelector("a");
+    if (linkElement) {
+      valueObj.link = linkElement.getAttribute("href");
+      valueObj.linkText = linkElement.textContent;
+    }
+
+    if (label) {
+      if (!result.households) {
+        result.households = {};
+      }
+      result.households[label] = [];
+      currentHousehold = result.households[label];
+    }
+
+    if (currentHousehold) {
+      currentHousehold.push(valueObj);
+    }
+  }
+
+  if (rows.length) {
+    result.recordData = {};
+    let lastLabel = "";
+    let lastValueObj = null;
+
+    const householdHeadings = ["About the household", "Om hushållet"];
+    let inHousehold = false;
+    for (let row of rows) {
+      let labelElement = row.querySelector("div.post_ledtext");
+      let valueElement = row.querySelector("div.post_faltdata");
+
+      if (labelElement && valueElement) {
+        let label = labelElement.textContent.trim();
+        let value = valueElement.textContent.trim();
+
+        if (value && label) {
+          // the value can start with the label again (the "visible-phone" part)
+          if (value.startsWith(label)) {
+            value = value.substring(label.length).trim();
+          }
+        }
+
+        if (label && householdHeadings.includes(label)) {
+          inHousehold = true;
+          addRecordData(label, value);
+          continue;
+        }
+
+        if (inHousehold) {
+          addHouseholdItem(label, value, valueElement);
+        } else {
+          addRecordData(label, value);
+        }
+      }
+    }
+  }
+
+  // image
+  let imageLinkElement = hitRow.querySelector("div.post_faltButton > a.link-image");
+  if (imageLinkElement) {
+    result.imageLink = imageLinkElement.getAttribute("href");
+  }
+
+  let postIdElement = document.querySelector("#postid");
+  if (!postIdElement) {
+    postIdElement = document.querySelector("#id");
+  }
+  if (postIdElement) {
+    result.postId = postIdElement.value;
+  }
+
+  result.pageType = "record";
+  result.success = true;
+  return result;
+}
+
+function extractImage(document, url, result) {
+  const imageTitleElement = document.querySelector("div.mainPanel > div.centerPanel > h1.title");
+  if (!imageTitleElement) {
+    return result;
+  }
+
+  const imageContentElement = document.querySelector("#content > div.viewer");
+  if (!imageContentElement) {
+    return result;
+  }
+
+  result.pageType = "image";
+
+  let title = imageTitleElement.textContent.trim();
+  if (title) {
+    result.imageTitle = title;
+    // the title is fairly freeform. e.g:
+    // Folkräkning 1880 - Hällestads församling, Älvsborgs län
+    // Gotlands norra häradsrätts arkiv (-1899), Bouppteckningar, "lösa serien", SE/ViLA/20056/F 2 A/9 (1735-1737)
+    // Helsingborgs stadsförsamlings (Maria) kyrkoarkiv, Födelse- och dopböcker, SE/LLA/13171/C I/15 (1887-1889)
+
+    // first check for am archive reference code.
+    const archiveCodeIndex = title.search(/SE\/[A-Z]+\/\d/);
+    if (archiveCodeIndex != -1) {
+      result.imageType = "archive";
+      let part1 = title.substring(0, archiveCodeIndex).trim();
+      let part2 = title.substring(archiveCodeIndex).trim();
+      if (part1) {
+        const commaIndex = part1.indexOf(",");
+        if (commaIndex !== -1) {
+          result.imageArchiveName = part1
+            .substring(0, commaIndex)
+            .replace(/\s*,\s*$/, "")
+            .trim();
+          result.imageCollectionName = part1
+            .substring(commaIndex + 1)
+            .replace(/\s*,\s*$/, "")
+            .trim();
+        } else {
+          // Fallback if there's no comma at all
+          result.imageCollectionName = part1.trim();
+        }
+      }
+      if (part2) {
+        // Capture Group 1: The archive code (e.g., SE/LLA/13171/C I/15)
+        // Capture Group 2: The date range including parentheses (e.g., (1887-1889))
+        const match = part2.match(/^(SE\/[A-Z]{3}\/[\dA-Za-z \/]+?)\s*(\([\d\-]+\))?$/);
+
+        if (match) {
+          let archiveCode = match[1] ? match[1].trim() : "";
+          let dateRange = match[2] ? match[2].trim() : "";
+
+          result.imageArchiveCode = archiveCode;
+          result.imageDateRange = dateRange; // if you want to store the dates too
+        }
+      }
+    } else {
+      result.imageType = "dataset";
+      const hyphenIndex = title.indexOf("-");
+      if (hyphenIndex !== -1) {
+        result.imageDatasetName = title.substring(0, hyphenIndex).trim();
+        result.imageLocation = title.substring(hyphenIndex + 1).trim();
+      } else {
+        // Fallback if there's no hyphen at all
+        result.imageLocation = title.trim();
+      }
+    }
+  }
+
+  const imageSelect = document.querySelector("select.image-selectionbox");
+  if (imageSelect) {
+    const selectedText = imageSelect.selectedOptions[0].text;
+    result.imageNumber = selectedText;
+  }
+
+  function getGroup(labels) {
+    let groups = document.querySelectorAll(`div.main > article > div.groups > div.group`);
+    let itemElement = null;
+    for (let group of groups) {
+      const headerElement = group.querySelector(`div.header`);
+      if (headerElement) {
+        let headerLabel = headerElement.textContent;
+
+        for (let label of labels) {
+          if (headerLabel == label) {
+            return group;
+          }
+        }
+      }
+    }
+  }
+
+  function getItemData(result, group, key, classNames, labels) {
+    let itemElement = null;
+    for (let className of classNames) {
+      if (className) {
+        itemElement = group.querySelector(`div.item.${className}`);
+        if (itemElement) {
+          break;
+        }
+      }
+    }
+
+    if (!itemElement) {
+      // try labels
+      let items = group.querySelectorAll(`div.item`);
+      for (item of items) {
+        const labelElement = item.querySelector(`div.label`);
+        if (labelElement) {
+          // Find the first direct text node child
+          const itemLabel = Array.from(labelElement.childNodes)
+            .filter((node) => node.nodeType === 3)
+            .map((node) => node.textContent.trim())
+            .join("");
+
+          for (let label of labels) {
+            if (itemLabel == label) {
+              itemElement = item;
+              break;
+            }
+          }
+        }
+        if (itemElement) {
+          break;
+        }
+      }
+    }
+    if (itemElement) {
+      const valueElement = itemElement.querySelector("div.value");
+      if (valueElement) {
+        // Find the first direct text node child
+        const textValue = Array.from(valueElement.childNodes)
+          .filter((node) => node.nodeType === 3)
+          .map((node) => node.textContent.trim())
+          .join("");
+
+        // this could be truncated, in this case it will end in "..." so no need to check
+        // if there is a "more" toggle.
+        result[key] = textValue;
+      }
+    }
+  }
+
+  const itemGroup = getGroup(["About the item", "Om objektet"]);
+  const pageGroup = getGroup(["Page", "Sida"]);
+
+  getItemData(result, itemGroup, "imageItemArchive", ["_archive", "_arkiv"], ["Archive", "Arkiv"]);
+  getItemData(result, itemGroup, "imageItemSeries", ["_series", "_serie"], ["Series", "Serie"]);
+  getItemData(
+    result,
+    itemGroup,
+    "imageItemReferenceCode",
+    ["_reference-code", "_referenskod"],
+    ["Reference code", "Referenskod"]
+  );
+  getItemData(result, itemGroup, "imageItemDate", ["_date", "_datering"], ["Date", "Datering"]);
+  getItemData(result, itemGroup, "imageItemRemark", ["_remark", "_anm__00e4rkning"], ["Remark", "Anmärkning"]);
+
+  // Used in a census
+  getItemData(result, itemGroup, "imageItemParish", ["_parish", "_f__00f6rsamling"], ["Parish", "Församling"]);
+  getItemData(
+    result,
+    itemGroup,
+    "imageItemCensusYear",
+    ["_census-year", "_folkr__00e4knings__00e5r"],
+    ["Census year", "Folkräkningsår"]
+  );
+  getItemData(result, itemGroup, "imageItemCounty", ["_county", "_l__00e4n"], ["County", "Län"]);
+
+  // common ones
+  getItemData(
+    result,
+    itemGroup,
+    "imageItemSourceReference",
+    ["_source-reference", "_k__00e4llh__00e4nvisning"],
+    ["Source reference", "Källhänvisning"]
+  );
+  getItemData(
+    result,
+    itemGroup,
+    "imageItemLicense",
+    ["", "_r__00e4ttigheter-f__00f6r-digital-reproduktion"],
+    ["", "Rättigheter för digital reproduktion"]
+  );
+  getItemData(
+    result,
+    itemGroup,
+    "imageItemIiifManifest",
+    ["_i_i_i_f-_manifest", "_i_i_i_f__002dmanifest"],
+    ["IIIF Manifest", "IIIF-manifest"]
+  );
+
+  // Page/Sida group
+  getItemData(result, pageGroup, "imagePageId", ["_image-_i_d", "_bildid"], ["Image ID", "Bildid"]);
+  getItemData(result, pageGroup, "imagePageLink", ["_link", "_l__00e4nk"], ["Link", "Länk"]);
+  getItemData(
+    result,
+    pageGroup,
+    "imagePageSourceReference",
+    ["_source-reference", "_k__00e4llh__00e4nvisning"],
+    ["Source reference", "Källhänvisning"]
+  );
+
+  // Extract data from the tree view on the left. This is needed to determin the record type
+  // since a church book can caintain multiple types of records.
+  const treeView = document.querySelector("div.views > div.treeView");
+  if (treeView) {
+    // first try to find the selected item. This is the best approach since it can't be changed
+    // without affecting the page displayed
+    const selectedItem = treeView.querySelector("ul.tree a.selected");
+    if (selectedItem) {
+      let selectedLinkText = selectedItem.getAttribute("title");
+      if (selectedLinkText) {
+        // this is often just the year(s)
+        if (/^[0-9\-\(\)]+$/.test(selectedLinkText)) {
+          result.treeItemYears = selectedLinkText;
+          // try the next level up
+          let selectedListItem = selectedItem.closest("li");
+          if (selectedListItem) {
+            const prevListItem = selectedListItem.previousElementSibling;
+            if (prevListItem && prevListItem.tagName == "LI") {
+              const childList = prevListItem.querySelector("ul");
+              if (!childList) {
+                const linkItem = prevListItem.querySelector("a");
+                if (linkItem) {
+                  let treeItemTitle = linkItem.getAttribute("title");
+                  if (treeItemTitle) {
+                    result.treeItemTitle = treeItemTitle.trim();
+                  }
+                }
+              }
+            }
+          }
+        } else {
+          result.treeItemTitle = selectedLinkText.trim();
+        }
+      }
+    }
+
+    // If that failed we can use the expanded item
+    const expandedL2ItemToggle = treeView.querySelector("ul.tree > li > ul > li > div.toggle.expanded");
+    if (expandedL2ItemToggle) {
+      const expandedL2Item = expandedL2ItemToggle.closest("li");
+      if (expandedL2Item) {
+        const linkItem = expandedL2Item.querySelector("a");
+        if (linkItem) {
+          let treeItemTitle = linkItem.getAttribute("title");
+          if (treeItemTitle) {
+            result.treeItemTitle = treeItemTitle.trim();
+          }
+        }
+      }
+    }
+  }
+
+  result.success = true;
+  return result;
+}
+
+function extractData(document, url) {
+  let result = { url: url, success: false };
+
+  const resultListDiv = document.querySelector("#resultlist");
+  if (resultListDiv) {
+    return extractRecord(document, url, result);
+  }
+
+  const imageTitleElement = document.querySelector("div.mainPanel > div.centerPanel > h1.title");
+  const imageContentElement = document.querySelector("#content > div.viewer");
+  if (imageTitleElement && imageContentElement) {
+    return extractImage(document, url, result);
+  }
+
+  return result;
+}
+
+// No exports allowed. See docs/dev_notes/extract_data_design

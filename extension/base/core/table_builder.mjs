@@ -659,7 +659,7 @@ function buildHouseholdTable(input) {
       }
     }
 
-    captionPart2 = gd.inferEventPlace();
+    captionPart2 = gd.inferFullEventPlace();
     if (!includeCountryInPlace) {
       let countryExtract = CD.extractCountryFromPlaceName(captionPart2);
       if (countryExtract) {

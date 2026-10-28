@@ -294,7 +294,10 @@ function getCurrentLastNameInNonEditMode(document, isPrivate) {
       let clnNode = null;
       if (isPrivate) {
         clnNode = vitalsNode.querySelector("a[title='Current Last Name']");
-      } else {
+      }
+      if (!clnNode) {
+        // Also used for a profile that is private but has a public family tree (the name is the same as for a
+        // public profile). The first link is the current last name, a second one after "formerly" is the LNAB.
         clnNode = vitalsNode.querySelector("a[title='Click here for the surname index page']");
       }
       if (clnNode) {
@@ -1382,6 +1385,16 @@ function extractVitalsDataInNonEditMode2025(document, result, privacyLevel) {
   if (isPrivate) {
     result.birthDate = getTextBySelector(document, ".VITALS span[data-cy=birth-date]");
     result.deathDate = getTextBySelector(document, ".VITALS span[data-cy=death-date]");
+
+    // If the family tree is public the dates and places are the same as for a public profile
+    if (!result.birthDate) {
+      result.birthDate = getTextBySelector(document, ".VITALS time[itemprop=birthDate]");
+    }
+    if (!result.deathDate) {
+      result.deathDate = getTextBySelector(document, ".VITALS time[itemprop=deathDate]");
+    }
+    result.birthLocation = getTextBySelector(document, ".VITALS span[itemprop=birthPlace]");
+    result.deathLocation = getTextBySelector(document, ".VITALS span[itemprop=deathPlace]");
   } else {
     result.birthDate = getTextBySelector(document, ".VITALS time[itemprop=birthDate]");
     result.birthDateStatus = getDateStatus2025(document, "#Birth");

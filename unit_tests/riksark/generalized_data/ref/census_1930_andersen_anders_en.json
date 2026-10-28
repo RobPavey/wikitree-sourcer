@@ -1,0 +1,43 @@
+{
+  "sourceOfData": "riksark",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Andersen",
+    "forenames": "Anders"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1930"
+  },
+  "eventPlace": {
+    "placeString": "Vätö, Stockholms län, Sweden",
+    "county": "Stockholm",
+    "streetAddress": "Vätöberg Sthlm. stads stenhuggeri",
+    "country": "Sweden",
+    "extractedPlaceString": "Vätö"
+  },
+  "birthDate": {
+    "dateString": "1877"
+  },
+  "maritalStatus": "single",
+  "occupation": "Stenhuggare",
+  "householdArrayFields": [
+    "name",
+    "birthYear",
+    "birthPlace",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Andersen, Anders",
+      "birthYear": "1877",
+      "birthPlace": "Naesodden, Norge",
+      "occupation": "Stenhuggare",
+      "isSelected": true,
+      "maritalStatus": "single",
+      "gender": "male"
+    }
+  ],
+  "hasValidData": true
+}

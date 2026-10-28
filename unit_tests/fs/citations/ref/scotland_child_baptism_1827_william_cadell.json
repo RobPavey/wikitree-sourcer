@@ -24,15 +24,15 @@
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''Baptism of grandson Alexander Cadell''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting Digital film/folder number: 007909057; FHL microfilm: 1067862; Record number: 13944415<br/>\n{{FamilySearch Record|C9C5-WQT2}} (accessed 6 May 2021)<br/>\nName: William Cadell.\n</ref>",
+    "citation": "<ref>\n'''Baptism of grandson Alexander Cadell''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting Digital film/folder number: 007909057; FHL microfilm: 1067862; Record number: 13944415<br/>\n{{FamilySearch Record|C9C5-WQT2}} (accessed 6 May 2021)<br/>\nName: William Cadell; Relationship to fact person: Grandparent; Fact: Christening; Related person name: Alexander Cadell; Related person gender: male; Event date: 29 Sep 1827; Event place: Tranent, Haddingtonshire, Scotland, United Kingdom.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "William's grandson Alexander Cadell was baptised on 29 September 1827 in Tranent, Haddingtonshire, Scotland, United Kingdom.<ref>\n'''Baptism of grandson Alexander Cadell''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting Digital film/folder number: 007909057; FHL microfilm: 1067862; Record number: 13944415<br/>\n{{FamilySearch Record|C9C5-WQT2}} (accessed 6 May 2021)<br/>\nName: William Cadell.\n</ref>",
+    "citation": "William's grandson Alexander Cadell was baptised on 29 September 1827 in Tranent, Haddingtonshire, Scotland, United Kingdom.<ref>\n'''Baptism of grandson Alexander Cadell''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting Digital film/folder number: 007909057; FHL microfilm: 1067862; Record number: 13944415<br/>\n{{FamilySearch Record|C9C5-WQT2}} (accessed 6 May 2021)<br/>\nName: William Cadell; Relationship to fact person: Grandparent; Fact: Christening; Related person name: Alexander Cadell; Related person gender: male; Event date: 29 Sep 1827; Event place: Tranent, Haddingtonshire, Scotland, United Kingdom.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''Baptism of grandson Alexander Cadell''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing Digital film/folder number: 007909057; FHL microfilm: 1067862; Record number: 13944415<br/>{{FamilySearch Record|C9C5-WQT2}} (accessed 6 May 2021)<br/>Name: William Cadell.",
+    "citation": "* '''Baptism of grandson Alexander Cadell''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing Digital film/folder number: 007909057; FHL microfilm: 1067862; Record number: 13944415<br/>{{FamilySearch Record|C9C5-WQT2}} (accessed 6 May 2021)<br/>Name: William Cadell; Relationship to fact person: Grandparent; Fact: Christening; Related person name: Alexander Cadell; Related person gender: male; Event date: 29 Sep 1827; Event place: Tranent, Haddingtonshire, Scotland, United Kingdom.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
@@ -44,7 +44,7 @@
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''Baptism of grandson Alexander Cadell''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing Digital film/folder number: 007909057; FHL microfilm: 1067862; Record number: 13944415<br/>{{FamilySearch Record|C9C5-WQT2}} (accessed 6 May 2021)<br/>Name: William Cadell.",
+    "citation": "* '''Baptism of grandson Alexander Cadell''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing Digital film/folder number: 007909057; FHL microfilm: 1067862; Record number: 13944415<br/>{{FamilySearch Record|C9C5-WQT2}} (accessed 6 May 2021)<br/>Name: William Cadell; Relationship to fact person: Grandparent; Fact: Christening; Related person name: Alexander Cadell; Related person gender: male; Event date: 29 Sep 1827; Event place: Tranent, Haddingtonshire, Scotland, United Kingdom.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {

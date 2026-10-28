@@ -27,7 +27,17 @@ import { OpenarchEdReader } from "./openarch_ed_reader.mjs";
 
 function buildOpenarchUrl(ed, builder) {
   // could provide option to use a search style URL but don't see any reason to so far
-  return ed.url;
+
+  const urlObj = new URL(ed.url);
+
+  // Remove the query parameters
+  urlObj.search = "";
+  // Remove the fragment/hash if needed
+  urlObj.hash = "";
+
+  const cleanUrl = urlObj.toString();
+
+  return cleanUrl;
 }
 
 function buildSourceTitle(ed, gd, edReader, builder) {

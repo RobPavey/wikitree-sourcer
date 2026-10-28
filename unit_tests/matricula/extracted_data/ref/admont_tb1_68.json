@@ -9,5 +9,8 @@
   ],
   "book": "Taufbuch 1 1632-1643 - 18512",
   "page": "68-69",
-  "typeSet": "Baptism"
+  "recordTypeCandidates": [
+    "Church Record",
+    "Baptism"
+  ]
 }

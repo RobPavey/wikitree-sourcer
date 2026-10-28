@@ -1,0 +1,132 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Albert S Densham"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Pill, Portbury, Somerset, England"
+  },
+  "registrationDistrict": "Bedminster",
+  "birthDate": {
+    "yearString": "1841",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Newbury Somerset England"
+  },
+  "eventDate": {
+    "yearString": "1871"
+  },
+  "ageAtEvent": "30",
+  "relationshipToHead": "servant",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "Jame Adams",
+      "age": "16",
+      "relationship": "servant",
+      "uid": "http://www.ancestry.com/search/collections/7619/records/917939"
+    },
+    {
+      "name": "Fanny Bennett",
+      "age": "26",
+      "relationship": "servant",
+      "uid": "http://www.ancestry.com/search/collections/7619/records/917941"
+    },
+    {
+      "name": "Fanny Hill",
+      "age": "30",
+      "relationship": "servant",
+      "uid": "http://www.ancestry.com/search/collections/7619/records/917943"
+    },
+    {
+      "name": "Mary N Hivell",
+      "age": "39",
+      "relationship": "servant",
+      "uid": "http://www.ancestry.com/search/collections/7619/records/917945"
+    },
+    {
+      "name": "Isabella West",
+      "age": "15",
+      "relationship": "servant",
+      "uid": "http://www.ancestry.com/search/collections/7619/records/917947"
+    },
+    {
+      "name": "Elizabeth Ambler",
+      "age": "16",
+      "relationship": "servant",
+      "uid": "http://www.ancestry.com/search/collections/7619/records/917949"
+    },
+    {
+      "name": "William H Miles",
+      "age": "40",
+      "relationship": "head",
+      "uid": "http://www.ancestry.com/search/collections/7619/records/917927"
+    },
+    {
+      "name": "Mary F Miles",
+      "age": "30",
+      "relationship": "wife",
+      "uid": "http://www.ancestry.com/search/collections/7619/records/917929"
+    },
+    {
+      "name": "Agatha M Miles",
+      "age": "7",
+      "relationship": "daughter",
+      "uid": "http://www.ancestry.com/search/collections/7619/records/917931"
+    },
+    {
+      "name": "Ethel C Miles",
+      "age": "6",
+      "relationship": "daughter",
+      "uid": "http://www.ancestry.com/search/collections/7619/records/917933"
+    },
+    {
+      "name": "Annette Burton",
+      "age": "18",
+      "uid": "http://www.ancestry.com/search/collections/7619/records/917935"
+    },
+    {
+      "name": "Albert S Densham",
+      "age": "30",
+      "relationship": "servant",
+      "isSelected": true,
+      "gender": "male",
+      "birthPlace": "Newbury Somerset England",
+      "birthYear": "1841"
+    }
+  ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7619|917937}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|7619|917939}}",
+    "{{Ancestry Record|7619|917941}}",
+    "{{Ancestry Record|7619|917943}}",
+    "{{Ancestry Record|7619|917945}}",
+    "{{Ancestry Record|7619|917947}}",
+    "{{Ancestry Record|7619|917949}}",
+    "{{Ancestry Record|7619|917927}}",
+    "{{Ancestry Record|7619|917929}}",
+    "{{Ancestry Record|7619|917931}}",
+    "{{Ancestry Record|7619|917933}}",
+    "{{Ancestry Record|7619|917935}}"
+  ],
+  "collectionData": {
+    "id": "7619",
+    "collectionTitle": "1871 England Census",
+    "page": "18",
+    "folio": "87",
+    "piece": "2517",
+    "county": "Somerset"
+  },
+  "hasValidData": true
+}

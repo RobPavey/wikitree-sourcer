@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "BiographicalIndex",
+  "name": {
+    "lastName": "O'Neill",
+    "forenames": "Patrick Henry"
+  },
+  "personGender": "male",
+  "hasValidData": true
+}

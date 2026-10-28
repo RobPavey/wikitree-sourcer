@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Johnson",
+    "forenames": "Genevieve Ray"
+  },
+  "personGender": "female",
+  "deathDate": {
+    "dateString": "1994"
+  },
+  "deathPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "collectionData": {
+    "id": "death",
+    "year": "1994"
+  },
+  "hasValidData": true
+}

@@ -382,17 +382,25 @@ function buildSearchData(input) {
     if (typeOfSearch != "PossibleDeaths") {
       let age = gd.inferAgeAtDeath();
       if (age !== undefined && age >= 0) {
+        let range = 0;
         if (typeOfSearch != "SameCollection") {
-          let range = 5;
+          range = 5;
           if (age < 14) {
             range = 2;
           } else if (age > 50) {
             range = 10;
           }
-          age = age.toString() + "%" + range.toString();
         }
-        selectData["spoudeath_select_boxses_mother_surname"] = "1";
-        fieldData["search_query_age_at_death"] = age;
+        if (range == 0) {
+          selectData["death_select_box"] = "1";
+          fieldData["search_query_age_at_death"] = age;
+        } else {
+          selectData["death_select_box"] = "2";
+          const minAge = Math.max(0, age - range);
+          const maxAge = age + range;
+          fieldData["search_query_min_age_at_death"] = minAge;
+          fieldData["search_query_max_age_at_death"] = maxAge;
+        }
       }
     }
   }

@@ -3,10 +3,10 @@
   "sourceType": "record",
   "recordType": "Newspaper",
   "eventDate": {
-    "dateString": "1929-01-16"
+    "dateString": "16 Jan 1929"
   },
   "eventPlace": {
-    "placeString": "Macon, Missouri"
+    "placeString": "Macon, Missouri, United States"
   },
   "newspaperName": "Macon Chronicle-Herald",
   "hasValidData": true

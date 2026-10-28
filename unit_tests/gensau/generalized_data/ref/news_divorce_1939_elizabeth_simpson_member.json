@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "name": {
+    "lastName": "Simpson",
+    "forenames": "Elizabeth"
+  },
+  "eventDate": {
+    "dateString": "11-Dec-1939"
+  },
+  "hasValidData": true
+}

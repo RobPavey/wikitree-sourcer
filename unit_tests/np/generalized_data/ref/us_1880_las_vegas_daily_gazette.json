@@ -3,10 +3,10 @@
   "sourceType": "record",
   "recordType": "Newspaper",
   "eventDate": {
-    "dateString": "1880-06-17"
+    "dateString": "17 Jun 1880"
   },
   "eventPlace": {
-    "placeString": "Las Vegas, New Mexico"
+    "placeString": "Las Vegas, New Mexico, United States"
   },
   "newspaperName": "Daily Gazette",
   "hasValidData": true

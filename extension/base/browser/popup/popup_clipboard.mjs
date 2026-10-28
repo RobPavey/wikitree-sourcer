@@ -29,7 +29,13 @@ import {
   emptyMenu,
 } from "./popup_menu_building.mjs";
 
-function writeToClipboardSuccessMessage(objectName, internalSave, extraMessage = "", iconType = "check") {
+function writeToClipboardSuccessMessage(
+  objectName,
+  internalSave,
+  extraMessage = "",
+  iconType = "check",
+  errorMessage1
+) {
   let message1 = objectName + " saved to clipboard.";
   let message2 = extraMessage;
   if (internalSave) {
@@ -38,7 +44,7 @@ function writeToClipboardSuccessMessage(objectName, internalSave, extraMessage =
   if (iconType == "check") {
     displayMessageWithIconThenClosePopup(iconType, message1, message2);
   } else {
-    displayMessageWithIcon(iconType, message1, message2);
+    displayMessageWithIcon(iconType, message1, message2, errorMessage1);
   }
 }
 
@@ -106,7 +112,14 @@ async function userWriteToClipboardWithEdit(text, objectName, internalSave) {
   document.getElementById("menu").appendChild(fragment);
 }
 
-async function userWriteToClipboard(text, objectName, internalSave = false, extraMessage = "") {
+async function userWriteToClipboard(
+  text,
+  objectName,
+  internalSave = false,
+  extraMessage = "",
+  iconType = "check",
+  errorMessage
+) {
   function addBreak(fragment) {
     let br = document.createElement("br");
     fragment.appendChild(br);
@@ -146,7 +159,7 @@ async function userWriteToClipboard(text, objectName, internalSave = false, extr
   saveButton.onclick = async function (element) {
     try {
       await navigator.clipboard.writeText(text);
-      writeToClipboardSuccessMessage(objectName, internalSave, extraMessage);
+      writeToClipboardSuccessMessage(objectName, internalSave, extraMessage, iconType, errorMessage);
     } catch (error) {
       console.log("Clipboard write failed in userWriteToClipboard.");
       console.log(error);
@@ -163,15 +176,15 @@ async function userWriteToClipboard(text, objectName, internalSave = false, extr
   document.getElementById("menu").appendChild(fragment);
 }
 
-async function writeToClipboard(text, objectName, internalSave, extraMessage = "", iconType = "check") {
+async function writeToClipboard(text, objectName, internalSave, extraMessage = "", iconType = "check", errorMessage) {
   try {
     await navigator.clipboard.writeText(text);
-    writeToClipboardSuccessMessage(objectName, internalSave, extraMessage, iconType);
+    writeToClipboardSuccessMessage(objectName, internalSave, extraMessage, iconType, errorMessage);
     //console.log("Clipboard set");
   } catch (error) {
     console.log("Clipboard write failed. Using dialog instead.");
     //console.log(error);
-    userWriteToClipboard(text, objectName, internalSave, extraMessage);
+    userWriteToClipboard(text, objectName, internalSave, extraMessage, iconType, errorMessage);
   }
 }
 

@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "np",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "25 Jun 1963"
+  },
+  "eventPlace": {
+    "placeString": "Charlotte, North Carolina, United States"
+  },
+  "newspaperName": "The Charlotte Observer",
+  "hasValidData": true
+}

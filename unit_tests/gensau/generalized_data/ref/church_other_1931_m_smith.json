@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "OtherChurchEvent",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "M"
+  },
+  "eventDate": {
+    "dateString": "1931"
+  },
+  "hasValidData": true
+}

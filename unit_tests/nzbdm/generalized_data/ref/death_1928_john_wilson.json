@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "nzbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "John C"
+  },
+  "eventDate": {
+    "yearString": "1928"
+  },
+  "eventPlace": {
+    "country": "New Zealand"
+  },
+  "lastNameAtDeath": "Wilson",
+  "deathPlace": {
+    "country": "New Zealand"
+  },
+  "ageAtEvent": "65 TO 70",
+  "ageAtDeath": "65 TO 70",
+  "hasValidData": true
+}

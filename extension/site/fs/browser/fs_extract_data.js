@@ -24,7 +24,31 @@ SOFTWARE.
 
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
+// This is an image with a person details selected. example URL:
+// https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9MR-NFZL?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AVTHY-ZB3&action=view&groupId=TH-1971-27766-10578-99
+// This is also an image with a person details selected - newer form
+// https://www.familysearch.org/ark:/61903/3:1:3QS7-L9S9-RGHR?view=index&action=view&personArk=%2Fark%3A%2F61903%2F1%3A1%3AQ2Q8-11ZZ
+// there can also be fewer digits in the image id. e.g.:
+// https://www.familysearch.org/ark:/61903/3:1:S3HY-DRVJ-ZJ?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AVFR1-FH4&action=view&cc=1478678
+// Or more like:
+// https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSKX-9798-6?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3A6ZQY-71VD&action=view&cc=1478678
+// Or there can be a shorter image ID like:
+// https://www.familysearch.org/ark:/61903/3:2:77TD-89FK?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AKSLT-3C1&action=view&cc=1910846&lang=en&groupId=
+var imageWithSidebarUrlRegEx =
+  /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:\d\:\w\w\w\w\-\w\w\w\w(?:\-\w\w?\w?\w?)?.*personArk=%2Fark%3A%2F(\d+)%2F1%3A1%3A(\w\w\w\w\-\w\w\w\w?).*$/;
+
+// these can now have a language code like "en" in them
+var personDetailsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/details\/(.*)$/i;
+var personSourcesRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/sources\/(.*$)/i;
+var personVitalsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/vitals\/(.*$)/i;
+
 const useOldSystem = false;
+
+// Check if 'logDebug' is declared and if not then decare it
+// This happens when extractData is used from the popup
+if (typeof globalThis.logDebug !== "function") {
+  globalThis.logDebug = function (...args) {};
+}
 
 function cleanText(text) {
   if (!text) {
@@ -219,16 +243,16 @@ function extractRelatives(relatives, result) {
   }
 }
 
-function extractDataForImageInNewViewer(document, result) {
+function extractDataForImageInNewViewer(doc, result) {
   //console.log("extractDataForImageInNewViewer");
 
-  let mainNode = document.querySelector("#main");
+  let mainNode = doc.querySelector("#main");
   if (!mainNode) {
     result.pageType = "unknown";
     return;
   }
 
-  let asideNodes = document.querySelectorAll("aside ");
+  let asideNodes = doc.querySelectorAll("aside ");
 
   //console.log("Num aside nodes = " + asideNodes.length);
 
@@ -237,7 +261,7 @@ function extractDataForImageInNewViewer(document, result) {
   //console.log("titleSpan is:");
   //console.log(titleSpan);
 
-  if (titleSpan) {
+  if (titleSpan && titleSpan.textContent.trim() != "Image Viewer") {
     let title = titleSpan.textContent.trim();
     if (title) {
       result.filmTitle = title;
@@ -245,13 +269,21 @@ function extractDataForImageInNewViewer(document, result) {
   } else {
     // newer format is different
     let wayFindingLink1 = mainNode.querySelector("nav[aria-label='Waypoints'] a[wayfinding]");
-    if (!wayFindingLink1) {
+    if (!wayFindingLink1 || wayFindingLink1.getAttribute("href").length < 30) {
+      // June 2026: https://www.familysearch.org/ark:/61903/3:1:3QS7-99WC-VH6B?cc=2078654&wc=M7HT-Z29%3A358133901%2C358577801&lang=en&i=41
+      wayFindingLink1 = mainNode.querySelector("nav[aria-label='Waypoints'] a[data-wayfinding]");
+    }
+    if (!wayFindingLink1 || wayFindingLink1.getAttribute("href").length < 30) {
       // can't rely on aria-label as it changes with language
       wayFindingLink1 = mainNode.querySelector("nav a[wayfinding]");
     }
+    if (!wayFindingLink1 || wayFindingLink1.getAttribute("href").length < 30) {
+      // June 2026: https://www.familysearch.org/ark:/61903/3:1:3QS7-99WC-VH6B?cc=2078654&wc=M7HT-Z29%3A358133901%2C358577801&lang=en&i=41
+      wayFindingLink1 = mainNode.querySelector("nav a[data-wayfinding]");
+    }
     if (wayFindingLink1) {
       let title = wayFindingLink1.textContent.trim();
-      if (title) {
+      if (title && title != "Image Viewer") {
         result.filmTitle = title;
       }
     }
@@ -643,7 +675,7 @@ function extractDataForImage(filmViewerNode, result) {
   }
 }
 
-function extractDataForPersonPage(document, result) {
+function extractDataForPersonPage(doc, result) {
   function extractDateAndPlaceFromVitalsSection(cardSection, prefix) {
     let dateElement = cardSection.querySelector("div.display-date");
     if (dateElement) {
@@ -708,7 +740,7 @@ function extractDataForPersonPage(document, result) {
 
   result.pageType = "person";
 
-  let personPageElement = document.querySelector("fs-person-page");
+  let personPageElement = doc.querySelector("fs-person-page");
   if (personPageElement && personPageElement.shadowRoot) {
     // there are two places to get the person's name, one in header and one in vitals
     let personElement = personPageElement.shadowRoot.querySelector("div.person-header-container > fs-tree-person");
@@ -885,7 +917,7 @@ function extractDataForPersonPage(document, result) {
 }
 
 // As of 12 Sep 2022  this new format page is an option from the old format page
-function extractDataForPersonPageFormat2(document, personId, result) {
+function extractDataForPersonPageFormat2(doc, personId, result) {
   function extractDateAndPlaceFromVitalsSection(conclusionElement, resultObject, prefix) {
     let dateElement = conclusionElement.querySelector("span[data-testid='conclusion-date']");
     if (dateElement) {
@@ -922,7 +954,7 @@ function extractDataForPersonPageFormat2(document, personId, result) {
 
   //console.log("extractDataForPersonPageFormat2:");
 
-  let mainContentNode = document.querySelector("main#main");
+  let mainContentNode = doc.querySelector("main#main");
   if (!mainContentNode) {
     return;
   }
@@ -1094,15 +1126,15 @@ function extractDataForPopup(searchArtifactResults, result) {
   }
 }
 
-function extractData(document, url) {
+function extractData(doc, url) {
   logDebug("fs extractData, url = " + url);
 
   var result = {};
 
-  if (document) {
-    let cookies = document.cookie;
+  if (doc) {
+    let cookies = doc.cookie;
     if (cookies) {
-      let fssessionid = document.cookie
+      let fssessionid = doc.cookie
         .split("; ")
         .find((row) => row.startsWith("fssessionid="))
         ?.split("=")[1];
@@ -1124,8 +1156,13 @@ function extractData(document, url) {
   result.url = url;
 
   // first determine what kind of page we are in.
+  let createSourceDialog = doc.querySelector("div[aria-modal='true'][role='dialog'][aria-label='Create Source']");
+  if (createSourceDialog) {
+    extractDataForCreateSource(doc, result);
+    return result;
+  }
 
-  let mainContent = document.querySelector("#main-content-section");
+  let mainContent = doc.querySelector("#main-content-section");
 
   // these can now have a language code like "en" in them
   const personDetailsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/details\/(.*)$/i;
@@ -1146,20 +1183,18 @@ function extractData(document, url) {
       // it is a person page
       //console.log("extractData, it is a person:");
 
-      extractDataForPersonPage(document, result);
+      extractDataForPersonPage(doc, result);
       return result;
     }
   } else {
-    mainContent = document.querySelector("#main");
+    mainContent = doc.querySelector("#main");
     if (mainContent) {
       // this is a newer format page, only supported for person pages currently
 
-      // check if we are on the sourcers page with the create source dialog up
-      let createSourceDialog = document.querySelector(
-        "div[aria-modal='true'][role='dialog'][aria-label='Create Source']"
-      );
+      // check if we are on the sources page with the create source dialog up
+      let createSourceDialog = doc.querySelector("div[aria-modal='true'][role='dialog'][aria-label='Create Source']");
       if (createSourceDialog) {
-        extractDataForCreateSource(document, result);
+        extractDataForCreateSource(doc, result);
         return result;
       }
 
@@ -1169,18 +1204,18 @@ function extractData(document, url) {
 
         let personId = url.replace(personDetailsRegex, "$1");
 
-        extractDataForPersonPageFormat2(document, personId, result);
+        extractDataForPersonPageFormat2(doc, personId, result);
         return result;
       } else if (url.startsWith("https://www.familysearch.org/ark:/61903/3:1:")) {
         logDebug("extractData, it is a new image page:");
 
         // e.g.: https://www.familysearch.org/ark:/61903/3:1:3Q9M-CS4F-NQ21?view=explore&groupId=M9DG-2LY
-        extractDataForImageInNewViewer(document, result);
+        extractDataForImageInNewViewer(doc, result);
       } else if (url.startsWith("https://www.familysearch.org/ark:/61903/3:")) {
         // e.g. https://www.familysearch.org/ark:/61903/3:2:77TV-BWKC?view=fullText&keywords=Johnson,William%20Johnson,William
         // Not sure what the :2 means but treat as image for now
         logDebug("extractData, it is a new image page with something other than 3:1:");
-        extractDataForImageInNewViewer(document, result);
+        extractDataForImageInNewViewer(doc, result);
       } else {
         logDebug("page type is unknown but has a #main element");
         result.pageType = "unknown";
@@ -1191,7 +1226,7 @@ function extractData(document, url) {
       if (url.startsWith("https://www.familysearch.org/library/books/")) {
         //console.log("page looks like a book page");
 
-        let content = document.querySelector("#content");
+        let content = doc.querySelector("#content");
         if (content) {
           let heading = content.querySelector("div.p_right > h1");
           let table = content.querySelector("#single-table");
@@ -1217,7 +1252,7 @@ function extractData(document, url) {
             }
           } else {
             let heading = content.querySelector("h1.title");
-            let viewerInfo = document.querySelector("#viewer_info");
+            let viewerInfo = doc.querySelector("#viewer_info");
             if (viewerInfo) {
               unknown = false;
               result.pageType = "book";
@@ -1254,7 +1289,7 @@ function extractData(document, url) {
 
       if (unknown) {
         // page may be partially loaded
-        console.warn("page type is unknown");
+        console.log("page type is unknown");
 
         result.pageType = "unknown";
         result.dataMayBeIncomplete = true;
@@ -1267,13 +1302,13 @@ function extractData(document, url) {
   // Currently it never gets this far because we use fetch for non-image pages
   // The below has been converted to not use jQuery but not tested
   /*
-  let searchArtifactResults = document.querySelector("#main-content-section > div.full-width > search-artifact-results");
+  let searchArtifactResults = doc.querySelector("#main-content-section > div.full-width > search-artifact-results");
   if (searchArtifactResults) {
     extractDataForPopup(searchArtifactResults, result)
   }
   else {
     
-    let recordSection = document.querySelector("#main > div.css-1c8s46c-appCss > div > div > div.css-1psu6mv-readyCss");
+    let recordSection = doc.querySelector("#main > div.css-1c8s46c-appCss > div > div > div.css-1psu6mv-readyCss");
 
     let header = recordSection.querySelector("> div > div.css-13hiha-headerCss");
     let leftSide = recordSection.querySelector("> div > div.css-dqaew8-recordCss > div > div:nth-child(1)");
@@ -1282,7 +1317,7 @@ function extractData(document, url) {
     // left side
     let mainPersonTable = leftSide.querySelector("> table");
 
-    let additionalPersonsTable = document.querySelector("#additionalPersons > div > div.css-mt5p7h-additionalPersonRowCss > div.css-dfawkr-lowerBorderCss > div > div > table");
+    let additionalPersonsTable = doc.querySelector("#additionalPersons > div > div.css-mt5p7h-additionalPersonRowCss > div.css-dfawkr-lowerBorderCss > div > div > table");
 
     let citationQ = rightSide.querySelector("#citation");
     result.citation = citation.textContent;
@@ -1300,7 +1335,7 @@ function extractData(document, url) {
   */
 }
 
-function extractDataForCreateSource(document, result) {
+function extractDataForCreateSource(doc, result) {
   result.pageType = "createSource";
 
   return result;
@@ -1334,6 +1369,10 @@ function getDateValueFromDate(date, fieldTypeEnding, labelId) {
     }
 
     return dateString;
+  }
+
+  if (!date) {
+    return "";
   }
 
   let closeMatch = undefined;
@@ -1701,7 +1740,7 @@ function isUrlAValidFullOrPartialFmpImageLink(url) {
   return isFindMyPast;
 }
 
-function processImageLinks(document, result, options) {
+function processImageLinks(doc, result, options) {
   let externalImageId = result.externalImageId;
   let extImageUrl = result.extImageUrl;
   let externalImageReference = result.externalImageReference;
@@ -1766,10 +1805,10 @@ function processImageLinks(document, result, options) {
     }
   }
 
-  if (document) {
+  if (doc) {
     // use the document to determine if there is a valid image thumbnail
-    let restrictedImageThumb = document.querySelector("button[class*=restrictedImageThumbCss]");
-    let imageThumb = document.querySelector("img[class*=-imageThumbCss]");
+    let restrictedImageThumb = doc.querySelector("button[class*=restrictedImageThumbCss]");
+    let imageThumb = doc.querySelector("img[class*=-imageThumbCss]");
 
     if (result.fsImageUrl && imageThumb && restrictedImageThumb) {
       // this implies that there is a valid FamilySearch image - so do not set externalImageUrl
@@ -3152,14 +3191,14 @@ function extractDataFromPersonChildAndParentsRelationships(dataObj, parentRelati
   }
 }
 
-function identifyPreferredParents(document, parentPairs) {
+function identifyPreferredParents(doc, parentPairs) {
   // There is no way that I can see to get this through the API without special access
   // So we use the document to get it.
-  if (!document) {
+  if (!doc) {
     return;
   }
 
-  let couplePersonNodes = document.querySelectorAll("ul[data-testid=couple-persons]");
+  let couplePersonNodes = doc.querySelectorAll("ul[data-testid=couple-persons]");
 
   for (let couple of couplePersonNodes) {
     let personNodes = couple.querySelectorAll("div[data-testid=person]");
@@ -3201,20 +3240,31 @@ function identifyPreferredParents(document, parentPairs) {
   }
 }
 
-function extractPersonDataFromFetch(result, document, dataObj, options) {
+function extractPersonDataFromFetch(result, doc, dataObj, options) {
   // there could be many people in this data, the description is one way to find out which
   // is the one that is being focused on
   let description = dataObj.description;
 
-  if (!description) {
+  let personId = "";
+  if (description && description.startsWith("#SD-")) {
+    // For a person page the description will be something like: "#SD-G8S8-5FJ" meaning the personId is:
+    // "G8S8-5FJ"
+    // Note. This description field no longer seems to exist after April 2025.
+    personId = description.replace(/^\#SD\-/, "");
+    result.personId = personId;
+  } else if (description && description.startsWith("#SD_PERSON_")) {
+    // For a person page the description will be something like: "#SD-G8S8-5FJ" meaning the personId is:
+    // "G8S8-5FJ"
+    // Note. This description field no longer seems to exist after April 2025.
+    personId = description.replace(/^\#SD_PERSON_/, "");
+    result.personId = personId;
+  } else if (dataObj.persons && dataObj.persons.length > 0) {
+    personId = dataObj.persons[0].id;
+    result.personId = personId;
+  } else {
     // this could be an image page which is not handled currently
     return result;
   }
-
-  // For a person page the description will be something like: "#SD-G8S8-5FJ" meaning the personId is:
-  // "G8S8-5FJ"
-  let personId = description.replace(/^\#SD\-/, "");
-  result.personId = personId;
 
   if (!dataObj.persons || dataObj.persons.length < 1) {
     return result;
@@ -3369,7 +3419,7 @@ function extractPersonDataFromFetch(result, document, dataObj, options) {
       }
     }
 
-    identifyPreferredParents(document, parentPairs);
+    identifyPreferredParents(doc, parentPairs);
 
     let bestRelationshipPair = undefined;
 
@@ -3440,9 +3490,9 @@ function extractPersonDataFromFetch(result, document, dataObj, options) {
       }
     }
     if (bestRelationshipPair) {
-      if (document) {
+      if (doc) {
         // this data is not available in the dataObj. Try getting it from document
-        let familyDivs = document.querySelectorAll("div[data-testid^='family-']");
+        let familyDivs = doc.querySelectorAll("div[data-testid^='family-']");
         for (let familyDiv of familyDivs) {
           let coupleDiv = familyDiv.querySelector("ul[data-testid='couple-persons']");
           if (coupleDiv) {
@@ -3645,12 +3695,12 @@ function setRelatedPersonInfoFromOtherPerson(
   }
 }
 
-function extractHintsFromRecordDocument(document) {
-  if (!document) {
+function extractHintsFromRecordDocument(doc) {
+  if (!doc) {
     return undefined;
   }
 
-  let mainContentElement = document.querySelector("#main");
+  let mainContentElement = doc.querySelector("#main");
   if (!mainContentElement) {
     return undefined;
   }
@@ -3672,7 +3722,7 @@ function extractHintsFromRecordDocument(document) {
   return docHints;
 }
 
-function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, options) {
+function extractDataFromFetch(doc, url, dataObjects, fetchType, sessionId, options) {
   //console.log("extractDataFromFetch: sessionId = " + sessionId);
 
   usedLabelIds = {};
@@ -3688,20 +3738,20 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
   if (url) {
     result.url = url;
   } else {
-    if (document) {
-      result.url = document.URL;
+    if (doc) {
+      result.url = doc.URL;
     }
   }
 
   if (fetchType == "person") {
-    return extractPersonDataFromFetch(result, document, dataObj, options);
+    return extractPersonDataFromFetch(result, doc, dataObj, options);
   }
 
   // There seem to be some things that cannot be determined solely from the fact data,
   // if we have the document as well we can try to use that to get the correct values from the
   // fetch data.
   // An example is the event place for https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y
-  let docHints = extractHintsFromRecordDocument(document);
+  let docHints = extractHintsFromRecordDocument(doc);
 
   // there could be many people in this data, the description is one way to find out which
   // is the one that is being focused on
@@ -3713,6 +3763,18 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
   }
 
   let personId = description.replace(/^.*(p_\d*)$/, "$1");
+  if (personId == description) {
+    // didn't work
+    let persons = dataObj.persons;
+    if (persons) {
+      for (let person of persons) {
+        if (person.principal) {
+          personId = person.id;
+          break;
+        }
+      }
+    }
+  }
 
   let personIdWithRelatedFact = undefined;
   let relatedPersonFactType = undefined;
@@ -3836,7 +3898,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
                   }
                 }
               }
-            } else if (!personIdWithRelatedFact) {
+            } else if (!personIdWithRelatedFact || !relatedPersonFactType) {
               // Sometimes the related person should be ignored,
               // for example in the case of us_ky_marriage_1891_ida_sphar where the
               // related person is the spouse in a marriage
@@ -4109,6 +4171,9 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
       // this is weird we have a primary fact for a different person but no relationships
       // This happens for: us_or_spouse_death_1989_leland_churchill
       // In that case the person of record is the spouse of a person who died.
+      // It also happens for us_nc_military_draft_1942_nancy_furr
+      // In that case the person of record is the spouse of a perion in a draft registration
+      // card - but she is just recorded as an informant - so there is no way to know the relationship.
 
       let person = findPersonById(dataObj, personId);
 
@@ -4146,6 +4211,10 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
               }
             }
           }
+        }
+
+        if (!relationshipToPerson) {
+          relationshipToPerson = "Other";
         }
 
         if (relationshipToPerson) {
@@ -4532,8 +4601,8 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
 
     // Sometime there are things displayed on the page that are not easy to extract from the dataObj
     // For example the Enumeration District in the US 1950 census
-    if (document) {
-      let table = document.querySelector("div.cellCss_crzk1zr > table.tableCss_tobv3gy");
+    if (doc) {
+      let table = doc.querySelector("div.cellCss_crzk1zr > table.tableCss_tobv3gy");
       if (table) {
         let rows = table.querySelectorAll("tr");
         if (rows.length) {
@@ -4569,7 +4638,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
     }
   }
 
-  processImageLinks(document, result, options);
+  processImageLinks(doc, result, options);
 
   result.pageType = "record";
 

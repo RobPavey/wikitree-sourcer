@@ -78,7 +78,7 @@ async function nsvrSearch(generalizedData, typeOfSearch) {
 function addNsvrDefaultSearchMenuItem(menu, data, backFunction, filter) {
   addMenuItem(menu, "Search Nova Scotia Vital Records", function (element) {
     // nsvrSearch(data.generalizedData);
-    setupNsvrSearchSubMenu(data, backFunction, filter);
+    setupNsvrSearchSubmenu(data, backFunction, filter);
   });
 
   return true;
@@ -139,7 +139,7 @@ function addNsvrSearchDeathsMenuItem(menu, data, filter) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupNsvrSearchSubMenu(data, backFunction, filter) {
+async function setupNsvrSearchSubmenu(data, backFunction, filter) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);

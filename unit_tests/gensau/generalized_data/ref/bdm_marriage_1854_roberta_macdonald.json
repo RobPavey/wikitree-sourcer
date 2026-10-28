@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "MacDonald",
+    "forenames": "Roberta"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1854"
+  },
+  "registrationDistrict": "The Murray/Burra",
+  "spouses": [
+    {
+      "name": {
+        "forenames": "William Isaac"
+      },
+      "marriageDate": {
+        "dateString": "1854"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "marriage",
+    "year": "1854",
+    "registrationNumber": "20/100",
+    "volume": "20",
+    "page": "100"
+  },
+  "hasValidData": true
+}

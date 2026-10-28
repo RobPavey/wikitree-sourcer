@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "nzbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "McCabe",
+    "forenames": "Ann Marie"
+  },
+  "eventDate": {
+    "yearString": "1954"
+  },
+  "eventPlace": {
+    "country": "New Zealand"
+  },
+  "lastNameAtDeath": "McCabe",
+  "deathPlace": {
+    "country": "New Zealand"
+  },
+  "ageAtEvent": "4D",
+  "ageAtDeath": "4D",
+  "hasValidData": true
+}

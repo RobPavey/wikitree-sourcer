@@ -24,15 +24,15 @@
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''Baptism of son Charles Plume''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>\n{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021)<br/>\nName: Charlotte.\n</ref>",
+    "citation": "<ref>\n'''Baptism of son Charles Plume''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>\n{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021)<br/>\nName: Charlotte; Relationship to fact person: Parent; Fact: Christening; Related person name: Charles Plume; Related person gender: male; Event date: 28 May 1882; Event place: Enfield, Middlesex, England, United Kingdom.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "Charlotte's son Charles Plume was baptised on 28 May 1882 in Enfield, Middlesex, England, United Kingdom.<ref>\n'''Baptism of son Charles Plume''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>\n{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021)<br/>\nName: Charlotte.\n</ref>",
+    "citation": "Charlotte's son Charles Plume was baptised on 28 May 1882 in Enfield, Middlesex, England, United Kingdom.<ref>\n'''Baptism of son Charles Plume''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>\n{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021)<br/>\nName: Charlotte; Relationship to fact person: Parent; Fact: Christening; Related person name: Charles Plume; Related person gender: male; Event date: 28 May 1882; Event place: Enfield, Middlesex, England, United Kingdom.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''Baptism of son Charles Plume''': \"England Births and Christenings, 1538-1975\"<br/>citing Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021)<br/>Name: Charlotte.",
+    "citation": "* '''Baptism of son Charles Plume''': \"England Births and Christenings, 1538-1975\"<br/>citing Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021)<br/>Name: Charlotte; Relationship to fact person: Parent; Fact: Christening; Related person name: Charles Plume; Related person gender: male; Event date: 28 May 1882; Event place: Enfield, Middlesex, England, United Kingdom.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
@@ -44,7 +44,7 @@
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''Baptism of son Charles Plume''': \"England Births and Christenings, 1538-1975\"<br/>citing Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021)<br/>Name: Charlotte.",
+    "citation": "* '''Baptism of son Charles Plume''': \"England Births and Christenings, 1538-1975\"<br/>citing Digital film/folder number: 007568829; FHL microfilm: 2214171; Record number: 879; Packet letter: A<br/>{{FamilySearch Record|N1N6-6JS}} (accessed 6 May 2021)<br/>Name: Charlotte; Relationship to fact person: Parent; Fact: Christening; Related person name: Charles Plume; Related person gender: male; Event date: 28 May 1882; Event place: Enfield, Middlesex, England, United Kingdom.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {

@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Naissance''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 3 E 189 5 - 1813-1832. - 1813-1832; Image 17 sur 134; Lieu: Motreff (Finistère); Type de document: naissance<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/645577.1478933/daoloc/0/17 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Naissance''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 3 E 189 5 - 1813-1832. - 1813-1832; Image 17 sur 134; Lieu: Motreff (Finistère); Type de document: naissance<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/645577.1478933/daoloc/0/17 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Naissance''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère; 3 E 189 5 - 1813-1832. - 1813-1832; Image 17 sur 134; Lieu: Motreff (Finistère); Type de document: naissance<br/>[https://recherche.archives.finistere.fr/ark:/72506/645577.1478933/daoloc/0/17 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Naissance''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 3 E 189 5 - 1813-1832. - 1813-1832, Image 17 sur 134, Lieu Motreff (Finistère), Type de document naissance<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/645577.1478933/daoloc/0/17 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Naissance''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 3 E 189 5 - 1813-1832. - 1813-1832, Image 17 sur 134, Lieu Motreff (Finistère), Type de document naissance<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/645577.1478933/daoloc/0/17 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Naissance''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère, 3 E 189 5 - 1813-1832. - 1813-1832, Image 17 sur 134, Lieu Motreff (Finistère), Type de document naissance<br/>[https://recherche.archives.finistere.fr/ark:/72506/645577.1478933/daoloc/0/17 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

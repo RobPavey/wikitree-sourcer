@@ -1,0 +1,23 @@
+{
+  "std": {
+    "fieldData": {
+      "subjectgivennames": "David Patrick",
+      "subjectfamilyname": "Goodwin",
+      "birth": true,
+      "dobfrom": 1875
+    },
+    "selectData": {}
+  },
+  "paramDeath": {
+    "fieldData": {
+      "subjectgivennames": "David Patrick",
+      "subjectfamilyname": "Goodwin",
+      "death": true,
+      "doefrom": 1870,
+      "doeto": 1996,
+      "fathersname": "Michael Goodwin",
+      "mothersname": "Bridget Walsh"
+    },
+    "selectData": {}
+  }
+}

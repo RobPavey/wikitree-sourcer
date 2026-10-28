@@ -1,0 +1,16 @@
+{
+  "std": {
+    "fieldData": {
+      "BrideFirstName": "Margaret",
+      "BrideLastName": "Connors",
+      "GroomFirstName": "James",
+      "GroomLastName": "Kearney",
+      "StartYear": 1891,
+      "EndYear": 1891
+    },
+    "selectData": {
+      "RecordSeries": "1"
+    },
+    "searchType": "marriages"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "sourceOfData": "prdh",
+  "sourceType": "record",
+  "recordType": "FamilyTree",
+  "name": {
+    "lastName": "Duclos",
+    "forenames": "Joseph"
+  },
+  "birthDate": {
+    "dateString": "19-Dec-1790"
+  },
+  "deathDate": {
+    "dateString": "27-Jun-1832"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Carrier",
+        "forenames": "Genevieve"
+      },
+      "marriageDate": {
+        "dateString": "29-Oct-1816"
+      },
+      "marriagePlace": {
+        "placeString": "Lauzon (St-Joseph-de-la-Pointe-Lévy)"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Duclos",
+        "forenames": "Joseph"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Fortier",
+        "forenames": "Louise"
+      }
+    }
+  },
+  "hasValidData": true
+}

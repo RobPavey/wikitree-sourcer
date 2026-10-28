@@ -35,10 +35,11 @@ import {
   macSecondMonitorWorkaround,
   openExceptionPage,
   displayMessageWithIcon,
+  displayMessageWithIconAndWaitForContinue,
 } from "./popup_menu_building.mjs";
 import { logDebug } from "../../core/log_debug.mjs";
 
-import "../../../site/all/browser/popup_register_search_sites.mjs";
+import "/site/all/browser/popup_register_search_sites.mjs";
 
 logDebug("Loaded popup_init.mjs");
 
@@ -64,6 +65,13 @@ class LoggerToTabConsole {
 }
 
 var logger = new LoggerToTabConsole(undefined);
+
+async function checkForDebugPause() {
+  const message1 = "Paused to attach debugger";
+  const message2 = "Press continue after inspect and set breakpoint";
+
+  await displayMessageWithIconAndWaitForContinue("warning", message1, message2);
+}
 
 function displaySiteNameChangedMessage(popupSiteName, contentSiteName) {
   popupState.progress = progressState.sitePopupDisplayError;
@@ -226,7 +234,7 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
             const retryDelay = 200;
             numRetriesToExtractContent++;
             popupState.progress = progressState.sitePopupRetryExtractTimeout;
-            chrome.runtime.lastError("data may be incomplete, retry: " + numRetriesToExtractContent);
+            logDebug("data may be incomplete, retry: " + numRetriesToExtractContent);
             let timeWaited = (numRetriesToExtractContent * retryDelay) / 1000;
             if (timeWaited > 1) {
               let timeWaitedString = timeWaited.toFixed(2) + " seconds";
@@ -463,9 +471,12 @@ async function callFunctionWithActiveTab(func) {
   });
 }
 
-function initPopupInternal(siteName, menuSetupFunction) {
+async function initPopupInternal(siteName, menuSetupFunction) {
   macSecondMonitorWorkaround();
   setPopupMenuWidth();
+
+  // Uncomment this to pause at start of popup init for debugging
+  //await checkForDebugPause();
 
   displayBusyMessageAfterDelay("WikiTree Sourcer initializing menu ...");
 
@@ -484,7 +495,7 @@ async function initPopup(siteName, menuSetupFunction) {
   logDebug("popupState.didStartFromDefaultPopup is: " + popupState.didStartFromDefaultPopup);
 
   try {
-    initPopupInternal(siteName, menuSetupFunction);
+    await initPopupInternal(siteName, menuSetupFunction);
   } catch (e) {
     console.error("WikiTree Sourcer: initPopup, exception occurred, e is:", e);
     openExceptionPage("Error during creating popup menu for content.", siteName, e, true);

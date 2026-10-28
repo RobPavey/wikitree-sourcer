@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Burgerlijke Stand Huwelijk (Civil registration marriages)\"<br/>\nNoord-Hollands Archief, Collection: burgerlijke stand van de gemeente Amsterdam, Archiefdeel van (dubbele) registers van huwelijken v..., Archive: 358.6, Inventory number: 2149, Record number: Reg. 1 fol. 24, Book: Huwelijksakten van de gemeente Amsterdam, 1916<br/>\n[https://www.openarchieven.nl/nha:F2A40D8C-4067-44ED-BBEB-511E1530AF5F OpenArch Record] (accessed 6 May 2021)<br/>\n[https://hdl.handle.net/21.12102/F2A40D8C406744EDBBEB511E1530AF5F Noord-Hollands Archief Record]<br/>\nMarcus Haringman divorce from Roosje Bolle on 27 Mar 1916 in Amsterdam, Noord-Holland, Nederland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Marcus was divorced from Roosje Bolle on 27 March 1916 in Amsterdam, Noord-Holland, Nederland.<ref>\n'''Divorce''':\n\"Burgerlijke Stand Huwelijk (Civil registration marriages)\"<br/>\nNoord-Hollands Archief, Collection: burgerlijke stand van de gemeente Amsterdam, Archiefdeel van (dubbele) registers van huwelijken v..., Archive: 358.6, Inventory number: 2149, Record number: Reg. 1 fol. 24, Book: Huwelijksakten van de gemeente Amsterdam, 1916<br/>\n[https://www.openarchieven.nl/nha:F2A40D8C-4067-44ED-BBEB-511E1530AF5F OpenArch Record] (accessed 6 May 2021)<br/>\n[https://hdl.handle.net/21.12102/F2A40D8C406744EDBBEB511E1530AF5F Noord-Hollands Archief Record]<br/>\nMarcus Haringman divorce from Roosje Bolle on 27 Mar 1916 in Amsterdam, Noord-Holland, Nederland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Divorce''': \"Burgerlijke Stand Huwelijk (Civil registration marriages)\"<br/>Noord-Hollands Archief, Collection: burgerlijke stand van de gemeente Amsterdam, Archiefdeel van (dubbele) registers van huwelijken v..., Archive: 358.6, Inventory number: 2149, Record number: Reg. 1 fol. 24, Book: Huwelijksakten van de gemeente Amsterdam, 1916<br/>[https://www.openarchieven.nl/nha:F2A40D8C-4067-44ED-BBEB-511E1530AF5F OpenArch Record] (accessed 6 May 2021)<br/>[https://hdl.handle.net/21.12102/F2A40D8C406744EDBBEB511E1530AF5F Noord-Hollands Archief Record]<br/>Marcus Haringman divorce from Roosje Bolle on 27 Mar 1916 in Amsterdam, Noord-Holland, Nederland.",
+    "type": "source"
+  }
+}

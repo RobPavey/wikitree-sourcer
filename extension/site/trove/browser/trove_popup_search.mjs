@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItemWithSubMenu, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+import { addMenuItemWithSubmenu, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
@@ -81,14 +81,14 @@ async function troveSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addTroveDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search Trove (Aus)",
     function (element) {
       troveDefaultSearch(data.generalizedData, "");
     },
     function () {
-      setupTroveSearchSubMenu(data, backFunction);
+      setupTroveSearchSubmenu(data, backFunction);
     }
   );
 }
@@ -97,10 +97,10 @@ function addTroveDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupTroveSearchSubMenu(data, backFunction) {
+async function setupTroveSearchSubmenu(data, backFunction) {
   let dataModule = await import(`../../../base/core/text_query_menu_data.mjs`);
   dataModule.TextSearchMenuData.searchSiteName = "trove";
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.TextSearchMenuData, troveSearchWithParameters);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.TextSearchMenuData, troveSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

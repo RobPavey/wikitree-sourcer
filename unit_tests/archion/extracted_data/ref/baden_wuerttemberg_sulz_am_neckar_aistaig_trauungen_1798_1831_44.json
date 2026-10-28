@@ -9,7 +9,10 @@
     "Aistaig"
   ],
   "book": "Eheregister 1798-1831",
-  "bookType": "Name Register",
+  "recordTypeCandidates": [
+    "Church Record",
+    "Name Register"
+  ],
   "pageType": "image",
   "uid": "113568",
   "permalink": "https://www.archion.de/p/1aa1b9ba8e/"

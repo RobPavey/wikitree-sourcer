@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Index to Death Certificates (RS141C5)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Registration Code: 2188; Volume: 173; Microfilm: F19577; Date:1946-04-18; Place: Carleton, New Brunswick, Canada<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/death/141c5/544356df-20f8-434c-baa4-5b444604869e New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nHerbert Adair death 18 Apr 1946 in Carleton, New Brunswick, Canada.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Herbert died on 18 April 1946 in Carleton, New Brunswick, Canada.<ref>\n'''Death Registration''':\n\"Index to Death Certificates (RS141C5)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Registration Code: 2188; Volume: 173; Microfilm: F19577; Date:1946-04-18; Place: Carleton, New Brunswick, Canada<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/death/141c5/544356df-20f8-434c-baa4-5b444604869e New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nHerbert Adair death 18 Apr 1946 in Carleton, New Brunswick, Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"Index to Death Certificates (RS141C5)\"<br/>Provincial Archives of New Brunswick; Vital Statistics (RS141); Registration Code: 2188; Volume: 173; Microfilm: F19577; Date:1946-04-18; Place: Carleton, New Brunswick, Canada<br/>[https://archives.gnb.ca/en-ca/vital-statistics/death/141c5/544356df-20f8-434c-baa4-5b444604869e New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>Herbert Adair death 18 Apr 1946 in Carleton, New Brunswick, Canada.",
+    "type": "source"
+  }
+}

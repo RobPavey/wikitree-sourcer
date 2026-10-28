@@ -33,7 +33,41 @@ import { groupSourcesIntoFacts } from "../../../base/core/group_sources_into_fac
 
 import { generalizeData } from "./fs_generalize_data.mjs";
 import { buildCitation } from "./fs_build_citation.mjs";
+import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
+import {
+  extractFsRecordIdFromUrl,
+  extractFsImageIdFromUrl,
+  buildFsRecordLinkOrTemplate,
+  buildFsImageLinkOrTemplate,
+  buildExternalLinkOrTemplate,
+} from "./fs_templates_and_links.mjs";
+
+function extractSingleYear(str) {
+  // Matches 4-digit numbers (typically years starting with 10-20)
+  // \b ensures we match whole words, avoiding IDs like Fletcher-22118
+  const regex = /\b(1[0-9]{3}|2[0-9]{3})\b/g;
+
+  // Find all matches in the string
+  const matches = str.match(regex);
+
+  // We only want a match if there is EXACTLY ONE 4-digit number found
+  if (!matches || matches.length !== 1) {
+    return null;
+  }
+
+  const year = matches[0];
+  const yearIndex = str.indexOf(year);
+
+  // Check the characters immediately surrounding the year to ensure it's not a range (e.g., 1882-84)
+  // Look at the character just after the year
+  const charAfter = str[yearIndex + 4];
+  if (charAfter === "-" || charAfter === "–" || charAfter === "/") {
+    return null;
+  }
+
+  return year;
+}
 
 function inferEventDate(source) {
   // there is no date, this can cause sort issues. Sometimes we can infer one
@@ -52,10 +86,9 @@ function inferEventDate(source) {
   }
 
   if (source.title) {
-    // get any years in title
-    let years = source.title.match(/\d\d\d\d/g);
-    if (years && years.length == 1) {
-      return years[0];
+    let year = extractSingleYear(source.title);
+    if (year) {
+      return year;
     }
   }
 
@@ -138,6 +171,21 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
       }
     }
 
+    // check for source that is a link to a wikitree profile, these are always excluded
+    if (sourceObj.uri) {
+      let wikitreeLinkIndex = sourceObj.uri.search(/wikitree\.com\//i);
+      if (wikitreeLinkIndex != -1) {
+        result.numExcludedWikiTreeSources++;
+        continue;
+      }
+    } else if (source.citation && source.citation.includes("WikiTree")) {
+      result.numExcludedWikiTreeSources++;
+      continue;
+    } else if (source.title && source.title.includes("WikiTree")) {
+      result.numExcludedWikiTreeSources++;
+      continue;
+    }
+
     if (options.buildAll_fs_excludeNonFsSources) {
       if (!sourceObj.uri) {
         result.numExcludedNonFsSources++;
@@ -159,8 +207,15 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
       }
     }
 
+    let excludeAsTreeSource = false;
     // ignore some useless sources
-    if (source.citation == "Ancestry Family Tree" && source.title == "Ancestry Family Trees" && !source.notes) {
+    if (source.citation && source.citation.includes("Ancestry Family Tree")) {
+      let notes = source.notes;
+      if (!notes || notes.startsWith("This information comes from 1 or more individual Ancestry Family Tree files")) {
+        excludeAsTreeSource = true;
+      }
+    }
+    if (excludeAsTreeSource) {
       result.numExcludedTreeSources++;
       continue;
     }
@@ -188,7 +243,7 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
   }
 }
 
-function buildFsPlainCitations(result, type, options) {
+function buildFsSourceInfoCitations(result, runDate, type, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
@@ -205,11 +260,10 @@ function buildFsPlainCitations(result, type, options) {
       if (citationsString) {
         citationsString += "\n";
       }
-      citationsString += buildRefForPlainCitation(source, false, options);
+      citationsString += buildRefForSourceInfoCitation(source, runDate, false, options);
       citationsString += "\n";
     } else {
-      citationsString += "* ";
-      citationsString += getTextForPlainCitation(source, "source", false, options);
+      citationsString += getTextForSourceInfoCitation(source, runDate, "source", false, options);
       citationsString += "\n";
     }
   }
@@ -282,6 +336,9 @@ function inferBestEventDateForCompare(gd) {
             eventDate = gd.marriageDate;
           }
         }
+      } else {
+        // sometimes an event date can be inferred from a related person
+        eventDate = gd.inferEventDate(true);
       }
     }
   }
@@ -319,16 +376,20 @@ function pickBestDateForCompare(recordDate, sourceDate, sourceYear) {
 
 // this can be used both for sorting sources and facts
 function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
-  let recordTypeSortPriority = {};
-  recordTypeSortPriority[RT.Birth] = 1;
-  recordTypeSortPriority[RT.Baptism] = 3;
+  let recordTypeSortPriority = {
+    [RT.Birth]: 1,
+    [RT.BirthOrBaptism]: 2,
+    [RT.Baptism]: 3,
 
-  recordTypeSortPriority[RT.Census] = 50;
+    [RT.Census]: 50,
 
-  recordTypeSortPriority[RT.Death] = 90;
-  recordTypeSortPriority[RT.Burial] = 93;
-  recordTypeSortPriority[RT.Will] = 94;
-  recordTypeSortPriority[RT.Probate] = 95;
+    [RT.Death]: 90,
+    [RT.DeathOrBurial]: 91,
+    [RT.Burial]: 92,
+    [RT.Memorial]: 93,
+    [RT.Will]: 95,
+    [RT.Probate]: 96,
+  };
 
   function getEventPriority(source) {
     let priority = 50;
@@ -357,11 +418,15 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
 
   if (eventDateA && eventDateB) {
     let result = DateUtils.compareDateStrings(eventDateA, eventDateB);
-    if (result == 0) {
+    let datesAreSame = DateUtils.areDateStringsEquivalent(eventDateA, eventDateB);
+    if (datesAreSame) {
       // dates are equal, sort by record type
       let priorityA = getEventPriority(sourceA);
       let priorityB = getEventPriority(sourceB);
-      result = priorityA - priorityB;
+      if (priorityA != priorityB) {
+        // if they are the same priority we keep the order from compareDateStrings
+        result = priorityA - priorityB;
+      }
     }
     if (result != 0) {
       return result;
@@ -451,7 +516,11 @@ function sortFacts(result) {
   result.facts.sort(compareFunction);
 }
 
-function buildNarrativeForPlainCitation(source, options) {
+function buildNarrativeForSourceInfoCitation(source, options) {
+  if (source.userOverrideForNarrative) {
+    return source.userOverrideForNarrative;
+  }
+
   let narrative = "";
 
   if (source.prefName) {
@@ -470,7 +539,190 @@ function buildNarrativeForPlainCitation(source, options) {
   return narrative;
 }
 
-function getTextForPlainCitation(source, type, isSourcerStyle, options) {
+function getTextForSourceInfoCitation(source, runDate, type, isSourcerStyle, options) {
+  let builder = new CitationBuilder(type, runDate, options);
+
+  function cleanText(text) {
+    if (text) {
+      text = text.replace(/\<\/?i\>/gi, "''");
+
+      if (type == "source") {
+        text = text.replace(/ *\n */g, "<br/>");
+        text = text.replace(/\s+/g, " ");
+      } else {
+        text = text.replace(/ *\n */g, "<br/>\n");
+      }
+
+      text = text.trim();
+
+      text = text.replace(/,$/g, "");
+
+      text = text.trim();
+    } else {
+      text = "";
+    }
+    return text;
+  }
+
+  function cleanTitle(text) {
+    if (text) {
+      // sometimes title has a newline after the person's name for no apparent reason
+      let titleText = text.replace(/\n/g, " ");
+      titleText = titleText.replace(/\s+/g, " ");
+      text = cleanText(titleText);
+    }
+    return text;
+  }
+
+  function cleanCitation(text) {
+    if (text) {
+      let titleText = text.replace(/\n/g, " ");
+      titleText = titleText.replace(/\s+/g, " ");
+      text = cleanText(titleText);
+    }
+    return text;
+  }
+
+  function cleanNotes(text) {
+    if (text) {
+      text = cleanText(text);
+
+      // crap that sometimes gets pasted in
+      text = text.replace(/[,\s\n]+save\s+cancel/gi, "");
+      text = text.replace(/\s+View\sblank\sform,?/gi, "");
+      text = text.replace(/\s+Add\salternate\sinformation,?/gi, "");
+      text = text.replace(/\s+Report\s+issue,?/gi, "");
+      text = text.replace(/SAVE\s+PRINT\s+SHARE[,.\s]/gi, "");
+      text = text.replace(/[\s\n]+VIEW[ ,]/gi, "");
+
+      text = text.replace(/ +/g, " ");
+      text = text.trim();
+    } else {
+      text = "";
+    }
+
+    return text;
+  }
+
+  let cleanTitleText = cleanTitle(source.title);
+  let cleanCitationText = cleanCitation(source.citation);
+
+  let includedTitle = false;
+  let includedCitation = false;
+  let includedNotes = false;
+
+  // If it is an FS Source then we only want the full FS citation and not the title.
+  const isFsSource = /^https?\:\/\/familysearch\.org\/ark\:\/\d+\/1\:1\:[A-Z0-1\-]+.*$/.test(source.uri);
+
+  if (source.userOverrideForRefTitle) {
+    if (options.citation_general_meaningfulNames != "none") {
+      builder.meaningfulTitle = cleanText(source.userOverrideForRefTitle);
+    }
+  }
+
+  let sourceTitle = "";
+  let sourceReference = "";
+  let linkText = "";
+  let dataString = "";
+
+  if (cleanCitationText) {
+    if (isFsSource || cleanTitleText.includes(" in the ")) {
+      if (cleanCitationText.includes('"')) {
+        builder.putSourceTitleInQuotes = false;
+      }
+
+      sourceTitle += cleanCitationText;
+      includedCitation = true;
+    } else {
+      if (cleanTitleText.includes('"')) {
+        builder.putSourceTitleInQuotes = false;
+      }
+      sourceTitle += cleanTitleText;
+      includedTitle = true;
+
+      if (!sourceTitle.includes(cleanCitationText)) {
+        if (cleanCitationText.includes('"')) {
+          builder.putSourceTitleInQuotes = false;
+        }
+
+        sourceReference += cleanCitationText;
+        includedCitation = true;
+      }
+    }
+  } else {
+    if (cleanTitleText) {
+      sourceTitle += cleanTitleText;
+      includedTitle = true;
+    }
+  }
+
+  // somtimes the citation is just the uri, in this case it is better to put the title first
+  if (!sourceTitle || sourceTitle == source.uri) {
+    if (!includedTitle) {
+      sourceTitle = cleanTitleText;
+      includedTitle = true;
+    }
+  }
+
+  // if there is no other text other than notes then put it before link
+  if (!sourceTitle && !cleanTitleText && !cleanCitationText) {
+    sourceTitle += cleanText(source.notes);
+    includedNotes = true;
+  }
+
+  if (source.uri && !sourceTitle.includes(source.uri)) {
+    let tempUri = source.uri.replace(/^https?\:\/\/[^\/]+\//, "");
+    if (!sourceTitle.includes(tempUri)) {
+      let target = options.citation_general_target;
+      if (source.uriUpdatedDate) {
+        builder.accessedDateOverride = source.uriUpdatedDate;
+      }
+      if (target == "wikitree") {
+        let url = source.uri;
+        if (extractFsImageIdFromUrl(url)) {
+          linkText = buildFsImageLinkOrTemplate(url);
+        } else if (extractFsRecordIdFromUrl(url)) {
+          linkText = buildFsRecordLinkOrTemplate(url);
+        } else {
+          linkText = buildExternalLinkOrTemplate(url);
+        }
+      } else {
+        linkText = source.uri;
+      }
+    }
+  }
+
+  if (!isFsSource && !includedTitle && cleanTitleText && !sourceTitle.includes(cleanTitleText)) {
+    sourceReference += cleanTitleText;
+  }
+
+  if (!includedCitation && cleanCitationText && !sourceTitle.includes(cleanCitationText)) {
+    dataString += cleanCitationText;
+  }
+
+  if (source.notes && !includedNotes && options.buildAll_fs_includeNotes) {
+    // some notes are an automatic comment like "Source created by RecordSeek.com"
+    // Not useful to include that.
+    if (!source.notes.startsWith("Source created by ")) {
+      if (dataString) {
+        dataString += " ";
+      }
+      dataString += cleanNotes(source.notes);
+    }
+  }
+
+  builder.sourceTitle = sourceTitle;
+  builder.sourceReference = sourceReference;
+  builder.recordLinkOrTemplate = linkText;
+  builder.dataString = dataString;
+
+  // now the builder is setup use it to build the citation object
+  let citationString = builder.getCitationString();
+
+  return citationString;
+}
+
+function getTextForSourceInfoCitationOld(source, type, isSourcerStyle, options) {
   function cleanText(text) {
     if (text) {
       text = text.replace(/\<\/?i\>/gi, "''");
@@ -566,6 +818,11 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
 
   let citationText = "";
 
+  if (source.userOverrideForRefTitle) {
+    if (options) {
+    }
+  }
+
   if (cleanCitationText) {
     if (isFsSource || cleanTitleText.includes(" in the ")) {
       citationText += cleanCitationText;
@@ -635,20 +892,12 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
   return citationText;
 }
 
-function buildRefForPlainCitation(source, isSourcerStyle, options) {
-  let refString = "<ref>";
-  if (options.citation_general_addNewlinesWithinRefs) {
-    refString += "\n";
-  }
-  refString += getTextForPlainCitation(source, "inline", isSourcerStyle, options);
-  if (options.citation_general_addNewlinesWithinRefs) {
-    refString += "\n";
-  }
-  refString += "</ref>";
+function buildRefForSourceInfoCitation(source, runDate, isSourcerStyle, options) {
+  let refString = getTextForSourceInfoCitation(source, runDate, "inline", isSourcerStyle, options);
   return refString;
 }
 
-function generateSourcerCitationsStringForFacts(result, type, options) {
+function generateSourcerCitationsStringForFacts(result, runDate, type, options) {
   // this is only ever used for narrative or inline
   let citationsString = "";
   let citationCount = 0;
@@ -709,9 +958,9 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
       }
 
       if (type == "narrative") {
-        citationsString += buildNarrativeForPlainCitation(source, options);
+        citationsString += buildNarrativeForSourceInfoCitation(source, options);
       }
-      citationsString += buildRefForPlainCitation(source, true, options);
+      citationsString += buildRefForSourceInfoCitation(source, runDate, true, options);
 
       citationsString += "\n";
       citationCount++;
@@ -722,7 +971,7 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
   result.citationCount = citationCount;
 }
 
-function generateSourcerCitationsStringForTypeSource(result, options) {
+function generateSourcerCitationsStringForTypeSource(result, runDate, options) {
   let citationsString = "";
 
   for (let source of result.sources) {
@@ -730,7 +979,7 @@ function generateSourcerCitationsStringForTypeSource(result, options) {
       citationsString += source.citationObject.citation;
       citationsString += "\n";
     } else {
-      citationsString += "* " + getTextForPlainCitation(source, "source", true, options);
+      citationsString += getTextForSourceInfoCitation(source, runDate, "source", true, options);
       citationsString += "\n";
     }
   }
@@ -739,7 +988,7 @@ function generateSourcerCitationsStringForTypeSource(result, options) {
   result.citationCount = result.sources.length;
 }
 
-function generateSourcerCitationsStringForTypeInline(result, options) {
+function generateSourcerCitationsStringForTypeInline(result, runDate, options) {
   let citationsString = "";
 
   for (let source of result.sources) {
@@ -754,7 +1003,7 @@ function generateSourcerCitationsStringForTypeInline(result, options) {
         citationsString += "\n";
       }
 
-      citationsString += buildRefForPlainCitation(source, true, options);
+      citationsString += buildRefForSourceInfoCitation(source, runDate, true, options);
       citationsString += "\n";
     }
   }
@@ -763,7 +1012,7 @@ function generateSourcerCitationsStringForTypeInline(result, options) {
   result.citationCount = result.sources.length;
 }
 
-function generateSourcerCitationsStringForTypeNarrative(result, options) {
+function generateSourcerCitationsStringForTypeNarrative(result, runDate, options) {
   let citationsString = "";
 
   for (let source of result.sources) {
@@ -778,8 +1027,8 @@ function generateSourcerCitationsStringForTypeNarrative(result, options) {
         citationsString += "\n";
       }
 
-      citationsString += buildNarrativeForPlainCitation(source, options);
-      citationsString += buildRefForPlainCitation(source, true, options);
+      citationsString += buildNarrativeForSourceInfoCitation(source, options);
+      citationsString += buildRefForSourceInfoCitation(source, runDate, true, options);
       citationsString += "\n";
     }
   }
@@ -821,6 +1070,37 @@ function doesCitationWantHouseholdTable(citationType, generalizedData, options) 
   return false;
 }
 
+function buildSourcerCitationGivenGd(runDate, source, type, options) {
+  let extractedData = source.extractedData;
+  let generalizedData = source.generalizedData;
+
+  let householdTableString = "";
+  if (doesCitationWantHouseholdTable(type, generalizedData, options)) {
+    const tableInput = {
+      extractedData: extractedData,
+      generalizedData: generalizedData,
+      dataCache: undefined,
+      options: options,
+    };
+
+    const tableObject = buildHouseholdTable(tableInput);
+    householdTableString = tableObject.tableString;
+  }
+
+  const input = {
+    extractedData: extractedData,
+    generalizedData: generalizedData,
+    runDate: runDate,
+    type: type,
+    dataCache: undefined,
+    options: options,
+    householdTableString: householdTableString,
+  };
+  const citationObject = buildCitation(input);
+  citationObject.generalizedData = generalizedData;
+  source.citationObject = citationObject;
+}
+
 function buildSourcerCitation(runDate, source, type, options) {
   if (source.dataObjects) {
     let extractedData = source.extractedData;
@@ -831,32 +1111,7 @@ function buildSourcerCitation(runDate, source, type, options) {
       let generalizedData = generalizeData({ extractedData: extractedData });
       if (generalizedData && generalizedData.hasValidData) {
         source.generalizedData = generalizedData;
-
-        let householdTableString = "";
-        if (doesCitationWantHouseholdTable(type, generalizedData, options)) {
-          const tableInput = {
-            extractedData: extractedData,
-            generalizedData: generalizedData,
-            dataCache: undefined,
-            options: options,
-          };
-
-          const tableObject = buildHouseholdTable(tableInput);
-          householdTableString = tableObject.tableString;
-        }
-
-        const input = {
-          extractedData: extractedData,
-          generalizedData: generalizedData,
-          runDate: runDate,
-          type: type,
-          dataCache: undefined,
-          options: options,
-          householdTableString: householdTableString,
-        };
-        const citationObject = buildCitation(input);
-        citationObject.generalizedData = generalizedData;
-        source.citationObject = citationObject;
+        buildSourcerCitationGivenGd(runDate, source, type, options);
       }
     }
   }
@@ -896,88 +1151,147 @@ function buildSourcerCitation(runDate, source, type, options) {
   }
 }
 
-async function buildSourcerCitations(result, type, options) {
+function pruneSources(result, options) {
+  if (result.failureCount) {
+    let prunedSources = [];
+    let failedSources = [];
+    for (let source of result.sources) {
+      if (source.fetchStatus && !source.fetchStatus.success) {
+        failedSources.push(source);
+      } else {
+        prunedSources.push(source);
+      }
+    }
+
+    result.sources = prunedSources;
+    result.fetchFailedSources = failedSources;
+  }
+
+  // always exclude duplicate sources
+  {
+    let newSources = [];
+    if (result.sources.length) {
+      newSources.push(result.sources[0]);
+    }
+    for (let thisIndex = 1; thisIndex < result.sources.length; thisIndex++) {
+      let source = result.sources[thisIndex];
+      let removeSource = false;
+      let ed = source.extractedData;
+      if (ed && ed.recordUrl) {
+        let thisRecordUrl = ed.recordUrl;
+        let thisImageUrl = ed.fsImageUrl;
+
+        // compare with previous sources to see if it is a duplicate
+        for (let otherIndex = 0; otherIndex < thisIndex; otherIndex++) {
+          let otherSource = result.sources[otherIndex];
+          let otherEd = otherSource.extractedData;
+          if (otherEd && otherEd.recordUrl) {
+            let otherRecordUrl = otherEd.recordUrl;
+            let otherImageUrl = otherEd.fsImageUrl;
+
+            //console.log("otherSource.uri = " + otherSource.uri);
+            if (otherRecordUrl == thisRecordUrl) {
+              if (!thisImageUrl || otherImageUrl == thisImageUrl) {
+                removeSource = true;
+                break;
+              }
+            }
+          }
+        }
+      }
+
+      if (removeSource) {
+        result.numExcludedDuplicateSources++;
+      } else {
+        newSources.push(source);
+      }
+    }
+    result.sources = newSources;
+  }
+
+  if (options.buildAll_fs_excludeOtherRoleSources) {
+    let newSources = [];
+    for (let source of result.sources) {
+      if (source.citationObject) {
+        const gd = source.generalizedData;
+        if (gd && gd.role && gd.role != Role.Primary) {
+          // exclude this one
+          result.numExcludedOtherRoleSources++;
+        } else {
+          newSources.push(source);
+        }
+      } else {
+        newSources.push(source);
+      }
+    }
+    result.sources = newSources;
+  }
+
+  if (options.buildAll_fs_excludeRetiredSources != "never") {
+    let newSources = [];
+    for (let source of result.sources) {
+      let removeSource = false;
+      let ed = source.extractedData;
+      // e.g. "Forward To Ark": "https://familysearch.org/ark:/61903/1:2:9HXH-3B3",
+      if (ed && ed.recordData && ed.recordData["Forward To Ark"]) {
+        if (options.buildAll_fs_excludeRetiredSources == "always") {
+          removeSource = true;
+        } else {
+          // the forward to Ark URL cannot be compared as it is a weird redirect using "/1:2:"
+          // but the current URL is store in either forwardPersonToArk or extData in this case.
+          let currentSourceUrl = ed.forwardPersonToArk;
+          if (!currentSourceUrl) {
+            if (ed.extData && ed.extData.startsWith("http")) {
+              currentSourceUrl = ed.extData;
+            }
+          }
+
+          if (currentSourceUrl) {
+            currentSourceUrl = currentSourceUrl.replace("www.familysearch.org", "familysearch.org");
+
+            //console.log("currentSourceUrl = " + currentSourceUrl);
+
+            for (let otherSource of result.sources) {
+              //console.log("otherSource.uri = " + otherSource.uri);
+              if (otherSource.uri == currentSourceUrl) {
+                removeSource = true;
+                //console.log("removing duplicate source");
+                break;
+              }
+            }
+          }
+        }
+      }
+
+      if (removeSource) {
+        result.numExcludedRetiredSources++;
+      } else {
+        newSources.push(source);
+      }
+    }
+    result.sources = newSources;
+  }
+}
+
+async function buildSourcerCitations(result, runDate, type, options) {
   try {
-    if (options.buildAll_fs_excludeOtherRoleSources) {
-      let newSources = [];
-      for (let source of result.sources) {
-        if (source.citationObject) {
-          const gd = source.generalizedData;
-          if (gd && gd.role && gd.role != Role.Primary) {
-            // exclude this one
-            result.numExcludedOtherRoleSources++;
-          } else {
-            newSources.push(source);
-          }
-        } else {
-          newSources.push(source);
-        }
-      }
-      result.sources = newSources;
-    }
-
-    if (options.buildAll_fs_excludeRetiredSources != "never") {
-      let newSources = [];
-      for (let source of result.sources) {
-        let removeSource = false;
-        let ed = source.extractedData;
-        // e.g. "Forward To Ark": "https://familysearch.org/ark:/61903/1:2:9HXH-3B3",
-        if (ed && ed.recordData && ed.recordData["Forward To Ark"]) {
-          if (options.buildAll_fs_excludeRetiredSources == "always") {
-            removeSource = true;
-          } else {
-            // the forward to Ark URL cannot be compared as it is a weird redirect using "/1:2:"
-            // but the current URL is store in either forwardPersonToArk or extData in this case.
-            let currentSourceUrl = ed.forwardPersonToArk;
-            if (!currentSourceUrl) {
-              if (ed.extData && ed.extData.startsWith("http")) {
-                currentSourceUrl = ed.extData;
-              }
-            }
-
-            if (currentSourceUrl) {
-              currentSourceUrl = currentSourceUrl.replace("www.familysearch.org", "familysearch.org");
-
-              //console.log("currentSourceUrl = " + currentSourceUrl);
-
-              for (let otherSource of result.sources) {
-                //console.log("otherSource.uri = " + otherSource.uri);
-                if (otherSource.uri == currentSourceUrl) {
-                  removeSource = true;
-                  //console.log("removing duplicate source");
-                  break;
-                }
-              }
-            }
-          }
-        }
-
-        if (removeSource) {
-          result.numExcludedDuplicateSources++;
-        } else {
-          newSources.push(source);
-        }
-      }
-      result.sources = newSources;
-    }
-
     sortSourcesUsingFsSortKeysAndFetchedRecords(result);
 
     if (type == "source") {
-      generateSourcerCitationsStringForTypeSource(result, options);
+      generateSourcerCitationsStringForTypeSource(result, runDate, options);
     } else {
       let groupCitations = options.buildAll_fs_groupCitations;
 
       if (groupCitations) {
         groupSourcesIntoFacts(result, type, options); // only needed for inlne and narrative
         sortFacts(result);
-        generateSourcerCitationsStringForFacts(result, type, options);
+        generateSourcerCitationsStringForFacts(result, runDate, type, options);
       } else {
         if (type == "inline") {
-          generateSourcerCitationsStringForTypeInline(result, options);
+          generateSourcerCitationsStringForTypeInline(result, runDate, options);
         } else {
           // must be narrative
-          generateSourcerCitationsStringForTypeNarrative(result, options);
+          generateSourcerCitationsStringForTypeNarrative(result, runDate, options);
         }
       }
     }
@@ -990,4 +1304,11 @@ async function buildSourcerCitations(result, type, options) {
   }
 }
 
-export { filterAndEnhanceFsSourcesIntoSources, buildSourcerCitation, buildSourcerCitations, buildFsPlainCitations };
+export {
+  filterAndEnhanceFsSourcesIntoSources,
+  buildSourcerCitationGivenGd,
+  buildSourcerCitation,
+  buildSourcerCitations,
+  buildFsSourceInfoCitations,
+  pruneSources,
+};

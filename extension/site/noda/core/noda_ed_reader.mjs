@@ -1917,18 +1917,6 @@ class NodaEdReader extends ExtractedDataReader {
     return undefined;
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
-  }
-
   getBirthDateObj() {
     let dateString = this.getRecordDataValue("birthDate");
     let yearString = this.getRecordDataValue("birthYear");

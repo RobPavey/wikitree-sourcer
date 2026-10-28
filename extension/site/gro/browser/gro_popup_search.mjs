@@ -424,7 +424,7 @@ function addGroSmartSearchDeathsMenuItem(menu, data, filter) {
 
 function addGroDefaultSearchMenuItem(menu, data, backFunction, filter) {
   addMenuItem(menu, "Search GRO (UK)...", function (element) {
-    setupGroSearchSubMenu(data, backFunction, filter);
+    setupGroSearchSubmenu(data, backFunction, filter);
   });
 
   return true;
@@ -466,7 +466,7 @@ function addGroSameRecordMenuItem(menu, data) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupGroSearchSubMenu(data, backFunction, filter) {
+async function setupGroSearchSubmenu(data, backFunction, filter) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);

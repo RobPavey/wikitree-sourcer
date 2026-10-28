@@ -1,0 +1,1091 @@
+{
+  "agents" : [ {
+    "id" : "a1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "findagrave.com" ]
+    }
+  } ],
+  "attribution" : {
+    "created" : 1742407863906,
+    "modified" : 1742407863906
+  },
+  "description" : "#sd_p_101075863232",
+  "fields" : [ {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "388cc17c-f265-467e-b58d-9d4962968285",
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "d715673e-f2a0-4508-b534-301fad63f10d",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "05/01/2023 08:50:00 AM;2023-05-01_Part001.tsv;dbj",
+      "type" : "http://gedcomx.org/Interpreted"
+    } ]
+  }, {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "0dab570c-e789-4590-9d0e-72d8f53dc0d0",
+    "type" : "http://familysearch.org/types/fields/MiscFlagPhotoIncluded",
+    "values" : [ {
+      "id" : "5df01ddf-99f7-4c27-b7d9-139afa628463",
+      "labelId" : "MISC_FLAG_PHOTO_INCLUDED_ORIG",
+      "text" : "Y",
+      "type" : "http://gedcomx.org/Original"
+    } ]
+  }, {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "59a1807b-0f2f-46b1-bfeb-659255481721",
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "dd95b2aa-b85e-4615-8357-9adde3d437b5",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "0",
+      "type" : "http://gedcomx.org/Interpreted"
+    } ]
+  }, {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "f9a6c66d-a27f-480d-bb12-7b8c480e2f18",
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "67a1d90c-dc74-464b-9709-319465b87cc0",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"pr_nic\": \"Dan\", \"ext_url_alt\": \"https://www.findagrave.com/memorial/38648452/daniel-webster-abbott\", \"ui_source_flag\": \"I-TABLE 2023_04;2023_05_01\", \"ext_cemetery_city_id\": \"111314\", \"ext_cemetery_state_id\": \"38\", \"ext_created_timestamp\": \"2009-06-23T04:04:03.000Z\", \"ext_updated_timestamp\": \"2023-04-19T22:15:28.000Z\", \"last_overwrite_update\": \"May 2023 update\", \"ext_cemetery_county_id\": \"2199\", \"ext_cemetery_country_id\": \"4\", \"ext_cemetery_state_abbrev\": \"ok\", \"ext_cemetery_country_abbrev\": \"USA\", \"misc_flag_photo_included_alt\": \"N\"}",
+      "type" : "http://gedcomx.org/Original"
+    }, {
+      "id" : "67a1d90c-dc74-464b-9709-319465b87cc0",
+      "labelId" : "EXT_DATA",
+      "text" : "{\"EXT_URL\":\"http://www.findagrave.com/cgi-bin/fg.cgi?page=gr&GRid=38648452&ref=3rdParty\",\"FS_COLLECTION_ID\":\"2221801\",\"EXT_STATUS_CODE\":\"1\"}",
+      "type" : "http://gedcomx.org/Interpreted"
+    } ]
+  }, {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "2110aa80-c4fe-445d-9b32-5c233c4df911",
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "14843ab7-2e00-45dc-848d-e26aa46a56e2",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "73220",
+      "type" : "http://gedcomx.org/Interpreted"
+    } ]
+  }, {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "b93dfc55-9fe5-4282-a7eb-fc56fbf2067b",
+    "type" : "http://familysearch.org/types/fields/ExtRecordId",
+    "values" : [ {
+      "id" : "bc870384-798e-4bbf-b079-f14e6afd91f1",
+      "labelId" : "EXT_RECORD_ID_ORIG",
+      "text" : "38648452",
+      "type" : "http://gedcomx.org/Original"
+    } ]
+  }, {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "ab01e67f-7b8d-4d66-b4d7-bb8739b3e8f3",
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "62fa44fe-d85c-46d2-a5dc-cd7621e6121f",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "13-0804",
+      "type" : "http://gedcomx.org/Interpreted"
+    } ]
+  }, {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "c9da6790-4326-43f6-b244-0cbcba3bfacd",
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "a2a9a59c-578d-4fb2-a540-a4df3132212a",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_UNIQUE_ID\":\"1002852728736\"}",
+      "type" : "http://gedcomx.org/Interpreted"
+    } ]
+  }, {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "997ff80b-6e70-4c02-860a-e90a84020e31",
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "051a8700-fccc-44ca-824d-9e55176f442e",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production",
+      "type" : "http://gedcomx.org/Interpreted"
+    } ]
+  }, {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "ad9385a2-8156-4551-938f-ca0a0c484be1",
+    "type" : "http://familysearch.org/types/fields/ExtImageId",
+    "values" : [ {
+      "id" : "0030bc60-157a-479c-9288-500fb2c20082",
+      "labelId" : "EXT_IMAGE_ID_ORIG",
+      "text" : "38648452",
+      "type" : "http://gedcomx.org/Original"
+    } ]
+  }, {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "44e90662-a9a0-4723-9bbc-8d72c96d9134",
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "549ad189-6931-4cee-9f25-8a45f11e789b",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false",
+      "type" : "http://gedcomx.org/Interpreted"
+    } ]
+  }, {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "06f6c9c5-cb80-4680-9b9a-2eb68f4fb6ff",
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "21ba9e8a-4602-4625-bb7f-ec98e61cfc19",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "U533_O245_C452_R324_A130_D500_00000000000038648452_00000001002852728736",
+      "type" : "http://gedcomx.org/Interpreted"
+    } ]
+  }, {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "id" : "e82e7598-248d-4855-9831-23fa4d9c0b51",
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "4b315160-502a-499e-915c-60bbd5dfabb4",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "5",
+      "type" : "http://gedcomx.org/Interpreted"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS",
+      "type" : "http://gedcomx.org/Interpreted"
+    } ]
+  } ],
+  "id" : "r_102101310332",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q29L-MM8S?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q29L-MM8S?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q29L-MM8S"
+    }
+  },
+  "persons" : [ {
+    "attribution" : {
+      "created" : 1742407863906,
+      "modified" : 1742407863906
+    },
+    "display" : {
+      "birthDate" : "21 Mar 1884",
+      "deathDate" : "19 Jan 1929",
+      "name" : "Daniel Webster Abbott"
+    },
+    "extracted" : true,
+    "facts" : [ {
+      "attribution" : {
+        "created" : 1742407863906,
+        "modified" : 1742407863906
+      },
+      "date" : {
+        "fields" : [ {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "3c25c12b-3e7d-42b1-a561-6e665192f102",
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "59f57d84-f6c2-4564-8a4b-94040f9aa454",
+            "labelId" : "PR_BIR_MONTH_ORIG",
+            "text" : "Mar",
+            "type" : "http://gedcomx.org/Original"
+          } ]
+        }, {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "efdec69e-d7f7-477d-8ea8-0ec97cec0a13",
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "53f483ec-8546-4710-b41a-d05a03fe3575",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1884",
+            "type" : "http://gedcomx.org/Original"
+          } ]
+        }, {
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.6.0"
+            }
+          },
+          "id" : "984c7a1b-909a-43b0-84c8-85b8d798ac9a",
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "ce134c2c-1dd7-45c6-83bf-b36e5ee50ee8",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "21 Mar 1884",
+            "type" : "http://gedcomx.org/Original",
+            "qualifiers" : [ {
+              "name" : "http://familysearch.org/types/qualifiers/Preferred",
+              "value" : "true"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.6.0"
+              }
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "id" : "ce134c2c-1dd7-45c6-83bf-b36e5ee50ee8",
+            "labelId" : "PR_BIR_DATE",
+            "resource" : "+1884-03-21",
+            "text" : "21 March 1884",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0"
+            } ]
+          } ]
+        }, {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "7adf581e-4c4c-4ede-bc07-40d410b98d20",
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "4291d6ff-5786-42bc-b6a7-d4ceaf5935fc",
+            "labelId" : "PR_BIR_DAY_ORIG",
+            "text" : "21",
+            "type" : "http://gedcomx.org/Original"
+          } ]
+        } ],
+        "id" : "bbd9fbf6-6680-4965-90e7-15dceba82836",
+        "original" : "21 Mar 1884"
+      },
+      "id" : "b16eec67-f1cf-4ef8-ad17-e3a13768bf41",
+      "type" : "http://gedcomx.org/Birth"
+    }, {
+      "attribution" : {
+        "created" : 1742407863906,
+        "modified" : 1742407863906
+      },
+      "date" : {
+        "fields" : [ {
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.6.0"
+            }
+          },
+          "id" : "4ea6f3c3-82e4-4af3-a756-585178add43e",
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "aec2a02d-350e-415e-a057-cdabb19526a8",
+            "labelId" : "PR_DEA_DATE_ORIG",
+            "text" : "19 Jan 1929",
+            "type" : "http://gedcomx.org/Original",
+            "qualifiers" : [ {
+              "name" : "http://familysearch.org/types/qualifiers/Preferred",
+              "value" : "true"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.6.0"
+              }
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "id" : "aec2a02d-350e-415e-a057-cdabb19526a8",
+            "labelId" : "PR_DEA_DATE",
+            "resource" : "+1929-01-19",
+            "text" : "19 January 1929",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0"
+            } ]
+          } ]
+        }, {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "8f4ab480-b7ca-46d0-9211-25bd2ecab7c9",
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "6f89c654-ddac-486f-9bfd-831ff755c7e1",
+            "labelId" : "PR_DEA_DAY_ORIG",
+            "text" : "19",
+            "type" : "http://gedcomx.org/Original"
+          } ]
+        }, {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "35488861-f8df-43b7-9bcc-f48e2b6e3f0a",
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "7ecdf308-f5e2-45cb-bb43-3f891e4bb85f",
+            "labelId" : "PR_DEA_MONTH_ORIG",
+            "text" : "Jan",
+            "type" : "http://gedcomx.org/Original"
+          } ]
+        }, {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "7bd9f158-a886-4d7e-8bac-58c1c59c77a7",
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "c8b2feea-b1ba-4474-abef-216e7d2400a6",
+            "labelId" : "PR_DEA_YEAR_ORIG",
+            "text" : "1929",
+            "type" : "http://gedcomx.org/Original"
+          }, {
+            "id" : "c8b2feea-b1ba-4474-abef-216e7d2400a6",
+            "labelId" : "PR_DEA_YEAR",
+            "text" : "1929",
+            "type" : "http://gedcomx.org/Interpreted"
+          } ]
+        } ],
+        "id" : "33b2142e-d00c-4716-9e23-adbea1f310f6",
+        "original" : "19 Jan 1929"
+      },
+      "id" : "bf1082d9-7b00-40f5-be44-5265dc48a885",
+      "type" : "http://gedcomx.org/Death"
+    }, {
+      "attribution" : {
+        "created" : 1742407863906,
+        "modified" : 1742407863906
+      },
+      "fields" : [ {
+        "attribution" : {
+          "created" : 1742407863906,
+          "modified" : 1742407863906
+        },
+        "id" : "e73aa2b4-4b3e-48a3-915d-41b834b4fff7",
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "877aa9f5-476b-47d5-a417-e6daf8ea8dd5",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "resource" : "http://gedcomx.org/Burial",
+          "text" : "Burial",
+          "type" : "http://gedcomx.org/Original"
+        } ]
+      } ],
+      "id" : "061c37d6-6b94-4454-8905-300f27a988f0",
+      "place" : {
+        "description" : "#place_4804887",
+        "fields" : [ {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "56fb9dd1-18b7-427d-8ab3-7411a3d929b7",
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "efaeed3d-777c-4349-9b14-03999b152a89",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Collinsville, Tulsa, Oklahoma, United States of America",
+            "type" : "http://gedcomx.org/Original",
+            "qualifiers" : [ {
+              "name" : "http://familysearch.org/types/qualifiers/Preferred",
+              "value" : "true"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.7.0"
+              },
+              "created" : 1783012833028,
+              "modified" : 1783012833028
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=97&fieldScorerVersion=1.0.0",
+            "id" : "efaeed3d-777c-4349-9b14-03999b152a89",
+            "labelId" : "EVENT_PLACE",
+            "resource" : "https://www.familysearch.org/platform/places/description/4804887",
+            "text" : "Ridgelawn Cemetery, Collinsville Township, Tulsa, Oklahoma, United States",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NR,SC&fieldScorerVersion=1.0.0"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.7.0"
+              },
+              "created" : 1783012833028,
+              "modified" : 1783012833028
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=97&fieldScorerVersion=1.0.0",
+            "id" : "efaeed3d-777c-4349-9b14-03999b152a89",
+            "labelId" : "EVENT_PLACE",
+            "resource" : "https://www.familysearch.org/platform/places/description/4567254",
+            "text" : "Ridgelawn Cemetery, Delawanna, Passaic, New Jersey, United States",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NR,SC&fieldScorerVersion=1.0.0"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.7.0"
+              },
+              "created" : 1783012833028,
+              "modified" : 1783012833028
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=97&fieldScorerVersion=1.0.0",
+            "id" : "efaeed3d-777c-4349-9b14-03999b152a89",
+            "labelId" : "EVENT_PLACE",
+            "resource" : "https://www.familysearch.org/platform/places/description/4110080",
+            "text" : "Ridgelawn Cemetery, Gary, Lake, Indiana, United States",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NR,SC&fieldScorerVersion=1.0.0"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.7.0"
+              },
+              "created" : 1783012833028,
+              "modified" : 1783012833028
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=97&fieldScorerVersion=1.0.0",
+            "id" : "efaeed3d-777c-4349-9b14-03999b152a89",
+            "labelId" : "EVENT_PLACE",
+            "resource" : "https://www.familysearch.org/platform/places/description/4964273",
+            "text" : "Ridgelawn Cemetery, Pittsburgh, Allegheny, Pennsylvania, United States",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NR,SC&fieldScorerVersion=1.0.0"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.7.0"
+              },
+              "created" : 1783012833028,
+              "modified" : 1783012833028
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=97&fieldScorerVersion=1.0.0",
+            "id" : "efaeed3d-777c-4349-9b14-03999b152a89",
+            "labelId" : "EVENT_PLACE",
+            "resource" : "https://www.familysearch.org/platform/places/description/11832151",
+            "text" : "Ridgelawn Cemetery, Breckenridge, Wheeler Township, Gratiot, Michigan, United States",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NR,SC&fieldScorerVersion=1.0.0"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.7.0"
+              },
+              "created" : 1783012833028,
+              "modified" : 1783012833028
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=97&fieldScorerVersion=1.0.0",
+            "id" : "efaeed3d-777c-4349-9b14-03999b152a89",
+            "labelId" : "EVENT_PLACE",
+            "resource" : "https://www.familysearch.org/platform/places/description/10325827",
+            "text" : "Ridgelawn Cemetery, Martinsville, Clark, Illinois, United States",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NR,SC&fieldScorerVersion=1.0.0"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.7.0"
+              },
+              "created" : 1783012833028,
+              "modified" : 1783012833028
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=97&fieldScorerVersion=1.0.0",
+            "id" : "efaeed3d-777c-4349-9b14-03999b152a89",
+            "labelId" : "EVENT_PLACE",
+            "resource" : "https://www.familysearch.org/platform/places/description/8488848",
+            "text" : "Ridgelawn Cemetery, Guyan Township, Gallia, Ohio, United States",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NR,SC&fieldScorerVersion=1.0.0"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.7.0"
+              },
+              "created" : 1783012833028,
+              "modified" : 1783012833028
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=97&fieldScorerVersion=1.0.0",
+            "id" : "efaeed3d-777c-4349-9b14-03999b152a89",
+            "labelId" : "EVENT_PLACE",
+            "resource" : "https://www.familysearch.org/platform/places/description/8362661",
+            "text" : "Ridgelawn Cemetery, Watertown, Middlesex, Massachusetts, United States",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NR,SC&fieldScorerVersion=1.0.0"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.7.0"
+              },
+              "created" : 1783012833028,
+              "modified" : 1783012833028
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=97&fieldScorerVersion=1.0.0",
+            "id" : "efaeed3d-777c-4349-9b14-03999b152a89",
+            "labelId" : "EVENT_PLACE",
+            "resource" : "https://www.familysearch.org/platform/places/description/5242597",
+            "text" : "Ridgelawn Cemetery, Sugar Grove, Smyth, Virginia, United States",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NR,SC&fieldScorerVersion=1.0.0"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.7.0"
+              },
+              "created" : 1783012833028,
+              "modified" : 1783012833028
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=97&fieldScorerVersion=1.0.0",
+            "id" : "efaeed3d-777c-4349-9b14-03999b152a89",
+            "labelId" : "EVENT_PLACE",
+            "resource" : "https://www.familysearch.org/platform/places/description/3876431",
+            "text" : "Ridgelawn Cemetery, Clewiston, Hendry, Florida, United States",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NR,SC&fieldScorerVersion=1.0.0"
+            } ]
+          }, {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.7.0"
+              },
+              "created" : 1783012833028,
+              "modified" : 1783012833028
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=97&fieldScorerVersion=1.0.0",
+            "id" : "efaeed3d-777c-4349-9b14-03999b152a89",
+            "labelId" : "EVENT_PLACE",
+            "resource" : "https://www.familysearch.org/platform/places/description/8479277",
+            "text" : "Ridgelawn Cemetery, Elyria, Lorain, Ohio, United States",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NR,SC&fieldScorerVersion=1.0.0"
+            } ]
+          } ]
+        }, {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "0f8359e8-a042-4197-96dc-c624bd1e2e5b",
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "b9dba721-3769-4676-a8a8-1dc96cbd3848",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Tulsa",
+            "type" : "http://gedcomx.org/Original"
+          } ]
+        }, {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "022720bc-fde4-4ca4-a47f-db981cce2973",
+          "type" : "http://gedcomx.org/Cemetery",
+          "values" : [ {
+            "id" : "8e55de87-7aa4-4da4-9328-0117b740f4e4",
+            "labelId" : "EVENT_CEMETERY_ORIG",
+            "text" : "Ridgelawn Cemetery",
+            "type" : "http://gedcomx.org/Original"
+          } ]
+        }, {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "dc8e11d1-696f-437c-813c-25f1bb7adc5d",
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "c5069334-a10f-4194-9f7e-225b03dc3032",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Collinsville",
+            "type" : "http://gedcomx.org/Original"
+          } ]
+        }, {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "9c14246c-abb0-4362-82e9-2ae0721c8dff",
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "21b42c6f-2580-4d3e-b9f5-844ea95983aa",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States of America",
+            "type" : "http://gedcomx.org/Original"
+          } ]
+        }, {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "b2ae2082-edad-438c-a96c-7d8bb7a2a86d",
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "eaa0711e-bd3e-4d81-af14-f1649686c7dc",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Oklahoma",
+            "type" : "http://gedcomx.org/Original"
+          } ]
+        } ],
+        "id" : "d324a6be-d88d-44f5-b1a6-63a824ee121d",
+        "original" : "Collinsville, Tulsa, Oklahoma, United States of America"
+      },
+      "primary" : true,
+      "type" : "http://gedcomx.org/Burial"
+    } ],
+    "fields" : [ {
+      "attribution" : {
+        "created" : 1742407863906,
+        "modified" : 1742407863906
+      },
+      "id" : "726a1992-e7ff-4c2d-91d0-f211107da0ba",
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "205ab534-c419-4d8c-baa9-a6960269f14c",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "U533_O245_C452_R324_A130_D500_00000000000038648452_00000001002852728736_000",
+        "type" : "http://gedcomx.org/Interpreted"
+      } ]
+    }, {
+      "attribution" : {
+        "created" : 1742407863906,
+        "modified" : 1742407863906
+      },
+      "id" : "8ba8bc9a-d3b1-430c-bab3-c90d901719db",
+      "type" : "http://familysearch.org/types/fields/AgeYears",
+      "values" : [ {
+        "id" : "584c4595-43df-4d53-801e-cf6fdf5b9acf",
+        "labelId" : "PR_AGE_YEARS",
+        "text" : "45",
+        "type" : "http://gedcomx.org/Interpreted"
+      } ],
+      "qualifiers" : [ {
+        "name" : "AgeIdentifier",
+        "value" : "58af896b-c498-489c-bd26-29387d32b7d4"
+      } ]
+    } ],
+    "id" : "p_101075863232",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVKF-MXLS" ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QVKF-MXLS?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/Q29L-MM8S?flag=fsh"
+      }
+    },
+    "names" : [ {
+      "attribution" : {
+        "created" : 1742407863906,
+        "modified" : 1742407863906
+      },
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "id" : "3253c3d4-3195-4769-bc92-5b01ef3a387a",
+      "nameForms" : [ {
+        "fields" : [ {
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+            }
+          },
+          "id" : "df64a40d-563d-4900-8e49-ad5416dd926d",
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+              }
+            },
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "id" : "11c5a808-e0f5-4fb1-b812-24918d523fa8",
+            "labelId" : "PR_NAME",
+            "text" : "Daniel Webster Abbott",
+            "type" : "http://gedcomx.org/Interpreted",
+            "qualifiers" : [ {
+              "name" : "StdQualifier",
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0"
+            } ]
+          } ]
+        } ],
+        "fullText" : "Daniel Webster Abbott",
+        "parts" : [ {
+          "fields" : [ {
+            "attribution" : {
+              "created" : 1742407863906,
+              "modified" : 1742407863906
+            },
+            "id" : "d5215927-5c4b-499f-8f27-b9beec4ef349",
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "98e0abfe-39f1-4ad8-8067-e8c3ed7ca168",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Abbott",
+              "type" : "http://gedcomx.org/Original"
+            }, {
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+                }
+              },
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "id" : "98e0abfe-39f1-4ad8-8067-e8c3ed7ca168",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Abbott",
+              "type" : "http://gedcomx.org/Interpreted",
+              "qualifiers" : [ {
+                "name" : "StdQualifier",
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0"
+              } ]
+            } ]
+          } ],
+          "id" : "9af5957b-0904-4647-b0c0-7749ddf2cd17",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Abbott"
+        }, {
+          "fields" : [ {
+            "attribution" : {
+              "created" : 1742407863906,
+              "modified" : 1742407863906
+            },
+            "id" : "62336920-0772-4001-8c6c-fa588e54d6c7",
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "236e74f3-0856-4dc7-856f-c8d975f961c7",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Daniel Webster",
+              "type" : "http://gedcomx.org/Original"
+            }, {
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.4.0"
+                }
+              },
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "id" : "236e74f3-0856-4dc7-856f-c8d975f961c7",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Daniel Webster",
+              "type" : "http://gedcomx.org/Interpreted",
+              "qualifiers" : [ {
+                "name" : "StdQualifier",
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0"
+              } ]
+            } ]
+          } ],
+          "id" : "158f295c-8149-4527-913d-0ced25a199af",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Daniel Webster"
+        } ]
+      } ],
+      "preferred" : false,
+      "type" : "http://gedcomx.org/BirthName"
+    }, {
+      "attribution" : {
+        "created" : 1742407863906,
+        "modified" : 1742407863906
+      },
+      "id" : "48417c77-17e4-4eee-9721-bedbfe4d3038",
+      "nameForms" : [ {
+        "fields" : [ {
+          "attribution" : {
+            "created" : 1742407863906,
+            "modified" : 1742407863906
+          },
+          "id" : "90f009e6-0f24-4d91-bb86-d0f3e88945d0",
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "23f1cfb5-16ac-4305-98fb-6212d01e3767",
+            "labelId" : "PR_AKA_ORIG",
+            "text" : "Dan",
+            "type" : "http://gedcomx.org/Original"
+          } ]
+        } ],
+        "fullText" : "Dan"
+      } ],
+      "preferred" : false,
+      "type" : "http://gedcomx.org/AlsoKnownAs"
+    } ],
+    "principal" : true,
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ]
+  } ],
+  "places" : [ {
+    "id" : "place_4804887",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/4804887" ]
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:Q29L-MM8S",
+    "citations" : [ {
+      "value" : "\"Find a Grave Index\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVKF-MXLS : Wed Jul 15 07:13:34 UTC 2026), Entry for Dan."
+    } ],
+    "componentOf" : {
+      "description" : "#sd_c_2221801",
+      "descriptionId" : "sd_c_2221801"
+    },
+    "coverage" : [ {
+      "recordType" : "http://gedcomx.org/Death",
+      "spatial" : {
+        "description" : "https://www.familysearch.org/platform/places/description/4804887",
+        "original" : "Ridgelawn Cemetery, Collinsville Township, Tulsa, Oklahoma, United States"
+      }
+    } ],
+    "created" : 1742407863906,
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/platform/records/collections/2221801?arkName=1:2:Q29L-MM8S"
+    },
+    "id" : "src_r_102101310332",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1002852728736" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:Q29L-MM8S" ]
+    },
+    "mediaType" : "image/jpeg",
+    "modified" : 1784099614072,
+    "resourceType" : "http://gedcomx.org/Record",
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmFhlc", "http://familysearch.org/records/recordPermissions/CdsPrmLdsMember", "http://familysearch.org/records/recordPermissions/CdsPrmRegisteredPatron" ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "statuses" : [ "http://gedcomx.org/Published" ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Daniel Webster Abbott, \"Find a Grave Index\""
+    } ]
+  }, {
+    "about" : "https://www.familysearch.org/platform/records/collections/2221801",
+    "coverage" : [ {
+      "recordType" : "http://gedcomx.org/Death",
+      "spatial" : {
+        "description" : "https://www.familysearch.org/platform/places/description/324",
+        "original" : "World"
+      },
+      "temporal" : {
+        "formal" : "+1500/+2013",
+        "original" : "1500/2013"
+      }
+    } ],
+    "created" : 1382223823371,
+    "id" : "sd_c_2221801",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/2221801" ]
+    },
+    "modified" : 1786620099765,
+    "resourceType" : "http://gedcomx.org/Collection",
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Find a Grave Index"
+    }, {
+      "lang" : "zh",
+      "value" : "Find a Grave 索引"
+    }, {
+      "lang" : "fr",
+      "value" : "Index de Find a Grave"
+    }, {
+      "lang" : "ru",
+      "value" : "Указатель Find a Grave"
+    }, {
+      "lang" : "no",
+      "value" : "Finn en gravregister"
+    }, {
+      "lang" : "es",
+      "value" : "Índice Find a Grave"
+    }, {
+      "lang" : "mn",
+      "value" : "Булш хайх индекс"
+    }, {
+      "lang" : "ko",
+      "value" : "묘지 색인 찾기"
+    }, {
+      "lang" : "it",
+      "value" : "Indice di Trova una tomba"
+    }, {
+      "lang" : "id",
+      "value" : "Indeks Find a Grave"
+    }, {
+      "lang" : "hu",
+      "value" : "Find a Grave tárgymutató"
+    }, {
+      "lang" : "sk",
+      "value" : "Nájsť index hrobu"
+    }, {
+      "lang" : "th",
+      "value" : "หาดัชนีหลุมศพ"
+    }, {
+      "lang" : "to",
+      "value" : "Fakahokohoko Fakamotuʻalea Kumi Ha Faʻitoka"
+    }, {
+      "lang" : "bg",
+      "value" : "Намери индекс на гроба"
+    }, {
+      "lang" : "km",
+      "value" : "ស្វែងរកលិបិក្រមនៃផ្នូរ"
+    }, {
+      "lang" : "pl",
+      "value" : "Indeks grobów z   Find a Grave"
+    }, {
+      "lang" : "ro",
+      "value" : "Index Find a Grave"
+    }, {
+      "lang" : "sv",
+      "value" : "Hitta en grav-index"
+    }, {
+      "lang" : "sm",
+      "value" : "Chỉ Mục Tìm Phần Mộ"
+    }, {
+      "lang" : "vi",
+      "value" : "Chỉ Mục Tìm Phần Mộ"
+    }, {
+      "lang" : "sq",
+      "value" : "Gjeni një indeks varri"
+    }, {
+      "lang" : "pt",
+      "value" : "Índice Find a Grave"
+    }, {
+      "lang" : "de",
+      "value" : "Find a Grave Index"
+    }, {
+      "lang" : "uk",
+      "value" : "Покажчик Find a Grave"
+    }, {
+      "lang" : "hr",
+      "value" : "Pronađi indeks groba"
+    }, {
+      "lang" : "cs",
+      "value" : "Najít index hrobů"
+    }, {
+      "lang" : "da",
+      "value" : "Find et gravindeks"
+    }, {
+      "lang" : "nl",
+      "value" : "Een grafindex zoeken"
+    }, {
+      "lang" : "et",
+      "value" : "Find a Grave'i indeks"
+    }, {
+      "lang" : "fj",
+      "value" : "Tuvani Vakamatanivola ni Find a Grave"
+    }, {
+      "lang" : "fi",
+      "value" : "Etsi hautahakemisto"
+    }, {
+      "lang" : "tl",
+      "value" : "Index ng Find a Grave"
+    }, {
+      "lang" : "mg",
+      "value" : "Indeksa momba ny Mitadiava Fasana Iray"
+    }, {
+      "lang" : "ceb",
+      "value" : "Find a Grave nga Indeks"
+    } ]
+  }, {
+    "about" : "http://www.findagrave.com/cgi-bin/fg.cgi?page=gr&GRid=38648452",
+    "componentOf" : {
+      "description" : "#sd_c_2221801",
+      "descriptionId" : "sd_c_2221801"
+    },
+    "id" : "sd_da1",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "http://www.findagrave.com/cgi-bin/fg.cgi?page=gr&GRid=38648452" ]
+    },
+    "mediaType" : "image/jpeg",
+    "repository" : {
+      "resourceId" : "#a1"
+    },
+    "resourceType" : "http://gedcomx.org/DigitalArtifact"
+  }, {
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVKF-MXLS",
+    "citations" : [ {
+      "value" : "\"Find a Grave Index\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVKF-MXLS : Wed Jul 15 07:13:34 UTC 2026), Entry for Dan."
+    } ],
+    "componentOf" : {
+      "description" : "#src_r_102101310332",
+      "descriptionId" : "src_r_102101310332"
+    },
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Daniel Webster Abbott, \"Find a Grave Index\""
+    } ],
+    "id" : "sd_p_101075863232",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVKF-MXLS" ]
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Daniel Webster Abbott, \"Find a Grave Index\""
+    } ]
+  } ]
+}

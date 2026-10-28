@@ -272,10 +272,6 @@ async function doHighlightForRefQuery() {
   doHighlightForRefNumber(refValue, recordType, true);
 }
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 async function doHighlightForRefNumData() {
   // should only do this when the search is completed
 

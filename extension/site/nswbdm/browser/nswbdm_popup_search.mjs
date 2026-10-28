@@ -110,7 +110,7 @@ async function nswbdmSearch(generalizedData, typeOfSearch) {
 
 function addNswbdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
   addMenuItem(menu, "Search New South Wales BDM (Aus)...", function (element) {
-    setupNswbdmSearchSubMenu(data, backFunction, filter);
+    setupNswbdmSearchSubmenu(data, backFunction, filter);
   });
 
   return true;
@@ -171,7 +171,7 @@ function addNswbdmSearchDeathsMenuItem(menu, data, filter) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupNswbdmSearchSubMenu(data, backFunction, filter) {
+async function setupNswbdmSearchSubmenu(data, backFunction, filter) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);

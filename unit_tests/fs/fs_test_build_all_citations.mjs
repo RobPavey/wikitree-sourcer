@@ -26,6 +26,7 @@ import {
   readFile,
   getRefTextFilePath,
   getTestTextFilePath,
+  createRefTextFile,
   writeTestOutputTextFile,
   readRefTextFile,
 } from "../test_utils/ref_file_utils.mjs";
@@ -37,7 +38,8 @@ import {
   filterAndEnhanceFsSourcesIntoSources,
   buildSourcerCitation,
   buildSourcerCitations,
-  buildFsPlainCitations,
+  buildFsSourceInfoCitations,
+  pruneSources,
 } from "../../extension/site/fs/core/fs_build_all_citations.mjs";
 
 async function testGetSourcerCitation(runDate, savedData, source, type, options, extractDataFromFetch) {
@@ -69,7 +71,9 @@ async function testGetSourcerCitations(runDate, savedData, result, type, options
     await testGetSourcerCitation(runDate, savedData, source, type, options, extractDataFromFetch);
   }
 
-  buildSourcerCitations(result, type, options);
+  pruneSources(result, options);
+
+  buildSourcerCitations(result, runDate, type, options);
 }
 
 async function fsTestGetAllCitations(input, extractDataFromFetch) {
@@ -87,11 +91,11 @@ async function fsTestGetAllCitations(input, extractDataFromFetch) {
     let citationType = options.buildAll_fs_citationType;
 
     switch (citationType) {
-      case "fsPlainInline":
-        buildFsPlainCitations(result, "inline", options);
+      case "fsSourceInfoInline":
+        buildFsSourceInfoCitations(result, runDate, "inline", options);
         break;
-      case "fsPlainSource":
-        buildFsPlainCitations(result, "source", options);
+      case "fsSourceInfoSource":
+        buildFsSourceInfoCitations(result, runDate, "source", options);
         break;
       case "narrative":
       case "inline":
@@ -197,12 +201,18 @@ async function runBuildAllCitationsTests(siteName, regressionData, testManager, 
       }
 
       if (refText != result.citationsString) {
-        reportStringDiff(refText, result.citationsString);
-        console.log("Result differs from reference. Result is:");
-        console.log(result);
-        let refFile = getRefTextFilePath(siteName, resultDir, testData, variantName);
-        let testFile = getTestTextFilePath(siteName, resultDir, testData, variantName);
-        logger.logError(testData, "Result differs from reference", refFile, testFile);
+        if (testManager.parameters.forceReplaceRefs) {
+          let refPath = getRefTextFilePath(siteName, resultDir, testData);
+          console.log("Force replacing ref file: " + refPath);
+          createRefTextFile(result.citationsString, siteName, resultDir, testData, variantName, logger);
+        } else {
+          reportStringDiff(refText, result.citationsString);
+          console.log("Result differs from reference. Result is:");
+          console.log(result);
+          let refFile = getRefTextFilePath(siteName, resultDir, testData, variantName);
+          let testFile = getTestTextFilePath(siteName, resultDir, testData, variantName);
+          logger.logError(testData, "Result differs from reference", refFile, testFile);
+        }
       }
     }
   }
@@ -228,7 +238,7 @@ const regressionData = [
       {
         variantName: "no_include_notes",
         optionOverrides: {
-          buildAll_fs_citationType: "fsPlainSource",
+          buildAll_fs_citationType: "fsSourceInfoSource",
           buildAll_fs_includeNotes: false,
         },
       },
@@ -262,6 +272,11 @@ const regressionData = [
     // found a bug in mergeDates, has marriage sources with no date
     caseName: "k2b7_nsv_vinnie_shubert",
     url: "https://www.familysearch.org/tree/person/details/K2B7-NSV",
+  },
+  {
+    // Newer version of the FS profile, for testing notes in sources
+    caseName: "k2fn_1vl_william_herron_2026format",
+    url: "https://www.familysearch.org/tree/person/details/K2FN-1VL",
   },
   {
     // bug in sorting, marriage source has no date but its record does
@@ -379,6 +394,10 @@ const regressionData = [
     url: "https://www.familysearch.org/tree/person/details/LKBM-ZX9",
   },
   {
+    caseName: "ll9j_xjt_claude_fletcher",
+    url: "https://www.familysearch.org/en/tree/person/details/LL9J-XJT",
+  },
+  {
     caseName: "lr97_hcc_dunmore_dameron",
     url: "https://www.familysearch.org/en/tree/person/sources/LR97-HCC",
     optionVariants: [
@@ -418,6 +437,13 @@ const regressionData = [
           buildAll_fs_excludeNonFsSources: true,
         },
       },
+      {
+        variantName: "plain_text_citation",
+        optionOverrides: {
+          buildAll_fs_citationType: "fsSourceInfoSource",
+          citation_general_target: "plain",
+        },
+      },
     ],
   },
 ];
@@ -444,13 +470,13 @@ const optionVariants = [
   {
     variantName: "fs_plain_inline",
     optionOverrides: {
-      buildAll_fs_citationType: "fsPlainInline",
+      buildAll_fs_citationType: "fsSourceInfoInline",
     },
   },
   {
     variantName: "fs_plain_source",
     optionOverrides: {
-      buildAll_fs_citationType: "fsPlainSource",
+      buildAll_fs_citationType: "fsSourceInfoSource",
     },
   },
 ];

@@ -159,7 +159,7 @@ async function generatePermaLink(ed) {
       return;
     }
 
-    ed.pageData.pageId = await extractPageDataFromDocument(ed.uid, ed.url, ed.pageData.page);
+    ed.pageData.pageId = await extractPageDataFromDocument(ed.uid, ed.url, ed.pageData.pageIdx);
     ed.permalinkBase = await extractPermalinkBaseUrl(ed.url);
 
     if (ed.pageData.pageId == -1 || ed.permalinkBase == null) {
@@ -206,6 +206,8 @@ async function generatePermaLink(ed) {
   return ed.permalink;
 }
 
+async function regeneralize(ed, result) {}
+
 async function setupArchionPopupMenu(extractedData) {
   let backFunction = function () {
     setupArchionPopupMenu(extractedData);
@@ -246,7 +248,7 @@ async function setupArchionPopupMenu(extractedData) {
 
   let menu = beginMainMenu();
 
-  addBuildCitationMenuItems(menu, data, archionPopupBuildCitation, backFunction);
+  await addBuildCitationMenuItems(menu, data, archionPopupBuildCitation, backFunction, regeneralize);
 
   addStandardMenuEnd(menu, data, backFunction);
 }

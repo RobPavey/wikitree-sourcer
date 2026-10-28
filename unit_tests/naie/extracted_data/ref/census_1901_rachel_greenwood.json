@@ -1,0 +1,104 @@
+{
+  "url": "https://www.census.nationalarchives.ie/pages/1901/Antrim/Shankhill/Tudor_Place/950389/",
+  "success": true,
+  "breadCrumbs": [
+    "Census Years",
+    "1901",
+    "Antrim",
+    "Shankhill",
+    "Tudor Place",
+    "Residents of a house"
+  ],
+  "heading": "Residents of a house 9 in Tudor Place (Shankhill, Antrim)",
+  "isRowUserSelected": true,
+  "household": {
+    "headings": [
+      "Surname",
+      "Forename",
+      "Age",
+      "Sex",
+      "Relation to head",
+      "Religion",
+      "Birthplace",
+      "Occupation",
+      "Literacy",
+      "Irish Language",
+      "Marital Status",
+      "Specified Illnesses"
+    ],
+    "members": [
+      {
+        "Surname": "Greenwood",
+        "Forename": "Robert",
+        "Age": "37",
+        "Sex": "Male",
+        "Relation to head": "Head of Family",
+        "Religion": "Methodist",
+        "Birthplace": "England",
+        "Occupation": "Traveller for Incandescine Light",
+        "Literacy": "Read and write",
+        "Irish Language": "-",
+        "Marital Status": "Married",
+        "Specified Illnesses": "-"
+      },
+      {
+        "Surname": "Dobbin",
+        "Forename": "Esaminia",
+        "Age": "34",
+        "Sex": "Female",
+        "Relation to head": "Servant",
+        "Religion": "Roman Catholic",
+        "Birthplace": "Co Antrim",
+        "Occupation": "Domestic Servant",
+        "Literacy": "Read and write",
+        "Irish Language": "-",
+        "Marital Status": "Not Married",
+        "Specified Illnesses": "-"
+      },
+      {
+        "Surname": "Greenwood",
+        "Forename": "Arthur",
+        "Age": "11",
+        "Sex": "Male",
+        "Relation to head": "Son",
+        "Religion": "Methodist",
+        "Birthplace": "England",
+        "Occupation": "Scholar",
+        "Literacy": "Read and write",
+        "Irish Language": "-",
+        "Marital Status": "Not Married",
+        "Specified Illnesses": "-"
+      },
+      {
+        "Surname": "Greenwood",
+        "Forename": "Henry Pickles",
+        "Age": "5",
+        "Sex": "Male",
+        "Relation to head": "Son",
+        "Religion": "Methodist",
+        "Birthplace": "England",
+        "Occupation": "Scholar",
+        "Literacy": "Read and write",
+        "Irish Language": "-",
+        "Marital Status": "Not Married",
+        "Specified Illnesses": "-"
+      },
+      {
+        "Surname": "Greenwood",
+        "Forename": "Rachel",
+        "Age": "36",
+        "Sex": "Female",
+        "Relation to head": "Wife",
+        "Religion": "Methodist",
+        "Birthplace": "England",
+        "Occupation": "House Wife",
+        "Literacy": "Read and write",
+        "Irish Language": "-",
+        "Marital Status": "Married",
+        "Specified Illnesses": "-",
+        "isSelected": true
+      }
+    ]
+  },
+  "imageLink": "https://www.census.nationalarchives.ie/reels/nai000302985/"
+}

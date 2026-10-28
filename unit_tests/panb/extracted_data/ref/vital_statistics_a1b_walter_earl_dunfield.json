@@ -1,0 +1,22 @@
+{
+  "url": "https://archives.gnb.ca/en-ca/vital-statistics/birth/141a1b/d740bc74-0dec-47c4-85e9-d5122dc81d96",
+  "success": true,
+  "databaseID": "RS141A1b",
+  "sourceTitle": "Provincial Archives of New Brunswick; Vital Statistics (RS141)",
+  "tableTitle": "Index to Late Registration of Births (RS141A1b)",
+  "recordData": {
+    "Name": "DUNFIELD, WALTER EARL",
+    "Sex": "M",
+    "Date": "1902-05-08",
+    "Place of Birth": "PENOBSQUIS",
+    "County": "KINGS",
+    "Father": "DUNFIELD, JOHN",
+    "Mother": "GODDARD, LUCY",
+    "Microfilm": "F18903"
+  },
+  "webpageFormat": 202606,
+  "numberTableEntries": 8,
+  "hasImage": true,
+  "imageUrl": "https://archives.gnb.ca/api/image-handler/digitized-documents/rs141/a1b/1902/d740bc74-0dec-47c4-85e9-d5122dc81d96.jpg",
+  "eventType": "Birth"
+}

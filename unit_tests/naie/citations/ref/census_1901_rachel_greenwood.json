@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Census of Ireland\"<br/>\nThe National Archives of Ireland; Residents of a house 9 in Tudor Place (Shankhill, Antrim)<br/>\n[https://www.census.nationalarchives.ie/reels/nai000302985/ National Archives of Ireland Image] - [https://www.census.nationalarchives.ie/pages/1901/Antrim/Shankhill/Tudor_Place/950389/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nRachel Greenwood (36), wife, House Wife, in household of Robert Greenwood (37) in Tudor Place, Shankhill, Antrim, Ireland. Born in England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1901 census Rachel (age 36), House Wife, was the wife of Robert Greenwood in Tudor Place, Shankhill, Antrim, Ireland.<ref>\n'''1901 Census''':\n\"1901 Census of Ireland\"<br/>\nThe National Archives of Ireland; Residents of a house 9 in Tudor Place (Shankhill, Antrim)<br/>\n[https://www.census.nationalarchives.ie/reels/nai000302985/ National Archives of Ireland Image] - [https://www.census.nationalarchives.ie/pages/1901/Antrim/Shankhill/Tudor_Place/950389/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nRachel Greenwood (36), wife, House Wife, in household of Robert Greenwood (37) in Tudor Place, Shankhill, Antrim, Ireland. Born in England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1901 Census''': \"1901 Census of Ireland\"<br/>The National Archives of Ireland; Residents of a house 9 in Tudor Place (Shankhill, Antrim)<br/>[https://www.census.nationalarchives.ie/reels/nai000302985/ National Archives of Ireland Image] - [https://www.census.nationalarchives.ie/pages/1901/Antrim/Shankhill/Tudor_Place/950389/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>Rachel Greenwood (36), wife, House Wife, in household of Robert Greenwood (37) in Tudor Place, Shankhill, Antrim, Ireland. Born in England.",
+    "type": "source"
+  }
+}

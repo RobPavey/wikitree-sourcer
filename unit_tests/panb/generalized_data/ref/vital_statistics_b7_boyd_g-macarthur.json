@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "name": "Boyd G Macarthur"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1935-10-24"
+  },
+  "eventPlace": {
+    "placeString": "Chatham, Northumberland, New Brunswick, Canada"
+  },
+  "registrationDistrict": "Northumberland",
+  "spouses": [
+    {
+      "name": {
+        "name": "Hilde Kanner"
+      },
+      "personGender": "female",
+      "marriageDate": {
+        "dateString": "1935-10-24"
+      },
+      "marriagePlace": {
+        "placeString": "Chatham, Northumberland, New Brunswick, Canada"
+      }
+    }
+  ],
+  "primaryPersonOptions": [
+    "Boyd G. Macarthur (groom)",
+    "Hilde Kanner (bride)"
+  ],
+  "webpageFormat": 202606,
+  "hasValidData": true
+}

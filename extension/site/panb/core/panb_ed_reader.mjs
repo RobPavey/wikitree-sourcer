@@ -37,11 +37,13 @@ class PanbEdReader extends ExtractedDataReader {
     this.regNumberString = this.recordData["Number"];
     this.volumeString = this.recordData["Volume"];
     this.referenceString = this.recordData["Reference"];
-    this.tableTitle = ed.tableTitle;		
+    this.tableTitle = ed.tableTitle;
+    this.sourceTitle =ed.sourceTitle;
     this.eventType = ed.eventType;
     this.databaseID = ed.databaseID;
     this.hasImage = ed.hasImage;
-    this.imageURL = ed.imageURL;
+    this.imageURL = ed.imageURL;      
+    this.webpageFormat = ed.webpageFormat;
   
     switch (this.eventType) {
       case "Birth":
@@ -57,7 +59,6 @@ class PanbEdReader extends ExtractedDataReader {
       default:
         this.recordType = RT.Unclassified;
     }
- 
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,28 +74,29 @@ class PanbEdReader extends ExtractedDataReader {
   }
 
   toLeadingCase(inputName) {
-    const words = (inputName.toLowerCase())
-    .split(/\s+/)
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1));
+    const words = inputName
+      .toLowerCase()
+      .split(/\s+/)
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1));
     const reCasedWord = words.join(" ");
     return reCasedWord;
   }
 
   // PANB index names are stored as "Last, First" so we need to reformat them to "First Last" as well as removing any "-----" place holders
- 	reformatName(inputName) {
-	  const [last, first] = inputName.split(",");
-	  if (!last || !first) {
+  reformatName(inputName) {
+    const [last, first] = inputName.split(",");
+    if (!last || !first) {
       return inputName;
     }
-	  const words = (first.trim() + " " + last.trim())
+    const words = (first.trim() + " " + last.trim())
       .replaceAll("-----", "")
       .toLowerCase()
       .split(/\s+/)
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1));
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1));
     const reformatedName = words.join(" ");
     return reformatedName;
-  };
- 
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -108,22 +110,22 @@ class PanbEdReader extends ExtractedDataReader {
 
   getUrl() {
     return this.ed.url;
-  } 
+  }
 
   getSourceType() {
     return "record";
   }
 
-   getRecordType() {
-	  return this.recordType;
+  getRecordType() {
+    return this.recordType;
   }
-  
+
   getTableTitle() {
-	  return this.tableTitle;
+    return this.tableTitle;
   }
-  
+
   getDatabaseID() {
-	  return this.databaseID;
+    return this.databaseID;
   }
 
   getHasImage() {
@@ -132,9 +134,9 @@ class PanbEdReader extends ExtractedDataReader {
 
   // PANB marriage index records can have bride or groom fullName in the "Name" field. The index name is always the alphabetically first of the two surnames.
   getRecordedIndexedName() {
-  // This routine is only called from getGroomsName and getBridesName
-    let tempString = this.recordData["Name"];  
-    if ( !tempString ) {
+    // This routine is only called from getGroomsName and getBridesName
+    let tempString = this.recordData["Name"];
+    if (!tempString) {
       return undefined;
     }
     let indexNameString = this.reformatName(tempString);
@@ -149,14 +151,13 @@ class PanbEdReader extends ExtractedDataReader {
       primaryGender = NameUtils.predictGenderFromGivenNames(firstName);
       if (primaryGender == "male") {
         this.recordData["Sex"] = "M";
-      }
-      else if (primaryGender == "female") {
+      } else if (primaryGender == "female") {
         this.recordData["Sex"] = "F";
       }
 
       // we must always test the secondary name in case of gender duplication
-      tempString = this.recordData["Married"];  
-      if (tempString) { 
+      tempString = this.recordData["Married"];
+      if (tempString) {
         let spouseNameString = this.reformatName(tempString);
         let spouseFullNameString = this.toLeadingCase(spouseNameString);
         firstName = spouseFullNameString.trim().split(" ")[0];
@@ -164,26 +165,25 @@ class PanbEdReader extends ExtractedDataReader {
         if (primaryGender == "") {
           if (secondaryGender == "male") {
             this.recordData["Sex"] = "F";
-          }
-          else if (secondaryGender == "female") {
+          } else if (secondaryGender == "female") {
             this.recordData["Sex"] = "M";
           }
-        } 
+        }
         // if both names predicted the same gender then we must treat it as gender unknown
         if (secondaryGender == primaryGender) {
           this.recordData["Sex"] = "";
         }
       }
-    }   
+    }
     // if we still can't determine gender we leave it blank as unknown
     return indexNameFullString;
   }
-   
+
   getRecordedSpouseName() {
-  // This routine is only called from getGroomsName and getBridesName
-  // Only PANB marriage index records have a spouse name field
-    let tempString = this.recordData["Married"];  
-    if ( !tempString ) {
+    // This routine is only called from getGroomsName and getBridesName
+    // Only PANB marriage index records have a spouse name field
+    let tempString = this.recordData["Married"];
+    if (!tempString) {
       return undefined;
     }
     let spouseFullString = this.reformatName(tempString);
@@ -192,27 +192,26 @@ class PanbEdReader extends ExtractedDataReader {
   }
 
   getGroomsName() {
-    if ( this.recordType != RT.MarriageRegistration ) {
+    if (this.recordType != RT.MarriageRegistration) {
       return "";
     }
     // It is important to get the primary name first
     let namePrimary = this.getRecordedIndexedName();
     let nameSecondary = this.getRecordedSpouseName();
-   
+
     // we use recorded gender to determine bride and groom names
     let recordedGender = this.recordData["Sex"];
     if (recordedGender == "F") {
       return nameSecondary;
-    }
-    else {
+    } else {
       // if we dont know gender we assume the marriage record had the groom's name first
       return namePrimary;
     }
-    return
+    return;
   }
-  
+
   getBridesName() {
-    if ( this.recordType != RT.MarriageRegistration ) {
+    if (this.recordType != RT.MarriageRegistration) {
       return "";
     }
     // It is important to get the primary name first
@@ -223,38 +222,33 @@ class PanbEdReader extends ExtractedDataReader {
     let recordedGender = this.recordData["Sex"];
     if (recordedGender == "F") {
       return namePrimary;
-    }
-    else {
+    } else {
       // if we decided the indexedd name was male or if we dont know gender we assume the marriage record had the groom's name first and we will be right about half the time
       return nameSecondary;
     }
-  return;
- }
-	  
+    return;
+  }
+
   getNameObj() {
-    if ( this.recordType == RT.MarriageRegistration ) {
-    // Marriage case handles drop-down control for picking the spouse to be the principle personshown on the citation
+    if (this.recordType == RT.MarriageRegistration) {
+      // Marriage case handles drop-down control for picking the spouse to be the principle personshown on the citation
       let groomName = this.getGroomsName();
-      let brideName = this.getBridesName();      
+      let brideName = this.getBridesName();
       if (this.isPrimaryTheSecond()) {
         if (brideName != "") {
           return this.makeNameObjFromFullName(brideName);
+        } else {
+          return undefined;
         }
-        else {
-           return undefined;          
-        }  
-      }
-      else {
+      } else {
         if (groomName != "") {
           return this.makeNameObjFromFullName(groomName);
+        } else {
+          return undefined;
         }
-        else {
-           return undefined;          
-        }
-      } 
-    }
-    else {
-    // PANB Birth and Death index records have only one name shown
+      }
+    } else {
+      // PANB Birth and Death index records have only one name shown
       let tempNameString = this.recordData["Name"];
       if (!tempNameString) {
         return undefined;
@@ -266,20 +260,17 @@ class PanbEdReader extends ExtractedDataReader {
   }
 
   getGender() {
-    if (this.recordType == RT.MarriageRegistration ) {
+    if (this.recordType == RT.MarriageRegistration) {
       if (this.isPrimaryTheSecond()) {
         return "female";
-      }
-      else {
+      } else {
         return "male";
       }
-    }
-    else {
+    } else {
       let recordedGender = this.recordData["Sex"];
       if (recordedGender == "M") {
         return "male";
-      }
-      else if ( recordedGender == "F") {
+      } else if (recordedGender == "F") {
         return "female";
       }
 
@@ -290,70 +281,79 @@ class PanbEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
-    if ( this.ed.databaseID == "RS141C6") {
-      let tempString = this.recordData["Date of Death"];
-      return this.makeDateObjFromDateString(tempString);
+    let tempString = "";
+    if (this.ed.databaseID == "RS141C6"  && this.webpageFormat == 202601) {
+      tempString = this.recordData["Date of Death"];
+      //return this.makeDateObjFromDateString(tempString);
     }
-
-    let dateString = this.recordData["Date"];
-	  if (!dateString) {
-		  return undefined;
-	  }
-	  else {
-		  return this.makeDateObjFromDateString(dateString);
-	  }
+    else {
+      tempString = this.recordData["Date"];
+    }
+    return this.makeDateObjFromDateString(tempString);
+  
   }
 
   getParish() {
-  	let parishString = this.recordData["Parish"];
+    let parishString = this.recordData["Parish"];
     if (!parishString) {
       return "";
-    }
-    else {
+    } else {
       return this.toLeadingCase(parishString);
     }
   }
 
   getCounty() {
-  	let countyString = this.recordData["County"];
+    let countyString = this.recordData["County"];
     if (!countyString) {
       return "";
-    }
-    else {
+    } else {
       return this.toLeadingCase(countyString);
     }
   }
 
   getEventPlaceObj() {
     let placeString = "";
-    if (this.ed.eventType == "Birth" || this.ed.databaseID == "RS141C1") {
-      let tempString = this.recordData["Place"];
+    if (this.ed.eventType == "Birth") {
+      let tempString = "";
+      if (this.webpageFormat == 202606) {
+        tempString =this.recordData["Place of Birth"];
+      }
+      else {
+        tempString =this.recordData["Place"];
+      }  
       placeString = this.toLeadingCase(tempString) + ", ";
     }
-    else if (this.ed.eventType == "Marriage" ) {
+    else if (this.ed.databaseID == "RS141C1") {
+      let tempString = this.recordData["Place"];
+      placeString = this.toLeadingCase(tempString) + ", ";
+    } else if (this.ed.eventType == "Marriage") {
       let tempString = this.recordData["Parish"];
-      if (tempString && tempString.slice(0,1) != "-") {
+      if (tempString && tempString.slice(0, 1) != "-") {
         placeString = this.toLeadingCase(tempString) + ", ";
       }
     }
-    else if ( this.ed.databaseID == "RS141C6") {
-      let tempString = this.recordData["Killed"];
-      placeString = "service in " + this.toLeadingCase(tempString);
+    else if (this.ed.databaseID == "RS141C6") {
+      let tempString = "";
+      if (this.webpageFormat == 202606) {
+        tempString = this.recordData["Place"];
+      }
+      else {
+        tempString = this.recordData["Killed"];
+      }
+      placeString = "service in " + tempString; //this.toLeadingCase(tempString);
       return this.makePlaceObjFromFullPlaceName(placeString);
     }
     let countyString = "";
     if (this.ed.databaseID == "RS141C1") {
       countyString = this.recordData["County of Death"];
-    }
-    else {
+    } else {
       countyString = this.recordData["County"];
     }
     if (!countyString) {
-        return undefined;
-    }
-    else {
+      return undefined;
+    } else {
       let countryString = ", New Brunswick, Canada";
-      if ( DateUtils.compareDateStrings( "1867-07-01", this.recordData["Date"] ) > 0 ) {
+      if (DateUtils.compareDateStrings("1867-07-01", this.recordData["Date"]) > 0) {
         countryString = ", New Brunswick Colony";
       }
       placeString += this.toLeadingCase(countyString) + countryString;
@@ -362,45 +362,47 @@ class PanbEdReader extends ExtractedDataReader {
     }
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
+getResidencePlaceObj() {
+  let tempString = this.recordData["Residence"];  
+  if (!tempString) {
+      return undefined;
+    } else if (tempString != "" && tempString[0] == "-") {
+      let placeString = this.toLeadingCase(tempString);
+      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
+      return placeObj;
+    } 
+    else {
+      return undefined;
+    }
 
-  getLastNameAtDeath() {
-    return ""; 
-  }
-
-  getBirthDateObj() {
-    return undefined;
-  }
+  } 
 
   getBirthPlaceObj() {
-    if ( this.ed.databaseID != "RS141C1" ) {
+    if (this.ed.databaseID != "RS141C1") {
       return undefined;
     }
     let tempString = this.recordData["Place of Birth"];
     if (!tempString) {
       return undefined;
-    }
-    else if (tempString != "" && tempString != "-----" ) {
+    } else if (tempString != "" && tempString[0] == "-") {
       let placeString = this.toLeadingCase(tempString) + ", ";
       let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
       return placeObj;
-    }
-    else {
+    } else {
       return undefined;
     }
   }
 
   getDeathDateObj() {
-    return undefined;
+    let deathDateObj = this.getEventDateObj();
+    return this.deathDateObj;
   }
 
   getDeathPlaceObj() {
-    if (  this.ed.databaseID == "RS141C6" ) {
+  /*   if (this.ed.databaseID == "RS141C6") {
       return undefined;
     }
-    let deathPlaceObj = this.getEventPlaceObj();
+  */   let deathPlaceObj = this.getEventPlaceObj();
     return this.deathPlaceObj;
   }
 
@@ -408,20 +410,17 @@ class PanbEdReader extends ExtractedDataReader {
     let age = this.recordData["Age"];
     if (age && !isNaN(age)) {
       return age;
-    }
-    else {
+    } else {
       return "";
     }
- }
+  }
 
   getAgeAtDeath() {
     if (this.ed.databaseID == "RS141C4" || this.ed.databaseID == "RS141C1" || this.ed.databaseID == "RS141C6") {
       return this.getAgeAtEvent();
-    }
-    else {
+    } else {
       return "";
     }
-
   }
 
   getRegistrationDistrict() {
@@ -429,51 +428,46 @@ class PanbEdReader extends ExtractedDataReader {
   }
 
   getRegistration() {
-  	let tempString = this.recordData["Registration"];
+    let tempString = this.recordData["Registration"];
     if (tempString) {
       return tempString;
-    }
-    else return "";
+    } else return "";
   }
 
   getReference() {
-  	let tempString = this.recordData["Reference"];
+    let tempString = this.recordData["Reference"];
     if (tempString) {
       return tempString;
-    }
-    else return "";
+    } else return "";
   }
 
   getVolume() {
-  	let tempString = this.recordData["Volume"];
+    let tempString = this.recordData["Volume"];
     if (tempString) {
       return tempString;
-    }
-    else return "";
+    } else return "";
   }
 
   getCode() {
-  	let codeString = this.recordData["Code"];
+    let codeString = this.recordData["Code"];
     if (codeString) {
       return this.codeString;
-    }
-    else return "";
+    } else return "";
   }
 
   getNumber() {
-  	const numberString = this.recordData["Number"];
+    const numberString = this.recordData["Number"];
     if (numberString) {
       return this.numberString;
-    }
-    else return "";
+    } else return "";
   }
 
   getMicrofilm() {
-  	let tempString = this.recordData["Microfilm"];
+    let tempString = this.recordData["Microfilm"];
     if (tempString) {
-	    //Check for empty field as some records are not on microfilm
+      //Check for empty field as some records are not on microfilm
       if (tempString != "-----") {
-        return tempString;	
+        return tempString;
       }
     }
     return "";
@@ -491,13 +485,12 @@ class PanbEdReader extends ExtractedDataReader {
     return "";
   }
 
- 
-  getSpouses() {    
+  getSpouses() {
     if (this.recordType == RT.MarriageRegistration) {
       let spouseFullName = this.getBridesName();
       if (this.isPrimaryTheSecond()) {
         spouseFullName = this.getGroomsName();
-      } 
+      }
       let spouseNameObj = this.makeNameObjFromFullName(spouseFullName);
       if (spouseNameObj) {
         let spouse = { name: spouseNameObj };
@@ -510,7 +503,7 @@ class PanbEdReader extends ExtractedDataReader {
           spouse.marriageDate = marriageDateObj;
         }
         let marriagePlaceObj = this.getEventPlaceObj();
-        if (marriagePlaceObj) {   
+        if (marriagePlaceObj) {
           spouse.marriagePlace = marriagePlaceObj;
         }
         return [spouse];
@@ -518,14 +511,14 @@ class PanbEdReader extends ExtractedDataReader {
     }
     return undefined;
   }
- 
+
   getMothersName() {
     let tempString = this.recordData["Mother"];
-    if ( !tempString ) {
+    if (!tempString) {
       return "";
     }
     // Some PANB birth index records have a comma in the mother field to indicate no name given
-    if ( tempString == ",") {
+    if (tempString == ",") {
       return "";
     }
     let mothersName = this.reformatName(tempString);
@@ -534,11 +527,11 @@ class PanbEdReader extends ExtractedDataReader {
 
   getFathersName() {
     let tempString = this.recordData["Father"];
-    if ( !tempString ) {
+    if (!tempString) {
       return "";
     }
     // Some PANB birth index records have a comma in the father field to indicate no name given
-    if ( tempString == ",") {
+    if (tempString == ",") {
       return "";
     }
     let fathersName = this.reformatName(tempString);
@@ -547,13 +540,13 @@ class PanbEdReader extends ExtractedDataReader {
 
   getParents() {
     // We assume at least one parent is present
-	  let fatherName = this.getFathersName();
-		let motherName = this.getMothersName();
+    let fatherName = this.getFathersName();
+    let motherName = this.getMothersName();
     return this.makeParentsFromFullNames(fatherName, motherName);
   }
-  
+
   getPrimaryPersonOptions() {
-    if (this.recordType == RT.MarriageRegistration ) {
+    if (this.recordType == RT.MarriageRegistration) {
       let groomName = this.getGroomsName();
       let brideName = this.getBridesName();
       if (groomName && brideName) {
@@ -574,6 +567,119 @@ class PanbEdReader extends ExtractedDataReader {
   getCollectionData() {
     return undefined;
   }
+
+  setCustomFields(gd) {
+    if (this.ed.webpageFormat) {
+      gd.webpageFormat = this.ed.webpageFormat;
+    }
+
+    if (this.databaseID == "RS141C6") { 
+      let residenceString = "";
+      let tempResidenceString = this.recordData["Residence"];
+      if (tempResidenceString && tempResidenceString != "") {
+        residenceString = " of " + tempResidenceString[0] + tempResidenceString.slice(1).toLowerCase();
+      }
+      
+      let tempLabel = "Date";
+      if (gd.webpageFormat == 202601) {
+        tempLabel = "Date of Death";
+      }
+      let tempString = this.recordData[tempLabel];
+      let deathDateObj = this.makeDateObjFromDateString(tempString);
+      let deathDateString = "" + deathDateObj.getDataStringFormat("short", false);
+      let killedPlaceString = "";
+      tempLabel = "Place";
+      if (gd.webpageFormat == 202601) {
+        tempLabel = "Killed";
+      }
+      let deathPlaceString = "";
+      let killedPlace
+      let tempKilledPlaceString = this.recordData[tempLabel];
+      if (tempKilledPlaceString && tempKilledPlaceString != "") {
+        deathPlaceString = tempKilledPlaceString[0] + tempKilledPlaceString.slice(1).toLowerCase();
+        if (deathPlaceString != "Overseas") {
+          killedPlaceString = " in service in " + deathPlaceString;
+        }
+        else {
+          killedPlaceString = " in service " + deathPlaceString;
+        }
+      }
+      let ageString = "";
+      if (gd.ageAtDeath && gd.ageAtDeath != "") {
+        ageString = " (age " + gd.ageAtDeath + ")";
+      }
+      gd.userOverrideForNarrative = gd.name.name + ageString + residenceString + " died " + deathDateString + killedPlaceString + ".";
+    }
+    else if (gd.webpageFormat == 202606 && this.databaseID == "RS141C1") {
+      let tempLabel = "Residence";
+      let residenceString = "";
+      let tempResidenceString = this.recordData[tempLabel];
+      if (tempResidenceString && tempResidenceString != "") {
+        residenceString = ", now of " +tempResidenceString[0] + tempResidenceString.slice(1).toLowerCase();
+      }
+      tempLabel = "County of Residence";
+      tempResidenceString = this.recordData[tempLabel];
+      if (tempResidenceString && tempResidenceString != "") {
+        if (residenceString != "") {
+          residenceString += ", ";
+        }
+        else {
+          residenceString += ", now of ";
+        }
+        residenceString += tempResidenceString[0] + tempResidenceString.slice(1).toLowerCase();
+      }
+      tempLabel = "Date";
+      let tempString = this.recordData[tempLabel];
+      let deathDateObj = this.makeDateObjFromDateString(tempString);
+      let deathDateString = deathDateObj.getDataStringFormat("short", false);
+
+      tempLabel = "Place";
+      let deathPlaceString = "";
+      let tempdiedPlaceString = this.recordData[tempLabel];
+      if (tempdiedPlaceString && tempdiedPlaceString != "") {
+        deathPlaceString = " in " + tempdiedPlaceString[0] + tempdiedPlaceString.slice(1).toLowerCase();
+      }
+      tempLabel = "County of Death";
+      tempdiedPlaceString = this.recordData[tempLabel];
+      if (tempdiedPlaceString && tempdiedPlaceString != "") {
+        if (deathPlaceString != "") {
+          deathPlaceString += ", ";
+        }
+        else {
+          deathPlaceString = ", in ";
+        }
+        deathPlaceString += tempdiedPlaceString[0] + tempdiedPlaceString.slice(1).toLowerCase();
+      }
+      if (deathPlaceString != "") {
+        deathPlaceString += ", New Brunswick";
+      }
+
+      tempLabel = "Place of Birth";
+      let bornPlaceString = "";
+      let tempbornPlaceString = this.recordData[tempLabel];
+      if (tempbornPlaceString && tempbornPlaceString != "") {
+        bornPlaceString = ", born in " + tempbornPlaceString[0] + tempbornPlaceString.slice(1).toLowerCase();
+      }
+      tempLabel = "County of Birth";
+      tempbornPlaceString = this.recordData[tempLabel];
+      if (tempbornPlaceString && tempbornPlaceString != "") {
+        if (bornPlaceString != "") {
+          bornPlaceString += ", ";
+        }
+        else {
+          bornPlaceString = ", born in ";
+        }
+        bornPlaceString += tempbornPlaceString[0] + tempbornPlaceString.slice(1).toLowerCase();
+      }
+      let ageString = gd.ageAtDeath;
+      let deathAgeString = "";
+      if (ageString && ageString != "") {
+        deathAgeString = " at age " + ageString;
+      }
+      gd.userOverrideForNarrative = gd.name.name + bornPlaceString + residenceString + ", died " + deathDateString + deathAgeString + deathPlaceString + ".";
+    }
+  }
 }
+
 
 export { PanbEdReader };

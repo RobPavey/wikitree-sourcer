@@ -1,0 +1,17 @@
+{
+  "std": {
+    "url": "https://wol.jw.org/en/wol/s/r1/lp-e?q=%22Elizabeth+Pavey%22+%7C+%22Elizabeth+Ellacott%22+%7C+%22Elizabeth+Ellacott+Pavey%22&p=par&r=occ&st=a"
+  },
+  "no_birth_name": {
+    "url": "https://wol.jw.org/en/wol/s/r1/lp-e?q=%22Elizabeth+Pavey%22&p=par&r=occ&st=a"
+  },
+  "german_library": {
+    "url": "https://wol.jw.org/de/wol/s/r10/lp-x?q=%22Elizabeth+Pavey%22+%7C+%22Elizabeth+Ellacott%22+%7C+%22Elizabeth+Ellacott+Pavey%22&p=par&r=occ&st=a"
+  },
+  "both_last_names": {
+    "url": "https://wol.jw.org/en/wol/s/r1/lp-e?q=%22Elizabeth+Ellacott+Pavey%22&p=par&r=occ&st=a"
+  },
+  "name_variant": {
+    "url": "https://wol.jw.org/en/wol/s/r1/lp-e?q=%22Mary+Ellacott%22&p=par&r=occ&st=a"
+  }
+}

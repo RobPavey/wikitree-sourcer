@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Medical Patient''':\n\"South Australia - Hospital, Asylum and Lying-in Home Admissions\"<br/>\nGenealogy SA; Surname: SMITH; Given Names: Mark, Mrs; Year: 1899; Notes: Received by C. of D.C. Saunderson. Result=Cured. Financial=Not Paying<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nMrs Mark Smith on 5 Jan 1899 in Wallaroo, South Australia, Australia. Born in South Australia, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mrs Mark Smith was a patient on 5 January 1899 in Wallaroo, South Australia, Australia.<ref>\n'''Medical Patient''':\n\"South Australia - Hospital, Asylum and Lying-in Home Admissions\"<br/>\nGenealogy SA; Surname: SMITH; Given Names: Mark, Mrs; Year: 1899; Notes: Received by C. of D.C. Saunderson. Result=Cured. Financial=Not Paying<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nMrs Mark Smith on 5 Jan 1899 in Wallaroo, South Australia, Australia. Born in South Australia, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Medical Patient''': \"South Australia - Hospital, Asylum and Lying-in Home Admissions\"<br/>Genealogy SA; Surname: SMITH; Given Names: Mark, Mrs; Year: 1899; Notes: Received by C. of D.C. Saunderson. Result=Cured. Financial=Not Paying<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Mrs Mark Smith on 5 Jan 1899 in Wallaroo, South Australia, Australia. Born in South Australia, Australia.",
+    "type": "source"
+  }
+}

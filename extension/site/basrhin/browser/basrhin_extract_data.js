@@ -24,6 +24,21 @@ SOFTWARE.
 
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
+function checkForDuplicatedText(inputText) {
+  // sometimes the commune name is duplicated separated by a comma
+  let text = inputText;
+  if (text) {
+    let textLength = text.length;
+    if (textLength && text.substring((textLength - 1) / 2, (textLength - 1) / 2 + 1) == ",") {
+      // if there's a comma in the center of the text, remove duplicated info, if any
+      //  1. Split by comma, 2. Filter duplicates using Set, 3. Join back
+      let uniqueString = [...new Set(text.split(","))].join(", ");
+      return uniqueString;
+    }
+  }
+  return text;
+}
+
 function cleanText(inputText) {
   let text = inputText;
   if (text) {
@@ -31,7 +46,7 @@ function cleanText(inputText) {
     text = text.replace(/(\r\n|\n|\r)/gm, "");
     text = text.trim();
   }
-  return text;
+  return checkForDuplicatedText(text);
 }
 
 function extractData(document, url) {
@@ -89,6 +104,53 @@ function extractData(document, url) {
       }
     }
     result.keyValueData = keyValueData;
+  }
+
+  const permalinkInput = document.querySelector("input#monocle-PermalinkField");
+  if (permalinkInput) {
+    const permalinkInputValue = permalinkInput.value;
+    if (permalinkInputValue) {
+      result.permalink = permalinkInputValue;
+      // } else {  result.permalink = "no permalinkInputValue";
+    }
+    // } else{  result.permalink = "no permalinkInput";
+  }
+
+  if (imageNumPhrase) {
+    const imgElement = imageNumPhrase.querySelector("img");
+    if (imgElement) {
+      let imgElementUrl = "";
+      if (imgElement.dataset.src) {
+        imgElementUrl = imgElement.dataset.src;
+      } else if (imgElement.src) {
+        imgElementUrl = imgElement.src;
+        // } else {  result.lastFifParamItem = "no imgElementUrl";
+      }
+      if (imgElementUrl !== "") {
+        // Parse the URL string using the URL API
+        const ImgElementUrlObj = new URL(imgElementUrl);
+        // if (urlObj) {  result.urlObj = urlObj;  }
+        // Extract the 'FIF' parameter value (/data/files/.../filename.jpg)
+        const imgElementFifParam = ImgElementUrlObj.searchParams.get("FIF");
+
+        if (imgElementFifParam) {
+          // Split by the forward slash and grab the last item
+          const lastFifParamItem = imgElementFifParam.split("/").pop();
+          const index = lastFifParamItem.indexOf(".jpg");
+          if (index !== -1) {
+            //strip off .jpg if exists
+            result.lastFifParamItem = lastFifParamItem.slice(0, index);
+          } else {
+            result.lastFifParamItem = lastFifParamItem;
+          }
+          // console.log(result.lastFifParamItem);
+          // Output: FRAD067_xxxxNUMyyyzzzzz_ppp.jpg, where xxxx is collection#, yyy is commune INSEE#, zzzzz is volume#, ppp is page/image#
+          // } else {  result.lastFifParamItem = "no fifParam";
+        }
+      }
+      // } else {  result.lastFifParamItem = "no imgElement";
+    }
+    // } else {  result.lastFifParamItem = "no imageNumPhrase";
   }
 
   result.success = true;

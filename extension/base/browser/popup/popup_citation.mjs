@@ -37,6 +37,7 @@ import { writeToClipboard, clearClipboard } from "./popup_clipboard.mjs";
 import { options } from "../options/options_loader.mjs";
 
 import { cachedDataCache } from "../common/data_cache.mjs";
+import { addCitationToCollectedCitations } from "../common/collected_citations.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Citation
@@ -67,6 +68,9 @@ async function saveCitation(citationObject) {
   chrome.storage.local.set({ latestCitation: citationObject }, function () {
     //console.log('latestCitation is set to ' + citation);
   });
+
+  // if we are collecting citations save to the collected citations
+  addCitationToCollectedCitations(citationObject);
 
   // Make the whole window the width it was before (not on iOS)
   overrideMenuWidth(widthBeforeEditCitation);

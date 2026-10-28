@@ -24,7 +24,7 @@ SOFTWARE.
 
 import {
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addBackMenuItem,
   beginMainMenu,
   endMainMenu,
@@ -85,7 +85,11 @@ function extractPlaceStrings(ed, gd) {
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
     if (placeParts && placeParts.localPlace) {
-      locations.push({ descriptor: "Birth", place: placeParts.localPlace, year: dateObj ? dateObj.getYearString() : -1 });
+      locations.push({
+        descriptor: "Birth",
+        place: placeParts.localPlace,
+        year: dateObj ? dateObj.getYearString() : -1,
+      });
     }
   }
 
@@ -94,7 +98,11 @@ function extractPlaceStrings(ed, gd) {
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
     if (placeParts && placeParts.localPlace) {
-      locations.push({ descriptor: "Residence", place: placeParts.localPlace, year: dateObj ? dateObj.getYearString() : -1 });
+      locations.push({
+        descriptor: "Residence",
+        place: placeParts.localPlace,
+        year: dateObj ? dateObj.getYearString() : -1,
+      });
     }
   }
 
@@ -107,7 +115,7 @@ function extractPlaceStrings(ed, gd) {
         year = Number(spouse.marriageDate.dateString.split(" ")[2]);
       }
       if (spouse.marriagePlace && spouse.marriagePlace.placeString) {
-        locations.push({ descriptor: "Marriage", place: spouse.marriagePlace.placeString, year : year });
+        locations.push({ descriptor: "Marriage", place: spouse.marriagePlace.placeString, year: year });
       }
     }
   }
@@ -117,7 +125,11 @@ function extractPlaceStrings(ed, gd) {
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
     if (placeParts && placeParts.localPlace) {
-      locations.push({ descriptor: "Death", place: placeParts.localPlace, year: dateObj ? dateObj.getYearString() : -1 });
+      locations.push({
+        descriptor: "Death",
+        place: placeParts.localPlace,
+        year: dateObj ? dateObj.getYearString() : -1,
+      });
     }
   }
 
@@ -127,7 +139,11 @@ function extractPlaceStrings(ed, gd) {
     if (placeObj) {
       let placeParts = placeObj.separatePlaceIntoParts();
       if (placeParts && placeParts.localPlace) {
-        locations.push({ descriptor: "Event", place: placeParts.localPlace, year: dateObj ? dateObj.getYearString() : -1 });
+        locations.push({
+          descriptor: "Event",
+          place: placeParts.localPlace,
+          year: dateObj ? dateObj.getYearString() : -1,
+        });
       }
     }
   }
@@ -140,14 +156,14 @@ function addArchionDefaultSearchMenuItem(menu, data, backFunction, filter) {
 
   // Display the submenu only when there are locations which we have extracted
   if (locations.length > 0) {
-    addMenuItemWithSubMenu(
+    addMenuItemWithSubmenu(
       menu,
       "Search Archion",
       function (element) {
         archionSearch(data.generalizedData, "");
       },
       function () {
-        setupArchionSearchSubMenu(data, backFunction, filter, locations);
+        setupArchionSearchSubmenu(data, backFunction, filter, locations);
       }
     );
   } else {
@@ -163,7 +179,7 @@ function addArchionDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupArchionSearchSubMenu(data, backFunction, filter, locations) {
+async function setupArchionSearchSubmenu(data, backFunction, filter, locations) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);

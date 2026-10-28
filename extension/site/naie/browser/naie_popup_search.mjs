@@ -26,7 +26,7 @@ import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_m
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { setupSearchWithParametersSubmenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -72,7 +72,7 @@ async function naieSearch(generalizedData, parameters) {
 
 function addNaieDefaultSearchMenuItem(menu, data, backFunction, filter) {
   addMenuItem(menu, "Search National Archives of Ireland Census...", function (element) {
-    setupNaieSearchSubMenu(data, backFunction, filter);
+    setupNaieSearchSubmenu(data, backFunction, filter);
   });
 
   return true;
@@ -82,9 +82,9 @@ function addNaieDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupNaieSearchSubMenu(data, backFunction, filter) {
+async function setupNaieSearchSubmenu(data, backFunction, filter) {
   let dataModule = await import(`../core/naie_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.NaieData, naieSearch);
+  setupSearchWithParametersSubmenu(data, backFunction, dataModule.NaieData, naieSearch);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

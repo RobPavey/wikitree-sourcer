@@ -1,0 +1,56 @@
+{
+  "sourceOfData": "genquebec",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "name": "Pierre Duclos"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "13 June 1842"
+  },
+  "eventPlace": {
+    "placeString": "Ville-Marie, Montréal (Notre-Dame-de-Montréal), Montréal, Québec, Canada"
+  },
+  "maritalStatus": "single",
+  "occupation": "macon",
+  "spouses": [
+    {
+      "name": {
+        "name": "Catherine Desrues"
+      },
+      "marriageDate": {
+        "dateString": "13 June 1842"
+      },
+      "marriagePlace": {
+        "placeString": "Ville-Marie, Montréal (Notre-Dame-de-Montréal), Montréal, Québec, Canada"
+      },
+      "personGender": "female",
+      "parents": {
+        "father": {
+          "name": {
+            "name": "Michel Desrues"
+          }
+        },
+        "mother": {
+          "name": {
+            "name": "Catherine Sabourin"
+          }
+        }
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Nicolas Duclos"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Marguerite Forget Despatis"
+      }
+    }
+  },
+  "hasValidData": true
+}

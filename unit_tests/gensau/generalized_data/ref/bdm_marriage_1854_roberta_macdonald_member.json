@@ -1,0 +1,45 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "MacDonald",
+    "forenames": "Roberta"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "17-Feb-1854"
+  },
+  "eventPlace": {
+    "placeString": "St Barnabas Church Clare, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "St Barnabas Church Clare"
+  },
+  "registrationDistrict": "The Murray/Burra",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Kerr",
+        "forenames": "William Isaac"
+      },
+      "marriageDate": {
+        "dateString": "17-Feb-1854"
+      },
+      "marriagePlace": {
+        "placeString": "St Barnabas Church Clare, South Australia, Australia",
+        "state": "South Australia",
+        "country": "Australia",
+        "extractedPlaceString": "St Barnabas Church Clare"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "marriage",
+    "year": "1854",
+    "registrationNumber": "20/100",
+    "volume": "20",
+    "page": "100"
+  },
+  "hasValidData": true
+}

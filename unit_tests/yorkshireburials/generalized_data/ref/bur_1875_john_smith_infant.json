@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "yorkshireburials",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "20 February 1875"
+  },
+  "eventPlace": {
+    "placeString": "Hunslet Cemetery, Leeds, Yorkshire, England",
+    "county": "Yorkshire",
+    "country": "England"
+  },
+  "lastNameAtDeath": "Smith",
+  "ageAtDeath": "12 days",
+  "hasValidData": true
+}

@@ -1,0 +1,31 @@
+{
+  "sourceOfData": "genquebec",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "name": "Pierre Nazaire Duclos"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "30 July 1822"
+  },
+  "eventPlace": {
+    "placeString": "Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada"
+  },
+  "birthDate": {
+    "dateString": "30 July 1822"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Jean Baptiste Duclos"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Suzanne Begin"
+      }
+    }
+  },
+  "hasValidData": true
+}

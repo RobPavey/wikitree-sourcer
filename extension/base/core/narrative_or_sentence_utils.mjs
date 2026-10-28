@@ -90,6 +90,10 @@ function getPrimaryPersonTermAndName(gd) {
 }
 
 function isRegistrationEventDateTheRegistrationDate(gd) {
+  if (gd.isDateTheRegistrationDate !== undefined) {
+    return gd.isDateTheRegistrationDate;
+  }
+
   let eventDateObj = gd.inferEventDateObj();
   if (eventDateObj) {
     if (eventDateObj.isRegistrationDate !== undefined) {

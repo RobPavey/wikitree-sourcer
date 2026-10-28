@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search Burials</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Custom Styles -->
+    <link href="/assets/css/custom.css" rel="stylesheet">
+    <link href="/assets/css/yb_styles.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Select CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+
+    <!-- DataTables core -->
+    <!--   -->
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css">
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- jQuery (MUST come before Bootstrap JS) -->
+    <!--  -->
+
+    <!-- Bootstrap Bundle with Popper -->
+    <!--  -->
+
+    <!-- Bootstrap Select JS -->
+    <!--  -->
+
+    <!-- Chart.js (optional, unrelated) -->
+    <!--  -->
+
+
+</head>
+
+<body><!-- Alerts -->
+
+
+<!-- header_navbar.php -->
+<nav class="navbar navbar-expand-lg navbar-light py-2"
+    style="background-color: #CCBFE0; border-bottom: 2px solid #5A4975;">
+    <div class="container-fluid px5 d-flex flex-lg-nowrap align-items-center justify-content-between">
+
+        <a class="navbar-brand me-4" href="/">
+    <img src="/assets/images/yb_logo_320.jpg" alt="Yorkshire Burials Logo" class="img-fluid" style="max-width: 200px;">
+</a> <!-- ✅ MUST be inside nav -->
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <!-- Home Link -->
+                <li class="nav-item">
+                    <a class="nav-link " href="/index.php">
+                        Home
+                    </a>
+                </li>
+
+                <!-- Other Navbar Links -->
+                <li class="nav-item">
+                    <a class="nav-link active"
+                        href="/records/">
+                        <i class="fas fa-search me-1"></i>Records
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/inscriptions/">
+                        Inscriptions
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/maps/">
+                        Plans
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/yas/">
+                        YAS
+                        Project
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="/progress/">
+                        Progress
+                    </a>
+                </li>
+
+                
+                <!-- Admin Block -->
+                
+
+
+            </ul>
+
+            <!-- Move the user profile to the right side of the navbar -->
+            <div class="ms-auto">
+                <!-- header_user.php -->
+<div class="d-flex justify-content-end"> <!-- align to the right -->
+                <a href="/auth/login.php" class="text-dark" title="Login">
+            <i class="fas fa-user-circle fa-2x"></i>
+        </a>
+    </div>            </div>
+        </div>
+    </div>
+</nav>
+<main class="container-fluid py-4" style="padding-bottom: 4rem;">
+    <div class="container mb-4">
+        
+<button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#searchForm"
+    aria-expanded="false" aria-controls="searchForm">
+    Toggle Search Form
+</button>
+
+<div class="collapse " id="searchForm">
+    <form action="" method="get" class="mb-4">
+        <fieldset class="border p-3 rounded bg-white shadow-sm">
+            <legend class="mb-3">Search Burials</legend>
+
+            <div class="row g-2">
+
+                <!-- Row 1 -->
+                <div class="col-md-3">
+                    <label for="surname" class="form-label">Surname</label>
+                    <input type="text" name="surname" id="surname" class="form-control form-control-sm"
+                        value="smith">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="surname_match" class="form-label">Surname Match Type</label>
+                    <select name="surname_match" id="surname_match" class="form-select form-select-sm">
+                        <option value="exact" selected>Exact</option>
+                        <option value="starts" >Starts With</option>
+                        <option value="contains" >Contains</option>
+                        <option value="ends" >Ends With</option>
+                        <option value="soundex" >Soundex</option>
+                        <option value="metaphone" >Metaphone
+                        </option>
+                    </select>
+                    <div class="form-text">Applies to surname only</div>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="forenames" class="form-label">Forenames <span
+                            class="text-muted small">(contains)</span></label>
+                    <input type="text" name="forenames" id="forenames" class="form-control form-control-sm"
+                        value="john">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="sex" class="form-label">Sex <span class="text-muted small">(often blank)</span></label>
+                    <select name="sex" id="sex" class="form-select form-select-sm">
+                        <option value="" selected>Any</option>
+                        <option value="Male" >Male</option>
+                        <option value="Female" >Female</option>
+                        <option value="Unknown" >Unknown</option>
+                        <option value="blank" >Not recorded</option>
+                    </select>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="col-md-3">
+                    <label for="birth_year" class="form-label">Birth Year</label>
+                    <input type="number" name="birth_year" id="birth_year" class="form-control form-control-sm"
+                        value="">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="birth_year_range" class="form-label">Birth Year Range</label>
+                    <select name="birth_year_range" id="birth_year_range" class="form-select form-select-sm">
+                        <option value="0" selected>Exact
+                        </option>
+                        <option value="1" >±1 year
+                        </option>
+                        <option value="2" >±2 years
+                        </option>
+                        <option value="5" >±5 years
+                        </option>
+                        <option value="10" >±10 years
+                        </option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="event_year" class="form-label">Event Year</label>
+                    <input type="number" name="event_year" id="event_year" class="form-control form-control-sm"
+                        value="1880">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="year_range" class="form-label">Event Year Range</label>
+                    <select name="year_range" id="year_range" class="form-select form-select-sm">
+                        <option value="0" >Exact</option>
+                        <option value="1" >±1 year</option>
+                        <option value="2" >±2 years</option>
+                        <option value="5" selected>±5 years</option>
+                        <option value="10" >±10 years</option>
+                    </select>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="col-md-4">
+                    <label for="abode_trade" class="form-label">Abode / Trade</label>
+                    <input type="text" name="abode_trade" id="abode_trade" class="form-control form-control-sm"
+                        placeholder="Address, trade, description, transcriber..."
+                        value="">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="area_id" class="form-label">Area</label>
+                    <select id="area_id" name="area_id" class="form-select form-select-sm" data-dropdown="area"
+                        data-endpoint="/ajax/get-areas.php" data-target="cemetery_id"
+                        data-selected="">
+                        <option value="">All Areas</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="cemetery_id" class="form-label">Cemetery</label>
+                    <select id="cemetery_id" name="cemetery_id" class="form-select form-select-sm"
+                        data-dropdown="cemetery" data-endpoint="/ajax/get-cemeteries.php" data-params="area_id"
+                        data-type="burials" data-target="section_id"
+                        data-selected="">
+                        <option value="">All Cemeteries</option>
+                    </select>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="col-md-3">
+                    <label for="grave_type" class="form-label">
+                        Grave Type <span class="text-muted small">(exact)</span>
+                    </label>
+                    <input type="text" name="grave_type" id="grave_type" class="form-control form-control-sm"
+                        value="">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="grave_section" class="form-label">Grave Section <span
+                            class="text-muted small">(exact)</span></label>
+                    <input type="text" name="grave_section" id="grave_section" class="form-control form-control-sm"
+                        value="">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="grave_number" class="form-label">Grave Number <span
+                            class="text-muted small">(exact)</span></label>
+                    <input type="text" name="grave_number" id="grave_number" class="form-control form-control-sm"
+                        value="">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="entry" class="form-label">Register Entry <span
+                            class="text-muted small">(exact)</span></label>
+                    <input type="text" name="entry" id="entry" class="form-control form-control-sm"
+                        value="">
+                </div>
+
+
+
+                <!-- Row 5 -->
+                <div class="col-md-4 d-flex align-items-end">
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" name="keep_open" id="keep_open" value="1"
+                            >
+                        <label class="form-check-label" for="keep_open">
+                            Keep search form open
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-8 text-end">
+                    <button type="submit" class="btn btn-primary btn-sm mt-3">Search</button>
+                    <a href="index.php" class="btn btn-secondary btn-sm mt-3">Clear</a>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+</div>
+    </div>
+    <div class="container-fluid px-4">
+        <div class="table-responsive">
+            <h2>Search Results</h2>
+<div class="table-responsive">
+    <table id="resultsTable" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sex</th>
+                <th>Age</th>
+                <th>Birth Year</th>
+                <th>Event Date</th>
+                <th>Area</th>
+                <th>Cemetery</th>
+                <th>Grave</th>
+            </tr>
+            <tr>
+                <th><input type="text" placeholder="Search Name"></th>
+                <th>
+                    <select class="form-select form-select-sm">
+                        <option value="">All</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Unknown">Unknown</option>
+                        <option value="__blank__">[Blank]</option>
+
+                    </select>
+                </th>
+                <th><input type="text" placeholder="Search Age"></th>
+                <th><input type="text" placeholder="Search Birth"></th>
+                <th><input type="text" placeholder="Search Date"></th>
+                <th><input type="text" placeholder="Search Area"></th>
+                <th><input type="text" placeholder="Search Cemetery"></th>
+                <th><input type="text" placeholder="Search Grave"></th>
+            </tr>
+        </thead>
+        <tbody>
+<tr>
+                    <td><a href="view_record.php?uuid=83e0d2ab-30d9-11f0-848c-02013c789f03" target="_blank"
+                            rel="noopener">John SMITH</a>
+                    </td>
+                    <td>Male</td>
+                    <td>41 years                    </td>
+                    <td>1834</td>
+
+                    <td data-order="1875-04-20">
+
+                        20 April 1875                    </td>
+
+                    <td>Leeds</td>
+                    <td>Burmantofts Cemetery (Beckett Street Cemetery)</td>
+                    <td>
+                        Unconsecrated, No. 19055                    </td>
+                </tr>
+<tr>
+                    <td><a href="view_record.php?uuid=83e17775-30d9-11f0-848c-02013c789f03" target="_blank"
+                            rel="noopener">John SMITH</a>
+                    </td>
+                    <td>Male</td>
+                    <td>38 years                    </td>
+                    <td>1837</td>
+
+                    <td data-order="1875-09-28">
+
+                        28 September 1875                    </td>
+
+                    <td>Leeds</td>
+                    <td>Burmantofts Cemetery (Beckett Street Cemetery)</td>
+                    <td>
+                        Unconsecrated, No. 19270                    </td>
+                </tr>
+<tr class="sourcerSelected">
+                    <td><a href="view_record.php?uuid=849bb965-30d9-11f0-848c-02013c789f03" target="_blank"
+                            rel="noopener">John SMITH</a>
+                    </td>
+                    <td>Male</td>
+                    <td>12 Days                    </td>
+                    <td>1875</td>
+
+                    <td data-order="1875-02-20">
+
+                        20 February 1875                    </td>
+
+                    <td>Leeds</td>
+                    <td>Hunslet Cemetery</td>
+                    <td>
+                        Unconsecrated, Sec Old, No. 5928                    </td>
+                </tr>
+<tr>
+                    <td><a href="view_record.php?uuid=849bcea7-30d9-11f0-848c-02013c789f03" target="_blank"
+                            rel="noopener">John Edward SMITH</a>
+                    </td>
+                    <td>Male</td>
+                    <td>35 years                    </td>
+                    <td>1840</td>
+
+                    <td data-order="1875-01-13">
+
+                        13 January 1875                    </td>
+
+                    <td>Leeds</td>
+                    <td>Hunslet Cemetery</td>
+                    <td>
+                        Unconsecrated, Sec Old, No. 501                    </td>
+                </tr>
+</tbody>
+    </table>
+</div>
+
+        </div>
+    </div>
+</main>
+
+<div style="height: 4rem;"></div>
+
+<!-- footer.php -->
+
+<footer class="footer text-dark py-2" style="background-color: #CCBFE0;">
+
+  <style>
+    /* Smaller Buy Me a Coffee button in footer */
+    .bmc-footer-wrap {
+      height: 32px;
+      display: flex;
+      align-items: center;
+    }
+
+    .bmc-footer-wrap .bmc-btn-container {
+      transform: scale(0.65);
+      transform-origin: left center;
+    }
+
+    /* Centre correctly on mobile */
+    @media (max-width: 767.98px) {
+      .bmc-footer-wrap {
+        justify-content: center;
+      }
+
+      .bmc-footer-wrap .bmc-btn-container {
+        transform-origin: center center;
+      }
+    }
+  </style>
+
+  <div
+    class="container-fluid px-5 footer-content d-flex flex-column flex-md-row justify-content-between align-items-center small">
+
+    <!-- Footer navigation -->
+    <nav class="footer-nav mb-1 mb-md-0">
+      <ul class="list-inline mb-0 d-flex flex-wrap align-items-center justify-content-center">
+
+        <li class="list-inline-item">
+          <a class="text-dark" href="/pages/about.php">About</a>
+        </li>
+
+        <li class="list-inline-item">
+          <a class="text-dark" href="/feedback/index.php">Feedback</a>
+        </li>
+
+        <li class="list-inline-item">
+          <a class="text-dark" href="/pages/volunteer.php">Volunteer</a>
+        </li>
+
+        <li class="list-inline-item">
+          <a class="text-dark" href="/pages/help.php">Help</a>
+        </li>
+
+        <!-- Buy Me a Coffee -->
+        <li class="list-inline-item ms-2">
+          <div class="bmc-footer-wrap">
+
+            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+            
+
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- Copyright -->
+    <div class="text-center text-md-end">
+      <p class="mb-1">
+        &copy; 2026 Yorkshire Burials. Content and images are protected by copyright.
+      </p>
+
+      <p class="mb-0">
+        <a class="text-dark" href="/pages/help.php">Reproduction policy</a>
+        |
+        <a class="text-dark" href="/pages/help.php">Report an error</a>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- JavaScript variables for dropdown.js -->
+
+<!--  -->
+
+
+
+<!-- jQuery (required for Bootstrap Select & DataTables) -->
+
+
+<!-- Bootstrap JS (includes Popper) -->
+
+
+<!-- Bootstrap Select -->
+
+
+<!-- Initialise Bootstrap Select -->
+
+
+<!-- DataTables -->
+
+
+
+<!-- Your cascade handler -->
+
+
+<!-- Chart.js -->
+
+
+<!-- Initialise DataTables -->
+
+
+
+
+</body>
+
+</html>

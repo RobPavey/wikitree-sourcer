@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Medical Patient''':\n\"South Australia - Hospital, Asylum and Lying-in Home Admissions\"<br/>\nGenealogy SA; Surname: SMITH; Given Names: Mrs Jessie; Year: 1923; Admission/Registration No: 4459; Notes: Ward = Terrace<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nMrs Jessie Smith on 22 Sep 1923 in Adelaide, South Australia, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Jessie was a patient on 22 September 1923 in Adelaide, South Australia, Australia.<ref>\n'''Medical Patient''':\n\"South Australia - Hospital, Asylum and Lying-in Home Admissions\"<br/>\nGenealogy SA; Surname: SMITH; Given Names: Mrs Jessie; Year: 1923; Admission/Registration No: 4459; Notes: Ward = Terrace<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nMrs Jessie Smith on 22 Sep 1923 in Adelaide, South Australia, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Medical Patient''': \"South Australia - Hospital, Asylum and Lying-in Home Admissions\"<br/>Genealogy SA; Surname: SMITH; Given Names: Mrs Jessie; Year: 1923; Admission/Registration No: 4459; Notes: Ward = Terrace<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Mrs Jessie Smith on 22 Sep 1923 in Adelaide, South Australia, Australia.",
+    "type": "source"
+  }
+}

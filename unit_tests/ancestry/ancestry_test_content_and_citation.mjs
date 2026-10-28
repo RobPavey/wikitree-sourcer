@@ -84,6 +84,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/8614064:8991",
   },
   {
+    caseName: "canada_child_baptism_1886_jean_laflamme",
+    url: "https://www.ancestry.com/search/collections/1091/records/379943751?tid=16392435&pid=1110187097&ssrc=pt",
+  },
+  {
     caseName: "canada_father_obituary_2007_sandra_bowman",
     url: "https://www.ancestry.com/discoveryui-content/view/686307572:62226?tid=&pid=&queryId=fb8fd94e57b84ebb42d63eedfb7d7fd2&_phsrc=XJK6813&_phstart=successSource",
   },
@@ -253,6 +257,10 @@ const regressionData = [
     url: "https://www.ancestry.com/search/collections/8767/records/8067946",
   },
   {
+    caseName: "england_census_1871_albert_densham",
+    url: "https://www.ancestry.com/search/collections/7619/records/917937",
+  },
+  {
     caseName: "england_census_1871_cole-650",
     url: "https://www.ancestry.com/discoveryui-content/view/11291260:7619",
   },
@@ -352,6 +360,10 @@ const regressionData = [
         },
       },
     ],
+  },
+  {
+    caseName: "england_census_1891_chaplin-1740_aug2026",
+    url: "https://www.ancestry.com/search/collections/6598/records/7866657?_phsrc=ywU8188&_phstart=successSource&gsfn=Blanche%20Amelia&gsln=Radcliffe&ml_rpos=1&queryid=47f46742e730e73a9fca2c081ec3a0df",
   },
   {
     caseName: "england_census_1891_chaplin-1740",
@@ -974,6 +986,14 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/41984770:6061",
   },
   {
+    caseName: "us_federal_census_1940_florence_hutchinson_may2026_new",
+    url: "https://www.ancestry.com/search/collections/2442/records/93824254",
+  },
+  {
+    caseName: "us_federal_census_1940_florence_hutchinson_may2026_old",
+    url: "https://www.ancestry.com/search/collections/2442/records/93824254",
+  },
+  {
     caseName: "us_federal_census_1950_polly_beardsley",
     url: "https://www.ancestry.com/discoveryui-content/view/18187958:8054?ssrc=pt&tid=82382307&pid=44461527800",
   },
@@ -1075,6 +1095,10 @@ const regressionData = [
   {
     caseName: "us_ma_arrival_1854_honor_buckley",
     url: "https://www.ancestry.com/discoveryui-content/view/3941667:8745",
+  },
+  {
+    caseName: "us_ma_death_index_1926_magnus_vonloesecke",
+    url: "https://www.ancestry.com/search/collections/3659/records/2700444?tid=&pid=&queryId=55faadce-bec6-45dc-9c94-e90d7f3fd796&_phsrc=jLh19482&_phstart=successSource",
   },
   {
     caseName: "us_ma_birth_1642_increase_sumner",
@@ -1259,6 +1283,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/23886198:2272",
   },
   {
+    caseName: "us_ut_death_1900_stephen_hunter",
+    url: "https://www.ancestry.co.uk/search/collections/6967/records/303158",
+  },
+  {
     caseName: "us_va_census_1782_abel_wakefield",
     url: "https://www.ancestry.com/discoveryui-content/view/32837506:3578",
   },
@@ -1325,6 +1353,11 @@ const regressionData = [
     // June 2024 format. Had Other Sources and Web Links. Has suffix.
     caseName: "xx_profile_leonard_pavey_iv_1700_1783_england",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46591661544/facts",
+  },
+  {
+    // 2026 format. Was not getting any useful data in extract
+    caseName: "xx_profile_leslie_carnell_england_2026",
+    url: "https://www.ancestry.com/family-tree/person/tree/118431178/person/420175338817/facts",
   },
   {
     // 2026 format. The name O'Briend is causing issues.

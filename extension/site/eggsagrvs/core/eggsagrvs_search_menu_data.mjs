@@ -60,7 +60,7 @@ function lastWordInSurname(surname) {
 }
 
 function buildDefaultParameters(province, generalizedData, parameters, options) {
-  parameters.urlPart = province;
+  parameters.searchUrl = EggsaGrvsCommon.searchAreas.find((area) => area.name === province)?.searchUrl;
   parameters.lastName = lastWordInSurname(generalizedData.inferLastName());
   parameters.surnameMode = options.search_eggsagrvs_surnameMode;
 
@@ -87,8 +87,8 @@ const EggsaGrvsData = {
   },
 
   getCategories: function (generalizedData, parameters, options) {
-    EggsaGrvsCommon.searchAreas.map((e) => {
-      return { value: e.urlPart, text: e.name };
+    return EggsaGrvsCommon.searchAreas.map((e) => {
+      return { value: e.searchUrl, text: e.name };
     });
   },
 
@@ -105,11 +105,11 @@ const EggsaGrvsData = {
     // Place
     const placeControl = {};
     placeControl.elementId = "province";
-    placeControl.parameterName = "urlPart";
+    placeControl.parameterName = "searchUrl";
     placeControl.type = "select";
     placeControl.label = "Search graveyards in";
     placeControl.values = EggsaGrvsCommon.searchAreas.map((e) => {
-      return { value: e.urlPart, text: e.name };
+      return { value: e.searchUrl, text: e.name };
     });
     controls.push(placeControl);
 
@@ -186,7 +186,7 @@ const EggsaGrvsData = {
   },
 
   setDefaultSearchParameters: function (generalizedData, parameters, options) {
-    buildDefaultParameters("wcsearchGraves", generalizedData, parameters, options);
+    buildDefaultParameters("Western Cape", generalizedData, parameters, options);
   },
 
   updateParametersOnCategoryChange: function (generalizedData, parameters, options) {},

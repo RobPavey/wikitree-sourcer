@@ -370,7 +370,11 @@ function setDataFromRecordData(ed, result) {
     }
   }
 
-  result.setAgeAtEvent(ed.recordData.age);
+  if (year == "1926") {
+    result.setAgeAtEvent(ed.recordData.updated_age);
+  } else {
+    result.setAgeAtEvent(ed.recordData.age);
+  }
 
   // could attempt to set country but birth place may not be in Ireland
   let birthPlace = ed.recordData.birthplace;
@@ -390,14 +394,17 @@ function setDataFromRecordData(ed, result) {
     // in 1831 there is no list of members - list head name and a count
     result.setRelationshipToHead("Head");
   } else {
-    let relationship = ed.recordData.relation_to_head;
+    let relationship = year == "1926" ? ed.recordData.updated_relationship_to_head : ed.recordData.relation_to_head;
     if (relationship && relationship != "N/A" && relationship != "?") {
       result.setRelationshipToHead(relationship);
     }
   }
 
-  result.setMaritalStatus(ed.recordData.marriage_status);
-  result.setPersonGender(ed.recordData.sex);
+  const marriageStatus = year == "1926" ? ed.recordData.updated_marriage : ed.recordData.marriage_status;
+  result.setMaritalStatus(marriageStatus);
+
+  const sex = year == "1926" ? ed.recordData.updated_sex : ed.recordData.sex;
+  result.setPersonGender(sex);
   let occupation = ed.recordData.occupation_updated;
   if (!occupation) {
     occupation = ed.recordData.occupation;

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Provincial Returns of Deaths (RS141C4)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Registration Number: 3335; Microfilm: F14021; Date:1892-05-18; Place: Kent, New Brunswick, Canada<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/death/141c4/25d15839-7f37-4301-8177-d49fc59f5391 New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nJames Smith death 18 May 1892 in Kent, New Brunswick, Canada.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "James died on 18 May 1892 in Kent, New Brunswick, Canada.<ref>\n'''Death Registration''':\n\"Provincial Returns of Deaths (RS141C4)\"<br/>\nProvincial Archives of New Brunswick; Vital Statistics (RS141); Registration Number: 3335; Microfilm: F14021; Date:1892-05-18; Place: Kent, New Brunswick, Canada<br/>\n[https://archives.gnb.ca/en-ca/vital-statistics/death/141c4/25d15839-7f37-4301-8177-d49fc59f5391 New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>\nJames Smith death 18 May 1892 in Kent, New Brunswick, Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"Provincial Returns of Deaths (RS141C4)\"<br/>Provincial Archives of New Brunswick; Vital Statistics (RS141); Registration Number: 3335; Microfilm: F14021; Date:1892-05-18; Place: Kent, New Brunswick, Canada<br/>[https://archives.gnb.ca/en-ca/vital-statistics/death/141c4/25d15839-7f37-4301-8177-d49fc59f5391 New Brunswick Provincial Archives] (accessed 6 May 2021)<br/>James Smith death 18 May 1892 in Kent, New Brunswick, Canada.",
+    "type": "source"
+  }
+}

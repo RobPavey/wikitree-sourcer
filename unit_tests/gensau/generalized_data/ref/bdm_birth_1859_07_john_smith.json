@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "07 1859"
+  },
+  "birthPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "registrationDistrict": "Adelaide",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "George Smith"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "birth",
+    "year": "1859",
+    "registrationNumber": "15/154",
+    "volume": "15",
+    "page": "154"
+  },
+  "hasValidData": true
+}

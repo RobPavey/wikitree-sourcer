@@ -1,0 +1,57 @@
+{
+  "sourceOfData": "genquebec",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "name": "Francois Augustin Bailly Demassin"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "13 January 1740"
+  },
+  "eventPlace": {
+    "placeString": "Ville-Marie, Montréal (Notre-Dame-de-Montréal), Montréal, Québec, Canada"
+  },
+  "ageAtEvent": "030",
+  "maritalStatus": "single",
+  "spouses": [
+    {
+      "name": {
+        "name": "Marie Anne Desgoutin"
+      },
+      "marriageDate": {
+        "dateString": "13 January 1740"
+      },
+      "marriagePlace": {
+        "placeString": "Ville-Marie, Montréal (Notre-Dame-de-Montréal), Montréal, Québec, Canada"
+      },
+      "age": "017",
+      "personGender": "female",
+      "parents": {
+        "father": {
+          "name": {
+            "name": "Francois Marie Desgoutin"
+          }
+        },
+        "mother": {
+          "name": {
+            "name": "Angelique Aubert Delachenay"
+          }
+        }
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Nicolas Bailly Demassin"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Marie Anne Bonhomme"
+      }
+    }
+  },
+  "hasValidData": true
+}

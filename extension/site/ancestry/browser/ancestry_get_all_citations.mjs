@@ -34,21 +34,24 @@ import { doesCitationWantHouseholdTable } from "/base/browser/popup/popup_citati
 
 import { fetchAncestrySharingDataObj } from "./ancestry_fetch.mjs";
 import { getExtractedDataFromRecordUrl } from "./ancestry_url_to_ed.mjs";
+import { getQueueOptions } from "./ancestry_fetch_queue.mjs";
 
 import {
   buildSourcerCitation,
   buildSourcerCitations,
   filterSourceIdsToSources,
   setUrlStart,
+  pruneSources,
 } from "../core/ancestry_build_all_citations.mjs";
 import { generalizeData, regeneralizeDataWithLinkedRecords } from "../core/ancestry_generalize_data.mjs";
 
 import { getDataForLinkedHouseholdRecords, processWithFetchedLinkData } from "./ancestry_popup_linked_records.mjs";
 
 async function getSharingDataObj(source) {
+  let response = { success: false };
   try {
     if (source.extractedData) {
-      let response = await fetchAncestrySharingDataObj(source.extractedData);
+      response = await fetchAncestrySharingDataObj(source.extractedData);
 
       if (response.success) {
         source.sharingDataObj = response.dataObj;
@@ -65,6 +68,8 @@ async function getSharingDataObj(source) {
     console.log("getAncestrySharingDataObj caught exception on fetchAncestrySharingDataObj:");
     console.log(e);
   }
+
+  return response;
 }
 
 async function updateWithLinkData(data) {
@@ -151,12 +156,17 @@ async function getExtractedAndGeneralizedData(source) {
 
   if (uri) {
     fetchResult = await getExtractedDataFromRecordUrl(uri);
+    source.fetchStatus = fetchResult;
     if (!fetchResult.success) {
       console.log("getExtractedAndGeneralizedData, getExtractedDataFromRecordUrl failed, fetchResult is:");
       console.log(fetchResult);
       response.allowRetry = fetchResult.allowRetry;
       response.statusCode = fetchResult.statusCode;
       return response;
+    }
+
+    if (fetchResult.wasInCache) {
+      response.wasInCache = true;
     }
   } else {
     return response;
@@ -219,6 +229,7 @@ async function getSourcerCitations(runDate, result, type, options) {
 
     updateStatusFunction("fetching...");
     let response = await getExtractedAndGeneralizedData(input);
+    updateStatusFunction("fetch responded");
 
     //console.log("getSourcerCitations, requestFunction, response is:");
     //console.log(response);
@@ -226,13 +237,8 @@ async function getSourcerCitations(runDate, result, type, options) {
     return response;
   }
 
-  const queueOptions = {
-    initialWaitBetweenRequests: 1,
-    maxWaitime: 1600,
-    additionalRetryWaitime: 1600,
-    additionalManyRecent429sWaitime: 1600,
-  };
   const message = "WikiTree Sourcer fetching record for each source";
+  const queueOptions = getQueueOptions(options, "sources");
   let requestsResult = await doRequestsInParallel(requests, fetchSourceRequestFunction, queueOptions, message);
   //console.log("getSourcerCitations: after getExtractedAndGeneralizedData parallel, requestsResult is:");
   //console.log(requestsResult);
@@ -244,6 +250,7 @@ async function getSourcerCitations(runDate, result, type, options) {
 
   result.failureCount = requestsResult.failureCount;
   result.linkedRecordFailureCount = 0;
+  result.sharingLinksFailureCount = 0;
 
   // Now that we have the generalizedData for each source go through and add a link to the personData
   if (result.personGeneralizedData) {
@@ -266,22 +273,22 @@ async function getSourcerCitations(runDate, result, type, options) {
   }
   async function getSharingObjRequestFunction(input, updateStatusFunction) {
     updateStatusFunction("getting sharing link...");
-    let newResponse = { success: true };
-    await getSharingDataObj(input);
-    return newResponse;
+    let response = await getSharingDataObj(input);
+    return response;
   }
-  const sharingMessage = "WikiTree Sourcer fetching sharing link each source";
+  const sharingMessage = "WikiTree Sourcer fetching sharing link for each source";
+  const sharingQueueOptions = getQueueOptions(options, "sharing");
   let sharingRequestsResult = await doRequestsInParallel(
     sharingRequests,
     getSharingObjRequestFunction,
-    queueOptions,
+    sharingQueueOptions,
     sharingMessage
   );
   if (sharingRequestsResult.failureCount > 0) {
     // some of the source records could not be retrieved.
     await parallelRequestsDisplayErrorsMessage("getting sharing links");
   }
-  result.failureCount += sharingRequestsResult.failureCount;
+  result.sharingLinksFailureCount += sharingRequestsResult.failureCount;
 
   // we now have the directly referenced source records extracted and generalized.
   // For some records we need to get linked records.
@@ -307,6 +314,8 @@ async function getSourcerCitations(runDate, result, type, options) {
       buildSourcerCitation(runDate, source, type, options);
     }
   }
+
+  pruneSources(result, options);
 
   //console.log("getSourcerCitations: before buildSourcerCitations, result is:");
   //console.log(result);

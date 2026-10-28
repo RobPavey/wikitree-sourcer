@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"South Australia - Birth Registrations\"<br/>\nGenealogy SA; Surname: KEMP; Book/Page: 143/400<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAbbey Kemp birth 1 Nov 1874 registered in the Daly district, daughter of Richard Kemp & Sarah Doyle, residence Moonta Mines.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Abbey's birth on 1 November 1874 was registered in the Daly district. She was the daughter of Richard Kemp & Sarah Doyle.<ref>\n'''Birth Registration''':\n\"South Australia - Birth Registrations\"<br/>\nGenealogy SA; Surname: KEMP; Book/Page: 143/400<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nAbbey Kemp birth 1 Nov 1874 registered in the Daly district, daughter of Richard Kemp & Sarah Doyle, residence Moonta Mines.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"South Australia - Birth Registrations\"<br/>Genealogy SA; Surname: KEMP; Book/Page: 143/400<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Abbey Kemp birth 1 Nov 1874 registered in the Daly district, daughter of Richard Kemp & Sarah Doyle, residence Moonta Mines.",
+    "type": "source"
+  }
+}

@@ -27,6 +27,8 @@ import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/matricula_generalize_data.mjs";
 import { buildCitation } from "../core/matricula_build_citation.mjs";
 
+function regeneralize() {}
+
 async function setupMatriculaPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
@@ -35,6 +37,7 @@ async function setupMatriculaPopupMenu(extractedData) {
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "matricula",
+    regeneralizeFunction: regeneralize,
   };
   setupSimplePopupMenu(input);
 }

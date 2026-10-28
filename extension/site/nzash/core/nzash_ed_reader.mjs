@@ -183,14 +183,6 @@ class NzashEdReader extends ExtractedDataReader {
     return this.makePlaceObjFromCountryName("New Zealand");
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
   getBirthDateObj() {
     return undefined;
   }

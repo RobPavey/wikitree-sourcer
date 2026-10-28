@@ -1,0 +1,54 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Surname: MACDONALD; Given Names: Dorothy Isabel Rose; Year: 1902; District: Adelaide; Book/Page: 290/184; Notes: Age=4w<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDorothy Isabel Rose MacDonald death 16 Nov 1902 registered in the Adelaide district.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Dorothy's death on 16 November 1902 was registered in the Adelaide district.<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Surname: MACDONALD; Given Names: Dorothy Isabel Rose; Year: 1902; District: Adelaide; Book/Page: 290/184; Notes: Age=4w<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDorothy Isabel Rose MacDonald death 16 Nov 1902 registered in the Adelaide district.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"South Australia - Death Registrations\"<br/>Genealogy SA; Surname: MACDONALD; Given Names: Dorothy Isabel Rose; Year: 1902; District: Adelaide; Book/Page: 290/184; Notes: Age=4w<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Dorothy Isabel Rose MacDonald death 16 Nov 1902 registered in the Adelaide district.",
+    "type": "source"
+  },
+  "two_sentence_narrative_format_narrative": {
+    "citation": "Dorothy died on 16 November 1902. Her death was registered in the Adelaide district.<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Surname: MACDONALD; Given Names: Dorothy Isabel Rose; Year: 1902; District: Adelaide; Book/Page: 290/184; Notes: Age=4w<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDorothy Isabel Rose MacDonald death 16 Nov 1902 registered in the Adelaide district.\n</ref>",
+    "type": "narrative"
+  },
+  "data_style_list_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Year: 1902; Book/Page: 290/184; Notes: Age=4w<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nSurname: MACDONALD; First Names: Dorothy Isabel Rose; Death Date: 16-Nov-1902; Gender: F; Marital Status: N; Place of Death: Unley; Residence: Unley; Relative: James MACDONALD (F); District: Adelaide.\n</ref>",
+    "type": "inline"
+  },
+  "data_style_list_narrative": {
+    "citation": "Dorothy's death on 16 November 1902 was registered in the Adelaide district.<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Year: 1902; Book/Page: 290/184; Notes: Age=4w<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nSurname: MACDONALD; First Names: Dorothy Isabel Rose; Death Date: 16-Nov-1902; Gender: F; Marital Status: N; Place of Death: Unley; Residence: Unley; Relative: James MACDONALD (F); District: Adelaide.\n</ref>",
+    "type": "narrative"
+  },
+  "data_style_list_source": {
+    "citation": "* '''Death Registration''': \"South Australia - Death Registrations\"<br/>Genealogy SA; Year: 1902; Book/Page: 290/184; Notes: Age=4w<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Surname: MACDONALD; First Names: Dorothy Isabel Rose; Death Date: 16-Nov-1902; Gender: F; Marital Status: N; Place of Death: Unley; Residence: Unley; Relative: James MACDONALD (F); District: Adelaide.",
+    "type": "source"
+  },
+  "source_ref_only_ref_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Book/Page: 290/184; Notes: Age=4w<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDorothy Isabel Rose MacDonald death 16 Nov 1902 registered in the Adelaide district.\n</ref>",
+    "type": "inline"
+  },
+  "source_ref_only_ref_narrative": {
+    "citation": "Dorothy's death on 16 November 1902 was registered in the Adelaide district.<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Book/Page: 290/184; Notes: Age=4w<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nDorothy Isabel Rose MacDonald death 16 Nov 1902 registered in the Adelaide district.\n</ref>",
+    "type": "narrative"
+  },
+  "source_ref_only_ref_source": {
+    "citation": "* '''Death Registration''': \"South Australia - Death Registrations\"<br/>Genealogy SA; Book/Page: 290/184; Notes: Age=4w<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Dorothy Isabel Rose MacDonald death 16 Nov 1902 registered in the Adelaide district.",
+    "type": "source"
+  },
+  "data_style_list_source_ref_only_ref_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Book/Page: 290/184; Notes: Age=4w<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nSurname: MACDONALD; First Names: Dorothy Isabel Rose; Death Date: 16-Nov-1902; Gender: F; Marital Status: N; Place of Death: Unley; Residence: Unley; Relative: James MACDONALD (F); District: Adelaide.\n</ref>",
+    "type": "inline"
+  },
+  "data_style_list_source_ref_only_ref_narrative": {
+    "citation": "Dorothy's death on 16 November 1902 was registered in the Adelaide district.<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Book/Page: 290/184; Notes: Age=4w<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nSurname: MACDONALD; First Names: Dorothy Isabel Rose; Death Date: 16-Nov-1902; Gender: F; Marital Status: N; Place of Death: Unley; Residence: Unley; Relative: James MACDONALD (F); District: Adelaide.\n</ref>",
+    "type": "narrative"
+  },
+  "data_style_list_source_ref_only_ref_source": {
+    "citation": "* '''Death Registration''': \"South Australia - Death Registrations\"<br/>Genealogy SA; Book/Page: 290/184; Notes: Age=4w<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Surname: MACDONALD; First Names: Dorothy Isabel Rose; Death Date: 16-Nov-1902; Gender: F; Marital Status: N; Place of Death: Unley; Residence: Unley; Relative: James MACDONALD (F); District: Adelaide.",
+    "type": "source"
+  }
+}

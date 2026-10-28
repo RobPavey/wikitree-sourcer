@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Surname: JOHNSON; Given Names: Genevieve Ray; Year: 1994<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nGenevieve Ray Johnson death 23 Aug 1994, daughter of James Roach & Olive Cox.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Genevieve, daughter of James Roach & Olive Cox, died (age 66) on 23 August 1994 in South Australia, Australia.<ref>\n'''Death Registration''':\n\"South Australia - Death Registrations\"<br/>\nGenealogy SA; Surname: JOHNSON; Given Names: Genevieve Ray; Year: 1994<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nGenevieve Ray Johnson death 23 Aug 1994, daughter of James Roach & Olive Cox.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"South Australia - Death Registrations\"<br/>Genealogy SA; Surname: JOHNSON; Given Names: Genevieve Ray; Year: 1994<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Genevieve Ray Johnson death 23 Aug 1994, daughter of James Roach & Olive Cox.",
+    "type": "source"
+  }
+}

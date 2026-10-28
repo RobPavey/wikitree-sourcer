@@ -91,12 +91,6 @@ class VicbdmEdReader extends ExtractedDataReader {
     }
   }
 
-  getRecordDataValue(key) {
-    if (key && this.ed.recordData) {
-      return this.ed.recordData[key];
-    }
-  }
-
   getClickedRowDataValue(key) {
     if (key && this.ed.clickedRowData) {
       let rowData = this.ed.clickedRowData;

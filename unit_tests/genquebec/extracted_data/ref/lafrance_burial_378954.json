@@ -1,0 +1,21 @@
+{
+  "url": "https://www.genealogiequebec.com/Membership/LAFRANCE/acte/378954",
+  "success": true,
+  "pageType": "membership-lafrance",
+  "recordId": "378954",
+  "indexHeader": "Death, LaFrance",
+  "recordData": {
+    "MRC": "Marguerite-D'Youville",
+    "Région": "Montérégie",
+    "Name": "MASSIN BAILLY, Francois Augustin",
+    "Gender": "male",
+    "Age": "061",
+    "Occupation": "NEGOCIANT EN CETTE PAROISSE",
+    "Burial date": "04-Apr-1771",
+    "Burial location": "Varennes (Ste-Anne)",
+    "Death date": "02-Apr-1771"
+  },
+  "heading": "MASSIN BAILLY, Francois Augustin",
+  "originalSource": "Drouin Institute, LAFRANCE",
+  "imageUrl": "../img/acte/378954"
+}

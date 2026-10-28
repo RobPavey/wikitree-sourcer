@@ -1,0 +1,46 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Kemp",
+    "forenames": "Abbey"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "01-Nov-1874"
+  },
+  "birthPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "residencePlace": {
+    "placeString": "Moonta Mines, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Moonta Mines"
+  },
+  "registrationDistrict": "Daly",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Richard Kemp"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Sarah Doyle"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "birth",
+    "year": "1874",
+    "registrationNumber": "143/400",
+    "volume": "143",
+    "page": "400"
+  },
+  "hasValidData": true
+}

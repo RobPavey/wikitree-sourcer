@@ -14362,7 +14362,7 @@ const NameUtils = {
     // replace any multiple white spaces with one space
     resultString = resultString.replace(/\s+/g, " ");
 
-    // Check for something in paraetheses at start (can happen the 1881 census on ScotP) see example in
+    // Check for something in parentheses at start (can happen the 1881 census on ScotP) see example in
     // test case census_lds_1881_mrs_fraser which has "(Mrs) FRASER" in th surname
     // Another example has "(A M) FRASER" in surname and "Donald" in forname.
     // For now remove anything in parens at start
@@ -14483,6 +14483,37 @@ const NameUtils = {
     } while (index != -1);
 
     return resultString;
+  },
+
+  convertFullNameWithLastNameInUpperCaseToForenamesAndLastNames: function (fullName) {
+    let result = {
+      success: false,
+    };
+
+    // split into parts
+    let parts = fullName.split(" ");
+    let lastNameIndex = -1;
+    for (let partIndex = 0; partIndex < parts.length; partIndex++) {
+      let part = parts[partIndex];
+      if (StringUtils.isAllUppercase(part)) {
+        lastNameIndex = partIndex;
+      } else {
+        lastNameIndex = -1;
+      }
+    }
+
+    if (lastNameIndex != -1 && lastNameIndex > 0) {
+      let forenames = parts.slice(0, lastNameIndex).join(" ");
+      let lastNames = parts.slice(lastNameIndex).join(" ");
+      lastNames = NameUtils.convertNameFromAllCapsToMixedCase(lastNames);
+      if (forenames && lastNames) {
+        result.forenames = forenames;
+        result.lastName = lastNames;
+        result.success = true;
+      }
+    }
+
+    return result;
   },
 
   convertEnglishGivenNameFromAbbrevationToFull: function (abbrev, gender) {

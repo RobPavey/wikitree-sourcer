@@ -38,7 +38,7 @@ async function getDefaultOptions() {
 
   let defaultOptions = {};
 
-  defaultOptions.options_version = 13;
+  defaultOptions.options_version = 14;
 
   for (let optionsGroup of optionsRegistry.optionsGroups) {
     let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";

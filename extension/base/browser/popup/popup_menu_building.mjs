@@ -35,6 +35,7 @@ import { openOrShowOptionsPage } from "../common/browser_compat.mjs";
 import { clearCitation } from "./popup_citation.mjs";
 
 import { addShowCitationAssistantMenuItem } from "./popup_menu_blocks.mjs";
+import { addCollectCitationsMenuItem } from "./popup_collect_citations.mjs";
 
 import { getSites } from "../common/site_registry_storage.mjs";
 
@@ -266,7 +267,7 @@ async function displayUnexpectedErrorMessage(message, error, requestReport) {
   document.getElementById("menu").appendChild(fragment);
 }
 
-async function displayMessageWithIcon(iconType, message1, message2) {
+async function displayMessageWithIcon(iconType, message1, message2, errorMessage1) {
   emptyMenu();
 
   let fragment = document.createDocumentFragment();
@@ -310,6 +311,13 @@ async function displayMessageWithIcon(iconType, message1, message2) {
     label2.className = "messageLabelInDiv";
     label2.innerText = message2;
     labelDiv.appendChild(label2);
+  }
+
+  if (errorMessage1) {
+    let label = document.createElement("label");
+    label.className = "errorMessageLabelInDiv";
+    label.innerText = errorMessage1;
+    labelDiv.appendChild(label);
   }
 
   document.getElementById("menu").appendChild(fragment);
@@ -905,10 +913,10 @@ function addMenuItemWithSubtitle(menu, innerText, onclick, subTitleText) {
   menu.list.appendChild(listItem);
 }
 
-function addMenuItemWithSubMenu(menu, innerText, onclick, onSubMenuClick) {
+function addMenuItemWithSubmenu(menu, innerText, onclick, onSubmenuClick) {
   // create a list item and add it to the list
   let listItem = document.createElement("li");
-  setMenuItemClassName(menu, listItem, "menuItemWithSubMenu");
+  setMenuItemClassName(menu, listItem, "menuItemWithSubmenu");
   menu.list.appendChild(listItem);
 
   let rowDiv = document.createElement("div");
@@ -931,7 +939,7 @@ function addMenuItemWithSubMenu(menu, innerText, onclick, onSubMenuClick) {
 
   let rightButton = document.createElement("button");
   rightButton.className = "menuButton";
-  rightButton.onclick = onSubMenuClick;
+  rightButton.onclick = onSubmenuClick;
   rightButton.innerText = ">";
   labelDiv.appendChild(rightButton);
 
@@ -971,6 +979,31 @@ function addHelpMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Help...", function (element) {
     setupHelpSubmenuMenu(data, backFunction);
   });
+}
+
+function addButtonMenuItem(menu, innerText, onclick, shortcut) {
+  // create a list item and add it to the list
+  let listItem = document.createElement("li");
+  setMenuItemClassName(menu, listItem, "menuItem");
+  //listItem.innerText = innerText;
+  //listItem.onclick = onclick;
+
+  if (shortcut) {
+    innerText = innerText + " [" + shortcut + "]";
+  }
+
+  let button = document.createElement("button");
+  button.className = "dialogButton";
+  button.onclick = onclick;
+  button.innerText = innerText;
+  button.setAttribute("aria-keyshortcuts", shortcut);
+  listItem.appendChild(button);
+
+  menu.list.appendChild(listItem);
+
+  if (shortcut) {
+    addShortcut(shortcut, onclick);
+  }
 }
 
 function addBuyMeACoffeeMenuItem(menu) {
@@ -1030,7 +1063,11 @@ function isManualClassificationNeeded(data) {
     } else if (
       data.generalizedData.sourceOfData == "openarch" ||
       data.generalizedData.sourceOfData == "wiewaswie" ||
-      data.generalizedData.sourceOfData == "noda"
+      data.generalizedData.sourceOfData == "noda" ||
+      data.generalizedData.sourceOfData == "archion" ||
+      data.generalizedData.sourceOfData == "matricula" ||
+      data.generalizedData.sourceOfData == "arolsenarchives" ||
+      data.generalizedData.sourceOfData == "dfgviewer"
     ) {
       result.isRecordTypeNeeded = true;
     }
@@ -1085,7 +1122,73 @@ function getBuildCitationShortcutForType(type) {
   return shortcut;
 }
 
-function setupBuildCitationSubMenuForRequestedUserInput(
+// This is used for submenu list - it is not as advanced as GeneralizedData.getRefTitle.
+const rtToRefTitle = {
+  Unclassified: "Unknown",
+  Apprenticeship: "Apprenticeship",
+  Baptism: "Baptism",
+  Biography: "Biography",
+  BiographicalIndex: "BiographicalIndex",
+  Birth: "Birth",
+  BirthRegistration: "Birth Registration",
+  Book: "Book",
+  Burial: "Burial",
+  Certificate: "Certificate",
+  Census: "Census",
+  ChurchRecords: "Church Records",
+  ConvictTransportation: "Convict Transportation",
+  CrewList: "Crew List",
+  CriminalRegister: "Criminal Register",
+  Death: "Death",
+  DeathRegistration: "Death Registration",
+  Deed: "Deed",
+  Diary: "Diary",
+  Directory: "Directory",
+  Divorce: "Divorce",
+  ElectoralRegister: "Electoral Register",
+  Encyclopedia: "Encyclopedia",
+  Employment: "Employment",
+  FamHistOrPedigree: "Family History Or Pedigree",
+  FamilyTree: "FamilyTree",
+  FreemasonMembership: "Freemason Membership",
+  GovernmentDocument: "Government Document",
+  Heraldry: "Heraldic Record",
+  Immigration: "Immigration",
+  Imprisonment: "Imprisonment",
+  Inquest: "Inquest",
+  InstitutionInmate: "InstitutionInmate",
+  LandAssessment: "Land Assessment",
+  LandTax: "Land Tax",
+  LandPetition: "Land Petition",
+  LandGrant: "Land Grant",
+  LegalRecord: "Legal Record",
+  Marriage: "Marriage",
+  MarriageRegistration: "Marriage Registration",
+  MedicalPatient: "Medical Patient",
+  MetisScrip: "MetisScrip",
+  Military: "Military",
+  Naturalization: "Naturalization",
+  Newspaper: "Newspaper",
+  NonpopulationCensus: "Nonpopulation Census",
+  Obituary: "Obituary",
+  OtherChurchEvent: "Other Church Event",
+  PassengerList: "Passenger List",
+  PassportApplication: "Passport Application",
+  Pension: "Pension",
+  PopulationRegister: "Population Register",
+  Probate: "Probate",
+  QuarterSession: "Quarter Session",
+  RateBook: "Rate Book",
+  Residence: "Residence",
+  SchoolRecords: "School Records",
+  SlaveSchedule: "Slave Schedule",
+  SocialSecurity: "Social Security",
+  Tax: "Tax",
+  Will: "Will",
+  WorkhouseRecord: "Workhouse Record",
+};
+
+function setupBuildCitationSubmenuForRequestedUserInput(
   data,
   buildFunction,
   backFunction,
@@ -1108,7 +1211,7 @@ function setupBuildCitationSubMenuForRequestedUserInput(
         focusElementId = activeElement.id;
       }
 
-      setupBuildCitationSubMenuForRequestedUserInput(
+      setupBuildCitationSubmenuForRequestedUserInput(
         data,
         buildFunction,
         backFunction,
@@ -1270,7 +1373,7 @@ function setupBuildCitationSubMenuForRequestedUserInput(
   }
 }
 
-function setupBuildCitationSubMenu(
+function setupBuildCitationSubmenu(
   data,
   manualClassification,
   buildFunction,
@@ -1281,7 +1384,7 @@ function setupBuildCitationSubMenu(
   clearCitation();
 
   if (userInputFunction) {
-    setupBuildCitationSubMenuForRequestedUserInput(
+    setupBuildCitationSubmenuForRequestedUserInput(
       data,
       buildFunction,
       backFunction,
@@ -1295,71 +1398,6 @@ function setupBuildCitationSubMenu(
     manualClassification.isRecordTypeNeeded ||
     (manualClassification.isRecordTypeNeededForNarrative && data.type == "narrative");
   let needsRefTitle = manualClassification.isRefTitleNeeded;
-
-  // This is used for submenu list - it is not as advanced as GeneraizedData.getRefTitle.
-  // This isn't alphabetical order
-  const rtToRefTitle = {
-    Unclassified: "Unknown",
-    Apprenticeship: "Apprenticeship",
-    Baptism: "Baptism",
-    Birth: "Birth",
-    BirthRegistration: "Birth Registration",
-    Book: "Book",
-    Burial: "Burial",
-    Certificate: "Certificate",
-    Census: "Census",
-    ConvictTransportation: "Convict Transportation",
-    CrewList: "Crew List",
-    CriminalRegister: "Criminal Register",
-    Death: "Death",
-    DeathRegistration: "Death Registration",
-    Deed: "Deed",
-    Diary: "Diary",
-    Directory: "Directory",
-    Divorce: "Divorce",
-    ElectoralRegister: "Electoral Register",
-    Encyclopedia: "Encyclopedia",
-    Employment: "Employment",
-    FamHistOrPedigree: "Family History Or Pedigree",
-    FamilyTree: "FamilyTree",
-    FreemasonMembership: "Freemason Membership",
-    GovernmentDocument: "Government Document",
-    Heraldry: "Heraldic Record",
-    Immigration: "Immigration",
-    Imprisonment: "Imprisonment",
-    Inquest: "Inquest",
-    InstitutionInmate: "InstitutionInmate",
-    LandAssessment: "Land Assessment",
-    LandTax: "Land Tax",
-    LandPetition: "Land Petition",
-    LandGrant: "Land Grant",
-    LegalRecord: "Legal Record",
-    Marriage: "Marriage",
-    MarriageRegistration: "Marriage Registration",
-    MedicalPatient: "Medical Patient",
-    MetisScrip: "MetisScrip",
-    Military: "Military",
-    Naturalization: "Naturalization",
-    Newspaper: "Newspaper",
-    NonpopulationCensus: "Nonpopulation Census",
-    Obituary: "Obituary",
-    OtherChurchEvent: "Other Church Event",
-    ChurchRecords: "Church Records",
-    PassengerList: "Passenger List",
-    PassportApplication: "Passport Application",
-    Pension: "Pension",
-    PopulationRegister: "Population Register",
-    Probate: "Probate",
-    QuarterSession: "Quarter Session",
-    RateBook: "Rate Book",
-    Residence: "Residence",
-    SchoolRecords: "School Records",
-    SlaveSchedule: "Slave Schedule",
-    SocialSecurity: "Social Security",
-    Tax: "Tax",
-    Will: "Will",
-    WorkhouseRecord: "Workhouse Record",
-  };
 
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
@@ -1376,11 +1414,11 @@ function setupBuildCitationSubMenu(
       selector.removeChild(selector.firstChild);
     }
 
-    const keys = Object.keys(rtToRefTitle);
+    const keys = data.extractedData.recordTypeCandidates || Object.keys(rtToRefTitle);
     for (const key of keys) {
       let option = document.createElement("option");
       option.value = key;
-      option.text = rtToRefTitle[key];
+      option.text = rtToRefTitle[key] || key;
       selector.appendChild(option);
     }
   }
@@ -1486,7 +1524,7 @@ function setupBuildCitationSubMenu(
   endMainMenu(menu);
 }
 
-function setupOtherBuildCitationItemsSubMenu(
+function setupOtherBuildCitationItemsSubmenu(
   data,
   manualClassification,
   buildFunction,
@@ -1586,7 +1624,7 @@ function addBuildCitationMenuItem(
   input.type = type;
 
   let rightArrowClickFunction = function (element) {
-    setupOtherBuildCitationItemsSubMenu(
+    setupOtherBuildCitationItemsSubmenu(
       data,
       manualClassification,
       buildFunction,
@@ -1598,7 +1636,7 @@ function addBuildCitationMenuItem(
   };
 
   let suffixClickFunction = function (element) {
-    setupBuildCitationSubMenu(
+    setupBuildCitationSubmenu(
       input,
       manualClassification,
       buildFunction,
@@ -1616,13 +1654,20 @@ function addBuildCitationMenuItem(
   let mainClickFunction = suffix ? suffixClickFunction : simpleBuildClickFunction;
 
   if (othersOnSubmenu) {
-    addMenuItemWithSubMenu(menu, menuText, mainClickFunction, rightArrowClickFunction);
+    addMenuItemWithSubmenu(menu, menuText, mainClickFunction, rightArrowClickFunction);
   } else {
     addMenuItem(menu, menuText, mainClickFunction, shortcut);
   }
 }
 
-function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, regeneralizeFunction, userInputFunction) {
+async function addBuildCitationMenuItems(
+  menu,
+  data,
+  buildFunction,
+  backFunction,
+  regeneralizeFunction,
+  userInputFunction
+) {
   let gd = data.generalizedData;
   if (gd.sourceType && !(gd.sourceType == "record" || gd.sourceType == "image")) {
     addShowCitationAssistantMenuItem(menu);
@@ -1656,6 +1701,8 @@ function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, rege
       );
     }
   }
+
+  await addCollectCitationsMenuItem(menu, data, backFunction);
 
   if (gd.sourceType == "image") {
     // Images typically do not have a lot of info for a citation
@@ -1913,7 +1960,7 @@ function setupHelpSubmenuMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFunction, backFunction) {
+async function setupSearchCollectionsSubmenu(data, siteName, searchCollectionFunction, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -1929,9 +1976,9 @@ async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFun
   };
   let collectionArray = RC.findCollectionsForSiteWithinDateRangeAndCountries(siteName, dates, countryArray);
 
-  //console.log("setupSearchCollectionsSubMenu, countryArray is:");
+  //console.log("setupSearchCollectionsSubmenu, countryArray is:");
   //console.log(countryArray);
-  //console.log("setupSearchCollectionsSubMenu, dates is:");
+  //console.log("setupSearchCollectionsSubmenu, dates is:");
   //console.log(dates);
 
   if (collectionArray && collectionArray.length > 0) {
@@ -2096,13 +2143,14 @@ export {
   addSameRecordMenuItem,
   addSameEventMenuItem,
   setPopupMenuWidth,
-  setupSearchCollectionsSubMenu,
+  setupSearchCollectionsSubmenu,
   addBackMenuItem,
   addHelpMenuItem,
+  addButtonMenuItem,
   addBuyMeACoffeeMenuItem,
   addOptionsMenuItem,
   addItalicMessageMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addMenuItemWithSubtitle,
   addMenuItem,
   addBreak,
@@ -2131,4 +2179,6 @@ export {
   clearCachedFetchData,
   displayTextMenu,
   overrideMenuWidth,
+  addMessageMenuItem,
+  rtToRefTitle,
 };

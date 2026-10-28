@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Généalogie Québec: Birth, LaFrance\"<br/>\nGenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Genealogical Institute and PRDH. [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/2713307 View original document]<br/>\n[https://www.genealogiequebec.com/en/lafrance_naissances/2713307 Généalogie Québec Record] (accessed 6 May 2021)<br/>\nPierre Nazaire Duclos baptism on 30 Jul 1822 (born 30 Jul 1822), son of Jean Baptiste Duclos & Suzanne Begin, in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada. Father's occupation: menuisier.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Pierre, son of Jean Baptiste Duclos & Suzanne Begin, was born on 30 July 1822 and baptised on 30 July 1822 in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada.<ref>\n'''Baptism''':\n\"Généalogie Québec: Birth, LaFrance\"<br/>\nGenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Genealogical Institute and PRDH. [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/2713307 View original document]<br/>\n[https://www.genealogiequebec.com/en/lafrance_naissances/2713307 Généalogie Québec Record] (accessed 6 May 2021)<br/>\nPierre Nazaire Duclos baptism on 30 Jul 1822 (born 30 Jul 1822), son of Jean Baptiste Duclos & Suzanne Begin, in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada. Father's occupation: menuisier.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"Généalogie Québec: Birth, LaFrance\"<br/>GenealogyQuebec.com, Drouin Genealogical Institute. Original source: Drouin Genealogical Institute and PRDH. [https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/2713307 View original document]<br/>[https://www.genealogiequebec.com/en/lafrance_naissances/2713307 Généalogie Québec Record] (accessed 6 May 2021)<br/>Pierre Nazaire Duclos baptism on 30 Jul 1822 (born 30 Jul 1822), son of Jean Baptiste Duclos & Suzanne Begin, in Lauzon (St-Joseph-de-la-Pointe-Lévy), Chaudière-Appalaches, Québec, Canada. Father's occupation: menuisier.",
+    "type": "source"
+  }
+}

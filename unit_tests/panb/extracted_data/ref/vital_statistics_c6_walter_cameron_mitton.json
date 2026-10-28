@@ -1,0 +1,20 @@
+{
+  "url": "https://archives.gnb.ca/en-ca/vital-statistics/death/141c6/0040b7d5-4dea-4c5a-b925-845e59e3d9e7",
+  "success": true,
+  "databaseID": "RS141C6",
+  "sourceTitle": "Provincial Archives of New Brunswick; Vital Statistics (RS141)",
+  "tableTitle": "Index to Death registration of soldiers, 1941-1947 (RS141C6)",
+  "recordData": {
+    "Name": "MITTON, WALTER CAMERON",
+    "Age": "21",
+    "Date": "1944-07-04",
+    "Place": "FRANCE",
+    "Residence": "ANAGANCE",
+    "Microfilm": "F20079"
+  },
+  "webpageFormat": 202606,
+  "numberTableEntries": 6,
+  "hasImage": true,
+  "imageUrl": "https://archives.gnb.ca/api/image-handler/digitized-documents/rs141/c6/1944/0040b7d5-4dea-4c5a-b925-845e59e3d9e7.jpg",
+  "eventType": "Death"
+}

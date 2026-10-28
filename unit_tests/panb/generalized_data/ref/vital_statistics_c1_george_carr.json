@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "name": "George Carr"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1888-??-??"
+  },
+  "eventPlace": {
+    "placeString": "Muniac, Victoria, New Brunswick, Canada"
+  },
+  "ageAtEvent": "3",
+  "ageAtDeath": "3",
+  "webpageFormat": 202606,
+  "userOverrideForNarrative": "George Carr, born in Muniac, Victoria, now of Muniac, Victoria, died 1888-??-?? at age 3 in Muniac, Victoria, New Brunswick.",
+  "hasValidData": true
+}

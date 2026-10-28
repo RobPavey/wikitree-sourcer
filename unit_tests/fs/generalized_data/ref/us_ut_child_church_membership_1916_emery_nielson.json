@@ -1,0 +1,46 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": {
+    "name": {
+      "name": "Nielson",
+      "lastName": "Nielson"
+    },
+    "gender": "male",
+    "birthDate": {
+      "dateString": "30 November 1916",
+      "yearString": "1916"
+    }
+  },
+  "recordType": "ChurchRecords",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Emery",
+    "forenames": "Emery"
+  },
+  "eventPlace": {
+    "placeString": "Duchesne, Utah, United States"
+  },
+  "wtSearchIds": [
+    {
+      "key": "FamilySearch",
+      "value": "6PGW-R2SM"
+    }
+  ],
+  "wtSearchIdsRelated": [
+    {
+      "key": "FamilySearch",
+      "value": "3Q9M-C3HM-NQCW"
+    },
+    {
+      "key": "FamilySearch",
+      "value": "6PGW-R291"
+    }
+  ],
+  "collectionData": {
+    "id": "3714676",
+    "collectionTitle": "The Church of Jesus Christ of Latter-day Saints, Record of Members (Worldwide), 1836-1970"
+  },
+  "hasValidData": true
+}

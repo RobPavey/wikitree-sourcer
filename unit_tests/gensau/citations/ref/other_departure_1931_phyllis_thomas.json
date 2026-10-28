@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Passenger List''':\n\"South Australia - Shipping Passenger Departures from South Australia\"<br/>\nGenealogy SA; Surname: THOMAS; Given Names: Phyllis Gwendolen Hewett<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nPhyllis Gwendolen Hewett Thomas, age 27, was a passenger.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Phyllis was a passenger.<ref>\n'''Passenger List''':\n\"South Australia - Shipping Passenger Departures from South Australia\"<br/>\nGenealogy SA; Surname: THOMAS; Given Names: Phyllis Gwendolen Hewett<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nPhyllis Gwendolen Hewett Thomas, age 27, was a passenger.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Passenger List''': \"South Australia - Shipping Passenger Departures from South Australia\"<br/>Genealogy SA; Surname: THOMAS; Given Names: Phyllis Gwendolen Hewett<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>Phyllis Gwendolen Hewett Thomas, age 27, was a passenger.",
+    "type": "source"
+  }
+}

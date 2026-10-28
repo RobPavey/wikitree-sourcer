@@ -1,0 +1,540 @@
+/*
+MIT License
+
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
+import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
+
+function cleanName(edReader, value) {
+  let cleanString = value;
+  return cleanString;
+}
+
+function cleanDate(edReader, value) {
+  let cleanString = value;
+  cleanString = cleanString.replace(/\s*\(död\)\s*/i, "");
+  cleanString = cleanString.replace(/\s*\(födelse\)\s*/i, "");
+  return cleanString;
+}
+
+function cleanPlace(edReader, value) {
+  let cleanString = value;
+
+  return cleanString;
+}
+
+function cleanGender(edReader, value) {
+  let cleanString = value;
+  if (cleanString == "Man") {
+    cleanString = "male";
+  } else if (cleanString == "Kvinna") {
+    cleanString = "female";
+  }
+  return cleanString;
+}
+
+function cleanMaritalStatus(edReader, value) {
+  let cleanString = value;
+  if (cleanString == "Ogift") {
+    cleanString = "single";
+  } else if (cleanString == "Gift") {
+    cleanString = "married";
+  } else if (cleanString == "Änka") {
+    cleanString = "widowed";
+  } else if (cleanString == "Änkling") {
+    cleanString = "widowed";
+  } else if (cleanString == "Frånskild") {
+    cleanString = "divorced";
+  }
+  return cleanString;
+}
+
+function cleanOccupation(edReader, value) {
+  let cleanString = value;
+  return cleanString;
+}
+
+function cleanMarriageDate(edReader, value) {
+  let cleanString = value;
+  let inIndex = cleanString.indexOf(" i ");
+  if (inIndex != -1) {
+    cleanString = cleanString.substring(0, inIndex).trim();
+  }
+  return cleanString;
+}
+
+function cleanMarriagePlace(edReader, value) {
+  let cleanString = value;
+  let inIndex = cleanString.indexOf(" i ");
+  if (inIndex != -1) {
+    cleanString = cleanString.substring(inIndex + 3).trim();
+  } else {
+    cleanString = "";
+  }
+  return cleanString;
+}
+
+const recordTypes = [
+  // BDM
+  {
+    recordType: RT.Birth,
+    matchData: {
+      type: ["Birth records", "Födelseregister"],
+    },
+    rules: {
+      birthDate: {
+        recordDataKeys: ["Birth date", "Födelsedatum", "Date of birth"],
+        cleanFunction: cleanDate,
+      },
+      birthPlace: {
+        recordDataKeys: ["Parish", "Församling"],
+        cleanFunction: cleanPlace,
+      },
+    },
+  },
+  {
+    recordType: RT.Death,
+    matchData: {
+      type: ["Death records", "Dödregister"],
+    },
+    rules: {
+      fullName: {
+        recordDataKeys: ["The deceased", "Den avlidne"],
+        cleanFunction: cleanName,
+      },
+      deathDate: {
+        recordDataKeys: ["Date", "Datum"],
+        cleanFunction: cleanDate,
+      },
+      deathPlace: {
+        recordDataKeys: ["Parish", "Församling"],
+        cleanFunction: cleanPlace,
+      },
+    },
+  },
+  {
+    recordType: RT.Marriage,
+    matchData: {
+      type: ["Marriage records", "Vigselregister"],
+    },
+    rules: {
+      fullName: {
+        recordDataKeys: ["Groom's name", "Brudgummens namn"],
+        cleanFunction: cleanName,
+      },
+      eventDate: {
+        recordDataKeys: ["Date", "Datum"],
+        cleanFunction: cleanMarriageDate,
+      },
+      eventPlace: {
+        recordDataKeys: ["Date", "Datum"],
+        cleanFunction: cleanMarriagePlace,
+      },
+      spouseFullName: {
+        recordDataKeys: ["Bride's name", "Brudens namn"],
+        cleanFunction: cleanName,
+      },
+    },
+  },
+  {
+    recordType: RT.Census,
+    matchData: {
+      type: [
+        "Census 1860",
+        "Census 1870",
+        "Census 1880",
+        "Census 1890",
+        "Census 1900",
+        "Census 1910",
+        "Census 1930",
+        "Folkräkningar (Sveriges befolkning) 1860",
+        "Folkräkningar (Sveriges befolkning) 1870",
+        "Folkräkningar (Sveriges befolkning) 1880",
+        "Folkräkningar (Sveriges befolkning) 1890",
+        "Folkräkningar (Sveriges befolkning) 1900",
+        "Folkräkningar (Sveriges befolkning) 1910",
+        "Folkräkningar (Sveriges befolkning) 1930",
+      ],
+    },
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Year", "Den avlidne"],
+        cleanFunction: cleanDate,
+      },
+      eventPlace: {
+        recordDataKeys: ["Home parish", "Hemförsamling"],
+        cleanFunction: cleanPlace,
+      },
+      birthDate: {
+        recordDataKeys: ["Birth year", "Födelseår"],
+        cleanFunction: cleanDate,
+      },
+      birthPlace: {
+        recordDataKeys: ["Birth parish", "Födelseförsamling"],
+        cleanFunction: cleanPlace,
+      },
+    },
+  },
+  {
+    recordType: RT.Census,
+    matchData: {
+      type: ["Index of SCB extracts", "Register till SCB"],
+    },
+    rules: {
+      eventDate: {
+        recordDataKeys: ["Year", "Årtal"],
+        cleanFunction: cleanDate,
+      },
+    },
+  },
+];
+
+const baseRecordTypeData = {
+  rules: {
+    fullName: {
+      recordDataKeys: ["Name", "Namn"],
+      cleanFunction: cleanName,
+    },
+    eventPlace: {
+      recordDataKeys: ["Parish", "Församling"],
+      cleanFunction: cleanPlace,
+    },
+    county: {
+      recordDataKeys: ["County", "Län"],
+      cleanFunction: cleanPlace,
+    },
+    streetAddress: {
+      recordDataKeys: ["Place of residence", "Hemort"],
+      cleanFunction: cleanPlace,
+    },
+    gender: {
+      recordDataKeys: ["Gender", "Kön"],
+      cleanFunction: cleanGender,
+    },
+    maritalStatus: {
+      recordDataKeys: ["Marital status", "Civilstånd"],
+      cleanFunction: cleanMaritalStatus,
+    },
+    occupation: {
+      recordDataKeys: ["Occupation", "Yrke"],
+      cleanFunction: cleanOccupation,
+    },
+    motherFullName: {
+      recordDataKeys: ["Mother's name", "Moderns namn"],
+      cleanFunction: cleanName,
+    },
+    fatherFullName: {
+      recordDataKeys: ["Father's name", "Faderns namn"],
+      cleanFunction: cleanName,
+    },
+  },
+  advancedNameRules: {
+    fullNameCanBeLastNameCommaForenames: true,
+  },
+  advancedPlaceRules: {
+    addImpliedPartsToBlankPlace: true,
+    useCountyKeys: true,
+    ignoreCountyKeyIfAlreadyInPlaceName: true,
+    additionalCountyWords: ["county", "län"], // must be lowercase
+    countyWordToIncludeInPlaceString: "län",
+    countyIsGenitivePlaceString: true,
+    useStreetAddressKeys: true,
+    impliedCountryName: "Sweden",
+  },
+};
+
+const imageArchiveRecordTypes = [
+  {
+    recordType: RT.BirthOrBaptism,
+    matchData: {
+      type: ["Födelse- och dopböcker", "Födelse och dop"],
+    },
+  },
+  {
+    recordType: RT.Birth,
+    matchData: {
+      type: ["Födelse"],
+    },
+  },
+  {
+    recordType: RT.Baptism,
+    matchData: {
+      type: ["Dopböcker", "Dop"],
+    },
+  },
+  {
+    recordType: RT.Census,
+    matchData: {
+      type: ["Folkräkning", "Census"],
+    },
+  },
+  {
+    recordType: RT.Probate,
+    matchData: {
+      type: ["Bouppteckning", "Probate"],
+    },
+  },
+  {
+    recordType: RT.Marriage,
+    matchData: {
+      type: ["Lysning och vigsel", "Vigsel", "Marriage"],
+    },
+  },
+  {
+    recordType: RT.DeathOrBurial,
+    matchData: {
+      type: ["Död och begravning", "Death or burial"],
+    },
+  },
+  {
+    recordType: RT.Death,
+    matchData: {
+      type: ["Död", "Death"],
+    },
+  },
+  {
+    recordType: RT.Burial,
+    matchData: {
+      type: ["Begravning", "Burial"],
+    },
+  },
+  {
+    recordType: RT.Census,
+    recordSubtype: RecordSubtype.HouseholdClericalSurveys,
+    overrideRefTitle: "Household Examination Rolls",
+    matchData: {
+      type: ["Husförhör", "Husförhörslängder", "Församlingsbok"],
+    },
+  },
+];
+
+const imageDatasetRecordTypes = [
+  {
+    recordType: RT.Census,
+    matchData: {
+      type: ["Census", "Folkräkning"],
+    },
+  },
+];
+
+const unclassifiedTypeData = {
+  recordType: RT.Unclassified,
+};
+
+class RiksarkEdReader extends ExtractedDataReader {
+  constructor(ed) {
+    super(ed);
+
+    if (ed.pageType == "record") {
+      this.baseRecordTypeData = baseRecordTypeData;
+
+      let matchConfig = {
+        type: {
+          matchType: ExtractedDataReader.MatchType.EqualsOneOf,
+          value: ed.recordType,
+        },
+      };
+
+      let recordTypeData = this.getRecordTypeMatch(recordTypes, matchConfig);
+      this.setRecordData(recordTypeData, unclassifiedTypeData);
+    } else if (ed.pageType == "image") {
+      if (ed.treeItemTitle) {
+        let matchConfig = {
+          type: {
+            matchType: ExtractedDataReader.MatchType.IncludesOneOf,
+            value: ed.treeItemTitle,
+          },
+        };
+        let recordTypeData = this.getRecordTypeMatch(imageArchiveRecordTypes, matchConfig);
+        if (recordTypeData) {
+          this.setRecordData(recordTypeData, unclassifiedTypeData);
+        }
+      }
+      if (!this.recordTypeData) {
+        if (ed.imageType == "archive") {
+          let matchConfig = {
+            type: {
+              matchType: ExtractedDataReader.MatchType.IncludesOneOf,
+              value: ed.imageCollectionName,
+            },
+          };
+          let recordTypeData = this.getRecordTypeMatch(imageArchiveRecordTypes, matchConfig);
+          this.setRecordData(recordTypeData, unclassifiedTypeData);
+        } else if (ed.imageType == "dataset") {
+          let matchConfig = {
+            type: {
+              matchType: ExtractedDataReader.MatchType.StartsWithOneOf,
+              value: ed.imageDatasetName,
+            },
+          };
+
+          let recordTypeData = this.getRecordTypeMatch(imageDatasetRecordTypes, matchConfig);
+          this.setRecordData(recordTypeData, unclassifiedTypeData);
+
+          if (this.recordType == RT.Census) {
+            const regex = /\w+\s+(\d\d\d\d)/;
+            const match = ed.imageDatasetName.match(regex);
+            if (match) {
+              let year = match[1].trim();
+              this.imageYear = year;
+            }
+          }
+        }
+      }
+
+      if (!this.imageYear && ed.treeItemYears) {
+        if (ed.treeItemYears.length == 4) {
+          this.imageYear = ed.treeItemYears;
+        }
+      }
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Overrides of the relevant get functions used in commonGeneralizeData
+  // Note: there are default implementations in ExtractedDataReader and, if using a data-driven
+  // style, you may not need to override them here.
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  getSourceType() {
+    if (this.ed.pageType == "record") {
+      return "record";
+    }
+    if (this.ed.pageType == "image") {
+      return "image";
+    }
+
+    return "unknown";
+  }
+
+  getEventDateObj() {
+    if (this.ed.pageType == "image") {
+      if (this.imageYear) {
+        return this.makeDateObjFromYear(this.imageYear);
+      }
+    } else {
+      let dateObj = super.getEventDateObj();
+
+      if (!dateObj) {
+        let recordType = this.ed.recordType;
+        if (recordType) {
+          const match = recordType.match(/\s\d{4}$/);
+          if (match) {
+            let year = match[0].trim();
+            dateObj = this.makeDateObjFromYear(year);
+          }
+        }
+      }
+      return dateObj;
+    }
+  }
+
+  getHousehold() {
+    if (this.recordType != RT.Census) {
+      return undefined;
+    }
+
+    if (!this.ed.households) {
+      return undefined;
+    }
+
+    let familyNumEntry = this.getRecordDataKeyAndValueForKeys(["Family no", "Familj nr"]);
+    if (!familyNumEntry) {
+      return undefined;
+    }
+
+    // "Family no" of "1" means the household key is "Fam. no 1"
+    // "Familj nr" of "1" means the household key is "Fam. nr 1"
+    let householdKey = "";
+    let lang = "en";
+    if (familyNumEntry.key == "Family no") {
+      householdKey = "Fam. no " + familyNumEntry.value;
+      lang = "en";
+    } else if (familyNumEntry.key == "Familj nr") {
+      householdKey = "Fam. nr " + familyNumEntry.value;
+      lang = "sv";
+    }
+
+    if (!householdKey) {
+      return undefined;
+    }
+
+    let household = this.ed.households[householdKey];
+    if (!household) {
+      return undefined;
+    }
+
+    let headings = ["name", "birthYear", "birthPlace", "occupation"];
+    let householdArray = [];
+
+    let selectedPerson = null;
+
+    for (let person of household) {
+      let text = person.text;
+      let occupation = person.italicEndText;
+      let link = person.link;
+      let linkText = person.linkText;
+
+      let householdMember = {};
+
+      // the text has the occupation removes and is usuall of the form:
+      // sv: "Andersson, Andreas, f. 1802 i Murum Älvsborgs län"
+      // en: "Andersson, Andreas, b. 1802 in Murum Älvsborgs län"
+
+      let enRegex = /^(.*)\,\sb\.\s(\d+)\sin\s(.*)$/;
+      let svRegex = /^(.*)\,\sf\.\s(\d+)\si\s(.*)$/;
+      let regex = enRegex;
+      if (lang == "sv") {
+        regex = svRegex;
+      }
+      if (regex.test(text)) {
+        householdMember.name = text.replace(regex, "$1");
+        householdMember.birthYear = text.replace(regex, "$2");
+        householdMember.birthPlace = text.replace(regex, "$3");
+      }
+
+      if (occupation) {
+        householdMember.occupation = occupation;
+      }
+
+      if (link) {
+        householdMember.link = link;
+      }
+
+      if (!link && !selectedPerson) {
+        householdMember.isSelected = true;
+      }
+
+      householdArray.push(householdMember);
+    }
+
+    let result = {};
+    result.fields = headings;
+    result.members = householdArray;
+
+    return result;
+  }
+}
+
+export { RiksarkEdReader };

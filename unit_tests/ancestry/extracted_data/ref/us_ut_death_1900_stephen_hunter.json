@@ -1,0 +1,30 @@
+{
+  "url": "https://www.ancestry.co.uk/search/collections/6967/records/303158",
+  "pageType": "record",
+  "dbId": "6967",
+  "recordId": "303158",
+  "ancestryTemplate": "{{Ancestry Record|6967|303158}}",
+  "domain": "ancestry.co.uk",
+  "titleName": "Stephen Hunter",
+  "titleCollection": "Utah, U.S., Death Registers, 1847-1966",
+  "recordData": {
+    "Name": "Stephen Hunter",
+    "Gender": "Male",
+    "Age": "77",
+    "Birth Date": "abt 1823",
+    "Death Date": "20 Aug 1900",
+    "Death County": "Salt Lake"
+  },
+  "recordDataAltValues": {
+    "Birth Date": [
+      "abt 1823"
+    ]
+  },
+  "imageUrl": "https://www.ancestry.co.uk/imageviewer/collections/6967/images/30846_00029702-00058?pid=303158&usePUB=true&usePUBJs=true",
+  "imageDbId": "6967",
+  "imageRecordId": "30846_00029702-00058",
+  "sourceCitation": "Utah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864",
+  "sourceInformation": "Ancestry.com. Utah, U.S., Death Registers, 1847-1966 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2010. Original data: Bureau of Vital Statistics. Utah Death Index, 1847-1966. Salt Lake City, UT, USA: Utah Department of Health. View Complete Source List.",
+  "originalData": "Bureau of Vital Statistics. Utah Death Index, 1847-1966. Salt Lake City, UT, USA: Utah Department of Health. View Complete Source List.",
+  "sourceDescription": "This database is an index to deaths that occurred in Utah. In addition to providing the name of the deceased, the index provides the date of death, county of death, gender, age at time of death, birth date, and state file number. Learn more..."
+}

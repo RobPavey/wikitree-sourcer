@@ -1,0 +1,54 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/118431178/person/420175338817/facts",
+  "pageType": "personFacts",
+  "fullName": "Leslie Victor Ernest George Carnell",
+  "givenName": "Leslie Victor Ernest George",
+  "surname": "Carnell",
+  "birthDate": "18 Apr 1899",
+  "birthPlace": "Wolborough, Devon, England",
+  "deathDate": "Mar 1955",
+  "deathPlace": null,
+  "gender": "Male",
+  "titleName": "Leslie Victor Ernest George Carnell",
+  "marriages": [
+    {
+      "date": "Dec 1937",
+      "place": "Newton Abbot, Devonshire",
+      "spouseName": "Rose L Carnell",
+      "spouseBirthYear": "1900",
+      "spouseDeathYear": "1953"
+    }
+  ],
+  "father": {
+    "name": "William Ernest George Carnell",
+    "subtitle": "1875–1958"
+  },
+  "mother": {
+    "name": "Louisa Phillips",
+    "subtitle": "1874–1945"
+  },
+  "spousesAndChildren": [
+    {
+      "name": "Rose L Carnell",
+      "subtitle": "1900–1953",
+      "children": [
+        {
+          "name": "Private"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "dbId": "61596",
+      "recordId": "29556616",
+      "title": "1939 England and Wales Register"
+    },
+    {
+      "dbId": "8753",
+      "recordId": "55059403",
+      "title": "England & Wales, Civil Registration Marriage Index, 1916-2005"
+    }
+  ],
+  "ancestryTemplate": "{{Ancestry Tree|118431178|420175338817}}"
+}

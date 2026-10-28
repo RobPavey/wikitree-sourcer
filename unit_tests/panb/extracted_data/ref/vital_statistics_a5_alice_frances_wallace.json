@@ -1,0 +1,22 @@
+{
+  "url": "https://archives.gnb.ca/en-ca/vital-statistics/birth/141a5/d9f0d4ad-a048-44e0-b7c2-8022c3c54c7f",
+  "success": true,
+  "databaseID": "RS141A5",
+  "sourceTitle": "Provincial Archives of New Brunswick; Vital Statistics (RS141)",
+  "tableTitle": "Index to Provincial Registrations of Births (RS141A5)",
+  "recordData": {
+    "Name": "WALLACE, ALICE FRANCES",
+    "Sex": "F",
+    "Date": "1908-06-04",
+    "Place of Birth": "SAINT JOHN",
+    "County": "SAINT JOHN",
+    "Father": "WALLACE, FREDERICK",
+    "Mother": "CLARK, ELLEN",
+    "Microfilm": "F19016"
+  },
+  "webpageFormat": 202606,
+  "numberTableEntries": 8,
+  "hasImage": true,
+  "imageUrl": "https://archives.gnb.ca/api/image-handler/digitized-documents/rs141/a5/1908/d9f0d4ad-a048-44e0-b7c2-8022c3c54c7f.jpg",
+  "eventType": "Birth"
+}

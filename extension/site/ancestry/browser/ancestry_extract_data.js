@@ -353,6 +353,14 @@ function extractRecordPageTitle(document, result) {
     }
   }
 
+  if (!titleCollection) {
+    // handle Aug 2026 change
+    let titleLinkElement = document.querySelector("a.collectionTitle");
+    if (titleLinkElement) {
+      titleCollection = titleLinkElement.textContent.trim();
+    }
+  }
+
   result.titleName = titleName;
   result.titleCollection = titleCollection;
 }
@@ -408,14 +416,139 @@ function addRecordDataUserValue(result, key, value) {
   result.recordDataUserValues[key].push(value);
 }
 
+function extractRecordDataRow(document, labelElement, dataElement, result) {
+  let label = labelElement ? labelElement.textContent : "";
+  if (label != "") {
+    label = cleanLabel(label);
+    let numChildren = dataElement.children.length;
+
+    if (numChildren == 0) {
+      let value = dataElement.textContent;
+      value = value.replace(/\s+/g, " ").trim();
+
+      // clean up height field
+      if (label == "Height") {
+        // example: https://www.ancestry.com/search/collections/2238/records/303556213
+        // has height of: 5''8 1/2 "
+        // which should be: 5' 8 1/2"
+        if (value.includes("''") && value.includes('"')) {
+          value = value.replace(/''/g, "'");
+          value = value.replace(/ "/g, '"');
+        }
+      }
+
+      if (!value.startsWith("Search for")) {
+        //console.log(label + " " + value);
+        result.recordData[label] = value;
+      }
+    } else {
+      // there are children. In old format this could contain a subtable but that is now a separate
+      // top-level table so ignore this for the household case.
+
+      // Else, for now just get the text of all the children. (this may be redundant because they also seem to be
+      // in a separate table)
+      // there can be multiple children for "Name:" in death reg
+      // It can also happen for "Inferred Spouse:" in 1939 reg.
+      // We used to have code to handle more than one child and one child
+      // differently but now we threat then the same
+      // An example where this does not work is:
+      // https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61311&h=2913
+      let value = dataElement.textContent;
+      value = cleanText(value);
+      if (value) {
+        if (!value.startsWith("Search for") && !value.startsWith("View ")) {
+          // extra test - sometime the text includes a script. We definitely don't want to include that
+          let scriptNode = dataElement.querySelector("script");
+          if (!scriptNode) {
+            // If this is a link we also store the link - this is case we need to read that
+            // additional record (e.g. for a child baptism)
+            let linkNode = dataElement.querySelector("a");
+
+            // in some old files there could ba a link for an alternate value
+            let altSpan = dataElement.querySelector("span[title='Click to see details about alternate names']");
+            if (linkNode && !altSpan) {
+              // there are some links that are for viewing maps or ordering copies
+              // It seems that these links have 'class="link"' so if that is there ignore
+              // this row
+              if (linkNode.className != "link") {
+                result.recordData[label] = value;
+
+                let linkText = linkNode.textContent;
+                // ignore links for alternate names
+                if (!linkText || !linkText.startsWith("[")) {
+                  let link = getAbsoluteLinkUrl(linkNode, document, result);
+                  if (!result.linkData) {
+                    result.linkData = {};
+                  }
+                  result.linkData[label] = link;
+                }
+              }
+            } else {
+              // no link just use all child text
+              let spans = dataElement.querySelectorAll("span");
+              if (spans.length > 0) {
+                let mainSpan = dataElement.querySelector("span.srchHit");
+                if (mainSpan) {
+                  let firstNode = mainSpan.childNodes[0];
+                  let mainText = firstNode.textContent;
+                  result.recordData[label] = mainText.trim();
+
+                  let altSpans = mainSpan.querySelectorAll("span");
+                  for (let altSpan of altSpans) {
+                    let altText = altSpan.textContent;
+                    addRecordDataAltValue(result, label, altText);
+                  }
+                  let userSpans = dataElement.querySelectorAll("span[title^='This value was member submitted'");
+                  for (let userSpan of userSpans) {
+                    let userText = userSpan.textContent;
+                    addRecordDataUserValue(result, label, userText);
+                  }
+                } else {
+                  let firstNode = dataElement.childNodes[0];
+                  let mainText = firstNode.textContent;
+                  result.recordData[label] = mainText.trim();
+                  let userSpans = dataElement.querySelectorAll("span");
+                  for (let userSpan of userSpans) {
+                    let userText = userSpan.textContent;
+                    addRecordDataUserValue(result, label, userText);
+                  }
+                }
+              } else {
+                result.recordData[label] = value;
+              }
+            }
+          }
+        }
+      }
+    }
+  } else {
+    // this row doesn't have a <th> label. In old layout it could be something like "Household members"
+    // But that is now a separate table. So ignore it.
+  }
+}
+
 function extractRecordData(document, result) {
   result.recordData = Object.create(null);
+
+  // August 2026 change - most record data is now in a description list rather than a table
+  // bit census households still use tables
+  let descriptionList = document.querySelector("#recordData dl.table");
+  if (descriptionList) {
+    let labelElements = descriptionList.querySelectorAll("dt");
+    for (let labelElement of labelElements) {
+      let dataElement = labelElement.nextElementSibling;
+      if (dataElement && dataElement.tagName == "DD") {
+        extractRecordDataRow(document, labelElement, dataElement, result);
+      }
+    }
+  }
 
   var recordDataRows = document.querySelectorAll("#recordData table > tbody > tr");
 
   for (let row of recordDataRows.values()) {
     // Get the label of the row (must be immediate child)
     let labelNode = row.querySelector(":scope > th");
+
     let label = labelNode ? labelNode.textContent : "";
     if (label != "") {
       label = cleanLabel(label);
@@ -720,16 +853,18 @@ function extractRecordSourceCitation(document, result) {
       if (sourceAreaSections.length > 0) {
         for (let index = 0; index < sourceAreaSections.length; index++) {
           let section = sourceAreaSections[index];
-          let citationTitleNode = section.querySelector("h4.citationTitle");
-          let sourceTextNode = section.querySelector("div.sourceText");
-          if (citationTitleNode && sourceTextNode) {
-            let citationTitle = citationTitleNode.textContent;
-            if (citationTitle == "Source Citation") {
-              setSourceCitation(result, sourceTextNode);
-            } else if (citationTitle == "Source Information") {
-              setSourceInformation(result, sourceTextNode);
-            } else if (citationTitle == "Description") {
-              setSourceDescription(result, sourceTextNode);
+          let citationTitleNode = section.querySelector(".citationTitle");
+          if (citationTitleNode) {
+            let sourceTextNode = section.querySelector("div.sourceText");
+            if (sourceTextNode) {
+              let citationTitle = citationTitleNode.textContent;
+              if (citationTitle == "Source Citation" || citationTitle == "Citation") {
+                setSourceCitation(result, sourceTextNode);
+              } else if (citationTitle == "Source Information" || citationTitle == "Information") {
+                setSourceInformation(result, sourceTextNode);
+              } else if (citationTitle == "Description" || citationTitle == "Collection description") {
+                setSourceDescription(result, sourceTextNode);
+              }
             }
           }
         }
@@ -796,6 +931,11 @@ function extractImageThumb(document, result) {
     thumbNode = document.querySelector("#mainContent > section.heroImageContainer");
   }
 
+  if (!thumbNode) {
+    // could be new May 2026 format
+    thumbNode = document.querySelector("#mainContent header div.recordThumbnail");
+  }
+
   if (thumbNode) {
     let linkNode = thumbNode.querySelector("a");
     //console.log("extractImageThumb, linkNode = ");
@@ -821,65 +961,72 @@ function extractImageThumb(document, result) {
           result.imageRecordId = recordId;
         }
       }
-    } else {
-      // Sometimes in some browsers the linkNode is not there. This happens more when ther user is on the
-      // factEdit modal, especially in Firefox. It seems to be because the link node is generated by a script.
-      // This is a backup that gets the image id from the "Report a problem" link.
-      let reportProblemNode = document.querySelector("#thumbnailTools a.iconWarning");
-      if (reportProblemNode) {
-        //console.log("extractImageThumb, reportProblemNode = ");
-        //console.log(reportProblemNode);
+    }
+  }
 
-        // Report problem node looks like:
-        // <a href="https://www.ancestry.com/feedback/reportissue?rp=RD&amp;pid=1903047&amp;dbid=2352&amp;imageId=rg14_00802_0395_03&amp;indexOnly=false&amp;backurl=http%3a%2f%2fsearch.ancestry.com%2fcgi-bin%2fsse.dll%3findiv%3d1%26dbid%3d2352%26h%3d1903047%26ssrc%3dpt%26tid%3d86808578%26pid%3d46552199708%26usePUB%3dtrue%26_gl%3d1*vivebz*_ga*MTA5NTMwNjUwOS4xNTg3ODQ4ODc3*_ga_4QT8FMEX30*MTY1MTYwMzE2NS4zMi4xLjE2NTE2MDYzNzkuMA.." class="link icon iconWarning"><span>Report a problem</span></a>
+  if (!result.imageUrl) {
+    // Sometimes in some browsers the linkNode is not there. This happens more when ther user is on the
+    // factEdit modal, especially in Firefox. It seems to be because the link node is generated by a script.
+    // This is a backup that gets the image id from the "Report a problem" link.
+    let reportProblemNode = document.querySelector("#thumbnailTools a.iconWarning");
 
-        let url = getAbsoluteLinkUrl(reportProblemNode, document, result);
+    if (!reportProblemNode) {
+      reportProblemNode = document.querySelector("a.iconWarning[href*='imageId']");
+    }
 
-        //console.log("extractImageThumb, reportProblemNode URL = ");
-        //console.log(url);
+    if (reportProblemNode) {
+      //console.log("extractImageThumb, reportProblemNode = ");
+      //console.log(reportProblemNode);
 
-        if (url) {
-          let imageRecordId = "";
-          const imagePrefix = "imageId=";
-          let imageIndex = url.indexOf(imagePrefix);
-          if (imageIndex != -1) {
-            let endIndex = url.indexOf("&", imageIndex);
-            if (endIndex != -1) {
-              imageRecordId = url.substring(imageIndex + imagePrefix.length, endIndex);
-              //console.log("extractImageThumb, imageRecordId = " + imageRecordId);
-            }
+      // Report problem node looks like:
+      // <a href="https://www.ancestry.com/feedback/reportissue?rp=RD&amp;pid=1903047&amp;dbid=2352&amp;imageId=rg14_00802_0395_03&amp;indexOnly=false&amp;backurl=http%3a%2f%2fsearch.ancestry.com%2fcgi-bin%2fsse.dll%3findiv%3d1%26dbid%3d2352%26h%3d1903047%26ssrc%3dpt%26tid%3d86808578%26pid%3d46552199708%26usePUB%3dtrue%26_gl%3d1*vivebz*_ga*MTA5NTMwNjUwOS4xNTg3ODQ4ODc3*_ga_4QT8FMEX30*MTY1MTYwMzE2NS4zMi4xLjE2NTE2MDYzNzkuMA.." class="link icon iconWarning"><span>Report a problem</span></a>
+
+      let url = getAbsoluteLinkUrl(reportProblemNode, document, result);
+
+      //console.log("extractImageThumb, reportProblemNode URL = ");
+      //console.log(url);
+
+      if (url) {
+        let imageRecordId = "";
+        const imagePrefix = "imageId=";
+        let imageIndex = url.indexOf(imagePrefix);
+        if (imageIndex != -1) {
+          let endIndex = url.indexOf("&", imageIndex);
+          if (endIndex != -1) {
+            imageRecordId = url.substring(imageIndex + imagePrefix.length, endIndex);
+            //console.log("extractImageThumb, imageRecordId = " + imageRecordId);
           }
+        }
 
-          let personId = "";
-          const personPrefix = "pid=";
-          let personIndex = url.indexOf(personPrefix);
-          if (personIndex != -1) {
-            let endIndex = url.indexOf("&", personIndex);
-            if (endIndex != -1) {
-              personId = url.substring(personIndex + personPrefix.length, endIndex);
-              //console.log("extractImageThumb, personId = " + personId);
-            }
+        let personId = "";
+        const personPrefix = "pid=";
+        let personIndex = url.indexOf(personPrefix);
+        if (personIndex != -1) {
+          let endIndex = url.indexOf("&", personIndex);
+          if (endIndex != -1) {
+            personId = url.substring(personIndex + personPrefix.length, endIndex);
+            //console.log("extractImageThumb, personId = " + personId);
           }
+        }
 
-          if (result.domain && result.dbId && imageRecordId) {
-            result.imageRecordId = imageRecordId;
-            result.imageDbId = result.dbId;
+        if (result.domain && result.dbId && imageRecordId) {
+          result.imageRecordId = imageRecordId;
+          result.imageDbId = result.dbId;
 
-            if (imageRecordId && personId) {
-              // https://www.ancestry.com/imageviewer/collections/61596/images/tna_r39_0773_0773a_021?pid=10189262&treeid=113369578&personid=222372269795&usePUB=true&usePUBJs=true
-              result.imageUrl =
-                "https://www." +
-                result.domain +
-                "/imageviewer/collections/" +
-                result.dbId +
-                "/images/" +
-                imageRecordId +
-                "?pid=" +
-                personId;
-            } else if (imageRecordId) {
-              result.imageUrl =
-                "https://www." + result.domain + "/imageviewer/collections/" + result.dbId + "/images/" + imageRecordId;
-            }
+          if (imageRecordId && personId) {
+            // https://www.ancestry.com/imageviewer/collections/61596/images/tna_r39_0773_0773a_021?pid=10189262&treeid=113369578&personid=222372269795&usePUB=true&usePUBJs=true
+            result.imageUrl =
+              "https://www." +
+              result.domain +
+              "/imageviewer/collections/" +
+              result.dbId +
+              "/images/" +
+              imageRecordId +
+              "?pid=" +
+              personId;
+          } else if (imageRecordId) {
+            result.imageUrl =
+              "https://www." + result.domain + "/imageviewer/collections/" + result.dbId + "/images/" + imageRecordId;
           }
         }
       }
@@ -907,7 +1054,40 @@ function extractImagePageTitle(document, result) {
   result.titleName = titleName;
 }
 
-function extractImageBrowsePath(document, result) {
+function extractJsonFromScript(scriptText) {
+  // 1. Find the start of the JSON object
+  const startIndex = scriptText.indexOf("{");
+  if (startIndex === -1) return null;
+
+  // 2. Iterate to find the matching closing brace
+  let balance = 0;
+  for (let i = startIndex; i < scriptText.length; i++) {
+    if (scriptText[i] === "{") balance++;
+    else if (scriptText[i] === "}") balance--;
+
+    // When balance hits 0, we've found the end of the root object
+    if (balance === 0) {
+      const jsonString = scriptText.substring(startIndex, i + 1);
+      try {
+        return JSON.parse(jsonString);
+      } catch (e) {
+        console.error("Found potential JSON but parse failed:", e);
+        return null;
+      }
+    }
+  }
+  return null;
+}
+
+function extractImageSpaState(document) {
+  const scriptElement = document.getElementById("spaStateScript");
+  if (scriptElement) {
+    const data = extractJsonFromScript(scriptElement.textContent);
+    return data;
+  }
+}
+
+function extractImageBrowsePath(document, spaState, result) {
   var wrapperNode = document.querySelector("div.browse-path-header > div.breadcrumbWrapper");
   let browsePath = "";
   if (wrapperNode) {
@@ -922,8 +1102,32 @@ function extractImageBrowsePath(document, result) {
     }
   }
 
+  if (!browsePath && spaState) {
+    if (spaState.viewer && spaState.viewer.imageInfo) {
+      const browsePathArray = spaState.viewer.imageInfo.localizedBrowsePath;
+      console.log("Localized Path:", browsePathArray);
+      if (browsePathArray && browsePathArray.length > 0) {
+        browsePath = browsePathArray[0];
+        for (let index = 1; index < browsePathArray.length; index++) {
+          browsePath += " > " + browsePathArray[index];
+        }
+      }
+    }
+  }
+
   if (browsePath) {
     result.imageBrowsePath = browsePath;
+  }
+}
+
+function extractImagePId(spaState, result) {
+  if (spaState) {
+    if (spaState.queryParamsInfo && spaState.queryParamsInfo.data) {
+      let pId = spaState.queryParamsInfo.data.pId;
+      if (pId) {
+        result.pId = pId;
+      }
+    }
   }
 }
 
@@ -1433,6 +1637,14 @@ function detectPageType(document, result, url) {
     result.pageType = "createRepository";
   } else {
     result.pageType = "unknown";
+  }
+
+  if (result.pageType == "record") {
+    // check if the comment modal is up
+    let modalElement = document.querySelector("#modal > #modalFixed div.commentsModal");
+    if (modalElement) {
+      result.pageType = "comments";
+    }
   }
 
   //console.log("detectPageType, result.pageType = " + result.pageType);
@@ -2004,6 +2216,33 @@ function handlePersonFactsJune2024(document, result) {
     extractPersonCardSimpleValue(result, personCardScript, "deathDate", "deathDate");
     extractPersonCardSimpleValue(result, personCardScript, "deathPlace", "deathPlace");
     extractPersonCardSimpleValue(result, personCardScript, "gender", "gender");
+  } else {
+    // In May 2026 the script data became a new forma which has more data in it
+    let personDataScriptJson = document.querySelector("#person-data");
+    if (personDataScriptJson) {
+      let json = personDataScriptJson.textContent;
+      let personData = JSON.parse(json);
+      if (personData) {
+        //console.log(personData);
+        if (personData.person) {
+          let personCard = personData.person.PersonCard;
+          if (personCard) {
+            //console.log(personCard);
+            result.fullName = personCard.FullName;
+            result.givenName = personCard.Given;
+            result.surname = personCard.Surname;
+            result.birthDate = personCard.BirthDate;
+            result.birthPlace = personCard.BirthPlace;
+            result.deathDate = personCard.DeathDate;
+            result.deathPlace = personCard.DeathPlace;
+            result.gender = personCard.Gender == 0 ? "female" : "male";
+          }
+
+          let personResearch = personData.person.PersonResearch;
+          // there is a lot of data in this that we could use instead of what we do below
+        }
+      }
+    }
   }
 
   let personCardContainer = document.querySelector("#personCardContainer");
@@ -2443,6 +2682,22 @@ function extractRecord(document, url, result) {
   extractRecordData(document, result);
   extractImageThumb(document, result);
   extractRecordSourceCitation(document, result);
+  extractImagePId(document, result);
+}
+
+function extractImage(document, url, result) {
+  const spaState = extractImageSpaState(document);
+
+  extractImagePageTitle(document, result);
+  extractImageTemplate(result, url);
+
+  extractImageBrowsePath(document, spaState, result);
+  extractImagePId(spaState, result);
+
+  extractImageNumberAndTotal(document, result);
+  extractImageHasIndex(document, result);
+  extractImageSourceCitation(document, result);
+  extractImageIndex(document, result);
 }
 
 function extractData(document, url) {
@@ -2472,7 +2727,7 @@ function extractData(document, url) {
   } else if (result.pageType == "image") {
     extractImagePageTitle(document, result);
     extractImageTemplate(result, url);
-    extractImageBrowsePath(document, result);
+    extractImageBrowsePath(document, null, result);
     extractImageNumberAndTotal(document, result);
     extractImageHasIndex(document, result);
     extractImageSourceCitation(document, result);

@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Obituary",
+  "name": {
+    "lastName": "Jones",
+    "forenames": "Thomas Patrick"
+  },
+  "eventDate": {
+    "dateString": "27-Jan-1944"
+  },
+  "ageAtEvent": "39",
+  "hasValidData": true
+}

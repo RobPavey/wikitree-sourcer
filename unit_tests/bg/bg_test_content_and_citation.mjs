@@ -51,6 +51,10 @@ const regressionData = [
     url: "https://billiongraves.com/grave/Isabella-Crawford/38296403",
   },
   {
+    caseName: "ivan_lucien_freeman_1922_1999_2026format",
+    url: "https://billiongraves.com/grave/Ivan-Lucien-Freeman/6498843?referrer=myheritage",
+  },
+  {
     caseName: "margaret_ann_craney_d_1909",
     url: "https://billiongraves.com/grave/Margaret-Ann-Craney/27550409",
   },

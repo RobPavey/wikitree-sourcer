@@ -9,5 +9,8 @@
   ],
   "book": "Taufen - KB 036",
   "page": "1",
-  "typeSet": "Baptism"
+  "recordTypeCandidates": [
+    "Church Record",
+    "Baptism"
+  ]
 }

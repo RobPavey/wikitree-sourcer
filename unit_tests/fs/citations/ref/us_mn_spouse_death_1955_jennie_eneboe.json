@@ -24,15 +24,15 @@
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''Death of husband Henry John Eneboe''':\n\"Minnesota Deaths, 1887-2001\"<br/>\nciting Digital film/folder number: 004225434; Record number: 0; Certificate number: 011102<br/>\n{{FamilySearch Record|HX2Y-P1PZ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-67Q9-R1Z}} Image number 00697<br/>\nName: Jennie Eggn Eneboe.\n</ref>",
+    "citation": "<ref>\n'''Death of husband Henry John Eneboe''':\n\"Minnesota Deaths, 1887-2001\"<br/>\nciting Digital film/folder number: 004225434; Record number: 0; Certificate number: 011102<br/>\n{{FamilySearch Record|HX2Y-P1PZ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-67Q9-R1Z}} Image number 00697<br/>\nName: Jennie Eggn Eneboe; Relationship to fact person: Spouse; Fact: Death; Related person name: Henry John Eneboe; Related person gender: male; Event date: 20 May 1955; Event place: Rochester, Olmsted, Minnesota, United States.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "Jennie's husband Henry John Eneboe died on 20 May 1955 in Rochester, Olmsted, Minnesota, United States.<ref>\n'''Death of husband Henry John Eneboe''':\n\"Minnesota Deaths, 1887-2001\"<br/>\nciting Digital film/folder number: 004225434; Record number: 0; Certificate number: 011102<br/>\n{{FamilySearch Record|HX2Y-P1PZ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-67Q9-R1Z}} Image number 00697<br/>\nName: Jennie Eggn Eneboe.\n</ref>",
+    "citation": "Jennie's husband Henry John Eneboe died on 20 May 1955 in Rochester, Olmsted, Minnesota, United States.<ref>\n'''Death of husband Henry John Eneboe''':\n\"Minnesota Deaths, 1887-2001\"<br/>\nciting Digital film/folder number: 004225434; Record number: 0; Certificate number: 011102<br/>\n{{FamilySearch Record|HX2Y-P1PZ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HT-67Q9-R1Z}} Image number 00697<br/>\nName: Jennie Eggn Eneboe; Relationship to fact person: Spouse; Fact: Death; Related person name: Henry John Eneboe; Related person gender: male; Event date: 20 May 1955; Event place: Rochester, Olmsted, Minnesota, United States.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''Death of husband Henry John Eneboe''': \"Minnesota Deaths, 1887-2001\"<br/>citing Digital film/folder number: 004225434; Record number: 0; Certificate number: 011102<br/>{{FamilySearch Record|HX2Y-P1PZ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-67Q9-R1Z}} Image number 00697<br/>Name: Jennie Eggn Eneboe.",
+    "citation": "* '''Death of husband Henry John Eneboe''': \"Minnesota Deaths, 1887-2001\"<br/>citing Digital film/folder number: 004225434; Record number: 0; Certificate number: 011102<br/>{{FamilySearch Record|HX2Y-P1PZ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-67Q9-R1Z}} Image number 00697<br/>Name: Jennie Eggn Eneboe; Relationship to fact person: Spouse; Fact: Death; Related person name: Henry John Eneboe; Related person gender: male; Event date: 20 May 1955; Event place: Rochester, Olmsted, Minnesota, United States.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
@@ -44,7 +44,7 @@
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''Death of husband Henry John Eneboe''': \"Minnesota Deaths, 1887-2001\"<br/>citing Digital film/folder number: 004225434; Record number: 0; Certificate number: 011102<br/>{{FamilySearch Record|HX2Y-P1PZ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-67Q9-R1Z}} Image number 00697<br/>Name: Jennie Eggn Eneboe.",
+    "citation": "* '''Death of husband Henry John Eneboe''': \"Minnesota Deaths, 1887-2001\"<br/>citing Digital film/folder number: 004225434; Record number: 0; Certificate number: 011102<br/>{{FamilySearch Record|HX2Y-P1PZ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HT-67Q9-R1Z}} Image number 00697<br/>Name: Jennie Eggn Eneboe; Relationship to fact person: Spouse; Fact: Death; Related person name: Henry John Eneboe; Related person gender: male; Event date: 20 May 1955; Event place: Rochester, Olmsted, Minnesota, United States.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {

@@ -32,14 +32,25 @@ import {
 import { handleDoSearchWithSearchDataMessage } from "./background_search.mjs";
 import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
 import { handleExceptionMessage } from "./background_exception.mjs";
+import {
+  registerContentScripts,
+  injectContentScriptsIntoTabsOnPermissionsChange,
+} from "./background_content_scripts.mjs";
+import { logDebug } from "/base/core/log_debug.mjs";
 
-function setPopup(tab, popupPage) {
-  //console.log("WikiTree Sourcer, background script (MV3), set popup on tab " + tab + " to: " + popupPage);
-  chrome.action.setPopup({ tabId: tab, popup: popupPage });
-}
+// Helper to convert Chrome Match Patterns to Regex
+// This tests whether a match pattern from a registered content script matches
+// a URL
+function doesUrlMatchChromePattern(pattern, url) {
+  if (pattern === "<all_urls>") return true;
 
-function setIcon(tab, iconPath) {
-  chrome.action.setIcon({ tabId: tab, path: iconPath });
+  // Prepare the pattern by escaping special regex characters except *
+  let regexString = pattern
+    .replace(/[.+^${}()|[\]\\]/g, "\\$&") // Escape all regex specials
+    .replace(/\*/g, ".*"); // Convert * to .*
+
+  const regex = new RegExp(`^${regexString}$`);
+  return regex.test(url);
 }
 
 async function handleGetPlatformInfoMessage(request, sendResponse) {
@@ -53,12 +64,62 @@ async function handleGetPlatformInfoMessage(request, sendResponse) {
 async function doWtPlusApiCall(request, sendResponse) {
   console.log("doWtPlusApiCall, request is:", request);
 
-  let fecthURL = request.url;
+  let fetchUrl = request.url;
 
-  fetch(fecthURL)
-    .then((response) => response.text())
-    .then((text) => sendResponse({ success: true, rawData: text }))
-    .catch((error) => sendResponse({ success: false, error: error.message }));
+  try {
+    const response = await fetch(fetchUrl);
+    const text = await response.text();
+    sendResponse({ success: true, rawData: text, status: response.status });
+  } catch (error) {
+    sendResponse({ success: false, error: error.message });
+  }
+
+  return true; // Keep the message channel open for the async response
+}
+
+async function doFetchJson(request, sendResponse) {
+  console.log("doFetchJson, request is:", request);
+
+  let fetchUrl = request.fetchUrl;
+  let fetchOptions = request.fetchOptions;
+
+  try {
+    let response = await fetch(fetchUrl, fetchOptions);
+    //console.log("doFetchJson, response is:", response);
+
+    //console.log("fetchFsRecordDataObj, response.status is: " + response.status);
+
+    if (response.status !== 200) {
+      //console.log("Looks like there was a problem. Status Code: " + response.status);
+      //console.log("Fetch URL is: " + fetchUrl);
+      sendResponse({
+        success: false,
+        error: "FetchError",
+        status: response.status,
+        fetchUrl: fetchUrl,
+      });
+    }
+
+    let jsonData = await response.text();
+
+    //console.log("fetchFsRecordDataObj: response text is:");
+    //console.log(jsonData);
+
+    if (!jsonData || jsonData[0] != `{`) {
+      console.log("The response text does not look like JSON");
+      //console.log(jsonData);
+      sendResponse({ success: false, error: "NotJSON" });
+    }
+
+    const json = JSON.parse(jsonData);
+
+    console.log("json is:");
+    console.log(json);
+
+    sendResponse({ success: true, json: json });
+  } catch (error) {
+    sendResponse({ success: false, error: error.message });
+  }
 
   return true; // Keep the message channel open for the async response
 }
@@ -68,13 +129,9 @@ function messageHandler(request, sender, sendResponse) {
   // Request should have these fields
   // type = the message type, a string that defines the action to be performed
 
-  //console.log("background messageHandler, request is: ");
-  //console.log(request);
+  logDebug("background messageHandler, request is:", request);
 
-  if (request.type == "contentLoaded") {
-    //console.log("WikiTree Sourcer, background script, received contentLoaded message");
-    handleContentLoadedMessage(request, sender, sendResponse, setPopup, setIcon);
-  } else if (request.type == "registerTab") {
+  if (request.type == "registerTab") {
     //console.log("WikiTree Sourcer, background script, received registerTab message");
     handleRegisterTabMessage(request, sender, sendResponse);
     return true;
@@ -110,10 +167,30 @@ function messageHandler(request, sender, sendResponse) {
   } else if (request.type == "doWtPlusApiCall") {
     doWtPlusApiCall(request, sendResponse);
     return true;
+  } else if (request.type == "doFetchJson") {
+    doFetchJson(request, sendResponse);
+    return true;
+  } else if (request.type == "openInNewTab") {
+    openInNewTab(request.url, sender.tab, request.tabOption);
+  } else if (request.type == "reregisterContentScripts") {
+    console.log("calling registerContentScripts");
+    doRegisterContentScripts(sendResponse);
+    return true;
+  } else if (request.type == "log") {
+    console.log("reveived log message in background", request.message);
+    return false;
   }
   //else if (request.type == "updateContextMenu") {
   //  modifyContextMenu(request.contentType);
   //}
+}
+
+async function doRegisterContentScripts(sendResponse) {
+  await registerContentScripts();
+
+  let contentScripts = await chrome.scripting.getRegisteredContentScripts();
+  logDebug("doRegisterContentScripts, sending response, contentScripts is ", contentScripts);
+  sendResponse({ success: true });
 }
 
 function openInNewTab(link, currentTab, tabOption) {
@@ -126,4 +203,4 @@ function openInNewTab(link, currentTab, tabOption) {
   }
 }
 
-export { messageHandler, openInNewTab };
+export { messageHandler, openInNewTab, doesUrlMatchChromePattern };

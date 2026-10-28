@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "nzbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "John"
+  },
+  "eventDate": {
+    "yearString": "1939"
+  },
+  "eventPlace": {
+    "country": "New Zealand"
+  },
+  "lastNameAtDeath": "Wilson",
+  "deathPlace": {
+    "country": "New Zealand"
+  },
+  "ageAtEvent": "7M",
+  "ageAtDeath": "7M",
+  "hasValidData": true
+}

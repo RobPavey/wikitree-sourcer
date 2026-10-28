@@ -204,10 +204,6 @@ function setSearchingBanner() {
   }
 }
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 async function doPendingSearch() {
   //console.log("##############################################################################");
   //console.log("doPendingSearch: called");
@@ -243,6 +239,7 @@ async function doPendingSearch() {
           if (inputElement) {
             inputElement.value = value;
           } else {
+            console.log("Input not found, key = ", key);
             inputNotFound = true;
             break;
           }

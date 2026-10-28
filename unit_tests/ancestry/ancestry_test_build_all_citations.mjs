@@ -48,9 +48,26 @@ import {
   buildSourcerCitations,
   filterSourceIdsToSources,
   setUrlStart,
+  pruneSources,
 } from "../../extension/site/ancestry/core/ancestry_build_all_citations.mjs";
 
 import { loadExtractDataInWrapper } from "../test_utils/test_extract_data_utils.mjs";
+
+function pushLinkedRecord(linkedRecords, link, name) {
+  if (!link) {
+    return;
+  }
+
+  // this avoids a redirect
+  let newLink = link.replace(/^http\:\/\//, "https://");
+
+  let linkedRecord = {
+    link: newLink,
+    name: name,
+  };
+
+  linkedRecords.push(linkedRecord);
+}
 
 function testLinkedHouseholdRecords(source, savedData, options) {
   let gd = source.generalizedData;
@@ -67,7 +84,7 @@ function testLinkedHouseholdRecords(source, savedData, options) {
         if (!name) {
           name = "Unknown name";
         }
-        linkedRecords.push({ link: member.uid, name: name });
+        pushLinkedRecord(linkedRecords, member.uid, name);
       }
     }
   }
@@ -93,54 +110,19 @@ function testFetchedLinkData(source, savedData) {
   if (linkData && role) {
     // there is a role so this is not the primary person.
     if (role == "Parent") {
-      let childLink = linkData["Child"];
-      if (childLink) {
-        linkedRecords.push({
-          link: childLink,
-          name: "Child",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Child"], "Child");
     } else if (role == "Child") {
-      let fatherLink = linkData["Father"];
-      if (fatherLink) {
-        linkedRecords.push({
-          link: fatherLink,
-          name: "Father",
-        });
-      }
-      let motherLink = linkData["Mother"];
-      if (motherLink) {
-        linkedRecords.push({
-          link: motherLink,
-          name: "Mother",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Father"], "Father");
+      pushLinkedRecord(linkedRecords, linkData["Mother"], "Mother");
     } else if (role == "Sibling") {
-      let childLink = linkData["Siblings"];
-      if (childLink) {
-        linkedRecords.push({
-          link: childLink,
-          name: "Siblings",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Siblings"], "Siblings");
     } else if (role == "Spouse") {
-      let childLink = linkData["Spouse"];
-      if (childLink) {
-        linkedRecords.push({
-          link: childLink,
-          name: "Spouse",
-        });
-      }
+      pushLinkedRecord(linkedRecords, linkData["Spouse"], "Spouse");
     }
   } else if (source.extractedData.household && role) {
     if (source.extractedData.household.members.length > 1) {
       let primaryMember = source.extractedData.household.members[0];
-      if (primaryMember.link) {
-        linkedRecords.push({
-          link: primaryMember.link,
-          name: "Primary person",
-        });
-      }
+      pushLinkedRecord(linkedRecords, primaryMember.link, "Primary person");
     }
   }
 
@@ -231,6 +213,8 @@ async function testGetSourcerCitations(runDate, savedData, result, type, options
   for (let source of result.sources) {
     await testGetSourcerCitation(runDate, savedData, gd, source, type, options);
   }
+
+  pruneSources(result, options);
 
   buildSourcerCitations(result, type, options);
 }
@@ -440,8 +424,30 @@ const regressionData = [
     userOptions: standardOptions,
   },
   {
+    // Saved by Celia in Jun 2026 with the new Ancestry format (which I could not see)
+    caseName: "william_chandler_1783_1842_celia",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262552029306/facts",
+    userOptions: standardOptions,
+  },
+  {
     // Test case that case otherSourced and webLinks - though we ignore them
     caseName: "william_whiting_1864_1940",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262551329535/facts",
+    userOptions: standardOptions,
+    optionVariants: [
+      {
+        variantName: "limitTables",
+        optionOverrides: {
+          table_general_maxLimit: 7,
+          table_general_limitStyleRelated: "relatedPlusCapped",
+          table_general_limitStyleUnrelated: "headSelectedCapped",
+        },
+      },
+    ],
+  },
+  {
+    // Test case for August 2026 record page changes
+    caseName: "william_whiting_1864_1940_aug2026",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262551329535/facts",
     userOptions: standardOptions,
     optionVariants: [

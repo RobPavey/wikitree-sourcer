@@ -2,6 +2,7 @@
   "url": "https://archives2.gnb.ca/Search/VISSE/141B7.aspx?culture=en-CA&guid=1F5E726E-805B-4FE2-8244-A066BFDE0BA0",
   "success": true,
   "databaseID": "RS141B7",
+  "sourceTitle": "New Brunswick Provincial Archives; Vital Statistics from Government Records (RS141)",
   "tableTitle": "Index to New Brunswick Marriages (RS141B7)",
   "recordData": {
     "Name": "DUNFIELD, EVA",
@@ -14,8 +15,9 @@
     "Microfilm": "F19682",
     "Sex": ""
   },
+  "webpageFormat": 202601,
+  "numberTableEntries": 9,
   "hasImage": true,
   "imageUrl": "https://archives2.gnb.ca/DigitizedDocuments/RS141/B7/1922/1f5e726e-805b-4fe2-8244-a066bfde0ba0.jpg",
-  "numberTableEntries": 8,
   "eventType": "Marriage"
 }

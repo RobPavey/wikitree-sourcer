@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Utah, U.S., Death Registers, 1847-1966\"<br/>\nUtah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864<br/>\nAncestry {{Ancestry Image|6967|30846_00029702-00058}} - {{Ancestry Record|6967|303158|uk}} (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Stephen died (age 77) on 20 August 1900 in Salt Lake.<ref>\n'''Death''':\n\"Utah, U.S., Death Registers, 1847-1966\"<br/>\nUtah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864<br/>\nAncestry {{Ancestry Image|6967|30846_00029702-00058}} - {{Ancestry Record|6967|303158|uk}} (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death''': \"Utah, U.S., Death Registers, 1847-1966\"<br/>Utah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864<br/>Ancestry {{Ancestry Image|6967|30846_00029702-00058}} - {{Ancestry Record|6967|303158|uk}} (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Utah, U.S., Death Registers, 1847-1966\"<br/>\nUtah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864<br/>\nAncestry {{Ancestry Image|6967|30846_00029702-00058}} - {{Ancestry Record|6967|303158|uk}} (accessed 6 May 2021)<br/>\nStephen Hunter death 20 Aug 1900 (age 77) in Salt Lake.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Stephen died (age 77) on 20 August 1900 in Salt Lake.<ref>\n'''Death''':\n\"Utah, U.S., Death Registers, 1847-1966\"<br/>\nUtah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864<br/>\nAncestry {{Ancestry Image|6967|30846_00029702-00058}} - {{Ancestry Record|6967|303158|uk}} (accessed 6 May 2021)<br/>\nStephen Hunter death 20 Aug 1900 (age 77) in Salt Lake.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death''': \"Utah, U.S., Death Registers, 1847-1966\"<br/>Utah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864<br/>Ancestry {{Ancestry Image|6967|30846_00029702-00058}} - {{Ancestry Record|6967|303158|uk}} (accessed 6 May 2021)<br/>Stephen Hunter death 20 Aug 1900 (age 77) in Salt Lake.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Utah, U.S., Death Registers, 1847-1966\"<br/>\nUtah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864<br/>\nAncestry {{Ancestry Image|6967|30846_00029702-00058}} - {{Ancestry Record|6967|303158|uk}} (accessed 6 May 2021)<br/>\nName: Stephen Hunter; Gender: Male; Age: 77; Birth Date: abt 1823; Death Date: 20 Aug 1900; Death County: Salt Lake.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Stephen died (age 77) on 20 August 1900 in Salt Lake.<ref>\n'''Death''':\n\"Utah, U.S., Death Registers, 1847-1966\"<br/>\nUtah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864<br/>\nAncestry {{Ancestry Image|6967|30846_00029702-00058}} - {{Ancestry Record|6967|303158|uk}} (accessed 6 May 2021)<br/>\nName: Stephen Hunter; Gender: Male; Age: 77; Birth Date: abt 1823; Death Date: 20 Aug 1900; Death County: Salt Lake.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death''': \"Utah, U.S., Death Registers, 1847-1966\"<br/>Utah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864<br/>Ancestry {{Ancestry Image|6967|30846_00029702-00058}} - {{Ancestry Record|6967|303158|uk}} (accessed 6 May 2021)<br/>Name: Stephen Hunter; Gender: Male; Age: 77; Birth Date: abt 1823; Death Date: 20 Aug 1900; Death County: Salt Lake.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Utah, U.S., Death Registers, 1847-1966\"<br/>\nUtah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864<br/>\nAncestry {{Ancestry Image|6967|30846_00029702-00058}} - {{Ancestry Record|6967|303158|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Stephen Hunter\n|-\n| Gender || Male\n|-\n| Age || 77\n|-\n| Birth Date || abt 1823\n|-\n| Death Date || 20 Aug 1900\n|-\n| Death County || Salt Lake\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Stephen died (age 77) on 20 August 1900 in Salt Lake.<ref>\n'''Death''':\n\"Utah, U.S., Death Registers, 1847-1966\"<br/>\nUtah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864<br/>\nAncestry {{Ancestry Image|6967|30846_00029702-00058}} - {{Ancestry Record|6967|303158|uk}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Stephen Hunter\n|-\n| Gender || Male\n|-\n| Age || 77\n|-\n| Birth Date || abt 1823\n|-\n| Death Date || 20 Aug 1900\n|-\n| Death County || Salt Lake\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death''': \"Utah, U.S., Death Registers, 1847-1966\"<br/>Utah State Archives and Records Service; Salt Lake City, UT; Utah State Archives and Records Service; Series: 03864<br/>Ancestry {{Ancestry Image|6967|30846_00029702-00058}} - {{Ancestry Record|6967|303158|uk}} (accessed 6 May 2021)<br/>Name: Stephen Hunter; Gender: Male; Age: 77; Birth Date: abt 1823; Death Date: 20 Aug 1900; Death County: Salt Lake.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Utah, U.S., Death Registers, 1847-1966,\" database, Ancestry {{Ancestry Image|6967|30846_00029702-00058}} - ({{Ancestry Record|6967|303158|uk}} : accessed 6 May 2021), Stephen Hunter death 20 Aug 1900 (age 77) in Salt Lake; citing Utah State Archives and Records Service, Salt Lake City, UT, Utah State Archives and Records Service, Series 03864.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Stephen died (age 77) on 20 August 1900 in Salt Lake.<ref>\"Utah, U.S., Death Registers, 1847-1966,\" database, Ancestry {{Ancestry Image|6967|30846_00029702-00058}} - ({{Ancestry Record|6967|303158|uk}} : accessed 6 May 2021), Stephen Hunter death 20 Aug 1900 (age 77) in Salt Lake; citing Utah State Archives and Records Service, Salt Lake City, UT, Utah State Archives and Records Service, Series 03864.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Utah, U.S., Death Registers, 1847-1966,\" database, Ancestry {{Ancestry Image|6967|30846_00029702-00058}} - ({{Ancestry Record|6967|303158|uk}} : accessed 6 May 2021), Stephen Hunter death 20 Aug 1900 (age 77) in Salt Lake; citing Utah State Archives and Records Service, Salt Lake City, UT, Utah State Archives and Records Service, Series 03864.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death'':\n\"Utah, U.S., Death Registers, 1847-1966\", database, \nUtah State Archives and Records Service, Salt Lake City, UT, Utah State Archives and Records Service, Series 03864, \nAncestry {{Ancestry Image|6967|30846_00029702-00058}} - ({{Ancestry Record|6967|303158|uk}} : accessed 6 May 2021), \nName: Stephen Hunter; Gender: Male; Age: 77; Birth Date: abt 1823; Death Date: 20 Aug 1900; Death County: Salt Lake.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Stephen died (age 77) on 20 August 1900 in Salt Lake.<ref>\n''Death'':\n\"Utah, U.S., Death Registers, 1847-1966\", database, \nUtah State Archives and Records Service, Salt Lake City, UT, Utah State Archives and Records Service, Series 03864, \nAncestry {{Ancestry Image|6967|30846_00029702-00058}} - ({{Ancestry Record|6967|303158|uk}} : accessed 6 May 2021), \nName: Stephen Hunter; Gender: Male; Age: 77; Birth Date: abt 1823; Death Date: 20 Aug 1900; Death County: Salt Lake.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death'': \"Utah, U.S., Death Registers, 1847-1966\", database, Utah State Archives and Records Service, Salt Lake City, UT, Utah State Archives and Records Service, Series 03864, Ancestry {{Ancestry Image|6967|30846_00029702-00058}} - ({{Ancestry Record|6967|303158|uk}} : accessed 6 May 2021), Name: Stephen Hunter; Gender: Male; Age: 77; Birth Date: abt 1823; Death Date: 20 Aug 1900; Death County: Salt Lake.",
+    "type": "source"
+  }
+}

@@ -27,7 +27,7 @@ import {
   addBuildCitationMenuItems,
   addMenuItemWithSubtitle,
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addMenuDivider,
   addItalicMessageMenuItem,
   beginMainMenu,
@@ -41,6 +41,7 @@ import {
   keepPopupOpenForDebug,
   closePopup,
   saveUnitTestData,
+  clearCachedFetchData,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
@@ -569,6 +570,7 @@ async function ancestryAddLinkBuilderComment(data, personData, tabId) {
   let fieldData = {
     wikiId: wikiId,
     commentText: commentText,
+    pageType: data.extractedData.pageType,
   };
 
   // send a message to content script
@@ -742,6 +744,57 @@ function getExcludedSourcesString(response, data) {
   return message;
 }
 
+function getIncompleteCitationsString(response) {
+  let message = "";
+
+  message +=
+    "\nWarning: Some data could not be retrieved from Ancestry so the citations may be incomplete or excluded.";
+  if (response.failureCount) {
+    if (response.failureCount == 1) {
+      message += "\n\nThere was " + response.failureCount + " failure getting sources";
+    } else {
+      message += "\n\nThere were " + response.failureCount + " failures getting sources";
+    }
+  }
+  if (response.linkedRecordFailureCount) {
+    if (response.linkedRecordFailureCount == 1) {
+      message += "\n\nThere was " + response.linkedRecordFailureCount + " failure getting linked records";
+    } else {
+      message += "\n\nThere were " + response.linkedRecordFailureCount + " failures getting linked records";
+    }
+  }
+  if (response.sharingLinksFailureCount) {
+    if (response.sharingLinksFailureCount == 1) {
+      message += "\n\nThere was " + response.sharingLinksFailureCount + " failure getting sharing links";
+    } else {
+      message += "\n\nThere were " + response.sharingLinksFailureCount + " failures getting sharing links";
+    }
+  }
+
+  if (response.fetchFailedSources && response.fetchFailedSources.length > 0) {
+    let error429count = 0;
+    for (let source of response.fetchFailedSources) {
+      let status = source.fetchStatus.statusCode;
+      let title = source.title;
+      let uri = source.recordUrl;
+      let reason = " could not be fetched";
+      if (status == 410) {
+        reason = " has been removed from the site";
+      } else if (status == 429) {
+        error429count++;
+      }
+      message += `\n• Source "${title} with URL ${uri} ${reason} (status code: ${status})`;
+    }
+
+    if (error429count) {
+      message +=
+        "\n\n⚠️ Note: Sourcer caches the data that was retrieved, so if you wait a few seconds and try again you may be able to get all of the records that got 429 errors.\n";
+    }
+  }
+
+  return message;
+}
+
 async function ancestryBuildAllCitationsAction(data, citationType) {
   try {
     clearClipboard();
@@ -778,10 +831,14 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
         } else {
           let message = response.citationCount + " citations";
           let message2 = "";
-          if (response.citationsStringType == "source" || response.citationsStringType == "fsPlainSource") {
+          if (response.citationsStringType == "source") {
             message2 = "\nThese are source type citations and should be pasted after the Sources heading.";
           } else {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
+            if (response.citationsStringType == "narrative") {
+              message2 +=
+                "\n\nNote that the narrative strings generated are just starting points for you to add detail.";
+            }
           }
 
           if (excludedSourcesMessage) {
@@ -789,21 +846,13 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
           }
 
           let iconType = "check";
-          if (response.failureCount || response.linkedRecordFailureCount) {
+          let errorMessage = "";
+          if (response.failureCount || response.linkedRecordFailureCount || response.sharingLinksFailureCount) {
             iconType = "warning";
-            message2 +=
-              "\n\nWarning: Some data could not be retreived from Ancestry so the citations may be incomplete.";
-            if (response.failureCount) {
-              message2 += "\n- There were " + response.failureCount + " failures getting sources";
-            }
-            if (response.linkedRecordFailureCount) {
-              message2 += "\n- There were " + response.linkedRecordFailureCount + " failures getting linked records";
-            }
-            message2 +=
-              "\n\nNote: Sourcer caches the data that was retreived, so if you wait a few seconds and try again you may be able to get all of the records and thus get a full list of citations.\n";
+            errorMessage = getIncompleteCitationsString(response);
           }
 
-          writeToClipboard(response.citationsString, message, false, message2, iconType);
+          writeToClipboard(response.citationsString, message, false, message2, iconType, errorMessage);
         }
       } else {
         if (response.failureCount) {
@@ -823,8 +872,6 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
             message2 +=
               " excluded due to option settings because the source person was not a primary person for the event.";
           }
-
-          numExcludedDuplicateSources;
 
           displayMessageWithIcon("warning", message, message2);
         }
@@ -876,6 +923,9 @@ async function ancestryGetAllCitationsForSavePersonData(data) {
       data.allCitationsString = response.citationsString;
       data.allCitationsType = response.citationsStringType;
       data.allCitationsNoteMessage = getExcludedSourcesString(response, data);
+      if (response.failureCount || response.linkedRecordFailureCount || response.sharingLinksFailureCount) {
+        data.allCitationsErrorMessage = getIncompleteCitationsString(response);
+      }
       return { success: true };
     } else {
       // If it fails we want to let the user know
@@ -899,7 +949,7 @@ async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citati
   };
 
   function getSourceNameForCitation(gd, otherSiteData) {
-    // a source name like "Devon Baptisms" is not unique, ther could be
+    // a source name like "Devon Baptisms" is not unique, there could be
     // collections like that on multiple repositories
 
     if (!citationObject.sourceTitle && !citationObject.sourceNameWithinRepository) {
@@ -1151,6 +1201,114 @@ async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citati
   }
 }
 
+async function setCommentFromPersonDataOrCitation(data, personData, tabId, citationObject, backFunction) {
+  displayBusyMessage("Setting fields ...");
+
+  let fieldData = {};
+  let ed = undefined;
+  let gd = undefined;
+
+  if (personData) {
+    ed = personData.extractedData;
+    gd = personData.generalizedData;
+  } else if (citationObject) {
+    gd = citationObject.generalizedData;
+  }
+
+  if (gd) {
+    if (personData) {
+      if (ed && gd.sourceOfData == "wikitree") {
+        if (ed.wikiId) {
+          fieldData.sourceTitle = ed.wikiId + " on WikiTree";
+          fieldData.webPageUrl = "https://www.wikitree.com/wiki/" + ed.wikiId;
+        }
+
+        if (ed.citation) {
+          fieldData.citation = ed.citation;
+        }
+      }
+    } else if (citationObject) {
+      if (gd.eventDate) {
+        fieldData.eventDate = gd.eventDate.getDateString();
+      }
+      fieldData.sourceTitle = citationObject.sourceTitle;
+      fieldData.webPageUrl = citationObject.url;
+      fieldData.citation = citationObject.sourceReference;
+      fieldData.notes = citationObject.standardDataString;
+
+      if (citationObject.plainSharingLink) {
+        fieldData.notes += "\n\nSharing link:\n" + citationObject.plainSharingLink;
+      }
+    }
+
+    if (gd.name) {
+      fieldData.hasNameEvent = true;
+    }
+    if (gd.personGender) {
+      fieldData.hasSexEvent = true;
+    }
+    if (gd.birthDate) {
+      fieldData.hasBirthEvent = true;
+    } else if (gd.recordType == RT.Birth || gd.recordType == RT.BirthRegistration) {
+      fieldData.hasBirthEvent = true;
+    }
+
+    if (gd.recordType == RT.Baptism) {
+      fieldData.hasBaptismEvent = true;
+    }
+
+    if (gd.deathDate) {
+      fieldData.hasDeathEvent = true;
+    } else if (gd.recordType == RT.Death || gd.recordType == RT.DeathRegistration) {
+      fieldData.hasDeathEvent = true;
+    }
+
+    if (gd.recordType == RT.Burial) {
+      fieldData.hasBurialEvent = true;
+    }
+  }
+
+  // send a message to content script
+  try {
+    //console.log("setCreateSourceFieldsFromPersonData");
+    //console.log(tabId);
+    //console.log(fieldData);
+
+    chrome.tabs.sendMessage(tabId, { type: "setFields", fieldData: fieldData }, function (response) {
+      displayBusyMessage("Setting fields ...");
+
+      //console.log("setCreateSourceFieldsFromPersonData, chrome.runtime.lastError is:");
+      //console.log(chrome.runtime.lastError);
+      //console.log("setCreateSourceFieldsFromPersonData, response is:");
+      //console.log(response);
+
+      // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
+      if (chrome.runtime.lastError || !response) {
+        // possibly there is no content script loaded, this could be an error that should be reported
+        // By testing edge cases I have found the if you reload the page and immediately click the
+        // extension button sometimes this will happen. Presumably because the content script
+        // just got unloaded prior to the reload but we got here because the popup had not been reset.
+        // In this case we are seeing the response being undefined.
+        // What to do in this case? Don't want to leave the "Initializing menu..." up.
+        let message = "setCreateSourceFieldsFromPersonData failed";
+        if (chrome.runtime.lastError && chrome.runtime.lastError.message) {
+          message += ": " + chrome.runtime.lastError.message;
+        }
+        displayMessageWithIcon("warning", message);
+      } else if (response.success) {
+        // Used to display a message on success but that meant an extra click to close popup
+        //displayMessageWithIconThenClosePopup("check", "Fields updated");
+        closePopup();
+      } else {
+        let message = response.errorMessage;
+        console.log(message);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -1217,7 +1375,7 @@ function addAncestryGoToImageMenuItem(menu, data) {
 
 async function addAncestryAddCommentMenuItem(menu, data, tabId) {
   let ed = data.extractedData;
-  if (ed.hasCommentTextArea) {
+  if (ed.hasCommentTextArea || ed.pageType == "comments") {
     let personData = await getLatestPersonData();
     if (!personData) {
       return; // no saved data, do not add menu item
@@ -1319,7 +1477,7 @@ function addBuildAncestryTreeMediaTemplateMenuItem(menu, data) {
 
 function addBuildAllCitationsMenuItem(menu, data, backFunction) {
   if (data.extractedData.sources && data.extractedData.sources.length > 0) {
-    addMenuItemWithSubMenu(
+    addMenuItemWithSubmenu(
       menu,
       "Build All Citations",
       function (element) {
@@ -1327,7 +1485,7 @@ function addBuildAllCitationsMenuItem(menu, data, backFunction) {
         ancestryBuildAllCitationsAction(data, citationType);
       },
       function () {
-        setupBuildAllCitationsSubMenu(data, backFunction);
+        setupBuildAllCitationsSubmenu(data, backFunction);
       }
     );
   }
@@ -1412,7 +1570,7 @@ async function addFillCreateCitationMenuItems(menu, data, tabId, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function setupBuildAllCitationsSubMenu(data, backFunction) {
+function setupBuildAllCitationsSubmenu(data, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -1427,6 +1585,18 @@ function setupBuildAllCitationsSubMenu(data, backFunction) {
 //////////////////////////////////////////////////////////////////////////////////////////
 // Main Menu
 //////////////////////////////////////////////////////////////////////////////////////////
+
+async function setupAncestryPopupMenuForComments(data, tabId) {
+  let backFunction = function () {
+    setupAncestryPopupMenuForComments(data, tabId);
+  };
+
+  let menu = beginMainMenu();
+
+  await addAncestryAddCommentMenuItem(menu, data, tabId);
+
+  addStandardMenuEnd(menu, data, backFunction);
+}
 
 // Common function used by both the normal path and the path taken for an unclassified
 // non-primary record.
@@ -1475,7 +1645,7 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
     await addSearchMenus(menu, data, backFunction, "ancestry");
     addMenuDivider(menu);
 
-    addBuildCitationMenuItems(menu, data, ancestryBuildCitation, backFunction, generalizeDataGivenRecordType);
+    await addBuildCitationMenuItems(menu, data, ancestryBuildCitation, backFunction, generalizeDataGivenRecordType);
     addAncestryBuildHouseholdTableMenuItem(menu, data);
     addAncestryGoToImageMenuItem(menu, data);
     await addAncestryAddCommentMenuItem(menu, data, tabId);
@@ -1558,6 +1728,11 @@ async function setupAncestryPopupMenu(extractedData, tabId) {
     return;
   }
 
+  if (extractedData.pageType == "comments") {
+    setupAncestryPopupMenuForComments(data, tabId);
+    return;
+  }
+
   // do async prefetches
   loadDataCache(ancestryDependencyListener);
 
@@ -1568,6 +1743,9 @@ async function setupAncestryPopupMenu(extractedData, tabId) {
 
   if (generalizedData.sourceType == "record" && generalizedData.recordType == RT.Unclassified && generalizedData.role) {
     // use linked record to try to determine record type
+    useLinkedRecordsToDetermineType(data, tabId);
+  } else if (generalizedData.useLinkedRecordsToDetermineRole) {
+    // the linkData could affect the recordType and role
     useLinkedRecordsToDetermineType(data, tabId);
   } else {
     setupAncestryPopupMenuWithLinkData(data, tabId);

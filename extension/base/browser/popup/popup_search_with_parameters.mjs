@@ -571,7 +571,7 @@ function setupParametersElements(data, siteData, listElement, parameters) {
   addWarningMessages(data, siteData, listElement, parameters);
 }
 
-function setupSearchWithParametersSubMenu(data, backFunction, siteData, searchFunction) {
+function setupSearchWithParametersSubmenu(data, backFunction, siteData, searchFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -619,4 +619,4 @@ function setupSearchWithParametersSubMenu(data, backFunction, siteData, searchFu
   endMainMenu(menu);
 }
 
-export { setupSearchWithParametersSubMenu };
+export { setupSearchWithParametersSubmenu };

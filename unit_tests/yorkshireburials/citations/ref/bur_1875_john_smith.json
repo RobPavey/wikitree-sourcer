@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Yorkshire Burials\"<br/>\nBurmantofts Cemetery (Beckett Street Cemetery), Leeds, Yorkshire; Grave: Unconsecrated, No. 19055<br/>\n[https://yorkshireburials.uk/records/view_record.php?uuid=83e0d2ab-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>\nJohn Smith was buried on 20 Apr 1875 at age 41 in Burmantofts Cemetery (Beckett Street Cemetery), Leeds, Yorkshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John Smith was buried on 20 Apr 1875 at age 41 in Burmantofts Cemetery (Beckett Street Cemetery), Leeds, Yorkshire, England.<ref>\n'''Burial''':\n\"Yorkshire Burials\"<br/>\nBurmantofts Cemetery (Beckett Street Cemetery), Leeds, Yorkshire; Grave: Unconsecrated, No. 19055<br/>\n[https://yorkshireburials.uk/records/view_record.php?uuid=83e0d2ab-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>\nJohn Smith was buried on 20 Apr 1875 at age 41 in Burmantofts Cemetery (Beckett Street Cemetery), Leeds, Yorkshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Yorkshire Burials\"<br/>Burmantofts Cemetery (Beckett Street Cemetery), Leeds, Yorkshire; Grave: Unconsecrated, No. 19055<br/>[https://yorkshireburials.uk/records/view_record.php?uuid=83e0d2ab-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>John Smith was buried on 20 Apr 1875 at age 41 in Burmantofts Cemetery (Beckett Street Cemetery), Leeds, Yorkshire, England.",
+    "type": "source"
+  }
+}

@@ -88,6 +88,9 @@ function inferBestEventDateForCompare(gd) {
             eventDate = birthDate;
           }
         }
+      } else {
+        // sometimes an event date can be inferred from a related person
+        eventDate = gd.inferEventDate(true);
       }
     }
   }
@@ -97,16 +100,20 @@ function inferBestEventDateForCompare(gd) {
 
 // this can be used both for sorting sources and facts
 function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
-  let recordTypeSortPriority = {};
-  recordTypeSortPriority[RT.Birth] = 1;
-  recordTypeSortPriority[RT.Baptism] = 3;
+  let recordTypeSortPriority = {
+    [RT.Birth]: 1,
+    [RT.BirthOrBaptism]: 2,
+    [RT.Baptism]: 3,
 
-  recordTypeSortPriority[RT.Census] = 50;
+    [RT.Census]: 50,
 
-  recordTypeSortPriority[RT.Death] = 90;
-  recordTypeSortPriority[RT.Burial] = 93;
-  recordTypeSortPriority[RT.Will] = 94;
-  recordTypeSortPriority[RT.Probate] = 95;
+    [RT.Death]: 90,
+    [RT.DeathOrBurial]: 91,
+    [RT.Burial]: 92,
+    [RT.Memorial]: 93,
+    [RT.Will]: 95,
+    [RT.Probate]: 96,
+  };
 
   function getEventPriority(source) {
     let priority = 50;
@@ -144,11 +151,15 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
 
   if (eventDateA && eventDateB) {
     let result = DateUtils.compareDateStrings(eventDateA, eventDateB);
-    if (result == 0) {
+    let datesAreSame = DateUtils.areDateStringsEquivalent(eventDateA, eventDateB);
+    if (datesAreSame) {
       // dates are equal, sort by record type
       let priorityA = getEventPriority(sourceA);
       let priorityB = getEventPriority(sourceB);
-      result = priorityA - priorityB;
+      if (priorityA != priorityB) {
+        // if they are the same priority we keep the order from compareDateStrings
+        result = priorityA - priorityB;
+      }
     }
     if (result != 0) {
       return result;
@@ -236,25 +247,6 @@ function sortFacts(result) {
 
   // sort the sources
   result.facts.sort(compareFunction);
-}
-
-function buildNarrativeForPlainCitation(source, options) {
-  let narrative = "";
-
-  if (source.prefName) {
-    narrative += source.prefName;
-  } else {
-    narrative += "This person";
-  }
-  narrative += " was in a record";
-  if (source.eventDate) {
-    // could get correct preposition here (see formatDateObj in narrative_builder)
-    narrative += " in " + source.eventDate;
-  } else if (source.sortYear) {
-    narrative += " in " + source.sortYear;
-  }
-  narrative += ".";
-  return narrative;
 }
 
 function generateSourcerCitationsStringForFacts(result, type, options) {
@@ -443,6 +435,7 @@ function filterSourceIdsToSources(result, sourceIds, options) {
   result.sources = [];
 
   for (let sourceId of uniqueSourceIds) {
+    // Note we used to do this:
     let recordUrl = result.urlStart + "/discoveryui-content/view/" + sourceId.recordId + ":" + sourceId.dbId;
     let source = {
       recordUrl: recordUrl,
@@ -496,26 +489,43 @@ function buildSourcerCitation(runDate, source, type, options) {
   }
 }
 
-async function buildSourcerCitations(result, type, options) {
-  try {
-    if (options.buildAll_ancestry_excludeOtherRoleSources) {
-      let newSources = [];
-      for (let source of result.sources) {
-        if (source.citationObject) {
-          const gd = source.generalizedData;
-          if (gd && gd.role && gd.role != Role.Primary) {
-            // exclude this one
-            result.numExcludedOtherRoleSources++;
-          } else {
-            newSources.push(source);
-          }
+function pruneSources(result, options) {
+  // prune out failed source so we don't build citations for them
+  if (result.failureCount) {
+    let prunedSources = [];
+    let failedSources = [];
+    for (let source of result.sources) {
+      if (source.fetchStatus && !source.fetchStatus.success) {
+        failedSources.push(source);
+      } else {
+        prunedSources.push(source);
+      }
+    }
+    result.sources = prunedSources;
+    result.fetchFailedSources = failedSources;
+  }
+
+  if (options.buildAll_ancestry_excludeOtherRoleSources) {
+    let newSources = [];
+    for (let source of result.sources) {
+      if (source.citationObject) {
+        const gd = source.generalizedData;
+        if (gd && gd.role && gd.role != Role.Primary) {
+          // exclude this one
+          result.numExcludedOtherRoleSources++;
         } else {
           newSources.push(source);
         }
+      } else {
+        newSources.push(source);
       }
-      result.sources = newSources;
     }
+    result.sources = newSources;
+  }
+}
 
+async function buildSourcerCitations(result, type, options) {
+  try {
     sortSourcesUsingFetchedRecords(result);
 
     if (type == "source") {
@@ -548,4 +558,4 @@ async function buildSourcerCitations(result, type, options) {
   }
 }
 
-export { buildSourcerCitation, buildSourcerCitations, filterSourceIdsToSources, setUrlStart };
+export { buildSourcerCitation, buildSourcerCitations, filterSourceIdsToSources, setUrlStart, pruneSources };

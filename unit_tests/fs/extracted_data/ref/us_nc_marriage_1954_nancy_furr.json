@@ -1,0 +1,41 @@
+{
+  "url": "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BV?lang=en",
+  "recordData": {
+    "Name": "Nancy L Furr"
+  },
+  "eventPlaceOriginal": "Charlotte",
+  "eventPlaceL2": "Mecklenburg",
+  "fullName": "Nancy L Furr",
+  "surname": "Furr",
+  "givenName": "Nancy L",
+  "gender": "female",
+  "eventDateOriginal": "13 Jun 1954",
+  "eventDate": "13 Jun 1954",
+  "eventYear": "1954",
+  "eventPlace": "Charlotte, Mecklenburg, North Carolina, United States",
+  "relatedPersonFactType": "Marriage",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "William Franklin Furr",
+  "relatedPersonSurname": "Furr",
+  "relatedPersonGivenName": "William Franklin",
+  "relatedPersonGender": "male",
+  "relatedPersonLink": "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BD",
+  "relatedPersonSpouseFullName": "Wilma Faye Yandle",
+  "relatedPersonSpouseSurname": "Yandle",
+  "relatedPersonSpouseGivenName": "Wilma Faye",
+  "relatedPersonSpouseLink": "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BP",
+  "referenceData": {
+    "filmNumber": "002447710",
+    "digitalFilmNumber": "007742014",
+    "imageNumber": "218"
+  },
+  "extData": "{\"FS_COLLECTION_ID\":\"1726957\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-C91D-93C4-1\",\"FS_FOLDER\":\"007742014\"}",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QLWW-3K3N",
+  "collectionTitle": "North Carolina, County Marriages, 1762-2011 ",
+  "fsCollectionId": "1726957",
+  "citation": "\"North Carolina, County Marriages, 1762-2011 \", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BD : Fri May 31 23:58:19 UTC 2024), Entry for William Franklin Furr and Ralph Emerson Furr, 13 Jun 1954.",
+  "sourceTitleForPerson": "Nancy L Furr, \"North Carolina, County Marriages, 1762-2011 \"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:Q28T-D3BV",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C91D-93C4-1",
+  "pageType": "record"
+}

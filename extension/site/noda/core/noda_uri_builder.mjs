@@ -100,7 +100,7 @@ class NodaUriBuilder {
       this.addSearchParameter("birth_year_to", year);
     }
     if (month && day) {
-      this.addSearchParameter("birth_date", month + "-" + day);
+      this.addSearchParameter("birth_date", String(month).padStart(2, "0") + "-" + String(day).padStart(2, "0"));
     }
   }
 
@@ -132,7 +132,7 @@ class NodaUriBuilder {
       this.addSearchParameter("event_year_to", year);
     }
     if (month && day) {
-      this.addSearchParameter("event_date", month + "-" + day);
+      this.addSearchParameter("event_date", String(month).padStart(2, "0") + "-" + String(day).padStart(2, "0"));
     }
   }
 

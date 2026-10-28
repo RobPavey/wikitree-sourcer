@@ -24,7 +24,7 @@ SOFTWARE.
 
 import {
   addMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addBackMenuItem,
   beginMainMenu,
   endMainMenu,
@@ -142,14 +142,14 @@ function addMatriculaDefaultSearchMenuItem(menu, data, backFunction, filter) {
 
   // Display the submenu only when there are locations which we have extracted
   if (locations.length > 0) {
-    addMenuItemWithSubMenu(
+    addMenuItemWithSubmenu(
       menu,
       "Search Matricula",
       function (element) {
         matriculaSearch(data.generalizedData, "");
       },
       function () {
-        setupMatriculaSearchSubMenu(data, backFunction, filter, locations);
+        setupMatriculaSearchSubmenu(data, backFunction, filter, locations);
       }
     );
   } else {
@@ -165,7 +165,7 @@ function addMatriculaDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupMatriculaSearchSubMenu(data, backFunction, filter, locations) {
+async function setupMatriculaSearchSubmenu(data, backFunction, filter, locations) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);

@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}<br/>\nEntry for Dan.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Daniel died on 19 January 1929 and was buried at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America.<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}<br/>\nEntry for Dan.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Burial''': \"Find a Grave Index\"<br/>{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>{{FindAGrave|38648452}}<br/>Entry for Dan.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}<br/>\nDaniel Webster Abbott burial (died on 19 Jan 1929) at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America. Born on 21 Mar 1884.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Daniel died on 19 January 1929 and was buried at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America.<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}<br/>\nDaniel Webster Abbott burial (died on 19 Jan 1929) at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America. Born on 21 Mar 1884.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Burial''': \"Find a Grave Index\"<br/>{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>{{FindAGrave|38648452}}<br/>Daniel Webster Abbott burial (died on 19 Jan 1929) at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America. Born on 21 Mar 1884.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}<br/>\nName: Daniel Webster Abbott; Birth Date: 21 Mar 1884; Death Date: 19 Jan 1929; Burial Place: Collinsville, Tulsa, Oklahoma, United States of America; Age Years: 45; Misc Flag Photo Included: Y.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Daniel died on 19 January 1929 and was buried at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America.<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}<br/>\nName: Daniel Webster Abbott; Birth Date: 21 Mar 1884; Death Date: 19 Jan 1929; Burial Place: Collinsville, Tulsa, Oklahoma, United States of America; Age Years: 45; Misc Flag Photo Included: Y.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Burial''': \"Find a Grave Index\"<br/>{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>{{FindAGrave|38648452}}<br/>Name: Daniel Webster Abbott; Birth Date: 21 Mar 1884; Death Date: 19 Jan 1929; Burial Place: Collinsville, Tulsa, Oklahoma, United States of America; Age Years: 45; Misc Flag Photo Included: Y.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}\n{| border=\"1\"\n| Name || Daniel Webster Abbott\n|-\n| Birth Date || 21 Mar 1884\n|-\n| Death Date || 19 Jan 1929\n|-\n| Burial Place || Collinsville, Tulsa, Oklahoma, United States of America\n|-\n| Age Years || 45\n|-\n| Misc Flag Photo Included || Y\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Daniel died on 19 January 1929 and was buried at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America.<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}\n{| border=\"1\"\n| Name || Daniel Webster Abbott\n|-\n| Birth Date || 21 Mar 1884\n|-\n| Death Date || 19 Jan 1929\n|-\n| Burial Place || Collinsville, Tulsa, Oklahoma, United States of America\n|-\n| Age Years || 45\n|-\n| Misc Flag Photo Included || Y\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Burial''': \"Find a Grave Index\"<br/>{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>{{FindAGrave|38648452}}<br/>Name: Daniel Webster Abbott; Birth Date: 21 Mar 1884; Death Date: 19 Jan 1929; Burial Place: Collinsville, Tulsa, Oklahoma, United States of America; Age Years: 45; Misc Flag Photo Included: Y.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}<br/>\nEntry for Dan.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Daniel died on 19 January 1929 and was buried at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America.<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}<br/>\nEntry for Dan.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Burial''': \"Find a Grave Index\"<br/>{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>{{FindAGrave|38648452}}<br/>Entry for Dan.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Daniel died on 19 January 1929 and was buried at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America.<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Burial''': \"Find a Grave Index\"<br/>{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>{{FindAGrave|38648452}}.",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}<br/>\nDaniel Webster Abbott burial (died on 19 Jan 1929) at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America. Born on 21 Mar 1884.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Daniel died on 19 January 1929 and was buried at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America.<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}<br/>\nDaniel Webster Abbott burial (died on 19 Jan 1929) at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America. Born on 21 Mar 1884.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Burial''': \"Find a Grave Index\"<br/>{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>{{FindAGrave|38648452}}<br/>Daniel Webster Abbott burial (died on 19 Jan 1929) at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America. Born on 21 Mar 1884.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}<br/>\nEntry for Dan.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Daniel died on 19 January 1929 and was buried at Ridgelawn Cemetery, Collinsville, Tulsa, Oklahoma, United States of America.<ref>\n'''Burial''':\n\"Find a Grave Index\"<br/>\n{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>\n{{FindAGrave|38648452}}<br/>\nEntry for Dan.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Burial''': \"Find a Grave Index\"<br/>{{FamilySearch Record|QVKF-MXLS}} (accessed 6 May 2021)<br/>{{FindAGrave|38648452}}<br/>Entry for Dan.",
+    "type": "source"
+  }
+}

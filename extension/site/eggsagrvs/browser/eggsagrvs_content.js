@@ -60,7 +60,7 @@ async function checkForAndProcessPendingSearch() {
   }
 
   const lcUrl = document.URL.toLowerCase();
-  if (lcUrl.includes("graves.eggsa.org") && lcUrl.includes("searchgraves")) {
+  if (lcUrl.includes(".eggsa.org") && lcUrl.includes("searchgraves")) {
     // console.log("checkForPendingSearch: URLs match");
 
     const searchData = await getSearchData(PENDING_SEARCH);

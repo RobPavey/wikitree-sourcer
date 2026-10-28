@@ -22,6 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// The WT+ API documentation is here:
+// https://www.wikitree.com/wiki/Help:WikiTree_Plus_API#wtFamilySearch
+
 // Example FamilySearch pages to test this on:/
 //
 // Person details:
@@ -31,6 +34,13 @@ SOFTWARE.
 //
 // https://www.familysearch.org/en/tree/person/details/L62P-39Y
 //  Casimio Lopez
+//
+// https://www.familysearch.org/en/tree/person/sources/GWHS-7KV
+//  Maria Barbara Basson - has no direct links to or from a WT profile but has
+//  sources that do.
+//
+// https://www.familysearch.org/en/tree/person/sources/M9BV-DXD
+//  Charles Allen Pavey - has a direct reference to FindAGrave
 //
 // Record:
 //
@@ -43,13 +53,13 @@ SOFTWARE.
 //  Has lots of Similar Records
 //
 // 	https://www.familysearch.org/ark:/61903/1:1:XLX7-TL7?lang=en
-//    Marriage
+//    Marriage for Casimiro Lopez, is referenced from WT
 //
 // Image:
 //
 // https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSV8-W944-B?i=356&lang=en&cc=1478678
 //    Image page with 23 WT profiles linking to it
-//    Note the unusual 4 part fsId
+//    Note the unusual 4 part id
 //
 // https://familysearch.org/ark:/61903/3:1:3Q9M-CS2Q-M6MV?cc=2821281&lang=en&view=index&groupId=&personArk=%2Fark%3A%2F61903%2F1%3A1%3A6ZCM-FKTL&action=view
 //    Referenced from 2 WT profiles
@@ -57,10 +67,10 @@ SOFTWARE.
 //
 // https://www.familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&i=160&cc=1804002
 //  Marriage
-//
-// https://www.familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&i=160&cc=1804002
+//  Has image index at bottom with a linked record
 //
 // https://www.familysearch.org/ark:/61903/3:1:33SQ-GR6Z-4DW?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AMH4N-35W&action=view&cc=1488411&lang=en&groupId=
+//   1920 census - not linked to a WT profile but is attached to an FS person that is
 //
 // Search results:
 //
@@ -111,6 +121,7 @@ if (runningExtensionId === currentExtensionId) {
   const recordRegex = /^\/ark\:\/61903\/1\:\d\:([A-Z0-9]{4,5}\-[A-Z0-9]{3,4}).*$/;
   // An image URL  should look like one of these:
   // https://familysearch.org/ark:/61903/3:1:939N-8GSP-KW?lang=en&view=index&groupId=M9C5-PB5
+  // https://www.familysearch.org/ark:/61903/3:1:3Q9M-CS7M-83GB-Y?lang=en&i=540
   const imageRegex = /^\/ark\:\/\d+\/\d\:\d\:([A-Z0-9]{4,5}\-[A-Z0-9]{3,4}\-[A-Z0-9]{2,4}(?:\-[A-Z0-9]{1,4})?).*$/;
   // A search results URL URL  should look like one of these:
   // https://www.familysearch.org/en/search/record/results?count=20&treeref=G443-GML&q.givenName=Etienne&q.surname=Smit&q.birthLikeDate.from=1926&q.birthLikeDate.to=1930&q.deathLikeDate.from=2005&q.deathLikeDate.to=2009&q.marriageLikePlace=Paarl%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from=1949&q.marriageLikeDate.to=1957&q.spouseGivenName=Anna%20Jacoba&q.spouseSurname=de%20Villiers&q.marriageLikePlace.1=Wynberg%2C%20Cape%20Province%2C%20South%20Africa&q.marriageLikeDate.from.1=1959&q.marriageLikeDate.to.1=1967&q.spouseGivenName.1=Helena&q.spouseSurname.1=Theron&q.recordCountry=South%20Africa
@@ -121,6 +132,22 @@ if (runningExtensionId === currentExtensionId) {
   // A portrait tree should look like this:
   // https://www.familysearch.org/en/tree/pedigree/portrait/G443-GML
   const pedigreePortraitRegex = /^\/(?:[^\/]+\/)?tree\/pedigree\/portrait\/.*$/;
+
+  function cleanWikiId(wikiId) {
+    if (!wikiId) {
+      return "";
+    }
+    wikiId = wikiId.trim();
+    if (!wikiId) {
+      return "";
+    }
+
+    if (wikiId.includes(" ")) {
+      wikiId = wikiId.replace(" ", "_");
+    }
+
+    return wikiId;
+  }
 
   async function fetchFsSimilarRecordsJson(recordId, sessionId) {
     logDebug("fetchFsSimilarRecordsJson, sessionId is: " + sessionId);
@@ -223,7 +250,7 @@ if (runningExtensionId === currentExtensionId) {
   }
 
   async function fetchSimilarRecords(locationBatch) {
-    let pageFsId = pageInfo.fsId;
+    let pageFsId = pageMods.id;
     if (!pageFsId) {
       return;
     }
@@ -235,7 +262,7 @@ if (runningExtensionId === currentExtensionId) {
     if (result.success) {
       logDebug("fetchSimilarRecords, dataObj", result.dataObj);
     } else {
-      logDebug("fetchSimilarRecords, bad response from fetchFsSourcesJson", result);
+      logDebug("fetchSimilarRecords, bad response from fetchFsSimilarRecordsJson", result);
       return;
     }
 
@@ -266,18 +293,212 @@ if (runningExtensionId === currentExtensionId) {
             logDebug("similar record location title is :", locationTitle);
             if (entry.title == locationTitle) {
               let fsUrl = entry.id;
-              let fsIdData = getFsIdDataFromUrl(fsUrl);
-              if (fsIdData) {
-                let fsId = fsIdData.fsId;
-                location.fsId = fsId;
-                location.fsIdType = fsIdData.fsIdType;
-                addLocationToPendingFsIds(locationBatch, fsId, location);
+              let idData = pageMods.getIdDataFromUrl(fsUrl, location);
+              if (idData) {
+                let id = idData.id;
+                location.id = id;
+                location.idType = idData.idType;
+                addLocationToPendingFsIds(locationBatch, id, idData.idType, location);
               }
             }
           }
         }
       }
     }
+  }
+
+  async function fetchFsSourceIdsForPersonJson(personId, sessionId) {
+    //logDebug("fetchFsSourceIdForPrsonJson, sessionId is: " + sessionId);
+
+    if (!sessionId) {
+      sessionId = "";
+    }
+
+    if (!personId) {
+      return { success: false };
+    }
+
+    // https://www.familysearch.org/service/tree/tf/person/L62P-39Y/entityref?version=2
+
+    let fetchUrl = "https://www.familysearch.org/service/tree/tf/person/" + personId + "/entityref?version=2";
+
+    logDebug("fetchUrl is", fetchUrl);
+
+    let fetchOptionsHeaders = {
+      accept: "application/x-gedcomx-v1+json, application/json",
+      "accept-language": "en",
+      from: "fsSearch.record.getGedcomX@familysearch.org",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      authorization: "Bearer " + sessionId,
+    };
+
+    let fetchOptions = {
+      headers: fetchOptionsHeaders,
+      referrerPolicy: "strict-origin-when-cross-origin",
+      body: null,
+      method: "GET",
+      mode: "cors",
+      credentials: "include",
+    };
+
+    try {
+      let response = await fetch(fetchUrl, fetchOptions).catch((err) => {
+        console.log("Fetch threw an exception, message is: " + err.message);
+        console.log(err);
+        return { success: false };
+      });
+
+      logDebug("response is");
+      logDebug(response);
+
+      // On Firefox it may return zero any time you use "no-cors"
+      if (response.status !== 200) {
+        console.log("fetchFsSourcesJson: Looks like there was a problem. Status Code: " + response.status);
+        return {
+          success: false,
+          errorCondition: "FetchError",
+          status: response.status,
+          allowRetry: true,
+        };
+      }
+
+      // Examine the text in the response
+      let data = await response.text();
+
+      //logDebug("data is:");
+      //logDebug(data);
+
+      if (data.startsWith("{")) {
+        const jsonData = data;
+        const dataObj = JSON.parse(jsonData);
+
+        logDebug("dataObj is:");
+        logDebug(dataObj);
+
+        if (dataObj) {
+          return { success: true, dataObj: dataObj };
+        }
+      } else {
+        console.log("response does not look like JSON");
+      }
+    } catch (error) {
+      console.log("fetch failed, error is:");
+      console.log(error);
+      return { success: false };
+    }
+
+    return { success: false };
+  }
+
+  let recordDataObjCache = {};
+
+  async function fetchFsRecordDataObj(recordUrl) {
+    // standardize the URL to improve cache hits
+    // remove any query from URL
+    let queryIndex = recordUrl.indexOf("?");
+    if (queryIndex != -1) {
+      recordUrl = recordUrl.substring(0, queryIndex);
+    }
+    let regex = /^\s*https?\:\/\/(?:www\.)?familysearch\.org/;
+    recordUrl = recordUrl.replace(regex, "https://www.familysearch.org");
+
+    let cachedRecordDataObj = recordDataObjCache[recordUrl];
+    if (cachedRecordDataObj) {
+      logDebug("returning cachedRecordDataObj", cachedRecordDataObj);
+      return cachedRecordDataObj;
+    }
+
+    let fssessionid = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("fssessionid="))
+      ?.split("=")[1];
+    //console.log("fetchFsRecordDataObj, fssessionid: " + fssessionid);
+
+    let fetchType = "record";
+
+    let fetchUrl = recordUrl;
+
+    // sometimes the URL has an extra / on the end. This causes the fetch to fail. So remove it
+    fetchUrl = fetchUrl.replace(/\/\?/, "?");
+    fetchUrl = fetchUrl.replace(/\/$/, "");
+
+    // This seems like a recent change on FamilySearch (noticed on 25 May 2022).
+    // Sometimes the URL contains "/search/" and this stops the fetch working
+    if (fetchUrl.indexOf("www.familysearch.org/search/ark:/") != -1) {
+      fetchUrl = fetchUrl.replace("www.familysearch.org/search/ark:/", "www.familysearch.org/ark:/");
+    }
+
+    //console.log("fetchFsRecordDataObj, fetchUrl is: " + fetchUrl);
+
+    let fetchOptionsHeaders = {
+      accept: "application/x-gedcomx-v1+json, application/json",
+      "accept-language": "en",
+      from: "fsSearch.record.getGedcomX@familysearch.org",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      authorization: "Bearer " + fssessionid,
+    };
+
+    let fetchOptions = {
+      headers: fetchOptionsHeaders,
+      referrerPolicy: "strict-origin-when-cross-origin",
+      body: null,
+      method: "GET",
+      mode: "cors",
+      credentials: "include",
+    };
+
+    try {
+      let response = await pageMods.backgroundFetchJson(fetchUrl, fetchOptions);
+
+      recordDataObjCache[recordUrl] = response;
+
+      return response;
+    } catch (error) {
+      console.log("fetch failed, error is:");
+      console.log(error);
+      console.log("Fetch URL is: " + fetchUrl);
+
+      return { success: false, error: "Exception", exceptionObject: error };
+    }
+  }
+
+  let personSourceIdsCache = {};
+
+  async function getSourceIdsForPerson(personId) {
+    logDebug("getSourceIdsForPerson, personSourceIdsCache", personSourceIdsCache);
+
+    let cachedIds = personSourceIdsCache[personId];
+    if (cachedIds) {
+      logDebug("returning cached ids");
+      return cachedIds;
+    }
+
+    let fetchResult = await fetchFsSourceIdsForPersonJson(personId);
+    if (fetchResult.success && fetchResult.dataObj && fetchResult.dataObj.entityRefs) {
+      logDebug("getSourceIdsForPerson, dataObj", fetchResult.dataObj);
+      let entityRefs = fetchResult.dataObj.entityRefs;
+
+      let sourceIds = [];
+      if (entityRefs.length) {
+        for (let entityRef of entityRefs) {
+          let value = entityRef.value;
+
+          if (value && value.type == "SOURCE") {
+            let sourceId = value.uri;
+            sourceIds.push(sourceId);
+          }
+        }
+      }
+
+      personSourceIdsCache[personId] = sourceIds;
+      return sourceIds;
+    }
+
+    return [];
   }
 
   async function fetchFsSourcesJson(sourceIdList, sessionId) {
@@ -375,6 +596,149 @@ if (runningExtensionId === currentExtensionId) {
     return { success: false };
   }
 
+  function extractFindAGraveMemorialIdFromUrl(fgUrl) {
+    if (!fgUrl) {
+      return "";
+    }
+
+    // extract the memorial ID from the findagrave URL
+    // e.g. http://www.findagrave.com/cgi-bin/fg.cgi?page=gr&GRid=51993416
+    let regex1 = /^.*https?\:\/\/www\.findagrave\.com\/cgi\-bin\/fg\.cgi\?page\=gr\&GRid\=(\d+)$/;
+    // e.g. https://www.findagrave.com/memorial/51993416/william-herron
+    let regex2 = /^.*https?\:\/\/(?:www\.)?findagrave\.com\/memorial\/(\d+).*$/;
+
+    let fgMemId = "";
+    if (regex1.test(fgUrl)) {
+      let memorialId = fgUrl.replace(regex1, "$1");
+      if (memorialId) {
+        fgMemId = memorialId;
+      }
+    } else if (regex2.test(fgUrl)) {
+      let memorialId = fgUrl.replace(regex2, "$1");
+      if (memorialId) {
+        fgMemId = memorialId;
+      }
+    }
+
+    return fgMemId;
+  }
+
+  function getFindAGraveUrlFromRecordDataObj(dataObj) {
+    if (!dataObj) {
+      return;
+    }
+
+    if (dataObj.sourceDescriptions) {
+      for (let sourceDescription of dataObj.sourceDescriptions) {
+        if (sourceDescription.about && sourceDescription.about.includes("findagrave")) {
+          return sourceDescription.about;
+        } else if (sourceDescription.identifiers && sourceDescription.identifiers["http://gedcomx.org/Persistent"]) {
+          let persistentIds = sourceDescription.identifiers["http://gedcomx.org/Persistent"];
+          for (let id of persistentIds) {
+            if (id.includes("findagrave")) {
+              return id;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  let sourceInfoCache = {};
+
+  async function getSourceInfosForSourceIds(sourceIdList) {
+    logDebug("getSourceInfosForSourceIds, sourceInfoCache", sourceInfoCache);
+
+    let trimmedSourceIdList = [];
+    let result = {};
+
+    for (let sourceId of sourceIdList) {
+      let cachedSource = sourceInfoCache[sourceId];
+      if (cachedSource) {
+        result[sourceId] = cachedSource;
+      } else {
+        trimmedSourceIdList.push(sourceId);
+      }
+    }
+
+    if (trimmedSourceIdList.length == 0) {
+      return result;
+    }
+
+    const REQUEST_LIMIT = 30;
+    const limitRequestSize = pageMods.pageProfile.pageType == "personSources" ? false : true;
+
+    while (trimmedSourceIdList.length > 0) {
+      let requestSourceIdList = trimmedSourceIdList;
+      if (trimmedSourceIdList.length > REQUEST_LIMIT && limitRequestSize) {
+        requestSourceIdList = trimmedSourceIdList.splice(0, REQUEST_LIMIT);
+      } else {
+        trimmedSourceIdList = [];
+      }
+
+      let fetchResult = await fetchFsSourcesJson(requestSourceIdList);
+      if (
+        fetchResult.success &&
+        fetchResult.dataObj &&
+        fetchResult.dataObj.sources &&
+        fetchResult.dataObj.sources.length
+      ) {
+        logDebug("getSourceInfosForSourceIds, dataObj", fetchResult.dataObj);
+        let sources = fetchResult.dataObj.sources;
+
+        for (let source of sources) {
+          let sourceId = source.id;
+
+          let sourceInfo = {};
+          if (source.uri && source.uri.uri) {
+            sourceInfo.uri = source.uri.uri;
+          }
+          if (source.title) {
+            sourceInfo.title = source.title;
+          }
+          if (source.sourceType) {
+            sourceInfo.sourceType = source.sourceType;
+          }
+
+          if (sourceInfo.title && sourceInfo.title.includes("Find a Grave")) {
+            logDebug("getSourceInfosForSourceIds: found Find a Grave source");
+            // check if this is a FamilySearch source
+            let fgUrl = "";
+            if (sourceInfo.uri) {
+              if (sourceInfo.uri.includes("familysearch.org")) {
+                let recordFetchResult = await fetchFsRecordDataObj(sourceInfo.uri);
+                logDebug("getSourceInfosForSourceIds: recordFetchResult is", recordFetchResult);
+                if (recordFetchResult.success && recordFetchResult.json) {
+                  fgUrl = getFindAGraveUrlFromRecordDataObj(recordFetchResult.json);
+                }
+              } else if (sourceInfo.uri.includes("findagrave.com")) {
+                fgUrl = sourceInfo.uri;
+              }
+            }
+
+            let fgMemId = extractFindAGraveMemorialIdFromUrl(fgUrl);
+            if (fgMemId) {
+              sourceInfo.externalSource = {
+                externalId: fgMemId,
+                externalSiteName: "fg",
+                externalSiteTitle: "Find a Grave",
+                externalSourceTypeName: "memorial",
+                externalUrl: fgUrl,
+              };
+            }
+          }
+
+          result[sourceId] = sourceInfo;
+          sourceInfoCache[sourceId] = sourceInfo;
+        }
+      } else {
+        logDebug("getSourceInfosForSourceIds, bad response from fetchFsSourcesJson", result);
+      }
+    }
+
+    return result;
+  }
+
   function extractSourceIdFromElement(element) {
     // 1. Traverse up to the main source card wrapper
     // The wrapper has the ID directly. We can look for the div that contains the heading section.
@@ -388,6 +752,177 @@ if (runningExtensionId === currentExtensionId) {
       }
     }
     return null;
+  }
+
+  async function getSourceInfosForLocationBatch(locationBatch, fetchProfile) {
+    // make a list of the sourceIds that we need
+    let sourceIdSet = new Set();
+
+    // it is possible that we have the option for icons on source rows turned off
+    // but we want to check for backlinks to WT.
+    // Or the pageH1 can be in an earlier processing batch than the sourceRow locations
+    logDebug("getSourceInfosForLocationBatch: fetchProfile is ", fetchProfile);
+
+    // go through all the locations and find persons who want the sourceIds fetched
+    for (let location of locationBatch.locations) {
+      let locationType = location.locationType;
+      if (locationType[fetchProfile]) {
+        logDebug("getSourceInfosForLocationBatch: actual fetchProfile is ", locationType[fetchProfile]);
+
+        let optionKey = locationType[fetchProfile].optionKey;
+        if (!optionKey || pageMods.getOption(optionKey)) {
+          if (location.id) {
+            let idType = location.idType;
+            if (idType == "person") {
+              logDebug("getSourceInfosForLocationBatch: found person ", location);
+              let personSourceIdList = location.personSourceIdList;
+              if (!personSourceIdList) {
+                personSourceIdList = await getSourceIdsForPerson(location.id);
+                location.personSourceIdList = personSourceIdList;
+              }
+              logDebug("getSourceInfosForLocationBatch: personSourceIdList is ", personSourceIdList);
+              personSourceIdList.forEach((item) => sourceIdSet.add(item));
+            }
+          } else if (locationType.locationTypeName == "sourceRow") {
+            let sourceId = extractSourceIdFromElement(location.matchedElement);
+            sourceIdSet.add(sourceId);
+          }
+        }
+      }
+    }
+
+    let sourceIdList = [...sourceIdSet];
+
+    logDebug("getSourceInfosForLocationBatch, sourceIdList", sourceIdList);
+
+    let sourceInfos = await getSourceInfosForSourceIds(sourceIdList);
+
+    logDebug("getSourceInfosForLocationBatch, sourceInfos", sourceInfos);
+
+    return sourceInfos;
+  }
+
+  async function fetchBackLinksFromSources(locationBatch) {
+    //logDebug("fetchBackLinksFromSources, locationBatch is", locationBatch);
+
+    let sourceInfos = await getSourceInfosForLocationBatch(locationBatch, "fetchForBackLink");
+
+    //logDebug("fetchBackLinksFromSources, sourceInfos is", sourceInfos);
+
+    function addBackLinkWikiIdToLocation(location, wikiId) {
+      if (wikiId) {
+        wikiId = cleanWikiId(wikiId);
+        location.backLinkWikiIds ??= [];
+        if (!location.backLinkWikiIds.includes(wikiId)) {
+          location.backLinkWikiIds.push(wikiId);
+        }
+      }
+    }
+
+    function checkLocationAndSourceId(location, sourceId) {
+      let sourceInfo = sourceInfos[sourceId];
+      //logDebug("checkLocationAndSourceId, sourceInfo is", sourceInfo);
+
+      if (sourceInfo && sourceInfo.sourceType == "DEFAULT") {
+        //logDebug("checkLocationAndSourceId, sourceInfo is DEFAULT");
+        if (sourceInfo.uri) {
+          let regex = /^.*wikitree.com\/wiki\/([^\s]+\-\d+).*$/;
+          if (regex.test(sourceInfo.uri)) {
+            let wikiId = sourceInfo.uri.replace(regex, "$1");
+            logDebug(`fetchBackLinksFromSources: found WT uri, sourceId is ${sourceId}, wikiId is ${wikiId}`);
+            addBackLinkWikiIdToLocation(location, wikiId);
+            return true;
+          }
+        } else if (sourceInfo.title) {
+          const title = sourceInfo.title;
+          // This looks for both the text "wikitree" (any case) plus a valid WikiTree ID
+          // in any order
+          const wtIdRegex = /^(?=.*wikitree).*?([\p{L}]+-\d+)/iu;
+          const match = wtIdRegex.exec(title);
+          if (match) {
+            let wikiId = match[1];
+            if (wikiId) {
+              logDebug(`fetchBackLinksFromSources: found WT title, sourceId is ${sourceId}, wikiId is ${wikiId}`);
+              addBackLinkWikiIdToLocation(location, wikiId);
+              return true;
+            }
+          }
+        }
+      }
+      return false;
+    }
+
+    if (sourceInfos) {
+      for (let location of locationBatch.locations) {
+        if (location.personSourceIdList) {
+          for (let sourceId of location.personSourceIdList) {
+            checkLocationAndSourceId(location, sourceId);
+          }
+        } else if (location.locationType.locationTypeName == "sourceRow") {
+          // if this source is actually the one that has a back link we would like an icon
+          let sourceId = extractSourceIdFromElement(location.matchedElement);
+
+          //logDebug(`fetchBackLinksFromSources, sourceId=${sourceId} location is `, location);
+          if (checkLocationAndSourceId(location, sourceId)) {
+            //logDebug(`fetchBackLinksFromSources, added to backLinkWikiIds`);
+            if (!location.id) {
+              location.id = sourceId;
+              location.idType = "source";
+            }
+          }
+        }
+      }
+    }
+  }
+
+  async function fetchSourceFsIdsFromSources(locationBatch) {
+    logDebug("fetchSourceFsIdsFromSources", locationBatch);
+
+    let sourceInfos = await getSourceInfosForLocationBatch(locationBatch, "fetchForSourceFsIds");
+
+    logDebug("fetchSourceFsIdsFromSources, sourceInfos is", sourceInfos);
+
+    if (sourceInfos) {
+      for (let location of locationBatch.locations) {
+        if (location.personSourceIdList) {
+          for (let sourceId of location.personSourceIdList) {
+            let sourceInfo = sourceInfos[sourceId];
+            if (sourceInfo) {
+              if (sourceInfo.uri && sourceInfo.sourceType != "DEFAULT") {
+                // non-FS sources can be mising a uri
+
+                let idData = pageMods.getIdDataFromUrl(sourceInfo.uri);
+                logDebug("fetchSourceFsIdsFromSources, idData is", idData);
+
+                if (idData) {
+                  location.sourceFsIds ??= [];
+                  location.sourceFsIds.push({ idData: idData, sourceInfo: sourceInfo });
+                  addLocationToPendingFsIds(locationBatch, idData.id, idData.idType, location);
+                }
+              }
+
+              if (sourceInfo.externalSource) {
+                logDebug(
+                  "fetchSourceFsIdsFromSources, found externalSource (location,sourceInfo)",
+                  location,
+                  sourceInfo
+                );
+
+                if (!location.id) {
+                  location.id = sourceId;
+                  location.idType = "source";
+                }
+
+                location.externalSources ??= [];
+                location.externalSources.push(sourceInfo.externalSource);
+                let key = sourceInfo.externalSource.externalSiteName + "|" + sourceInfo.externalSource.externalId;
+                addLocationToPendingExternalSources(locationBatch, key, location);
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   async function fetchFsIdsForSources(locationBatch) {
@@ -406,100 +941,219 @@ if (runningExtensionId === currentExtensionId) {
 
     logDebug("fetchFsIdsForSources, sourceIdList", sourceIdList);
 
-    let result = await fetchFsSourcesJson(sourceIdList);
-    if (result.success && result.dataObj && result.dataObj.sources && result.dataObj.sources.length) {
-      logDebug("fetchFsIdsForSources, dataObj", result.dataObj);
-      let sources = result.dataObj.sources;
+    let sourceInfos = await getSourceInfosForSourceIds(sourceIdList);
 
+    logDebug("fetchFsIdsForSources, sourceInfos", sourceInfos);
+
+    if (sourceInfos) {
       for (let location of locationBatch.locations) {
         let locationTypeName = location.locationType.locationTypeName;
         let sourceId = null;
         if (locationTypeName == "sourceRow") {
           // get the source ID from the element
           sourceId = extractSourceIdFromElement(location.matchedElement);
-        }
 
-        if (sourceId) {
-          for (let source of sources) {
-            if (source.id == sourceId) {
-              if (source.uri && source.uri.uri) {
+          if (sourceId) {
+            let sourceInfo = sourceInfos[sourceId];
+            if (sourceInfo) {
+              if (sourceInfo.uri) {
                 // non-FS sources can be mising a uri
 
-                let fsIdData = getFsIdDataFromUrl(source.uri.uri);
-                if (fsIdData) {
-                  let fsId = fsIdData.fsId;
-                  location.fsId = fsId;
-                  location.fsIdType = fsIdData.fsIdType;
+                let idData = pageMods.getIdDataFromUrl(sourceInfo.uri);
+                if (idData) {
+                  let id = idData.id;
+                  location.id = id;
+                  location.idType = idData.idType;
 
-                  addLocationToPendingFsIds(locationBatch, fsId, location);
+                  addLocationToPendingFsIds(locationBatch, id, idData.idType, location);
                 }
               }
-              break;
+
+              if (sourceInfo.externalSource) {
+                logDebug("fetchFsIdsForSources, found externalSource (location,sourceInfo)", location, sourceInfo);
+                if (!location.id) {
+                  location.id = sourceId;
+                  location.idType = "source";
+                }
+
+                location.externalSources ??= [];
+                location.externalSources.push(sourceInfo.externalSource);
+                let key = sourceInfo.externalSource.externalSiteName + "|" + sourceInfo.externalSource.externalId;
+                addLocationToPendingExternalSources(locationBatch, key, location);
+              }
             }
           }
         }
       }
-    } else {
-      logDebug("fetchFsIdsForSources, bad response from fetchFsSourcesJson", result);
+    }
+  }
+
+  async function fetchExternalSourceForRecord(locationBatch) {
+    logDebug("fetchExternalSourceForRecord, locationBatch", locationBatch);
+
+    for (let location of locationBatch.locations) {
+      let pageType = pageMods.pageProfile.pageType;
+      let locationTypeName = location.locationType.locationTypeName;
+      logDebug("fetchExternalSourceForRecord, location", location);
+      if (pageType == "record" && locationTypeName == "pageH1") {
+        // first check by looking at the page if this is a record with an external source
+        let h1Element = location.matchedElement.parentElement;
+        let containerElement = h1Element.parentElement;
+        let recordTitleElement = containerElement.querySelector("h2 > div");
+        logDebug("fetchExternalSourceForRecord, recordTitleElement", recordTitleElement);
+        if (!recordTitleElement) {
+          continue;
+        }
+
+        let recordTitle = recordTitleElement.textContent;
+
+        if (recordTitle.includes("Find a Grave Index")) {
+          logDebug("fetchExternalSourceForRecord: found Find a Grave source");
+          let recordFetchResult = await fetchFsRecordDataObj(document.URL);
+          logDebug("fetchExternalSourceForRecord: recordFetchResult is", recordFetchResult);
+          if (recordFetchResult.success && recordFetchResult.json) {
+            let fgUrl = getFindAGraveUrlFromRecordDataObj(recordFetchResult.json);
+            let fgMemId = extractFindAGraveMemorialIdFromUrl(fgUrl);
+
+            if (fgMemId) {
+              let externalSource = {
+                externalId: fgMemId,
+                externalSiteName: "fg",
+                externalSiteTitle: "Find a Grave",
+                externalSourceTypeName: "memorial",
+                externalUrl: fgUrl,
+              };
+
+              logDebug(
+                "fetchExternalSourceForRecord, found externalSource (location, externalSource)",
+                location,
+                externalSource
+              );
+              location.externalSources ??= [];
+              location.externalSources.push(externalSource);
+              let key = externalSource.externalSiteName + "|" + externalSource.externalId;
+              addLocationToPendingExternalSources(locationBatch, key, location);
+            }
+          }
+        }
+      }
     }
   }
 
   const pageProfiles = [
     {
       pageType: "personDetails",
+      pageIdType: "person",
       matchRegex: personDetailsRegex,
       locationTypes: [
         {
           locationTypeName: "pageH1",
           selector: "h1 [data-testid='fullName']",
+          iconAddRule: { type: "ellipsis" },
           useFsIdFromPageUrl: true,
           optionKey: "personShowWtIconH1",
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "personShowWtIconH1BackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1SourceRef",
+          },
         },
         {
           locationTypeName: "familyMember",
+          locationIdType: "person",
           selector: "[data-testid='nameLink'] [data-testid='fullName']",
+          iconAddRule: { type: "ellipsis" },
           optionKey: "personDetailsShowWtIconFamily",
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "personShowWtIconFamilyBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconFamilySourceRef",
+          },
         },
       ],
     },
     {
       pageType: "personSources",
+      pageIdType: "person",
       matchRegex: personSourcesRegex,
       locationTypes: [
         {
           locationTypeName: "pageH1",
           selector: "[data-testid='fullName']",
+          iconAddRule: { type: "ellipsis" },
           useFsIdFromPageUrl: true,
           optionKey: "personShowWtIconH1",
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "personShowWtIconH1BackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1SourceRef",
+          },
         },
         {
           locationTypeName: "sourceRow",
           selector: "[data-testid='section-card-sources'] [data-testid='source-heading-section']",
+          iconAddRule: { type: "makeFlexAddChild" },
           optionKey: "personSourcesShowWtIconOnSourceRow",
           needToFetchIds: true,
-          fetchFunction: fetchFsIdsForSources,
+          iconPlaceElementRule: { type: "child", selector: "div[class^='cssSourceTitle']" },
+          fetchForId: {
+            fetchFunction: fetchFsIdsForSources,
+          },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "personShowWtIconH1BackLink",
+          },
         },
       ],
     },
     {
       pageType: "personAbout",
+      pageIdType: "person",
       matchRegex: personAboutRegex,
       locationTypes: [
         {
           locationTypeName: "pageH1",
           selector: "h1 [data-testid='fullName']",
+          iconAddRule: { type: "ellipsis" },
           useFsIdFromPageUrl: true,
           optionKey: "personShowWtIconH1",
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "personShowWtIconH1BackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconH1SourceRef",
+          },
         },
         {
           locationTypeName: "familyMember",
           selector: "[data-testid='nameLink'] [data-testid='fullName']",
+          iconAddRule: { type: "ellipsis" },
           optionKey: "personAboutShowWtIconFamily",
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "personShowWtIconFamilyBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "personShowWtIconFamilySourceRef",
+          },
         },
       ],
     },
     {
       pageType: "record",
+      pageIdType: "record",
       matchRegex: recordRegex,
       locationTypes: [
         {
@@ -507,33 +1161,61 @@ if (runningExtensionId === currentExtensionId) {
           selector: "main h1 > div",
           optionKey: "recordShowWtIconH1",
           useFsIdFromPageUrl: true,
+          fetchForExternalSource: {
+            fetchFunction: fetchExternalSourceForRecord,
+            optionKey: "recordShowWtIconH1ExternalSource",
+          },
         },
         {
           locationTypeName: "otherPeople",
           selector: "tr > th > span > a",
+          iconPlaceElementRule: { type: "closest", selector: "span" },
           optionKey: "recordShowWtIconOtherPeople",
         },
         {
           locationTypeName: "thisRecordAttachedTo",
           selector: "div[class^='attachCss'] [data-testid='person'] [data-testid='fullName']",
           optionKey: "recordShowWtIconAttached",
+          iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "recordShowWtIconForPersonBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "recordShowWtIconForPersonSourceRef",
+          },
         },
         {
           locationTypeName: "similarRecord",
           selector: "li div[role='button'] span > span",
+          iconAddRule: { type: "addChild" },
           needToFetchIds: true,
-          fetchFunction: fetchSimilarRecords,
+          fetchForId: {
+            fetchFunction: fetchSimilarRecords,
+          },
+          iconPlaceElementRule: { type: "parent" },
           optionKey: "recordShowWtIconSimilarRecords",
         },
         {
           locationTypeName: "similarRecordAttachedTo",
           selector: "li [data-testid='person'] [data-testid='fullName']",
           optionKey: "recordShowWtIconSimilarRecordsAttached",
+          iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "recordShowWtIconForPersonBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "recordShowWtIconForPersonSourceRef",
+          },
         },
       ],
     },
     {
       pageType: "image",
+      pageIdType: "image",
       matchRegex: imageRegex,
       locationTypes: [
         {
@@ -545,21 +1227,42 @@ if (runningExtensionId === currentExtensionId) {
           locationTypeName: "imageSideBarAttached",
           selector: "aside [data-testid='person'] [data-testid='nameLink'] [data-testid='fullName']",
           optionKey: "imageShowWtIconSidebar",
+          iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "imageShowWtIconPeopleBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "imageShowWtIconPeopleSourceRef",
+          },
         },
         {
           locationTypeName: "imageIndexRecord",
           selector: "aside tbody > tr > td > a[href^='/ark:/61903/'] > span",
+          iconPlaceElementRule: {
+            type: "closestThenChild",
+            closestSelector: "td",
+            childSelector: "a[href*='search/linker']",
+          },
+          iconAddRule: { type: "ellipsis" },
           optionKey: "imageShowWtIconSidebar",
         },
         {
           locationTypeName: "pageH1",
           selector: "main h1 > span, nav ol",
+          iconPlaceElementRule: {
+            type: "closestThenChild",
+            closestSelector: "div",
+            childSelector: "h1 span",
+          },
           useFsIdFromPageUrl: true,
           optionKey: "imageShowWtIconH1",
         },
         {
           locationTypeName: "imageNavBar",
           selector: "nav > div > div[class^='rowCss']",
+          iconAddRule: { type: "addFlexChild" },
           useFsIdFromPageUrl: true,
           optionKey: "imageShowWtIconH1",
         },
@@ -572,6 +1275,7 @@ if (runningExtensionId === currentExtensionId) {
         {
           locationTypeName: "searchResult",
           selector: "td > h2 > strong > a",
+          iconPlaceElementRule: { type: "closest", selector: "strong" },
           optionKey: "searchResultsShowWtIconResultRow",
         },
         {
@@ -581,7 +1285,8 @@ if (runningExtensionId === currentExtensionId) {
         },
         {
           locationTypeName: "sidebarHeaderPreview",
-          selector: "[data-testid='recordPreview-InfoSheet'] h1 > div",
+          selector: "aside[data-testid='recordPreview-InfoSheet'] h1 > div",
+          hrefRule: { type: "grandparentThenChild", childSelector: "div > a" },
           optionKey: "searchResultsShowWtIconSidebar",
         },
         {
@@ -589,6 +1294,15 @@ if (runningExtensionId === currentExtensionId) {
           selector:
             "aside [data-testid='nameSpan'] [data-testid='fullName'], aside [data-testid='person'] [data-testid='fullName']",
           optionKey: "searchResultsShowWtIconPersonInTree",
+          iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "searchResultsShowWtIconPersonInTreeBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "searchResultsShowWtIconPersonInTreeSourceRef",
+          },
         },
       ],
     },
@@ -598,13 +1312,31 @@ if (runningExtensionId === currentExtensionId) {
       locationTypes: [
         {
           locationTypeName: "pedigreePerson",
-          selector: "li [data-testid='nameLink'] div > span",
+          selector: "li [data-testid='nameLink'] div > span:not([class^='wt-sourcer'])",
           optionKey: "pedigreeLandscapeShowWtIcon",
+          iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "pedigreeLandscapeShowWtIconPeopleBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "pedigreeLandscapeShowWtIconPeopleSourceRef",
+          },
         },
         {
           locationTypeName: "sidebarHeader",
           selector: "[data-testid='PersonSheetHeader'] [data-testid='nameLink'] [data-testid='fullName']",
           optionKey: "pedigreeLandscapeShowWtIconSidebar",
+          iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "pedigreeLandscapeShowWtIconPeopleBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "pedigreeLandscapeShowWtIconPeopleSourceRef",
+          },
         },
       ],
     },
@@ -617,291 +1349,590 @@ if (runningExtensionId === currentExtensionId) {
           selector:
             "[data-testid='pedigree'] [data-testid='person'] [data-testid='nameLink'] [data-testid='namePart2']",
           optionKey: "pedigreePortraitShowWtIcon",
+          iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "pedigreePortraitShowWtIconPeopleBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "pedigreePortraitShowWtIconPeopleSourceRef",
+          },
         },
         {
           locationTypeName: "sidebarHeader",
           selector: "aside [data-testid='PersonSheetHeader'] [data-testid='nameLink'] [data-testid='fullName']",
           optionKey: "pedigreePortraitShowWtIconSidebar",
+          iconAddRule: { type: "ellipsis" },
+          fetchForBackLink: {
+            fetchFunction: fetchBackLinksFromSources,
+            optionKey: "pedigreePortraitShowWtIconPeopleBackLink",
+          },
+          fetchForSourceFsIds: {
+            fetchFunction: fetchSourceFsIdsFromSources,
+            optionKey: "pedigreePortraitShowWtIconPeopleSourceRef",
+          },
         },
       ],
     },
   ];
 
-  function isLocationTypeEnabled(locationType, options) {
-    let optionKey = "ui_fs_" + locationType.optionKey;
-    return options[optionKey];
-  }
-
-  function wtPlusApiCall(url) {
-    return new Promise((resolve, reject) => {
-      chrome.runtime.sendMessage(
-        {
-          type: "doWtPlusApiCall",
-          url: url,
-        },
-        (response) => {
-          if (response && response.success) {
-            resolve(JSON.parse(response.rawData));
-          } else {
-            if (chrome.runtime.lastError) {
-              reject(chrome.runtime.lastError);
-            } else if (response.error) {
-              reject(response.error);
-            } else {
-              reject("No response");
-            }
-          }
-        }
-      );
-    });
-  }
-
   function wtPlusApiGetProfilesUsingFsId(idString) {
+    let referrer = document.URL;
     let url = `https://plus.wikitree.com/function/wtFamilySearch/Sourcer.json?query=${idString}`;
-    return wtPlusApiCall(url);
+    return pageMods.wtPlusApiCall(url, referrer);
   }
 
-  function getSpanElementToAddIconTo(location) {
+  function wtPlusApiGetProfilesUsingFgId(idString) {
+    let referrer = document.URL;
+    let url = `https://plus.wikitree.com/function/wtFindAGrave4Bee/Sourcer.json?query=${idString}`;
+    return pageMods.wtPlusApiCall(url, referrer);
+  }
+
+  function getElementToAddIconTo(location) {
     let element = location.matchedElement;
 
     let locationType = location.locationType;
 
-    if (locationType.locationTypeName == "sourceRow") {
-      let titleElement = element.querySelector("div[class^='cssSourceTitle']");
-      return titleElement;
-    }
-
-    if (locationType.locationTypeName == "imageIndexRecord") {
-      let tdElement = element.closest("td");
-      if (tdElement) {
-        let attachElement = tdElement.querySelector("a[href*='search/linker']");
-        if (attachElement) {
-          return attachElement;
+    if (locationType.iconPlaceElementRule) {
+      let rule = locationType.iconPlaceElementRule;
+      if (rule.type == "same") {
+        return element;
+      } else if (rule.type == "parent") {
+        return element.parentElement;
+      } else if (rule.type == "closest") {
+        let closestElement = element.closest(rule.selector);
+        if (closestElement) {
+          return closestElement;
+        }
+      } else if (rule.type == "child") {
+        let childElement = element.querySelector(rule.selector);
+        if (childElement) {
+          return childElement;
+        }
+      } else if (rule.type == "closestThenChild") {
+        let closestElement = element.closest(rule.closestSelector);
+        if (closestElement) {
+          let childElement = closestElement.querySelector(rule.childSelector);
+          if (childElement) {
+            return childElement;
+          }
         }
       }
-    }
 
-    if (locationType.locationTypeName == "imageNavBar") {
+      console.warn("locationType has iconPlaceElementRule but it failed", location);
+    } else {
       return element;
-    }
-
-    if (locationType.locationTypeName == "similarRecord") {
-      // we want to add as a child of the parent span
-      return element.parentElement;
-    }
-
-    if (element.tagName == "SPAN") {
-      return element;
-    }
-
-    let enclosingDiv = element.closest("div");
-    if (enclosingDiv) {
-      let spanElement = enclosingDiv.querySelector("h1 span");
-      if (spanElement) {
-        return spanElement;
-      }
-    }
-
-    // for record pages the title is not actually a span, it is a div
-    if (element.tagName == "DIV") {
-      let enclosingH1 = element.closest("h1");
-      if (enclosingH1) {
-        return element;
-      }
-    }
-
-    // for other people on a record page
-    if (element.tagName == "A") {
-      let enclosingSpan = element.closest("span");
-      if (enclosingSpan) {
-        return enclosingSpan;
-      }
-      let enclosingStrong = element.closest("strong"); // for search results
-      if (enclosingStrong) {
-        return enclosingStrong;
-      }
     }
   }
 
-  // Define  SVG icons
-  const svgSingle = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <circle cx="12" cy="12" r="11" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
-  
-  <path d="M16 12H1M1 12L5 8M1 12L5 16" 
-        stroke="rgba(0,0,0,0.4)" 
-        stroke-width="5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-        
-  <path d="M16 12H1M1 12L5 8M1 12L5 16" 
-        stroke="white" 
-        stroke-width="2.5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-</svg>`;
-
-  const svgMultiple = `data:image/svg+xml;utf8,
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <circle cx="15" cy="9" r="8" fill="%23ffaf02" stroke="white" stroke-width="1.5" opacity="0.6"/>
-  
-  <circle cx="10" cy="14" r="9" fill="%23ffaf02" stroke="white" stroke-width="1.5"/>
-  
-  <path d="M13 14H2M2 14L5 11M2 14L5 17" 
-        stroke="rgba(0,0,0,0.4)" 
-        stroke-width="5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-        
-  <path d="M13 14H2M2 14L5 11M2 14L5 17" 
-        stroke="white" 
-        stroke-width="2.5" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        fill="none"/>
-</svg>`;
+  let currentPageWikiIds = [];
 
   function addWikiTreeIcon(location, wikiIds) {
+    pageMods.removeProcessingIcon(location);
+
     logDebug("addWikiTreeIcon", location, wikiIds);
 
-    if (wikiIds.length < 1) {
-      logDebug("addWikiTreeIcon, profiles length less than 1");
+    let backLinkWikiIds = location.backLinkWikiIds;
+
+    let sourceFsIds = location.sourceFsIds;
+
+    let externalSources = location.externalSources;
+
+    if (!wikiIds) {
+      wikiIds = [];
+    }
+    if (!backLinkWikiIds) {
+      backLinkWikiIds = [];
+    }
+    if (!sourceFsIds) {
+      sourceFsIds = [];
+    }
+    if (!externalSources) {
+      externalSources = [];
+    }
+
+    if (
+      wikiIds.length == 0 &&
+      backLinkWikiIds.length == 0 &&
+      sourceFsIds.length == 0 &&
+      externalSources.length == 0 &&
+      !location.error
+    ) {
       return;
     }
 
-    let spanElement = location.spanElement;
+    let locationType = location.locationType;
+    let locationTypeName = locationType?.locationTypeName;
+    let pageProfile = pageMods.pageProfile;
+    let pageIdType = pageProfile.pageIdType;
 
-    let svgIcon = null;
-    let titleText = "FamilySearch " + location.fsIdType + " " + location.fsId + " is ";
+    let iconConfig = {
+      isMultiple: false,
+      isConflict: false,
+      includeSourceBox: false,
+      mainArrowStyle: "none",
+    };
+    let titleText = "FamilySearch " + location.idType + " " + location.id;
+    let tooltipData = { title: titleText, listItems: [] };
+    let clipboardText = "";
+    let linkUrl = "";
 
-    if (wikiIds.length > 1) {
-      svgIcon = svgMultiple;
-      titleText += `referenced from ${wikiIds.length} WikiTree profiles`;
-    } else {
-      svgIcon = svgSingle;
-      titleText += `referenced from WikiTree profile: ${wikiIds[0]}`;
-    }
+    let primaryWikiId = "";
 
-    const img = document.createElement("img");
-
-    // 3. Set the source to your SVG string
-    img.src = svgIcon;
-
-    // 4. Add styling for alignment and spacing
-    img.style.width = "24px";
-    img.style.height = "24px";
-    img.style.verticalAlign = "middle"; // Crucial for sitting level with the text
-    img.style.position = "relative";
-    img.style.top = "-1px"; // Tiny nudge up to visually center with the caps
-    img.style.filter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-
-    img.style.cursor = "pointer";
-    img.className = "wt-sourcer-icon"; // Good for your MutationObserver check
-
-    // 5. Add a tooltip for clarity
-    img.title = titleText;
-
-    // Set initial filter
-    const normalFilter = "drop-shadow(0px 1px 1.5px rgba(0,0,0,0.15))";
-    img.style.filter = normalFilter;
-
-    img.addEventListener("mouseenter", () => {
-      img.style.filter = `${normalFilter} brightness(1.1)`;
-    });
-
-    img.addEventListener("mouseleave", () => {
-      img.style.filter = normalFilter;
-    });
-
-    // create an anchor element
-    const anchorElement = document.createElement("a");
-    if (wikiIds.length > 1) {
-      let fsId = location.fsId;
-      if (fsId) {
-        let wtPlusUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
-        if (location.fsIdType == "image") {
-          wtPlusUrl += "FamilySearchImage=";
-        } else {
-          wtPlusUrl += "FamilySearch=";
-        }
-        wtPlusUrl += fsId;
-        wtPlusUrl += "&render=1";
-        anchorElement.setAttribute("href", wtPlusUrl);
+    if (wikiIds.length == 0 && location.error) {
+      let error = location.error;
+      iconConfig.isFetchError = true;
+      let itemText = `could not get data from the WT+ API`;
+      if (error.message == "Blocked request") {
+        itemText += " because your IP address was blocked (see https://plus.wikitree.com/ for details)";
+      } else {
+        itemText += " due to " + error.message;
       }
-    } else {
-      anchorElement.setAttribute("href", "https://www.wikitree.com/wiki/" + wikiIds[0]);
+      let tooltipListItem = { text: itemText, isError: true };
+      tooltipData.listItems.push(tooltipListItem);
     }
 
-    anchorElement.target = "_blank";
-    anchorElement.style.textDecoration = "none";
-
-    anchorElement.appendChild(img);
-
-    // if this span element is an ellipsis style then we need to avoid the icon disappearing
-    // when the ellipsis is shown
-    const isEllipsisSpan = Array.from(spanElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
-    const locationTypeName = location.locationType.locationTypeName;
-
-    if (isEllipsisSpan) {
-      const container = spanElement.parentElement;
-
-      // Set container to flex so icon stays visible next to the span
-      container.style.display = "flex";
-      container.style.alignItems = "center";
-      container.style.flexDirection = "row";
-      container.style.width = "100%"; // Ensure it uses the full header width
-
-      // Allow the name to shrink, but keep the icon fixed
-      spanElement.style.flexShrink = "1";
-      spanElement.style.minWidth = "0"; // Firefox requirement for flex-shrink on text
-
-      anchorElement.style.flexShrink = "0";
-      anchorElement.style.display = "flex";
-      anchorElement.style.marginLeft = "8px";
-
-      // Append to PARENT so it's not clipped by the span
-      container.appendChild(anchorElement);
-    } else if (locationTypeName === "sourceRow" || locationTypeName == "imageIndexRecord") {
-      // Set container to flex so icon stays visible next to the span
-      spanElement.style.display = "flex";
-      spanElement.style.alignItems = "flex-start";
-      spanElement.style.flexDirection = "row";
-
-      anchorElement.style.flexShrink = "0";
-      anchorElement.style.display = "flex";
-      anchorElement.style.marginLeft = "8px";
-
-      spanElement.appendChild(anchorElement);
-    } else if (locationTypeName === "imageNavBar") {
-      // the spanElement is a container that we want to append to
-      anchorElement.style.flexShrink = "0";
-      anchorElement.style.display = "flex";
-      anchorElement.style.marginLeft = "8px";
-
-      spanElement.appendChild(anchorElement);
-    } else if (locationTypeName === "similarRecord") {
-      // the spanElement is a container that we want to append to
-      anchorElement.style.marginLeft = "0px";
-      spanElement.appendChild(anchorElement);
-    } else {
-      img.style.marginLeft = "12px";
-      spanElement.appendChild(anchorElement);
+    function buildWikiProfileUrl(wikiId) {
+      return "https://www.wikitree.com/wiki/" + wikiId;
     }
+
+    function buildWtPlusUrl(fsId, fsIdType) {
+      let linkUrl = "";
+      if (fsId) {
+        linkUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
+        if (fsIdType == "image") {
+          linkUrl += "FamilySearchImage=";
+        } else if (fsIdType == "record") {
+          linkUrl += "FamilySearchRecord=";
+        } else {
+          linkUrl += "FamilySearchPerson=";
+        }
+        linkUrl += fsId;
+        linkUrl += "&render=1";
+      }
+      return linkUrl;
+    }
+
+    function buildWtPlusUrlForSet(fsIdSet, fsIdType) {
+      let linkUrl = "";
+      if (fsIdSet.size > 0) {
+        linkUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
+        let keyword = "";
+        if (fsIdType == "image") {
+          keyword = "FamilySearchImage=";
+        } else if (fsIdType == "record") {
+          keyword = "FamilySearchRecord=";
+        } else {
+          keyword = "FamilySearchPerson=";
+        }
+
+        let added = false;
+        for (let fsId of fsIdSet) {
+          if (added) {
+            linkUrl += " OR ";
+          }
+          linkUrl += keyword + fsId;
+          added = true;
+        }
+        linkUrl += "&render=1";
+      }
+      return linkUrl;
+    }
+
+    function buildWtPlusUrlForWikiIdSet(allWikiIds) {
+      let linkUrl = "";
+      if (allWikiIds.size > 0) {
+        linkUrl = "https://plus.wikitree.com/default.htm?report=srch1&Query=";
+        let keyword = "WikiTreeID";
+        let added = false;
+        for (let wikiId of allWikiIds) {
+          if (added) {
+            linkUrl += " OR ";
+          }
+          let searchWikiId = wikiId.includes(" ") ? '"' + wikiId + '"' : wikiId;
+          linkUrl += keyword + "=" + searchWikiId;
+          added = true;
+        }
+        linkUrl += "&render=1";
+      }
+      return linkUrl;
+    }
+
+    if (pageIdType == "person" && locationTypeName == "pageH1") {
+      currentPageWikiIds = [];
+      if (wikiIds.length) {
+        currentPageWikiIds = [...wikiIds];
+      } else if (backLinkWikiIds.length) {
+        currentPageWikiIds = [...backLinkWikiIds];
+      } else if (sourceFsIds.length) {
+        for (let sourceFsId of sourceFsIds) {
+          let idType = sourceFsId.idData.idType;
+          if (idType == "record") {
+            if (sourceFsId.wikiIds) {
+              for (let wikiId of sourceFsId.wikiIds) {
+                if (!currentPageWikiIds.includes(wikiId)) {
+                  currentPageWikiIds.push(wikiId);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    let allWikiIds = new Set();
+    let needToUseWtPlusUrlForAllWikiIds = false;
+
+    // Direct links from WikiTree
+    if (wikiIds.length > 1) {
+      iconConfig.isMultiple = true;
+      iconConfig.mainArrowStyle = "in";
+      let tooltipListItem = { text: `is referenced from ${wikiIds.length} profiles` };
+      tooltipData.listItems.push(tooltipListItem);
+
+      for (let wikiId of wikiIds) {
+        if (clipboardText) {
+          clipboardText += ",";
+        }
+        clipboardText += wikiId;
+      }
+
+      linkUrl = buildWtPlusUrl(location.id, location.idType);
+
+      // in case there are more WikiIds referenced indirectly or from backlinks we record them all
+      wikiIds.forEach((item) => allWikiIds.add(item));
+
+      if (location.idType == "person" || location.idType == "record") {
+        iconConfig.isConflict = true;
+        tooltipListItem.isError = true;
+      } else if (pageIdType == "person" && locationTypeName == "sourceRow" && currentPageWikiIds) {
+        if (currentPageWikiIds.length && currentPageWikiIds.length == 1) {
+          if (!wikiIds.includes(currentPageWikiIds[0])) {
+            iconConfig.isPartial = true;
+            tooltipListItem.text += ` but not profile ${currentPageWikiIds[0]}`;
+          }
+        }
+      }
+    } else if (wikiIds.length == 1) {
+      iconConfig.mainArrowStyle = "in";
+      primaryWikiId = wikiIds[0];
+
+      let tooltipListItem = { text: `is referenced from profile ${wikiIds[0]}` };
+      tooltipData.listItems.push(tooltipListItem);
+
+      clipboardText = wikiIds[0];
+      linkUrl = buildWikiProfileUrl(wikiIds[0]);
+
+      // in case there are more WikiIds referenced indirectly or from backlinks we record them all
+      allWikiIds.add(wikiIds[0]);
+
+      if (pageIdType == "person" && locationTypeName == "sourceRow" && currentPageWikiIds) {
+        if (currentPageWikiIds.length && currentPageWikiIds.length == 1) {
+          if (currentPageWikiIds[0] != wikiIds[0]) {
+            iconConfig.isPartial = true;
+            tooltipListItem.text += ` but not profile ${currentPageWikiIds[0]}`;
+          }
+        }
+      }
+    }
+
+    // Back links
+    if (backLinkWikiIds.length == 1) {
+      if (wikiIds.length == 1) {
+        let tooltipListItem = { text: `uses a source to reference profile ${backLinkWikiIds[0]}` };
+        if (primaryWikiId == backLinkWikiIds[0]) {
+          iconConfig.mainArrowStyle = "both";
+        } else {
+          iconConfig.mainArrowStyle = "split";
+          iconConfig.isConflict = true;
+          tooltipListItem.isError = true;
+          allWikiIds.add(backLinkWikiIds[0]);
+          needToUseWtPlusUrlForAllWikiIds = true;
+        }
+        tooltipData.listItems.push(tooltipListItem);
+      } else if (wikiIds.length == 0) {
+        primaryWikiId = backLinkWikiIds[0];
+        iconConfig.mainArrowStyle = "out";
+        if (location.idType == "source") {
+          tooltipData.listItems.push({ text: `references profile ${backLinkWikiIds[0]}` });
+        } else {
+          tooltipData.listItems.push({ text: `uses a source to reference profile ${backLinkWikiIds[0]}` });
+        }
+        linkUrl = buildWikiProfileUrl(backLinkWikiIds[0]);
+        allWikiIds.add(backLinkWikiIds[0]);
+      } else {
+        // there are multiple WT profiles referencing this FS profile which in itself is an error
+        // and we also reference a WT profile
+        iconConfig.mainArrowStyle = "split";
+        iconConfig.isConflict = true;
+        tooltipData.listItems.push({ text: `uses a source to reference profile ${backLinkWikiIds[0]}`, isError: true });
+        allWikiIds.add(backLinkWikiIds[0]);
+        needToUseWtPlusUrlForAllWikiIds = true;
+      }
+    } else if (backLinkWikiIds.length > 1) {
+      // this profile references multiple WT profiles.
+      if (wikiIds.length > 0) {
+        iconConfig.mainArrowStyle = "split";
+        iconConfig.isConflict = true;
+        tooltipData.listItems.push({ text: `uses sources to reference multiple profiles`, isError: true });
+      } else {
+        iconConfig.mainArrowStyle = "split";
+        iconConfig.isConflict = true;
+        tooltipData.listItems.push({ text: `uses sources to reference multiple profiles`, isError: true });
+      }
+      backLinkWikiIds.forEach((item) => allWikiIds.add(item));
+      needToUseWtPlusUrlForAllWikiIds = true;
+    }
+
+    // links from WikiTree to attached sources
+    let attachedSourceWikiIdCount = 0;
+    if (sourceFsIds.length) {
+      let recordWikiIds = new Set();
+      let recordFsIds = new Set();
+      let numRecordsUsedOnWt = 0;
+      let imageWikiIds = new Set();
+      let imageFsIds = new Set();
+      let numImagesUsedOnWt = 0;
+      for (let sourceFsId of sourceFsIds) {
+        let idType = sourceFsId.idData.idType;
+        let fsId = sourceFsId.idData.id;
+        if (idType == "record") {
+          if (sourceFsId.wikiIds) {
+            numRecordsUsedOnWt++;
+            recordFsIds.add(fsId);
+            for (let wikiId of sourceFsId.wikiIds) {
+              recordWikiIds.add(wikiId);
+            }
+          }
+        } else if (idType == "image") {
+          if (sourceFsId.wikiIds) {
+            numImagesUsedOnWt++;
+            imageFsIds.add(fsId);
+            for (let wikiId of sourceFsId.wikiIds) {
+              imageWikiIds.add(wikiId);
+            }
+          }
+        }
+      }
+
+      attachedSourceWikiIdCount = recordWikiIds.size + imageWikiIds.size;
+
+      if (attachedSourceWikiIdCount) {
+        iconConfig.includeSourceBox = true;
+        if (numRecordsUsedOnWt == 0) {
+          iconConfig.sourceIsImage = true;
+        }
+      }
+
+      if (recordWikiIds.size == 1) {
+        let wikiId = recordWikiIds.values().next().value;
+        let tooltipListItem = {
+          text: `has ${numRecordsUsedOnWt} attached record sources referenced by profile ${wikiId}`,
+        };
+
+        if (primaryWikiId && wikiId != primaryWikiId) {
+          iconConfig.isConflict = true;
+          tooltipListItem.isError = true;
+          tooltipListItem.text = `has ${numRecordsUsedOnWt} attached record sources referenced by a different profile ${wikiId}`;
+          needToUseWtPlusUrlForAllWikiIds = true;
+        } else if (!primaryWikiId) {
+          primaryWikiId = wikiId;
+        }
+
+        tooltipData.listItems.push(tooltipListItem);
+
+        allWikiIds.add(wikiId);
+        if (!linkUrl) {
+          linkUrl = buildWikiProfileUrl(wikiId);
+        }
+
+        if (!clipboardText) {
+          clipboardText = wikiId;
+        }
+
+        if (imageWikiIds.size > 0) {
+          let listItemText = `has ${numImagesUsedOnWt} attached image sources referenced by`;
+          if (imageWikiIds.size == 1) {
+            let imageWikiId = imageWikiIds.values().next().value;
+            listItemText += ` profile ${imageWikiId}`;
+          } else {
+            listItemText += ` ${imageWikiIds.size} profiles`;
+          }
+          tooltipData.listItems.push({ text: listItemText });
+        }
+      } else if (recordWikiIds.size > 1) {
+        if (iconConfig.mainArrowStyle == "none") {
+          iconConfig.isMultiple = true;
+        }
+        iconConfig.isConflict = true;
+        recordWikiIds.forEach((item) => allWikiIds.add(item));
+
+        if (!linkUrl) {
+          linkUrl = buildWtPlusUrlForSet(recordFsIds, "record");
+        } else {
+          needToUseWtPlusUrlForAllWikiIds = true;
+        }
+
+        if (!clipboardText) {
+          for (let wikiId of recordWikiIds) {
+            if (clipboardText) {
+              clipboardText += ",";
+            }
+            clipboardText += wikiId;
+          }
+        }
+
+        tooltipData.listItems.push({
+          text: `has ${numRecordsUsedOnWt} attached record sources referenced by ${recordWikiIds.size} profiles`,
+          isError: true,
+        });
+
+        if (imageWikiIds.size > 0) {
+          let listItemText = `has ${numImagesUsedOnWt} attached image sources referenced by`;
+          if (imageWikiIds.size == 1) {
+            let imageWikiId = imageWikiIds.values().next().value;
+            listItemText += ` profile ${imageWikiId}`;
+          } else {
+            listItemText += ` ${imageWikiIds.size} profiles`;
+          }
+
+          tooltipData.listItems.push({
+            text: listItemText,
+          });
+        }
+      } else if (imageWikiIds.size == 1) {
+        let wikiId = imageWikiIds.values().next().value;
+        let tooltipListItem = {
+          text: `has ${numImagesUsedOnWt} attached image sources referenced by profile ${wikiId}`,
+        };
+
+        if (primaryWikiId && wikiId != primaryWikiId) {
+          // this is not an error since multiple people can share an image
+          tooltipListItem.text = `has ${numImagesUsedOnWt} attached image sources referenced by a different profile ${wikiId}`;
+        }
+
+        tooltipData.listItems.push(tooltipListItem);
+
+        if (!linkUrl) {
+          linkUrl = buildWikiProfileUrl(wikiId);
+        }
+
+        if (!clipboardText) {
+          clipboardText = wikiId;
+        }
+      } else if (imageWikiIds.size > 1) {
+        if (!linkUrl) {
+          linkUrl = buildWtPlusUrlForSet(imageFsIds, "image");
+        }
+
+        if (iconConfig.mainArrowStyle == "none") {
+          iconConfig.isMultiple = true;
+        }
+
+        if (!clipboardText) {
+          for (let wikiId of imageWikiIds) {
+            if (clipboardText) {
+              clipboardText += ",";
+            }
+            clipboardText += wikiId;
+          }
+        }
+
+        tooltipData.listItems.push({
+          text: `has ${numImagesUsedOnWt} attached image sources referenced by ${imageWikiIds.size} profiles`,
+        });
+      }
+    }
+
+    // links from WikiTree to an external source referenced from FS
+    let externalWikiIdCount = 0;
+    if (externalSources && externalSources.length) {
+      for (let externalSource of externalSources) {
+        if (externalSource.wikiIds && externalSource.wikiIds.length) {
+          iconConfig.includeExternal = true;
+          let title = externalSource.externalSiteTitle;
+          let type = externalSource.externalSourceTypeName;
+          let id = externalSource.externalId;
+          let extWikiIds = externalSource.wikiIds;
+          externalWikiIdCount += extWikiIds.length;
+          if (extWikiIds.length > 1) {
+            let tooltipListItem = {
+              text: `references ${title} ${type} ${id} which is referenced by ${extWikiIds.size} profiles`,
+            };
+
+            iconConfig.isConflict = true;
+            tooltipListItem.isError = true;
+            tooltipData.listItems.push(tooltipListItem);
+
+            extWikiIds.forEach((item) => allWikiIds.add(item));
+            needToUseWtPlusUrlForAllWikiIds = true;
+          } else {
+            let wikiId = extWikiIds[0];
+            let tooltipListItem = {
+              text: `references ${title} ${type} ${id} which is referenced by profile ${wikiId}`,
+            };
+
+            if (primaryWikiId && wikiId != primaryWikiId) {
+              iconConfig.isConflict = true;
+              tooltipListItem.isError = true;
+              tooltipListItem.text = `references ${title} ${type} ${id} which is referenced by a different profile ${wikiId}`;
+              needToUseWtPlusUrlForAllWikiIds = true;
+            }
+
+            allWikiIds.add(wikiId);
+
+            tooltipData.listItems.push(tooltipListItem);
+            if (!linkUrl) {
+              linkUrl = buildWikiProfileUrl(wikiId);
+            }
+          }
+        }
+      }
+    }
+
+    if (attachedSourceWikiIdCount == 0 && externalWikiIdCount == 0) {
+      if (wikiIds.length == 0 && backLinkWikiIds.length == 0) {
+        // we do not need an icon unless there was an error
+        if (tooltipData.listItems.length == 0) {
+          return;
+        }
+      }
+    }
+
+    if (needToUseWtPlusUrlForAllWikiIds) {
+      // it should always have more than one WikiId at this point
+      iconConfig.isMultiple = true;
+      linkUrl = buildWtPlusUrlForWikiIdSet(allWikiIds);
+    }
+
+    const svgIcon = pageMods.buildIcon(iconConfig);
+
+    const anchorElement = pageMods.createAnchorWithIconElement(svgIcon, tooltipData, clipboardText, linkUrl);
+
+    pageMods.addIconAtLocation(location, anchorElement);
   }
 
   let cachedFsIdToWtIdsMap = new Map();
 
+  let cachedExternalSourceToWtIdsMap = new Map();
+
   let pendingLocationsBatch = {};
   let debounceTimer = null;
 
-  function addLocationToPendingFsIds(locationBatch, fsId, location) {
-    if (!locationBatch.pendingFsIds.has(fsId)) {
-      locationBatch.pendingFsIds.set(fsId, []);
+  function addLocationToPendingFsIds(locationBatch, id, idType, location) {
+    let key = id + "|" + idType;
+    if (!locationBatch.pendingFsIds.has(key)) {
+      locationBatch.pendingFsIds.set(key, []);
     }
-    locationBatch.pendingFsIds.get(fsId).push(location);
+    locationBatch.pendingFsIds.get(key).push(location);
+  }
+
+  function addLocationToPendingExternalSources(locationBatch, key, location) {
+    if (!locationBatch.pendingExternalSources.has(key)) {
+      locationBatch.pendingExternalSources.set(key, []);
+    }
+    locationBatch.pendingExternalSources.get(key).push(location);
   }
 
   function addLocationToPendingBatch(location) {
@@ -913,21 +1944,71 @@ if (runningExtensionId === currentExtensionId) {
     if (!pendingLocationsBatch.pendingFsIds) {
       pendingLocationsBatch.pendingFsIds = new Map();
     }
+    if (!pendingLocationsBatch.pendingExternalSources) {
+      pendingLocationsBatch.pendingExternalSources = new Map();
+    }
 
-    const fsId = location.fsId;
-    if (fsId) {
-      addLocationToPendingFsIds(pendingLocationsBatch, fsId, location);
+    let locationType = location.locationType;
+
+    const id = location.id;
+    if (id) {
+      addLocationToPendingFsIds(pendingLocationsBatch, id, location.idType, location);
     } else {
-      let locationType = location.locationType;
       if (locationType.needToFetchIds) {
-        pendingLocationsBatch.awaitingFsIdFetch = true;
-        let fetchFunction = location.locationType.fetchFunction;
-        if (!pendingLocationsBatch.fetchFunctions) {
-          pendingLocationsBatch.fetchFunctions = [];
+        let fetchForId = locationType.fetchForId;
+        let fetchFunction = fetchForId.fetchFunction;
+        if (!pendingLocationsBatch.fetchFunctionsForFsIds) {
+          pendingLocationsBatch.fetchFunctionsForFsIds = [];
         }
-        if (!pendingLocationsBatch.fetchFunctions.includes(fetchFunction)) {
-          pendingLocationsBatch.fetchFunctions.push(fetchFunction);
-          pendingLocationsBatch.awaitingFsIdFetch = true;
+        if (!pendingLocationsBatch.fetchFunctionsForFsIds.includes(fetchFunction)) {
+          pendingLocationsBatch.fetchFunctionsForFsIds.push(fetchFunction);
+        }
+      }
+    }
+
+    // if there are any fetches required to check for back links add them to a list
+    if (locationType.fetchForBackLink) {
+      let fetchForBackLink = locationType.fetchForBackLink;
+      let optionKey = fetchForBackLink.optionKey;
+      if (!optionKey || pageMods.getOption(optionKey)) {
+        let fetchFunction = fetchForBackLink.fetchFunction;
+        if (!pendingLocationsBatch.fetchFunctionsForBackLinks) {
+          pendingLocationsBatch.fetchFunctionsForBackLinks = [];
+        }
+        if (!pendingLocationsBatch.fetchFunctionsForBackLinks.includes(fetchFunction)) {
+          pendingLocationsBatch.fetchFunctionsForBackLinks.push(fetchFunction);
+        }
+      }
+    }
+
+    // if there are any fetches required to check for attached sources add them to a list
+    if (locationType.fetchForSourceFsIds) {
+      let fetchForSourceFsIds = locationType.fetchForSourceFsIds;
+
+      let optionKey = fetchForSourceFsIds.optionKey;
+      if (!optionKey || pageMods.getOption(optionKey)) {
+        let fetchFunction = fetchForSourceFsIds.fetchFunction;
+        if (!pendingLocationsBatch.fetchFunctionsForSourceWikiIds) {
+          pendingLocationsBatch.fetchFunctionsForSourceWikiIds = [];
+        }
+        if (!pendingLocationsBatch.fetchFunctionsForSourceWikiIds.includes(fetchFunction)) {
+          pendingLocationsBatch.fetchFunctionsForSourceWikiIds.push(fetchFunction);
+        }
+      }
+    }
+
+    // if there are any fetches required to check for external add them to a list
+    if (locationType.fetchForExternalSource) {
+      let fetchForExternalSource = locationType.fetchForExternalSource;
+
+      let optionKey = fetchForExternalSource.optionKey;
+      if (!optionKey || pageMods.getOption(optionKey)) {
+        let fetchFunction = fetchForExternalSource.fetchFunction;
+        if (!pendingLocationsBatch.fetchFunctionsForSourceWikiIds) {
+          pendingLocationsBatch.fetchFunctionsForSourceWikiIds = [];
+        }
+        if (!pendingLocationsBatch.fetchFunctionsForSourceWikiIds.includes(fetchFunction)) {
+          pendingLocationsBatch.fetchFunctionsForSourceWikiIds.push(fetchFunction);
         }
       }
     }
@@ -951,140 +2032,221 @@ if (runningExtensionId === currentExtensionId) {
 
     logDebug("getWikiIdsForPendingBatch, fsIdsToCheck is", fsIdsToCheck);
 
-    for (let fsId of fsIdsToCheck) {
-      if (!cachedFsIdToWtIdsMap.has(fsId)) {
-        fsIdsToQuery.push(fsId);
+    for (let key of fsIdsToCheck) {
+      if (!cachedFsIdToWtIdsMap.has(key)) {
+        let keyParts = key.split("|");
+        let id = keyParts[0];
+        fsIdsToQuery.push(id);
       }
     }
     logDebug("getWikiIdsForPendingBatch, fsIdsToQuery is", fsIdsToQuery);
 
-    const fsIdsString = fsIdsToQuery.join(",");
+    if (fsIdsToQuery.length > 0) {
+      const fsIdsString = fsIdsToQuery.join(",");
 
-    logDebug("getWikiIdsForPendingBatch, fsIdsString is", fsIdsString);
+      logDebug("getWikiIdsForPendingBatch, fsIdsString is", fsIdsString);
 
-    try {
-      const response = await wtPlusApiGetProfilesUsingFsId(fsIdsString);
-      logDebug("getWikiIdsForPendingBatch, response is: ", response);
-      if (response.response?.profiles) {
-        function addWikiIdToMap(fsIdList, wikiId) {
-          for (let fsId of fsIdList) {
-            if (!cachedFsIdToWtIdsMap.has(fsId)) {
-              cachedFsIdToWtIdsMap.set(fsId, []);
-            }
-            let wikiIdsForFsId = cachedFsIdToWtIdsMap.get(fsId);
-            if (!wikiIdsForFsId.includes(wikiId)) {
-              wikiIdsForFsId.push(wikiId);
+      try {
+        const response = await wtPlusApiGetProfilesUsingFsId(fsIdsString);
+        logDebug("getWikiIdsForPendingBatch, response is: ", response);
+        if (response.response?.profiles) {
+          function addWikiIdToMap(idType, fsIdList, wikiId) {
+            wikiId = cleanWikiId(wikiId);
+
+            for (let id of fsIdList) {
+              let key = id + "|" + idType;
+              if (!cachedFsIdToWtIdsMap.has(key)) {
+                cachedFsIdToWtIdsMap.set(key, []);
+              }
+              let wikiIdsForFsId = cachedFsIdToWtIdsMap.get(key);
+              if (!wikiIdsForFsId.includes(wikiId)) {
+                wikiIdsForFsId.push(wikiId);
+              }
             }
           }
-        }
 
-        // record the profiles that reference the elements fsId for the currentBatch
-        response.response.profiles.forEach((profile) => {
-          addWikiIdToMap(profile.persons, profile.wikitreeID);
-          addWikiIdToMap(profile.records, profile.wikitreeID);
-          addWikiIdToMap(profile.recordImages, profile.wikitreeID);
-        });
+          // record the profiles that reference the elements id for the currentBatch
+          response.response.profiles.forEach((profile) => {
+            addWikiIdToMap("person", profile.persons, profile.wikitreeID);
+            addWikiIdToMap("record", profile.records, profile.wikitreeID);
+            addWikiIdToMap("image", profile.recordImages, profile.wikitreeID);
+          });
+        }
+      } catch (error) {
+        console.error("WT+ API Batch fetch failed", error);
+        logDebug("fsIdsString is", fsIdsString);
+
+        if (currentBatch.locations) {
+          let locations = currentBatch.locations;
+          for (let location of locations) {
+            location.error = error;
+          }
+        }
       }
-    } catch (error) {
-      console.error("WT+ API Batch fetch failed", error);
-      logDebug("fsIdsString is", fsIdsString);
+    }
+
+    // check externalSources
+
+    let pendingExternalSources = currentBatch.pendingExternalSources;
+    if (pendingExternalSources) {
+      logDebug(`getWikiIdsForBatch, pendingExternalSources size is ${pendingExternalSources.size}`);
+    } else {
+      console.log(`getWikiIdsForBatch, pendingExternalSources undefined`);
+      return;
+    }
+
+    if (pendingExternalSources.size == 0) {
+      return;
+    }
+
+    const externalSourcesToCheck = Array.from(pendingExternalSources.keys());
+    let fgIdsToQuery = [];
+
+    logDebug("getWikiIdsForPendingBatch, externalSourcesToCheck is", externalSourcesToCheck);
+
+    for (let key of externalSourcesToCheck) {
+      if (!cachedExternalSourceToWtIdsMap.has(key)) {
+        let keyParts = key.split("|");
+        let siteName = keyParts[0];
+        let id = keyParts[1];
+        if (siteName == "fg") {
+          fgIdsToQuery.push("fgmem" + id);
+        }
+      }
+    }
+    logDebug("getWikiIdsForPendingBatch, fgIdsToQuery is", fgIdsToQuery);
+
+    if (fgIdsToQuery.length > 0) {
+      const fgIdsString = fgIdsToQuery.join(",");
+
+      logDebug("getWikiIdsForPendingBatch, fgIdsString is", fgIdsString);
+
+      try {
+        const response = await wtPlusApiGetProfilesUsingFgId(fgIdsString);
+        logDebug("getWikiIdsForPendingBatch, fg response is: ", response);
+
+        if (response.response?.memorials) {
+          // record the profiles that reference the elements id for the currentBatch
+          response.response.memorials.forEach((memorial) => {
+            let wikiId = cleanWikiId(memorial.WikiTreeID);
+            let fgMemorialId = memorial.memorial.toString();
+            let externalId = "fg|" + fgMemorialId;
+
+            if (!cachedExternalSourceToWtIdsMap.has(externalId)) {
+              cachedExternalSourceToWtIdsMap.set(externalId, []);
+            }
+
+            let wikiIdsForFgMemorialId = cachedExternalSourceToWtIdsMap.get(externalId);
+            if (!wikiIdsForFgMemorialId.includes(wikiId)) {
+              wikiIdsForFgMemorialId.push(wikiId);
+            }
+          });
+        }
+      } catch (error) {
+        console.error("WT+ API Batch fetch failed", error);
+        logDebug("fgIdsString is", fgIdsString);
+
+        if (currentBatch.locations) {
+          let locations = currentBatch.locations;
+          for (let location of locations) {
+            location.error = error;
+          }
+        }
+      }
     }
   }
 
   async function processPendingLocations() {
-    // Check if the extension is still "alive"
-    if (!chrome.runtime?.id) {
-      console.log("WikiTree Sourcer: Context invalidated, stopping batch.");
-      return;
-    }
-
-    if (pendingLocationsBatch.awaitingFsIdFetch) {
-      for (let fetchFunction of pendingLocationsBatch.fetchFunctions) {
-        await fetchFunction(pendingLocationsBatch);
+    try {
+      // Check if the extension is still "alive"
+      if (!chrome.runtime?.id) {
+        console.log("WikiTree Sourcer: Context invalidated, stopping batch.");
+        return;
       }
-    }
 
-    // Clear the pendingLocationsBatch immediately so new mutations start a fresh batch
-    const currentBatch = pendingLocationsBatch;
-    pendingLocationsBatch = {};
+      // Clear the pendingLocationsBatch immediately so new mutations start a fresh batch
+      const currentBatch = pendingLocationsBatch;
+      pendingLocationsBatch = {};
 
-    // Use WT+ API to get the WikiTree IDs that use these fsIds
-    await getWikiIdsForBatch(currentBatch);
+      if (!currentBatch.locations) {
+        // this can happen whete switching back and forth quickly between Details and Sources
+        return;
+      }
 
-    logDebug("cachedFsIdToWtIdsMap is:", cachedFsIdToWtIdsMap);
+      // Filter out locations where the element has been detached from the DOM
+      // This happens if FamilySearch/React re-rendered the area while we were waiting.
+      currentBatch.locations = currentBatch.locations.filter((location) => {
+        const isConnected = location.matchedElement && location.matchedElement.isConnected;
 
-    // Go through the locations and set the WikiIds
-    if (currentBatch.locations) {
-      let locations = currentBatch.locations;
-      for (let location of locations) {
-        if (location.fsId) {
-          let wikiIds = cachedFsIdToWtIdsMap.get(location.fsId);
-          if (wikiIds) {
+        if (!isConnected) {
+          logDebug("Pruning disconnected location from batch:", location);
+        }
+        return isConnected;
+      });
+
+      if (currentBatch.fetchFunctionsForFsIds) {
+        for (let fetchFunction of currentBatch.fetchFunctionsForFsIds) {
+          await fetchFunction(currentBatch);
+        }
+      }
+
+      if (currentBatch.fetchFunctionsForBackLinks) {
+        for (let fetchFunction of currentBatch.fetchFunctionsForBackLinks) {
+          await fetchFunction(currentBatch);
+        }
+      }
+
+      if (currentBatch.fetchFunctionsForSourceWikiIds) {
+        for (let fetchFunction of currentBatch.fetchFunctionsForSourceWikiIds) {
+          await fetchFunction(currentBatch);
+        }
+      }
+
+      // Use WT+ API to get the WikiTree IDs that use these fsIds
+      await getWikiIdsForBatch(currentBatch);
+
+      logDebug("cachedFsIdToWtIdsMap is:", cachedFsIdToWtIdsMap);
+
+      if (cachedExternalSourceToWtIdsMap.size) {
+        logDebug("cachedExternalSourceToWtIdsMap is:", cachedExternalSourceToWtIdsMap);
+      }
+
+      // Go through the locations and set the WikiIds
+      if (currentBatch.locations) {
+        let locations = currentBatch.locations;
+        for (let location of locations) {
+          let wikiIds = [];
+          if (location.id || location.externalSources) {
+            if (location.id) {
+              let key = location.id + "|" + location.idType;
+              wikiIds = cachedFsIdToWtIdsMap.get(key);
+              if (location.sourceFsIds) {
+                for (let sourceFsId of location.sourceFsIds) {
+                  let fsId = sourceFsId.idData.id;
+                  let sourceKey = fsId + "|" + sourceFsId.idData.idType;
+                  sourceFsId.wikiIds = cachedFsIdToWtIdsMap.get(sourceKey);
+                }
+              }
+            }
+            if (location.externalSources) {
+              for (let externalSource of location.externalSources) {
+                let sourceKey = externalSource.externalSiteName + "|" + externalSource.externalId;
+                externalSource.wikiIds = cachedExternalSourceToWtIdsMap.get(sourceKey);
+              }
+            }
             addWikiTreeIcon(location, wikiIds);
+          } else {
+            pageMods.removeProcessingIcon(location);
           }
         }
       }
-    }
-  }
-
-  function determinePageProfile(url) {
-    // Remove the start and the domain, leaving the rest of the string untouched
-    const domainRegex = /^https?:\/\/(?:www\.)?familysearch\.org/;
-    url = url.replace(domainRegex, "");
-
-    for (let profile of pageProfiles) {
-      if (profile.matchRegex.test(url)) {
-        return profile;
-      }
-    }
-  }
-
-  function getFsIdDataFromUrl(url) {
-    //logDebug("getFsIdDataFromUrl ", url);
-
-    // Remove the start and the domain, leaving the rest of the string untouched
-    const domainRegex = /^https?:\/\/(?:www\.)?familysearch\.org/;
-    url = url.replace(domainRegex, "");
-
-    logDebug("getFsIdDataFromUrl modified URL is ", url);
-
-    if (personRegex.test(url)) {
-      let personId = url.replace(personRegex, "$1");
-      //logDebug("personId is:", personId);
-
-      if (personId.length > 5) {
-        return { fsIdType: "person", fsId: personId };
-      }
-    } else if (recordRegex.test(url)) {
-      let recordId = url.replace(recordRegex, "$1");
-      logDebug("url is : ", url, "recordId is:", recordId);
-
-      if (recordId.length > 5) {
-        return { fsIdType: "record", fsId: recordId };
-      }
-    } else if (imageRegex.test(url)) {
-      let imageId = url.replace(imageRegex, "$1");
-      logDebug("url is : ", url, "imageId is:", imageId);
-
-      if (imageId.length > 5) {
-        return { fsIdType: "image", fsId: imageId };
-      }
-    } else if (pedigreeLandscapeRegex.test(url)) {
-      let personId = url.replace(pedigreeLandscapeRegex, "$1");
-      logDebug("url is : ", url, "personId is:", personId);
-
-      if (personId.length > 5) {
-        return { fsIdType: "person", fsId: personId };
-      }
-    } else if (pedigreePortraitRegex.test(url)) {
-      let personId = url.replace(pedigreePortraitRegex, "$1");
-      logDebug("url is : ", url, "personId is:", personId);
-
-      if (personId.length > 5) {
-        return { fsIdType: "person", fsId: personId };
-      }
-    } else {
-      console.log("getFsIdDataFromUrl no match for ", url);
+    } catch (error) {
+      openExceptionPageForContentScript(
+        "Error in processPendingLocations for FamilySearch page",
+        pageMods,
+        error,
+        true
+      );
     }
   }
 
@@ -1092,30 +2254,43 @@ if (runningExtensionId === currentExtensionId) {
     logDebug("extractFsIdFromLocation, location is:", location);
 
     if (location.locationType.useFsIdFromPageUrl) {
-      logDebug("extractFsIdFromLocation, using fsId from location");
-      let fsIdData = getFsIdDataFromUrl(document.URL);
-      if (fsIdData) {
-        return fsIdData;
+      logDebug("extractFsIdFromLocation, using id from location");
+      let idData = pageMods.getIdDataFromUrl(document.URL);
+      if (idData) {
+        return idData;
       }
       return "";
     }
 
     let element = location.matchedElement;
-    // We found an element that could be a place where an icon could be added
-    let enclosingLinkElement = element.closest("a");
-    if (enclosingLinkElement) {
-      let href = enclosingLinkElement.getAttribute("href");
-      if (href) {
-        logDebug("extractFsIdFromLocation, using fsId from href", href);
+    let hrefRule = location.locationType.hrefRule;
 
-        let fsIdData = getFsIdDataFromUrl(href);
-        if (fsIdData) {
-          return fsIdData;
-        }
+    let hrefElement = undefined;
+
+    if (hrefRule) {
+      if (hrefRule.type == "grandparentThenChild") {
+        let parent = element.parentElement;
+        let grandparent = parent.parentElement;
+        hrefElement = grandparent.querySelector(hrefRule.childSelector);
       }
     } else {
-      console.log("no fsId found for location ", location);
+      // Default is to find the enclosing anchor element
+      hrefElement = element.closest("a");
     }
+
+    if (hrefElement) {
+      let href = hrefElement.getAttribute("href");
+      if (href) {
+        logDebug("extractFsIdFromLocation, using id from href", href);
+
+        let idData = pageMods.getIdDataFromUrl(href, location);
+        if (idData) {
+          return idData;
+        }
+      }
+    }
+
+    console.log("no id found for location ", location);
   }
 
   function analyzeLocation(location) {
@@ -1130,125 +2305,153 @@ if (runningExtensionId === currentExtensionId) {
 
     if (location.matchedElement.querySelector(".wt-sourcer-icon")) {
       location.hasIcon = true;
-      logDebug("location matched element has icon already");
+      logDebug("location matchedElement has icon already", location);
       return false;
     }
 
-    location.spanElement = getSpanElementToAddIconTo(location);
-    if (!location.spanElement) {
+    location.iconPlaceElement = getElementToAddIconTo(location);
+    if (!location.iconPlaceElement) {
       logDebug("location matched element has no span element", location);
       return false;
     }
 
-    location.isEllipsisSpan = false;
-
-    let hasIconAlready = location.spanElement.querySelector(".wt-sourcer-icon");
-    if (!hasIconAlready) {
-      // in the case of the ellipsis the icon is a sibling of the span
-      const isEllipsisSpan = Array.from(location.spanElement.classList).some((cls) => cls.startsWith("ellipsisCss"));
-      if (isEllipsisSpan) {
-        location.isEllipsisSpan = true;
-        const container = location.spanElement.parentElement;
-        hasIconAlready = container.querySelector(".wt-sourcer-icon");
-      }
-    }
+    let iconParent = pageMods.findExistingIconParent(location);
+    let hasIconAlready = iconParent.querySelector(".wt-sourcer-icon");
     if (hasIconAlready) {
       location.hasIcon = true;
-      logDebug("location matched element has icon already");
+      logDebug("location iconParent has icon already", location);
       return false;
     }
 
     if (!location.locationType.needToFetchIds) {
-      let fsIdData = extractFsIdFromLocation(location); // Helper to get ID from href or text
-      if (fsIdData) {
-        location.fsId = fsIdData.fsId;
-        location.fsIdType = fsIdData.fsIdType;
+      let idData = extractFsIdFromLocation(location); // Helper to get ID from href or text
+      if (idData) {
+        location.id = idData.id;
+        location.idType = idData.idType;
       } else {
-        logDebug("location matched element has no fsId and does not require fetch");
+        logDebug("location matched element has no id and does not require fetch");
         return false;
       }
     } else {
       logDebug("location has locationType.needToFetchIds", location);
     }
 
+    pageMods.addProcessingIcon(location);
     el.dataset.wtIconProcessed = "true";
 
     return true;
   }
 
-  let pageInfo = {};
   let areOptionsForThisPageEnabled = false;
 
-  function onMutation(options, mutations) {
-    // Because FamilySearch is a Single Page Application (SPA), the URL can change
-    // without a page reload. In that case the MutationObserver is still running
-    if (window.sourcerWtIconsLastProcessedUrl !== document.URL) {
-      window.sourcerWtIconsLastProcessedUrl = document.URL;
+  function onMutation(mutations) {
+    //logDebug("onMutation: mutations is: ", mutations);
+    try {
+      // Because FamilySearch is a Single Page Application (SPA), the URL can change
+      // without a page reload. In that case the MutationObserver is still running
+      if (window.sourcerWtIconsLastProcessedUrl !== document.URL) {
+        window.sourcerWtIconsLastProcessedUrl = document.URL;
 
-      pageInfo.pageProfile = determinePageProfile(document.URL);
-      let fsIdData = getFsIdDataFromUrl(document.URL);
-      if (fsIdData) {
-        pageInfo.fsId = fsIdData.fsId;
-        pageInfo.fsIdType = fsIdData.fsIdType;
-      }
+        // we have changed page so kill any pending locations
+        pendingLocationsBatch = {};
 
-      logDebug("pageProfile is: ", pageInfo.pageProfile);
+        // clear globals
+        currentPageWikiIds = [];
 
-      if (!pageInfo.pageProfile) {
-        console.log("initWtIconInjection could not identify pageProfile for URL:", document.URL);
-        return;
-      }
-
-      // if none of the options for this profile are enabled return
-      areOptionsForThisPageEnabled = false;
-      for (let locationType of pageInfo.pageProfile.locationTypes) {
-        if (isLocationTypeEnabled(locationType, options)) {
-          areOptionsForThisPageEnabled = true;
-          break;
+        pageMods.determinePageProfile(document.URL);
+        let idData = pageMods.getIdDataFromUrl(document.URL);
+        if (idData) {
+          pageMods.id = idData.id;
+          pageMods.idType = idData.idType;
         }
-      }
-    }
 
-    if (!pageInfo.pageProfile || !areOptionsForThisPageEnabled) {
-      return;
-    }
+        logDebug("pageProfile is: ", pageMods.pageProfile);
 
-    let foundNew = false;
+        if (!pageMods.pageProfile) {
+          console.log("initWtIconInjection could not identify pageProfile for URL:", document.URL);
+          return;
+        }
 
-    let candidateLocations = [];
-
-    for (let locationType of pageInfo.pageProfile.locationTypes) {
-      if (isLocationTypeEnabled(locationType, options)) {
-        let candidateElements = document.querySelectorAll(locationType.selector);
-        //logDebug("locationType ", locationType);
-        //logDebug("candidateElements ", candidateElements);
-        for (let candidateElement of candidateElements) {
-          let candidateLocation = { locationType: locationType, matchedElement: candidateElement };
-          if (analyzeLocation(candidateLocation)) {
-            //logDebug("pushing candidateLocation ", candidateLocation);
-
-            candidateLocations.push(candidateLocation);
-          } else {
-            //logDebug("candidate location rejected:", candidateLocation);
+        // if none of the options for this profile are enabled return
+        areOptionsForThisPageEnabled = false;
+        for (let locationType of pageMods.pageProfile.locationTypes) {
+          if (pageMods.isLocationTypeEnabled(locationType)) {
+            areOptionsForThisPageEnabled = true;
+            break;
           }
         }
       }
-    }
 
-    if (candidateLocations.length) {
-      logDebug(`There are ${candidateLocations.length} candidateLocations`);
-      logDebug(candidateLocations);
-      foundNew = true;
-    }
+      if (!pageMods.pageProfile || !areOptionsForThisPageEnabled) {
+        logDebug("areOptionsForThisPageEnabled is: ", areOptionsForThisPageEnabled, "returning");
+        return;
+      }
 
-    candidateLocations.forEach((candidateLocation) => {
-      addLocationToPendingBatch(candidateLocation);
-    });
+      let foundNew = false;
 
-    if (foundNew) {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(processPendingLocations, 300); // Wait 300ms of "silence"
+      let candidateLocations = [];
+
+      for (let locationType of pageMods.pageProfile.locationTypes) {
+        if (pageMods.isLocationTypeEnabled(locationType)) {
+          let candidateElements = document.querySelectorAll(locationType.selector);
+          //logDebug("locationType ", locationType);
+          //logDebug("candidateElements ", candidateElements);
+          for (let candidateElement of candidateElements) {
+            let candidateLocation = { locationType: locationType, matchedElement: candidateElement };
+            if (analyzeLocation(candidateLocation)) {
+              //logDebug("pushing candidateLocation ", candidateLocation);
+
+              candidateLocations.push(candidateLocation);
+            } else {
+              //logDebug("candidate location rejected:", candidateLocation);
+            }
+          }
+        }
+      }
+
+      if (candidateLocations.length) {
+        logDebug(`There are ${candidateLocations.length} candidateLocations`);
+        logDebug(candidateLocations);
+        foundNew = true;
+      }
+
+      candidateLocations.forEach((candidateLocation) => {
+        addLocationToPendingBatch(candidateLocation);
+      });
+
+      if (foundNew) {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(processPendingLocations, 300); // Wait 300ms of "silence"
+      }
+    } catch (error) {
+      openExceptionPageForContentScript("Error in onMutation for FamilySearch page", pageMods, error, true);
     }
+  }
+
+  let pageMods = undefined;
+
+  function listenForAddSource() {
+    document.addEventListener(
+      "click",
+      (e) => {
+        let sourceSaveButton = e.target.closest("button[data-testid='source-save-button']");
+        if (sourceSaveButton) {
+          logDebug("clicked on save button");
+          if (pageMods.pageProfile) {
+            for (let locationType of pageMods.pageProfile.locationTypes) {
+              if (locationType.locationTypeName == "pageH1") {
+                let personId = pageMods.id;
+                if (personSourceIdsCache[personId]) {
+                  delete personSourceIdsCache[personId];
+                }
+                pageMods.removeWikiTreeIconsForLocationType(locationType, getElementToAddIconTo);
+              }
+            }
+          }
+        }
+      },
+      { capture: true, passive: true }
+    );
   }
 
   function initWtIconInjection(options) {
@@ -1258,6 +2461,16 @@ if (runningExtensionId === currentExtensionId) {
     window.hasSourcerWtIconInjectionStarted = true;
 
     logDebug("initWtIconInjection: document.URL is: " + document.URL);
+
+    const domainRegex = /^https?:\/\/(?:[a-z0-9-]+\.)*familysearch\.(?:org|net|jp|org\.uk|de|fr|es|it)/i;
+
+    let siteConfig = {
+      siteName: "fs",
+      pageProfiles: pageProfiles,
+      domainRegex: domainRegex,
+    };
+    pageMods = new WikiTreeSourcerPageModsHelper(siteConfig);
+    pageMods.setOptions(options);
 
     const observer = new MutationObserver((mutations) => {
       // Check if the extension is still "alive"
@@ -1271,7 +2484,7 @@ if (runningExtensionId === currentExtensionId) {
       }
 
       //logDebug("MutationObserver called", mutations);
-      onMutation(options, mutations);
+      onMutation(mutations);
     });
 
     window.sourcerWtMutationObserver = observer;
@@ -1279,9 +2492,34 @@ if (runningExtensionId === currentExtensionId) {
     observer.observe(document.body, {
       childList: true,
       subtree: true,
+      //attributes: true, // Catch class or style changes (like 'hidden' being removed)
+      //characterData: true, // Catch cases where text is swapped out inside a node
     });
 
-    logDebug("WikiTree Sourcer: Observer started.");
+    // add a listener for adding a new source
+    listenForAddSource();
+
+    // NEW: Add a safety-net poll for the first 5 seconds
+    // This is to handle case where a FamilySearch page was not triggering and mutation
+    // events due to an internal FS SDK error:
+    // "flags-js client SDK_READY_TIMED_OUT event received, resolving timeout Promise but flags will return control treatment"
+    let pollCount = 0;
+    const maxPolls = 10; // 10 polls * 500ms = 5 seconds
+
+    const safetyPoll = setInterval(() => {
+      pollCount++;
+      logDebug(`WikiTree Sourcer: Safety poll ${pollCount}/${maxPolls}`);
+
+      // Manually trigger the scan
+      onMutation(options, null);
+
+      if (pollCount >= maxPolls) {
+        clearInterval(safetyPoll);
+      }
+    }, 500);
+
+    logDebug("WikiTree Sourcer: Observer started. Performing initial scan");
+    onMutation(options, null);
   }
 
   async function checkOptionsAndInitWtIconInjection() {

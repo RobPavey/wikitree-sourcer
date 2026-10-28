@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Yorkshire Burials\"<br/>\nHunslet Cemetery, Leeds, Yorkshire; Grave: Sec Old, No. 5137; Register: UNCON Reg. 1 1845-1892, Page 390, Entry 15591<br/>\n[https://yorkshireburials.uk/records/view_record.php?uuid=844e975b-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>\nWilliam Battersby was buried on 16 Oct 1886 at age 40 in Hunslet Cemetery, Leeds, Yorkshire, England.<br/>\nResidence: 38 Derby Crescent, Hunslet, Leeds, Yorkshire, England<br/>\nRank/Profession: Forge Man.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "William Battersby was buried on 16 Oct 1886 at age 40 in Hunslet Cemetery, Leeds, Yorkshire, England. His last residence was 38 Derby Crescent, Hunslet, Leeds, Yorkshire, England.<ref>\n'''Burial''':\n\"Yorkshire Burials\"<br/>\nHunslet Cemetery, Leeds, Yorkshire; Grave: Sec Old, No. 5137; Register: UNCON Reg. 1 1845-1892, Page 390, Entry 15591<br/>\n[https://yorkshireburials.uk/records/view_record.php?uuid=844e975b-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>\nWilliam Battersby was buried on 16 Oct 1886 at age 40 in Hunslet Cemetery, Leeds, Yorkshire, England.<br/>\nResidence: 38 Derby Crescent, Hunslet, Leeds, Yorkshire, England<br/>\nRank/Profession: Forge Man.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Yorkshire Burials\"<br/>Hunslet Cemetery, Leeds, Yorkshire; Grave: Sec Old, No. 5137; Register: UNCON Reg. 1 1845-1892, Page 390, Entry 15591<br/>[https://yorkshireburials.uk/records/view_record.php?uuid=844e975b-30d9-11f0-848c-02013c789f03 Yorkshire Burials Record] (accessed 6 May 2021)<br/>William Battersby was buried on 16 Oct 1886 at age 40 in Hunslet Cemetery, Leeds, Yorkshire, England.<br/>Residence: 38 Derby Crescent, Hunslet, Leeds, Yorkshire, England<br/>Rank/Profession: Forge Man.",
+    "type": "source"
+  }
+}

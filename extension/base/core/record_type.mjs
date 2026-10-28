@@ -98,6 +98,8 @@ const RT = {
   Book: "Book",
   Journal: "Journal",
   Inquest: "Inquest",
+  Biography: "Biography",
+  BiographicalIndex: "BiographicalIndex",
 };
 
 const RecordSubtype = {

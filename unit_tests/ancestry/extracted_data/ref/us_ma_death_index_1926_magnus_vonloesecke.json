@@ -1,0 +1,25 @@
+{
+  "url": "https://www.ancestry.com/search/collections/3659/records/2700444?tid=&pid=&queryId=55faadce-bec6-45dc-9c94-e90d7f3fd796&_phsrc=jLh19482&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "3659",
+  "recordId": "2700444",
+  "ancestryTemplate": "{{Ancestry Record|3659|2700444}}",
+  "domain": "ancestry.com",
+  "titleName": "Magnus F S Vonloesecke",
+  "titleCollection": "Massachusetts, U.S., Death Index, 1901-1980",
+  "recordData": {
+    "Name": "Magnus F S Vonloesecke",
+    "Death Date": "1926",
+    "Death Place": "Arlington, Massachusetts, USA",
+    "Volume Number": "3",
+    "Page number": "140",
+    "Index Volume Number": "87",
+    "Reference Number": "F63.M363 v.87"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/3659/images/41263_2421406273_0069-00311?pid=2700444&queryId=55faadce-bec6-45dc-9c94-e90d7f3fd796&usePUB=true&_phsrc=jLh19482&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "3659",
+  "imageRecordId": "41263_2421406273_0069-00311",
+  "sourceInformation": "Ancestry.com. Massachusetts, U.S., Death Index, 1901-1980 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2013. Original data: Department of Public Health, Registry of Vital Records and Statistics. Massachusetts Vital Records Index to Deaths [1916–1970]. Volumes 66–145. Facsimile edition. Boston, MA: New England Historic Genealogical Society, Boston, Massachusetts.",
+  "originalData": "Department of Public Health, Registry of Vital Records and Statistics. Massachusetts Vital Records Index to Deaths [1916–1970]. Volumes 66–145. Facsimile edition. Boston, MA: New England Historic Genealogical Society, Boston, Massachusetts.",
+  "sourceDescription": "Vital records are a cornerstone of family history research. Use this index to lead you to 20th-century death records for your Massachusetts ancestors. Learn more..."
+}

@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "panb",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "name": "Herbert Adair"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1946-04-18"
+  },
+  "eventPlace": {
+    "placeString": "Carleton, New Brunswick, Canada"
+  },
+  "registrationDistrict": "Carleton",
+  "webpageFormat": 202606,
+  "hasValidData": true
+}

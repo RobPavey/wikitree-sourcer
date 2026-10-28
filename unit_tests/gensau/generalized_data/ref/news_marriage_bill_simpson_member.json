@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "name": {
+    "lastName": "Simpson",
+    "forenames": "Dawn"
+  },
+  "eventDate": {
+    "dateString": "12-Apr-1947"
+  },
+  "eventPlace": {
+    "placeString": "Methodist Church Mt Bryan, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Methodist Church Mt Bryan"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Simpson",
+        "forenames": "Dawn"
+      }
+    }
+  ],
+  "hasValidData": true
+}

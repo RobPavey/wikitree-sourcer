@@ -248,6 +248,12 @@ const citationPopupOptionsGroup = {
       defaultValue: "all",
     },
     {
+      optionName: "showCollectCitations",
+      type: "checkbox",
+      label: "Show menu items for collecting a group of citations",
+      defaultValue: true,
+    },
+    {
       optionName: "addShortcuts",
       type: "checkbox",
       label: "Add keyboard shortcuts to Build Citation menu items",
@@ -1902,8 +1908,19 @@ const uiPageModsOptionsGroup = {
       optionName: "allowPageMods",
       type: "checkbox",
       label: "Enable Sourcer to make web page modifications",
-      defaultValue: false,
+      defaultValue: true,
       comment: "This is a master control. If this is not checked then no page modifications will be made.",
+    },
+    {
+      optionName: "newTabPos",
+      type: "select",
+      label: "Where to open a new tab when clicking a Sourcer button/icon",
+      values: [
+        { value: "rightMost", text: "To the right of all existing tabs" },
+        { value: "nextToRight", text: "To the right of the current tab" },
+        { value: "newWindow", text: "In a new window" },
+      ],
+      defaultValue: "rightMost",
     },
   ],
 };
@@ -1976,7 +1993,7 @@ registerSubsectionForOptions(
   "ui",
   "pageMods",
   "Page Mods general",
-  "By default Sourcer will not make changes to web pages (except for when filling out search forms at user request).",
+  "By default Sourcer will not make changes to web pages (except for when filling out search forms at user request or highlighting items in search results).",
   2
 );
 

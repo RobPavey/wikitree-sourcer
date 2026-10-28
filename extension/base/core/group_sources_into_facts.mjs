@@ -26,7 +26,7 @@ import { CD } from "./country_data.mjs";
 import { RT, RecordSubtype, Role } from "./record_type.mjs";
 import { DateUtils } from "./date_utils.mjs";
 
-import { NameObj, DateObj, PlaceObj } from "./generalize_data_utils.mjs";
+import { NameObj, DateObj, PlaceObj, dateQualifiers } from "./generalize_data_utils.mjs";
 import { getFieldsUsedInNarrative } from "./narrative_builder.mjs";
 
 function canMergeDifferentTypes(recordTypeA, recordTypeB, subTypeA, subTypeB, eventDateObjA, eventDateObjB, options) {
@@ -201,9 +201,21 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
       return dateObjA;
     }
 
+    let mergedQualifier = dateObjA.qualifier;
     if (dateObjA.qualifier != dateObjB.qualifier) {
       // might be able to merge these
-      return "nomatch";
+      // Really, if the actual dates are the same then qualifiers should not stop merge
+      // But we have to consolidate the qualifiers
+      if (!mergedQualifier == dateQualifiers.EXACT) {
+        if (dateObjB.qualifier == dateQualifiers.EXACT) {
+          mergedQualifier = dateQualifiers.EXACT;
+        } else {
+          // neither is exact
+          if (mergedQualifier == dateQualifiers.ABOUT && dateObjB.qualifier != dateQualifiers.ABOUT) {
+            mergedQualifier = dateObjB.qualifier;
+          }
+        }
+      }
     }
 
     // If either of the date are for a particular quarter then it require a different comparison
@@ -294,6 +306,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
       // we were able to merge them just based on the strings
       let mergedDateObj = new DateObj();
       mergedDateObj.dateString = mergedDateString;
+      mergedDateObj.qualifier = mergedQualifier;
       return mergedDateObj;
     }
 
@@ -620,6 +633,25 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
       return placeB;
     }
 
+    function cleanTerm(term) {
+      if (!term) {
+        return "";
+      }
+
+      term = term.trim().toLowerCase();
+      term = term.replace(/^['"-;.,]+/g, "");
+      term = term.replace(/['"-;.,]+$/g, "");
+
+      // remove endings that are not significant
+      const insignificantEndings = ["churchyard", "district"];
+      for (let ending of insignificantEndings) {
+        if (term.endsWith(ending)) {
+          term = term.substring(0, term.length - ending.length);
+        }
+      }
+      return term;
+    }
+
     // we would like these to merge OK for example:
     //   St Pancras, Middlesex, England
     //   Kentish Town, St Pancras, London, Middlesex, England
@@ -627,10 +659,10 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
     function areAllTermsInOtherTerms(termsA, termsB) {
       let termBStartIndex = 0;
       for (let termA of termsA) {
-        let cleanTermA = termA.trim().toLowerCase();
+        let cleanTermA = cleanTerm(termA);
         let foundTermA = false;
         for (let termBIndex = termBStartIndex; termBIndex < termsB.length; termBIndex++) {
-          let cleanTermB = termsB[termBIndex].trim().toLowerCase();
+          let cleanTermB = cleanTerm(termsB[termBIndex]);
           if (cleanTermA == cleanTermB) {
             termBStartIndex = termBIndex + 1;
             foundTermA = true;

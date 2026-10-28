@@ -24,15 +24,15 @@
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\nciting Digital film/folder number: 004729300; FHL microfilm: 002427577<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nName: James Ridout.\n</ref>",
+    "citation": "<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\nciting Digital film/folder number: 004729300; FHL microfilm: 002427577<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nName: James Ridout; Relationship to fact person: Parent; Fact: Marriage; Related person name: James Ridout; Related person gender: male; Related person spouse name: Eliza Tapper; Event date: 24 Sep 1852; Event place: Sturminster Newton, Dorset, England, United Kingdom.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "James's son James Ridout married Eliza Tapper on 24 September 1852 in Sturminster Newton, Dorset, England, United Kingdom.<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\nciting Digital film/folder number: 004729300; FHL microfilm: 002427577<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nName: James Ridout.\n</ref>",
+    "citation": "James's son James Ridout married Eliza Tapper on 24 September 1852 in Sturminster Newton, Dorset, England, United Kingdom.<ref>\n'''Marriage of son James Ridout''':\n\"England, Dorset, Parish Registers, 1538-2001\"<br/>\nciting Digital film/folder number: 004729300; FHL microfilm: 002427577<br/>\n{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>\nName: James Ridout; Relationship to fact person: Parent; Fact: Marriage; Related person name: James Ridout; Related person gender: male; Related person spouse name: Eliza Tapper; Event date: 24 Sep 1852; Event place: Sturminster Newton, Dorset, England, United Kingdom.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''Marriage of son James Ridout''': \"England, Dorset, Parish Registers, 1538-2001\"<br/>citing Digital film/folder number: 004729300; FHL microfilm: 002427577<br/>{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>Name: James Ridout.",
+    "citation": "* '''Marriage of son James Ridout''': \"England, Dorset, Parish Registers, 1538-2001\"<br/>citing Digital film/folder number: 004729300; FHL microfilm: 002427577<br/>{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>Name: James Ridout; Relationship to fact person: Parent; Fact: Marriage; Related person name: James Ridout; Related person gender: male; Related person spouse name: Eliza Tapper; Event date: 24 Sep 1852; Event place: Sturminster Newton, Dorset, England, United Kingdom.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
@@ -44,7 +44,7 @@
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''Marriage of son James Ridout''': \"England, Dorset, Parish Registers, 1538-2001\"<br/>citing Digital film/folder number: 004729300; FHL microfilm: 002427577<br/>{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>Name: James Ridout.",
+    "citation": "* '''Marriage of son James Ridout''': \"England, Dorset, Parish Registers, 1538-2001\"<br/>citing Digital film/folder number: 004729300; FHL microfilm: 002427577<br/>{{FamilySearch Record|QJDC-577Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939L-SL93-13}} Image number 00751<br/>Name: James Ridout; Relationship to fact person: Parent; Fact: Marriage; Related person name: James Ridout; Related person gender: male; Related person spouse name: Eliza Tapper; Event date: 24 Sep 1852; Event place: Sturminster Newton, Dorset, England, United Kingdom.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {

@@ -1,0 +1,28 @@
+{
+  "url": "https://sok.riksarkivet.se/?Sokord=Anders+andersen&page=10&postid=Sjoman_liggare_200626&tab=post",
+  "success": true,
+  "recordTitle": "Andersen, Anders",
+  "recordType": "Sjömanshus - liggare",
+  "recordData": {
+    "Namn": "Andersen, Anders",
+    "Födelsedatum": "1875",
+    "Födelseförsamling": "Arendal",
+    "Hemförsamling": "Arendal",
+    "Inskrivningsnummer": "H. 6220",
+    "Hyra/lön": "36 Kr",
+    "Befattning/Yrke": "Lättmatros",
+    "Påmönstrad": "1890-11-27 i Arendal",
+    "Avmönstrad": "1891-01-21 i Västervik (Avmönstrad)",
+    "Namn1": "Gemma (Skepp)",
+    "Hemmahamn": "Arendal",
+    "Kapten": "A. Jacobsen",
+    "Arkiv": "Sjömanshusets i Västervik arkiv (SE/VALA/00671)",
+    "Volym": "DIb: 2 s. 45",
+    "Upprättad av": "Riksarkivet SVAR-Svensk arkivinformation"
+  },
+  "duplicateValues": {
+    "Namn1": "Namn"
+  },
+  "postId": "Sjoman_liggare_200626",
+  "pageType": "record"
+}

@@ -28,6 +28,7 @@ import {
   registerContentScripts,
   injectContentScriptsIntoTabsOnPermissionsChange,
 } from "./background_content_scripts.mjs";
+import { applyCorrectAction } from "./background_action.mjs";
 
 chrome.runtime.onMessage.addListener(messageHandler);
 chrome.runtime.onInstalled.addListener(registerContentScripts);
@@ -35,5 +36,21 @@ chrome.runtime.onInstalled.addListener(registerContentScripts);
 // if permissions are later granted by the user we want to inject the content script into existing tabs
 // that got the new permission
 chrome.permissions.onAdded.addListener(injectContentScriptsIntoTabsOnPermissionsChange);
+
+// Handles full page loads, reloads, and standard navigations
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  if (changeInfo.status === "complete" && tab.url) {
+    applyCorrectAction(tabId, tab.url);
+  }
+});
+
+// Handles switching back to a tab (catches bfcache restores)
+chrome.tabs.onActivated.addListener((activeInfo) => {
+  chrome.tabs.get(activeInfo.tabId, (tab) => {
+    if (tab.url) {
+      applyCorrectAction(tab.id, tab.url);
+    }
+  });
+});
 
 setupContextMenu();

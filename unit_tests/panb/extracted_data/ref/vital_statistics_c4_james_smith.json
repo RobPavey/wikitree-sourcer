@@ -1,0 +1,22 @@
+{
+  "url": "https://archives.gnb.ca/en-ca/vital-statistics/death/141c4/25d15839-7f37-4301-8177-d49fc59f5391",
+  "success": true,
+  "databaseID": "RS141C4",
+  "sourceTitle": "Provincial Archives of New Brunswick; Vital Statistics (RS141)",
+  "tableTitle": "Provincial Returns of Deaths (RS141C4)",
+  "recordData": {
+    "Name": "SMITH, JAMES",
+    "Sex": "M",
+    "Age": "<1",
+    "Date": "1892-05-18",
+    "County": "KENT",
+    "Registration": "3335",
+    "Volume": "",
+    "Microfilm": "F14021"
+  },
+  "webpageFormat": 202606,
+  "numberTableEntries": 8,
+  "hasImage": true,
+  "imageUrl": "https://archives.gnb.ca/api/image-handler/digitized-documents/rs141/c4/1892/25d15839-7f37-4301-8177-d49fc59f5391.jpg",
+  "eventType": "Death"
+}

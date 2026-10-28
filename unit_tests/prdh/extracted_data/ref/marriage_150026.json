@@ -1,0 +1,196 @@
+{
+  "url": "https://www.prdh-igd.com/Membership/en/PRDH/Acte/150026",
+  "success": true,
+  "pageType": "marriage",
+  "recordId": "150026",
+  "recordTypeLabel": "Marriage",
+  "eventDate": "13-Jan-1740",
+  "mrc": "Arrondissement: Ville-Marie / MRC: Montréal / Région: Montréal",
+  "birthOrDeathLabel": "",
+  "birthOrDeathDate": "",
+  "imageUrl": "https://www.genealogiequebec.com/Membership/LAFRANCE/img/acte/150026",
+  "parish": "Montréal (Notre-Dame-de-Montréal)",
+  "mentions": [
+    {
+      "rank": "01",
+      "name": "Francois Augustin BAILLY DEMASSIN",
+      "individualId": "103550",
+      "age": "030",
+      "maritalStatus": "c",
+      "presence": "Present",
+      "sex": "m",
+      "residence": "NOTRE-DAME-DE-QUEBEC",
+      "origin": "",
+      "relations": [
+        {
+          "type": "SPOUSE",
+          "rank": "02"
+        }
+      ]
+    },
+    {
+      "rank": "02",
+      "name": "Marie Anne DESGOUTIN",
+      "individualId": "103551",
+      "age": "017",
+      "maritalStatus": "c",
+      "presence": "Present",
+      "sex": "f",
+      "residence": "MONTRÉAL (NOTRE-DAME-DE-MONTRÉAL)",
+      "origin": "LOUISBOURG",
+      "relations": [
+        {
+          "type": "SPOUSE",
+          "rank": "01"
+        }
+      ]
+    },
+    {
+      "rank": "03",
+      "name": "Nicolas BAILLY DEMASSIN",
+      "individualId": "5578",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "inconnue",
+      "sex": "m",
+      "residence": "",
+      "origin": "",
+      "occupation": "ECUYER, LIEUTENANT D'UNE COMPAGNIE DU DETACHEMENT DE LA MARINE",
+      "relations": [
+        {
+          "type": "FATHER",
+          "rank": "01"
+        }
+      ]
+    },
+    {
+      "rank": "04",
+      "name": "Marie Anne BONHOMME",
+      "individualId": "5579",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "Deceased",
+      "sex": "f",
+      "residence": "",
+      "origin": "",
+      "relations": [
+        {
+          "type": "MOTHER",
+          "rank": "01"
+        }
+      ]
+    },
+    {
+      "rank": "05",
+      "name": "Francois Marie DESGOUTIN",
+      "individualId": "75356",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "inconnue",
+      "sex": "m",
+      "residence": "",
+      "origin": "",
+      "occupation": "ECUYER, CONSEILLER AU CONSEIL SUPERIEUR DE L'ILE ROYALE",
+      "relations": [
+        {
+          "type": "FATHER",
+          "rank": "02"
+        }
+      ]
+    },
+    {
+      "rank": "06",
+      "name": "Angelique AUBERT DELACHENAY",
+      "individualId": "57741",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "Deceased",
+      "sex": "f",
+      "residence": "",
+      "origin": "",
+      "relations": [
+        {
+          "type": "MOTHER",
+          "rank": "02"
+        }
+      ]
+    },
+    {
+      "rank": "07",
+      "name": "Honore Michel DEVILLEBOIS DELAROUVILIERE",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "Present",
+      "sex": "m",
+      "residence": "",
+      "origin": "",
+      "occupation": "ECUYER, COMMISSAIRE ORDONNATEUR DANS TOUT LE CANADA"
+    },
+    {
+      "rank": "08",
+      "name": "Louis Joseph Marie ROCBERT",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "Present",
+      "sex": "m",
+      "residence": "",
+      "origin": "",
+      "occupation": "GARDE-MAGASIN DU ROI"
+    },
+    {
+      "rank": "09",
+      "name": "Jean DAILLEBOUT DARGENTEUIL",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "Present",
+      "sex": "m",
+      "residence": "",
+      "origin": "",
+      "occupation": "ECUYER"
+    },
+    {
+      "rank": "10",
+      "name": "Xxxxx DANEAU",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "Present",
+      "sex": "m",
+      "residence": "",
+      "origin": "",
+      "occupation": "ECUYER"
+    },
+    {
+      "rank": "11",
+      "name": "Xxxxx DEMUY",
+      "age": "---",
+      "maritalStatus": "---",
+      "presence": "Present",
+      "sex": "m",
+      "residence": "",
+      "origin": ""
+    },
+    {
+      "rank": "12",
+      "name": "Louis NORMANT",
+      "age": "---",
+      "maritalStatus": "c",
+      "presence": "inconnue",
+      "sex": "m",
+      "residence": "",
+      "origin": "",
+      "occupation": "VICAIRE GENERAL"
+    },
+    {
+      "rank": "13",
+      "name": "Xxxxx DEAT",
+      "age": "---",
+      "maritalStatus": "c",
+      "presence": "Present",
+      "sex": "m",
+      "residence": "MONTRÉAL (NOTRE-DAME-DE-MONTRÉAL)",
+      "origin": "",
+      "occupation": "VICAIRE"
+    }
+  ],
+  "complementaryInformation": "DEUX BANS ONT ETE PUBLIES, LA DISPENSE DU TROISIEME AYANT ETE ACCORDEE PAR LOUIS NORMANT"
+}

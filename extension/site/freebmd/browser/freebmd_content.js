@@ -148,10 +148,6 @@ function setSearchingBanner() {
   }
 }
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 async function doPendingSearch() {
   //console.log("##############################################################################");
   //console.log("doPendingSearch: called");
@@ -218,6 +214,39 @@ async function doPendingSearch() {
         }
       }
 
+      for (var key in selectData) {
+        //console.log("doPendingSearch: selectData key is: " + key);
+        if (key) {
+          let value = selectData[key];
+          //console.log("doPendingSearch: selectData value is: " + value);
+
+          if (value !== undefined && value !== "") {
+            let id = key;
+
+            let inputElement = formElement.querySelector("#" + id);
+            //console.log("doPendingSearch: inputElement is:");
+            //console.log(inputElement);
+
+            if (inputElement) {
+              inputElement.focus();
+              inputElement.value = value;
+              const event = new Event("change", { bubbles: true, cancelable: true });
+              inputElement.dispatchEvent(event);
+              if (searchButtonElement) {
+                // moves to another input so that this field gets processed
+                searchButtonElement.focus();
+              }
+              mainElement.scrollIntoView(); // so user can see the "please wait" message
+              setSearchingBanner();
+              await sleep(100);
+            } else {
+              inputNotFound = true;
+              break;
+            }
+          }
+        }
+      }
+
       for (var key in fieldData) {
         //console.log("doPendingSearch: key is: " + key);
 
@@ -244,37 +273,6 @@ async function doPendingSearch() {
                 const event = new Event("change", { bubbles: true, cancelable: true });
                 inputElement.dispatchEvent(event);
               }
-              if (searchButtonElement) {
-                // moves to another input so that this field gets processed
-                searchButtonElement.focus();
-              }
-              mainElement.scrollIntoView(); // so user can see the "please wait" message
-              setSearchingBanner();
-              await sleep(100);
-            } else {
-              inputNotFound = true;
-              break;
-            }
-          }
-        }
-      }
-
-      for (var key in selectData) {
-        //console.log("doPendingSearch: selectData key is: " + key);
-        if (key) {
-          let value = selectData[key];
-          //console.log("doPendingSearch: selectData value is: " + value);
-
-          if (value !== undefined && value !== "") {
-            let id = key;
-
-            let inputElement = formElement.querySelector("#" + id);
-            //console.log("doPendingSearch: inputElement is:");
-            //console.log(inputElement);
-
-            if (inputElement) {
-              inputElement.focus();
-              inputElement.value = value;
               if (searchButtonElement) {
                 // moves to another input so that this field gets processed
                 searchButtonElement.focus();

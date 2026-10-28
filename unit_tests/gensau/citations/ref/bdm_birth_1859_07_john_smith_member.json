@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"South Australia - Birth Registrations\"<br/>\nGenealogy SA; Surname: SMITH; Book/Page: 15/154<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nJohn Smith birth Jul 1859 registered in the Adelaide district, son of George Smith & Matilda Bean, residence Brompton.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John's birth in July 1859 was registered in the Adelaide district. He was the son of George Smith & Matilda Bean.<ref>\n'''Birth Registration''':\n\"South Australia - Birth Registrations\"<br/>\nGenealogy SA; Surname: SMITH; Book/Page: 15/154<br/>\n[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>\nJohn Smith birth Jul 1859 registered in the Adelaide district, son of George Smith & Matilda Bean, residence Brompton.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"South Australia - Birth Registrations\"<br/>Genealogy SA; Surname: SMITH; Book/Page: 15/154<br/>[https://www.genealogysa.org.au Genealogy SA] (accessed 6 May 2021)<br/>John Smith birth Jul 1859 registered in the Adelaide district, son of George Smith & Matilda Bean, residence Brompton.",
+    "type": "source"
+  }
+}

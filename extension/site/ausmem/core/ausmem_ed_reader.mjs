@@ -70,18 +70,6 @@ class AusmemEdReader extends ExtractedDataReader {
     return undefined;
   }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
-  }
-
   getBirthDateObj() {
     if (this.ed.values["date of birth"]) {
       return this.makeDateObjFromDdmmyyyyDate(this.ed.values["date of birth"], "-");

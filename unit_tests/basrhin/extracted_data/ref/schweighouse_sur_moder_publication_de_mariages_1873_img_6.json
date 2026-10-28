@@ -1,5 +1,5 @@
 {
-  "url": "https://archives67.alsace.eu/ark:/78665/2059877/dao/0/1/idsearch:RECH_e1a9c4eb4a0e075a0af3a6841b3fd1be?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F2059877%2Fcanvas%2F0%2F6",
+  "url": "https://archives67.alsace.eu/ark:/78665/2149660/dao/0/1/idsearch:RECH_cf951f647cd4527692b5a7dda6ecb325?id=https%3A%2F%2Farchives67.alsace.eu%2Fark%3A%2F78665%2F2149660%2Fcanvas%2F0%2F6",
   "success": true,
   "repository": "Archives d'Alsace Site de Strasbourg",
   "ogTitle": "1873 - 1873",
@@ -9,6 +9,8 @@
   "imageNumMax": "12",
   "keyValueData": {
     "Importance matérielle": "12",
-    "Lieu": "SCHWEIGHOUSE-SUR-MODER"
-  }
+    "Lieu": "SCHWEIGHOUSE-SUR-MODER",
+    "Contexte": "Registres paroissiaux et documents d’état civil de la commune de Schweighouse-sur-Moder > Etat civil > Registres d'état civil > Publications de mariages > 1873-1875"
+  },
+  "lastFifParamItem": "FRAD067_0098NUM45803610_06"
 }

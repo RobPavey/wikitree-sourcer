@@ -45,6 +45,22 @@ function cleanName(name) {
   return name;
 }
 
+function ancestryLinksMatch(linkA, linkB) {
+  // building household tables I hit an issue where it compared links for equality
+  // and these two did not match:
+  // "https://www.ancestry.com/search/collections/2352/records/1903048"
+  // "http://www.ancestry.com/search/collections/2352/records/1903048"
+
+  function standardizeLink(link) {
+    link = link.replace("http://", "https://");
+    return link;
+  }
+
+  let stdLinkA = standardizeLink(linkA);
+  let stdLinkB = standardizeLink(linkB);
+  return stdLinkA == stdLinkB;
+}
+
 // Note that spaces are remoxed from the Event Type or Record Type field before looking up here
 const eventTypeStringToDataType = {
   BirthRegistration: RT.BirthRegistration,
@@ -136,12 +152,14 @@ const recordTypeByFields = [
   { type: RT.Military, labels: ["Enlistment Date", "Enlistment Location"] },
   { type: RT.Military, labels: ["Enlistment Year", "Enlistment Place"] },
   { type: RT.Military, labels: ["Enlistment Year", "Enlistment Location"] },
+  { type: RT.Military, labels: ["Draft Registration Date", "Draft Registration Place"] },
   { type: RT.Military, labels: ["Military Date", "Military Place"] },
   { type: RT.Military, labels: ["Regiment", "Rank"] },
   { type: RT.Military, labels: ["Muster Regiment"] },
   { type: RT.Will, labels: ["Will Date"] },
   { type: RT.Will, labels: ["Others Listed (Name)<br/>Relationship"] },
   { type: RT.Death, labels: ["Death Date", "Death Place"] },
+  { type: RT.Death, labels: ["Death Date", "Death County"] },
   { type: RT.Death, labels: ["Death Date", "Cause of Death"] },
 ];
 
@@ -243,8 +261,11 @@ function determineRecordType(extractedData) {
     },
     {
       type: RT.Death,
-      matches: ["Deaths", "Death Records", "Death Index", "Deaths Index"],
-      requiredData: [["Death Date", "Death Place"]],
+      matches: ["Deaths", "Death Records", "Death Index", "Deaths Index", "Death Registers"],
+      requiredData: [
+        ["Death Date", "Death Place"],
+        ["Death Date", "Death County"],
+      ],
     },
     {
       type: RT.DeathRegistration,
@@ -265,7 +286,7 @@ function determineRecordType(extractedData) {
     },
     {
       type: RT.Death,
-      matches: ["Deaths", "Death Records", "Scotland, Local Heritage Index"],
+      matches: ["Deaths", "Death Records", "Scotland, Local Heritage Index", "Death Registers"],
       requiredData: [["Death Date"]],
     },
     {
@@ -276,6 +297,7 @@ function determineRecordType(extractedData) {
         "U.S., Death Record",
         "Index to Deceased Estate Files",
         "Death Notice",
+        "Death Registers",
         "Canada, Deaths",
       ],
     },
@@ -295,7 +317,14 @@ function determineRecordType(extractedData) {
     { type: RT.Census, matches: ["Census", "1939 England and Wales Register"] },
     {
       type: RT.ElectoralRegister,
-      matches: ["Electoral Roll", "Voter Registers", "Voter Registration", "Electoral Registers", "Qualified Voters"],
+      matches: [
+        "Electoral Roll",
+        "Voter Registers",
+        "Voters Lists",
+        "Voter Registration",
+        "Electoral Registers",
+        "Qualified Voters",
+      ],
     },
     {
       type: RT.Will,
@@ -380,6 +409,7 @@ function determineRecordType(extractedData) {
         "Army Roll of Honour",
         "Army Attestation Registers",
         "Military List",
+        "Draft Cards",
       ],
     },
     { type: RT.Military, matches: ["War"], secondMatches: ["Pension"] },
@@ -620,7 +650,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       return Role.Child;
     } else if (relationship == "Son" || relationship == "Daughter") {
       return Role.Child;
-    } else if (relationship == "Spouse" || relationship == "Wife") {
+    } else if (relationship == "Spouse" || relationship == "Wife" || relationship == "Spouse or Partner") {
       return Role.Spouse;
     } else if (relationship == "Father") {
       return Role.Parent;
@@ -629,6 +659,13 @@ function determineRoleGivenRecordType(extractedData, result) {
     } else if (relationship == "Sibling" || relationship == "Siblings") {
       return Role.Sibling;
     }
+  }
+
+  function hasSpouseField() {
+    if (extractedData.recordData["Spouse"] || extractedData.recordData["Spouse or Partner"]) {
+      return true;
+    }
+    return false;
   }
 
   let recordType = result.recordType;
@@ -641,6 +678,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       "Baptism Date",
       "Christening Date",
       "Birth Date",
+      "Date of Birth",
       "Baptism Year",
       "Christening Year",
       "Birth Year",
@@ -674,7 +712,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       if (extractedData.recordData["Child"]) {
         result.role = Role.Parent;
         result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Child"));
-      } else if (extractedData.recordData["Spouse"]) {
+      } else if (hasSpouseField()) {
         if (
           !extractedData.recordData["Death Date"] &&
           !extractedData.recordData["Death Place"] &&
@@ -683,7 +721,8 @@ function determineRoleGivenRecordType(extractedData, result) {
           !extractedData.recordData["Burial Place"]
         ) {
           result.role = Role.Spouse;
-          result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Spouse"));
+          let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse or Partner"]);
+          result.setPrimaryPersonFullName(spouseName);
         }
       }
     }
@@ -726,9 +765,10 @@ function determineRoleGivenRecordType(extractedData, result) {
           result.role = Role.Parent;
           result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Child"));
         }
-      } else if (extractedData.recordData["Spouse"]) {
+      } else if (hasSpouseField()) {
         result.role = Role.Spouse;
-        result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Spouse"));
+        let spouseName = getCleanValueForRecordDataList(extractedData, result, ["Spouse", "Spouse or Partner"]);
+        result.setPrimaryPersonFullName(spouseName);
       }
     } else {
       let hasBaptismOrBurialKey = testForWordsInRecordDataKeys(extractedData, [
@@ -757,9 +797,10 @@ function determineRoleGivenRecordType(extractedData, result) {
       if (extractedData.recordData["Child"]) {
         result.role = Role.Parent;
         result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Child"));
-      } else if (extractedData.recordData["Spouse"]) {
+      } else if (hasSpouseField()) {
         result.role = Role.Spouse;
-        result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Spouse"));
+        let spouseName = getCleanValueForRecordDataList(extractedData, result, ["Spouse", "Spouse or Partner"]);
+        result.setPrimaryPersonFullName(spouseName);
       } else if (extractedData.recordData["Father"]) {
         result.role = Role.Child;
         result.setPrimaryPersonFullName(getCleanRecordDataValue(extractedData, result, "Father"));
@@ -787,6 +828,18 @@ function determineRoleGivenRecordType(extractedData, result) {
             result.setPrimaryPersonFullName(cleanName(otherName));
           }
         }
+      }
+    }
+  } else if (extractedData.linkData) {
+    // we can't determine a role given the current recordType
+    // but there are linked records
+    // this is pretty common. For example a birth registration could have a link to the father
+    // but we don't need to do anything more. But for certain record types, where key data such as date
+    // is missing we should fetch the linked records and delve deeper.
+    // This could be expanded but the only cases where it is found to be needed are handled below
+    if (recordType == RT.ChurchRecords) {
+      if (!extractedData.recordData["Record Type"]) {
+        result.useLinkedRecordsToDetermineRole = true;
       }
     }
   }
@@ -1507,7 +1560,7 @@ function generalizeDataGivenRecordType(ed, result) {
   determineRoleGivenRecordType(ed, result);
 
   if (result.recordType == RT.BirthRegistration) {
-    const dateFields = ["Birth Date", "Birth Registration Date"];
+    const dateFields = ["Birth Date", "Date of Birth", "Birth Registration Date"];
     const yearFields = ["Birth Registration Year"];
     const quarterFields = ["Birth Registration Quarter", "Birth Quarter"];
     if (!setDateFromAncestryDateFields(ed, result, ["event", "birth"], dateFields, yearFields, quarterFields)) {
@@ -1548,7 +1601,7 @@ function generalizeDataGivenRecordType(ed, result) {
 
     buildParents(ed, result);
   } else if (result.recordType == RT.Birth) {
-    const dateFields = ["Birth Date"];
+    const dateFields = ["Birth Date", "Date of Birth"];
     setDateFromAncestryDateFields(ed, result, ["event", "birth"], dateFields);
 
     let eventPlace = getCleanValueForRecordDataList(ed, result, ["Birth Place", "Birthplace", "Registration Place"]);
@@ -1560,7 +1613,7 @@ function generalizeDataGivenRecordType(ed, result) {
     buildParents(ed, result);
 
     if (result.role && result.role == Role.Parent) {
-      let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse"]);
+      let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse or Partner"]);
       if (spouseName) {
         let name = new NameObj();
 
@@ -1614,7 +1667,7 @@ function generalizeDataGivenRecordType(ed, result) {
     result.ageAtDeath = getCleanValueForRecordDataList(ed, result, ["Age at Death", "Death Age", "Age"]);
 
     // later England Death Registration include exact birth date
-    let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date");
+    let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date");
     if (birthDate) {
       result.setBirthDate(birthDate);
     }
@@ -1667,7 +1720,7 @@ function generalizeDataGivenRecordType(ed, result) {
     }
 
     // later England Death Registration include exact birth date
-    let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date", "Birth Year"], "date");
+    let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth", "Birth Year"], "date");
     if (birthDate) {
       result.setBirthDate(birthDate);
     }
@@ -1772,7 +1825,7 @@ function generalizeDataGivenRecordType(ed, result) {
     if (ed.titleCollection && ed.titleCollection.includes("1939")) {
       result.setEventYear("1939");
 
-      let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date");
+      let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date");
       result.setBirthDate(birthDate);
 
       let maritalStatus = getCleanValueForRecordDataList(ed, result, ["Marital Status", "Marital status"]);
@@ -1974,7 +2027,12 @@ function generalizeDataGivenRecordType(ed, result) {
     );
     buildParents(ed, result);
 
-    let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse Name", "Spouse's Name"]);
+    let spouseName = getCleanValueForRecordDataList(ed, result, [
+      "Spouse",
+      "Spouse Name",
+      "Spouse's Name",
+      "Spouse or Partner",
+    ]);
 
     // occasionally there is no field for the spouse name but there is a Household Members sections
     // that lists the bride and groom. us_pa_marriage_1761_patience_brown is an example.
@@ -2085,8 +2143,7 @@ function generalizeDataGivenRecordType(ed, result) {
     }
     result.setFieldIfValueExists("ageAtEvent", getCleanValueForRecordDataList(ed, result, ["Marriage Age", "Age"]));
 
-    let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse Name"]);
-
+    let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse Name", "Spouse or Partner"]);
     if (!spouseName) {
       // For a UK marriage registration, if there are only two records on page, we can infer spouse
       if (ed.recordData) {
@@ -2256,7 +2313,7 @@ function generalizeDataGivenRecordType(ed, result) {
   } else if (result.recordType == RT.Obituary) {
     // if there is a death or burial date etc then this is likely a record for this person not a
     // child or spouse
-    let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date");
+    let birthDate = getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date");
     let deathDate = getCleanValueForRecordDataList(ed, result, ["Death Date"], "date");
     let deathPlace = getCleanValueForRecordDataList(ed, result, ["Death Place", "Death County"]);
     let eventDate = getCleanValueForRecordDataList(ed, result, ["Obituary Date", "Date", "Newspaper Date"], "date");
@@ -2374,7 +2431,7 @@ function generalizeDataGivenRecordType(ed, result) {
     );
     result.setEventPlace(getCleanValueForRecordDataList(ed, result, ["Divorce Place", "Decree Place", "Location"]));
 
-    let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse Name"]);
+    let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse Name", "Spouse or Partner"]);
 
     if (spouseName) {
       let spouse = result.addSpouse();
@@ -2463,7 +2520,7 @@ function generalizeDataGivenRecordType(ed, result) {
         "date"
       )
     );
-    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date"));
+    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date"));
     result.setDeathDate(getCleanValueForRecordDataList(ed, result, ["Death Date"], "date"));
     if (!result.eventDate) {
       result.setEventYear(
@@ -2539,7 +2596,12 @@ function generalizeDataGivenRecordType(ed, result) {
     }
 
     // sometimes a military record can contain a spouse name and possibly a marriage date
-    let spouseName = getCleanValueForRecordDataList(ed, result, ["Spouse", "Spouse Name", "Spouse's Name"]);
+    let spouseName = getCleanValueForRecordDataList(ed, result, [
+      "Spouse",
+      "Spouse Name",
+      "Spouse's Name",
+      "Spouse or Partner",
+    ]);
     if (spouseName) {
       let spouse = result.addSpouse();
       spouse.name.name = spouseName;
@@ -2567,7 +2629,7 @@ function generalizeDataGivenRecordType(ed, result) {
   } else if (result.recordType == RT.SchoolRecords) {
     result.setEventDate(getCleanValueForRecordDataList(ed, result, ["Yearbook Date", "Admission Date"], "date"));
 
-    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date"));
+    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date"));
     result.setBirthYear(getCleanValueForRecordDataList(ed, result, ["Birth Year"]));
 
     let schoolLocation = getCleanValueForRecordDataList(ed, result, ["School Location"]);
@@ -2657,7 +2719,7 @@ function generalizeDataGivenRecordType(ed, result) {
     if (ageAtEvent) {
       result.ageAtEvent = ageAtEvent;
     }
-    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date"));
+    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date"));
     result.setBirthPlace(getCleanValueForRecordDataList(ed, result, ["Birth Place"]));
     let arrivalDate = getCleanValueForRecordDataList(ed, result, ["Arrival Date"]);
     if (arrivalDate) {
@@ -2674,7 +2736,7 @@ function generalizeDataGivenRecordType(ed, result) {
   } else if (result.recordType == RT.FreedomOfCity) {
     result.setEventDate(getCleanValueForRecordDataList(ed, result, ["Admission Date", "Event Date", "Date"], "date"));
     result.setEventPlace(getCleanValueForRecordDataList(ed, result, ["Residence Place"]));
-    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date"));
+    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date"));
     result.setBirthPlace(getCleanValueForRecordDataList(ed, result, ["Birth Place"]));
 
     result.setFieldIfValueExists(
@@ -2769,7 +2831,7 @@ function generalizeDataGivenRecordType(ed, result) {
     result.setEventPlace(eventPlace);
 
     // lots of record have a birth date. The narrative may not use it but search can.
-    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date"], "date"));
+    result.setBirthDate(getCleanValueForRecordDataList(ed, result, ["Birth Date", "Date of Birth"], "date"));
     result.setBirthPlace(getCleanValueForRecordDataList(ed, result, ["Birth Place"]));
 
     result.setDeathDate(getCleanValueForRecordDataList(ed, result, ["Death Date"], "date"));
@@ -3259,10 +3321,92 @@ function setExtraGdHouseholdFields(extractedData, result, generalizedMember, fie
   setMemberData("maritalStatus", ["Marital Status", "Marital status"], GD.standardizeMaritalStatus);
   setMemberData("gender", ["Gender"], GD.standardizeGender);
   setMemberData("occupation", ["Occupation"]);
-  setMemberData("birthDate", ["Birth Date", "DOB"]);
+  setMemberData("birthDate", ["Birth Date", "DOB", "Date of Birth"]);
   setMemberData("birthPlace", ["Where born", "Where Born", "Birth Place", "Birthplace", "Birth place"]);
   setMemberData("birthYear", ["Estimated Birth Year", "Birth Year"]);
   setMemberData("employer", ["Employer"]);
+}
+
+function regeneralizeDataGivenNewPrimaryPerson(result, generalizedData) {
+  //console.log("regeneralizeDataWithLinkedRecords, primaryLinkedRecord generalizedData is:");
+  //console.log(generalizedData);
+
+  // even if we have an event date and place the one from the linked record should be better.
+  // For example the parent in a child birth record can have a birth place which has been
+  // interpreted as the event place incorrectly e.g.:
+  // https://www.ancestry.com/discoveryui-content/view/300065623:8703
+  if (generalizedData.eventPlace) {
+    result.eventPlace = generalizedData.eventPlace;
+  }
+  if (generalizedData.eventDate) {
+    result.eventDate = generalizedData.eventDate;
+  }
+
+  // because the linked record has more data it will have a more accurate recordType
+  // For example the existing one might be BirthOrBaptism but the linked one may have
+  // Baptism because it has a BaptismDate.
+  // But we have to be careful in case it is an unclassified event
+  if (generalizedData.recordType && generalizedData.recordType != RT.Unclassified) {
+    result.recordType = generalizedData.recordType;
+
+    if (result.overrideRefTitle) {
+      // this means that we asked the user to specify the recordType because it was unclassified
+      // But now we have a recordType from the linkedRecord.
+      // So we didn't need to ask. If we leave the overrideRefTitle we can end up with
+      // contradictory data in the citation if they picked the wrong type.
+      delete result.overrideRefTitle;
+    }
+  }
+
+  let currentPrimaryPersonGender = result.inferPrimaryPersonGender();
+  if (generalizedData.personGender && !currentPrimaryPersonGender) {
+    result.setPrimaryPersonGender(generalizedData.personGender);
+  }
+
+  // For a child marriage we want to get the spouse,
+  // This is a bit confusing - we store this in result.spouses even though it is
+  // the spouse of the child not this person
+  if (generalizedData.spouses) {
+    result.spouses = generalizedData.spouses;
+
+    if (generalizedData.ageAtEvent) {
+      result.setPrimaryPersonAge(generalizedData.ageAtEvent);
+    }
+  } else {
+    // for a child birth/baptism we want to get the other parent and put that in spouses
+    let otherParent = undefined;
+    if (generalizedData.parents) {
+      if (result.personGender == "male") {
+        if (generalizedData.parents.mother) {
+          otherParent = generalizedData.parents.mother;
+        }
+      } else if (result.personGender == "female") {
+        if (generalizedData.parents.father) {
+          otherParent = generalizedData.parents.father;
+        }
+      } else if (result.name && result.name.name) {
+        // don't know gender so have to compare our name with parent names
+        let fatherName = "";
+        let motherName = "";
+        if (generalizedData.parents.father && generalizedData.parents.father.name) {
+          fatherName = generalizedData.parents.father.name.name;
+        }
+        if (generalizedData.parents.mother && generalizedData.parents.mother.name) {
+          motherName = generalizedData.parents.mother.name.name;
+        }
+        if (result.name.name == fatherName && generalizedData.parents.mother) {
+          otherParent = generalizedData.parents.mother;
+        } else if (result.name.name == motherName && generalizedData.parents.father) {
+          otherParent = generalizedData.parents.father;
+        }
+      }
+    }
+
+    if (otherParent && otherParent.name) {
+      result.spouses = [];
+      result.spouses.push(otherParent);
+    }
+  }
 }
 
 function regeneralizeDataWithLinkedRecords(input) {
@@ -3278,10 +3422,19 @@ function regeneralizeDataWithLinkedRecords(input) {
   //console.log(linkedRecords);
 
   if (ed.household && result.householdArray) {
+    // There is an Ancestry bug that can order the household incorrectly
+    // by putting those on subsequent pages first
+    // e.g. https://www.ancestry.com/search/collections/7619/records/917937
+    // So we want to use the page numbers to update the order.
+    let reorderedArray = [];
+    let allHavePageNumbers = true;
+
     for (let extractedMember of ed.household.members) {
+      let generalizedMember = undefined;
+      let memberExtractedData = undefined;
+
       if (extractedMember.link) {
         // find the same member in the generalized data
-        let generalizedMember = undefined;
         for (let member of result.householdArray) {
           //console.log("regeneralizeDataWithLinkedRecords extractedMember.link is:" + extractedMember.link);
           if (member.uid == extractedMember.link) {
@@ -3291,33 +3444,73 @@ function regeneralizeDataWithLinkedRecords(input) {
         }
 
         if (generalizedMember) {
-          let memberData = undefined;
           if (generalizedMember.isSelected) {
             // we don't have a linked record for the primary member
             // But we want to do some similar filling out of fields
             //console.log("regeneralizeDataWithLinkedRecords member is selected");
-            memberData = ed;
+            memberExtractedData = ed;
           } else {
             let memberLinkedRecord = undefined;
             for (let linkedRecord of linkedRecords) {
-              if (linkedRecord.link == extractedMember.link) {
+              if (ancestryLinksMatch(linkedRecord.link, extractedMember.link)) {
                 memberLinkedRecord = linkedRecord;
                 break;
               }
             }
             if (memberLinkedRecord) {
-              memberData = memberLinkedRecord.extractedData;
+              memberExtractedData = memberLinkedRecord.extractedData;
             }
           }
 
-          if (memberData) {
+          if (memberExtractedData) {
             //console.log("regeneralizeDataWithLinkedRecords found matching member. Name is:" + generalizedMember.name);
             //console.log("regeneralizeDataWithLinkedRecords. Extracted data is :");
-            //console.log(memberData);
-            setExtraGdHouseholdFields(memberData, result, generalizedMember, result.householdArrayFields);
+            //console.log(memberExtractedData);
+            setExtraGdHouseholdFields(memberExtractedData, result, generalizedMember, result.householdArrayFields);
+          }
+        }
+      } else {
+        // no link - could be selected member
+        memberExtractedData = ed;
+        for (let member of result.householdArray) {
+          //console.log("regeneralizeDataWithLinkedRecords extractedMember.link is:" + extractedMember.link);
+          if (member.isSelected) {
+            generalizedMember = member;
+            break;
           }
         }
       }
+
+      // get pageNum for reordering
+      if (memberExtractedData && generalizedMember) {
+        let hasPageNum = false;
+        if (memberExtractedData.recordData) {
+          let pageNumString = memberExtractedData.recordData["Page number"];
+          if (pageNumString) {
+            let pageNum = Number(pageNumString.trim());
+            if (!isNaN(pageNum)) {
+              let reorderElement = { pageNum: pageNum, generalizedMember: generalizedMember };
+              reorderedArray.push(reorderElement);
+              hasPageNum = true;
+            }
+          }
+        }
+
+        if (!hasPageNum) {
+          allHavePageNumbers = false;
+        }
+      }
+    }
+
+    if (allHavePageNumbers && reorderedArray.length == result.householdArray.length) {
+      // we can reorder, this is a stable sort so if two members have the same pageNum
+      // their order will not change
+      reorderedArray.sort((a, b) => a.pageNum - b.pageNum);
+      let newhouseholdArray = [];
+      for (let reorderedMember of reorderedArray) {
+        newhouseholdArray.push(reorderedMember.generalizedMember);
+      }
+      result.householdArray = newhouseholdArray;
     }
   } else if (ed.linkData && result.role) {
     // if there are linkData and this person is not the primary person on the record
@@ -3364,7 +3557,7 @@ function regeneralizeDataWithLinkedRecords(input) {
     if (primaryLink) {
       let primaryLinkedRecord = undefined;
       for (let linkedRecord of linkedRecords) {
-        if (linkedRecord.link == primaryLink) {
+        if (ancestryLinksMatch(linkedRecord.link, primaryLink)) {
           primaryLinkedRecord = linkedRecord;
           break;
         }
@@ -3382,82 +3575,7 @@ function regeneralizeDataWithLinkedRecords(input) {
         //console.log("regeneralizeDataWithLinkedRecords, primaryLinkedRecord generalizedData is:");
         //console.log(generalizedData);
 
-        // even if we have an event date and place the one from the linked record should be better.
-        // For example the parent in a child birth record can have a birth place which has been
-        // interpreted as the event place incorrectly e.g.:
-        // https://www.ancestry.com/discoveryui-content/view/300065623:8703
-        if (generalizedData.eventPlace) {
-          result.eventPlace = generalizedData.eventPlace;
-        }
-        if (generalizedData.eventDate) {
-          result.eventDate = generalizedData.eventDate;
-        }
-
-        // because the linked record has more data it will have a more accurate recordType
-        // For example the existing one might be BirthOrBaptism but the linked one may have
-        // Baptism because it has a BaptismDate.
-        // But we have to be careful in case it is an unclassified event
-        if (generalizedData.recordType && generalizedData.recordType != RT.Unclassified) {
-          result.recordType = generalizedData.recordType;
-
-          if (result.overrideRefTitle) {
-            // this means that we asked the user to specify the recordType because it was unclassified
-            // But now we have a recordType from the linkedRecord.
-            // So we didn't need to ask. If we leave the overrideRefTitle we can end up with
-            // contradictory data in the citation if they picked the wrong type.
-            delete result.overrideRefTitle;
-          }
-        }
-
-        let currentPrimaryPersonGender = result.inferPrimaryPersonGender();
-        if (generalizedData.personGender && !currentPrimaryPersonGender) {
-          result.setPrimaryPersonGender(generalizedData.personGender);
-        }
-
-        // For a child marriage we want to get the spouse,
-        // This is a bit confusing - we store this in result.spouses even though it is
-        // the spouse of the child not this person
-        if (generalizedData.spouses) {
-          result.spouses = generalizedData.spouses;
-
-          if (generalizedData.ageAtEvent) {
-            result.setPrimaryPersonAge(generalizedData.ageAtEvent);
-          }
-        } else {
-          // for a child birth/baptism we want to get the other parent and put that in spouses
-          let otherParent = undefined;
-          if (generalizedData.parents) {
-            if (result.personGender == "male") {
-              if (generalizedData.parents.mother) {
-                otherParent = generalizedData.parents.mother;
-              }
-            } else if (result.personGender == "female") {
-              if (generalizedData.parents.father) {
-                otherParent = generalizedData.parents.father;
-              }
-            } else if (result.name && result.name.name) {
-              // don't know gender so have to compare our name with parent names
-              let fatherName = "";
-              let motherName = "";
-              if (generalizedData.parents.father && generalizedData.parents.father.name) {
-                fatherName = generalizedData.parents.father.name.name;
-              }
-              if (generalizedData.parents.mother && generalizedData.parents.mother.name) {
-                motherName = generalizedData.parents.mother.name.name;
-              }
-              if (result.name.name == fatherName && generalizedData.parents.mother) {
-                otherParent = generalizedData.parents.mother;
-              } else if (result.name.name == motherName && generalizedData.parents.father) {
-                otherParent = generalizedData.parents.father;
-              }
-            }
-          }
-
-          if (otherParent && otherParent.name) {
-            result.spouses = [];
-            result.spouses.push(otherParent);
-          }
-        }
+        regeneralizeDataGivenNewPrimaryPerson(result, generalizedData);
       }
     }
   } else if (ed.household) {
@@ -3481,6 +3599,43 @@ function regeneralizeDataWithLinkedRecords(input) {
 
         result.setPrimaryPersonGender(generalizedData.personGender);
       }
+    }
+  } else if (ed.linkData && result.useLinkedRecordsToDetermineRole) {
+    // we may be able to improve the record type and role
+    // There are many possible cases, to be as flexible as possible we do generalizeData on
+    // all of the linkedRecords
+    let linkedGeneralizedData = [];
+    for (let linkedRecord of linkedRecords) {
+      if (linkedRecord.extractedData) {
+        // Now we can look for extra data
+        let gdInput = {};
+        gdInput.extractedData = linkedRecord.extractedData;
+        linkedRecord.generalizedData = generalizeData(gdInput);
+      }
+    }
+
+    let currentGd = result;
+    let primaryGd = null;
+    let primaryRole = "";
+    for (let linkedRecord of linkedRecords) {
+      if (linkedRecord.generalizedData) {
+        let linkGd = linkedRecord.generalizedData;
+        if (!currentGd.eventDate && linkGd.eventDate) {
+          primaryGd = linkGd;
+          primaryRole = linkedRecord.name;
+          break;
+        }
+      }
+    }
+
+    if (primaryGd) {
+      if (primaryRole == "Child") {
+        result.role = Role.Parent;
+      }
+      let primaryPersonName = primaryGd.inferFullName();
+      result.setPrimaryPersonFullName(primaryPersonName);
+
+      regeneralizeDataGivenNewPrimaryPerson(result, primaryGd);
     }
   }
 

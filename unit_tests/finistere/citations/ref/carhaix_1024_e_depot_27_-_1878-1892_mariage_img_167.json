@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 1024 E DEPOT 27 - 1878-1892. - 1878-1892; Image 167 sur 168; Lieu: Carhaix (Carhaix-Plouguer, Finistère); Type de document: registre, mariage<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1464985/daoloc/0/167 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 1024 E DEPOT 27 - 1878-1892. - 1878-1892; Image 167 sur 168; Lieu: Carhaix (Carhaix-Plouguer, Finistère); Type de document: registre, mariage<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1464985/daoloc/0/167 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Mariage''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère; 1024 E DEPOT 27 - 1878-1892. - 1878-1892; Image 167 sur 168; Lieu: Carhaix (Carhaix-Plouguer, Finistère); Type de document: registre, mariage<br/>[https://recherche.archives.finistere.fr/ark:/72506/1464985/daoloc/0/167 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 1024 E DEPOT 27 - 1878-1892. - 1878-1892, Image 167 sur 168, Lieu Carhaix (Carhaix-Plouguer, Finistère), Type de document registre, mariage<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1464985/daoloc/0/167 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 1024 E DEPOT 27 - 1878-1892. - 1878-1892, Image 167 sur 168, Lieu Carhaix (Carhaix-Plouguer, Finistère), Type de document registre, mariage<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1464985/daoloc/0/167 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Mariage''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère, 1024 E DEPOT 27 - 1878-1892. - 1878-1892, Image 167 sur 168, Lieu Carhaix (Carhaix-Plouguer, Finistère), Type de document registre, mariage<br/>[https://recherche.archives.finistere.fr/ark:/72506/1464985/daoloc/0/167 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

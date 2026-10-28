@@ -31,86 +31,126 @@ import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_u
 const recordTypeMatches = [
   {
     recordType: RT.Census,
-    requiredFields: [["Census"]],
+    matchData: {
+      requiredFields: [["Census"]],
+    },
   },
   {
     recordType: RT.Burial,
-    requiredFields: [["Burial Date"], ["Burial Place"]],
+    matchData: {
+      requiredFields: [["Burial Date"], ["Burial Place"]],
+    },
   },
   {
     recordType: RT.Baptism,
-    requiredFields: [["Baptism"]],
+    matchData: {
+      requiredFields: [["Baptism"]],
+    },
   },
   {
     recordType: RT.Census,
-    collectionTitleMatches: [["Federal Census"], ["Census Collection"]],
+    matchData: {
+      collectionTitleMatches: [["Federal Census"], ["Census Collection"]],
+    },
   },
   {
     recordType: RT.Birth,
-    collectionTitleMatches: [["Birth Index"]],
+    matchData: {
+      collectionTitleMatches: [["Birth Index"]],
+    },
   },
   {
     recordType: RT.Birth,
-    collectionTitleMatches: [["Vital Records"]],
-    requiredFields: [["Birth"]],
+    matchData: {
+      collectionTitleMatches: [["Vital Records"]],
+      requiredFields: [["Birth"]],
+    },
   },
   {
     recordType: RT.Death,
-    collectionTitleMatches: [["Death Index"]],
+    matchData: {
+      collectionTitleMatches: [["Death Index"]],
+    },
   },
   {
     recordType: RT.Tax,
-    collectionTitleMatches: [["Direct Tax"]],
+    matchData: {
+      collectionTitleMatches: [["Direct Tax"]],
+    },
   },
   {
     recordType: RT.Probate,
-    collectionTitleMatches: [["Probate"]],
+    matchData: {
+      collectionTitleMatches: [["Probate"]],
+    },
   },
   {
     recordType: RT.Military,
-    requiredFields: [["Military Record"]],
+    matchData: {
+      requiredFields: [["Military Record"]],
+    },
   },
   {
     recordType: RT.Death,
-    requiredFields: [["Death"]],
+    matchData: {
+      requiredFields: [["Death"]],
+    },
   },
   {
     recordType: RT.Marriage,
-    requiredFields: [["Marriage"], ["Intention"]],
+    matchData: {
+      requiredFields: [["Marriage"], ["Intention"]],
+    },
   },
   {
     recordType: RT.Birth,
-    requiredFields: [["Birth"]],
+    matchData: {
+      requiredFields: [["Birth"]],
+    },
   },
   {
     recordType: RT.Residence,
-    requiredFields: [["Residence"]],
+    matchData: {
+      requiredFields: [["Residence"]],
+    },
   },
   {
     recordType: RT.Deed,
-    requiredFields: [["Deed"]],
+    matchData: {
+      requiredFields: [["Deed"]],
+    },
   },
   {
     recordType: RT.Will,
-    requiredFields: [["Will"]],
+    matchData: {
+      requiredFields: [["Will"]],
+    },
   },
   {
     recordType: RT.Probate,
-    requiredFields: [["Probate Record"], ["Probate Administration"]],
+    matchData: {
+      requiredFields: [["Probate Record"], ["Probate Administration"]],
+    },
   },
   {
     recordType: RT.LegalRecord,
-    requiredFields: [["Court Record"]],
+    matchData: {
+      requiredFields: [["Court Record"]],
+    },
   },
   {
     recordType: RT.Immigration,
-    requiredFields: [["Naturalization"]],
+    matchData: {
+      requiredFields: [["Naturalization"]],
+    },
   },
 
   // ones with vague type
   {
     recordType: RT.LegalRecord,
-    collectionTitleMatches: [["Abstracts of Wills, Admins. and Guardianships"]],
+    matchData: {
+      collectionTitleMatches: [["Abstracts of Wills, Admins. and Guardianships"]],
+    },
   },
 ];
 
@@ -166,12 +206,18 @@ class AmerancEdReader extends ExtractedDataReader {
       }
     }
 
-    let inputData = {
-      collectionTitle: this.ed.title,
-      recordData: this.ed.recordData,
+    let matchConfig = {
+      collectionTitleMatches: {
+        matchType: ExtractedDataReader.MatchType.StringIncludesAllFromOneSet,
+        value: this.ed.title,
+      },
+      requiredFields: {
+        matchType: ExtractedDataReader.MatchType.ObjectHasAllFromOneSet,
+        value: this.ed.recordData,
+      },
     };
 
-    this.recordType = this.determineRecordType(recordTypeMatches, inputData);
+    this.recordType = this.determineRecordType(recordTypeMatches, matchConfig);
   }
 
   makeNameObjFromAmerancFullName(fullNameString) {
@@ -414,18 +460,6 @@ class AmerancEdReader extends ExtractedDataReader {
       return this.makePlaceObjFromFullPlaceName(location);
     }
     return undefined;
-  }
-
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
   }
 
   getBirthDateObj() {

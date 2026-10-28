@@ -1,0 +1,32 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Stephen Hunter"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "20 Aug 1900"
+  },
+  "deathDate": {
+    "dateString": "20 Aug 1900"
+  },
+  "eventPlace": {
+    "placeString": "Salt Lake"
+  },
+  "lastNameAtDeath": "Hunter",
+  "ageAtDeath": "77",
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1823"
+  },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|6967|303158}}"
+  ],
+  "collectionData": {
+    "id": "6967",
+    "collectionTitle": "Utah, U.S., Death Registers, 1847-1966"
+  },
+  "hasValidData": true
+}

@@ -50,7 +50,7 @@ class DoewEdReader extends ExtractedDataReader {
     if (this.ed.fields["first name"] || this.ed.fields["last name"]) {
       return this.makeNameObjFromForenamesAndLastName(
         this.ed.fields["first name"] || "",
-        this.ed.fields["last name"] || "",
+        this.ed.fields["last name"] || ""
       );
     }
     return undefined;
@@ -66,18 +66,6 @@ class DoewEdReader extends ExtractedDataReader {
 
   getEventPlaceObj() {
     return undefined;
-  }
-
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
   }
 
   getBirthDateObj() {

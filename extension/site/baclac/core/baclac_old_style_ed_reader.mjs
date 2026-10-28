@@ -145,11 +145,7 @@ class BaclacOldStyleEdReader extends ExtractedDataReader {
   }
 
   getGender() {
-    let gender = this.getRecordDataValue("Gender");
-    if (gender) {
-      return gender.toLowerCase();
-    }
-    return "";
+    return this.getGenderFromRecordData("Gender", ["male"], ["female"], true);
   }
 
   getEventDateObj() {
@@ -210,18 +206,6 @@ class BaclacOldStyleEdReader extends ExtractedDataReader {
     placeObj.country = "Canada";
 
     return placeObj;
-  }
-
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
   }
 
   getBirthDateObj() {

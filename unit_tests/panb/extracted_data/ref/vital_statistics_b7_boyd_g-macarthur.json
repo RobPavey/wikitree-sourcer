@@ -1,0 +1,22 @@
+{
+  "url": "https://archives.gnb.ca/en-ca/vital-statistics/marriage/141b7/7c9b2dd7-8180-4ae6-a1e5-01fc95bbb82f",
+  "success": true,
+  "databaseID": "RS141B7",
+  "sourceTitle": "Provincial Archives of New Brunswick; Vital Statistics (RS141)",
+  "tableTitle": "Index to New Brunswick Marriages (RS141B7)",
+  "recordData": {
+    "Name": "MACARTHUR, BOYD G.",
+    "Married": "KANNER, HILDE",
+    "Date": "1935-10-24",
+    "Parish": "CHATHAM",
+    "County": "NORTHUMBERLAND",
+    "Microfilm": "F20001",
+    "Number": "2287",
+    "Sex": ""
+  },
+  "webpageFormat": 202606,
+  "numberTableEntries": 8,
+  "hasImage": true,
+  "imageUrl": "https://archives.gnb.ca/api/image-handler/digitized-documents/rs141/b7/1935/7c9b2dd7-8180-4ae6-a1e5-01fc95bbb82f.jpg",
+  "eventType": "Marriage"
+}

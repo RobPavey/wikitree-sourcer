@@ -9,5 +9,8 @@
   ],
   "book": "Taufen - KB 530, Section 2",
   "page": "12",
-  "typeSet": "Baptism"
+  "recordTypeCandidates": [
+    "Church Record",
+    "Baptism"
+  ]
 }

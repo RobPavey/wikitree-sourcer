@@ -1,0 +1,28 @@
+{
+  "url": "https://www.ancestry.com/search/collections/1091/records/379943751?tid=16392435&pid=1110187097&ssrc=pt",
+  "pageType": "record",
+  "dbId": "1091",
+  "recordId": "379943751",
+  "ancestryTemplate": "{{Ancestry Record|1091|379943751}}",
+  "domain": "ancestry.com",
+  "titleName": "Jean Baptiste Laflamme",
+  "titleCollection": "Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968",
+  "recordData": {
+    "Name": "Jean Baptiste Laflamme",
+    "Gender": "Homme (Male)",
+    "Spouse": "Henriette Dubois",
+    "Child": "Albert Napoléon Laflamme",
+    "Legitimate": "Y"
+  },
+  "linkData": {
+    "Spouse": "http://www.ancestry.com/search/collections/1091/records/24223583",
+    "Child": "http://www.ancestry.com/search/collections/1091/records/9943751"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/1091/images/d13p_6310459?pid=379943751&treeid=16392435&personid=1110187097&usePUB=true&usePUBJs=true",
+  "imageDbId": "1091",
+  "imageRecordId": "d13p_6310459",
+  "sourceCitation": "Institut Généalogique Drouin; Montreal, Quebec, Canada; Drouin Collection; Author: Gabriel Drouin, Comp.",
+  "sourceInformation": "Ancestry.com. Quebec, Canada, Vital and Church Records (Drouin Collection), 1621-1968 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2008. Original data: Gabriel Drouin, comp. Drouin Collection. Montreal, Quebec, Canada: Institut Généalogique Drouin.",
+  "originalData": "Gabriel Drouin, comp. Drouin Collection. Montreal, Quebec, Canada: Institut Généalogique Drouin.",
+  "sourceDescription": "This collection holds over thirty million records pertaining to births, baptisms, marriages, deaths, and burials in Quebec between roughly 1621 and 1968. Most of the collection relates to Catholic Church parishes, though records from other denominations are also included. Most of the records are written in French, but some records may be written in English, Latin, or Italian. Learn more..."
+}

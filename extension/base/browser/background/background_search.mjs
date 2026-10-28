@@ -74,12 +74,12 @@ async function doSearchInExistingTab(tabId, searchData) {
 }
 
 async function doSearchGivenSearchData(searchData, activeTab, options, existingTab, reuseTabIfPossible) {
-  //console.log("doSearchGivenSearchData. reuseTabIfPossible is:");
-  //console.log(reuseTabIfPossible);
-  //console.log("doSearchGivenSearchData. existingTab is:");
-  //console.log(existingTab);
-  //console.log("doSearchGivenSearchData. searchData is:");
-  //console.log(searchData);
+  console.log("doSearchGivenSearchData. reuseTabIfPossible is:");
+  console.log(reuseTabIfPossible);
+  console.log("doSearchGivenSearchData. existingTab is:");
+  console.log(existingTab);
+  console.log("doSearchGivenSearchData. searchData is:");
+  console.log(searchData);
 
   if (reuseTabIfPossible) {
     if (existingTab) {

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n\"WikiTree #Hacktoberfest2026 (1 Oct 2026).\"<br/>\nhttps://www.youtube.com/watch?v=fyYpCuoJEWw (accessed 6 May 2021)<br/>\nYouTube video. {{YouTube|fyYpCuoJEWw}}\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "<ref>\n\"WikiTree #Hacktoberfest2026 (1 Oct 2026).\"<br/>\nhttps://www.youtube.com/watch?v=fyYpCuoJEWw (accessed 6 May 2021)<br/>\nYouTube video. {{YouTube|fyYpCuoJEWw}}\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* \"WikiTree #Hacktoberfest2026 (1 Oct 2026).\"<br/>https://www.youtube.com/watch?v=fyYpCuoJEWw (accessed 6 May 2021)<br/>YouTube video. {{YouTube|fyYpCuoJEWw}}",
+    "type": "source"
+  }
+}

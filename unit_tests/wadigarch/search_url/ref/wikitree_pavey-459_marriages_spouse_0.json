@@ -1,0 +1,16 @@
+{
+  "std": {
+    "fieldData": {
+      "GroomFirstName": "Ralph",
+      "GroomLastName": "Pavey",
+      "BrideFirstName": "Clara",
+      "BrideLastName": "Risley",
+      "StartYear": 1914,
+      "EndYear": 1914
+    },
+    "selectData": {
+      "RecordSeries": "1"
+    },
+    "searchType": "marriages"
+  }
+}

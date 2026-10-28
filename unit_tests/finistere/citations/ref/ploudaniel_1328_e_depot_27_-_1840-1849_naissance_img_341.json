@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''État civil''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 1328 E DEPOT 27 - 1840-1849. - 1840-1849; Image 341 sur 343; Lieu: Ploudaniel (Finistère); Type de document: registre, naissance, mariage, décès\\<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1474211/daoloc/0/341 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''État civil''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère; 1328 E DEPOT 27 - 1840-1849. - 1840-1849; Image 341 sur 343; Lieu: Ploudaniel (Finistère); Type de document: registre, naissance, mariage, décès\\<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1474211/daoloc/0/341 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''État civil''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère; 1328 E DEPOT 27 - 1840-1849. - 1840-1849; Image 341 sur 343; Lieu: Ploudaniel (Finistère); Type de document: registre, naissance, mariage, décès\\<br/>[https://recherche.archives.finistere.fr/ark:/72506/1474211/daoloc/0/341 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''État civil''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 1328 E DEPOT 27 - 1840-1849. - 1840-1849, Image 341 sur 343, Lieu Ploudaniel (Finistère), Type de document registre, naissance, mariage, décès\\<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1474211/daoloc/0/341 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''État civil''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Finistère, 1328 E DEPOT 27 - 1840-1849. - 1840-1849, Image 341 sur 343, Lieu Ploudaniel (Finistère), Type de document registre, naissance, mariage, décès\\<br/>\n[https://recherche.archives.finistere.fr/ark:/72506/1474211/daoloc/0/341 Archives Départementales du Finistère Record] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''État civil''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Finistère, 1328 E DEPOT 27 - 1840-1849. - 1840-1849, Image 341 sur 343, Lieu Ploudaniel (Finistère), Type de document registre, naissance, mariage, décès\\<br/>[https://recherche.archives.finistere.fr/ark:/72506/1474211/daoloc/0/341 Archives Départementales du Finistère Record] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

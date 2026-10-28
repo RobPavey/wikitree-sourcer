@@ -178,6 +178,10 @@ const factTypeToRecordType = [
     titleMatches: [{ recordType: RT.ElectoralRegister, matches: ["Electoral Register"] }],
   },
   {
+    type: "Membership",
+    titleMatches: [{ recordType: RT.ChurchRecords, matches: ["Church"] }],
+  },
+  {
     type: "TaxAssessment",
     defaultRT: RT.Tax,
   },
@@ -515,6 +519,15 @@ function cleanPlace(placeString) {
 
   // Sometimes there are consequtive commas e.g. "Turner, , Maine, United States"
   cleanPlace = placeString.replace(/\s+/g, " "); // remove multiple spaces
+  if (cleanPlace) {
+    placeString = cleanPlace.trim();
+  }
+  // Sometimes the place starts of ends with commas
+  cleanPlace = placeString.replace(/^\s*\,\s*/, ""); // remove leading commas
+  if (cleanPlace) {
+    placeString = cleanPlace.trim();
+  }
+  cleanPlace = placeString.replace(/\s*\,\s*$/, ""); // remove railing commas
   if (cleanPlace) {
     placeString = cleanPlace.trim();
   }
@@ -942,6 +955,15 @@ function generalizeDataGivenRecordType(ed, result) {
       result.setTypeSpecficDataValue("race", race);
     }
   } else if (result.recordType == RT.Burial) {
+    // For the FS FindAGrave Index the event place is usually incorrect and the burial place
+    // is correct.
+    if (ed.fsCollectionId && ed.fsCollectionId == "2221801") {
+      if (ed.recordData && ed.recordData["Burial Place"]) {
+        let burialPlace = ed.recordData["Burial Place"];
+        result.setEventPlace(cleanPlace(burialPlace));
+      }
+    }
+
     // sometimes there is a cemetary name in the document record data
     // e.g. https://www.familysearch.org/ark:/61903/1:1:QVVG-NP36?lang=en
     if (result.eventPlace && ed.documentRecordData && ed.documentRecordData["Cemetery"]) {
@@ -1390,8 +1412,9 @@ function generalizeData(input) {
   result.setDeathPlace(deathPlace);
 
   let eventDate = selectDate(ed.eventDate, ed.eventDateOriginal);
+  let eventYear = ed.eventYear;
 
-  if (eventDate && ed.eventYear) {
+  if (eventDate && eventYear) {
     // occasionally the event date is missing the year and should have it added
     // E.g. https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKC?lang=en
     // BUT. Sometime (e.g. on https://www.familysearch.org/ark:/61903/1:1:QGLK-B6K4?lang=en )
@@ -1399,15 +1422,15 @@ function generalizeData(input) {
     // "eventDate": "1 January 1782",
     // "eventYear": "1641-1813",
     // In that case we do not want to include the "eventYear"
-    if (ed.eventYear.length == 4) {
-      if (!eventDate.includes(ed.eventYear)) {
-        eventDate += " " + ed.eventYear;
+    if (eventYear.length == 4) {
+      if (!eventDate.includes(eventYear)) {
+        eventDate += " " + eventYear;
       }
     }
   }
 
   result.setEventDate(eventDate);
-  result.setEventYear(ed.eventYear);
+  result.setEventYear(eventYear);
 
   if (!ed.eventDate && !ed.eventDateOriginal && !ed.eventYear) {
     // this can happen for a census
@@ -1593,7 +1616,7 @@ function generalizeData(input) {
       let yearsMarried = ed.recordData["Cnt Years Married"];
       if (yearsMarried) {
         let censusDate = result.inferEventDate();
-        let marriageDateString = GeneralizedData.getSubtractAgeFromDate(censusDate, yearsMarried);
+        let marriageDateString = GeneralizedData.subtractAgeOrTimePeriodFromDate(censusDate, yearsMarried);
         let marriageYear = StringUtils.getLastWord(marriageDateString);
         if (marriageYear) {
           result.spouses[0].marriageDate.yearString = marriageYear;

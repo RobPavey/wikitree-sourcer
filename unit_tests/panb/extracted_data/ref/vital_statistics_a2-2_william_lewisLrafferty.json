@@ -1,0 +1,26 @@
+{
+  "url": "https://archives.gnb.ca/en-ca/vital-statistics/birth/141a2_2/7b9c7302-3ac5-42b4-b1b1-f11ac4102a2c",
+  "success": true,
+  "databaseID": "RS141A2/2",
+  "sourceTitle": "Provincial Archives of New Brunswick; Vital Statistics (RS141)",
+  "tableTitle": "Index to County Birth Registers (RS141A2/2)",
+  "recordData": {
+    "Name": "RAFFERTY, WILLIAM LEWIS",
+    "Sex": "M",
+    "Date": "1867-02-18",
+    "Place of Birth": "SAINT JOHN",
+    "County": "SAINT JOHN",
+    "Father": "RAFFERTY, WILLIAM",
+    "Mother": "MCGUIRE, MARGARET",
+    "Microfilm": "F23160",
+    "Page": 198,
+    "Number": 504,
+    "Code": 1,
+    "Book": 1
+  },
+  "webpageFormat": 202606,
+  "numberTableEntries": 12,
+  "hasImage": true,
+  "imageUrl": "https://archives.gnb.ca/api/image-handler/digitized-documents/rs141/a2_2/1867/7b9c7302-3ac5-42b4-b1b1-f11ac4102a2c.jpg",
+  "eventType": "Birth"
+}

@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "OtherChurchEvent",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "M"
+  },
+  "eventDate": {
+    "dateString": "1931"
+  },
+  "eventPlace": {
+    "placeString": "Gawler Methodist Tod Street Sunday School, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "Gawler Methodist Tod Street Sunday School"
+  },
+  "hasValidData": true
+}

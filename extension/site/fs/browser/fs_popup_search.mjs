@@ -23,10 +23,10 @@ SOFTWARE.
 */
 
 import {
-  setupSearchCollectionsSubMenu,
+  setupSearchCollectionsSubmenu,
   addSameRecordMenuItem,
   addBackMenuItem,
-  addMenuItemWithSubMenu,
+  addMenuItemWithSubmenu,
   addMenuItemWithSubtitle,
   addMenuItem,
   beginMainMenu,
@@ -100,14 +100,14 @@ async function familySearchSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addFamilySearchDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItemWithSubMenu(
+  addMenuItemWithSubmenu(
     menu,
     "Search FamilySearch",
     function (element) {
       familySearchSearch(data.generalizedData, "");
     },
     function () {
-      setupFamilySearchSearchSubMenu(data, backFunction);
+      setupFamilySearchSearchSubmenu(data, backFunction);
     }
   );
   return true;
@@ -121,7 +121,7 @@ function addFsSameRecordMenuItem(menu, data) {
 
 function addFsSearchCollectionsMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search a specific collection...", function (element) {
-    setupSearchCollectionsSubMenu(data, "fs", familySearchSearchCollection, backFunction);
+    setupSearchCollectionsSubmenu(data, "fs", familySearchSearchCollection, backFunction);
   });
 }
 
@@ -139,16 +139,16 @@ function addFsSearchFullTextMenuItem(menu, data) {
 
 function addFsSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
-    setupFsSearchWithParametersSubMenu(data, backFunction);
+    setupFsSearchWithParametersSubmenu(data, backFunction);
   });
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
-async function setupFamilySearchSearchSubMenu(data, backFunction) {
+async function setupFamilySearchSearchSubmenu(data, backFunction) {
   let backToHereFunction = function () {
-    setupFamilySearchSearchSubMenu(data, backFunction);
+    setupFamilySearchSearchSubmenu(data, backFunction);
   };
 
   let menu = beginMainMenu();
@@ -163,7 +163,7 @@ async function setupFamilySearchSearchSubMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-function setupFsSearchWithParametersSubMenu(data, backFunction) {
+function setupFsSearchWithParametersSubmenu(data, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);

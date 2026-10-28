@@ -1,0 +1,90 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1901"
+  },
+  "eventPlace": {
+    "placeString": "Tudor Place, Shankhill, Antrim, Ireland"
+  },
+  "name": {
+    "lastName": "Greenwood",
+    "forenames": "Rachel"
+  },
+  "ageAtEvent": "36",
+  "birthPlace": {
+    "placeString": "England"
+  },
+  "relationshipToHead": "wife",
+  "maritalStatus": "married",
+  "personGender": "female",
+  "occupation": "House Wife",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "gender",
+    "relationship",
+    "birthPlace",
+    "occupation",
+    "maritalStatus"
+  ],
+  "householdArray": [
+    {
+      "name": "Robert Greenwood",
+      "birthPlace": "England",
+      "age": "37",
+      "gender": "male",
+      "relationship": "head",
+      "occupation": "Traveller for Incandescine Light",
+      "maritalStatus": "married"
+    },
+    {
+      "name": "Esaminia Dobbin",
+      "birthPlace": "County Antrim",
+      "age": "34",
+      "gender": "female",
+      "relationship": "servant",
+      "occupation": "Domestic Servant",
+      "maritalStatus": ""
+    },
+    {
+      "name": "Arthur Greenwood",
+      "birthPlace": "England",
+      "age": "11",
+      "gender": "male",
+      "relationship": "son",
+      "occupation": "Scholar",
+      "maritalStatus": ""
+    },
+    {
+      "name": "Henry Pickles Greenwood",
+      "birthPlace": "England",
+      "age": "5",
+      "gender": "male",
+      "relationship": "son",
+      "occupation": "Scholar",
+      "maritalStatus": ""
+    },
+    {
+      "name": "Rachel Greenwood",
+      "birthPlace": "England",
+      "age": "36",
+      "gender": "female",
+      "relationship": "wife",
+      "occupation": "House Wife",
+      "maritalStatus": "married",
+      "isSelected": true
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Robert Greenwood"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "hasValidData": true
+}

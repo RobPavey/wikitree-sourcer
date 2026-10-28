@@ -56,8 +56,12 @@ function buildCoreCitation(ed, gd, builder) {
   builder.addStandardDataString(gd);
 }
 
+function customLableFunction(ed, gd) {
+  return gd.recordType || "Record";
+}
+
 function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
+  return simpleBuildCitationWrapper(input, buildCoreCitation, customLableFunction);
 }
 
 export { buildCitation };

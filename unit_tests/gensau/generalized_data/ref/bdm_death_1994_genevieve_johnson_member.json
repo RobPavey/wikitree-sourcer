@@ -1,0 +1,45 @@
+{
+  "sourceOfData": "gensau",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Johnson",
+    "forenames": "Genevieve Ray"
+  },
+  "personGender": "female",
+  "deathDate": {
+    "dateString": "23-Aug-1994"
+  },
+  "deathPlace": {
+    "placeString": "South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": ""
+  },
+  "residencePlace": {
+    "placeString": "2 SUNRAY STREET, WHYALLA STUART 5608, South Australia, Australia",
+    "state": "South Australia",
+    "country": "Australia",
+    "extractedPlaceString": "2 SUNRAY STREET, WHYALLA STUART 5608"
+  },
+  "ageAtEvent": "66",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Roach",
+        "forenames": "James"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Cox",
+        "forenames": "Olive"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "death",
+    "year": "1994"
+  },
+  "hasValidData": true
+}

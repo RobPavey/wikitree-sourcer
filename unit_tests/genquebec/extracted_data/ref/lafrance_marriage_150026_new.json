@@ -1,0 +1,36 @@
+{
+  "url": "https://www.genealogiequebec.com/en/lafrance_mariages/150026",
+  "success": true,
+  "recordData": {
+    "Husband": "Francois Augustin Bailly Demassin",
+    "Husband's age": "030",
+    "Husband's civil status": "Single",
+    "Husband's residence": "notre-dame-de-quebec",
+    "Wife": "Marie Anne Desgoutin",
+    "Wife's age": "017",
+    "Wife's civil status": "Single",
+    "Wife's origin": "louisbourg",
+    "Marriage date": "13 January 1740",
+    "Marriage location": "Ville-Marie, Montréal (Notre-Dame-de-Montréal), Montréal, Québec, Canada",
+    "Husband's father": "Nicolas Bailly Demassin",
+    "Husband's father's occupation": "ecuyer, lieutenant d'une compagnie du detachement de la marine",
+    "Husband's mother": "Marie Anne Bonhomme",
+    "Wife's father": "Francois Marie Desgoutin",
+    "Wife's father's occupation": "ecuyer, conseiller au conseil superieur de l'ile royale",
+    "Wife's mother": "Angelique Aubert Delachenay",
+    "Other individuals listed": "Devillebois Delarouviliere Honore Michel, Rocbert Louis Joseph Marie, Daillebout Dargenteuil Jean, Daneau, Demuy, Normant Louis, Deat",
+    "Complementary information": "deux bans ont ete publies, la dispense du troisieme ayant ete accordee par louis normant"
+  },
+  "prdhIndividualIds": {
+    "Husband": "103550",
+    "Wife": "103551",
+    "Husband's father": "5578",
+    "Husband's mother": "5579",
+    "Wife's father": "75356",
+    "Wife's mother": "57741"
+  },
+  "heading": "Francois Augustin Bailly Demassin and Marie Anne Desgoutin",
+  "indexHeader": "Marriage, LaFrance",
+  "originalSource": "Drouin Genealogical Institute and PRDH",
+  "imageUrl": "/Membership/LAFRANCE/img/acte/150026"
+}
