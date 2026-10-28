@@ -158,20 +158,23 @@ class RipieEdReader extends ExtractedDataReader {
     return undefined;
   }
 
-  setCustomFields(gd) {
+  getResidencePlaceObj() {
+    // The town and county on a notice are where the person lived, not necessarily where they died
     let ed = this.ed;
-    if (ed.town || ed.county) {
-      let country = northernIrelandCounties.includes(ed.county) ? "Northern Ireland" : "Ireland";
-      let placeParts = [];
-      if (ed.town) {
-        placeParts.push(ed.town);
-      }
-      if (ed.county) {
-        placeParts.push(ed.county);
-      }
-      placeParts.push(country);
-      gd.setResidencePlace(placeParts.join(", "));
+    if (!ed.town && !ed.county) {
+      return undefined;
     }
+
+    let country = northernIrelandCounties.includes(ed.county) ? "Northern Ireland" : "Ireland";
+    let placeParts = [];
+    if (ed.town) {
+      placeParts.push(ed.town);
+    }
+    if (ed.county) {
+      placeParts.push(ed.county);
+    }
+    placeParts.push(country);
+    return this.makePlaceObjFromFullPlaceName(placeParts.join(", "));
   }
 }
 
