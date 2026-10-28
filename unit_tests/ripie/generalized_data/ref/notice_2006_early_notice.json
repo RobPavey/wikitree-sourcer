@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "ripie",
+  "sourceType": "record",
+  "recordType": "Obituary",
+  "name": {
+    "lastName": "Atkinson",
+    "forenames": "Iris"
+  },
+  "eventDate": {
+    "dateString": "3 Jul 2006"
+  },
+  "deathDate": {
+    "dateString": "29 Jun 2006"
+  },
+  "residencePlace": {
+    "placeString": "Dublin, Ireland"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\nDate Published: 3 Jul 2006<br/>\n[https://rip.ie/death-notice/iris-atkinson-dublin-281 View Page] (accessed 6 May 2021)<br/>\nIris Atkinson died on 29 Jun 2006. Residence: Dublin.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Iris was in an obituary on 3 July 2006. Iris died on 29 June 2006.<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\nDate Published: 3 Jul 2006<br/>\n[https://rip.ie/death-notice/iris-atkinson-dublin-281 View Page] (accessed 6 May 2021)<br/>\nIris Atkinson died on 29 Jun 2006. Residence: Dublin.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Notice''': \"RIP.ie\"<br/>Date Published: 3 Jul 2006<br/>[https://rip.ie/death-notice/iris-atkinson-dublin-281 View Page] (accessed 6 May 2021)<br/>Iris Atkinson died on 29 Jun 2006. Residence: Dublin.",
+    "type": "source"
+  }
+}
