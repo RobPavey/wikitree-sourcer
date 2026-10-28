@@ -71,6 +71,7 @@ const siteNames = [
   "panb",
   "ppnz",
   "psuk",
+  "ripie",
   "scotp",
   "sosmogov",
   "szukaj",

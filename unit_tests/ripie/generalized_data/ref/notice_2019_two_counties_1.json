@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "ripie",
+  "sourceType": "record",
+  "recordType": "Obituary",
+  "name": {
+    "lastName": "Jenkins",
+    "forenames": "Maureen"
+  },
+  "eventDate": {
+    "dateString": "8 Oct 2019"
+  },
+  "lastNameAtBirth": "Doyle",
+  "lastNameAtDeath": "Jenkins",
+  "deathDate": {
+    "dateString": "7 Oct 2019"
+  },
+  "residencePlace": {
+    "placeString": "Clonshaugh, Dublin, Ireland"
+  },
+  "hasValidData": true
+}

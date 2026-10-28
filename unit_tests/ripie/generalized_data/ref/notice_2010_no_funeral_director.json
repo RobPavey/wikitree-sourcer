@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "ripie",
+  "sourceType": "record",
+  "recordType": "Obituary",
+  "name": {
+    "lastName": "Halligan",
+    "forenames": "Michael"
+  },
+  "eventDate": {
+    "dateString": "10 Aug 2010"
+  },
+  "deathDate": {
+    "dateString": "8 Aug 2010"
+  },
+  "residencePlace": {
+    "placeString": "Carlow, Ireland"
+  },
+  "hasValidData": true
+}

@@ -75,6 +75,7 @@ import "../../openarch/core/openarch_options.mjs";
 import "../../panb/core/panb_options.mjs";
 import "../../ppnz/core/ppnz_options.mjs";
 import "../../psuk/core/psuk_options.mjs";
+import "../../ripie/core/ripie_options.mjs";
 import "../../scotp/core/scotp_options.mjs";
 import "../../sosmogov/core/sosmogov_options.mjs";
 import "../../szukaj/core/szukaj_options.mjs";

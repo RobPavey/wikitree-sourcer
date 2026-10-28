@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "ripie",
+  "sourceType": "record",
+  "recordType": "Obituary",
+  "name": {
+    "lastName": "Flynn",
+    "forenames": "Ann"
+  },
+  "eventDate": {
+    "dateString": "10 Aug 2010"
+  },
+  "lastNameAtBirth": "Ferguson",
+  "lastNameAtDeath": "Flynn",
+  "deathDate": {
+    "dateString": "9 Aug 2010"
+  },
+  "residencePlace": {
+    "placeString": "Galway, Ireland"
+  },
+  "hasValidData": true
+}

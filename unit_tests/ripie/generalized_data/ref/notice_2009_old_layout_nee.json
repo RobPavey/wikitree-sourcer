@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "ripie",
+  "sourceType": "record",
+  "recordType": "Obituary",
+  "name": {
+    "lastName": "Cosgrave",
+    "forenames": "Maura",
+    "nicknames": "Mary"
+  },
+  "eventDate": {
+    "dateString": "15 Oct 2009"
+  },
+  "lastNameAtBirth": "Barrett",
+  "lastNameAtDeath": "Cosgrave",
+  "deathDate": {
+    "dateString": "9 Oct 2009"
+  },
+  "residencePlace": {
+    "placeString": "Dalkey, Dublin, Ireland"
+  },
+  "hasValidData": true
+}
