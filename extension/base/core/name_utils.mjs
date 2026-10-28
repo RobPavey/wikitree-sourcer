@@ -25,7 +25,19 @@ SOFTWARE.
 import { StringUtils } from "./string_utils.mjs";
 
 // These are names that have been removed (or not added to the male/female) names because they could be either
-const genderNeutralGivenNames = ["Aubrey", "Ashley", "Cameron", "Jean", "Jesse", "Jessee", "Kerry", "Lesley", "Leslie"];
+// this list is not currently used (since the absence works, but could be in future)
+const genderNeutralGivenNames = [
+  "Aubrey",
+  "Ashley",
+  "Cameron",
+  "Evelyn",
+  "Jean",
+  "Jesse",
+  "Jessee",
+  "Kerry",
+  "Lesley",
+  "Leslie",
+];
 
 const femaleGivenNames = [
   "Aaf",
@@ -2170,7 +2182,6 @@ const femaleGivenNames = [
   "Evelin",
   "Evelina",
   "Eveline",
-  "Evelyn",
   "Evelyne",
   "Everdina",
   "Everline",
