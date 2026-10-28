@@ -37,7 +37,7 @@ import { writeToClipboard, clearClipboard } from "./popup_clipboard.mjs";
 import { options } from "../options/options_loader.mjs";
 
 import { cachedDataCache } from "../common/data_cache.mjs";
-import { addCitationToCollectedCitations } from "../common/collected_citations.mjs";
+import { checkIfCollectingCitations, addCitationToCollectedCitations } from "../common/collected_citations.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Citation
@@ -69,17 +69,23 @@ async function saveCitation(citationObject) {
     //console.log('latestCitation is set to ' + citation);
   });
 
+  const isCollecting = checkIfCollectingCitations();
+
   // if we are collecting citations save to the collected citations
-  addCitationToCollectedCitations(citationObject);
+  let message2 = "";
+  if (isCollecting) {
+    addCitationToCollectedCitations(citationObject);
+
+    message2 += "\nIt is also added to the collected citations.\n";
+  }
 
   // Make the whole window the width it was before (not on iOS)
   overrideMenuWidth(widthBeforeEditCitation);
 
-  let message2 = "";
   if (citationObject.type == "source") {
-    message2 = "\nThis is a source type citation and should be pasted after the Sources heading.";
+    message2 += "\nThis is a source type citation and should be pasted after the Sources heading.";
   } else {
-    message2 = "\nThis is an inline citation and should be pasted before the Sources heading.";
+    message2 += "\nThis is an inline citation and should be pasted before the Sources heading.";
   }
 
   return await writeToClipboard(citationObject.citation, "Citation", true, message2);

@@ -55,6 +55,16 @@ async function getPreviousCollectedCitations() {
   return await getCollectedCitationsByKey("previousCollectedCitations");
 }
 
+async function checkIfCollectingCitations() {
+  // if we are collecting citations save to the collected citations
+  let items = await chrome.storage.local.get(["collectedCitations"]);
+  if (items && items.collectedCitations && items.collectedCitations.citations) {
+    return true;
+  }
+
+  return false;
+}
+
 async function addCitationToCollectedCitations(citationObject) {
   // if we are collecting citations save to the collected citations
   let items = await chrome.storage.local.get(["collectedCitations"]);
@@ -117,8 +127,62 @@ async function restoreCollectedCitations() {
   }
 }
 
+function isDeepEqual(obj1, obj2) {
+  // 1. Primitive comparison or reference match
+  if (obj1 === obj2) return true;
+
+  // 2. Check for null or non-object types
+  if (obj1 === null || obj2 === null || typeof obj1 !== "object" || typeof obj2 !== "object") {
+    return false;
+  }
+
+  // 3. Handle key counts
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+
+  if (keys1.length !== keys2.length) return false;
+
+  // 4. Recursive comparison for all properties
+  for (const key of keys1) {
+    if (!Object.prototype.hasOwnProperty.call(obj2, key) || !isDeepEqual(obj1[key], obj2[key])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function doesCitationObjMatchData(citationObject, ed, gd) {
+  if (citationObject.url && citationObject.url != ed.url) {
+    return false;
+  }
+
+  let citationGd = citationObject.generalizedData;
+  if (!citationGd) {
+    return false;
+  }
+
+  return isDeepEqual(citationGd, gd);
+}
+
+async function isRecordInCollectedCitations(ed, gd) {
+  let collectedCitations = await getCollectedCitations();
+
+  if (collectedCitations && collectedCitations.citations) {
+    // check that this is not a duplicate
+    for (let existingCitationObject of collectedCitations.citations) {
+      if (doesCitationObjMatchData(existingCitationObject, ed, gd)) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
 export {
   startNewCollectedCitations,
+  checkIfCollectingCitations,
   addCitationToCollectedCitations,
   removeLastCitationFromCollectedCitations,
   restorePreviousCollectedCitations,
@@ -126,4 +190,5 @@ export {
   getPreviousCollectedCitations,
   stopCollectingCitations,
   restoreCollectedCitations,
+  isRecordInCollectedCitations,
 };
