@@ -176,8 +176,6 @@ function setSearchingBanner() {
   let formActionElement = document.querySelector("form[action='/Records/Archives/ArchivesMvc/']");
   let containerElement = document.querySelector("div.card");
   if (formActionElement && containerElement) {
-    // sosmogov
-    console.log("sosmogov => setSearchingBanner => #main and div.card elements found");
     let message =
       "WikiTree Sourcer filled in the search fields. Please make any desired changes and click the Search button.";
     let existingSpan = formActionElement.querySelector("#sourcerWaitMessage");
@@ -350,9 +348,6 @@ async function doPendingSearch() {
           }
         }
       }
-
-      console.log("inputNotFound is:");
-      console.log(inputNotFound);
 
       if (!inputNotFound) {
         setSearchingBanner();
