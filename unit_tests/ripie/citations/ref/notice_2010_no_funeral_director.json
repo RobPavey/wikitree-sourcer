@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\ndeath notice published 10 Aug 2010<br/>\n[https://rip.ie/death-notice/michael-halligan-carlow-107898 RIP.ie notice 107898] (accessed 6 May 2021)<br/>\nMichael Halligan died on 8 Aug 2010. Residence: Carlow.\n</ref>",
+    "citation": "<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\nDate Published: 10 Aug 2010<br/>\n[https://rip.ie/death-notice/michael-halligan-carlow-107898 View Page] (accessed 6 May 2021)<br/>\nMichael Halligan died on 8 Aug 2010. Residence: Carlow.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Michael was in an obituary on 10 August 2010. Michael died on 8 August 2010.<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\ndeath notice published 10 Aug 2010<br/>\n[https://rip.ie/death-notice/michael-halligan-carlow-107898 RIP.ie notice 107898] (accessed 6 May 2021)<br/>\nMichael Halligan died on 8 Aug 2010. Residence: Carlow.\n</ref>",
+    "citation": "Michael was in an obituary on 10 August 2010. Michael died on 8 August 2010.<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\nDate Published: 10 Aug 2010<br/>\n[https://rip.ie/death-notice/michael-halligan-carlow-107898 View Page] (accessed 6 May 2021)<br/>\nMichael Halligan died on 8 Aug 2010. Residence: Carlow.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death Notice''': \"RIP.ie\"<br/>death notice published 10 Aug 2010<br/>[https://rip.ie/death-notice/michael-halligan-carlow-107898 RIP.ie notice 107898] (accessed 6 May 2021)<br/>Michael Halligan died on 8 Aug 2010. Residence: Carlow.",
+    "citation": "* '''Death Notice''': \"RIP.ie\"<br/>Date Published: 10 Aug 2010<br/>[https://rip.ie/death-notice/michael-halligan-carlow-107898 View Page] (accessed 6 May 2021)<br/>Michael Halligan died on 8 Aug 2010. Residence: Carlow.",
     "type": "source"
   }
 }

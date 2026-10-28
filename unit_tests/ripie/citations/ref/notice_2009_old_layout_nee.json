@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\ndeath notice published 15 Oct 2009<br/>\n[https://rip.ie/death-notice/maura-mary-cosgrave-dublin-dalkey-83992 RIP.ie notice 83992] (accessed 6 May 2021)<br/>\nMaura Cosgrave (née Barrett) died on 9 Oct 2009. Residence: Dalkey, Dublin.\n</ref>",
+    "citation": "<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\nDate Published: 15 Oct 2009<br/>\n[https://rip.ie/death-notice/maura-mary-cosgrave-dublin-dalkey-83992 View Page] (accessed 6 May 2021)<br/>\nMaura Cosgrave (née Barrett) died on 9 Oct 2009. Residence: Dalkey, Dublin.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Maura was in an obituary on 15 October 2009. Maura died on 9 October 2009.<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\ndeath notice published 15 Oct 2009<br/>\n[https://rip.ie/death-notice/maura-mary-cosgrave-dublin-dalkey-83992 RIP.ie notice 83992] (accessed 6 May 2021)<br/>\nMaura Cosgrave (née Barrett) died on 9 Oct 2009. Residence: Dalkey, Dublin.\n</ref>",
+    "citation": "Maura was in an obituary on 15 October 2009. Maura died on 9 October 2009.<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\nDate Published: 15 Oct 2009<br/>\n[https://rip.ie/death-notice/maura-mary-cosgrave-dublin-dalkey-83992 View Page] (accessed 6 May 2021)<br/>\nMaura Cosgrave (née Barrett) died on 9 Oct 2009. Residence: Dalkey, Dublin.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death Notice''': \"RIP.ie\"<br/>death notice published 15 Oct 2009<br/>[https://rip.ie/death-notice/maura-mary-cosgrave-dublin-dalkey-83992 RIP.ie notice 83992] (accessed 6 May 2021)<br/>Maura Cosgrave (née Barrett) died on 9 Oct 2009. Residence: Dalkey, Dublin.",
+    "citation": "* '''Death Notice''': \"RIP.ie\"<br/>Date Published: 15 Oct 2009<br/>[https://rip.ie/death-notice/maura-mary-cosgrave-dublin-dalkey-83992 View Page] (accessed 6 May 2021)<br/>Maura Cosgrave (née Barrett) died on 9 Oct 2009. Residence: Dalkey, Dublin.",
     "type": "source"
   }
 }
