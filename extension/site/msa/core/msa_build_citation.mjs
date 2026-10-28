@@ -65,6 +65,27 @@ function parseHtmlHeader (headTitle, ed) {
   }
 }
 
+function checkStoredDomNodes(msaDomNodes, ed) {
+  let index = 0;
+  if (!msaDomNodes) {
+    return;
+  }
+  msaDomNodes.forEach(node => {
+    if ((node == "Additional Info") &&
+        (node[index+1] == "PREROGATIVE COURT") &&
+        (node[index+2] == "(Wills)")) {
+          ed.msaRecordType = RT.Will;
+
+    } else if ((node == "Additional Info")  && ((index+4) < storedDomNodes.length)) {
+      for (let j=index; j<=index+4; ++j) {
+        if (node[j].includes("Inventories")) {
+          ed.msaRecordType = RT.Probate;
+	}
+      }
+    }
+  });
+}
+
 function buildSourceTitle(ed, gd, builder) {
 
   let title = "";
@@ -86,6 +107,9 @@ function buildSourceReference(ed, gd, builder) {
   if (ed.msaCitation) {
     builder.sourceReference += " " + ed.msaCitation;
   }
+  if (ed.msaPageViewerPage) {
+    builder.sourceReference += " Page: " + ed.msaPageViewerPage;
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
@@ -97,6 +121,7 @@ function buildRecordLink(ed, gd, builder) {
 
 function buildCoreCitation(ed, gd, builder) {
   parseHtmlHeader(ed.msaRawHeadTitle, ed);
+  checkStoredDomNodes(ed.msaDomNodes, ed);
   if (ed.msaRecordType) {
     gd.recordType = ed.msaRecordType;
   }

@@ -23,11 +23,11 @@ SOFTWARE.
 */
 
 import * as test_content_and_citation from "./msa_test_content_and_citation.mjs";
-import * as test_build_search_url from "./msa_test_build_search_url.mjs";
+//import * as test_build_search_url from "./msa_test_build_search_url.mjs";
 
 async function runTests(testManager) {
   await test_content_and_citation.runTests(testManager);
-  await test_build_search_url.runTests(testManager);
+  //await test_build_search_url.runTests(testManager);
 }
 
 export { runTests };

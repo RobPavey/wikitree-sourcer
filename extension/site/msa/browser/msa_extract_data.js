@@ -32,21 +32,13 @@ function isMsaCitation(string) {
 }
 function isMsaFilenameCitation(string) {
   const mdsa_filename_citation = /^mdsa_([A-Za-z0-9\-_]{3,12})\.(:?pdf|html)$/;  // mdsa_AA1234-5.pdf
-  const other_filename_citation = /^([a-z]{2,4}[0-9\-_]{3,12})\.(:?pdf|html)$/;  // sc1234-5678-9.html
   let match = string.match(mdsa_filename_citation);
   let result = null;
   if (match) {
-    //console.log("isMsaFilenameCitation: hasMatch");
     if (match[1]) {
-      //console.log("isMsaFilenameCitation: hasGroups");
       result = match[1].replace("_", "-").toUpperCase();
     } 
-  } else if (match = string.match(other_filename_citation)) {
-    if (match[1]) {
-      result = "MSA " + match[1].toUpperCase();
-    }
-  }
-  //console.log("isMsaFilenameCitation: " + string + " " + result);
+  } 
   return result;
 }
 function searchDOMNode(domNodeText) {
@@ -60,9 +52,8 @@ function searchDOMNode(domNodeText) {
   if (!result) {
     result = domNodeText.match(msa_citation_b);
     if (result) 
-      console.log("searchDOMNode: " + node + " " + result[1]);
+      console.log("searchDOMNode: " + domNodeText + " " + result[1]);
   }
-  //console.log("searchDOMNode: " + node + " " + result);
   return result;
 }
 function searchDOMNodeForPage(domNodeText) {
@@ -85,23 +76,20 @@ function searchDOMNodeForRecordType(text, result) {
   }
 }
 
-function parseHtmlHeader (headTitle, result) {
-  // Archives.., Volume  0002, Page 1234 - Title
-  if ( htmlHdrTxt.match(/Archives of Maryland,\s+Volume\s+\d{1,7},\s+Page\s+\d{1,9}\s+\-.*/)) {
-    //result.msaHeadTitle = htmlHdrTxt;
-    console.log("parseHtmlHeader 2: " + htmlHdrTxt);
-    let dashParts = headTitle.textContent.split("-");
-    if (dashParts.length > 1) {
-      result.msaTitle += dashParts[2];
-    }
-  }
-}
-
 function checkTitleForCitation(headTitle, result) {
+  if (headTitle.textContent.includes("Archives of Maryland, Volume")) {
+    console.log(" IS The Part: " + headTitle.textContent);
+    result.success = true;
+    return result;
+  }
   let parts = headTitle.textContent.split(",");
   if (parts.length > 0) {
     for (i=0; i<parts.length; i++) {
       part = parts[i].trim();
+      //if (part.includes("Archives of Maryland")) {
+      //  console.log(" IS The Part: " + part);
+      //  result.success = true;
+      //}
       if (isMsaCitation(part)) {
         result.msaCitation = part;
         return result; 
@@ -112,10 +100,8 @@ function checkTitleForCitation(headTitle, result) {
 }
 
 function extractData(document, url) {
-  //let result = { url: url, success: false };
-  console.log("MSA extractData DOC");
+  console.log("MSA extractData DOM: ");
   console.log(document);
-  //console.log("MSA extractData URL");
   //console.log(url);
   var result = {};
 
@@ -127,49 +113,66 @@ function extractData(document, url) {
   if (headTitle) {
     result.msaRawHeadTitle = headTitle.textContent;
     checkTitleForCitation(headTitle, result);
-    //parseHtmlHeader(headTitle.textContent, result); 
   }
-  if(!result.msaCitation) {     
-    console.log("No Citation yet");
-    // No Citation yet, sometimes the .pdf filename is the MSA citation
+  if(!result.msaCitation) {
+    // sometimes the .pdf filename is the MSA citation
     let maybeCitation = isMsaFilenameCitation(url.split('/').pop());
+    console.log("No Citation yet, searching Filename: " + maybeCitation);
     if (maybeCitation) {
-      console.log("MSA extractData filename : " + maybeCitation);
-      result.msaCitation = maybeCitation;
+      result.msaCitation = "MSA " + maybeCitation;
+      result.success = true;
+      //console.log("MSA filename citation: " + result.msaCitation);
     }
   }
   if(!result.msaCitation) {
     console.log("Still No Citation yet, searching DOM");
-    let n =0;
+    result.msaDomNodes = [];
+    let n = 0;
     const root = document.getRootNode();
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
     let currentNode;
     while(( currentNode = walker.nextNode())) {
+      let txt = currentNode.wholeText.trim();
+      // heuristics, drop empty txt and scripts 
+      if ((txt.length > 3) && (txt.length < 100) && (result.msaDomNodes.length < 100)) {
+        if (txt.match(/\d+/)) {
+        } else {
+          result.msaDomNodes.push(txt);
+        }
+      } 
       if (!result.msaCitation) {
         let citation = searchDOMNode(currentNode.wholeText);
         if (citation) {
   	    result.msaCitation = citation;
         }
       }
-      if (!result.msaPageNum) {
-        let page = searchDOMNodeForPage(currentNode.wholeText);
-        if (page) {
-	  result.msaPage = page;
-          console.log(" Found Page " + result.msaPage);
-        }
-      }
-      if (!result.msaRecordType) {
-        let rt = searchDOMNodeForRecordType(currentNode.wholeText);
+      if (result.msaDomNodes.length >= 100) {
+        break;
       }
       n++;
     }
-  console.log(" checked " + n + " nodes");
-  if (result.msaCitation) {
-    console.log(" Found citation " + result.msaCitation)
-  }
+    // try to dig out the page # from the html
+    //  -- currently in in the (div id="optionsViewer") "option selected="selected"
+    const optionNodes = document.querySelectorAll('div[id=\"optionsViewer\"] select option[selected=\"selected\"]');
+    //const optionNodes = document.querySelectorAll('select option[selected=\"selected\"]');
+    for (const onode of optionNodes) {
+      console.log("Foundan ONode Len");
+      if (onode.value.match(/\d{1,5}/)) {
+        result.msaPageViewerPage = onode.value;
+        console.log("ONode Len: " + onode.outerHTML + " " +  result.msaPageViewerPage);
+      }
+    }
+
+    console.log(" checked " + n + " nodes" + " Stored:" + result.msaDomNodes.length);
+    //for (const node of result.msaDomNodes) {
+    //  console.log("Node Len: " + node.length + " " + node);
+    //}
+    if (result.msaCitation) {
+      result.success = true;
+      console.log(" Found citation " + result.msaCitation)
+    }
   }
 
-  result.success = true;
   return result;
 }
 

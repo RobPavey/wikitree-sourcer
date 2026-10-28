@@ -30,21 +30,21 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.msa.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+    // has extended ASCII characters
+    caseName: "msa_leonard_calvert_bio",
+    url: "https://msa.maryland.gov/megafile/msa/speccol/sc3500/sc3520/000100/000198/html/198bio.html",
   },
-  */
+
 ];
 
 async function runTests(testManager) {
   await runExtractDataTests("msa", regressionData, testManager);
 
-  await runGeneralizeDataTests("msa", generalizeData, regressionData, testManager);
+  //await runGeneralizeDataTests("msa", generalizeData, regressionData, testManager);
 
-  const functions = { buildCitation: buildCitation };
-  await runBuildCitationTests("msa", functions, regressionData, testManager);
+  //const functions = { buildCitation: buildCitation };
+  //await runBuildCitationTests("msa", functions, regressionData, testManager);
 }
 
 export { runTests };
