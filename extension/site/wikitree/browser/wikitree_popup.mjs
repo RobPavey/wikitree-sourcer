@@ -1789,13 +1789,12 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
 
           result.notes += allCitationsText;
           canIncludeMarriageAndDeathLines = false;
-
-          let allSourceCitationsText = personData.allSeparateSourceCitationsString;
-          if (allSourceCitationsText) {
-            result.sources = allSourceCitationsText;
-          }
         }
       }
+    }
+    let allSourceCitationsText = personData.allSeparateSourceCitationsString;
+    if (allSourceCitationsText) {
+      result.sources = allSourceCitationsText;
     }
   }
 
