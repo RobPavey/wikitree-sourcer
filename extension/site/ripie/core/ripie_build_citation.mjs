@@ -45,7 +45,7 @@ function buildSourceReference(ed, gd, builder) {
 function buildRecordLink(ed, gd, builder) {
   let ripieUrl = buildRipieUrl(ed, builder);
 
-  let recordLink = "[" + ripieUrl + " View Page]";
+  let recordLink = "[" + ripieUrl + " RIP.ie record]";
   builder.recordLinkOrTemplate = recordLink;
 }
 
