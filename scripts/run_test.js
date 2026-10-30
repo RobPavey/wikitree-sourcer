@@ -84,6 +84,7 @@ const siteNames = [
   "ppnz",
   "prdh",
   "psuk",
+  "ripie",
   "qldbdm",
   "riksark",
   "scotp",

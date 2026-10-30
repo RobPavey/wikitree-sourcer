@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\nDate Published: 10 Aug 2010<br/>\n[https://rip.ie/death-notice/ann-flynn-kildare-leixlip-107926 RIP.ie record] (accessed 6 May 2021)<br/>\nAnn Flynn (née Ferguson) died on 9 Aug 2010. Residence: Leixlip, Kildare.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ann was in an obituary on 10 August 2010. Ann died on 9 August 2010.<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\nDate Published: 10 Aug 2010<br/>\n[https://rip.ie/death-notice/ann-flynn-kildare-leixlip-107926 RIP.ie record] (accessed 6 May 2021)<br/>\nAnn Flynn (née Ferguson) died on 9 Aug 2010. Residence: Leixlip, Kildare.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Notice''': \"RIP.ie\"<br/>Date Published: 10 Aug 2010<br/>[https://rip.ie/death-notice/ann-flynn-kildare-leixlip-107926 RIP.ie record] (accessed 6 May 2021)<br/>Ann Flynn (née Ferguson) died on 9 Aug 2010. Residence: Leixlip, Kildare.",
+    "type": "source"
+  }
+}

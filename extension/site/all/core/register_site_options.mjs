@@ -87,6 +87,7 @@ import "../../panb/core/panb_options.mjs";
 import "../../ppnz/core/ppnz_options.mjs";
 import "../../prdh/core/prdh_options.mjs";
 import "../../psuk/core/psuk_options.mjs";
+import "../../ripie/core/ripie_options.mjs";
 import "../../qldbdm/core/qldbdm_options.mjs";
 import "../../riksark/core/riksark_options.mjs";
 import "../../scotp/core/scotp_options.mjs";

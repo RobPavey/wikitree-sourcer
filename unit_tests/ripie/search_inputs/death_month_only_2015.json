@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Jane",
+    "lastName": "Smith"
+  },
+  "lastNameAtBirth": "Smith",
+  "lastNameAtDeath": "Smith",
+  "deathDate": {
+    "dateString": "Mar 2015",
+    "qualifier": 0
+  },
+  "deathPlace": {
+    "placeString": "Dublin, Ireland"
+  },
+  "hasValidData": true
+}

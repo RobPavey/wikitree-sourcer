@@ -673,7 +673,15 @@ async function setupSelectValuesSubmenu(backFunction, addActionFunction) {
         if (option.text) {
           if (option.gd.recordType == RT.Marriage || option.gd.recordType == RT.MarriageRegistration) {
             // We would want the spouse last name (if this is a woman)
-            // But the option doesn't select that name. Hmm...
+            if (option.gd.personGender == "female") {
+              if (option.gd.spouses && option.gd.spouses.length == 1) {
+                let nameObj = option.gd.spouses[0].name;
+                if (nameObj) {
+                  field.defaultValue = index;
+                  return;
+                }
+              }
+            }
           }
         }
       }
@@ -682,6 +690,13 @@ async function setupSelectValuesSubmenu(backFunction, addActionFunction) {
       // use the latest option with a last name
       for (let index = field.options.length - 1; index >= 0; index--) {
         let option = field.options[index];
+        // sometimes records can have an old last name for a woman
+        if (option.gd.personGender == "female") {
+          if (option.gd.recordType == RT.Military) {
+            // can be a record of who the soldier married some time ago with her maiden name
+            continue;
+          }
+        }
         if (option.text) {
           field.defaultValue = index;
           return;
@@ -1046,13 +1061,16 @@ async function addCollectCitationsMenuItem(menu, data, backFunction) {
 
   if (collectingCitations) {
     const numCitations = collectedCitations.citations ? collectedCitations.citations.length : 0;
-    addMenuItem(menu, `Collecting Citations (${numCitations})...`, function (element) {
+    let menuItem = addMenuItem(menu, `Collecting Citations (${numCitations})...`, function (element) {
       setupCollectCitationsSubmenu(data, collectedCitations, backFunction);
     });
+    menuItem.classList.add("bordered");
   } else {
     addMenuItem(menu, "Start Collecting Citations", async function (element) {
       await startNewCollectedCitations();
-      closePopup();
+      // rather than closing the popup go back to main menu as the normal thing to do next
+      // is build a citation
+      backFunction();
     });
   }
 }

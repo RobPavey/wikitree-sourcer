@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\nDate Published: 8 Oct 2019<br/>\n[https://rip.ie/death-notice/maureen-jenkins-dublin-clonshaugh-384735 RIP.ie record] (accessed 6 May 2021)<br/>\nMaureen Jenkins (née Doyle) died on 7 Oct 2019. Residence: Clonshaugh, Dublin.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Maureen was in an obituary on 8 October 2019. Maureen died on 7 October 2019.<ref>\n'''Death Notice''':\n\"RIP.ie\"<br/>\nDate Published: 8 Oct 2019<br/>\n[https://rip.ie/death-notice/maureen-jenkins-dublin-clonshaugh-384735 RIP.ie record] (accessed 6 May 2021)<br/>\nMaureen Jenkins (née Doyle) died on 7 Oct 2019. Residence: Clonshaugh, Dublin.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Notice''': \"RIP.ie\"<br/>Date Published: 8 Oct 2019<br/>[https://rip.ie/death-notice/maureen-jenkins-dublin-clonshaugh-384735 RIP.ie record] (accessed 6 May 2021)<br/>Maureen Jenkins (née Doyle) died on 7 Oct 2019. Residence: Clonshaugh, Dublin.",
+    "type": "source"
+  }
+}

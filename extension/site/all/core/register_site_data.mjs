@@ -91,6 +91,7 @@ import "../../panb/core/panb_site_data.mjs";
 import "../../ppnz/core/ppnz_site_data.mjs";
 import "../../prdh/core/prdh_site_data.mjs";
 import "../../psuk/core/psuk_site_data.mjs";
+import "../../ripie/core/ripie_site_data.mjs";
 import "../../qldbdm/core/qldbdm_site_data.mjs";
 import "../../riksark/core/riksark_site_data.mjs";
 import "../../scotp/core/scotp_site_data.mjs";
