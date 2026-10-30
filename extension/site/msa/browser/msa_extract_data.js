@@ -26,59 +26,46 @@ SOFTWARE.
 
 function isMsaCitation(string) {
   const msa_header_citation = "^MSA [A-Z]+ [A-Z0-9\-]{3,12}$";  // MSA ZZ 1234-56
-  let result = string.match(msa_header_citation);
-  console.log("isMsaCitation: " + string + " " + result);
-  return result;
+  let citation = string.match(msa_header_citation);
+  console.log("isMsaCitation: " + string + " " + citation);
+  return citation;
 }
 function isMsaFilenameCitation(string) {
-  const mdsa_filename_citation = /^mdsa_([A-Za-z0-9\-_]{3,12})\.(:?pdf|html)$/;  // mdsa_AA1234-5.pdf
-  let match = string.match(mdsa_filename_citation);
   let result = null;
-  if (match) {
-    if (match[1]) {
-      result = match[1].replace("_", "-").toUpperCase();
-    } 
-  } 
+  //console.log("Check  for Filename citation: " +string);
+  const mdsa_filename_citation = /^(:?mdsa_)([A-Za-z0-9\-]{3,14})(\.pdf)$/;  // mdsa_AA1234-5.pdf
+  const non_mdsa_filename_citation = /^([A-Za-z0-9\-]{3,14})(\.pdf)$/;  // AA1234-5.pdf
+  const match = string.match(mdsa_filename_citation);
+  if (match && match[1]) {
+    result = match[1].toUpperCase();
+  } else {
+    const match = string.match(non_mdsa_filename_citation);
+    if (match && match[1]) {
+      result = match[1].toUpperCase();
+    }
+  }
   return result;
 }
 function searchDOMNode(domNodeText) {
-  const msa_citation_a = ".*(MSA [A-Z]{2,4}[0-9]{2,6}\-[0-9]{1,4}).*";
+  const msa_citation_a = ".*(MSA [A-Z]{1,4}[0-9]{2,6}\-[0-9]{1,4}).*";
   const msa_citation_b = "^MSA [A-Z0-9\-]{3,12}$";  // MSA 1234-56
   let result = domNodeText.match(msa_citation_a);
   if (result) {
-    console.log("searchDOMNode: " + " " + result[1]);
+    console.log("searchDOMNode A: " + " " + result[1]);
     return result[1];
   } else
   if (!result) {
     result = domNodeText.match(msa_citation_b);
-    if (result) 
-      console.log("searchDOMNode: " + domNodeText + " " + result[1]);
+    if (result)  {
+      console.log("searchDOMNode B: " + " " + result[0]);
+      return result[0];
+    }
   }
   return result;
-}
-function searchDOMNodeForPage(domNodeText) {
-  // const msa_page_num = ".*\<option selected=\"selected\" value=\"([0-9]{1,5})\>.*"
-  const msa_page_num = ".*option selected.*";
-  let result = domNodeText.match(msa_page_num);
-  //console.log("searchDOMNodeForPage: " + result);
-  if (result) {
-    console.log("searchDOMNodeForPage: " + " " + result[1]);
-    return result[1];
-  }
-  //console.log("searchDOMNode: " + node + " " + result);
-  return result;
-}
-
-function searchDOMNodeForRecordType(text, result) {
-  //console.log("LookforRT: " + text);
-  if (text.indexOf("(Biographical Series)") != -1) {
-    //result.msaRecordType = RT.Biography;
-  }
 }
 
 function checkTitleForCitation(headTitle, result) {
   if (headTitle.textContent.includes("Archives of Maryland, Volume")) {
-    console.log(" IS The Part: " + headTitle.textContent);
     result.success = true;
     return result;
   }
@@ -92,6 +79,7 @@ function checkTitleForCitation(headTitle, result) {
       //}
       if (isMsaCitation(part)) {
         result.msaCitation = part;
+        result.success = true; 
         return result; 
       }
     }
@@ -99,9 +87,40 @@ function checkTitleForCitation(headTitle, result) {
   return null;
 }
 
+function searchDomNodes(document, result) {
+  result.msaDomNodes = [];
+  let n = 0;
+  const root = document.getRootNode();
+  //const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+  const walker = document.createTreeWalker(root, 4, null);
+  let currentNode;
+  while(( currentNode = walker.nextNode())) {
+    let txt = currentNode.wholeText.trim();
+    // heuristics, drop empty txt and scripts 
+    if ((txt.length > 3) && (txt.length < 100) && (result.msaDomNodes.length < 100)) {
+      if (txt.match(/^\d+$/)) {
+        ;
+      } else {
+        result.msaDomNodes.push(txt);
+      }
+    } 
+    if (!result.msaCitation) {
+      let citation = searchDOMNode(currentNode.wholeText);
+      if (citation) {
+        result.msaCitation = citation;
+      }
+    }
+    if (result.msaDomNodes.length >= 100) {
+      break;
+    }
+    n++;
+  }
+}
+
 function extractData(document, url) {
   console.log("MSA extractData DOM: ");
   console.log(document);
+  //console.log("URL: " + url);
   //console.log(url);
   var result = {};
 
@@ -117,56 +136,27 @@ function extractData(document, url) {
   if(!result.msaCitation) {
     // sometimes the .pdf filename is the MSA citation
     let maybeCitation = isMsaFilenameCitation(url.split('/').pop());
-    console.log("No Citation yet, searching Filename: " + maybeCitation);
     if (maybeCitation) {
+    console.log("Got Citation yet, searching Filename: " + maybeCitation);
       result.msaCitation = "MSA " + maybeCitation;
       result.success = true;
-      //console.log("MSA filename citation: " + result.msaCitation);
     }
   }
   if(!result.msaCitation) {
     console.log("Still No Citation yet, searching DOM");
+    const body = document.querySelector('body');
     result.msaDomNodes = [];
-    let n = 0;
-    const root = document.getRootNode();
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
-    let currentNode;
-    while(( currentNode = walker.nextNode())) {
-      let txt = currentNode.wholeText.trim();
-      // heuristics, drop empty txt and scripts 
-      if ((txt.length > 3) && (txt.length < 100) && (result.msaDomNodes.length < 100)) {
-        if (txt.match(/\d+/)) {
-        } else {
-          result.msaDomNodes.push(txt);
-        }
-      } 
-      if (!result.msaCitation) {
-        let citation = searchDOMNode(currentNode.wholeText);
-        if (citation) {
-  	    result.msaCitation = citation;
-        }
-      }
-      if (result.msaDomNodes.length >= 100) {
-        break;
-      }
-      n++;
-    }
+    searchDomNodes(document, result);
     // try to dig out the page # from the html
     //  -- currently in in the (div id="optionsViewer") "option selected="selected"
     const optionNodes = document.querySelectorAll('div[id=\"optionsViewer\"] select option[selected=\"selected\"]');
-    //const optionNodes = document.querySelectorAll('select option[selected=\"selected\"]');
     for (const onode of optionNodes) {
-      console.log("Foundan ONode Len");
       if (onode.value.match(/\d{1,5}/)) {
         result.msaPageViewerPage = onode.value;
-        console.log("ONode Len: " + onode.outerHTML + " " +  result.msaPageViewerPage);
+        //console.log("ONode Len: " + onode.outerHTML + " " +  result.msaPageViewerPage);
       }
     }
 
-    console.log(" checked " + n + " nodes" + " Stored:" + result.msaDomNodes.length);
-    //for (const node of result.msaDomNodes) {
-    //  console.log("Node Len: " + node.length + " " + node);
-    //}
     if (result.msaCitation) {
       result.success = true;
       console.log(" Found citation " + result.msaCitation)

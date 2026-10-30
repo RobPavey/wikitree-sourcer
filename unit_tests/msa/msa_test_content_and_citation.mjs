@@ -31,9 +31,24 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
-    // has extended ASCII characters
     caseName: "msa_leonard_calvert_bio",
     url: "https://msa.maryland.gov/megafile/msa/speccol/sc3500/sc3520/000100/000198/html/198bio.html",
+  },
+  {
+    caseName: "msa_vol_16_pg_356",
+    url: "https://msa.maryland.gov/megafile/msa/speccol/sc2900/sc2908/000001/000016/html/am16--356.html",
+  },
+  {
+    caseName: "msa_will_john_english",
+    url: "https://pve.msa.maryland.gov/pages/viewer.aspx?2R8PyaO%2fMGlVGRYhxaoNJBs5mtUkMi7uFZEC3T2b2NUu2tKQDEKlWRXDAwkImRKeGZqbDDYPfgHRIFYzDoRWqA=%3d",
+  },
+  {
+    caseName: "msa_will_john_adams",
+    url: "https://pve.msa.maryland.gov/pages/viewer.aspx?JA05XmF7tMvU+l8taFfVV%2fSUQGStsXK96qAUM%2fFPL61qCZ+t3h45DtVnODpJzWmJcdGrunTWvHJpXbEQZn0dvA=%3d",
+  },
+  {
+    caseName: "msa_m_isabelle_dcert",
+    url: "https://pve.msa.maryland.gov/pages/viewer.aspx?L9X3RQuDc4NfJ150bhvuQx%2fWvHanONX9Z4z6F2xu6BxqcqvO9UWtNenRwRuX4j3Zb1WeOV%2fc1G3rDfHgLQAXjQ=%3d",
   },
 
 ];
