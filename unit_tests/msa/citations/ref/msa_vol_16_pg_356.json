@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\n: Archives of Maryland, Volume  0016, Page 0356 - Journal and Correspondence of the Maryland Council of Safety, January 1<br/>\n[https://msa.maryland.gov/megafile/msa/speccol/sc2900/sc2908/000001/000016/html/am16--356.html Maryland State Archives] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n: Archives of Maryland, Volume  0016, Page 0356 - Journal and Correspondence of the Maryland Council of Safety, January 1<br/>\n[https://msa.maryland.gov/megafile/msa/speccol/sc2900/sc2908/000001/000016/html/am16--356.html Maryland State Archives] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': : Archives of Maryland, Volume  0016, Page 0356 - Journal and Correspondence of the Maryland Council of Safety, January 1<br/>[https://msa.maryland.gov/megafile/msa/speccol/sc2900/sc2908/000001/000016/html/am16--356.html Maryland State Archives] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

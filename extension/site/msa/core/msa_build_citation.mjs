@@ -76,7 +76,7 @@ function checkStoredDomNodes(msaDomNodes, ed) {
         (node[index+2] == "(Wills)")) {
           ed.msaRecordType = RT.Will;
 
-    } else if ((node == "Additional Info")  && ((index+4) < storedDomNodes.length)) {
+    } else if ((node == "Additional Info")  && ((index+4) < msaDomNodes.length)) {
       for (let j=index; j<=index+4; ++j) {
         if (node[j].includes("Inventories")) {
           ed.msaRecordType = RT.Probate;

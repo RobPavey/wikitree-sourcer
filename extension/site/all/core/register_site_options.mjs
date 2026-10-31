@@ -72,6 +72,7 @@ import "../../matricula/core/matricula_options.mjs";
 import "../../mdz/core/mdz_options.mjs";
 import "../../mh/core/mh_options.mjs";
 import "../../morbihan/core/morbihan_options.mjs";
+import "../../msa/core/msa_options.mjs";
 import "../../naie/core/naie_options.mjs";
 import "../../nli/core/nli_options.mjs";
 import "../../noda/core/noda_options.mjs";
