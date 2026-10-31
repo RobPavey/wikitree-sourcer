@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Cemetery Map\"<br/>\n[https://apps.wikitree.com/apps/robinson27225/cemetery-map/index.html?cemetery=fairview-raton-nm&wt=Smith-1234 Mary (Jones) Smith] (accessed 6 May 2021)<br/>\nMap entry for Mary (Jones) Smith (Smith-1234) (1850-1921), buried at [[Space:Fairview_Cemetery_Raton_NM_USA|Fairview Presbyterian Cemetery]]; Section B, Plot 14; GPS: 36.904061, -104.423645.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mary died in 1921 and was buried at Fairview Presbyterian Cemetery.<ref>\n'''Burial''':\n\"Cemetery Map\"<br/>\n[https://apps.wikitree.com/apps/robinson27225/cemetery-map/index.html?cemetery=fairview-raton-nm&wt=Smith-1234 Mary (Jones) Smith] (accessed 6 May 2021)<br/>\nMap entry for Mary (Jones) Smith (Smith-1234) (1850-1921), buried at [[Space:Fairview_Cemetery_Raton_NM_USA|Fairview Presbyterian Cemetery]]; Section B, Plot 14; GPS: 36.904061, -104.423645.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Cemetery Map\"<br/>[https://apps.wikitree.com/apps/robinson27225/cemetery-map/index.html?cemetery=fairview-raton-nm&wt=Smith-1234 Mary (Jones) Smith] (accessed 6 May 2021)<br/>Map entry for Mary (Jones) Smith (Smith-1234) (1850-1921), buried at [[Space:Fairview_Cemetery_Raton_NM_USA|Fairview Presbyterian Cemetery]]; Section B, Plot 14; GPS: 36.904061, -104.423645.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Cemetery Map\"<br/>\n[https://apps.wikitree.com/apps/robinson27225/cemetery-map/index.html?category=Claquato_Cemetery%2C_Chehalis%2C_Washington&fag=186934145 Andrew D Miller] (accessed 6 May 2021)<br/>\nMap entry for Andrew D Miller (1853-1938), buried at Claquato Cemetery, Chehalis, Washington; Plot Section A, Lot 63; GPS: 46.646090, -123.024633.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Andrew died in 1938 and was buried at Claquato Cemetery, Chehalis, Washington.<ref>\n'''Burial''':\n\"Cemetery Map\"<br/>\n[https://apps.wikitree.com/apps/robinson27225/cemetery-map/index.html?category=Claquato_Cemetery%2C_Chehalis%2C_Washington&fag=186934145 Andrew D Miller] (accessed 6 May 2021)<br/>\nMap entry for Andrew D Miller (1853-1938), buried at Claquato Cemetery, Chehalis, Washington; Plot Section A, Lot 63; GPS: 46.646090, -123.024633.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Cemetery Map\"<br/>[https://apps.wikitree.com/apps/robinson27225/cemetery-map/index.html?category=Claquato_Cemetery%2C_Chehalis%2C_Washington&fag=186934145 Andrew D Miller] (accessed 6 May 2021)<br/>Map entry for Andrew D Miller (1853-1938), buried at Claquato Cemetery, Chehalis, Washington; Plot Section A, Lot 63; GPS: 46.646090, -123.024633.",
+    "type": "source"
+  }
+}
