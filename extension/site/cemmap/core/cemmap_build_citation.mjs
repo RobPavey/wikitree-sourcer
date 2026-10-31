@@ -28,8 +28,8 @@ import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.
 // cemetery and the person, which is what the page address holds (see personLink in app.js of the app).
 //
 // Example citation:
-// "Cemetery Map" [https://apps.wikitree.com/.../index.html?category=...&wt=Jones-67676 Lucy Amanda Jones],
-// Map entry for Lucy Amanda Jones (Jones-67676) (1886-1981), buried at [[Space:Claquato_Cemetery|Claquato Cemetery]],
+// "Cemetery Map" [https://apps.wikitree.com/.../index.html?category=...&wt=Jones-67676 Index entry],
+// Lucy Amanda Jones (Jones-67676) (1886-1981), buried at [[Space:Claquato_Cemetery|Claquato Cemetery]],
 // Chehalis, Washington; Plot County; GPS: 46.648022, -123.023667.
 
 function buildSourceTitle(ed, gd, builder) {
@@ -63,7 +63,7 @@ function cemeteryText(ed, builder) {
 }
 
 function buildDataString(ed, gd, builder) {
-  let dataString = "Map entry for " + ed.name;
+  let dataString = ed.name;
   if (ed.wtId) {
     dataString += " (" + ed.wtId + ")";
   }
@@ -97,7 +97,7 @@ function buildRecordLink(ed, gd, builder) {
   // The address of the page is the link that was copied from the map, without any #fragment
   let url = ed.url.replace(/#.*$/, "");
   if (builder.getOptions().citation_general_target == "wikitree") {
-    builder.recordLinkOrTemplate = "[" + url + " " + ed.name + "]";
+    builder.recordLinkOrTemplate = "[" + url + " Index entry]";
   } else {
     builder.recordLinkOrTemplate = url;
   }
