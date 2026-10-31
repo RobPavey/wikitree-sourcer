@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<!-- saved from url=(0141)https://pve.msa.maryland.gov/pages/viewer.aspx?L9X3RQuDc4NfJ150bhvuQx%2fWvHanONX9Z4z6F2xu6BxqcqvO9UWtNenRwRuX4j3Zb1WeOV%2fc1G3rDfHgLQAXjQ=%3d -->
+<html lang="en" dir="ltr" class="yui3-js-enabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Page Viewer
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Step 1 : Link to MD favicon -->
+    <link rel="shortcut icon" href="https://msa.maryland.gov/msa/homepage/egov/img/icons/favicon.ico">
+    <!-- Necessary Bootstrap.css for responsive design -->
+    <link href="./msa_m_isabelle_dcert_files/bootstrap.min.css" rel="stylesheet"><link href="./msa_m_isabelle_dcert_files/agency-styles-pageviewer.css" rel="stylesheet"><link href="./msa_m_isabelle_dcert_files/agency-header.css" rel="stylesheet"><link href="./msa_m_isabelle_dcert_files/css" rel="stylesheet" type="text/css">
+
+
+    <script type="text/javascript" async="" src="./msa_m_isabelle_dcert_files/js"></script><script async="" src="./msa_m_isabelle_dcert_files/analytics.js"></script><script async="" src="./msa_m_isabelle_dcert_files/analytics.js"></script><script type="text/javascript" src="./msa_m_isabelle_dcert_files/jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="/msa/homepage/egov/css/jquery-ui-1.10.3.min.css" />
+    <script src="/msa/homepage/egov/js/jquery-ui-1.10.3.min.js"></script>-->
+    
+
+    
+
+    
+
+    <!--Step 4 : Necessary .js for  Statewide nav bar script -->
+    <script type="text/javascript" src="./msa_m_isabelle_dcert_files/yui-min.js"></script>
+    <script>       
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            var d = document.getElementById("ContentPlaceHolder1_bookinfocell");
+            if (d) {
+                d.style.display = "none";                
+            }     
+        });
+
+        window.onload = function () {
+            setTimeout(function () {
+                window.scrollTo(0, 0);
+            }, 100);
+        };
+
+        function adaNotify() {
+            let request = {
+                LastName: document.getElementById("ContentPlaceHolder1_lNameADA").value,
+                FirstName: document.getElementById("ContentPlaceHolder1_fNameADA").value,
+                Email: document.getElementById("ContentPlaceHolder1_emailADA").value,
+                Pages: document.getElementById("ContentPlaceHolder1_pagesADA").value
+            };
+
+            // Validate request and proceed appropriately
+            fetch("viewer.aspx/ValidateAdaRequest", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ request: request })
+            })
+            .then((response) => response.json())
+            .then((valid) => {
+                if (valid.d) {
+                    alert("Your ADA request has been sent to the Archives' Help Desk. \n\nA copy of your request has also been sent to you by email. You may be contacted by the Archives if additional information is required.");
+                }
+                else {
+                    alert("Either the first name, last name, and/or page(s) were empty or an invalid email was entered.\n\nPlease confirm the information you entered is correct.");
+                }
+            })
+            .catch((err) => {
+                console.error("An error occured while validating ada request:", err);
+            });
+        }
+    </script>
+    <style>
+        #navUL>li.current-menu-item>a{
+    background-color: #fff !important;
+        }
+
+        #mdgov_homeLink a:focus, #mdgov_agencyTitle a:focus {
+            border: 3px solid black;
+            outline: 1px solid white;
+            border-radius: 10px;
+        }
+
+
+
+        .centered {
+            font-family: Arial;
+            width: 100%;
+            max-width: 920px;
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+        .active, .level0:hover {
+        background-color: #fff;
+        }
+        #mdgov_enterpriseNavigation ul {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            list-style: none;
+            position: relative;
+            display: block;
+            /*background-color: firebrick;*/
+        }
+        #infodiv, #adaDiv {
+            display: none;
+        }
+        body {
+	        background: rgb(158, 29, 50) !important;
+            color: black;
+            overflow-x: hidden;
+        }
+        nav {
+	        background-color: #18253A;
+        }
+
+        h1 {
+            display: block;
+        }
+
+        a {
+            color: #003fff;
+            text-decoration: none;
+        }
+
+        a:focus, a:hover {
+            text-decoration: underline;
+        }
+
+        input[type=text], input[type=email],  select, textarea {
+            border-color: #808080;
+        }
+
+        h3, h4 {
+        margin: 0px;
+	        padding: 0px;
+        }
+        .special {
+            padding: 0px;
+            margin: 0px;
+        }
+        .skip-link {
+            background: rgba(255, 255, 255, 0.65);
+            height: 30px;
+            left: 50%;
+            padding: 8px;
+            position: absolute;
+            transform: translateY(-170%);
+            transition: transform 0.3s;
+        }
+
+        #ContentPlaceHolder1_pagenumbertxt:focus, #ContentPlaceHolder1_fNameADA:focus, #ContentPlaceHolder1_lNameADA:focus,
+        #ContentPlaceHolder1_emailADA:focus, #ContentPlaceHolder1_pagesADA:focus, #ContentPlaceHolder1_commentADAtxt:focus {
+            border-color:rgba(32, 128, 196, 0.8)
+        }
+
+         .skip-link:focus {
+            transform: translateY(0%);
+         }
+        #headerstyle {
+            background-color: #E3DFDF; 
+            padding: 0px 20px; 
+            border-style: solid; 
+            border-bottom-width: thick;
+            border-bottom-color: #D4AF56;  
+            border-top: none; 
+            border-left: none; 
+            border-right: none;
+        }
+        .eralinks1 {
+            padding-top: .5em;
+            padding-bottom: .5em;
+            display: block;	
+        }
+        .leftYellowBorder, .archiveNotice p {
+            border-left: 3px solid #F1E17E;
+            background-color: #E3DFDF;/* was #f5f5f5 */
+            padding: 7px 7px 7px 12px;
+            font-family: Roboto, Arial, Helvetica, sans-serif;
+            font-weight: 400;
+        }
+
+        a {
+    text-decoration: underline;
+}
+
+        #mdgov_agencyName {
+            margin-top: 10px;
+        }
+        #ContentPlaceHolder1_hidelnk {
+    display:inline-block;
+}
+
+        img {
+            width: fit-content;
+        }
+
+        #ContentPlaceHolder1_iframecell {
+    width: 95%;
+     -webkit-transition: width .5s; 
+     transition: width .5s;
+}
+
+#ContentPlaceHolder1_bookinfocell {
+    width: 0%;
+    display: none;
+}
+
+        #sidediv {
+            flex-direction: row;
+        }
+
+        @media (max-width: 800px) {
+            #mdgov_agencyName {
+                margin-top: 0px;
+            }
+        }
+
+        @media (max-width: 500px) {
+                form div {
+        padding: 0px !important;
+    }
+
+    div:has(> table) {
+    padding: inherit !important;
+}
+
+    td > div {
+    padding: inherit !important;
+}
+
+    table {
+        max-width: 100% !important;
+    }
+        }
+
+        @media (max-width: 900px) {
+
+            #divHideLnk2 {
+                padding-bottom: 25px;
+            }
+
+            #optionsViewer {
+                flex-direction: column;
+                align-items: start;
+            }
+
+            #ContentPlaceHolder1_bookinfocell {
+                display: flex;
+                flex-direction: column;
+                overflow-wrap: break-word;
+                width: 30%;
+            }
+
+            #ContentPlaceHolder1_iframecell {
+                display: flex;
+                flex-direction: column;
+                overflow-wrap: break-word;
+                transition: none;
+}
+
+            #ContentPlaceHolder1_pagetablerow {
+                display: flex;
+                flex-direction: column;
+                align-items:center;
+            }
+
+            body {
+                overflow-x: hidden;
+            }
+   
+            .ErrorDiv {
+                padding: 20px 0px 5px 0px;
+            }
+
+            h3 {
+                padding-bottom:40px;
+            }
+
+
+            #sidediv {
+                flex-direction: column;
+            }
+
+            .skip-link:focus{
+                transform: translateY(100%);
+                height: 18px;
+            }
+
+        }
+
+        
+    </style>
+<script id="yui_3_1_1_1_17933594420862" type="text/javascript" charset="utf-8" src="./msa_m_isabelle_dcert_files/statewideNavigationDefer.js"></script></head>
+<body id="bookviewer">
+    <div class="container" id="MobileNav" style="width: 100%">
+        <div role="banner">
+            <a class="skip-link" href="https://pve.msa.maryland.gov/pages/viewer.aspx?L9X3RQuDc4NfJ150bhvuQx%2fWvHanONX9Z4z6F2xu6BxqcqvO9UWtNenRwRuX4j3Zb1WeOV%2fc1G3rDfHgLQAXjQ=%3d#primary_content_Block">Skip to main content</a>  
+                <div id="mdgov_globalSiteWrapper">
+                    <div id="mdgov_TopSliverBar" class="clearfix">
+                        <div id="mdgov_TopSliverBarContent" class="clearfix">                                
+                            <div id="mdgov_sliverRight"><div style="font-family: arial,verdana,helvetica,sans-serif; font-size: xx-small; color: #FFFFFF;"><a class="hidden-phone" href="http://www.maryland.gov/" target="_blank" style="padding: 0px 5px 0px 0px;">Maryland.gov</a><a href="http://www.doit.state.md.us/phonebook/" target="_blank" style="padding: 0px 5px 0px 5px;">Phone Directory</a><a href="http://www.maryland.gov/pages/agency_directory.aspx" target="_blank" style="padding: 0px 5px 0px 5px;">State Agencies</a><a class="hidden-phone" href="http://www.maryland.gov/pages/online_services.aspx" target="_blank" style="padding: 0px 0px 0px 5px;">Online Services</a></div></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Begin Header -->
+                <div id="headerBlock" class="row-fluid">
+                    <div id="header" class="span12">
+                        <div id="headerBackground">
+                            <div class="headerBgImgSubpage clearfix">
+                                <div class="row-fluid">
+                                    <div id="agency_branding_subpage" class="clearfix" style="padding: 10px; background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url('https://msa.maryland.gov/msa/homepage/egov/img/bgblack65.png')">
+                                            
+                                        <div id="mdgov_agencyName" class="span6 clearfix" style="display: inline-block; width: 100%;">
+                                            <div id="mdgov_agencyTitle">
+                                                <h1 style="color: white;width: fit-content;display: inline-block;">Electronic Document Viewer</h1>
+                                                <!-- Step 3 : Add Agency Title and link to home page -->
+                                                <a href="https://msa.maryland.gov/" style="height: auto; display: inline-block; float:right;">
+                                                    <img src="./msa_m_isabelle_dcert_files/agencytitle_300px.png" alt="Welcome to the Maryland State Archives">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Header -->
+        </div>
+    </div>
+
+    <noscript>
+        <div class="row-fluid">
+            <div class="uiMessage">
+                <strong>Notice:</strong> JavaScript is not available in your browser. Some enhanced features will not be available until JavaScript is enabled.
+            </div>
+        </div>
+    </noscript>
+    <div id="navBlock" class="row-fluid" style="display: none">
+        <div id="mdgov_enterpriseNavigation" class="clearfix">
+            <!-- Step 9 : Add Main navigation links -->
+            <nav id="mynav">
+                <ul id="navUL">
+                    <li id="t-home" class="tab"><a href="https://msa.maryland.gov/msa/homepage/html/homepage.html" class="level0">Archives Home</a></li>
+                    <li id="t-bookviewer" class="tab"><a href="https://pve.msa.maryland.gov/pages/index.aspx" class="level0">Page Viewer</a></li>
+                    <li id="t-examples" class="tab"><a href="https://pve.msa.maryland.gov/pages/examples.aspx" class="level0">Page Viewer Example</a></li>
+                    <li id="t-recentds" class="tab"><a href="https://pve.msa.maryland.gov/pages/recentDS.aspx" class="level0">Recent Direct Scans</a></li>
+                    <li id="t-recentfilm" class="tab"><a href="https://pve.msa.maryland.gov/pages/recentFilm.aspx" class="level0">Recent Microfilm</a></li>
+                </ul>
+            </nav>
+            <noscript>You must enable javascript to view menu</noscript>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div id="primary_content_Block" class="mdgov_contentWrapper" style="padding: 0px; margin: 0px; background-color: #F2E6E1">
+            <div class="span12" style="padding: 0px 20px;">
+                <form method="post" action="https://pve.msa.maryland.gov/pages/viewer.aspx?L9X3RQuDc4NfJ150bhvuQx%2fWvHanONX9Z4z6F2xu6BxqcqvO9UWtNenRwRuX4j3Zb1WeOV%2fc1G3rDfHgLQAXjQ=%3d" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./msa_m_isabelle_dcert_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./msa_m_isabelle_dcert_files/jquery-3.7.0.js" type="text/javascript"></script>
+<script src="./msa_m_isabelle_dcert_files/WebResource(1).axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="98979F71">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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">
+</div>
+                    <main>
+                        
+    <div id="ContentPlaceHolder1_viewer" style="background-color:#F2E6E1;">
+	
+        <div class="boxBlank">
+            <table id="ContentPlaceHolder1_pagetable" role="presentation" style="width: 100%; border: none">
+		<tbody><tr id="ContentPlaceHolder1_pagetablerow" valign="top" style="width: 100%;">
+			<td id="ContentPlaceHolder1_iframecell" align="center" style="padding: 5px; width: 80%;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <h2 id="ContentPlaceHolder1_booklbltop" class="left_col_list" style="overflow-wrap: normal; color: black; font-family: Arial; padding-bottom: 5px;"><strong>MSA SE43-2650</strong></h2>
+                        <h3 style="color: black; font-family: Arial; font-size: 18px; line-height: 19px; margin: 10px 0 3px 0; font-family: Roboto; font-weight: 570; overflow-wrap: normal; place-self: center;">Options<br>
+                            (<em>page will update automatically after submitting</em>)</h3>
+
+                        <div id="optionsViewer" style="display: flex; justify-content: center;">
+
+
+
+
+                            <label id="ContentPlaceHolder1_lblLocation" for="ContentPlaceHolder1_locationddl" style="display: none;"><strong>Location: E - 68.134.228.36</strong></label>
+                            &nbsp;&nbsp;
+                        
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                        <label for="ContentPlaceHolder1_pagenumbertxt" style="display: inline-block"><strong>Page #</strong></label>&nbsp;                        
+                        <input name="ctl00$ContentPlaceHolder1$pagenumbertxt" type="text" id="ContentPlaceHolder1_pagenumbertxt" title="Enter page number" style="height:15px;width:40px;">
+                            &nbsp;
+                        <input type="submit" name="ctl00$ContentPlaceHolder1$jumptobtntop" value="Go" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$jumptobtntop&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ContentPlaceHolder1_jumptobtntop" style="height:28px;">
+                            &nbsp;&nbsp;
+                                                <span data-val-controltovalidate="ContentPlaceHolder1_pagenumbertxt" data-val-display="Dynamic" id="ContentPlaceHolder1_CustomValidator2" role="alert" data-val="true" data-val-evaluationfunction="CustomValidatorEvaluateIsValid" style="display:none;color:red;">
+                            <p style="text-align: center;"><strong>Page not found</strong></p>
+                                                </span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <label for="ContentPlaceHolder1_fileList" style="display: inline-block" class="right"><strong>Viewing</strong></label>
+                            &nbsp;&nbsp;
+                        <select name="ctl00$ContentPlaceHolder1$fileList" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$fileList\',\'\')', 0)" id="ContentPlaceHolder1_fileList" title="Type a number to be taken to that number directly." style="width:75px;padding: 2px;">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+				<option value="32">32</option>
+				<option value="33">33</option>
+				<option value="34">34</option>
+				<option value="35">35</option>
+				<option value="36">36</option>
+				<option value="37">37</option>
+				<option value="38">38</option>
+				<option value="39">39</option>
+				<option value="40">40</option>
+				<option value="41">41</option>
+				<option value="42">42</option>
+				<option value="43">43</option>
+				<option value="44">44</option>
+				<option value="45">45</option>
+				<option value="46">46</option>
+				<option value="47">47</option>
+				<option value="48">48</option>
+				<option value="49">49</option>
+				<option value="50">50</option>
+				<option value="51">51</option>
+				<option value="52">52</option>
+				<option value="53">53</option>
+				<option value="54">54</option>
+				<option value="55">55</option>
+				<option value="56">56</option>
+				<option value="57">57</option>
+				<option value="58">58</option>
+				<option value="59">59</option>
+				<option value="60">60</option>
+				<option value="61">61</option>
+				<option value="62">62</option>
+				<option value="63">63</option>
+				<option value="64">64</option>
+				<option value="65">65</option>
+				<option value="66">66</option>
+				<option value="67">67</option>
+				<option value="68">68</option>
+				<option value="69">69</option>
+				<option value="70">70</option>
+				<option value="71">71</option>
+				<option value="72">72</option>
+				<option value="73">73</option>
+				<option value="74">74</option>
+				<option value="75">75</option>
+				<option value="76">76</option>
+				<option value="77">77</option>
+				<option value="78">78</option>
+				<option value="79">79</option>
+				<option value="80">80</option>
+				<option value="81">81</option>
+				<option value="82">82</option>
+				<option value="83">83</option>
+				<option value="84">84</option>
+				<option value="85">85</option>
+				<option value="86">86</option>
+				<option selected="selected" value="87">87</option>
+				<option value="88">88</option>
+				<option value="89">89</option>
+				<option value="90">90</option>
+				<option value="91">91</option>
+				<option value="92">92</option>
+				<option value="93">93</option>
+				<option value="94">94</option>
+				<option value="95">95</option>
+				<option value="96">96</option>
+				<option value="97">97</option>
+				<option value="98">98</option>
+				<option value="99">99</option>
+				<option value="100">100</option>
+				<option value="101">101</option>
+				<option value="102">102</option>
+				<option value="103">103</option>
+				<option value="104">104</option>
+				<option value="105">105</option>
+				<option value="106">106</option>
+				<option value="107">107</option>
+				<option value="108">108</option>
+				<option value="109">109</option>
+				<option value="110">110</option>
+				<option value="111">111</option>
+				<option value="112">112</option>
+				<option value="113">113</option>
+				<option value="114">114</option>
+				<option value="115">115</option>
+				<option value="116">116</option>
+				<option value="117">117</option>
+				<option value="118">118</option>
+				<option value="119">119</option>
+				<option value="120">120</option>
+				<option value="121">121</option>
+				<option value="122">122</option>
+				<option value="123">123</option>
+				<option value="124">124</option>
+				<option value="125">125</option>
+				<option value="126">126</option>
+				<option value="127">127</option>
+				<option value="128">128</option>
+				<option value="129">129</option>
+				<option value="130">130</option>
+				<option value="131">131</option>
+				<option value="132">132</option>
+				<option value="133">133</option>
+				<option value="134">134</option>
+				<option value="135">135</option>
+				<option value="136">136</option>
+				<option value="137">137</option>
+				<option value="138">138</option>
+				<option value="139">139</option>
+				<option value="140">140</option>
+				<option value="141">141</option>
+				<option value="142">142</option>
+				<option value="143">143</option>
+				<option value="144">144</option>
+				<option value="145">145</option>
+				<option value="146">146</option>
+				<option value="147">147</option>
+				<option value="148">148</option>
+				<option value="149">149</option>
+				<option value="150">150</option>
+				<option value="151">151</option>
+				<option value="152">152</option>
+				<option value="153">153</option>
+				<option value="154">154</option>
+				<option value="155">155</option>
+				<option value="156">156</option>
+				<option value="157">157</option>
+				<option value="158">158</option>
+				<option value="159">159</option>
+				<option value="160">160</option>
+				<option value="161">161</option>
+				<option value="162">162</option>
+				<option value="163">163</option>
+				<option value="164">164</option>
+				<option value="165">165</option>
+				<option value="166">166</option>
+				<option value="167">167</option>
+				<option value="168">168</option>
+				<option value="169">169</option>
+				<option value="170">170</option>
+				<option value="171">171</option>
+				<option value="172">172</option>
+				<option value="173">173</option>
+				<option value="174">174</option>
+				<option value="175">175</option>
+				<option value="176">176</option>
+				<option value="177">177</option>
+				<option value="178">178</option>
+				<option value="179">179</option>
+				<option value="180">180</option>
+				<option value="181">181</option>
+				<option value="182">182</option>
+				<option value="183">183</option>
+				<option value="184">184</option>
+				<option value="185">185</option>
+				<option value="186">186</option>
+				<option value="187">187</option>
+				<option value="188">188</option>
+				<option value="189">189</option>
+				<option value="190">190</option>
+				<option value="191">191</option>
+				<option value="192">192</option>
+				<option value="193">193</option>
+				<option value="194">194</option>
+				<option value="195">195</option>
+				<option value="196">196</option>
+				<option value="197">197</option>
+				<option value="198">198</option>
+				<option value="199">199</option>
+				<option value="200">200</option>
+				<option value="201">201</option>
+				<option value="202">202</option>
+				<option value="203">203</option>
+				<option value="204">204</option>
+				<option value="205">205</option>
+				<option value="206">206</option>
+				<option value="207">207</option>
+				<option value="208">208</option>
+				<option value="209">209</option>
+				<option value="210">210</option>
+				<option value="211">211</option>
+				<option value="212">212</option>
+				<option value="213">213</option>
+				<option value="214">214</option>
+				<option value="215">215</option>
+				<option value="216">216</option>
+				<option value="217">217</option>
+				<option value="218">218</option>
+				<option value="219">219</option>
+				<option value="220">220</option>
+				<option value="221">221</option>
+				<option value="222">222</option>
+
+			</select>
+                            &nbsp;&nbsp;
+                        <span id="ContentPlaceHolder1_filelbl"><strong>Of  222 Images</strong></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <select name="ctl00$ContentPlaceHolder1$numberofpdfpagesddl" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$numberofpdfpagesddl\',\'\')', 0)" id="ContentPlaceHolder1_numberofpdfpagesddl" style="width:75px;padding: 2px;">
+				<option selected="selected" value="Single">Single</option>
+				<option value="Multi">Multi</option>
+
+			</select>
+                            &nbsp;&nbsp;
+                        <label for="ContentPlaceHolder1_numberofpdfpagesddl" style="display: inline-block;"><strong>PDF pages</strong></label>
+                            &nbsp;&nbsp;
+
+                            <div style="display: flex; align-items: center">
+                                <span style="margin-right: 5px; margin-left: 20px"><input id="ContentPlaceHolder1_chkShortcut" type="checkbox" name="ctl00$ContentPlaceHolder1$chkShortcut"></span>
+                                <label for="ContentPlaceHolder1_chkShortcut" style="align-self: end">Disable Keyboard Shortcuts</label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <input type="image" name="ctl00$ContentPlaceHolder1$backbtntop" id="ContentPlaceHolder1_backbtntop" accesskey="P" title="Previous Image" src="./msa_m_isabelle_dcert_files/backsmall.png" alt="Previous Image" align="left" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$backbtntop&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="width:40px;margin-right: auto;"><input type="image" name="ctl00$ContentPlaceHolder1$forwardbtntop" id="ContentPlaceHolder1_forwardbtntop" accesskey="N" title="Next Image" src="./msa_m_isabelle_dcert_files/forwardsmall.png" alt="Next Image" align="right" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$forwardbtntop&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="width:40px;margin-left: auto;">
+                        </div>
+                        &nbsp;&nbsp;
+                            
+
+                        <iframe src="./msa_m_isabelle_dcert_files/msa_se43_002650-0087_Mixed.html" id="ContentPlaceHolder1_iframePDF" name="pdfLoad" style="height: 840px;" width="100%" title="PDF is inaccessible." role="alert"></iframe>
+
+                        <div>
+                            <input type="image" name="ctl00$ContentPlaceHolder1$backbtnbottom" id="ContentPlaceHolder1_backbtnbottom" title="Previous Image" src="./msa_m_isabelle_dcert_files/backsmall.png" alt="Previous Image" align="left" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$backbtnbottom&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="width:40px;margin-right: auto;"><input type="image" name="ctl00$ContentPlaceHolder1$forwardbtnbottom" id="ContentPlaceHolder1_forwardbtnbottom" title="Next Image" src="./msa_m_isabelle_dcert_files/forwardsmall.png" alt="Next Image" align="right" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$forwardbtnbottom&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="width:40px;margin-left: auto;">
+                        </div>
+                    </td><td id="ContentPlaceHolder1_minimizercell" style="vertical-align: top; display: block;">
+                        <div style="vertical-align: top; margin-top: 70px;" id="divHideLnk">
+                            
+                            <a onclick="javascript:collapse(); return false;" id="ContentPlaceHolder1_hidelnk" title="View Info" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$hidelnk&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))" style="display:inline-block;width:30px;margin-top: 5px; margin-left: 10px;">Hide Info</a>
+
+
+                        </div>
+                    </td><td id="ContentPlaceHolder1_minimizercell2" style="vertical-align: top; display: block;">
+                        <div style="vertical-align: top; margin-top: 20px;" id="divHideLnk2">
+                            
+                            <a onclick="javascript:collapse2(); return false;" id="ContentPlaceHolder1_adaLnk" title="Request Accessible PDF" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$adaLnk&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))" style="margin-top: 5px; margin-left: 10px; display: flex">Request Accessible PDF</a>
+
+
+                        </div>
+                    </td><td id="ContentPlaceHolder1_bookinfocell" valign="top" style="background-color: rgb(242, 230, 225); width: 100%; transition: width 0.5s; display: inline; opacity: 1;">
+                        <div id="sidediv" style="text-align: center; vertical-align: top; display: flex; place-content: center;">
+                            <br>
+                            <div id="infodiv" style="display: block;">
+                                <span role="alert" id="addlInfo" style="display: block" aria-label="Additional info section expanded">Additional Info</span>
+                                <span id="ContentPlaceHolder1_booklbl" style="font-size:Large;font-weight:bold;">MSA SE43-2650</span><br>
+                                <span id="ContentPlaceHolder1_infoMessagelbl" style="font-size:Large;font-weight:bold;"></span><br>
+                                <br>
+                                <br>
+                                <span id="ContentPlaceHolder1_AoMlbl" style="font-size:Large;font-weight:bold;">DEPARTMENT OF HEALTH BUREAU OF VITAL STATISTICS<br><br>(Death Record, Counties)<br>Baltimore<br>12/1919</span><br>
+                                <br>
+                                
+                            </div>
+                            <div id="adaDiv" style="display: none;">
+                                <table style="text-align: left; border: 2px solid rgb(158, 29, 50); border-radius: 15px; place-self: center; margin-left: 15px; visibility: visible;" role="presentation" id="adaForm">
+                                    <tbody style="display: block; padding: 10px;">
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <span role="alert" id="requestADA" style="display: block" aria-label="Request Accessible PDF section expanded"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center">
+                                                <strong style="color: rgb(158, 29, 50)">Fields with * are required to submit.</strong><br>
+                                                <br>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="ContentPlaceHolder1_fNameADA" style="display: inline-block"><strong>First Name *:</strong></label> 
+                                                <input name="ctl00$ContentPlaceHolder1$fNameADA" type="text" id="ContentPlaceHolder1_fNameADA" autocomplete="given-name" style="width:170px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="ContentPlaceHolder1_lNameADA" style="display: inline-block"><strong>Last Name *:</strong></label>   
+                                                <input name="ctl00$ContentPlaceHolder1$lNameADA" type="text" id="ContentPlaceHolder1_lNameADA" autocomplete="family-name" style="width:170px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="ContentPlaceHolder1_emailADA" style="display: inline-block"><strong>Email *:</strong></label>       
+                                                <input name="ctl00$ContentPlaceHolder1$emailADA" id="ContentPlaceHolder1_emailADA" autocomplete="email" type="email" style="width:170px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="ContentPlaceHolder1_pagesADA" style="display: inline-block"><strong>Page(s) *:</strong></label>   
+                                                <input name="ctl00$ContentPlaceHolder1$pagesADA" type="text" value="87" id="ContentPlaceHolder1_pagesADA" style="width:170px;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="ContentPlaceHolder1_commentADAtxt" style="display: inline-block"><strong>Comments</strong>: </label>
+                                                    
+                                                <textarea name="ctl00$ContentPlaceHolder1$commentADAtxt" id="ContentPlaceHolder1_commentADAtxt" style="width: 170px"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p style="text-align: center;">
+                                                    ADA Requests are to provide ADA compliant PDF documents that are compatible with 
+                                                    assistive technology such as a screen reader.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="submit" name="ctl00$ContentPlaceHolder1$submitadaBtn" value="Submit" onclick="adaNotify();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$submitadaBtn&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ContentPlaceHolder1_submitadaBtn">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table id="ContentPlaceHolder1_adaRequestConfirmed" style="text-align:center;border:2px solid green;place-self:center;margin-left:15px;display:none;visibility:hidden;" role="presentation">
+				<tbody><tr style="display: block; padding: 10px;">
+					<td>
+                                                <strong>Accessible PDF already requested</strong>
+                                                <br>
+                                                <p>Your ADA request has been sent to the Archives' Help Desk.</p>
+                                                <p>
+                                                    A copy of your request has also been sent to you by email. 
+                                                You may be contacted by the Archives if additional information is required.
+                                                </p>
+                                            </td>
+				</tr>
+			</tbody></table>
+			
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            <br>
+                            
+                            
+                            
+                        </div>
+                    </td>
+		</tr><tr>
+			<td>
+                        <div style="text-align: center">
+                            <a id="ContentPlaceHolder1_returnBtn" class="tag" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$returnBtn&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))" style="font-size:Medium;font-weight:bold;">Return to Guide to Government Records</a>
+                            <br>
+                            <strong><span>S8 </span></strong>
+                        </div>
+                    </td>
+		</tr>
+	</tbody></table>
+        </div>
+    
+</div>
+    
+    
+    <script type="text/javascript">
+        // to enter page with bookinfocell visible, test for .style.display == "none" and reverse the if and else
+        function collapse() {
+
+            if (document.getElementById("infodiv").style.display == "block") {
+                document.getElementById("ContentPlaceHolder1_iframecell").style.width = "95%";
+                document.getElementById("ContentPlaceHolder1_bookinfocell").style.width = "0";
+                document.getElementById("ContentPlaceHolder1_bookinfocell").style.display = "none";
+                document.getElementById("infodiv").style.display = "none";
+                document.getElementById("adaDiv").style.display = "none";
+                document.getElementById("addlInfo").innerText = "";
+                document.getElementById("requestADA").innerText = "";
+
+                document.getElementById("ContentPlaceHolder1_fNameADA").removeAttribute("required");
+                document.getElementById("ContentPlaceHolder1_lNameADA").removeAttribute("required");
+                document.getElementById("ContentPlaceHolder1_emailADA").removeAttribute("required");
+                document.getElementById("ContentPlaceHolder1_pagesADA").removeAttribute("required");
+                document.getElementById("ContentPlaceHolder1_bookinfocell").style.opacity = "0";
+                document.getElementById("ContentPlaceHolder1_hidelnk").innerHTML = "View Info";
+
+            } else {
+                document.getElementById("ContentPlaceHolder1_iframecell").style.width = "80%";
+                document.getElementById("ContentPlaceHolder1_bookinfocell").style.width = "100%";
+                document.getElementById("ContentPlaceHolder1_bookinfocell").style.display = "inline";
+                document.getElementById("infodiv").style.display = "block";
+                document.getElementById("adaDiv").style.display = "none";
+                document.getElementById("addlInfo").innerText = "Additional Info";
+                document.getElementById("requestADA").innerText = "";
+                document.getElementById("ContentPlaceHolder1_fNameADA").removeAttribute("required");
+                document.getElementById("ContentPlaceHolder1_lNameADA").removeAttribute("required");
+                document.getElementById("ContentPlaceHolder1_emailADA").removeAttribute("required");
+                document.getElementById("ContentPlaceHolder1_pagesADA").removeAttribute("required");
+                document.getElementById("ContentPlaceHolder1_bookinfocell").style.opacity = "1";
+
+                document.getElementById("ContentPlaceHolder1_hidelnk").innerHTML = "Hide Info";
+                document.getElementById("ContentPlaceHolder1_adaLnk").innerHTML = "Request Accessible PDF";
+            }
+
+        }
+
+        function collapse2() {
+            if (document.getElementById("adaDiv").style.display == "block") {
+                if (document.getElementById("ContentPlaceHolder1_adaRequestConfirmed").style.visibility == "visible") {
+                    document.getElementById("adaForm").style.visibility = "hidden";
+                    document.getElementById("adaForm").style.display = "none";
+                    document.getElementById("ContentPlaceHolder1_adaRequestConfirmed").style.display = "none";
+                }
+                document.getElementById("ContentPlaceHolder1_iframecell").style.width = "95%";
+                document.getElementById("ContentPlaceHolder1_bookinfocell").style.width = "0";
+                document.getElementById("ContentPlaceHolder1_bookinfocell").style.display = "none";
+                document.getElementById("infodiv").style.display = "none";
+                document.getElementById("adaDiv").style.display = "none";
+                document.getElementById("addlInfo").innerText = "";
+                document.getElementById("requestADA").innerText = "";
+                document.getElementById("ContentPlaceHolder1_fNameADA").removeAttribute("required");
+                document.getElementById("ContentPlaceHolder1_lNameADA").removeAttribute("required");
+                document.getElementById("ContentPlaceHolder1_emailADA").removeAttribute("required");
+                document.getElementById("ContentPlaceHolder1_pagesADA").removeAttribute("required");
+                document.getElementById("ContentPlaceHolder1_bookinfocell").style.opacity = "0";
+                document.getElementById("ContentPlaceHolder1_adaLnk").innerHTML = "Request Accessible PDF";
+
+            } else {
+                if (document.getElementById("ContentPlaceHolder1_adaRequestConfirmed").style.visibility == "visible") {
+                    document.getElementById("adaForm").style.visibility = "hidden";
+                    document.getElementById("adaForm").style.display = "none";
+                    document.getElementById("ContentPlaceHolder1_adaRequestConfirmed").style.display = "block";
+                }
+                document.getElementById("ContentPlaceHolder1_iframecell").style.width = "80%";
+                document.getElementById("ContentPlaceHolder1_bookinfocell").style.width = "100%";
+                document.getElementById("ContentPlaceHolder1_bookinfocell").style.display = "inline";
+                document.getElementById("infodiv").style.display = "none";
+                document.getElementById("adaDiv").style.display = "block";
+                document.getElementById("addlInfo").innerText = "";
+                document.getElementById("requestADA").innerText = "Request Accessible PDF";
+                document.getElementById("ContentPlaceHolder1_fNameADA").setAttribute("required", "true");
+                document.getElementById("ContentPlaceHolder1_lNameADA").setAttribute("required", "true");
+                document.getElementById("ContentPlaceHolder1_emailADA").setAttribute("required", "true");
+                document.getElementById("ContentPlaceHolder1_pagesADA").setAttribute("required", "true");
+                document.getElementById("ContentPlaceHolder1_bookinfocell").style.opacity = "1";
+
+                document.getElementById("ContentPlaceHolder1_adaLnk").innerHTML = "Close";
+                document.getElementById("ContentPlaceHolder1_hidelnk").innerHTML = "View Info";
+            }
+        }
+
+
+        function showRange() {
+            if (document.getElementById("rangeDiv").style.display == "none") {
+                document.getElementById("rangeDiv").style.display = "block"
+                document.getElementById("rangelink").innerHTML = document.getElementById("rangelink").innerHTML.replace("[+]", "[-]")
+            } else {
+                document.getElementById("rangeDiv").style.display = "none"
+                document.getElementById("rangelink").innerHTML = document.getElementById("rangelink").innerHTML.replace("[-]", "[+]")
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkbox = document.getElementById('ContentPlaceHolder1_chkShortcut');
+
+            const nextBtn = document.getElementById('ContentPlaceHolder1_forwardbtntop');
+            const prevBtn = document.getElementById('ContentPlaceHolder1_backbtntop');
+
+            if (checkbox.checked) {
+                nextBtn.removeAttribute('accesskey');
+                prevBtn.removeAttribute('accesskey');
+            } else {
+                nextBtn.setAttribute('accesskey', 'N');
+                prevBtn.setAttribute('accesskey', 'P');
+            }
+
+            checkbox.addEventListener('change', function (e) {
+                if (e.target.checked) {
+                    nextBtn.removeAttribute('accesskey');
+                    prevBtn.removeAttribute('accesskey');
+                } else {
+                    nextBtn.setAttribute('accesskey', 'N');
+                    prevBtn.setAttribute('accesskey', 'P');
+                }
+            });
+        });
+
+
+
+    </script>
+
+                    </main>
+                    <br>
+                <input type="hidden" name="__ncforminfo" value="5n6huaMwWTUg-J-yJ1dn_wP1N1eM_dVtcC8E6cvb357fmAU92vNQbloGaaySmdvYnX0kbo4mc6NqbO7Jvzja5owPBuVTpRYTL2ZFoGOROJirNTZdw7CVfPdvg40BlqkE"></form>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: #F2E6E1" role="contentinfo">
+        <div style="padding: 0px 25px 25px 25px">
+            <p align="center"> <strong>Check information resource of the Maryland State Archives is presented here for fair use in the public domain. When this material is used, in whole or in part, proper citation and credit must be attributed to the Maryland State Archives. PLEASE NOTE: Rights assessment for associated source material is the responsibility of the user.</strong> </p>
+            <hr aria-hidden="true">
+            <p align="center"> <span id="BottomIndex1_feedbackLabel" style="font-weight:bold;"><a href="https://feedback.msa.maryland.gov/">Tell Us What You Think About the Maryland State Archives Website</a></span> </p>
+            <hr aria-hidden="true">
+            <p align="center"> <span id="BottomIndex1_lowerNavLinks" style="font-weight:normal;">[  <a href="https://msa.maryland.gov/">Archives' Home Page</a>&nbsp;<span aria-hidden="true">||</span>&nbsp; <a href="https://msa.maryland.gov/msa/mdmanual/html/mmtoc.html">Maryland Manual On-Line</a>&nbsp;<span aria-hidden="true">||</span>&nbsp; <a href="https://guide.msa.maryland.gov/pages/viewer.aspx?page=topviewed">Reference &amp; Research</a><br> <a href="https://query.msa.maryland.gov/texis/search">Search the Archives</a>&nbsp;<span aria-hidden="true">||</span>&nbsp; <a href="https://msa.maryland.gov/msa/homepage/html/teachers.html">Education &amp; Outreach</a>&nbsp;<span aria-hidden="true">||</span>&nbsp; <a href="http://aomol.msa.maryland.gov/">Archives of Maryland Online</a> ]</span> </p>
+            <br>
+            <p align="center"> <span id="BottomIndex1_lowerGovLinks" style="font-weight:bold;"> <a href="https://governor.maryland.gov/">Governor</a>&nbsp;&nbsp;&nbsp; <a href="https://mgaleg.maryland.gov/mgawebsite">General Assembly</a>&nbsp;&nbsp;&nbsp; <a href="https://courts.maryland.gov/">Judiciary</a>&nbsp;&nbsp;&nbsp; <a href="https://maryland.gov/">Maryland.Gov</a>&nbsp;&nbsp;&nbsp;</span> </p>
+
+            <p align="center">
+                <span id="copyrightLabel" style="font-style: italic;">
+                    © Copyright
+                    <span id="BottomIndex1_lblyear">2025</span>
+                    Maryland State Archives
+                </span>
+            </p>
+        </div>
+                                                            
+        <div class="row-fluid">
+            <div id="footer_block" class="clearfix">
+                <div class="span9">
+                    <div id="footer_left">
+                        <script type="text/javascript" src="./msa_m_isabelle_dcert_files/footer.js"></script><div class="cl_base_hNav footerLinks"><ul><li><a href="https://msa.maryland.gov/msa/homepage/html/contact.html" target="_blank">Contact Us</a></li><li><a href="https://msa.maryland.gov/msa/homepage/html/privacy.html" target="_blank">Privacy Notice</a></li><li><a href="https://msa.maryland.gov/msa/intromsa/html/acceptable.html" target="_blank">Acceptable Use Policy </a></li><li><a href="https://donations.msa.maryland.gov/">Donate </a></li> <li><a href="https://msa.maryland.gov/msa/homepage/html/siteindex.html" target="_blank">Site Index</a></li> <li><a href="https://www.ola.state.md.us/fraud/ola-fraud-hotline" target="_blank">Stop Fraud</a></li> </ul></div><p>Dr. Edward C. Papenfuse State Archives Building - 350 Rowe Blvd - Annapolis, MD 21401 <br></p><p>Main: (410) 260-6400 - Toll Free: (800) 235-4045 </p>
+				<noscript>You must have javascript enabled to view this menu</noscript>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div id="footer_right" class="clearfix">
+                        <div class="mdgov_socialNav" style="min-width: 0px;">
+                            <script type="text/javascript" src="./msa_m_isabelle_dcert_files/social-links.js"></script><ul class="cl_base_hNav cl_socialNav"><li><a href="https://www.facebook.com/pages/Maryland-State-Archives/271742632879921" class="sm-facebook" title="Facebook">Facebook</a> </li><li><a href="https://twitter.com/mdarchives" class="sm-twitter" title="Twitter">Twitter</a> </li><li><a href="https://instagram.com/MarylandStateArchives" class="sm-instagram" title="Instagram">Instagram</a></li><li><a href="https://www.youtube.com/channel/UCHfsJ4ZyklZTGKWshJDsemw" class="sm-youtube" title="YouTube">You Tube</a></li></ul><!--<ul class="cl_base_hNav cl_socialNavDirectory"><li><a href="http://www.maryland.gov/pages/social_media.aspx" class="sm-directory" title="MD Social Media Directory">MD Social Media Directory</a></li></ul>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-92547033-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</body></html>

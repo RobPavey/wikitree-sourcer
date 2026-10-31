@@ -75,6 +75,7 @@ import "../../matricula/core/matricula_site_data.mjs";
 import "../../mdz/core/mdz_site_data.mjs";
 import "../../mh/core/mh_site_data.mjs";
 import "../../morbihan/core/morbihan_site_data.mjs";
+import "../../msa/core/msa_site_data.mjs";
 import "../../naie/core/naie_site_data.mjs";
 import "../../nli/core/nli_site_data.mjs";
 import "../../noda/core/noda_site_data.mjs";
