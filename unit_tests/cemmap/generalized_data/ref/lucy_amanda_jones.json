@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "cemmap",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "name": "Lucy Amanda Jones"
+  },
+  "eventPlace": {
+    "placeString": "Claquato Cemetery, Chehalis, Washington"
+  },
+  "lastNameAtDeath": "Jones",
+  "birthDate": {
+    "yearString": "1886"
+  },
+  "deathDate": {
+    "yearString": "1981"
+  },
+  "deathPlace": {
+    "placeString": "Centralia, Lewis, Washington, United States"
+  },
+  "hasValidData": true
+}

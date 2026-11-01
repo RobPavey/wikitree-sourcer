@@ -1,0 +1,16 @@
+{
+  "url": "https://apps.wikitree.com/apps/robinson27225/cemetery-map/index.html?cemetery=fairview-raton-nm&fag=98765432",
+  "success": true,
+  "name": "John Smith",
+  "wtId": "",
+  "findAGraveId": "98765432",
+  "familySearchId": "",
+  "birthYear": "1845",
+  "deathYear": "1923",
+  "plot": "Section B, Plot 14",
+  "notes": "Husband of Mary",
+  "cemeteryName": "Fairview Presbyterian Cemetery",
+  "cemeteryId": "fairview-raton-nm",
+  "latitude": "36.904061",
+  "longitude": "-104.423645"
+}

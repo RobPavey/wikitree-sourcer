@@ -36,6 +36,7 @@ const siteNames = [
   "baclac",
   "basrhin",
   "bg",
+  "cemmap",
   "compdes",
   "cwgc",
   "dfgviewer",
