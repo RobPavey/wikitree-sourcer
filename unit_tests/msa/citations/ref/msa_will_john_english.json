@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\nArchives of Maryland<br/>\n MSA S538-3 Page: 18<br/>\n[https://pve.msa.maryland.gov/pages/viewer.aspx?2R8PyaO%2fMGlVGRYhxaoNJBs5mtUkMi7uFZEC3T2b2NUu2tKQDEKlWRXDAwkImRKeGZqbDDYPfgHRIFYzDoRWqA=%3d Maryland State Archives] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\nArchives of Maryland<br/>\n MSA S538-3 Page: 18<br/>\n[https://pve.msa.maryland.gov/pages/viewer.aspx?2R8PyaO%2fMGlVGRYhxaoNJBs5mtUkMi7uFZEC3T2b2NUu2tKQDEKlWRXDAwkImRKeGZqbDDYPfgHRIFYzDoRWqA=%3d Maryland State Archives] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': Archives of Maryland<br/> MSA S538-3 Page: 18<br/>[https://pve.msa.maryland.gov/pages/viewer.aspx?2R8PyaO%2fMGlVGRYhxaoNJBs5mtUkMi7uFZEC3T2b2NUu2tKQDEKlWRXDAwkImRKeGZqbDDYPfgHRIFYzDoRWqA=%3d Maryland State Archives] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

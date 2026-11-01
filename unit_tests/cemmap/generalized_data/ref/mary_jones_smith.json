@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "cemmap",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Mary"
+  },
+  "eventPlace": {
+    "placeString": "Fairview Presbyterian Cemetery"
+  },
+  "lastNameAtBirth": "Jones",
+  "lastNameAtDeath": "Smith",
+  "birthDate": {
+    "yearString": "1850"
+  },
+  "deathDate": {
+    "yearString": "1921"
+  },
+  "hasValidData": true
+}
