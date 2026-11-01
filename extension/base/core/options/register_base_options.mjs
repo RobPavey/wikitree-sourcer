@@ -1730,7 +1730,7 @@ const addMergeAddPersonOptionsGroup = {
       type: "checkbox",
       label:
         'Automatically do "Build All Citations" during "Save Person Data" (if site supports it) and include the citations in the biography when doing "Set Fields from Person Data"',
-      defaultValue: false,
+      defaultValue: true,
     },
     {
       optionName: "includeProfileLink",
@@ -1845,7 +1845,7 @@ const addMergeMergeEditOptionsGroup = {
       type: "checkbox",
       label:
         'Automatically do "Build All Citations" during "Save Person Data" (if site supports it) and include the citations in the biography when doing "Merge Edit from Person Data"',
-      defaultValue: false,
+      defaultValue: true,
     },
     {
       optionName: "includeProfileLink",
