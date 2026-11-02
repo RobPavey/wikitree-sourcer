@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "cemmap",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "name": "John Smith"
+  },
+  "eventPlace": {
+    "placeString": "Fairview Presbyterian Cemetery"
+  },
+  "lastNameAtDeath": "Smith",
+  "birthDate": {
+    "yearString": "1845"
+  },
+  "deathDate": {
+    "yearString": "1923"
+  },
+  "hasValidData": true
+}

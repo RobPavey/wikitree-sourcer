@@ -118,6 +118,7 @@
     "*://*.wikitree.com/*",
     "*://*.yadvashem.org/*",
     "*://apps.bundesarchiv.de/gedenkbuch/*",
+    "*://apps.wikitree.com/apps/*/cemetery-map/*",
     "*://apps.wikitree.com/apps/*/headstone-tool/*",
     "*://archive.org/*",
     "*://archives.novascotia.ca/vital-statistics/*",
