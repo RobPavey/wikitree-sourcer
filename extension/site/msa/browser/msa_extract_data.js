@@ -33,8 +33,10 @@ function isMsaCitation(string) {
 function isMsaFilenameCitation(string) {
   let result = null;
   //console.log("Check  for Filename citation: " +string);
-  const mdsa_filename_citation = /^(:?mdsa_)([A-Za-z0-9\-]{3,14})(\.pdf)$/;  // mdsa_AA1234-5.pdf
+  const mdsa_filename_citation = /^(?:mdsa_)([A-Za-z0-9\-_]{3,14})(\.pdf)$/;  // mdsa_AA1234-5.pdf
   const non_mdsa_filename_citation = /^([A-Za-z0-9\-]{3,14})(\.pdf)$/;  // AA1234-5.pdf
+  // There are some citation filenames like below, and some possible false citations.
+  //const msa_film_filename_citation = /^(?:msa_)([A-Za-z0-9]{3,7})_([A-Za-z0-9\-_]{3,14})(\.pdf)$/;  // msa_wk987_AA1234-5.pdf
   const match = string.match(mdsa_filename_citation);
   if (match && match[1]) {
     result = match[1].toUpperCase();
@@ -47,9 +49,14 @@ function isMsaFilenameCitation(string) {
   return result;
 }
 function searchDOMNode(domNodeText) {
+  let result = null;
+  console.log("SearchDOM node: " + domNodeText);
+  if (!domNodeText || (domNodeText.length < 4)) {
+    return result;
+  }
   const msa_citation_a = ".*(MSA [A-Z]{1,4}[0-9]{2,6}\-[0-9]{1,4}).*";
   const msa_citation_b = "^MSA [A-Z0-9\-]{3,12}$";  // MSA 1234-56
-  let result = domNodeText.match(msa_citation_a);
+  result = domNodeText.match(msa_citation_a);
   if (result) {
     console.log("searchDOMNode A: " + " " + result[1]);
     return result[1];
@@ -87,7 +94,7 @@ function checkTitleForCitation(headTitle, result) {
   return null;
 }
 
-function searchDomNodes(document, result) {
+function searchAllDomNodes(document, result) {
   result.msaDomNodes = [];
   let n = 0;
   const root = document.getRootNode();
@@ -117,6 +124,23 @@ function searchDomNodes(document, result) {
   }
 }
 
+function searchDomNodes(document, result) {
+  const citation_nl = document.querySelectorAll('span[id=\"ContentPlaceHolder1_booklbl\"]');
+  for (const snode of citation_nl) {
+    //console.log("DOM Citation: " + snode.nodeType + " Txt:  " + snode.innerHTML);
+    let citation = searchDOMNode(snode.innerHTML);
+    if (citation && (citation.length > 0)) {
+      result.msaCitation = citation;
+      //console.log("DOM Citation: " + result.msaCitation);
+    }
+  }
+  const additional_node = document.querySelector('span[id=\"ContentPlaceHolder1_AoMlbl\"]');
+  if (additional_node) {
+    result.msaAdditionalInfo = additional_node.innerHTML.split('<br>');
+    console.log("AdditionalInfo: " + result.msaAdditionalInfo);
+  }
+}
+
 function extractData(document, url) {
   console.log("MSA extractData DOM: ");
   console.log(document);
@@ -135,17 +159,17 @@ function extractData(document, url) {
   }
   if(!result.msaCitation) {
     // sometimes the .pdf filename is the MSA citation
-    let maybeCitation = isMsaFilenameCitation(url.split('/').pop());
+    let filename = url.split('/').pop();
+    let maybeCitation = isMsaFilenameCitation(filename);
     if (maybeCitation) {
-    console.log("Got Citation yet, searching Filename: " + maybeCitation);
-      result.msaCitation = "MSA " + maybeCitation;
+      result.msaCitation = "MSA " + maybeCitation.toUpperCase().replace("_", "-");
+      console.log("Got Citation , from Filename: " + filename + " " + result.msaCitation );
       result.success = true;
     }
   }
   if(!result.msaCitation) {
     console.log("Still No Citation yet, searching DOM");
     const body = document.querySelector('body');
-    result.msaDomNodes = [];
     searchDomNodes(document, result);
     // try to dig out the page # from the html
     //  -- currently in in the (div id="optionsViewer") "option selected="selected"

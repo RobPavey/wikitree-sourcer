@@ -80,10 +80,25 @@ function checkStoredDomNodes(msaDomNodes, ed) {
       for (let j=index; j<=index+4; ++j) {
         if (node[j].includes("Inventories")) {
           ed.msaRecordType = RT.Probate;
-	}
+	      }
       }
     }
   });
+}
+
+function checkAdditionalInfo(msaAdditionalInfo, ed) {
+  let index = 0;
+  if (msaAdditionalInfo && (msaAdditionalInfo.length > 4)) {
+    if (msaAdditionalInfo[2].includes("Will")) {
+      ed.msaRecordType = RT.Will;
+    } else
+    if (msaAdditionalInfo[2].includes("Estate")) {
+      ed.msaRecordType = RT.Probate;
+    } else
+    if (msaAdditionalInfo[2].includes("Death")) {
+      ed.msaRecordType = RT.Death;
+    }
+  }
 }
 
 function buildSourceTitle(ed, gd, builder) {
@@ -101,8 +116,15 @@ function buildSourceTitle(ed, gd, builder) {
 
 function buildSourceReference(ed, gd, builder) {
   builder.sourceReference = "";
-  if (ed.msaParts == 4 && ed.msaVolume && ed.msaPage) {
-    builder.sourceReference += ed.msaSR;
+  //if (ed.msaParts == 4 && ed.msaVolume && ed.msaPage) {
+  //  builder.sourceReference += ed.msaSR;
+  //}
+  if (ed.msaAdditionalInfo && (ed.msaAdditionalInfo.length >= 4)) {
+    if (ed.msaAdditionalInfo[1].length > 0) {
+      builder.sourceReference += " " + ed.msaAdditionalInfo[0] + ", " + ed.msaAdditionalInfo[1] + ", ";
+    } else {
+      builder.sourceReference += " " + ed.msaAdditionalInfo[0] + ", " + ed.msaAdditionalInfo[3] + ", ";
+    }
   }
   if (ed.msaCitation) {
     builder.sourceReference += " " + ed.msaCitation;
@@ -121,7 +143,8 @@ function buildRecordLink(ed, gd, builder) {
 
 function buildCoreCitation(ed, gd, builder) {
   parseHtmlHeader(ed.msaRawHeadTitle, ed);
-  checkStoredDomNodes(ed.msaDomNodes, ed);
+  //checkStoredDomNodes(ed.msaDomNodes, ed);
+  checkAdditionalInfo(ed.msaAdditionalInfo, ed);
   if (ed.msaRecordType) {
     gd.recordType = ed.msaRecordType;
   }
