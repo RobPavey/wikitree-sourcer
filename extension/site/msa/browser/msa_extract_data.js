@@ -27,7 +27,7 @@ SOFTWARE.
 function isMsaCitation(string) {
   const msa_header_citation = "^MSA [A-Z]+ [A-Z0-9\-]{3,12}$";  // MSA ZZ 1234-56
   let citation = string.match(msa_header_citation);
-  console.log("isMsaCitation: " + string + " " + citation);
+  //console.log("isMsaCitation: " + string + " " + citation);
   return citation;
 }
 function isMsaFilenameCitation(string) {
@@ -50,7 +50,7 @@ function isMsaFilenameCitation(string) {
 }
 function searchDOMNode(domNodeText) {
   let result = null;
-  console.log("SearchDOM node: " + domNodeText);
+  //console.log("SearchDOM node: " + domNodeText);
   if (!domNodeText || (domNodeText.length < 4)) {
     return result;
   }
@@ -58,13 +58,13 @@ function searchDOMNode(domNodeText) {
   const msa_citation_b = "^MSA [A-Z0-9\-]{3,12}$";  // MSA 1234-56
   result = domNodeText.match(msa_citation_a);
   if (result) {
-    console.log("searchDOMNode A: " + " " + result[1]);
+    //console.log("searchDOMNode A: " + " " + result[1]);
     return result[1];
   } else
   if (!result) {
     result = domNodeText.match(msa_citation_b);
     if (result)  {
-      console.log("searchDOMNode B: " + " " + result[0]);
+      //console.log("searchDOMNode B: " + " " + result[0]);
       return result[0];
     }
   }
@@ -137,13 +137,13 @@ function searchDomNodes(document, result) {
   const additional_node = document.querySelector('span[id=\"ContentPlaceHolder1_AoMlbl\"]');
   if (additional_node) {
     result.msaAdditionalInfo = additional_node.innerHTML.split('<br>');
-    console.log("AdditionalInfo: " + result.msaAdditionalInfo);
+    //console.log("AdditionalInfo: " + result.msaAdditionalInfo);
   }
 }
 
 function extractData(document, url) {
-  console.log("MSA extractData DOM: ");
-  console.log(document);
+  //console.log("MSA extractData DOM: ");
+  //console.log(document);
   //console.log("URL: " + url);
   //console.log(url);
   var result = {};
@@ -163,12 +163,12 @@ function extractData(document, url) {
     let maybeCitation = isMsaFilenameCitation(filename);
     if (maybeCitation) {
       result.msaCitation = "MSA " + maybeCitation.toUpperCase().replace("_", "-");
-      console.log("Got Citation , from Filename: " + filename + " " + result.msaCitation );
+      //console.log("Got Citation , from Filename: " + filename + " " + result.msaCitation );
       result.success = true;
     }
   }
   if(!result.msaCitation) {
-    console.log("Still No Citation yet, searching DOM");
+    //console.log("Still No Citation yet, searching DOM");
     const body = document.querySelector('body');
     searchDomNodes(document, result);
     // try to dig out the page # from the html
@@ -183,7 +183,7 @@ function extractData(document, url) {
 
     if (result.msaCitation) {
       result.success = true;
-      console.log(" Found citation " + result.msaCitation)
+      //console.log(" Found citation " + result.msaCitation)
     }
   }
 

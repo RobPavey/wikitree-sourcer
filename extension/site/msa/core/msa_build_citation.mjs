@@ -44,7 +44,7 @@ function parseHtmlHeader (headTitle, ed) {
     ed.msaTitle = match[1].trim();
     ed.msaTitle += ", " + match[2].trim();
     ed.msaTitle += ", " + match[3].trim();
-    console.log("parseHtmlHeader 2: " + headTitle);
+    //console.log("parseHtmlHeader 2: " + headTitle);
     let dashParts = headTitle.split("-");
     if (dashParts.length > 0) {
       ed.msaTitle += " - " + dashParts[1].trim();
