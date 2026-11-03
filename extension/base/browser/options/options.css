@@ -261,24 +261,47 @@ dialog::backdrop {
   border: 1px solid var(--text-color);
   max-width: 400px;
   max-height: 400px;
-  overflow-y: auto;
+  overflow-y: scroll; /* Forces the scrollbar track to remain visible instead of auto-hiding */
   position: relative;
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
 }
 
+/* Force visible scrollbar track and thumb on WebKit / iOS Safari */
+.optionSiteListDraggable::-webkit-scrollbar {
+  width: 8px;
+  -webkit-appearance: none;
+}
+
+.optionSiteListDraggable::-webkit-scrollbar-track {
+  background: var(--bg-close-color);
+  border-radius: 4px;
+}
+
+.optionSiteListDraggable::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+/* Dark mode support for the scrollbar thumb */
+@media (prefers-color-scheme: dark) {
+  .optionSiteListDraggable::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
 li.draggableListItem {
   background-color: var(--bg-close-color);
-  padding: 4px 8px;
-  margin: 4px;
+  padding: 2px 6px;
+  margin: 2px 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   -webkit-user-select: none;
   user-select: none;
-  touch-action: none; /* Changed from pan-y to none so iOS allows touch dragging everywhere on the row */
+  touch-action: pan-y;
 }
 
 li.draggableListItem.beingDragged {
@@ -294,8 +317,8 @@ li.draggableListItem.beingDragged {
     border: 1px solid var(--text-color);
   }
 }
-/* Container for the grip handle bars */
-.draggableIconContainer {
+/* Compact visual handle with an invisible large touch target */
+.draggableIcon {
   cursor: grab;
   touch-action: none;
   display: flex;
@@ -303,12 +326,26 @@ li.draggableListItem.beingDragged {
   justify-content: center;
   align-items: center;
   width: 24px;
-  height: 24px;
-  margin-right: 8px;
+  height: 24px; /* Keeps the visual row height slim and clean */
+  position: relative; /* Required for positioning the expanded touch area */
+  margin-right: 4px;
   flex-shrink: 0;
+  -webkit-touch-callout: none;
 }
 
-li.draggableListItem.beingDragged .draggableIconContainer {
+/* Only expand the touch target on touch-primary devices (mobile/tablets) */
+@media (pointer: coarse) {
+  .draggableIcon::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+  }
+}
+
+li.draggableListItem.beingDragged .draggableIcon {
   cursor: grabbing;
 }
 
