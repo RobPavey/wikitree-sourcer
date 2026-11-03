@@ -666,7 +666,6 @@ async function setupSelectValuesSubmenu(backFunction, addActionFunction) {
       }
 
       // using deaths didn't work
-
       // if this is a woman look for the last marriage
       for (let index = field.options.length - 1; index >= 0; index--) {
         let option = field.options[index];
@@ -677,6 +676,8 @@ async function setupSelectValuesSubmenu(backFunction, addActionFunction) {
               if (option.gd.spouses && option.gd.spouses.length == 1) {
                 let nameObj = option.gd.spouses[0].name;
                 if (nameObj) {
+                  // Note: if there is a typo in the marriage record and there is the correct
+                  // married name in several censuses after the marriage perhaps we should use that.
                   field.defaultValue = index;
                   return;
                 }

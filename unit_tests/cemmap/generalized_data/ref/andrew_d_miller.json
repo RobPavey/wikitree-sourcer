@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "cemmap",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "name": "Andrew D Miller"
+  },
+  "eventPlace": {
+    "placeString": "Claquato Cemetery, Chehalis, Washington"
+  },
+  "lastNameAtDeath": "Miller",
+  "birthDate": {
+    "yearString": "1853"
+  },
+  "deathDate": {
+    "yearString": "1938"
+  },
+  "hasValidData": true
+}

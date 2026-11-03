@@ -1,0 +1,16 @@
+{
+  "url": "https://apps.wikitree.com/apps/robinson27225/cemetery-map/index.html?cemetery=fairview-raton-nm&wt=Smith-1234",
+  "success": true,
+  "name": "Mary (Jones) Smith",
+  "wtId": "Smith-1234",
+  "findAGraveId": "98765431",
+  "familySearchId": "",
+  "birthYear": "1850",
+  "deathYear": "1921",
+  "plot": "Section B, Plot 14",
+  "cemeteryName": "Fairview Presbyterian Cemetery",
+  "cemeterySpaceUrl": "https://www.wikitree.com/wiki/Space:Fairview_Cemetery_Raton_NM_USA",
+  "cemeteryId": "fairview-raton-nm",
+  "latitude": "36.904061",
+  "longitude": "-104.423645"
+}

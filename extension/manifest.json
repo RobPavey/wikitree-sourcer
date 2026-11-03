@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "WikiTree Sourcer (Preview)",
-  "version": "3.4.6.1",
+  "version": "3.4.6.2",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "icons": {
     "16": "images/wikitree_sourcer16.png",
@@ -98,6 +98,7 @@
     "*://*.imdb.com/*",
     "*://*.irishgenealogy.ie/*",
     "*://*.jstor.org/*",
+    "*://*.msa.maryland.gov/*",
     "*://*.myheritage.com/*",
     "*://*.nationalarchives.ie/*",
     "*://*.newspaperarchive.com/*",
@@ -117,6 +118,7 @@
     "*://*.wikitree.com/*",
     "*://*.yadvashem.org/*",
     "*://apps.bundesarchiv.de/gedenkbuch/*",
+    "*://apps.wikitree.com/apps/*/cemetery-map/*",
     "*://apps.wikitree.com/apps/*/headstone-tool/*",
     "*://archive.org/*",
     "*://archives.novascotia.ca/vital-statistics/*",
