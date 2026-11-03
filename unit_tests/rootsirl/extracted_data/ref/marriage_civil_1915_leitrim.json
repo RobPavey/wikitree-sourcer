@@ -1,0 +1,52 @@
+{
+  "url": "https://www.rootsireland.ie/ifhf/view_detail.php?recordid=962555&type=mcv&recordCentre=leitrim&page=1&n=9&backLink=quis.php&sc=0",
+  "success": true,
+  "recordId": "962555",
+  "recordTypeCode": "mcv",
+  "recordCentre": "leitrim",
+  "shortUrl": "https://www.rootsireland.ie/ifhf/view_detail.php?recordid=962555&type=mcv&recordCentre=leitrim",
+  "recordTitle": "Civil Marriage Record",
+  "recordData": {
+    "Date of Marriage": "8-Jan-1915",
+    "Parish / District": "NEWTOWNGORE CIVIL REGISTRATION DISTRICT",
+    "County": "Co. Leitrim"
+  },
+  "sections": {
+    "Husband": {
+      "forenames": "John",
+      "surname": "Smith",
+      "Address": "Glasgow",
+      "Occupation": "ENGINEER",
+      "Age": "Full Age (Over 21)",
+      "Status": "Bachelor (Previously unmarried)"
+    },
+    "Wife": {
+      "forenames": "Bridget",
+      "surname": "Quinn",
+      "Address": "Openshaw",
+      "Occupation": "TEACHER",
+      "Age": "Full Age (Over 21)",
+      "Status": "Spinster (Previously unmarried)"
+    },
+    "Husband's Father": {
+      "forenames": "John",
+      "surname": "Smith",
+      "Occupation": "WATCHMAN"
+    },
+    "Wife's Father": {
+      "forenames": "Patrick",
+      "surname": "Quinn",
+      "Occupation": "FARMER"
+    },
+    "Witness 1": {
+      "forenames": "Peter",
+      "surname": "Smith"
+    },
+    "Witness 2": {
+      "forenames": "Monica",
+      "surname": "Carey"
+    }
+  },
+  "notes": "MARRIED IN DRUMREILLY UPPER RC CHURCH",
+  "copyrightOwner": "Leitrim Genealogy Centre"
+}

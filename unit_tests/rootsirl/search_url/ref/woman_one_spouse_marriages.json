@@ -1,0 +1,17 @@
+{
+  "std": {
+    "fieldData": {
+      "firstname": "Bridget",
+      "ssurname": "Brennan",
+      "sfirstname": "Patrick",
+      "surname": "Quinn",
+      "year": "1898"
+    },
+    "selectData": {
+      "yearRange": "2",
+      "variants": "ssi"
+    },
+    "searchType": "Marriages",
+    "formType": "marriage"
+  }
+}

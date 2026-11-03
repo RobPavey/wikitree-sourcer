@@ -1,0 +1,41 @@
+{
+  "sourceOfData": "rootsirl",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Smyth",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "21 Oct 1915"
+  },
+  "eventPlace": {
+    "placeString": "Ardagh and Moydow, County Longford, Ireland",
+    "county": "County Longford"
+  },
+  "maritalStatus": "single",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Clarke",
+        "forenames": "Mary Ellen"
+      },
+      "marriageDate": {
+        "dateString": "21 Oct 1915"
+      },
+      "marriagePlace": {
+        "placeString": "Ardagh and Moydow, County Longford, Ireland",
+        "county": "County Longford"
+      },
+      "age": "24",
+      "personGender": "female"
+    }
+  ],
+  "primaryPersonOptions": [
+    "John Smyth (husband)",
+    "Mary Ellen Clarke (wife)"
+  ],
+  "overrideRefTitle": "Church Marriage",
+  "hasValidData": true
+}

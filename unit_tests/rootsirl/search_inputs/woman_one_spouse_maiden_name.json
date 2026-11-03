@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Bridget Mary",
+    "lastName": "Brennan"
+  },
+  "lastNameAtBirth": "Quinn",
+  "lastNameAtDeath": "Brennan",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "abt 1875",
+    "qualifier": 1
+  },
+  "birthPlace": {
+    "placeString": "County Longford, Ireland"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Patrick Joseph Brennan",
+        "forenames": "Patrick Joseph",
+        "lastName": "Brennan"
+      },
+      "marriageDate": {
+        "dateString": "1898"
+      },
+      "marriagePlace": {
+        "placeString": "County Longford, Ireland"
+      }
+    }
+  ],
+  "hasValidData": true
+}

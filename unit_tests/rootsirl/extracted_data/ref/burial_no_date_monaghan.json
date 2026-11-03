@@ -1,0 +1,27 @@
+{
+  "url": "https://www.rootsireland.ie/ifhf/view_detail.php?recordid=34166&type=dch&recordCentre=monaghan&page=6&n=54&backLink=quis.php&sc=0",
+  "success": true,
+  "recordId": "34166",
+  "recordTypeCode": "dch",
+  "recordCentre": "monaghan",
+  "shortUrl": "https://www.rootsireland.ie/ifhf/view_detail.php?recordid=34166&type=dch&recordCentre=monaghan",
+  "recordTitle": "Burial/Death Record",
+  "recordData": {
+    "Forenames": "John",
+    "Surname": "Smith",
+    "Age": "76 Yrs",
+    "Parish / District": "Donagh",
+    "Address": "Emyvale, Donagh Parish",
+    "County": "Co. Monaghan",
+    "Sex": "Male"
+  },
+  "sections": {
+    "Graveyard": {
+      "Graveyard": "St Salvator's",
+      "Parish": "Donagh",
+      "County": "Monaghan"
+    }
+  },
+  "notes": "Rev. Samuel Ferguson Cunningham",
+  "copyrightOwner": "Monaghan Genealogy"
+}

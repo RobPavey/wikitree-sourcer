@@ -91,6 +91,7 @@ import "../../psuk/core/psuk_options.mjs";
 import "../../qldbdm/core/qldbdm_options.mjs";
 import "../../riksark/core/riksark_options.mjs";
 import "../../ripie/core/ripie_options.mjs";
+import "../../rootsirl/core/rootsirl_options.mjs";
 import "../../scotp/core/scotp_options.mjs";
 import "../../sosmogov/core/sosmogov_options.mjs";
 import "../../szukaj/core/szukaj_options.mjs";

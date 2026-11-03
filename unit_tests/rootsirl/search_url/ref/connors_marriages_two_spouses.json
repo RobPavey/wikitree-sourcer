@@ -1,0 +1,15 @@
+{
+  "std": {
+    "fieldData": {
+      "firstname": "Margaret",
+      "surname": "Connors",
+      "year": ""
+    },
+    "selectData": {
+      "yearRange": "-1",
+      "variants": "ssi"
+    },
+    "searchType": "Marriages",
+    "formType": "marriage"
+  }
+}

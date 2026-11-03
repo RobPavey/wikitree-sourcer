@@ -1,0 +1,34 @@
+{
+  "url": "https://www.rootsireland.ie/ifhf/view_detail.php?recordid=295429&type=dch&recordCentre=dublinsouth&page=1&n=1&backLink=quis.php&sc=0",
+  "success": true,
+  "recordId": "295429",
+  "recordTypeCode": "dch",
+  "recordCentre": "dublinsouth",
+  "shortUrl": "https://www.rootsireland.ie/ifhf/view_detail.php?recordid=295429&type=dch&recordCentre=dublinsouth",
+  "recordTitle": "Burial/Death Record",
+  "recordData": {
+    "Forenames": "John",
+    "Surname": "Smith",
+    "Date of Death": "22-Sep-1899",
+    "Age": "42",
+    "Parish / District": "DEANSGRANGE",
+    "Address": "Windy Arbour Dundrum",
+    "County": "Co. Dublin",
+    "Status": "Married",
+    "Denomination": "Roman Catholic",
+    "Occupation": "LABOURER",
+    "Sex": "Male"
+  },
+  "sections": {
+    "Graveyard": {
+      "Graveyard": "DEANSGRANGE",
+      "Parish": "DEANSGRANGE",
+      "County": "Co. Dublin"
+    },
+    "Informant": {
+      "Name": "Margaret Burke"
+    }
+  },
+  "notes": "G 115 N",
+  "copyrightOwner": "Dun Laoghaire Heritage Society (Dublin South)"
+}

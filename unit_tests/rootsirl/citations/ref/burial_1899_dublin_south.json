@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Church Burial''':\nRoots Ireland<br/>\nDenomination: Roman Catholic; Parish: Deansgrange, County Dublin; Transcribed by: Dun Laoghaire Heritage Society (Dublin South); Record ID: 295429<br/>\n[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=295429&type=dch&recordCentre=dublinsouth Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\nJohn Smith burial (died on 22 Sep 1899 at age 42) on 22 Sep 1899 in Deansgrange, County Dublin, Ireland. Informant: Margaret Burke. Notes: G 115 N.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John (age 42) was buried on 22 September 1899 in Deansgrange, County Dublin, Ireland.<ref>\n'''Church Burial''':\nRoots Ireland<br/>\nDenomination: Roman Catholic; Parish: Deansgrange, County Dublin; Transcribed by: Dun Laoghaire Heritage Society (Dublin South); Record ID: 295429<br/>\n[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=295429&type=dch&recordCentre=dublinsouth Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\nJohn Smith burial (died on 22 Sep 1899 at age 42) on 22 Sep 1899 in Deansgrange, County Dublin, Ireland. Informant: Margaret Burke. Notes: G 115 N.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Church Burial''': Roots Ireland<br/>Church burial; Denomination: Roman Catholic; Parish: Deansgrange, County Dublin; Transcribed by: Dun Laoghaire Heritage Society (Dublin South); Record ID: 295429<br/>[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=295429&type=dch&recordCentre=dublinsouth Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>John Smith burial (died on 22 Sep 1899 at age 42) on 22 Sep 1899 in Deansgrange, County Dublin, Ireland. Informant: Margaret Burke. Notes: G 115 N.",
+    "type": "source"
+  }
+}

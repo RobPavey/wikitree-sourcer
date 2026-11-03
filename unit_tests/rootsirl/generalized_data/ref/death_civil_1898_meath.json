@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "rootsirl",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "26 Oct 1898"
+  },
+  "eventPlace": {
+    "placeString": "County Meath, Ireland",
+    "county": "County Meath"
+  },
+  "deathDate": {
+    "dateString": "26 Oct 1898"
+  },
+  "residencePlace": {
+    "placeString": "Cloughrea, County Meath, Ireland",
+    "county": "County Meath"
+  },
+  "ageAtDeath": "55",
+  "maritalStatus": "single",
+  "occupation": "Labourer",
+  "overrideRefTitle": "Civil Death Registration",
+  "hasValidData": true
+}

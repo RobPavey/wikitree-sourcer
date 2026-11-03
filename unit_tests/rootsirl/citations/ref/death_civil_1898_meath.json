@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Civil Death Registration''':\nRoots Ireland<br/>\nRegistration district: Nobber Cr.Ded, County Meath; Transcribed by: Meath Heritage Centre; Record ID: 639672<br/>\n[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=639672&type=dcv&recordCentre=meath Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\nJohn Smith death 26 Oct 1898 (age 55) in County Meath, Ireland. Informant: James Lawler (householder). Notes: CHRONIC BRONCHITIS 12 MONTHS; UNCERTIFIED; NO MEDICAL ATTENDANT; *JOHNNY (E).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John died (age 55) on 26 October 1898 in County Meath, Ireland.<ref>\n'''Civil Death Registration''':\nRoots Ireland<br/>\nRegistration district: Nobber Cr.Ded, County Meath; Transcribed by: Meath Heritage Centre; Record ID: 639672<br/>\n[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=639672&type=dcv&recordCentre=meath Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\nJohn Smith death 26 Oct 1898 (age 55) in County Meath, Ireland. Informant: James Lawler (householder). Notes: CHRONIC BRONCHITIS 12 MONTHS; UNCERTIFIED; NO MEDICAL ATTENDANT; *JOHNNY (E).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Civil Death Registration''': Roots Ireland<br/>Civil death registration; Registration district: Nobber Cr.Ded, County Meath; Transcribed by: Meath Heritage Centre; Record ID: 639672<br/>[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=639672&type=dcv&recordCentre=meath Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>John Smith death 26 Oct 1898 (age 55) in County Meath, Ireland. Informant: James Lawler (householder). Notes: CHRONIC BRONCHITIS 12 MONTHS; UNCERTIFIED; NO MEDICAL ATTENDANT; *JOHNNY (E).",
+    "type": "source"
+  }
+}

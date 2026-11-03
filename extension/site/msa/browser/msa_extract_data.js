@@ -25,7 +25,7 @@ SOFTWARE.
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
 function isMsaCitation(string) {
-  const msa_header_citation = "^MSA [A-Z]+ [A-Z0-9\-]{3,12}$";  // MSA ZZ 1234-56
+  const msa_header_citation = "^MSA [A-Z]+ [A-Z0-9-]{3,12}$"; // MSA ZZ 1234-56
   let citation = string.match(msa_header_citation);
   //console.log("isMsaCitation: " + string + " " + citation);
   return citation;
@@ -33,8 +33,8 @@ function isMsaCitation(string) {
 function isMsaFilenameCitation(string) {
   let result = null;
   //console.log("Check  for Filename citation: " +string);
-  const mdsa_filename_citation = /^(?:mdsa_)([A-Za-z0-9\-_]{3,14})(\.pdf)$/;  // mdsa_AA1234-5.pdf
-  const non_mdsa_filename_citation = /^([A-Za-z0-9\-]{3,14})(\.pdf)$/;  // AA1234-5.pdf
+  const mdsa_filename_citation = /^(?:mdsa_)([A-Za-z0-9\-_]{3,14})(\.pdf)$/; // mdsa_AA1234-5.pdf
+  const non_mdsa_filename_citation = /^([A-Za-z0-9\-]{3,14})(\.pdf)$/; // AA1234-5.pdf
   // There are some citation filenames like below, and some possible false citations.
   //const msa_film_filename_citation = /^(?:msa_)([A-Za-z0-9]{3,7})_([A-Za-z0-9\-_]{3,14})(\.pdf)$/;  // msa_wk987_AA1234-5.pdf
   const match = string.match(mdsa_filename_citation);
@@ -51,19 +51,18 @@ function isMsaFilenameCitation(string) {
 function searchDOMNode(domNodeText) {
   let result = null;
   //console.log("SearchDOM node: " + domNodeText);
-  if (!domNodeText || (domNodeText.length < 4)) {
+  if (!domNodeText || domNodeText.length < 4) {
     return result;
   }
-  const msa_citation_a = ".*(MSA [A-Z]{1,4}[0-9]{2,6}\-[0-9]{1,4}).*";
-  const msa_citation_b = "^MSA [A-Z0-9\-]{3,12}$";  // MSA 1234-56
+  const msa_citation_a = ".*(MSA [A-Z]{1,4}[0-9]{2,6}-[0-9]{1,4}).*";
+  const msa_citation_b = "^MSA [A-Z0-9-]{3,12}$"; // MSA 1234-56
   result = domNodeText.match(msa_citation_a);
   if (result) {
     //console.log("searchDOMNode A: " + " " + result[1]);
     return result[1];
-  } else
-  if (!result) {
+  } else if (!result) {
     result = domNodeText.match(msa_citation_b);
-    if (result)  {
+    if (result) {
       //console.log("searchDOMNode B: " + " " + result[0]);
       return result[0];
     }
@@ -78,7 +77,7 @@ function checkTitleForCitation(headTitle, result) {
   }
   let parts = headTitle.textContent.split(",");
   if (parts.length > 0) {
-    for (i=0; i<parts.length; i++) {
+    for (i = 0; i < parts.length; i++) {
       part = parts[i].trim();
       //if (part.includes("Archives of Maryland")) {
       //  console.log(" IS The Part: " + part);
@@ -86,8 +85,8 @@ function checkTitleForCitation(headTitle, result) {
       //}
       if (isMsaCitation(part)) {
         result.msaCitation = part;
-        result.success = true; 
-        return result; 
+        result.success = true;
+        return result;
       }
     }
   }
@@ -101,16 +100,15 @@ function searchAllDomNodes(document, result) {
   //const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
   const walker = document.createTreeWalker(root, 4, null);
   let currentNode;
-  while(( currentNode = walker.nextNode())) {
+  while ((currentNode = walker.nextNode())) {
     let txt = currentNode.wholeText.trim();
-    // heuristics, drop empty txt and scripts 
-    if ((txt.length > 3) && (txt.length < 100) && (result.msaDomNodes.length < 100)) {
+    // heuristics, drop empty txt and scripts
+    if (txt.length > 3 && txt.length < 100 && result.msaDomNodes.length < 100) {
       if (txt.match(/^\d+$/)) {
-        ;
       } else {
         result.msaDomNodes.push(txt);
       }
-    } 
+    }
     if (!result.msaCitation) {
       let citation = searchDOMNode(currentNode.wholeText);
       if (citation) {
@@ -125,18 +123,18 @@ function searchAllDomNodes(document, result) {
 }
 
 function searchDomNodes(document, result) {
-  const citation_nl = document.querySelectorAll('span[id=\"ContentPlaceHolder1_booklbl\"]');
+  const citation_nl = document.querySelectorAll('span[id="ContentPlaceHolder1_booklbl"]');
   for (const snode of citation_nl) {
     //console.log("DOM Citation: " + snode.nodeType + " Txt:  " + snode.innerHTML);
     let citation = searchDOMNode(snode.innerHTML);
-    if (citation && (citation.length > 0)) {
+    if (citation && citation.length > 0) {
       result.msaCitation = citation;
       //console.log("DOM Citation: " + result.msaCitation);
     }
   }
-  const additional_node = document.querySelector('span[id=\"ContentPlaceHolder1_AoMlbl\"]');
+  const additional_node = document.querySelector('span[id="ContentPlaceHolder1_AoMlbl"]');
   if (additional_node) {
-    result.msaAdditionalInfo = additional_node.innerHTML.split('<br>');
+    result.msaAdditionalInfo = additional_node.innerHTML.split("<br>");
     //console.log("AdditionalInfo: " + result.msaAdditionalInfo);
   }
 }
@@ -157,9 +155,9 @@ function extractData(document, url) {
     result.msaRawHeadTitle = headTitle.textContent;
     checkTitleForCitation(headTitle, result);
   }
-  if(!result.msaCitation) {
+  if (!result.msaCitation) {
     // sometimes the .pdf filename is the MSA citation
-    let filename = url.split('/').pop();
+    let filename = url.split("/").pop();
     let maybeCitation = isMsaFilenameCitation(filename);
     if (maybeCitation) {
       result.msaCitation = "MSA " + maybeCitation.toUpperCase().replace("_", "-");
@@ -167,13 +165,13 @@ function extractData(document, url) {
       result.success = true;
     }
   }
-  if(!result.msaCitation) {
+  if (!result.msaCitation) {
     //console.log("Still No Citation yet, searching DOM");
-    const body = document.querySelector('body');
+    const body = document.querySelector("body");
     searchDomNodes(document, result);
     // try to dig out the page # from the html
     //  -- currently in in the (div id="optionsViewer") "option selected="selected"
-    const optionNodes = document.querySelectorAll('div[id=\"optionsViewer\"] select option[selected=\"selected\"]');
+    const optionNodes = document.querySelectorAll('div[id="optionsViewer"] select option[selected="selected"]');
     for (const onode of optionNodes) {
       if (onode.value.match(/\d{1,5}/)) {
         result.msaPageViewerPage = onode.value;

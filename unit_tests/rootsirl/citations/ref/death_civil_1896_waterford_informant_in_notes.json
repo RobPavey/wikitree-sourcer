@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Civil Death Registration''':\nRoots Ireland<br/>\nRegistration district: Waterford, County Waterford; Transcribed by: Waterford Heritage; Record ID: 80547<br/>\n[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=80547&type=dcv&recordCentre=waterford Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\nJohn Smith death 15 Oct 1896 (age 18) in County Waterford, Ireland. Notes: Registrar: Cutler P; Register: WAT 1U DTH BK43; Union: Waterford; Cause of death: Hemiplegia 2 months certified; Informant: Smith Bridget Mother His Mark Present At.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John died (age 18) on 15 October 1896 in County Waterford, Ireland.<ref>\n'''Civil Death Registration''':\nRoots Ireland<br/>\nRegistration district: Waterford, County Waterford; Transcribed by: Waterford Heritage; Record ID: 80547<br/>\n[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=80547&type=dcv&recordCentre=waterford Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\nJohn Smith death 15 Oct 1896 (age 18) in County Waterford, Ireland. Notes: Registrar: Cutler P; Register: WAT 1U DTH BK43; Union: Waterford; Cause of death: Hemiplegia 2 months certified; Informant: Smith Bridget Mother His Mark Present At.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Civil Death Registration''': Roots Ireland<br/>Civil death registration; Registration district: Waterford, County Waterford; Transcribed by: Waterford Heritage; Record ID: 80547<br/>[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=80547&type=dcv&recordCentre=waterford Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>John Smith death 15 Oct 1896 (age 18) in County Waterford, Ireland. Notes: Registrar: Cutler P; Register: WAT 1U DTH BK43; Union: Waterford; Cause of death: Hemiplegia 2 months certified; Informant: Smith Bridget Mother His Mark Present At.",
+    "type": "source"
+  }
+}

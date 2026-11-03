@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Church Baptism''':\nRoots Ireland<br/>\nDenomination: Roman Catholic; Parish: Killeagh, County Cork; Transcribed by: Mallow Heritage Centre (Cork North & East); Record ID: 973516<br/>\n[https://rootsireland.ie/corknortheast/view_detail.php?recordid=973516&type=bch&recordCentre=corknortheast Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\n[https://registers.nli.ie/registers/vtls000634264 National Library of Ireland parish register]<br/>\nPatrick Lee baptism on 13 Apr 1834, son of William Lee & Elizabeth Murray, in Killeagh, County Cork, Ireland. Sponsors: Patrick Hurly, Catherine Walsh. Notes: E.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Patrick, son of William Lee & Elizabeth Murray, was baptised on 13 April 1834 in Killeagh, County Cork, Ireland.<ref>\n'''Church Baptism''':\nRoots Ireland<br/>\nDenomination: Roman Catholic; Parish: Killeagh, County Cork; Transcribed by: Mallow Heritage Centre (Cork North & East); Record ID: 973516<br/>\n[https://rootsireland.ie/corknortheast/view_detail.php?recordid=973516&type=bch&recordCentre=corknortheast Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\n[https://registers.nli.ie/registers/vtls000634264 National Library of Ireland parish register]<br/>\nPatrick Lee baptism on 13 Apr 1834, son of William Lee & Elizabeth Murray, in Killeagh, County Cork, Ireland. Sponsors: Patrick Hurly, Catherine Walsh. Notes: E.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Church Baptism''': Roots Ireland<br/>Church baptism; Denomination: Roman Catholic; Parish: Killeagh, County Cork; Transcribed by: Mallow Heritage Centre (Cork North & East); Record ID: 973516<br/>[https://rootsireland.ie/corknortheast/view_detail.php?recordid=973516&type=bch&recordCentre=corknortheast Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>[https://registers.nli.ie/registers/vtls000634264 National Library of Ireland parish register]<br/>Patrick Lee baptism on 13 Apr 1834, son of William Lee & Elizabeth Murray, in Killeagh, County Cork, Ireland. Sponsors: Patrick Hurly, Catherine Walsh. Notes: E.",
+    "type": "source"
+  }
+}
