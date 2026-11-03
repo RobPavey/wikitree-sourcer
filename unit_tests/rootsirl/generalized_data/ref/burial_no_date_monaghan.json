@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "rootsirl",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "placeString": "St Salvator's, Donagh, County Monaghan, Ireland",
+    "county": "County Monaghan"
+  },
+  "residencePlace": {
+    "placeString": "Emyvale, Donagh Parish, County Monaghan, Ireland",
+    "county": "County Monaghan"
+  },
+  "ageAtDeath": "76",
+  "overrideRefTitle": "Church Burial",
+  "hasValidData": true
+}

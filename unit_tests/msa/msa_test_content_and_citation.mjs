@@ -50,7 +50,6 @@ const regressionData = [
     caseName: "msa_m_isabelle_dcert",
     url: "https://pve.msa.maryland.gov/pages/viewer.aspx?L9X3RQuDc4NfJ150bhvuQx%2fWvHanONX9Z4z6F2xu6BxqcqvO9UWtNenRwRuX4j3Zb1WeOV%2fc1G3rDfHgLQAXjQ=%3d",
   },
-
 ];
 
 async function runTests(testManager) {

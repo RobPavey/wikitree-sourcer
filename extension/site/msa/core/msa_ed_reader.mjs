@@ -35,15 +35,13 @@ class MsaEdReader extends ExtractedDataReader {
   // Note: there are default implementations in ExtractedDataReader and, if using a data-driven
   // style, you may not need to override them here.
   ////////////////////////////////////////////////////////////////////////////////////////////////////
-  getSourceTitle(options) {
-  }
+  getSourceTitle(options) {}
   getSourceReference(options) {
     if (this.ed.msaCitation) {
       return this.ed.msaCitation;
-    } 
+    }
     return "no citation was found";
   }
-
 }
 
 export { MsaEdReader };

@@ -1,0 +1,43 @@
+{
+  "url": "https://rootsireland.ie/ifhf/view_detail.php?recordid=1233592&type=mch&recordCentre=longford&page=2&n=15&backLink=quis.php&sc=0",
+  "success": true,
+  "recordId": "1233592",
+  "recordTypeCode": "mch",
+  "recordCentre": "longford",
+  "shortUrl": "https://rootsireland.ie/ifhf/view_detail.php?recordid=1233592&type=mch&recordCentre=longford",
+  "recordTitle": "Church Marriage Record",
+  "recordData": {
+    "Date of Marriage": "21-Oct-1915",
+    "Parish / District": "ARDAGH AND MOYDOW",
+    "County": "Co. Longford"
+  },
+  "sections": {
+    "Husband": {
+      "forenames": "John",
+      "surname": "Smyth",
+      "Address": "Rathowen",
+      "Denomination": "Roman Catholic",
+      "Status": "Bachelor (Previously unmarried)"
+    },
+    "Wife": {
+      "forenames": "Mary Ellen",
+      "surname": "Clarke",
+      "Denomination": "Roman Catholic",
+      "Age": "24",
+      "Status": "Spinster (Previously unmarried)"
+    },
+    "Husband's Father": {
+      "surname": "Smyth"
+    },
+    "Wife's Father": {
+      "forenames": "James",
+      "surname": "Clarke"
+    },
+    "Wife's Mother": {
+      "forenames": "Mary",
+      "surname": "Egan"
+    }
+  },
+  "notes": "MARRIED IN BALLIVOR CO MEATH\nMARY ELLEN WAS BORN 30-09-1891",
+  "copyrightOwner": "Longford Genealogy"
+}

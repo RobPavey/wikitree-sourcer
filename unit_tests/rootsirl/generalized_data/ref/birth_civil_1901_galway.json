@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "rootsirl",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "John Smyth"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1 Mar 1901"
+  },
+  "eventPlace": {
+    "placeString": "County Galway, Ireland",
+    "county": "County Galway"
+  },
+  "birthDate": {
+    "dateString": "1 Mar 1901"
+  },
+  "residencePlace": {
+    "placeString": "William Street West, County Galway, Ireland",
+    "county": "County Galway"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Martin Joseph Smyth"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ellen Mcdonagh"
+      }
+    }
+  },
+  "overrideRefTitle": "Civil Birth Registration",
+  "hasValidData": true
+}

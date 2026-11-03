@@ -1,0 +1,38 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Patrick Joseph",
+    "lastName": "Brennan"
+  },
+  "lastNameAtBirth": "Brennan",
+  "lastNameAtDeath": "Brennan",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "4 Mar 1872",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "1931",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Ballymahon, County Longford, Ireland"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Bridget Mary Quinn",
+        "forenames": "Bridget Mary",
+        "lastName": "Quinn"
+      },
+      "marriageDate": {
+        "dateString": "12 Feb 1898"
+      },
+      "marriagePlace": {
+        "placeString": "County Longford, Ireland"
+      }
+    }
+  ],
+  "hasValidData": true
+}

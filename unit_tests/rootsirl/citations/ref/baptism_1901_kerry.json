@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Church Baptism''':\nRoots Ireland<br/>\nDenomination: Roman Catholic; Parish: Prior, County Kerry; Transcribed by: Kerry Genealogy; Record ID: 471306<br/>\n[https://rootsireland.ie/ifhf/view_detail.php?recordid=471306&type=bch&recordCentre=kerry Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\nJohn Smith baptism on 14 Mar 1901 (born 13 Mar 1901), child of John Smith & Helen Connell, in Prior, County Kerry, Ireland. Sponsors: James Smith, Mary Smith. Notes: PRIEST: REV. J. O'CONNELL.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John, child of John Smith & Helen Connell, was born on 13 March 1901 and baptised on 14 March 1901 in Prior, County Kerry, Ireland.<ref>\n'''Church Baptism''':\nRoots Ireland<br/>\nDenomination: Roman Catholic; Parish: Prior, County Kerry; Transcribed by: Kerry Genealogy; Record ID: 471306<br/>\n[https://rootsireland.ie/ifhf/view_detail.php?recordid=471306&type=bch&recordCentre=kerry Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\nJohn Smith baptism on 14 Mar 1901 (born 13 Mar 1901), child of John Smith & Helen Connell, in Prior, County Kerry, Ireland. Sponsors: James Smith, Mary Smith. Notes: PRIEST: REV. J. O'CONNELL.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Church Baptism''': Roots Ireland<br/>Church baptism; Denomination: Roman Catholic; Parish: Prior, County Kerry; Transcribed by: Kerry Genealogy; Record ID: 471306<br/>[https://rootsireland.ie/ifhf/view_detail.php?recordid=471306&type=bch&recordCentre=kerry Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>John Smith baptism on 14 Mar 1901 (born 13 Mar 1901), child of John Smith & Helen Connell, in Prior, County Kerry, Ireland. Sponsors: James Smith, Mary Smith. Notes: PRIEST: REV. J. O'CONNELL.",
+    "type": "source"
+  }
+}

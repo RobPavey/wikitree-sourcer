@@ -1,0 +1,36 @@
+{
+  "url": "https://www.rootsireland.ie/ifhf/view_detail.php?recordid=80547&type=dcv&recordCentre=waterford&page=7&n=65&backLink=quis.php&sc=0",
+  "success": true,
+  "recordId": "80547",
+  "recordTypeCode": "dcv",
+  "recordCentre": "waterford",
+  "shortUrl": "https://www.rootsireland.ie/ifhf/view_detail.php?recordid=80547&type=dcv&recordCentre=waterford",
+  "recordTitle": "Civil Death Record",
+  "recordData": {
+    "Forenames": "John",
+    "Surname": "Smith",
+    "Date of Death": "15-Oct-1896",
+    "Age": "18",
+    "Parish / District": "Waterford",
+    "Address": "Peter Street.",
+    "County": "Co. Waterford",
+    "Status": "Bachelor",
+    "Denomination": "Civil Record",
+    "Occupation": "Son Of Sailor",
+    "Sex": "Male"
+  },
+  "sections": {
+    "Informant": {
+      "Address": "Peter Street"
+    }
+  },
+  "notes": "Registrar: Cutler P..\nRegister: WAT 1U DTH BK43.\nUnion: Waterford.\nCause of death: Hemiplegia 2 months certified .\nInformant: Smith Bridget Mother His Mark Present At.",
+  "noteFields": {
+    "Registrar": "Cutler P",
+    "Register": "WAT 1U DTH BK43",
+    "Union": "Waterford",
+    "Cause of death": "Hemiplegia 2 months certified",
+    "Informant": "Smith Bridget Mother His Mark Present At"
+  },
+  "copyrightOwner": "Waterford Heritage"
+}

@@ -1,0 +1,31 @@
+{
+  "url": "https://www.rootsireland.ie/ifhf/view_detail.php?recordid=639672&type=dcv&recordCentre=meath&page=3&n=27&backLink=quis.php&sc=0",
+  "success": true,
+  "recordId": "639672",
+  "recordTypeCode": "dcv",
+  "recordCentre": "meath",
+  "shortUrl": "https://www.rootsireland.ie/ifhf/view_detail.php?recordid=639672&type=dcv&recordCentre=meath",
+  "recordTitle": "Civil Death Record",
+  "recordData": {
+    "Forenames": "John",
+    "Surname": "Smith",
+    "Date of Death": "26-Oct-1898",
+    "Age": "55",
+    "Parish / District": "NOBBER CR.DED",
+    "Address": "Cloughrea",
+    "County": "Co. Meath",
+    "Status": "Not Married",
+    "Denomination": "Civil Record",
+    "Occupation": "LABOURER",
+    "Sex": "Male"
+  },
+  "sections": {
+    "Informant": {
+      "Relationship": "Householder",
+      "Name": "James Lawler",
+      "Address": "Cloughrea"
+    }
+  },
+  "notes": "CHRONIC BRONCHITIS 12 MONTHS\nUNCERTIFIED\nNO MEDICAL ATTENDANT\n*JOHNNY (E)",
+  "copyrightOwner": "Meath Heritage Centre"
+}

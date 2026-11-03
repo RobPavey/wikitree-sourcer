@@ -1,0 +1,24 @@
+{
+  "url": "https://rootsireland.ie/corknortheast/view_detail.php?recordid=973516&type=bch&recordCentre=corknortheast&page=1&n=2&backLink=quis.php&sc=0",
+  "success": true,
+  "recordId": "973516",
+  "recordTypeCode": "bch",
+  "recordCentre": "corknortheast",
+  "shortUrl": "https://rootsireland.ie/corknortheast/view_detail.php?recordid=973516&type=bch&recordCentre=corknortheast",
+  "recordTitle": "Church Baptism Record",
+  "recordData": {
+    "Name": "Patrick Lee",
+    "Date of Baptism": "13-Apr-1834",
+    "Parish / District": "KILLEAGH",
+    "Gender": "Male",
+    "County": "Co. Cork",
+    "Denomination": "Roman Catholic",
+    "Father": "William Lee",
+    "Mother": "Elizabeth Murray",
+    "Sponsor 1 / Informant 1": "Patrick Hurly",
+    "Sponsor 2 / Informant 2": "Catherine Walsh"
+  },
+  "notes": "E",
+  "copyrightOwner": "Mallow Heritage Centre (Cork North & East)",
+  "microfilmLink": "https://registers.nli.ie/registers/vtls000634264"
+}

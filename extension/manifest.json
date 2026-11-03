@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "WikiTree Sourcer (Preview)",
-  "version": "3.4.6.2",
+  "name": "WikiTree Sourcer",
+  "version": "3.4.7",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "icons": {
     "16": "images/wikitree_sourcer16.png",
@@ -105,9 +105,10 @@
     "*://*.newspapers.com/*",
     "*://*.nli.ie/*",
     "*://*.openarchieven.nl/*",
-    "*://*.rip.ie/*",
     "*://*.prdh-igd.com/*",
     "*://*.riksarkivet.se/*",
+    "*://*.rip.ie/*",
+    "*://*.rootsireland.ie/*",
     "*://*.thegenealogist.co.uk/*",
     "*://*.thegenealogist.com/*",
     "*://*.ushmm.org/*",
@@ -117,6 +118,7 @@
     "*://*.wikitree.com/*",
     "*://*.yadvashem.org/*",
     "*://apps.bundesarchiv.de/gedenkbuch/*",
+    "*://apps.ilsos.gov/isavital/*",
     "*://apps.wikitree.com/apps/*/cemetery-map/*",
     "*://apps.wikitree.com/apps/*/headstone-tool/*",
     "*://archive.org/*",
@@ -162,7 +164,6 @@
     "*://www.szukajwarchiwach.gov.pl/*",
     "*://www.yorkshireburials.uk/*",
     "*://www.youtube.com/*",
-    "*://yorkshireburials.uk/*",
-    "*://apps.ilsos.gov/isavital/*"
+    "*://yorkshireburials.uk/*"
   ]
 }

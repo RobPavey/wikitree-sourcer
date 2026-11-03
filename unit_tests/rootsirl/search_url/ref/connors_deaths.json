@@ -1,0 +1,15 @@
+{
+  "std": {
+    "fieldData": {
+      "firstname": "Margaret",
+      "surname": "Long",
+      "year": "1936"
+    },
+    "selectData": {
+      "yearRange": "2",
+      "variants": "ssi"
+    },
+    "searchType": "Deaths",
+    "formType": "death"
+  }
+}

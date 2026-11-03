@@ -40,6 +40,8 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
+import { checkIfCollectingCitations } from "/base/browser/common/collected_citations.mjs";
+import { addCollectCitationsMenuItem } from "/base/browser/popup/popup_collect_citations.mjs";
 
 import {
   addStandardMenuEnd,
@@ -3197,6 +3199,12 @@ async function buildMenu(data, tabId) {
 
   if (extractedData.pageType == "editFamily") {
     if (extractedData.editFamilyType != "steps" || extractedData.editFamilyTypeStep == "basicData") {
+      let collectingCitations = await checkIfCollectingCitations();
+      if (collectingCitations) {
+        addMenuDivider(menu);
+        addItalicMessageMenuItem(menu, "You are currently collecting citations", "colorRed");
+        await addCollectCitationsMenuItem(menu, data, backFunction);
+      }
       addMenuDivider(menu);
       await addSetFieldsFromPersonDataMenuItem(menu, data, tabId, backFunction);
       await addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction);

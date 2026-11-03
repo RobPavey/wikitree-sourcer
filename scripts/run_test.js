@@ -86,9 +86,10 @@ const siteNames = [
   "ppnz",
   "prdh",
   "psuk",
-  "ripie",
   "qldbdm",
   "riksark",
+  "ripie",
+  "rootsirl",
   "scotp",
   "sosmogov",
   "szukaj",
@@ -106,7 +107,7 @@ const siteNames = [
   "wtahdstn",
   "yadvashem",
   "yorkshireburials",
-  "youtube"
+  "youtube",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {

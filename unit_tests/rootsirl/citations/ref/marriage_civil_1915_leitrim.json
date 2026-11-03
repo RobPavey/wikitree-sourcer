@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Civil Marriage Registration''':\nRoots Ireland<br/>\nRegistration district: Newtowngore, County Leitrim; Transcribed by: Leitrim Genealogy Centre; Record ID: 962555<br/>\n[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=962555&type=mcv&recordCentre=leitrim Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\nJohn Smith, son of John Smith, marriage to Bridget Quinn on 8 Jan 1915 in County Leitrim, Ireland. Witnesses: Peter Smith, Monica Carey. Notes: MARRIED IN DRUMREILLY UPPER RC CHURCH.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John, son of John Smith, married Bridget Quinn on 8 January 1915 in County Leitrim, Ireland.<ref>\n'''Civil Marriage Registration''':\nRoots Ireland<br/>\nRegistration district: Newtowngore, County Leitrim; Transcribed by: Leitrim Genealogy Centre; Record ID: 962555<br/>\n[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=962555&type=mcv&recordCentre=leitrim Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\nJohn Smith, son of John Smith, marriage to Bridget Quinn on 8 Jan 1915 in County Leitrim, Ireland. Witnesses: Peter Smith, Monica Carey. Notes: MARRIED IN DRUMREILLY UPPER RC CHURCH.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Civil Marriage Registration''': Roots Ireland<br/>Civil marriage registration; Registration district: Newtowngore, County Leitrim; Transcribed by: Leitrim Genealogy Centre; Record ID: 962555<br/>[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=962555&type=mcv&recordCentre=leitrim Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>John Smith, son of John Smith, marriage to Bridget Quinn on 8 Jan 1915 in County Leitrim, Ireland. Witnesses: Peter Smith, Monica Carey. Notes: MARRIED IN DRUMREILLY UPPER RC CHURCH.",
+    "type": "source"
+  }
+}

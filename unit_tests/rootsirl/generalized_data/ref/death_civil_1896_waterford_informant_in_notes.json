@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "rootsirl",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "15 Oct 1896"
+  },
+  "eventPlace": {
+    "placeString": "County Waterford, Ireland",
+    "county": "County Waterford"
+  },
+  "deathDate": {
+    "dateString": "15 Oct 1896"
+  },
+  "residencePlace": {
+    "placeString": "Peter Street, County Waterford, Ireland",
+    "county": "County Waterford"
+  },
+  "ageAtDeath": "18",
+  "maritalStatus": "single",
+  "occupation": "Son Of Sailor",
+  "overrideRefTitle": "Civil Death Registration",
+  "hasValidData": true
+}
