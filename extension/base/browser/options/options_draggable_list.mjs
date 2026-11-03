@@ -28,7 +28,7 @@ function createDraggableListElement(document) {
   let activeItem = null;
   let scrollInterval = null;
 
-  // --- COMMON DRAG LOGIC ---
+  // --- CORE REORDER & AUTO-SCROLL LOGIC ---
   function handleMove(clientY) {
     const afterElement = getDragAfterElement(listElement, clientY);
     if (afterElement == null) {
@@ -69,22 +69,20 @@ function createDraggableListElement(document) {
     activeItem = null;
   }
 
-  // --- DESKTOP / POINTER EVENTS ---
+  // --- DESKTOP / POINTER EVENTS (Chrome, Mac/PC Safari) ---
   function startPointerDrag(e) {
     const listItem = e.target.closest("li.draggableListItem");
     if (!listItem || listItem.parentElement !== listElement) return;
 
-    // On mobile devices/tablets (even when using a mouse/trackpad),
-    // restrict pointer dragging strictly to the handle.
-    // Allow row-wide dragging only on true desktop environments (mouse-primary browsers).
+    // On touch/coarse pointer devices (e.g. iPad, iOS Simulator),
+    // require grabbing the handle to avoid breaking touch scroll.
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
     if (isTouchDevice) {
       const handle = e.target.closest(".draggableIcon");
-      if (!handle) return; // If clicking outside the handle on iOS/iPad, let native scrolling/events happen
+      if (!handle) return;
     }
 
     e.preventDefault();
-
     activeItem = listItem;
     isDragging = true;
     activeItem.classList.add("beingDragged");
@@ -103,8 +101,7 @@ function createDraggableListElement(document) {
   function onPointerMove(e) {
     if (!isDragging || !activeItem) return;
     e.preventDefault();
-    const clientY = e.clientY;
-    if (clientY) handleMove(clientY);
+    if (e.clientY) handleMove(e.clientY);
   }
 
   function endPointerDrag(e) {
@@ -128,9 +125,8 @@ function createDraggableListElement(document) {
     const listItem = handle.closest(".draggableListItem");
     if (!listItem || listItem.parentElement !== listElement) return;
 
-    // Immediately stop iOS scrolling and lock gesture to dragging
     e.preventDefault();
-    e.stopPropagation(); // Prevent event bubbling confusion
+    e.stopPropagation();
 
     activeItem = listItem;
     isDragging = true;
@@ -178,7 +174,7 @@ function createDraggableListElement(document) {
     ).element;
   };
 
-  // Attach both pointer events (Chrome/Desktop) and touch events (iOS Safari)
+  // Bind input listeners
   listElement.addEventListener("pointerdown", startPointerDrag);
   listElement.addEventListener("touchstart", startTouchDrag, { passive: false });
 

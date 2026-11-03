@@ -266,8 +266,6 @@ dialog::backdrop {
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
-  /* Forces iOS WebKit to display the scrollbar persistently */
-  -webkit-overflow-scrolling: touch;
 }
 
 /* Force visible scrollbar track and thumb on WebKit / iOS Safari */
@@ -295,8 +293,8 @@ dialog::backdrop {
 
 li.draggableListItem {
   background-color: var(--bg-close-color);
-  padding: 4px 8px;
-  margin: 4px;
+  padding: 2px 6px;
+  margin: 2px 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -335,14 +333,16 @@ li.draggableListItem.beingDragged {
   -webkit-touch-callout: none;
 }
 
-/* Expands the touch hit-box by ~10px in all directions without affecting visuals */
-.draggableIcon::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  bottom: -10px;
-  left: -10px;
-  right: -10px;
+/* Only expand the touch target on touch-primary devices (mobile/tablets) */
+@media (pointer: coarse) {
+  .draggableIcon::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+  }
 }
 
 li.draggableListItem.beingDragged .draggableIcon {
