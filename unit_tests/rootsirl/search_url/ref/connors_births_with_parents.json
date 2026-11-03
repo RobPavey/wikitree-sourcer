@@ -1,0 +1,19 @@
+{
+  "std": {
+    "fieldData": {
+      "firstname": "Margaret",
+      "ffirstname": "James",
+      "fsurname": "Connors",
+      "mfirstname": "Catherine",
+      "msurname": "Power",
+      "surname": "Connors",
+      "year": "1869"
+    },
+    "selectData": {
+      "yearRange": "0",
+      "variants": "ssi"
+    },
+    "searchType": "Births",
+    "formType": "birth"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "url": "https://rootsireland.ie/ifhf/view_detail.php?recordid=471306&type=bch&recordCentre=kerry&page=1&n=1&backLink=quis.php&sc=0",
+  "success": true,
+  "recordId": "471306",
+  "recordTypeCode": "bch",
+  "recordCentre": "kerry",
+  "shortUrl": "https://rootsireland.ie/ifhf/view_detail.php?recordid=471306&type=bch&recordCentre=kerry",
+  "recordTitle": "Church Baptism Record",
+  "recordData": {
+    "Name": "John Smith",
+    "Date of Birth": "13-Mar-1901",
+    "Date of Baptism": "14-Mar-1901",
+    "Address": "Pathkearan",
+    "Parish / District": "Prior",
+    "County": "Co. Kerry",
+    "Denomination": "Roman Catholic",
+    "Father": "John Smith",
+    "Mother": "Helen Connell",
+    "Sponsor 1 / Informant 1": "James Smith",
+    "Sponsor 2 / Informant 2": "Mary Smith"
+  },
+  "notes": "PRIEST: REV. J. O'CONNELL",
+  "noteFields": {
+    "PRIEST": "REV. J. O'CONNELL"
+  },
+  "copyrightOwner": "Kerry Genealogy"
+}

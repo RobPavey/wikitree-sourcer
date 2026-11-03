@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "rootsirl",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "22 Sep 1899"
+  },
+  "eventPlace": {
+    "placeString": "Deansgrange, County Dublin, Ireland",
+    "county": "County Dublin"
+  },
+  "deathDate": {
+    "dateString": "22 Sep 1899"
+  },
+  "residencePlace": {
+    "placeString": "Windy Arbour Dundrum, County Dublin, Ireland",
+    "county": "County Dublin"
+  },
+  "ageAtDeath": "42",
+  "maritalStatus": "married",
+  "occupation": "Labourer",
+  "overrideRefTitle": "Church Burial",
+  "hasValidData": true
+}

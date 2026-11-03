@@ -107,9 +107,10 @@
     "*://*.newspapers.com/*",
     "*://*.nli.ie/*",
     "*://*.openarchieven.nl/*",
-    "*://*.rip.ie/*",
     "*://*.prdh-igd.com/*",
     "*://*.riksarkivet.se/*",
+    "*://*.rip.ie/*",
+    "*://*.rootsireland.ie/*",
     "*://*.thegenealogist.co.uk/*",
     "*://*.thegenealogist.com/*",
     "*://*.ushmm.org/*",
@@ -118,8 +119,6 @@
     "*://*.wikipedia.org/*",
     "*://*.wikitree.com/*",
     "*://*.yadvashem.org/*",
-    "*://yorkshireburials.uk/*",
-    "*://www.yorkshireburials.uk/*",
     "*://apps.bundesarchiv.de/gedenkbuch/*",
     "*://apps.wikitree.com/apps/*/headstone-tool/*",
     "*://archive.org/*",
@@ -163,7 +162,9 @@
     "*://www.landesarchiv-nrw.de/*",
     "*://www.scotlandspeople.gov.uk/*",
     "*://www.szukajwarchiwach.gov.pl/*",
-    "*://www.youtube.com/*"
+    "*://www.yorkshireburials.uk/*",
+    "*://www.youtube.com/*",
+    "*://yorkshireburials.uk/*"
   ],
   "commands": {
     "_execute_action": {

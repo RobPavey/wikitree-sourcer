@@ -1,0 +1,49 @@
+{
+  "sourceOfData": "rootsirl",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "8 Jan 1915"
+  },
+  "eventPlace": {
+    "placeString": "County Leitrim, Ireland",
+    "county": "County Leitrim"
+  },
+  "maritalStatus": "single",
+  "occupation": "Engineer",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Quinn",
+        "forenames": "Bridget"
+      },
+      "marriageDate": {
+        "dateString": "8 Jan 1915"
+      },
+      "marriagePlace": {
+        "placeString": "County Leitrim, Ireland",
+        "county": "County Leitrim"
+      },
+      "personGender": "female"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Smith",
+        "forenames": "John"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "John Smith (husband)",
+    "Bridget Quinn (wife)"
+  ],
+  "overrideRefTitle": "Civil Marriage Registration",
+  "hasValidData": true
+}

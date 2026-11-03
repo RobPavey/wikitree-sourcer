@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Church Burial''':\nRoots Ireland<br/>\nParish: Donagh, County Monaghan; Transcribed by: Monaghan Genealogy; Record ID: 34166<br/>\n[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=34166&type=dch&recordCentre=monaghan Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\nJohn Smith burial (died age 76) in St Salvator's, Donagh, County Monaghan, Ireland. Notes: Rev. Samuel Ferguson Cunningham.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John (age 76) was buried in St Salvator's, Donagh, County Monaghan, Ireland.<ref>\n'''Church Burial''':\nRoots Ireland<br/>\nParish: Donagh, County Monaghan; Transcribed by: Monaghan Genealogy; Record ID: 34166<br/>\n[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=34166&type=dch&recordCentre=monaghan Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>\nJohn Smith burial (died age 76) in St Salvator's, Donagh, County Monaghan, Ireland. Notes: Rev. Samuel Ferguson Cunningham.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Church Burial''': Roots Ireland<br/>Church burial; Parish: Donagh, County Monaghan; Transcribed by: Monaghan Genealogy; Record ID: 34166<br/>[https://www.rootsireland.ie/ifhf/view_detail.php?recordid=34166&type=dch&recordCentre=monaghan Roots Ireland record] (subscription required) (accessed 6 May 2021)<br/>John Smith burial (died age 76) in St Salvator's, Donagh, County Monaghan, Ireland. Notes: Rev. Samuel Ferguson Cunningham.",
+    "type": "source"
+  }
+}

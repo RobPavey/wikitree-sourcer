@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "rootsirl",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "name": "John Smith"
+  },
+  "eventDate": {
+    "dateString": "14 Mar 1901"
+  },
+  "eventPlace": {
+    "placeString": "Prior, County Kerry, Ireland",
+    "county": "County Kerry"
+  },
+  "birthDate": {
+    "dateString": "13 Mar 1901"
+  },
+  "residencePlace": {
+    "placeString": "Pathkearan, County Kerry, Ireland",
+    "county": "County Kerry"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Smith"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Helen Connell"
+      }
+    }
+  },
+  "overrideRefTitle": "Church Baptism",
+  "hasValidData": true
+}

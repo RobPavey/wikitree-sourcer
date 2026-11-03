@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "rootsirl",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "name": "Patrick Lee"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "13 Apr 1834"
+  },
+  "eventPlace": {
+    "placeString": "Killeagh, County Cork, Ireland",
+    "county": "County Cork"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Lee"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Elizabeth Murray"
+      }
+    }
+  },
+  "overrideRefTitle": "Church Baptism",
+  "hasValidData": true
+}
