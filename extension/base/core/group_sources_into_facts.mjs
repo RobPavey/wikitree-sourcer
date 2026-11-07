@@ -655,28 +655,20 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
     // we would like these to merge OK for example:
     //   St Pancras, Middlesex, England
     //   Kentish Town, St Pancras, London, Middlesex, England
-    // So if every term in one name if also in the other name in the same order it is OK
+    // So if every term in one name if also in the other name it matches
     function areAllTermsInOtherTerms(termsA, termsB) {
-      let termBStartIndex = 0;
+      let cleanSetB = new Set(termsB.map((t) => cleanTerm(t)));
+
       for (let termA of termsA) {
         let cleanTermA = cleanTerm(termA);
-        let foundTermA = false;
-        for (let termBIndex = termBStartIndex; termBIndex < termsB.length; termBIndex++) {
-          let cleanTermB = cleanTerm(termsB[termBIndex]);
-          if (cleanTermA == cleanTermB) {
-            termBStartIndex = termBIndex + 1;
-            foundTermA = true;
-            break;
-          }
-          // We would also like these to match:
-          // Wimbledon, Surrey, England.
-          // Holy Trinity and St Peter, South Wimbledon, Holy Trinity and St Peter, Surrey, England.
-          if (cleanTermB.startsWith(cleanTermA) || cleanTermB.endsWith(cleanTermA)) {
-            foundTermA = true;
-            break;
-          }
+        let found = cleanSetB.has(cleanTermA);
+
+        if (!found) {
+          // Optional: allow partial substring match for variants like "South Wimbledon" vs "Wimbledon"
+          found = Array.from(cleanSetB).some((b) => b.includes(cleanTermA) || cleanTermA.includes(b));
         }
-        if (!foundTermA) {
+
+        if (!found) {
           return false;
         }
       }
