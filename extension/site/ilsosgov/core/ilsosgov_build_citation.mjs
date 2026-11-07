@@ -25,7 +25,16 @@ SOFTWARE.
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildIlsosgovUrl(ed, builder) {
-  return ed.url;
+  // change url from search results page to search fields page
+  let url = ed.url;
+  if (ed.url.includes("deathSearch.do")) {
+    url = ed.url.replace("deathSearch.do", "deathsrch.jsp");
+  } else if (ed.url.includes("idphDeathSearch.do")) {
+    url = ed.url.replace("idphDeathSearch.do", "idphdeathsrch.jsp");
+  } else if (ed.url.includes("marriageSearch.do")) {
+    url = ed.url.replace("marriageSearch.do", "marriagesrch.jsp");
+  }
+  return url;
 }
 
 function buildSourceTitle(ed, gd, builder) {

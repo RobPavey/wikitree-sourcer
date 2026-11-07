@@ -43,6 +43,7 @@ const regressionData = [
     url: "https://www.wikitree.com/index.php?title=Brewster-4803&errcode=saved",
   },
   {
+    // To test IL post-1915 death search on ilsosgov
     caseName: "conrad-4600_edit",
     url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=33050155",
   },
@@ -86,6 +87,11 @@ const regressionData = [
     // Scotland example
     caseName: "gow-822_read",
     url: "https://www.wikitree.com/wiki/Gow-822",
+  },
+  {
+    // To test IL marriage search by groom on ilsosgov
+    caseName: "gummersheimer-5_edit",
+    url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=23791327",
   },
   {
     // To test MO death cert search on sosmogov
@@ -257,6 +263,11 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Stanway-252",
   },
   {
+    // To test IL pre-1916 death search on ilsosgov
+    caseName: "stevenson-1184_edit",
+    url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=4690752",
+  },
+  {
     caseName: "thomas-78801_add_child_2025",
     url: "https://www.wikitree.com/index.php?title=Special:EditFamily&u=46061695&who=child",
   },
@@ -278,6 +289,11 @@ const regressionData = [
     // To test search on taslib
     caseName: "whish-wilson-24_read",
     url: "https://www.wikitree.com/wiki/Whish-Wilson-24",
+  },
+  {
+    // To test IL marriage search by bride on ilsosgov
+    caseName: "willems-1190_edit",
+    url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=26798471",
   },
   {
     // To test no marriage location when user is manager

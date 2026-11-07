@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Illinois Statewide Marriage Index\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/marriagesrch.jsp Search] (accessed 6 May 2021)<br/>\nGroom: UNKNOWN,; Bride: TANNER, MARY E; Date: 1891-12-02; Volume: A 1; Page: 0246; County: SALINE.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Unknown married Mary E Tanner on 2 December 1891 in Saline County, Illinois, United States of America.<ref>\n'''Marriage''':\n\"Illinois Statewide Marriage Index\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/marriagesrch.jsp Search] (accessed 6 May 2021)<br/>\nGroom: UNKNOWN,; Bride: TANNER, MARY E; Date: 1891-12-02; Volume: A 1; Page: 0246; County: SALINE.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Illinois Statewide Marriage Index\"<br/>Illinois State Archives<br/>[https://apps.ilsos.gov/isavital/marriagesrch.jsp Search] (accessed 6 May 2021)<br/>Groom: UNKNOWN,; Bride: TANNER, MARY E; Date: 1891-12-02; Volume: A 1; Page: 0246; County: SALINE.",
+    "type": "source"
+  }
+}

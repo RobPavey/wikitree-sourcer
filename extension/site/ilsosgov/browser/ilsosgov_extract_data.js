@@ -82,8 +82,12 @@ function extractData(document, url) {
   result.recordData = {};
   for (let i = 0; i < tableCells.length; i++) {
     if (tableCells[i].textContent.trim() !== "-  -" && tableCells[i].textContent.trim() !== "- -") {
+      let key = headerCells[i].textContent.trim();
+      if (headerCells[i].textContent.trim().includes("ofDeceased")) {
+        key = headerCells[i].textContent.trim().replace("ofDeceased", "of Deceased");
+      }
       // drop N/A fields
-      result.recordData[headerCells[i].textContent.trim()] = tableCells[i].textContent.trim();
+      result.recordData[key] = tableCells[i].textContent.trim();
     }
   }
 

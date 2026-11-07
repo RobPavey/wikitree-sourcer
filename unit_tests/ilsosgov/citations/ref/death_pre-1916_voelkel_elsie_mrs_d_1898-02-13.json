@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Illinois Statewide Death Index, Pre-1916\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/deathsrch.jsp Search] (accessed 6 May 2021)<br/>\nName of Deceased: VOELKEL, ELSIE (MRS); Date: 1898-02-13; City: BELLEVILLE; Age: 30 YR; Sex: F; Volume: 5; Page: 20; Cert No: 258; County: ST. CLAIR.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Elsie died (age 30) on 13 February 1898 in Belleville, St. Clair County, Illinois, United States of America.<ref>\n'''Death''':\n\"Illinois Statewide Death Index, Pre-1916\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/deathsrch.jsp Search] (accessed 6 May 2021)<br/>\nName of Deceased: VOELKEL, ELSIE (MRS); Date: 1898-02-13; City: BELLEVILLE; Age: 30 YR; Sex: F; Volume: 5; Page: 20; Cert No: 258; County: ST. CLAIR.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Illinois Statewide Death Index, Pre-1916\"<br/>Illinois State Archives<br/>[https://apps.ilsos.gov/isavital/deathsrch.jsp Search] (accessed 6 May 2021)<br/>Name of Deceased: VOELKEL, ELSIE (MRS); Date: 1898-02-13; City: BELLEVILLE; Age: 30 YR; Sex: F; Volume: 5; Page: 20; Cert No: 258; County: ST. CLAIR.",
+    "type": "source"
+  }
+}

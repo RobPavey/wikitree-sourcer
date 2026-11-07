@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|125446179}} (accessed 6 May 2021)<br/>\nMemorial page for Joseph Franz Wolf (21 Dec 1824-8 Apr 1891), citing Schnebelin Cemetery, Mascoutah, St. Clair County, Illinois, USA; Maintained by Myron Mugele (contributor 48020246).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Joseph was mentioned on a memorial at Schnebelin Cemetery, Mascoutah, St. Clair County, Illinois, USA, with a death date of 8 April 1891.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|125446179}} (accessed 6 May 2021)<br/>\nMemorial page for Joseph Franz Wolf (21 Dec 1824-8 Apr 1891), citing Schnebelin Cemetery, Mascoutah, St. Clair County, Illinois, USA; Maintained by Myron Mugele (contributor 48020246).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': Find a Grave (has image)<br/>{{FindAGrave|125446179}} (accessed 6 May 2021)<br/>Memorial page for Joseph Franz Wolf (21 Dec 1824-8 Apr 1891), citing Schnebelin Cemetery, Mascoutah, St. Clair County, Illinois, USA; Maintained by Myron Mugele (contributor 48020246).",
+    "type": "source"
+  }
+}

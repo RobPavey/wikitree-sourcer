@@ -217,6 +217,8 @@ async function doPendingSearch() {
     let fieldData = pendingSearchData.fieldData;
     // let selectData = pendingSearchData.selectData;
 
+    let mainElement = document.querySelector(".row");
+
     //console.log("doPendingSearch: fieldData is:");
     //console.log(fieldData);
     //console.log("doPendingSearch: isRetry is");
@@ -264,13 +266,12 @@ async function doPendingSearch() {
         }
       }
 
-      console.log("inputNotFound is:");
-      console.log(inputNotFound);
-
       if (!inputNotFound) {
         setSearchingBanner();
 
-        mainElement.scrollIntoView(); // so user can see the "WikiTree Sourcer" message
+        if (mainElement) {
+          mainElement.scrollIntoView(); // so user can see the "WikiTree Sourcer" message
+        }
 
         // update this in case the HTML changed
         searchButtonElement = document.querySelector("div.button-row > input.btn[type='submit']");

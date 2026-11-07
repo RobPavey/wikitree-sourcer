@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "ilsosgov",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "GUMMERSHEIMER",
+    "forenames": "HENRY"
+  },
+  "eventDate": {
+    "dateString": "1866-10-30",
+    "qualifier": 1
+  },
+  "eventPlace": {
+    "placeString": "St. Clair County, Illinois, United States of America"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "WILLEMS",
+        "forenames": "PAULINE"
+      },
+      "marriageDate": {
+        "dateString": "1866-10-30",
+        "qualifier": 1
+      },
+      "marriagePlace": {
+        "placeString": "St. Clair County, Illinois, United States of America"
+      }
+    }
+  ],
+  "hasValidData": true
+}

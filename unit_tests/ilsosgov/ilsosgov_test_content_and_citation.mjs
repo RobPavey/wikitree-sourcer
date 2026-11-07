@@ -52,6 +52,34 @@ const regressionData = [
     caseName: "death_1916-1972_unknown_white_baby_girl_d_1949-03-07",
     url: "https://apps.ilsos.gov/isavital/idphDeathSearch.do",
   },
+  {
+    caseName: "death_pre-1916_edwards_simian_w_d_1889-09-02",
+    url: "https://apps.ilsos.gov/isavital/deathSearch.do",
+  },
+  {
+    caseName: "death_pre-1916_pullman_george_m_d_1897-10-19",
+    url: "https://apps.ilsos.gov/isavital/deathSearch.do",
+  },
+  {
+    caseName: "death_pre-1916_stevenson_adlai_e_d_1914-06-14",
+    url: "https://apps.ilsos.gov/isavital/deathSearch.do",
+  },
+  {
+    caseName: "death_pre-1916_voelkel_elsie_mrs_d_1898-02-13",
+    url: "https://apps.ilsos.gov/isavital/deathSearch.do",
+  },
+  {
+    caseName: "marriage_1763-1900_gumersheimer_wolff_m_1871-08-28",
+    url: "https://apps.ilsos.gov/isavital/marriageSearch.do",
+  },
+  {
+    caseName: "marriage_1763-1900_gummersheimer_willems_m_1866-10-30",
+    url: "https://apps.ilsos.gov/isavital/marriageSearch.do",
+  },
+  {
+    caseName: "marriage_1763-1900_unknown_tanner_m_1891-12-02",
+    url: "https://apps.ilsos.gov/isavital/marriageSearch.do",
+  },
 ];
 
 async function runTests(testManager) {

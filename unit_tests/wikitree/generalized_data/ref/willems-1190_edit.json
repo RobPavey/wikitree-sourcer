@@ -1,0 +1,45 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Paulina",
+    "prefNames": "Pauline",
+    "lastName": "Willems"
+  },
+  "lastNameAtBirth": "Willems",
+  "lastNameAtDeath": "Gummersheimer",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "Oct 1848",
+    "qualifier": 2
+  },
+  "deathDate": {
+    "dateString": "2 Mar 1870",
+    "qualifier": 1
+  },
+  "birthPlace": {
+    "placeString": "Prussia"
+  },
+  "deathPlace": {
+    "placeString": "Belleville, St. Clair County, Illinois, United States of America"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Heinrich Gummersheimer",
+        "lastName": "Gummersheimer",
+        "forenames": "Heinrich"
+      },
+      "lastNameAtBirth": "Gummersheimer",
+      "lastNameAtDeath": "Gummersheimer",
+      "marriageDate": {
+        "dateString": "30 Oct 1866"
+      },
+      "marriagePlace": {
+        "placeString": "St. Clair County, Illinois, United States of America"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Willems-1190"
+}

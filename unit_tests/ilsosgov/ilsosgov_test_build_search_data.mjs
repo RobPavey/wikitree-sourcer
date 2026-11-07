@@ -46,6 +46,36 @@ const regressionData = [
     inputPath: "wikitree/generalized_data/ref/conrad-4600_edit",
     typeOfSearch: "deathsPost1915",
   },
+  {
+    caseName: "death_pre-1916_fg_joseph_franz_wolf_d_1891",
+    inputPath: "fg/generalized_data/ref/joseph_franz_wolf_d_1891",
+    typeOfSearch: "deathsPre1916",
+  },
+  {
+    caseName: "death_pre-1916_wikitree_stevenson-1184_edit",
+    inputPath: "wikitree/generalized_data/ref/stevenson-1184_edit",
+    typeOfSearch: "deathsPre1916",
+  },
+  {
+    caseName: "marriage_1763-1900_by_bride_fg_paulina_gummersheimer_d_1870",
+    inputPath: "fg/generalized_data/ref/paulina_gummersheimer_d_1870",
+    typeOfSearch: "marriagesByBride",
+  },
+  {
+    caseName: "marriage_1763-1900_by_bride_wikitree_willems-1190_edit",
+    inputPath: "wikitree/generalized_data/ref/willems-1190_edit",
+    typeOfSearch: "marriagesByBride",
+  },
+  {
+    caseName: "marriage_1763-1900_by_groom_fg_henry_gummersheimer_d_1873",
+    inputPath: "fg/generalized_data/ref/henry_gummersheimer_d_1873",
+    typeOfSearch: "marriagesByGroom",
+  },
+  {
+    caseName: "marriage_1763-1900_by_groom_wikitree_gummersheimer-5_edit",
+    inputPath: "wikitree/generalized_data/ref/gummersheimer-5_edit",
+    typeOfSearch: "marriagesByGroom",
+  },
 ];
 
 async function runTests(testManager) {

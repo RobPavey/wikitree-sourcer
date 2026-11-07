@@ -1,7 +1,7 @@
 {
   "sourceOfData": "ilsosgov",
   "sourceType": "record",
-  "recordType": "DeathRegistration",
+  "recordType": "Death",
   "name": {
     "lastName": "UNKNOWN",
     "firstNames": "INFANT"

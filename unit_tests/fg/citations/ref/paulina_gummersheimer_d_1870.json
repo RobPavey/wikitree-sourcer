@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|181942960}} (accessed 6 May 2021)<br/>\nMemorial page for Paulina ''Willems'' Gummersheimer (15 Oct 1848-2 Mar 1870), citing Walnut Hill Cemetery, Belleville, St. Clair County, Illinois, USA (plot: 1st Add. Lot 283); Maintained by Barb T. (contributor 48197628).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Paulina was mentioned on a memorial at Walnut Hill Cemetery, Belleville, St. Clair County, Illinois, USA, with a death date of 2 March 1870.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|181942960}} (accessed 6 May 2021)<br/>\nMemorial page for Paulina ''Willems'' Gummersheimer (15 Oct 1848-2 Mar 1870), citing Walnut Hill Cemetery, Belleville, St. Clair County, Illinois, USA (plot: 1st Add. Lot 283); Maintained by Barb T. (contributor 48197628).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': Find a Grave (has image)<br/>{{FindAGrave|181942960}} (accessed 6 May 2021)<br/>Memorial page for Paulina ''Willems'' Gummersheimer (15 Oct 1848-2 Mar 1870), citing Walnut Hill Cemetery, Belleville, St. Clair County, Illinois, USA (plot: 1st Add. Lot 283); Maintained by Barb T. (contributor 48197628).",
+    "type": "source"
+  }
+}

@@ -87,11 +87,13 @@ async function ilsosgovSearch(generalizedData, typeOfSearch) {
     // put URL of this site's search page here
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     let searchUrl = "";
-    if (typeOfSearch == "deathsPre1915") {
+    if (typeOfSearch == "deathsPre1916") {
       searchUrl = "https://apps.ilsos.gov/isavital/deathsrch.jsp";
     } else if (typeOfSearch == "deathsPost1915") {
       searchUrl = "https://apps.ilsos.gov/isavital/idphdeathsrch.jsp";
-    } else if (typeOfSearch == "marriages") {
+    } else if (typeOfSearch == "marriagesByGroom") {
+      searchUrl = "https://apps.ilsos.gov/isavital/marriagesrch.jsp";
+    } else if (typeOfSearch == "marriagesByBride") {
       searchUrl = "https://apps.ilsos.gov/isavital/marriagesrch.jsp";
     }
 
@@ -136,7 +138,7 @@ function addIlsosgovSearchDeathsPre1916MenuItem(menu, generalizedData, filter) {
     }
   }
   addMenuItem(menu, "Search Illinois Statewide Death Index, Pre-1916", function (element) {
-    ilsosgovSearch(generalizedData, "deathsPre1915");
+    ilsosgovSearch(generalizedData, "deathsPre1916");
   });
 }
 
@@ -157,7 +159,7 @@ function addIlsosgovSearchDeathsPost1915MenuItem(menu, generalizedData, filter) 
   });
 }
 
-function addIlsosgovSearchMarriagesMenuItem(menu, generalizedData, filter) {
+function addIlsosgovSearchMarriagesByGroomMenuItem(menu, generalizedData, filter) {
   if (!filter) {
     let maxLifespan = Number(options.search_general_maxLifespan);
     let marriagePossibleInRange = generalizedData.couldPersonHaveMarriedInDateRange(
@@ -169,8 +171,25 @@ function addIlsosgovSearchMarriagesMenuItem(menu, generalizedData, filter) {
       return;
     }
   }
-  addMenuItem(menu, "Search Illinois Statewide Marriage Index, 1763-1900", function (element) {
-    ilsosgovSearch(generalizedData, "marriages");
+  addMenuItem(menu, "Search Illinois Statewide Marriage Index, 1763-1900 By Groom", function (element) {
+    ilsosgovSearch(generalizedData, "marriagesByGroom");
+  });
+}
+
+function addIlsosgovSearchMarriagesByBrideMenuItem(menu, generalizedData, filter) {
+  if (!filter) {
+    let maxLifespan = Number(options.search_general_maxLifespan);
+    let marriagePossibleInRange = generalizedData.couldPersonHaveMarriedInDateRange(
+      ilsosgovMarriagesStartYear,
+      ilsosgovMarriagesEndYear,
+      maxLifespan
+    );
+    if (!marriagePossibleInRange) {
+      return;
+    }
+  }
+  addMenuItem(menu, "Search Illinois Statewide Marriage Index, 1763-1900 By Bride", function (element) {
+    ilsosgovSearch(generalizedData, "marriagesByBride");
   });
 }
 
@@ -185,7 +204,8 @@ async function setupIlsosgovSearchSubmenu(generalizedData, backFunction, filter)
 
   addIlsosgovSearchDeathsPre1916MenuItem(menu, generalizedData, filter);
   addIlsosgovSearchDeathsPost1915MenuItem(menu, generalizedData, filter);
-  addIlsosgovSearchMarriagesMenuItem(menu, generalizedData, filter);
+  addIlsosgovSearchMarriagesByGroomMenuItem(menu, generalizedData, filter);
+  addIlsosgovSearchMarriagesByBrideMenuItem(menu, generalizedData, filter);
 
   endMainMenu(menu);
 }

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Illinois Statewide Marriage Index\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/marriagesrch.jsp Search] (accessed 6 May 2021)<br/>\nGroom: GUMMERSHEIMER, HENRY; Bride: WILLEMS, PAULINE; Date: 1866-10-30; Lic No.: 2223; County: ST. CLAIR.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Henry married Pauline Willems on 30 October 1866 in St. Clair County, Illinois, United States of America.<ref>\n'''Marriage''':\n\"Illinois Statewide Marriage Index\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/marriagesrch.jsp Search] (accessed 6 May 2021)<br/>\nGroom: GUMMERSHEIMER, HENRY; Bride: WILLEMS, PAULINE; Date: 1866-10-30; Lic No.: 2223; County: ST. CLAIR.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Illinois Statewide Marriage Index\"<br/>Illinois State Archives<br/>[https://apps.ilsos.gov/isavital/marriagesrch.jsp Search] (accessed 6 May 2021)<br/>Groom: GUMMERSHEIMER, HENRY; Bride: WILLEMS, PAULINE; Date: 1866-10-30; Lic No.: 2223; County: ST. CLAIR.",
+    "type": "source"
+  }
+}

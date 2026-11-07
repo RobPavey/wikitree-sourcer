@@ -31,10 +31,26 @@ import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mj
 class IlsosgovEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
+    function getNextWord(text, targetWord) {
+      // Escapes special characters if targetWord contains them
+      // const escapedWord = targetWord.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+
+      // Matches the target word, followed by 1 or more spaces, and captures the next word
+      const regex = new RegExp(`\\b${targetWord}\\b\\s+(\\w+)`, "i");
+      const match = text.match(regex);
+
+      // Returns the captured group if found, otherwise null
+      return match ? match[1] : null;
+    }
+    if (ed.collectionName) {
+      this.recordType = getNextWord(ed.collectionName, "Statewide");
+    }
+    /*
     if (ed.collectionName && ed.collectionName.includes("Death")) {
       this.recordType = RT.DeathRegistration;
       this.isDeath = true;
     }
+    */
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -121,6 +137,10 @@ class IlsosgovEdReader extends ExtractedDataReader {
           this.ed.recordData["Last Name"]
         );
       }
+    } else if (this.ed.recordData["Name of Deceased"] && this.ed.recordData["Name of Deceased"] !== "") {
+      return this.makeNameObjFromLastNameCommaForenames(this.ed.recordData["Name of Deceased"]);
+    } else if (this.ed.recordData["Groom"] && this.ed.recordData["Groom"] !== "") {
+      return this.makeNameObjFromLastNameCommaForenames(this.ed.recordData["Groom"]);
     } else {
       return undefined;
     }
@@ -141,20 +161,44 @@ class IlsosgovEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
-    if (this.ed.recordData["Death Date"] && this.ed.recordData["Death Date"] !== "-  -") {
-      let dateObj = this.makeDateObjFromDateString(this.ed.recordData["Death Date"]);
-      dateObj.qualifier = dateQualifiers.EXACT;
-      return dateObj;
+    if (this.recordType == RT.Death) {
+      if (this.ed.recordData["Death Date"] && this.ed.recordData["Death Date"] !== "-  -") {
+        let dateObj = this.makeDateObjFromDateString(this.ed.recordData["Death Date"]);
+        dateObj.qualifier = dateQualifiers.EXACT;
+        return dateObj;
+      } else if (this.ed.recordData["Date"] && this.ed.recordData["Date"] !== "") {
+        let dateObj = this.makeDateObjFromDateString(this.ed.recordData["Date"]);
+        dateObj.qualifier = dateQualifiers.EXACT;
+        return dateObj;
+      } else {
+        return undefined;
+      }
+    } else if (this.recordType == RT.Marriage) {
+      if (this.ed.recordData["Date"] && this.ed.recordData["Date"] !== "") {
+        let dateObj = this.makeDateObjFromDateString(this.ed.recordData["Date"]);
+        dateObj.qualifier = dateQualifiers.EXACT;
+        return dateObj;
+      } else {
+        return undefined;
+      }
     } else {
       return undefined;
     }
   }
 
   getDeathDateObj() {
-    if (this.ed.recordData["Death Date"] && this.ed.recordData["Death Date"] !== "-  -") {
-      let dateObj = this.makeDateObjFromDateString(this.ed.recordData["Death Date"]);
-      dateObj.qualifier = dateQualifiers.EXACT;
-      return dateObj;
+    if (this.recordType == RT.Death) {
+      if (this.ed.recordData["Death Date"] && this.ed.recordData["Death Date"] !== "-  -") {
+        let dateObj = this.makeDateObjFromDateString(this.ed.recordData["Death Date"]);
+        dateObj.qualifier = dateQualifiers.EXACT;
+        return dateObj;
+      } else if (this.ed.recordData["Date"] && this.ed.recordData["Date"] !== "") {
+        let dateObj = this.makeDateObjFromDateString(this.ed.recordData["Date"]);
+        dateObj.qualifier = dateQualifiers.EXACT;
+        return dateObj;
+      } else {
+        return undefined;
+      }
     } else {
       return undefined;
     }
@@ -167,14 +211,24 @@ class IlsosgovEdReader extends ExtractedDataReader {
   getAgeAtDeath() {
     if (this.ed.recordData["Age"]) {
       const ageString = this.ed.recordData["Age"];
-      if (ageString[0] == "H" || ageString[0] == "D" || ageString[0] == "M") {
-        // age is in hours, days, or months
+      if (
+        ageString[0] == "H" ||
+        ageString[0] == "D" ||
+        ageString[0] == "M" ||
+        ageString.slice(-2) === "SB" ||
+        ageString.slice(-2) === "MN" ||
+        ageString.slice(-2) === "HR" ||
+        ageString.slice(-2) === "DA" ||
+        ageString.slice(-2) === "WK" ||
+        ageString.slice(-2) === "MO"
+      ) {
+        // age is stillborn, or in minutes, hours, days, weeks, or months
         return "0";
       }
       const match = ageString.match(/\d+/);
       if (match) {
         if (match[0]) {
-          if (ageString[0] == "Y") {
+          if (ageString[0] == "Y" || ageString.slice(-2) === "YR") {
             // age in years
             return match[0];
           } else {
@@ -192,16 +246,52 @@ class IlsosgovEdReader extends ExtractedDataReader {
   }
 
   getDeathPlaceObj() {
-    let placeString = "";
-    if (this.ed.recordData["County"] && this.ed.recordData["County"] !== "UNKNOWN") {
-      if (this.ed.recordData["City"] && this.ed.recordData["City"] !== "UNKNOWN") {
-        placeString += this.toTitleCase(this.ed.recordData["City"]) + ", ";
+    if (this.recordType == RT.Death) {
+      let placeString = "";
+      if (this.ed.recordData["County"] && this.ed.recordData["County"] !== "UNKNOWN") {
+        if (this.ed.recordData["City"] && this.ed.recordData["City"] !== "UNKNOWN") {
+          placeString += this.toTitleCase(this.ed.recordData["City"]) + ", ";
+        }
+        placeString += this.toTitleCase(this.ed.recordData["County"]) + " County, Illinois, United States of America";
+      } else {
+        placeString += "Illinois, United States of America";
       }
-      placeString += this.toTitleCase(this.ed.recordData["County"]) + " County, Illinois, United States of America";
+      return this.makePlaceObjFromFullPlaceName(placeString);
     } else {
-      placeString += "Illinois, United States of America";
+      return undefined;
     }
-    return this.makePlaceObjFromFullPlaceName(placeString);
+  }
+
+  getEventPlaceObj() {
+    if (this.recordType == RT.Marriage) {
+      let placeString = "";
+      if (this.ed.recordData["County"] && this.ed.recordData["County"] !== "UNKNOWN") {
+        if (this.ed.recordData["City"] && this.ed.recordData["City"] !== "UNKNOWN") {
+          placeString += this.toTitleCase(this.ed.recordData["City"]) + ", ";
+        }
+        placeString += this.toTitleCase(this.ed.recordData["County"]) + " County, Illinois, United States of America";
+      } else {
+        placeString += "Illinois, United States of America";
+      }
+      return this.makePlaceObjFromFullPlaceName(placeString);
+    } else {
+      return undefined;
+    }
+  }
+
+  getSpouses() {
+    if (this.ed.recordData["Bride"] && this.ed.recordData["Bride"] !== "") {
+      let spouseNameObj = this.makeNameObjFromLastNameCommaForenames(this.ed.recordData["Bride"]);
+      if (spouseNameObj) {
+        let eventDateObj = this.getEventDateObj();
+        let eventPlaceObj = this.getEventPlaceObj();
+        return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj)];
+      } else {
+        return undefined;
+      }
+    } else {
+      return undefined;
+    }
   }
 }
 

@@ -43,8 +43,9 @@ function buildSearchData(input) {
   let firstName = gd.inferFirstName();
   //  let middleName = gd.inferMiddleName();  don't use middle name to search
   let lastName = gd.inferLastName();
+  let lastNameAtBirth = gd.inferLastNameAtBirth();
   let lastNameAtDeath = gd.inferLastNameAtDeath();
-  let personGender = gd.inferPersonGender();
+  // console.log("ilsosgov: firstName = "+firstName+", lastName = "+lastName+", lastNameAtDeath = "+lastNameAtDeath);
 
   //  let county = gd.inferCounty();
 
@@ -77,25 +78,23 @@ function buildSearchData(input) {
 
     let middleName = ""; // use empty middle name for search
     fieldData["mname1"] = middleName;
-  } else if (typeOfSearch == "marriages") {
-    if (personGender == "male") {
-      if (lastName) {
-        fieldData["gname1"] = lastName;
-      } else {
-        fieldData["gname1"] = "";
-      }
-      if (firstName) {
-        fieldData["gname1"] += ", " + firstName;
-      }
-    } else if (personGender == "female") {
-      if (lastName) {
-        fieldData["bname1"] = lastName;
-      } else {
-        fieldData["bname1"] = "";
-      }
-      if (firstName) {
-        fieldData["bname1"] += ", " + firstName;
-      }
+  } else if (typeOfSearch == "marriagesByGroom") {
+    if (lastName) {
+      fieldData["gname1"] = lastName;
+    } else {
+      fieldData["gname1"] = "";
+    }
+    if (firstName) {
+      fieldData["gname1"] += ", " + firstName;
+    }
+  } else if (typeOfSearch == "marriagesByBride") {
+    if (lastName) {
+      fieldData["bname1"] = lastNameAtBirth;
+    } else {
+      fieldData["bname1"] = "";
+    }
+    if (firstName) {
+      fieldData["bname1"] += ", " + firstName;
     }
   }
   //console.log("fieldData is:");

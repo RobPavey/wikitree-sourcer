@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Illinois Statewide Death Index, Pre-1916\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/deathsrch.jsp Search] (accessed 6 May 2021)<br/>\nName of Deceased: EDWARDS, SIMIAN W; Date: 1889-09-02; City: SPRINGFIELD; Age: 80 YR; Sex: M; Cert No: 3894; County: SANGAMON.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Simian died (age 80) on 2 September 1889 in Springfield, Sangamon County, Illinois, United States of America.<ref>\n'''Death''':\n\"Illinois Statewide Death Index, Pre-1916\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/deathsrch.jsp Search] (accessed 6 May 2021)<br/>\nName of Deceased: EDWARDS, SIMIAN W; Date: 1889-09-02; City: SPRINGFIELD; Age: 80 YR; Sex: M; Cert No: 3894; County: SANGAMON.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Illinois Statewide Death Index, Pre-1916\"<br/>Illinois State Archives<br/>[https://apps.ilsos.gov/isavital/deathsrch.jsp Search] (accessed 6 May 2021)<br/>Name of Deceased: EDWARDS, SIMIAN W; Date: 1889-09-02; City: SPRINGFIELD; Age: 80 YR; Sex: M; Cert No: 3894; County: SANGAMON.",
+    "type": "source"
+  }
+}
