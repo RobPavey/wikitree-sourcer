@@ -66,6 +66,7 @@ The fixtures are reduced transcriptions, not complete browser page saves.
 - Safari macOS/iOS manifests contain the same optional hosts; actual Safari testing
   requires the corresponding platforms.
 
-Live DOM inspection was performed logged out on 9 November 2026. Installed
-Chrome/Firefox extension flows, logged-in operation and Safari operation require
-manual verification; automated fixture tests do not replace those checks.
+Live DOM inspection was performed logged out on 9 November 2026. The contributor
+subsequently reported successful manual testing in Chrome and Firefox. Detailed
+coverage of logged-in operation has not been recorded, and Safari execution has
+not been verified. Automated fixture tests do not replace browser testing.
