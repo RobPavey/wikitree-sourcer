@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 11111111-1111-1111-1111-111111111111<br/>\n[https://slektogdata.no/gravminner/grav/11111111-1111-1111-1111-111111111111 Gravminner memorial] (accessed 9 November 2026)<br/>\nMemorial for Åse Øyvind Ærlig (née Bø), born Apr 1900, died 1970; memorial location: Østre; burial date: 1970; Bisatt: 17 May 1970; Teig A, Felt B, Rad 2, Gravnummer 3.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Åse died in 1970 and was buried in 1970 in Østre.<ref>\n'''Burial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 11111111-1111-1111-1111-111111111111<br/>\n[https://slektogdata.no/gravminner/grav/11111111-1111-1111-1111-111111111111 Gravminner memorial] (accessed 9 November 2026)<br/>\nMemorial for Åse Øyvind Ærlig (née Bø), born Apr 1900, died 1970; memorial location: Østre; burial date: 1970; Bisatt: 17 May 1970; Teig A, Felt B, Rad 2, Gravnummer 3.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Slekt og Data, Gravminner\"<br/>ID: 11111111-1111-1111-1111-111111111111<br/>[https://slektogdata.no/gravminner/grav/11111111-1111-1111-1111-111111111111 Gravminner memorial] (accessed 9 November 2026)<br/>Memorial for Åse Øyvind Ærlig (née Bø), born Apr 1900, died 1970; memorial location: Østre; burial date: 1970; Bisatt: 17 May 1970; Teig A, Felt B, Rad 2, Gravnummer 3.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Burial: \"Slekt og Data, Gravminner\", \nID: 11111111-1111-1111-1111-111111111111, \nhttps://slektogdata.no/gravminner/grav/11111111-1111-1111-1111-111111111111 (accessed 9 November 2026), \nMemorial for Åse Øyvind Ærlig (née Bø), born Apr 1900, died 1970; memorial location: Østre; burial date: 1970; Bisatt: 17 May 1970; Teig A, Felt B, Rad 2, Gravnummer 3.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Åse died in 1970 and was buried in 1970 in Østre.Burial: \"Slekt og Data, Gravminner\", \nID: 11111111-1111-1111-1111-111111111111, \nhttps://slektogdata.no/gravminner/grav/11111111-1111-1111-1111-111111111111 (accessed 9 November 2026), \nMemorial for Åse Øyvind Ærlig (née Bø), born Apr 1900, died 1970; memorial location: Østre; burial date: 1970; Bisatt: 17 May 1970; Teig A, Felt B, Rad 2, Gravnummer 3.\n",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Burial: \"Slekt og Data, Gravminner\", ID: 11111111-1111-1111-1111-111111111111, https://slektogdata.no/gravminner/grav/11111111-1111-1111-1111-111111111111 (accessed 9 November 2026), Memorial for Åse Øyvind Ærlig (née Bø), born Apr 1900, died 1970; memorial location: Østre; burial date: 1970; Bisatt: 17 May 1970; Teig A, Felt B, Rad 2, Gravnummer 3.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 11111111-1111-1111-1111-111111111111<br/>\n[https://slektogdata.no/gravminner/grav/11111111-1111-1111-1111-111111111111 Gravminner memorial]<br/>\nMemorial for Åse Øyvind Ærlig (née Bø), born Apr 1900, died 1970; memorial location: Østre; burial date: 1970; Bisatt: 17 May 1970; Teig A, Felt B, Rad 2, Gravnummer 3.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Åse died in 1970 and was buried in 1970 in Østre.<ref>\n'''Burial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 11111111-1111-1111-1111-111111111111<br/>\n[https://slektogdata.no/gravminner/grav/11111111-1111-1111-1111-111111111111 Gravminner memorial]<br/>\nMemorial for Åse Øyvind Ærlig (née Bø), born Apr 1900, died 1970; memorial location: Østre; burial date: 1970; Bisatt: 17 May 1970; Teig A, Felt B, Rad 2, Gravnummer 3.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Burial''': \"Slekt og Data, Gravminner\"<br/>ID: 11111111-1111-1111-1111-111111111111<br/>[https://slektogdata.no/gravminner/grav/11111111-1111-1111-1111-111111111111 Gravminner memorial]<br/>Memorial for Åse Øyvind Ærlig (née Bø), born Apr 1900, died 1970; memorial location: Østre; burial date: 1970; Bisatt: 17 May 1970; Teig A, Felt B, Rad 2, Gravnummer 3.",
+    "type": "source"
+  }
+}

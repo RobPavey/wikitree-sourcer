@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 22222222-2222-2222-2222-222222222222<br/>\n[https://slektogdata.no/gravminner/grav/22222222-2222-2222-2222-222222222222 Gravminner memorial] (accessed 9 November 2026)<br/>\nMemorial for Anne Olsen.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Anne was mentioned on a memorial.<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 22222222-2222-2222-2222-222222222222<br/>\n[https://slektogdata.no/gravminner/grav/22222222-2222-2222-2222-222222222222 Gravminner memorial] (accessed 9 November 2026)<br/>\nMemorial for Anne Olsen.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': \"Slekt og Data, Gravminner\"<br/>ID: 22222222-2222-2222-2222-222222222222<br/>[https://slektogdata.no/gravminner/grav/22222222-2222-2222-2222-222222222222 Gravminner memorial] (accessed 9 November 2026)<br/>Memorial for Anne Olsen.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Memorial: \"Slekt og Data, Gravminner\", \nID: 22222222-2222-2222-2222-222222222222, \nhttps://slektogdata.no/gravminner/grav/22222222-2222-2222-2222-222222222222 (accessed 9 November 2026), \nMemorial for Anne Olsen.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Anne was mentioned on a memorial.Memorial: \"Slekt og Data, Gravminner\", \nID: 22222222-2222-2222-2222-222222222222, \nhttps://slektogdata.no/gravminner/grav/22222222-2222-2222-2222-222222222222 (accessed 9 November 2026), \nMemorial for Anne Olsen.\n",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Memorial: \"Slekt og Data, Gravminner\", ID: 22222222-2222-2222-2222-222222222222, https://slektogdata.no/gravminner/grav/22222222-2222-2222-2222-222222222222 (accessed 9 November 2026), Memorial for Anne Olsen.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 22222222-2222-2222-2222-222222222222<br/>\n[https://slektogdata.no/gravminner/grav/22222222-2222-2222-2222-222222222222 Gravminner memorial]<br/>\nMemorial for Anne Olsen.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Anne was mentioned on a memorial.<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 22222222-2222-2222-2222-222222222222<br/>\n[https://slektogdata.no/gravminner/grav/22222222-2222-2222-2222-222222222222 Gravminner memorial]<br/>\nMemorial for Anne Olsen.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Memorial''': \"Slekt og Data, Gravminner\"<br/>ID: 22222222-2222-2222-2222-222222222222<br/>[https://slektogdata.no/gravminner/grav/22222222-2222-2222-2222-222222222222 Gravminner memorial]<br/>Memorial for Anne Olsen.",
+    "type": "source"
+  }
+}

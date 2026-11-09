@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: ea281e18-402a-4724-b151-4733c7ec0bbd<br/>\n[https://slektogdata.no/gravminner/grav/ea281e18-402a-4724-b151-4733c7ec0bbd Gravminner memorial] (accessed 9 November 2026)<br/>\nMemorial for Magdalene Arctander Johansen (née Rasmusdatter), born 12 Sep 1877, died 6 Jan 1954; memorial location: Narvik nye, Narvik, Nordland, Norge; Felt P.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Magdalene was mentioned on a memorial with a death date of 6 January 1954.<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: ea281e18-402a-4724-b151-4733c7ec0bbd<br/>\n[https://slektogdata.no/gravminner/grav/ea281e18-402a-4724-b151-4733c7ec0bbd Gravminner memorial] (accessed 9 November 2026)<br/>\nMemorial for Magdalene Arctander Johansen (née Rasmusdatter), born 12 Sep 1877, died 6 Jan 1954; memorial location: Narvik nye, Narvik, Nordland, Norge; Felt P.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': \"Slekt og Data, Gravminner\"<br/>ID: ea281e18-402a-4724-b151-4733c7ec0bbd<br/>[https://slektogdata.no/gravminner/grav/ea281e18-402a-4724-b151-4733c7ec0bbd Gravminner memorial] (accessed 9 November 2026)<br/>Memorial for Magdalene Arctander Johansen (née Rasmusdatter), born 12 Sep 1877, died 6 Jan 1954; memorial location: Narvik nye, Narvik, Nordland, Norge; Felt P.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Memorial: \"Slekt og Data, Gravminner\", \nID: ea281e18-402a-4724-b151-4733c7ec0bbd, \nhttps://slektogdata.no/gravminner/grav/ea281e18-402a-4724-b151-4733c7ec0bbd (accessed 9 November 2026), \nMemorial for Magdalene Arctander Johansen (née Rasmusdatter), born 12 Sep 1877, died 6 Jan 1954; memorial location: Narvik nye, Narvik, Nordland, Norge; Felt P.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Magdalene was mentioned on a memorial with a death date of 6 January 1954.Memorial: \"Slekt og Data, Gravminner\", \nID: ea281e18-402a-4724-b151-4733c7ec0bbd, \nhttps://slektogdata.no/gravminner/grav/ea281e18-402a-4724-b151-4733c7ec0bbd (accessed 9 November 2026), \nMemorial for Magdalene Arctander Johansen (née Rasmusdatter), born 12 Sep 1877, died 6 Jan 1954; memorial location: Narvik nye, Narvik, Nordland, Norge; Felt P.\n",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Memorial: \"Slekt og Data, Gravminner\", ID: ea281e18-402a-4724-b151-4733c7ec0bbd, https://slektogdata.no/gravminner/grav/ea281e18-402a-4724-b151-4733c7ec0bbd (accessed 9 November 2026), Memorial for Magdalene Arctander Johansen (née Rasmusdatter), born 12 Sep 1877, died 6 Jan 1954; memorial location: Narvik nye, Narvik, Nordland, Norge; Felt P.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: ea281e18-402a-4724-b151-4733c7ec0bbd<br/>\n[https://slektogdata.no/gravminner/grav/ea281e18-402a-4724-b151-4733c7ec0bbd Gravminner memorial]<br/>\nMemorial for Magdalene Arctander Johansen (née Rasmusdatter), born 12 Sep 1877, died 6 Jan 1954; memorial location: Narvik nye, Narvik, Nordland, Norge; Felt P.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Magdalene was mentioned on a memorial with a death date of 6 January 1954.<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: ea281e18-402a-4724-b151-4733c7ec0bbd<br/>\n[https://slektogdata.no/gravminner/grav/ea281e18-402a-4724-b151-4733c7ec0bbd Gravminner memorial]<br/>\nMemorial for Magdalene Arctander Johansen (née Rasmusdatter), born 12 Sep 1877, died 6 Jan 1954; memorial location: Narvik nye, Narvik, Nordland, Norge; Felt P.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Memorial''': \"Slekt og Data, Gravminner\"<br/>ID: ea281e18-402a-4724-b151-4733c7ec0bbd<br/>[https://slektogdata.no/gravminner/grav/ea281e18-402a-4724-b151-4733c7ec0bbd Gravminner memorial]<br/>Memorial for Magdalene Arctander Johansen (née Rasmusdatter), born 12 Sep 1877, died 6 Jan 1954; memorial location: Narvik nye, Narvik, Nordland, Norge; Felt P.",
+    "type": "source"
+  }
+}

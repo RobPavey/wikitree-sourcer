@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "gravminner",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "name": {
+    "lastName": "Olsen",
+    "forenames": "Anne"
+  },
+  "lastNameAtDeath": "Olsen",
+  "hasValidData": true
+}
