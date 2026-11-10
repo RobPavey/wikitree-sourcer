@@ -1,0 +1,120 @@
+{
+  "expand": "relatedItems,metadata",
+  "id": "URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1",
+  "_links": {
+    "self": {
+      "href": "https://api.nb.no:443/catalog/v1/items/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1"
+    },
+    "mods": {
+      "href": "https://api.nb.no:443/catalog/v1/metadata/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1/mods"
+    },
+    "dublincore": {
+      "href": "https://api.nb.no:443/catalog/v1/metadata/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1/dublincore"
+    },
+    "presentation": {
+      "href": "https://api.nb.no:443/catalog/v1/iiif/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1/manifest"
+    },
+    "enw": {
+      "href": "https://api.nb.no:443/catalog/v1/reference/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1/enw"
+    },
+    "ris": {
+      "href": "https://api.nb.no:443/catalog/v1/reference/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1/ris"
+    },
+    "wiki": {
+      "href": "https://api.nb.no:443/catalog/v1/reference/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1/wiki"
+    },
+    "thumbnail_custom": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1-1_001_null/full/{width},{height}/0/native.jpg",
+      "templated": true
+    },
+    "thumbnail_large": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1-1_001_null/full/0,200/0/native.jpg"
+    },
+    "thumbnail_medium": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1-1_001_null/full/0,128/0/native.jpg"
+    },
+    "thumbnail_small": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1-1_001_null/full/0,64/0/native.jpg"
+    },
+    "relatedItems": {
+      "href": "https://api.nb.no:443/catalog/v1/items/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1/relatedItems"
+    }
+  },
+  "accessInfo": {
+    "accessAllowedFrom": "EVERYWHERE",
+    "accessInfoLastModified": "2026-11-04T03:00:11.742Z",
+    "actions": [
+      "download",
+      "text"
+    ],
+    "isDigital": true,
+    "isPublicDomain": false,
+    "license": "ccbyncnd",
+    "viewability": "ALL"
+  },
+  "metadata": {
+    "identifiers": {
+      "sesamId": "257e6af8f0fd21e35e3c19c337e4c18c",
+      "oaiId": "oai:axiellnewspaper.nb.no:np:1612343052",
+      "urn": "URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1",
+      "seriesid": "oai:axiellnewspaper.nb.no:se:2861"
+    },
+    "title": "Hedemarkens Amtstidende ",
+    "titleInfos": [
+      {
+        "title": "Hedemarkens Amtstidende 1910.03.30"
+      }
+    ],
+    "mediaTypes": [
+      "aviser"
+    ],
+    "typeOfResource": "text",
+    "genres": [
+      "Newspaper"
+    ],
+    "geographic": {
+      "placeString": "Norge;Innlandet;;Hamar;;;;",
+      "county": "Innlandet",
+      "city": "Hamar"
+    },
+    "originInfo": {
+      "issued": "19100330",
+      "issuedUntouched": "1910-03-30",
+      "edition": "64-35-1",
+      "firstIndexTime": "2025-11-28T20:04:32.938Z",
+      "firstDigitalContentTime": "2025-11-28T23:42:54.576Z",
+      "indexLastModified": "2026-11-04T03:00:11.758Z"
+    },
+    "recordInfo": {
+      "identifier": "np:1612343052",
+      "identifierSource": "axiellnewspaper.nb.no"
+    },
+    "languages": [
+      {
+        "code": "nob",
+        "text": "Norsk bokmål"
+      }
+    ],
+    "pageCount": 4,
+    "contentClasses": [
+      "public",
+      "CCBYNCND",
+      "legaldeposit",
+      "Aviserse2861",
+      "jp2"
+    ],
+    "metadataClasses": [
+      "public"
+    ],
+    "series": [
+      "Hedemarkens Amtstidende"
+    ],
+    "physicalDescription": {
+      "form": [
+        "Digitalt",
+        "Papir",
+        "Paper"
+      ]
+    }
+  }
+}

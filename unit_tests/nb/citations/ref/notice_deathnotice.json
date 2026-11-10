@@ -1,18 +1,18 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death Notice''':\n\"Salten. Fauske, 5 November 1952. Edition: 43-45-1\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice<br/>\n[https://www.nb.no/items/0000004ee44611385504a9d4f0639552?page=0 NB digital copy] (accessed 10 November 2026)<br/>\nMention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.\n</ref>",
+    "citation": "<ref>\n'''Death Notice''':\n\"Salten. Fauske, 5 November 1952. Edition: 43-45-1\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice<br/>\n[https://www.nb.no/items/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1?page=0 NB digital copy] (accessed 10 November 2026)<br/>\nMention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Åse Østby was named in a death notice in Salten, published on 5 November 1952. The notice reported the death before 3 May 1920 in Bergen.<ref>\n'''Death Notice''':\n\"Salten. Fauske, 5 November 1952. Edition: 43-45-1\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice<br/>\n[https://www.nb.no/items/0000004ee44611385504a9d4f0639552?page=0 NB digital copy] (accessed 10 November 2026)<br/>\nMention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.\n</ref>",
+    "citation": "Åse Østby was named in a death notice in Salten, published on 5 November 1952. The notice reported the death before 3 May 1920 in Bergen.<ref>\n'''Death Notice''':\n\"Salten. Fauske, 5 November 1952. Edition: 43-45-1\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice<br/>\n[https://www.nb.no/items/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1?page=0 NB digital copy] (accessed 10 November 2026)<br/>\nMention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death Notice''': \"Salten. Fauske, 5 November 1952. Edition: 43-45-1\"<br/>Nasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice<br/>[https://www.nb.no/items/0000004ee44611385504a9d4f0639552?page=0 NB digital copy] (accessed 10 November 2026)<br/>Mention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.",
+    "citation": "* '''Death Notice''': \"Salten. Fauske, 5 November 1952. Edition: 43-45-1\"<br/>Nasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice<br/>[https://www.nb.no/items/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1?page=0 NB digital copy] (accessed 10 November 2026)<br/>Mention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.",
     "type": "source"
   },
   "plain_inline": {
-    "citation": "Death Notice: \"Salten. Fauske, 5 November 1952. Edition: 43-45-1\", \nNasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice, \nhttps://www.nb.no/items/0000004ee44611385504a9d4f0639552?page=0 (accessed 10 November 2026), \nMention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.\n",
+    "citation": "Death Notice: \"Salten. Fauske, 5 November 1952. Edition: 43-45-1\", \nNasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice, \nhttps://www.nb.no/items/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1?page=0 (accessed 10 November 2026), \nMention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.\n",
     "type": "inline"
   },
   "plain_narrative": {
@@ -20,19 +20,19 @@
     "type": "narrative"
   },
   "plain_source": {
-    "citation": "Death Notice: \"Salten. Fauske, 5 November 1952. Edition: 43-45-1\", Nasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice, https://www.nb.no/items/0000004ee44611385504a9d4f0639552?page=0 (accessed 10 November 2026), Mention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.",
+    "citation": "Death Notice: \"Salten. Fauske, 5 November 1952. Edition: 43-45-1\", Nasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice, https://www.nb.no/items/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1?page=0 (accessed 10 November 2026), Mention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.",
     "type": "source"
   },
   "noAccessDate_inline": {
-    "citation": "<ref>\n'''Death Notice''':\n\"Salten. Fauske, 5 November 1952. Edition: 43-45-1\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice<br/>\n[https://www.nb.no/items/0000004ee44611385504a9d4f0639552?page=0 NB digital copy]<br/>\nMention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.\n</ref>",
+    "citation": "<ref>\n'''Death Notice''':\n\"Salten. Fauske, 5 November 1952. Edition: 43-45-1\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice<br/>\n[https://www.nb.no/items/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1?page=0 NB digital copy]<br/>\nMention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.\n</ref>",
     "type": "inline"
   },
   "noAccessDate_narrative": {
-    "citation": "Åse Østby was named in a death notice in Salten, published on 5 November 1952. The notice reported the death before 3 May 1920 in Bergen.<ref>\n'''Death Notice''':\n\"Salten. Fauske, 5 November 1952. Edition: 43-45-1\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice<br/>\n[https://www.nb.no/items/0000004ee44611385504a9d4f0639552?page=0 NB digital copy]<br/>\nMention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.\n</ref>",
+    "citation": "Åse Østby was named in a death notice in Salten, published on 5 November 1952. The notice reported the death before 3 May 1920 in Bergen.<ref>\n'''Death Notice''':\n\"Salten. Fauske, 5 November 1952. Edition: 43-45-1\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice<br/>\n[https://www.nb.no/items/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1?page=0 NB digital copy]<br/>\nMention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.\n</ref>",
     "type": "narrative"
   },
   "noAccessDate_source": {
-    "citation": "* '''Death Notice''': \"Salten. Fauske, 5 November 1952. Edition: 43-45-1\"<br/>Nasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice<br/>[https://www.nb.no/items/0000004ee44611385504a9d4f0639552?page=0 NB digital copy]<br/>Mention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.",
+    "citation": "* '''Death Notice''': \"Salten. Fauske, 5 November 1952. Edition: 43-45-1\"<br/>Nasjonalbiblioteket; URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1; Printed page(s): 2; Death Notice; Person: Åse Østby; Synthetic Death notice<br/>[https://www.nb.no/items/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1?page=0 NB digital copy]<br/>Mention of Åse Østby; death date stated in passage: before 3 May 1920; death place stated in passage: Bergen.",
     "type": "source"
   }
 }

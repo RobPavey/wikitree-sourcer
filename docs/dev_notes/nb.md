@@ -1,6 +1,8 @@
 # Nasjonalbiblioteket (NB.no) citation assistance
 
-Citation-only support for newspaper and book viewer items. NB bibliography is
+Citation-only support for newspaper and book viewer items addressed by either
+NB item IDs or full URNs. Generated links prefer the API-supplied URN, retaining
+the exact zero-based `page` query. NB bibliography is
 loaded on demand from the public catalogue API through Sourcer's existing
 background JSON fetch. Item/page identity is checked again after fetching and
 before generation. No OCR, scanned images, credentials or search terms are fetched.
@@ -50,7 +52,9 @@ collection change is an additive ID field; existing stored collections remain va
 
 ## Page and citation identity
 
-The viewer's zero-based page query identifies an image, not a printed page. Keep
+The viewer's zero-based page query identifies an image, not a printed page.
+ID and URN aliases for the same item are recognized during stale-page checks;
+a change of page or a genuinely different item still blocks generation. Keep
 its exact canonical link, including image zero. Two-up display ranges are captured
 from the visible viewer control. Manifest labels are retained as metadata but are
 not assumed to be printed page numbers. The user can supply a printed page/range.

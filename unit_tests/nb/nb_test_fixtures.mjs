@@ -43,7 +43,7 @@ function extract(html, url) {
 }
 function record(kind = "newspaper") {
   const item = fixture(kind + "_item");
-  const pageIndex = kind === "book" ? 1 : 0;
+  const pageIndex = { book: 1, urn_newspaper: 1, urn_book: 585 }[kind] || 0;
   const url = "https://www.nb.no/items/" + item.id + "?page=" + pageIndex;
   const selection = extract(fs.readFileSync(directory + "saved_pages/" + kind + ".html", "utf8"), url);
   return normalizeMetadata(selection, item, fixture(kind + "_manifest"));

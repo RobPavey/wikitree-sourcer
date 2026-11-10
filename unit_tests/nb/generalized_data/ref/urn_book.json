@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "nb",
+  "sourceType": "record",
+  "recordType": "Book",
+  "name": {
+    "name": "Synthetic Person"
+  },
+  "eventDate": {
+    "yearString": "1995"
+  },
+  "overrideRefTitle": "Book",
+  "isAboutNamedPerson": true,
+  "hasValidData": true,
+  "siteData": {
+    "nb": {
+      "category": "book",
+      "event": "",
+      "personName": "Synthetic Person",
+      "passageHeading": "",
+      "printedPages": ""
+    }
+  },
+  "userOverrideForNarrative": "Synthetic Person was mentioned in Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen, published in 1995."
+}

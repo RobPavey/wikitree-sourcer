@@ -31,7 +31,13 @@ function extractData(document, url) {
   } catch {
     return result;
   }
-  const match = /^\/items\/([a-f0-9]{32})\/?$/i.exec(address.pathname);
+  let path;
+  try {
+    path = decodeURIComponent(address.pathname);
+  } catch {
+    return result;
+  }
+  const match = /^\/items\/([a-f0-9]{32}|URN:NBN:no-nb_[a-z0-9_-]+)\/?$/i.exec(path);
   if (!/^https?:$/.test(address.protocol) || !/^(www\.)?nb\.no$/i.test(address.hostname) || !match) {
     result.overrideFailureMessage = "Open an individual newspaper or book in NB's viewer to build a citation.";
     return result;
@@ -41,7 +47,9 @@ function extractData(document, url) {
     result.overrideFailureMessage = "The NB viewer page number is not valid.";
     return result;
   }
-  result.itemId = match[1].toLowerCase();
+  result.itemId = /^[a-f0-9]{32}$/i.test(match[1])
+    ? match[1].toLowerCase()
+    : match[1].replace(/^urn:nbn:no-nb_/i, "URN:NBN:no-nb_");
   result.pageIndex = page === null ? 0 : Number(page);
   if (!Number.isSafeInteger(result.pageIndex)) return result;
   result.url = "https://www.nb.no/items/" + result.itemId + "?page=" + result.pageIndex;

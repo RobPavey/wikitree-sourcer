@@ -52,6 +52,8 @@ const cases = [
     state: { personName: "Anna Hansen", passageHeading: "Synthetic passage", printedPages: "iv–v" },
   },
   { caseName: "book_no_person", kind: "book", state: {} },
+  { caseName: "urn_newspaper", kind: "urn_newspaper", state: { category: "mention", personName: "Synthetic Person" } },
+  { caseName: "urn_book", kind: "urn_book", state: { personName: "Synthetic Person" } },
 ];
 async function runTests(testManager) {
   for (const phase of ["extract", "generalize"]) {

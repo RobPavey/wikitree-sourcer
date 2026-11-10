@@ -26,7 +26,12 @@ import assert from "node:assert/strict";
 import { fixture, record, extract, personCitation } from "./nb_test_fixtures.mjs";
 import { noticeTypes } from "../../extension/site/nb/core/nb_notice_types.mjs";
 import { readNbDate, dateText } from "../../extension/site/nb/core/nb_dates.mjs";
-import { normalizeMetadata, loadNbMetadata, selectionFromUrl } from "../../extension/site/nb/core/nb_metadata.mjs";
+import {
+  normalizeMetadata,
+  loadNbMetadata,
+  selectionFromUrl,
+  sameSelection,
+} from "../../extension/site/nb/core/nb_metadata.mjs";
 import {
   buildCollectionContext,
   getSuggestions,
@@ -336,7 +341,7 @@ async function runTests(testManager) {
       );
       assert.equal(normalizeMetadata(ed, fixture("newspaper_item")).manifestAvailable, false);
       const upper = "https://nb.no/items/" + ed.itemId.toUpperCase() + "/?page=0&search=test#zoom";
-      assert.equal(extract("", upper).url, ed.url);
+      assert.equal(extract("", upper).url, "https://www.nb.no/items/" + ed.itemId + "?page=0");
       assert.deepEqual(selectionFromUrl(upper), { success: true, itemId: ed.itemId, pageIndex: 0 });
     },
     invalid_user_dates_are_reported() {
@@ -353,6 +358,82 @@ async function runTests(testManager) {
       assert.equal(next.confirmDate, "no");
       assert.equal(next.eventDate, "");
       assert.equal(next.printedPages, "");
+    },
+    urn_routes_use_permanent_links_and_preserve_the_selected_page() {
+      for (const [kind, page] of [
+        ["urn_newspaper", 1],
+        ["urn_book", 585],
+      ]) {
+        const item = fixture(kind + "_item");
+        const urn = item.metadata.identifiers.urn;
+        const url = "https://www.nb.no/items/" + urn + "?page=" + page;
+        const selection = extract("", url);
+        assert.equal(selection.success, true);
+        assert.equal(selection.itemId, urn);
+        assert.equal(selection.pageIndex, page);
+        const encoded = url.replaceAll(":", "%3A").replace("https%3A", "https:");
+        assert.deepEqual(selectionFromUrl(encoded), selectionFromUrl(url));
+        assert.equal(extract("", encoded).itemId, urn);
+        const normalized = record(kind);
+        assert.equal(normalized.url, url);
+        assert.equal(normalized.itemId, item.metadata.identifiers.sesamId);
+        assert.equal(sameSelection(selection, normalized), true);
+        const gd = generalizeData({ extractedData: normalized });
+        for (const target of ["wikitree", "plain"]) {
+          for (const type of ["inline", "narrative", "source"]) {
+            const result = buildCitation({
+              extractedData: normalized,
+              generalizedData: gd,
+              options: { ...testManager.options, citation_general_target: target },
+              type,
+              runDate: new Date(2026, 10, 10),
+            });
+            assert.ok(result.citation.includes(url));
+            assert.equal(result.url, url);
+            assert.ok(!result.citation.includes("https://www.nb.no/items/" + normalized.itemId));
+          }
+        }
+      }
+    },
+    id_routes_and_older_extracted_data_also_generate_urn_links() {
+      const gd = generalizeData({ extractedData: ed });
+      const hashUrl = "https://www.nb.no/items/" + ed.itemId + "?page=0";
+      const expected = "https://www.nb.no/items/" + ed.urn + "?page=0";
+      assert.equal(ed.url, expected);
+      const result = buildCitation({
+        extractedData: { ...ed, url: hashUrl },
+        generalizedData: gd,
+        options: testManager.options,
+        type: "source",
+        runDate: new Date(),
+      });
+      assert.equal(result.url, expected);
+      assert.ok(result.citation.includes(expected));
+      assert.ok(!result.citation.includes(hashUrl));
+      const missingUrn = structuredClone(fixture("newspaper_item"));
+      delete missingUrn.metadata.identifiers.urn;
+      const fallback = normalizeMetadata(ed, missingUrn);
+      assert.equal(fallback.url, hashUrl); // Do not invent an identifier when NB supplies none.
+    },
+    alias_navigation_keeps_identity_checks_without_false_stale_page_errors() {
+      return (async () => {
+        const fetch = async (url) =>
+          url.includes("/iiif/") ? fixture("newspaper_manifest") : fixture("newspaper_item");
+        const urnSelection = { ...ed, itemId: ed.urn };
+        assert.equal((await loadNbMetadata(urnSelection, fetch, async () => ed)).url, ed.url);
+        assert.equal((await loadNbMetadata(ed, fetch, async () => urnSelection)).url, ed.url);
+        await assert.rejects(
+          loadNbMetadata(urnSelection, fetch, async () => ({
+            ...urnSelection,
+            itemId: fixture("book_item").metadata.identifiers.urn,
+          })),
+          /changed/
+        );
+        await assert.rejects(
+          loadNbMetadata(urnSelection, fetch, async () => ({ ...urnSelection, pageIndex: 1 })),
+          /changed/
+        );
+      })();
     },
     async_metadata_failures_and_navigation() {
       const fetch = async (url) => (url.includes("/iiif/") ? fixture("newspaper_manifest") : fixture("newspaper_item"));

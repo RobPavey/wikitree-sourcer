@@ -1,0 +1,196 @@
+{
+  "expand": "relatedItems,metadata",
+  "id": "URN:NBN:no-nb_digibok_2012050924011",
+  "_links": {
+    "self": {
+      "href": "https://api.nb.no:443/catalog/v1/items/URN:NBN:no-nb_digibok_2012050924011"
+    },
+    "mods": {
+      "href": "https://api.nb.no:443/catalog/v1/metadata/URN:NBN:no-nb_digibok_2012050924011/mods"
+    },
+    "dublincore": {
+      "href": "https://api.nb.no:443/catalog/v1/metadata/URN:NBN:no-nb_digibok_2012050924011/dublincore"
+    },
+    "presentation": {
+      "href": "https://api.nb.no:443/catalog/v1/iiif/URN:NBN:no-nb_digibok_2012050924011/manifest"
+    },
+    "enw": {
+      "href": "https://api.nb.no:443/catalog/v1/reference/URN:NBN:no-nb_digibok_2012050924011/enw"
+    },
+    "ris": {
+      "href": "https://api.nb.no:443/catalog/v1/reference/URN:NBN:no-nb_digibok_2012050924011/ris"
+    },
+    "wiki": {
+      "href": "https://api.nb.no:443/catalog/v1/reference/URN:NBN:no-nb_digibok_2012050924011/wiki"
+    },
+    "thumbnail_custom": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digibok_2012050924011_C1/full/{width},{height}/0/native.jpg",
+      "templated": true
+    },
+    "thumbnail_large": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digibok_2012050924011_C1/full/0,200/0/native.jpg"
+    },
+    "thumbnail_medium": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digibok_2012050924011_C1/full/0,128/0/native.jpg"
+    },
+    "thumbnail_small": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digibok_2012050924011_C1/full/0,64/0/native.jpg"
+    },
+    "relatedItems": {
+      "href": "https://api.nb.no:443/catalog/v1/items/URN:NBN:no-nb_digibok_2012050924011/relatedItems"
+    }
+  },
+  "accessInfo": {
+    "accessAllowedFrom": "EVERYWHERE",
+    "accessInfoLastModified": "2025-01-24T10:00:22.419Z",
+    "actions": [
+      "download",
+      "text"
+    ],
+    "isDigital": true,
+    "isPublicDomain": false,
+    "license": "copyrighted",
+    "viewability": "ALL"
+  },
+  "metadata": {
+    "identifiers": {
+      "isbn10": [
+        "8299349419"
+      ],
+      "sesamId": "7a5cd6baa4395f1f4143698e404bb9e6",
+      "oaiId": "oai:nb.bibsys.no:999622024604702202",
+      "urn": "URN:NBN:no-nb_digibok_2012050924011",
+      "otherid": [
+        "999622024604702201"
+      ]
+    },
+    "title": "Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen",
+    "titleInfos": [
+      {
+        "partName": "Gards- og slektshistorie for Østsiden og Finnskogen",
+        "partNumber": "B. 3",
+        "title": "Hof bygdebok"
+      }
+    ],
+    "mediaTypes": [
+      "bøker"
+    ],
+    "typeOfResource": "text",
+    "people": [
+      {
+        "date": "1934-2015",
+        "identifier": "bibsys.no:authority:90243874",
+        "name": "Trøseid, Hans Marius",
+        "roles": [
+          {
+            "name": "cre",
+            "description": "Opphaver"
+          }
+        ],
+        "usage": "primary"
+      }
+    ],
+    "corporates": [
+      {
+        "identifier": "bibsys.no:authority:90332416",
+        "name": [
+          "Åsnes"
+        ]
+      }
+    ],
+    "geographic": {
+      "placeString": "Flisa",
+      "county": "Innlandet",
+      "city": "Flisa"
+    },
+    "originInfo": {
+      "publisher": "Åsnes kommune",
+      "issued": "1995",
+      "issuedUntouched": "1995",
+      "firstIndexTime": "2025-06-11T18:10:20.351Z",
+      "firstDigitalContentTime": "2016-01-21T20:23:11.677Z",
+      "indexLastModified": "2026-09-05T15:09:33.694Z"
+    },
+    "recordInfo": {
+      "identifier": "999622024604702202",
+      "identifierSource": "nb.bibsys.no",
+      "created": "120515"
+    },
+    "classification": {
+      "ddc": [
+        "948.2433",
+        "948.24"
+      ],
+      "udc": [
+        "908(481.143)"
+      ]
+    },
+    "notes": [
+      "Elektronisk reproduksjon [Norge] Nasjonalbiblioteket Digital 2012-05-15",
+      "Langtidslagret aa 2026 permanent"
+    ],
+    "note": {
+      "action": [
+        "Langtidslagret aa 2026 permanent"
+      ],
+      "reproduction": [
+        "Elektronisk reproduksjon [Norge] Nasjonalbiblioteket Digital 2012-05-15"
+      ]
+    },
+    "subject": {
+      "topics": [
+        "åsnes",
+        "bygdebøker",
+        "form",
+        "norske",
+        "gårdsnavn",
+        "slekter",
+        "hof",
+        "hedmark",
+        "Norge (Hedmark)",
+        "Bygdebøker",
+        "Gårdshistorie",
+        "Slektshistorie"
+      ],
+      "geographics": [
+        "Norge,Innlandet,Åsnes,Hof"
+      ],
+      "genres": [
+        "Bygdebøker"
+      ]
+    },
+    "languages": [
+      {
+        "code": "nob"
+      }
+    ],
+    "pageCount": 841,
+    "contentClasses": [
+      "public",
+      "legaldeposit",
+      "jp2",
+      "COPYRIGHTED"
+    ],
+    "metadataClasses": [
+      "public"
+    ],
+    "literaryform": "Faglitteratur",
+    "physicalDescription": {
+      "form": [
+        "print",
+        "electronic resource",
+        "remote",
+        "text",
+        "regular print"
+      ],
+      "extent": "832 s."
+    },
+    "relatedItems": [
+      {
+        "name": [
+          "Trøseid, Hans Marius"
+        ]
+      }
+    ]
+  }
+}

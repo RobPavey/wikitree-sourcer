@@ -26,7 +26,7 @@ import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs"
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 import { displayMessageWithIcon, displayBusyMessage } from "/base/browser/popup/popup_menu_building.mjs";
-import { loadNbMetadata, selectionKey, selectionFromUrl } from "../core/nb_metadata.mjs";
+import { loadNbMetadata, sameSelection, selectionFromUrl } from "../core/nb_metadata.mjs";
 import { buildCollectionContext, loadActiveCollection, saveResearchSubject } from "../core/nb_collection_context.mjs";
 import { generalizeData, regeneralizeData } from "../core/nb_generalize_data.mjs";
 import { getRequestedUserInput } from "../core/nb_user_input.mjs";
@@ -80,7 +80,7 @@ async function setupNbPopupMenu(selection, tabId) {
       userInputFunction: (input) => getRequestedUserInput(input, context),
       regeneralizeFunction: async (input) => {
         const current = await currentSelection();
-        if (!current.success || selectionKey(current) !== selectionKey(ed))
+        if (!sameSelection(current, ed))
           throw new Error("The NB page changed. Reopen Sourcer before generating this citation.");
         await saveResearchSubject(chrome.storage.local, context, input.newData);
         regeneralizeData(input);

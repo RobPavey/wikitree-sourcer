@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Newspaper Mention''':\n\"Hedemarkens Amtstidende. Hamar, 30 March 1910. Edition: 64-35-1\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1; Viewer image(s): 2; Newspaper Mention; Person: Synthetic Person<br/>\n[https://www.nb.no/items/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1?page=1 NB digital copy] (accessed 10 November 2026)<br/>\nMention of Synthetic Person.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Synthetic Person was mentioned in Hedemarkens Amtstidende, published on 30 March 1910.<ref>\n'''Newspaper Mention''':\n\"Hedemarkens Amtstidende. Hamar, 30 March 1910. Edition: 64-35-1\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1; Viewer image(s): 2; Newspaper Mention; Person: Synthetic Person<br/>\n[https://www.nb.no/items/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1?page=1 NB digital copy] (accessed 10 November 2026)<br/>\nMention of Synthetic Person.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Newspaper Mention''': \"Hedemarkens Amtstidende. Hamar, 30 March 1910. Edition: 64-35-1\"<br/>Nasjonalbiblioteket; URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1; Viewer image(s): 2; Newspaper Mention; Person: Synthetic Person<br/>[https://www.nb.no/items/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1?page=1 NB digital copy] (accessed 10 November 2026)<br/>Mention of Synthetic Person.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Newspaper Mention: \"Hedemarkens Amtstidende. Hamar, 30 March 1910. Edition: 64-35-1\", \nNasjonalbiblioteket; URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1; Viewer image(s): 2; Newspaper Mention; Person: Synthetic Person, \nhttps://www.nb.no/items/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1?page=1 (accessed 10 November 2026), \nMention of Synthetic Person.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Synthetic Person was mentioned in Hedemarkens Amtstidende, published on 30 March 1910.",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Newspaper Mention: \"Hedemarkens Amtstidende. Hamar, 30 March 1910. Edition: 64-35-1\", Nasjonalbiblioteket; URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1; Viewer image(s): 2; Newspaper Mention; Person: Synthetic Person, https://www.nb.no/items/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1?page=1 (accessed 10 November 2026), Mention of Synthetic Person.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Newspaper Mention''':\n\"Hedemarkens Amtstidende. Hamar, 30 March 1910. Edition: 64-35-1\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1; Viewer image(s): 2; Newspaper Mention; Person: Synthetic Person<br/>\n[https://www.nb.no/items/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1?page=1 NB digital copy]<br/>\nMention of Synthetic Person.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Synthetic Person was mentioned in Hedemarkens Amtstidende, published on 30 March 1910.<ref>\n'''Newspaper Mention''':\n\"Hedemarkens Amtstidende. Hamar, 30 March 1910. Edition: 64-35-1\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1; Viewer image(s): 2; Newspaper Mention; Person: Synthetic Person<br/>\n[https://www.nb.no/items/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1?page=1 NB digital copy]<br/>\nMention of Synthetic Person.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Newspaper Mention''': \"Hedemarkens Amtstidende. Hamar, 30 March 1910. Edition: 64-35-1\"<br/>Nasjonalbiblioteket; URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1; Viewer image(s): 2; Newspaper Mention; Person: Synthetic Person<br/>[https://www.nb.no/items/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1?page=1 NB digital copy]<br/>Mention of Synthetic Person.",
+    "type": "source"
+  }
+}

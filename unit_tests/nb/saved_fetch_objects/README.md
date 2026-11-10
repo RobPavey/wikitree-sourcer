@@ -16,3 +16,16 @@ viewer image positions. Printed pages are always supplied separately.
 
 Notice categories, subjects, relationships and life events in the tests are
 synthetic and do not assert that those people occur in these publications.
+
+## URN regression examples
+
+The `urn_newspaper` and `urn_book` fixtures were retrieved from the public API on
+10 November 2026 for the two URN viewer addresses supplied during manual testing:
+
+- https://www.nb.no/items/URN:NBN:no-nb_digavis_hedemarkensamtstidende_null_null_19100330_64_35_1?page=1
+- https://www.nb.no/items/URN:NBN:no-nb_digibok_2012050924011?page=585
+
+Their reduced manifests contain canvas labels and sequence length only. Viewer
+shells are synthetic. Page indexes 1 and 585 must be preserved exactly, including
+when metadata returns a different ID alias. Hash-addressed items must also emit
+URN-based citation links whenever NB supplies a URN.

@@ -24,8 +24,35 @@ SOFTWARE.
 
 import { cleanText } from "./nb_notice_types.mjs";
 
+function normalizeIdentifier(value) {
+  if (typeof value !== "string") return "";
+  if (/^[a-f0-9]{32}$/i.test(value)) return value.toLowerCase();
+  if (/^URN:NBN:no-nb_[a-z0-9_-]+$/i.test(value)) return value.replace(/^urn:nbn:no-nb_/i, "URN:NBN:no-nb_");
+  return "";
+}
+function canonicalNbUrl(record) {
+  const urn = normalizeIdentifier(record.urn);
+  const itemId = urn.startsWith("URN:") ? urn : normalizeIdentifier(record.itemId);
+  return "https://www.nb.no/items/" + itemId + "?page=" + record.pageIndex;
+}
+function sameSelection(selection, record) {
+  const identifier = normalizeIdentifier(selection.itemId);
+  return Boolean(
+    selection.success &&
+      identifier &&
+      selection.pageIndex === record.pageIndex &&
+      [record.itemId, record.urn].some((value) => normalizeIdentifier(value) === identifier)
+  );
+}
 function normalizeMetadata(selection, item, manifest) {
-  if (!selection.success || !item || item.id !== selection.itemId)
+  const identifiers = item?.metadata?.identifiers || {};
+  const aliases = [item?.id, identifiers.sesamId, identifiers.urn].map(normalizeIdentifier).filter(Boolean);
+  if (
+    !selection.success ||
+    !item ||
+    !normalizeIdentifier(item.id) ||
+    !aliases.includes(normalizeIdentifier(selection.itemId))
+  )
     throw new Error("NB returned metadata for a different item. Reopen Sourcer on the intended page.");
   if (item.accessInfo?.isDigital === false)
     throw new Error("Open a digitized NB newspaper or book in the viewer to cite an image location.");
@@ -46,23 +73,26 @@ function normalizeMetadata(selection, item, manifest) {
       editor: (person.roles || []).some((role) => role.name === "edt"),
     }))
     .filter((person) => person.name);
+  const itemId = normalizeIdentifier(identifiers.sesamId) || normalizeIdentifier(item.id);
+  const urn =
+    normalizeIdentifier(identifiers.urn) ||
+    (normalizeIdentifier(selection.itemId).startsWith("URN:") ? normalizeIdentifier(selection.itemId) : "");
   return {
     ...selection,
+    itemId,
+    url: canonicalNbUrl({ itemId, urn, pageIndex: selection.pageIndex }),
     materialType,
     title: cleanText(metadata.title),
     publicationDate: cleanText(origin.issuedUntouched || origin.issued),
     publisher: cleanText(origin.publisher),
     publicationPlace: cleanText(metadata.geographic?.city),
     edition: cleanText(origin.edition),
-    urn: cleanText(metadata.identifiers?.urn),
+    urn,
     creators,
     pageCount: canvases.length || metadata.pageCount || 0,
     canvasLabel: cleanText(canvases[selection.pageIndex]?.label),
     manifestAvailable: Boolean(canvases.length),
   };
-}
-function selectionKey(selection) {
-  return selection.itemId + ":" + selection.pageIndex;
 }
 async function loadNbMetadata(selection, fetchJson, getCurrentSelection) {
   if (!selection.success) throw new Error(selection.overrideFailureMessage || "Open an NB newspaper or book viewer.");
@@ -74,15 +104,16 @@ async function loadNbMetadata(selection, fetchJson, getCurrentSelection) {
   } catch {
     /* Bibliography and exact viewer link still work without a manifest. */
   }
+  const record = normalizeMetadata(selection, item, manifest);
   const current = await getCurrentSelection();
-  if (!current.success || selectionKey(selection) !== selectionKey(current))
+  if (!sameSelection(current, record))
     throw new Error("The NB item or page changed while loading. Reopen Sourcer to cite the current page.");
-  return normalizeMetadata(selection, item, manifest);
+  return record;
 }
 function selectionFromUrl(url) {
   try {
     const address = new URL(url);
-    const match = /^\/items\/([a-f0-9]{32})\/?$/i.exec(address.pathname);
+    const match = /^\/items\/([a-f0-9]{32}|URN:NBN:no-nb_[a-z0-9_-]+)\/?$/i.exec(decodeURIComponent(address.pathname));
     const rawPage = address.searchParams.get("page");
     const page = rawPage === null ? "0" : rawPage;
     if (
@@ -93,9 +124,9 @@ function selectionFromUrl(url) {
       !Number.isSafeInteger(Number(page))
     )
       return { success: false };
-    return { success: true, itemId: match[1].toLowerCase(), pageIndex: Number(page) };
+    return { success: true, itemId: normalizeIdentifier(match[1]), pageIndex: Number(page) };
   } catch {
     return { success: false };
   }
 }
-export { normalizeMetadata, loadNbMetadata, selectionKey, selectionFromUrl };
+export { normalizeMetadata, loadNbMetadata, selectionFromUrl, canonicalNbUrl, sameSelection };

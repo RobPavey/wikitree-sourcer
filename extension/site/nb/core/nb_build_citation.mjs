@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { getNoticeType, escapeText } from "./nb_notice_types.mjs";
+import { canonicalNbUrl } from "./nb_metadata.mjs";
 import { dateText, readNbDate } from "./nb_dates.mjs";
 
 function buildCoreCitation(ed, gd, builder) {
@@ -62,6 +63,7 @@ function buildCoreCitation(ed, gd, builder) {
 function buildCitation(input) {
   if (!input.extractedData.success || !input.generalizedData.hasValidData)
     throw new Error("A loaded NB newspaper or book is required.");
+  input = { ...input, extractedData: { ...input.extractedData, url: canonicalNbUrl(input.extractedData) } };
   const requestedType = input.type;
   if (requestedType === "narrative" && !input.generalizedData.userOverrideForNarrative)
     input = { ...input, type: "inline" };
