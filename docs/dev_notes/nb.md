@@ -79,3 +79,10 @@ Chrome and Firefox still need manual extension-level checks of permission prompt
 live NB access and clipboard output. Safari manifests are maintained, but actual
 Safari testing requires the relevant platforms. See the local contribution's
 LOCAL-TESTING.md for the complete manual workflow.
+
+## Contributor retest
+
+The contributor manually retested both reported URN viewer examples and confirmed
+successful citation generation after the URN correction, including the book at
+page index 585. Detailed platform-by-platform permission and clipboard coverage
+has not been recorded; Safari execution remains untested.
