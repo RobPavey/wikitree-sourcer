@@ -192,8 +192,16 @@ function extractPeopleFromTable(panelData, panelGroup) {
   let tableWithHeadings = panelGroup.querySelector("div.panel-body > div > div[aria-hidden=true] > table.table");
   let tableWithRows = panelGroup.querySelector("div.panel-body > div > table.table");
 
+  if (!tableWithHeadings || !tableWithRows) {
+    return;
+  }
+
   let headings = tableWithHeadings.querySelectorAll("thead th");
   let rows = tableWithRows.querySelectorAll("tbody tr.data-item");
+
+  if (!headings || !rows) {
+    return;
+  }
 
   let heading0 = "";
   if (headings.length > 0) {
