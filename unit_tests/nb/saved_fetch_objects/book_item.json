@@ -1,0 +1,241 @@
+{
+  "expand": "metadata",
+  "id": "000009d0157c2a3eb5fbcd86070ed1d5",
+  "_links": {
+    "self": {
+      "href": "https://api.nb.no:443/catalog/v1/items/000009d0157c2a3eb5fbcd86070ed1d5"
+    },
+    "mods": {
+      "href": "https://api.nb.no:443/catalog/v1/metadata/000009d0157c2a3eb5fbcd86070ed1d5/mods"
+    },
+    "dublincore": {
+      "href": "https://api.nb.no:443/catalog/v1/metadata/000009d0157c2a3eb5fbcd86070ed1d5/dublincore"
+    },
+    "presentation": {
+      "href": "https://api.nb.no:443/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/manifest"
+    },
+    "enw": {
+      "href": "https://api.nb.no:443/catalog/v1/reference/000009d0157c2a3eb5fbcd86070ed1d5/enw"
+    },
+    "ris": {
+      "href": "https://api.nb.no:443/catalog/v1/reference/000009d0157c2a3eb5fbcd86070ed1d5/ris"
+    },
+    "wiki": {
+      "href": "https://api.nb.no:443/catalog/v1/reference/000009d0157c2a3eb5fbcd86070ed1d5/wiki"
+    },
+    "thumbnail_custom": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digibok_2008061904016_C1/full/{width},{height}/0/native.jpg",
+      "templated": true
+    },
+    "thumbnail_large": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digibok_2008061904016_C1/full/0,200/0/native.jpg"
+    },
+    "thumbnail_medium": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digibok_2008061904016_C1/full/0,128/0/native.jpg"
+    },
+    "thumbnail_small": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digibok_2008061904016_C1/full/0,64/0/native.jpg"
+    }
+  },
+  "accessInfo": {
+    "accessAllowedFrom": "NORWAY",
+    "accessInfoLastModified": "2023-11-14T14:26:35.045Z",
+    "isDigital": true,
+    "isPublicDomain": false,
+    "license": "bokhylla",
+    "viewability": "ALL"
+  },
+  "metadata": {
+    "identifiers": {
+      "isbn10": [
+        "8291430055"
+      ],
+      "sesamId": "000009d0157c2a3eb5fbcd86070ed1d5",
+      "oaiId": "oai:nb.bibsys.no:999607260984702202",
+      "urn": "URN:NBN:no-nb_digibok_2008061904016",
+      "otherid": [
+        "999607260984702201"
+      ]
+    },
+    "title": "Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3  1996",
+    "titleInfos": [
+      {
+        "subTitle": "abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3  1996",
+        "title": "Syndige abstraksjoner"
+      }
+    ],
+    "mediaTypes": [
+      "bøker"
+    ],
+    "typeOfResource": "text",
+    "people": [
+      {
+        "date": "1965-",
+        "identifier": "bibsys.no:authority:90783943",
+        "name": "Ustvedt, Øystein",
+        "roles": [
+          {
+            "name": "cre",
+            "description": "Opphaver"
+          }
+        ],
+        "usage": "primary"
+      }
+    ],
+    "geographic": {
+      "placeString": "Oslo",
+      "city": "Oslo"
+    },
+    "originInfo": {
+      "publisher": "Astrup Fearnley museet for moderne kunst",
+      "issued": "1996",
+      "issuedUntouched": "1996",
+      "firstIndexTime": "2025-06-11T22:18:53.150Z",
+      "firstDigitalContentTime": "2016-01-21T08:23:42.376Z",
+      "indexLastModified": "2026-09-05T12:53:39.773Z"
+    },
+    "recordInfo": {
+      "identifier": "999607260984702202",
+      "identifierSource": "nb.bibsys.no",
+      "created": "150612"
+    },
+    "classification": {
+      "udc": [
+        "7.036.7",
+        "7.036.75(48)",
+        "48"
+      ]
+    },
+    "notes": [
+      "Teksten er skrevet av Øyvind Ustvedt",
+      "Elektronisk reproduksjon [Norge] Nasjonalbiblioteket Digital 2010-06-10",
+      "Langtidslagret aa 2026 permanent"
+    ],
+    "note": {
+      "action": [
+        "Langtidslagret aa 2026 permanent"
+      ],
+      "reproduction": [
+        "Elektronisk reproduksjon [Norge] Nasjonalbiblioteket Digital 2010-06-10"
+      ],
+      "statementOfResponsibility": [
+        "[utstillings- og katalogansvarlig: Øystein Ustvedt]"
+      ]
+    },
+    "subject": {
+      "topics": [
+        "abstrakt",
+        "kunst",
+        "kunsthistorie",
+        "1990-1999",
+        "utstillingskataloger",
+        "Abstrakt kunst",
+        "Abstrakt kunst",
+        "Kunst",
+        "Kunst"
+      ],
+      "persons": [
+        {
+          "date": "1963-",
+          "name": "Fenn, Harald"
+        },
+        {
+          "name": "Ghadtspa, Urban"
+        },
+        {
+          "date": "1957-",
+          "name": "Hestvold, Thomas"
+        },
+        {
+          "date": "1963-",
+          "name": "McAlinden, Sunniva"
+        },
+        {
+          "date": "1953-",
+          "name": "Ngoma, Germain"
+        },
+        {
+          "date": "1952-",
+          "name": "Leversby, Dag Erik"
+        },
+        {
+          "date": "1965-",
+          "name": "Sæverud, Thomas"
+        },
+        {
+          "name": "Widoff, Anders"
+        },
+        {
+          "date": "1963-",
+          "name": "Fenn, Harald"
+        },
+        {
+          "date": "1961-",
+          "name": "Ghadtspa, Urban"
+        },
+        {
+          "date": "1957-",
+          "name": "Hestvold, Thomas"
+        },
+        {
+          "name": "Leversby, Dag Erik"
+        },
+        {
+          "date": "1963-",
+          "name": "McAlinden, Sunniva"
+        },
+        {
+          "date": "1953-",
+          "name": "Ngoma, Germain"
+        },
+        {
+          "date": "1965-",
+          "name": "Sæverud, Thomas"
+        },
+        {
+          "date": "1953-",
+          "name": "Widoff, Anders"
+        }
+      ],
+      "geographics": [
+        "Norden",
+        "Norge"
+      ],
+      "genres": [
+        "Utstillingskataloger"
+      ]
+    },
+    "statementOfResponsibility": [
+      "[utstillings- og katalogansvarlig: Øystein Ustvedt]"
+    ],
+    "languages": [
+      {
+        "code": "nob"
+      }
+    ],
+    "pageCount": 29,
+    "contentClasses": [
+      "legaldeposit",
+      "bokhylla",
+      "jp2",
+      "bokhyllalisens"
+    ],
+    "metadataClasses": [
+      "public"
+    ],
+    "series": [
+      "Katalog (Astrup Fearnley museet for moderne kunst)"
+    ],
+    "literaryform": "Faglitteratur",
+    "physicalDescription": {
+      "form": [
+        "print",
+        "electronic resource",
+        "remote",
+        "text",
+        "regular print"
+      ],
+      "extent": "23 s. ill."
+    }
+  }
+}

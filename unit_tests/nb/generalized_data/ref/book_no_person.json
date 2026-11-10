@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "nb",
+  "sourceType": "record",
+  "recordType": "Book",
+  "eventDate": {
+    "yearString": "1996"
+  },
+  "overrideRefTitle": "Book",
+  "hasValidData": true,
+  "siteData": {
+    "nb": {
+      "category": "book",
+      "event": "",
+      "personName": "",
+      "passageHeading": "",
+      "printedPages": ""
+    }
+  }
+}

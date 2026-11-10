@@ -24,6 +24,7 @@ SOFTWARE.
 
 async function startNewCollectedCitations() {
   let collectedCitations = {
+    id: crypto.randomUUID(),
     citations: [],
   };
 

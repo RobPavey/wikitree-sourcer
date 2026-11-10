@@ -1227,7 +1227,8 @@ function setupBuildCitationSubmenuForRequestedUserInput(
         regeneralizeFunction,
         userInputFunction,
         resultData,
-        focusElementId
+        focusElementId,
+        isCollectingCitations
       );
     }, 1);
   }
@@ -1362,13 +1363,25 @@ function setupBuildCitationSubmenuForRequestedUserInput(
   let button = document.createElement("button");
   button.className = "dialogButton";
   button.innerText = buttonText;
-  button.onclick = function (element) {
-    if (regeneralizeFunction) {
-      let input = { extractedData: data.extractedData, generalizedData: gd, newData: resultData };
-      regeneralizeFunction(input);
+  if (requestedUserInput.validationError) {
+    addMessageMenuItem(menu, requestedUserInput.validationError);
+    button.disabled = true;
+  }
+  button.onclick = async function (element) {
+    if (requestedUserInput.validationError || button.disabled) return;
+    button.disabled = true;
+    try {
+      if (regeneralizeFunction) {
+        let input = { extractedData: data.extractedData, generalizedData: gd, newData: resultData };
+        const result = await regeneralizeFunction(input);
+        if (result === false) return;
+      }
+      await buildFunction(data);
+    } catch (error) {
+      await displayMessageWithIcon("warning", "Could not build the citation", error.message);
+    } finally {
+      button.disabled = Boolean(requestedUserInput.validationError);
     }
-
-    buildFunction(data);
   };
   menu.list.appendChild(button);
 

@@ -1,0 +1,125 @@
+{
+  "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/manifest{?fields,profile}",
+  "sequences": [
+    {
+      "canvases": [
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_C1",
+          "label": "25"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_I1",
+          "label": "28"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0001",
+          "label": "1"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0002",
+          "label": "2"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0003",
+          "label": "3"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0004",
+          "label": "4"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0005",
+          "label": "5"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0006",
+          "label": "6"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0007",
+          "label": "7"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0008",
+          "label": "8"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0009",
+          "label": "9"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0010",
+          "label": "10"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0011",
+          "label": "11"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0012",
+          "label": "12"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0013",
+          "label": "13"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0014",
+          "label": "14"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0015",
+          "label": "15"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0016",
+          "label": "16"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0017",
+          "label": "17"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0018",
+          "label": "18"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0019",
+          "label": "19"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0020",
+          "label": "20"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0021",
+          "label": "21"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0022",
+          "label": "22"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0023",
+          "label": "23"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_0024",
+          "label": "24"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_I3",
+          "label": "29"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_C3",
+          "label": "27"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/000009d0157c2a3eb5fbcd86070ed1d5/canvas/URN:NBN:no-nb_digibok_2008061904016_C2",
+          "label": "26"
+        }
+      ]
+    }
+  ]
+}

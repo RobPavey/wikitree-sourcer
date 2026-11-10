@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Book''':\n\"Ustvedt, Øystein. Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3 1996. Oslo, Astrup Fearnley museet for moderne kunst, 1996\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digibok_2008061904016; Printed page(s): iv–v; Book; Person: Anna Hansen; Synthetic passage<br/>\n[https://www.nb.no/items/000009d0157c2a3eb5fbcd86070ed1d5?page=1 NB digital copy] (accessed 10 November 2026)<br/>\nMention of Anna Hansen.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Anna Hansen was mentioned in Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3 1996, published in 1996.<ref>\n'''Book''':\n\"Ustvedt, Øystein. Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3 1996. Oslo, Astrup Fearnley museet for moderne kunst, 1996\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digibok_2008061904016; Printed page(s): iv–v; Book; Person: Anna Hansen; Synthetic passage<br/>\n[https://www.nb.no/items/000009d0157c2a3eb5fbcd86070ed1d5?page=1 NB digital copy] (accessed 10 November 2026)<br/>\nMention of Anna Hansen.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Book''': \"Ustvedt, Øystein. Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3 1996. Oslo, Astrup Fearnley museet for moderne kunst, 1996\"<br/>Nasjonalbiblioteket; URN:NBN:no-nb_digibok_2008061904016; Printed page(s): iv–v; Book; Person: Anna Hansen; Synthetic passage<br/>[https://www.nb.no/items/000009d0157c2a3eb5fbcd86070ed1d5?page=1 NB digital copy] (accessed 10 November 2026)<br/>Mention of Anna Hansen.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Book: \"Ustvedt, Øystein. Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3 1996. Oslo, Astrup Fearnley museet for moderne kunst, 1996\", \nNasjonalbiblioteket; URN:NBN:no-nb_digibok_2008061904016; Printed page(s): iv–v; Book; Person: Anna Hansen; Synthetic passage, \nhttps://www.nb.no/items/000009d0157c2a3eb5fbcd86070ed1d5?page=1 (accessed 10 November 2026), \nMention of Anna Hansen.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Anna Hansen was mentioned in Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3 1996, published in 1996.",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Book: \"Ustvedt, Øystein. Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3 1996. Oslo, Astrup Fearnley museet for moderne kunst, 1996\", Nasjonalbiblioteket; URN:NBN:no-nb_digibok_2008061904016; Printed page(s): iv–v; Book; Person: Anna Hansen; Synthetic passage, https://www.nb.no/items/000009d0157c2a3eb5fbcd86070ed1d5?page=1 (accessed 10 November 2026), Mention of Anna Hansen.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Book''':\n\"Ustvedt, Øystein. Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3 1996. Oslo, Astrup Fearnley museet for moderne kunst, 1996\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digibok_2008061904016; Printed page(s): iv–v; Book; Person: Anna Hansen; Synthetic passage<br/>\n[https://www.nb.no/items/000009d0157c2a3eb5fbcd86070ed1d5?page=1 NB digital copy]<br/>\nMention of Anna Hansen.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Anna Hansen was mentioned in Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3 1996, published in 1996.<ref>\n'''Book''':\n\"Ustvedt, Øystein. Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3 1996. Oslo, Astrup Fearnley museet for moderne kunst, 1996\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digibok_2008061904016; Printed page(s): iv–v; Book; Person: Anna Hansen; Synthetic passage<br/>\n[https://www.nb.no/items/000009d0157c2a3eb5fbcd86070ed1d5?page=1 NB digital copy]<br/>\nMention of Anna Hansen.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Book''': \"Ustvedt, Øystein. Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3 1996. Oslo, Astrup Fearnley museet for moderne kunst, 1996\"<br/>Nasjonalbiblioteket; URN:NBN:no-nb_digibok_2008061904016; Printed page(s): iv–v; Book; Person: Anna Hansen; Synthetic passage<br/>[https://www.nb.no/items/000009d0157c2a3eb5fbcd86070ed1d5?page=1 NB digital copy]<br/>Mention of Anna Hansen.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "nb",
+  "sourceType": "record",
+  "recordType": "Book",
+  "name": {
+    "name": "Anna Hansen"
+  },
+  "eventDate": {
+    "yearString": "1996"
+  },
+  "overrideRefTitle": "Book",
+  "isAboutNamedPerson": true,
+  "hasValidData": true,
+  "siteData": {
+    "nb": {
+      "category": "book",
+      "event": "",
+      "personName": "Anna Hansen",
+      "passageHeading": "Synthetic passage",
+      "printedPages": "iv–v"
+    }
+  },
+  "userOverrideForNarrative": "Anna Hansen was mentioned in Syndige abstraksjoner : abstrakt kunst fra 90-årene : Harald Fenn, Urban Ghadtspa, Thomas Hestvold, Sunniva McAlinden, Germain Ngoma, Dag Erik Leversby, Thomas Sæverud, Anders Widoff : Impulsen 25.1 - 17.3 1996, published in 1996."
+}

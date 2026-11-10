@@ -1,0 +1,116 @@
+{
+  "expand": "relatedItems,metadata",
+  "id": "0000004ee44611385504a9d4f0639552",
+  "_links": {
+    "self": {
+      "href": "https://api.nb.no:443/catalog/v1/items/0000004ee44611385504a9d4f0639552"
+    },
+    "mods": {
+      "href": "https://api.nb.no:443/catalog/v1/metadata/0000004ee44611385504a9d4f0639552/mods"
+    },
+    "dublincore": {
+      "href": "https://api.nb.no:443/catalog/v1/metadata/0000004ee44611385504a9d4f0639552/dublincore"
+    },
+    "presentation": {
+      "href": "https://api.nb.no:443/catalog/v1/iiif/0000004ee44611385504a9d4f0639552/manifest"
+    },
+    "enw": {
+      "href": "https://api.nb.no:443/catalog/v1/reference/0000004ee44611385504a9d4f0639552/enw"
+    },
+    "ris": {
+      "href": "https://api.nb.no:443/catalog/v1/reference/0000004ee44611385504a9d4f0639552/ris"
+    },
+    "wiki": {
+      "href": "https://api.nb.no:443/catalog/v1/reference/0000004ee44611385504a9d4f0639552/wiki"
+    },
+    "thumbnail_custom": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1-1_001_null/full/{width},{height}/0/native.jpg",
+      "templated": true
+    },
+    "thumbnail_large": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1-1_001_null/full/0,200/0/native.jpg"
+    },
+    "thumbnail_medium": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1-1_001_null/full/0,128/0/native.jpg"
+    },
+    "thumbnail_small": {
+      "href": "https://www.nb.no/services/image/resolver/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1-1_001_null/full/0,64/0/native.jpg"
+    },
+    "relatedItems": {
+      "href": "https://api.nb.no:443/catalog/v1/items/0000004ee44611385504a9d4f0639552/relatedItems"
+    }
+  },
+  "accessInfo": {
+    "accessAllowedFrom": "NB",
+    "accessInfoLastModified": "2026-02-02T08:16:40.877Z",
+    "isDigital": true,
+    "isPublicDomain": false,
+    "legalDepositLoginText": "4 lisenser for Feide-brukere ved norske universitet og høyskoler.",
+    "license": "copyrighted",
+    "viewability": "NONE"
+  },
+  "metadata": {
+    "identifiers": {
+      "sesamId": "0000004ee44611385504a9d4f0639552",
+      "oaiId": "oai:axiellnewspaper.nb.no:np:1618572645",
+      "urn": "URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1",
+      "seriesid": "oai:axiellnewspaper.nb.no:np:1611000143"
+    },
+    "title": "Salten ",
+    "titleInfos": [
+      {
+        "title": "Salten 1952.11.05"
+      }
+    ],
+    "mediaTypes": [
+      "aviser"
+    ],
+    "typeOfResource": "text",
+    "genres": [
+      "Newspaper"
+    ],
+    "geographic": {
+      "placeString": "Norge;Nordland;;Fauske;;;;",
+      "county": "Nordland",
+      "city": "Fauske"
+    },
+    "originInfo": {
+      "issued": "19521105",
+      "issuedUntouched": "1952-11-05",
+      "edition": "43-45-1",
+      "firstIndexTime": "2026-02-02T07:01:38.307Z",
+      "firstDigitalContentTime": "2026-02-02T08:16:40.877Z",
+      "indexLastModified": "2026-02-02T08:16:41.103Z"
+    },
+    "recordInfo": {
+      "identifier": "np:1618572645",
+      "identifierSource": "axiellnewspaper.nb.no"
+    },
+    "languages": [
+      {
+        "text": "Norsk bokmål"
+      }
+    ],
+    "pageCount": 2,
+    "contentClasses": [
+      "Avisernp1611000143",
+      "legaldeposit",
+      "jp2",
+      "COPYRIGHTED",
+      "avisrestricted"
+    ],
+    "metadataClasses": [
+      "public"
+    ],
+    "series": [
+      "Salten"
+    ],
+    "physicalDescription": {
+      "form": [
+        "Digitalt",
+        "Papir",
+        "Paper"
+      ]
+    }
+  }
+}
