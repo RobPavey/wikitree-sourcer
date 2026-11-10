@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "gravminner",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "name": {
+    "lastName": "Johansen",
+    "forenames": "Magdalene Arctander"
+  },
+  "personGender": "female",
+  "lastNameAtBirth": "Rasmusdatter",
+  "lastNameAtDeath": "Johansen",
+  "birthDate": {
+    "dateString": "12 Sep 1877"
+  },
+  "birthPlace": {
+    "placeString": "Skånland Store"
+  },
+  "deathDate": {
+    "dateString": "6 Jan 1954"
+  },
+  "hasValidData": true
+}

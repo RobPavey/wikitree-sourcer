@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 33333333-3333-3333-3333-333333333333<br/>\n[https://slektogdata.no/gravminner/grav/33333333-3333-3333-3333-333333333333 Gravminner memorial] (accessed 9 November 2026)<br/>\nMemorial for Ole Åsen, died 1980; Bisatt: 1 Feb 1980.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ole was mentioned on a memorial with a death date of 1980.<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 33333333-3333-3333-3333-333333333333<br/>\n[https://slektogdata.no/gravminner/grav/33333333-3333-3333-3333-333333333333 Gravminner memorial] (accessed 9 November 2026)<br/>\nMemorial for Ole Åsen, died 1980; Bisatt: 1 Feb 1980.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': \"Slekt og Data, Gravminner\"<br/>ID: 33333333-3333-3333-3333-333333333333<br/>[https://slektogdata.no/gravminner/grav/33333333-3333-3333-3333-333333333333 Gravminner memorial] (accessed 9 November 2026)<br/>Memorial for Ole Åsen, died 1980; Bisatt: 1 Feb 1980.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Memorial: \"Slekt og Data, Gravminner\", \nID: 33333333-3333-3333-3333-333333333333, \nhttps://slektogdata.no/gravminner/grav/33333333-3333-3333-3333-333333333333 (accessed 9 November 2026), \nMemorial for Ole Åsen, died 1980; Bisatt: 1 Feb 1980.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Ole was mentioned on a memorial with a death date of 1980.Memorial: \"Slekt og Data, Gravminner\", \nID: 33333333-3333-3333-3333-333333333333, \nhttps://slektogdata.no/gravminner/grav/33333333-3333-3333-3333-333333333333 (accessed 9 November 2026), \nMemorial for Ole Åsen, died 1980; Bisatt: 1 Feb 1980.\n",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Memorial: \"Slekt og Data, Gravminner\", ID: 33333333-3333-3333-3333-333333333333, https://slektogdata.no/gravminner/grav/33333333-3333-3333-3333-333333333333 (accessed 9 November 2026), Memorial for Ole Åsen, died 1980; Bisatt: 1 Feb 1980.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 33333333-3333-3333-3333-333333333333<br/>\n[https://slektogdata.no/gravminner/grav/33333333-3333-3333-3333-333333333333 Gravminner memorial]<br/>\nMemorial for Ole Åsen, died 1980; Bisatt: 1 Feb 1980.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Ole was mentioned on a memorial with a death date of 1980.<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 33333333-3333-3333-3333-333333333333<br/>\n[https://slektogdata.no/gravminner/grav/33333333-3333-3333-3333-333333333333 Gravminner memorial]<br/>\nMemorial for Ole Åsen, died 1980; Bisatt: 1 Feb 1980.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Memorial''': \"Slekt og Data, Gravminner\"<br/>ID: 33333333-3333-3333-3333-333333333333<br/>[https://slektogdata.no/gravminner/grav/33333333-3333-3333-3333-333333333333 Gravminner memorial]<br/>Memorial for Ole Åsen, died 1980; Bisatt: 1 Feb 1980.",
+    "type": "source"
+  }
+}

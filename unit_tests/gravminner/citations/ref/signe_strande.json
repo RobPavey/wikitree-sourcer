@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 259e0d76-270e-4a55-b46d-d36270407cae<br/>\n[https://slektogdata.no/gravminner/grav/259e0d76-270e-4a55-b46d-d36270407cae Gravminner memorial] (accessed 9 November 2026)<br/>\nMemorial for Signe Strande, born 24 Apr 1936, died 6 Mar 2022; memorial location: Kolbotn, Nordre Follo, Akershus, Norge; burial date: 16 May 2022; Felt CN.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Signe died on 6 March 2022 and was buried on 16 May 2022 in Kolbotn, Nordre Follo, Akershus, Norge.<ref>\n'''Burial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 259e0d76-270e-4a55-b46d-d36270407cae<br/>\n[https://slektogdata.no/gravminner/grav/259e0d76-270e-4a55-b46d-d36270407cae Gravminner memorial] (accessed 9 November 2026)<br/>\nMemorial for Signe Strande, born 24 Apr 1936, died 6 Mar 2022; memorial location: Kolbotn, Nordre Follo, Akershus, Norge; burial date: 16 May 2022; Felt CN.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Slekt og Data, Gravminner\"<br/>ID: 259e0d76-270e-4a55-b46d-d36270407cae<br/>[https://slektogdata.no/gravminner/grav/259e0d76-270e-4a55-b46d-d36270407cae Gravminner memorial] (accessed 9 November 2026)<br/>Memorial for Signe Strande, born 24 Apr 1936, died 6 Mar 2022; memorial location: Kolbotn, Nordre Follo, Akershus, Norge; burial date: 16 May 2022; Felt CN.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Burial: \"Slekt og Data, Gravminner\", \nID: 259e0d76-270e-4a55-b46d-d36270407cae, \nhttps://slektogdata.no/gravminner/grav/259e0d76-270e-4a55-b46d-d36270407cae (accessed 9 November 2026), \nMemorial for Signe Strande, born 24 Apr 1936, died 6 Mar 2022; memorial location: Kolbotn, Nordre Follo, Akershus, Norge; burial date: 16 May 2022; Felt CN.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Signe died on 6 March 2022 and was buried on 16 May 2022 in Kolbotn, Nordre Follo, Akershus, Norge.Burial: \"Slekt og Data, Gravminner\", \nID: 259e0d76-270e-4a55-b46d-d36270407cae, \nhttps://slektogdata.no/gravminner/grav/259e0d76-270e-4a55-b46d-d36270407cae (accessed 9 November 2026), \nMemorial for Signe Strande, born 24 Apr 1936, died 6 Mar 2022; memorial location: Kolbotn, Nordre Follo, Akershus, Norge; burial date: 16 May 2022; Felt CN.\n",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Burial: \"Slekt og Data, Gravminner\", ID: 259e0d76-270e-4a55-b46d-d36270407cae, https://slektogdata.no/gravminner/grav/259e0d76-270e-4a55-b46d-d36270407cae (accessed 9 November 2026), Memorial for Signe Strande, born 24 Apr 1936, died 6 Mar 2022; memorial location: Kolbotn, Nordre Follo, Akershus, Norge; burial date: 16 May 2022; Felt CN.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 259e0d76-270e-4a55-b46d-d36270407cae<br/>\n[https://slektogdata.no/gravminner/grav/259e0d76-270e-4a55-b46d-d36270407cae Gravminner memorial]<br/>\nMemorial for Signe Strande, born 24 Apr 1936, died 6 Mar 2022; memorial location: Kolbotn, Nordre Follo, Akershus, Norge; burial date: 16 May 2022; Felt CN.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Signe died on 6 March 2022 and was buried on 16 May 2022 in Kolbotn, Nordre Follo, Akershus, Norge.<ref>\n'''Burial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: 259e0d76-270e-4a55-b46d-d36270407cae<br/>\n[https://slektogdata.no/gravminner/grav/259e0d76-270e-4a55-b46d-d36270407cae Gravminner memorial]<br/>\nMemorial for Signe Strande, born 24 Apr 1936, died 6 Mar 2022; memorial location: Kolbotn, Nordre Follo, Akershus, Norge; burial date: 16 May 2022; Felt CN.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Burial''': \"Slekt og Data, Gravminner\"<br/>ID: 259e0d76-270e-4a55-b46d-d36270407cae<br/>[https://slektogdata.no/gravminner/grav/259e0d76-270e-4a55-b46d-d36270407cae Gravminner memorial]<br/>Memorial for Signe Strande, born 24 Apr 1936, died 6 Mar 2022; memorial location: Kolbotn, Nordre Follo, Akershus, Norge; burial date: 16 May 2022; Felt CN.",
+    "type": "source"
+  }
+}

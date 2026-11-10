@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "gravminner",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "name": {
+    "lastName": "Åsen",
+    "forenames": "Ole"
+  },
+  "lastNameAtDeath": "Åsen",
+  "deathDate": {
+    "yearString": "1980"
+  },
+  "hasValidData": true
+}

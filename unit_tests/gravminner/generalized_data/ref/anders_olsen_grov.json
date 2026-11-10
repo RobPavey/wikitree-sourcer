@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "gravminner",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "name": {
+    "lastName": "Olsen Grov",
+    "forenames": "Anders"
+  },
+  "personGender": "male",
+  "lastNameAtDeath": "Olsen Grov",
+  "birthDate": {
+    "yearString": "1890"
+  },
+  "birthPlace": {
+    "placeString": "Grov"
+  },
+  "deathDate": {
+    "dateString": "15 Jan 1905"
+  },
+  "hasValidData": true
+}

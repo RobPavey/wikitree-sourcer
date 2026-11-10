@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: b8ac84e7-ba92-4dcb-8982-522be1be5c5b<br/>\n[https://slektogdata.no/gravminner/grav/b8ac84e7-ba92-4dcb-8982-522be1be5c5b Gravminner memorial] (accessed 9 November 2026)<br/>\nMemorial for Anders Olsen Grov, born 1890, died 15 Jan 1905; memorial location: Minnesmerker Stryn, Stryn, Vestland, Norge; Felt Loen kirke.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Anders was mentioned on a memorial with a death date of 15 January 1905.<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: b8ac84e7-ba92-4dcb-8982-522be1be5c5b<br/>\n[https://slektogdata.no/gravminner/grav/b8ac84e7-ba92-4dcb-8982-522be1be5c5b Gravminner memorial] (accessed 9 November 2026)<br/>\nMemorial for Anders Olsen Grov, born 1890, died 15 Jan 1905; memorial location: Minnesmerker Stryn, Stryn, Vestland, Norge; Felt Loen kirke.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': \"Slekt og Data, Gravminner\"<br/>ID: b8ac84e7-ba92-4dcb-8982-522be1be5c5b<br/>[https://slektogdata.no/gravminner/grav/b8ac84e7-ba92-4dcb-8982-522be1be5c5b Gravminner memorial] (accessed 9 November 2026)<br/>Memorial for Anders Olsen Grov, born 1890, died 15 Jan 1905; memorial location: Minnesmerker Stryn, Stryn, Vestland, Norge; Felt Loen kirke.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Memorial: \"Slekt og Data, Gravminner\", \nID: b8ac84e7-ba92-4dcb-8982-522be1be5c5b, \nhttps://slektogdata.no/gravminner/grav/b8ac84e7-ba92-4dcb-8982-522be1be5c5b (accessed 9 November 2026), \nMemorial for Anders Olsen Grov, born 1890, died 15 Jan 1905; memorial location: Minnesmerker Stryn, Stryn, Vestland, Norge; Felt Loen kirke.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Anders was mentioned on a memorial with a death date of 15 January 1905.Memorial: \"Slekt og Data, Gravminner\", \nID: b8ac84e7-ba92-4dcb-8982-522be1be5c5b, \nhttps://slektogdata.no/gravminner/grav/b8ac84e7-ba92-4dcb-8982-522be1be5c5b (accessed 9 November 2026), \nMemorial for Anders Olsen Grov, born 1890, died 15 Jan 1905; memorial location: Minnesmerker Stryn, Stryn, Vestland, Norge; Felt Loen kirke.\n",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Memorial: \"Slekt og Data, Gravminner\", ID: b8ac84e7-ba92-4dcb-8982-522be1be5c5b, https://slektogdata.no/gravminner/grav/b8ac84e7-ba92-4dcb-8982-522be1be5c5b (accessed 9 November 2026), Memorial for Anders Olsen Grov, born 1890, died 15 Jan 1905; memorial location: Minnesmerker Stryn, Stryn, Vestland, Norge; Felt Loen kirke.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: b8ac84e7-ba92-4dcb-8982-522be1be5c5b<br/>\n[https://slektogdata.no/gravminner/grav/b8ac84e7-ba92-4dcb-8982-522be1be5c5b Gravminner memorial]<br/>\nMemorial for Anders Olsen Grov, born 1890, died 15 Jan 1905; memorial location: Minnesmerker Stryn, Stryn, Vestland, Norge; Felt Loen kirke.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Anders was mentioned on a memorial with a death date of 15 January 1905.<ref>\n'''Memorial''':\n\"Slekt og Data, Gravminner\"<br/>\nID: b8ac84e7-ba92-4dcb-8982-522be1be5c5b<br/>\n[https://slektogdata.no/gravminner/grav/b8ac84e7-ba92-4dcb-8982-522be1be5c5b Gravminner memorial]<br/>\nMemorial for Anders Olsen Grov, born 1890, died 15 Jan 1905; memorial location: Minnesmerker Stryn, Stryn, Vestland, Norge; Felt Loen kirke.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Memorial''': \"Slekt og Data, Gravminner\"<br/>ID: b8ac84e7-ba92-4dcb-8982-522be1be5c5b<br/>[https://slektogdata.no/gravminner/grav/b8ac84e7-ba92-4dcb-8982-522be1be5c5b Gravminner memorial]<br/>Memorial for Anders Olsen Grov, born 1890, died 15 Jan 1905; memorial location: Minnesmerker Stryn, Stryn, Vestland, Norge; Felt Loen kirke.",
+    "type": "source"
+  }
+}
