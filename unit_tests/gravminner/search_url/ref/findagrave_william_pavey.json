@@ -1,0 +1,38 @@
+{
+  "std": {
+    "fieldData": {
+      "firstName": "William",
+      "surname": "Pavey",
+      "bornFromYear": 1874,
+      "bornToYear": 1876,
+      "deathFromYear": 1960,
+      "deathToYear": 1962
+    },
+    "selectData": {}
+  },
+  "noBirth": {
+    "fieldData": {
+      "firstName": "William",
+      "surname": "Pavey",
+      "deathFromYear": 1960,
+      "deathToYear": 1962
+    },
+    "selectData": {}
+  },
+  "noDeath": {
+    "fieldData": {
+      "firstName": "William",
+      "surname": "Pavey",
+      "bornFromYear": 1874,
+      "bornToYear": 1876
+    },
+    "selectData": {}
+  },
+  "namesOnly": {
+    "fieldData": {
+      "firstName": "William",
+      "surname": "Pavey"
+    },
+    "selectData": {}
+  }
+}

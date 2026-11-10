@@ -24,8 +24,12 @@ SOFTWARE.
 
 import { runTests as runContentTests } from "./gravminner_test_content_and_citation.mjs";
 import { runTests as runBehaviorTests } from "./gravminner_test_behavior.mjs";
+import { runTests as runSearchDataTests } from "./gravminner_test_search_data.mjs";
+import { runTests as runSearchTests } from "./gravminner_test_search.mjs";
 async function runTests(testManager) {
   await runContentTests(testManager);
   await runBehaviorTests(testManager);
+  await runSearchDataTests(testManager);
+  await runSearchTests(testManager);
 }
 export { runTests };

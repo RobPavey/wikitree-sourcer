@@ -1,0 +1,38 @@
+{
+  "std": {
+    "fieldData": {
+      "firstName": "Åse",
+      "surname": "Ærlig",
+      "bornFromYear": 1899,
+      "bornToYear": 1901,
+      "deathFromYear": 1969,
+      "deathToYear": 1971
+    },
+    "selectData": {}
+  },
+  "noBirth": {
+    "fieldData": {
+      "firstName": "Åse",
+      "surname": "Ærlig",
+      "deathFromYear": 1969,
+      "deathToYear": 1971
+    },
+    "selectData": {}
+  },
+  "noDeath": {
+    "fieldData": {
+      "firstName": "Åse",
+      "surname": "Ærlig",
+      "bornFromYear": 1899,
+      "bornToYear": 1901
+    },
+    "selectData": {}
+  },
+  "namesOnly": {
+    "fieldData": {
+      "firstName": "Åse",
+      "surname": "Ærlig"
+    },
+    "selectData": {}
+  }
+}

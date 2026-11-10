@@ -36,6 +36,7 @@ import {
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
+  closePopup,
 } from "./popup_menu_building.mjs";
 
 import {

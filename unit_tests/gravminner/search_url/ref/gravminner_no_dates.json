@@ -1,0 +1,30 @@
+{
+  "std": {
+    "fieldData": {
+      "firstName": "Anne",
+      "surname": "Olsen"
+    },
+    "selectData": {}
+  },
+  "noBirth": {
+    "fieldData": {
+      "firstName": "Anne",
+      "surname": "Olsen"
+    },
+    "selectData": {}
+  },
+  "noDeath": {
+    "fieldData": {
+      "firstName": "Anne",
+      "surname": "Olsen"
+    },
+    "selectData": {}
+  },
+  "namesOnly": {
+    "fieldData": {
+      "firstName": "Anne",
+      "surname": "Olsen"
+    },
+    "selectData": {}
+  }
+}

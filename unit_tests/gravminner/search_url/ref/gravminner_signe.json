@@ -1,0 +1,38 @@
+{
+  "std": {
+    "fieldData": {
+      "firstName": "Signe",
+      "surname": "Strande",
+      "bornFromYear": 1935,
+      "bornToYear": 1937,
+      "deathFromYear": 2021,
+      "deathToYear": 2023
+    },
+    "selectData": {}
+  },
+  "noBirth": {
+    "fieldData": {
+      "firstName": "Signe",
+      "surname": "Strande",
+      "deathFromYear": 2021,
+      "deathToYear": 2023
+    },
+    "selectData": {}
+  },
+  "noDeath": {
+    "fieldData": {
+      "firstName": "Signe",
+      "surname": "Strande",
+      "bornFromYear": 1935,
+      "bornToYear": 1937
+    },
+    "selectData": {}
+  },
+  "namesOnly": {
+    "fieldData": {
+      "firstName": "Signe",
+      "surname": "Strande"
+    },
+    "selectData": {}
+  }
+}

@@ -62,6 +62,7 @@ import "../../gedenkbuch/core/gedenkbuch_options.mjs";
 import "../../geneteka/core/geneteka_options.mjs";
 import "../../genquebec/core/genquebec_options.mjs";
 import "../../gensau/core/gensau_options.mjs";
+import "../../gravminner/core/gravminner_options.mjs";
 import "../../gro/core/gro_options.mjs";
 import "../../hathi/core/hathi_options.mjs";
 import "../../imdb/core/imdb_options.mjs";
