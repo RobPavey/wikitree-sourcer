@@ -1353,6 +1353,12 @@ function extractSharingImageFullSizeLinkV2(document, result) {
   let imageUrl = "";
 
   let img = document.querySelector("#landingPageContent div.photo > img");
+
+  // change in November 2026
+  if (!img) {
+    img = document.querySelector("main > div > figure > button > img");
+  }
+
   if (img) {
     imageUrl = img.getAttribute("src");
   }

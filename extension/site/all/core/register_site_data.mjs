@@ -66,6 +66,7 @@ import "../../gedenkbuch/core/gedenkbuch_site_data.mjs";
 import "../../geneteka/core/geneteka_site_data.mjs";
 import "../../genquebec/core/genquebec_site_data.mjs";
 import "../../gensau/core/gensau_site_data.mjs";
+import "../../gravminner/core/gravminner_site_data.mjs";
 import "../../gro/core/gro_site_data.mjs";
 import "../../hathi/core/hathi_site_data.mjs";
 import "../../ilsosgov/core/ilsosgov_site_data.mjs";

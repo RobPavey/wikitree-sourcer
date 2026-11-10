@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "gravminner",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Ærlig",
+    "forenames": "Åse Øyvind"
+  },
+  "eventDate": {
+    "dateString": "1970"
+  },
+  "eventPlace": {
+    "placeString": "Østre"
+  },
+  "lastNameAtBirth": "Bø",
+  "lastNameAtDeath": "Ærlig",
+  "birthDate": {
+    "dateString": "Apr 1900"
+  },
+  "deathDate": {
+    "yearString": "1970"
+  },
+  "hasValidData": true
+}
