@@ -81,6 +81,22 @@ function addClickedRowListener() {
   }
 }
 
+function addEventPersistedListener() {
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+      // user arrived via browser back/forward button and the submit and reset buttons can be re-enabled
+      const submitBtn = document.querySelector("div.button-row > input.btn[type='submit']");
+      if (submitBtn) {
+        submitBtn.disabled = false;
+      }
+      const resetBtn = document.querySelector("div.button-row > input.btn[type='reset']");
+      if (resetBtn) {
+        resetBtn.disabled = false;
+      }
+    }
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Code for registering/unregistering tab with background
 ////////////////////////////////////////////////////////////////////////////////
@@ -177,7 +193,7 @@ function setSearchingBanner() {
   let containerElement = document.querySelector(".row > div");
   if (mainElement && containerElement) {
     let message =
-      "WikiTree Sourcer filled in the search fields. Please make any desired changes and click the Search button.";
+      "WikiTree Sourcer filled in the search fields. Please make any desired changes and click the Submit button.";
     let existingSpan = mainElement.querySelector("#sourcerWaitMessage");
     if (!existingSpan) {
       let fragment = document.createDocumentFragment();
@@ -279,7 +295,7 @@ async function doPendingSearch() {
         //console.log("doPendingSearch: searchButtonElement is:");
         //console.log(searchButtonElement);
 
-        /* We let the user click the Search button, so that the browser back arrow works, in case the user wants to refine the search criteria.
+        /* We let the user click the Submit button, so the browser back button can be used to refine search criteria if desired
 
         // try to submit form
         if (searchButtonElement) {
@@ -414,17 +430,7 @@ async function checkForSearchThenInit() {
 
     addClickedRowListener();
   }
-  /*
-  checkForPendingSearch();
-
-  siteContentInit(
-    "ilsosgov",
-    undefined, // overrideExtractHandler
-    additionalMessageHandler
-  );
-
-  addClickedRowListener();
-  */
 }
 
+addEventPersistedListener();
 checkForSearchThenInit();

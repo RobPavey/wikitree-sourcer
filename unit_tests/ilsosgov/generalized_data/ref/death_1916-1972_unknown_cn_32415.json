@@ -2,6 +2,7 @@
   "sourceOfData": "ilsosgov",
   "sourceType": "record",
   "recordType": "Death",
+  "personGender": "",
   "deathPlace": {
     "placeString": "Rural Twp, Randolph County, Illinois, United States of America"
   },

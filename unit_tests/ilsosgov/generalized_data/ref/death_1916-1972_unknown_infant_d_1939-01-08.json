@@ -6,6 +6,7 @@
     "lastName": "UNKNOWN",
     "firstNames": "INFANT"
   },
+  "personGender": "",
   "eventDate": {
     "dateString": "1939-01-08",
     "qualifier": 1

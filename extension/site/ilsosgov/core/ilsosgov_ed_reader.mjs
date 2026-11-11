@@ -26,11 +26,40 @@ SOFTWARE.
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { NameObj } from "../../../base/core/generalize_data_utils.mjs";
+// import { NameUtils } from "../../../base/core/name_utils.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+
+const baseRecordTypeData = {
+  rules: {
+    /*
+    fullName: {
+      recordDataKeys: ["Name of Deceased", "Groom"],
+    },
+    lastName: {
+      recordDataKeys: ["Last Name"],
+    },
+    forenames: {
+      recordDataKeys: ["First Name", "Middle Name"],
+    },
+*/
+    gender: {
+      recordDataKeys: ["Sex"],
+    },
+  },
+  /*
+  advancedNameRules: {
+    fullNameCanBeLastNameCommaForenames: true,
+  },
+*/
+};
 
 class IlsosgovEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
+    this.baseRecordTypeData = baseRecordTypeData;
+    // use the word after Statewide in the collection name to determine the record type associated with this collection
+    // either 'Death' or 'Marriage'
     function getNextWord(text, targetWord) {
       // Escapes special characters if targetWord contains them
       // const escapedWord = targetWord.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -56,43 +85,6 @@ class IlsosgovEdReader extends ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Helper functions
   ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  toTitleCase(allCapsString) {
-    const titleCaseString = allCapsString
-      .toLowerCase()
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-    return titleCaseString;
-  }
-
-  makeNameObjFromFirstNamesAndLastName(firstNames, lastName) {
-    if (firstNames || lastName) {
-      let nameObj = new NameObj();
-      nameObj.setLastName(lastName);
-      nameObj.setFirstNames(firstNames);
-      return nameObj;
-    }
-  }
-
-  makeNameObjFromFirstNameMiddleNameAndLastName(firstName, middleName, lastName) {
-    if (firstName || middleName || lastName) {
-      let nameObj = new NameObj();
-      nameObj.setLastName(lastName);
-      nameObj.setMiddleName(middleName);
-      nameObj.setFirstName(firstName);
-      return nameObj;
-    }
-  }
-
-  makeNameObjFromMiddleNameAndLastName(middleName, lastName) {
-    if (middleName || lastName) {
-      let nameObj = new NameObj();
-      nameObj.setLastName(lastName);
-      nameObj.setMiddleName(middleName);
-      return nameObj;
-    }
-  }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
@@ -141,20 +133,6 @@ class IlsosgovEdReader extends ExtractedDataReader {
       return this.makeNameObjFromLastNameCommaForenames(this.ed.recordData["Name of Deceased"]);
     } else if (this.ed.recordData["Groom"] && this.ed.recordData["Groom"] !== "") {
       return this.makeNameObjFromLastNameCommaForenames(this.ed.recordData["Groom"]);
-    } else {
-      return undefined;
-    }
-  }
-
-  getGender() {
-    if (this.ed.recordData["Sex"] && this.ed.recordData["Sex"] !== "") {
-      if (this.ed.recordData["Sex"] == "M") {
-        return "male";
-      } else if (this.ed.recordData["Sex"] == "F") {
-        return "female";
-      } else {
-        return undefined;
-      }
     } else {
       return undefined;
     }
@@ -250,9 +228,11 @@ class IlsosgovEdReader extends ExtractedDataReader {
       let placeString = "";
       if (this.ed.recordData["County"] && this.ed.recordData["County"] !== "UNKNOWN") {
         if (this.ed.recordData["City"] && this.ed.recordData["City"] !== "UNKNOWN") {
-          placeString += this.toTitleCase(this.ed.recordData["City"]) + ", ";
+          placeString += StringUtils.toInitialCapsEachWord(this.ed.recordData["City"]) + ", ";
         }
-        placeString += this.toTitleCase(this.ed.recordData["County"]) + " County, Illinois, United States of America";
+        placeString +=
+          StringUtils.toInitialCapsEachWord(this.ed.recordData["County"]) +
+          " County, Illinois, United States of America";
       } else {
         placeString += "Illinois, United States of America";
       }
@@ -267,9 +247,11 @@ class IlsosgovEdReader extends ExtractedDataReader {
       let placeString = "";
       if (this.ed.recordData["County"] && this.ed.recordData["County"] !== "UNKNOWN") {
         if (this.ed.recordData["City"] && this.ed.recordData["City"] !== "UNKNOWN") {
-          placeString += this.toTitleCase(this.ed.recordData["City"]) + ", ";
+          placeString += StringUtils.toInitialCapsEachWord(this.ed.recordData["City"]) + ", ";
         }
-        placeString += this.toTitleCase(this.ed.recordData["County"]) + " County, Illinois, United States of America";
+        placeString +=
+          StringUtils.toInitialCapsEachWord(this.ed.recordData["County"]) +
+          " County, Illinois, United States of America";
       } else {
         placeString += "Illinois, United States of America";
       }

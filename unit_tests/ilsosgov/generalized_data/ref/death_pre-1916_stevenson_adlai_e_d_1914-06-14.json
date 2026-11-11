@@ -6,6 +6,7 @@
     "lastName": "STEVENSON",
     "forenames": "ADLAI E"
   },
+  "personGender": "",
   "eventDate": {
     "dateString": "1914-06-14",
     "qualifier": 1
