@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "ilsosgov",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "UNKEFER",
+    "middleName": "SUSAN",
+    "firstName": "MARIE"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1968-09-04",
+    "qualifier": 1
+  },
+  "deathDate": {
+    "dateString": "1968-09-04",
+    "qualifier": 1
+  },
+  "deathPlace": {
+    "placeString": "Evanston, Cook County, Illinois, United States of America"
+  },
+  "ageAtDeath": "53",
+  "hasValidData": true
+}

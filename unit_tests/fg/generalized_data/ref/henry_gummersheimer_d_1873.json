@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "15 Aug 1873"
+  },
+  "eventPlace": {
+    "placeString": "Mascoutah, St. Clair County, Illinois, USA",
+    "streetAddress": "Schnebelin Cemetery"
+  },
+  "name": {
+    "firstNames": "Henry",
+    "lastName": "Gummersheimer"
+  },
+  "lastNameAtDeath": "Gummersheimer",
+  "deathDate": {
+    "dateString": "15 Aug 1873"
+  },
+  "deathPlace": {
+    "placeString": "Mascoutah, St. Clair County, Illinois, USA"
+  },
+  "ageAtDeath": "29",
+  "birthDate": {
+    "dateString": "29 Oct 1843"
+  },
+  "birthPlace": {
+    "placeString": "Rockenhausen, Donnersbergkreis, Rheinland-Pfalz, Germany"
+  },
+  "wtSearchIds": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem261530060"
+    }
+  ],
+  "hasValidData": true
+}

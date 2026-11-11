@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Illinois Statewide Death Index, 1916-1972\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/idphdeathsrch.jsp Search] (accessed 6 May 2021)<br/>\nLast Name: IMRY; First Name: LAVINA; Sex: F; Age: Y-66; Cert No.: 0021336; Death Date: 1962-04-04; County: ST CLAIR; City: EAST ST LOUIS; Date Filed: 1962-04-06.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Lavina died (age 66) on 4 April 1962 in East St Louis, St Clair County, Illinois, United States of America.<ref>\n'''Death''':\n\"Illinois Statewide Death Index, 1916-1972\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/idphdeathsrch.jsp Search] (accessed 6 May 2021)<br/>\nLast Name: IMRY; First Name: LAVINA; Sex: F; Age: Y-66; Cert No.: 0021336; Death Date: 1962-04-04; County: ST CLAIR; City: EAST ST LOUIS; Date Filed: 1962-04-06.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Illinois Statewide Death Index, 1916-1972\"<br/>Illinois State Archives<br/>[https://apps.ilsos.gov/isavital/idphdeathsrch.jsp Search] (accessed 6 May 2021)<br/>Last Name: IMRY; First Name: LAVINA; Sex: F; Age: Y-66; Cert No.: 0021336; Death Date: 1962-04-04; County: ST CLAIR; City: EAST ST LOUIS; Date Filed: 1962-04-06.",
+    "type": "source"
+  }
+}

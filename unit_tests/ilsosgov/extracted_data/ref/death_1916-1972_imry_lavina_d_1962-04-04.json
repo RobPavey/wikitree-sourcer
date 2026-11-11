@@ -1,0 +1,18 @@
+{
+  "url": "https://apps.ilsos.gov/isavital/idphDeathSearch.do",
+  "success": true,
+  "collectionName": "Illinois Statewide Death Index, 1916-1972",
+  "repository": "Illinois State Archives",
+  "recordData": {
+    "Last Name": "IMRY",
+    "First Name": "LAVINA",
+    "Middle Name": "",
+    "Sex": "F",
+    "Age": "Y-66",
+    "Cert No.": "0021336",
+    "Death Date": "1962-04-04",
+    "County": "ST CLAIR",
+    "City": "EAST ST LOUIS",
+    "Date Filed": "1962-04-06"
+  }
+}

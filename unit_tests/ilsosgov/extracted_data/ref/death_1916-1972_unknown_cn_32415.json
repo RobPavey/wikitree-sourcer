@@ -1,0 +1,16 @@
+{
+  "url": "https://apps.ilsos.gov/isavital/idphDeathSearch.do",
+  "success": true,
+  "collectionName": "Illinois Statewide Death Index, 1916-1972",
+  "repository": "Illinois State Archives",
+  "recordData": {
+    "Last Name": "UNKNOWN",
+    "First Name": "",
+    "Middle Name": "",
+    "Sex": "U",
+    "Age": "Y150",
+    "Cert No.": "0032415",
+    "County": "RANDOLPH",
+    "City": "RURAL TWP"
+  }
+}

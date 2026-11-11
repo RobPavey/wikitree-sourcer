@@ -62,6 +62,7 @@ const siteNames = [
   "gravminner",
   "gro",
   "hathi",
+  "ilsosgov",
   "imdb",
   "irishg",
   "itcadgg",

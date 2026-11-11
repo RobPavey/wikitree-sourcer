@@ -1,0 +1,52 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Lavina",
+    "prefNames": "Lavina",
+    "nicknames": "Lena",
+    "otherLastNames": "Renfro, Bridger, Hunter",
+    "lastName": "Conrad"
+  },
+  "lastNameAtBirth": "Conrad",
+  "lastNameAtDeath": "Imry",
+  "mothersMaidenName": "Joeckel",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "28 Feb 1890",
+    "qualifier": 2
+  },
+  "deathDate": {
+    "dateString": "4 Apr 1962",
+    "qualifier": 1
+  },
+  "birthPlace": {
+    "placeString": "Missouri, United States of America"
+  },
+  "deathPlace": {
+    "placeString": "East St. Louis, St. Clair County, Illinois, United States of America"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Ludwig L. Conrad",
+        "lastName": "Conrad",
+        "forenames": "Ludwig L."
+      },
+      "lastNameAtBirth": "Conrad",
+      "lastNameAtDeath": "Conrad"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Christine Elisabeth",
+        "lastName": "Joeckel",
+        "name": "Christine Elisabeth Joeckel"
+      },
+      "lastNameAtBirth": "Joeckel",
+      "lastNameAtDeath": "Conrad"
+    }
+  },
+  "spouses": [],
+  "hasValidData": true,
+  "personRepoRef": "Conrad-4600"
+}

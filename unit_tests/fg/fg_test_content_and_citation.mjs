@@ -100,6 +100,11 @@ const regressionData = [
     url: "https://www.findagrave.com/memorial/111269301/blackwell",
   },
   {
+    // To test IL marriage search by groom on ilsosgov
+    caseName: "henry_gummersheimer_d_1873",
+    url: "https://www.findagrave.com/memorial/261530060/henry-gummersheimer",
+  },
+  {
     // has only one name
     caseName: "john_d_1978",
     url: "https://www.findagrave.com/memorial/62103674/john",
@@ -120,6 +125,11 @@ const regressionData = [
     url: "https://www.findagrave.com/memorial/148814973/john-thomas-sinclair",
   },
   {
+    // To test IL pre-1916 death search on ilsosgov
+    caseName: "joseph_franz_wolf_d_1891",
+    url: "https://www.findagrave.com/memorial/125446179/joseph-franz-wolf",
+  },
+  {
     // has lots of hyphens in name
     caseName: "k_lu_sw",
     url: "https://www.findagrave.com/memorial/55174407/k-----lu----sw---",
@@ -128,6 +138,11 @@ const regressionData = [
     // To test MO death cert search on sosmogov
     caseName: "laura_e_buchert_d_1957",
     url: "https://www.findagrave.com/memorial/118913956/laura-e-buchert",
+  },
+  {
+    // To test IL post-1915 death search on ilsosgov
+    caseName: "lavina_imry_d_1962",
+    url: "https://www.findagrave.com/memorial/261594189/lavina-imry",
   },
   {
     // has ldifferent name in URL to fields
@@ -143,6 +158,11 @@ const regressionData = [
     // has multiple prefixes
     caseName: "master_capt_john_smith_d_1941",
     url: "https://www.findagrave.com/memorial/15373507/capt_john-smith",
+  },
+  {
+    // To test IL marriage search by bride on ilsosgov
+    caseName: "paulina_gummersheimer_d_1870",
+    url: "https://www.findagrave.com/memorial/181942960/paulina-gummersheimer",
   },
   {
     // New format for "sponsored" memorials

@@ -1,0 +1,17 @@
+{
+  "url": "https://apps.ilsos.gov/isavital/deathSearch.do",
+  "success": true,
+  "collectionName": "Illinois Statewide Death Index, Pre-1916",
+  "repository": "Illinois State Archives",
+  "recordData": {
+    "Name of Deceased": "VOELKEL, ELSIE (MRS)",
+    "Date": "1898-02-13",
+    "City": "BELLEVILLE",
+    "Age": "30 YR",
+    "Sex": "F",
+    "Volume": "5",
+    "Page": "20",
+    "Cert No": "258",
+    "County": "ST. CLAIR"
+  }
+}

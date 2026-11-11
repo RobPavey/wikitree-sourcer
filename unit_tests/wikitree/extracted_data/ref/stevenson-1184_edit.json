@@ -1,0 +1,39 @@
+{
+  "hasValidData": true,
+  "firstNames": "Adlai",
+  "prefNames": "Adlai",
+  "middleNames": "Ewing",
+  "lnab": "Stevenson",
+  "currentLastName": "Stevenson",
+  "mothersMaidenName": "Ewing",
+  "birthDate": "23 Oct 1835",
+  "birthDateStatus": "certain",
+  "deathDate": "14 Jun 1914",
+  "deathDateStatus": "certain",
+  "birthLocation": "Christian County, Kentucky, United States",
+  "deathLocation": "Chicago, Cook, Illinois, United States",
+  "personGender": "Male",
+  "spouses": [
+    {
+      "name": "Letitia (Green) Stevenson",
+      "wikiId": "Green-13215",
+      "marriageString": "22 Dec 1866 Chenoa, Illinois",
+      "marriageDate": "22 Dec 1866",
+      "marriagePlace": "Chenoa, Illinois"
+    }
+  ],
+  "url": "https://www.wikitree.com/index.php?title=Special:EditPerson&u=4690752",
+  "pageType": "edit",
+  "parents": {
+    "father": {
+      "name": "John Turner Stevenson",
+      "wikiId": "Stevenson-2014"
+    },
+    "mother": {
+      "name": "Elizabeth Ann (Ewing) Stevenson",
+      "wikiId": "Ewing-764"
+    }
+  },
+  "wikiId": "Stevenson-1184",
+  "citation": "WikiTree contributors, \"Adlai Ewing Stevenson I (1835-1914),\" WikiTree: The Free Family Tree, (https://www.wikitree.com/wiki/Stevenson-1184 : accessed 06 November 2026)."
+}

@@ -1,0 +1,17 @@
+{
+  "url": "https://apps.ilsos.gov/isavital/deathSearch.do",
+  "success": true,
+  "collectionName": "Illinois Statewide Death Index, Pre-1916",
+  "repository": "Illinois State Archives",
+  "recordData": {
+    "Name of Deceased": "STEVENSON, ADLAI E",
+    "Date": "1914-06-14",
+    "City": "CHICAGO",
+    "Age": "78 YR",
+    "Sex": "U",
+    "Volume": "",
+    "Page": "",
+    "Cert No": "00017480",
+    "County": "COOK"
+  }
+}

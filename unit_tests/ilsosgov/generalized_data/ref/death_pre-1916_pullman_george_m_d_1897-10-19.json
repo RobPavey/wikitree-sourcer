@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "ilsosgov",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "PULLMAN",
+    "forenames": "GEORGE M"
+  },
+  "personGender": "",
+  "eventDate": {
+    "dateString": "1897-10-19",
+    "qualifier": 1
+  },
+  "deathDate": {
+    "dateString": "1897-10-19",
+    "qualifier": 1
+  },
+  "deathPlace": {
+    "placeString": "Chicago, Cook County, Illinois, United States of America"
+  },
+  "ageAtDeath": "66",
+  "hasValidData": true
+}

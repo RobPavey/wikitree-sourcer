@@ -1,0 +1,18 @@
+{
+  "url": "https://apps.ilsos.gov/isavital/idphDeathSearch.do",
+  "success": true,
+  "collectionName": "Illinois Statewide Death Index, 1916-1972",
+  "repository": "Illinois State Archives",
+  "recordData": {
+    "Last Name": "UNKEFER",
+    "First Name": "MARIE",
+    "Middle Name": "SUSAN",
+    "Sex": "F",
+    "Age": "Y-53",
+    "Cert No.": "0050753",
+    "Death Date": "1968-09-04",
+    "County": "COOK",
+    "City": "EVANSTON",
+    "Date Filed": "1968-09-06"
+  }
+}

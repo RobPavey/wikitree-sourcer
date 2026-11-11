@@ -1,0 +1,18 @@
+{
+  "url": "https://apps.ilsos.gov/isavital/idphDeathSearch.do",
+  "success": true,
+  "collectionName": "Illinois Statewide Death Index, 1916-1972",
+  "repository": "Illinois State Archives",
+  "recordData": {
+    "Last Name": "UNKNOWN",
+    "First Name": "WHITE",
+    "Middle Name": "BABY GIRL",
+    "Sex": "F",
+    "Age": "H-00",
+    "Cert No.": "0011364",
+    "Death Date": "1949-03-07",
+    "County": "MCLEAN",
+    "City": "UNKNOWN",
+    "Date Filed": "1949-03-07"
+  }
+}

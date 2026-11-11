@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Illinois Statewide Death Index, 1916-1972\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/idphdeathsrch.jsp Search] (accessed 6 May 2021)<br/>\nLast Name: UNKNOWN; Sex: U; Age: Y150; Cert No.: 0032415; County: RANDOLPH; City: RURAL TWP.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Unknown died (age 150) in Rural Twp, Randolph County, Illinois, United States of America.<ref>\n'''Death''':\n\"Illinois Statewide Death Index, 1916-1972\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/idphdeathsrch.jsp Search] (accessed 6 May 2021)<br/>\nLast Name: UNKNOWN; Sex: U; Age: Y150; Cert No.: 0032415; County: RANDOLPH; City: RURAL TWP.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Illinois Statewide Death Index, 1916-1972\"<br/>Illinois State Archives<br/>[https://apps.ilsos.gov/isavital/idphdeathsrch.jsp Search] (accessed 6 May 2021)<br/>Last Name: UNKNOWN; Sex: U; Age: Y150; Cert No.: 0032415; County: RANDOLPH; City: RURAL TWP.",
+    "type": "source"
+  }
+}

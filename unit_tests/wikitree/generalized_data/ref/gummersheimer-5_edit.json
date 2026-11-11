@@ -1,0 +1,81 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Heinrich",
+    "prefNames": "Henry",
+    "lastName": "Gummersheimer"
+  },
+  "lastNameAtBirth": "Gummersheimer",
+  "lastNameAtDeath": "Gummersheimer",
+  "mothersMaidenName": "Steitz",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "18 Oct 1843",
+    "qualifier": 1
+  },
+  "deathDate": {
+    "dateString": "18 Aug 1873",
+    "qualifier": 1
+  },
+  "birthPlace": {
+    "placeString": "Rockenhausen, Pfalz, KÃ¶nigreich Bayern, Deutscher Bund"
+  },
+  "deathPlace": {
+    "placeString": "Mascoutah, St. Clair County, Illinois, United States of America"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Johannes Gummersheimer",
+        "lastName": "Gummersheimer",
+        "forenames": "Johannes"
+      },
+      "lastNameAtBirth": "Gummersheimer",
+      "lastNameAtDeath": "Gummersheimer"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Elisabetha",
+        "lastName": "Steitz",
+        "name": "Elisabetha Steitz"
+      },
+      "lastNameAtBirth": "Steitz",
+      "lastNameAtDeath": "Gummersheimer"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Paulina",
+        "lastName": "Willems",
+        "name": "Paulina Willems"
+      },
+      "lastNameAtBirth": "Willems",
+      "lastNameAtDeath": "Gummersheimer",
+      "marriageDate": {
+        "dateString": "30 Oct 1866"
+      },
+      "marriagePlace": {
+        "placeString": "St. Clair County, Illinois, United States of America"
+      }
+    },
+    {
+      "name": {
+        "forenames": "Barbara",
+        "lastName": "Wolf",
+        "name": "Barbara Wolf"
+      },
+      "lastNameAtBirth": "Wolf",
+      "lastNameAtDeath": "Birk",
+      "marriageDate": {
+        "dateString": "28 Aug 1871"
+      },
+      "marriagePlace": {
+        "placeString": "St Clair County, Illinois, United States of America"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Gummersheimer-5"
+}

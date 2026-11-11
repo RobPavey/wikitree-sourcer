@@ -399,6 +399,34 @@ class ExtractedDataReader {
     }
   }
 
+  makeNameObjFromFirstNamesAndLastName(firstNames, lastName) {
+    if (firstNames || lastName) {
+      let nameObj = new NameObj();
+      nameObj.setLastName(lastName);
+      nameObj.setFirstNames(firstNames);
+      return nameObj;
+    }
+  }
+
+  makeNameObjFromFirstNameMiddleNameAndLastName(firstName, middleName, lastName) {
+    if (firstName || middleName || lastName) {
+      let nameObj = new NameObj();
+      nameObj.setLastName(lastName);
+      nameObj.setMiddleName(middleName);
+      nameObj.setFirstName(firstName);
+      return nameObj;
+    }
+  }
+
+  makeNameObjFromMiddleNameAndLastName(middleName, lastName) {
+    if (middleName || lastName) {
+      let nameObj = new NameObj();
+      nameObj.setLastName(lastName);
+      nameObj.setMiddleName(middleName);
+      return nameObj;
+    }
+  }
+
   makeNameObjUsingRecordTypeDataKeys(fullNameKey, forenamesKey, lastNameKey) {
     let forenames = this.getValueUsingRecordTypeData(forenamesKey);
     let lastName = this.getValueUsingRecordTypeData(lastNameKey);

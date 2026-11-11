@@ -1,0 +1,31 @@
+{
+  "sourceOfData": "ilsosgov",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "UNKNOWN"
+  },
+  "eventDate": {
+    "dateString": "1891-12-02",
+    "qualifier": 1
+  },
+  "eventPlace": {
+    "placeString": "Saline County, Illinois, United States of America"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "TANNER",
+        "forenames": "MARY E"
+      },
+      "marriageDate": {
+        "dateString": "1891-12-02",
+        "qualifier": 1
+      },
+      "marriagePlace": {
+        "placeString": "Saline County, Illinois, United States of America"
+      }
+    }
+  ],
+  "hasValidData": true
+}

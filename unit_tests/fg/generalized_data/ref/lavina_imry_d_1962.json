@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "4 Apr 1962"
+  },
+  "eventPlace": {
+    "placeString": "Bel-Nor, St. Louis County, Missouri, USA",
+    "streetAddress": "Lake Charles Park Cemetery"
+  },
+  "name": {
+    "firstNames": "Lavina",
+    "lastName": "Imry"
+  },
+  "lastNameAtBirth": "Conrad",
+  "lastNameAtDeath": "Imry",
+  "deathDate": {
+    "dateString": "4 Apr 1962"
+  },
+  "deathPlace": {
+    "placeString": "East Saint Louis, St. Clair County, Illinois, USA"
+  },
+  "ageAtDeath": "67-68",
+  "birthDate": {
+    "dateString": "1894"
+  },
+  "wtSearchIds": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem261594189"
+    }
+  ],
+  "hasValidData": true
+}

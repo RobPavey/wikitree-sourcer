@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Illinois Statewide Death Index, Pre-1916\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/deathsrch.jsp Search] (accessed 6 May 2021)<br/>\nName of Deceased: PULLMAN, GEORGE M; Date: 1897-10-19; City: CHICAGO; Age: 66 YR; Sex: U; Cert No: 00015353; County: COOK.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "George died (age 66) on 19 October 1897 in Chicago, Cook County, Illinois, United States of America.<ref>\n'''Death''':\n\"Illinois Statewide Death Index, Pre-1916\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/deathsrch.jsp Search] (accessed 6 May 2021)<br/>\nName of Deceased: PULLMAN, GEORGE M; Date: 1897-10-19; City: CHICAGO; Age: 66 YR; Sex: U; Cert No: 00015353; County: COOK.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Illinois Statewide Death Index, Pre-1916\"<br/>Illinois State Archives<br/>[https://apps.ilsos.gov/isavital/deathsrch.jsp Search] (accessed 6 May 2021)<br/>Name of Deceased: PULLMAN, GEORGE M; Date: 1897-10-19; City: CHICAGO; Age: 66 YR; Sex: U; Cert No: 00015353; County: COOK.",
+    "type": "source"
+  }
+}

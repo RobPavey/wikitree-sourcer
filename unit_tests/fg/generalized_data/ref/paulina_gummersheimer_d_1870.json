@@ -1,0 +1,38 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "2 Mar 1870"
+  },
+  "eventPlace": {
+    "placeString": "Belleville, St. Clair County, Illinois, USA",
+    "streetAddress": "Walnut Hill Cemetery"
+  },
+  "name": {
+    "firstNames": "Paulina",
+    "lastName": "Gummersheimer"
+  },
+  "lastNameAtBirth": "Willems",
+  "lastNameAtDeath": "Gummersheimer",
+  "deathDate": {
+    "dateString": "2 Mar 1870"
+  },
+  "deathPlace": {
+    "placeString": "Belleville, St. Clair County, Illinois, USA"
+  },
+  "ageAtDeath": "21",
+  "birthDate": {
+    "dateString": "15 Oct 1848"
+  },
+  "birthPlace": {
+    "placeString": "Germany"
+  },
+  "wtSearchIds": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem181942960"
+    }
+  ],
+  "hasValidData": true
+}

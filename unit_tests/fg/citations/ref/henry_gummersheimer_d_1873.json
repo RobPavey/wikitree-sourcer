@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\nFind a Grave (no image)<br/>\n{{FindAGrave|261530060}} (accessed 6 May 2021)<br/>\nMemorial page for Henry Gummersheimer (29 Oct 1843-15 Aug 1873), citing Schnebelin Cemetery, Mascoutah, St. Clair County, Illinois, USA; Maintained by Teri Bromley (contributor 47625788).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Henry was mentioned on a memorial at Schnebelin Cemetery, Mascoutah, St. Clair County, Illinois, USA, with a death date of 15 August 1873.<ref>\n'''Memorial''':\nFind a Grave (no image)<br/>\n{{FindAGrave|261530060}} (accessed 6 May 2021)<br/>\nMemorial page for Henry Gummersheimer (29 Oct 1843-15 Aug 1873), citing Schnebelin Cemetery, Mascoutah, St. Clair County, Illinois, USA; Maintained by Teri Bromley (contributor 47625788).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': Find a Grave (no image)<br/>{{FindAGrave|261530060}} (accessed 6 May 2021)<br/>Memorial page for Henry Gummersheimer (29 Oct 1843-15 Aug 1873), citing Schnebelin Cemetery, Mascoutah, St. Clair County, Illinois, USA; Maintained by Teri Bromley (contributor 47625788).",
+    "type": "source"
+  }
+}

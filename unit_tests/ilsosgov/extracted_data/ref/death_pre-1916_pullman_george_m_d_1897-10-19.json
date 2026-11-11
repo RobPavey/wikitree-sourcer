@@ -1,0 +1,17 @@
+{
+  "url": "https://apps.ilsos.gov/isavital/deathSearch.do",
+  "success": true,
+  "collectionName": "Illinois Statewide Death Index, Pre-1916",
+  "repository": "Illinois State Archives",
+  "recordData": {
+    "Name of Deceased": "PULLMAN, GEORGE M",
+    "Date": "1897-10-19",
+    "City": "CHICAGO",
+    "Age": "66 YR",
+    "Sex": "U",
+    "Volume": "",
+    "Page": "",
+    "Cert No": "00015353",
+    "County": "COOK"
+  }
+}

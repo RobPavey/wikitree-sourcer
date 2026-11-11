@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "ilsosgov",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "VOELKEL",
+    "forenames": "ELSIE (MRS)"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1898-02-13",
+    "qualifier": 1
+  },
+  "deathDate": {
+    "dateString": "1898-02-13",
+    "qualifier": 1
+  },
+  "deathPlace": {
+    "placeString": "Belleville, St. Clair County, Illinois, United States of America"
+  },
+  "ageAtDeath": "30",
+  "hasValidData": true
+}

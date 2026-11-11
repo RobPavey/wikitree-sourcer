@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "ilsosgov",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "UNKNOWN",
+    "middleName": "BABY GIRL",
+    "firstName": "WHITE"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1949-03-07",
+    "qualifier": 1
+  },
+  "deathDate": {
+    "dateString": "1949-03-07",
+    "qualifier": 1
+  },
+  "deathPlace": {
+    "placeString": "Mclean County, Illinois, United States of America"
+  },
+  "ageAtDeath": "0",
+  "hasValidData": true
+}

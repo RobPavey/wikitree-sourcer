@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|261594189}} (accessed 6 May 2021)<br/>\nMemorial page for Lavina ''Conrad'' Imry (1894-4 Apr 1962), citing Lake Charles Park Cemetery, Bel-Nor, St. Louis County, Missouri, USA; Maintained by Pat Oder (contributor 48351374).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Lavina was mentioned on a memorial at Lake Charles Park Cemetery, Bel-Nor, St. Louis County, Missouri, USA, with a death date of 4 April 1962.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|261594189}} (accessed 6 May 2021)<br/>\nMemorial page for Lavina ''Conrad'' Imry (1894-4 Apr 1962), citing Lake Charles Park Cemetery, Bel-Nor, St. Louis County, Missouri, USA; Maintained by Pat Oder (contributor 48351374).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': Find a Grave (has image)<br/>{{FindAGrave|261594189}} (accessed 6 May 2021)<br/>Memorial page for Lavina ''Conrad'' Imry (1894-4 Apr 1962), citing Lake Charles Park Cemetery, Bel-Nor, St. Louis County, Missouri, USA; Maintained by Pat Oder (contributor 48351374).",
+    "type": "source"
+  }
+}

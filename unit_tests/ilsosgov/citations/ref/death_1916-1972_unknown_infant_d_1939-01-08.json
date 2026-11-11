@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Illinois Statewide Death Index, 1916-1972\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/idphdeathsrch.jsp Search] (accessed 6 May 2021)<br/>\nLast Name: UNKNOWN; First Name: INFANT; Sex: U; Age: UNK; Cert No.: 0001238; Death Date: 1939-01-08; County: UNKNOWN; City: UNKNOWN.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Infant died on 8 January 1939 in Illinois, United States of America.<ref>\n'''Death''':\n\"Illinois Statewide Death Index, 1916-1972\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/idphdeathsrch.jsp Search] (accessed 6 May 2021)<br/>\nLast Name: UNKNOWN; First Name: INFANT; Sex: U; Age: UNK; Cert No.: 0001238; Death Date: 1939-01-08; County: UNKNOWN; City: UNKNOWN.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Illinois Statewide Death Index, 1916-1972\"<br/>Illinois State Archives<br/>[https://apps.ilsos.gov/isavital/idphdeathsrch.jsp Search] (accessed 6 May 2021)<br/>Last Name: UNKNOWN; First Name: INFANT; Sex: U; Age: UNK; Cert No.: 0001238; Death Date: 1939-01-08; County: UNKNOWN; City: UNKNOWN.",
+    "type": "source"
+  }
+}

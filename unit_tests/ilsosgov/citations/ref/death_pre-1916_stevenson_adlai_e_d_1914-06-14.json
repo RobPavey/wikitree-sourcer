@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Illinois Statewide Death Index, Pre-1916\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/deathsrch.jsp Search] (accessed 6 May 2021)<br/>\nName of Deceased: STEVENSON, ADLAI E; Date: 1914-06-14; City: CHICAGO; Age: 78 YR; Sex: U; Cert No: 00017480; County: COOK.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Adlai died (age 78) on 14 June 1914 in Chicago, Cook County, Illinois, United States of America.<ref>\n'''Death''':\n\"Illinois Statewide Death Index, Pre-1916\"<br/>\nIllinois State Archives<br/>\n[https://apps.ilsos.gov/isavital/deathsrch.jsp Search] (accessed 6 May 2021)<br/>\nName of Deceased: STEVENSON, ADLAI E; Date: 1914-06-14; City: CHICAGO; Age: 78 YR; Sex: U; Cert No: 00017480; County: COOK.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Illinois Statewide Death Index, Pre-1916\"<br/>Illinois State Archives<br/>[https://apps.ilsos.gov/isavital/deathsrch.jsp Search] (accessed 6 May 2021)<br/>Name of Deceased: STEVENSON, ADLAI E; Date: 1914-06-14; City: CHICAGO; Age: 78 YR; Sex: U; Cert No: 00017480; County: COOK.",
+    "type": "source"
+  }
+}

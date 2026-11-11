@@ -1,0 +1,46 @@
+{
+  "hasValidData": true,
+  "firstNames": "Heinrich",
+  "prefNames": "Henry",
+  "middleNames": "",
+  "lnab": "Gummersheimer",
+  "currentLastName": "Gummersheimer",
+  "mothersMaidenName": "Steitz",
+  "birthDate": "18 Oct 1843",
+  "birthDateStatus": "certain",
+  "deathDate": "18 Aug 1873",
+  "deathDateStatus": "certain",
+  "birthLocation": "Rockenhausen, Pfalz, KÃ¶nigreich Bayern, Deutscher Bund",
+  "deathLocation": "Mascoutah, St. Clair County, Illinois, United States of America",
+  "personGender": "Male",
+  "spouses": [
+    {
+      "name": "Paulina (Willems) Gummersheimer",
+      "wikiId": "Willems-1190",
+      "marriageString": "30 Oct 1866 St. Clair County, Illinois, United States of America",
+      "marriageDate": "30 Oct 1866",
+      "marriagePlace": "St. Clair County, Illinois, United States of America"
+    },
+    {
+      "name": "Barbara (Wolf) Birk",
+      "wikiId": "Wolf-5707",
+      "marriageString": "28 Aug 1871 St Clair County, Illinois, United States of America",
+      "marriageDate": "28 Aug 1871",
+      "marriagePlace": "St Clair County, Illinois, United States of America"
+    }
+  ],
+  "url": "https://www.wikitree.com/index.php?title=Special:EditPerson&u=23791327",
+  "pageType": "edit",
+  "parents": {
+    "father": {
+      "name": "Johannes Gummersheimer",
+      "wikiId": "Gummersheimer-7"
+    },
+    "mother": {
+      "name": "Elisabetha (Steitz) Gummersheimer",
+      "wikiId": "Steitz-43"
+    }
+  },
+  "wikiId": "Gummersheimer-5",
+  "citation": "WikiTree contributors, \"Heinrich Gummersheimer (1843-1873),\" WikiTree: The Free Family Tree, (https://www.wikitree.com/wiki/Gummersheimer-5 : accessed 06 November 2026)."
+}

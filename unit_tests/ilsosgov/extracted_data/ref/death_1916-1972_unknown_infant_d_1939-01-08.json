@@ -1,0 +1,17 @@
+{
+  "url": "https://apps.ilsos.gov/isavital/idphDeathSearch.do",
+  "success": true,
+  "collectionName": "Illinois Statewide Death Index, 1916-1972",
+  "repository": "Illinois State Archives",
+  "recordData": {
+    "Last Name": "UNKNOWN",
+    "First Name": "INFANT",
+    "Middle Name": "",
+    "Sex": "U",
+    "Age": "UNK",
+    "Cert No.": "0001238",
+    "Death Date": "1939-01-08",
+    "County": "UNKNOWN",
+    "City": "UNKNOWN"
+  }
+}

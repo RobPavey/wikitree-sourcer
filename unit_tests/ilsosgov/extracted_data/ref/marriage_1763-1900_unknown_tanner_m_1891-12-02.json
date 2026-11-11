@@ -1,0 +1,15 @@
+{
+  "url": "https://apps.ilsos.gov/isavital/marriageSearch.do",
+  "success": true,
+  "collectionName": "Illinois Statewide Marriage Index",
+  "repository": "Illinois State Archives",
+  "recordData": {
+    "Groom": "UNKNOWN,",
+    "Bride": "TANNER, MARY E",
+    "Date": "1891-12-02",
+    "Volume": "A 1",
+    "Page": "0246",
+    "Lic No.": "",
+    "County": "SALINE"
+  }
+}

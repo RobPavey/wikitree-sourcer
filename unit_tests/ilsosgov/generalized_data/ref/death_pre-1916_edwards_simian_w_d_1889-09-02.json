@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "ilsosgov",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "EDWARDS",
+    "forenames": "SIMIAN W"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1889-09-02",
+    "qualifier": 1
+  },
+  "deathDate": {
+    "dateString": "1889-09-02",
+    "qualifier": 1
+  },
+  "deathPlace": {
+    "placeString": "Springfield, Sangamon County, Illinois, United States of America"
+  },
+  "ageAtDeath": "80",
+  "hasValidData": true
+}

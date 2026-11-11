@@ -1,0 +1,29 @@
+{
+  "hasValidData": true,
+  "firstNames": "Paulina",
+  "prefNames": "Pauline",
+  "middleNames": "",
+  "lnab": "Willems",
+  "currentLastName": "Gummersheimer",
+  "mothersMaidenName": "",
+  "birthDate": "Oct 1848",
+  "birthDateStatus": "guess",
+  "deathDate": "2 Mar 1870",
+  "deathDateStatus": "certain",
+  "birthLocation": "Prussia",
+  "deathLocation": "Belleville, St. Clair County, Illinois, United States of America",
+  "personGender": "Female",
+  "spouses": [
+    {
+      "name": "Heinrich Gummersheimer",
+      "wikiId": "Gummersheimer-5",
+      "marriageString": "30 Oct 1866 St. Clair County, Illinois, United States of America",
+      "marriageDate": "30 Oct 1866",
+      "marriagePlace": "St. Clair County, Illinois, United States of America"
+    }
+  ],
+  "url": "https://www.wikitree.com/index.php?title=Special:EditPerson&u=26798471",
+  "pageType": "edit",
+  "wikiId": "Willems-1190",
+  "citation": "WikiTree contributors, \"Paulina (Willems) Gummersheimer (abt.1848-1870),\" WikiTree: The Free Family Tree, (https://www.wikitree.com/wiki/Willems-1190 : accessed 06 November 2026)."
+}

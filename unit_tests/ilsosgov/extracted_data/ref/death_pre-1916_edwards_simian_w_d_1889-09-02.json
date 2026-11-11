@@ -1,0 +1,17 @@
+{
+  "url": "https://apps.ilsos.gov/isavital/deathSearch.do",
+  "success": true,
+  "collectionName": "Illinois Statewide Death Index, Pre-1916",
+  "repository": "Illinois State Archives",
+  "recordData": {
+    "Name of Deceased": "EDWARDS, SIMIAN W",
+    "Date": "1889-09-02",
+    "City": "SPRINGFIELD",
+    "Age": "80 YR",
+    "Sex": "M",
+    "Volume": "",
+    "Page": "",
+    "Cert No": "3894",
+    "County": "SANGAMON"
+  }
+}

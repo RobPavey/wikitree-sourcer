@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "8 Apr 1891"
+  },
+  "eventPlace": {
+    "placeString": "Mascoutah, St. Clair County, Illinois, USA",
+    "streetAddress": "Schnebelin Cemetery"
+  },
+  "name": {
+    "firstNames": "Joseph",
+    "lastName": "Wolf",
+    "middleNames": "Franz"
+  },
+  "lastNameAtDeath": "Wolf",
+  "deathDate": {
+    "dateString": "8 Apr 1891"
+  },
+  "ageAtDeath": "66",
+  "birthDate": {
+    "dateString": "21 Dec 1824"
+  },
+  "wtSearchIds": [
+    {
+      "key": "FindAGrave",
+      "value": "fgmem125446179"
+    }
+  ],
+  "hasValidData": true
+}
