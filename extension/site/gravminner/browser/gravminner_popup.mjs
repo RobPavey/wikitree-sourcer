@@ -34,7 +34,7 @@ async function setupGravminnerPopupMenu(extractedData) {
     generalizeFailedMessage: "The Gravminner page does not contain the required person details.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
-    doNotIncludeSearch: true,
+    siteNameToExcludeFromSearch: "gravminner",
   });
 }
 initPopup("gravminner", setupGravminnerPopupMenu);

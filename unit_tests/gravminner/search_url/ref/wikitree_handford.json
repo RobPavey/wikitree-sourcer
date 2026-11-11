@@ -1,0 +1,38 @@
+{
+  "std": {
+    "fieldData": {
+      "firstName": "William",
+      "surname": "Handford",
+      "bornFromYear": 1840,
+      "bornToYear": 1846,
+      "deathFromYear": 1910,
+      "deathToYear": 1916
+    },
+    "selectData": {}
+  },
+  "noBirth": {
+    "fieldData": {
+      "firstName": "William",
+      "surname": "Handford",
+      "deathFromYear": 1910,
+      "deathToYear": 1916
+    },
+    "selectData": {}
+  },
+  "noDeath": {
+    "fieldData": {
+      "firstName": "William",
+      "surname": "Handford",
+      "bornFromYear": 1840,
+      "bornToYear": 1846
+    },
+    "selectData": {}
+  },
+  "namesOnly": {
+    "fieldData": {
+      "firstName": "William",
+      "surname": "Handford"
+    },
+    "selectData": {}
+  }
+}

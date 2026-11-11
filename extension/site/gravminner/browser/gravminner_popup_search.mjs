@@ -22,5 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// Citation-only support: the popup loads this module for every registered site.
-// No search menu items are registered for Gravminner.
+import { registerSearchMenuItemFromConfig } from "/base/browser/popup/popup_search_config.mjs";
+
+registerSearchMenuItemFromConfig({
+  siteName: "gravminner",
+  siteDisplayName: "Slekt og Data – Gravminner",
+  localStorageConfig: { searchUrl: "https://slektogdata.no/gravminner/finn-en-grav" },
+  defaultMenuItem: {
+    menuItemText: "Search Slekt og Data – Gravminner",
+    includeDefaultSearch: true,
+    includeSearchSubmenu: false,
+  },
+});
