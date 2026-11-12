@@ -1363,6 +1363,7 @@ function setupBuildCitationSubmenuForRequestedUserInput(
   let button = document.createElement("button");
   button.className = "dialogButton";
   button.innerText = buttonText;
+  // Sites may report invalid input before generation; existing forms need not supply this field.
   if (requestedUserInput.validationError) {
     addMessageMenuItem(menu, requestedUserInput.validationError);
     button.disabled = true;
@@ -1373,6 +1374,8 @@ function setupBuildCitationSubmenuForRequestedUserInput(
     try {
       if (regeneralizeFunction) {
         let input = { extractedData: data.extractedData, generalizedData: gd, newData: resultData };
+        // Await optional async checks (for example, verifying the current viewer page).
+        // Synchronous site hooks remain supported.
         const result = await regeneralizeFunction(input);
         if (result === false) return;
       }

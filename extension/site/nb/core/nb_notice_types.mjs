@@ -71,13 +71,10 @@ function getNoticeType(materialType, key) {
   if (materialType === "book") return bookType;
   return { ...(noticeTypes.find((type) => type.key === key) || noticeTypes[0]), recordType: RT.Newspaper };
 }
-function normalizeName(name) {
-  return (name || "").normalize("NFC").replace(/\s+/g, " ").trim().toLocaleLowerCase("nb");
-}
 function cleanText(value) {
   return typeof value === "string" ? value.replace(/\s+/g, " ").trim() : "";
 }
 function escapeText(value) {
   return cleanText(value).replace(/[&<>\[\]{}|]/g, (char) => "&#" + char.charCodeAt(0) + ";");
 }
-export { noticeTypes, getNoticeType, normalizeName, cleanText, escapeText };
+export { noticeTypes, getNoticeType, cleanText, escapeText };

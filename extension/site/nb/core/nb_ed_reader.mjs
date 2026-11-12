@@ -26,8 +26,7 @@ import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mj
 import { getNoticeType } from "./nb_notice_types.mjs";
 import { readNbDate } from "./nb_dates.mjs";
 
-// Values here come only from NB bibliography or the current passage's confirmed overlay.
-// Collection suggestions are never passed to the reader.
+// Values come only from NB bibliography or input transcribed from the current passage.
 const baseRecordTypeData = {
   rules: {
     fullName: { edKeys: ["personName"] },
@@ -37,10 +36,10 @@ const baseRecordTypeData = {
   },
 };
 class NbEdReader extends ExtractedDataReader {
-  constructor(ed, confirmed = {}) {
-    super({ ...ed, ...confirmed });
+  constructor(ed, passage = {}) {
+    super({ ...ed, ...passage });
     this.baseRecordTypeData = baseRecordTypeData;
-    const type = getNoticeType(ed.materialType, confirmed.category);
+    const type = getNoticeType(ed.materialType, passage.category);
     this.setRecordData({ recordType: type.recordType, overrideRefTitle: type.heading });
   }
   hasValidData() {

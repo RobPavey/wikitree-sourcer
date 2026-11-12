@@ -52,7 +52,7 @@ function buildCoreCitation(ed, gd, builder) {
   builder.sourceReference = reference.map(escapeText).join("; ");
   builder.recordLinkOrTemplate =
     builder.getOptions().citation_general_target === "wikitree" ? "[" + ed.url + " NB digital copy]" : ed.url;
-  // Only confirmed/transcribed data enter this string. Suggestions are not part of gd.
+  // Attribute manually entered event facts to this passage.
   const details = [];
   if (passage.personName) details.push("Mention of " + passage.personName);
   if (passage.eventDate)

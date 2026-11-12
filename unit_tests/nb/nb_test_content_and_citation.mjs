@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { record } from "./nb_test_fixtures.mjs";
 import { noticeTypes } from "../../extension/site/nb/core/nb_notice_types.mjs";
-import { generalizeData, confirmedInput } from "../../extension/site/nb/core/nb_generalize_data.mjs";
+import { generalizeData, passageInput } from "../../extension/site/nb/core/nb_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/nb/core/nb_build_citation.mjs";
 import { writeTestOutputFile } from "../test_utils/ref_file_utils.mjs";
 import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
@@ -65,7 +65,7 @@ async function runTests(testManager) {
       testManager.results.totalTestsRun++;
       const ed = record(data.kind);
       const result =
-        phase === "extract" ? ed : generalizeData({ extractedData: ed, confirmed: confirmedInput(ed, data.state) });
+        phase === "extract" ? ed : generalizeData({ extractedData: ed, passage: passageInput(ed, data.state) });
       const dir = phase === "extract" ? "extracted_data" : "generalized_data";
       if (writeTestOutputFile(result, "nb", dir, data, logger))
         compareOrReplaceRefFileWithResult(result, "nb", testManager, dir, data, logger);

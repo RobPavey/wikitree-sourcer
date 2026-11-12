@@ -1,88 +1,66 @@
 # Nasjonalbiblioteket (NB.no) citation assistance
 
-Citation-only support for newspaper and book viewer items addressed by either
-NB item IDs or full URNs. Generated links prefer the API-supplied URN, retaining
-the exact zero-based `page` query. NB bibliography is
-loaded on demand from the public catalogue API through Sourcer's existing
-background JSON fetch. Item/page identity is checked again after fetching and
-before generation. No OCR, scanned images, credentials or search terms are fetched.
+Citation-only support for digitized newspaper and book viewer items, addressed
+by short item IDs or full URNs. Generated links prefer the API-supplied URN and
+retain the exact zero-based `page` query. Public catalogue metadata is loaded
+through Sourcer's existing background JSON fetch; no OCR, images or login state
+are fetched. Search and profile creation are outside this contribution.
 
-## Data-driven interpretation
+## Data flow
 
-`nb_notice_types.mjs` defines the six newspaper categories and book context. These
-definitions drive headings, available fields and narrative phrases. The reader
-uses common field rules, `setRecordData` and `commonGeneralizeData`. Confirmed form
-input is applied through that same reader again, replacing all prior generalized
-fields so stale facts cannot survive a category change.
+1. Read the viewer item and page, then load the NB bibliography and optional page manifest.
+2. Show a manual form for category, person, passage locator, printed pages and applicable event facts.
+3. Normalize applicable passage fields, run the rule-based reader and common generalization pipeline, then use the common citation builder.
 
-The generic record type remains Newspaper or Book. Its eventDate is publication
-time. Confirmed death facts have their own standardized fields; marriage and
-engagement details remain in the plain, serializable `siteData.nb` passage data.
-Book creators remain bibliographic metadata. A named book subject sets
-`isAboutNamedPerson`; catalogue authors are not used as research subjects.
+`nb_notice_types.mjs` is the single definition of newspaper categories, headings,
+visible event fields and narrative phrases. Underlying record types remain
+Newspaper and Book. Publication dates are never treated as life-event dates;
+death facts transcribed from a passage have explicit reader mappings. Book
+creators stay in the bibliography and never become the narrative subject.
 
-## Three distinct data layers
+Person and event fields always start blank. Changing the person or category
+clears event facts. Rebuilding generalized data from the bibliography and current
+passage removes stale fields. Without a person, generation produces a reference
+without a person-specific narrative. Narratives attribute entered event facts to
+the notice rather than presenting them as independently established facts.
 
-1. Extracted NB bibliography and viewer position.
-2. Suggestions derived from the active collection, kept in a popup-local context.
-3. Facts transcribed or explicitly confirmed in the current passage. Only these
-   reach the passage data, generalized death fields and attributed narrative.
+## Citation collection
 
-The collection retains an optional `nbContext` containing the selected subject
-and explicitly associated name variants, never copied life-event facts. New
-collections have an ID; legacy active collections receive one on first NB use.
-The ID prevents a stale form from using a replaced or stopped collection. Explicit
-restoration preserves the research subject, but passage confirmations start blank.
-Only primary-person records with matching names or explicitly associated variants
-supply suggestions. Alternatives remain separate, with source descriptions. Date
-qualifiers and year-only precision are preserved, including death-before-burial
-limits. Saved person data and inactive previous collections are not consulted.
+Collection-based prefilling is deferred to a separate proposal. NB does not read
+existing citations or write research context into collection storage. Normal
+Add to collection, duplicate handling, stop and restore use the existing common
+workflow. This contribution adds no collection storage fields or migrations;
+older stored collections are left untouched.
 
-## Existing form integration
+## Shared form changes
 
-The existing user-input hook remains synchronous. Collection metadata is loaded
-before constructing the form and refreshed when returning from the collection
-menu. The shared form now awaits its regeneralize hook, handles failure/cancellation
-without building, prevents double submission, and supports an optional
-`validationError` message. Existing synchronous hooks continue to work. Rebuilt
-forms retain the collecting-mode button label.
-
-No new generalized-data classes or global record types are introduced. The shared
-collection change is an additive ID field; existing stored collections remain valid.
+The existing user-input hook remains synchronous. Its optional regeneralization
+hook is awaited so NB can check that the tab still shows the same item/page before
+building. Synchronous hooks remain supported. Failed checks stop generation with
+a message; repeated submission is blocked while a check is pending. An optional
+`validationError` disables generation for invalid event dates. Rebuilding the form
+preserves the standard collecting-mode button label. These changes do not read
+collection contents or change citation collection storage.
 
 ## Page and citation identity
 
-The viewer's zero-based page query identifies an image, not a printed page.
-ID and URN aliases for the same item are recognized during stale-page checks;
-a change of page or a genuinely different item still blocks generation. Keep
-its exact canonical link, including image zero. Two-up display ranges are captured
-from the visible viewer control. Manifest labels are retained as metadata but are
-not assumed to be printed page numbers. The user can supply a printed page/range.
+A viewer index identifies an image, not necessarily a printed page. Manifest
+labels are retained as metadata, but printed pages are entered manually. URN and
+short-ID aliases are accepted for the same item; a different item or page blocks
+generation. Two-up display ranges come from the visible viewer control.
 
-Source references include the page locator, category, person and optional passage
-heading/column, allowing distinct notices on the same image to be collected.
-Identical references still use Sourcer's standard duplicate handling.
+References include category, person and optional passage locator to distinguish
+notices on one image. Identical references retain Sourcer's duplicate behavior.
 
 ## Verification
 
-Run `node scripts/run_test.js nb` for public metadata fixtures, interpreted-data
-and citation baselines, collection and form behavior, and DOM tests of the actual
-shared input-form implementation. Synthetic names/notices are explicitly identified.
-The tests exercise synchronous and asynchronous hooks, early cancellation, failed
-hooks, form rebuilds, validation and the actual collection add/stop/restore methods.
+Run `node scripts/run_test.js nb` for extraction, generalization, citation
+baselines, manual-input behavior, URN links, page-change checks and actual-form
+DOM tests. Collection lifecycle tests exercise the unchanged common add, stop
+and restore functions and check preservation of earlier citations. Fixture
+notices and names are synthetic; metadata is public and no scans are included.
 
-A local browser harness using the actual form function and core NB modules also
-verified that an unconfirmed suggested date is omitted and a confirmed one appears
-with attribution. This harness does not replace installed-extension testing.
-
-Chrome and Firefox still need manual extension-level checks of permission prompts,
-live NB access and clipboard output. Safari manifests are maintained, but actual
-Safari testing requires the relevant platforms. See the local contribution's
-LOCAL-TESTING.md for the complete manual workflow.
-
-## Contributor retest
-
-The contributor manually retested both reported URN viewer examples and confirmed
-successful citation generation after the URN correction, including the book at
-page index 585. Detailed platform-by-platform permission and clipboard coverage
-has not been recorded; Safari execution remains untested.
+Both reported URN viewer links were manually retested successfully by the
+contributor before this simplification. That result does not count as manual
+testing of the revised form. See `nb_manual_test.md` for the revised workflow.
+Safari execution has not been tested.

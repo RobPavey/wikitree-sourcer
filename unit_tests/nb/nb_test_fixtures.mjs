@@ -26,8 +26,6 @@ import fs from "node:fs";
 import vm from "node:vm";
 import { JSDOM } from "jsdom";
 import { normalizeMetadata } from "../../extension/site/nb/core/nb_metadata.mjs";
-import { GeneralizedData } from "../../extension/base/core/generalize_data_utils.mjs";
-import { readNbDate } from "../../extension/site/nb/core/nb_dates.mjs";
 
 const directory = "unit_tests/nb/";
 const fixture = (name) => JSON.parse(fs.readFileSync(directory + "saved_fetch_objects/" + name + ".json", "utf8"));
@@ -48,20 +46,4 @@ function record(kind = "newspaper") {
   const selection = extract(fs.readFileSync(directory + "saved_pages/" + kind + ".html", "utf8"), url);
   return normalizeMetadata(selection, item, fixture(kind + "_manifest"));
 }
-function personCitation(name = "Anna Hansen", date = "3 May 1920", type = "Death", source = "Source A") {
-  const gd = new GeneralizedData();
-  gd.hasValidData = true;
-  gd.sourceOfData = "test";
-  gd.sourceType = "record";
-  gd.recordType = type;
-  gd.setFullName(name);
-  if (type === "Burial") gd.eventDate = readNbDate(date);
-  else if (date) gd.deathDate = readNbDate(date);
-  return {
-    url: "https://example.org/" + encodeURIComponent(source),
-    sourceTitle: source,
-    sourceReference: name,
-    generalizedData: JSON.parse(JSON.stringify(gd)),
-  };
-}
-export { fixture, record, extract, personCitation };
+export { fixture, record, extract };

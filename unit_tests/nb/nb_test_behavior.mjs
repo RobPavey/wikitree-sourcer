@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import assert from "node:assert/strict";
-import { fixture, record, extract, personCitation } from "./nb_test_fixtures.mjs";
+import { fixture, record, extract } from "./nb_test_fixtures.mjs";
 import { noticeTypes } from "../../extension/site/nb/core/nb_notice_types.mjs";
 import { readNbDate, dateText } from "../../extension/site/nb/core/nb_dates.mjs";
 import {
@@ -33,14 +33,8 @@ import {
   sameSelection,
 } from "../../extension/site/nb/core/nb_metadata.mjs";
 import {
-  buildCollectionContext,
-  getSuggestions,
-  loadActiveCollection,
-  saveResearchSubject,
-} from "../../extension/site/nb/core/nb_collection_context.mjs";
-import {
   prepareUserInput,
-  confirmedInput,
+  passageInput,
   generalizeData,
   regeneralizeData,
   getInputError,
@@ -57,14 +51,11 @@ import {
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 
 const ed = record();
-const subject = "anna hansen";
-const collection = { id: "collection-1", citations: [personCitation()] };
-const context = buildCollectionContext(collection);
-function input(category = "deathNotice", ctx = context) {
-  let state = prepareUserInput(ed, undefined, ctx).state;
-  state.subjectKey = subject;
+function input(category = "deathNotice") {
+  const state = prepareUserInput(ed).state;
+  state.personName = "Anna Hansen";
   state.category = category;
-  return prepareUserInput(ed, state, ctx).state;
+  return prepareUserInput(ed, state).state;
 }
 function output(state) {
   const gd = generalizeData({ extractedData: ed });
@@ -79,18 +70,6 @@ function citation(gd, options, type = "narrative", recordData = ed) {
     type,
     options,
   }).citation;
-}
-function storageFor(value) {
-  let data = value ? { collectedCitations: structuredClone(value) } : {};
-  return {
-    get: async () => structuredClone(data),
-    set: async (value) => {
-      Object.assign(data, structuredClone(value));
-    },
-    replace: (value) => {
-      data = value ? { collectedCitations: structuredClone(value) } : {};
-    },
-  };
 }
 async function runTests(testManager) {
   if (testManager.parameters.testName && testManager.parameters.testName !== "behavior") return;
@@ -107,127 +86,29 @@ async function runTests(testManager) {
       assert.ok(book.creators.length);
       const gd = generalizeData({ extractedData: book });
       assert.equal(gd.name, undefined);
-      assert.equal(
-        buildCollectionContext({ id: "b", citations: [{ generalizedData: JSON.parse(JSON.stringify(gd)) }] }).subjects
-          .length,
-        0
-      );
       assert.ok(!citation(gd, testManager.options, "narrative", book).startsWith("This person"));
       assert.ok(!citation(gd, testManager.options, "narrative", book).includes("was mentioned"));
     },
-    suggestions_are_not_evidence_until_confirmed() {
-      const state = input();
-      assert.equal(state.personName, "Anna Hansen");
-      assert.equal(state.dateSuggestion, "3 May 1920");
-      assert.equal(state.confirmDate, "no");
-      let gd = output(state);
-      assert.equal(gd.deathDate, undefined);
-      assert.ok(!citation(gd, testManager.options).includes("3 May 1920"));
-      assert.ok(!JSON.stringify(gd).includes("Source A"));
-      const recycled = buildCollectionContext({
-        id: "c",
-        citations: [{ generalizedData: JSON.parse(JSON.stringify(gd)) }],
-      });
-      assert.equal(getSuggestions(recycled, { subjectKey: subject }, "deathDate").length, 0);
-      state.confirmDate = "yes";
-      gd = output(state);
-      assert.equal(gd.deathDate.getDateString(), "3 May 1920");
-      assert.ok(citation(gd, testManager.options).includes("The notice reported the death on 3 May 1920"));
-      assert.ok(!citation(gd, testManager.options).includes("died on 5 November 1952"));
-    },
-    explicit_transcription_overrides_suggestion() {
+    transcribed_event_facts_are_attributed() {
       const state = input();
       state.eventDate = "4 May 1920";
       state.eventPlace = "Bergen";
       const gd = output(state);
       assert.equal(gd.deathDate.getDateString(), "4 May 1920");
       assert.equal(gd.deathPlace.placeString, "Bergen");
-      assert.ok(!citation(gd, testManager.options).includes("3 May 1920"));
-    },
-    conflicts_are_not_resolved_by_majority_or_recency() {
-      const ctx = buildCollectionContext({
-        id: "c",
-        citations: [
-          personCitation(),
-          personCitation("Anna Hansen", "4 May 1920", "Death", "Source B"),
-          personCitation("Anna Hansen", "3 May 1920", "Death", "Source C"),
-        ],
-      });
-      const state = input("deathNotice", ctx);
-      assert.equal(state.dateSuggestion, "");
-      const choices = getSuggestions(ctx, state, "deathDate");
-      assert.equal(choices.length, 2);
-      assert.equal(choices.find((choice) => choice.value === "3 May 1920").sources.length, 2);
-    },
-    relatives_and_other_people_are_excluded() {
-      const relative = personCitation("Parent Person");
-      relative.generalizedData.role = "Parent";
-      const ctx = buildCollectionContext({
-        id: "c",
-        citations: [personCitation(), personCitation("Ole Olsen", "1940"), relative],
-      });
-      assert.equal(ctx.subjects.length, 2);
-      assert.deepEqual(
-        getSuggestions(ctx, input("deathNotice", ctx), "deathDate").map((choice) => choice.value),
-        ["3 May 1920"]
-      );
-    },
-    name_variants_require_explicit_association() {
-      const ctx = buildCollectionContext({
-        id: "c",
-        citations: [personCitation(), personCitation("Anna Olsen", "4 May 1920", "Death", "Birth surname")],
-      });
-      const state = input("deathNotice", ctx);
-      assert.equal(getSuggestions(ctx, state, "deathDate").length, 1);
-      state.aliases = "Anna Olsen";
-      prepareUserInput(ed, state, ctx);
-      assert.equal(getSuggestions(ctx, state, "deathDate").length, 2);
-      assert.equal(state.confirmDate, "no");
-    },
-    changing_name_subject_or_category_removes_old_facts() {
-      const state = input();
-      state.confirmDate = "yes";
-      const gd = output(state);
-      state.category = "marriage";
-      prepareUserInput(ed, state, context);
-      regeneralizeData({ extractedData: ed, generalizedData: gd, newData: state });
-      assert.equal(gd.deathDate, undefined);
-      assert.equal(gd.overrideRefTitle, "Marriage Notice");
-      assert.ok(!citation(gd, testManager.options).includes("death notice"));
-      state.personName = "Ole Olsen";
-      prepareUserInput(ed, state, context);
-      assert.equal(state.subjectKey, "");
-      assert.equal(state.confirmDate, "no");
-      state.subjectKey = subject;
-      prepareUserInput(ed, state, context);
-      assert.equal(state.personName, "Anna Hansen");
-      assert.equal(state.aliases, "");
+      assert.ok(citation(gd, testManager.options).includes("The notice reported the death on 4 May 1920"));
     },
     deliberate_empty_values_survive_rebuilds() {
       const state = input();
-      state.dateSuggestion = "";
       state.eventDate = "";
       state.personName = "";
-      prepareUserInput(ed, state, context);
-      const form = getRequestedUserInput({ extractedData: ed, newData: state, type: "narrative" }, context);
+      prepareUserInput(ed, state);
+      const form = getRequestedUserInput({ extractedData: ed, newData: state, type: "narrative" });
       assert.equal(form.resultData.personName, "");
       assert.equal(form.fields.find((field) => field.property === "personName").defaultValue, "");
       assert.equal(form.resultData.eventDate, "");
     },
-    changing_suggestion_clears_confirmation() {
-      const state = input();
-      state.confirmDate = "yes";
-      state.dateSuggestion = "";
-      prepareUserInput(ed, state, context);
-      assert.equal(state.confirmDate, "no");
-      assert.equal(state.dateSuggestion, "");
-    },
-    burial_limits_and_partial_dates_keep_qualifiers() {
-      const ctx = buildCollectionContext({
-        id: "c",
-        citations: [personCitation("Anna Hansen", "6 May 1920", "Burial")],
-      });
-      assert.equal(getSuggestions(ctx, input("deathNotice", ctx), "deathDate")[0].value, "before 6 May 1920");
+    partial_dates_keep_precision_and_qualifiers() {
       for (const [raw, expected] of [
         ["1920", "1920"],
         ["about 1920", "about 1920"],
@@ -237,37 +118,6 @@ async function runTests(testManager) {
       ])
         assert.equal(dateText(readNbDate(raw)), expected);
       for (const raw of ["31.2.1920", "29 Feb 1900", "nothing", "0000"]) assert.equal(readNbDate(raw), undefined);
-    },
-    approximate_burials_do_not_become_precise_death_limits() {
-      for (const date of ["about 6 May 1920", "after 6 May 1920", "1920", "May 1920"]) {
-        const ctx = buildCollectionContext({ id: "c", citations: [personCitation("Anna Hansen", date, "Burial")] });
-        assert.equal(getSuggestions(ctx, input("deathNotice", ctx), "deathDate").length, 0);
-      }
-    },
-    confirmed_engagements_are_only_suggestions_for_the_next_passage() {
-      const state = input("engagement");
-      state.eventDate = "3 May 1920";
-      state.eventPlace = "Bergen";
-      const gd = output(state);
-      const ctx = buildCollectionContext({
-        id: "c",
-        citations: [{ sourceTitle: "Earlier notice", generalizedData: JSON.parse(JSON.stringify(gd)) }],
-      });
-      const next = input("engagement", ctx);
-      assert.equal(next.dateSuggestion, "3 May 1920");
-      assert.equal(next.confirmDate, "no");
-      assert.equal(confirmedInput(ed, next).eventDate, "");
-    },
-    two_people_are_only_included_after_confirmation_or_transcription() {
-      const c = personCitation();
-      c.generalizedData.spouses = [{ name: { name: "Ole Olsen" } }];
-      const ctx = buildCollectionContext({ id: "c", citations: [c] });
-      const state = input("marriage", ctx);
-      assert.equal(state.secondSuggestion, "Ole Olsen");
-      assert.equal(confirmedInput(ed, state).secondPerson, "");
-      state.confirmSecond = "yes";
-      assert.equal(confirmedInput(ed, state).secondPerson, "Ole Olsen");
-      assert.ok(citation(output(state), testManager.options).includes("also named Ole Olsen"));
     },
     all_categories_drive_headings_and_narratives() {
       for (const type of noticeTypes) {
@@ -291,7 +141,7 @@ async function runTests(testManager) {
       assert.ok(text.includes("?page=1"));
       const named = generalizeData({
         extractedData: book,
-        confirmed: confirmedInput(book, { personName: "Anna Hansen", printedPages: "iv–v" }),
+        passage: passageInput(book, { personName: "Anna Hansen", printedPages: "iv–v" }),
       });
       assert.ok(citation(named, testManager.options, "source", book).includes("Printed page(s): iv–v"));
     },
@@ -348,16 +198,8 @@ async function runTests(testManager) {
       const state = input();
       state.eventDate = "31 February 1920";
       assert.ok(getInputError(ed, state));
-      assert.ok(getRequestedUserInput({ extractedData: ed, newData: state }, context).validationError);
+      assert.ok(getRequestedUserInput({ extractedData: ed, newData: state }).validationError);
       assert.throws(() => output(state), /valid event date/);
-    },
-    fresh_passages_keep_subject_but_reset_confirmation() {
-      const ctx = buildCollectionContext({ ...collection, nbContext: { subjectKey: subject, aliases: "Anna Olsen" } });
-      const next = prepareUserInput({ ...ed, pageIndex: 1 }, undefined, ctx).state;
-      assert.equal(next.personName, "Anna Hansen");
-      assert.equal(next.confirmDate, "no");
-      assert.equal(next.eventDate, "");
-      assert.equal(next.printedPages, "");
     },
     urn_routes_use_permanent_links_and_preserve_the_selected_page() {
       for (const [kind, page] of [
@@ -487,8 +329,8 @@ async function runTests(testManager) {
         };
         try {
           await startNewCollectedCitations();
-          const firstId = data.collectedCitations.id;
-          assert.ok(firstId);
+          const originalCitation = { url: "https://example.org/prior", sourceTitle: "Earlier source" };
+          await addCitationToCollectedCitations(originalCitation);
           const a = input("deathNotice");
           const b = input("deathListing");
           const object = (state) => ({
@@ -504,45 +346,66 @@ async function runTests(testManager) {
           await addCitationToCollectedCitations(object(a));
           await addCitationToCollectedCitations(object(b));
           await addCitationToCollectedCitations(object(a));
-          assert.equal(data.collectedCitations.citations.length, 2);
-          data.collectedCitations.nbContext = { subjectKey: subject };
+          assert.equal(data.collectedCitations.citations.length, 3);
+          assert.deepEqual(data.collectedCitations.citations[0], originalCitation);
+          const saved = structuredClone(data.collectedCitations);
           await stopCollectingCitations();
           assert.equal(await getCollectedCitations(), undefined);
-          assert.equal(buildCollectionContext(await getCollectedCitations()).subjects.length, 0);
           await restoreCollectedCitations();
-          assert.equal(data.collectedCitations.id, firstId);
-          assert.equal(data.collectedCitations.nbContext.subjectKey, subject);
+          assert.deepEqual(data.collectedCitations, saved);
           await startNewCollectedCitations();
-          assert.notEqual(data.collectedCitations.id, firstId);
-          assert.equal(data.collectedCitations.nbContext, undefined);
+          assert.deepEqual(data.collectedCitations, { citations: [] });
         } finally {
           if (original === undefined) delete globalThis.chrome;
           else globalThis.chrome = original;
         }
       })();
     },
-    collection_lifetime_and_legacy_compatibility() {
-      return (async () => {
-        const storage = storageFor({ citations: [personCitation()] });
-        const loaded = await loadActiveCollection(storage, () => "legacy-id");
-        assert.equal(loaded.id, "legacy-id");
-        const ctx = buildCollectionContext(loaded);
-        const state = input("deathNotice", ctx);
-        await saveResearchSubject(storage, ctx, state);
-        const active = (await storage.get()).collectedCitations;
-        assert.equal(active.nbContext.subjectKey, subject);
-        assert.equal(active.citations.length, 1);
-        storage.replace({ id: "new-collection", citations: [] });
-        await assert.rejects(saveResearchSubject(storage, ctx, state), /collection changed/);
-        assert.equal(buildCollectionContext((await storage.get()).collectedCitations).selectedSubjectKey, "");
-        storage.replace(undefined);
-        assert.equal(await loadActiveCollection(storage, () => "unused"), undefined);
-        await assert.rejects(saveResearchSubject(storage, ctx, state), /collection changed/);
-        storage.replace(active); // Restoring the saved collection restores only research context.
-        const restored = buildCollectionContext(await loadActiveCollection(storage, () => "unused"));
-        assert.equal(prepareUserInput(ed, undefined, restored).state.personName, "Anna Hansen");
-        assert.equal(prepareUserInput(ed, undefined, restored).state.confirmDate, "no");
-      })();
+    new_forms_start_without_person_or_event_facts() {
+      for (const kind of ["newspaper", "book"]) {
+        const form = getRequestedUserInput({ extractedData: record(kind) });
+        for (const key of ["personName", "eventDate", "eventPlace", "secondPerson", "printedPages", "passageHeading"])
+          assert.equal(form.resultData[key], "");
+        assert.ok(!form.fields.some((field) => /subjectKey|alias|suggestion|confirm/i.test(field.id)));
+      }
+    },
+    changing_person_or_category_clears_event_facts_and_generalized_data() {
+      const state = input();
+      state.eventDate = "1920";
+      state.eventPlace = "Bergen";
+      const gd = output(state);
+      assert.equal(gd.deathDate.getDateString(), "1920");
+      state.category = "marriage";
+      prepareUserInput(ed, state);
+      regeneralizeData({ extractedData: ed, generalizedData: gd, newData: state });
+      assert.equal(gd.deathDate, undefined);
+      assert.equal(gd.deathPlace, undefined);
+      assert.equal(gd.overrideRefTitle, "Marriage Notice");
+      state.eventDate = "1921";
+      state.eventPlace = "Oslo";
+      state.secondPerson = "Ole Olsen";
+      state.personName = "Åse Østby";
+      prepareUserInput(ed, state);
+      for (const key of ["eventDate", "eventPlace", "secondPerson"]) assert.equal(state[key], "");
+      regeneralizeData({ extractedData: ed, generalizedData: gd, newData: state });
+      assert.ok(!citation(gd, testManager.options).includes("Ole Olsen"));
+      state.personName = "";
+      prepareUserInput(ed, state);
+      regeneralizeData({ extractedData: ed, generalizedData: gd, newData: state });
+      assert.equal(gd.name, undefined);
+      assert.equal(gd.userOverrideForNarrative, undefined);
+      assert.ok(!citation(gd, testManager.options).includes("was named"));
+    },
+    second_person_is_only_used_for_couple_notices() {
+      const state = input("marriage");
+      state.secondPerson = "Ole Olsen";
+      assert.ok(citation(output(state), testManager.options).includes("also named Ole Olsen"));
+      state.category = "mention";
+      assert.equal(passageInput(ed, state).secondPerson, undefined);
+      assert.equal(
+        passageInput(ed, { ...state, category: "deathNotice", personName: "", eventDate: "1920" }).eventDate,
+        undefined
+      );
     },
   };
   const logger = new LocalErrorLogger(testManager.results, "nb_behavior");

@@ -23,11 +23,11 @@ SOFTWARE.
 */
 
 import { noticeTypes, cleanText } from "./nb_notice_types.mjs";
-import { prepareUserInput, confirmedInput, getInputError, buildNbNarrative } from "./nb_generalize_data.mjs";
+import { prepareUserInput, passageInput, getInputError, buildNbNarrative } from "./nb_generalize_data.mjs";
 
-function getRequestedUserInput(input, context = { subjects: [] }) {
+function getRequestedUserInput(input) {
   const ed = input.extractedData;
-  const { state, suggestions, type } = prepareUserInput(ed, input.newData, context);
+  const { state, type } = prepareUserInput(ed, input.newData);
   const fields = [];
   const label = (id, text) => fields.push({ id, type: "label", label: text });
   const select = (property, text, options) =>
@@ -59,21 +59,6 @@ function getRequestedUserInput(input, context = { subjects: [] }) {
       (ed.pageCount ? " of " + ed.pageCount : "") +
       ". This is not necessarily the printed page number."
   );
-  if (context.subjects.length) {
-    select("subjectKey", "Research subject from the active collection", [
-      { value: "", text: "Enter a person manually / do not use collection details" },
-      ...context.subjects.map((subject) => ({
-        value: subject.key,
-        text: subject.name + " — " + subject.sources.map((source) => source.label).join("; "),
-      })),
-    ]);
-    if (state.subjectKey)
-      text(
-        "aliases",
-        "Other names for this same person (separate with ;)",
-        "Only add name variants you have identified as this person. Other people in the collection are excluded."
-      );
-  }
   if (ed.materialType === "newspaper")
     select(
       "category",
@@ -94,50 +79,15 @@ function getRequestedUserInput(input, context = { subjects: [] }) {
     "Printed page(s)",
     "Confirm against the publication. Leave blank to cite the viewer image position."
   );
-  function addSuggestion(kind, manual, labelText) {
-    const options = suggestions[kind];
-    if (options.length) {
-      const field = kind === "second" ? "secondSuggestion" : kind + "Suggestion";
-      select(field, "Known " + labelText.toLowerCase() + " from collected sources", [
-        {
-          value: "",
-          text:
-            options.length > 1
-              ? "Conflicting or alternative values: choose one, or leave unused"
-              : "Do not use a collected value",
-        },
-        ...options.map((choice) => ({
-          value: choice.value,
-          text: choice.value + " — " + choice.sources.map((source) => source.label).join("; "),
-        })),
-      ]);
-      if (state[field])
-        label(
-          field + "Source",
-          "Source: " +
-            options
-              .find((choice) => choice.value === state[field])
-              .sources.map((source) => source.label)
-              .join("; ")
-        );
-      if (state[field])
-        select("confirm" + kind[0].toUpperCase() + kind.slice(1), "Is this supported by the current passage?", [
-          { value: "no", text: "Not confirmed — exclude from this citation" },
-          { value: "yes", text: "Confirmed from this passage — include" },
-        ]);
-    }
-    text(
-      manual,
-      labelText + " transcribed from this passage",
-      kind === "date"
-        ? "Optional. A value entered here replaces the suggestion. Use 3 May 1920, 1920, or about/before/after a date."
-        : "Optional. A value entered here replaces the suggestion. Include only information stated in this passage."
-    );
-  }
   if (cleanText(state.personName) && type.event) {
-    addSuggestion("date", "eventDate", type.event[0].toUpperCase() + type.event.slice(1) + " date");
-    addSuggestion("place", "eventPlace", type.event[0].toUpperCase() + type.event.slice(1) + " place");
-    if (type.couple) addSuggestion("second", "secondPerson", "Second person named in the notice");
+    const event = type.event[0].toUpperCase() + type.event.slice(1);
+    text(
+      "eventDate",
+      event + " date stated in this passage",
+      "Optional. Use 3 May 1920, 1920, or about/before/after a date."
+    );
+    text("eventPlace", event + " place stated in this passage", "Optional. Include only information stated here.");
+    if (type.couple) text("secondPerson", "Second person named in this notice");
     if (type.event === "engagement")
       label(
         "engagementHelp",
@@ -148,7 +98,7 @@ function getRequestedUserInput(input, context = { subjects: [] }) {
   label(
     "preview",
     "Narrative preview: " +
-      (buildNbNarrative(ed, confirmedInput(ed, state), false) ||
+      (buildNbNarrative(ed, passageInput(ed, state), false) ||
         "No person-specific narrative; the reference will still be generated.")
   );
   return { resultData: state, fields, validationError };

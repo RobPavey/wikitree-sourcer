@@ -27,9 +27,8 @@ import fs from "node:fs";
 import vm from "node:vm";
 import { JSDOM } from "jsdom";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
-import { record, personCitation } from "./nb_test_fixtures.mjs";
+import { record } from "./nb_test_fixtures.mjs";
 import { getRequestedUserInput } from "../../extension/site/nb/core/nb_user_input.mjs";
-import { buildCollectionContext } from "../../extension/site/nb/core/nb_collection_context.mjs";
 import { generalizeData, regeneralizeData } from "../../extension/site/nb/core/nb_generalize_data.mjs";
 
 // Exercise the actual shared form implementation in a DOM with only its menu dependencies stubbed.
@@ -132,7 +131,7 @@ async function runTests(testManager) {
           async () => {
             calls.push("start");
             await gate;
-            calls.push("saved");
+            calls.push("checked");
           },
           () => ({ resultData: {}, fields: [] })
         );
@@ -143,7 +142,7 @@ async function runTests(testManager) {
         assert.deepEqual(calls, ["start"]);
         release();
         await pending;
-        assert.deepEqual(calls, ["start", "saved", "build"]);
+        assert.deepEqual(calls, ["start", "checked", "build"]);
       } finally {
         ui.close();
       }
@@ -156,13 +155,13 @@ async function runTests(testManager) {
           { type: "inline", extractedData: {}, generalizedData: {} },
           () => builds++,
           async () => {
-            throw new Error("Collection changed");
+            throw new Error("NB page changed");
           },
           () => ({ resultData: {}, fields: [] })
         );
         await ui.button().onclick();
         assert.equal(builds, 0);
-        assert.ok(ui.errors[0].includes("Collection changed"));
+        assert.ok(ui.errors[0].includes("NB page changed"));
       } finally {
         ui.close();
       }
@@ -183,12 +182,11 @@ async function runTests(testManager) {
         ui.close();
       }
     },
-    async real_nb_form_carries_subject_and_requires_fact_confirmation() {
+    async real_nb_form_uses_manual_input_and_retains_collection_button_label() {
       const ui = harness(testManager.options);
       const ed = record();
       const gd = generalizeData({ extractedData: ed });
       let generated;
-      const context = buildCollectionContext({ id: "collection", citations: [personCitation()] });
       try {
         ui.show(
           { type: "narrative", extractedData: ed, generalizedData: gd },
@@ -196,18 +194,20 @@ async function runTests(testManager) {
             generated = JSON.parse(JSON.stringify(gd));
           },
           regeneralizeData,
-          (input) => getRequestedUserInput(input, context),
+          getRequestedUserInput,
           true
         );
-        await ui.change("subjectKey", "anna hansen");
+        assert.equal(ui.document.getElementById("personName").value, "");
+        assert.equal(ui.document.getElementById("subjectKey"), null);
+        await ui.change("personName", "Anna Hansen");
         await ui.change("category", "deathNotice");
         assert.equal(ui.document.getElementById("personName").value, "Anna Hansen");
-        assert.equal(ui.document.getElementById("dateSuggestion").value, "3 May 1920");
-        assert.equal(ui.document.getElementById("confirmDate").value, "no");
+        assert.equal(ui.document.getElementById("eventDate").value, "");
+        assert.equal(ui.document.getElementById("dateSuggestion"), null);
         assert.equal(ui.button().innerText, "Add narrative");
         await ui.button().onclick();
         assert.equal(generated.deathDate, undefined);
-        await ui.change("confirmDate", "yes");
+        await ui.change("eventDate", "3 May 1920");
         assert.ok(
           Array.from(ui.document.querySelectorAll("label")).some((label) =>
             label.textContent?.includes("death on 3 May 1920")

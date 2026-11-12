@@ -24,82 +24,36 @@ SOFTWARE.
 
 import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
 import { NbEdReader } from "./nb_ed_reader.mjs";
-import { getNoticeType, cleanText, escapeText, normalizeName } from "./nb_notice_types.mjs";
+import { getNoticeType, cleanText, escapeText } from "./nb_notice_types.mjs";
 import { readNbDate, dateText } from "./nb_dates.mjs";
-import { getSuggestions } from "./nb_collection_context.mjs";
 
-const passageFields = [
-  "eventDate",
-  "eventPlace",
-  "secondPerson",
-  "dateSuggestion",
-  "placeSuggestion",
-  "secondSuggestion",
-];
-const confirmations = ["confirmDate", "confirmPlace", "confirmSecond"];
-function prepareUserInput(ed, existing, context = { subjects: [] }) {
-  let state = existing;
-  const first = !state;
-  if (!state) {
-    const selected = context.subjects.find((subject) => subject.key === context.selectedSubjectKey);
-    state = {
-      category: ed.materialType === "book" ? "book" : "mention",
-      subjectKey: selected?.key || "",
-      aliases: context.aliases || "",
-      personName: selected?.name || "",
-      passageHeading: "",
-      printedPages: "",
-    };
-    for (const key of passageFields) state[key] = "";
-    for (const key of confirmations) state[key] = "no";
-  }
-  state.category = getNoticeType(ed.materialType, state.category).key;
-  const selected = context.subjects.find((subject) => subject.key === state.subjectKey);
-  const subjectChanged = !first && state.subjectKey !== state._subjectKey;
-  const categoryChanged = !first && state.category !== state._category;
-  const aliasesChanged = !first && state.aliases !== state._aliases;
-  const nameChanged = !first && state.personName !== state._name;
-  if (subjectChanged) {
-    state.personName = selected?.name || "";
-    state.aliases = "";
-  }
-  const acceptableNames = [selected?.name || "", ...(state.aliases || "").split(";")].map(normalizeName);
-  if (nameChanged && !subjectChanged && state.subjectKey && !acceptableNames.includes(normalizeName(state.personName)))
-    state.subjectKey = "";
-  const reset = subjectChanged || categoryChanged || aliasesChanged || nameChanged;
-  if (reset) {
-    for (const key of passageFields) state[key] = "";
-    for (const key of confirmations) state[key] = "no";
-  }
-  const type = getNoticeType(ed.materialType, state.category);
-  const suggestions = {
-    date: type.event ? getSuggestions(context, state, type.event + "Date") : [],
-    place: type.event ? getSuggestions(context, state, type.event + "Place") : [],
-    second: type.couple ? getSuggestions(context, state, "secondPerson") : [],
+// The form describes one passage. Nothing is restored from other citations.
+const eventFields = ["eventDate", "eventPlace", "secondPerson"];
+function prepareUserInput(ed, existing) {
+  const state = existing || {
+    category: ed.materialType === "book" ? "book" : "mention",
+    personName: "",
+    passageHeading: "",
+    printedPages: "",
+    eventDate: "",
+    eventPlace: "",
+    secondPerson: "",
   };
-  for (const kind of ["date", "place", "second"]) {
-    const field = kind === "second" ? "secondSuggestion" : kind + "Suggestion";
-    const confirm = "confirm" + kind[0].toUpperCase() + kind.slice(1);
-    if (first || reset) state[field] = suggestions[kind].length === 1 ? suggestions[kind][0].value : "";
-    if (state[field] !== state["_" + field]) state[confirm] = "no";
-    if (state[field] && !suggestions[kind].some((choice) => choice.value === state[field])) {
-      state[field] = "";
-      state[confirm] = "no";
-    }
-    state["_" + field] = state[field];
-  }
-  Object.assign(state, {
-    _subjectKey: state.subjectKey,
-    _category: state.category,
-    _aliases: state.aliases,
-    _name: state.personName,
-  });
-  return { state, suggestions, type };
-}
-function confirmedInput(ed, state) {
   const type = getNoticeType(ed.materialType, state.category);
-  const value = (manual, suggestion, confirmation) =>
-    cleanText(state[manual] || (state[confirmation] === "yes" ? state[suggestion] : ""));
+  state.category = type.key;
+  if (existing && (state.category !== state._category || state.personName !== state._name)) {
+    for (const key of eventFields) state[key] = "";
+  }
+  if (!type.event || !cleanText(state.personName)) {
+    for (const key of eventFields) state[key] = "";
+  } else if (!type.couple) state.secondPerson = "";
+  state._category = state.category;
+  state._name = state.personName;
+  return { state, type };
+}
+// Keep only the fields applicable to this passage, even when called without the form.
+function passageInput(ed, state) {
+  const type = getNoticeType(ed.materialType, state.category);
   const personName = cleanText(state.personName);
   const result = {
     category: type.key,
@@ -109,9 +63,9 @@ function confirmedInput(ed, state) {
     printedPages: cleanText(state.printedPages),
   };
   if (personName && type.event) {
-    result.eventDate = value("eventDate", "dateSuggestion", "confirmDate");
-    result.eventPlace = value("eventPlace", "placeSuggestion", "confirmPlace");
-    if (type.couple) result.secondPerson = value("secondPerson", "secondSuggestion", "confirmSecond");
+    result.eventDate = cleanText(state.eventDate);
+    result.eventPlace = cleanText(state.eventPlace);
+    if (type.couple) result.secondPerson = cleanText(state.secondPerson);
   }
   if (type.event === "death") {
     result.confirmedDeathDate = result.eventDate;
@@ -120,36 +74,36 @@ function confirmedInput(ed, state) {
   return result;
 }
 function getInputError(ed, state) {
-  const confirmed = confirmedInput(ed, state);
-  if (confirmed.eventDate && !readNbDate(confirmed.eventDate))
+  const passage = passageInput(ed, state);
+  if (passage.eventDate && !readNbDate(passage.eventDate))
     return "Enter a valid event date, for example 3 May 1920, 1920, or before 6 May 1920.";
   return "";
 }
-function buildNbNarrative(ed, confirmed, escape = true) {
-  if (!confirmed.personName) return "";
+function buildNbNarrative(ed, passage, escape = true) {
+  if (!passage.personName) return "";
   const text = escape ? escapeText : cleanText;
-  const type = getNoticeType(ed.materialType, confirmed.category);
-  let result = text(confirmed.personName) + " " + type.phrase + " in " + text(ed.title);
+  const type = getNoticeType(ed.materialType, passage.category);
+  let result = text(passage.personName) + " " + type.phrase + " in " + text(ed.title);
   const publication = readNbDate(ed.publicationDate);
   if (publication) result += ", published " + dateText(publication, true);
   result += ".";
-  if (confirmed.secondPerson)
-    result += " The notice also named " + text(confirmed.secondPerson) + " in the " + type.event + " announcement.";
-  if (confirmed.eventDate || confirmed.eventPlace) {
+  if (passage.secondPerson)
+    result += " The notice also named " + text(passage.secondPerson) + " in the " + type.event + " announcement.";
+  if (passage.eventDate || passage.eventPlace) {
     result += " The notice reported the " + type.event;
-    if (confirmed.eventDate) result += " " + dateText(readNbDate(confirmed.eventDate), true);
-    if (confirmed.eventPlace) result += " in " + text(confirmed.eventPlace);
+    if (passage.eventDate) result += " " + dateText(readNbDate(passage.eventDate), true);
+    if (passage.eventPlace) result += " in " + text(passage.eventPlace);
     result += ".";
   }
   return result;
 }
 function generalizeData(input) {
   const ed = input.extractedData;
-  const confirmed = input.confirmed || {};
-  const gd = commonGeneralizeData("nb", new NbEdReader(ed, confirmed));
+  const passage = input.passage || {};
+  const gd = commonGeneralizeData("nb", new NbEdReader(ed, passage));
   if (gd.hasValidData) {
-    gd.siteData = { nb: { ...confirmed } };
-    if (confirmed.personName) gd.userOverrideForNarrative = buildNbNarrative(ed, confirmed);
+    gd.siteData = { nb: { ...passage } };
+    if (passage.personName) gd.userOverrideForNarrative = buildNbNarrative(ed, passage);
   }
   return gd;
 }
@@ -158,9 +112,9 @@ function regeneralizeData(input) {
   if (error) throw new Error(error);
   const next = generalizeData({
     extractedData: input.extractedData,
-    confirmed: confirmedInput(input.extractedData, input.newData),
+    passage: passageInput(input.extractedData, input.newData),
   });
   for (const key of Object.keys(input.generalizedData)) delete input.generalizedData[key];
   Object.assign(input.generalizedData, next);
 }
-export { prepareUserInput, confirmedInput, getInputError, buildNbNarrative, generalizeData, regeneralizeData };
+export { prepareUserInput, passageInput, getInputError, buildNbNarrative, generalizeData, regeneralizeData };
