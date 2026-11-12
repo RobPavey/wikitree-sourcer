@@ -523,6 +523,19 @@ function addAdditionalControls(data, siteData, listElement, parameters) {
   for (let control of controls) {
     if (control.type == "select") {
       addControlSelector(data, siteData, listElement, control, parameters);
+    } else if (control.type == "text") {
+      const label = document.createElement("label");
+      label.htmlFor = control.elementId;
+      label.textContent = control.label + ": ";
+      const input = document.createElement("input");
+      input.type = "text";
+      input.id = control.elementId;
+      input.value = parameters[control.parameterName] ?? "";
+      input.addEventListener("input", () => {
+        parameters[control.parameterName] = input.value;
+      });
+      label.appendChild(input);
+      listElement.appendChild(label);
     } else if (control.type == "checkbox") {
       addControlCheckbox(data, siteData, listElement, control, parameters);
     } else if (control.type == "readOnlyText") {

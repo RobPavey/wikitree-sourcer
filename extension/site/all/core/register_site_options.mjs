@@ -110,3 +110,4 @@ import "../../wikitree/core/wikitree_options.mjs";
 import "../../wol/core/wol_options.mjs";
 import "../../yadvashem/core/yadvashem_options.mjs";
 import "../../yorkshireburials/core/yorkshireburials_options.mjs";
+import "../../dfs/core/dfs_options.mjs";

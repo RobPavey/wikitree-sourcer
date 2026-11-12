@@ -40,6 +40,7 @@ const siteNames = [
   "compdes",
   "cwgc",
   "dfgviewer",
+  "dfs",
   "doew",
   "ecpp",
   "eggsabdm",

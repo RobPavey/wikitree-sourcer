@@ -33,6 +33,8 @@
     "contextMenus"
   ],
   "optional_host_permissions": [
+    "*://*.danishfamilysearch.dk/*",
+    "*://*.danishfamilysearch.com/*",
     "*://*.americanancestors.org/*",
     "*://*.ancestry.ca/*",
     "*://*.ancestry.co.uk/*",

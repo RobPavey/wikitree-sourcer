@@ -116,3 +116,4 @@ import "../../wtahdstn/core/wtahdstn_site_data.mjs";
 import "../../yadvashem/core/yadvashem_site_data.mjs";
 import "../../yorkshireburials/core/yorkshireburials_site_data.mjs";
 import "../../youtube/core/youtube_site_data.mjs";
+import "../../dfs/core/dfs_site_data.mjs";
