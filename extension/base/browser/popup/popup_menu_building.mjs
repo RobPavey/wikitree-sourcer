@@ -1227,8 +1227,7 @@ function setupBuildCitationSubmenuForRequestedUserInput(
         regeneralizeFunction,
         userInputFunction,
         resultData,
-        focusElementId,
-        isCollectingCitations
+        focusElementId
       );
     }, 1);
   }
@@ -1376,8 +1375,7 @@ function setupBuildCitationSubmenuForRequestedUserInput(
         let input = { extractedData: data.extractedData, generalizedData: gd, newData: resultData };
         // Await optional async checks (for example, verifying the current viewer page).
         // Synchronous site hooks remain supported.
-        const result = await regeneralizeFunction(input);
-        if (result === false) return;
+        await regeneralizeFunction(input);
       }
       await buildFunction(data);
     } catch (error) {

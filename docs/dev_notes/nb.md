@@ -38,9 +38,13 @@ The existing user-input hook remains synchronous. Its optional regeneralization
 hook is awaited so NB can check that the tab still shows the same item/page before
 building. Synchronous hooks remain supported. Failed checks stop generation with
 a message; repeated submission is blocked while a check is pending. An optional
-`validationError` disables generation for invalid event dates. Rebuilding the form
-preserves the standard collecting-mode button label. These changes do not read
-collection contents or change citation collection storage.
+`validationError` disables generation for invalid event dates. These changes do
+not read collection contents or change citation collection storage. There is no
+return-value cancellation protocol: the hook completes or throws an error.
+
+The unrelated collecting-mode button-label fix is maintained separately from this
+PR. The existing shared form can lose its Add to collection label after a rebuild;
+this contribution leaves that existing behavior unchanged.
 
 ## Page and citation identity
 

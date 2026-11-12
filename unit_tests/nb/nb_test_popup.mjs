@@ -166,23 +166,7 @@ async function runTests(testManager) {
         ui.close();
       }
     },
-    async cancelled_hook_does_not_build() {
-      const ui = harness(testManager.options);
-      let builds = 0;
-      try {
-        ui.show(
-          { type: "inline", extractedData: {}, generalizedData: {} },
-          () => builds++,
-          () => false,
-          () => ({ resultData: {}, fields: [] })
-        );
-        await ui.button().onclick();
-        assert.equal(builds, 0);
-      } finally {
-        ui.close();
-      }
-    },
-    async real_nb_form_uses_manual_input_and_retains_collection_button_label() {
+    async real_nb_form_uses_manual_input() {
       const ui = harness(testManager.options);
       const ed = record();
       const gd = generalizeData({ extractedData: ed });
@@ -194,8 +178,7 @@ async function runTests(testManager) {
             generated = JSON.parse(JSON.stringify(gd));
           },
           regeneralizeData,
-          getRequestedUserInput,
-          true
+          getRequestedUserInput
         );
         assert.equal(ui.document.getElementById("personName").value, "");
         assert.equal(ui.document.getElementById("subjectKey"), null);
@@ -204,7 +187,7 @@ async function runTests(testManager) {
         assert.equal(ui.document.getElementById("personName").value, "Anna Hansen");
         assert.equal(ui.document.getElementById("eventDate").value, "");
         assert.equal(ui.document.getElementById("dateSuggestion"), null);
-        assert.equal(ui.button().innerText, "Add narrative");
+        assert.equal(ui.button().innerText, "Build narrative");
         await ui.button().onclick();
         assert.equal(generated.deathDate, undefined);
         await ui.change("eventDate", "3 May 1920");
