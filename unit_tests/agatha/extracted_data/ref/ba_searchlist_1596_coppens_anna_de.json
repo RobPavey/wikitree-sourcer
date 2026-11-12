@@ -1,0 +1,25 @@
+{
+  "url": "https://agatha.arch.be/de/data/acts/PARDOWVL_00166596",
+  "success": true,
+  "isRecord": true,
+  "people": {
+    "täufling": [
+      {
+        "vorname und name": "Anna Coppens"
+      }
+    ],
+    "vater des täuflings": [
+      {
+        "vorname und name": "Joannes Coppens"
+      }
+    ]
+  },
+  "metadata": {
+    "aktentyp": "Taufurkunden",
+    "projekt": "Kirchenbücher - Taufurkunden - Provinz Westflandern",
+    "ort": "Brugge",
+    "pfarrei": "St.Salv.2de",
+    "beschreibung": "Doopakte",
+    "datum der urkunde": "08/01/1596"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "url": "https://agatha.arch.be/fr/data/acts/PARDOWVL_00166596",
+  "success": true,
+  "isRecord": true,
+  "people": {
+    "enfant baptisé": [
+      {
+        "prénom et nom": "Anna Coppens"
+      }
+    ],
+    "père de l'enfant baptisé": [
+      {
+        "prénom et nom": "Joannes Coppens"
+      }
+    ]
+  },
+  "metadata": {
+    "type d'acte": "Actes de baptêmes",
+    "projet": "Registres paroissiaux - Actes de baptême - Province de Flandre occidentale",
+    "lieu": "Brugge",
+    "paroisse": "St.Salv.2de",
+    "description": "Doopakte",
+    "date de l'acte": "08/01/1596"
+  }
+}

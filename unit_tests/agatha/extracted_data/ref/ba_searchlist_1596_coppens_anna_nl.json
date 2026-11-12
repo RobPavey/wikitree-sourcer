@@ -1,0 +1,25 @@
+{
+  "url": "https://agatha.arch.be/nl/data/acts/PARDOWVL_00166596",
+  "success": true,
+  "isRecord": true,
+  "people": {
+    "dopeling": [
+      {
+        "voornaam en naam": "Anna Coppens"
+      }
+    ],
+    "vader van de dopeling": [
+      {
+        "voornaam en naam": "Joannes Coppens"
+      }
+    ]
+  },
+  "metadata": {
+    "aktetype": "Doopakten",
+    "project": "Parochieregisters - Doopakten - Provincie West-Vlaanderen",
+    "plaats": "Brugge",
+    "parochie": "St.Salv.2de",
+    "beschrijving": "Doopakte",
+    "datum van de akte": "08/01/1596"
+  }
+}
