@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\"<br/>\nStubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd<br/>\n[https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 Danish Family Search] (accessed 12 November 2026)<br/>\n[https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg Register image]<br/>\nRegister image.\n</ref>",
+    "type": "inline"
+  },
+  "std_source": {
+    "citation": "* '''Record''': \"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\"<br/>Stubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd<br/>[https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 Danish Family Search] (accessed 12 November 2026)<br/>[https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg Register image]<br/>Register image.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Record: \"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\", \nStubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd, \nhttps://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 (accessed 12 November 2026)<br/>\nhttps://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg, \nRegister image.\n",
+    "type": "inline"
+  },
+  "plain_source": {
+    "citation": "Record: \"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\", Stubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd, https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 (accessed 12 November 2026)<br/>https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg, Register image.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\"<br/>\nStubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd<br/>\n[https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 Danish Family Search]<br/>\n[https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg Register image]<br/>\nRegister image.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Record''': \"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\"<br/>Stubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd<br/>[https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 Danish Family Search]<br/>[https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg Register image]<br/>Register image.",
+    "type": "source"
+  }
+}

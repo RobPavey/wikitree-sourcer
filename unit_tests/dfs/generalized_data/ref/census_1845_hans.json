@@ -1,0 +1,159 @@
+{
+  "sourceOfData": "dfs",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Hans Andreasen Hansen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1845"
+  },
+  "eventPlace": {
+    "placeString": "Hesselager, Gudme, Svendborg"
+  },
+  "birthDate": {
+    "dateString": "1840",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Hesselager"
+  },
+  "ageAtEvent": "5",
+  "relationshipToHead": "son",
+  "maritalStatus": "single",
+  "householdArrayFields": [
+    "name",
+    "gender",
+    "age",
+    "birthYear",
+    "maritalStatus",
+    "relationship",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Hans Andreasen",
+      "gender": "male",
+      "age": "35",
+      "birthYear": "1810",
+      "maritalStatus": "married",
+      "relationship": "Gaardmand",
+      "occupation": "",
+      "link": "https://www.danishfamilysearch.dk/cid5500973",
+      "isSelected": false
+    },
+    {
+      "name": "Kirsten Hansdatter",
+      "gender": "female",
+      "age": "43",
+      "birthYear": "1802",
+      "maritalStatus": "married",
+      "relationship": "wife",
+      "occupation": "",
+      "link": "https://www.danishfamilysearch.dk/cid5500974",
+      "isSelected": false
+    },
+    {
+      "name": "Kirsten Hansdatter",
+      "gender": "female",
+      "age": "13",
+      "birthYear": "1832",
+      "maritalStatus": "single",
+      "relationship": "daughter",
+      "occupation": "",
+      "link": "https://www.danishfamilysearch.dk/cid5500975",
+      "isSelected": false
+    },
+    {
+      "name": "Peder Hansen",
+      "gender": "male",
+      "age": "10",
+      "birthYear": "1835",
+      "maritalStatus": "single",
+      "relationship": "son",
+      "occupation": "",
+      "link": "https://www.danishfamilysearch.dk/cid5500976",
+      "isSelected": false
+    },
+    {
+      "name": "Christian Hansen",
+      "gender": "male",
+      "age": "8",
+      "birthYear": "1837",
+      "maritalStatus": "single",
+      "relationship": "son",
+      "occupation": "",
+      "link": "https://www.danishfamilysearch.dk/cid5500977",
+      "isSelected": false
+    },
+    {
+      "name": "Hans Andreasen Hansen",
+      "gender": "male",
+      "age": "5",
+      "birthYear": "1840",
+      "maritalStatus": "single",
+      "relationship": "son",
+      "occupation": "",
+      "link": "https://www.danishfamilysearch.dk/cid5500978",
+      "isSelected": true,
+      "birthPlace": "Hesselager"
+    },
+    {
+      "name": "Jørgen Hansen",
+      "gender": "male",
+      "age": "3",
+      "birthYear": "1842",
+      "maritalStatus": "single",
+      "relationship": "son",
+      "occupation": "",
+      "link": "https://www.danishfamilysearch.dk/cid5500979",
+      "isSelected": false
+    },
+    {
+      "name": "Poul Hansen",
+      "gender": "male",
+      "age": "1",
+      "birthYear": "1844",
+      "maritalStatus": "single",
+      "relationship": "son",
+      "occupation": "",
+      "link": "https://www.danishfamilysearch.dk/cid5500980",
+      "isSelected": false
+    },
+    {
+      "name": "Rasmus Danielsen",
+      "gender": "male",
+      "age": "19",
+      "birthYear": "1826",
+      "maritalStatus": "single",
+      "relationship": "Konens søn",
+      "occupation": "",
+      "link": "https://www.danishfamilysearch.dk/cid5500981",
+      "isSelected": false
+    },
+    {
+      "name": "Maren Nielsdatter",
+      "gender": "female",
+      "age": "27",
+      "birthYear": "1818",
+      "maritalStatus": "single",
+      "relationship": "servant",
+      "occupation": "",
+      "link": "https://www.danishfamilysearch.dk/cid5500982",
+      "isSelected": false
+    },
+    {
+      "name": "Rasmus Larsen",
+      "gender": "male",
+      "age": "34",
+      "birthYear": "1811",
+      "maritalStatus": "single",
+      "relationship": "servant",
+      "occupation": "",
+      "link": "https://www.danishfamilysearch.dk/cid5500983",
+      "isSelected": false
+    }
+  ],
+  "hasValidData": true
+}

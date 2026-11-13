@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "url": "https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149",
+  "sourceTitle": "Skoleprotokol 1811-1820",
+  "imageReference": "Opslag 17: 1811-1819 Skoleprotokol",
+  "imageUrl": "https://api.rigsarkivet.dk/ao/v1/images/40906530",
+  "entries": [
+    {
+      "Dato": "Maj 1811",
+      "Navn": "Christian Nicolaysen",
+      "Alder": "8",
+      "id": "1562151"
+    },
+    {
+      "Dato": "Maj 1811",
+      "Navn": "Jens Nielsen",
+      "Alder": "7",
+      "id": "1562152"
+    },
+    {
+      "Dato": "Maj 1811",
+      "Navn": "Hans Hansen",
+      "Alder": "8",
+      "id": "1562153"
+    },
+    {
+      "Dato": "Maj 1819",
+      "Navn": "Anne Nielsdatter",
+      "Alder": "7",
+      "id": "1562154"
+    }
+  ],
+  "indexSignature": "[\"/sogn804/skole66/source152527/opslag17728149\",\"Opslag 17: 1811-1819 Skoleprotokol\",[{\"Dato\":\"Maj 1811\",\"Navn\":\"Christian Nicolaysen\",\"Alder\":\"8\",\"id\":\"1562151\"},{\"Dato\":\"Maj 1811\",\"Navn\":\"Jens Nielsen\",\"Alder\":\"7\",\"id\":\"1562152\"},{\"Dato\":\"Maj 1811\",\"Navn\":\"Hans Hansen\",\"Alder\":\"8\",\"id\":\"1562153\"},{\"Dato\":\"Maj 1819\",\"Navn\":\"Anne Nielsdatter\",\"Alder\":\"7\",\"id\":\"1562154\"}]]",
+  "entryType": "Skoleprotokol",
+  "group": "skoleprotokol",
+  "locality": "Dreslette, Båg, Odense",
+  "district": "",
+  "levyNumber": "",
+  "imageOnly": true
+}

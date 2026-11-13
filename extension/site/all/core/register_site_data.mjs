@@ -47,6 +47,7 @@ import "../../cemmap/core/cemmap_site_data.mjs";
 import "../../compdes/core/compdes_site_data.mjs";
 import "../../cwgc/core/cwgc_site_data.mjs";
 import "../../dfgviewer/core/dfgviewer_site_data.mjs";
+import "../../dfs/core/dfs_site_data.mjs";
 import "../../doew/core/doew_site_data.mjs";
 import "../../ecpp/core/ecpp_site_data.mjs";
 import "../../eggsabdm/core/eggsabdm_site_data.mjs";

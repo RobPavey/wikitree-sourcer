@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1811 School Records''':\n\"Danish Family Search, Skoleprotokol 1811-1820\"<br/>\nDreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol; DFS ID 1562153<br/>\n[https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 Danish Family Search] (accessed 12 November 2026)<br/>\n[https://api.rigsarkivet.dk/ao/v1/images/40906530 Register image]<br/>\nHans Hansen, Skoleprotokol, May 1811, age 8.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Hans was at school in May 1811 in Dreslette, Båg, Odense.<ref>\n'''1811 School Records''':\n\"Danish Family Search, Skoleprotokol 1811-1820\"<br/>\nDreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol; DFS ID 1562153<br/>\n[https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 Danish Family Search] (accessed 12 November 2026)<br/>\n[https://api.rigsarkivet.dk/ao/v1/images/40906530 Register image]<br/>\nHans Hansen, Skoleprotokol, May 1811, age 8.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1811 School Records''': \"Danish Family Search, Skoleprotokol 1811-1820\"<br/>Dreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol; DFS ID 1562153<br/>[https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 Danish Family Search] (accessed 12 November 2026)<br/>[https://api.rigsarkivet.dk/ao/v1/images/40906530 Register image]<br/>Hans Hansen, Skoleprotokol, May 1811, age 8.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "1811 School Records: \"Danish Family Search, Skoleprotokol 1811-1820\", \nDreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol; DFS ID 1562153, \nhttps://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 (accessed 12 November 2026)<br/>\nhttps://api.rigsarkivet.dk/ao/v1/images/40906530, \nHans Hansen, Skoleprotokol, May 1811, age 8.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Hans was at school in May 1811 in Dreslette, Båg, Odense.1811 School Records: \"Danish Family Search, Skoleprotokol 1811-1820\", \nDreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol; DFS ID 1562153, \nhttps://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 (accessed 12 November 2026)<br/>\nhttps://api.rigsarkivet.dk/ao/v1/images/40906530, \nHans Hansen, Skoleprotokol, May 1811, age 8.\n",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "1811 School Records: \"Danish Family Search, Skoleprotokol 1811-1820\", Dreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol; DFS ID 1562153, https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 (accessed 12 November 2026)<br/>https://api.rigsarkivet.dk/ao/v1/images/40906530, Hans Hansen, Skoleprotokol, May 1811, age 8.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''1811 School Records''':\n\"Danish Family Search, Skoleprotokol 1811-1820\"<br/>\nDreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol; DFS ID 1562153<br/>\n[https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 Danish Family Search]<br/>\n[https://api.rigsarkivet.dk/ao/v1/images/40906530 Register image]<br/>\nHans Hansen, Skoleprotokol, May 1811, age 8.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Hans was at school in May 1811 in Dreslette, Båg, Odense.<ref>\n'''1811 School Records''':\n\"Danish Family Search, Skoleprotokol 1811-1820\"<br/>\nDreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol; DFS ID 1562153<br/>\n[https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 Danish Family Search]<br/>\n[https://api.rigsarkivet.dk/ao/v1/images/40906530 Register image]<br/>\nHans Hansen, Skoleprotokol, May 1811, age 8.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''1811 School Records''': \"Danish Family Search, Skoleprotokol 1811-1820\"<br/>Dreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol; DFS ID 1562153<br/>[https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 Danish Family Search]<br/>[https://api.rigsarkivet.dk/ao/v1/images/40906530 Register image]<br/>Hans Hansen, Skoleprotokol, May 1811, age 8.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "dfs",
+  "sourceType": "record",
+  "recordType": "Military",
+  "name": {
+    "name": "Hans Hansen"
+  },
+  "eventDate": {
+    "dateString": "1791"
+  },
+  "ageAtEvent": "19",
+  "overrideRefTitle": "Military levy registration",
+  "hasValidData": true
+}
