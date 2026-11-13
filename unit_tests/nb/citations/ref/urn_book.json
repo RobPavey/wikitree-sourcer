@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Book''':\n\"Trøseid, Hans Marius. Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen. Flisa, Åsnes kommune, 1995\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digibok_2012050924011; Viewer image(s): 586; Book; Person: Synthetic Person<br/>\n[https://www.nb.no/items/URN:NBN:no-nb_digibok_2012050924011?page=585 NB digital copy] (accessed 10 November 2026)<br/>\nMention of Synthetic Person.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Synthetic Person was mentioned in Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen, published in 1995.<ref>\n'''Book''':\n\"Trøseid, Hans Marius. Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen. Flisa, Åsnes kommune, 1995\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digibok_2012050924011; Viewer image(s): 586; Book; Person: Synthetic Person<br/>\n[https://www.nb.no/items/URN:NBN:no-nb_digibok_2012050924011?page=585 NB digital copy] (accessed 10 November 2026)<br/>\nMention of Synthetic Person.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Book''': \"Trøseid, Hans Marius. Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen. Flisa, Åsnes kommune, 1995\"<br/>Nasjonalbiblioteket; URN:NBN:no-nb_digibok_2012050924011; Viewer image(s): 586; Book; Person: Synthetic Person<br/>[https://www.nb.no/items/URN:NBN:no-nb_digibok_2012050924011?page=585 NB digital copy] (accessed 10 November 2026)<br/>Mention of Synthetic Person.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Book: \"Trøseid, Hans Marius. Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen. Flisa, Åsnes kommune, 1995\", \nNasjonalbiblioteket; URN:NBN:no-nb_digibok_2012050924011; Viewer image(s): 586; Book; Person: Synthetic Person, \nhttps://www.nb.no/items/URN:NBN:no-nb_digibok_2012050924011?page=585 (accessed 10 November 2026), \nMention of Synthetic Person.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Synthetic Person was mentioned in Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen, published in 1995.",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Book: \"Trøseid, Hans Marius. Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen. Flisa, Åsnes kommune, 1995\", Nasjonalbiblioteket; URN:NBN:no-nb_digibok_2012050924011; Viewer image(s): 586; Book; Person: Synthetic Person, https://www.nb.no/items/URN:NBN:no-nb_digibok_2012050924011?page=585 (accessed 10 November 2026), Mention of Synthetic Person.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Book''':\n\"Trøseid, Hans Marius. Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen. Flisa, Åsnes kommune, 1995\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digibok_2012050924011; Viewer image(s): 586; Book; Person: Synthetic Person<br/>\n[https://www.nb.no/items/URN:NBN:no-nb_digibok_2012050924011?page=585 NB digital copy]<br/>\nMention of Synthetic Person.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Synthetic Person was mentioned in Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen, published in 1995.<ref>\n'''Book''':\n\"Trøseid, Hans Marius. Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen. Flisa, Åsnes kommune, 1995\"<br/>\nNasjonalbiblioteket; URN:NBN:no-nb_digibok_2012050924011; Viewer image(s): 586; Book; Person: Synthetic Person<br/>\n[https://www.nb.no/items/URN:NBN:no-nb_digibok_2012050924011?page=585 NB digital copy]<br/>\nMention of Synthetic Person.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Book''': \"Trøseid, Hans Marius. Hof bygdebok. B. 3 : Gards- og slektshistorie for Østsiden og Finnskogen. Flisa, Åsnes kommune, 1995\"<br/>Nasjonalbiblioteket; URN:NBN:no-nb_digibok_2012050924011; Viewer image(s): 586; Book; Person: Synthetic Person<br/>[https://www.nb.no/items/URN:NBN:no-nb_digibok_2012050924011?page=585 NB digital copy]<br/>Mention of Synthetic Person.",
+    "type": "source"
+  }
+}

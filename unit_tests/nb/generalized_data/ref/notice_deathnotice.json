@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "nb",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "name": {
+    "name": "Åse Østby"
+  },
+  "eventDate": {
+    "dateString": "5 Nov 1952"
+  },
+  "deathDate": {
+    "qualifier": 3,
+    "dateString": "3 May 1920"
+  },
+  "deathPlace": {
+    "placeString": "Bergen"
+  },
+  "overrideRefTitle": "Death Notice",
+  "isAboutNamedPerson": true,
+  "newspaperName": "Salten",
+  "hasValidData": true,
+  "siteData": {
+    "nb": {
+      "category": "deathNotice",
+      "event": "death",
+      "personName": "Åse Østby",
+      "passageHeading": "Synthetic Death notice",
+      "printedPages": "2",
+      "eventDate": "before 3 May 1920",
+      "eventPlace": "Bergen",
+      "confirmedDeathDate": "before 3 May 1920",
+      "confirmedDeathPlace": "Bergen"
+    }
+  },
+  "userOverrideForNarrative": "Åse Østby was named in a death notice in Salten, published on 5 November 1952. The notice reported the death before 3 May 1920 in Bergen."
+}

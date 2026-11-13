@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "nb",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "name": {
+    "name": "Synthetic Person"
+  },
+  "eventDate": {
+    "dateString": "30 Mar 1910"
+  },
+  "overrideRefTitle": "Newspaper Mention",
+  "isAboutNamedPerson": true,
+  "newspaperName": "Hedemarkens Amtstidende",
+  "hasValidData": true,
+  "siteData": {
+    "nb": {
+      "category": "mention",
+      "event": "",
+      "personName": "Synthetic Person",
+      "passageHeading": "",
+      "printedPages": ""
+    }
+  },
+  "userOverrideForNarrative": "Synthetic Person was mentioned in Hedemarkens Amtstidende, published on 30 March 1910."
+}

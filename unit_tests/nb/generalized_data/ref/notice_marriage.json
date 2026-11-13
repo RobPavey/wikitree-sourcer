@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "nb",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "name": {
+    "name": "Åse Østby"
+  },
+  "eventDate": {
+    "dateString": "5 Nov 1952"
+  },
+  "overrideRefTitle": "Marriage Notice",
+  "isAboutNamedPerson": true,
+  "newspaperName": "Salten",
+  "hasValidData": true,
+  "siteData": {
+    "nb": {
+      "category": "marriage",
+      "event": "marriage",
+      "personName": "Åse Østby",
+      "passageHeading": "Synthetic Marriage notice",
+      "printedPages": "2",
+      "eventDate": "before 3 May 1920",
+      "eventPlace": "Bergen",
+      "secondPerson": "Ole Åsen"
+    }
+  },
+  "userOverrideForNarrative": "Åse Østby was named in a marriage notice in Salten, published on 5 November 1952. The notice also named Ole Åsen in the marriage announcement. The notice reported the marriage before 3 May 1920 in Bergen."
+}

@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "nb",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "5 Nov 1952"
+  },
+  "overrideRefTitle": "Newspaper Mention",
+  "newspaperName": "Salten",
+  "hasValidData": true,
+  "siteData": {
+    "nb": {
+      "category": "mention",
+      "event": "",
+      "personName": "",
+      "passageHeading": "",
+      "printedPages": ""
+    }
+  }
+}

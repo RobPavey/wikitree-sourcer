@@ -1,0 +1,13 @@
+/* Keep long publication titles and source descriptions inside the extension popup. */
+#menu .dialogSelector {
+  width: 90%;
+  max-width: calc(100% - 20px);
+}
+#menu .dialogInput {
+  display: block;
+  overflow-wrap: anywhere;
+}
+#menu .dialogInputComment {
+  display: block;
+  padding: 4px 0;
+}

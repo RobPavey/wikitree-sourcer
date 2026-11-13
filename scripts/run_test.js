@@ -73,6 +73,7 @@ const siteNames = [
   "morbihan",
   "msa",
   "naie",
+  "nb",
   "nli",
   "noda",
   "np",

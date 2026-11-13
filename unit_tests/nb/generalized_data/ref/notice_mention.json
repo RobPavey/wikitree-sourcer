@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "nb",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "name": {
+    "name": "Åse Østby"
+  },
+  "eventDate": {
+    "dateString": "5 Nov 1952"
+  },
+  "overrideRefTitle": "Newspaper Mention",
+  "isAboutNamedPerson": true,
+  "newspaperName": "Salten",
+  "hasValidData": true,
+  "siteData": {
+    "nb": {
+      "category": "mention",
+      "event": "",
+      "personName": "Åse Østby",
+      "passageHeading": "Synthetic General mention",
+      "printedPages": "2"
+    }
+  },
+  "userOverrideForNarrative": "Åse Østby was mentioned in Salten, published on 5 November 1952."
+}

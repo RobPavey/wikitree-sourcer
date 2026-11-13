@@ -142,6 +142,7 @@
     "*://geneteka.genealodzy.pl/*",
     "*://graves.eggsa.org/*",
     "*://librariestas.ent.sirsidynix.net.au/*",
+    "*://nb.no/*",
     "*://paperspast.natlib.govt.nz/*",
     "*://probatesearch.service.gov.uk/*",
     "*://recherche.archives.finistere.fr/ark:/*",
@@ -164,12 +165,14 @@
     "*://www.gda.bayern.de/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://www.landesarchiv-nrw.de/*",
+    "*://www.nb.no/*",
     "*://www.scotlandspeople.gov.uk/*",
     "*://www.slektogdata.no/*",
     "*://www.szukajwarchiwach.gov.pl/*",
     "*://www.yorkshireburials.uk/*",
     "*://www.youtube.com/*",
-    "*://yorkshireburials.uk/*"
+    "*://yorkshireburials.uk/*",
+    "https://api.nb.no/*"
   ],
   "commands": {
     "_execute_action": {

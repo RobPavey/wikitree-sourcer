@@ -1,0 +1,17 @@
+{
+  "@id": "https://api.nb.no/catalog/v1/iiif/0000004ee44611385504a9d4f0639552/manifest{?fields,profile}",
+  "sequences": [
+    {
+      "canvases": [
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/0000004ee44611385504a9d4f0639552/canvas/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1-1_001_null",
+          "label": "1"
+        },
+        {
+          "@id": "https://api.nb.no/catalog/v1/iiif/0000004ee44611385504a9d4f0639552/canvas/URN:NBN:no-nb_digavis_salten_null_null_19521105_43_45_1-1_002_null",
+          "label": "2"
+        }
+      ]
+    }
+  ]
+}

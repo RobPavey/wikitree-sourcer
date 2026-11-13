@@ -80,6 +80,7 @@ import "../../mh/core/mh_site_data.mjs";
 import "../../morbihan/core/morbihan_site_data.mjs";
 import "../../msa/core/msa_site_data.mjs";
 import "../../naie/core/naie_site_data.mjs";
+import "../../nb/core/nb_site_data.mjs";
 import "../../nli/core/nli_site_data.mjs";
 import "../../noda/core/noda_site_data.mjs";
 import "../../np/core/np_site_data.mjs";

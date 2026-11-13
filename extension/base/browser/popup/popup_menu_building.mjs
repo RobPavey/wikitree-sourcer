@@ -1362,13 +1362,27 @@ function setupBuildCitationSubmenuForRequestedUserInput(
   let button = document.createElement("button");
   button.className = "dialogButton";
   button.innerText = buttonText;
-  button.onclick = function (element) {
-    if (regeneralizeFunction) {
-      let input = { extractedData: data.extractedData, generalizedData: gd, newData: resultData };
-      regeneralizeFunction(input);
+  // Sites may report invalid input before generation; existing forms need not supply this field.
+  if (requestedUserInput.validationError) {
+    addMessageMenuItem(menu, requestedUserInput.validationError);
+    button.disabled = true;
+  }
+  button.onclick = async function (element) {
+    if (requestedUserInput.validationError || button.disabled) return;
+    button.disabled = true;
+    try {
+      if (regeneralizeFunction) {
+        let input = { extractedData: data.extractedData, generalizedData: gd, newData: resultData };
+        // Await optional async checks (for example, verifying the current viewer page).
+        // Synchronous site hooks remain supported.
+        await regeneralizeFunction(input);
+      }
+      await buildFunction(data);
+    } catch (error) {
+      await displayMessageWithIcon("warning", "Could not build the citation", error.message);
+    } finally {
+      button.disabled = Boolean(requestedUserInput.validationError);
     }
-
-    buildFunction(data);
   };
   menu.list.appendChild(button);
 
