@@ -66,7 +66,8 @@ function extractData(document, url) {
     return result;
   }
 
-  let ident = url.replace("//", "__").split("/")[3];
+  const url_parts = url.replace("//", "__").split("/"); // Fix possible '//' 'in http(s)://'
+  const ident = url_parts[3];
   if (ident == "images") {
     result.isRecord = false;
     result.metadata = {};
@@ -93,6 +94,10 @@ function extractData(document, url) {
     result.isRecord = true;
     let doc = document;
     if (ident == "analyses") {
+      if (url_parts.length < 5 || url_parts[4] != "results") {
+        // Search page, not the results page. Nothing to extract here.
+        return result;
+      }
       // Inside of the search screen, extract the open modal, if possible
       const mod = document.querySelector("#modal_ACT.show");
       if (!mod) {

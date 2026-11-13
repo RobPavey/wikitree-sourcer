@@ -33,14 +33,14 @@ function refTitleOverrideFunction(ed, gd, options) {
     if (spouses) {
       spouses = spouses[0].name;
     }
-    let meaningfulTitle = gd.getRefTitle();
+    meaningfulTitle = gd.getRefTitle();
     if (gd.recordType == RT.Marriage) {
-      meaningfulTitle = meaningfulTitle + " between " + primary.name;
+      meaningfulTitle += " between " + primary.name;
       if (spouses) {
-        meaningfulTitle = meaningfulTitle + " and " + spouses.name;
+        meaningfulTitle += " and " + spouses.name;
       }
     } else {
-      meaningfulTitle = meaningfulTitle + " of " + primary.name;
+      meaningfulTitle += " of " + primary.name;
     }
   } else {
     meaningfulTitle = gd.getRefTitle();

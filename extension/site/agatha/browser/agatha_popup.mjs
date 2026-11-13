@@ -28,7 +28,7 @@ import { generalizeData } from "../core/agatha_generalize_data.mjs";
 import { buildCitation } from "../core/agatha_build_citation.mjs";
 
 async function setupAgathaPopupMenu(extractedData) {
-  let extractFailedMessage = "It looks like an AGATHA page but not a record page.";
+  let extractFailedMessage = "It looks like an AGATHA page but not a record page or an image.";
   if (extractedData && extractedData.reason) {
     const reason = extractedData.reason;
     if (reason == "no_open_modal") {

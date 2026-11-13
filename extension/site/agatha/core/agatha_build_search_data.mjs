@@ -22,29 +22,38 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+
 function buildSearchData(input) {
   const gd = input.generalizedData;
 
   let fieldData = {};
-  let selectData = {};
 
-  //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
-  // Add code here to populate the search data that is used to fill out the search form
-  // The fieldData typically will be used for text fields
-  // while the selectData will be for select controls
-  // In these structures use the names of the elements in the search form that need to be
-  // filled
-  // For examples see:
-  // - extension/site/vicbdm/core/vicbdm_build_search_data.mjs
-  // - extension/site/nswbdm/core/nswbdm_build_search_data.mjs
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-  //console.log("fieldData is:");
-  //console.log(fieldData);
+  const lastName = gd.inferLastName();
+  if (lastName) {
+    fieldData["NAME"] = lastName;
+  }
+  const firstName = gd.inferForenames();
+  if (firstName) {
+    fieldData["FIRST_NAME"] = firstName;
+  }
+  const birthDateObj = gd.inferBirthDateObj();
+  if (birthDateObj) {
+    const birthYear = birthDateObj.getYearString();
+    switch (birthDateObj.qualifier) {
+      case dateQualifiers.NONE:
+      case dateQualifiers.EXACT:
+      case dateQualifiers.AFTER:
+        fieldData["exactYear_PERS"] = birthYear;
+        break;
+      case dateQualifiers.ABOUT:
+        fieldData["exactYear_PERS"] = birthYear - 10;
+        break;
+    }
+  }
 
   var result = {
     fieldData: fieldData,
-    selectData: selectData,
   };
 
   return result;
