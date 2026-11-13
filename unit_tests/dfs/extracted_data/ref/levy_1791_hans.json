@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "url": "https://www.danishfamilysearch.dk/kilder/laegdsruller/kreds2/bsid17267/opslag12157806",
+  "sourceTitle": "Hovedrulle (Halsted) 1791 Lægd 3 til 27",
+  "imageReference": "Opslag 180: 1791 Lægdsrulle",
+  "imageUrl": "https://api.rigsarkivet.dk/ao/v1/images/737917",
+  "entries": [
+    {
+      "Dato": "1791",
+      "Navn": "Ole Pedersen",
+      "Alder": "17",
+      "id": "2464947"
+    },
+    {
+      "Dato": "1791",
+      "Navn": "Peder Hansen",
+      "Alder": "",
+      "id": "2464948"
+    },
+    {
+      "Dato": "1791",
+      "Navn": "Hans Hansen",
+      "Alder": "19",
+      "id": "2464949"
+    },
+    {
+      "Dato": "1791",
+      "Navn": "Hans Ladefoged",
+      "Alder": "",
+      "id": "2464950"
+    }
+  ],
+  "indexSignature": "[\"/kilder/laegdsruller/kreds2/bsid17267/opslag12157806\",\"Opslag 180: 1791 Lægdsrulle\",[{\"Dato\":\"1791\",\"Navn\":\"Ole Pedersen\",\"Alder\":\"17\",\"id\":\"2464947\"},{\"Dato\":\"1791\",\"Navn\":\"Peder Hansen\",\"Alder\":\"\",\"id\":\"2464948\"},{\"Dato\":\"1791\",\"Navn\":\"Hans Hansen\",\"Alder\":\"19\",\"id\":\"2464949\"},{\"Dato\":\"1791\",\"Navn\":\"Hans Ladefoged\",\"Alder\":\"\",\"id\":\"2464950\"}]]",
+  "entryType": "Lægdsrulle",
+  "group": "laegsruller",
+  "locality": "",
+  "district": "2. Udskrivningskreds",
+  "levyNumber": "",
+  "imageOnly": true
+}

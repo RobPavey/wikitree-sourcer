@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "dfs",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "name": "Hans Christian Hansen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "23 Feb 1840"
+  },
+  "eventPlace": {
+    "placeString": "Kirkeby, Løjt, Rise, Åbenrå"
+  },
+  "birthDate": {
+    "dateString": "23 Feb 1840"
+  },
+  "birthPlace": {
+    "placeString": "Kirkeby"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Chresten Hansen"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Anne født Krongaard"
+      }
+    }
+  },
+  "hasValidData": true
+}

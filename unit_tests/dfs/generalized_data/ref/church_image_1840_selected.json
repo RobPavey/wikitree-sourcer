@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "dfs",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "name": "Hans Arnold Hansen"
+  },
+  "eventDate": {
+    "dateString": "17 Feb 1840"
+  },
+  "eventPlace": {
+    "placeString": "Stubbekøbing, Falsters Nørre, Maribo"
+  },
+  "birthDate": {
+    "dateString": "17 Feb 1840"
+  },
+  "hasValidData": true
+}

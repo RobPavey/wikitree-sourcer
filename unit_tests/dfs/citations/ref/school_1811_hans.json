@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Danish Family Search, Skoleprotokol 1811-1820\"<br/>\nDreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol<br/>\n[https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 Danish Family Search] (accessed 12 November 2026)<br/>\n[https://api.rigsarkivet.dk/ao/v1/images/40906530 Register image]<br/>\nRegister image.\n</ref>",
+    "type": "inline"
+  },
+  "std_source": {
+    "citation": "* '''Record''': \"Danish Family Search, Skoleprotokol 1811-1820\"<br/>Dreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol<br/>[https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 Danish Family Search] (accessed 12 November 2026)<br/>[https://api.rigsarkivet.dk/ao/v1/images/40906530 Register image]<br/>Register image.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Record: \"Danish Family Search, Skoleprotokol 1811-1820\", \nDreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol, \nhttps://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 (accessed 12 November 2026)<br/>\nhttps://api.rigsarkivet.dk/ao/v1/images/40906530, \nRegister image.\n",
+    "type": "inline"
+  },
+  "plain_source": {
+    "citation": "Record: \"Danish Family Search, Skoleprotokol 1811-1820\", Dreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol, https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 (accessed 12 November 2026)<br/>https://api.rigsarkivet.dk/ao/v1/images/40906530, Register image.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Danish Family Search, Skoleprotokol 1811-1820\"<br/>\nDreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol<br/>\n[https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 Danish Family Search]<br/>\n[https://api.rigsarkivet.dk/ao/v1/images/40906530 Register image]<br/>\nRegister image.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Record''': \"Danish Family Search, Skoleprotokol 1811-1820\"<br/>Dreslette, Båg, Odense; Opslag 17: 1811-1819 Skoleprotokol<br/>[https://www.danishfamilysearch.dk/sogn804/skole66/source152527/opslag17728149 Danish Family Search]<br/>[https://api.rigsarkivet.dk/ao/v1/images/40906530 Register image]<br/>Register image.",
+    "type": "source"
+  }
+}

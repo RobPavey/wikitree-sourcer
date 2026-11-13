@@ -51,11 +51,31 @@ name-entry forms are excluded. `DfsEdReader` maps to existing Sourcer types, inc
 The shared search-parameter renderer gains an optional text control so source year
 and place parameters use the existing specified-parameters dialog.
 
-Run `node scripts/run_test.js dfs` for extraction, generalization, citation,
-household-table, search state-machine, selection, and manifest tests. The tests use
-sanitized compact HTML excerpts and explicit synthetic failure cases; see
-`unit_tests/dfs/saved_pages/README.md`. They simulate the site's postback lifecycle
-without contacting DFS or changing records.
+Run `node scripts/run_test.js dfs` for the site's tests. The entry point delegates
+to the usual content/citation, household-table, and search modules, using Sourcer's
+shared regression helpers and committed expected JSON under `extracted_data/ref`,
+`generalized_data/ref`, `citations/ref`, `household_tables/ref`, and `search_url/ref`.
+The helpers write actual output under the corresponding ignored `test` directories.
+Search-data references use `search_url` because that is the shared helper's convention.
+
+Stages and individual cases can be run independently, for example:
+
+```text
+node scripts/run_test.js dfs extract school_1811_hans_selected
+node scripts/run_test.js dfs generalize church_1840_hans
+node scripts/run_test.js dfs citation census_1845_hans
+node scripts/run_test.js dfs table census_1845_hans
+node scripts/run_test.js dfs search wikitree_handford
+node scripts/run_test.js dfs behavior
+```
+
+Reference files cover all four record groups, indexed selections, image-only
+citations, the main census person and another household member, table-in-caption
+and table-in-citation options, plain citations, accessed dates, and search variants.
+Supplemental behavior checks cover invalid/stale selection, login and postback
+lifecycle, and other cases that cannot be represented by a static saved page alone.
+The tests use sanitized compact HTML excerpts and explicit synthetic failure cases;
+see `unit_tests/dfs/saved_pages/README.md`. They never contact DFS or change records.
 
 The authenticated website layouts and Reset/Search behavior were inspected in the
 built-in browser. This does not constitute an installed-extension end-to-end test.

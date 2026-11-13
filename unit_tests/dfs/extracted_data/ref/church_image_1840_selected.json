@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "url": "https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995",
+  "sourceTitle": "Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave",
+  "imageReference": "Opslag 9: 1839-1840 Fødte Mænd",
+  "imageUrl": "https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg",
+  "entries": [
+    {
+      "Dato": "3 Dec 1839",
+      "Navn": "Christian Gotlieb Asmussen",
+      "Alder": "",
+      "id": "4940045"
+    },
+    {
+      "Dato": "17 Feb 1840",
+      "Navn": "Hans Arnold Hansen",
+      "Alder": "",
+      "id": "4940048"
+    }
+  ],
+  "indexSignature": "[\"/churchbook/sogn701/churchlisting143098/opslag15978995\",\"Opslag 9: 1839-1840 Fødte Mænd\",[{\"Dato\":\"3 Dec 1839\",\"Navn\":\"Christian Gotlieb Asmussen\",\"Alder\":\"\",\"id\":\"4940045\"},{\"Dato\":\"17 Feb 1840\",\"Navn\":\"Hans Arnold Hansen\",\"Alder\":\"\",\"id\":\"4940048\"}]]",
+  "entryType": "Fødte Mænd",
+  "group": "churchbook",
+  "locality": "Stubbekøbing, Falsters Nørre, Maribo",
+  "district": "",
+  "levyNumber": "",
+  "imageOnly": false,
+  "fields": {
+    "Dato": "17 Feb 1840",
+    "Navn": "Hans Arnold Hansen",
+    "Alder": "",
+    "id": "4940048"
+  },
+  "fullName": "Hans Arnold Hansen",
+  "eventDate": "17 Feb 1840",
+  "recordId": "4940048"
+}
