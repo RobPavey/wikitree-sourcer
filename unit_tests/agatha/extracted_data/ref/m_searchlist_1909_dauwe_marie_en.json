@@ -1,0 +1,83 @@
+{
+  "url": "https://agatha.arch.be/en/data/acts/HUVLB_HUBRU_00619335_0",
+  "success": true,
+  "isRecord": true,
+  "people": {
+    "bride": [
+      {
+        "first name and name": "Marie Rosine Dauwe",
+        "place of birth": "Galmaarden, Brabant",
+        "date of birth": "10/02/1878",
+        "place of residence": "Saint-Gilles",
+        "profession": "sans profession"
+      }
+    ],
+    "father of the bride": [
+      {
+        "first name and name": "Pierre François Dauwe",
+        "place of residence": "Galmaarden",
+        "profession": "fermier"
+      }
+    ],
+    "mother of the bride": [
+      {
+        "first name and name": "Jeanne Catherine Vanholder",
+        "place of residence": "Galmaarden",
+        "profession": "sans profession"
+      }
+    ],
+    "groom": [
+      {
+        "first name and name": "Alphonse Marie Louise Corneille Van Haelst",
+        "place of birth": "Sint-Niklaas, Oost-Vlaanderen",
+        "date of birth": "15/10/1874",
+        "place of residence": "Zwijndrecht, Vlaams Hoofd",
+        "profession": "courtier"
+      }
+    ],
+    "father of the groom": [
+      {
+        "first name and name": "Jean Baptiste Marie Van Haelst",
+        "place of death": "Saint-Nicolas",
+        "date of death": "16/11/1880",
+        "remarks": "Son acte de décès mentionne comme son patonyme:Vanhaelst."
+      }
+    ],
+    "mother of the husband": [
+      {
+        "first name and name": "Marie Clotilde Goossens",
+        "place of death": "Antwerpen",
+        "date of death": "28/12/1906",
+        "remarks": "Son acte de décès mentionne comme patonym ede son époux:Vanhaelst."
+      }
+    ],
+    "child recognized": [
+      {
+        "first name and name": "Anne Catherine Léopoldine Dauwe>Van Haelst",
+        "place of birth": "Bruxelles",
+        "date of birth": "23/10/1897"
+      }
+    ],
+    "witness": [
+      {
+        "first name and name": "Léopold Meerts",
+        "age": "44 years",
+        "place of residence": "Saint-Gilles",
+        "profession": "conducteur au gaz"
+      },
+      {
+        "first name and name": "François Schellens",
+        "age": "45 years",
+        "place of residence": "Antwerpen",
+        "profession": "restaurateur"
+      }
+    ]
+  },
+  "metadata": {
+    "type of record": "Marriage certificates",
+    "project": "Civil status - Marriage certificates - Province of Flemish Brabant and Brussels-Capital Region",
+    "location": "Sint-Gillis",
+    "description": "Huwelijksakte",
+    "date of record": "06/03/1909"
+  }
+}

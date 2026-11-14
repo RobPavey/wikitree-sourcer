@@ -1,0 +1,83 @@
+{
+  "url": "https://agatha.arch.be/de/data/acts/HUVLB_HUBRU_00619335_0",
+  "success": true,
+  "isRecord": true,
+  "people": {
+    "braut": [
+      {
+        "vorname und name": "Marie Rosine Dauwe",
+        "geburtsort": "Galmaarden, Brabant",
+        "geburtsdatum": "10/02/1878",
+        "wohnort": "Saint-Gilles",
+        "beruf": "sans profession"
+      }
+    ],
+    "vater der braut": [
+      {
+        "vorname und name": "Pierre François Dauwe",
+        "wohnort": "Galmaarden",
+        "beruf": "fermier"
+      }
+    ],
+    "mutter der braut": [
+      {
+        "vorname und name": "Jeanne Catherine Vanholder",
+        "wohnort": "Galmaarden",
+        "beruf": "sans profession"
+      }
+    ],
+    "bräutigam": [
+      {
+        "vorname und name": "Alphonse Marie Louise Corneille Van Haelst",
+        "geburtsort": "Sint-Niklaas, Oost-Vlaanderen",
+        "geburtsdatum": "15/10/1874",
+        "wohnort": "Zwijndrecht, Vlaams Hoofd",
+        "beruf": "courtier"
+      }
+    ],
+    "vater des bräutigams": [
+      {
+        "vorname und name": "Jean Baptiste Marie Van Haelst",
+        "sterbeort": "Saint-Nicolas",
+        "sterbedatum": "16/11/1880",
+        "bemerkungen": "Son acte de décès mentionne comme son patonyme:Vanhaelst."
+      }
+    ],
+    "mutter des bräutigams": [
+      {
+        "vorname und name": "Marie Clotilde Goossens",
+        "sterbeort": "Antwerpen",
+        "sterbedatum": "28/12/1906",
+        "bemerkungen": "Son acte de décès mentionne comme patonym ede son époux:Vanhaelst."
+      }
+    ],
+    "legitimiertes kind": [
+      {
+        "vorname und name": "Anne Catherine Léopoldine Dauwe>Van Haelst",
+        "geburtsort": "Bruxelles",
+        "geburtsdatum": "23/10/1897"
+      }
+    ],
+    "zeuge": [
+      {
+        "vorname und name": "Léopold Meerts",
+        "alter": "44 Jahre",
+        "wohnort": "Saint-Gilles",
+        "beruf": "conducteur au gaz"
+      },
+      {
+        "vorname und name": "François Schellens",
+        "alter": "45 Jahre",
+        "wohnort": "Antwerpen",
+        "beruf": "restaurateur"
+      }
+    ]
+  },
+  "metadata": {
+    "aktentyp": "Eheschließungsurkunden",
+    "projekt": "Personenstand - Heiratsurkunden - Provinz Flämisch Brabant und Region Brüssel-Hauptstadt",
+    "ort": "Sint-Gillis",
+    "beschreibung": "Huwelijksakte",
+    "datum der urkunde": "06/03/1909"
+  }
+}

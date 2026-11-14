@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism of Charles Josephe Coppens (1774)''':\n\"State Archives of Belgium: AGATHA\"<br/>\nProject PRHENEG, id: PRHENEG_HENEGBAPT1_00032668<br/>\n[https://agatha.arch.be/nl/data/acts/PRHENEG_HENEGBAPT1_00032668 AGATHA Record] (accessed 6 May 2021)<br/>\nCharles Josephe Coppens baptism on 23 Jan 1774, child of Judo Coppens & Marie Catherine Dereyst, in Acren St Gereon.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Charles, child of Judo Coppens & Marie Catherine Dereyst, was baptised on 23 January 1774 in Acren St Gereon.<ref>\n'''Baptism of Charles Josephe Coppens (1774)''':\n\"State Archives of Belgium: AGATHA\"<br/>\nProject PRHENEG, id: PRHENEG_HENEGBAPT1_00032668<br/>\n[https://agatha.arch.be/nl/data/acts/PRHENEG_HENEGBAPT1_00032668 AGATHA Record] (accessed 6 May 2021)<br/>\nCharles Josephe Coppens baptism on 23 Jan 1774, child of Judo Coppens & Marie Catherine Dereyst, in Acren St Gereon.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism of Charles Josephe Coppens (1774)''': \"State Archives of Belgium: AGATHA\"<br/>Project PRHENEG, id: PRHENEG_HENEGBAPT1_00032668<br/>[https://agatha.arch.be/nl/data/acts/PRHENEG_HENEGBAPT1_00032668 AGATHA Record] (accessed 6 May 2021)<br/>Charles Josephe Coppens baptism on 23 Jan 1774, child of Judo Coppens & Marie Catherine Dereyst, in Acren St Gereon.",
+    "type": "source"
+  }
+}

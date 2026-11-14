@@ -1,0 +1,39 @@
+{
+  "sourceOfData": "agatha",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "name": "Alphonse Marie Louise Corneille Van Haelst"
+  },
+  "eventDate": {
+    "dateString": "6 Mar 1909"
+  },
+  "eventPlace": {
+    "placeString": "Sint-Gillis"
+  },
+  "birthDate": {
+    "dateString": "15 Oct 1874"
+  },
+  "birthPlace": {
+    "placeString": "Sint-Niklaas, Oost-Vlaanderen"
+  },
+  "residencePlace": {
+    "placeString": "Zwijndrecht, Vlaams Hoofd"
+  },
+  "occupation": "courtier",
+  "spouses": [
+    {
+      "name": {
+        "name": "Marie Rosine Dauwe"
+      },
+      "marriageDate": "06/03/1909",
+      "marriagePlace": "Sint-Gillis"
+    }
+  ],
+  "primaryPersonOptions": [
+    "Marie Rosine Dauwe (bride)",
+    "Alphonse Marie Louise Corneille Van Haelst (groom)"
+  ],
+  "project": "Civil status - Marriage certificates - Province of Flemish Brabant and Brussels-Capital Region",
+  "hasValidData": true
+}

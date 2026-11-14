@@ -277,12 +277,12 @@ class AgathaEdReader extends ExtractedDataReader {
   normalizeAge(ageString) {
     // Some languages use the same word for both a single and multiple time units (1 year and 2 years vs. 1 jaar en 2 jaar)
     if (ageString) {
-      let result = ageString.toLowerCase().replace(/"ans|jaar|jahre"/, "years");
-      result = result.replace(/"mois|maanden|monate"/, "months");
-      result = result.replace(/"jours|dagen|tage"/, "days");
-      result = result.replace(/"an|jahr"/, "year");
-      result = result.replace(/"maand|monat"/, "month");
-      result = result.replace(/"jour|dag|tag"/, "day");
+      let result = ageString.toLowerCase().replace(/ans|jaar|jahre/, "years");
+      result = result.replace(/mois|maanden|monate/, "months");
+      result = result.replace(/jours|dagen|tage/, "days");
+      result = result.replace(/an|jahr/, "year");
+      result = result.replace(/maand|monat/, "month");
+      result = result.replace(/jour|dag|tag/, "day");
       return result;
     }
   }
@@ -333,7 +333,7 @@ class AgathaEdReader extends ExtractedDataReader {
     if (this.ed && this.ed.metadata) {
       let date = this.findAnyField(this.ed.metadata, metadataFields.record_date);
       if (date) {
-        return this.makeDateObjFromDdmmyyyyDate(date, "/");
+        return this.makeDateObjFromDdmmyyyyDate(date, /[/-]+/);
       }
     }
   }
@@ -361,7 +361,7 @@ class AgathaEdReader extends ExtractedDataReader {
     if (primary) {
       let bd = this.findAnyField(primary, personFields.birthdate);
       if (bd) {
-        return this.makeDateObjFromDdmmyyyyDate(bd, "/");
+        return this.makeDateObjFromDdmmyyyyDate(bd, /[/-]+/);
       }
     }
   }
@@ -390,7 +390,7 @@ class AgathaEdReader extends ExtractedDataReader {
     if (primary) {
       let dd = this.findAnyField(primary, personFields.deathdate);
       if (dd) {
-        return this.makeDateObjFromDdmmyyyyDate(dd, "/");
+        return this.makeDateObjFromDdmmyyyyDate(dd, /[/-]+/);
       }
     }
   }

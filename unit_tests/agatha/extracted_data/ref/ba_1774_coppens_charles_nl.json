@@ -1,0 +1,41 @@
+{
+  "url": "https://agatha.arch.be/nl/data/acts/PRHENEG_HENEGBAPT1_00032668",
+  "success": true,
+  "isRecord": true,
+  "people": {
+    "dopeling": [
+      {
+        "naam en voornaam": "Charles Josephe Coppens",
+        "geboorteplaats": "Acren St Gereon",
+        "opmerkingen": "Né vers le matin"
+      }
+    ],
+    "vader van de dopeling": [
+      {
+        "naam en voornaam": "Judo Coppens"
+      }
+    ],
+    "moeder van de dopeling": [
+      {
+        "naam en voornaam": "Marie Catherine Dereyst"
+      }
+    ],
+    "peter": [
+      {
+        "naam en voornaam": "Jean-baptiste Coppens"
+      }
+    ],
+    "meter": [
+      {
+        "naam en voornaam": "Anne Marie Coppens"
+      }
+    ]
+  },
+  "metadata": {
+    "aktetype": "Doopakten",
+    "project": "https://agatha.arch.be/nl/data/projects/PRHENEG",
+    "plaats": "Acren St Gereon",
+    "beschrijving": "Acte de baptême",
+    "aktedatum": "23/01/1774"
+  }
+}

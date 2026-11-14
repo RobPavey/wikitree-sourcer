@@ -1,0 +1,61 @@
+{
+  "url": "https://agatha.arch.be/nl/data/acts/LIEDEK_00000655",
+  "success": true,
+  "isRecord": true,
+  "people": {
+    "kind": [
+      {
+        "naam en voornaam": "Emma Van Molle",
+        "geboorteplaats": "Liedekerke"
+      }
+    ],
+    "vader": [
+      {
+        "naam en voornaam": "Emmanuël Van Molle",
+        "geboorteplaats": "Liedekerke",
+        "leeftijd": "46 jaar",
+        "woonplaats": "Liedekerke",
+        "beroep": "Kaasverkoper"
+      }
+    ],
+    "moeder": [
+      {
+        "naam en voornaam": "Joanna Maria Devrindt",
+        "geboorteplaats": "Iddergem",
+        "leeftijd": "41 jaar",
+        "woonplaats": "Liedekerke",
+        "beroep": "Kantwerkster"
+      }
+    ],
+    "getuige": [
+      {
+        "naam en voornaam": "Jan Jozef Asselman",
+        "leeftijd": "58 jaar",
+        "woonplaats": "Liedekerke",
+        "beroep": "Slachter"
+      },
+      {
+        "naam en voornaam": "Victor Jozef Pollet",
+        "leeftijd": "62 jaar",
+        "woonplaats": "Liedekerke",
+        "beroep": "Hoefsmid"
+      }
+    ],
+    "aangever": [
+      {
+        "naam en voornaam": "Emmanuël Van Molle",
+        "leeftijd": "46 jaar",
+        "woonplaats": "Liedekerke",
+        "beroep": "Kaasverkoper",
+        "opmerkingen": "Vader"
+      }
+    ]
+  },
+  "metadata": {
+    "aktetype": "Geboorteakten",
+    "project": "https://agatha.arch.be/nl/data/projects/LIEDEK",
+    "plaats": "Liedekerke",
+    "beschrijving": "Geboorteakte",
+    "aktedatum": "13-04-1901"
+  }
+}

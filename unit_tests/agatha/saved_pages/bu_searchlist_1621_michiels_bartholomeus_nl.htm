@@ -1,0 +1,3229 @@
+<!DOCTYPE html>
+<html lang="nl"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<link rel="alternate" hreflang="fr" href="http://agatha.arch.be/fr/search/analyses/results/">
+<link rel="alternate" hreflang="nl" href="http://agatha.arch.be/nl/search/analyses/results/">
+<link rel="alternate" hreflang="en" href="http://agatha.arch.be/en/search/analyses/results/">
+<link rel="alternate" hreflang="de" href="http://agatha.arch.be/de/search/analyses/results/">
+<link rel="alternate" hreflang="x-default" href="http://agatha.arch.be/en/search/analyses/results/">
+<link rel="canonical" href="http://agatha.arch.be/nl/search/analyses/results/">
+
+<script type="text/javascript" async="" charset="utf-8" src="bu_searchlist_1621_michiels_bartholomeus_nl_files/recaptcha__nl_ewYY.js" crossorigin="anonymous" integrity="sha384-TyA8NK2S0NtKGwEM2T/+pmdG/Ca9T/qh+pxKL7mv9zjnpCYKzb71GXHZWf6UXGlt"></script><script async="" src="bu_searchlist_1621_michiels_bartholomeus_nl_files/matomo_ewYY.js"></script><script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['setSessionCookieTimeout', '86400']);  
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//bbbb.arch.be/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '27']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<title>Zoekresultaten – AGATHA</title>
+<script>
+	lang = 'DUT';
+</script>
+<!-- Styles -->
+<link href="bu_searchlist_1621_michiels_bartholomeus_nl_files/my_ewYY.css" rel="stylesheet">
+<link href="bu_searchlist_1621_michiels_bartholomeus_nl_files/jquery-ui.min_ewYY.css" rel="stylesheet">
+<link href="bu_searchlist_1621_michiels_bartholomeus_nl_files/font-awesome.min_ewYY.css" rel="stylesheet">
+<link href="bu_searchlist_1621_michiels_bartholomeus_nl_files/bootstrap-select-1.14.0-beta3.min_ewYY.css" rel="stylesheet">
+<link href="bu_searchlist_1621_michiels_bartholomeus_nl_files/bootstrap-icons-1.9.1_ewYY.css" rel="stylesheet">
+<link href="bu_searchlist_1621_michiels_bartholomeus_nl_files/style_002_ewYY.css" rel="stylesheet">
+<link href="bu_searchlist_1621_michiels_bartholomeus_nl_files/style_ewYY.css" rel="stylesheet">
+<!-- JS -->
+<script src="bu_searchlist_1621_michiels_bartholomeus_nl_files/constant_002_ewYY.js"></script>
+<script src="bu_searchlist_1621_michiels_bartholomeus_nl_files/constant_ewYY.js"></script>
+<script src="bu_searchlist_1621_michiels_bartholomeus_nl_files/jquery-3.7.1.min_ewYY.js" type="text/javascript"></script>
+<script src="bu_searchlist_1621_michiels_bartholomeus_nl_files/jquery-ui-1.12.1.min_ewYY.js" type="text/javascript"></script>
+<script src="bu_searchlist_1621_michiels_bartholomeus_nl_files/popper-2.11.8.min_ewYY.js"></script>
+<script src="bu_searchlist_1621_michiels_bartholomeus_nl_files/bootstrap.min_ewYY.js"></script>
+<script src="bu_searchlist_1621_michiels_bartholomeus_nl_files/AGRAR_utilities_ewYY.js"></script>
+<script src="bu_searchlist_1621_michiels_bartholomeus_nl_files/bootstrap-select-1.14.0-beta3.min_ewYY.js"></script>
+<script src="bu_searchlist_1621_michiels_bartholomeus_nl_files/bootstrap-select-defaults-nl_NL-1.14.0-beta3.min_ewYY.js"></script>
+
+<script src="bu_searchlist_1621_michiels_bartholomeus_nl_files/api_ewYY.js"></script>
+<script>
+    function checkUsername()
+    {				
+        var regex = new RegExp(/^[a-zA-Z0-9_-]{4,}$/), submit;
+
+        var field = $('#username_signup')[0];
+        var username = $('#username_signup').val();
+        
+        if(!regex.test(username))
+        {
+            // $('#errorUsernameMsg').removeAttr('hidden');
+            field.setCustomValidity(' ');
+            submit = false;
+            
+            if(username.length < 4)
+                $('#usernameInvalidDetail')[0].innerHTML = "- "+USERNAME_SHORT_LABEL+"<br/>";
+            else 
+                $('#usernameInvalidDetail')[0].innerHTML = "";
+            
+            var msg = getErrorFromValidity(field.validity);
+
+            if(msg == PATTERN_MISMATCH_LABEL)
+            {
+                var pattern = new RegExp(field.pattern.replace(/\{(\d+,\d*)\}/, ''));
+                var nbCharInvalid = 0;
+                for(var ind = 0; ind < field.value.length; ind++)
+                {
+                    if(!(pattern.test(field.value[ind])))
+                    {
+                        if(nbCharInvalid == 0)
+                            msg += " :";
+                        msg += " " + field.value[ind];
+                        nbCharInvalid++;
+                    }
+                }
+                
+                if(nbCharInvalid > 0)
+                    $('#usernameInvalidDetail')[0].innerHTML += "- "+msg;
+            }
+            
+            field.classList.add('is-invalid');
+            field.classList.remove('is-valid');
+        }
+        else
+        {
+            // $('#errorUsernameMsg').attr('hidden', '');
+            field.setCustomValidity('');
+            submit = true;
+            
+            field.classList.add('is-valid');
+            field.classList.remove('is-invalid');
+        }
+        
+        return submit;
+    }
+
+    function checkMail(emailId, errorId) 
+    {		
+        let submit;
+        
+        if($('#'+emailId).length == 0 || $('#'+emailId)[0].validationMessage != '')
+        {
+            $('#'+errorId).find('strong')[0].innerHTML = $('#'+emailId)[0].validationMessage;
+            submit = false;
+        }
+        else
+        {
+            submit = true;
+        }
+        
+        return submit
+    }
+
+    function checkPw()
+    {
+        return checkMainPw() && checkConfirmPw();
+    }
+
+    function checkMainPw()
+    {
+        // min. length 0 so the regex fail only if the input doesn't meet the requirements
+        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&,;.:\/"#'(){}\[\]+)_~=-])[A-Za-z\d@$!%*?&,;.:\/"#'(){}\[\]+°_~=-]{0,}$/, submit = "";
+        
+        if($('#pw_signup').val().length < 8)
+            submit = "- "+PW_TOO_SHORT_LABEL+"<br/>";
+        
+        if(!regex.test($('#pw_signup').val()))
+            submit += "- "+PW_MUST_CONTAIN_LABEL;
+        
+        if(submit != "")
+        {
+            $('#passwordInvalidDetail')[0].innerHTML = submit;
+            $('#pw_signup')[0].setCustomValidity(' ');
+
+            $('#pw_signup').addClass('is-invalid');
+            $('#pw_signup').removeClass('is-valid');
+            
+            $('#pw_help').addClass('text-hide');
+
+            return false;
+        }
+        else
+        {
+            $('#pw_signup')[0].setCustomValidity('');
+            
+            $('#pw_signup').removeClass('is-invalid');
+            $('#pw_signup').addClass('is-valid');
+            
+            $('#pw_help').removeClass('text-hide');
+
+            return true;
+        }
+        
+    }
+
+    function checkConfirmPw()
+    {
+        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&,;.:\/"#'(){}\[\]+)_~=-])[A-Za-z\d@$!%*?&,;.:\/"#'(){}\[\]+°_~=-]{8,}$/, confirmSubmit = "";
+        
+        if($('#pw_signup').val() != $('#confirm_pw').val())
+            confirmSubmit = "- "+PW_NOT_THE_SAME_LABEL;
+        
+        if(confirmSubmit != "")
+        {
+            $('#confirmPasswordInvalidDetail')[0].innerHTML = confirmSubmit;
+            $('#confirm_pw')[0].setCustomValidity(' ');
+
+            $('#confirm_pw').addClass('is-invalid');
+            $('#confirm_pw').removeClass('is-valid');
+
+            return false;
+        }
+        else
+        {
+            $('#confirm_pw')[0].setCustomValidity('');
+            
+            $('#confirm_pw').removeClass('is-invalid');
+            $('#confirm_pw').addClass('is-valid');
+            
+            return true;
+        }
+    }
+
+    function checkForm(indCaptcha, errorCaptchaId)
+    {
+        var submitUsername = checkUsername(),
+            submitPw = checkPw(),
+            submitMail = checkMail('email', 'errorMailMsg'),
+            submitCaptcha = checkCaptcha(indCaptcha, errorCaptchaId);
+                    
+        return submitUsername && submitPw && submitMail && submitCaptcha;
+    }
+
+    function checkCaptcha(ind, errorId) 
+    {
+        if(grecaptcha.getResponse(ind) == '')
+        {
+            $('#'+errorId)[0].setCustomValidity(' ');
+            return false;
+        }
+        else
+        {
+            $('#'+errorId)[0].setCustomValidity('');
+            return true;
+        }
+    }
+
+    function notARobot()
+    {
+        $('#captcha')[0].setCustomValidity('');
+    }
+
+    function NotARobotExpired()
+    {
+        $('#captcha')[0].setCustomValidity(' ');
+    }
+
+    function notARobotPw()
+    {
+        $('#captchaPwForgotten')[0].setCustomValidity('');
+    }
+
+    function NotARobotExpiredPw()
+    {
+        $('#captchaPwForgotten')[0].setCustomValidity(' ');
+    }
+
+    function setLoading(ele, activate)
+    {
+        if(activate)
+        {
+            ele.setAttribute('data-init', ele.innerHTML);
+            
+            ele.setAttribute('disabled', true);
+            ele.innerHTML = "";
+            
+            let spinner = document.createElement('span');
+            spinner.classList.add('spinner-border', 'spinner-border-sm');
+            spinner.setAttribute('role', 'status');
+            spinner.setAttribute('aria-hidden', 'true');
+            
+            ele.append(spinner);				
+            ele.innerHTML += " "+SAVING_LABEL+" "+COULD_TAKE_FEW_MOMENTS_LABEL;
+        }
+        else
+        {				
+            ele.removeAttribute('disabled');
+            ele.innerHTML = ele.getAttribute('data-init');
+        }
+    }
+
+    function checkTextarea(ele)
+    {
+        let input;
+        if(ele)
+            input = ele;
+        else
+            input = $('#MESSAGE_TXT')[0];
+        
+        $(input).parent('div').find('.nbChar').html(input.value.length);
+        
+        var regExp = RegExp(input.getAttribute("pattern"), "s");
+        var mayActivate = true;        
+        
+        if(regExp.test(input.value))
+        {
+            input.setCustomValidity("");
+
+            // input.classList.add('is-valid');
+            // input.classList.remove('is-invalid');
+        }
+        else
+        {
+            mayActivate = false;
+            if(input.value.length < 5)
+                input.setCustomValidity(TOO_SHORT_MIN_5_LABEL);
+            else if(input.value.length > 1500)
+                input.setCustomValidity(MESSAGE_TOO_LONG_LABEL);
+            else
+            {
+                input.setCustomValidity(PATTERN_MISMATCH_LABEL);
+                
+                var msg = "";
+                var regExp2 = RegExp(input.getAttribute("pattern").replace(/\{(\d+,\d+)\}/, ''));
+                var nbCharInvalid = 0;
+                for(var ind = 0; ind < input.value.length; ind++)
+                {
+                    if(!(regExp2.test(input.value[ind])))
+                    {
+                        msg += input.value[ind] + " ";
+                        nbCharInvalid++;
+                    }
+                }
+            }
+
+            // input.classList.add('is-invalid');
+            // input.classList.remove('is-valid');
+
+            $('#errorTextarea').html(input.validationMessage + (msg ? ' : ' + msg : ''));
+        }
+
+        return mayActivate;
+    }
+
+    $(function() {
+        $('#FORM_SIGNUP').submit(function() {
+            return false;
+        });
+
+        // Fix for the 'opening modal from another modal'
+        $('.modal').on('hidden.bs.modal', function () {
+            // If there are any visible
+            if($(".modal:visible").length > 0) {
+                $('body').addClass('modal-open');
+            }
+        });
+        
+        $('.togglePassword').on('mouseup', function() {
+            $(this).find('span').toggleClass('bi-eye-fill bi-eye-slash');
+            var inp = '#'+($(this).attr('for'));
+            $(inp).attr('type') == 'text' ? $(inp).attr('type', 'password') : $(inp).attr('type', 'text');
+        });
+        
+        // $('#FORM_SIGNUP').find('input[name!=APP_NAME]').val('');
+        
+        $('#modal_signup, #modal_pw_forgotten, #reservationModal, #reproductionModal, #contactModal').on('hidden.bs.modal', function() {
+            for(var i = 0; i < $('.g-recaptcha').length; i++)
+            {
+                try {
+                    if(grecaptcha.getResponse(i) != "")
+                        grecaptcha.reset(i);
+                }
+                catch(e){}
+            }
+        });		
+            
+        $('#modal_signup, #modal_pw_forgotten, #reservationModal, #reproductionModal, #contactModal').on('show.bs.modal', function() {
+            $(this).find('form').removeClass('was-validated');
+            $(this).find('form').find('input').removeClass('is-valid is-invalid');
+            $(this).find('form')[0].reset();
+			
+			let nbChar = $(this).find('.nbChar');
+			if(nbChar.length > 0)
+				nbChar[0].innerHTML = '0';
+        });
+
+        $('#modal_signup, #modal_pw_forgotten, #modal_login, #reservationModal, #reproductionModal, #contactModal').on('shown.bs.modal', function() {
+            $(this).find('[autofocus]').focus();
+        });
+        
+        $('#modal_signup').on('keydown', function(e) {
+            if(e.key == 'Enter')
+                e.preventDefault();
+        });	
+
+        $('#modal_login').on('keydown', function(e) {
+            if(e.key == 'Enter')
+                $('#confirmButton_login').click();
+        });
+
+        $('#pw_signup').on('input', checkMainPw);
+        $('#confirm_pw').on('input', checkConfirmPw);
+        $('#username_signup').on('input', checkUsername);
+        
+        // Registration
+        $('#confirmButton_signup').on('click', function() {		
+            var submit = checkForm(0, 'captcha');
+            $('#FORM_SIGNUP').addClass('was-validated');
+                
+            let _this = this;
+            _this.blur();   
+            
+            if(submit)
+            {
+                setLoading(_this, true);
+                
+                $('#cancelButton_signup').hide();
+                
+                var datas = $('#FORM_SIGNUP').serializeArray();
+                
+                $.ajax({
+                    url: '/nl/signup.php',
+                    type: 'POST',
+                    data: {datas: datas},
+                    success: function(result) {
+                        var resJSON = JSON.parse(result);
+                                                    
+                        grecaptcha.reset(0);	
+                            
+                        if(resJSON['registration'] == true && !resJSON['errors']['registrationMsg'])
+                        {
+                            $('#modal_signup').modal('hide');
+                            $('#msgResponse')[0].innerHTML = resJSON['msgResponse'];
+                            $('#modal_response').modal('show');
+                            
+                            $('#FORM_SIGNUP').removeClass('was-validated');
+                            $('#FORM_SIGNUP').find('input').removeClass('is-valid is-invalid');
+                            $('#FORM_SIGNUP')[0].reset();
+                        }
+                        else
+                        {									
+                            if(resJSON['errors']['username'] === true)
+                                $('#username_signup')[0].setCustomValidity('');
+                            else
+                            {
+                                $('#username_signup')[0].setCustomValidity(' ');
+                                if(resJSON['errors']['username'])
+                                    $('#usernameInvalidDetail')[0].innerHTML = "- "+resJSON['errors']['username'];
+                            }
+                            
+                            if(resJSON['errors']['pw']['DIFFERENT'] && resJSON['errors']['pw']['SHORT'] && resJSON['errors']['pw']['PATTERN'])
+                            {
+                                $('#pw_signup')[0].setCustomValidity('');
+                                $('#confirm_pw')[0].setCustomValidity('');
+                            }
+                            else
+                            {
+                                if(resJSON['errors']['pw']['DIFFERENT'] == false)
+                                {
+                                    $('#confirm_pw')[0].setCustomValidity(' ');
+                                    $('#confirmPasswordInvalidDetail')[0].innerHTML = "- "+PW_NOT_THE_SAME_LABEL;
+                                }
+                                
+                                $('#passwordInvalidDetail')[0].innerHTML = "";
+                                
+                                if(resJSON['errors']['pw']['SHORT'] == false)
+                                {
+                                    $('#pw_signup')[0].setCustomValidity(' ');
+                                    $('#passwordInvalidDetail')[0].innerHTML = "- "+PW_TOO_SHORT_LABEL;
+                                }
+                                
+                                if(resJSON['errors']['pw']['PATTERN'] == false)
+                                {
+                                    $('#pw_signup')[0].setCustomValidity(' ');
+                                    $('#passwordInvalidDetail')[0].innerHTML += "- "+PW_MUST_CONTAIN_LABEL;
+                                }
+                                
+                                submit = false;
+                            }
+                            
+                            if(resJSON['errors']['email'] === true)
+                                $('#email')[0].setCustomValidity('');
+                            else
+                            {
+                                $('#email')[0].setCustomValidity(' ');
+                                if(resJSON['errors']['email'])
+                                    $('#emailInvalidDetail')[0].innerHTML = "- "+resJSON['errors']['email'];
+                            }
+                            
+                            if(resJSON['errors']['captcha'] == true)
+                                $('#captcha')[0].setCustomValidity('');
+                            else
+                            {
+                                $('#captcha')[0].setCustomValidity('');
+                                $('#errorCaptchaMsg').find('strong')[0].innerHTML = resJSON['errors']['captcha'];
+                            }
+                            
+                            if(resJSON['errors']['registrationMsg'])
+                            {
+                                
+                                $('#modal_signup').modal('hide');
+                                $('#msgResponse')[0].innerHTML = resJSON['errors']['registrationMsg'];
+                                $('#modal_response').modal('show');
+                                
+                                $('#FORM_SIGNUP')[0].reset();
+                            }
+                        }
+                        
+                        setLoading(_this, false);
+                        $('#cancelButton_signup').show();
+                    }
+                });
+            }
+        });
+        
+        
+        // Reset password form
+        $('#pwForgottenForm input').on('input', function() {
+            checkMail('emailPwForgotten', 'errorEmailPwForgotten');
+            submitCaptcha = checkCaptcha(1, 'captchaPwForgotten');
+        });
+        
+        $('#pw_forgotten_btn').on('click', function() {
+            $('#pwForgottenForm').addClass('was-validated');
+            var submitMail = checkMail('emailPwForgotten', 'errorEmailPwForgotten'), submitCaptcha = checkCaptcha(1, 'captchaPwForgotten');
+
+            if(submitMail && submitCaptcha)
+            {
+                let _this = this;
+                setLoading(_this, true);
+                _this.blur();
+                
+                var email = $('#emailPwForgotten').val(), token = grecaptcha.getResponse(1);
+                
+                $.ajax({
+                    url: '/nl/pw_forgotten.php',
+                    type: 'POST',
+                    data: {email: email, token: token, app: $('input[name="app"]').val()},
+                    success: function(result) {
+                        setLoading(_this, false);
+
+                        var resJSON = JSON.parse(result);
+                                                        
+                        grecaptcha.reset(1);
+                            
+                        if(resJSON['success'] == true && resJSON['errors']['email'] == true)
+                        {
+                            $('#modal_pw_forgotten').modal('hide');
+                            $('#msgResponsePwForgotten')[0].innerHTML = resJSON['msgResponse'];
+                            $('#modal_response_pw_forgotten').modal('show');
+                            $('#emailPwForgotten').val("");
+                        }
+                        else
+                        {									
+                            if(resJSON['errors']['email'] == true)
+                            {
+                                $('#emailPwForgotten')[0].setCustomValidity('');
+                            }
+                            else
+                            {
+                                $('#emailPwForgotten')[0].setCustomValidity(' ');
+                                $('#errorEmailPwForgotten').find('strong')[0].innerHTML = resJSON['errors']['email'];
+                            }
+                            
+                            if(resJSON['errors']['captcha'] == true)
+                                $('#captchaPwForgotten')[0].setCustomValidity('');
+                            else
+                            {
+                                $('#captchaPwForgotten')[0].setCustomValidity(' ');
+                                $('#errorCaptchaPwForgotten').find('strong')[0].innerHTML = resJSON['errors']['captcha'];
+                            }
+                        }
+                    }
+                });
+            }
+        });
+        ///////
+        
+        
+        // Login
+        $('#confirmButton_login').on('click', function() {
+            let _this = this;
+            _this.blur();
+            
+            var d = $('#form_login').serializeArray();
+            
+            if(d[0].value != '' && d[1].value != '')
+            {
+                setLoading(_this, true);
+                
+                $('#cancelButton_login').hide();
+
+                $.ajax({
+                    url: LIBRARY_PATH+'/login.php',
+                    type: 'POST',
+                    data: {username: d[0].value, password: d[1].value, app: d[2].value},
+                    success: function(result) {
+                        if(result == '1')
+                        {
+                            window.location.href = window.location.href;
+                            location.reload(true);
+                            $('#errorLogin').parent('div').attr('hidden', '');
+                        }	
+                        else
+                        {
+                            setLoading(_this, false);
+                            $('#cancelButton_login').show();
+                            $('#errorLogin').html(result);
+                            $('#errorLogin').parent('div').removeAttr('hidden');
+                        }	
+                    }
+                });
+            }
+        });
+        //////
+    });
+</script>
+<script type="text/javascript">
+	$(function() {	
+			});
+</script>
+<link href="bu_searchlist_1621_michiels_bartholomeus_nl_files/cookieconsent_ewYY.css" rel="stylesheet">
+<script src="bu_searchlist_1621_michiels_bartholomeus_nl_files/cookieconsent_ewYY.js" type="text/javascript"></script>
+<script>
+   $(function() {
+		window.cookieconsent.initialise({
+			type: 'info',
+			position: 'bottom-right',
+			theme: 'classic',
+			content: {
+				message: "Deze website gebruikt cookies voor een optimale ervaring.",
+				dismiss: "Ok",
+				link: "Lees meer",
+				href: "#"
+			},
+			palette:{
+				popup: {background: "rgb(213, 235, 241)", text: "rgb(0,0,0)", link: "#00f"},
+				button: {background: "rgb(14, 110, 111)"},
+			},
+			revokable: false,
+			onPopupOpen: function() {				
+				this.element.classList.add('font-family');
+				this.element.classList.add('text-center');
+			
+				$('.cc-link').on('click', function(e) {
+					e.preventDefault();
+					
+					$('#modal_cookieInfo').modal('show');
+				});
+			},
+			law: {
+				regionalLaw: false,
+			},
+			location: true,
+		});
+	});
+</script>        <script src="bu_searchlist_1621_michiels_bartholomeus_nl_files/pagination-2.6.0_ewYY.js"></script>
+        <link href="bu_searchlist_1621_michiels_bartholomeus_nl_files/pagination-2.6.0_ewYY.css" rel="stylesheet">
+	<style></style></head>
+	<body style="overflow: hidden; padding-right: 17px;" class="modal-open"><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-info cc-theme-classic cc-bottom cc-right cc-color-override-1094592441  font-family text-center" style=""><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">Deze website gebruikt cookies voor een optimale ervaring. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="#" rel="noopener noreferrer nofollow" target="_blank">Lees meer</a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Ok</a></div><!--googleon: all--></div>
+		<!-- BACK TO TOP -->
+<button type="button" class="btn btn-primary btn-floating" id="btn-back-to-top" aria-label="Terug naar het begin van de pagina">
+	<i class="bi bi-arrow-up"></i>
+</button>
+<!-- HEADER MENU -->
+<header id="headerMenu" class="d-print-none mb-3">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light p-3 p-lg-4 border-bottom align-items-lg-start justify-content-center justify-content-md-between" id="navbarMenu">
+		<div class="container-fluid">
+		<div class="col-12 col-md-2 col-lg-3 col-xl-3  text-center text-md-start d-none d-sm-block">
+			<a class="navbar-brand me-0" href="http://www.arch.be/" target="_blank">
+				<img src="bu_searchlist_1621_michiels_bartholomeus_nl_files/logo_DUT_ewYY.png" class="d-inline-block d-md-none align-top" height="60" alt="Rijksarchief in België">
+				<img src="bu_searchlist_1621_michiels_bartholomeus_nl_files/logo_DUT_ewYY.png" class="d-none d-md-inline-block align-top img-fluid" height="79" alt="Rijksarchief in België">
+			</a>
+		</div>
+		<div class="col-12 col-md-8 col-lg-auto col-xl-6 mt-3 mt-lg-0 text-center">
+			<h1 class="mb-2 ms-auto me-auto AGRAR_ff_fira_condensed fw-semibold text-primary"><a class="no_underline" href="https://agatha.arch.be/nl/">AGATHA</a></h1>
+			<h2 class="mb-4 h5 fw-light grey-dark AGRAR_ff_fira_condensed">De online zoekomgeving van het Rijksarchief&nbsp;in&nbsp;België</h2>
+			<div class="d-none d-lg-flex" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto me-auto  mb-0">
+					<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/nl/">Onthaal</a></li>
+					<li class="nav-item dropdown active px-2" id="navbar">
+						<a class="nav-link text-uppercase btn-underline dropdown-toggle" href="https://agatha.arch.be/nl/search/" role="button" aria-expanded="false">
+							Zoeken						</a>
+						<ul class="dropdown-menu rounded-0">
+						  <li><a class="dropdown-item py-2" href="https://agatha.arch.be/nl/search/genealogie/">Genealogische bronnen</a></li>
+						  <li><a class="dropdown-item py-2" href="https://agatha.arch.be/nl/search/analyses/">Analyses van akten</a></li>
+						  <li><a class="dropdown-item py-2" href="https://agatha.arch.be/nl/search/ead/">Archiefinventarissen</a></li>
+						</ul>
+                    </li>
+					<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/nl/help/">Hulp</a></li>
+					<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/nl/contact/">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<button class="navbar-toggler mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent_smalldevices" aria-controls="navbarSupportedContent_smalldevices" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+		<div class="col-2 col-lg-3 col-xl-3 collapse navbar-collapse align-self-start" id="navbarLogin">
+			<ul class="navbar-nav ms-auto mt-2">
+				<li class="nav-item dropdown"> 
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<span class="me-1">Nederlands</span></a>
+					<div class="dropdown-menu">
+						<a href="#" hreflang="fr" class="dropdown-item" onclick='event.preventDefault();changeLanguage("FRE", "analyses", "", false)'>Français</a>
+						<a href="#" hreflang="nl" class="dropdown-item" onclick='event.preventDefault();changeLanguage("DUT", "analyses", "", false)'>Nederlands</a>
+						<a href="#" hreflang="de" class="dropdown-item" onclick='event.preventDefault();changeLanguage("GER", "analyses", "", false)'>Deutsch</a>
+						<a href="#" hreflang="en" class="dropdown-item" onclick='event.preventDefault();changeLanguage("ENG", "analyses", "", false)'>English</a>
+					</div>
+				</li>
+								<li class="dropdown nav-item ms-2"> 
+					<a href="#modal_login" class="nav-link" data-bs-toggle="modal" role="button" aria-haspopup="true" aria-expanded="false">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle me-2" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path></svg>
+						Inloggen					</a>
+				</li>
+							</ul>
+		</div>
+	</div>
+	</nav>
+	
+<!-- MENU SMALL DEVICES / HIDE ON DESKTOP -->
+	<nav class="d-block d-lg-none navbar navbar-expand-lg navbar-light py-0  bg-light"> 
+		<div class="collapse navbar-collapse py-3" id="navbarSupportedContent_smalldevices">
+			<ul class="navbar-nav ms-auto me-auto">
+				<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/nl/">Onthaal</a></li>
+				<li class="nav-item active px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/nl/search/">Zoeken</a></li>
+				<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/nl/help/">Hulp</a></li>
+				<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/nl/contact/">Contact</a></li>
+			
+				<div class="border-top pt-2 mt-2">
+										<li class="dropdown nav-item ms-2"> 
+						<a href="#modal_login" class="nav-link" data-bs-toggle="modal" role="button" aria-haspopup="true" aria-expanded="false">
+							Inloggen						</a>
+					</li>
+										
+					<li class="nav-item dropdown ms-2">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLanguage" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Nederlands						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownLanguage">
+							<a href="#" hreflang="fr" class="dropdown-item " onclick='event.preventDefault();changeLanguage("FRE", "analyses", "", false)'>Français</a>
+							<a href="#" hreflang="nl" class="dropdown-item d-none" onclick='event.preventDefault();changeLanguage("DUT", "analyses", "", false)'>Nederlands</a>
+							<a href="#" hreflang="de" class="dropdown-item " onclick='event.preventDefault();changeLanguage("GER", "analyses", "", false)'>Deutsch</a>
+							<a href="#" hreflang="en" class="dropdown-item " onclick='event.preventDefault();changeLanguage("ENG", "analyses", "", false)'>English</a>
+						</div>
+					</li>
+				</div>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+
+<!-- HEADER FOR PRINT-->
+<header class="d-none d-print-block mb-3">
+	<nav class="navbar border-bottom">
+		<div class="container-fluid justify-content-between align-items-center">
+            <div class="col-3 text-start align-items-center">
+                <a class="navbar-brand me-0" href="http://www.arch.be/" target="_blank">
+                    <img src="bu_searchlist_1621_michiels_bartholomeus_nl_files/logo_DUT_ewYY.png" class="d-inline-block" height="60" alt="Rijksarchief in België">
+                </a>
+            </div>
+            <div class="col-9 text-start align-items-center">
+                <h1 class="mb-2 ms-auto me-auto AGRAR_ff_fira_condensed fw-semibold text-primary">AGATHA</h1>
+                <h2 class="mb-4 h5 fw-light text-secondary AGRAR_ff_fira_condensed">De online zoekomgeving van het Rijksarchief&nbsp;in&nbsp;België</h2>
+            </div>
+        </div>
+	</nav>
+</header>
+
+<!-- Modal signup -->
+<div id="modal_signup" data-backdrop="static" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalSignup" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<form id="FORM_SIGNUP" class="needs-validation" novalidate="">
+				<div class="modal-header">
+					<h1 class="modal-title h5" id="modalSignup">
+						Registreer					</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col">
+							<label class="form-label" for="email">
+								<strong>
+									Mailadres								</strong>
+							</label>
+							<input id="email" name="email" type="email" class="form-control" autofocus="" autocomplete="off" oninput="checkMail('email', 'errorMailMsg')" required="">
+							<div class="invalid-feedback" id="errorMailMsg">
+								<strong></strong><br>
+								<span id="emailInvalidDetail"></span>
+							</div>
+							<div class="alert alert-danger" id="errorRegistrationMsg" hidden="">
+								<strong>
+									Ongeldige gebruikersnaam								</strong>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="username_signup">
+								<strong>
+									Gebruikersnaam								</strong>
+							</label>
+							<input id="username_signup" name="username_signup" type="text" class="form-control" pattern="^[a-zA-Z0-9_\-]{4,}$" autocomplete="off" required="">
+							<div class="invalid-feedback" id="errorUsernameMsg">
+								<strong>
+									Ongeldige gebruikersnaam								</strong><br>
+								<span id="usernameInvalidDetail"></span>
+							</div>
+							<small id="username_help" class="form-text text-muted text-justify">
+								Uw gebruikersnaam moet tenminste 4 letters of cijfers bevatten (geen spaties, accenten of speciale tekens).							</small>
+							<input id="app" name="app" type="hidden" value="/nl/search/analyses">
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="pw_signup">
+								<strong>
+									Wachtwoord								</strong>
+							</label>
+							<div class="input-group">
+								<input class="form-control" type="password" id="pw_signup" name="pw_signup" required="">
+								<button class="btn btn-outline-secondary togglePassword" type="button" for="pw_signup" tabindex="-1">
+									<span class="bi bi-eye-slash" aria-hidden="true"></span>
+								</button>
+							</div>
+							<div class="invalid-feedback" id="errorPwMsg">
+								<strong>
+									Ongeldig wachtwoord								</strong><br>
+								<span id="passwordInvalidDetail"></span>
+							</div>
+
+							<small id="pw_help" class="form-text text-muted text-justify">
+								Uw wachtwoord moet tenminste 8 karakters bevatten: een kleine letter, een hoofdletter, een cijfer en een speciaal teken.							</small>
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="confirm_pw">
+								<strong>
+									Wachtwoord bevestigen								</strong>
+							</label>
+							<div class="input-group">
+								<input class="form-control" type="password" id="confirm_pw" name="confirm_pw" required="">
+								<button class="btn btn-outline-secondary togglePassword" type="button" for="confirm_pw" tabindex="-1">
+									<span class="bi bi-eye-slash" aria-hidden="true"></span>
+								</button>
+							</div>
+							<div class="invalid-feedback" id="errorConfirmPwMsg">
+								<strong>
+									Ongeldig wachtwoord								</strong><br>
+								<span id="confirmPasswordInvalidDetail"></span>
+							</div>
+
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<div class="g-recaptcha" data-callback="notARobot" data-expired-callback="NotARobotExpired" data-sitekey="6LeTYa4iAAAAAAJ9inrEoJP8ZP3CluXV2MqaJZSU"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-bfynmyr9opdi" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="bu_searchlist_1621_michiels_bartholomeus_nl_files/anchor_ewYY.htm"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+							<input id="captcha" name="captcha" type="text" hidden="" aria-label="captcha">
+							<div class="invalid-feedback" id="errorCaptchaMsg">
+								<strong>
+									Gelieve de captcha in te vullen								</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button id="confirmButton_signup" class="btn btn-primary form-control col" type="button">
+						Registreer					</button>
+					<button id="cancelButton_signup" data-bs-dismiss="modal" class="btn btn-outline-secondary form-control col" type="button">
+						Annuleren					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Modal response signup -->
+<div class="modal fade" id="modal_response" tabindex="-1" role="dialog" aria-labelledby="modalResponse" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title h5" id="modalResponse">
+					Registreer				</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body test-justify">
+				<span id="msgResponse"></span>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary form-control col" data-bs-dismiss="modal">
+					Sluiten				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal password forgotten -->
+<div class="modal fade" id="modal_pw_forgotten" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalPwForgotten" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title h5" id="modalPwForgotten">
+					Wachtwoord vergeten?				</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<form id="pwForgottenForm" class="needs-validation" novalidate="">
+				<div class="modal-body">
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="emailPwForgotten">
+								<strong>
+									Mailadres								</strong>
+							</label>
+							<div class="input-group mb-3">
+								<input id="emailPwForgotten" name="emailPwForgotten" type="email" class="form-control" autofocus="" autocomplete="off" required="">
+								<button id="pw_forgotten_btn" class="btn btn-primary" type="button">
+									Verzenden								</button>
+                                <div class="invalid-feedback" id="errorEmailPwForgotten">
+                                    <strong>
+                                        Ongeldig mailadres                                    </strong>
+                                </div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<div class="g-recaptcha" data-callback="notARobotPw" data-expired-callback="NotARobotExpiredPw" data-sitekey="6LeTYa4iAAAAAAJ9inrEoJP8ZP3CluXV2MqaJZSU"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-6eatjdfpx6yl" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="bu_searchlist_1621_michiels_bartholomeus_nl_files/anchor_002_ewYY.htm"></iframe></div><textarea id="g-recaptcha-response-1" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+							<input id="captchaPwForgotten" name="captchaPwForgotten" type="text" hidden="" aria-label="captcha">
+							<div class="invalid-feedback" id="errorCaptchaPwForgotten">
+								<strong>
+									Gelieve de captcha in te vullen								</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Modal response pw forgotten -->
+<div class="modal fade" id="modal_response_pw_forgotten" tabindex="-1" role="dialog" aria-labelledby="modalResponsePwForgotten" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title h5" id="modalResponsePwForgotten">
+					Wachtwoord vergeten?				</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body text-justify">
+				<span id="msgResponsePwForgotten"></span>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary form-control col" data-bs-dismiss="modal">
+					Sluiten				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Modal log in -->
+<div class="modal fade" data-backdrop="static" id="modal_login" tabindex="-1" role="dialog" aria-labelledby="modalLogin" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<form id="form_login">
+				<div class="modal-header">
+					<h1 class="modal-title h5" id="modalLogin">
+						Inloggen					</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="alert alert-warning d-flex align-items-center" role="alert">
+						<strong><i class="bi bi-exclamation-triangle-fill"></i>
+							Opgelet : Indien je reeds over een account op <i>Search</i> beschikt, is deze ook voor <i>Agatha</i> geldig.						</strong>
+					</div>
+					<div class="alert alert-danger text-center" role="alert" hidden="">
+						<span id="errorLogin"></span>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="username">
+								<strong>
+									Gebruikersnaam of mailadres								</strong>
+							</label>
+							<input autofocus="" type="text" class="form-control" id="username" name="username">
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="password">
+								<strong>
+									Wachtwoord								</strong>
+							</label>
+							<div class="input-group">
+								<input class="form-control" type="password" id="password" name="password">
+								<button class="btn btn-outline-secondary togglePassword" type="button" for="password" tabindex="-1">
+									<span class="bi bi-eye-slash" aria-hidden="true"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<input type="hidden" name="appName" value="/nl/search/analyses">
+					<div class="row mt-3">
+						<div class="col-12">
+							<a id="PASSWORD_FORGOTTEN_A" href="#modal_pw_forgotten" data-bs-toggle="modal" data-bs-dismiss="modal">
+								Wachtwoord vergeten?							</a>
+						</div>
+						<div class="col-12">
+							<a id="SIGNUP_A" href="#modal_signup" data-bs-toggle="modal" data-bs-dismiss="modal">
+								Registreer							</a>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button id="confirmButton_login" class="btn btn-primary form-control col" type="button">
+						Inloggen					</button>
+					<button id="cancelButton_login" data-bs-dismiss="modal" class="btn btn-outline-secondary form-control col" type="button">
+						Annuleren					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Modal display any message -->
+<div class="modal fade" id="modal_showMsg" tabindex="-1" role="dialog" aria-labelledby="generalMsg" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<span id="generalMsg"></span>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary form-control col" data-bs-dismiss="modal">
+					Sluiten				</button>
+			</div>
+		</div>
+	</div>
+</div>		<div class="container-fluid">
+			<div class="row mt-4">
+				<div class="col">
+					<div class="d-grid gap-2 col-12 col-xl-10 col-xxl-8">
+						<form id="FORM_BACK_MODIFY_SEARCH" action="/nl/search/analyses/" method="post"><input type="hidden" name="WHICH_TAB" value="PERS"><input type="hidden" name="NAME" value="Michiels"><input type="hidden" name="ACTTYPE" value="5"><input type="hidden" name="PROJECT_ID" value="-1"><input type="hidden" name="JOB_ID" value="-1"><input type="hidden" name="JOB_ID_2" value="-1"><input type="hidden" name="ROLE" value="ALL"><input type="hidden" name="ROLE_2" value="ALL"><input type="hidden" name="CHOOSE_DATE_PERIODE" value="1"><button wuwid="MODIFY_SEARCH_BTN" id="MODIFY_SEARCH" class="btn btn-primary text-md-start w-100 mb-2" type="submit"><i class="bi bi-chevron-left mr-2 me-2"></i>Zoekopdracht wijzigen</button></form>						<form id="FORM_BACK_SEARCH_AGAIN" action="/nl/search/analyses/" method="post"><button wuwid="SEARCH_AGAIN_BTN" id="SEARCH_AGAIN" class="btn btn-outline-primary text-md-start w-100" type="submit"><i class="bi bi-search mr-2 me-2"></i>Nieuwe zoekopdracht</button></form>					</div>
+				</div>
+				<div class="col-12 col-md-9 mt-4 mt-md-0">
+					<h3 class="text-secondary d-inline" tabindex="0">Zoekresultaten</h3>
+					<div class="float-end">
+                        <button class="btn btn-sm btn-outline-primary" onclick="copyUrlResult(event)"><i class="bi bi-clipboard me-2"></i>Link naar pagina kopiëren</button>
+                        <button class="btn btn-sm btn-outline-primary ms-2" onclick="reportError('results')"><i class="bi bi-pen me-2"></i>Een fout melden</button>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<h4 class="display-5" tabindex="0"> Michiels</h4>
+						</div>
+						
+						
+												
+												
+                        						
+												
+												<div class="col-12">
+							<span><strong>Aktetype :</strong> Begrafenisakten</span>
+						</div>
+						
+											</div>
+				</div>
+			</div>
+
+			<!-- Header containing filter, sort, etc.  -->
+			<div class="bg-light border box-shadow-lg rounded-lg p-4 mt-4">
+				<div class="row align-self-center gy-3">
+					<div class="dropdown col">
+						<a class="btn btn-primary dropdown-toggle" href="#filters" data-bs-toggle="collapse" aria-expanded="true">
+							<i class="me-2 bi bi-funnel"></i>
+							Resultaten filteren						</a>
+					</div>
+					<div class="pagination nav col-12 col-md-7 d-flex justify-content-center align-self-center"><div class="paginationjs"><div class="paginationjs-nav J-paginationjs-nav" tabindex="0" aria-label="Resultaten 1 tot 25 op 1272 resultaten">1-25 van <strong>1272 resultaten</strong></div><div class="paginationjs-pages"><ul><li class="paginationjs-prev disabled "><a><i class="bi bi-chevron-left"></i></a></li><li class="paginationjs-page J-paginationjs-page  active" data-num="1"><a tabindex="0" aria-label="Huidige pagina">1</a></li><li class="paginationjs-page J-paginationjs-page " data-num="2"><a tabindex="0" aria-label="Paginanummer 2">2</a></li><li class="paginationjs-page J-paginationjs-page " data-num="3"><a tabindex="0" aria-label="Paginanummer 3">3</a></li><li class="paginationjs-page J-paginationjs-page " data-num="4"><a tabindex="0" aria-label="Paginanummer 4">4</a></li><li class="paginationjs-page J-paginationjs-page " data-num="5"><a tabindex="0" aria-label="Paginanummer 5">5</a></li><li class="paginationjs-ellipsis disabled"><a>...</a></li><li class="paginationjs-next J-paginationjs-next " data-num="2" title="Next page"><a tabindex="0" aria-label="Volgende pagina"><i class="bi bi-chevron-right"></i></a></li></ul></div><div class="paginationjs-size-changer"><select class="J-paginationjs-size-select"><option aria-label="10 resultaten per pagina" value="10">10 / pagina</option><option aria-label="25 resultaten per pagina" value="25" selected="selected">25 / pagina</option><option aria-label="50 resultaten per pagina" value="50">50 / pagina</option></select></div></div></div>					<div class="col flex-grow-1 align-self-center text-end">
+					    <button class="btn btn-sm btn-outline-primary" onclick="exportTable()"><i class="bi bi-filetype-csv me-2"></i>Pagina exporteren naar CSV</button>
+					</div>
+				</div>
+				<div class="collapse" id="filters">
+	<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pt-4 g-4 justify-content-center">
+		<!-- PLACE -->
+		<div class="col">
+			<div class="card">
+				<div class="card-body px-4">
+					<div class="card-title mb-3" style="transform:rotate(0)">
+						<h6 class="fw-bold">
+							<a class="d-block text-decoration-none" data-bs-toggle="collapse" href="#collapsePlace" role="button" aria-expanded="true" aria-controls="collapsePlace">
+								Plaats 
+                                <span tabindex="0" class="small text-secondary bi bi-info-circle" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover click" data-bs-title="In de meeste gevallen de gemeente waar het document is opgesteld of een gemeente die aan een persoon is gekoppeld (bv. geboorte- of overlijdensplaats)."></span>
+                                <span class="float-end bi bi-chevron-down"></span>
+							</a>
+						</h6>
+					</div>
+					<div class="collapse show" id="collapsePlace">
+						<input class="form-control ui-autocomplete-input" type="text" id="ALL_PLACES" name="ALL_PLACES" data-init="" autocomplete="off">
+					</div>
+					<div class="invalid-feedback">
+						<strong>Selecteer tenminste één aktetype of index</strong>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- PERIODE -->
+		<div class="col">
+			<div class="card">
+				<div class="card-body px-4">
+					<div class="card-title mb-3" style="transform:rotate(0)">
+						<h6 class="fw-bold">
+							<a class="d-block  text-decoration-none" data-bs-toggle="collapse" href="#collapsePeriode" role="button" aria-expanded="true" aria-controls="collapsePeriode">
+                                <label for="exactYear" class="form-label mb-0">Periode <span tabindex="0" class="small text-secondary bi bi-info-circle" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover click" data-bs-title="Exacte datum van de akte (formaat DD/MM/JJJJ) of de interval waarin één of meerdere akten werden opgesteld."></span></label>
+								<span class="float-end bi bi-chevron-down"></span>
+							</a>
+						</h6>
+					</div>
+					<div class="collapse show" id="collapsePeriode">
+						<div class="d-flex mt-3">
+                                <div class="input-group has-validation">
+									<select class="form-select bg-middle-grey rounded-0" id="CHOOSE_DATE_PERIODE" name="CHOOSE_DATE_PERIODE">
+										<option value="0">De</option>
+										<option value="1" selected="selected">Tussen</option>
+										<option value="2">Voor</option>
+										<option value="3">Na</option>
+									</select>
+                                    <input id="exactYear" name="exactYear" type="text" class="form-control" aria-label="Exact jaar" placeholder="1580">
+                                    <span class="input-group-text rounded-0 border-end-0" id="SHOW_FROM">en</span>
+                                    <input type="text" id="SHOW_PERIODE" name="SHOW_PERIODE" class="form-control" aria-label="Periode" placeholder="1920">
+                                    <a id="CLEAR_DATES" role="button" tabindex="0" class="input-group-text"><span class="bi bi-trash"></span></a>
+                                </div>
+						</div>
+						<div class="row">
+                                    <div id="EXACTYEAR_ERROR_MSG" class="col invalid-feedback">
+                                        <strong></strong>
+                                    </div>
+                                    <div id="SHOWPERIODE_ERROR_MSG" class="col invalid-feedback">
+                                        <strong></strong>
+                                    </div>
+                                </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ACTTYPE -->
+		<div class="col">
+			<div class="card">
+				<div class="card-body px-4">
+					<div class="card-title mb-3" style="transform:rotate(0)">
+						<h6 class="fw-bold">
+							<a class="mb-2 d-block  text-decoration-none" data-bs-toggle="collapse" href="#collapseActtype" role="button" aria-expanded="true" aria-controls="collapseActtype">
+								Aktetype <span tabindex="0" class="small text-secondary bi bi-info-circle" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover click" data-bs-title="Geschreven documenten die een verandering van status registreren (doop, huwelijk, begrafenis, dienstplicht, enz.) en een juridische waarde hebben (notariële akte, vonnis, enz.)."></span>
+								<span class="float-end bi bi-chevron-down"></span>
+							</a>
+						</h6>
+					</div>
+					<div class="collapse show" id="collapseActtype">
+                        <div class="dropdown bootstrap-select w-100"><select id="ACTTYPE" name="ACTTYPE" class="selectpicker w-100" data-live-search="true" data-live-search-normalize="true">
+                            <option value="-1">Alle</option>
+                            <option value="AARTVER">Aartshertogelijke verordening</option><option value="ADVER">Advertentie</option><option value="AKTE">Akte</option><option value="BENOEM">Akte van benoeming</option><option value="SCH">Akte van een schepenbank of een dorpsbestuur</option><option value="AMBREG">Ambachtsregister</option><option value="AMBREGL">Ambachtsreglement</option><option value="AMMREK">Ammansrekening</option><option value="BSA">Andere aankondigingen</option><option value="5" selected="selected">Begrafenisakten</option><option value="BEVSCH">Bevelschrift</option><option value="BEVREG">Bevolkingsregister</option><option value="BID">Bidprentjes en rouwbrieven</option><option value="BISSVER">Bisschoppelijke verordening</option><option value="BOEDVER">Boedelverdeling</option><option value="BOUWV">Bouwvergunning</option><option value="BRIEF">Brief</option><option value="BSGA">Burgerlijke Stand / Geboorteaankondigingen</option><option value="CAUTREGL">Cautsidereglement</option><option value="CIJNSREG">Cijnsregister</option><option value="CIJNSROL">Cijnsrol</option><option value="DAGB">Dagboek</option><option value="DIENSTST">Dienststaat</option><option value="DOMREK">Domeinrekening</option><option value="13">Doopakten</option><option value="DOSSIER">Dossier</option><option value="EED">Eed</option><option value="ERF">Erfenisaangifte</option><option value="BS_G">Geboorteakten</option><option value="VERKLOV">Gerechtelijke verklaring van overlijden</option><option value="GILBR">Gildebrief</option><option value="GILREGL">Gildereglement</option><option value="GILVON">Gildevonnis</option><option value="GOEDREG">Goederenregister</option><option value="GRAFVER">Grafelijke verordening</option><option value="HAARDTEL">Haardtelling</option><option value="HERTVER">Hertogelijke verordening</option><option value="HUURCON">Huurcontract</option><option value="BS_HA">Huwelijksaankondigingen</option><option value="BS_H">Huwelijksakten</option><option value="HUWCON">Huwelijkscontract</option><option value="BS_HP">Huwelijkspublicaties</option><option value="INSCHR">Inschrijvingsregister</option><option value="53">Inventaris</option><option value="OVDEC">Inventaris van een sterfhuis</option><option value="KEIZVER">Keizerlijke verordening</option><option value="KONVER">Koninklijke verordening</option><option value="KOST">Kostuimen</option><option value="KRON">Kroniek</option><option value="61">Kwitantie</option><option value="LEDLIJST">Ledenlijst</option><option value="LEENREG">Leenregister</option><option value="POP">Lijst van personen</option><option value="LIT">Literatuur</option><option value="MAGLIJST">Magistraatslijst</option><option value="STMIL">Militie / diverse documenten </option><option value="DMILO">Militie / Overlijdensberichten Franse periode</option><option value="23">Namenlijst</option><option value="69">Notariaat</option><option value="OBIT">Obituarium</option><option value="ONDVR">Ondervraging</option><option value="ONTBOEK">Ontvangstenboek</option><option value="OVERSTED">Overeenkomst tussen steden</option><option value="BS_O">Overlijdensakten</option><option value="PROC">Procesdossier</option><option value="REGVER">Regentelijke verordening</option><option value="REG">Register</option><option value="MVG">Register van morele boekhouding</option><option value="REISV">Reisverslag</option><option value="74">Rekeningen (inkomsten en uitgaven)</option><option value="RENTREGL">Rentmeestersreglement</option><option value="SCHVON">Schepenvonnis</option><option value="SVG">Staat van goed</option><option value="STADOR">Stadsordonnantie</option><option value="STADREG">Stadsregister</option><option value="STADREK">Stadsrekening</option><option value="STBO">Stamboek</option><option value="BEVTEL">Telling van de meiseniers en buitenpoorters in de ammanie Brussel</option><option value="78">Testament</option><option value="VERZSCH">Verzoekschrift</option><option value="31">Vormelingenlijst</option><option value="VREEMD">Vreemdelingendossier</option><option value="VRIJGEL">Vrijgeleide</option><option value="WZA">Wezenakte</option>                        </select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Begrafenisakten" data-id="ACTTYPE"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Begrafenisakten</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-1" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- PROJECT -->
+		<div class="col">
+			<div class="card">
+				<div class="card-body px-4">
+					<div class="card-title mb-3" style="transform:rotate(0)">
+						<h6 class="fw-bold">
+							<a class="mb-2 d-block text-decoration-none" data-bs-toggle="collapse" href="#collapseProject" role="button" aria-expanded="true" aria-controls="collapseProject">
+								Project <span tabindex="0" class="small text-secondary bi bi-info-circle" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover click" data-bs-title="Lijst van projecten uitgevoerd door vrijwilligers of medewerkers van het Rijksarchief."></span>
+								<span class="float-end bi bi-chevron-down"></span>
+							</a>
+						</h6>
+					</div>
+					<div class="collapse show" id="collapseProject">
+					    <div class="dropdown bootstrap-select w-100"><select class="selectpicker w-100" id="PROJECT" name="PROJECT_ID" data-init="" data-live-search="true" data-live-search-normalize="true">
+                            <option value="-1" selected="selected">Alle</option>
+                            <option value="ANLIRP">ANLIRP - Parochieregisters - Anlier</option><option value="ANTBEL">ANTBEL - Beloningen, eretekens en verheffingen in de adelstand - Provincie Antwerpen</option><option value="ANTBENOEM">ANTBENOEM - Benoemingsdossiers - Provincie Antwerpen</option><option value="ANTBIJST">ANTBIJST - Aanvragen tot bijstand aan personen - Provincie Antwerpen</option><option value="ANTBOUW">ANTBOUW - Bouwaanvragen - Provincie Antwerpen</option><option value="ANTCAL">ANTCAL - Aanvragen tot bijstand bij calamiteiten en rampen - Provincie Antwerpen</option><option value="ANTDIENST">ANTDIENST - Lijst van dienstplichtige vreemdelingen - Provincie Antwerpen</option><option value="ANTMIL">ANTMIL - Militiedossiers - Departement Twee Neten</option><option value="ANTOVLB">ANTOVLB - Overlijdensberichten van militairen - Departement Twee Neten</option><option value="ANTSCH">ANTSCH - Schepenakten - Provincie Antwerpen</option><option value="ANTSTUD">ANTSTUD - Studiebeursaanvragen - Provincie Antwerpen</option><option value="ANTVERG">ANTVERG - Octrooien, vergunningen en tentoonstellingen - Provincie Antwerpen</option><option value="AUDMIL">AUDMIL - Procesdossiers van het krijgsauditoraat - Provincie Namen</option><option value="BDCH">BDCH - Poortersboeken - Charleroi</option><option value="BDNA">BDNA - Poortersboeken - Namen</option><option value="BEVERF">BEVERF - Erfenisaangiften - Beveren</option><option value="BGBRUS">BGBRUS - Lijst van ingetreden begijnen - Brussel</option><option value="BIDPREN">BIDPREN - Bidprentjes en rouwbrieven - Provincie West-Vlaanderen</option><option value="BOV">BOV - Bevolkingsregisters - Provincie Namen</option><option value="BSBETH">BSBETH - Huwelijks- en geboorteaankondigingen - Kortrijk</option><option value="BSCINEY">BSCINEY - Burgerlijke stand - Geboorteakten - Ciney</option><option value="BSFRAN">BSFRAN - Burgerlijke stand - Francorchamps</option><option value="BSFRBE">BSFRBE - Parochieregisters en burgerlijke stand - Frans-Belgische huwelijks- en overlijdensakten - Avenois </option><option value="BSHANTW">BSHANTW - Burgerlijke stand - Huwelijksakten - Provincie Antwerpen</option><option value="BSHTER">BSHTER - Burgerlijke stand - Huwelijksakten - Terhagen</option><option value="BSHWWI">BSHWWI - Burgerlijke Stand - Huwelijksakten van Belgen tijdens de Eerste Wereldoorlog in het buitenland - Wereld</option><option value="BSJALH">BSJALH - Burgerlijke stand - Jalhay</option><option value="BSJOSSE">BSJOSSE - Burgerlijke stand - Geboorteakten - Sint-Joost-ten-Node</option><option value="BSKEMP">BSKEMP - Burgerlijke stand - Antwerpse Kempen</option><option value="BSLASNE">BSLASNE - Burgerlijke stand - Lasne</option><option value="BSLOMMEL">BSLOMMEL - Burgerlijke stand - Lommel </option><option value="BSMATOURNA">BSMATOURNA - Burgerlijke stand - Huwelijksakten - Doornik en omstreken</option><option value="BSREV">BSREV - Burgerlijke stand - Geboorteakten - Rèves</option><option value="BSSART">BSSART - Burgerlijke stand - Sart-lez-Spa</option><option value="BSSCHAER">BSSCHAER - Burgerlijke stand - Geboorteakten - Schaarbeek</option><option value="BSSTREE">BSSTREE - Burgerlijke stand - Geboorte- en overlijdensakten - Strée</option><option value="BSWOP">BSWOP - Burgerlijke stand - Wezembeek-Oppem</option><option value="BSZEVERG">BSZEVERG - Burgerlijke stand - Huwelijksakten - Zevergem</option><option value="CGPN">CGPN - Procesdossiers van de krijgsraad - Povincie Namen</option><option value="CLINGE">CLINGE - Parochieregisters - Huwelijksakten - De Klinge</option><option value="COR">COR - Burgerlijke stand (KU Leuven) - Provincie Antwerpen</option><option value="DOUANE">DOUANE - Signalementfiches en dienststaten van de ambtenaren van de administratie 'Douane en Accijnzen' - België</option><option value="ECHU">ECHU - Parochieregisters en burgerlijke stand - Begrafenis- en overlijdensakten - Mont-Sainte-Marie </option><option value="ECMLIEGE">ECMLIEGE - Burgerlijke stand - Huwelijksakten - Luik</option><option value="ETRBRUX">ETRBRUX - Lijst van buitenlandse reizigers - Brussel</option><option value="EUPEN">EUPEN - Parochieregisters - Kanton Eupen</option><option value="FLOWODEL">FLOWODEL - Burgerlijke stand - Flobecq, Wodecq en Ellezelles</option><option value="GAVLB">GAVLB - Burgerlijke stand - Geboorteakten - Provincie Vlaams-Brabant en Brussels Hoofdstedelijk Gewest</option><option value="GDINANT">GDINANT - Parochieregisters - Namen en omstreken</option><option value="GENT">GENT - Parochieregisters - Huwelijksakten - Gent</option><option value="GENTBRUG">GENTBRUG - Burgerlijke stand - Gentbrugge</option><option value="GEWVL">GEWVL - Burgerlijke stand - Geboorteakten - Provincie West-Vlaanderen</option><option value="GPPBRUS">GPPBRUS - Politieke dossiers van de gerechtelijke politie - Arrondissement Brussel </option><option value="GRIMPR">GRIMPR - Parochieregisters - Grimbergen</option><option value="GSU">GSU - Burgerlijke stand (FamilySearch) - België</option><option value="HEREERF">HEREERF - Erfenisaangiften - Herentals</option><option value="HUVLB">HUVLB - Burgerlijke stand - Huwelijksakten - Provincie Vlaams-Brabant en Brussels Hoofdstedelijk Gewest</option><option value="HUWILLE">HUWILLE - Burgerlijke stand - Huwelijksakten - Willebroek </option><option value="HUWVL2">HUWVL2 - Burgerlijke stand - Huwelijksakten - Provincie West-Vlaanderen</option><option value="IMMIBEL">IMMIBEL - Vreemdelingendossiers - Wereld</option><option value="LEGAAT1">LEGAAT1 - Giften en legaten aan lokale besturen - Provincie Brabant</option><option value="LIEDEK">LIEDEK - Burgerlijke stand - Liedekerke</option><option value="LOKERF">LOKERF - Erfenisaangiften - Lokeren</option><option value="MATRIKEL">MATRIKEL - Matrikels van de Oude Universiteit Leuven - Wereld</option><option value="NIKLERF">NIKLERF - Erfenisaangiften - Sint-Niklaas</option><option value="NOTAANT">NOTAANT - Notarisakten (Notarius) - Provincie Antwerpen</option><option value="NOTANT">NOTANT - Notarisakten - Provincie Antwerpen</option><option value="NOTAVB">NOTAVB - Notarisakten (Notarius) - Provincie Vlaams-Brabant</option><option value="NOTAWVL">NOTAWVL - Notarisakten - Provincie West-Vlaanderen</option><option value="NOTNIV">NOTNIV - Notarisakten - Provincie Waals-Brabant</option><option value="OORLOG">OORLOG - Oorlogsschade - Arrondissement Kortrijk</option><option value="OORLOGLIM">OORLOGLIM - Oorlogsschade - Provincie Limburg</option><option value="OORLOGVBR">OORLOGVBR - Oorlogsschade - Arrondissement Leuven</option><option value="OSAK">OSAK - Staten van goed - Arrondissement Kortrijk</option><option value="OVWVL">OVWVL - Burgerlijke stand - Overlijdensakten - Provincie West-Vlaanderen</option><option value="PARBEWVL">PARBEWVL - Parochieregisters - Begrafenisakten - Provincie West-Vlaanderen</option><option value="PARBGENT">PARBGENT - Parochieregisters - Begrafenisakten - Gent </option><option value="PARDEBRUS">PARDEBRUS - Parochieregisters en burgerlijke stand - Begrafenis- en overlijdensakten - Brussel</option><option value="PARDOBRUS">PARDOBRUS - Parochieregisters - Doopakten - Brussel </option><option value="PARDOBUT">PARDOBUT - Parochieregisters - Doopakten - Bütgenbach</option><option value="PARDOWVL">PARDOWVL - Parochieregisters - Doopakten - Provincie West-Vlaanderen</option><option value="PARHUWVL">PARHUWVL - Parochieregisters - Huwelijksakten - Provincie West-Vlaanderen</option><option value="PARMABRUS">PARMABRUS - Parochieregisters - Huwelijksakten - Brussel</option><option value="PARWOP">PARWOP - Parochieregisters - Wezembeek-Oppem</option><option value="PATUR">PATUR - Parochieregisters - Pâturages</option><option value="PERSAF">PERSAF - PERSoneel in AFrika - Onafhankelijke Congostaat, Belgisch-Congo en Ruanda-Urundi</option><option value="PRBZELE">PRBZELE - Parochieregisters - Doopakten - Zele</option><option value="PRDSNG">PRDSNG - Parochieregisters - Doopakten - Gent </option><option value="PRHENEG">PRHENEG - Parochieregisters en burgerlijke stand - Ath, Doornik en Ronse</option><option value="PRISARLON">PRISARLON - Morele verslagen van veroordeelde gedetineerden van de gevangenis van Aarlen – België</option><option value="PRISBRUGGE">PRISBRUGGE - Morele verslagen van veroordeelde gedetineerden van de gevangenis van Brugge – België (1876-1925)</option><option value="PRISDINANT">PRISDINANT - Morele verslagen van veroordeelde gedetineerden van de gevangenis van Dinant – België</option><option value="PRISLEUV">PRISLEUV - Lijst van gedetineerden van de gevangenis van Leuven-Centraal - België</option><option value="PRISLIEGE">PRISLIEGE - Lijst van gedetineerden van de gevangenis van Saint-Léonard in Luik - België</option><option value="PRISMECHEL">PRISMECHEL - Morele verslagen van veroordeelde gedetineerden van de gevangenis van Mechelen – België</option><option value="PRISNEUF">PRISNEUF - Lijst van gedetineerden van de gevangenis van Neufchâteau - België</option><option value="PRISNIJVEL">PRISNIJVEL - Morele verslagen van veroordeelde gedetineerden van de gevangenis van Nijvel – België</option><option value="PRISOUDENA">PRISOUDENA - Morele verslagen van veroordeelde gedetineerden van de gevangenis van Oudenaarde – België</option><option value="PRISTURNH">PRISTURNH - Morele verslagen van veroordeelde gedetineerden van de gevangenis van Turnhout – België</option><option value="PRISVILV">PRISVILV - Lijst van gedetineerden van de gevangenis van Vilvoorde - België</option><option value="PRNIV">PRNIV - Parochieregisters - Oisquercq</option><option value="PRRAMOF">PRRAMOF - Parochieregisters - Ramillies en Offus</option><option value="PRTWVL">PRTWVL - Poortersboeken - Roeselare</option><option value="PTKORT">PTKORT - Poortersboeken - Kortrijk</option><option value="QLP">QLP - Parochieregisters en burgerlijke Stand - Quévy</option><option value="REKTIELT">REKTIELT - Stadsrekeningen - Tielt</option><option value="ROESERF">ROESERF - Erfenisaangiften - Arrondissement Kortrijk</option><option value="RVB">RVB - Procesdossiers van de Raad van Brabant - Hertogdom Brabant</option><option value="SBBG">SBBG - Persoonsvermeldingen in het archief van de abdij van Sint-Baafs en het bisdom - Gent</option><option value="SMBR">SMBR - Burgerlijke stand - Huwelijksakten - Provincie Henegouwen</option><option value="SOLDDYLE">SOLDDYLE - Overlijdensberichten van militairen - Departement Dijle</option><option value="SOLDJEMAP">SOLDJEMAP - Overlijdensberichten van militairen - Departement Jemappes</option><option value="SOLDOUR">SOLDOUR - Overlijdensberichten van militairen - Departement Ourthe</option><option value="SOLDSM">SOLDSM - Overlijdensberichten van militairen - Departement Samber en Maas</option><option value="SVGLVW">SVGLVW - Staten van goed - Land van Waas</option><option value="SVGMATER">SVGMATER - Erfenisaangiften - Mater </option><option value="SVGPETEG">SVGPETEG - Erfenisaangiften - Petegem</option><option value="SVGWVL">SVGWVL - Staten van goed - Provincie West-Vlaanderen</option><option value="TDECEN">TDECEN - Parochieregisters en burgerlijke stand - Doop- en geboorteakten - Brussel</option><option value="THIEU">THIEU - Burgerlijke stand - Geboorteakten - Thieulain</option><option value="TMACHUT">TMACHUT - Staten van goed - Moeskroen</option><option value="VERMIST">VERMIST - Overlijdensverklaringen van vermisten tijdens de Tweede Wereldoorlog - Arrondissement Antwerpen</option><option value="VGLP">VGLP - Vrijgeleiden van terugkerende Belgen uit Nederland - België</option><option value="VISU">VISU - Burgerlijke stand (DemoGen Visu) - België</option><option value="WIWILB">WIWILB - Lijst van inwoners en bezoekers - Brussel</option><option value="WKKORT">WKKORT - Weesregisters - Kortrijk</option><option value="WVLERF">WVLERF - Erfenisaangiften - Provincie West-Vlaanderen</option><option value="WZWVL">WZWVL - Weesregisters - Provincie West-Vlaanderen</option><option value="ZEELUI">ZEELUI - Stamboeken van zeelui op Belgische koopvaardijschepen - Wereld</option>                        </select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-2" aria-haspopup="listbox" aria-expanded="false" title="Alle" data-id="PROJECT"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Alle</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-2" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-2" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row mt-4">
+		<div class="col-12 d-flex justify-content-center">
+			<button id="PERSON_FILTER_SUBMIT_A" class="btn btn-primary" type="button">Filters toepassen</button>
+		</div>
+	</div>
+</div>			</div>
+		
+			<div class="row mt-4">
+                <!-- spinner loading -->
+                <style>
+                    .spinner-overlay{
+                        z-index: 3000 !important;
+                    }
+                </style>
+                <div class="spinner-overlay position-fixed top-0 start-0 w-100 h-100 bg-white bg-opacity-75 d-flex justify-content-center align-items-center d-none">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">...</span>
+                    </div>
+                </div>
+                <!-- END spinner loading -->
+				<div class="col-md-12">
+    <table id="tableResults" class="table table-hover">
+        <thead id="table_head" class="table-secondary sticky-top">
+            <tr class="text-dark">
+                <th class="col-2" scope="col"><span class="thead-clickable"><i id="SORT_EDITORIALFORM_DUT" class="bi bi-chevron-expand me-2" aria-hidden="true"></i>
+                        Aktetype                    </span></th>
+                <th class="col-2" scope="col"><span class="thead-clickable"><i id="SORT_ACTPLACE_STRING" class="bi bi-chevron-expand me-2" aria-hidden="true"></i>
+                        Plaats van akte                    </span></th>
+                <th class="col-2" scope="col"><span class="thead-clickable"><i id="SORT_ACTDATE" class="bi bi-chevron-expand me-2" aria-hidden="true"></i>
+                        Datum van akte                    </span></th>
+                <th class="col-2" scope="col"><span class=""><i id="SORT_LAST_NAME" class="bi me-2" aria-hidden="true"></i>
+                        Naam                    </span></th>
+                <th class="col-2" scope="col"><span class=""><i id="SORT_FIRST_NAME" class="bi me-2" aria-hidden="true"></i>
+                        Voornaam                    </span></th>
+                <th class="col-2" scope="col"><span class=""><i id="SORT_ROLE" class="bi me-2" aria-hidden="true"></i>
+                        Rol                    </span></th>
+                <th class="col-1" scope="col">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody id="table_body"><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>01/12/1596</td><td>Michiels<br>Michiels<br></td><td>NN<br>Jacobus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>03/02/1631</td><td>Michiels<br>Michiels<br></td><td>NN<br>Jacobus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>03/05/1715</td><td>Michiels<br>Michiels<br></td><td>NN<br>Joannes<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>04/02/1710</td><td>Michiels<br>Michiels<br></td><td>NN<br>Joannes<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>08/10/1612</td><td>Michiels<br>Michiels<br></td><td>NN<br>Jacques<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>11/07/1715</td><td>Michiels<br>Michiels<br></td><td>NN<br>Pieter<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>14/08/1587</td><td>Michiels<br>Michiels<br></td><td>NN<br>Jacobus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>18/04/1689</td><td>Michiels<br>Michiels<br></td><td>NN<br>Nicolaus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>19/06/1593</td><td>Michiels<br>Michiels<br></td><td>NN<br>Jacobus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>19/03/1709</td><td>Michiels<br>Michiels<br></td><td>NN<br>Jacobus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>24/09/1711</td><td>Michiels<br>Michiels<br></td><td>NN<br>Joannes<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>26/07/1615</td><td>Michiels<br>Michiels<br></td><td>NN<br>Ferdinandus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>28/11/1669</td><td>Michiels<br>Michiels<br></td><td>NN<br>Christophorus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>29/08/1712</td><td>Michiels<br>Michiels<br></td><td>NN<br>Antonius<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>30/09/1609</td><td>Michiels<br>Michiels<br></td><td>NN<br>Jacques<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>8/1614</td><td>Michiels<br>Michiels<br></td><td>NN<br>Ferdinandus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>4/1638</td><td>Michiels<br>Michiels<br></td><td>NN<br>Jacobus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>8/1646</td><td>Michiels<br>Michiels<br></td><td>NN<br>Martinus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Vlissegem</td><td>7/1648</td><td>Michiels<br>Michiels<br></td><td>NN<br>Vincentius<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Wulpen</td><td>24/08/1679</td><td>Michiels<br>Michiels<br></td><td>Maria<br>Jacobus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>01/10/1668</td><td>Michiels<br>Michiels<br></td><td>Petronilla<br>Christophorus<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>01/05/1761</td><td>Michiels<br>Michiels<br></td><td>Pieter<br>Joannes<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>03/06/1621</td><td>Michiels<br>Michiels<br></td><td>Pieter<br>Michel<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>04/11/1658</td><td>Michiels<br>Michiels<br></td><td>Francisca<br>Alexander<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr><tr class="row-results"><td>Begrafenisakten</td><td>Brugge</td><td>05/05/1621</td><td>Michiels<br>Michiels<br></td><td>Bartholomeus<br>Jan<br></td><td>Overledene<br>Vader van de overledene<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">Raadplegen</a></td></tr></tbody>
+        <tfoot>
+            <tr>
+                <td colspan="10" class="text-center bg-light">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                        </div>
+                        <div class="pagination nav col-12 col-md-7 d-flex justify-content-center align-self-center"><div class="paginationjs"><div class="paginationjs-nav J-paginationjs-nav" tabindex="0" aria-label="Resultaten 1 tot 25 op 1272 resultaten">1-25 van <strong>1272 resultaten</strong></div><div class="paginationjs-pages"><ul><li class="paginationjs-prev disabled "><a><i class="bi bi-chevron-left"></i></a></li><li class="paginationjs-page J-paginationjs-page  active" data-num="1"><a tabindex="0" aria-label="Huidige pagina">1</a></li><li class="paginationjs-page J-paginationjs-page " data-num="2"><a tabindex="0" aria-label="Paginanummer 2">2</a></li><li class="paginationjs-page J-paginationjs-page " data-num="3"><a tabindex="0" aria-label="Paginanummer 3">3</a></li><li class="paginationjs-page J-paginationjs-page " data-num="4"><a tabindex="0" aria-label="Paginanummer 4">4</a></li><li class="paginationjs-page J-paginationjs-page " data-num="5"><a tabindex="0" aria-label="Paginanummer 5">5</a></li><li class="paginationjs-ellipsis disabled"><a>...</a></li><li class="paginationjs-next J-paginationjs-next " data-num="2" title="Next page"><a tabindex="0" aria-label="Volgende pagina"><i class="bi bi-chevron-right"></i></a></li></ul></div><div class="paginationjs-size-changer"><select class="J-paginationjs-size-select"><option aria-label="10 resultaten per pagina" value="10">10 / pagina</option><option aria-label="25 resultaten per pagina" value="25" selected="selected">25 / pagina</option><option aria-label="50 resultaten per pagina" value="50">50 / pagina</option></select></div></div></div>                        <div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>			</div>
+		</div>
+		<!-- Act modal -->
+<div class="modal show" id="modal_ACT" tabindex="-1" role="dialog" aria-labelledby="ACT_NUMBER" data-bs-backdrop="static" style="display: block;" aria-modal="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary-light align-items-center">
+                    <h1 class="modal-title display-8 mb-0">Akte</h1>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a id="openActBtn" class="btn btn-sm btn-outline-primary ms-2" href="https://agatha.arch.be/nl/data/acts/PARBEWVL_00342612" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+                        <button class="btn btn-sm btn-outline-primary ms-2" onclick="copyLink(event, 'act')"><i class="bi bi-clipboard me-2"></i>Link kopiëren</button>
+                        <button class="btn btn-sm btn-outline-primary ms-2" onclick="printPage('act')">Afdrukken</button>
+                        <button id="reportErrorBtn" class="btn btn-sm btn-outline-primary ms-2" onclick="reportError('act')">Een fout melden</button>
+                        <button type="button" class="btn-close ms-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h2 class="AGRAR_ff_fira_condensed fw-semibold my-4" hidden="" id="ACT_TITLE">PARBEWVL_00342612</h2>
+                    <h3 class="display-7 mt-0 mb-3">Gegevens van de akte<span id="ACT_NUMBER"></span></h3>
+                    <table class="table table-hover table-results">
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-secondary">Aktetype</th>
+                                <td id="modal_ACTTYPE">Begrafenisakten</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Project</th>
+                                <td id="modal_PROJECT_ID"><a href="#modal_PROJECT" data-bs-toggle="modal">Parochieregisters - Begrafenisakten - Provincie West-Vlaanderen</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Plaats</th>
+                                <td id="modal_ACTPLACE">Brugge</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Parochie</th>
+                                <td id="modal_ACTPARISH">St.Janshospitaal</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Beschrijving</th>
+                                <td id="modal_DESCRIPTION">Begrafenissen</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Opmerkingen</th>
+                                <td id="modal_REMARKSACT"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Datum van de akte</th>
+                                <td id="modal_ACTDATE">05/05/1621</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">URL</th>
+                                <td id="modal_URL"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3 class="display-7 mt-4 mb-3">Vermelde personen</h3>
+                    <table class="table table-hover table-results tablePersons">
+                        <thead class="table-light">
+                            <tr>
+                                <th colspan="2" scope="col"><span class="text-body modal_ACTROLE_CODE">Overledene</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-secondary">Voornaam en naam</th>
+                                <td class="modal_NAME"><div>Bartholomeus <mark><em>Michiels</em></mark></div></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Burgerlijke staat</th>
+                                <td class="modal_CIVILSTATUS"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Geboorteplaats</th>
+                                <td class="modal_BIRTHPLACE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Geboortedatum</th>
+                                <td class="modal_BIRTHDATE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Leeftijd</th>
+                                <td class="modal_AGE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Woonplaats</th>
+                                <td class="modal_RESIDENCE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Beroep</th>
+                                <td class="modal_OCCUPATION"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Overlijdensplaats</th>
+                                <td class="modal_DEATHPLACE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Overlijdensdatum</th>
+                                <td class="modal_DEATHDATE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Opmerkingen</th>
+                                <td class="modal_REMARKSPERSON"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <table class="table table-hover table-results tablePersons">
+                        <thead class="table-light">
+                            <tr>
+                                <th colspan="2" scope="col"><span class="text-body modal_ACTROLE_CODE">Vader van de overledene</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-secondary">Voornaam en naam</th>
+                                <td class="modal_NAME"><div>Jan <mark><em>Michiels</em></mark></div></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Burgerlijke staat</th>
+                                <td class="modal_CIVILSTATUS"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Geboorteplaats</th>
+                                <td class="modal_BIRTHPLACE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Geboortedatum</th>
+                                <td class="modal_BIRTHDATE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Leeftijd</th>
+                                <td class="modal_AGE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Woonplaats</th>
+                                <td class="modal_RESIDENCE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Beroep</th>
+                                <td class="modal_OCCUPATION"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Overlijdensplaats</th>
+                                <td class="modal_DEATHPLACE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Overlijdensdatum</th>
+                                <td class="modal_DEATHDATE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Opmerkingen</th>
+                                <td class="modal_REMARKSPERSON"></td>
+                            </tr>
+                        </tbody>
+                    </table></div>
+                <div class="modal-footer bg-light">
+                    <div class="row flex-fill justify-content-end">
+                        <div class="col-12 col-sm-8 col-xl-4 d-flex justify-content-between gap-3">
+                            <button id="prevActBtn" type="button" class="btn btn-primary col-5 flex-grow-1 text-uppercase"><i class="bi bi-chevron-left float-start"></i>Vorige</button>
+                            <button id="nextActBtn" type="button" class="btn btn-primary col-5 flex-grow-1 text-uppercase" disabled="disabled">Volgende<i class="bi bi-chevron-right float-end"></i></button>
+                        </div>
+                        <div class="col-12 col-sm-2 col-xl-4 mt-3 mt-sm-0 text-center text-sm-end">
+                            <button type="button" class="btn btn-outline-primary text-uppercase" data-bs-dismiss="modal">Sluiten</button>
+                        </div>
+                      </div>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Act modal --> 
+
+<!-- Project modal -->
+<div class="modal" id="modal_PROJECT" tabindex="-1" role="dialog" aria-labelledby="PROJECT_TITLE" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary-light align-items-center">
+                    <h1 class="modal-title display-8 mb-0" id="PROJECT_TITLE">
+                        Project                    </h1>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a id="openProjectBtn" class="btn btn-sm btn-outline-primary ms-2" href="#" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+                        <button class="btn btn-sm btn-outline-primary ms-2" onclick="copyLink(event, 'project')"><i class="bi bi-clipboard me-2"></i>Link kopiëren</button>
+                        <button type="button" class="btn-close text-primary ms-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h2 class="AGRAR_ff_fira_condensed fw-semibold my-4" id="modal_PROJECT_PROJECT"></h2>
+                    <input hidden="" id="PROJECT_ID"><table class="table table-hover table-results">
+                        <tbody> 
+                            <tr>
+                                <th scope="row" class="text-secondary">Beschrijving van het project</th>
+                                <td id="modal_PROJECT_DESCRIPTION"></td>
+                                
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Status</th>
+                                <td id="modal_PROJECT_STATUS"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Aantal akten</th>
+                                <td id="modal_PROJECT_NUMACTS"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Aantal personen waarnaar verwezen wordt</th>
+                                <td id="modal_PROJECT_NUMPERSONS"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Periode</th>
+                                <td id="modal_PROJECT_PERIODE"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Geografische omschrijving</th>
+                                <td id="modal_PROJECT_REGION"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Gegevens ingevoerd door</th>
+                                <td id="modal_PROJECT_AUTHOR"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Laatst bijgewerkt</th>
+                                <td id="modal_PROJECT_LAST_UPDATE"></td>
+                            </tr>
+                            <tr id="modal_URL1" class="urls">
+                                <th scope="row" class="text-secondary">URL</th>
+                                <td><a target="_blank" id="modal_URL_link1"></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer bg-light d-flex">
+                    <button id="returnToAct" data-bs-toggle="modal" data-bs-target="#modal_ACT" type="button" class="btn btn-primary text-uppercase">Terug naar de akte</button>
+                    <button id="actsProject" class="btn btn-primary text-uppercase"><i class="bi bi-search me-2"></i>Project-gerelateerde akten raadplegen</button>
+                    <button type="button" class="btn btn-outline-primary text-uppercase ms-auto" data-bs-dismiss="modal">Sluiten</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Project modal --> 
+
+
+<!-- Project not found modal -->
+<div class="modal" id="modal_PROJECT_NOT_FOUND" tabindex="-1" role="dialog" aria-labelledby="PROJECT_NOT_FOUND" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="display-7 mt-0 mb-3" id="PROJECT_NOT_FOUND">
+                            <div scope="row" class="text-secondary">Project</div>
+                            <span id="modal_PROJECT_PROJECT_ID"></span>
+                    </h1>
+                </div>
+                <div class="modal-body">
+                    Bestand niet gevonden of niet beschikbaar                </div>
+                <div class="modal-footer bg-light">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Sluiten</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Project not found modal --> <script>
+	function getTab() {
+		var id = $('#myTab').find('.active').attr('id');
+		return id.substring(0,4);
+	}
+
+	function printPage(page) 
+	{
+        if(page)
+        {
+            let iframe = document.createElement('iframe');
+
+            if(page == 'act')
+                iframe.src = "https://agatha.arch.be/nl/data/acts/"+$('#ACT_TITLE').text();
+            else // project
+                iframe.src = "https://agatha.arch.be/nl/data/projects/"+$('#PROJECT_ID').val();
+            
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            iframe.onload = function() {
+                iframe.contentWindow.print();
+                setTimeout(function() {
+                    document.body.removeChild(iframe);
+                }, 1000);
+            };
+        }
+        else
+		    window.print();
+	}
+
+    // Job list
+    function initAutocomplete(selector)
+    {
+        $(selector).autocomplete({
+            autoFocus: true,
+            source: function(request, response) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/nl/search/analyses/ajax.php", 
+                    data: {
+                        method: 'getJobs',
+                        term: request.term
+                    },
+                    success: function(result) {	
+                        var resJSON = JSON.parse(result);
+                        response(resJSON);
+                    }	
+                })							
+            },
+            minLength: 2,
+            select: function(event, item) {
+                $('#'+event.target.id+'_ID').val(item.item.ID);
+            },
+            change: function(event, item) {
+                if(!item.item) 
+                    $('#'+event.target.id+'_ID').val("-1");
+            }
+        });
+
+        if($(selector).length > 0)
+        {
+            $(selector).data("ui-autocomplete")._renderItem = function (ul, item) {
+                return $( "<li>" )
+                .append( $( "<div>" ).text( item.label ) )
+                .appendTo( ul );
+            };
+        }
+    }
+
+    function validateForm() {
+		var tab = getTab();
+		
+		validateSearchField();
+		validateDates();
+		
+		// if any invalid field, the form is not valid
+		if($('#'+tab+'_FORM').find('.is-invalid:visible').length > 0)
+			return false;
+		else
+			return true;
+	}
+
+    function validateDates() {
+		let this_tab = getTab();
+		let exactYear = $('#exactYear_'+this_tab).val();
+        let endYear = $('#SHOW_PERIODE_'+this_tab).val();
+        
+        let dateType = parseInt($('#CHOOSE_DATE_PERIODE_'+this_tab).val());
+
+        let ok = true;
+
+        $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().find('strong').text('');
+        $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text('');
+        
+        if(extractText(exactYear) != '')
+        {
+            if(dateType == 0)
+            {
+                let rgxp = new RegExp(/^\d{1,2}[/.-]\d{1,2}[/.-]\d{1,4}$/);
+                if(!rgxp.test(exactYear))
+                {
+                    $('#exactYear_'+this_tab).addClass('is-invalid');
+                    $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().find('strong').text(MUST_BE_NUMBER_LABEL);
+                }
+                else
+                    $('#exactYear_'+this_tab).removeClass('is-invalid');
+            }
+            else
+            {
+                $('#exactYear_'+this_tab).addClass('is-invalid');
+                $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().find('strong').text(MUST_BE_NUMBER_LABEL);
+            }
+        }
+        else
+            $('#exactYear_'+this_tab).removeClass('is-invalid');
+        
+        if(extractText(endYear) != '')
+        {
+            $('#SHOW_PERIODE_'+this_tab).addClass('is-invalid');
+            $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(MUST_BE_NUMBER_LABEL);
+        }
+        else
+            $('#SHOW_PERIODE_'+this_tab).removeClass('is-invalid');
+
+        if(extractText(exactYear) != '' || extractText(endYear) != '')
+            ok = false;
+			
+        switch(dateType)
+        {					
+            // exact year
+            case 0:
+                break;
+            // between - periode
+            case 1:
+                if(exactYear != '' && endYear == '')
+                {
+                    $('#SHOW_PERIODE_'+this_tab).addClass('is-invalid');
+                    $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(VALUE_MISSING_LABEL);
+
+                    ok = false;
+                }
+
+                
+                if(exactYear == '' && endYear != '')
+                {
+                    $('#exactYear_'+this_tab).addClass('is-invalid');
+                    $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().find('strong').text(VALUE_MISSING_LABEL);
+
+                    ok = false;
+                }
+                
+                if(parseInt(exactYear) > parseInt(endYear))
+                {
+                    $('#SHOW_PERIODE_'+this_tab).addClass('is-invalid'); 
+                    $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(END_YEAR_MUST_BE_HIGHER_LABEL);
+                }
+                else if(ok)
+                    $('#SHOW_PERIODE_'+this_tab).removeClass('is-invalid');
+                break;
+            // before
+            case 2:
+                break;
+            // after
+            case 3:
+                break;
+        }
+
+        if($('#exactYear_'+this_tab).hasClass('is-invalid'))
+            $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().show();
+        else
+            $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().hide();
+    
+        if($('#SHOW_PERIODE_'+this_tab).hasClass('is-invalid'))
+        {
+            $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).show();
+            $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().show();
+        }
+        else
+        {
+            $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).hide();
+
+            if(!$('#exactYear_'+this_tab).hasClass('is-invalid'))
+                $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().hide();
+        }
+		
+		$('#exactYear_'+this_tab).on('input', validateDates);
+		$('#SHOW_PERIODE_'+this_tab).on('input', validateDates);
+	}
+
+    function validateSearchField() {
+        let tab = getTab();
+        let this_input;
+
+        if(tab == 'FREE')
+		    this_input = $('#SHORT_ALL_TEXTS')[0];
+        else
+            this_input = $('#NAME')[0];
+		
+        if(!this_input.checkValidity())
+        {
+			$(this_input).addClass('is-invalid');
+            $(this_input).next('.invalid-feedback').find('strong').text(getErrorFromValidity(this_input.validity));
+        }
+        else
+			$(this_input).removeClass('is-invalid');
+	}
+
+    function copyLink(e, from)
+    {
+        if(from == 'project')
+        {
+            let urlProject = "https://agatha.arch.be/nl/data/projects/"+($('#PROJECT_ID').text() || $('#PROJECT_ID').val());
+            navigator.clipboard.writeText(urlProject);
+        }
+        else if(from == 'act')
+        {
+            let urlAct = "https://agatha.arch.be/nl/data/acts/"+$('#ACT_TITLE').text();
+            navigator.clipboard.writeText(urlAct);
+        }
+
+        $(e.target).tooltip({
+            trigger: 'manual',
+            title: 'Gekopieerd !'
+        }).tooltip('show');
+        setTimeout(function() { $(e.target).tooltip('hide'); }, 2000);
+    }
+
+    function initAutocompletePlaces(selector)
+    {
+        $(selector).autocomplete({
+            autoFocus: true,
+            source: function(request, response) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/nl/search/analyses/ajax.php", 
+                    data: {
+                        method: 'getMunicipalities',
+                        term: request.term
+                    },
+                    success: function(result) {	
+                        var resJSON = JSON.parse(result);
+                        response(resJSON);
+                        $(selector).autocomplete('instance').listItems = resJSON;
+                        $(selector).autocomplete('instance').clicked = false;
+                    }	
+                })							
+            },
+            minLength: 0
+        });
+
+        if($(selector).length > 0)
+        {
+            $(selector).data("ui-autocomplete")._renderItem = function (ul, item) {
+                return $( "<li>" )
+                .append( $( "<div>" ).text( item.label ) )
+                .appendTo( ul );
+            };
+        }
+    }
+	
+	function reportError(t)
+    {
+        if(t == 'act')        
+            postURLForm('https://agatha.arch.be/nl/contact/', 'URL_RESULTS', "https://agatha.arch.be/nl/data/acts/"+$('#ACT_TITLE').text(), true);
+        else if(t == 'project')        
+            postURLForm('https://agatha.arch.be/nl/contact/', 'URL_RESULTS', "https://agatha.arch.be/nl/data/projects/"+$('#PROJECT_ID').text(), true);
+        else if(t == 'results')
+            postURLForm('https://agatha.arch.be/nl/contact/', 'URL_RESULTS', "sess", true);
+        else if(t == 'update')
+            postURLForm('https://agatha.arch.be/nl/contact/', 'URL_RESULTS', location.href, true);
+        else
+            postURLForm('https://agatha.arch.be/nl/contact/', '', "", true);
+    }
+	
+	function formatDate(this_date)
+    {
+        const formatter = new Intl.DateTimeFormat("fr-FR", { 
+            timeZone: "UTC",
+            year: "numeric", month: "2-digit", day: "2-digit"
+        });
+
+        return formatter.format(this_date);
+    }
+	
+	function viewProject(row, ele, fromAct)
+	{	
+		var project_id = row['PROJECT_ID'];
+
+        $('#openProjectBtn').attr('href', "https://agatha.arch.be/nl/data/projects/"+project_id);
+
+        $.ajax({
+            type: "POST",
+            url: "/nl/search/analyses/ajax.php",
+            data: {
+                method: 'getProjectXML',
+                PROJECT_ID: project_id
+            },
+            success: function(result) {
+                var xml = JSON.parse(result);
+
+                if(xml == false)
+                {
+                    $('#modal_PROJECT').modal('hide');
+                    $('#modal_PROJECT_NOT_FOUND').modal('show');
+
+                    var td = document.getElementById('modal_PROJECT_PROJECT_ID');
+                    var tr = td.parentElement;
+                    if(xml['PROJECT_ID'] != '')
+                    {
+                        td.innerHTML = xml['PROJECT_ID'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                }
+                else
+                {
+                    for(var key in xml)
+                    {
+                        if(key != 'Urls')
+                        {
+                            var val = xml[key];
+                            if(typeof val == 'object')
+                                val = val[0];
+                            if(val != undefined)
+                                val = val.trim();
+
+                            xml[key] = val;
+                        }
+                    }
+                    
+                    $('#PROJECT_ID').val(xml['PROJECT_ID']);
+                    
+                    var td = document.getElementById('modal_PROJECT_PROJECT');
+                    var tr = td.parentElement;
+                    if(xml[lang+'_TITLE'] != '')
+                    {
+                        td.innerHTML = xml[lang+'_TITLE'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_DESCRIPTION');
+                    var tr = td.parentElement;
+                    if(xml[lang+'_FULL_DESCRIPTION'] != '')
+                    {
+                        td.innerHTML = xml[lang+'_FULL_DESCRIPTION'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_STATUS');
+                    var tr = td.parentElement;
+                    if(xml['PROJECTSTATUS'] != '')
+                    {
+                        td.innerHTML = xml['PROJECTSTATUS_DUT_DESCRIPTION'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_NUMACTS');
+                    var tr = td.parentElement;
+                    if(xml['NUMACTS'] != '')
+                    {
+                        td.innerHTML = xml['NUMACTS'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_NUMPERSONS');
+                    var tr = td.parentElement;
+                    if(xml['NUMPERSONS'] != '')
+                    {
+                        td.innerHTML = xml['NUMPERSONS'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_PERIODE');
+                    var tr = td.parentElement;
+                    if(xml['PERIODE'] != '')
+                    {
+                        td.innerHTML = xml['PERIODE'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_REGION');
+                    var tr = td.parentElement;
+                    if(xml['REGION'] != '')
+                    {
+                        td.innerHTML = xml['REGION'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_AUTHOR');
+                    var tr = td.parentElement;
+                    if(xml['AUTHORS'] != '')
+                    {
+                        td.innerHTML = xml['AUTHORS'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+
+                    var td = document.getElementById('modal_PROJECT_LAST_UPDATE');
+                    var tr = td.parentElement;
+                    if(xml['LAST_UPDATE'] && xml['LAST_UPDATE'] != '')
+                    {
+                        const [day, month, year] = xml['LAST_UPDATE'].split(/[- :]/);
+
+                        const last_update = new Date(Date.UTC(year, month - 1, day));
+
+                        td.innerHTML = formatDate(last_update);
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+
+                    var prevUrls = document.getElementsByClassName('urls');
+                    for(var i = prevUrls.length-1; i > 0; i--)
+                    {
+                        prevUrls[i].remove();
+                    }
+                    prevUrls[0].removeAttribute('hidden');
+                    
+                    var urls = xml['Urls']['Url'];
+                    if(urls && !Array.isArray(urls))
+                        urls.length = 1;
+
+                    for(var i = 0; urls && i < urls.length; i++)
+                    {
+                        if(i != 0)
+                        {
+                            var cloneUrlNode = document.getElementById('modal_URL'+i).cloneNode('true');
+                            var idDescription = cloneUrlNode.getAttribute('id');
+                            var nextId = parseInt(extractNumber(idDescription)) + 1;
+                            cloneUrlNode.setAttribute('id', extractText(idDescription) + nextId);
+
+                            var idLink = cloneUrlNode.getElementsByTagName('a')[0].getAttribute('id');
+                            cloneUrlNode.getElementsByTagName('a')[0].setAttribute('id', extractText(idLink) + nextId)
+
+                            document.getElementById('modal_URL'+i).after(cloneUrlNode);
+                        }
+                        
+                        let urlLink;
+                        
+                        if(urls.length == 1)
+                        {
+							let urlLinkLang = urls['URL_LINK_'+lang];
+                            if(urlLinkLang && urlLinkLang != '')
+                                urlLink = urlLinkLang;
+                            else
+								urlLink = (typeof urls['URL_LINK'] == "object") ? urls['URL_LINK'][0] : urls['URL_LINK'];
+                            document.getElementById('modal_URL_link'+(i+1)).innerHTML = (typeof urls[lang+'_DESCRIPTION'] == "object") ? (urls[lang+'_DESCRIPTION'][0] || "Geen beschrijving") : (urls[lang+'_DESCRIPTION'] || "Geen beschrijving");
+                            document.getElementById('modal_URL_link'+(i+1)).setAttribute('href', urlLink);
+                        }
+                        else
+                        {
+							let urlLinkLang = urls[i]['URL_LINK_'+lang];
+                            if(urlLinkLang && urlLinkLang != '')
+                                urlLink = urlLinkLang;
+                            else
+								urlLink = (typeof urls[i]['URL_LINK'] == "object") ? urls[i]['URL_LINK'][0] : urls[i]['URL_LINK'];
+                            document.getElementById('modal_URL_link'+(i+1)).innerHTML = (typeof urls[i][lang+'_DESCRIPTION'] == "object") ? (urls[i][lang+'_DESCRIPTION'][0] || "Geen beschrijving") : (urls[i][lang+'_DESCRIPTION'] || "Geen beschrijving");
+                            document.getElementById('modal_URL_link'+(i+1)).setAttribute('href', urlLink);                                
+                        }
+                        
+                        if(urlLink && urlLink.indexOf('.pdf') != -1)
+                        {
+                            if(cloneUrlNode)
+                            {
+                                $(cloneUrlNode).find('th').text("PDF");
+                            }
+                        }
+                    }
+
+                    if(!urls)
+                        prevUrls[0].setAttribute('hidden', true);
+
+                    let btnReturnToAct = $('#returnToAct');
+                    if(fromAct)
+                    {
+                        btnReturnToAct.show();
+                    }
+                    else
+                    {
+                        btnReturnToAct.hide();
+                    }
+                }
+            }
+        });
+	}
+</script><script>   
+	function viewAct(results, ind)
+	{
+        let hiddenDates = ["01/01/0001", "00/00/0000", "NN", "31/12/2999", "12/31/2999", "31-12-2999", "12-31-2999", undefined, "", "01/01/1"];
+        let row = results[ind];
+		var ACT_ID = row['ACT_ID'];
+		var j = 0;
+		var filterName = [];
+        var filters = {"WHICH_TAB":"PERS","NAME":"Michiels","ACTTYPE":"5","PROJECT_ID":"-1","JOB_ID":"-1","JOB_ID_2":"-1","ROLE":"ALL","ROLE_2":"ALL","CHOOSE_DATE_PERIODE":"1"};
+
+        $('#openActBtn').attr('href', "https://agatha.arch.be/nl/data/acts/"+ACT_ID);
+
+        for(var key in filters)
+        {
+            var val = filters[key];
+           
+            if((key == 'NAME' || key == 'NAME_2' || key == 'FIRST_NAME' || key == 'FIRST_NAME_2' || key == 'ALL_PLACES' || key == 'SHORT_ALL_TEXTS') && val != null && val != '')
+            {
+                if(key == 'NAME' || key == 'NAME_2' || key == 'FIRST_NAME' || key == 'FIRST_NAME_2')
+                    val = '"'+val+'"';
+                filterName[j] = val;
+                j++;
+            }
+        }
+
+        document.getElementById('ACT_TITLE').innerHTML = ACT_ID
+		var editorialCodes = {"AARTVER":"Aartshertogelijke verordening","ADVER":"Advertentie","AKTE":"Akte","BENOEM":"Akte van benoeming","SCH":"Akte van een schepenbank of een dorpsbestuur","AMBREG":"Ambachtsregister","AMBREGL":"Ambachtsreglement","AMMREK":"Ammansrekening","BSA":"Andere aankondigingen","5":"Begrafenisakten","BEVSCH":"Bevelschrift","BEVREG":"Bevolkingsregister","BID":"Bidprentjes en rouwbrieven","BISSVER":"Bisschoppelijke verordening","BOEDVER":"Boedelverdeling","BOUWV":"Bouwvergunning","BRIEF":"Brief","BSGA":"Burgerlijke Stand \/ Geboorteaankondigingen","CAUTREGL":"Cautsidereglement","CIJNSREG":"Cijnsregister","CIJNSROL":"Cijnsrol","DAGB":"Dagboek","DIENSTST":"Dienststaat","DOMREK":"Domeinrekening","13":"Doopakten","DOSSIER":"Dossier","EED":"Eed","ERF":"Erfenisaangifte","BS_G":"Geboorteakten","VERKLOV":"Gerechtelijke verklaring van overlijden","GILBR":"Gildebrief","GILREGL":"Gildereglement","GILVON":"Gildevonnis","GOEDREG":"Goederenregister","GRAFVER":"Grafelijke verordening","HAARDTEL":"Haardtelling","HERTVER":"Hertogelijke verordening","HUURCON":"Huurcontract","BS_HA":"Huwelijksaankondigingen","BS_H":"Huwelijksakten","HUWCON":"Huwelijkscontract","BS_HP":"Huwelijkspublicaties","INSCHR":"Inschrijvingsregister","53":"Inventaris","OVDEC":"Inventaris van een sterfhuis","KEIZVER":"Keizerlijke verordening","KONVER":"Koninklijke verordening","KOST":"Kostuimen","KRON":"Kroniek","61":"Kwitantie","LEDLIJST":"Ledenlijst","LEENREG":"Leenregister","POP":"Lijst van personen","LIT":"Literatuur","MAGLIJST":"Magistraatslijst","STMIL":"Militie \/ diverse documenten ","DMILO":"Militie \/ Overlijdensberichten Franse periode","23":"Namenlijst","69":"Notariaat","OBIT":"Obituarium","ONDVR":"Ondervraging","ONTBOEK":"Ontvangstenboek","OVERSTED":"Overeenkomst tussen steden","BS_O":"Overlijdensakten","PROC":"Procesdossier","REGVER":"Regentelijke verordening","REG":"Register","MVG":"Register van morele boekhouding","REISV":"Reisverslag","74":"Rekeningen (inkomsten en uitgaven)","RENTREGL":"Rentmeestersreglement","SCHVON":"Schepenvonnis","SVG":"Staat van goed","STADOR":"Stadsordonnantie","STADREG":"Stadsregister","STADREK":"Stadsrekening","STBO":"Stamboek","BEVTEL":"Telling van de meiseniers en buitenpoorters in de ammanie Brussel","78":"Testament","VERZSCH":"Verzoekschrift","31":"Vormelingenlijst","VREEMD":"Vreemdelingendossier","VRIJGEL":"Vrijgeleide","WZA":"Wezenakte"};
+        document.getElementById('modal_ACTTYPE').innerHTML = editorialCodes[row['EDITORIALFORM_CODE'].toUpperCase()];
+		var projectCodes = {"ANLIRP":"Parochieregisters - Anlier","ANTBEL":"Beloningen, eretekens en verheffingen in de adelstand - Provincie Antwerpen","ANTBENOEM":"Benoemingsdossiers - Provincie Antwerpen","ANTBIJST":"Aanvragen tot bijstand aan personen - Provincie Antwerpen","ANTBOUW":"Bouwaanvragen - Provincie Antwerpen","ANTCAL":"Aanvragen tot bijstand bij calamiteiten en rampen - Provincie Antwerpen","ANTDIENST":"Lijst van dienstplichtige vreemdelingen - Provincie Antwerpen","ANTMIL":"Militiedossiers - Departement Twee Neten","ANTOVLB":"Overlijdensberichten van militairen - Departement Twee Neten","ANTSCH":"Schepenakten - Provincie Antwerpen","ANTSTUD":"Studiebeursaanvragen - Provincie Antwerpen","ANTVERG":"Octrooien, vergunningen en tentoonstellingen - Provincie Antwerpen","AUDMIL":"Procesdossiers van het krijgsauditoraat - Provincie Namen","BDCH":"Poortersboeken - Charleroi","BDNA":"Poortersboeken - Namen","BEVERF":"Erfenisaangiften - Beveren","BGBRUS":"Lijst van ingetreden begijnen - Brussel","BIDPREN":"Bidprentjes en rouwbrieven - Provincie West-Vlaanderen","BOV":"Bevolkingsregisters - Provincie Namen","BSBETH":"Huwelijks- en geboorteaankondigingen - Kortrijk","BSCINEY":"Burgerlijke stand - Geboorteakten - Ciney","BSFRAN":"Burgerlijke stand - Francorchamps","BSFRBE":"Parochieregisters en burgerlijke stand - Frans-Belgische huwelijks- en overlijdensakten - Avenois ","BSHANTW":"Burgerlijke stand - Huwelijksakten - Provincie Antwerpen","BSHTER":"Burgerlijke stand - Huwelijksakten - Terhagen","BSHWWI":"Burgerlijke Stand - Huwelijksakten van Belgen tijdens de Eerste Wereldoorlog in het buitenland - Wereld","BSJALH":"Burgerlijke stand - Jalhay","BSJOSSE":"Burgerlijke stand - Geboorteakten - Sint-Joost-ten-Node","BSKEMP":"Burgerlijke stand - Antwerpse Kempen","BSLASNE":"Burgerlijke stand - Lasne","BSLOMMEL":"Burgerlijke stand - Lommel ","BSMATOURNA":"Burgerlijke stand - Huwelijksakten - Doornik en omstreken","BSREV":"Burgerlijke stand - Geboorteakten - R\u00e8ves","BSSART":"Burgerlijke stand - Sart-lez-Spa","BSSCHAER":"Burgerlijke stand - Geboorteakten - Schaarbeek","BSSTREE":"Burgerlijke stand - Geboorte- en overlijdensakten - Str\u00e9e","BSWOP":"Burgerlijke stand - Wezembeek-Oppem","BSZEVERG":"Burgerlijke stand - Huwelijksakten - Zevergem","CGPN":"Procesdossiers van de krijgsraad - Povincie Namen","CLINGE":"Parochieregisters - Huwelijksakten - De Klinge","COR":"Burgerlijke stand (KU Leuven) - Provincie Antwerpen","DOUANE":"Signalementfiches en dienststaten van de ambtenaren van de administratie 'Douane en Accijnzen' - Belgi\u00eb","ECHU":"Parochieregisters en burgerlijke stand - Begrafenis- en overlijdensakten - Mont-Sainte-Marie ","ECMLIEGE":"Burgerlijke stand - Huwelijksakten - Luik","ETRBRUX":"Lijst van buitenlandse reizigers - Brussel","EUPEN":"Parochieregisters - Kanton Eupen","FLOWODEL":"Burgerlijke stand - Flobecq, Wodecq en Ellezelles","GAVLB":"Burgerlijke stand - Geboorteakten - Provincie Vlaams-Brabant en Brussels Hoofdstedelijk Gewest","GDINANT":"Parochieregisters - Namen en omstreken","GENT":"Parochieregisters - Huwelijksakten - Gent","GENTBRUG":"Burgerlijke stand - Gentbrugge","GEWVL":"Burgerlijke stand - Geboorteakten - Provincie West-Vlaanderen","GPPBRUS":"Politieke dossiers van de gerechtelijke politie - Arrondissement Brussel ","GRIMPR":"Parochieregisters - Grimbergen","GSU":"Burgerlijke stand (FamilySearch) - Belgi\u00eb","HEREERF":"Erfenisaangiften - Herentals","HUVLB":"Burgerlijke stand - Huwelijksakten - Provincie Vlaams-Brabant en Brussels Hoofdstedelijk Gewest","HUWILLE":"Burgerlijke stand - Huwelijksakten - Willebroek ","HUWVL2":"Burgerlijke stand - Huwelijksakten - Provincie West-Vlaanderen","IMMIBEL":"Vreemdelingendossiers - Wereld","LEGAAT1":"Giften en legaten aan lokale besturen - Provincie Brabant","LIEDEK":"Burgerlijke stand - Liedekerke","LOKERF":"Erfenisaangiften - Lokeren","MATRIKEL":"Matrikels van de Oude Universiteit Leuven - Wereld","NIKLERF":"Erfenisaangiften - Sint-Niklaas","NOTAANT":"Notarisakten (Notarius) - Provincie Antwerpen","NOTANT":"Notarisakten - Provincie Antwerpen","NOTAVB":"Notarisakten (Notarius) - Provincie Vlaams-Brabant","NOTAWVL":"Notarisakten - Provincie West-Vlaanderen","NOTNIV":"Notarisakten - Provincie Waals-Brabant","OORLOG":"Oorlogsschade - Arrondissement Kortrijk","OORLOGLIM":"Oorlogsschade - Provincie Limburg","OORLOGVBR":"Oorlogsschade - Arrondissement Leuven","OSAK":"Staten van goed - Arrondissement Kortrijk","OVWVL":"Burgerlijke stand - Overlijdensakten - Provincie West-Vlaanderen","PARBEWVL":"Parochieregisters - Begrafenisakten - Provincie West-Vlaanderen","PARBGENT":"Parochieregisters - Begrafenisakten - Gent ","PARDEBRUS":"Parochieregisters en burgerlijke stand - Begrafenis- en overlijdensakten - Brussel","PARDOBRUS":"Parochieregisters - Doopakten - Brussel ","PARDOBUT":"Parochieregisters - Doopakten - B\u00fctgenbach","PARDOWVL":"Parochieregisters - Doopakten - Provincie West-Vlaanderen","PARHUWVL":"Parochieregisters - Huwelijksakten - Provincie West-Vlaanderen","PARMABRUS":"Parochieregisters - Huwelijksakten - Brussel","PARWOP":"Parochieregisters - Wezembeek-Oppem","PATUR":"Parochieregisters - P\u00e2turages","PERSAF":"PERSoneel in AFrika - Onafhankelijke Congostaat, Belgisch-Congo en Ruanda-Urundi","PRBZELE":"Parochieregisters - Doopakten - Zele","PRDSNG":"Parochieregisters - Doopakten - Gent ","PRHENEG":"Parochieregisters en burgerlijke stand - Ath, Doornik en Ronse","PRISARLON":"Morele verslagen van veroordeelde gedetineerden van de gevangenis van Aarlen \u2013 Belgi\u00eb","PRISBRUGGE":"Morele verslagen van veroordeelde gedetineerden van de gevangenis van Brugge \u2013 Belgi\u00eb (1876-1925)","PRISDINANT":"Morele verslagen van veroordeelde gedetineerden van de gevangenis van Dinant \u2013 Belgi\u00eb","PRISLEUV":"Lijst van gedetineerden van de gevangenis van Leuven-Centraal - Belgi\u00eb","PRISLIEGE":"Lijst van gedetineerden van de gevangenis van Saint-L\u00e9onard in Luik - Belgi\u00eb","PRISMECHEL":"Morele verslagen van veroordeelde gedetineerden van de gevangenis van Mechelen \u2013 Belgi\u00eb","PRISNEUF":"Lijst van gedetineerden van de gevangenis van Neufch\u00e2teau - Belgi\u00eb","PRISNIJVEL":"Morele verslagen van veroordeelde gedetineerden van de gevangenis van Nijvel \u2013 Belgi\u00eb","PRISOUDENA":"Morele verslagen van veroordeelde gedetineerden van de gevangenis van Oudenaarde \u2013 Belgi\u00eb","PRISTURNH":"Morele verslagen van veroordeelde gedetineerden van de gevangenis van Turnhout \u2013 Belgi\u00eb","PRISVILV":"Lijst van gedetineerden van de gevangenis van Vilvoorde - Belgi\u00eb","PRNIV":"Parochieregisters - Oisquercq","PRRAMOF":"Parochieregisters - Ramillies en Offus","PRTWVL":"Poortersboeken - Roeselare","PTKORT":"Poortersboeken - Kortrijk","QLP":"Parochieregisters en burgerlijke Stand - Qu\u00e9vy","REKTIELT":"Stadsrekeningen - Tielt","ROESERF":"Erfenisaangiften - Arrondissement Kortrijk","RVB":"Procesdossiers van de Raad van Brabant - Hertogdom Brabant","SBBG":"Persoonsvermeldingen in het archief van de abdij van Sint-Baafs en het bisdom - Gent","SMBR":"Burgerlijke stand - Huwelijksakten - Provincie Henegouwen","SOLDDYLE":"Overlijdensberichten van militairen - Departement Dijle","SOLDJEMAP":"Overlijdensberichten van militairen - Departement Jemappes","SOLDOUR":"Overlijdensberichten van militairen - Departement Ourthe","SOLDSM":"Overlijdensberichten van militairen - Departement Samber en Maas","SVGLVW":"Staten van goed - Land van Waas","SVGMATER":"Erfenisaangiften - Mater ","SVGPETEG":"Erfenisaangiften - Petegem","SVGWVL":"Staten van goed - Provincie West-Vlaanderen","TDECEN":"Parochieregisters en burgerlijke stand - Doop- en geboorteakten - Brussel","THIEU":"Burgerlijke stand - Geboorteakten - Thieulain","TMACHUT":"Staten van goed - Moeskroen","VERMIST":"Overlijdensverklaringen van vermisten tijdens de Tweede Wereldoorlog - Arrondissement Antwerpen","VGLP":"Vrijgeleiden van terugkerende Belgen uit Nederland - Belgi\u00eb","VISU":"Burgerlijke stand (DemoGen Visu) - Belgi\u00eb","WIWILB":"Lijst van inwoners en bezoekers - Brussel","WKKORT":"Weesregisters - Kortrijk","WVLERF":"Erfenisaangiften - Provincie West-Vlaanderen","WZWVL":"Weesregisters - Provincie West-Vlaanderen","ZEELUI":"Stamboeken van zeelui op Belgische koopvaardijschepen - Wereld"};
+        
+        var projectLink = document.createElement('a');
+        projectLink.setAttribute('href', '#modal_PROJECT');
+        projectLink.setAttribute('data-bs-toggle', 'modal');
+        projectLink.innerHTML = projectCodes[row['PROJECT_ID']];
+        document.getElementById('modal_PROJECT_ID').innerHTML = "";
+        document.getElementById('modal_PROJECT_ID').appendChild(projectLink);
+        
+        projectLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            viewProject(row, this, true);
+        });      
+
+		var ACT_NUMBER = row['ACT_NUMBER'];
+        var span = document.getElementById('ACT_NUMBER'); 
+		if(ACT_NUMBER == 'NN')
+        {
+            span.innerHTML = "";
+        }
+        else
+		{
+            span.innerHTML = " "+ACT_NUMBER;
+		}
+
+		var ACTPLACE = row['ACTPLACE'];
+        var td = document.getElementById('modal_ACTPLACE'); 
+		if(!ACTPLACE || ACTPLACE == 'NN')
+        {
+            td.parentElement.setAttribute('hidden', true);
+        }
+        else
+		{
+            ACTPLACE = emphazes(ACTPLACE, filterName);
+            td.innerHTML = ACTPLACE;
+            td.parentElement.removeAttribute('hidden');
+		}
+
+		var ACTPARISH = row['PARISH'];
+        var td = document.getElementById('modal_ACTPARISH'); 
+		if(ACTPARISH == 'NN')
+        {
+            td.parentElement.setAttribute('hidden', true);
+        }
+        else
+		{
+            ACTPARISH = emphazes(ACTPARISH, filterName);
+            td.innerHTML = ACTPARISH;
+            td.parentElement.removeAttribute('hidden');
+		}
+
+        document.getElementById('modal_DESCRIPTION').innerHTML = row['ACT_DESCRIPTION'];
+
+		var REMARKS_ACT = row['REMARKS_ACT'];
+        td = document.getElementById('modal_REMARKSACT');
+		if(!REMARKS_ACT || REMARKS_ACT == 'NN')
+        {
+            td.parentElement.setAttribute('hidden', true);
+        }
+        else
+		{
+		    REMARKS_ACT = emphazes(REMARKS_ACT, filterName);
+            td.innerHTML = REMARKS_ACT;
+            td.parentElement.removeAttribute('hidden');
+		}
+
+		var ACTDATE_TEXT = row['ACTDATE_TEXT'];
+        td = document.getElementById('modal_ACTDATE');
+		if(hiddenDates.includes(ACTDATE_TEXT))
+        {
+            td.parentElement.setAttribute('hidden', true);
+        }
+        else
+		{
+            td.innerHTML = ACTDATE_TEXT;
+            td.parentElement.removeAttribute('hidden');
+		}
+
+		var URL = row['URL']; 
+        td = document.getElementById('modal_URL');
+		if (URL == 'NN')
+        {
+            td.parentElement.setAttribute('hidden', true);
+        }
+        else
+		{
+            let aURL = document.createElement('a');
+            aURL.setAttribute('href', URL);
+            aURL.setAttribute('target', "_blank");
+            aURL.innerHTML = URL;
+			td.innerHTML = "";
+            td.append(aURL);
+            td.parentElement.removeAttribute('hidden');
+		}
+
+        var tables = document.getElementsByClassName('tablePersons');
+        for(var i = tables.length-1; i > 0; i--)
+            tables[i].remove();
+            
+		var roleCodes = {"1000":"Aangever","5504":"Aanklager \/ Indiener van een bezwaarschrift","5500":"Aanvrager","5501":"Architect \/ Tekenaar","6005":"Begunstigde","500":"Belanghebbende","6006":"Borgsteller","5001":"Broer van de militieplichtige","1":"Bruid","2":"Bruidegom","5502":"Buur","6002":"Collateur","7000":"Communicant","40":"Dopeling","6003":"Echtgenoot \/ Echtgenote","5503":"Eigenaar \/ Huurder","4000":"Erflater","8000":"Gedetineerde","7":"Getuige","8":"Gewettigd kind","11":"Grootouder van de bruid","12":"Grootouder van de bruidegom","16":"Grootouders van het kind","5600":"Hulpbehoevende","5003":"Ingelijfde militieplichtige","20":"Kind","4007":"Maternele voogd","44":"Meter","5000":"Militieplichtige","22":"Moeder","6":"Moeder van de bruid","4":"Moeder van de bruidegom","42":"Moeder van de dopeling","4002":"Moeder van de erflater","5004":"Moeder van de militieplichtige","32":"Moeder van de overledene","4004":"Moeder van de partner van de erflater","4012":"Naamsvariant","30":"Overledene","6031":"Partner","4001":"Partner van de erflater","5008":"Partner van de militieplichtige","33":"Partner van de overledene","4006":"Paternele voogd","5700":"Persoon vermeld in document","43":"Peter","6020":"Poorter","4008":"Rendant (administratie van de erfenis)","5005":"Schoonbroer van de militieplichtige","6001":"Stichter","21":"Vader","5":"Vader van de bruid","3":"Vader van de bruidegom","41":"Vader van de dopeling","4003":"Vader van de erflater","5006":"Vader van de militieplichtige","31":"Vader van de overledene","4005":"Vader van de partner van de erflater","5007":"Vervanger van de militieplichtige","5601":"Verwant van de hulpbehoevende","3001":"Vorige partner","9":"Vorige partner van de bruid","10":"Vorige partner van de bruidegom","17":"Vorige partner van de moeder","6010":"Vorige partner van de overledene","7001":"Vormeling","6030":"Vreemdeling","5009":"Weerspannige militieplichtige","4009":"Wees","19":"Wettige moeder","18":"Wettige vader","5002":"Zus van de militieplichtige"};
+        var nbNames = row['LAST_NAME'].length;
+        for(var i = 0; i < nbNames; i++)
+        {
+            if(i > 0)
+            {
+                var tableCopy = document.getElementsByClassName('tablePersons')[0].cloneNode(true);
+                document.getElementsByClassName('tablePersons')[0].parentElement.append(tableCopy);
+            }
+
+            var FULL_NAME = row['FULL_NAME'][i];
+            FULL_NAME = emphazes(FULL_NAME, filterName);
+
+            document.getElementsByClassName('modal_ACTROLE_CODE')[i].innerHTML = roleCodes[row['ACTROLE_CODE'][i]];
+            document.getElementsByClassName('modal_NAME')[i].innerHTML = FULL_NAME;
+                
+            var CIVILSTATUS = row['CIVILSTATUS'][i]; 
+            td = document.getElementsByClassName('modal_CIVILSTATUS')[i];
+            if(CIVILSTATUS == 'NN')
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                let CIVILSTATUS_array = CIVILSTATUS.split('|');
+                let lang = "DUT";
+                let CIVILSTATUS_lang = CIVILSTATUS_array.find(str => {
+                    str = str.trim();
+                    return str.startsWith(lang + ":") || (!str.includes(":") && str !== "NN");
+                });
+                td.innerHTML = CIVILSTATUS_lang ? CIVILSTATUS_lang.replace(lang + ":", "").trim() : "";
+                td.parentElement.removeAttribute('hidden');
+            }
+
+            var BIRTHPLACE = row['BIRTHPLACE'][i]; 
+            td = document.getElementsByClassName('modal_BIRTHPLACE')[i];
+            if(BIRTHPLACE && BIRTHPLACE == 'NN')
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                BIRTHPLACE = emphazes(BIRTHPLACE, filterName);
+                td.innerHTML = BIRTHPLACE;
+                td.parentElement.removeAttribute('hidden');
+            }
+                
+            var BIRTHDATE = row['BIRTHDATE'][i]; 
+            let birthdate = BIRTHDATE ? new Date(BIRTHDATE) : '';
+            let formattedBirthDate = birthdate ? formatDate(birthdate) : '';
+            
+            td = document.getElementsByClassName('modal_BIRTHDATE')[i];
+            if(hiddenDates.includes(formattedBirthDate))
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                td.innerHTML = formattedBirthDate;
+                td.parentElement.removeAttribute('hidden');
+            }
+
+            let AGE = row['AGE'][i]; 
+            let replacements = {
+                "%y": { singular: "jaar", plural: "jaar" },
+                "%m": { singular: "maand", plural: "maanden" },
+                "%d": { singular: "dag", plural: "dagen" }
+            };
+            
+            let AGE_formatted = AGE.replace(/(\d+)\s*%[ymd]/g, (match, number, offset, fullString) => {
+                let token = match.match(/%[ymd]/)[0];
+                let word = (parseInt(number) === 1) ? replacements[token].singular : replacements[token].plural;
+                return `${number} ${word}`;
+            });
+
+            td = document.getElementsByClassName('modal_AGE')[i];
+            if(AGE == '0' || AGE == 'NN')
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                td.innerHTML = AGE_formatted;
+                td.parentElement.removeAttribute('hidden');
+            }
+
+            var RESIDENCE = row['RESIDENCE'] ? row['RESIDENCE'][i] : 'NN'; 
+            td = document.getElementsByClassName('modal_RESIDENCE')[i];
+            if(RESIDENCE && RESIDENCE == 'NN')
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                RESIDENCE = emphazes(RESIDENCE, filterName);
+                td.innerHTML = RESIDENCE;
+                td.parentElement.removeAttribute('hidden');
+            }
+
+            var OCCUPATION = row['OCCUPATION'][i];
+            td = document.getElementsByClassName('modal_OCCUPATION')[i];
+            if(OCCUPATION && OCCUPATION == 'NN')
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                let OCCUPATION_array = OCCUPATION.split('|');
+                let OCCUPATION_lang;
+                let lang = "DUT";
+
+                if(OCCUPATION_array.length > 1)
+                {
+                    OCCUPATION_lang = OCCUPATION_array.find(str => {
+                        str = str.trim();
+                        return str.startsWith(lang + ":") || (!str.includes(":") && str !== "NN");
+                    });
+                }
+                else
+                    OCCUPATION_lang = OCCUPATION_array[0];
+
+                td.innerHTML = emphazes(OCCUPATION_lang.replace(lang + ":", "").trim(), filterName);
+                td.parentElement.removeAttribute('hidden');
+            }
+
+            var DEATHPLACE = row['DEATHPLACE'][i]; 
+            td = document.getElementsByClassName('modal_DEATHPLACE')[i];
+            if(DEATHPLACE && DEATHPLACE == 'NN')
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                DEATHPLACE = emphazes(DEATHPLACE, filterName);
+                td.innerHTML = DEATHPLACE;
+                td.parentElement.removeAttribute('hidden');
+            }
+          
+            var DEATHDATE = row['DEATHDATE'][i];
+            let ddate = DEATHDATE ? new Date(DEATHDATE) : '';
+            let formattedDeathDate = ddate ? formatDate(ddate) : '';
+            td = document.getElementsByClassName('modal_DEATHDATE')[i];
+            if(hiddenDates.includes(formattedDeathDate))
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                td.innerHTML = formattedDeathDate;
+                td.parentElement.removeAttribute('hidden');
+            }
+
+            var REMARKS_PERSON = row['REMARKS_PERSON'] ? row['REMARKS_PERSON'][i] : '';
+            td = document.getElementsByClassName('modal_REMARKSPERSON')[i];
+            if(!REMARKS_PERSON || (REMARKS_PERSON && REMARKS_PERSON == 'NN'))
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                REMARKS_PERSON = emphazes(REMARKS_PERSON, filterName);
+                td.innerHTML = REMARKS_PERSON;
+                td.parentElement.removeAttribute('hidden');
+            }
+		}
+		
+		$('#modal_ACT').modal('show');
+
+        // clone and replace the buttons, to remove previous events
+        let prevClone = $('#prevActBtn').clone(false);
+        let nextClone = $('#nextActBtn').clone(false);
+        $('#prevActBtn').replaceWith(prevClone);
+        $('#nextActBtn').replaceWith(nextClone);
+
+        if(ind > 0)
+        {
+            $('#prevActBtn').prop('disabled', false);
+            $('#prevActBtn').on('click', function(e) {
+				$(e.target).parents('.modal').find('.modal-body').animate({scrollTop:0}, 0);
+                viewAct(results, ind-1);
+            });
+        }
+        else
+        {
+            $('#prevActBtn').prop('disabled', true);
+        }
+
+        if(ind+1 < results.length)
+        {
+            $('#nextActBtn').prop('disabled', false);
+            $('#nextActBtn').on('click', function(e) {
+				$(e.target).parents('.modal').find('.modal-body').animate({scrollTop:0}, 0);
+                viewAct(results, ind+1);
+            });
+        }
+        else
+        {
+            $('#nextActBtn').prop('disabled', true);
+        }
+	}
+    
+    function wildcardMatch(value, filter) 
+    {
+        let regex = new RegExp(filter.replace(/\*/g, '[^\\s]*').replace(/\?/g, '[^\\s]?'), 'i');
+        return regex.test(value);
+    }
+
+    function constructBody(results)
+	{
+		tbody = $('#table_body')[0];
+		tbody.innerHTML = "";
+
+		var roleCodes = {"1000":"Aangever","5504":"Aanklager \/ Indiener van een bezwaarschrift","5500":"Aanvrager","5501":"Architect \/ Tekenaar","6005":"Begunstigde","500":"Belanghebbende","6006":"Borgsteller","5001":"Broer van de militieplichtige","1":"Bruid","2":"Bruidegom","5502":"Buur","6002":"Collateur","7000":"Communicant","40":"Dopeling","6003":"Echtgenoot \/ Echtgenote","5503":"Eigenaar \/ Huurder","4000":"Erflater","8000":"Gedetineerde","7":"Getuige","8":"Gewettigd kind","11":"Grootouder van de bruid","12":"Grootouder van de bruidegom","16":"Grootouders van het kind","5600":"Hulpbehoevende","5003":"Ingelijfde militieplichtige","20":"Kind","4007":"Maternele voogd","44":"Meter","5000":"Militieplichtige","22":"Moeder","6":"Moeder van de bruid","4":"Moeder van de bruidegom","42":"Moeder van de dopeling","4002":"Moeder van de erflater","5004":"Moeder van de militieplichtige","32":"Moeder van de overledene","4004":"Moeder van de partner van de erflater","4012":"Naamsvariant","30":"Overledene","6031":"Partner","4001":"Partner van de erflater","5008":"Partner van de militieplichtige","33":"Partner van de overledene","4006":"Paternele voogd","5700":"Persoon vermeld in document","43":"Peter","6020":"Poorter","4008":"Rendant (administratie van de erfenis)","5005":"Schoonbroer van de militieplichtige","6001":"Stichter","21":"Vader","5":"Vader van de bruid","3":"Vader van de bruidegom","41":"Vader van de dopeling","4003":"Vader van de erflater","5006":"Vader van de militieplichtige","31":"Vader van de overledene","4005":"Vader van de partner van de erflater","5007":"Vervanger van de militieplichtige","5601":"Verwant van de hulpbehoevende","3001":"Vorige partner","9":"Vorige partner van de bruid","10":"Vorige partner van de bruidegom","17":"Vorige partner van de moeder","6010":"Vorige partner van de overledene","7001":"Vormeling","6030":"Vreemdeling","5009":"Weerspannige militieplichtige","4009":"Wees","19":"Wettige moeder","18":"Wettige vader","5002":"Zus van de militieplichtige"};
+		var editorialCodes = {"AARTVER":"Aartshertogelijke verordening","ADVER":"Advertentie","AKTE":"Akte","BENOEM":"Akte van benoeming","SCH":"Akte van een schepenbank of een dorpsbestuur","AMBREG":"Ambachtsregister","AMBREGL":"Ambachtsreglement","AMMREK":"Ammansrekening","BSA":"Andere aankondigingen","5":"Begrafenisakten","BEVSCH":"Bevelschrift","BEVREG":"Bevolkingsregister","BID":"Bidprentjes en rouwbrieven","BISSVER":"Bisschoppelijke verordening","BOEDVER":"Boedelverdeling","BOUWV":"Bouwvergunning","BRIEF":"Brief","BSGA":"Burgerlijke Stand \/ Geboorteaankondigingen","CAUTREGL":"Cautsidereglement","CIJNSREG":"Cijnsregister","CIJNSROL":"Cijnsrol","DAGB":"Dagboek","DIENSTST":"Dienststaat","DOMREK":"Domeinrekening","13":"Doopakten","DOSSIER":"Dossier","EED":"Eed","ERF":"Erfenisaangifte","BS_G":"Geboorteakten","VERKLOV":"Gerechtelijke verklaring van overlijden","GILBR":"Gildebrief","GILREGL":"Gildereglement","GILVON":"Gildevonnis","GOEDREG":"Goederenregister","GRAFVER":"Grafelijke verordening","HAARDTEL":"Haardtelling","HERTVER":"Hertogelijke verordening","HUURCON":"Huurcontract","BS_HA":"Huwelijksaankondigingen","BS_H":"Huwelijksakten","HUWCON":"Huwelijkscontract","BS_HP":"Huwelijkspublicaties","INSCHR":"Inschrijvingsregister","53":"Inventaris","OVDEC":"Inventaris van een sterfhuis","KEIZVER":"Keizerlijke verordening","KONVER":"Koninklijke verordening","KOST":"Kostuimen","KRON":"Kroniek","61":"Kwitantie","LEDLIJST":"Ledenlijst","LEENREG":"Leenregister","POP":"Lijst van personen","LIT":"Literatuur","MAGLIJST":"Magistraatslijst","STMIL":"Militie \/ diverse documenten ","DMILO":"Militie \/ Overlijdensberichten Franse periode","23":"Namenlijst","69":"Notariaat","OBIT":"Obituarium","ONDVR":"Ondervraging","ONTBOEK":"Ontvangstenboek","OVERSTED":"Overeenkomst tussen steden","BS_O":"Overlijdensakten","PROC":"Procesdossier","REGVER":"Regentelijke verordening","REG":"Register","MVG":"Register van morele boekhouding","REISV":"Reisverslag","74":"Rekeningen (inkomsten en uitgaven)","RENTREGL":"Rentmeestersreglement","SCHVON":"Schepenvonnis","SVG":"Staat van goed","STADOR":"Stadsordonnantie","STADREG":"Stadsregister","STADREK":"Stadsrekening","STBO":"Stamboek","BEVTEL":"Telling van de meiseniers en buitenpoorters in de ammanie Brussel","78":"Testament","VERZSCH":"Verzoekschrift","31":"Vormelingenlijst","VREEMD":"Vreemdelingendossier","VRIJGEL":"Vrijgeleide","WZA":"Wezenakte"};
+
+        var filters = {"WHICH_TAB":"PERS","NAME":"Michiels","ACTTYPE":"5","PROJECT_ID":"-1","JOB_ID":"-1","JOB_ID_2":"-1","ROLE":"ALL","ROLE_2":"ALL","CHOOSE_DATE_PERIODE":"1"};
+        
+		var tab = filters['WHICH_TAB'] ?? '';
+		var filterName, filterName_2, filterFirstName, filterFirstName_2, filterRole, filterRole_2, free;
+
+        if(tab == 'FREE')
+        {
+            free = filters['SHORT_ALL_TEXTS'] ?? '';
+
+            var regex = /^"[^"]*"$/;
+            // search non exact terms
+            if(!regex.test(free))
+            {
+                free = free.split(' ');
+            }
+            else // search exact terms
+            {
+
+                free = [free.substr(1, free.length-2)];
+            }
+        }
+        else
+        {
+            filterName = filters['NAME'] || '';
+            filterName_2 = filters['NAME_2'] || '';
+            filterFirstName = filters['FIRST_NAME'] || '';
+            filterFirstName_2 = filters['FIRST_NAME_2'] || '';
+            filterRole = filters['ROLE'] || '';
+            filterRole_2 = filters['ROLE_2'] || '';
+			
+            // remove accents and uppercase to compare to results
+            filterName = noAccent(filterName.toUpperCase());
+            filterName_2 = noAccent(filterName_2.toUpperCase());
+            filterFirstName = noAccent(filterFirstName.toUpperCase());
+            filterFirstName_2 = noAccent(filterFirstName_2.toUpperCase());
+        }        
+		
+		if(!results)
+		{
+			var tr = document.createElement('tr');
+			tbody.appendChild(tr);
+			$(tr).addClass('row-results');
+			
+			var td = document.createElement('td');
+			tr.appendChild(td);
+			td.setAttribute('colspan', 10);
+			td.innerHTML = "Jammer, uw zoekopdracht heeft geen resultaat opgeleverd. Gelieve een andere uit te voeren.";
+		}
+		
+		for(var i = 0; i < results.length; i++)
+		{
+			var tr = document.createElement('tr');
+			tbody.appendChild(tr);
+			$(tr).addClass('row-results');
+			
+			var td = document.createElement('td');
+			td.innerHTML = editorialCodes[results[i]['EDITORIALFORM_CODE'].toUpperCase()];
+			tr.appendChild(td);
+
+			td = document.createElement('td');
+			td.innerHTML = !results[i]['ACTPLACE'] || results[i]['ACTPLACE'] == 'NN' ? '/' : results[i]['ACTPLACE'];
+			tr.appendChild(td);
+			
+			td = document.createElement('td');
+            let hiddenDates = ["01/01/0001", "00/00/0000", "NN", "31/12/2999", "12/31/2999", "31-12-2999", "12-31-2999", undefined, ""];
+			td.innerHTML = hiddenDates.includes(results[i]['ACTDATE_TEXT']) ? '/' : results[i]['ACTDATE_TEXT'];
+			tr.appendChild(td);
+
+			var tdLastName = document.createElement('td');
+			tr.appendChild(tdLastName);
+            
+			var tdFirstName = document.createElement('td');
+			tr.appendChild(tdFirstName);
+
+			var tdRole = document.createElement('td');
+			tr.appendChild(tdRole);
+
+            var nbNames = results[i]['LAST_NAME'].length;
+		    var hasname = false;
+
+            for(var j = 0; j < nbNames; j++)
+            {
+                var added = false;
+
+                var lastName = noAccent(results[i]['LAST_NAME'][j].toUpperCase());
+                var firstName = noAccent((results[i]['FIRST_NAME'][j] ?? '').toUpperCase());
+                var role = results[i]['ACTROLE_CODE'][j];
+
+                if(tab == 'FREE')
+                {
+                    for(var m = 0; m < free.length; m++)
+                    {                        
+                        // remove accents and uppercase to compare to results
+                        free[m] = noAccent(free[m].toUpperCase());
+                        let escapedPattern = free[m].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                        let regexPattern = escapedPattern.replace(/\\\*/g, '.*').replace(/\\\?/g, '.');
+						regexPattern = regexPattern.replace(/'/g, "'?");
+                        let regex = new RegExp(regexPattern);
+                   
+                        if(regex.test(lastName) || regex.test(firstName)) 
+                        {
+                            hasname = true;
+                            added = true;
+                            
+                            tdLastName.innerHTML += results[i]['LAST_NAME'][j]+"<br/>";
+                            tdFirstName.innerHTML += (results[i]['FIRST_NAME'][j] ?? '')+"<br/>";
+                            tdRole.innerHTML += roleCodes[results[i]['ACTROLE_CODE'][j]]+"<br/>";
+
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    // first person search
+                    if(filterName != '' || filterFirstName != '' || (filterRole != '' && filterRole != 'ALL'))
+                    {
+                        if(wildcardMatch(lastName, filterName) && wildcardMatch(firstName, filterFirstName) && (filterRole == 'ALL' || role == filterRole))
+                        {
+                            hasname = true;
+                            added = true;
+                            
+                            tdLastName.innerHTML += results[i]['LAST_NAME'][j]+"<br/>";
+                            tdFirstName.innerHTML += (results[i]['FIRST_NAME'][j] ?? '')+"<br/>";
+                            tdRole.innerHTML += roleCodes[results[i]['ACTROLE_CODE'][j]]+"<br/>";
+                        }
+                    }
+
+                    // second person search
+                    if(!added && (filterName_2 != '' || filterFirstName_2 != '' || (filterRole_2 != '' && filterRole_2 != 'ALL')))
+                    {
+                        if(wildcardMatch(lastName, filterName_2) && wildcardMatch(firstName, filterFirstName_2) && (filterRole_2 == 'ALL' || role == filterRole_2))
+                        {
+                            hasname = true;
+                            added = true;
+                            
+                            tdLastName.innerHTML += results[i]['LAST_NAME'][j]+"<br/>";
+                            tdFirstName.innerHTML += (results[i]['FIRST_NAME'][j] ?? '')+"<br/>";
+                            tdRole.innerHTML += roleCodes[results[i]['ACTROLE_CODE'][j]]+"<br/>";
+                        }
+                    }
+                }
+            }
+
+            if(hasname == false)
+            {
+                if(nbNames > 0)
+                {  
+                    tdLastName.innerHTML += results[i]['LAST_NAME'][0]+"<br/>";
+                    tdFirstName.innerHTML += results[i]['FIRST_NAME'][0]+"<br/>";
+			        tdRole.innerHTML += roleCodes[results[i]['ACTROLE_CODE'][0]]+"<br/>";
+                }
+            }
+
+			var td6	= document.createElement('td');
+			tr.appendChild(td6);
+			var a6 = document.createElement('a');
+			
+            td6.appendChild(a6);
+            a6.setAttribute("class", "btn btn-primary btn-sm float-end");
+            a6.setAttribute('href', '#');
+            a6.setAttribute('role', 'button');
+            a6.innerHTML += 'Raadplegen';
+        
+            $(tr).find('td').on('click', function(j) { 
+                return function(e) { 
+                    e.preventDefault();
+                    
+                    viewAct(results, j);
+                }
+            }(i));
+		}
+	}
+
+	$(function() {        
+        loadResults();
+
+        if($('#ALL_PLACES').length > 0)
+            initAutocompletePlaces($('#ALL_PLACES'));
+
+        $('#CLEAR_DATES').on('click', function(e) {
+            e.currentTarget.blur();
+            $('#exactYear').val('');
+            $('#SHOW_PERIODE').val('');
+        });
+
+        $('[data-bs-toggle="tooltip"]').each(function(i, _this) {
+            getBsTooltip(_this);
+        });
+        $('[data-bs-toggle="tooltip"]').on('shown.bs.tooltip', function(e) {
+            $('#'+e.target.getAttribute('aria-describedby')).addClass('text-justify');
+        
+            $('.tooltip.show').on('mouseleave', function() {
+                $(this).tooltip('hide');
+            });
+        });
+       
+		$('#exactYear').on('input', validateDates);
+		$('#SHOW_PERIODE').on('input', validateDates);
+
+        $('#CHOOSE_DATE_PERIODE').on('change', function() {
+			let input_from = $(this).siblings('input')[0];
+			
+			let lab = $($(input_from).labels()[0]);
+
+			if(this.value == 0)
+			{	
+                $('#exactYear').attr('placeholder', '1800 of 01/01/1800');
+                $('#exactYear').removeAttr('maxlength');
+                $('#exactYear').val('');
+            } 
+            else if(this.value == 2)
+            {
+                $('#exactYear').attr('placeholder', '1920');
+                $('#exactYear').attr('maxlength', 4);
+                $('#exactYear').val('');
+            }
+            else
+            {
+                $('#exactYear').attr('placeholder', '1580');
+                $('#exactYear').attr('maxlength', 4);
+                $('#exactYear').val('');
+            }
+
+            
+            if(this.value == 1)
+			{				
+				$('#SHOW_FROM').removeAttr('hidden');
+				$('#SHOW_PERIODE').removeAttr('hidden');
+				
+				lab.html('Periode');
+			}
+			else
+			{
+                $('#SHOW_PERIODE').val('');
+                $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).hide();
+                $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text('');
+				$('#SHOW_FROM').attr('hidden', true);
+				$('#SHOW_PERIODE').attr('hidden', true);
+				
+				lab.html('Datum');
+			}
+                    
+            if($('#exactYear').parent().find('.is-invalid:not(:hidden)').length > 0)
+                $('#PERSON_FILTER_SUBMIT_A').attr('disabled', true);
+            else
+                $('#PERSON_FILTER_SUBMIT_A').attr('disabled', false);
+        });
+
+        $('#PERSON_FILTER_SUBMIT_A').on('click', function() {
+            $.ajax({
+                type: "POST",
+                url: "/nl/search/analyses/ajax.php",
+                data: {
+                    method: 'filterResults',
+                    ap: $('#ALL_PLACES').val(),
+                    y: $('#exactYear').val(),
+                    y2: $('#SHOW_PERIODE').val(),
+                    yt: $('#CHOOSE_DATE_PERIODE').val(),
+                    at: $('#ACTTYPE').val(),
+                    p: $('#PROJECT').val()
+                },
+                success: function(result) {                    
+                    let resJSON = JSON.parse(result);
+                    let u = new URL(location);
+
+                    if(u.searchParams.size > 0)
+                        window.history.pushState("", "", resJSON);
+
+                    loadResults();
+                }
+            });
+        });
+
+        $('#actsProject').on('click', function(e) {
+            e.preventDefault();
+            
+            let form_new = $('<form hidden method="post" action="/nl/search/analyses/results/">');
+            form_new.append('<input name="PROJECT_ID" value="'+$('#PROJECT_ID').val()+'">');
+            form_new.append('<input name="WHICH_TAB" value="FREE">');
+            form_new.append('<input name="ACTTYPE" value="-1">');
+            form_new.appendTo('body').submit();
+        });
+	});
+</script><script>    
+	function searchWithWildcards(str, needles)
+    {      
+        str_noaccent = noAccent(str).trim().toLowerCase();
+
+        needles.forEach(subNeedle => {
+            subNeedle_noaccent = noAccent(subNeedle);
+            let subNeedleSafe = subNeedle_noaccent.replace(/[()]/g, '\\$&'); 
+            let subNeedleWildcardsCompliant = subNeedleSafe.replace(/\?/g, '[^\\s]?').replace(/\*/g, '[^\\s]*');
+            let regexPattern = new RegExp(subNeedleWildcardsCompliant, 'i');
+            
+            str_noaccent = str_noaccent.replace(regexPattern, (match) => `<mark><em>${match}</em></mark>`);
+        });
+
+        function transferTags(a, b) 
+        {
+            const parser = new DOMParser();
+
+            const aDoc = parser.parseFromString(`<div>${a}</div>`, 'text/html');
+            const bDoc = parser.parseFromString(`<div>${b}</div>`, 'text/html');
+
+            const markedTerms = Array.from(bDoc.querySelectorAll('mark > em'))
+                .map(el => el.textContent.trim())
+                .filter(Boolean);
+
+            if(markedTerms.length === 0) return a;
+
+            const walker = aDoc.createTreeWalker(aDoc.body, NodeFilter.SHOW_TEXT, null, false);
+            const queue = [];
+
+            while(walker.nextNode()) 
+            {
+                queue.push(walker.currentNode);
+            }
+
+            while(queue.length > 0) 
+            {
+                const node = queue.shift();
+                if (!node || node.nodeType !== Node.TEXT_NODE) continue;
+
+                const originalText = node.nodeValue;
+                const normalizedText = noAccent(originalText);
+                const parent = node.parentNode;
+                let matched = false;
+
+                for(const term of markedTerms) 
+                {
+                    const normalizedTerm = noAccent(term);
+                    const regex = new RegExp(normalizedTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+                    const matches = [...normalizedText.matchAll(regex)];
+
+                    if(matches.length === 0) continue;
+
+                    const fragments = [];
+                    let lastIndex = 0;
+
+                    for(const match of matches) 
+                    {
+                        const start = match.index;
+                        const end = start + match[0].length;
+
+                        if(start > lastIndex) 
+                            fragments.push(document.createTextNode(originalText.slice(lastIndex, start)));
+
+                        const mark = aDoc.createElement('mark');
+                        const em = aDoc.createElement('em');
+                        em.textContent = originalText.slice(start, end);
+                        mark.appendChild(em);
+                        fragments.push(mark);
+
+                        lastIndex = end;
+                    }
+
+                    if(lastIndex < originalText.length)
+                        fragments.push(document.createTextNode(originalText.slice(lastIndex)));
+
+                    fragments.forEach(frag => {
+                        parent.insertBefore(frag, node);
+                        if (frag.nodeType === Node.TEXT_NODE) queue.push(frag);
+                    });
+
+                    parent.removeChild(node);
+                    matched = true;
+                    break;
+                }
+
+                if(!matched) continue;
+            }
+
+            return aDoc.body.innerHTML;
+        }
+
+        str = transferTags(str, str_noaccent);
+
+        return str;
+    }
+
+    function noAccent(str)
+	{
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+	}
+
+    function emphazes(str, needles)
+    {        
+		let copyNeedles = [...needles];
+
+        let newNeedles = [];
+        for(let i = 0; i < copyNeedles.length; i++)
+        {
+            if(copyNeedles[i].substr(0, 1) == '"')
+            {
+                copyNeedles[i] = copyNeedles[i].slice(1, -1);
+                newNeedles.push(copyNeedles[i]);
+            }
+            else
+            {
+                let tokens = copyNeedles[i].split(/[ (){}[\]\\\/~=:+\^!?"&-]/);
+                let subNeedle = tokens.filter(t => t !== '');
+                if(subNeedle.length > 1)
+                {
+                
+                    for(var s = 0; s < subNeedle.length; s++)
+                    {
+                        // remove the slashes from being highlighted, other characters can be added, if so, modification of the code is needed
+                        if(subNeedle[s].trim() == '/' || subNeedle[s].length <= 2)
+                        {
+                            subNeedle.splice(s, 1);
+                            s--;
+                        }
+                    }
+
+                    newNeedles.push(...subNeedle);
+                    copyNeedles.splice(i, 1);
+                    i--;
+                }
+                else
+                {
+                    newNeedles.push(...subNeedle);
+                }
+            }
+        }
+
+        return searchWithWildcards(str, newNeedles);
+	}
+
+    function SplitStringLanguage(str)
+	{
+		var lang = 'DUT';
+
+        // 160 used as delimiter, remove anything after it
+		var a0 = str.split('160');
+		if((a0[0].length > 1) && (a0.Length > 1))
+			a0[0] = a0[0].substring(0, a0[0].length-1);
+		var a = a0[0].split(' | ');
+		var ret = str;
+		var tmp = '';
+
+		for(var i = 0; i < a.length; i++)
+		{
+            // if there is more than just the language in the string
+			if(a[i].length > 4)
+				tmp = a[i].substring(4);
+                
+			if(a[i].includes(lang))
+				ret = a[i].substring(4);
+		}
+
+		if (ret == '')
+			ret = tmp;
+		if (a0.length>1)
+			ret = ret + '<br>(in het document beschreven als: ' + a0[1] + ')';
+
+		return(ret);	
+	}
+
+    function loadResults() 
+    {
+        showSpinner();
+
+        let p = $('.pagination');
+        
+        if(p.length > 0)
+        {
+            p = $('.pagination').eq(0);
+
+            var SORT_ON = Array();
+            $('.thead-clickable[sort=true]').find('i').each(function(i) {
+                SORT_ON.push($(this).attr('id'));
+            });
+            
+            var ORDER = Array();
+            $('.thead-clickable[sort=true]').each(function(i) {
+                ORDER.push($(this).attr('order'));
+            });
+            
+            var zIndex = Array();
+            $('.thead-clickable[sort=true]').each(function(i) {
+                zIndex.push($(this).attr('z'));
+            });
+
+            let nbRows;
+            if($('.J-paginationjs-size-select').length > 0)
+                nbRows = parseInt($('.J-paginationjs-size-select').eq(0).val());
+            else
+                nbRows = 25;
+            
+            return new Promise((resolve, reject) => {
+                p.addHook('beforeInit', function() {
+                    showSpinner();
+                });
+
+                p.pagination({
+                    dataSource: "/nl/search/analyses/ajax.php",
+                    locator: 'response.docs',
+                    pageRange: 2,
+                    pageSize: nbRows,
+                    pageText: '/ pagina',
+                    arialabelPageText: 'resultaten per pagina',
+                    arialabelNavigator: 'Resultaten {first} tot {last} op {total} resultaten',
+                    nextText: '<i class="bi bi-chevron-right"></i>',
+                    arialabelNext: 'Volgende pagina',
+                    prevText: '<i class="bi bi-chevron-left"></i>',
+                    arialabelPrev: 'Vorige pagina',
+                    arialabelPageNumber : 'Paginanummer {pageNb}',
+                    arialabelCurrentPage : 'Huidige pagina',
+                    showSizeChanger: true,
+                    showNavigator: true,
+                    autoHidePrevious: false,
+                    autoHideNext: true,
+                    hideOnlyOnePage: false,
+                    hideLastOnEllipsisShow: true,
+                    sizeChangerOptions: [10, 25, 50],
+                    formatNavigator: "<%= rangeStart %>-<%= rangeEnd %> van <strong><%= totalNumber %> resultaten</strong>",
+                    totalNumberLocator: function(response) {
+                        return response.response.numFound;
+                    },
+                    ajax: {
+                        type: 'POST',
+                        data: {
+                            method: 'getResults',
+                            SORT_ON: SORT_ON,
+                            ORDER: ORDER,
+                            ZINDEX: zIndex
+                        }
+                    },
+                    formatAjaxError: function(req, textStatus, e) {
+                        // error
+                    },
+                    callback: function(data, pagination) {    
+                        resolve();                
+
+                        hideSpinner();
+
+                        if(pagination.originalResponse.response && pagination.originalResponse.response.maxScore)
+                            data.maxScore = pagination.originalResponse.response.maxScore;
+                        
+                        if(data.length > 0)
+                        {
+                            constructBody(data);
+
+                            if(pagination.originalResponse['countTypes'])
+                            {
+                                // in the filters, change the count for each type act
+                                $('.customCheckActes,.customCheckIndex').parents('li').find('.countTypeActes,.countTypeIndex').html('0');
+                                var countTypes = pagination.originalResponse['countTypes'];
+                                countTypes.forEach(function(ele, _this) {
+                                    if(ele.ISINDEX == '0')
+                                        $('.customCheckActes[value="'+ele.EDITORIALFORMBASE_ID+'"]').parents('li').find('.countTypeActes')[0].innerHTML = ele.COUNT_EDITORIALFORMBASE;
+                                    else if(ele.ISINDEX == '1')
+                                        $('.customCheckIndex[value="'+ele.EDITORIALFORMBASE_ID+'"]').parents('li').find('.countTypeIndex')[0].innerHTML = ele.COUNT_EDITORIALFORMBASE;
+                                });
+                            }
+                        }
+                        else
+                        {
+                            var tr = document.createElement('tr');
+                            $('#table_body').html('').append(tr);
+                            $(tr).addClass('row-results');
+
+                            var td = document.createElement('td');
+                            tr.appendChild(td);
+                            td.setAttribute('colspan', 10);
+                            if(pagination.originalResponse.error)
+                                td.innerHTML = pagination.originalResponse.error;
+                            else
+                                td.innerHTML = "Jammer, uw zoekopdracht heeft geen resultaat opgeleverd. Gelieve een andere uit te voeren of gebruik de filters hierboven";
+                            
+                            $(tr).on('click', function(j) { 
+                                $('#MODIFY_SEARCH').click();
+                            });
+                        }
+                    
+                        var paginationClone = $(".pagination > *").eq(0).clone(true);
+                        var paginationDest = $(".pagination").eq(1);
+                        paginationDest.empty();
+                        paginationClone.appendTo(paginationDest);
+
+                        $('.paginationjs-next,.paginationjs-prev').on('keypress', function(e) {
+                            if(e.originalEvent.key == 'Enter')
+                                this.click();
+                        });
+                    }
+                });
+
+                p.addHook('beforeSizeSelectorChange', function() {
+                    showSpinner();
+                });
+                p.addHook('beforePreviousOnClick', function() {
+                    showSpinner();
+                });
+                p.addHook('beforeNextOnClick', function() {
+                    showSpinner();
+                });
+                p.addHook('beforePageOnClick', function() {
+                    showSpinner();
+                });
+            });
+        }
+    }
+
+    function validateDates() 
+    {
+		let exactYear = $('#exactYear').val();
+        let endYear = $('#SHOW_PERIODE').val();
+        
+        let dateType = parseInt($('#CHOOSE_DATE_PERIODE').val());
+
+        let ok = true;
+
+        $('#exactYear').parent().next('.row').find('.invalid-feedback').first().find('strong').text('');
+        $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text('');
+        
+        if(extractText(exactYear) != '')
+        {
+            if(dateType == 0)
+            {
+                let rgxp = new RegExp(/^\d{1,2}[/.-]\d{1,2}[/.-]\d{1,4}$/);
+                if(!rgxp.test(exactYear))
+                {
+                    $('#exactYear').addClass('is-invalid');
+                    $('#exactYear').parent().next('.row').find('.invalid-feedback').first().find('strong').text(MUST_BE_NUMBER_LABEL);
+                }
+                else
+                    $('#exactYear').removeClass('is-invalid');
+            }
+            else
+            {
+                $('#exactYear').addClass('is-invalid');
+                $('#exactYear').parent().next('.row').find('.invalid-feedback').first().find('strong').text(MUST_BE_NUMBER_LABEL);
+            }
+        }
+        else
+            $('#exactYear').removeClass('is-invalid');
+        
+        if(extractText(endYear) != '')
+        {
+            $('#SHOW_PERIODE').addClass('is-invalid');
+            $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(MUST_BE_NUMBER_LABEL);
+        }
+        else
+            $('#SHOW_PERIODE').removeClass('is-invalid');
+
+        if(extractText(exactYear) != '' || extractText(endYear) != '')
+            ok = false;
+			
+        switch(dateType)
+        {					
+            // exact year
+            case 0:
+                break;
+            // between - periode
+            case 1:
+                if(exactYear != '' && endYear == '')
+                {
+                    $('#SHOW_PERIODE').addClass('is-invalid');
+                    $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(VALUE_MISSING_LABEL);
+
+                    ok = false;
+                }
+
+                
+                if(exactYear == '' && endYear != '')
+                {
+                    $('#exactYear').addClass('is-invalid');
+                    $('#exactYear').parent().next('.row').find('.invalid-feedback').first().find('strong').text(VALUE_MISSING_LABEL);
+
+                    ok = false;
+                }
+                
+                if(parseInt(exactYear) > parseInt(endYear))
+                {
+                    $('#SHOW_PERIODE').addClass('is-invalid'); 
+                    $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(END_YEAR_MUST_BE_HIGHER_LABEL);
+                }
+                else if(ok)
+                    $('#SHOW_PERIODE').removeClass('is-invalid');
+                break;
+            // before
+            case 2:
+                break;
+            // after
+            case 3:
+                break;
+        }
+
+        if($('#exactYear').hasClass('is-invalid'))
+            $('#exactYear').parent().next('.row').find('.invalid-feedback').first().show();
+        else
+            $('#exactYear').parent().next('.row').find('.invalid-feedback').first().hide();
+    
+        if($('#SHOW_PERIODE').hasClass('is-invalid'))
+        {
+            $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).show();
+            $('#exactYear').parent().next('.row').find('.invalid-feedback').first().show();
+        }
+        else
+        {
+            $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).hide();
+
+            if(!$('#exactYear').hasClass('is-invalid'))
+                $('#exactYear').parent().next('.row').find('.invalid-feedback').first().hide();
+        }
+
+        if($('#exactYear').parent().find('.is-invalid:not(:hidden)').length > 0)
+            $('#PERSON_FILTER_SUBMIT_A').attr('disabled', true);
+        else
+            $('#PERSON_FILTER_SUBMIT_A').attr('disabled', false);
+	}
+
+    function exportTable()
+    {
+        var table = document.getElementById("tableResults");
+        var rows = table.querySelectorAll('tr');
+        var csvContent = '\uFEFF';
+
+        for(var i = 0; i < rows.length-1; i++) 
+        {
+            var cells = rows[i].querySelectorAll('td, th');
+            for(var j = 0; j < cells.length-1; j++)
+            { 
+                var cellContent = cells[j].innerHTML.includes('<br>') ? cells[j].innerHTML.replace(/<br>/g, '\n') : cells[j].textContent;
+                var cellValue = cellContent.trim().replace(/"/g, '""');
+                if (cellValue.includes('\n')) {
+                    csvContent += '"' + cellValue + '";';
+                } else {
+                    csvContent += cellValue + ';';
+                }
+            }            
+            csvContent += '\n';
+        }
+
+        var blob = new Blob([decodeURIComponent(encodeURI(csvContent))], { type: 'text/csv;charset=utf-8;' });
+        if(navigator.msSaveBlob) // IE 10+
+            navigator.msSaveBlob(blob, "analyses.csv");
+        else
+        {
+            var link = document.createElement("a");
+            if(link.download !== undefined)
+            {
+                var url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", "analyses.csv");
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+    }
+
+    function showSpinner() 
+    {
+        $('.spinner-overlay').removeClass('d-none');
+    }
+
+    function hideSpinner() 
+    {
+        $('.spinner-overlay').addClass('d-none');
+    }
+
+    function copyUrlResult(e)
+    {
+        $.ajax({
+            type: "POST",
+            url: "/nl/search/analyses/ajax.php",
+            data: {
+                method: 'getUrlResult'
+            },
+            success: function(result) {    
+                let urlResults = JSON.parse(result);
+                navigator.clipboard.writeText(urlResults);  
+
+                $(e.target).tooltip({
+                    trigger: 'manual',
+                    title: 'Gekopieerd !'
+                }).tooltip('show');
+                setTimeout(function() { $(e.target).tooltip('hide'); }, 2000);
+            }
+        });
+    }
+
+    function reportError(t)
+    {
+        if(t == 'act')        
+            postURLForm('https://agatha.arch.be/nl/contact/', 'URL_RESULTS', "https://agatha.arch.be/nl/data/acts/"+$('#ACT_TITLE').text(), true);
+        else if(t == 'project')        
+            postURLForm('https://agatha.arch.be/nl/contact/', 'URL_RESULTS', "https://agatha.arch.be/nl/data/projects/"+$('#PROJECT_ID').text(), true);
+        else if(t == 'results')
+            postURLForm('https://agatha.arch.be/nl/contact/', 'URL_RESULTS', "sess", true);
+        else if(t == 'update')
+            postURLForm('https://agatha.arch.be/nl/contact/', 'URL_RESULTS', location.href, true);
+        else
+            postURLForm('https://agatha.arch.be/nl/contact/', '', "", true);
+    }
+</script><div class="modal fade" id="modal_cookieInfo" tabindex="-1" role="dialog" aria-labelledby="modalCookieInfo" aria-hidden="true">
+	<div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title" id="modalCookieInfo">Bescherming van persoonsgegevens</h3>
+				<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body text-justify">
+				<h4>Webanalytics en cookies</h4><br><p>Wij beheren meerdere websites: arch.be, agatha.arch.be, search.arch.be, archief-democratie.be, archive-demokratie.be, archives-democratie.be, cegesoma.be, dataverse.arch.be, expocongo.be, goaaal.arch.be, pauvresdenous.arch.be, 14-18-wallonie.be.</p><p>Soms plaatsen deze websites functionele cookies om uw gebruikservaring te optimaliseren. Zo kunnen wij uw voorkeuren bewaren i.v.m.</p><ul><li>taalkeuze (FR / NL / DE / EN)</li><li>gekozen profiel (onderzoeker, genealoog, ambtenaar, journalist, leerkracht, notaris / landmeter)</li></ul><p></p><p>Wij gebruiken ook analytische cookies om met Matomo Analytics (geanonimiseerde) gegevens te kunnen verzamelen en statistieken op te maken, die we publiceren in onze jaarrapporten en op onze website. Alle gegevens worden nadien verwijderd.</p><p>We bekijken hierbij hoofdzakelijk :</p><ul><li>het aantal “gebruikers / bezoekers” (op basis van browser of IP-adres)</li><li>het aantal sessies</li><li>het aantal geraadpleegde pagina’s</li></ul><p></p><p>Voor de ontwikkeling van nieuwe websites en functionaliteiten kan bijkomend gekeken worden naar : </p><ul><li>device, browser, schermresolutie</li><li>plaats (regio of gemeente) en tijd (uur en duur van het bezoek)</li><li>de verwijzende website</li></ul><p></p><p>Er worden geen persoonlijke profielen gemaakt van de websitegebruikers en de gebruikersdata worden niet met derden gedeeld. U kan de instellingen voor cookies in uw browser zelf bepalen.</p>			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary form-control col" data-bs-dismiss="modal">Sluiten</button>						
+			</div>
+		</div>
+	</div>
+</div><footer class="bg-light border-top py-4 mt-auto">
+    <div class="container">
+		 <div class="row py-3">
+		 <div class="col text-md-right">
+		<!-- START LOGOS -->
+			 <ul class="list-inline d-flex justify-content-center">
+             <li class="list-inline-item mx-4">
+		  <a href="https://www.arch.be/index.php?l=nl" target="_blank" class="" aria-label="Front">
+			 <img class="brand" src="bu_searchlist_1621_michiels_bartholomeus_nl_files/logo_arch_ewYY.png" alt="Logo Archives de l'État">
+					  </a></li> 
+				 <li class="list-inline-item mx-4">
+		  <a href="https://www.belgium.be/nl/" target="_blank" class="" aria-label="Front">
+			 <img class="brand" src="bu_searchlist_1621_michiels_bartholomeus_nl_files/logo_be_ewYY.png" alt="Logo Belgium">
+					  </a></li>
+				 <li class="list-inline-item mx-4">
+		<a href="https://www.belspo.be/belspo/index_nl.stm" target="_blank" class="" aria-label="Front">
+			 <img class="brand" src="bu_searchlist_1621_michiels_bartholomeus_nl_files/logo_belspo_ewYY.png" alt="Logo Belspo">
+		  </a>
+				 </li>
+			 </ul>
+		<!-- END LOGOS -->    
+		 </div>
+		 </div>
+      <hr class="opacity-xs my-0">
+
+        <div class="row align-items-md-center mb-7">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <!-- Nav Link -->
+            <ul class="nav align-items-center justify-content-center justify-content-md-start">
+              <li class="nav-item">
+                <a class="nav-link px-0" href="https://www.arch.be/index.php?l=nl&amp;m=praktische-info&amp;r=gegevensbescherming" target="_blank">Gegevensbescherming</a>
+              </li>
+              <li class="nav-item opacity mx-3">/</li>
+              <li class="nav-item">
+                <a class="nav-link px-0" href="https://agatha.arch.be/nl/help/">Hulp</a>
+              </li>
+              <li class="nav-item opacity mx-3">/</li>
+              <li class="nav-item">
+                <a class="nav-link px-0" href="https://agatha.arch.be/nl/contact/">Contact</a>
+              </li>
+            </ul>
+            <!-- End Nav Link -->
+          </div>
+
+          <div class="col-md-6  mb-4 mb-md-0 text-md-right">
+            <ul class="nav align-items-center justify-content-center justify-content-md-end">
+              <!-- Social Networks -->
+              <li class="list-inline-item">
+                <a class="btn btn-xs btn-icon btn-soft-light text-primary" href="https://www.facebook.com/rijksarchief/" target="_blank" aria-label="Facebook">
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </li>
+              <!-- End Social Networks -->
+
+              <!-- Language -->
+              <li class="list-inline-item"> <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nederlands&nbsp;<span class="caret"></span></a>
+					<div class="dropdown-menu dropdown-menu-right">
+						<a href="#" hreflang="fr" class="dropdown-item" onclick='event.preventDefault();changeLanguage("FRE", "analyses", "", false)'>Français</a>
+						<a href="#" hreflang="nl" class="dropdown-item" onclick='event.preventDefault();changeLanguage("DUT", "analyses", "", false)'>Nederlands</a>
+						<a href="#" hreflang="de" class="dropdown-item" onclick='event.preventDefault();changeLanguage("GER", "analyses", "", false)'>Deutsch</a>
+						<a href="#" hreflang="en" class="dropdown-item" onclick='event.preventDefault();changeLanguage("ENG", "analyses", "", false)'>English</a>
+					</div>
+				</li>
+              <!-- End Language -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="w-md-75 text-center mt-2">
+          <p class="grey-dark opacity-sm small">© Rijksarchief in België 2026. Alle rechten voorbehouden</p>
+        </div>
+        <!-- End Copyright -->
+    </div>
+  </footer>	
+<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="z-index: 2000000000; position: relative;"><iframe title="reCAPTCHA-test verloopt over 2 minuten" style="width: 100%; height: 100%;" name="c-bfynmyr9opdi" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="bu_searchlist_1621_michiels_bartholomeus_nl_files/bframe_ewYY.htm"></iframe></div></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="z-index: 2000000000; position: relative;"><iframe title="reCAPTCHA-test verloopt over 2 minuten" style="width: 100%; height: 100%;" name="c-6eatjdfpx6yl" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="bu_searchlist_1621_michiels_bartholomeus_nl_files/bframe_002_ewYY.htm"></iframe></div></div><div class="modal-backdrop show"></div></body></html>

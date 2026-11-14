@@ -1,0 +1,31 @@
+{
+  "sourceOfData": "agatha",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "name": "Charles Josephe Coppens"
+  },
+  "eventDate": {
+    "dateString": "23 Jan 1774"
+  },
+  "eventPlace": {
+    "placeString": "Acren St Gereon"
+  },
+  "birthPlace": {
+    "placeString": "Acren St Gereon"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Judo Coppens"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Marie Catherine Dereyst"
+      }
+    }
+  },
+  "project": "Registres paroissiaux et de l'état civil - Ath, Tournai et Renaix",
+  "hasValidData": true
+}

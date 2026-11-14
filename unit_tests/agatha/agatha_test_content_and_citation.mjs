@@ -31,6 +31,26 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    caseName: "m_searchlist_1909_dauwe_marie_fr",
+    url: "https://agatha.arch.be/fr/search/analyses/results/",
+    primaryPersonIndex: 1,
+  },
+  {
+    caseName: "m_searchlist_1909_dauwe_marie_nl",
+    url: "https://agatha.arch.be/fr/search/analyses/results/",
+    primaryPersonIndex: 1,
+  },
+  {
+    caseName: "m_searchlist_1909_dauwe_marie_de",
+    url: "https://agatha.arch.be/fr/search/analyses/results/",
+    primaryPersonIndex: 1,
+  },
+  {
+    caseName: "m_searchlist_1909_dauwe_marie_en",
+    url: "https://agatha.arch.be/fr/search/analyses/results/",
+    primaryPersonIndex: 1,
+  },
+  {
     // Has death information for parents and an illegitimate child that is legitimized
     caseName: "m_1909_dauwe_marie_fr",
     url: "https://agatha.arch.be/fr/data/acts/HUVLB_HUBRU_00619335_0",
@@ -55,6 +75,22 @@ const regressionData = [
     primaryPersonIndex: 1,
   },
   {
+    caseName: "d_searchlist_1880_vingerhoedt_maria_fr",
+    url: "https://agatha.arch.be/fr/search/analyses/results/",
+  },
+  {
+    caseName: "d_searchlist_1880_vingerhoedt_maria_nl",
+    url: "https://agatha.arch.be/nl/search/analyses/results/",
+  },
+  {
+    caseName: "d_searchlist_1880_vingerhoedt_maria_de",
+    url: "https://agatha.arch.be/de/search/analyses/results/",
+  },
+  {
+    caseName: "d_searchlist_1880_vingerhoedt_maria_en",
+    url: "https://agatha.arch.be/en/search/analyses/results/",
+  },
+  {
     caseName: "d_1880_vingerhoedt_maria_fr",
     url: "https://agatha.arch.be/fr/data/acts/GSU_004191864_00813_4_00152800",
   },
@@ -71,20 +107,100 @@ const regressionData = [
     url: "https://agatha.arch.be/en/data/acts/GSU_004191864_00813_4_00152800",
   },
   {
-    caseName: "ba_searchlist_1596_coppens_anna_fr",
+    caseName: "ba_searchlist_1774_coppens_charles_fr",
     url: "https://agatha.arch.be/fr/search/analyses/results/",
   },
   {
-    caseName: "ba_searchlist_1596_coppens_anna_nl",
+    caseName: "ba_searchlist_1774_coppens_charles_nl",
     url: "https://agatha.arch.be/nl/search/analyses/results/",
   },
   {
-    caseName: "ba_searchlist_1596_coppens_anna_de",
+    caseName: "ba_searchlist_1774_coppens_charles_de",
     url: "https://agatha.arch.be/de/search/analyses/results/",
   },
   {
-    caseName: "ba_searchlist_1596_coppens_anna_en",
+    caseName: "ba_searchlist_1774_coppens_charles_en",
     url: "https://agatha.arch.be/en/search/analyses/results/",
+  },
+  {
+    caseName: "ba_1774_coppens_charles_fr",
+    url: "https://agatha.arch.be/fr/data/acts/PRHENEG_HENEGBAPT1_00032668",
+  },
+  {
+    caseName: "ba_1774_coppens_charles_nl",
+    url: "https://agatha.arch.be/nl/data/acts/PRHENEG_HENEGBAPT1_00032668",
+  },
+  {
+    caseName: "ba_1774_coppens_charles_de",
+    url: "https://agatha.arch.be/de/data/acts/PRHENEG_HENEGBAPT1_00032668",
+  },
+  {
+    caseName: "ba_1774_coppens_charles_en",
+    url: "https://agatha.arch.be/en/data/acts/PRHENEG_HENEGBAPT1_00032668",
+  },
+  {
+    caseName: "bu_searchlist_1621_michiels_bartholomeus_fr",
+    url: "https://agatha.arch.be/fr/search/analyses/results/",
+  },
+  {
+    caseName: "bu_searchlist_1621_michiels_bartholomeus_nl",
+    url: "https://agatha.arch.be/nl/search/analyses/results/",
+  },
+  {
+    caseName: "bu_searchlist_1621_michiels_bartholomeus_de",
+    url: "https://agatha.arch.be/de/search/analyses/results/",
+  },
+  {
+    caseName: "bu_searchlist_1621_michiels_bartholomeus_en",
+    url: "https://agatha.arch.be/en/search/analyses/results/",
+  },
+  {
+    caseName: "bu_1621_michiels_bartholomeus_fr",
+    url: "https://agatha.arch.be/fr/data/acts/PARBEWVL_00342612",
+  },
+  {
+    caseName: "bu_1621_michiels_bartholomeus_nl",
+    url: "https://agatha.arch.be/nl/data/acts/PARBEWVL_00342612",
+  },
+  {
+    caseName: "bu_1621_michiels_bartholomeus_de",
+    url: "https://agatha.arch.be/de/data/acts/PARBEWVL_00342612",
+  },
+  {
+    caseName: "bu_1621_michiels_bartholomeus_en",
+    url: "https://agatha.arch.be/en/data/acts/PARBEWVL_00342612",
+  },
+  {
+    caseName: "bi_searchlist_1901_van_molle_emma_fr",
+    url: "https://agatha.arch.be/fr/search/analyses/results/",
+  },
+  {
+    caseName: "bi_searchlist_1901_van_molle_emma_nl",
+    url: "https://agatha.arch.be/nl/search/analyses/results/",
+  },
+  {
+    caseName: "bi_searchlist_1901_van_molle_emma_de",
+    url: "https://agatha.arch.be/de/search/analyses/results/",
+  },
+  {
+    caseName: "bi_searchlist_1901_van_molle_emma_en",
+    url: "https://agatha.arch.be/en/search/analyses/results/",
+  },
+  {
+    caseName: "bi_1901_van_molle_emma_fr",
+    url: "https://agatha.arch.be/fr/data/acts/LIEDEK_00000655",
+  },
+  {
+    caseName: "bi_1901_van_molle_emma_nl",
+    url: "https://agatha.arch.be/nl/data/acts/LIEDEK_00000655",
+  },
+  {
+    caseName: "bi_1901_van_molle_emma_de",
+    url: "https://agatha.arch.be/de/data/acts/LIEDEK_00000655",
+  },
+  {
+    caseName: "bi_1901_van_molle_emma_en",
+    url: "https://agatha.arch.be/en/data/acts/LIEDEK_00000655",
   },
 ];
 

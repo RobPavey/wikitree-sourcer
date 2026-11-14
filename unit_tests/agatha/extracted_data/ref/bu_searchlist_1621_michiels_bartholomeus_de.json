@@ -1,0 +1,25 @@
+{
+  "url": "https://agatha.arch.be/de/data/acts/PARBEWVL_00342612",
+  "success": true,
+  "isRecord": true,
+  "people": {
+    "verstorbener": [
+      {
+        "vorname und name": "Bartholomeus Michiels"
+      }
+    ],
+    "vater des verstorbenen": [
+      {
+        "vorname und name": "Jan Michiels"
+      }
+    ]
+  },
+  "metadata": {
+    "aktentyp": "Bestattungsurkunden",
+    "projekt": "Kirchenbücher - Bestattungsurkunden - Provinz Westflandern",
+    "ort": "Brugge",
+    "pfarrei": "St.Janshospitaal",
+    "beschreibung": "Begrafenissen",
+    "datum der urkunde": "05/05/1621"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "url": "https://agatha.arch.be/nl/data/acts/PARBEWVL_00342612",
+  "success": true,
+  "isRecord": true,
+  "people": {
+    "overledene": [
+      {
+        "naam en voornaam": "Bartholomeus Michiels"
+      }
+    ],
+    "vader van de overledene": [
+      {
+        "naam en voornaam": "Jan Michiels"
+      }
+    ]
+  },
+  "metadata": {
+    "aktetype": "Begrafenisakten",
+    "project": "https://agatha.arch.be/nl/data/projects/PARBEWVL",
+    "plaats": "Brugge",
+    "parochie": "St.Janshospitaal",
+    "beschrijving": "Begrafenissen",
+    "aktedatum": "05/05/1621"
+  }
+}

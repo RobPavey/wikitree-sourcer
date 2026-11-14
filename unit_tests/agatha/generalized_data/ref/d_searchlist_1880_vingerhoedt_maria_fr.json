@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "agatha",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "name": "Maria Cornelia Vingerhoedt"
+  },
+  "eventDate": {
+    "dateString": "5 Apr 1880"
+  },
+  "eventPlace": {
+    "placeString": "Antwerpen"
+  },
+  "birthDate": {
+    "dateString": "21 Nov 1805"
+  },
+  "ageAtEvent": "74 years 4 months 13 days",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Antonius Vingerhoedt"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Maria Catharina Van Der Poel"
+      }
+    }
+  },
+  "project": "État civil (FamilySearch) - Belgique",
+  "hasValidData": true
+}

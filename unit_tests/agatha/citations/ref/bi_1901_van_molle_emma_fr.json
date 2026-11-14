@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration of Emma Van Molle (1901)''':\n\"State Archives of Belgium: AGATHA\"<br/>\nProject LIEDEK, id: LIEDEK_00000655<br/>\n[https://agatha.arch.be/fr/data/acts/LIEDEK_00000655 AGATHA Record] (accessed 6 May 2021)<br/>\nEmma Van Molle birth 13 Apr 1901 in Liedekerke, child of Emmanuël Van Molle & Joanna Maria Devrindt.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Emma, child of Emmanuël Van Molle & Joanna Maria Devrindt, was born on 13 April 1901 in Liedekerke.<ref>\n'''Birth Registration of Emma Van Molle (1901)''':\n\"State Archives of Belgium: AGATHA\"<br/>\nProject LIEDEK, id: LIEDEK_00000655<br/>\n[https://agatha.arch.be/fr/data/acts/LIEDEK_00000655 AGATHA Record] (accessed 6 May 2021)<br/>\nEmma Van Molle birth 13 Apr 1901 in Liedekerke, child of Emmanuël Van Molle & Joanna Maria Devrindt.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration of Emma Van Molle (1901)''': \"State Archives of Belgium: AGATHA\"<br/>Project LIEDEK, id: LIEDEK_00000655<br/>[https://agatha.arch.be/fr/data/acts/LIEDEK_00000655 AGATHA Record] (accessed 6 May 2021)<br/>Emma Van Molle birth 13 Apr 1901 in Liedekerke, child of Emmanuël Van Molle & Joanna Maria Devrindt.",
+    "type": "source"
+  }
+}
