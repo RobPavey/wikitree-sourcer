@@ -43,6 +43,7 @@ import "../../bg/core/bg_options.mjs";
 import "../../compdes/core/compdes_options.mjs";
 import "../../cwgc/core/cwgc_options.mjs";
 import "../../dfgviewer/core/dfgviewer_options.mjs";
+import "../../dfs/core/dfs_options.mjs";
 import "../../doew/core/doew_options.mjs";
 import "../../ecpp/core/ecpp_options.mjs";
 import "../../eggsabdm/core/eggsabdm_options.mjs";

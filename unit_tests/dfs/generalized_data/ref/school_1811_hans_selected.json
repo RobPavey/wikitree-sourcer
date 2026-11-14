@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "dfs",
+  "sourceType": "record",
+  "recordType": "SchoolRecords",
+  "name": {
+    "name": "Hans Hansen"
+  },
+  "eventDate": {
+    "dateString": "May 1811"
+  },
+  "eventPlace": {
+    "placeString": "Dreslette, Båg, Odense"
+  },
+  "ageAtEvent": "8",
+  "hasValidData": true
+}

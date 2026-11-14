@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Danish Family Search, Kirkebog 1833 - 1867 Løjt, Ny udgave\"<br/>\nKirkeby, Løjt, Rise, Åbenrå; Opslag Nr. 29 - Fødte 1840; entry 6; DFS ID kbid953766<br/>\n[https://www.danishfamilysearch.dk/kbid953766 Danish Family Search] (accessed 12 November 2026)<br/>\n[https://www.danishfamilysearch.dk/sogn15/churchbook/source138891/opslag15207032 Register image]<br/>\nHans Christian Hansen, Fødte, 23 Feb 1840.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Hans, son of Chresten Hansen & Anne født Krongaard, was born on 23 February 1840 in Kirkeby.<ref>\n'''Birth''':\n\"Danish Family Search, Kirkebog 1833 - 1867 Løjt, Ny udgave\"<br/>\nKirkeby, Løjt, Rise, Åbenrå; Opslag Nr. 29 - Fødte 1840; entry 6; DFS ID kbid953766<br/>\n[https://www.danishfamilysearch.dk/kbid953766 Danish Family Search] (accessed 12 November 2026)<br/>\n[https://www.danishfamilysearch.dk/sogn15/churchbook/source138891/opslag15207032 Register image]<br/>\nHans Christian Hansen, Fødte, 23 Feb 1840.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth''': \"Danish Family Search, Kirkebog 1833 - 1867 Løjt, Ny udgave\"<br/>Kirkeby, Løjt, Rise, Åbenrå; Opslag Nr. 29 - Fødte 1840; entry 6; DFS ID kbid953766<br/>[https://www.danishfamilysearch.dk/kbid953766 Danish Family Search] (accessed 12 November 2026)<br/>[https://www.danishfamilysearch.dk/sogn15/churchbook/source138891/opslag15207032 Register image]<br/>Hans Christian Hansen, Fødte, 23 Feb 1840.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Birth: \"Danish Family Search, Kirkebog 1833 - 1867 Løjt, Ny udgave\", \nKirkeby, Løjt, Rise, Åbenrå; Opslag Nr. 29 - Fødte 1840; entry 6; DFS ID kbid953766, \nhttps://www.danishfamilysearch.dk/kbid953766 (accessed 12 November 2026)<br/>\nhttps://www.danishfamilysearch.dk/sogn15/churchbook/source138891/opslag15207032, \nHans Christian Hansen, Fødte, 23 Feb 1840.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Hans, son of Chresten Hansen & Anne født Krongaard, was born on 23 February 1840 in Kirkeby.Birth: \"Danish Family Search, Kirkebog 1833 - 1867 Løjt, Ny udgave\", \nKirkeby, Løjt, Rise, Åbenrå; Opslag Nr. 29 - Fødte 1840; entry 6; DFS ID kbid953766, \nhttps://www.danishfamilysearch.dk/kbid953766 (accessed 12 November 2026)<br/>\nhttps://www.danishfamilysearch.dk/sogn15/churchbook/source138891/opslag15207032, \nHans Christian Hansen, Fødte, 23 Feb 1840.\n",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Birth: \"Danish Family Search, Kirkebog 1833 - 1867 Løjt, Ny udgave\", Kirkeby, Løjt, Rise, Åbenrå; Opslag Nr. 29 - Fødte 1840; entry 6; DFS ID kbid953766, https://www.danishfamilysearch.dk/kbid953766 (accessed 12 November 2026)<br/>https://www.danishfamilysearch.dk/sogn15/churchbook/source138891/opslag15207032, Hans Christian Hansen, Fødte, 23 Feb 1840.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Danish Family Search, Kirkebog 1833 - 1867 Løjt, Ny udgave\"<br/>\nKirkeby, Løjt, Rise, Åbenrå; Opslag Nr. 29 - Fødte 1840; entry 6; DFS ID kbid953766<br/>\n[https://www.danishfamilysearch.dk/kbid953766 Danish Family Search]<br/>\n[https://www.danishfamilysearch.dk/sogn15/churchbook/source138891/opslag15207032 Register image]<br/>\nHans Christian Hansen, Fødte, 23 Feb 1840.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Hans, son of Chresten Hansen & Anne født Krongaard, was born on 23 February 1840 in Kirkeby.<ref>\n'''Birth''':\n\"Danish Family Search, Kirkebog 1833 - 1867 Løjt, Ny udgave\"<br/>\nKirkeby, Løjt, Rise, Åbenrå; Opslag Nr. 29 - Fødte 1840; entry 6; DFS ID kbid953766<br/>\n[https://www.danishfamilysearch.dk/kbid953766 Danish Family Search]<br/>\n[https://www.danishfamilysearch.dk/sogn15/churchbook/source138891/opslag15207032 Register image]<br/>\nHans Christian Hansen, Fødte, 23 Feb 1840.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Birth''': \"Danish Family Search, Kirkebog 1833 - 1867 Løjt, Ny udgave\"<br/>Kirkeby, Løjt, Rise, Åbenrå; Opslag Nr. 29 - Fødte 1840; entry 6; DFS ID kbid953766<br/>[https://www.danishfamilysearch.dk/kbid953766 Danish Family Search]<br/>[https://www.danishfamilysearch.dk/sogn15/churchbook/source138891/opslag15207032 Register image]<br/>Hans Christian Hansen, Fødte, 23 Feb 1840.",
+    "type": "source"
+  }
+}

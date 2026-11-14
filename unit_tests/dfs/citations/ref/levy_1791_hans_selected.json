@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Military levy registration''':\n\"Danish Family Search, Hovedrulle (Halsted) 1791 Lægd 3 til 27\"<br/>\n2. Udskrivningskreds; Opslag 180: 1791 Lægdsrulle; DFS ID 2464949<br/>\n[https://www.danishfamilysearch.dk/kilder/laegdsruller/kreds2/bsid17267/opslag12157806 Danish Family Search] (accessed 12 November 2026)<br/>\n[https://api.rigsarkivet.dk/ao/v1/images/737917 Register image]<br/>\nHans Hansen, military levy registration, 1791, age 19.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Hans was in a military record in 1791.<ref>\n'''Military levy registration''':\n\"Danish Family Search, Hovedrulle (Halsted) 1791 Lægd 3 til 27\"<br/>\n2. Udskrivningskreds; Opslag 180: 1791 Lægdsrulle; DFS ID 2464949<br/>\n[https://www.danishfamilysearch.dk/kilder/laegdsruller/kreds2/bsid17267/opslag12157806 Danish Family Search] (accessed 12 November 2026)<br/>\n[https://api.rigsarkivet.dk/ao/v1/images/737917 Register image]<br/>\nHans Hansen, military levy registration, 1791, age 19.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Military levy registration''': \"Danish Family Search, Hovedrulle (Halsted) 1791 Lægd 3 til 27\"<br/>2. Udskrivningskreds; Opslag 180: 1791 Lægdsrulle; DFS ID 2464949<br/>[https://www.danishfamilysearch.dk/kilder/laegdsruller/kreds2/bsid17267/opslag12157806 Danish Family Search] (accessed 12 November 2026)<br/>[https://api.rigsarkivet.dk/ao/v1/images/737917 Register image]<br/>Hans Hansen, military levy registration, 1791, age 19.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Military levy registration: \"Danish Family Search, Hovedrulle (Halsted) 1791 Lægd 3 til 27\", \n2. Udskrivningskreds; Opslag 180: 1791 Lægdsrulle; DFS ID 2464949, \nhttps://www.danishfamilysearch.dk/kilder/laegdsruller/kreds2/bsid17267/opslag12157806 (accessed 12 November 2026)<br/>\nhttps://api.rigsarkivet.dk/ao/v1/images/737917, \nHans Hansen, military levy registration, 1791, age 19.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Hans was in a military record in 1791.Military levy registration: \"Danish Family Search, Hovedrulle (Halsted) 1791 Lægd 3 til 27\", \n2. Udskrivningskreds; Opslag 180: 1791 Lægdsrulle; DFS ID 2464949, \nhttps://www.danishfamilysearch.dk/kilder/laegdsruller/kreds2/bsid17267/opslag12157806 (accessed 12 November 2026)<br/>\nhttps://api.rigsarkivet.dk/ao/v1/images/737917, \nHans Hansen, military levy registration, 1791, age 19.\n",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Military levy registration: \"Danish Family Search, Hovedrulle (Halsted) 1791 Lægd 3 til 27\", 2. Udskrivningskreds; Opslag 180: 1791 Lægdsrulle; DFS ID 2464949, https://www.danishfamilysearch.dk/kilder/laegdsruller/kreds2/bsid17267/opslag12157806 (accessed 12 November 2026)<br/>https://api.rigsarkivet.dk/ao/v1/images/737917, Hans Hansen, military levy registration, 1791, age 19.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Military levy registration''':\n\"Danish Family Search, Hovedrulle (Halsted) 1791 Lægd 3 til 27\"<br/>\n2. Udskrivningskreds; Opslag 180: 1791 Lægdsrulle; DFS ID 2464949<br/>\n[https://www.danishfamilysearch.dk/kilder/laegdsruller/kreds2/bsid17267/opslag12157806 Danish Family Search]<br/>\n[https://api.rigsarkivet.dk/ao/v1/images/737917 Register image]<br/>\nHans Hansen, military levy registration, 1791, age 19.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Hans was in a military record in 1791.<ref>\n'''Military levy registration''':\n\"Danish Family Search, Hovedrulle (Halsted) 1791 Lægd 3 til 27\"<br/>\n2. Udskrivningskreds; Opslag 180: 1791 Lægdsrulle; DFS ID 2464949<br/>\n[https://www.danishfamilysearch.dk/kilder/laegdsruller/kreds2/bsid17267/opslag12157806 Danish Family Search]<br/>\n[https://api.rigsarkivet.dk/ao/v1/images/737917 Register image]<br/>\nHans Hansen, military levy registration, 1791, age 19.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Military levy registration''': \"Danish Family Search, Hovedrulle (Halsted) 1791 Lægd 3 til 27\"<br/>2. Udskrivningskreds; Opslag 180: 1791 Lægdsrulle; DFS ID 2464949<br/>[https://www.danishfamilysearch.dk/kilder/laegdsruller/kreds2/bsid17267/opslag12157806 Danish Family Search]<br/>[https://api.rigsarkivet.dk/ao/v1/images/737917 Register image]<br/>Hans Hansen, military levy registration, 1791, age 19.",
+    "type": "source"
+  }
+}

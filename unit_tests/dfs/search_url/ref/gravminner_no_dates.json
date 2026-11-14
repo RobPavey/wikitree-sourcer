@@ -1,0 +1,113 @@
+{
+  "std": {
+    "fieldData": {
+      "firstname": "Anne",
+      "lastname": "Olsen"
+    },
+    "selectData": {
+      "groups": [
+        "census",
+        "churchbook",
+        "skoleprotokol",
+        "laegsruller"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "namesOnly": {
+    "fieldData": {
+      "firstname": "Anne",
+      "lastname": "Olsen"
+    },
+    "selectData": {
+      "groups": [
+        "census",
+        "churchbook",
+        "skoleprotokol",
+        "laegsruller"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "review": {
+    "fieldData": {
+      "firstname": "Anne",
+      "lastname": "Olsen"
+    },
+    "selectData": {
+      "groups": [
+        "census",
+        "churchbook",
+        "skoleprotokol",
+        "laegsruller"
+      ],
+      "autoSubmit": false
+    }
+  },
+  "census": {
+    "fieldData": {
+      "firstname": "Anne",
+      "lastname": "Olsen"
+    },
+    "selectData": {
+      "groups": [
+        "census"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "churchbook": {
+    "fieldData": {
+      "firstname": "Anne",
+      "lastname": "Olsen"
+    },
+    "selectData": {
+      "groups": [
+        "churchbook"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "skoleprotokol": {
+    "fieldData": {
+      "firstname": "Anne",
+      "lastname": "Olsen"
+    },
+    "selectData": {
+      "groups": [
+        "skoleprotokol"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "laegsruller": {
+    "fieldData": {
+      "firstname": "Anne",
+      "lastname": "Olsen"
+    },
+    "selectData": {
+      "groups": [
+        "laegsruller"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "specifiedParameters": {
+    "fieldData": {
+      "firstname": "Anne",
+      "lastname": "Olsen",
+      "bornyearfrom": "1838",
+      "bornyearto": "1842",
+      "sourceyearfrom": "1850",
+      "sourceyearto": "1860",
+      "bornplacename": "Åbenrå",
+      "placename": "Dreslette"
+    },
+    "selectData": {
+      "groups": [
+        "skoleprotokol"
+      ],
+      "autoSubmit": true
+    }
+  }
+}

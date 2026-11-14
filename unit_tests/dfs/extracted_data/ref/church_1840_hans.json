@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "url": "https://www.danishfamilysearch.dk/kbid953766",
+  "fields": {
+    "Navn": "Hans Christian Hansen",
+    "Køn": "Mand",
+    "Fødested": "Kirkeby",
+    "Dåbsdato": "",
+    "Dåbssted": ""
+  },
+  "fullName": "Hans Christian Hansen",
+  "recordId": "kbid953766",
+  "group": "churchbook",
+  "entryType": "Fødte",
+  "eventDate": "23 Februar 1840",
+  "entryNumber": "6",
+  "sourceReference": "",
+  "provenance": "",
+  "remarks": "Død 13 Octbr. 1841.",
+  "locality": "Kirkeby, Løjt, Rise, Åbenrå",
+  "sourceTitle": "Kirkebog 1833 - 1867 Løjt, Ny udgave",
+  "imageReference": "Opslag Nr. 29 - Fødte 1840",
+  "imagePageUrl": "https://www.danishfamilysearch.dk/sogn15/churchbook/source138891/opslag15207032",
+  "fatherFullName": "Chresten Hansen",
+  "motherFullName": "Anne født Krongaard",
+  "spouseFullName": "",
+  "household": []
+}

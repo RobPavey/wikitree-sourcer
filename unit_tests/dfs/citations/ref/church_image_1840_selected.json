@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\"<br/>\nStubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd; DFS ID 4940048<br/>\n[https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 Danish Family Search] (accessed 12 November 2026)<br/>\n[https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg Register image]<br/>\nHans Arnold Hansen, Fødte Mænd, 17 Feb 1840.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Hans was born on 17 February 1840 in Stubbekøbing, Falsters Nørre, Maribo.<ref>\n'''Birth''':\n\"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\"<br/>\nStubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd; DFS ID 4940048<br/>\n[https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 Danish Family Search] (accessed 12 November 2026)<br/>\n[https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg Register image]<br/>\nHans Arnold Hansen, Fødte Mænd, 17 Feb 1840.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth''': \"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\"<br/>Stubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd; DFS ID 4940048<br/>[https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 Danish Family Search] (accessed 12 November 2026)<br/>[https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg Register image]<br/>Hans Arnold Hansen, Fødte Mænd, 17 Feb 1840.",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Birth: \"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\", \nStubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd; DFS ID 4940048, \nhttps://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 (accessed 12 November 2026)<br/>\nhttps://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg, \nHans Arnold Hansen, Fødte Mænd, 17 Feb 1840.\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "Hans was born on 17 February 1840 in Stubbekøbing, Falsters Nørre, Maribo.Birth: \"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\", \nStubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd; DFS ID 4940048, \nhttps://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 (accessed 12 November 2026)<br/>\nhttps://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg, \nHans Arnold Hansen, Fødte Mænd, 17 Feb 1840.\n",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Birth: \"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\", Stubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd; DFS ID 4940048, https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 (accessed 12 November 2026)<br/>https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg, Hans Arnold Hansen, Fødte Mænd, 17 Feb 1840.",
+    "type": "source"
+  },
+  "noAccessDate_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\"<br/>\nStubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd; DFS ID 4940048<br/>\n[https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 Danish Family Search]<br/>\n[https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg Register image]<br/>\nHans Arnold Hansen, Fødte Mænd, 17 Feb 1840.\n</ref>",
+    "type": "inline"
+  },
+  "noAccessDate_narrative": {
+    "citation": "Hans was born on 17 February 1840 in Stubbekøbing, Falsters Nørre, Maribo.<ref>\n'''Birth''':\n\"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\"<br/>\nStubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd; DFS ID 4940048<br/>\n[https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 Danish Family Search]<br/>\n[https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg Register image]<br/>\nHans Arnold Hansen, Fødte Mænd, 17 Feb 1840.\n</ref>",
+    "type": "narrative"
+  },
+  "noAccessDate_source": {
+    "citation": "* '''Birth''': \"Danish Family Search, Kirkebog 1835 - 1851 Stubbekøbing, Ny udgave\"<br/>Stubbekøbing, Falsters Nørre, Maribo; Opslag 9: 1839-1840 Fødte Mænd; DFS ID 4940048<br/>[https://www.danishfamilysearch.dk/churchbook/sogn701/churchlisting143098/opslag15978995 Danish Family Search]<br/>[https://filedn.eu/lxUb0Tww4FLXaQb4oa0WB3k/ch/701/143098/15978995.jpg Register image]<br/>Hans Arnold Hansen, Fødte Mænd, 17 Feb 1840.",
+    "type": "source"
+  }
+}

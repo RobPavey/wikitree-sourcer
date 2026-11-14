@@ -1,0 +1,125 @@
+{
+  "std": {
+    "fieldData": {
+      "firstname": "William",
+      "lastname": "Pavey",
+      "bornyearfrom": "1874",
+      "bornyearto": "1876"
+    },
+    "selectData": {
+      "groups": [
+        "census",
+        "churchbook",
+        "skoleprotokol",
+        "laegsruller"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "namesOnly": {
+    "fieldData": {
+      "firstname": "William",
+      "lastname": "Pavey"
+    },
+    "selectData": {
+      "groups": [
+        "census",
+        "churchbook",
+        "skoleprotokol",
+        "laegsruller"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "review": {
+    "fieldData": {
+      "firstname": "William",
+      "lastname": "Pavey",
+      "bornyearfrom": "1874",
+      "bornyearto": "1876"
+    },
+    "selectData": {
+      "groups": [
+        "census",
+        "churchbook",
+        "skoleprotokol",
+        "laegsruller"
+      ],
+      "autoSubmit": false
+    }
+  },
+  "census": {
+    "fieldData": {
+      "firstname": "William",
+      "lastname": "Pavey",
+      "bornyearfrom": "1874",
+      "bornyearto": "1876"
+    },
+    "selectData": {
+      "groups": [
+        "census"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "churchbook": {
+    "fieldData": {
+      "firstname": "William",
+      "lastname": "Pavey",
+      "bornyearfrom": "1874",
+      "bornyearto": "1876"
+    },
+    "selectData": {
+      "groups": [
+        "churchbook"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "skoleprotokol": {
+    "fieldData": {
+      "firstname": "William",
+      "lastname": "Pavey",
+      "bornyearfrom": "1874",
+      "bornyearto": "1876"
+    },
+    "selectData": {
+      "groups": [
+        "skoleprotokol"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "laegsruller": {
+    "fieldData": {
+      "firstname": "William",
+      "lastname": "Pavey",
+      "bornyearfrom": "1874",
+      "bornyearto": "1876"
+    },
+    "selectData": {
+      "groups": [
+        "laegsruller"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "specifiedParameters": {
+    "fieldData": {
+      "firstname": "William",
+      "lastname": "Pavey",
+      "bornyearfrom": "1838",
+      "bornyearto": "1842",
+      "sourceyearfrom": "1850",
+      "sourceyearto": "1860",
+      "bornplacename": "Åbenrå",
+      "placename": "Dreslette"
+    },
+    "selectData": {
+      "groups": [
+        "skoleprotokol"
+      ],
+      "autoSubmit": true
+    }
+  }
+}

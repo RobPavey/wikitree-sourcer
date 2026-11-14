@@ -1,0 +1,125 @@
+{
+  "std": {
+    "fieldData": {
+      "firstname": "Hans",
+      "lastname": "Hansen",
+      "bornyearfrom": "1834",
+      "bornyearto": "1846"
+    },
+    "selectData": {
+      "groups": [
+        "census",
+        "churchbook",
+        "skoleprotokol",
+        "laegsruller"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "namesOnly": {
+    "fieldData": {
+      "firstname": "Hans",
+      "lastname": "Hansen"
+    },
+    "selectData": {
+      "groups": [
+        "census",
+        "churchbook",
+        "skoleprotokol",
+        "laegsruller"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "review": {
+    "fieldData": {
+      "firstname": "Hans",
+      "lastname": "Hansen",
+      "bornyearfrom": "1834",
+      "bornyearto": "1846"
+    },
+    "selectData": {
+      "groups": [
+        "census",
+        "churchbook",
+        "skoleprotokol",
+        "laegsruller"
+      ],
+      "autoSubmit": false
+    }
+  },
+  "census": {
+    "fieldData": {
+      "firstname": "Hans",
+      "lastname": "Hansen",
+      "bornyearfrom": "1834",
+      "bornyearto": "1846"
+    },
+    "selectData": {
+      "groups": [
+        "census"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "churchbook": {
+    "fieldData": {
+      "firstname": "Hans",
+      "lastname": "Hansen",
+      "bornyearfrom": "1834",
+      "bornyearto": "1846"
+    },
+    "selectData": {
+      "groups": [
+        "churchbook"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "skoleprotokol": {
+    "fieldData": {
+      "firstname": "Hans",
+      "lastname": "Hansen",
+      "bornyearfrom": "1834",
+      "bornyearto": "1846"
+    },
+    "selectData": {
+      "groups": [
+        "skoleprotokol"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "laegsruller": {
+    "fieldData": {
+      "firstname": "Hans",
+      "lastname": "Hansen",
+      "bornyearfrom": "1834",
+      "bornyearto": "1846"
+    },
+    "selectData": {
+      "groups": [
+        "laegsruller"
+      ],
+      "autoSubmit": true
+    }
+  },
+  "specifiedParameters": {
+    "fieldData": {
+      "firstname": "Hans",
+      "lastname": "Hansen",
+      "bornyearfrom": "1838",
+      "bornyearto": "1842",
+      "sourceyearfrom": "1850",
+      "sourceyearto": "1860",
+      "bornplacename": "Åbenrå",
+      "placename": "Dreslette"
+    },
+    "selectData": {
+      "groups": [
+        "skoleprotokol"
+      ],
+      "autoSubmit": true
+    }
+  }
+}
