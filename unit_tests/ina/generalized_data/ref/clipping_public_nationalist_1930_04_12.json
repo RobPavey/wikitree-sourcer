@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "ina",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "12 April 1930"
+  },
+  "newspaperName": "Nationalist & Leinster Times",
+  "hasValidData": true
+}

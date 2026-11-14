@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Bridget Mary",
+    "lastName": "Brennan"
+  },
+  "lastNameAtBirth": "Quinn",
+  "lastNameAtDeath": "Brennan",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "abt 1875",
+    "qualifier": 1
+  },
+  "birthPlace": {
+    "placeString": "Tramore, County Waterford, Ireland"
+  },
+  "deathDate": {
+    "dateString": "12 March 1950"
+  },
+  "deathPlace": {
+    "placeString": "Waterford, County Waterford, Ireland"
+  },
+  "hasValidData": true
+}
