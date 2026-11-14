@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1930 Newspaper''':\n\"Irish Newspaper Archives\"<br/>\nNationalist & Leinster Times, 12 April 1930, page 9, \"1930\"<br/>\n[https://irishnewsarchive.com/?a=clipa&command=ShowClippingEntry&clippingid=75420 Irish Newspaper Archives clipping] (accessed 6 May 2021)<br/>\nClipping note: plaois gaa.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the Nationalist & Leinster Times on 12 April 1930.<ref>\n'''1930 Newspaper''':\n\"Irish Newspaper Archives\"<br/>\nNationalist & Leinster Times, 12 April 1930, page 9, \"1930\"<br/>\n[https://irishnewsarchive.com/?a=clipa&command=ShowClippingEntry&clippingid=75420 Irish Newspaper Archives clipping] (accessed 6 May 2021)<br/>\nClipping note: plaois gaa.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1930 Newspaper''': \"Irish Newspaper Archives\"<br/>Nationalist & Leinster Times, 12 April 1930, page 9, \"1930\"<br/>[https://irishnewsarchive.com/?a=clipa&command=ShowClippingEntry&clippingid=75420 Irish Newspaper Archives clipping] (accessed 6 May 2021)<br/>Clipping note: plaois gaa.",
+    "type": "source"
+  }
+}

@@ -67,6 +67,7 @@ import "../../gro/core/gro_options.mjs";
 import "../../hathi/core/hathi_options.mjs";
 import "../../ilsosgov/core/ilsosgov_options.mjs";
 import "../../imdb/core/imdb_options.mjs";
+import "../../ina/core/ina_options.mjs";
 import "../../irishg/core/irishg_options.mjs";
 import "../../itcadgg/core/itcadgg_options.mjs";
 import "../../jstor/core/jstor_options.mjs";
