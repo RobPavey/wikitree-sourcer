@@ -1308,6 +1308,24 @@ const DateUtils = {
 
     return result;
   },
+
+  monthNumToFullMonthName(monthNumber) {
+    // month number can be a number or string in the range 1 to 12.
+    if (!monthNumber) {
+      return "";
+    }
+
+    // 1. Convert to an integer (handles both numbers and numeric strings like "5")
+    const monthNum = parseInt(monthNumber, 10);
+
+    // 2. Validate that it's a valid integer within the 1–12 range
+    if (isNaN(monthNum) || monthNum < 1 || monthNum > 12) {
+      return "";
+    }
+
+    // 3. Map 1-12 to the 0-11 array index
+    return fullMonths[monthNum - 1];
+  },
 };
 
 export { DateUtils };

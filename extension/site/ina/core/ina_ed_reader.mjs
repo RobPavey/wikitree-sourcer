@@ -24,21 +24,7 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
-
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 // "Friday, 2 October 1925" -> "2 October 1925", or from the page ID's "19251002" if that is all there is
 function getIssueDateString(ed) {
@@ -50,7 +36,7 @@ function getIssueDateString(ed) {
     let month = Number(ed.issueDateYmd.substring(4, 6));
     let day = Number(ed.issueDateYmd.substring(6, 8));
     if (month >= 1 && month <= 12 && day >= 1) {
-      return day + " " + monthNames[month - 1] + " " + year;
+      return day + " " + DateUtils.monthNumToFullMonthName(month) + " " + year;
     }
   }
   return "";

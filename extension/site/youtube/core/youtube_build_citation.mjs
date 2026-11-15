@@ -23,23 +23,10 @@ SOFTWARE.
 */
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { buildYoutubeTemplate } from "./youtube_build_template.mjs";
 
 const weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
 
 // e.g. 11939 -> "3:18:59", 125 -> "2:05"
 function formatDuration(totalSeconds) {
@@ -64,7 +51,8 @@ function formatPostedDate(isoDate) {
   const day = parseInt(match[3], 10);
   // Use UTC so that the user's time zone doesn't change the day of the week
   const weekday = new Date(Date.UTC(year, month - 1, day)).getUTCDay();
-  return weekdayNames[weekday] + ", " + monthNames[month - 1] + " " + day + ", " + year;
+  const monthName = DateUtils.monthNumToFullMonthName(month);
+  return weekdayNames[weekday] + ", " + monthName + " " + day + ", " + year;
 }
 
 // e.g. USC Shoah Foundation. 1997. "Jehovah Witness Survivor Franz Wohlfahrt | USC Shoah Foundation."

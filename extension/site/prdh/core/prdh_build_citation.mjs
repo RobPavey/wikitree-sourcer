@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 function buildPrdhUrl(ed, builder) {
   return ed.url;
@@ -177,21 +178,8 @@ function formatFamilyDate(dateString) {
   if (!match) {
     return dateString;
   }
-  let monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  return Number(match[3]) + " " + monthNames[Number(match[2]) - 1] + " " + match[1];
+  const monthName = DateUtils.monthNumToFullMonthName(match[2]);
+  return Number(match[3]) + " " + monthName + " " + match[1];
 }
 
 function formatFamilyPlace(place) {

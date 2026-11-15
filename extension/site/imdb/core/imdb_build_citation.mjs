@@ -23,22 +23,8 @@ SOFTWARE.
 */
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { buildImdbTemplate } from "./imdb_build_template.mjs";
-
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
 
 // e.g. "1963-12-18" -> "18 December 1963", "1963-12" -> "December 1963", "1963" -> "1963"
 function formatIsoDate(isoDate) {
@@ -56,7 +42,8 @@ function formatIsoDate(isoDate) {
   }
   let result = match[1];
   if (match[2]) {
-    result = monthNames[parseInt(match[2], 10) - 1] + " " + result;
+    let monthName = DateUtils.monthNumToFullMonthName(match[2]);
+    result = monthName + " " + result;
     if (match[3]) {
       result = parseInt(match[3], 10) + " " + result;
     }

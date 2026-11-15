@@ -25,6 +25,7 @@ SOFTWARE.
 import { buildNarrative } from "./narrative_builder.mjs";
 import { DataString } from "./data_string.mjs";
 import { DateObj } from "./generalize_data_utils.mjs";
+import { DateUtils } from "./date_utils.mjs";
 
 // The different parts of a citation are:
 //
@@ -59,22 +60,8 @@ class CitationBuilder {
   }
 
   getDateString(generalizedData, date) {
-    const monthStrings = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-
-    let dateString = "" + date.getDate() + " " + monthStrings[date.getMonth()] + " " + date.getFullYear();
+    let monthName = DateUtils.monthNumToFullMonthName(date.getMonth() + 1);
+    let dateString = "" + date.getDate() + " " + monthName + " " + date.getFullYear();
 
     let format = this.options.citation_general_accessedDateFormat;
     if (format != "long") {

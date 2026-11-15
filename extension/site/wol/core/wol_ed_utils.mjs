@@ -22,20 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 // The issue date of a magazine on the library is "19781001" for an issue on a particular day or "201901" for an
 // issue for a month. Returns an object with the year, month and day (the month and day may be undefined) or
@@ -65,7 +52,7 @@ function formatIssueDate(issue) {
   if (!parts) {
     return "";
   }
-  let result = monthNames[parts.month - 1] + " " + parts.year;
+  let result = DateUtils.monthNumToFullMonthName(parts.month) + " " + parts.year;
   if (parts.day) {
     result = parts.day + " " + result;
   }

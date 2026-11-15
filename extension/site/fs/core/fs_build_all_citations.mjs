@@ -96,23 +96,8 @@ function inferEventDate(source) {
 }
 
 function getDateString(date) {
-  const monthStrings = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  const dateString = "" + date.getUTCDate() + " " + monthStrings[date.getUTCMonth()] + " " + date.getUTCFullYear();
-
+  const monthName = DateUtils.monthNumToFullMonthName(date.getUTCMonth() + 1);
+  const dateString = "" + date.getUTCDate() + " " + monthName + " " + date.getUTCFullYear();
   return dateString;
 }
 

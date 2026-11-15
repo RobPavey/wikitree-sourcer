@@ -25,6 +25,7 @@ SOFTWARE.
 import { GD, GeneralizedData, PlaceObj, NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { getRecordType } from "./scotp_utils.mjs";
 import { getRegistrationDistrict, getCountyDisplayName } from "./scotp_registration_districts.mjs";
@@ -678,24 +679,11 @@ function cleanDdMmYyyyDate(dateString) {
 
   let monthNum = parseInt(month);
   if (monthNum != NaN) {
-    if (month < 1 || month > 12) {
+    const monthName = DateUtils.monthNumToFullMonthName(month);
+    if (!monthName) {
       return dateString;
     }
-    const monthStrings = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    month = monthStrings[monthNum - 1];
+    month = monthName;
   } else {
     return dateString;
   }
