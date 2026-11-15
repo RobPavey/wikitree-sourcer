@@ -3486,6 +3486,10 @@ function regeneralizeDataWithLinkedRecords(input) {
         let hasPageNum = false;
         if (memberExtractedData.recordData) {
           let pageNumString = memberExtractedData.recordData["Page number"];
+          if (!pageNumString) {
+            // 1891 census uses Folio field for the page number
+            pageNumString = memberExtractedData.recordData["Folio"];
+          }
           if (pageNumString) {
             let pageNum = Number(pageNumString.trim());
             if (!isNaN(pageNum)) {
