@@ -2,24 +2,14 @@
   "url": "https://agatha.arch.be/en/data/acts/PARBEWVL_00342612",
   "success": true,
   "isRecord": true,
-  "people": {
-    "deceased": [
-      {
-        "first name and name": "Bartholomeus Michiels"
-      }
-    ],
-    "father of the deceased": [
-      {
-        "first name and name": "Jan Michiels"
-      }
-    ]
-  },
-  "metadata": {
+  "recordData": {
     "type of record": "Funeral certificates",
     "project": "Church registers - Funeral certificates - Province of West Flanders",
     "location": "Brugge",
     "parish": "St.Janshospitaal",
     "description": "Begrafenissen",
-    "date of record": "05/05/1621"
+    "date of record": "05/05/1621",
+    "deceased::first name and name": "Bartholomeus Michiels",
+    "father of the deceased::first name and name": "Jan Michiels"
   }
 }

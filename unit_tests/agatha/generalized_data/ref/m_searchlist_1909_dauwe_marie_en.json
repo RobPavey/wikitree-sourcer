@@ -17,19 +17,31 @@
   "birthPlace": {
     "placeString": "Sint-Niklaas, Oost-Vlaanderen"
   },
-  "residencePlace": {
-    "placeString": "Zwijndrecht, Vlaams Hoofd"
-  },
-  "occupation": "courtier",
   "spouses": [
     {
       "name": {
         "name": "Marie Rosine Dauwe"
       },
-      "marriageDate": "06/03/1909",
-      "marriagePlace": "Sint-Gillis"
+      "marriageDate": {
+        "dateString": "6 Mar 1909"
+      },
+      "marriagePlace": {
+        "placeString": "Sint-Gillis"
+      }
     }
   ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Jean Baptiste Marie Van Haelst"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Marie Clotilde Goossens"
+      }
+    }
+  },
   "primaryPersonOptions": [
     "Marie Rosine Dauwe (bride)",
     "Alphonse Marie Louise Corneille Van Haelst (groom)"

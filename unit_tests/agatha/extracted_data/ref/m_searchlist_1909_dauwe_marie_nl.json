@@ -2,82 +2,46 @@
   "url": "https://agatha.arch.be/nl/data/acts/HUVLB_HUBRU_00619335_0",
   "success": true,
   "isRecord": true,
-  "people": {
-    "bruid": [
-      {
-        "voornaam en naam": "Marie Rosine Dauwe",
-        "geboorteplaats": "Galmaarden, Brabant",
-        "geboortedatum": "10/02/1878",
-        "woonplaats": "Saint-Gilles",
-        "beroep": "sans profession"
-      }
-    ],
-    "vader van de bruid": [
-      {
-        "voornaam en naam": "Pierre François Dauwe",
-        "woonplaats": "Galmaarden",
-        "beroep": "fermier"
-      }
-    ],
-    "moeder van de bruid": [
-      {
-        "voornaam en naam": "Jeanne Catherine Vanholder",
-        "woonplaats": "Galmaarden",
-        "beroep": "sans profession"
-      }
-    ],
-    "bruidegom": [
-      {
-        "voornaam en naam": "Alphonse Marie Louise Corneille Van Haelst",
-        "geboorteplaats": "Sint-Niklaas, Oost-Vlaanderen",
-        "geboortedatum": "15/10/1874",
-        "woonplaats": "Zwijndrecht, Vlaams Hoofd",
-        "beroep": "courtier"
-      }
-    ],
-    "vader van de bruidegom": [
-      {
-        "voornaam en naam": "Jean Baptiste Marie Van Haelst",
-        "overlijdensplaats": "Saint-Nicolas",
-        "overlijdensdatum": "16/11/1880",
-        "opmerkingen": "Son acte de décès mentionne comme son patonyme:Vanhaelst."
-      }
-    ],
-    "moeder van de bruidegom": [
-      {
-        "voornaam en naam": "Marie Clotilde Goossens",
-        "overlijdensplaats": "Antwerpen",
-        "overlijdensdatum": "28/12/1906",
-        "opmerkingen": "Son acte de décès mentionne comme patonym ede son époux:Vanhaelst."
-      }
-    ],
-    "gewettigd kind": [
-      {
-        "voornaam en naam": "Anne Catherine Léopoldine Dauwe>Van Haelst",
-        "geboorteplaats": "Bruxelles",
-        "geboortedatum": "23/10/1897"
-      }
-    ],
-    "getuige": [
-      {
-        "voornaam en naam": "Léopold Meerts",
-        "leeftijd": "44 jaar",
-        "woonplaats": "Saint-Gilles",
-        "beroep": "conducteur au gaz"
-      },
-      {
-        "voornaam en naam": "François Schellens",
-        "leeftijd": "45 jaar",
-        "woonplaats": "Antwerpen",
-        "beroep": "restaurateur"
-      }
-    ]
-  },
-  "metadata": {
+  "recordData": {
     "aktetype": "Huwelijksakten",
     "project": "Burgerlijke stand - Huwelijksakten - Provincie Vlaams-Brabant en Brussels Hoofdstedelijk Gewest",
     "plaats": "Sint-Gillis",
     "beschrijving": "Huwelijksakte",
-    "datum van de akte": "06/03/1909"
+    "datum van de akte": "06/03/1909",
+    "bruid::voornaam en naam": "Marie Rosine Dauwe",
+    "bruid::geboorteplaats": "Galmaarden, Brabant",
+    "bruid::geboortedatum": "10/02/1878",
+    "bruid::woonplaats": "Saint-Gilles",
+    "bruid::beroep": "sans profession",
+    "vader van de bruid::voornaam en naam": "Pierre François Dauwe",
+    "vader van de bruid::woonplaats": "Galmaarden",
+    "vader van de bruid::beroep": "fermier",
+    "moeder van de bruid::voornaam en naam": "Jeanne Catherine Vanholder",
+    "moeder van de bruid::woonplaats": "Galmaarden",
+    "moeder van de bruid::beroep": "sans profession",
+    "bruidegom::voornaam en naam": "Alphonse Marie Louise Corneille Van Haelst",
+    "bruidegom::geboorteplaats": "Sint-Niklaas, Oost-Vlaanderen",
+    "bruidegom::geboortedatum": "15/10/1874",
+    "bruidegom::woonplaats": "Zwijndrecht, Vlaams Hoofd",
+    "bruidegom::beroep": "courtier",
+    "vader van de bruidegom::voornaam en naam": "Jean Baptiste Marie Van Haelst",
+    "vader van de bruidegom::overlijdensplaats": "Saint-Nicolas",
+    "vader van de bruidegom::overlijdensdatum": "16/11/1880",
+    "vader van de bruidegom::opmerkingen": "Son acte de décès mentionne comme son patonyme:Vanhaelst.",
+    "moeder van de bruidegom::voornaam en naam": "Marie Clotilde Goossens",
+    "moeder van de bruidegom::overlijdensplaats": "Antwerpen",
+    "moeder van de bruidegom::overlijdensdatum": "28/12/1906",
+    "moeder van de bruidegom::opmerkingen": "Son acte de décès mentionne comme patonym ede son époux:Vanhaelst.",
+    "gewettigd kind::voornaam en naam": "Anne Catherine Léopoldine Dauwe>Van Haelst",
+    "gewettigd kind::geboorteplaats": "Bruxelles",
+    "gewettigd kind::geboortedatum": "23/10/1897",
+    "getuige::voornaam en naam": "Léopold Meerts",
+    "getuige::leeftijd": "44 jaar",
+    "getuige::woonplaats": "Saint-Gilles",
+    "getuige::beroep": "conducteur au gaz",
+    "getuige2::voornaam en naam": "François Schellens",
+    "getuige2::leeftijd": "45 jaar",
+    "getuige2::woonplaats": "Antwerpen",
+    "getuige2::beroep": "restaurateur"
   }
 }

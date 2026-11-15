@@ -2,40 +2,18 @@
   "url": "https://agatha.arch.be/en/data/acts/PRHENEG_HENEGBAPT1_00032668",
   "success": true,
   "isRecord": true,
-  "people": {
-    "baptized child": [
-      {
-        "first name and name": "Charles Josephe Coppens",
-        "place of birth": "Acren St Gereon",
-        "remarks": "Né vers le matin"
-      }
-    ],
-    "father of the baptized child": [
-      {
-        "first name and name": "Judo Coppens"
-      }
-    ],
-    "mother of the baptized child": [
-      {
-        "first name and name": "Marie Catherine Dereyst"
-      }
-    ],
-    "godfather": [
-      {
-        "first name and name": "Jean-baptiste Coppens"
-      }
-    ],
-    "godmother": [
-      {
-        "first name and name": "Anne Marie Coppens"
-      }
-    ]
-  },
-  "metadata": {
+  "recordData": {
     "type of record": "Baptism certificates",
     "project": "Church registers and civil status - Ath, Tournai and Ronse",
     "location": "Acren St Gereon",
     "description": "Acte de baptême",
-    "date of record": "23/01/1774"
+    "date of record": "23/01/1774",
+    "baptized child::first name and name": "Charles Josephe Coppens",
+    "baptized child::place of birth": "Acren St Gereon",
+    "baptized child::remarks": "Né vers le matin",
+    "father of the baptized child::first name and name": "Judo Coppens",
+    "mother of the baptized child::first name and name": "Marie Catherine Dereyst",
+    "godfather::first name and name": "Jean-baptiste Coppens",
+    "godmother::first name and name": "Anne Marie Coppens"
   }
 }

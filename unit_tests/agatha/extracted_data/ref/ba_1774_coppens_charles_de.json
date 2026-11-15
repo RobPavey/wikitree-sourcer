@@ -2,40 +2,18 @@
   "url": "https://agatha.arch.be/de/data/acts/PRHENEG_HENEGBAPT1_00032668",
   "success": true,
   "isRecord": true,
-  "people": {
-    "täufling": [
-      {
-        "name und vorname": "Charles Josephe Coppens",
-        "geburtsort": "Acren St Gereon",
-        "bemerkungen": "Né vers le matin"
-      }
-    ],
-    "vater des täuflings": [
-      {
-        "name und vorname": "Judo Coppens"
-      }
-    ],
-    "mutter des täuflings": [
-      {
-        "name und vorname": "Marie Catherine Dereyst"
-      }
-    ],
-    "pate": [
-      {
-        "name und vorname": "Jean-baptiste Coppens"
-      }
-    ],
-    "patin": [
-      {
-        "name und vorname": "Anne Marie Coppens"
-      }
-    ]
-  },
-  "metadata": {
+  "recordData": {
     "art der urkunde": "Taufurkunden",
     "projekt": "https://agatha.arch.be/de/data/projects/PRHENEG",
     "ort": "Acren St Gereon",
     "beschreibung": "Acte de baptême",
-    "datum der urkunde": "23/01/1774"
+    "datum der urkunde": "23/01/1774",
+    "täufling::name und vorname": "Charles Josephe Coppens",
+    "täufling::geburtsort": "Acren St Gereon",
+    "täufling::bemerkungen": "Né vers le matin",
+    "vater des täuflings::name und vorname": "Judo Coppens",
+    "mutter des täuflings::name und vorname": "Marie Catherine Dereyst",
+    "pate::name und vorname": "Jean-baptiste Coppens",
+    "patin::name und vorname": "Anne Marie Coppens"
   }
 }

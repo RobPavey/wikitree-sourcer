@@ -2,40 +2,18 @@
   "url": "https://agatha.arch.be/fr/data/acts/PRHENEG_HENEGBAPT1_00032668",
   "success": true,
   "isRecord": true,
-  "people": {
-    "enfant baptisé": [
-      {
-        "nom et prénom": "Charles Josephe Coppens",
-        "lieu de naissance": "Acren St Gereon",
-        "remarques": "Né vers le matin"
-      }
-    ],
-    "père de l'enfant baptisé": [
-      {
-        "nom et prénom": "Judo Coppens"
-      }
-    ],
-    "mère de l'enfant baptisé": [
-      {
-        "nom et prénom": "Marie Catherine Dereyst"
-      }
-    ],
-    "parrain": [
-      {
-        "nom et prénom": "Jean-baptiste Coppens"
-      }
-    ],
-    "marraine": [
-      {
-        "nom et prénom": "Anne Marie Coppens"
-      }
-    ]
-  },
-  "metadata": {
+  "recordData": {
     "type d'actes": "Actes de baptêmes",
     "projet": "https://agatha.arch.be/fr/data/projects/PRHENEG",
     "lieu": "Acren St Gereon",
     "description": "Acte de baptême",
-    "date de l'acte": "23/01/1774"
+    "date de l'acte": "23/01/1774",
+    "enfant baptisé::nom et prénom": "Charles Josephe Coppens",
+    "enfant baptisé::lieu de naissance": "Acren St Gereon",
+    "enfant baptisé::remarques": "Né vers le matin",
+    "père de l'enfant baptisé::nom et prénom": "Judo Coppens",
+    "mère de l'enfant baptisé::nom et prénom": "Marie Catherine Dereyst",
+    "parrain::nom et prénom": "Jean-baptiste Coppens",
+    "marraine::nom et prénom": "Anne Marie Coppens"
   }
 }

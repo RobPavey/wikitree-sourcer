@@ -28,28 +28,173 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 
-const typeMap = {
-  "actes de baptêmes": RT.Baptism,
-  doopakten: RT.Baptism,
-  taufurkunden: RT.Baptism,
-  "baptism certificates": RT.Baptism,
-  "actes de sépultures": RT.Burial,
-  begrafenisakten: RT.Burial,
-  bestattungsurkunden: RT.Burial,
-  "funeral certificates": RT.Burial,
-  "actes de mariages": RT.Marriage,
-  huwelijksakten: RT.Marriage,
-  eheschließungsurkunden: RT.Marriage,
-  "marriage certificates": RT.Marriage,
-  "actes de décès": RT.DeathRegistration,
-  overlijdensakten: RT.DeathRegistration,
-  sterbeurkunden: RT.DeathRegistration,
-  "death certificates": RT.DeathRegistration,
-  "actes de naissances": RT.BirthRegistration,
-  geboorteakten: RT.BirthRegistration,
-  geburtsurkunden: RT.BirthRegistration,
-  "birth certificates": RT.BirthRegistration,
+function cleanDate(edReader, value) {
+  let cleanString = value;
+  cleanString = cleanString.replaceAll("-", "/"); // Sometimes dates are dd-mm-yyyy
+  return cleanString;
+}
+
+function cleanAge(edReader, ageString) {
+  // Some languages use the same word for both a single and multiple time units (1 year and 2 years vs. 1 jaar en 2 jaar)
+  if (ageString) {
+    let result = ageString.toLowerCase().replace(/ans|jaar|jahre/, "years");
+    result = result.replace(/mois|maanden|monate/, "months");
+    result = result.replace(/jours|dagen|tage/, "days");
+    result = result.replace(/an|jahr/, "year");
+    result = result.replace(/maand|monat/, "month");
+    result = result.replace(/jour|dag|tag/, "day");
+    return result;
+  }
+}
+
+const marriageTemplate = {
+  groomFullName: {
+    recordDataKeys: [
+      "époux::nom et prénom",
+      "époux::prénom et nom",
+      "bruidegom::naam en voornaam",
+      "bruidegom::voornaam en naam",
+      "bräutigam::name und vorname",
+      "bräutigam::vorname und name",
+      "groom::name and first name",
+      "groom::first name and name",
+    ],
+  },
+  groomBirthDate: {
+    recordDataKeys: [
+      "époux::date de naissance",
+      "bruidegom::geboortedatum",
+      "bräutigam::geburtsdatum",
+      "groom::date of birth",
+    ],
+    cleanFunction: cleanDate,
+  },
+  groomBirthPlace: {
+    recordDataKeys: [
+      "époux::lieu de naissance",
+      "bruidegom::geboorteplaats",
+      "bräutigam::geburtsort",
+      "groom::place of birth",
+    ],
+  },
+  groomAge: {
+    recordDataKeys: ["époux::age", "bruidegom::leeftijd", "bräutigam::alter", "groom::age"],
+    cleanFunction: cleanAge,
+  },
+  groomFatherFullName: {
+    recordDataKeys: [
+      "père de l'époux::nom et prénom",
+      "père de l'époux::prénom et nom",
+      "vader van de bruidegom::naam en voornaam",
+      "vader van de bruidegom::voornaam en naam",
+      "vater des bräutigams::name und vorname",
+      "vater des bräutigams::vorname und name",
+      "father of the groom::name and first name",
+      "father of the groom::first name and name",
+    ],
+  },
+  groomMotherFullName: {
+    recordDataKeys: [
+      "mère de l'époux::nom et prénom",
+      "mère de l'époux::prénom et nom",
+      "moeder van de bruidegom::naam en voornaam",
+      "moeder van de bruidegom::voornaam en naam",
+      "mutter des bräutigams::name und vorname",
+      "mutter des bräutigams::vorname und name",
+      "mother of the husband::name and first name",
+      "mother of the husband::first name and name",
+    ],
+  },
+  brideFullName: {
+    recordDataKeys: [
+      "épouse::nom et prénom",
+      "épouse::prénom et nom",
+      "bruid::naam en voornaam",
+      "bruid::voornaam en naam",
+      "braut::name und vorname",
+      "braut::vorname und name",
+      "bride::name and first name",
+      "bride::first name and name",
+    ],
+  },
+  brideBirthDate: {
+    recordDataKeys: [
+      "épouse::date de naissance",
+      "bruid::geboortedatum",
+      "braut::geburtsdatum",
+      "bride::date of birth",
+    ],
+    cleanFunction: cleanDate,
+  },
+  brideBirthPlace: {
+    recordDataKeys: [
+      "épouse::lieu de naissance",
+      "bruid::geboorteplaats",
+      "braut::geburtsort",
+      "bride::place of birth",
+    ],
+  },
+  brideAge: {
+    recordDataKeys: ["épouse::age", "bruid::leeftijd", "braut::alter", "bride::age"],
+    cleanFunction: cleanAge,
+  },
+  brideFatherFullName: {
+    recordDataKeys: [
+      "père de l'épouse::nom et prénom",
+      "père de l'épouse::prénom et nom",
+      "vader van de bruid::naam en voornaam",
+      "vader van de bruid::voornaam en naam",
+      "vater der braut::name und vorname",
+      "vater der braut::vorname und name",
+      "father of the bride::name and first name",
+      "father of the bride::first name and name",
+    ],
+  },
+  brideMotherFullName: {
+    recordDataKeys: [
+      "mère de l'épouse::nom et prénom",
+      "mère de l'épouse::prénom et nom",
+      "moeder van de bruid::naam en voornaam",
+      "moeder van de bruid::voornaam en naam",
+      "mutter der braut::name und vorname",
+      "mutter der braut::vorname und name",
+      "mother of the bride::name and first name",
+      "mother of the bride::first name and name",
+    ],
+  },
 };
+
+function initializeRulesMarriage(type, primaryPersonIndex) {
+  if (primaryPersonIndex == 1) {
+    // Groom selected
+    type.rules.fullName = marriageTemplate.groomFullName;
+    type.rules.birthDate = marriageTemplate.groomBirthDate;
+    type.rules.birthPlace = marriageTemplate.groomBirthPlace;
+    type.rules.ageAtEvent = marriageTemplate.groomAge;
+    type.rules.fatherFullName = marriageTemplate.groomFatherFullName;
+    type.rules.motherFullName = marriageTemplate.groomMotherFullName;
+    type.rules.spouseFullName = marriageTemplate.brideFullName;
+    type.rules.spouseBirthDate = marriageTemplate.brideBirthDate;
+    type.rules.spouseBirthPlace = marriageTemplate.brideBirthPlace;
+    type.rules.spouseAge = marriageTemplate.brideAge;
+    type.rules.spouseFatherFullName = marriageTemplate.brideFatherFullName;
+    type.rules.spouseMotherFullName = marriageTemplate.brideMotherFullName;
+  } else {
+    // Default or bride is selected
+    type.rules.fullName = marriageTemplate.brideFullName;
+    type.rules.birthDate = marriageTemplate.brideBirthDate;
+    type.rules.birthPlace = marriageTemplate.brideBirthPlace;
+    type.rules.ageAtEvent = marriageTemplate.brideAge;
+    type.rules.fatherFullName = marriageTemplate.brideFatherFullName;
+    type.rules.motherFullName = marriageTemplate.brideMotherFullName;
+    type.rules.spouseFullName = marriageTemplate.groomFullName;
+    type.rules.spouseBirthDate = marriageTemplate.groomBirthDate;
+    type.rules.spouseBirthPlace = marriageTemplate.groomBirthPlace;
+    type.rules.spouseAge = marriageTemplate.groomAge;
+    type.rules.spouseFatherFullName = marriageTemplate.groomFatherFullName;
+    type.rules.spouseMotherFullName = marriageTemplate.groomMotherFullName;
+  }
+}
 
 const nameMap = [
   // [list of options], type if civil record, type if parish record
@@ -89,221 +234,489 @@ const nameMap = [
   [["overlijdensakten", "actes de décès", "death certificates", "sterbeurkunden"], RT.DeathRegistration, RT.Death],
 ];
 
-const typeData = {
-  default: {
-    relation: {
-      father: ["Vader"],
-      mother: ["Moeder"],
-      spouse: ["Partner"],
-      bride: ["Bruid"],
-      brideFather: ["Vader van de bruid"],
-      brideMother: ["Moeder van de bruid"],
+const recordTypes = [
+  {
+    recordType: RT.BirthRegistration, // Belgium only has baptism records and birth registrations
+    matchData: {
+      type: ["actes de naissances", "geboorteakten", "geburtsurkunden", "birth certificates"],
+    },
+    rules: {
+      fullName: {
+        recordDataKeys: [
+          "enfant::nom et prénom",
+          "enfant::prénom et nom",
+          "kind::naam en voornaam",
+          "kind::voornaam en naam",
+          "kind::name und vorname",
+          "kind::vorname und name",
+          "child::name and first name",
+          "child::first name and name",
+        ],
+      },
+      birthDate: {
+        recordDataKeys: [
+          "enfant::date de naissance",
+          "kind::geboortedatum",
+          "kind::geburtsdatum",
+          "child::date of birth",
+        ],
+        cleanFunction: cleanDate,
+      },
+      birthPlace: {
+        recordDataKeys: [
+          "enfant::lieu de naissance",
+          "kind::geboorteplaats",
+          "kind::geburtsort",
+          "child::place of birth",
+        ],
+      },
+      fatherFullName: {
+        recordDataKeys: [
+          "père::nom et prénom",
+          "père::prénom et nom",
+          "vader::naam en voornaam",
+          "vader::voornaam en naam",
+          "vater::name und vorname",
+          "vater::vorname und name",
+          "father::name and first name",
+          "father::first name and name",
+        ],
+      },
+      motherFullName: {
+        recordDataKeys: [
+          "mère::nom et prénom",
+          "mère::prénom et nom",
+          "moeder::naam en voornaam",
+          "moeder::voornaam en naam",
+          "mutter::name und vorname",
+          "mutter::vorname und name",
+          "mother::name and first name",
+          "mother::first name and name",
+        ],
+      },
     },
   },
-  Baptism: {
-    // Baptismal registers
-    primary: ["enfant baptisé", "dopeling", "täufling", "baptized child"],
-    father: [
-      "père de l'enfant baptisé",
-      "vader van de dopeling",
-      "vater des täuflings",
-      "father of the baptized child",
-    ],
-    mother: [
-      "mère de l'enfant baptisé",
-      "moeder van de dopeling",
-      "mutter des täuflings",
-      "mother of the baptized child",
-    ],
-    godfather: ["parrain", "peter", "pate", "godfather"],
-    godmother: ["marraine", "meter", "patin", "godmother"],
+  {
+    recordType: RT.DeathRegistration,
+    matchData: {
+      type: ["actes de décès", "overlijdensakten", "sterbeurkunden", "death certificates"],
+    },
+    rules: {
+      fullName: {
+        recordDataKeys: [
+          "défunt / défunte::nom et prénom",
+          "défunt / défunte::prénom et nom",
+          "overledene::naam en voornaam",
+          "overledene::voornaam en naam",
+          "verstorbener::name und vorname",
+          "verstorbener::vorname und name",
+          "deceased::name and first name",
+          "deceased::first name and name",
+        ],
+      },
+      birthDate: {
+        recordDataKeys: [
+          "défunt / défunte::date de naissance",
+          "overledene::geboortedatum",
+          "verstorbener::geburtsdatum",
+          "deceased::date of birth",
+        ],
+        cleanFunction: cleanDate,
+      },
+      birthPlace: {
+        recordDataKeys: [
+          "défunt / défunte::lieu de naissance",
+          "overledene::geboorteplaats",
+          "verstorbener::geburtsort",
+          "deceased::place of birth",
+        ],
+      },
+      deathDate: {
+        recordDataKeys: [
+          "défunt / défunte::date de décès",
+          "overledene::overlijdensdatum",
+          "verstorbener::sterbedatum",
+          "deceased::date of death",
+        ],
+        cleanFunction: cleanDate,
+      },
+      deathPlace: {
+        recordDataKeys: [
+          "défunt / défunte::lieu de décès",
+          "overledene::overlijdensplaats",
+          "verstorbener::sterbeort",
+          "deceased::place of death",
+        ],
+      },
+      ageAtEvent: {
+        recordDataKeys: ["défunt / défunte::age", "overledene::leeftijd", "verstorbener::alter", "deceased::age"],
+        cleanFunction: cleanAge,
+      },
+      fatherFullName: {
+        recordDataKeys: [
+          "père du défunt / de la défunte::nom et prénom",
+          "père du défunt / de la défunte::prénom et nom",
+          "vader van de overledene::naam en voornaam",
+          "vader van de overledene::voornaam en naam",
+          "vater des verstorbenen::name und vorname",
+          "vater des verstorbenen::vorname und name",
+          "father of the deceased::name and first name",
+          "father of the deceased::first name and name",
+        ],
+      },
+      motherFullName: {
+        recordDataKeys: [
+          "mère du défunt / de la défunte::nom et prénom",
+          "mère du défunt / de la défunte::prénom et nom",
+          "moeder van de overledene::naam en voornaam",
+          "moeder van de overledene::voornaam en naam",
+          "mutter des verstorbenen::name und vorname",
+          "mutter des verstorbenen::vorname und name",
+          "mother of the deceased::name and first name",
+          "mother of the deceased::first name and name",
+        ],
+      },
+      spouseFullName: {
+        recordDataKeys: [
+          "partenaire du défunt / de la défunte::nom et prénom",
+          "partenaire du défunt / de la défunte::prénom et nom",
+          "partner van de overledene::naam en voornaam",
+          "partner van de overledene::voornaam en naam",
+          "partner des verstorbenen::name und vorname",
+          "partner des verstorbenen::vorname und name",
+          "partner of the deceased::name and first name",
+          "partner of the deceased::first name and name",
+        ],
+      },
+      spouseAge: {
+        recordDataKeys: [
+          "partenaire du défunt / de la défunte::age",
+          "partner van de overledene::leeftijd",
+          "partner des verstorbenen::alter",
+          "partner of the deceased::age",
+        ],
+        cleanFunction: cleanAge,
+      },
+    },
   },
-  Burial: {
-    // Burial registers
-    primary: ["défunt / défunte", "overledene", "verstorbener", "deceased"],
-    father: [
-      "père du défunt / de la défunte",
-      "vader van de overledene",
-      "vater des verstorbenen",
-      "father of the deceased",
-    ],
-    mother: [
-      "mère du défunt / de la défunte",
-      "moeder van de overledene",
-      "mutter des verstorbenen",
-      "mother of the deceased",
-    ],
-    spouse: [
-      "partenaire du défunt / de la défunte",
-      "partner van de overledene",
-      "partner des verstorbenen",
-      "partner of the deceased",
-    ],
+  {
+    recordType: RT.Burial,
+    matchData: {
+      type: ["actes de sépultures", "begrafenisakten", "bestattungsurkunden", "funeral certificates"],
+    },
+    rules: {
+      fullName: {
+        recordDataKeys: [
+          "défunt / défunte::nom et prénom",
+          "défunt / défunte::prénom et nom",
+          "overledene::naam en voornaam",
+          "overledene::voornaam en naam",
+          "verstorbener::name und vorname",
+          "verstorbener::vorname und name",
+          "deceased::name and first name",
+          "deceased::first name and name",
+        ],
+      },
+      birthDate: {
+        recordDataKeys: [
+          "défunt / défunte::date de naissance",
+          "overledene::geboortedatum",
+          "verstorbener::geburtsdatum",
+          "deceased::date of birth",
+        ],
+        cleanFunction: cleanDate,
+      },
+      birthPlace: {
+        recordDataKeys: [
+          "défunt / défunte::lieu de naissance",
+          "overledene::geboorteplaats",
+          "verstorbener::geburtsort",
+          "deceased::place of birth",
+        ],
+      },
+      deathDate: {
+        recordDataKeys: [
+          "défunt / défunte::date de décès",
+          "overledene::overlijdensdatum",
+          "verstorbener::sterbedatum",
+          "deceased::date of death",
+        ],
+        cleanFunction: cleanDate,
+      },
+      deathPlace: {
+        recordDataKeys: [
+          "défunt / défunte::lieu de décès",
+          "overledene::overlijdensplaats",
+          "verstorbener::sterbeort",
+          "deceased::place of death",
+        ],
+      },
+      ageAtEvent: {
+        recordDataKeys: ["défunt / défunte::age", "overledene::leeftijd", "verstorbener::alter", "deceased::age"],
+        cleanFunction: cleanAge,
+      },
+      fatherFullName: {
+        recordDataKeys: [
+          "père du défunt / de la défunte::nom et prénom",
+          "père du défunt / de la défunte::prénom et nom",
+          "vader van de overledene::naam en voornaam",
+          "vader van de overledene::voornaam en naam",
+          "vater des verstorbenen::name und vorname",
+          "vater des verstorbenen::vorname und name",
+          "father of the deceased::name and first name",
+          "father of the deceased::first name and name",
+        ],
+      },
+      motherFullName: {
+        recordDataKeys: [
+          "mère du défunt / de la défunte::nom et prénom",
+          "mère du défunt / de la défunte::prénom et nom",
+          "moeder van de overledene::naam en voornaam",
+          "moeder van de overledene::voornaam en naam",
+          "mutter des verstorbenen::name und vorname",
+          "mutter des verstorbenen::vorname und name",
+          "mother of the deceased::name and first name",
+          "mother of the deceased::first name and name",
+        ],
+      },
+      spouseFullName: {
+        recordDataKeys: [
+          "partenaire du défunt / de la défunte::nom et prénom",
+          "partenaire du défunt / de la défunte::prénom et nom",
+          "partner van de overledene::naam en voornaam",
+          "partner van de overledene::voornaam en naam",
+          "partner des verstorbenen::name und vorname",
+          "partner des verstorbenen::vorname und name",
+          "partner of the deceased::name and first name",
+          "partner of the deceased::first name and name",
+        ],
+      },
+      spouseAge: {
+        recordDataKeys: [
+          "partenaire du défunt / de la défunte::age",
+          "partner van de overledene::leeftijd",
+          "partner des verstorbenen::alter",
+          "partner of the deceased::age",
+        ],
+        cleanFunction: cleanAge,
+      },
+    },
   },
-  DeathRegistration: {
-    // Death records
-    primary: ["défunt / défunte", "overledene", "verstorbener", "deceased"],
-    father: [
-      "père du défunt / de la défunte",
-      "vader van de overledene",
-      "vater des verstorbenen",
-      "father of the deceased",
-    ],
-    mother: [
-      "mère du défunt / de la défunte",
-      "moeder van de overledene",
-      "mutter des verstorbenen",
-      "mother of the deceased",
-    ],
-    spouse: [
-      "partenaire du défunt / de la défunte",
-      "partner van de overledene",
-      "partner des verstorbenen",
-      "partner of the deceased",
-    ],
+  {
+    recordType: RT.Baptism,
+    matchData: {
+      type: ["actes de baptêmes", "doopakten", "taufurkunden", "baptism certificates"],
+    },
+    rules: {
+      fullName: {
+        recordDataKeys: [
+          "enfant baptisé::nom et prénom",
+          "enfant baptisé::prénom et nom",
+          "dopeling::naam en voornaam",
+          "dopeling::voornaam en naam",
+          "täufling::name und vorname",
+          "täufling::vorname und name",
+          "baptized child::name and first name",
+          "baptized child::first name and name",
+        ],
+      },
+      birthDate: {
+        recordDataKeys: [
+          "enfant baptisé::date de naissance",
+          "dopeling::geboortedatum",
+          "täufling::geburtsdatum",
+          "baptized child::date of birth",
+        ],
+        cleanFunction: cleanDate,
+      },
+      birthPlace: {
+        recordDataKeys: [
+          "enfant baptisé::lieu de naissance",
+          "dopeling::geboorteplaats",
+          "täufling::geburtsort",
+          "baptized child::place of birth",
+        ],
+      },
+      fatherFullName: {
+        recordDataKeys: [
+          "père de l'enfant baptisé::nom et prénom",
+          "père de l'enfant baptisé::prénom et nom",
+          "vader van de dopeling::naam en voornaam",
+          "vader van de dopeling::voornaam en naam",
+          "vater des täuflings::name und vorname",
+          "vater des täuflings::vorname und name",
+          "father of the baptized child::name and first name",
+          "father of the baptized child::first name and name",
+        ],
+      },
+      motherFullName: {
+        recordDataKeys: [
+          "mère de l'enfant baptisé::nom et prénom",
+          "mère de l'enfant baptisé::prénom et nom",
+          "moeder van de dopeling::naam en voornaam",
+          "moeder van de dopeling::voornaam en naam",
+          "mutter des täuflings::name und vorname",
+          "mutter des täuflings::vorname und name",
+          "mother of the baptized child::name and first name",
+          "mother of the baptized child::first name and name",
+        ],
+      },
+    },
   },
-  BirthRegistration: {
-    // Birth records
-    primary: ["enfant", "kind", "child"], // kind is the same for both Dutch and German
-    father: ["père", "vader", "vater", "father"],
-    mother: ["mère", "moeder", "mutter", "mother"],
+  {
+    recordType: RT.Marriage,
+    matchData: {
+      type: ["actes de mariages", "huwelijksakten", "eheschließungsurkunden", "marriage certificates"],
+    },
+    initRulesFunction: initializeRulesMarriage,
+    rules: {},
   },
-  Marriage: {
-    // Marriage registers
-    bride: ["épouse", "bruid", "braut", "bride"],
-    father_of_bride: ["père de l'épouse", "vader van bruid", "vater der braut", "father of the bride"],
-    mother_of_bride: ["mère de l'épouse", "moeder van bruid", "mutter der braut", "mother of the bride"],
-    groom: ["époux", "bruidegom", "bräutigam", "groom"],
-    father_of_groom: ["père de l'époux", "vader van de bruidegom", "vater der bräutigams", "father of the groom"],
-    mother_of_groom: ["mère de l'époux", "moeder van de bruidegom", "mutter der bräutigams", "mother of the husband"],
+];
+
+const baseRecordTypeData = {
+  rules: {
+    recordType: {
+      recordDataKeys: [
+        "type d'actes",
+        "aktetype",
+        "art der urkunde",
+        "type of records",
+        "type d'acte",
+        "type of record",
+        "aktentyp",
+      ],
+    },
+    project: {
+      recordDataKeys: ["projet", "project", "projekt"], // project is the same for both Dutch and English
+    },
+    eventPlace: {
+      recordDataKeys: ["lieu", "plaats", "ort", "location"],
+    },
+    description: {
+      recordDataKeys: ["description", "beschrijving", "beschreibung"], // description is the same for both French and English
+    },
+    remark: {
+      recordDataKeys: ["remarque", "opmerking", "bemerkung", "remark"],
+    },
+    eventDate: {
+      recordDataKeys: ["date de l'acte", "aktedatum", "datum der urkunde", "date of record", "datum van de akte"],
+      cleanFunction: cleanDate,
+    },
   },
 };
 
-const personFields = {
-  fullname: [
-    "nom et prénom",
-    "naam en voornaam",
-    "name und vorname",
-    "name and first name",
-    "prénom et nom",
-    "voornaam en naam",
-    "vorname und name",
-    "first name and name",
-  ],
-  birthplace: ["lieu de naissance", "geboorteplaats", "geburtsort", "place of birth"],
-  birthdate: ["date de naissance", "geboortedatum", "geburtsdatum", "date of birth"],
-  deathplace: ["lieu de décès", "overlijdensplaats", "sterbeort", "place of death"],
-  deathdate: ["date de décès", "overlijdensdatum", "sterbedatum", "date of death"],
-  residence: ["lieu de résidence", "woonplaats", "wohnort", "place of residence"],
-  age: ["age", "leeftijd", "alter"], // age is the same for both French and English
-  profession: ["profession", "beroep", "beruf"], // profession is the same for both French and English
-};
+const imageRecordTypes = [
+  {
+    // Births
+    typeIfParish: RT.BirthRegistration,
+    typeIfCivil: RT.BirthRegistration,
+    matchData: {
+      type: ["geboorteakten", "actes de naissances", "birth certificates", "geburtsurkunden"],
+    },
+  },
+  {
+    // Baptisms
+    typeIfParish: RT.Baptism,
+    typeIfCivil: RT.Baptism,
+    matchData: {
+      type: ["doopakten", "actes de baptêmes", "baptism certificates", "taufurkunden"],
+    },
+  },
+  {
+    // Marriages
+    typeIfParish: RT.Marriage,
+    typeIfCivil: RT.Marriage,
+    matchData: {
+      type: [
+        "huwelijksbeloften en -akten",
+        "actes de promesses de mariage et mariages",
+        "nuptial vow and marriage certificates",
+        "eheversprechens- und eheschließungsurkunden",
+        "huwelijksakten",
+        "actes de mariages",
+        "marriage certificates",
+        "eheschließungsurkunden",
+      ],
+    },
+  },
+  {
+    // Deaths+Burials
+    typeIfParish: RT.DeathOrBurial,
+    typeIfCivil: RT.DeathOrBurial,
+    matchData: {
+      type: [
+        "begrafenis- en overlijdensakten",
+        "actes de sépultures et décès",
+        "funeral and death certificates",
+        "bestattungs- und sterbeurkunden",
+      ],
+    },
+  },
+  {
+    // Deaths
+    typeIfParish: RT.Death,
+    typeIfCivil: RT.DeathRegistration,
+    matchData: {
+      type: ["overlijdensakten", "actes de décès", "death certificates", "sterbeurkunden"],
+    },
+  },
+  {
+    // Burials
+    typeIfParish: RT.Burial,
+    typeIfCivil: RT.Burial,
+    matchData: {
+      type: ["begrafenisakten", "actes de sépultures", "funeral certificates", "bestattungsurkunden"],
+    },
+  },
+];
 
-const metadataFields = {
-  record_type: [
-    "type d'actes",
-    "aktetype",
-    "art der urkunde",
-    "type of records",
-    "type d'acte",
-    "type of record",
-    "aktentyp",
-  ],
-  project: ["projet", "project", "projekt"], // project is the same for both Dutch and English
-  location: ["lieu", "plaats", "ort", "location"],
-  description: ["description", "beschrijving", "beschreibung"], // description is the same for both French and English
-  remark: ["remarque", "opmerking", "bemerkung", "remark"],
-  record_date: ["date de l'acte", "aktedatum", "datum der urkunde", "date of record", "datum van de akte"],
+const unclassifiedTypeData = {
+  recordType: RT.Unclassified,
 };
 
 class AgathaEdReader extends ExtractedDataReader {
   constructor(ed, primaryPersonIndex) {
     super(ed);
+    if (!primaryPersonIndex) {
+      primaryPersonIndex = 0;
+    }
     this.primaryPersonIndex = primaryPersonIndex;
-    let recordType = this.findAnyField(ed.metadata, metadataFields.record_type);
-    if (recordType) {
-      recordType = typeMap[recordType.toLowerCase()];
-      if (recordType) {
-        this.recordType = recordType;
+
+    if (ed.isRecord) {
+      this.baseRecordTypeData = baseRecordTypeData;
+      const typeFieldValue = this.getRecordDataValueForKeys(baseRecordTypeData.rules.recordType.recordDataKeys);
+      let matchConfig = {
+        type: {
+          matchType: ExtractedDataReader.MatchType.EqualsOneOf,
+          value: typeFieldValue,
+        },
+      };
+
+      let recordTypeData = this.getRecordTypeMatch(recordTypes, matchConfig);
+      if (recordTypeData.initRulesFunction) {
+        recordTypeData.initRulesFunction(recordTypeData, this.primaryPersonIndex);
       }
-    } else if (!ed.isRecord) {
-      this.recordType = this.guessType(ed.metadata.selection);
-    }
-    this.type = typeData[this.recordType];
-  }
-
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
-  // Helper functions
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  findPrimary() {
-    if (this.type) {
-      let primaryKeys = this.type["primary"];
-      if (!primaryKeys) {
-        // No single primary person. Only supported record type is marriage
-        if (this.primaryPersonIndex == 0) {
-          return this.findPersonMatchingAny(this.type["bride"]);
-        } else {
-          return this.findPersonMatchingAny(this.type["groom"]);
-        }
-      } else {
-        return this.findPersonMatchingAny(primaryKeys);
-      }
-    }
-  }
-
-  findPersonMatchingAny(keys) {
-    if (this.ed.people && keys) {
-      for (let key of keys) {
-        let person = this.ed.people[key];
-        if (person) {
-          return person[0];
-        }
-      }
-    }
-  }
-
-  findAnyField(obj, keys) {
-    if (obj && keys) {
-      for (let key of keys) {
-        let field = obj[key];
-        if (field) {
-          return field;
-        }
-      }
-    }
-  }
-
-  normalizeAge(ageString) {
-    // Some languages use the same word for both a single and multiple time units (1 year and 2 years vs. 1 jaar en 2 jaar)
-    if (ageString) {
-      let result = ageString.toLowerCase().replace(/ans|jaar|jahre/, "years");
-      result = result.replace(/mois|maanden|monate/, "months");
-      result = result.replace(/jours|dagen|tage/, "days");
-      result = result.replace(/an|jahr/, "year");
-      result = result.replace(/maand|monat/, "month");
-      result = result.replace(/jour|dag|tag/, "day");
-      return result;
-    }
-  }
-
-  guessType(groupName) {
-    if (groupName) {
-      const groupNameLC = groupName.toLowerCase();
-      let idx = 1;
-      if (groupNameLC.includes(":")) {
-        // Parish register (e.g., Dworp (Beersel): Sint-Gaugericus)
-        idx += 1;
-      }
-      for (let typ of nameMap) {
-        for (let opt of typ[0]) {
-          if (groupNameLC.includes(opt)) {
-            return typ[idx];
+      this.setRecordData(recordTypeData, unclassifiedTypeData);
+    } else {
+      if (ed.selection) {
+        let matchConfig = {
+          type: {
+            matchType: ExtractedDataReader.MatchType.StartsWithOneOf,
+            value: ed.selection.toLowerCase(),
+          },
+        };
+        let recordTypeData = this.getRecordTypeMatch(imageRecordTypes, matchConfig);
+        if (recordTypeData) {
+          if (matchConfig.type.value.includes(":")) {
+            // Parish record (e.g., Dworp (Beersel): Sint-Gaugericus)
+            recordTypeData.recordType = recordTypeData.typeIfParish;
+          } else {
+            recordTypeData.recordType = recordTypeData.typeIfCivil;
           }
+          this.setRecordData(recordTypeData, unclassifiedTypeData);
         }
       }
     }
-    return RT.Unclassified;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -319,172 +732,24 @@ class AgathaEdReader extends ExtractedDataReader {
     return "image";
   }
 
-  getNameObj() {
-    let primary = this.findPrimary();
-    if (primary) {
-      let name = this.findAnyField(primary, personFields.fullname);
-      if (name) {
-        return this.makeNameObjFromFullName(name);
-      }
-    }
-  }
-
   getEventDateObj() {
-    if (this.ed && this.ed.metadata) {
-      let date = this.findAnyField(this.ed.metadata, metadataFields.record_date);
-      if (date) {
-        return this.makeDateObjFromDdmmyyyyDate(date, /[/-]+/);
-      }
-    }
-  }
-
-  getEventPlaceObj() {
-    if (this.ed && this.ed.metadata) {
-      let place = this.findAnyField(this.ed.metadata, metadataFields.location);
-      if (place) {
-        return this.makePlaceObjFromFullPlaceName(place);
-      }
-    }
-    let placeString = this.getValueUsingRecordTypeData("eventPlace");
-
-    if (placeString) {
-      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
-      if (placeObj) {
-        return placeObj;
-      }
-    }
-    return undefined;
+    let dateString = this.getValueUsingRecordTypeData("eventDate");
+    return this.makeDateObjFromDdmmyyyyDate(dateString, "/");
   }
 
   getBirthDateObj() {
-    let primary = this.findPrimary();
-    if (primary) {
-      let bd = this.findAnyField(primary, personFields.birthdate);
-      if (bd) {
-        return this.makeDateObjFromDdmmyyyyDate(bd, /[/-]+/);
-      }
-    }
-  }
-
-  getBirthPlaceObj() {
-    let placeString;
-    let primary = this.findPrimary();
-    if (primary) {
-      placeString = this.findAnyField(primary, personFields.birthplace);
-    }
-    /*if (!placeString && (this.recordType == RT.BirthRegistration || this.recordType == RT.Baptism)) {
-      return this.getEventPlaceObj();
-    }*/
-
-    if (placeString || this.recordType == RT.Birth || this.recordType == RT.BirthRegistration) {
-      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
-      if (placeObj) {
-        return placeObj;
-      }
-    }
-    return undefined;
+    let dateString = this.getValueUsingRecordTypeData("birthDate");
+    return this.makeDateObjFromDdmmyyyyDate(dateString, "/");
   }
 
   getDeathDateObj() {
-    let primary = this.findPrimary();
-    if (primary) {
-      let dd = this.findAnyField(primary, personFields.deathdate);
-      if (dd) {
-        return this.makeDateObjFromDdmmyyyyDate(dd, /[/-]+/);
-      }
-    }
-  }
-
-  getDeathPlaceObj() {
-    let placeString;
-    let primary = this.findPrimary();
-    if (primary) {
-      placeString = this.findAnyField(primary, personFields.deathplace);
-    }
-    /*if (!placeString && (this.recordType == RT.DeathRegistration || this.recordType == RT.Burial)) {
-      return this.getEventPlaceObj();
-    }*/
-
-    if (placeString || this.recordType == RT.Death || this.recordType == RT.DeathRegistration) {
-      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
-      if (placeObj) {
-        return placeObj;
-      }
-    }
-    return undefined;
-  }
-
-  getResidencePlaceObj() {
-    let placeString;
-    let primary = this.findPrimary();
-    if (primary) {
-      placeString = this.findAnyField(primary, personFields.residence);
-    }
-    if (placeString) {
-      let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
-      if (placeObj) {
-        return placeObj;
-      }
-    }
-    return undefined;
-  }
-
-  getAgeAtEvent() {
-    let primary = this.findPrimary();
-    if (primary) {
-      return this.normalizeAge(this.findAnyField(primary, personFields.age));
-    }
-  }
-
-  getOccupation() {
-    let primary = this.findPrimary();
-    if (primary) {
-      return this.findAnyField(primary, personFields.profession);
-    }
-  }
-
-  getSpouses() {
-    if (this.type) {
-      let spouse = this.findPersonMatchingAny(this.type["spouse"]);
-      let date = undefined,
-        place = undefined;
-      if (this.recordType == RT.Marriage) {
-        date = this.findAnyField(this.ed.metadata, metadataFields.record_date);
-        place = this.findAnyField(this.ed.metadata, metadataFields.location);
-        if (!spouse && this.recordType == RT.Marriage) {
-          if (this.primaryPersonIndex == 0) {
-            spouse = this.findPersonMatchingAny(this.type["groom"]);
-          } else {
-            spouse = this.findPersonMatchingAny(this.type["bride"]);
-          }
-        }
-      }
-      if (spouse) {
-        let spouseName = this.makeNameObjFromFullName(this.findAnyField(spouse, personFields.fullname));
-        let age = this.normalizeAge(this.findAnyField(spouse, personFields.age));
-        return [this.makeSpouseObj(spouseName, date, place, age)];
-      }
-    }
-  }
-
-  getParents() {
-    let fatherName, motherName;
-    if (this.type) {
-      let father = this.findPersonMatchingAny(this.type["father"]);
-      if (father) {
-        fatherName = this.findAnyField(father, personFields.fullname);
-      }
-      let mother = this.findPersonMatchingAny(this.type["mother"]);
-      if (mother) {
-        motherName = this.findAnyField(mother, personFields.fullname);
-      }
-    }
-    return this.makeParentsFromFullNames(fatherName, motherName);
+    let dateString = this.getValueUsingRecordTypeData("deathDate");
+    return this.makeDateObjFromDdmmyyyyDate(dateString, "/");
   }
 
   setCustomFields(gd) {
     if (this.ed.isRecord) {
-      let projectURL = this.findAnyField(this.ed.metadata, metadataFields.project);
+      let projectURL = this.getRecordDataValueForKeys(["projet", "project", "projekt"]); //this.findAnyField(this.ed.metadata, metadataFields.project);
       if (projectURL) {
         let parts = projectURL.split("/");
         gd.project = parts[parts.length - 1];
@@ -494,13 +759,11 @@ class AgathaEdReader extends ExtractedDataReader {
 
   getPrimaryPersonOptions() {
     if (this.recordType == RT.Marriage) {
-      let bride = this.findPersonMatchingAny(this.type.bride);
-      let groom = this.findPersonMatchingAny(this.type.groom);
-      let brideName = this.findAnyField(bride, personFields.fullname);
-      let groomName = this.findAnyField(groom, personFields.fullname);
+      const brideFullName = this.getRecordDataValueForKeys(marriageTemplate.brideFullName.recordDataKeys);
+      const groomFullName = this.getRecordDataValueForKeys(marriageTemplate.groomFullName.recordDataKeys);
 
-      if (brideName && groomName) {
-        let options = [brideName + " (bride)", groomName + " (groom)"];
+      if (brideFullName && groomFullName) {
+        let options = [brideFullName + " (bride)", groomFullName + " (groom)"];
         return options;
       }
     }

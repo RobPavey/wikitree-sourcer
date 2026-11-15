@@ -2,60 +2,36 @@
   "url": "https://agatha.arch.be/de/data/acts/LIEDEK_00000655",
   "success": true,
   "isRecord": true,
-  "people": {
-    "kind": [
-      {
-        "vorname und name": "Emma Van Molle",
-        "geburtsort": "Liedekerke"
-      }
-    ],
-    "vater": [
-      {
-        "vorname und name": "Emmanuël Van Molle",
-        "geburtsort": "Liedekerke",
-        "alter": "46 Jahre",
-        "wohnort": "Liedekerke",
-        "beruf": "Kaasverkoper"
-      }
-    ],
-    "mutter": [
-      {
-        "vorname und name": "Joanna Maria Devrindt",
-        "geburtsort": "Iddergem",
-        "alter": "41 Jahre",
-        "wohnort": "Liedekerke",
-        "beruf": "Kantwerkster"
-      }
-    ],
-    "zeuge": [
-      {
-        "vorname und name": "Jan Jozef Asselman",
-        "alter": "58 Jahre",
-        "wohnort": "Liedekerke",
-        "beruf": "Slachter"
-      },
-      {
-        "vorname und name": "Victor Jozef Pollet",
-        "alter": "62 Jahre",
-        "wohnort": "Liedekerke",
-        "beruf": "Hoefsmid"
-      }
-    ],
-    "anzeigender": [
-      {
-        "vorname und name": "Emmanuël Van Molle",
-        "alter": "46 Jahre",
-        "wohnort": "Liedekerke",
-        "beruf": "Kaasverkoper",
-        "bemerkungen": "Vader"
-      }
-    ]
-  },
-  "metadata": {
+  "recordData": {
     "aktentyp": "Geburtsurkunden",
     "projekt": "Personenstand - Liedekerke",
     "ort": "Liedekerke",
     "beschreibung": "Geboorteakte",
-    "datum der urkunde": "13-04-1901"
+    "datum der urkunde": "13-04-1901",
+    "kind::vorname und name": "Emma Van Molle",
+    "kind::geburtsort": "Liedekerke",
+    "vater::vorname und name": "Emmanuël Van Molle",
+    "vater::geburtsort": "Liedekerke",
+    "vater::alter": "46 Jahre",
+    "vater::wohnort": "Liedekerke",
+    "vater::beruf": "Kaasverkoper",
+    "mutter::vorname und name": "Joanna Maria Devrindt",
+    "mutter::geburtsort": "Iddergem",
+    "mutter::alter": "41 Jahre",
+    "mutter::wohnort": "Liedekerke",
+    "mutter::beruf": "Kantwerkster",
+    "zeuge::vorname und name": "Jan Jozef Asselman",
+    "zeuge::alter": "58 Jahre",
+    "zeuge::wohnort": "Liedekerke",
+    "zeuge::beruf": "Slachter",
+    "zeuge2::vorname und name": "Victor Jozef Pollet",
+    "zeuge2::alter": "62 Jahre",
+    "zeuge2::wohnort": "Liedekerke",
+    "zeuge2::beruf": "Hoefsmid",
+    "anzeigender::vorname und name": "Emmanuël Van Molle",
+    "anzeigender::alter": "46 Jahre",
+    "anzeigender::wohnort": "Liedekerke",
+    "anzeigender::beruf": "Kaasverkoper",
+    "anzeigender::bemerkungen": "Vader"
   }
 }

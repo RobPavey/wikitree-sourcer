@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Marriage between Alphonse Marie Louise Corneille Van Haelst and Marie Rosine Dauwe (1909)''':\n\"State Archives of Belgium: AGATHA\"<br/>\nProject HUVLB, id: HUVLB_HUBRU_00619335_0<br/>\n[https://agatha.arch.be/nl/data/acts/HUVLB_HUBRU_00619335_0 AGATHA Record] (accessed 6 May 2021)<br/>\nAlphonse Marie Louise Corneille Van Haelst marriage to Marie Rosine Dauwe on 6 Mar 1909 in Sint-Gillis.\n</ref>",
+    "citation": "<ref>\n'''Marriage between Alphonse Marie Louise Corneille Van Haelst and Marie Rosine Dauwe (1909)''':\n\"State Archives of Belgium: AGATHA\"<br/>\nProject HUVLB, id: HUVLB_HUBRU_00619335_0<br/>\n[https://agatha.arch.be/nl/data/acts/HUVLB_HUBRU_00619335_0 AGATHA Record] (accessed 6 May 2021)<br/>\nAlphonse Marie Louise Corneille Van Haelst, child of Jean Baptiste Marie Van Haelst & Marie Clotilde Goossens, marriage to Marie Rosine Dauwe on 6 Mar 1909 in Sint-Gillis.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Alphonse married Marie Rosine Dauwe on 6 March 1909 in Sint-Gillis.<ref>\n'''Marriage between Alphonse Marie Louise Corneille Van Haelst and Marie Rosine Dauwe (1909)''':\n\"State Archives of Belgium: AGATHA\"<br/>\nProject HUVLB, id: HUVLB_HUBRU_00619335_0<br/>\n[https://agatha.arch.be/nl/data/acts/HUVLB_HUBRU_00619335_0 AGATHA Record] (accessed 6 May 2021)<br/>\nAlphonse Marie Louise Corneille Van Haelst marriage to Marie Rosine Dauwe on 6 Mar 1909 in Sint-Gillis.\n</ref>",
+    "citation": "Alphonse, child of Jean Baptiste Marie Van Haelst & Marie Clotilde Goossens, married Marie Rosine Dauwe on 6 March 1909 in Sint-Gillis.<ref>\n'''Marriage between Alphonse Marie Louise Corneille Van Haelst and Marie Rosine Dauwe (1909)''':\n\"State Archives of Belgium: AGATHA\"<br/>\nProject HUVLB, id: HUVLB_HUBRU_00619335_0<br/>\n[https://agatha.arch.be/nl/data/acts/HUVLB_HUBRU_00619335_0 AGATHA Record] (accessed 6 May 2021)<br/>\nAlphonse Marie Louise Corneille Van Haelst, child of Jean Baptiste Marie Van Haelst & Marie Clotilde Goossens, marriage to Marie Rosine Dauwe on 6 Mar 1909 in Sint-Gillis.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Marriage between Alphonse Marie Louise Corneille Van Haelst and Marie Rosine Dauwe (1909)''': \"State Archives of Belgium: AGATHA\"<br/>Project HUVLB, id: HUVLB_HUBRU_00619335_0<br/>[https://agatha.arch.be/nl/data/acts/HUVLB_HUBRU_00619335_0 AGATHA Record] (accessed 6 May 2021)<br/>Alphonse Marie Louise Corneille Van Haelst marriage to Marie Rosine Dauwe on 6 Mar 1909 in Sint-Gillis.",
+    "citation": "* '''Marriage between Alphonse Marie Louise Corneille Van Haelst and Marie Rosine Dauwe (1909)''': \"State Archives of Belgium: AGATHA\"<br/>Project HUVLB, id: HUVLB_HUBRU_00619335_0<br/>[https://agatha.arch.be/nl/data/acts/HUVLB_HUBRU_00619335_0 AGATHA Record] (accessed 6 May 2021)<br/>Alphonse Marie Louise Corneille Van Haelst, child of Jean Baptiste Marie Van Haelst & Marie Clotilde Goossens, marriage to Marie Rosine Dauwe on 6 Mar 1909 in Sint-Gillis.",
     "type": "source"
   }
 }

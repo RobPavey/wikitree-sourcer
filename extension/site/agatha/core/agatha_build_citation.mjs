@@ -77,13 +77,13 @@ function buildSourceReference(ed, gd, builder) {
     const project = id.split("_")[0];
     ref += "Project " + project + ", id: " + id;
   } else {
-    if (ed.metadata.selection) {
-      ref += ed.metadata.selection; //ed.metadata.source;
-    } else if (ed.metadata.source) {
-      ref += ed.metadata.source;
+    if (ed.selection) {
+      ref += ed.selection; //ed.source;
+    } else if (ed.source) {
+      ref += ed.source;
     }
-    if (ed.metadata.currentPage && ed.metadata.maxPage) {
-      ref += " > Image " + ed.metadata.currentPage + " of " + ed.metadata.maxPage + ".";
+    if (ed.currentPage && ed.maxPage) {
+      ref += " > Image " + ed.currentPage + " of " + ed.maxPage + ".";
     }
   }
   builder.sourceReference = ref;

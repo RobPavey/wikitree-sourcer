@@ -2,60 +2,36 @@
   "url": "https://agatha.arch.be/fr/data/acts/LIEDEK_00000655",
   "success": true,
   "isRecord": true,
-  "people": {
-    "enfant": [
-      {
-        "nom et prénom": "Emma Van Molle",
-        "lieu de naissance": "Liedekerke"
-      }
-    ],
-    "père": [
-      {
-        "nom et prénom": "Emmanuël Van Molle",
-        "lieu de naissance": "Liedekerke",
-        "age": "46 ans",
-        "lieu de résidence": "Liedekerke",
-        "profession": "Kaasverkoper"
-      }
-    ],
-    "mère": [
-      {
-        "nom et prénom": "Joanna Maria Devrindt",
-        "lieu de naissance": "Iddergem",
-        "age": "41 ans",
-        "lieu de résidence": "Liedekerke",
-        "profession": "Kantwerkster"
-      }
-    ],
-    "témoin": [
-      {
-        "nom et prénom": "Jan Jozef Asselman",
-        "age": "58 ans",
-        "lieu de résidence": "Liedekerke",
-        "profession": "Slachter"
-      },
-      {
-        "nom et prénom": "Victor Jozef Pollet",
-        "age": "62 ans",
-        "lieu de résidence": "Liedekerke",
-        "profession": "Hoefsmid"
-      }
-    ],
-    "déclarant / déclarante": [
-      {
-        "nom et prénom": "Emmanuël Van Molle",
-        "age": "46 ans",
-        "lieu de résidence": "Liedekerke",
-        "profession": "Kaasverkoper",
-        "remarques": "Vader"
-      }
-    ]
-  },
-  "metadata": {
+  "recordData": {
     "type d'actes": "Actes de naissances",
     "projet": "https://agatha.arch.be/fr/data/projects/LIEDEK",
     "lieu": "Liedekerke",
     "description": "Geboorteakte",
-    "date de l'acte": "13-04-1901"
+    "date de l'acte": "13-04-1901",
+    "enfant::nom et prénom": "Emma Van Molle",
+    "enfant::lieu de naissance": "Liedekerke",
+    "père::nom et prénom": "Emmanuël Van Molle",
+    "père::lieu de naissance": "Liedekerke",
+    "père::age": "46 ans",
+    "père::lieu de résidence": "Liedekerke",
+    "père::profession": "Kaasverkoper",
+    "mère::nom et prénom": "Joanna Maria Devrindt",
+    "mère::lieu de naissance": "Iddergem",
+    "mère::age": "41 ans",
+    "mère::lieu de résidence": "Liedekerke",
+    "mère::profession": "Kantwerkster",
+    "témoin::nom et prénom": "Jan Jozef Asselman",
+    "témoin::age": "58 ans",
+    "témoin::lieu de résidence": "Liedekerke",
+    "témoin::profession": "Slachter",
+    "témoin2::nom et prénom": "Victor Jozef Pollet",
+    "témoin2::age": "62 ans",
+    "témoin2::lieu de résidence": "Liedekerke",
+    "témoin2::profession": "Hoefsmid",
+    "déclarant / déclarante::nom et prénom": "Emmanuël Van Molle",
+    "déclarant / déclarante::age": "46 ans",
+    "déclarant / déclarante::lieu de résidence": "Liedekerke",
+    "déclarant / déclarante::profession": "Kaasverkoper",
+    "déclarant / déclarante::remarques": "Vader"
   }
 }

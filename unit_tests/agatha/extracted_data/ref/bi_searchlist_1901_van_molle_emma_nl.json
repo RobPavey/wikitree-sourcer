@@ -2,60 +2,36 @@
   "url": "https://agatha.arch.be/nl/data/acts/LIEDEK_00000655",
   "success": true,
   "isRecord": true,
-  "people": {
-    "kind": [
-      {
-        "voornaam en naam": "Emma Van Molle",
-        "geboorteplaats": "Liedekerke"
-      }
-    ],
-    "vader": [
-      {
-        "voornaam en naam": "Emmanuël Van Molle",
-        "geboorteplaats": "Liedekerke",
-        "leeftijd": "46 jaar",
-        "woonplaats": "Liedekerke",
-        "beroep": "Kaasverkoper"
-      }
-    ],
-    "moeder": [
-      {
-        "voornaam en naam": "Joanna Maria Devrindt",
-        "geboorteplaats": "Iddergem",
-        "leeftijd": "41 jaar",
-        "woonplaats": "Liedekerke",
-        "beroep": "Kantwerkster"
-      }
-    ],
-    "getuige": [
-      {
-        "voornaam en naam": "Jan Jozef Asselman",
-        "leeftijd": "58 jaar",
-        "woonplaats": "Liedekerke",
-        "beroep": "Slachter"
-      },
-      {
-        "voornaam en naam": "Victor Jozef Pollet",
-        "leeftijd": "62 jaar",
-        "woonplaats": "Liedekerke",
-        "beroep": "Hoefsmid"
-      }
-    ],
-    "aangever": [
-      {
-        "voornaam en naam": "Emmanuël Van Molle",
-        "leeftijd": "46 jaar",
-        "woonplaats": "Liedekerke",
-        "beroep": "Kaasverkoper",
-        "opmerkingen": "Vader"
-      }
-    ]
-  },
-  "metadata": {
+  "recordData": {
     "aktetype": "Geboorteakten",
     "project": "Burgerlijke stand - Liedekerke",
     "plaats": "Liedekerke",
     "beschrijving": "Geboorteakte",
-    "datum van de akte": "13-04-1901"
+    "datum van de akte": "13-04-1901",
+    "kind::voornaam en naam": "Emma Van Molle",
+    "kind::geboorteplaats": "Liedekerke",
+    "vader::voornaam en naam": "Emmanuël Van Molle",
+    "vader::geboorteplaats": "Liedekerke",
+    "vader::leeftijd": "46 jaar",
+    "vader::woonplaats": "Liedekerke",
+    "vader::beroep": "Kaasverkoper",
+    "moeder::voornaam en naam": "Joanna Maria Devrindt",
+    "moeder::geboorteplaats": "Iddergem",
+    "moeder::leeftijd": "41 jaar",
+    "moeder::woonplaats": "Liedekerke",
+    "moeder::beroep": "Kantwerkster",
+    "getuige::voornaam en naam": "Jan Jozef Asselman",
+    "getuige::leeftijd": "58 jaar",
+    "getuige::woonplaats": "Liedekerke",
+    "getuige::beroep": "Slachter",
+    "getuige2::voornaam en naam": "Victor Jozef Pollet",
+    "getuige2::leeftijd": "62 jaar",
+    "getuige2::woonplaats": "Liedekerke",
+    "getuige2::beroep": "Hoefsmid",
+    "aangever::voornaam en naam": "Emmanuël Van Molle",
+    "aangever::leeftijd": "46 jaar",
+    "aangever::woonplaats": "Liedekerke",
+    "aangever::beroep": "Kaasverkoper",
+    "aangever::opmerkingen": "Vader"
   }
 }

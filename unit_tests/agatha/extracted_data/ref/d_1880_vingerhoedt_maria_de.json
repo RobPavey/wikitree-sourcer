@@ -2,30 +2,16 @@
   "url": "https://agatha.arch.be/de/data/acts/GSU_004191864_00813_4_00152800",
   "success": true,
   "isRecord": true,
-  "people": {
-    "verstorbener": [
-      {
-        "name und vorname": "Maria Cornelia Vingerhoedt",
-        "geburtsdatum": "21/11/1805",
-        "alter": "74 Jahre 4 Monate 13 Tage"
-      }
-    ],
-    "vater des verstorbenen": [
-      {
-        "name und vorname": "Antonius Vingerhoedt"
-      }
-    ],
-    "mutter des verstorbenen": [
-      {
-        "name und vorname": "Maria Catharina Van Der Poel"
-      }
-    ]
-  },
-  "metadata": {
+  "recordData": {
     "art der urkunde": "Sterbeurkunden",
     "projekt": "https://agatha.arch.be/de/data/projects/GSU",
     "ort": "Antwerpen",
     "beschreibung": "Overlijdensakte",
-    "datum der urkunde": "05/04/1880"
+    "datum der urkunde": "05/04/1880",
+    "verstorbener::name und vorname": "Maria Cornelia Vingerhoedt",
+    "verstorbener::geburtsdatum": "21/11/1805",
+    "verstorbener::alter": "74 Jahre 4 Monate 13 Tage",
+    "vater des verstorbenen::name und vorname": "Antonius Vingerhoedt",
+    "mutter des verstorbenen::name und vorname": "Maria Catharina Van Der Poel"
   }
 }

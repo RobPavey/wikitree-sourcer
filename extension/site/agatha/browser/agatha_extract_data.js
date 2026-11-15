@@ -24,8 +24,10 @@ SOFTWARE.
 
 // No imports or requires allowed. See docs/dev_notes/extract_data_design
 
-function makeList(listElement) {
-  let list = {};
+function populateDict(list, listElement, prefix) {
+  if (!prefix) {
+    prefix = "";
+  }
 
   // the list is a series of th and td elements, there appear to always be the same number of each
 
@@ -45,19 +47,17 @@ function makeList(listElement) {
     if (td.childNodes.length > 1) {
       for (child of td.childNodes) {
         if (child.tagName && child.tagName.toLowerCase() == "a") {
-          list[label.trim().toLowerCase()] = child.getAttribute("href");
+          list[prefix + label.trim().toLowerCase()] = child.getAttribute("href");
           break;
         }
       }
     } else {
       let value = td.textContent;
       if (label && value) {
-        list[label.trim().toLowerCase()] = value.trim();
+        list[prefix + label.trim().toLowerCase()] = value.trim();
       }
     }
   }
-
-  return list;
 }
 
 function extractData(document, url) {
@@ -70,24 +70,23 @@ function extractData(document, url) {
   const ident = url_parts[3];
   if (ident == "images") {
     result.isRecord = false;
-    result.metadata = {};
     const iframe = document.querySelector("iframe.resp-iframe");
     const content = iframe.contentDocument.body;
     const selec = content.querySelector("ul.MuiTreeView-root > div");
     if (selec) {
-      result.metadata.selection = selec.textContent.trim(); // Example: Death certificates Dworp (Beersel): Sint-Gaugericus (1798 - 1804)
+      result.selection = selec.textContent.trim(); // Example: Death certificates Dworp (Beersel): Sint-Gaugericus (1798 - 1804)
     }
     const source = content.querySelector("h2.mirador36");
     if (source) {
-      result.metadata.source = source.textContent.trim(); // Example: Dworp / Tourneppe (Beersel): Sint-Gaugericus | 1761 - 1804
+      result.source = source.textContent.trim(); // Example: Dworp / Tourneppe (Beersel): Sint-Gaugericus | 1761 - 1804
     }
     const obj = content.querySelector("div.mirador-osd-info > span");
     if (obj) {
       const counts = obj.textContent; // Example: 87 of 139
       const parts = counts.split(" ");
       if (parts.length == 3) {
-        result.metadata.currentPage = parts[0].trim();
-        result.metadata.maxPage = parts[2].trim();
+        result.currentPage = parts[0].trim();
+        result.maxPage = parts[2].trim();
       }
     }
   } else {
@@ -127,21 +126,24 @@ function extractData(document, url) {
       return result;
     }
 
-    result.people = {};
-    result.metadata = makeList(tables[0]);
+    result.recordData = {};
+    populateDict(result.recordData, tables[0]);
+    let roleDict = {};
     for (let index = 1; index < length; index++) {
       const table = tables[index];
       const role_span = table.querySelector("span");
       const role = role_span.textContent.toLowerCase();
-      const body = table.querySelector("tbody");
-      let fields = makeList(body);
-      //let person = { role: role, fields: fields };
-      let lst = result.people[role];
-      if (!lst) {
-        result.people[role] = [fields];
+      const amt = roleDict[role];
+      let prefix = role;
+      if (amt) {
+        prefix += amt + 1;
+        roleDict[role] += 1;
       } else {
-        lst.push(fields);
+        roleDict[role] = 1;
       }
+      prefix += "::";
+      const body = table.querySelector("tbody");
+      populateDict(result.recordData, body, prefix);
     }
   }
   result.success = true;
