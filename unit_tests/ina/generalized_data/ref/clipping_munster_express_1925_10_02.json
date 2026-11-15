@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "ina",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "2 October 1925"
+  },
+  "newspaperName": "Munster Express",
+  "hasValidData": true
+}

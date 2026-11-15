@@ -1,0 +1,17 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "John Joseph",
+    "lastName": "O'Brien"
+  },
+  "lastNameAtBirth": "O'Brien",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "1930"
+  },
+  "birthPlace": {
+    "placeString": "Dungarvan, County Waterford, Ireland"
+  },
+  "hasValidData": true
+}

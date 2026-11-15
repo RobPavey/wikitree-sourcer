@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1951 Newspaper''':\n\"Irish Newspaper Archives\"<br/>\nMunster Express, 11 May 1951, page 7, \"Citation test - Private Clipping\"<br/>\n[https://irishnewsarchive.com/?a=clipa&command=ShowClippingEntry&clippingid=75991 Irish Newspaper Archives clipping] (subscription required) (accessed 6 May 2021)<br/>\nClipping note: This is a description of the clipping.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the Munster Express on 11 May 1951.<ref>\n'''1951 Newspaper''':\n\"Irish Newspaper Archives\"<br/>\nMunster Express, 11 May 1951, page 7, \"Citation test - Private Clipping\"<br/>\n[https://irishnewsarchive.com/?a=clipa&command=ShowClippingEntry&clippingid=75991 Irish Newspaper Archives clipping] (subscription required) (accessed 6 May 2021)<br/>\nClipping note: This is a description of the clipping.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1951 Newspaper''': \"Irish Newspaper Archives\"<br/>Munster Express, 11 May 1951, page 7, \"Citation test - Private Clipping\"<br/>[https://irishnewsarchive.com/?a=clipa&command=ShowClippingEntry&clippingid=75991 Irish Newspaper Archives clipping] (subscription required) (accessed 6 May 2021)<br/>Clipping note: This is a description of the clipping.",
+    "type": "source"
+  }
+}

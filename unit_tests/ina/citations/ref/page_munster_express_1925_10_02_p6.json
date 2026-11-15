@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1925 Newspaper''':\n\"Irish Newspaper Archives\"<br/>\nMunster Express, 2 October 1925, page 6<br/>\n[https://irishnewsarchive.com/?a=d&d=MEX19251002.1.6 Irish Newspaper Archives page] (subscription required) (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the Munster Express on 2 October 1925.<ref>\n'''1925 Newspaper''':\n\"Irish Newspaper Archives\"<br/>\nMunster Express, 2 October 1925, page 6<br/>\n[https://irishnewsarchive.com/?a=d&d=MEX19251002.1.6 Irish Newspaper Archives page] (subscription required) (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1925 Newspaper''': \"Irish Newspaper Archives\"<br/>Munster Express, 2 October 1925, page 6<br/>[https://irishnewsarchive.com/?a=d&d=MEX19251002.1.6 Irish Newspaper Archives page] (subscription required) (accessed 6 May 2021).",
+    "type": "source"
+  }
+}
