@@ -27,6 +27,7 @@ import { getUserClassification, getUserProvidedVitals } from "/base/browser/popu
 
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
 import { checkPermissionForSiteMatches } from "/base/browser/popup/popup_permissions.mjs";
+import { addCitationToCollectedCitations } from "/base/browser/common/collected_citations.mjs";
 
 import { fetchFsSourcesJson, fetchRecordJson, fetchRecordHtml } from "./fs_fetch.mjs";
 import {
@@ -385,7 +386,19 @@ async function getSourcerCitations(runDate, result, type, sessionId, tabId, opti
     await getUserChoicesForLackingSources(result, runDate, type, options);
   }
 
-  buildSourcerCitations(result, runDate, type, options);
+  if (result.collectedCitations) {
+    let citationCount = 0;
+    for (let source of result.sources) {
+      if (source.citationObject) {
+        await addCitationToCollectedCitations(source.citationObject);
+        citationCount++;
+      }
+    }
+    result.success = true;
+    result.citationCount = citationCount;
+  } else {
+    buildSourcerCitations(result, runDate, type, options);
+  }
 }
 
 async function fsGetAllCitations(input) {
@@ -396,6 +409,7 @@ async function fsGetAllCitations(input) {
   let tabId = input.tabId;
 
   let result = { success: false };
+  result.collectedCitations = input.collectedCitations;
   result.numExcludedOtherRoleSources = 0;
   result.numExcludedRetiredSources = 0;
   result.numExcludedDuplicateSources = 0;

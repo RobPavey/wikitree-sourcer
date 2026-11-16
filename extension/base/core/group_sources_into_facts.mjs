@@ -987,7 +987,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
 
     // if they have a different number of people then don't merge
     if (arrayA.length != arrayB.length) {
-      return "noMatch";
+      return "nomatch";
     }
 
     // if the fields are different then, creat a combined set of fields

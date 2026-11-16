@@ -52,6 +52,8 @@ import {
 import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 import { getLatestCitation } from "/base/browser/popup/popup_citation.mjs";
 
+import { getCollectedCitations } from "/base/browser/common/collected_citations.mjs";
+
 import { isFirefox } from "/base/browser/common/browser_check.mjs";
 
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
@@ -825,7 +827,36 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
 
       let excludedSourcesMessage = getExcludedSourcesString(response, data);
 
-      if (response.citationsString) {
+      if (data.collectedCitations) {
+        // the citations were added to the collection
+        let message1 = response.citationCount + " citations were added to the collection";
+        let message2 = "";
+        if (response.citationsStringType == "source") {
+          message2 = "\nThese are source type citations and should be pasted after the Sources heading.";
+        } else {
+          message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
+          if (response.citationsStringType == "narrative") {
+            message2 += "\n\nNote that the narrative strings generated are just starting points for you to add detail.";
+          }
+        }
+
+        if (excludedSourcesMessage) {
+          message2 += excludedSourcesMessage;
+        }
+
+        let iconType = "check";
+        let errorMessage = "";
+        if (response.failureCount || response.linkedRecordFailureCount || response.sharingLinksFailureCount) {
+          iconType = "warning";
+          errorMessage = getIncompleteCitationsString(response);
+        }
+
+        if (iconType == "check") {
+          displayMessageWithIconThenClosePopup(iconType, message1, message2);
+        } else {
+          displayMessageWithIcon(iconType, message1, message2, errorMessage1);
+        }
+      } else if (response.citationsString) {
         if (saveUnitTestData) {
           ancestrySaveUnitTestDataForAllCitations(input, response);
         } else {
@@ -1475,11 +1506,19 @@ function addBuildAncestryTreeMediaTemplateMenuItem(menu, data) {
   }
 }
 
-function addBuildAllCitationsMenuItem(menu, data, backFunction) {
+async function addBuildAllCitationsMenuItem(menu, data, backFunction) {
+  let collectedCitations = await getCollectedCitations();
+
+  let menuText = "Build All Citations";
+  if (collectedCitations && collectedCitations.citations) {
+    menuText = "Add All Citations to Collection";
+    data.collectedCitations = collectedCitations;
+  }
+
   if (data.extractedData.sources && data.extractedData.sources.length > 0) {
     addMenuItemWithSubmenu(
       menu,
-      "Build All Citations",
+      menuText,
       function (element) {
         let citationType = options.buildAll_ancestry_citationType;
         ancestryBuildAllCitationsAction(data, citationType);
@@ -1627,7 +1666,7 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
     await addSearchMenus(menu, data, backFunction, "ancestry");
     addMenuDivider(menu);
     addSavePersonDataMenuItem(menu, data, ancestryGetAllCitationsForSavePersonData);
-    addBuildAllCitationsMenuItem(menu, data, backFunction);
+    await addBuildAllCitationsMenuItem(menu, data, backFunction);
     addBuildListsMenuItem(menu, data, backFunction, true);
     addBuildAncestryTreeTemplateMenuItem(menu, data);
   } else if (extractedData.pageType == "record") {

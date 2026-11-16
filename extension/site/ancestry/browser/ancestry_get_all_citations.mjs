@@ -32,6 +32,8 @@ import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permiss
 
 import { doesCitationWantHouseholdTable } from "/base/browser/popup/popup_citation.mjs";
 
+import { addCitationToCollectedCitations } from "/base/browser/common/collected_citations.mjs";
+
 import { fetchAncestrySharingDataObj } from "./ancestry_fetch.mjs";
 import { getExtractedDataFromRecordUrl } from "./ancestry_url_to_ed.mjs";
 import { getQueueOptions } from "./ancestry_fetch_queue.mjs";
@@ -320,7 +322,19 @@ async function getSourcerCitations(runDate, result, type, options) {
   //console.log("getSourcerCitations: before buildSourcerCitations, result is:");
   //console.log(result);
 
-  buildSourcerCitations(result, type, options);
+  if (result.collectedCitations) {
+    let citationCount = 0;
+    for (let source of result.sources) {
+      if (source.citationObject) {
+        await addCitationToCollectedCitations(source.citationObject);
+        citationCount++;
+      }
+    }
+    result.success = true;
+    result.citationCount = citationCount;
+  } else {
+    buildSourcerCitations(result, type, options);
+  }
 }
 
 async function ancestryGetAllCitations(input) {
@@ -332,7 +346,14 @@ async function ancestryGetAllCitations(input) {
   let options = input.options;
   let runDate = input.runDate;
 
-  let result = { success: false, personExtractedData: ed, personGeneralizedData: gd };
+  let collectedCitations = input.collectedCitations;
+
+  let result = {
+    success: false,
+    personExtractedData: ed,
+    personGeneralizedData: gd,
+    collectedCitations: collectedCitations,
+  };
   result.numExcludedOtherRoleSources = 0;
   result.numExcludedDuplicateSources = 0;
 
