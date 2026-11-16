@@ -32,6 +32,12 @@ const regressionData = [
   },
   {
     caseName: "census_1865_carl_motzfeldt",
+    optionVariants: [
+      {
+        variantName: "citationInCaption",
+        optionOverrides: { table_general_autoGenerate: "citationInTableCaption", table_table_caption: "titlePlace" },
+      },
+    ],
   },
   {
     caseName: "census_1875_jakob_pedersen",

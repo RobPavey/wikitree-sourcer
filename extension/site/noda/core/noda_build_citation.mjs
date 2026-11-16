@@ -103,6 +103,7 @@ function buildRecordLink(ed, gd, builder) {
 }
 
 function buildCoreCitation(ed, gd, builder) {
+  builder.websiteCreatorOwner = "The National Archives of Norway";
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
