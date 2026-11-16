@@ -1,0 +1,17 @@
+{
+  "url": "https://agatha.arch.be/nl/data/acts/GSU_004191864_00813_4_00152800",
+  "success": true,
+  "isRecord": true,
+  "recordData": {
+    "aktetype": "Overlijdensakten",
+    "project": "Burgerlijke stand (FamilySearch) - België",
+    "plaats": "Antwerpen",
+    "beschrijving": "Overlijdensakte",
+    "datum van de akte": "05/04/1880",
+    "overledene::voornaam en naam": "Maria Cornelia Vingerhoedt",
+    "overledene::geboortedatum": "21/11/1805",
+    "overledene::leeftijd": "74 jaar 4 maanden 13 dagen",
+    "vader van de overledene::voornaam en naam": "Antonius Vingerhoedt",
+    "moeder van de overledene::voornaam en naam": "Maria Catharina Van Der Poel"
+  }
+}

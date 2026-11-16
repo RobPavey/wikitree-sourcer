@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "agatha",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "name": "Bartholomeus Michiels"
+  },
+  "eventDate": {
+    "dateString": "5 May 1621"
+  },
+  "eventPlace": {
+    "placeString": "Brugge"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Jan Michiels"
+      }
+    }
+  },
+  "project": "Kirchenbücher - Bestattungsurkunden - Provinz Westflandern",
+  "hasValidData": true
+}

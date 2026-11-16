@@ -1,0 +1,1870 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<link rel="alternate" hreflang="fr" href="http://agatha.arch.be/fr/data/acts/GSU_004191864_00813_4_00152800" />
+<link rel="alternate" hreflang="nl" href="http://agatha.arch.be/nl/data/acts/GSU_004191864_00813_4_00152800" />
+<link rel="alternate" hreflang="en" href="http://agatha.arch.be/en/data/acts/GSU_004191864_00813_4_00152800" />
+<link rel="alternate" hreflang="de" href="http://agatha.arch.be/de/data/acts/GSU_004191864_00813_4_00152800" />
+<link rel="alternate" hreflang="x-default" href="http://agatha.arch.be/en/data/acts/GSU_004191864_00813_4_00152800" />
+<link rel="canonical" href="http://agatha.arch.be/de/data/acts/GSU_004191864_00813_4_00152800">
+
+<script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['setSessionCookieTimeout', '86400']);  
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//bbbb.arch.be/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '27']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<title>AGATHA - Suchumgebung des Staatsarchivs</title>
+<script>
+	lang = 'GER';
+</script>
+<!-- Styles -->
+<link href="/de/my.css" rel="stylesheet">
+<link href="/library/css/jquery-ui.min.css" rel="stylesheet">
+<link href="/library/css/font-awesome.min.css" rel="stylesheet">
+<link href="/library/css/bootstrap-select-1.14.0-beta3.min.css" rel="stylesheet">
+<link href="/library/css/bootstrap-icons-1.9.1.css" rel="stylesheet">
+<link href="/library/css/style.css" rel="stylesheet">
+<link href="/de/include/style.css" rel="stylesheet">
+<!-- JS -->
+<script src="/de/search/analyses/include/constant.js"></script>
+<script src="/library/constant.js"></script>
+<script src="/library/js/jquery-3.7.1.min.js" type="text/javascript"></script>
+<script src="/library/js/jquery-ui-1.12.1.min.js" type="text/javascript"></script>
+<script src="/library/js/popper-2.11.8.min.js"></script>
+<script src="/library/bootstrap-5.3.3/js/bootstrap.min.js"></script>
+<script src="/library/AGRAR_utilities.js"></script>
+<script src="/library/js/bootstrap-select-1.14.0-beta3.min.js"></script>
+<script src="/library/js/bootstrap-select-defaults-de_DE-1.14.0-beta3.min.js"></script>
+
+<script src="https://www.google.com/recaptcha/api.js?hl=de"></script>
+<script>
+    function checkUsername()
+    {				
+        var regex = new RegExp(/^[a-zA-Z0-9_-]{4,}$/), submit;
+
+        var field = $('#username_signup')[0];
+        var username = $('#username_signup').val();
+        
+        if(!regex.test(username))
+        {
+            // $('#errorUsernameMsg').removeAttr('hidden');
+            field.setCustomValidity(' ');
+            submit = false;
+            
+            if(username.length < 4)
+                $('#usernameInvalidDetail')[0].innerHTML = "- "+USERNAME_SHORT_LABEL+"<br/>";
+            else 
+                $('#usernameInvalidDetail')[0].innerHTML = "";
+            
+            var msg = getErrorFromValidity(field.validity);
+
+            if(msg == PATTERN_MISMATCH_LABEL)
+            {
+                var pattern = new RegExp(field.pattern.replace(/\{(\d+,\d*)\}/, ''));
+                var nbCharInvalid = 0;
+                for(var ind = 0; ind < field.value.length; ind++)
+                {
+                    if(!(pattern.test(field.value[ind])))
+                    {
+                        if(nbCharInvalid == 0)
+                            msg += " :";
+                        msg += " " + field.value[ind];
+                        nbCharInvalid++;
+                    }
+                }
+                
+                if(nbCharInvalid > 0)
+                    $('#usernameInvalidDetail')[0].innerHTML += "- "+msg;
+            }
+            
+            field.classList.add('is-invalid');
+            field.classList.remove('is-valid');
+        }
+        else
+        {
+            // $('#errorUsernameMsg').attr('hidden', '');
+            field.setCustomValidity('');
+            submit = true;
+            
+            field.classList.add('is-valid');
+            field.classList.remove('is-invalid');
+        }
+        
+        return submit;
+    }
+
+    function checkMail(emailId, errorId) 
+    {		
+        let submit;
+        
+        if($('#'+emailId).length == 0 || $('#'+emailId)[0].validationMessage != '')
+        {
+            $('#'+errorId).find('strong')[0].innerHTML = $('#'+emailId)[0].validationMessage;
+            submit = false;
+        }
+        else
+        {
+            submit = true;
+        }
+        
+        return submit
+    }
+
+    function checkPw()
+    {
+        return checkMainPw() && checkConfirmPw();
+    }
+
+    function checkMainPw()
+    {
+        // min. length 0 so the regex fail only if the input doesn't meet the requirements
+        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&,;.:\/"#'(){}\[\]+)_~=-])[A-Za-z\d@$!%*?&,;.:\/"#'(){}\[\]+°_~=-]{0,}$/, submit = "";
+        
+        if($('#pw_signup').val().length < 8)
+            submit = "- "+PW_TOO_SHORT_LABEL+"<br/>";
+        
+        if(!regex.test($('#pw_signup').val()))
+            submit += "- "+PW_MUST_CONTAIN_LABEL;
+        
+        if(submit != "")
+        {
+            $('#passwordInvalidDetail')[0].innerHTML = submit;
+            $('#pw_signup')[0].setCustomValidity(' ');
+
+            $('#pw_signup').addClass('is-invalid');
+            $('#pw_signup').removeClass('is-valid');
+            
+            $('#pw_help').addClass('text-hide');
+
+            return false;
+        }
+        else
+        {
+            $('#pw_signup')[0].setCustomValidity('');
+            
+            $('#pw_signup').removeClass('is-invalid');
+            $('#pw_signup').addClass('is-valid');
+            
+            $('#pw_help').removeClass('text-hide');
+
+            return true;
+        }
+        
+    }
+
+    function checkConfirmPw()
+    {
+        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&,;.:\/"#'(){}\[\]+)_~=-])[A-Za-z\d@$!%*?&,;.:\/"#'(){}\[\]+°_~=-]{8,}$/, confirmSubmit = "";
+        
+        if($('#pw_signup').val() != $('#confirm_pw').val())
+            confirmSubmit = "- "+PW_NOT_THE_SAME_LABEL;
+        
+        if(confirmSubmit != "")
+        {
+            $('#confirmPasswordInvalidDetail')[0].innerHTML = confirmSubmit;
+            $('#confirm_pw')[0].setCustomValidity(' ');
+
+            $('#confirm_pw').addClass('is-invalid');
+            $('#confirm_pw').removeClass('is-valid');
+
+            return false;
+        }
+        else
+        {
+            $('#confirm_pw')[0].setCustomValidity('');
+            
+            $('#confirm_pw').removeClass('is-invalid');
+            $('#confirm_pw').addClass('is-valid');
+            
+            return true;
+        }
+    }
+
+    function checkForm(indCaptcha, errorCaptchaId)
+    {
+        var submitUsername = checkUsername(),
+            submitPw = checkPw(),
+            submitMail = checkMail('email', 'errorMailMsg'),
+            submitCaptcha = checkCaptcha(indCaptcha, errorCaptchaId);
+                    
+        return submitUsername && submitPw && submitMail && submitCaptcha;
+    }
+
+    function checkCaptcha(ind, errorId) 
+    {
+        if(grecaptcha.getResponse(ind) == '')
+        {
+            $('#'+errorId)[0].setCustomValidity(' ');
+            return false;
+        }
+        else
+        {
+            $('#'+errorId)[0].setCustomValidity('');
+            return true;
+        }
+    }
+
+    function notARobot()
+    {
+        $('#captcha')[0].setCustomValidity('');
+    }
+
+    function NotARobotExpired()
+    {
+        $('#captcha')[0].setCustomValidity(' ');
+    }
+
+    function notARobotPw()
+    {
+        $('#captchaPwForgotten')[0].setCustomValidity('');
+    }
+
+    function NotARobotExpiredPw()
+    {
+        $('#captchaPwForgotten')[0].setCustomValidity(' ');
+    }
+
+    function setLoading(ele, activate)
+    {
+        if(activate)
+        {
+            ele.setAttribute('data-init', ele.innerHTML);
+            
+            ele.setAttribute('disabled', true);
+            ele.innerHTML = "";
+            
+            let spinner = document.createElement('span');
+            spinner.classList.add('spinner-border', 'spinner-border-sm');
+            spinner.setAttribute('role', 'status');
+            spinner.setAttribute('aria-hidden', 'true');
+            
+            ele.append(spinner);				
+            ele.innerHTML += " "+SAVING_LABEL+" "+COULD_TAKE_FEW_MOMENTS_LABEL;
+        }
+        else
+        {				
+            ele.removeAttribute('disabled');
+            ele.innerHTML = ele.getAttribute('data-init');
+        }
+    }
+
+    function checkTextarea(ele)
+    {
+        let input;
+        if(ele)
+            input = ele;
+        else
+            input = $('#MESSAGE_TXT')[0];
+        
+        $(input).parent('div').find('.nbChar').html(input.value.length);
+        
+        var regExp = RegExp(input.getAttribute("pattern"), "s");
+        var mayActivate = true;        
+        
+        if(regExp.test(input.value))
+        {
+            input.setCustomValidity("");
+
+            // input.classList.add('is-valid');
+            // input.classList.remove('is-invalid');
+        }
+        else
+        {
+            mayActivate = false;
+            if(input.value.length < 5)
+                input.setCustomValidity(TOO_SHORT_MIN_5_LABEL);
+            else if(input.value.length > 1500)
+                input.setCustomValidity(MESSAGE_TOO_LONG_LABEL);
+            else
+            {
+                input.setCustomValidity(PATTERN_MISMATCH_LABEL);
+                
+                var msg = "";
+                var regExp2 = RegExp(input.getAttribute("pattern").replace(/\{(\d+,\d+)\}/, ''));
+                var nbCharInvalid = 0;
+                for(var ind = 0; ind < input.value.length; ind++)
+                {
+                    if(!(regExp2.test(input.value[ind])))
+                    {
+                        msg += input.value[ind] + " ";
+                        nbCharInvalid++;
+                    }
+                }
+            }
+
+            // input.classList.add('is-invalid');
+            // input.classList.remove('is-valid');
+
+            $('#errorTextarea').html(input.validationMessage + (msg ? ' : ' + msg : ''));
+        }
+
+        return mayActivate;
+    }
+
+    $(function() {
+        $('#FORM_SIGNUP').submit(function() {
+            return false;
+        });
+
+        // Fix for the 'opening modal from another modal'
+        $('.modal').on('hidden.bs.modal', function () {
+            // If there are any visible
+            if($(".modal:visible").length > 0) {
+                $('body').addClass('modal-open');
+            }
+        });
+        
+        $('.togglePassword').on('mouseup', function() {
+            $(this).find('span').toggleClass('bi-eye-fill bi-eye-slash');
+            var inp = '#'+($(this).attr('for'));
+            $(inp).attr('type') == 'text' ? $(inp).attr('type', 'password') : $(inp).attr('type', 'text');
+        });
+        
+        // $('#FORM_SIGNUP').find('input[name!=APP_NAME]').val('');
+        
+        $('#modal_signup, #modal_pw_forgotten, #reservationModal, #reproductionModal, #contactModal').on('hidden.bs.modal', function() {
+            for(var i = 0; i < $('.g-recaptcha').length; i++)
+            {
+                try {
+                    if(grecaptcha.getResponse(i) != "")
+                        grecaptcha.reset(i);
+                }
+                catch(e){}
+            }
+        });		
+            
+        $('#modal_signup, #modal_pw_forgotten, #reservationModal, #reproductionModal, #contactModal').on('show.bs.modal', function() {
+            $(this).find('form').removeClass('was-validated');
+            $(this).find('form').find('input').removeClass('is-valid is-invalid');
+            $(this).find('form')[0].reset();
+			
+			let nbChar = $(this).find('.nbChar');
+			if(nbChar.length > 0)
+				nbChar[0].innerHTML = '0';
+        });
+
+        $('#modal_signup, #modal_pw_forgotten, #modal_login, #reservationModal, #reproductionModal, #contactModal').on('shown.bs.modal', function() {
+            $(this).find('[autofocus]').focus();
+        });
+        
+        $('#modal_signup').on('keydown', function(e) {
+            if(e.key == 'Enter')
+                e.preventDefault();
+        });	
+
+        $('#modal_login').on('keydown', function(e) {
+            if(e.key == 'Enter')
+                $('#confirmButton_login').click();
+        });
+
+        $('#pw_signup').on('input', checkMainPw);
+        $('#confirm_pw').on('input', checkConfirmPw);
+        $('#username_signup').on('input', checkUsername);
+        
+        // Registration
+        $('#confirmButton_signup').on('click', function() {		
+            var submit = checkForm(0, 'captcha');
+            $('#FORM_SIGNUP').addClass('was-validated');
+                
+            let _this = this;
+            _this.blur();   
+            
+            if(submit)
+            {
+                setLoading(_this, true);
+                
+                $('#cancelButton_signup').hide();
+                
+                var datas = $('#FORM_SIGNUP').serializeArray();
+                
+                $.ajax({
+                    url: '/de/signup.php',
+                    type: 'POST',
+                    data: {datas: datas},
+                    success: function(result) {
+                        var resJSON = JSON.parse(result);
+                                                    
+                        grecaptcha.reset(0);	
+                            
+                        if(resJSON['registration'] == true && !resJSON['errors']['registrationMsg'])
+                        {
+                            $('#modal_signup').modal('hide');
+                            $('#msgResponse')[0].innerHTML = resJSON['msgResponse'];
+                            $('#modal_response').modal('show');
+                            
+                            $('#FORM_SIGNUP').removeClass('was-validated');
+                            $('#FORM_SIGNUP').find('input').removeClass('is-valid is-invalid');
+                            $('#FORM_SIGNUP')[0].reset();
+                        }
+                        else
+                        {									
+                            if(resJSON['errors']['username'] === true)
+                                $('#username_signup')[0].setCustomValidity('');
+                            else
+                            {
+                                $('#username_signup')[0].setCustomValidity(' ');
+                                if(resJSON['errors']['username'])
+                                    $('#usernameInvalidDetail')[0].innerHTML = "- "+resJSON['errors']['username'];
+                            }
+                            
+                            if(resJSON['errors']['pw']['DIFFERENT'] && resJSON['errors']['pw']['SHORT'] && resJSON['errors']['pw']['PATTERN'])
+                            {
+                                $('#pw_signup')[0].setCustomValidity('');
+                                $('#confirm_pw')[0].setCustomValidity('');
+                            }
+                            else
+                            {
+                                if(resJSON['errors']['pw']['DIFFERENT'] == false)
+                                {
+                                    $('#confirm_pw')[0].setCustomValidity(' ');
+                                    $('#confirmPasswordInvalidDetail')[0].innerHTML = "- "+PW_NOT_THE_SAME_LABEL;
+                                }
+                                
+                                $('#passwordInvalidDetail')[0].innerHTML = "";
+                                
+                                if(resJSON['errors']['pw']['SHORT'] == false)
+                                {
+                                    $('#pw_signup')[0].setCustomValidity(' ');
+                                    $('#passwordInvalidDetail')[0].innerHTML = "- "+PW_TOO_SHORT_LABEL;
+                                }
+                                
+                                if(resJSON['errors']['pw']['PATTERN'] == false)
+                                {
+                                    $('#pw_signup')[0].setCustomValidity(' ');
+                                    $('#passwordInvalidDetail')[0].innerHTML += "- "+PW_MUST_CONTAIN_LABEL;
+                                }
+                                
+                                submit = false;
+                            }
+                            
+                            if(resJSON['errors']['email'] === true)
+                                $('#email')[0].setCustomValidity('');
+                            else
+                            {
+                                $('#email')[0].setCustomValidity(' ');
+                                if(resJSON['errors']['email'])
+                                    $('#emailInvalidDetail')[0].innerHTML = "- "+resJSON['errors']['email'];
+                            }
+                            
+                            if(resJSON['errors']['captcha'] == true)
+                                $('#captcha')[0].setCustomValidity('');
+                            else
+                            {
+                                $('#captcha')[0].setCustomValidity('');
+                                $('#errorCaptchaMsg').find('strong')[0].innerHTML = resJSON['errors']['captcha'];
+                            }
+                            
+                            if(resJSON['errors']['registrationMsg'])
+                            {
+                                
+                                $('#modal_signup').modal('hide');
+                                $('#msgResponse')[0].innerHTML = resJSON['errors']['registrationMsg'];
+                                $('#modal_response').modal('show');
+                                
+                                $('#FORM_SIGNUP')[0].reset();
+                            }
+                        }
+                        
+                        setLoading(_this, false);
+                        $('#cancelButton_signup').show();
+                    }
+                });
+            }
+        });
+        
+        
+        // Reset password form
+        $('#pwForgottenForm input').on('input', function() {
+            checkMail('emailPwForgotten', 'errorEmailPwForgotten');
+            submitCaptcha = checkCaptcha(1, 'captchaPwForgotten');
+        });
+        
+        $('#pw_forgotten_btn').on('click', function() {
+            $('#pwForgottenForm').addClass('was-validated');
+            var submitMail = checkMail('emailPwForgotten', 'errorEmailPwForgotten'), submitCaptcha = checkCaptcha(1, 'captchaPwForgotten');
+
+            if(submitMail && submitCaptcha)
+            {
+                let _this = this;
+                setLoading(_this, true);
+                _this.blur();
+                
+                var email = $('#emailPwForgotten').val(), token = grecaptcha.getResponse(1);
+                
+                $.ajax({
+                    url: '/de/pw_forgotten.php',
+                    type: 'POST',
+                    data: {email: email, token: token, app: $('input[name="app"]').val()},
+                    success: function(result) {
+                        setLoading(_this, false);
+
+                        var resJSON = JSON.parse(result);
+                                                        
+                        grecaptcha.reset(1);
+                            
+                        if(resJSON['success'] == true && resJSON['errors']['email'] == true)
+                        {
+                            $('#modal_pw_forgotten').modal('hide');
+                            $('#msgResponsePwForgotten')[0].innerHTML = resJSON['msgResponse'];
+                            $('#modal_response_pw_forgotten').modal('show');
+                            $('#emailPwForgotten').val("");
+                        }
+                        else
+                        {									
+                            if(resJSON['errors']['email'] == true)
+                            {
+                                $('#emailPwForgotten')[0].setCustomValidity('');
+                            }
+                            else
+                            {
+                                $('#emailPwForgotten')[0].setCustomValidity(' ');
+                                $('#errorEmailPwForgotten').find('strong')[0].innerHTML = resJSON['errors']['email'];
+                            }
+                            
+                            if(resJSON['errors']['captcha'] == true)
+                                $('#captchaPwForgotten')[0].setCustomValidity('');
+                            else
+                            {
+                                $('#captchaPwForgotten')[0].setCustomValidity(' ');
+                                $('#errorCaptchaPwForgotten').find('strong')[0].innerHTML = resJSON['errors']['captcha'];
+                            }
+                        }
+                    }
+                });
+            }
+        });
+        ///////
+        
+        
+        // Login
+        $('#confirmButton_login').on('click', function() {
+            let _this = this;
+            _this.blur();
+            
+            var d = $('#form_login').serializeArray();
+            
+            if(d[0].value != '' && d[1].value != '')
+            {
+                setLoading(_this, true);
+                
+                $('#cancelButton_login').hide();
+
+                $.ajax({
+                    url: LIBRARY_PATH+'/login.php',
+                    type: 'POST',
+                    data: {username: d[0].value, password: d[1].value, app: d[2].value},
+                    success: function(result) {
+                        if(result == '1')
+                        {
+                            window.location.href = window.location.href;
+                            location.reload(true);
+                            $('#errorLogin').parent('div').attr('hidden', '');
+                        }	
+                        else
+                        {
+                            setLoading(_this, false);
+                            $('#cancelButton_login').show();
+                            $('#errorLogin').html(result);
+                            $('#errorLogin').parent('div').removeAttr('hidden');
+                        }	
+                    }
+                });
+            }
+        });
+        //////
+    });
+</script>
+<script type="text/javascript">
+	$(function() {	
+			});
+</script>
+<link href="/library/css/cookieconsent.css" rel="stylesheet">
+<script src="/library/js/cookieconsent.js" type="text/javascript"></script>
+<script>
+   $(function() {
+		window.cookieconsent.initialise({
+			type: 'info',
+			position: 'bottom-right',
+			theme: 'classic',
+			content: {
+				message: "Diese Website verwendet Cookies für eine optimale Nutzung.",
+				dismiss: "Ok",
+				link: "Weitere Infos",
+				href: "#"
+			},
+			palette:{
+				popup: {background: "rgb(213, 235, 241)", text: "rgb(0,0,0)", link: "#00f"},
+				button: {background: "rgb(14, 110, 111)"},
+			},
+			revokable: false,
+			onPopupOpen: function() {				
+				this.element.classList.add('font-family');
+				this.element.classList.add('text-center');
+			
+				$('.cc-link').on('click', function(e) {
+					e.preventDefault();
+					
+					$('#modal_cookieInfo').modal('show');
+				});
+			},
+			law: {
+				regionalLaw: false,
+			},
+			location: true,
+		});
+	});
+</script><script>
+	function getTab() {
+		var id = $('#myTab').find('.active').attr('id');
+		return id.substring(0,4);
+	}
+
+	function printPage(page) 
+	{
+        if(page)
+        {
+            let iframe = document.createElement('iframe');
+
+            if(page == 'act')
+                iframe.src = "https://agatha.arch.be/de/data/acts/"+$('#ACT_TITLE').text();
+            else // project
+                iframe.src = "https://agatha.arch.be/de/data/projects/"+$('#PROJECT_ID').val();
+            
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            iframe.onload = function() {
+                iframe.contentWindow.print();
+                setTimeout(function() {
+                    document.body.removeChild(iframe);
+                }, 1000);
+            };
+        }
+        else
+		    window.print();
+	}
+
+    // Job list
+    function initAutocomplete(selector)
+    {
+        $(selector).autocomplete({
+            autoFocus: true,
+            source: function(request, response) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/de/search/analyses/ajax.php", 
+                    data: {
+                        method: 'getJobs',
+                        term: request.term
+                    },
+                    success: function(result) {	
+                        var resJSON = JSON.parse(result);
+                        response(resJSON);
+                    }	
+                })							
+            },
+            minLength: 2,
+            select: function(event, item) {
+                $('#'+event.target.id+'_ID').val(item.item.ID);
+            },
+            change: function(event, item) {
+                if(!item.item) 
+                    $('#'+event.target.id+'_ID').val("-1");
+            }
+        });
+
+        if($(selector).length > 0)
+        {
+            $(selector).data("ui-autocomplete")._renderItem = function (ul, item) {
+                return $( "<li>" )
+                .append( $( "<div>" ).text( item.label ) )
+                .appendTo( ul );
+            };
+        }
+    }
+
+    function validateForm() {
+		var tab = getTab();
+		
+		validateSearchField();
+		validateDates();
+		
+		// if any invalid field, the form is not valid
+		if($('#'+tab+'_FORM').find('.is-invalid:visible').length > 0)
+			return false;
+		else
+			return true;
+	}
+
+    function validateDates() {
+		let this_tab = getTab();
+		let exactYear = $('#exactYear_'+this_tab).val();
+        let endYear = $('#SHOW_PERIODE_'+this_tab).val();
+        
+        let dateType = parseInt($('#CHOOSE_DATE_PERIODE_'+this_tab).val());
+
+        let ok = true;
+
+        $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().find('strong').text('');
+        $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text('');
+        
+        if(extractText(exactYear) != '')
+        {
+            if(dateType == 0)
+            {
+                let rgxp = new RegExp(/^\d{1,2}[/.-]\d{1,2}[/.-]\d{1,4}$/);
+                if(!rgxp.test(exactYear))
+                {
+                    $('#exactYear_'+this_tab).addClass('is-invalid');
+                    $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().find('strong').text(MUST_BE_NUMBER_LABEL);
+                }
+                else
+                    $('#exactYear_'+this_tab).removeClass('is-invalid');
+            }
+            else
+            {
+                $('#exactYear_'+this_tab).addClass('is-invalid');
+                $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().find('strong').text(MUST_BE_NUMBER_LABEL);
+            }
+        }
+        else
+            $('#exactYear_'+this_tab).removeClass('is-invalid');
+        
+        if(extractText(endYear) != '')
+        {
+            $('#SHOW_PERIODE_'+this_tab).addClass('is-invalid');
+            $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(MUST_BE_NUMBER_LABEL);
+        }
+        else
+            $('#SHOW_PERIODE_'+this_tab).removeClass('is-invalid');
+
+        if(extractText(exactYear) != '' || extractText(endYear) != '')
+            ok = false;
+			
+        switch(dateType)
+        {					
+            // exact year
+            case 0:
+                break;
+            // between - periode
+            case 1:
+                if(exactYear != '' && endYear == '')
+                {
+                    $('#SHOW_PERIODE_'+this_tab).addClass('is-invalid');
+                    $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(VALUE_MISSING_LABEL);
+
+                    ok = false;
+                }
+
+                
+                if(exactYear == '' && endYear != '')
+                {
+                    $('#exactYear_'+this_tab).addClass('is-invalid');
+                    $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().find('strong').text(VALUE_MISSING_LABEL);
+
+                    ok = false;
+                }
+                
+                if(parseInt(exactYear) > parseInt(endYear))
+                {
+                    $('#SHOW_PERIODE_'+this_tab).addClass('is-invalid'); 
+                    $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(END_YEAR_MUST_BE_HIGHER_LABEL);
+                }
+                else if(ok)
+                    $('#SHOW_PERIODE_'+this_tab).removeClass('is-invalid');
+                break;
+            // before
+            case 2:
+                break;
+            // after
+            case 3:
+                break;
+        }
+
+        if($('#exactYear_'+this_tab).hasClass('is-invalid'))
+            $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().show();
+        else
+            $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().hide();
+    
+        if($('#SHOW_PERIODE_'+this_tab).hasClass('is-invalid'))
+        {
+            $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).show();
+            $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().show();
+        }
+        else
+        {
+            $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).hide();
+
+            if(!$('#exactYear_'+this_tab).hasClass('is-invalid'))
+                $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().hide();
+        }
+		
+		$('#exactYear_'+this_tab).on('input', validateDates);
+		$('#SHOW_PERIODE_'+this_tab).on('input', validateDates);
+	}
+
+    function validateSearchField() {
+        let tab = getTab();
+        let this_input;
+
+        if(tab == 'FREE')
+		    this_input = $('#SHORT_ALL_TEXTS')[0];
+        else
+            this_input = $('#NAME')[0];
+		
+        if(!this_input.checkValidity())
+        {
+			$(this_input).addClass('is-invalid');
+            $(this_input).next('.invalid-feedback').find('strong').text(getErrorFromValidity(this_input.validity));
+        }
+        else
+			$(this_input).removeClass('is-invalid');
+	}
+
+    function copyLink(e, from)
+    {
+        if(from == 'project')
+        {
+            let urlProject = "https://agatha.arch.be/de/data/projects/"+($('#PROJECT_ID').text() || $('#PROJECT_ID').val());
+            navigator.clipboard.writeText(urlProject);
+        }
+        else if(from == 'act')
+        {
+            let urlAct = "https://agatha.arch.be/de/data/acts/"+$('#ACT_TITLE').text();
+            navigator.clipboard.writeText(urlAct);
+        }
+
+        $(e.target).tooltip({
+            trigger: 'manual',
+            title: 'Kopiert !'
+        }).tooltip('show');
+        setTimeout(function() { $(e.target).tooltip('hide'); }, 2000);
+    }
+
+    function initAutocompletePlaces(selector)
+    {
+        $(selector).autocomplete({
+            autoFocus: true,
+            source: function(request, response) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/de/search/analyses/ajax.php", 
+                    data: {
+                        method: 'getMunicipalities',
+                        term: request.term
+                    },
+                    success: function(result) {	
+                        var resJSON = JSON.parse(result);
+                        response(resJSON);
+                        $(selector).autocomplete('instance').listItems = resJSON;
+                        $(selector).autocomplete('instance').clicked = false;
+                    }	
+                })							
+            },
+            minLength: 0
+        });
+
+        if($(selector).length > 0)
+        {
+            $(selector).data("ui-autocomplete")._renderItem = function (ul, item) {
+                return $( "<li>" )
+                .append( $( "<div>" ).text( item.label ) )
+                .appendTo( ul );
+            };
+        }
+    }
+	
+	function reportError(t)
+    {
+        if(t == 'act')        
+            postURLForm('https://agatha.arch.be/de/contact/', 'URL_RESULTS', "https://agatha.arch.be/de/data/acts/"+$('#ACT_TITLE').text(), true);
+        else if(t == 'project')        
+            postURLForm('https://agatha.arch.be/de/contact/', 'URL_RESULTS', "https://agatha.arch.be/de/data/projects/"+$('#PROJECT_ID').text(), true);
+        else if(t == 'results')
+            postURLForm('https://agatha.arch.be/de/contact/', 'URL_RESULTS', "sess", true);
+        else if(t == 'update')
+            postURLForm('https://agatha.arch.be/de/contact/', 'URL_RESULTS', location.href, true);
+        else
+            postURLForm('https://agatha.arch.be/de/contact/', '', "", true);
+    }
+	
+	function formatDate(this_date)
+    {
+        const formatter = new Intl.DateTimeFormat("fr-FR", { 
+            timeZone: "UTC",
+            year: "numeric", month: "2-digit", day: "2-digit"
+        });
+
+        return formatter.format(this_date);
+    }
+	
+	function viewProject(row, ele, fromAct)
+	{	
+		var project_id = row['PROJECT_ID'];
+
+        $('#openProjectBtn').attr('href', "https://agatha.arch.be/de/data/projects/"+project_id);
+
+        $.ajax({
+            type: "POST",
+            url: "/de/search/analyses/ajax.php",
+            data: {
+                method: 'getProjectXML',
+                PROJECT_ID: project_id
+            },
+            success: function(result) {
+                var xml = JSON.parse(result);
+
+                if(xml == false)
+                {
+                    $('#modal_PROJECT').modal('hide');
+                    $('#modal_PROJECT_NOT_FOUND').modal('show');
+
+                    var td = document.getElementById('modal_PROJECT_PROJECT_ID');
+                    var tr = td.parentElement;
+                    if(xml['PROJECT_ID'] != '')
+                    {
+                        td.innerHTML = xml['PROJECT_ID'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                }
+                else
+                {
+                    for(var key in xml)
+                    {
+                        if(key != 'Urls')
+                        {
+                            var val = xml[key];
+                            if(typeof val == 'object')
+                                val = val[0];
+                            if(val != undefined)
+                                val = val.trim();
+
+                            xml[key] = val;
+                        }
+                    }
+                    
+                    $('#PROJECT_ID').val(xml['PROJECT_ID']);
+                    
+                    var td = document.getElementById('modal_PROJECT_PROJECT');
+                    var tr = td.parentElement;
+                    if(xml[lang+'_TITLE'] != '')
+                    {
+                        td.innerHTML = xml[lang+'_TITLE'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_DESCRIPTION');
+                    var tr = td.parentElement;
+                    if(xml[lang+'_FULL_DESCRIPTION'] != '')
+                    {
+                        td.innerHTML = xml[lang+'_FULL_DESCRIPTION'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_STATUS');
+                    var tr = td.parentElement;
+                    if(xml['PROJECTSTATUS'] != '')
+                    {
+                        td.innerHTML = xml['PROJECTSTATUS_GER_DESCRIPTION'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_NUMACTS');
+                    var tr = td.parentElement;
+                    if(xml['NUMACTS'] != '')
+                    {
+                        td.innerHTML = xml['NUMACTS'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_NUMPERSONS');
+                    var tr = td.parentElement;
+                    if(xml['NUMPERSONS'] != '')
+                    {
+                        td.innerHTML = xml['NUMPERSONS'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_PERIODE');
+                    var tr = td.parentElement;
+                    if(xml['PERIODE'] != '')
+                    {
+                        td.innerHTML = xml['PERIODE'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_REGION');
+                    var tr = td.parentElement;
+                    if(xml['REGION'] != '')
+                    {
+                        td.innerHTML = xml['REGION'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_AUTHOR');
+                    var tr = td.parentElement;
+                    if(xml['AUTHORS'] != '')
+                    {
+                        td.innerHTML = xml['AUTHORS'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+
+                    var td = document.getElementById('modal_PROJECT_LAST_UPDATE');
+                    var tr = td.parentElement;
+                    if(xml['LAST_UPDATE'] && xml['LAST_UPDATE'] != '')
+                    {
+                        const [day, month, year] = xml['LAST_UPDATE'].split(/[- :]/);
+
+                        const last_update = new Date(Date.UTC(year, month - 1, day));
+
+                        td.innerHTML = formatDate(last_update);
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+
+                    var prevUrls = document.getElementsByClassName('urls');
+                    for(var i = prevUrls.length-1; i > 0; i--)
+                    {
+                        prevUrls[i].remove();
+                    }
+                    prevUrls[0].removeAttribute('hidden');
+                    
+                    var urls = xml['Urls']['Url'];
+                    if(urls && !Array.isArray(urls))
+                        urls.length = 1;
+
+                    for(var i = 0; urls && i < urls.length; i++)
+                    {
+                        if(i != 0)
+                        {
+                            var cloneUrlNode = document.getElementById('modal_URL'+i).cloneNode('true');
+                            var idDescription = cloneUrlNode.getAttribute('id');
+                            var nextId = parseInt(extractNumber(idDescription)) + 1;
+                            cloneUrlNode.setAttribute('id', extractText(idDescription) + nextId);
+
+                            var idLink = cloneUrlNode.getElementsByTagName('a')[0].getAttribute('id');
+                            cloneUrlNode.getElementsByTagName('a')[0].setAttribute('id', extractText(idLink) + nextId)
+
+                            document.getElementById('modal_URL'+i).after(cloneUrlNode);
+                        }
+                        
+                        let urlLink;
+                        
+                        if(urls.length == 1)
+                        {
+							let urlLinkLang = urls['URL_LINK_'+lang];
+                            if(urlLinkLang && urlLinkLang != '')
+                                urlLink = urlLinkLang;
+                            else
+								urlLink = (typeof urls['URL_LINK'] == "object") ? urls['URL_LINK'][0] : urls['URL_LINK'];
+                            document.getElementById('modal_URL_link'+(i+1)).innerHTML = (typeof urls[lang+'_DESCRIPTION'] == "object") ? (urls[lang+'_DESCRIPTION'][0] || "Keine Beschreibung") : (urls[lang+'_DESCRIPTION'] || "Keine Beschreibung");
+                            document.getElementById('modal_URL_link'+(i+1)).setAttribute('href', urlLink);
+                        }
+                        else
+                        {
+							let urlLinkLang = urls[i]['URL_LINK_'+lang];
+                            if(urlLinkLang && urlLinkLang != '')
+                                urlLink = urlLinkLang;
+                            else
+								urlLink = (typeof urls[i]['URL_LINK'] == "object") ? urls[i]['URL_LINK'][0] : urls[i]['URL_LINK'];
+                            document.getElementById('modal_URL_link'+(i+1)).innerHTML = (typeof urls[i][lang+'_DESCRIPTION'] == "object") ? (urls[i][lang+'_DESCRIPTION'][0] || "Keine Beschreibung") : (urls[i][lang+'_DESCRIPTION'] || "Keine Beschreibung");
+                            document.getElementById('modal_URL_link'+(i+1)).setAttribute('href', urlLink);                                
+                        }
+                        
+                        if(urlLink && urlLink.indexOf('.pdf') != -1)
+                        {
+                            if(cloneUrlNode)
+                            {
+                                $(cloneUrlNode).find('th').text("PDF");
+                            }
+                        }
+                    }
+
+                    if(!urls)
+                        prevUrls[0].setAttribute('hidden', true);
+
+                    let btnReturnToAct = $('#returnToAct');
+                    if(fromAct)
+                    {
+                        btnReturnToAct.show();
+                    }
+                    else
+                    {
+                        btnReturnToAct.hide();
+                    }
+                }
+            }
+        });
+	}
+</script><script>
+    $(function() {
+        // explicit call is not needed but apparently it renders faster
+		$(".selectpicker").selectpicker("render");
+
+        $('#CLEAR_DATES_FREE, #CLEAR_DATES_PERS').on('click', function(e) {
+            e.currentTarget.blur();
+            $('#exactYear_'+getTab()).val('');
+            $('#SHOW_PERIODE_'+getTab()).val('');
+        });
+
+        $('#collapseFilters').on('show.bs.collapse', function(e) {
+            $('a[href="#collapseFilters"]')[0].innerHTML = "Weniger Filter<i class='bi bi-chevron-up ms-2'></i>";
+        });
+
+        $('#collapseFilters').on('hide.bs.collapse', function(e) {
+            $('a[href="#collapseFilters"]')[0].innerHTML = "Weitere Filter<i class='bi bi-chevron-down ms-2'></i>";
+        });
+
+        $('#collapseSecondPerson').on('show.bs.collapse', function(e) {
+            $('a[href="#collapseSecondPerson"]')[0].innerHTML = "Die zweite Person aus dem Suchbegriff streichen<i class='bi bi-dash-lg ms-2'></i>";
+        });
+
+        $('#collapseSecondPerson').on('hide.bs.collapse', function(e) {
+            $('a[href="#collapseSecondPerson"]')[0].innerHTML = "Eine zweite Person zur Suche hinzufügen<i class='bi bi-plus-lg ms-2'></i>";
+            $('#NAME_2').val('');
+            $('#FIRST_NAME_2').val('');
+            $('#JOB_2').val('');
+            $('#ROLE_2').val('ALL');
+        });
+
+        $('#collapseFilters_PERS,#collapseFilters_FREE').on('show.bs.collapse', function(e) {
+            let tab = getTab();
+            $('a[href="#collapseFilters_'+tab+'"]')[0].innerHTML = "Weniger Filter<i class='bi bi-chevron-up ms-2'></i>";
+        });
+
+        $('#collapseFilters_PERS,#collapseFilters_FREE').on('hide.bs.collapse', function(e) {
+            let tab = getTab();
+            $('a[href="#collapseFilters_'+tab+'"]')[0].innerHTML = "Weitere Filter<i class='bi bi-chevron-down ms-2'></i>";
+        });
+        
+        $('#collapseFilters_PERS,#collapseFilters_FREE').on('hidden.bs.collapse', function(e) {
+            let tab = getTab();
+            $('#ACTTYPE_'+tab).selectpicker('val', '-1');
+            $('#PROJECT_'+tab).selectpicker('val', '-1');
+        });
+
+        initAutocomplete($('#JOB,#JOB_2'));
+        initAutocompletePlaces($('#ALL_PLACES_FREE,#ALL_PLACES_PERS'));
+
+        $('[data-bs-toggle="tooltip"]').each(function(i, _this) {
+            getBsTooltip(_this);
+        });
+        
+        $('[data-bs-toggle="tooltip"]').on('shown.bs.tooltip', function(e) {
+            let tooltipBox = getBsTooltip($(e.target));
+            tooltipBox.tip.classList.add('text-justify');
+        
+            $('.tooltip.show').on('mouseleave', function() {
+                tooltipBox.hide();
+            });
+        });
+
+        // DATE
+        $('#CHOOSE_DATE_PERIODE_FREE,#CHOOSE_DATE_PERIODE_PERS').on('change', function(e) {
+            let tab = getTab();
+            let input_from = $(this).parent('div').siblings('input')[0];
+            let lab = $($(input_from).labels()[0]).find('strong');
+
+            if(this.value == 0)
+            {	
+                $('#exactYear_'+tab).attr('placeholder', '1800 oder 01/01/1800');
+                $('#exactYear_'+tab).removeAttr('maxlength');
+            }
+            else if(this.value == 2)
+            {
+                $('#exactYear_'+tab).attr('placeholder', '1920');
+                $('#exactYear_'+tab).attr('maxlength', 4);
+                $('#exactYear_'+tab).val('');
+            }
+            else
+            {
+                $('#exactYear_'+tab).attr('placeholder', '1580');
+                $('#exactYear_'+tab).attr('maxlength', 4);
+                $('#exactYear_'+tab).val('');
+            }
+                
+            if(this.value == 1)
+            {				
+                $('#SHOW_FROM_'+tab).removeAttr('hidden');
+                $('#SHOW_PERIODE_'+tab).removeAttr('hidden');
+                
+                lab.html('Periode');
+            }
+            else
+            {
+                $('#SHOW_PERIODE_'+tab).val('');
+                $('#SHOW_PERIODE_'+tab).parent().next('.row').find('.invalid-feedback').eq(1).hide();
+                $('#SHOW_PERIODE_'+tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text('');
+                $('#SHOW_FROM_'+tab).attr('hidden', true);
+                $('#SHOW_PERIODE_'+tab).attr('hidden', true);
+                
+                lab.html('Datum');
+            }
+
+            $('#exactYear_'+tab).focus();
+        });		
+
+        $('#SUBMIT_SEARCH_FREE,#SUBMIT_SEARCH_PERS').on('click', function() {
+            event.preventDefault();
+        
+            if(validateForm())
+            {
+                $(this).form().submit();
+            }
+        });
+
+        $('#FREE_FORM,#PERS_FORM').on('reset', function() {
+            let _this = this;
+            setTimeout(function() {
+                $('#CHOOSE_DATE_PERIODE_'+getTab()).change();
+                $(".selectpicker").selectpicker("refresh");                
+                $(_this).find("[autofocus").focus();
+            }, 0);
+        });
+
+        
+		$('#FREE_a,#PERS_a').on('shown.bs.tab', function() {
+			var this_tab = getTab();
+			var prev_tab = this_tab == 'FREE' ? 'PERS' : 'FREE';
+			
+			$('#ALL_PLACES_'+this_tab).val($('#ALL_PLACES_'+prev_tab).val());	
+			$('#ALL_PLACES_'+this_tab).autocomplete('search', $('#PLACE_'+prev_tab).val());	
+			$('#ALL_PLACES_'+this_tab).autocomplete('close');
+			$('#ALL_PLACES_'+this_tab).autocomplete('widget').find('li').remove();
+
+            $('#CHOOSE_DATE_PERIODE_'+this_tab).val($('#CHOOSE_DATE_PERIODE_'+prev_tab).val()).trigger('change');
+            $('#exactYear_'+this_tab).val($('#exactYear_'+prev_tab).val());
+            $('#SHOW_PERIODE_'+this_tab).val($('#SHOW_PERIODE_'+prev_tab).val());
+
+            if($('#collapseFilters_'+prev_tab).hasClass('show'))
+                $('#collapseFilters_'+this_tab).collapse('show');
+            else
+                $('#collapseFilters_'+this_tab).collapse('hide');
+
+            $('#ACTTYPE_'+this_tab).selectpicker('val', $('#ACTTYPE_'+prev_tab).val());
+            $('#PROJECT_'+this_tab).selectpicker('val', $('#PROJECT_'+prev_tab).val());
+			
+			// focus the search field of the selected tab
+			$('body').find('[autofocus]').focus();
+        });
+
+        /////////////////////
+        // Restore the filter
+        // FREE
+        var SHORT_ALL_TEXTS = null;
+        var ALL_PLACES = null;
+        if(SHORT_ALL_TEXTS)
+            $('#SHORT_ALL_TEXTS').val(SHORT_ALL_TEXTS);	
+
+        if(ALL_PLACES)
+            $('#ALL_PLACES_'+getTab()).val(ALL_PLACES);	
+
+        // PERSON
+        var NAME = null;
+        var FIRST_NAME = null;
+        var JOB = null;
+        var JOB_ID = -1;
+        var ROLE = "ALL";
+        var NAME_2 = null;
+        var FIRST_NAME_2 = null;
+        var JOB_2 = null;
+        var JOB_ID_2 = -1;
+        var ROLE_2 = "ALL";
+            
+        if(NAME)
+            $('#NAME').val(NAME);
+        if(FIRST_NAME)
+            $('#FIRST_NAME').val(FIRST_NAME);
+        if(JOB)
+            $('#JOB').val(JOB);
+        if(JOB_ID)
+            $('#JOB_ID').val(JOB_ID);
+        if(ROLE)
+            $('#ROLE').val(ROLE);
+        if(NAME_2)
+            $('#NAME_2').val(NAME_2);
+        if(FIRST_NAME_2)
+            $('#FIRST_NAME_2').val(FIRST_NAME_2);
+        if(JOB_2)
+            $('#JOB_2').val(JOB_2);
+        if(JOB_ID_2)
+            $('#JOB_ID_2').val(JOB_ID_2);
+        if(ROLE_2)
+            $('#ROLE_2').val(ROLE_2);
+
+        // BOTH
+        var exactYear = null;
+        var SHOW_PERIODE = null;
+        var CHOOSE_DATE_PERIODE = null;
+        var ACTTYPE = null;
+        var PROJECT_ID = null;
+        
+        if(CHOOSE_DATE_PERIODE && exactYear)
+        {
+            $('#CHOOSE_DATE_PERIODE_'+getTab()).val(CHOOSE_DATE_PERIODE);
+            $('#CHOOSE_DATE_PERIODE_'+getTab()).change();
+            
+            $('#exactYear_'+getTab()).val(exactYear);
+        }
+            
+        if(SHOW_PERIODE)
+            $('#SHOW_PERIODE_'+getTab()).val(SHOW_PERIODE);
+
+        if(ACTTYPE)
+            $('#ACTTYPE_'+getTab()).val(ACTTYPE);
+
+        if(PROJECT_ID)
+            $('#PROJECT_'+getTab()).val(PROJECT_ID);
+
+        $(".selectpicker").selectpicker("refresh");
+        /////////////////////
+
+        $('[autofocus]').focus();
+    });
+</script>        <!-- <link rel="stylesheet" href="/de/search/analyses/include/style.css" /> -->
+        <link rel="stylesheet" media="print" href="/de/search/analyses/include/print_acts.css" />
+    </head>
+    <body>
+        <!-- BACK TO TOP -->
+<button type="button" class="btn btn-primary btn-floating" id="btn-back-to-top" aria-label="Zurück zum Anfang der Seite">
+	<i class="bi bi-arrow-up"></i>
+</button>
+<!-- HEADER MENU -->
+<header id="headerMenu" class="d-print-none mb-3">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light p-3 p-lg-4 border-bottom align-items-lg-start justify-content-center justify-content-md-between" id="navbarMenu">
+		<div class="container-fluid">
+		<div class="col-12 col-md-2 col-lg-3 col-xl-3  text-center text-md-start d-none d-sm-block">
+			<a class="navbar-brand me-0" href="http://www.arch.be" target="_blank">
+				<img src="/library/img/logo_GER.png" class="d-inline-block d-md-none align-top" height="60" alt="Belgisches Staatsarchiv">
+				<img src="/library/img/logo_GER.png" class="d-none d-md-inline-block align-top img-fluid" height="79" alt="Belgisches Staatsarchiv">
+			</a>
+		</div>
+		<div class="col-12 col-md-8 col-lg-auto col-xl-6 mt-3 mt-lg-0 text-center">
+			<h1 class="mb-2 ms-auto me-auto AGRAR_ff_fira_condensed fw-semibold text-primary"><a class="no_underline" href="https://agatha.arch.be/de/">AGATHA</a></h1>
+			<h2 class="mb-4 h5 fw-light grey-dark AGRAR_ff_fira_condensed">Die Online-Suchumgebung des belgischen Staatsarchivs</h2>
+			<div class="d-none d-lg-flex" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto me-auto  mb-0">
+					<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/de/">Startseite</a></li>
+					<li class="nav-item dropdown  px-2" id="navbar">
+						<a class="nav-link text-uppercase btn-underline dropdown-toggle" href="/de/search/" role="button" aria-expanded="false">
+							Suchen						</a>
+						<ul class="dropdown-menu rounded-0">
+						  <li><a class="dropdown-item py-2" href="/de/search/genealogie/">Genealogische Quellen</a></li>
+						  <li><a class="dropdown-item py-2" href="/de/search/analyses/">Analysen von Urkunden</a></li>
+						  <li><a class="dropdown-item py-2" href="/de/search/ead/">Archivinventare</a></li>
+						</ul>
+                    </li>
+					<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="/de/help/">Hilfe</a></li>
+					<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="/de/contact/">Kontakt</a></li>
+				</ul>
+			</div>
+		</div>
+		<button class="navbar-toggler mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent_smalldevices" aria-controls="navbarSupportedContent_smalldevices" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+		<div class="col-2 col-lg-3 col-xl-3 collapse navbar-collapse align-self-start" id="navbarLogin">
+			<ul class="navbar-nav ms-auto mt-2">
+				<li class="nav-item dropdown"> 
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<span class="me-1">Deutsch</span></a>
+					<div class="dropdown-menu">
+						<a href='#' hreflang="fr" class="dropdown-item" onclick='event.preventDefault();changeLanguage("FRE", "analyses", "", false)'>Français</a>
+						<a href='#' hreflang="nl" class="dropdown-item" onclick='event.preventDefault();changeLanguage("DUT", "analyses", "", false)'>Nederlands</a>
+						<a href='#' hreflang="de" class="dropdown-item" onclick='event.preventDefault();changeLanguage("GER", "analyses", "", false)'>Deutsch</a>
+						<a href='#' hreflang="en" class="dropdown-item" onclick='event.preventDefault();changeLanguage("ENG", "analyses", "", false)'>English</a>
+					</div>
+				</li>
+								<li class="dropdown nav-item ms-2"> 
+					<a href="#modal_login" class="nav-link" data-bs-toggle="modal" role="button" aria-haspopup="true" aria-expanded="false">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle me-2" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg>
+						Einloggen					</a>
+				</li>
+							</ul>
+		</div>
+	</div>
+	</nav>
+	
+<!-- MENU SMALL DEVICES / HIDE ON DESKTOP -->
+	<nav class="d-block d-lg-none navbar navbar-expand-lg navbar-light py-0  bg-light"> 
+		<div class="collapse navbar-collapse py-3" id="navbarSupportedContent_smalldevices">
+			<ul class="navbar-nav ms-auto me-auto">
+				<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/de/">Startseite</a></li>
+				<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="/de/search/">Suchen</a></li>
+				<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="/de/help/">Hilfe</a></li>
+				<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="/de/contact/">Kontakt</a></li>
+			
+				<div class="border-top pt-2 mt-2">
+										<li class="dropdown nav-item ms-2"> 
+						<a href="#modal_login" class="nav-link" data-bs-toggle="modal" role="button" aria-haspopup="true" aria-expanded="false">
+							Einloggen						</a>
+					</li>
+										
+					<li class="nav-item dropdown ms-2">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLanguage" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Deutsch						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownLanguage">
+							<a href='#' hreflang="fr" class="dropdown-item " onclick='event.preventDefault();changeLanguage("FRE", "analyses", "", false)'>Français</a>
+							<a href='#' hreflang="nl" class="dropdown-item " onclick='event.preventDefault();changeLanguage("DUT", "analyses", "", false)'>Nederlands</a>
+							<a href='#' hreflang="de" class="dropdown-item d-none" onclick='event.preventDefault();changeLanguage("GER", "analyses", "", false)'>Deutsch</a>
+							<a href='#' hreflang="en" class="dropdown-item " onclick='event.preventDefault();changeLanguage("ENG", "analyses", "", false)'>English</a>
+						</div>
+					</li>
+				</div>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+
+<!-- HEADER FOR PRINT-->
+<header class="d-none d-print-block mb-3">
+	<nav class="navbar border-bottom">
+		<div class="container-fluid justify-content-between align-items-center">
+            <div class="col-3 text-start align-items-center">
+                <a class="navbar-brand me-0" href="http://www.arch.be" target="_blank">
+                    <img src="/library/img/logo_GER.png" class="d-inline-block" height="60" alt="Belgisches Staatsarchiv">
+                </a>
+            </div>
+            <div class="col-9 text-start align-items-center">
+                <h1 class="mb-2 ms-auto me-auto AGRAR_ff_fira_condensed fw-semibold text-primary">AGATHA</h1>
+                <h2 class="mb-4 h5 fw-light text-secondary AGRAR_ff_fira_condensed">Die Online-Suchumgebung des belgischen Staatsarchivs</h2>
+            </div>
+        </div>
+	</nav>
+</header>
+
+<!-- Modal signup -->
+<div id="modal_signup" data-backdrop="static" class="modal fade" tabindex="-1" role="dialog"
+	aria-labelledby="modalSignup" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<form id="FORM_SIGNUP" class="needs-validation" novalidate="">
+				<div class="modal-header">
+					<h1 class="modal-title h5" id="modalSignup">
+						Registrieren					</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col">
+							<label class="form-label" for="email">
+								<strong>
+									Mail Adresse								</strong>
+							</label>
+							<input id="email" name="email" type="email" class="form-control" autofocus autocomplete="off" oninput="checkMail('email', 'errorMailMsg')"
+								required>
+							<div class="invalid-feedback" id="errorMailMsg">
+								<strong></strong><br />
+								<span id="emailInvalidDetail"></span>
+							</div>
+							<div class="alert alert-danger" id="errorRegistrationMsg" hidden>
+								<strong>
+									Ungültiger Benutzername								</strong>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="username_signup">
+								<strong>
+									Benutzername								</strong>
+							</label>
+							<input id="username_signup" name="username_signup" type="text" class="form-control"
+								pattern="^[a-zA-Z0-9_\-]{4,}$" autocomplete="off" required>
+							<div class="invalid-feedback" id="errorUsernameMsg">
+								<strong>
+									Ungültiger Benutzername								</strong><br />
+								<span id="usernameInvalidDetail"></span>
+							</div>
+							<small id="username_help" class="form-text text-muted text-justify">
+								Ihr Benutzername muss aus mindestens 4 Buchstaben oder Zahlen bestehen (ohne Leerzeichen, Akzente und Sonderzeichen).							</small>
+							<input id="app" name="app" type="hidden" value="/de/search/analyses">
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="pw_signup">
+								<strong>
+									Passwort								</strong>
+							</label>
+							<div class="input-group">
+								<input class="form-control" type="password" id="pw_signup" name="pw_signup" required>
+								<button class="btn btn-outline-secondary togglePassword" type="button" for="pw_signup"
+									tabindex="-1">
+									<span class="bi bi-eye-slash" aria-hidden="true"></span>
+								</button>
+							</div>
+							<div class="invalid-feedback" id="errorPwMsg">
+								<strong>
+									Passwort ungültig								</strong><br />
+								<span id="passwordInvalidDetail"></span>
+							</div>
+
+							<small id="pw_help" class="form-text text-muted text-justify">
+								Ihr Passwort muss aus mindestens 8 Zeichen bestehen und einen Kleinbuchstaben, einen Großbuchstaben, eine Zahl und ein Sonderzeichen enthalten.							</small>
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="confirm_pw">
+								<strong>
+									Passwort bestätigen								</strong>
+							</label>
+							<div class="input-group">
+								<input class="form-control" type="password" id="confirm_pw" name="confirm_pw" required>
+								<button class="btn btn-outline-secondary togglePassword" type="button" for="confirm_pw"
+									tabindex="-1">
+									<span class="bi bi-eye-slash" aria-hidden="true"></span>
+								</button>
+							</div>
+							<div class="invalid-feedback" id="errorConfirmPwMsg">
+								<strong>
+									Passwort ungültig								</strong><br />
+								<span id="confirmPasswordInvalidDetail"></span>
+							</div>
+
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<div class="g-recaptcha" data-callback="notARobot" data-expired-callback="NotARobotExpired"
+								data-sitekey="6LeTYa4iAAAAAAJ9inrEoJP8ZP3CluXV2MqaJZSU"></div>
+							<input id="captcha" name="captcha" type="text" hidden aria-label="captcha">
+							<div class="invalid-feedback" id="errorCaptchaMsg">
+								<strong>
+									Bitte geben Sie das Captcha ein								</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button id="confirmButton_signup" class="btn btn-primary form-control col" type="button">
+						Registrieren					</button>
+					<button id="cancelButton_signup" data-bs-dismiss="modal"
+						class="btn btn-outline-secondary form-control col" type="button">
+						Annulieren					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Modal response signup -->
+<div class="modal fade" id="modal_response" tabindex="-1" role="dialog" aria-labelledby="modalResponse"
+	aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title h5" id="modalResponse">
+					Registrieren				</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body test-justify">
+				<span id="msgResponse"></span>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary form-control col" data-bs-dismiss="modal">
+					Schließen				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal password forgotten -->
+<div class="modal fade" id="modal_pw_forgotten" data-backdrop="static" tabindex="-1" role="dialog"
+	aria-labelledby="modalPwForgotten" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title h5" id="modalPwForgotten">
+					Passwort vergessen?				</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<form id="pwForgottenForm" class="needs-validation" novalidate="">
+				<div class="modal-body">
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="emailPwForgotten">
+								<strong>
+									Mail Adresse								</strong>
+							</label>
+							<div class="input-group mb-3">
+								<input id="emailPwForgotten" name="emailPwForgotten" type="email" class="form-control"
+									autofocus autocomplete="off" required>
+								<button id="pw_forgotten_btn" class="btn btn-primary" type="button">
+									Senden								</button>
+                                <div class="invalid-feedback" id="errorEmailPwForgotten">
+                                    <strong>
+                                        Mail Adresse ungültig                                    </strong>
+                                </div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<div class="g-recaptcha" data-callback="notARobotPw"
+								data-expired-callback="NotARobotExpiredPw" data-sitekey="6LeTYa4iAAAAAAJ9inrEoJP8ZP3CluXV2MqaJZSU">
+							</div>
+							<input id="captchaPwForgotten" name="captchaPwForgotten" type="text" hidden aria-label="captcha">
+							<div class="invalid-feedback" id="errorCaptchaPwForgotten">
+								<strong>
+									Bitte geben Sie das Captcha ein								</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Modal response pw forgotten -->
+<div class="modal fade" id="modal_response_pw_forgotten" tabindex="-1" role="dialog"
+	aria-labelledby="modalResponsePwForgotten" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title h5" id="modalResponsePwForgotten">
+					Passwort vergessen?				</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body text-justify">
+				<span id="msgResponsePwForgotten"></span>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary form-control col" data-bs-dismiss="modal">
+					Schließen				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Modal log in -->
+<div class="modal fade" data-backdrop="static" id="modal_login" tabindex="-1" role="dialog" aria-labelledby="modalLogin"
+	aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<form id="form_login">
+				<div class="modal-header">
+					<h1 class="modal-title h5" id="modalLogin">
+						Einloggen					</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="alert alert-warning d-flex align-items-center" role="alert">
+						<strong><i class="bi bi-exclamation-triangle-fill"></i>
+							Achtung: Wenn Sie bereits ein Konto bei <i>Search</i> haben, gilt es auch für <i>Agatha</i>.						</strong>
+					</div>
+					<div class="alert alert-danger text-center" role="alert" hidden>
+						<span id="errorLogin"></span>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="username">
+								<strong>
+									Benutzername oder Mail Adresse								</strong>
+							</label>
+							<input autofocus type="text" class="form-control" id="username" name="username">
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="password">
+								<strong>
+									Passwort								</strong>
+							</label>
+							<div class="input-group">
+								<input class="form-control" type="password" id="password" name="password">
+								<button class="btn btn-outline-secondary togglePassword" type="button" for="password" tabindex="-1">
+									<span class="bi bi-eye-slash" aria-hidden="true"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<input type="hidden" name="appName" value="/de/search/analyses">
+					<div class="row mt-3">
+						<div class="col-12">
+							<a id="PASSWORD_FORGOTTEN_A" href="#modal_pw_forgotten" data-bs-toggle="modal"
+								data-bs-dismiss="modal">
+								Passwort vergessen?							</a>
+						</div>
+						<div class="col-12">
+							<a id="SIGNUP_A" href="#modal_signup" data-bs-toggle="modal" data-bs-dismiss="modal">
+								Registrieren							</a>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button id="confirmButton_login" class="btn btn-primary form-control col" type="button">
+						Einloggen					</button>
+					<button id="cancelButton_login" data-bs-dismiss="modal"
+						class="btn btn-outline-secondary form-control col" type="button">
+						Annulieren					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Modal display any message -->
+<div class="modal fade" id="modal_showMsg" tabindex="-1" role="dialog" aria-labelledby="generalMsg"
+	aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<span id="generalMsg"></span>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary form-control col" data-bs-dismiss="modal">
+					Schließen				</button>
+			</div>
+		</div>
+	</div>
+</div>        <div class="container-xl">
+        <div class="row py-3 d-print-none">
+                <div class="col align-self-end text-end">
+                    <button class="btn btn-sm btn-outline-secondary" onclick="copyLink(event, 'act')"><i class="bi bi-clipboard me-2"></i>Link kopieren</button>
+                    <button class="btn btn-sm btn-outline-secondary ms-2" onclick="printPage()"><i class="bi bi-printer me-2"></i>Drucken</button>
+                    <button class="btn btn-sm btn-outline-secondary ms-2" onclick="reportError('act')">Einen Fehler melden</button>
+                </div>
+            </div>
+
+            <div class="row pb-5 m-0">
+                <div class="col-12 p-0 m-0">
+                    <h1 class="display-4 mb-3 mb-md-5 mt-3">Urkunde <small class="display-6 text-muted" hidden>#<span id="ACT_TITLE">GSU_004191864_00813_4_00152800</span></small></h1>
+                    <h2 class="display-7 mt-4 mb-3">Daten der Urkunde<span id="ACT_NUMBER"></span></h2>
+                    <table class="table table-hover table-results tablePersons">
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-secondary">Art der Urkunde</th>
+                                <td id="modal_ACTTYPE">Sterbeurkunden</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Projekt</th>
+                                <td><a href="https://agatha.arch.be/de/data/projects/GSU" id="modal_PROJECT_ID">Personenstand (FamilySearch) - Belgien</a><span class="d-none d-print-block">(https://agatha.arch.be/de/data/projects/GSU)</span></td>
+                            </tr>
+                                                        <tr>
+                                <th scope="row" class="text-secondary">Ort</th>
+                                <td id="modal_ACTPLACE">Antwerpen</td>
+                            </tr>
+                                                                                    <tr>
+                                <th scope="row" class="text-secondary">Beschreibung</th>
+                                <td id="modal_DESCRIPTION">Overlijdensakte</td>
+                            </tr>
+                                                        <tr>
+                                <th scope="row" class="text-secondary">Datum der Urkunde</th>
+                                <td id="modal_ACTDATE">05/04/1880</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Verknüpfung</th>
+                                <td id="modal_URL"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 class="display-7 mt-4 mb-3">Gelistete Personen</h2>
+                                        <table class="table table-hover table-results tablePersons">
+                        <thead class="table-light">
+                            <tr>
+                                <th colspan="2" scope="col"><span class="text-body" id="modal_ACTROLE_CODE">Verstorbener</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-secondary">Name und Vorname</th>
+                                <td id="modal_NAME">Maria Cornelia Vingerhoedt</td>
+                            </tr>
+                                                                                                                <tr>
+                                <th scope="row" class="text-secondary">Geburtsdatum</th>
+                                <td id="modal_BIRTHDATE">21/11/1805</td>
+                            </tr>
+                                                                                    <tr>
+                                <th scope="row" class="text-secondary">Alter</th>
+                                <td id="modal_AGE">
+                                    74 Jahre 4 Monate 13 Tage                                </td>
+                            </tr>
+                                                                                                                                                                                                </tbody>
+                    </table>
+                                        <table class="table table-hover table-results tablePersons">
+                        <thead class="table-light">
+                            <tr>
+                                <th colspan="2" scope="col"><span class="text-body" id="modal_ACTROLE_CODE">Vater des Verstorbenen</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-secondary">Name und Vorname</th>
+                                <td id="modal_NAME">Antonius Vingerhoedt</td>
+                            </tr>
+                                                                                                                                                                                                                                                                                    </tbody>
+                    </table>
+                                        <table class="table table-hover table-results tablePersons">
+                        <thead class="table-light">
+                            <tr>
+                                <th colspan="2" scope="col"><span class="text-body" id="modal_ACTROLE_CODE">Mutter des Verstorbenen</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-secondary">Name und Vorname</th>
+                                <td id="modal_NAME">Maria Catharina Van Der Poel</td>
+                            </tr>
+                                                                                                                                                                                                                                                                                    </tbody>
+                    </table>
+                                    </div>
+            </div>
+        </div>
+    </body>
+</html>

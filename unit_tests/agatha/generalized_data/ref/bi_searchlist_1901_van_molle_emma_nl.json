@@ -1,0 +1,31 @@
+{
+  "sourceOfData": "agatha",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "Emma Van Molle"
+  },
+  "eventDate": {
+    "dateString": "13 Apr 1901"
+  },
+  "eventPlace": {
+    "placeString": "Liedekerke"
+  },
+  "birthPlace": {
+    "placeString": "Liedekerke"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Emmanuël Van Molle"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Joanna Maria Devrindt"
+      }
+    }
+  },
+  "project": "Burgerlijke stand - Liedekerke",
+  "hasValidData": true
+}

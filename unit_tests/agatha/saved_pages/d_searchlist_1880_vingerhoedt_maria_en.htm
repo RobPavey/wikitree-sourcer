@@ -1,0 +1,3277 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<link rel="alternate" hreflang="fr" href="http://agatha.arch.be/fr/search/analyses/results/">
+<link rel="alternate" hreflang="nl" href="http://agatha.arch.be/nl/search/analyses/results/">
+<link rel="alternate" hreflang="en" href="http://agatha.arch.be/en/search/analyses/results/">
+<link rel="alternate" hreflang="de" href="http://agatha.arch.be/de/search/analyses/results/">
+<link rel="alternate" hreflang="x-default" href="http://agatha.arch.be/en/search/analyses/results/">
+<link rel="canonical" href="http://agatha.arch.be/en/search/analyses/results/">
+
+<script type="text/javascript" async="" charset="utf-8" src="d_searchlist_1880_vingerhoedt_maria_en_files/recaptcha__en_sGeh.js" crossorigin="anonymous" integrity="sha384-9kWldX1GBV0fyoXG9yQ5yIrkqyWnjgRBm6nILiadZBzlNoT3mlsHud6Afn9RimQk"></script><script async="" src="d_searchlist_1880_vingerhoedt_maria_en_files/matomo_sGeh.js"></script><script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['setSessionCookieTimeout', '86400']);  
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//bbbb.arch.be/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '27']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<title>Search results – AGATHA</title>
+<script>
+	lang = 'ENG';
+</script>
+<!-- Styles -->
+<link href="d_searchlist_1880_vingerhoedt_maria_en_files/my_sGeh.css" rel="stylesheet">
+<link href="d_searchlist_1880_vingerhoedt_maria_en_files/jquery-ui.min_sGeh.css" rel="stylesheet">
+<link href="d_searchlist_1880_vingerhoedt_maria_en_files/font-awesome.min_sGeh.css" rel="stylesheet">
+<link href="d_searchlist_1880_vingerhoedt_maria_en_files/bootstrap-select-1.14.0-beta3.min_sGeh.css" rel="stylesheet">
+<link href="d_searchlist_1880_vingerhoedt_maria_en_files/bootstrap-icons-1.9.1_sGeh.css" rel="stylesheet">
+<link href="d_searchlist_1880_vingerhoedt_maria_en_files/style_002_sGeh.css" rel="stylesheet">
+<link href="d_searchlist_1880_vingerhoedt_maria_en_files/style_sGeh.css" rel="stylesheet">
+<!-- JS -->
+<script src="d_searchlist_1880_vingerhoedt_maria_en_files/constant_002_sGeh.js"></script>
+<script src="d_searchlist_1880_vingerhoedt_maria_en_files/constant_sGeh.js"></script>
+<script src="d_searchlist_1880_vingerhoedt_maria_en_files/jquery-3.7.1.min_sGeh.js" type="text/javascript"></script>
+<script src="d_searchlist_1880_vingerhoedt_maria_en_files/jquery-ui-1.12.1.min_sGeh.js" type="text/javascript"></script>
+<script src="d_searchlist_1880_vingerhoedt_maria_en_files/popper-2.11.8.min_sGeh.js"></script>
+<script src="d_searchlist_1880_vingerhoedt_maria_en_files/bootstrap.min_sGeh.js"></script>
+<script src="d_searchlist_1880_vingerhoedt_maria_en_files/AGRAR_utilities_sGeh.js"></script>
+<script src="d_searchlist_1880_vingerhoedt_maria_en_files/bootstrap-select-1.14.0-beta3.min_sGeh.js"></script>
+<script src="d_searchlist_1880_vingerhoedt_maria_en_files/bootstrap-select-defaults-en_US-1.14.0-beta3.min_sGeh.js"></script>
+
+<script src="d_searchlist_1880_vingerhoedt_maria_en_files/api_sGeh.js"></script>
+<script>
+    function checkUsername()
+    {				
+        var regex = new RegExp(/^[a-zA-Z0-9_-]{4,}$/), submit;
+
+        var field = $('#username_signup')[0];
+        var username = $('#username_signup').val();
+        
+        if(!regex.test(username))
+        {
+            // $('#errorUsernameMsg').removeAttr('hidden');
+            field.setCustomValidity(' ');
+            submit = false;
+            
+            if(username.length < 4)
+                $('#usernameInvalidDetail')[0].innerHTML = "- "+USERNAME_SHORT_LABEL+"<br/>";
+            else 
+                $('#usernameInvalidDetail')[0].innerHTML = "";
+            
+            var msg = getErrorFromValidity(field.validity);
+
+            if(msg == PATTERN_MISMATCH_LABEL)
+            {
+                var pattern = new RegExp(field.pattern.replace(/\{(\d+,\d*)\}/, ''));
+                var nbCharInvalid = 0;
+                for(var ind = 0; ind < field.value.length; ind++)
+                {
+                    if(!(pattern.test(field.value[ind])))
+                    {
+                        if(nbCharInvalid == 0)
+                            msg += " :";
+                        msg += " " + field.value[ind];
+                        nbCharInvalid++;
+                    }
+                }
+                
+                if(nbCharInvalid > 0)
+                    $('#usernameInvalidDetail')[0].innerHTML += "- "+msg;
+            }
+            
+            field.classList.add('is-invalid');
+            field.classList.remove('is-valid');
+        }
+        else
+        {
+            // $('#errorUsernameMsg').attr('hidden', '');
+            field.setCustomValidity('');
+            submit = true;
+            
+            field.classList.add('is-valid');
+            field.classList.remove('is-invalid');
+        }
+        
+        return submit;
+    }
+
+    function checkMail(emailId, errorId) 
+    {		
+        let submit;
+        
+        if($('#'+emailId).length == 0 || $('#'+emailId)[0].validationMessage != '')
+        {
+            $('#'+errorId).find('strong')[0].innerHTML = $('#'+emailId)[0].validationMessage;
+            submit = false;
+        }
+        else
+        {
+            submit = true;
+        }
+        
+        return submit
+    }
+
+    function checkPw()
+    {
+        return checkMainPw() && checkConfirmPw();
+    }
+
+    function checkMainPw()
+    {
+        // min. length 0 so the regex fail only if the input doesn't meet the requirements
+        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&,;.:\/"#'(){}\[\]+)_~=-])[A-Za-z\d@$!%*?&,;.:\/"#'(){}\[\]+°_~=-]{0,}$/, submit = "";
+        
+        if($('#pw_signup').val().length < 8)
+            submit = "- "+PW_TOO_SHORT_LABEL+"<br/>";
+        
+        if(!regex.test($('#pw_signup').val()))
+            submit += "- "+PW_MUST_CONTAIN_LABEL;
+        
+        if(submit != "")
+        {
+            $('#passwordInvalidDetail')[0].innerHTML = submit;
+            $('#pw_signup')[0].setCustomValidity(' ');
+
+            $('#pw_signup').addClass('is-invalid');
+            $('#pw_signup').removeClass('is-valid');
+            
+            $('#pw_help').addClass('text-hide');
+
+            return false;
+        }
+        else
+        {
+            $('#pw_signup')[0].setCustomValidity('');
+            
+            $('#pw_signup').removeClass('is-invalid');
+            $('#pw_signup').addClass('is-valid');
+            
+            $('#pw_help').removeClass('text-hide');
+
+            return true;
+        }
+        
+    }
+
+    function checkConfirmPw()
+    {
+        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&,;.:\/"#'(){}\[\]+)_~=-])[A-Za-z\d@$!%*?&,;.:\/"#'(){}\[\]+°_~=-]{8,}$/, confirmSubmit = "";
+        
+        if($('#pw_signup').val() != $('#confirm_pw').val())
+            confirmSubmit = "- "+PW_NOT_THE_SAME_LABEL;
+        
+        if(confirmSubmit != "")
+        {
+            $('#confirmPasswordInvalidDetail')[0].innerHTML = confirmSubmit;
+            $('#confirm_pw')[0].setCustomValidity(' ');
+
+            $('#confirm_pw').addClass('is-invalid');
+            $('#confirm_pw').removeClass('is-valid');
+
+            return false;
+        }
+        else
+        {
+            $('#confirm_pw')[0].setCustomValidity('');
+            
+            $('#confirm_pw').removeClass('is-invalid');
+            $('#confirm_pw').addClass('is-valid');
+            
+            return true;
+        }
+    }
+
+    function checkForm(indCaptcha, errorCaptchaId)
+    {
+        var submitUsername = checkUsername(),
+            submitPw = checkPw(),
+            submitMail = checkMail('email', 'errorMailMsg'),
+            submitCaptcha = checkCaptcha(indCaptcha, errorCaptchaId);
+                    
+        return submitUsername && submitPw && submitMail && submitCaptcha;
+    }
+
+    function checkCaptcha(ind, errorId) 
+    {
+        if(grecaptcha.getResponse(ind) == '')
+        {
+            $('#'+errorId)[0].setCustomValidity(' ');
+            return false;
+        }
+        else
+        {
+            $('#'+errorId)[0].setCustomValidity('');
+            return true;
+        }
+    }
+
+    function notARobot()
+    {
+        $('#captcha')[0].setCustomValidity('');
+    }
+
+    function NotARobotExpired()
+    {
+        $('#captcha')[0].setCustomValidity(' ');
+    }
+
+    function notARobotPw()
+    {
+        $('#captchaPwForgotten')[0].setCustomValidity('');
+    }
+
+    function NotARobotExpiredPw()
+    {
+        $('#captchaPwForgotten')[0].setCustomValidity(' ');
+    }
+
+    function setLoading(ele, activate)
+    {
+        if(activate)
+        {
+            ele.setAttribute('data-init', ele.innerHTML);
+            
+            ele.setAttribute('disabled', true);
+            ele.innerHTML = "";
+            
+            let spinner = document.createElement('span');
+            spinner.classList.add('spinner-border', 'spinner-border-sm');
+            spinner.setAttribute('role', 'status');
+            spinner.setAttribute('aria-hidden', 'true');
+            
+            ele.append(spinner);				
+            ele.innerHTML += " "+SAVING_LABEL+" "+COULD_TAKE_FEW_MOMENTS_LABEL;
+        }
+        else
+        {				
+            ele.removeAttribute('disabled');
+            ele.innerHTML = ele.getAttribute('data-init');
+        }
+    }
+
+    function checkTextarea(ele)
+    {
+        let input;
+        if(ele)
+            input = ele;
+        else
+            input = $('#MESSAGE_TXT')[0];
+        
+        $(input).parent('div').find('.nbChar').html(input.value.length);
+        
+        var regExp = RegExp(input.getAttribute("pattern"), "s");
+        var mayActivate = true;        
+        
+        if(regExp.test(input.value))
+        {
+            input.setCustomValidity("");
+
+            // input.classList.add('is-valid');
+            // input.classList.remove('is-invalid');
+        }
+        else
+        {
+            mayActivate = false;
+            if(input.value.length < 5)
+                input.setCustomValidity(TOO_SHORT_MIN_5_LABEL);
+            else if(input.value.length > 1500)
+                input.setCustomValidity(MESSAGE_TOO_LONG_LABEL);
+            else
+            {
+                input.setCustomValidity(PATTERN_MISMATCH_LABEL);
+                
+                var msg = "";
+                var regExp2 = RegExp(input.getAttribute("pattern").replace(/\{(\d+,\d+)\}/, ''));
+                var nbCharInvalid = 0;
+                for(var ind = 0; ind < input.value.length; ind++)
+                {
+                    if(!(regExp2.test(input.value[ind])))
+                    {
+                        msg += input.value[ind] + " ";
+                        nbCharInvalid++;
+                    }
+                }
+            }
+
+            // input.classList.add('is-invalid');
+            // input.classList.remove('is-valid');
+
+            $('#errorTextarea').html(input.validationMessage + (msg ? ' : ' + msg : ''));
+        }
+
+        return mayActivate;
+    }
+
+    $(function() {
+        $('#FORM_SIGNUP').submit(function() {
+            return false;
+        });
+
+        // Fix for the 'opening modal from another modal'
+        $('.modal').on('hidden.bs.modal', function () {
+            // If there are any visible
+            if($(".modal:visible").length > 0) {
+                $('body').addClass('modal-open');
+            }
+        });
+        
+        $('.togglePassword').on('mouseup', function() {
+            $(this).find('span').toggleClass('bi-eye-fill bi-eye-slash');
+            var inp = '#'+($(this).attr('for'));
+            $(inp).attr('type') == 'text' ? $(inp).attr('type', 'password') : $(inp).attr('type', 'text');
+        });
+        
+        // $('#FORM_SIGNUP').find('input[name!=APP_NAME]').val('');
+        
+        $('#modal_signup, #modal_pw_forgotten, #reservationModal, #reproductionModal, #contactModal').on('hidden.bs.modal', function() {
+            for(var i = 0; i < $('.g-recaptcha').length; i++)
+            {
+                try {
+                    if(grecaptcha.getResponse(i) != "")
+                        grecaptcha.reset(i);
+                }
+                catch(e){}
+            }
+        });		
+            
+        $('#modal_signup, #modal_pw_forgotten, #reservationModal, #reproductionModal, #contactModal').on('show.bs.modal', function() {
+            $(this).find('form').removeClass('was-validated');
+            $(this).find('form').find('input').removeClass('is-valid is-invalid');
+            $(this).find('form')[0].reset();
+			
+			let nbChar = $(this).find('.nbChar');
+			if(nbChar.length > 0)
+				nbChar[0].innerHTML = '0';
+        });
+
+        $('#modal_signup, #modal_pw_forgotten, #modal_login, #reservationModal, #reproductionModal, #contactModal').on('shown.bs.modal', function() {
+            $(this).find('[autofocus]').focus();
+        });
+        
+        $('#modal_signup').on('keydown', function(e) {
+            if(e.key == 'Enter')
+                e.preventDefault();
+        });	
+
+        $('#modal_login').on('keydown', function(e) {
+            if(e.key == 'Enter')
+                $('#confirmButton_login').click();
+        });
+
+        $('#pw_signup').on('input', checkMainPw);
+        $('#confirm_pw').on('input', checkConfirmPw);
+        $('#username_signup').on('input', checkUsername);
+        
+        // Registration
+        $('#confirmButton_signup').on('click', function() {		
+            var submit = checkForm(0, 'captcha');
+            $('#FORM_SIGNUP').addClass('was-validated');
+                
+            let _this = this;
+            _this.blur();   
+            
+            if(submit)
+            {
+                setLoading(_this, true);
+                
+                $('#cancelButton_signup').hide();
+                
+                var datas = $('#FORM_SIGNUP').serializeArray();
+                
+                $.ajax({
+                    url: '/en/signup.php',
+                    type: 'POST',
+                    data: {datas: datas},
+                    success: function(result) {
+                        var resJSON = JSON.parse(result);
+                                                    
+                        grecaptcha.reset(0);	
+                            
+                        if(resJSON['registration'] == true && !resJSON['errors']['registrationMsg'])
+                        {
+                            $('#modal_signup').modal('hide');
+                            $('#msgResponse')[0].innerHTML = resJSON['msgResponse'];
+                            $('#modal_response').modal('show');
+                            
+                            $('#FORM_SIGNUP').removeClass('was-validated');
+                            $('#FORM_SIGNUP').find('input').removeClass('is-valid is-invalid');
+                            $('#FORM_SIGNUP')[0].reset();
+                        }
+                        else
+                        {									
+                            if(resJSON['errors']['username'] === true)
+                                $('#username_signup')[0].setCustomValidity('');
+                            else
+                            {
+                                $('#username_signup')[0].setCustomValidity(' ');
+                                if(resJSON['errors']['username'])
+                                    $('#usernameInvalidDetail')[0].innerHTML = "- "+resJSON['errors']['username'];
+                            }
+                            
+                            if(resJSON['errors']['pw']['DIFFERENT'] && resJSON['errors']['pw']['SHORT'] && resJSON['errors']['pw']['PATTERN'])
+                            {
+                                $('#pw_signup')[0].setCustomValidity('');
+                                $('#confirm_pw')[0].setCustomValidity('');
+                            }
+                            else
+                            {
+                                if(resJSON['errors']['pw']['DIFFERENT'] == false)
+                                {
+                                    $('#confirm_pw')[0].setCustomValidity(' ');
+                                    $('#confirmPasswordInvalidDetail')[0].innerHTML = "- "+PW_NOT_THE_SAME_LABEL;
+                                }
+                                
+                                $('#passwordInvalidDetail')[0].innerHTML = "";
+                                
+                                if(resJSON['errors']['pw']['SHORT'] == false)
+                                {
+                                    $('#pw_signup')[0].setCustomValidity(' ');
+                                    $('#passwordInvalidDetail')[0].innerHTML = "- "+PW_TOO_SHORT_LABEL;
+                                }
+                                
+                                if(resJSON['errors']['pw']['PATTERN'] == false)
+                                {
+                                    $('#pw_signup')[0].setCustomValidity(' ');
+                                    $('#passwordInvalidDetail')[0].innerHTML += "- "+PW_MUST_CONTAIN_LABEL;
+                                }
+                                
+                                submit = false;
+                            }
+                            
+                            if(resJSON['errors']['email'] === true)
+                                $('#email')[0].setCustomValidity('');
+                            else
+                            {
+                                $('#email')[0].setCustomValidity(' ');
+                                if(resJSON['errors']['email'])
+                                    $('#emailInvalidDetail')[0].innerHTML = "- "+resJSON['errors']['email'];
+                            }
+                            
+                            if(resJSON['errors']['captcha'] == true)
+                                $('#captcha')[0].setCustomValidity('');
+                            else
+                            {
+                                $('#captcha')[0].setCustomValidity('');
+                                $('#errorCaptchaMsg').find('strong')[0].innerHTML = resJSON['errors']['captcha'];
+                            }
+                            
+                            if(resJSON['errors']['registrationMsg'])
+                            {
+                                
+                                $('#modal_signup').modal('hide');
+                                $('#msgResponse')[0].innerHTML = resJSON['errors']['registrationMsg'];
+                                $('#modal_response').modal('show');
+                                
+                                $('#FORM_SIGNUP')[0].reset();
+                            }
+                        }
+                        
+                        setLoading(_this, false);
+                        $('#cancelButton_signup').show();
+                    }
+                });
+            }
+        });
+        
+        
+        // Reset password form
+        $('#pwForgottenForm input').on('input', function() {
+            checkMail('emailPwForgotten', 'errorEmailPwForgotten');
+            submitCaptcha = checkCaptcha(1, 'captchaPwForgotten');
+        });
+        
+        $('#pw_forgotten_btn').on('click', function() {
+            $('#pwForgottenForm').addClass('was-validated');
+            var submitMail = checkMail('emailPwForgotten', 'errorEmailPwForgotten'), submitCaptcha = checkCaptcha(1, 'captchaPwForgotten');
+
+            if(submitMail && submitCaptcha)
+            {
+                let _this = this;
+                setLoading(_this, true);
+                _this.blur();
+                
+                var email = $('#emailPwForgotten').val(), token = grecaptcha.getResponse(1);
+                
+                $.ajax({
+                    url: '/en/pw_forgotten.php',
+                    type: 'POST',
+                    data: {email: email, token: token, app: $('input[name="app"]').val()},
+                    success: function(result) {
+                        setLoading(_this, false);
+
+                        var resJSON = JSON.parse(result);
+                                                        
+                        grecaptcha.reset(1);
+                            
+                        if(resJSON['success'] == true && resJSON['errors']['email'] == true)
+                        {
+                            $('#modal_pw_forgotten').modal('hide');
+                            $('#msgResponsePwForgotten')[0].innerHTML = resJSON['msgResponse'];
+                            $('#modal_response_pw_forgotten').modal('show');
+                            $('#emailPwForgotten').val("");
+                        }
+                        else
+                        {									
+                            if(resJSON['errors']['email'] == true)
+                            {
+                                $('#emailPwForgotten')[0].setCustomValidity('');
+                            }
+                            else
+                            {
+                                $('#emailPwForgotten')[0].setCustomValidity(' ');
+                                $('#errorEmailPwForgotten').find('strong')[0].innerHTML = resJSON['errors']['email'];
+                            }
+                            
+                            if(resJSON['errors']['captcha'] == true)
+                                $('#captchaPwForgotten')[0].setCustomValidity('');
+                            else
+                            {
+                                $('#captchaPwForgotten')[0].setCustomValidity(' ');
+                                $('#errorCaptchaPwForgotten').find('strong')[0].innerHTML = resJSON['errors']['captcha'];
+                            }
+                        }
+                    }
+                });
+            }
+        });
+        ///////
+        
+        
+        // Login
+        $('#confirmButton_login').on('click', function() {
+            let _this = this;
+            _this.blur();
+            
+            var d = $('#form_login').serializeArray();
+            
+            if(d[0].value != '' && d[1].value != '')
+            {
+                setLoading(_this, true);
+                
+                $('#cancelButton_login').hide();
+
+                $.ajax({
+                    url: LIBRARY_PATH+'/login.php',
+                    type: 'POST',
+                    data: {username: d[0].value, password: d[1].value, app: d[2].value},
+                    success: function(result) {
+                        if(result == '1')
+                        {
+                            window.location.href = window.location.href;
+                            location.reload(true);
+                            $('#errorLogin').parent('div').attr('hidden', '');
+                        }	
+                        else
+                        {
+                            setLoading(_this, false);
+                            $('#cancelButton_login').show();
+                            $('#errorLogin').html(result);
+                            $('#errorLogin').parent('div').removeAttr('hidden');
+                        }	
+                    }
+                });
+            }
+        });
+        //////
+    });
+</script>
+<script type="text/javascript">
+	$(function() {	
+			});
+</script>
+<link href="d_searchlist_1880_vingerhoedt_maria_en_files/cookieconsent_sGeh.css" rel="stylesheet">
+<script src="d_searchlist_1880_vingerhoedt_maria_en_files/cookieconsent_sGeh.js" type="text/javascript"></script>
+<script>
+   $(function() {
+		window.cookieconsent.initialise({
+			type: 'info',
+			position: 'bottom-right',
+			theme: 'classic',
+			content: {
+				message: "This website uses cookies to provide you with the best experience.",
+				dismiss: "Ok",
+				link: "Read more",
+				href: "#"
+			},
+			palette:{
+				popup: {background: "rgb(213, 235, 241)", text: "rgb(0,0,0)", link: "#00f"},
+				button: {background: "rgb(14, 110, 111)"},
+			},
+			revokable: false,
+			onPopupOpen: function() {				
+				this.element.classList.add('font-family');
+				this.element.classList.add('text-center');
+			
+				$('.cc-link').on('click', function(e) {
+					e.preventDefault();
+					
+					$('#modal_cookieInfo').modal('show');
+				});
+			},
+			law: {
+				regionalLaw: false,
+			},
+			location: true,
+		});
+	});
+</script>        <script src="d_searchlist_1880_vingerhoedt_maria_en_files/pagination-2.6.0_sGeh.js"></script>
+        <link href="d_searchlist_1880_vingerhoedt_maria_en_files/pagination-2.6.0_sGeh.css" rel="stylesheet">
+	<style></style></head>
+	<body style="overflow: hidden; padding-right: 17px;" class="modal-open"><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-info cc-theme-classic cc-bottom cc-right cc-color-override-1094592441  font-family text-center" style=""><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">This website uses cookies to provide you with the best experience. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="#" rel="noopener noreferrer nofollow" target="_blank">Read more</a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Ok</a></div><!--googleon: all--></div>
+		<!-- BACK TO TOP -->
+<button type="button" class="btn btn-primary btn-floating" id="btn-back-to-top" aria-label="Back to top of page">
+	<i class="bi bi-arrow-up"></i>
+</button>
+<!-- HEADER MENU -->
+<header id="headerMenu" class="d-print-none mb-3">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light p-3 p-lg-4 border-bottom align-items-lg-start justify-content-center justify-content-md-between" id="navbarMenu">
+		<div class="container-fluid">
+		<div class="col-12 col-md-2 col-lg-3 col-xl-3  text-center text-md-start d-none d-sm-block">
+			<a class="navbar-brand me-0" href="http://www.arch.be/" target="_blank">
+				<img src="d_searchlist_1880_vingerhoedt_maria_en_files/logo_ENG_sGeh.png" class="d-inline-block d-md-none align-top" height="60" alt="State Archives of Belgium">
+				<img src="d_searchlist_1880_vingerhoedt_maria_en_files/logo_ENG_sGeh.png" class="d-none d-md-inline-block align-top img-fluid" height="79" alt="State Archives of Belgium">
+			</a>
+		</div>
+		<div class="col-12 col-md-8 col-lg-auto col-xl-6 mt-3 mt-lg-0 text-center">
+			<h1 class="mb-2 ms-auto me-auto AGRAR_ff_fira_condensed fw-semibold text-primary"><a class="no_underline" href="https://agatha.arch.be/en/">AGATHA</a></h1>
+			<h2 class="mb-4 h5 fw-light grey-dark AGRAR_ff_fira_condensed">The online search environment of the State&nbsp;Archives&nbsp;of&nbsp;Belgium</h2>
+			<div class="d-none d-lg-flex" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto me-auto  mb-0">
+					<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/en/">Home</a></li>
+					<li class="nav-item dropdown active px-2" id="navbar">
+						<a class="nav-link text-uppercase btn-underline dropdown-toggle" href="https://agatha.arch.be/en/search/" role="button" aria-expanded="false">
+							Search						</a>
+						<ul class="dropdown-menu rounded-0">
+						  <li><a class="dropdown-item py-2" href="https://agatha.arch.be/en/search/genealogie/">Genealogical sources</a></li>
+						  <li><a class="dropdown-item py-2" href="https://agatha.arch.be/en/search/analyses/">Analyses of records</a></li>
+						  <li><a class="dropdown-item py-2" href="https://agatha.arch.be/en/search/ead/">Archive inventories</a></li>
+						</ul>
+                    </li>
+					<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/en/help/">Help</a></li>
+					<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/en/contact/">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<button class="navbar-toggler mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent_smalldevices" aria-controls="navbarSupportedContent_smalldevices" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+		<div class="col-2 col-lg-3 col-xl-3 collapse navbar-collapse align-self-start" id="navbarLogin">
+			<ul class="navbar-nav ms-auto mt-2">
+				<li class="nav-item dropdown"> 
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<span class="me-1">English</span></a>
+					<div class="dropdown-menu">
+						<a href="#" hreflang="fr" class="dropdown-item" onclick='event.preventDefault();changeLanguage("FRE", "analyses", "", false)'>Français</a>
+						<a href="#" hreflang="nl" class="dropdown-item" onclick='event.preventDefault();changeLanguage("DUT", "analyses", "", false)'>Nederlands</a>
+						<a href="#" hreflang="de" class="dropdown-item" onclick='event.preventDefault();changeLanguage("GER", "analyses", "", false)'>Deutsch</a>
+						<a href="#" hreflang="en" class="dropdown-item" onclick='event.preventDefault();changeLanguage("ENG", "analyses", "", false)'>English</a>
+					</div>
+				</li>
+								<li class="dropdown nav-item ms-2"> 
+					<a href="#modal_login" class="nav-link" data-bs-toggle="modal" role="button" aria-haspopup="true" aria-expanded="false">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle me-2" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path></svg>
+						Login					</a>
+				</li>
+							</ul>
+		</div>
+	</div>
+	</nav>
+	
+<!-- MENU SMALL DEVICES / HIDE ON DESKTOP -->
+	<nav class="d-block d-lg-none navbar navbar-expand-lg navbar-light py-0  bg-light"> 
+		<div class="collapse navbar-collapse py-3" id="navbarSupportedContent_smalldevices">
+			<ul class="navbar-nav ms-auto me-auto">
+				<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/en/">Home</a></li>
+				<li class="nav-item active px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/en/search/">Search</a></li>
+				<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/en/help/">Help</a></li>
+				<li class="nav-item  px-2"><a class="nav-link text-uppercase btn-underline" href="https://agatha.arch.be/en/contact/">Contact</a></li>
+			
+				<div class="border-top pt-2 mt-2">
+										<li class="dropdown nav-item ms-2"> 
+						<a href="#modal_login" class="nav-link" data-bs-toggle="modal" role="button" aria-haspopup="true" aria-expanded="false">
+							Login						</a>
+					</li>
+										
+					<li class="nav-item dropdown ms-2">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLanguage" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  English						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownLanguage">
+							<a href="#" hreflang="fr" class="dropdown-item " onclick='event.preventDefault();changeLanguage("FRE", "analyses", "", false)'>Français</a>
+							<a href="#" hreflang="nl" class="dropdown-item " onclick='event.preventDefault();changeLanguage("DUT", "analyses", "", false)'>Nederlands</a>
+							<a href="#" hreflang="de" class="dropdown-item " onclick='event.preventDefault();changeLanguage("GER", "analyses", "", false)'>Deutsch</a>
+							<a href="#" hreflang="en" class="dropdown-item d-none" onclick='event.preventDefault();changeLanguage("ENG", "analyses", "", false)'>English</a>
+						</div>
+					</li>
+				</div>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+
+<!-- HEADER FOR PRINT-->
+<header class="d-none d-print-block mb-3">
+	<nav class="navbar border-bottom">
+		<div class="container-fluid justify-content-between align-items-center">
+            <div class="col-3 text-start align-items-center">
+                <a class="navbar-brand me-0" href="http://www.arch.be/" target="_blank">
+                    <img src="d_searchlist_1880_vingerhoedt_maria_en_files/logo_ENG_sGeh.png" class="d-inline-block" height="60" alt="State Archives of Belgium">
+                </a>
+            </div>
+            <div class="col-9 text-start align-items-center">
+                <h1 class="mb-2 ms-auto me-auto AGRAR_ff_fira_condensed fw-semibold text-primary">AGATHA</h1>
+                <h2 class="mb-4 h5 fw-light text-secondary AGRAR_ff_fira_condensed">The online search environment of the State&nbsp;Archives&nbsp;of&nbsp;Belgium</h2>
+            </div>
+        </div>
+	</nav>
+</header>
+
+<!-- Modal signup -->
+<div id="modal_signup" data-backdrop="static" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalSignup" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<form id="FORM_SIGNUP" class="needs-validation" novalidate="">
+				<div class="modal-header">
+					<h1 class="modal-title h5" id="modalSignup">
+						Create an account					</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col">
+							<label class="form-label" for="email">
+								<strong>
+									Mail address								</strong>
+							</label>
+							<input id="email" name="email" type="email" class="form-control" autofocus="" autocomplete="off" oninput="checkMail('email', 'errorMailMsg')" required="">
+							<div class="invalid-feedback" id="errorMailMsg">
+								<strong></strong><br>
+								<span id="emailInvalidDetail"></span>
+							</div>
+							<div class="alert alert-danger" id="errorRegistrationMsg" hidden="">
+								<strong>
+									Invalid username								</strong>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="username_signup">
+								<strong>
+									Username								</strong>
+							</label>
+							<input id="username_signup" name="username_signup" type="text" class="form-control" pattern="^[a-zA-Z0-9_\-]{4,}$" autocomplete="off" required="">
+							<div class="invalid-feedback" id="errorUsernameMsg">
+								<strong>
+									Invalid username								</strong><br>
+								<span id="usernameInvalidDetail"></span>
+							</div>
+							<small id="username_help" class="form-text text-muted text-justify">
+								Your username must contain at least 4 letters or numbers (no space, accent or special characters).							</small>
+							<input id="app" name="app" type="hidden" value="/en/search/analyses">
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="pw_signup">
+								<strong>
+									Password								</strong>
+							</label>
+							<div class="input-group">
+								<input class="form-control" type="password" id="pw_signup" name="pw_signup" required="">
+								<button class="btn btn-outline-secondary togglePassword" type="button" for="pw_signup" tabindex="-1">
+									<span class="bi bi-eye-slash" aria-hidden="true"></span>
+								</button>
+							</div>
+							<div class="invalid-feedback" id="errorPwMsg">
+								<strong>
+									Invalid password								</strong><br>
+								<span id="passwordInvalidDetail"></span>
+							</div>
+
+							<small id="pw_help" class="form-text text-muted text-justify">
+								Your password must have at least 8 characters, including one lower case letter, one upper case letter, one number and one special character.							</small>
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="confirm_pw">
+								<strong>
+									Confirm password								</strong>
+							</label>
+							<div class="input-group">
+								<input class="form-control" type="password" id="confirm_pw" name="confirm_pw" required="">
+								<button class="btn btn-outline-secondary togglePassword" type="button" for="confirm_pw" tabindex="-1">
+									<span class="bi bi-eye-slash" aria-hidden="true"></span>
+								</button>
+							</div>
+							<div class="invalid-feedback" id="errorConfirmPwMsg">
+								<strong>
+									Invalid password								</strong><br>
+								<span id="confirmPasswordInvalidDetail"></span>
+							</div>
+
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<div class="g-recaptcha" data-callback="notARobot" data-expired-callback="NotARobotExpired" data-sitekey="6LeTYa4iAAAAAAJ9inrEoJP8ZP3CluXV2MqaJZSU"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-2sbyau6pq7qf" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="d_searchlist_1880_vingerhoedt_maria_en_files/anchor_sGeh.htm"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+							<input id="captcha" name="captcha" type="text" hidden="" aria-label="captcha">
+							<div class="invalid-feedback" id="errorCaptchaMsg">
+								<strong>
+									Please enter the captcha								</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button id="confirmButton_signup" class="btn btn-primary form-control col" type="button">
+						Create an account					</button>
+					<button id="cancelButton_signup" data-bs-dismiss="modal" class="btn btn-outline-secondary form-control col" type="button">
+						Cancel					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Modal response signup -->
+<div class="modal fade" id="modal_response" tabindex="-1" role="dialog" aria-labelledby="modalResponse" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title h5" id="modalResponse">
+					Create an account				</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body test-justify">
+				<span id="msgResponse"></span>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary form-control col" data-bs-dismiss="modal">
+					Close				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal password forgotten -->
+<div class="modal fade" id="modal_pw_forgotten" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalPwForgotten" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title h5" id="modalPwForgotten">
+					Forgot password?				</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<form id="pwForgottenForm" class="needs-validation" novalidate="">
+				<div class="modal-body">
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="emailPwForgotten">
+								<strong>
+									Mail address								</strong>
+							</label>
+							<div class="input-group mb-3">
+								<input id="emailPwForgotten" name="emailPwForgotten" type="email" class="form-control" autofocus="" autocomplete="off" required="">
+								<button id="pw_forgotten_btn" class="btn btn-primary" type="button">
+									Send								</button>
+                                <div class="invalid-feedback" id="errorEmailPwForgotten">
+                                    <strong>
+                                        Invalid mail address                                    </strong>
+                                </div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<div class="g-recaptcha" data-callback="notARobotPw" data-expired-callback="NotARobotExpiredPw" data-sitekey="6LeTYa4iAAAAAAJ9inrEoJP8ZP3CluXV2MqaJZSU"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-efl0ulsp9xh2" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="d_searchlist_1880_vingerhoedt_maria_en_files/anchor_002_sGeh.htm"></iframe></div><textarea id="g-recaptcha-response-1" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+							<input id="captchaPwForgotten" name="captchaPwForgotten" type="text" hidden="" aria-label="captcha">
+							<div class="invalid-feedback" id="errorCaptchaPwForgotten">
+								<strong>
+									Please enter the captcha								</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Modal response pw forgotten -->
+<div class="modal fade" id="modal_response_pw_forgotten" tabindex="-1" role="dialog" aria-labelledby="modalResponsePwForgotten" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title h5" id="modalResponsePwForgotten">
+					Forgot password?				</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body text-justify">
+				<span id="msgResponsePwForgotten"></span>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary form-control col" data-bs-dismiss="modal">
+					Close				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Modal log in -->
+<div class="modal fade" data-backdrop="static" id="modal_login" tabindex="-1" role="dialog" aria-labelledby="modalLogin" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<form id="form_login">
+				<div class="modal-header">
+					<h1 class="modal-title h5" id="modalLogin">
+						Login					</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="alert alert-warning d-flex align-items-center" role="alert">
+						<strong><i class="bi bi-exclamation-triangle-fill"></i>
+							Attention : If you already have an account on <i>Search</i>, it is also valid for <i>Agatha</i>.						</strong>
+					</div>
+					<div class="alert alert-danger text-center" role="alert" hidden="">
+						<span id="errorLogin"></span>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="username">
+								<strong>
+									Username or mail address								</strong>
+							</label>
+							<input autofocus="" type="text" class="form-control" id="username" name="username">
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="password">
+								<strong>
+									Password								</strong>
+							</label>
+							<div class="input-group">
+								<input class="form-control" type="password" id="password" name="password">
+								<button class="btn btn-outline-secondary togglePassword" type="button" for="password" tabindex="-1">
+									<span class="bi bi-eye-slash" aria-hidden="true"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<input type="hidden" name="appName" value="/en/search/analyses">
+					<div class="row mt-3">
+						<div class="col-12">
+							<a id="PASSWORD_FORGOTTEN_A" href="#modal_pw_forgotten" data-bs-toggle="modal" data-bs-dismiss="modal">
+								Forgot password?							</a>
+						</div>
+						<div class="col-12">
+							<a id="SIGNUP_A" href="#modal_signup" data-bs-toggle="modal" data-bs-dismiss="modal">
+								Create an account							</a>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button id="confirmButton_login" class="btn btn-primary form-control col" type="button">
+						Login					</button>
+					<button id="cancelButton_login" data-bs-dismiss="modal" class="btn btn-outline-secondary form-control col" type="button">
+						Cancel					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Modal display any message -->
+<div class="modal fade" id="modal_showMsg" tabindex="-1" role="dialog" aria-labelledby="generalMsg" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<span id="generalMsg"></span>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary form-control col" data-bs-dismiss="modal">
+					Close				</button>
+			</div>
+		</div>
+	</div>
+</div>		<div class="container-fluid">
+			<div class="row mt-4">
+				<div class="col">
+					<div class="d-grid gap-2 col-12 col-xl-10 col-xxl-8">
+						<form id="FORM_BACK_MODIFY_SEARCH" action="/en/search/analyses/" method="post"><input type="hidden" name="WHICH_TAB" value="PERS"><input type="hidden" name="NAME" value="vingerhoedt"><input type="hidden" name="ACTTYPE" value="BS_O"><input type="hidden" name="PROJECT_ID" value="-1"><input type="hidden" name="JOB_ID" value="-1"><input type="hidden" name="JOB_ID_2" value="-1"><input type="hidden" name="ROLE" value="ALL"><input type="hidden" name="ROLE_2" value="ALL"><input type="hidden" name="CHOOSE_DATE_PERIODE" value="1"><button wuwid="MODIFY_SEARCH_BTN" id="MODIFY_SEARCH" class="btn btn-primary text-md-start w-100 mb-2" type="submit"><i class="bi bi-chevron-left mr-2 me-2"></i>Modify search</button></form>						<form id="FORM_BACK_SEARCH_AGAIN" action="/en/search/analyses/" method="post"><button wuwid="SEARCH_AGAIN_BTN" id="SEARCH_AGAIN" class="btn btn-outline-primary text-md-start w-100" type="submit"><i class="bi bi-search mr-2 me-2"></i>New search</button></form>					</div>
+				</div>
+				<div class="col-12 col-md-9 mt-4 mt-md-0">
+					<h3 class="text-secondary d-inline" tabindex="0">Search results</h3>
+					<div class="float-end">
+                        <button class="btn btn-sm btn-outline-primary" onclick="copyUrlResult(event)"><i class="bi bi-clipboard me-2"></i>Copy page link</button>
+                        <button class="btn btn-sm btn-outline-primary ms-2" onclick="reportError('results')"><i class="bi bi-pen me-2"></i>Report an error</button>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<h4 class="display-5" tabindex="0"> vingerhoedt</h4>
+						</div>
+						
+						
+												
+												
+                        						
+												
+												<div class="col-12">
+							<span><strong>Type of record :</strong> Death certificates</span>
+						</div>
+						
+											</div>
+				</div>
+			</div>
+
+			<!-- Header containing filter, sort, etc.  -->
+			<div class="bg-light border box-shadow-lg rounded-lg p-4 mt-4">
+				<div class="row align-self-center gy-3">
+					<div class="dropdown col">
+						<a class="btn btn-primary dropdown-toggle" href="#filters" data-bs-toggle="collapse" aria-expanded="true">
+							<i class="me-2 bi bi-funnel"></i>
+							Filter results						</a>
+					</div>
+					<div class="pagination nav col-12 col-md-7 d-flex justify-content-center align-self-center"><div class="paginationjs"><div class="paginationjs-nav J-paginationjs-nav" tabindex="0" aria-label="Results 1 to 14 of 14 results">1-14 of <strong>14 results</strong></div><div class="paginationjs-pages"><ul><li class="paginationjs-prev disabled "><a><i class="bi bi-chevron-left"></i></a></li><li class="paginationjs-page J-paginationjs-page  active" data-num="1"><a tabindex="0" aria-label="Current page">1</a></li></ul></div><div class="paginationjs-size-changer"><select class="J-paginationjs-size-select"><option aria-label="10 results per page" value="10">10 / page</option><option aria-label="25 results per page" value="25" selected="selected">25 / page</option><option aria-label="50 results per page" value="50">50 / page</option></select></div></div></div>					<div class="col flex-grow-1 align-self-center text-end">
+					    <button class="btn btn-sm btn-outline-primary" onclick="exportTable()"><i class="bi bi-filetype-csv me-2"></i>Export page as CSV</button>
+					</div>
+				</div>
+				<div class="collapse" id="filters">
+	<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pt-4 g-4 justify-content-center">
+		<!-- PLACE -->
+		<div class="col">
+			<div class="card">
+				<div class="card-body px-4">
+					<div class="card-title mb-3" style="transform:rotate(0)">
+						<h6 class="fw-bold">
+							<a class="d-block text-decoration-none" data-bs-toggle="collapse" href="#collapsePlace" role="button" aria-expanded="true" aria-controls="collapsePlace">
+								Location 
+                                <span tabindex="0" class="small text-secondary bi bi-info-circle" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover click" data-bs-title="In most cases, the municipality where the document was created or a municipality linked to a person (e.g. place of birth or death)."></span>
+                                <span class="float-end bi bi-chevron-down"></span>
+							</a>
+						</h6>
+					</div>
+					<div class="collapse show" id="collapsePlace">
+						<input class="form-control ui-autocomplete-input" type="text" id="ALL_PLACES" name="ALL_PLACES" data-init="" autocomplete="off">
+					</div>
+					<div class="invalid-feedback">
+						<strong>Select at least one type of record or index</strong>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- PERIODE -->
+		<div class="col">
+			<div class="card">
+				<div class="card-body px-4">
+					<div class="card-title mb-3" style="transform:rotate(0)">
+						<h6 class="fw-bold">
+							<a class="d-block  text-decoration-none" data-bs-toggle="collapse" href="#collapsePeriode" role="button" aria-expanded="true" aria-controls="collapsePeriode">
+                                <label for="exactYear" class="form-label mb-0">Period <span tabindex="0" class="small text-secondary bi bi-info-circle" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover click" data-bs-title="Exact date of the record (format DD/MM/YYYY) or the interval in which one or more records were created."></span></label>
+								<span class="float-end bi bi-chevron-down"></span>
+							</a>
+						</h6>
+					</div>
+					<div class="collapse show" id="collapsePeriode">
+						<div class="d-flex mt-3">
+                                <div class="input-group has-validation">
+									<select class="form-select bg-middle-grey rounded-0" id="CHOOSE_DATE_PERIODE" name="CHOOSE_DATE_PERIODE">
+										<option value="0">The</option>
+										<option value="1" selected="selected">From</option>
+										<option value="2">Before</option>
+										<option value="3">After</option>
+									</select>
+                                    <input id="exactYear" name="exactYear" type="text" class="form-control" aria-label="Exact year" placeholder="1580">
+                                    <span class="input-group-text rounded-0 border-end-0" id="SHOW_FROM">until</span>
+                                    <input type="text" id="SHOW_PERIODE" name="SHOW_PERIODE" class="form-control" aria-label="Period" placeholder="1920">
+                                    <a id="CLEAR_DATES" role="button" tabindex="0" class="input-group-text"><span class="bi bi-trash"></span></a>
+                                </div>
+						</div>
+						<div class="row">
+                                    <div id="EXACTYEAR_ERROR_MSG" class="col invalid-feedback">
+                                        <strong></strong>
+                                    </div>
+                                    <div id="SHOWPERIODE_ERROR_MSG" class="col invalid-feedback">
+                                        <strong></strong>
+                                    </div>
+                                </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ACTTYPE -->
+		<div class="col">
+			<div class="card">
+				<div class="card-body px-4">
+					<div class="card-title mb-3" style="transform:rotate(0)">
+						<h6 class="fw-bold">
+							<a class="mb-2 d-block  text-decoration-none" data-bs-toggle="collapse" href="#collapseActtype" role="button" aria-expanded="true" aria-controls="collapseActtype">
+								Type of record <span tabindex="0" class="small text-secondary bi bi-info-circle" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover click" data-bs-title="Written documents that record a change of status (baptism, marriage, burial, conscription, etc.) and have legal value (notarial act, judgment, etc.)."></span>
+								<span class="float-end bi bi-chevron-down"></span>
+							</a>
+						</h6>
+					</div>
+					<div class="collapse show" id="collapseActtype">
+                        <div class="dropdown bootstrap-select w-100"><select id="ACTTYPE" name="ACTTYPE" class="selectpicker w-100" data-live-search="true" data-live-search-normalize="true">
+                            <option value="-1">All</option>
+                            <option value="AMMREK">Account of a court officer</option><option value="74">Accounts (earnings and expenses)</option><option value="AKTE">Act</option><option value="ONDVR">Act of interrogation</option><option value="ADVER">Advertisement</option><option value="SCH">Aldermans deed</option><option value="SCHVON">Aldermans judgement</option><option value="BSA">Announcement</option><option value="AARTVER">Archducal ordinance</option><option value="13">Baptism certificates</option><option value="BSGA">Birth announcement</option><option value="BS_G">Birth certificates</option><option value="CAUTREGL">Cautsideregulation</option><option value="KRON">Chronicle</option><option value="STADREK">City account</option><option value="STADOR">City ordinance</option><option value="STADREG">City register</option><option value="BOUWV">Construction permit</option><option value="BEVTEL">Count</option><option value="GRAFVER">Count's ordinance</option><option value="AMBREGL">Craft regulations</option><option value="KOST">Custom</option><option value="BS_O" selected="selected">Death certificates</option><option value="DMILO">Death notice</option><option value="DOMREK">Domain account</option><option value="HERTVER">Ducal ordinance</option><option value="INSCHR">Enrolment register</option><option value="BISSVER">Episcopal ordinance</option><option value="CIJNSREG">Feu-duty register</option><option value="CIJNSROL">Feu-duty roll</option><option value="LEENREG">Feudal register</option><option value="DOSSIER">File</option><option value="5">Funeral certificates</option><option value="GOEDREG">Goods register</option><option value="GILVON">Guild judgment</option><option value="GILBR">Guild letter</option><option value="GILREGL">Guild regulations</option><option value="VREEMD">Immigration file</option><option value="KEIZVER">Imperial ordinance</option><option value="ERF">Inheritance declaration</option><option value="53">Inventaris</option><option value="DAGB">Journal</option><option value="VERKLOV">Judicial death declaration</option><option value="61">Kwitantie</option><option value="RENTREGL">Land agents regulations</option><option value="HUURCON">Lease</option><option value="BRIEF">Letter</option><option value="VRIJGEL">Letter of safe-conduct</option><option value="31">List of confirmands</option><option value="23">List of names</option><option value="POP">List of persons</option><option value="LIT">Literature</option><option value="PROC">Litigation file</option><option value="MAGLIJST">Magistrate's list</option><option value="BS_HA">Marriage announcements</option><option value="BS_H">Marriage certificates</option><option value="HUWCON">Marriage settlement</option><option value="STBO">Matriculation register</option><option value="LEDLIJST">Members register</option><option value="STMIL">Militia register</option><option value="BID">Mortuary and mourning card</option><option value="OVDEC">Mortuary inventory</option><option value="69">Notaries</option><option value="BS_HP">Notices of marriage</option><option value="EED">Oath</option><option value="OBIT">Obituary</option><option value="WZA">Orphan register</option><option value="VERZSCH">Petition</option><option value="BEVREG">Population register</option><option value="BENOEM">Power of attorney</option><option value="BOEDVER">Property inventory</option><option value="REGVER">Regency ordinance</option><option value="REG">Register</option><option value="MVG">Register of moral accounting</option><option value="ONTBOEK">Revenue book</option><option value="KONVER">Royal ordinance</option><option value="DIENSTST">Service history</option><option value="SVG">State of goods</option><option value="HAARDTEL">Stove count</option><option value="AMBREG">Trade register</option><option value="REISV">Travel journal</option><option value="OVERSTED">Treaty</option><option value="BEVSCH">Warrant</option><option value="78">Will</option>                        </select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Death certificates" data-id="ACTTYPE"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Death certificates</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-1" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- PROJECT -->
+		<div class="col">
+			<div class="card">
+				<div class="card-body px-4">
+					<div class="card-title mb-3" style="transform:rotate(0)">
+						<h6 class="fw-bold">
+							<a class="mb-2 d-block text-decoration-none" data-bs-toggle="collapse" href="#collapseProject" role="button" aria-expanded="true" aria-controls="collapseProject">
+								Project <span tabindex="0" class="small text-secondary bi bi-info-circle" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover click" data-bs-title="List of projects executed by volunteers or staff of the State Archives."></span>
+								<span class="float-end bi bi-chevron-down"></span>
+							</a>
+						</h6>
+					</div>
+					<div class="collapse show" id="collapseProject">
+					    <div class="dropdown bootstrap-select w-100"><select class="selectpicker w-100" id="PROJECT" name="PROJECT_ID" data-init="" data-live-search="true" data-live-search-normalize="true">
+                            <option value="-1" selected="selected">All</option>
+                            <option value="ANLIRP">ANLIRP - Church registers - Anlier</option><option value="ANTBEL">ANTBEL - Rewards, decorations and elevations to the nobility - Province of Antwerp</option><option value="ANTBENOEM">ANTBENOEM - Appointment Deed - Province of Antwerp</option><option value="ANTBIJST">ANTBIJST - Requests for assistance to persons - Province of Antwerp</option><option value="ANTBOUW">ANTBOUW - Building applications - Province of Antwerp</option><option value="ANTCAL">ANTCAL - Requests for assistance in case of calamities and disasters - Province of Antwerp</option><option value="ANTDIENST">ANTDIENST - List of foreigners subject to military service - Province of Antwerp</option><option value="ANTMIL">ANTMIL - Militia files - Twee Neten Department</option><option value="ANTOVLB">ANTOVLB - Death notices of soldiers - Departement Deux-Nèthes</option><option value="ANTSCH">ANTSCH - Aldermans deeds - Province of Antwerp</option><option value="ANTSTUD">ANTSTUD - Scholarship applications - Province of Antwerp</option><option value="ANTVERG">ANTVERG - Patents, licences and exhibitions - Province of Antwerp</option><option value="AUDMIL">AUDMIL - Litigation files of the military prosecutor office - Province of Namur</option><option value="BDCH">BDCH - Burgher's books - Charleroi</option><option value="BDNA">BDNA - Burgher's books - Namur</option><option value="BEVERF">BEVERF - Inheritance deeds - Beveren</option><option value="BGBRUS">BGBRUS - List of women who entered the beguinage - Brussels</option><option value="BIDPREN">BIDPREN - Prayer and mourning cards - Province of West Flanders</option><option value="BOV">BOV - Population registers - Province of Namur</option><option value="BSBETH">BSBETH - Marriage and birth announcements - Kortrijk</option><option value="BSCINEY">BSCINEY - Civil status - Birth certificates - Ciney</option><option value="BSFRAN">BSFRAN - Civil status - Francorchamps</option><option value="BSFRBE">BSFRBE - Church registers and civil status - Franco-Belgian marriage and death certificates - Avenois </option><option value="BSHANTW">BSHANTW - Civil status - Marriage certificates - Province of Antwerp</option><option value="BSHTER">BSHTER - Civil status - Marriage certificates - Terhagen</option><option value="BSHWWI">BSHWWI - Civil status - Marriage certificates of Belgians living abroad during World War I - Belgium</option><option value="BSJALH">BSJALH - Civil status - Jalhay</option><option value="BSJOSSE">BSJOSSE - Civil status - Birth certificates - Sint-Joost-ten-Node</option><option value="BSKEMP">BSKEMP - Civil status - Antwerp Campine</option><option value="BSLASNE">BSLASNE - Civil status - Lasne</option><option value="BSLOMMEL">BSLOMMEL - Civil status - Lommel </option><option value="BSMATOURNA">BSMATOURNA - Civil status - Marriage certificates - Tournai and environs</option><option value="BSREV">BSREV - Civil status - Birth certificates - Rèves</option><option value="BSSART">BSSART - Civil status - Sart-lez-Spa</option><option value="BSSCHAER">BSSCHAER - Civil status - Birth certificates - Schaarbeek</option><option value="BSSTREE">BSSTREE - Civil status - Birth and death certificates - Strée</option><option value="BSWOP">BSWOP - Civil status - Wezembeek-Oppem</option><option value="BSZEVERG">BSZEVERG - Civil status - Marriage certificates - Zevergem</option><option value="CGPN">CGPN - Litigation files from the court martial - Province of Namur</option><option value="CLINGE">CLINGE - Church registers - Marriage certificates - De Klinge</option><option value="COR">COR - Civil status (KU Leuven) - Province of Antwerp</option><option value="DOUANE">DOUANE - Identification sheets and service history of officials of the 'Customs and Excise' administration - Belgium</option><option value="ECHU">ECHU - Church registers and civil status - Funeral and death certificates - Mont-Sainte-Marie </option><option value="ECMLIEGE">ECMLIEGE - Civil status - Marriage certificates - Liège</option><option value="ETRBRUX">ETRBRUX - List of foreign travellers - Brussels</option><option value="EUPEN">EUPEN - Church registers - Canton of Eupen</option><option value="FLOWODEL">FLOWODEL - Civil status - Flobecq, Wodecq and Ellezelles</option><option value="GAVLB">GAVLB - Civil status - Birth certificates - Province of Flemish Brabant and Brussels-Capital Region</option><option value="GDINANT">GDINANT - Church registers - Namur and environs</option><option value="GENT">GENT - Church registers - Marriage certificates - Ghent</option><option value="GENTBRUG">GENTBRUG - Civil status - Gentbrugge</option><option value="GEWVL">GEWVL - Civil status - Birth certificates - Province of West Flanders</option><option value="GPPBRUS">GPPBRUS - Political files of the judicial police - District of Brussels</option><option value="GRIMPR">GRIMPR - Church registers - Grimbergen</option><option value="GSU">GSU - Civil status (FamilySearch) - Belgium</option><option value="HEREERF">HEREERF - Inheritance deeds - Herentals</option><option value="HUVLB">HUVLB - Civil status - Marriage certificates - Province of Flemish Brabant and Brussels-Capital Region</option><option value="HUWILLE">HUWILLE - Civil status - Marriage certificates - Willebroek </option><option value="HUWVL2">HUWVL2 - Civil status - Marriage certificates - Province of West Flanders</option><option value="IMMIBEL">IMMIBEL - Immigration files - World</option><option value="LEGAAT1">LEGAAT1 - Gifts and legacies to local authorities - Province of Brabant</option><option value="LIEDEK">LIEDEK - Civil status - Liedekerke</option><option value="LOKERF">LOKERF - Inheritance deeds - Lokeren</option><option value="MATRIKEL">MATRIKEL - Matricules of the Old University Leuven - World</option><option value="NIKLERF">NIKLERF - Inheritance deeds - Sint-Niklaas</option><option value="NOTAANT">NOTAANT - Notarial acts (Notarius) - Province of Antwerp</option><option value="NOTANT">NOTANT - Notarial acts - Province of Antwerp</option><option value="NOTAVB">NOTAVB - Notarial acts (Notarius) - Province of Flemish Brabant</option><option value="NOTAWVL">NOTAWVL - Notarial acts - Province of West Flanders</option><option value="NOTNIV">NOTNIV - Notarial acts - Province of Walloon Brabant</option><option value="OORLOG">OORLOG - War damages - District of Kortrijk</option><option value="OORLOGLIM">OORLOGLIM - War damages - Province of Limburg</option><option value="OORLOGVBR">OORLOGVBR - War damages - District of Leuven</option><option value="OSAK">OSAK - States of good - District of Kortrijk</option><option value="OVWVL">OVWVL - Civil status certificates - Death certificates - Province of West Flanders</option><option value="PARBEWVL">PARBEWVL - Church registers - Funeral certificates - Province of West Flanders</option><option value="PARBGENT">PARBGENT - Church registers - Funeral certificates - Ghent </option><option value="PARDEBRUS">PARDEBRUS - Church registers and civil status - Funeral and death certificates - Brussels</option><option value="PARDOBRUS">PARDOBRUS - Church registers - Baptism certificates - Brussels </option><option value="PARDOBUT">PARDOBUT - Church registers - Baptism certificates - Bütgenbach</option><option value="PARDOWVL">PARDOWVL - Church registers - Baptism certificates - Province of West Flanders</option><option value="PARHUWVL">PARHUWVL - Church registers - Marriage certificates - Province of West Flanders</option><option value="PARMABRUS">PARMABRUS - Church registers - Marriage certificates - Brussels</option><option value="PARWOP">PARWOP - Church registers - Wezembeek-Oppem</option><option value="PATUR">PATUR - Church registers - Pâturages</option><option value="PERSAF">PERSAF - PERSonal in AFrica - Congo Free State, Belgian Congo and Ruanda-Urundi</option><option value="PRBZELE">PRBZELE - Church registers - Baptism certificates - Zele</option><option value="PRDSNG">PRDSNG - Church registers - Baptism certificates - Ghent </option><option value="PRHENEG">PRHENEG - Church registers and civil status - Ath, Tournai and Ronse</option><option value="PRISARLON">PRISARLON - Moral reports of convicted prisoners of the Arlon prison – Belgium</option><option value="PRISBRUGGE">PRISBRUGGE - Moralische Berichte verurteilter Häftlinge des Gefängnisses von Brügge – Belgien (1876-1925)</option><option value="PRISDINANT">PRISDINANT - Moral reports on convicted prisoners of the prison of Dinant - Belgium</option><option value="PRISLEUV">PRISLEUV - List of inmates of Leuven central prison - Belgium</option><option value="PRISLIEGE">PRISLIEGE - List of inmates of Saint-Léonard prison in Liège - Belgium</option><option value="PRISMECHEL">PRISMECHEL - </option><option value="PRISNEUF">PRISNEUF - List of inmates of Neufchâteau prison - Belgium</option><option value="PRISNIJVEL">PRISNIJVEL - Moral reports on convicted prisoners of the prison of Nivelles (Nijvel) – Belgium</option><option value="PRISOUDENA">PRISOUDENA - Moral reports on convicted prisoners of the prison of Oudenaarde (Audenarde) – Belgium</option><option value="PRISTURNH">PRISTURNH - Moral reports on convicted prisoners of the prison of Turnhout – Belgium</option><option value="PRISVILV">PRISVILV - List of inmates from Vilvoorde prison - Belgium</option><option value="PRNIV">PRNIV - Church registers - Oisquercq</option><option value="PRRAMOF">PRRAMOF - Church registers - Ramillies and Offus</option><option value="PRTWVL">PRTWVL - Burgher's books - Roeselare</option><option value="PTKORT">PTKORT - Burgher's books - Courtrai</option><option value="QLP">QLP - Church registers and civil status - Quévy</option><option value="REKTIELT">REKTIELT - City accounts - Tielt</option><option value="ROESERF">ROESERF - Inheritance deeds - District of Kortrijk</option><option value="RVB">RVB - Litigation files of the Council of Brabant - Duchy of Brabant</option><option value="SBBG">SBBG - Persons references in the archives of Saint Bavo's Abbey and diocese - Ghent</option><option value="SMBR">SMBR - Civil status - Marriage certificates - Province of Hainaut</option><option value="SOLDDYLE">SOLDDYLE - Death notices of soldiers - Department Dyle</option><option value="SOLDJEMAP">SOLDJEMAP - Death notices of soldiers - Department Jemmappe</option><option value="SOLDOUR">SOLDOUR - Death notices of soldiers - Departement Ourthe</option><option value="SOLDSM">SOLDSM - Death notices of soldiers - Department Sambre-et-Meuse</option><option value="SVGLVW">SVGLVW - States of good - Land of Waes</option><option value="SVGMATER">SVGMATER - Inheritance deeds - Mater </option><option value="SVGPETEG">SVGPETEG - Inheritance deeds - Petegem</option><option value="SVGWVL">SVGWVL - States of good - Province of West Flanders</option><option value="TDECEN">TDECEN - Church registers and civil status - Baptism and birth certificates - Brussels</option><option value="THIEU">THIEU - Civil status - Birth certificates - Thieulain</option><option value="TMACHUT">TMACHUT - States of good - Mouscron</option><option value="VERMIST">VERMIST - Death declarations of missing persons during World War II - District of Antwerp</option><option value="VGLP">VGLP - Letter of safe-conduct of Belgians returning from the Netherlands - Belgium</option><option value="VISU">VISU - Civil status certificates (DemoGen Visu) - Belgium</option><option value="WIWILB">WIWILB - List of residents and visitors - Brussels</option><option value="WKKORT">WKKORT - Orphan register - Kortrijk</option><option value="WVLERF">WVLERF - Inheritance deeds - Province of West Flanders</option><option value="WZWVL">WZWVL - Orphan register - Province of West Flanders</option><option value="ZEELUI">ZEELUI - Matriculation register of seamen on Belgian merchant ships - World</option>                        </select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-2" aria-haspopup="listbox" aria-expanded="false" title="All" data-id="PROJECT"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">All</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-2" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-2" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row mt-4">
+		<div class="col-12 d-flex justify-content-center">
+			<button id="PERSON_FILTER_SUBMIT_A" class="btn btn-primary" type="button">Apply filter</button>
+		</div>
+	</div>
+</div>			</div>
+		
+			<div class="row mt-4">
+                <!-- spinner loading -->
+                <style>
+                    .spinner-overlay{
+                        z-index: 3000 !important;
+                    }
+                </style>
+                <div class="spinner-overlay position-fixed top-0 start-0 w-100 h-100 bg-white bg-opacity-75 d-flex justify-content-center align-items-center d-none">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">...</span>
+                    </div>
+                </div>
+                <!-- END spinner loading -->
+				<div class="col-md-12">
+    <table id="tableResults" class="table table-hover">
+        <thead id="table_head" class="table-secondary sticky-top">
+            <tr class="text-dark">
+                <th class="col-2" scope="col"><span class="thead-clickable"><i id="SORT_EDITORIALFORM_ENG" class="bi bi-chevron-expand me-2" aria-hidden="true"></i>
+                        Type of record                    </span></th>
+                <th class="col-2" scope="col"><span class="thead-clickable"><i id="SORT_ACTPLACE_STRING" class="bi bi-chevron-expand me-2" aria-hidden="true"></i>
+                        Place of record                    </span></th>
+                <th class="col-2" scope="col"><span class="thead-clickable"><i id="SORT_ACTDATE" class="bi bi-chevron-expand me-2" aria-hidden="true"></i>
+                        Date of record                    </span></th>
+                <th class="col-2" scope="col"><span class=""><i id="SORT_LAST_NAME" class="bi me-2" aria-hidden="true"></i>
+                        Name                    </span></th>
+                <th class="col-2" scope="col"><span class=""><i id="SORT_FIRST_NAME" class="bi me-2" aria-hidden="true"></i>
+                        First name                    </span></th>
+                <th class="col-2" scope="col"><span class=""><i id="SORT_ROLE" class="bi me-2" aria-hidden="true"></i>
+                        Role                    </span></th>
+                <th class="col-1" scope="col">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody id="table_body"><tr class="row-results"><td>Death certificates</td><td>Antwerpen</td><td>10/11/1858</td><td>Vingerhoedt<br>Vingerhoedt<br></td><td>Maria Theresia<br>Antonius<br></td><td>Deceased<br>Father of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Berendrecht</td><td>15/11/1843</td><td>Vingerhoedt<br>Vingerhoedt<br></td><td>Antonius<br>Cornelius<br></td><td>Deceased<br>Father of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Berendrecht</td><td>21/02/1845</td><td>Vingerhoedt<br>Vingerhoedt<br></td><td>Petrus Joannes<br>Adrianus<br></td><td>Deceased<br>Father of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Antwerpen</td><td>05/04/1880</td><td>Vingerhoedt<br>Vingerhoedt<br></td><td>Maria Cornelia<br>Antonius<br></td><td>Deceased<br>Father of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Berendrecht</td><td>21/05/1839</td><td>Vingerhoedt<br></td><td>Elisabeth<br></td><td>Mother of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Gent</td><td>22/03/1881</td><td>Vingerhoedt<br></td><td>Joanna Maria<br></td><td>Mother of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Antwerpen</td><td>17/02/1879</td><td>Vingerhoedt<br></td><td>Maria Magdalena<br></td><td>Mother of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Antwerpen</td><td>17/02/1879</td><td>Vingerhoedt<br></td><td>Maria Magdalena<br></td><td>Mother of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Geel</td><td>27/05/1896</td><td>Vingerhoedt<br></td><td>Joanna Catharina<br></td><td>Mother of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Antwerpen</td><td>03/11/1879</td><td>Vingerhoedt<br></td><td>Gisberta Aleida<br></td><td>Mother of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Antwerpen</td><td>16/09/1878</td><td>Vingerhoedt<br></td><td>Maria Anna<br></td><td>Mother of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Antwerpen</td><td>14/09/1854</td><td>Vingerhoedt<br></td><td>Joanna Cornelia<br></td><td>Mother of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Doel</td><td>26/07/1831</td><td>Vingerhoedt<br></td><td>Benedictus<br></td><td>Declarant<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr><tr class="row-results"><td>Death certificates</td><td>Santvliet</td><td>03/01/1875</td><td>Vingerhoedt<br></td><td>Theresia<br></td><td>Mother of the deceased<br></td><td><a class="btn btn-primary btn-sm float-end" href="#" role="button">View</a></td></tr></tbody>
+        <tfoot>
+            <tr>
+                <td colspan="10" class="text-center bg-light">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                        </div>
+                        <div class="pagination nav col-12 col-md-7 d-flex justify-content-center align-self-center"><div class="paginationjs"><div class="paginationjs-nav J-paginationjs-nav" tabindex="0" aria-label="Results 1 to 14 of 14 results">1-14 of <strong>14 results</strong></div><div class="paginationjs-pages"><ul><li class="paginationjs-prev disabled "><a><i class="bi bi-chevron-left"></i></a></li><li class="paginationjs-page J-paginationjs-page  active" data-num="1"><a tabindex="0" aria-label="Current page">1</a></li></ul></div><div class="paginationjs-size-changer"><select class="J-paginationjs-size-select"><option aria-label="10 results per page" value="10">10 / page</option><option aria-label="25 results per page" value="25" selected="selected">25 / page</option><option aria-label="50 results per page" value="50">50 / page</option></select></div></div></div>                        <div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>			</div>
+		</div>
+		<!-- Act modal -->
+<div class="modal show" id="modal_ACT" tabindex="-1" role="dialog" aria-labelledby="ACT_NUMBER" data-bs-backdrop="static" style="display: block;" aria-modal="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary-light align-items-center">
+                    <h1 class="modal-title display-8 mb-0">Record</h1>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a id="openActBtn" class="btn btn-sm btn-outline-primary ms-2" href="https://agatha.arch.be/en/data/acts/GSU_004191864_00813_4_00152800" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+                        <button class="btn btn-sm btn-outline-primary ms-2" onclick="copyLink(event, 'act')"><i class="bi bi-clipboard me-2"></i>Copy link</button>
+                        <button class="btn btn-sm btn-outline-primary ms-2" onclick="printPage('act')">Print</button>
+                        <button id="reportErrorBtn" class="btn btn-sm btn-outline-primary ms-2" onclick="reportError('act')">Report an error</button>
+                        <button type="button" class="btn-close ms-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h2 class="AGRAR_ff_fira_condensed fw-semibold my-4" hidden="" id="ACT_TITLE">GSU_004191864_00813_4_00152800</h2>
+                    <h3 class="display-7 mt-0 mb-3">Details of the record<span id="ACT_NUMBER"></span></h3>
+                    <table class="table table-hover table-results">
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-secondary">Type of record</th>
+                                <td id="modal_ACTTYPE">Death certificates</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Project</th>
+                                <td id="modal_PROJECT_ID"><a href="#modal_PROJECT" data-bs-toggle="modal">Civil status (FamilySearch) - Belgium</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Location</th>
+                                <td id="modal_ACTPLACE">Antwerpen</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Parish</th>
+                                <td id="modal_ACTPARISH"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Description</th>
+                                <td id="modal_DESCRIPTION">Overlijdensakte</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Remarks</th>
+                                <td id="modal_REMARKSACT"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Date of record</th>
+                                <td id="modal_ACTDATE">05/04/1880</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">URL</th>
+                                <td id="modal_URL"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3 class="display-7 mt-4 mb-3">Persons mentioned</h3>
+                    <table class="table table-hover table-results tablePersons">
+                        <thead class="table-light">
+                            <tr>
+                                <th colspan="2" scope="col"><span class="text-body modal_ACTROLE_CODE">Deceased</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-secondary">First name and name</th>
+                                <td class="modal_NAME"><div>Maria Cornelia <mark><em>Vingerhoedt</em></mark></div></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Civil status</th>
+                                <td class="modal_CIVILSTATUS"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Place of birth</th>
+                                <td class="modal_BIRTHPLACE"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Date of birth</th>
+                                <td class="modal_BIRTHDATE">21/11/1805</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Age</th>
+                                <td class="modal_AGE">74 years 4 months 13 days</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Place of residence</th>
+                                <td class="modal_RESIDENCE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Profession</th>
+                                <td class="modal_OCCUPATION"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Place of death</th>
+                                <td class="modal_DEATHPLACE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Date of death</th>
+                                <td class="modal_DEATHDATE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Remarks</th>
+                                <td class="modal_REMARKSPERSON"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <table class="table table-hover table-results tablePersons">
+                        <thead class="table-light">
+                            <tr>
+                                <th colspan="2" scope="col"><span class="text-body modal_ACTROLE_CODE">Father of the deceased</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-secondary">First name and name</th>
+                                <td class="modal_NAME"><div>Antonius <mark><em>Vingerhoedt</em></mark></div></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Civil status</th>
+                                <td class="modal_CIVILSTATUS"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Place of birth</th>
+                                <td class="modal_BIRTHPLACE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Date of birth</th>
+                                <td class="modal_BIRTHDATE">21/11/1805</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Age</th>
+                                <td class="modal_AGE">74 years 4 months 13 days</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Place of residence</th>
+                                <td class="modal_RESIDENCE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Profession</th>
+                                <td class="modal_OCCUPATION"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Place of death</th>
+                                <td class="modal_DEATHPLACE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Date of death</th>
+                                <td class="modal_DEATHDATE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Remarks</th>
+                                <td class="modal_REMARKSPERSON"></td>
+                            </tr>
+                        </tbody>
+                    </table><table class="table table-hover table-results tablePersons">
+                        <thead class="table-light">
+                            <tr>
+                                <th colspan="2" scope="col"><span class="text-body modal_ACTROLE_CODE">Mother of the deceased</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-secondary">First name and name</th>
+                                <td class="modal_NAME">Maria Catharina Van Der Poel</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Civil status</th>
+                                <td class="modal_CIVILSTATUS"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Place of birth</th>
+                                <td class="modal_BIRTHPLACE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Date of birth</th>
+                                <td class="modal_BIRTHDATE">21/11/1805</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Age</th>
+                                <td class="modal_AGE">74 years 4 months 13 days</td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Place of residence</th>
+                                <td class="modal_RESIDENCE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Profession</th>
+                                <td class="modal_OCCUPATION"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Place of death</th>
+                                <td class="modal_DEATHPLACE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Date of death</th>
+                                <td class="modal_DEATHDATE"></td>
+                            </tr>
+                            <tr hidden="true">
+                                <th scope="row" class="text-secondary">Remarks</th>
+                                <td class="modal_REMARKSPERSON"></td>
+                            </tr>
+                        </tbody>
+                    </table></div>
+                <div class="modal-footer bg-light">
+                    <div class="row flex-fill justify-content-end">
+                        <div class="col-12 col-sm-8 col-xl-4 d-flex justify-content-between gap-3">
+                            <button id="prevActBtn" type="button" class="btn btn-primary col-5 flex-grow-1 text-uppercase"><i class="bi bi-chevron-left float-start"></i>Previous</button>
+                            <button id="nextActBtn" type="button" class="btn btn-primary col-5 flex-grow-1 text-uppercase">Next<i class="bi bi-chevron-right float-end"></i></button>
+                        </div>
+                        <div class="col-12 col-sm-2 col-xl-4 mt-3 mt-sm-0 text-center text-sm-end">
+                            <button type="button" class="btn btn-outline-primary text-uppercase" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Act modal --> 
+
+<!-- Project modal -->
+<div class="modal" id="modal_PROJECT" tabindex="-1" role="dialog" aria-labelledby="PROJECT_TITLE" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary-light align-items-center">
+                    <h1 class="modal-title display-8 mb-0" id="PROJECT_TITLE">
+                        Project                    </h1>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a id="openProjectBtn" class="btn btn-sm btn-outline-primary ms-2" href="#" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+                        <button class="btn btn-sm btn-outline-primary ms-2" onclick="copyLink(event, 'project')"><i class="bi bi-clipboard me-2"></i>Copy link</button>
+                        <button type="button" class="btn-close text-primary ms-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h2 class="AGRAR_ff_fira_condensed fw-semibold my-4" id="modal_PROJECT_PROJECT"></h2>
+                    <input hidden="" id="PROJECT_ID"><table class="table table-hover table-results">
+                        <tbody> 
+                            <tr>
+                                <th scope="row" class="text-secondary">Project description</th>
+                                <td id="modal_PROJECT_DESCRIPTION"></td>
+                                
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Status</th>
+                                <td id="modal_PROJECT_STATUS"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Number of records</th>
+                                <td id="modal_PROJECT_NUMACTS"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Number of people referenced</th>
+                                <td id="modal_PROJECT_NUMPERSONS"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Period</th>
+                                <td id="modal_PROJECT_PERIODE"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Geographical description</th>
+                                <td id="modal_PROJECT_REGION"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Data introduced by</th>
+                                <td id="modal_PROJECT_AUTHOR"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-secondary">Last updated</th>
+                                <td id="modal_PROJECT_LAST_UPDATE"></td>
+                            </tr>
+                            <tr id="modal_URL1" class="urls">
+                                <th scope="row" class="text-secondary">URL</th>
+                                <td><a target="_blank" id="modal_URL_link1"></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer bg-light d-flex">
+                    <button id="returnToAct" data-bs-toggle="modal" data-bs-target="#modal_ACT" type="button" class="btn btn-primary text-uppercase">Back to the record</button>
+                    <button id="actsProject" class="btn btn-primary text-uppercase"><i class="bi bi-search me-2"></i>View project-related acts</button>
+                    <button type="button" class="btn btn-outline-primary text-uppercase ms-auto" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Project modal --> 
+
+
+<!-- Project not found modal -->
+<div class="modal" id="modal_PROJECT_NOT_FOUND" tabindex="-1" role="dialog" aria-labelledby="PROJECT_NOT_FOUND" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="display-7 mt-0 mb-3" id="PROJECT_NOT_FOUND">
+                            <div scope="row" class="text-secondary">Project</div>
+                            <span id="modal_PROJECT_PROJECT_ID"></span>
+                    </h1>
+                </div>
+                <div class="modal-body">
+                    File not found or not available                </div>
+                <div class="modal-footer bg-light">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Project not found modal --> <script>
+	function getTab() {
+		var id = $('#myTab').find('.active').attr('id');
+		return id.substring(0,4);
+	}
+
+	function printPage(page) 
+	{
+        if(page)
+        {
+            let iframe = document.createElement('iframe');
+
+            if(page == 'act')
+                iframe.src = "https://agatha.arch.be/en/data/acts/"+$('#ACT_TITLE').text();
+            else // project
+                iframe.src = "https://agatha.arch.be/en/data/projects/"+$('#PROJECT_ID').val();
+            
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            iframe.onload = function() {
+                iframe.contentWindow.print();
+                setTimeout(function() {
+                    document.body.removeChild(iframe);
+                }, 1000);
+            };
+        }
+        else
+		    window.print();
+	}
+
+    // Job list
+    function initAutocomplete(selector)
+    {
+        $(selector).autocomplete({
+            autoFocus: true,
+            source: function(request, response) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/en/search/analyses/ajax.php", 
+                    data: {
+                        method: 'getJobs',
+                        term: request.term
+                    },
+                    success: function(result) {	
+                        var resJSON = JSON.parse(result);
+                        response(resJSON);
+                    }	
+                })							
+            },
+            minLength: 2,
+            select: function(event, item) {
+                $('#'+event.target.id+'_ID').val(item.item.ID);
+            },
+            change: function(event, item) {
+                if(!item.item) 
+                    $('#'+event.target.id+'_ID').val("-1");
+            }
+        });
+
+        if($(selector).length > 0)
+        {
+            $(selector).data("ui-autocomplete")._renderItem = function (ul, item) {
+                return $( "<li>" )
+                .append( $( "<div>" ).text( item.label ) )
+                .appendTo( ul );
+            };
+        }
+    }
+
+    function validateForm() {
+		var tab = getTab();
+		
+		validateSearchField();
+		validateDates();
+		
+		// if any invalid field, the form is not valid
+		if($('#'+tab+'_FORM').find('.is-invalid:visible').length > 0)
+			return false;
+		else
+			return true;
+	}
+
+    function validateDates() {
+		let this_tab = getTab();
+		let exactYear = $('#exactYear_'+this_tab).val();
+        let endYear = $('#SHOW_PERIODE_'+this_tab).val();
+        
+        let dateType = parseInt($('#CHOOSE_DATE_PERIODE_'+this_tab).val());
+
+        let ok = true;
+
+        $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().find('strong').text('');
+        $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text('');
+        
+        if(extractText(exactYear) != '')
+        {
+            if(dateType == 0)
+            {
+                let rgxp = new RegExp(/^\d{1,2}[/.-]\d{1,2}[/.-]\d{1,4}$/);
+                if(!rgxp.test(exactYear))
+                {
+                    $('#exactYear_'+this_tab).addClass('is-invalid');
+                    $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().find('strong').text(MUST_BE_NUMBER_LABEL);
+                }
+                else
+                    $('#exactYear_'+this_tab).removeClass('is-invalid');
+            }
+            else
+            {
+                $('#exactYear_'+this_tab).addClass('is-invalid');
+                $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().find('strong').text(MUST_BE_NUMBER_LABEL);
+            }
+        }
+        else
+            $('#exactYear_'+this_tab).removeClass('is-invalid');
+        
+        if(extractText(endYear) != '')
+        {
+            $('#SHOW_PERIODE_'+this_tab).addClass('is-invalid');
+            $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(MUST_BE_NUMBER_LABEL);
+        }
+        else
+            $('#SHOW_PERIODE_'+this_tab).removeClass('is-invalid');
+
+        if(extractText(exactYear) != '' || extractText(endYear) != '')
+            ok = false;
+			
+        switch(dateType)
+        {					
+            // exact year
+            case 0:
+                break;
+            // between - periode
+            case 1:
+                if(exactYear != '' && endYear == '')
+                {
+                    $('#SHOW_PERIODE_'+this_tab).addClass('is-invalid');
+                    $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(VALUE_MISSING_LABEL);
+
+                    ok = false;
+                }
+
+                
+                if(exactYear == '' && endYear != '')
+                {
+                    $('#exactYear_'+this_tab).addClass('is-invalid');
+                    $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().find('strong').text(VALUE_MISSING_LABEL);
+
+                    ok = false;
+                }
+                
+                if(parseInt(exactYear) > parseInt(endYear))
+                {
+                    $('#SHOW_PERIODE_'+this_tab).addClass('is-invalid'); 
+                    $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(END_YEAR_MUST_BE_HIGHER_LABEL);
+                }
+                else if(ok)
+                    $('#SHOW_PERIODE_'+this_tab).removeClass('is-invalid');
+                break;
+            // before
+            case 2:
+                break;
+            // after
+            case 3:
+                break;
+        }
+
+        if($('#exactYear_'+this_tab).hasClass('is-invalid'))
+            $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().show();
+        else
+            $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().hide();
+    
+        if($('#SHOW_PERIODE_'+this_tab).hasClass('is-invalid'))
+        {
+            $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).show();
+            $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().show();
+        }
+        else
+        {
+            $('#SHOW_PERIODE_'+this_tab).parent().next('.row').find('.invalid-feedback').eq(1).hide();
+
+            if(!$('#exactYear_'+this_tab).hasClass('is-invalid'))
+                $('#exactYear_'+this_tab).parent().next('.row').find('.invalid-feedback').first().hide();
+        }
+		
+		$('#exactYear_'+this_tab).on('input', validateDates);
+		$('#SHOW_PERIODE_'+this_tab).on('input', validateDates);
+	}
+
+    function validateSearchField() {
+        let tab = getTab();
+        let this_input;
+
+        if(tab == 'FREE')
+		    this_input = $('#SHORT_ALL_TEXTS')[0];
+        else
+            this_input = $('#NAME')[0];
+		
+        if(!this_input.checkValidity())
+        {
+			$(this_input).addClass('is-invalid');
+            $(this_input).next('.invalid-feedback').find('strong').text(getErrorFromValidity(this_input.validity));
+        }
+        else
+			$(this_input).removeClass('is-invalid');
+	}
+
+    function copyLink(e, from)
+    {
+        if(from == 'project')
+        {
+            let urlProject = "https://agatha.arch.be/en/data/projects/"+($('#PROJECT_ID').text() || $('#PROJECT_ID').val());
+            navigator.clipboard.writeText(urlProject);
+        }
+        else if(from == 'act')
+        {
+            let urlAct = "https://agatha.arch.be/en/data/acts/"+$('#ACT_TITLE').text();
+            navigator.clipboard.writeText(urlAct);
+        }
+
+        $(e.target).tooltip({
+            trigger: 'manual',
+            title: 'Copied !'
+        }).tooltip('show');
+        setTimeout(function() { $(e.target).tooltip('hide'); }, 2000);
+    }
+
+    function initAutocompletePlaces(selector)
+    {
+        $(selector).autocomplete({
+            autoFocus: true,
+            source: function(request, response) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/en/search/analyses/ajax.php", 
+                    data: {
+                        method: 'getMunicipalities',
+                        term: request.term
+                    },
+                    success: function(result) {	
+                        var resJSON = JSON.parse(result);
+                        response(resJSON);
+                        $(selector).autocomplete('instance').listItems = resJSON;
+                        $(selector).autocomplete('instance').clicked = false;
+                    }	
+                })							
+            },
+            minLength: 0
+        });
+
+        if($(selector).length > 0)
+        {
+            $(selector).data("ui-autocomplete")._renderItem = function (ul, item) {
+                return $( "<li>" )
+                .append( $( "<div>" ).text( item.label ) )
+                .appendTo( ul );
+            };
+        }
+    }
+	
+	function reportError(t)
+    {
+        if(t == 'act')        
+            postURLForm('https://agatha.arch.be/en/contact/', 'URL_RESULTS', "https://agatha.arch.be/en/data/acts/"+$('#ACT_TITLE').text(), true);
+        else if(t == 'project')        
+            postURLForm('https://agatha.arch.be/en/contact/', 'URL_RESULTS', "https://agatha.arch.be/en/data/projects/"+$('#PROJECT_ID').text(), true);
+        else if(t == 'results')
+            postURLForm('https://agatha.arch.be/en/contact/', 'URL_RESULTS', "sess", true);
+        else if(t == 'update')
+            postURLForm('https://agatha.arch.be/en/contact/', 'URL_RESULTS', location.href, true);
+        else
+            postURLForm('https://agatha.arch.be/en/contact/', '', "", true);
+    }
+	
+	function formatDate(this_date)
+    {
+        const formatter = new Intl.DateTimeFormat("fr-FR", { 
+            timeZone: "UTC",
+            year: "numeric", month: "2-digit", day: "2-digit"
+        });
+
+        return formatter.format(this_date);
+    }
+	
+	function viewProject(row, ele, fromAct)
+	{	
+		var project_id = row['PROJECT_ID'];
+
+        $('#openProjectBtn').attr('href', "https://agatha.arch.be/en/data/projects/"+project_id);
+
+        $.ajax({
+            type: "POST",
+            url: "/en/search/analyses/ajax.php",
+            data: {
+                method: 'getProjectXML',
+                PROJECT_ID: project_id
+            },
+            success: function(result) {
+                var xml = JSON.parse(result);
+
+                if(xml == false)
+                {
+                    $('#modal_PROJECT').modal('hide');
+                    $('#modal_PROJECT_NOT_FOUND').modal('show');
+
+                    var td = document.getElementById('modal_PROJECT_PROJECT_ID');
+                    var tr = td.parentElement;
+                    if(xml['PROJECT_ID'] != '')
+                    {
+                        td.innerHTML = xml['PROJECT_ID'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                }
+                else
+                {
+                    for(var key in xml)
+                    {
+                        if(key != 'Urls')
+                        {
+                            var val = xml[key];
+                            if(typeof val == 'object')
+                                val = val[0];
+                            if(val != undefined)
+                                val = val.trim();
+
+                            xml[key] = val;
+                        }
+                    }
+                    
+                    $('#PROJECT_ID').val(xml['PROJECT_ID']);
+                    
+                    var td = document.getElementById('modal_PROJECT_PROJECT');
+                    var tr = td.parentElement;
+                    if(xml[lang+'_TITLE'] != '')
+                    {
+                        td.innerHTML = xml[lang+'_TITLE'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_DESCRIPTION');
+                    var tr = td.parentElement;
+                    if(xml[lang+'_FULL_DESCRIPTION'] != '')
+                    {
+                        td.innerHTML = xml[lang+'_FULL_DESCRIPTION'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_STATUS');
+                    var tr = td.parentElement;
+                    if(xml['PROJECTSTATUS'] != '')
+                    {
+                        td.innerHTML = xml['PROJECTSTATUS_ENG_DESCRIPTION'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_NUMACTS');
+                    var tr = td.parentElement;
+                    if(xml['NUMACTS'] != '')
+                    {
+                        td.innerHTML = xml['NUMACTS'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_NUMPERSONS');
+                    var tr = td.parentElement;
+                    if(xml['NUMPERSONS'] != '')
+                    {
+                        td.innerHTML = xml['NUMPERSONS'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_PERIODE');
+                    var tr = td.parentElement;
+                    if(xml['PERIODE'] != '')
+                    {
+                        td.innerHTML = xml['PERIODE'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_REGION');
+                    var tr = td.parentElement;
+                    if(xml['REGION'] != '')
+                    {
+                        td.innerHTML = xml['REGION'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+                    
+                    var td = document.getElementById('modal_PROJECT_AUTHOR');
+                    var tr = td.parentElement;
+                    if(xml['AUTHORS'] != '')
+                    {
+                        td.innerHTML = xml['AUTHORS'];
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+
+                    var td = document.getElementById('modal_PROJECT_LAST_UPDATE');
+                    var tr = td.parentElement;
+                    if(xml['LAST_UPDATE'] && xml['LAST_UPDATE'] != '')
+                    {
+                        const [day, month, year] = xml['LAST_UPDATE'].split(/[- :]/);
+
+                        const last_update = new Date(Date.UTC(year, month - 1, day));
+
+                        td.innerHTML = formatDate(last_update);
+                        tr.removeAttribute('hidden');
+                    }
+                    else
+                    {
+                        tr.setAttribute('hidden', true);
+                    }
+
+                    var prevUrls = document.getElementsByClassName('urls');
+                    for(var i = prevUrls.length-1; i > 0; i--)
+                    {
+                        prevUrls[i].remove();
+                    }
+                    prevUrls[0].removeAttribute('hidden');
+                    
+                    var urls = xml['Urls']['Url'];
+                    if(urls && !Array.isArray(urls))
+                        urls.length = 1;
+
+                    for(var i = 0; urls && i < urls.length; i++)
+                    {
+                        if(i != 0)
+                        {
+                            var cloneUrlNode = document.getElementById('modal_URL'+i).cloneNode('true');
+                            var idDescription = cloneUrlNode.getAttribute('id');
+                            var nextId = parseInt(extractNumber(idDescription)) + 1;
+                            cloneUrlNode.setAttribute('id', extractText(idDescription) + nextId);
+
+                            var idLink = cloneUrlNode.getElementsByTagName('a')[0].getAttribute('id');
+                            cloneUrlNode.getElementsByTagName('a')[0].setAttribute('id', extractText(idLink) + nextId)
+
+                            document.getElementById('modal_URL'+i).after(cloneUrlNode);
+                        }
+                        
+                        let urlLink;
+                        
+                        if(urls.length == 1)
+                        {
+							let urlLinkLang = urls['URL_LINK_'+lang];
+                            if(urlLinkLang && urlLinkLang != '')
+                                urlLink = urlLinkLang;
+                            else
+								urlLink = (typeof urls['URL_LINK'] == "object") ? urls['URL_LINK'][0] : urls['URL_LINK'];
+                            document.getElementById('modal_URL_link'+(i+1)).innerHTML = (typeof urls[lang+'_DESCRIPTION'] == "object") ? (urls[lang+'_DESCRIPTION'][0] || "No description") : (urls[lang+'_DESCRIPTION'] || "No description");
+                            document.getElementById('modal_URL_link'+(i+1)).setAttribute('href', urlLink);
+                        }
+                        else
+                        {
+							let urlLinkLang = urls[i]['URL_LINK_'+lang];
+                            if(urlLinkLang && urlLinkLang != '')
+                                urlLink = urlLinkLang;
+                            else
+								urlLink = (typeof urls[i]['URL_LINK'] == "object") ? urls[i]['URL_LINK'][0] : urls[i]['URL_LINK'];
+                            document.getElementById('modal_URL_link'+(i+1)).innerHTML = (typeof urls[i][lang+'_DESCRIPTION'] == "object") ? (urls[i][lang+'_DESCRIPTION'][0] || "No description") : (urls[i][lang+'_DESCRIPTION'] || "No description");
+                            document.getElementById('modal_URL_link'+(i+1)).setAttribute('href', urlLink);                                
+                        }
+                        
+                        if(urlLink && urlLink.indexOf('.pdf') != -1)
+                        {
+                            if(cloneUrlNode)
+                            {
+                                $(cloneUrlNode).find('th').text("PDF");
+                            }
+                        }
+                    }
+
+                    if(!urls)
+                        prevUrls[0].setAttribute('hidden', true);
+
+                    let btnReturnToAct = $('#returnToAct');
+                    if(fromAct)
+                    {
+                        btnReturnToAct.show();
+                    }
+                    else
+                    {
+                        btnReturnToAct.hide();
+                    }
+                }
+            }
+        });
+	}
+</script><script>   
+	function viewAct(results, ind)
+	{
+        let hiddenDates = ["01/01/0001", "00/00/0000", "NN", "31/12/2999", "12/31/2999", "31-12-2999", "12-31-2999", undefined, "", "01/01/1"];
+        let row = results[ind];
+		var ACT_ID = row['ACT_ID'];
+		var j = 0;
+		var filterName = [];
+        var filters = {"WHICH_TAB":"PERS","NAME":"vingerhoedt","ACTTYPE":"BS_O","PROJECT_ID":"-1","JOB_ID":"-1","JOB_ID_2":"-1","ROLE":"ALL","ROLE_2":"ALL","CHOOSE_DATE_PERIODE":"1"};
+
+        $('#openActBtn').attr('href', "https://agatha.arch.be/en/data/acts/"+ACT_ID);
+
+        for(var key in filters)
+        {
+            var val = filters[key];
+           
+            if((key == 'NAME' || key == 'NAME_2' || key == 'FIRST_NAME' || key == 'FIRST_NAME_2' || key == 'ALL_PLACES' || key == 'SHORT_ALL_TEXTS') && val != null && val != '')
+            {
+                if(key == 'NAME' || key == 'NAME_2' || key == 'FIRST_NAME' || key == 'FIRST_NAME_2')
+                    val = '"'+val+'"';
+                filterName[j] = val;
+                j++;
+            }
+        }
+
+        document.getElementById('ACT_TITLE').innerHTML = ACT_ID
+		var editorialCodes = {"AMMREK":"Account of a court officer","74":"Accounts (earnings and expenses)","AKTE":"Act","ONDVR":"Act of interrogation","ADVER":"Advertisement","SCH":"Aldermans deed","SCHVON":"Aldermans judgement","BSA":"Announcement","AARTVER":"Archducal ordinance","13":"Baptism certificates","BSGA":"Birth announcement","BS_G":"Birth certificates","CAUTREGL":"Cautsideregulation","KRON":"Chronicle","STADREK":"City account","STADOR":"City ordinance","STADREG":"City register","BOUWV":"Construction permit","BEVTEL":"Count","GRAFVER":"Count's ordinance","AMBREGL":"Craft regulations","KOST":"Custom","BS_O":"Death certificates","DMILO":"Death notice","DOMREK":"Domain account","HERTVER":"Ducal ordinance","INSCHR":"Enrolment register","BISSVER":"Episcopal ordinance","CIJNSREG":"Feu-duty register","CIJNSROL":"Feu-duty roll","LEENREG":"Feudal register","DOSSIER":"File","5":"Funeral certificates","GOEDREG":"Goods register","GILVON":"Guild judgment","GILBR":"Guild letter","GILREGL":"Guild regulations","VREEMD":"Immigration file","KEIZVER":"Imperial ordinance","ERF":"Inheritance declaration","53":"Inventaris","DAGB":"Journal","VERKLOV":"Judicial death declaration","61":"Kwitantie","RENTREGL":"Land agents regulations","HUURCON":"Lease","BRIEF":"Letter","VRIJGEL":"Letter of safe-conduct","31":"List of confirmands","23":"List of names","POP":"List of persons","LIT":"Literature","PROC":"Litigation file","MAGLIJST":"Magistrate's list","BS_HA":"Marriage announcements","BS_H":"Marriage certificates","HUWCON":"Marriage settlement","STBO":"Matriculation register","LEDLIJST":"Members register","STMIL":"Militia register","BID":"Mortuary and mourning card","OVDEC":"Mortuary inventory","69":"Notaries","BS_HP":"Notices of marriage","EED":"Oath","OBIT":"Obituary","WZA":"Orphan register","VERZSCH":"Petition","BEVREG":"Population register","BENOEM":"Power of attorney","BOEDVER":"Property inventory","REGVER":"Regency ordinance","REG":"Register","MVG":"Register of moral accounting","ONTBOEK":"Revenue book","KONVER":"Royal ordinance","DIENSTST":"Service history","SVG":"State of goods","HAARDTEL":"Stove count","AMBREG":"Trade register","REISV":"Travel journal","OVERSTED":"Treaty","BEVSCH":"Warrant","78":"Will"};
+        document.getElementById('modal_ACTTYPE').innerHTML = editorialCodes[row['EDITORIALFORM_CODE'].toUpperCase()];
+		var projectCodes = {"ANLIRP":"Church registers - Anlier","ANTBEL":"Rewards, decorations and elevations to the nobility - Province of Antwerp","ANTBENOEM":"Appointment Deed - Province of Antwerp","ANTBIJST":"Requests for assistance to persons - Province of Antwerp","ANTBOUW":"Building applications - Province of Antwerp","ANTCAL":"Requests for assistance in case of calamities and disasters - Province of Antwerp","ANTDIENST":"List of foreigners subject to military service - Province of Antwerp","ANTMIL":"Militia files - Twee Neten Department","ANTOVLB":"Death notices of soldiers - Departement Deux-N\u00e8thes","ANTSCH":"Aldermans deeds - Province of Antwerp","ANTSTUD":"Scholarship applications - Province of Antwerp","ANTVERG":"Patents, licences and exhibitions - Province of Antwerp","AUDMIL":"Litigation files of the military prosecutor office - Province of Namur","BDCH":"Burgher's books - Charleroi","BDNA":"Burgher's books - Namur","BEVERF":"Inheritance deeds - Beveren","BGBRUS":"List of women who entered the beguinage - Brussels","BIDPREN":"Prayer and mourning cards - Province of West Flanders","BOV":"Population registers - Province of Namur","BSBETH":"Marriage and birth announcements - Kortrijk","BSCINEY":"Civil status - Birth certificates - Ciney","BSFRAN":"Civil status - Francorchamps","BSFRBE":"Church registers and civil status - Franco-Belgian marriage and death certificates - Avenois ","BSHANTW":"Civil status - Marriage certificates - Province of Antwerp","BSHTER":"Civil status - Marriage certificates - Terhagen","BSHWWI":"Civil status - Marriage certificates of Belgians living abroad during World War I - Belgium","BSJALH":"Civil status - Jalhay","BSJOSSE":"Civil status - Birth certificates - Sint-Joost-ten-Node","BSKEMP":"Civil status - Antwerp Campine","BSLASNE":"Civil status - Lasne","BSLOMMEL":"Civil status - Lommel ","BSMATOURNA":"Civil status - Marriage certificates - Tournai and environs","BSREV":"Civil status - Birth certificates - R\u00e8ves","BSSART":"Civil status - Sart-lez-Spa","BSSCHAER":"Civil status - Birth certificates - Schaarbeek","BSSTREE":"Civil status - Birth and death certificates - Str\u00e9e","BSWOP":"Civil status - Wezembeek-Oppem","BSZEVERG":"Civil status - Marriage certificates - Zevergem","CGPN":"Litigation files from the court martial - Province of Namur","CLINGE":"Church registers - Marriage certificates - De Klinge","COR":"Civil status (KU Leuven) - Province of Antwerp","DOUANE":"Identification sheets and service history of officials of the 'Customs and Excise' administration - Belgium","ECHU":"Church registers and civil status - Funeral and death certificates - Mont-Sainte-Marie ","ECMLIEGE":"Civil status - Marriage certificates - Li\u00e8ge","ETRBRUX":"List of foreign travellers - Brussels","EUPEN":"Church registers - Canton of Eupen","FLOWODEL":"Civil status - Flobecq, Wodecq and Ellezelles","GAVLB":"Civil status - Birth certificates - Province of Flemish Brabant and Brussels-Capital Region","GDINANT":"Church registers - Namur and environs","GENT":"Church registers - Marriage certificates - Ghent","GENTBRUG":"Civil status - Gentbrugge","GEWVL":"Civil status - Birth certificates - Province of West Flanders","GPPBRUS":"Political files of the judicial police - District of Brussels","GRIMPR":"Church registers - Grimbergen","GSU":"Civil status (FamilySearch) - Belgium","HEREERF":"Inheritance deeds - Herentals","HUVLB":"Civil status - Marriage certificates - Province of Flemish Brabant and Brussels-Capital Region","HUWILLE":"Civil status - Marriage certificates - Willebroek ","HUWVL2":"Civil status - Marriage certificates - Province of West Flanders","IMMIBEL":"Immigration files - World","LEGAAT1":"Gifts and legacies to local authorities - Province of Brabant","LIEDEK":"Civil status - Liedekerke","LOKERF":"Inheritance deeds - Lokeren","MATRIKEL":"Matricules of the Old University Leuven - World","NIKLERF":"Inheritance deeds - Sint-Niklaas","NOTAANT":"Notarial acts (Notarius) - Province of Antwerp","NOTANT":"Notarial acts - Province of Antwerp","NOTAVB":"Notarial acts (Notarius) - Province of Flemish Brabant","NOTAWVL":"Notarial acts - Province of West Flanders","NOTNIV":"Notarial acts - Province of Walloon Brabant","OORLOG":"War damages - District of Kortrijk","OORLOGLIM":"War damages - Province of Limburg","OORLOGVBR":"War damages - District of Leuven","OSAK":"States of good - District of Kortrijk","OVWVL":"Civil status certificates - Death certificates - Province of West Flanders","PARBEWVL":"Church registers - Funeral certificates - Province of West Flanders","PARBGENT":"Church registers - Funeral certificates - Ghent ","PARDEBRUS":"Church registers and civil status - Funeral and death certificates - Brussels","PARDOBRUS":"Church registers - Baptism certificates - Brussels ","PARDOBUT":"Church registers - Baptism certificates - B\u00fctgenbach","PARDOWVL":"Church registers - Baptism certificates - Province of West Flanders","PARHUWVL":"Church registers - Marriage certificates - Province of West Flanders","PARMABRUS":"Church registers - Marriage certificates - Brussels","PARWOP":"Church registers - Wezembeek-Oppem","PATUR":"Church registers - P\u00e2turages","PERSAF":"PERSonal in AFrica - Congo Free State, Belgian Congo and Ruanda-Urundi","PRBZELE":"Church registers - Baptism certificates - Zele","PRDSNG":"Church registers - Baptism certificates - Ghent ","PRHENEG":"Church registers and civil status - Ath, Tournai and Ronse","PRISARLON":"Moral reports of convicted prisoners of the Arlon prison \u2013 Belgium","PRISBRUGGE":"Moralische Berichte verurteilter H\u00e4ftlinge des Gef\u00e4ngnisses von Br\u00fcgge \u2013 Belgien (1876-1925)","PRISDINANT":"Moral reports on convicted prisoners of the prison of Dinant - Belgium","PRISLEUV":"List of inmates of Leuven central prison - Belgium","PRISLIEGE":"List of inmates of Saint-L\u00e9onard prison in Li\u00e8ge - Belgium","PRISMECHEL":"","PRISNEUF":"List of inmates of Neufch\u00e2teau prison - Belgium","PRISNIJVEL":"Moral reports on convicted prisoners of the prison of Nivelles (Nijvel) \u2013 Belgium","PRISOUDENA":"Moral reports on convicted prisoners of the prison of Oudenaarde (Audenarde) \u2013 Belgium","PRISTURNH":"Moral reports on convicted prisoners of the prison of Turnhout \u2013 Belgium","PRISVILV":"List of inmates from Vilvoorde prison - Belgium","PRNIV":"Church registers - Oisquercq","PRRAMOF":"Church registers - Ramillies and Offus","PRTWVL":"Burgher's books - Roeselare","PTKORT":"Burgher's books - Courtrai","QLP":"Church registers and civil status - Qu\u00e9vy","REKTIELT":"City accounts - Tielt","ROESERF":"Inheritance deeds - District of Kortrijk","RVB":"Litigation files of the Council of Brabant - Duchy of Brabant","SBBG":"Persons references in the archives of Saint Bavo's Abbey and diocese - Ghent","SMBR":"Civil status - Marriage certificates - Province of Hainaut","SOLDDYLE":"Death notices of soldiers - Department Dyle","SOLDJEMAP":"Death notices of soldiers - Department Jemmappe","SOLDOUR":"Death notices of soldiers - Departement Ourthe","SOLDSM":"Death notices of soldiers - Department Sambre-et-Meuse","SVGLVW":"States of good - Land of Waes","SVGMATER":"Inheritance deeds - Mater ","SVGPETEG":"Inheritance deeds - Petegem","SVGWVL":"States of good - Province of West Flanders","TDECEN":"Church registers and civil status - Baptism and birth certificates - Brussels","THIEU":"Civil status - Birth certificates - Thieulain","TMACHUT":"States of good - Mouscron","VERMIST":"Death declarations of missing persons during World War II - District of Antwerp","VGLP":"Letter of safe-conduct of Belgians returning from the Netherlands - Belgium","VISU":"Civil status certificates (DemoGen Visu) - Belgium","WIWILB":"List of residents and visitors - Brussels","WKKORT":"Orphan register - Kortrijk","WVLERF":"Inheritance deeds - Province of West Flanders","WZWVL":"Orphan register - Province of West Flanders","ZEELUI":"Matriculation register of seamen on Belgian merchant ships - World"};
+        
+        var projectLink = document.createElement('a');
+        projectLink.setAttribute('href', '#modal_PROJECT');
+        projectLink.setAttribute('data-bs-toggle', 'modal');
+        projectLink.innerHTML = projectCodes[row['PROJECT_ID']];
+        document.getElementById('modal_PROJECT_ID').innerHTML = "";
+        document.getElementById('modal_PROJECT_ID').appendChild(projectLink);
+        
+        projectLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            viewProject(row, this, true);
+        });      
+
+		var ACT_NUMBER = row['ACT_NUMBER'];
+        var span = document.getElementById('ACT_NUMBER'); 
+		if(ACT_NUMBER == 'NN')
+        {
+            span.innerHTML = "";
+        }
+        else
+		{
+            span.innerHTML = " "+ACT_NUMBER;
+		}
+
+		var ACTPLACE = row['ACTPLACE'];
+        var td = document.getElementById('modal_ACTPLACE'); 
+		if(!ACTPLACE || ACTPLACE == 'NN')
+        {
+            td.parentElement.setAttribute('hidden', true);
+        }
+        else
+		{
+            ACTPLACE = emphazes(ACTPLACE, filterName);
+            td.innerHTML = ACTPLACE;
+            td.parentElement.removeAttribute('hidden');
+		}
+
+		var ACTPARISH = row['PARISH'];
+        var td = document.getElementById('modal_ACTPARISH'); 
+		if(ACTPARISH == 'NN')
+        {
+            td.parentElement.setAttribute('hidden', true);
+        }
+        else
+		{
+            ACTPARISH = emphazes(ACTPARISH, filterName);
+            td.innerHTML = ACTPARISH;
+            td.parentElement.removeAttribute('hidden');
+		}
+
+        document.getElementById('modal_DESCRIPTION').innerHTML = row['ACT_DESCRIPTION'];
+
+		var REMARKS_ACT = row['REMARKS_ACT'];
+        td = document.getElementById('modal_REMARKSACT');
+		if(!REMARKS_ACT || REMARKS_ACT == 'NN')
+        {
+            td.parentElement.setAttribute('hidden', true);
+        }
+        else
+		{
+		    REMARKS_ACT = emphazes(REMARKS_ACT, filterName);
+            td.innerHTML = REMARKS_ACT;
+            td.parentElement.removeAttribute('hidden');
+		}
+
+		var ACTDATE_TEXT = row['ACTDATE_TEXT'];
+        td = document.getElementById('modal_ACTDATE');
+		if(hiddenDates.includes(ACTDATE_TEXT))
+        {
+            td.parentElement.setAttribute('hidden', true);
+        }
+        else
+		{
+            td.innerHTML = ACTDATE_TEXT;
+            td.parentElement.removeAttribute('hidden');
+		}
+
+		var URL = row['URL']; 
+        td = document.getElementById('modal_URL');
+		if (URL == 'NN')
+        {
+            td.parentElement.setAttribute('hidden', true);
+        }
+        else
+		{
+            let aURL = document.createElement('a');
+            aURL.setAttribute('href', URL);
+            aURL.setAttribute('target', "_blank");
+            aURL.innerHTML = URL;
+			td.innerHTML = "";
+            td.append(aURL);
+            td.parentElement.removeAttribute('hidden');
+		}
+
+        var tables = document.getElementsByClassName('tablePersons');
+        for(var i = tables.length-1; i > 0; i--)
+            tables[i].remove();
+            
+		var roleCodes = {"4008":"Accounting party (inheritance distribution)","5500":"Applicant","5501":"Architect \/ Designer","40":"Baptized child","6005":"Beneficiary","1":"Bride","5001":"Brother of the conscript","5005":"Brother-in-law of the conscript","6020":"Burgher","20":"Child","8":"Child recognized","6002":"Collator","7000":"Communicant","7001":"Confirmand","5000":"Conscript","30":"Deceased","1000":"Declarant","5600":"Destitute","8000":"Detainee","5003":"Enlisted conscript","21":"Father","4003":"Father of the  testator","41":"Father of the baptized child","5":"Father of the bride","5006":"Father of the conscript","31":"Father of the deceased","3":"Father of the groom","4005":"Father of the partner of the  testator","6030":"Foreigner","3001":"Former partner","9":"Former partner of the bride","6010":"Former partner of the deceased","10":"Former partner of the groom","17":"Former partner of the mother","6001":"Founder","43":"Godfather","44":"Godmother","11":"Grandparent of the bride","16":"Grandparent of the child","12":"Grandparent of the groom","2":"Groom","6006":"Guarantor","6003":"Husband \/ Wife","5503":"Landlord \/ Tenant","18":"Legal father","19":"Legal mother","4007":"Maternal guardian","22":"Mother","4002":"Mother of the  testator","42":"Mother of the baptized child","6":"Mother of the bride","5004":"Mother of the conscript","32":"Mother of the deceased","4":"Mother of the husband","4004":"Mother of the partner of the  testator","4012":"Name variation","5502":"Neighbor","4009":"Orphan","6031":"Partner","5008":"Partner of the conscript","33":"Partner of the deceased","4001":"Partner of the testator","4006":"Paternal guardian","5700":"Person mentioned in a document","5504":"Plaintiff \/ Petitioner of an objection","5601":"Relative of the destitute","5009":"Reluctant conscript","5007":"Replacement for the conscript","5002":"Sister of the conscript","500":"Stakeholder","4000":"Testator","7":"Witness"};
+        var nbNames = row['LAST_NAME'].length;
+        for(var i = 0; i < nbNames; i++)
+        {
+            if(i > 0)
+            {
+                var tableCopy = document.getElementsByClassName('tablePersons')[0].cloneNode(true);
+                document.getElementsByClassName('tablePersons')[0].parentElement.append(tableCopy);
+            }
+
+            var FULL_NAME = row['FULL_NAME'][i];
+            FULL_NAME = emphazes(FULL_NAME, filterName);
+
+            document.getElementsByClassName('modal_ACTROLE_CODE')[i].innerHTML = roleCodes[row['ACTROLE_CODE'][i]];
+            document.getElementsByClassName('modal_NAME')[i].innerHTML = FULL_NAME;
+                
+            var CIVILSTATUS = row['CIVILSTATUS'][i]; 
+            td = document.getElementsByClassName('modal_CIVILSTATUS')[i];
+            if(CIVILSTATUS == 'NN')
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                let CIVILSTATUS_array = CIVILSTATUS.split('|');
+                let lang = "ENG";
+                let CIVILSTATUS_lang = CIVILSTATUS_array.find(str => {
+                    str = str.trim();
+                    return str.startsWith(lang + ":") || (!str.includes(":") && str !== "NN");
+                });
+                td.innerHTML = CIVILSTATUS_lang ? CIVILSTATUS_lang.replace(lang + ":", "").trim() : "";
+                td.parentElement.removeAttribute('hidden');
+            }
+
+            var BIRTHPLACE = row['BIRTHPLACE'][i]; 
+            td = document.getElementsByClassName('modal_BIRTHPLACE')[i];
+            if(BIRTHPLACE && BIRTHPLACE == 'NN')
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                BIRTHPLACE = emphazes(BIRTHPLACE, filterName);
+                td.innerHTML = BIRTHPLACE;
+                td.parentElement.removeAttribute('hidden');
+            }
+                
+            var BIRTHDATE = row['BIRTHDATE'][i]; 
+            let birthdate = BIRTHDATE ? new Date(BIRTHDATE) : '';
+            let formattedBirthDate = birthdate ? formatDate(birthdate) : '';
+            
+            td = document.getElementsByClassName('modal_BIRTHDATE')[i];
+            if(hiddenDates.includes(formattedBirthDate))
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                td.innerHTML = formattedBirthDate;
+                td.parentElement.removeAttribute('hidden');
+            }
+
+            let AGE = row['AGE'][i]; 
+            let replacements = {
+                "%y": { singular: "year", plural: "years" },
+                "%m": { singular: "month", plural: "months" },
+                "%d": { singular: "day", plural: "days" }
+            };
+            
+            let AGE_formatted = AGE.replace(/(\d+)\s*%[ymd]/g, (match, number, offset, fullString) => {
+                let token = match.match(/%[ymd]/)[0];
+                let word = (parseInt(number) === 1) ? replacements[token].singular : replacements[token].plural;
+                return `${number} ${word}`;
+            });
+
+            td = document.getElementsByClassName('modal_AGE')[i];
+            if(AGE == '0' || AGE == 'NN')
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                td.innerHTML = AGE_formatted;
+                td.parentElement.removeAttribute('hidden');
+            }
+
+            var RESIDENCE = row['RESIDENCE'] ? row['RESIDENCE'][i] : 'NN'; 
+            td = document.getElementsByClassName('modal_RESIDENCE')[i];
+            if(RESIDENCE && RESIDENCE == 'NN')
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                RESIDENCE = emphazes(RESIDENCE, filterName);
+                td.innerHTML = RESIDENCE;
+                td.parentElement.removeAttribute('hidden');
+            }
+
+            var OCCUPATION = row['OCCUPATION'][i];
+            td = document.getElementsByClassName('modal_OCCUPATION')[i];
+            if(OCCUPATION && OCCUPATION == 'NN')
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                let OCCUPATION_array = OCCUPATION.split('|');
+                let OCCUPATION_lang;
+                let lang = "ENG";
+
+                if(OCCUPATION_array.length > 1)
+                {
+                    OCCUPATION_lang = OCCUPATION_array.find(str => {
+                        str = str.trim();
+                        return str.startsWith(lang + ":") || (!str.includes(":") && str !== "NN");
+                    });
+                }
+                else
+                    OCCUPATION_lang = OCCUPATION_array[0];
+
+                td.innerHTML = emphazes(OCCUPATION_lang.replace(lang + ":", "").trim(), filterName);
+                td.parentElement.removeAttribute('hidden');
+            }
+
+            var DEATHPLACE = row['DEATHPLACE'][i]; 
+            td = document.getElementsByClassName('modal_DEATHPLACE')[i];
+            if(DEATHPLACE && DEATHPLACE == 'NN')
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                DEATHPLACE = emphazes(DEATHPLACE, filterName);
+                td.innerHTML = DEATHPLACE;
+                td.parentElement.removeAttribute('hidden');
+            }
+          
+            var DEATHDATE = row['DEATHDATE'][i];
+            let ddate = DEATHDATE ? new Date(DEATHDATE) : '';
+            let formattedDeathDate = ddate ? formatDate(ddate) : '';
+            td = document.getElementsByClassName('modal_DEATHDATE')[i];
+            if(hiddenDates.includes(formattedDeathDate))
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                td.innerHTML = formattedDeathDate;
+                td.parentElement.removeAttribute('hidden');
+            }
+
+            var REMARKS_PERSON = row['REMARKS_PERSON'] ? row['REMARKS_PERSON'][i] : '';
+            td = document.getElementsByClassName('modal_REMARKSPERSON')[i];
+            if(!REMARKS_PERSON || (REMARKS_PERSON && REMARKS_PERSON == 'NN'))
+            {
+                td.parentElement.setAttribute('hidden', true);
+            }
+            else
+            {
+                REMARKS_PERSON = emphazes(REMARKS_PERSON, filterName);
+                td.innerHTML = REMARKS_PERSON;
+                td.parentElement.removeAttribute('hidden');
+            }
+		}
+		
+		$('#modal_ACT').modal('show');
+
+        // clone and replace the buttons, to remove previous events
+        let prevClone = $('#prevActBtn').clone(false);
+        let nextClone = $('#nextActBtn').clone(false);
+        $('#prevActBtn').replaceWith(prevClone);
+        $('#nextActBtn').replaceWith(nextClone);
+
+        if(ind > 0)
+        {
+            $('#prevActBtn').prop('disabled', false);
+            $('#prevActBtn').on('click', function(e) {
+				$(e.target).parents('.modal').find('.modal-body').animate({scrollTop:0}, 0);
+                viewAct(results, ind-1);
+            });
+        }
+        else
+        {
+            $('#prevActBtn').prop('disabled', true);
+        }
+
+        if(ind+1 < results.length)
+        {
+            $('#nextActBtn').prop('disabled', false);
+            $('#nextActBtn').on('click', function(e) {
+				$(e.target).parents('.modal').find('.modal-body').animate({scrollTop:0}, 0);
+                viewAct(results, ind+1);
+            });
+        }
+        else
+        {
+            $('#nextActBtn').prop('disabled', true);
+        }
+	}
+    
+    function wildcardMatch(value, filter) 
+    {
+        let regex = new RegExp(filter.replace(/\*/g, '[^\\s]*').replace(/\?/g, '[^\\s]?'), 'i');
+        return regex.test(value);
+    }
+
+    function constructBody(results)
+	{
+		tbody = $('#table_body')[0];
+		tbody.innerHTML = "";
+
+		var roleCodes = {"4008":"Accounting party (inheritance distribution)","5500":"Applicant","5501":"Architect \/ Designer","40":"Baptized child","6005":"Beneficiary","1":"Bride","5001":"Brother of the conscript","5005":"Brother-in-law of the conscript","6020":"Burgher","20":"Child","8":"Child recognized","6002":"Collator","7000":"Communicant","7001":"Confirmand","5000":"Conscript","30":"Deceased","1000":"Declarant","5600":"Destitute","8000":"Detainee","5003":"Enlisted conscript","21":"Father","4003":"Father of the  testator","41":"Father of the baptized child","5":"Father of the bride","5006":"Father of the conscript","31":"Father of the deceased","3":"Father of the groom","4005":"Father of the partner of the  testator","6030":"Foreigner","3001":"Former partner","9":"Former partner of the bride","6010":"Former partner of the deceased","10":"Former partner of the groom","17":"Former partner of the mother","6001":"Founder","43":"Godfather","44":"Godmother","11":"Grandparent of the bride","16":"Grandparent of the child","12":"Grandparent of the groom","2":"Groom","6006":"Guarantor","6003":"Husband \/ Wife","5503":"Landlord \/ Tenant","18":"Legal father","19":"Legal mother","4007":"Maternal guardian","22":"Mother","4002":"Mother of the  testator","42":"Mother of the baptized child","6":"Mother of the bride","5004":"Mother of the conscript","32":"Mother of the deceased","4":"Mother of the husband","4004":"Mother of the partner of the  testator","4012":"Name variation","5502":"Neighbor","4009":"Orphan","6031":"Partner","5008":"Partner of the conscript","33":"Partner of the deceased","4001":"Partner of the testator","4006":"Paternal guardian","5700":"Person mentioned in a document","5504":"Plaintiff \/ Petitioner of an objection","5601":"Relative of the destitute","5009":"Reluctant conscript","5007":"Replacement for the conscript","5002":"Sister of the conscript","500":"Stakeholder","4000":"Testator","7":"Witness"};
+		var editorialCodes = {"AMMREK":"Account of a court officer","74":"Accounts (earnings and expenses)","AKTE":"Act","ONDVR":"Act of interrogation","ADVER":"Advertisement","SCH":"Aldermans deed","SCHVON":"Aldermans judgement","BSA":"Announcement","AARTVER":"Archducal ordinance","13":"Baptism certificates","BSGA":"Birth announcement","BS_G":"Birth certificates","CAUTREGL":"Cautsideregulation","KRON":"Chronicle","STADREK":"City account","STADOR":"City ordinance","STADREG":"City register","BOUWV":"Construction permit","BEVTEL":"Count","GRAFVER":"Count's ordinance","AMBREGL":"Craft regulations","KOST":"Custom","BS_O":"Death certificates","DMILO":"Death notice","DOMREK":"Domain account","HERTVER":"Ducal ordinance","INSCHR":"Enrolment register","BISSVER":"Episcopal ordinance","CIJNSREG":"Feu-duty register","CIJNSROL":"Feu-duty roll","LEENREG":"Feudal register","DOSSIER":"File","5":"Funeral certificates","GOEDREG":"Goods register","GILVON":"Guild judgment","GILBR":"Guild letter","GILREGL":"Guild regulations","VREEMD":"Immigration file","KEIZVER":"Imperial ordinance","ERF":"Inheritance declaration","53":"Inventaris","DAGB":"Journal","VERKLOV":"Judicial death declaration","61":"Kwitantie","RENTREGL":"Land agents regulations","HUURCON":"Lease","BRIEF":"Letter","VRIJGEL":"Letter of safe-conduct","31":"List of confirmands","23":"List of names","POP":"List of persons","LIT":"Literature","PROC":"Litigation file","MAGLIJST":"Magistrate's list","BS_HA":"Marriage announcements","BS_H":"Marriage certificates","HUWCON":"Marriage settlement","STBO":"Matriculation register","LEDLIJST":"Members register","STMIL":"Militia register","BID":"Mortuary and mourning card","OVDEC":"Mortuary inventory","69":"Notaries","BS_HP":"Notices of marriage","EED":"Oath","OBIT":"Obituary","WZA":"Orphan register","VERZSCH":"Petition","BEVREG":"Population register","BENOEM":"Power of attorney","BOEDVER":"Property inventory","REGVER":"Regency ordinance","REG":"Register","MVG":"Register of moral accounting","ONTBOEK":"Revenue book","KONVER":"Royal ordinance","DIENSTST":"Service history","SVG":"State of goods","HAARDTEL":"Stove count","AMBREG":"Trade register","REISV":"Travel journal","OVERSTED":"Treaty","BEVSCH":"Warrant","78":"Will"};
+
+        var filters = {"WHICH_TAB":"PERS","NAME":"vingerhoedt","ACTTYPE":"BS_O","PROJECT_ID":"-1","JOB_ID":"-1","JOB_ID_2":"-1","ROLE":"ALL","ROLE_2":"ALL","CHOOSE_DATE_PERIODE":"1"};
+        
+		var tab = filters['WHICH_TAB'] ?? '';
+		var filterName, filterName_2, filterFirstName, filterFirstName_2, filterRole, filterRole_2, free;
+
+        if(tab == 'FREE')
+        {
+            free = filters['SHORT_ALL_TEXTS'] ?? '';
+
+            var regex = /^"[^"]*"$/;
+            // search non exact terms
+            if(!regex.test(free))
+            {
+                free = free.split(' ');
+            }
+            else // search exact terms
+            {
+
+                free = [free.substr(1, free.length-2)];
+            }
+        }
+        else
+        {
+            filterName = filters['NAME'] || '';
+            filterName_2 = filters['NAME_2'] || '';
+            filterFirstName = filters['FIRST_NAME'] || '';
+            filterFirstName_2 = filters['FIRST_NAME_2'] || '';
+            filterRole = filters['ROLE'] || '';
+            filterRole_2 = filters['ROLE_2'] || '';
+			
+            // remove accents and uppercase to compare to results
+            filterName = noAccent(filterName.toUpperCase());
+            filterName_2 = noAccent(filterName_2.toUpperCase());
+            filterFirstName = noAccent(filterFirstName.toUpperCase());
+            filterFirstName_2 = noAccent(filterFirstName_2.toUpperCase());
+        }        
+		
+		if(!results)
+		{
+			var tr = document.createElement('tr');
+			tbody.appendChild(tr);
+			$(tr).addClass('row-results');
+			
+			var td = document.createElement('td');
+			tr.appendChild(td);
+			td.setAttribute('colspan', 10);
+			td.innerHTML = "Sorry, your search has yielded no results. Please retry.";
+		}
+		
+		for(var i = 0; i < results.length; i++)
+		{
+			var tr = document.createElement('tr');
+			tbody.appendChild(tr);
+			$(tr).addClass('row-results');
+			
+			var td = document.createElement('td');
+			td.innerHTML = editorialCodes[results[i]['EDITORIALFORM_CODE'].toUpperCase()];
+			tr.appendChild(td);
+
+			td = document.createElement('td');
+			td.innerHTML = !results[i]['ACTPLACE'] || results[i]['ACTPLACE'] == 'NN' ? '/' : results[i]['ACTPLACE'];
+			tr.appendChild(td);
+			
+			td = document.createElement('td');
+            let hiddenDates = ["01/01/0001", "00/00/0000", "NN", "31/12/2999", "12/31/2999", "31-12-2999", "12-31-2999", undefined, ""];
+			td.innerHTML = hiddenDates.includes(results[i]['ACTDATE_TEXT']) ? '/' : results[i]['ACTDATE_TEXT'];
+			tr.appendChild(td);
+
+			var tdLastName = document.createElement('td');
+			tr.appendChild(tdLastName);
+            
+			var tdFirstName = document.createElement('td');
+			tr.appendChild(tdFirstName);
+
+			var tdRole = document.createElement('td');
+			tr.appendChild(tdRole);
+
+            var nbNames = results[i]['LAST_NAME'].length;
+		    var hasname = false;
+
+            for(var j = 0; j < nbNames; j++)
+            {
+                var added = false;
+
+                var lastName = noAccent(results[i]['LAST_NAME'][j].toUpperCase());
+                var firstName = noAccent((results[i]['FIRST_NAME'][j] ?? '').toUpperCase());
+                var role = results[i]['ACTROLE_CODE'][j];
+
+                if(tab == 'FREE')
+                {
+                    for(var m = 0; m < free.length; m++)
+                    {                        
+                        // remove accents and uppercase to compare to results
+                        free[m] = noAccent(free[m].toUpperCase());
+                        let escapedPattern = free[m].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                        let regexPattern = escapedPattern.replace(/\\\*/g, '.*').replace(/\\\?/g, '.');
+						regexPattern = regexPattern.replace(/'/g, "'?");
+                        let regex = new RegExp(regexPattern);
+                   
+                        if(regex.test(lastName) || regex.test(firstName)) 
+                        {
+                            hasname = true;
+                            added = true;
+                            
+                            tdLastName.innerHTML += results[i]['LAST_NAME'][j]+"<br/>";
+                            tdFirstName.innerHTML += (results[i]['FIRST_NAME'][j] ?? '')+"<br/>";
+                            tdRole.innerHTML += roleCodes[results[i]['ACTROLE_CODE'][j]]+"<br/>";
+
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    // first person search
+                    if(filterName != '' || filterFirstName != '' || (filterRole != '' && filterRole != 'ALL'))
+                    {
+                        if(wildcardMatch(lastName, filterName) && wildcardMatch(firstName, filterFirstName) && (filterRole == 'ALL' || role == filterRole))
+                        {
+                            hasname = true;
+                            added = true;
+                            
+                            tdLastName.innerHTML += results[i]['LAST_NAME'][j]+"<br/>";
+                            tdFirstName.innerHTML += (results[i]['FIRST_NAME'][j] ?? '')+"<br/>";
+                            tdRole.innerHTML += roleCodes[results[i]['ACTROLE_CODE'][j]]+"<br/>";
+                        }
+                    }
+
+                    // second person search
+                    if(!added && (filterName_2 != '' || filterFirstName_2 != '' || (filterRole_2 != '' && filterRole_2 != 'ALL')))
+                    {
+                        if(wildcardMatch(lastName, filterName_2) && wildcardMatch(firstName, filterFirstName_2) && (filterRole_2 == 'ALL' || role == filterRole_2))
+                        {
+                            hasname = true;
+                            added = true;
+                            
+                            tdLastName.innerHTML += results[i]['LAST_NAME'][j]+"<br/>";
+                            tdFirstName.innerHTML += (results[i]['FIRST_NAME'][j] ?? '')+"<br/>";
+                            tdRole.innerHTML += roleCodes[results[i]['ACTROLE_CODE'][j]]+"<br/>";
+                        }
+                    }
+                }
+            }
+
+            if(hasname == false)
+            {
+                if(nbNames > 0)
+                {  
+                    tdLastName.innerHTML += results[i]['LAST_NAME'][0]+"<br/>";
+                    tdFirstName.innerHTML += results[i]['FIRST_NAME'][0]+"<br/>";
+			        tdRole.innerHTML += roleCodes[results[i]['ACTROLE_CODE'][0]]+"<br/>";
+                }
+            }
+
+			var td6	= document.createElement('td');
+			tr.appendChild(td6);
+			var a6 = document.createElement('a');
+			
+            td6.appendChild(a6);
+            a6.setAttribute("class", "btn btn-primary btn-sm float-end");
+            a6.setAttribute('href', '#');
+            a6.setAttribute('role', 'button');
+            a6.innerHTML += 'View';
+        
+            $(tr).find('td').on('click', function(j) { 
+                return function(e) { 
+                    e.preventDefault();
+                    
+                    viewAct(results, j);
+                }
+            }(i));
+		}
+	}
+
+	$(function() {        
+        loadResults();
+
+        if($('#ALL_PLACES').length > 0)
+            initAutocompletePlaces($('#ALL_PLACES'));
+
+        $('#CLEAR_DATES').on('click', function(e) {
+            e.currentTarget.blur();
+            $('#exactYear').val('');
+            $('#SHOW_PERIODE').val('');
+        });
+
+        $('[data-bs-toggle="tooltip"]').each(function(i, _this) {
+            getBsTooltip(_this);
+        });
+        $('[data-bs-toggle="tooltip"]').on('shown.bs.tooltip', function(e) {
+            $('#'+e.target.getAttribute('aria-describedby')).addClass('text-justify');
+        
+            $('.tooltip.show').on('mouseleave', function() {
+                $(this).tooltip('hide');
+            });
+        });
+       
+		$('#exactYear').on('input', validateDates);
+		$('#SHOW_PERIODE').on('input', validateDates);
+
+        $('#CHOOSE_DATE_PERIODE').on('change', function() {
+			let input_from = $(this).siblings('input')[0];
+			
+			let lab = $($(input_from).labels()[0]);
+
+			if(this.value == 0)
+			{	
+                $('#exactYear').attr('placeholder', '1800 or 01/01/1800');
+                $('#exactYear').removeAttr('maxlength');
+                $('#exactYear').val('');
+            } 
+            else if(this.value == 2)
+            {
+                $('#exactYear').attr('placeholder', '1920');
+                $('#exactYear').attr('maxlength', 4);
+                $('#exactYear').val('');
+            }
+            else
+            {
+                $('#exactYear').attr('placeholder', '1580');
+                $('#exactYear').attr('maxlength', 4);
+                $('#exactYear').val('');
+            }
+
+            
+            if(this.value == 1)
+			{				
+				$('#SHOW_FROM').removeAttr('hidden');
+				$('#SHOW_PERIODE').removeAttr('hidden');
+				
+				lab.html('Period');
+			}
+			else
+			{
+                $('#SHOW_PERIODE').val('');
+                $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).hide();
+                $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text('');
+				$('#SHOW_FROM').attr('hidden', true);
+				$('#SHOW_PERIODE').attr('hidden', true);
+				
+				lab.html('Date');
+			}
+                    
+            if($('#exactYear').parent().find('.is-invalid:not(:hidden)').length > 0)
+                $('#PERSON_FILTER_SUBMIT_A').attr('disabled', true);
+            else
+                $('#PERSON_FILTER_SUBMIT_A').attr('disabled', false);
+        });
+
+        $('#PERSON_FILTER_SUBMIT_A').on('click', function() {
+            $.ajax({
+                type: "POST",
+                url: "/en/search/analyses/ajax.php",
+                data: {
+                    method: 'filterResults',
+                    ap: $('#ALL_PLACES').val(),
+                    y: $('#exactYear').val(),
+                    y2: $('#SHOW_PERIODE').val(),
+                    yt: $('#CHOOSE_DATE_PERIODE').val(),
+                    at: $('#ACTTYPE').val(),
+                    p: $('#PROJECT').val()
+                },
+                success: function(result) {                    
+                    let resJSON = JSON.parse(result);
+                    let u = new URL(location);
+
+                    if(u.searchParams.size > 0)
+                        window.history.pushState("", "", resJSON);
+
+                    loadResults();
+                }
+            });
+        });
+
+        $('#actsProject').on('click', function(e) {
+            e.preventDefault();
+            
+            let form_new = $('<form hidden method="post" action="/en/search/analyses/results/">');
+            form_new.append('<input name="PROJECT_ID" value="'+$('#PROJECT_ID').val()+'">');
+            form_new.append('<input name="WHICH_TAB" value="FREE">');
+            form_new.append('<input name="ACTTYPE" value="-1">');
+            form_new.appendTo('body').submit();
+        });
+	});
+</script><script>    
+	function searchWithWildcards(str, needles)
+    {      
+        str_noaccent = noAccent(str).trim().toLowerCase();
+
+        needles.forEach(subNeedle => {
+            subNeedle_noaccent = noAccent(subNeedle);
+            let subNeedleSafe = subNeedle_noaccent.replace(/[()]/g, '\\$&'); 
+            let subNeedleWildcardsCompliant = subNeedleSafe.replace(/\?/g, '[^\\s]?').replace(/\*/g, '[^\\s]*');
+            let regexPattern = new RegExp(subNeedleWildcardsCompliant, 'i');
+            
+            str_noaccent = str_noaccent.replace(regexPattern, (match) => `<mark><em>${match}</em></mark>`);
+        });
+
+        function transferTags(a, b) 
+        {
+            const parser = new DOMParser();
+
+            const aDoc = parser.parseFromString(`<div>${a}</div>`, 'text/html');
+            const bDoc = parser.parseFromString(`<div>${b}</div>`, 'text/html');
+
+            const markedTerms = Array.from(bDoc.querySelectorAll('mark > em'))
+                .map(el => el.textContent.trim())
+                .filter(Boolean);
+
+            if(markedTerms.length === 0) return a;
+
+            const walker = aDoc.createTreeWalker(aDoc.body, NodeFilter.SHOW_TEXT, null, false);
+            const queue = [];
+
+            while(walker.nextNode()) 
+            {
+                queue.push(walker.currentNode);
+            }
+
+            while(queue.length > 0) 
+            {
+                const node = queue.shift();
+                if (!node || node.nodeType !== Node.TEXT_NODE) continue;
+
+                const originalText = node.nodeValue;
+                const normalizedText = noAccent(originalText);
+                const parent = node.parentNode;
+                let matched = false;
+
+                for(const term of markedTerms) 
+                {
+                    const normalizedTerm = noAccent(term);
+                    const regex = new RegExp(normalizedTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+                    const matches = [...normalizedText.matchAll(regex)];
+
+                    if(matches.length === 0) continue;
+
+                    const fragments = [];
+                    let lastIndex = 0;
+
+                    for(const match of matches) 
+                    {
+                        const start = match.index;
+                        const end = start + match[0].length;
+
+                        if(start > lastIndex) 
+                            fragments.push(document.createTextNode(originalText.slice(lastIndex, start)));
+
+                        const mark = aDoc.createElement('mark');
+                        const em = aDoc.createElement('em');
+                        em.textContent = originalText.slice(start, end);
+                        mark.appendChild(em);
+                        fragments.push(mark);
+
+                        lastIndex = end;
+                    }
+
+                    if(lastIndex < originalText.length)
+                        fragments.push(document.createTextNode(originalText.slice(lastIndex)));
+
+                    fragments.forEach(frag => {
+                        parent.insertBefore(frag, node);
+                        if (frag.nodeType === Node.TEXT_NODE) queue.push(frag);
+                    });
+
+                    parent.removeChild(node);
+                    matched = true;
+                    break;
+                }
+
+                if(!matched) continue;
+            }
+
+            return aDoc.body.innerHTML;
+        }
+
+        str = transferTags(str, str_noaccent);
+
+        return str;
+    }
+
+    function noAccent(str)
+	{
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+	}
+
+    function emphazes(str, needles)
+    {        
+		let copyNeedles = [...needles];
+
+        let newNeedles = [];
+        for(let i = 0; i < copyNeedles.length; i++)
+        {
+            if(copyNeedles[i].substr(0, 1) == '"')
+            {
+                copyNeedles[i] = copyNeedles[i].slice(1, -1);
+                newNeedles.push(copyNeedles[i]);
+            }
+            else
+            {
+                let tokens = copyNeedles[i].split(/[ (){}[\]\\\/~=:+\^!?"&-]/);
+                let subNeedle = tokens.filter(t => t !== '');
+                if(subNeedle.length > 1)
+                {
+                
+                    for(var s = 0; s < subNeedle.length; s++)
+                    {
+                        // remove the slashes from being highlighted, other characters can be added, if so, modification of the code is needed
+                        if(subNeedle[s].trim() == '/' || subNeedle[s].length <= 2)
+                        {
+                            subNeedle.splice(s, 1);
+                            s--;
+                        }
+                    }
+
+                    newNeedles.push(...subNeedle);
+                    copyNeedles.splice(i, 1);
+                    i--;
+                }
+                else
+                {
+                    newNeedles.push(...subNeedle);
+                }
+            }
+        }
+
+        return searchWithWildcards(str, newNeedles);
+	}
+
+    function SplitStringLanguage(str)
+	{
+		var lang = 'ENG';
+
+        // 160 used as delimiter, remove anything after it
+		var a0 = str.split('160');
+		if((a0[0].length > 1) && (a0.Length > 1))
+			a0[0] = a0[0].substring(0, a0[0].length-1);
+		var a = a0[0].split(' | ');
+		var ret = str;
+		var tmp = '';
+
+		for(var i = 0; i < a.length; i++)
+		{
+            // if there is more than just the language in the string
+			if(a[i].length > 4)
+				tmp = a[i].substring(4);
+                
+			if(a[i].includes(lang))
+				ret = a[i].substring(4);
+		}
+
+		if (ret == '')
+			ret = tmp;
+		if (a0.length>1)
+			ret = ret + '<br>(described in the document as: ' + a0[1] + ')';
+
+		return(ret);	
+	}
+
+    function loadResults() 
+    {
+        showSpinner();
+
+        let p = $('.pagination');
+        
+        if(p.length > 0)
+        {
+            p = $('.pagination').eq(0);
+
+            var SORT_ON = Array();
+            $('.thead-clickable[sort=true]').find('i').each(function(i) {
+                SORT_ON.push($(this).attr('id'));
+            });
+            
+            var ORDER = Array();
+            $('.thead-clickable[sort=true]').each(function(i) {
+                ORDER.push($(this).attr('order'));
+            });
+            
+            var zIndex = Array();
+            $('.thead-clickable[sort=true]').each(function(i) {
+                zIndex.push($(this).attr('z'));
+            });
+
+            let nbRows;
+            if($('.J-paginationjs-size-select').length > 0)
+                nbRows = parseInt($('.J-paginationjs-size-select').eq(0).val());
+            else
+                nbRows = 25;
+            
+            return new Promise((resolve, reject) => {
+                p.addHook('beforeInit', function() {
+                    showSpinner();
+                });
+
+                p.pagination({
+                    dataSource: "/en/search/analyses/ajax.php",
+                    locator: 'response.docs',
+                    pageRange: 2,
+                    pageSize: nbRows,
+                    pageText: '/ page',
+                    arialabelPageText: 'results per page',
+                    arialabelNavigator: 'Results {first} to {last} of {total} results',
+                    nextText: '<i class="bi bi-chevron-right"></i>',
+                    arialabelNext: 'Next page',
+                    prevText: '<i class="bi bi-chevron-left"></i>',
+                    arialabelPrev: 'Previous page',
+                    arialabelPageNumber : 'Page number {pageNb}',
+                    arialabelCurrentPage : 'Current page',
+                    showSizeChanger: true,
+                    showNavigator: true,
+                    autoHidePrevious: false,
+                    autoHideNext: true,
+                    hideOnlyOnePage: false,
+                    hideLastOnEllipsisShow: true,
+                    sizeChangerOptions: [10, 25, 50],
+                    formatNavigator: "<%= rangeStart %>-<%= rangeEnd %> of <strong><%= totalNumber %> results</strong>",
+                    totalNumberLocator: function(response) {
+                        return response.response.numFound;
+                    },
+                    ajax: {
+                        type: 'POST',
+                        data: {
+                            method: 'getResults',
+                            SORT_ON: SORT_ON,
+                            ORDER: ORDER,
+                            ZINDEX: zIndex
+                        }
+                    },
+                    formatAjaxError: function(req, textStatus, e) {
+                        // error
+                    },
+                    callback: function(data, pagination) {    
+                        resolve();                
+
+                        hideSpinner();
+
+                        if(pagination.originalResponse.response && pagination.originalResponse.response.maxScore)
+                            data.maxScore = pagination.originalResponse.response.maxScore;
+                        
+                        if(data.length > 0)
+                        {
+                            constructBody(data);
+
+                            if(pagination.originalResponse['countTypes'])
+                            {
+                                // in the filters, change the count for each type act
+                                $('.customCheckActes,.customCheckIndex').parents('li').find('.countTypeActes,.countTypeIndex').html('0');
+                                var countTypes = pagination.originalResponse['countTypes'];
+                                countTypes.forEach(function(ele, _this) {
+                                    if(ele.ISINDEX == '0')
+                                        $('.customCheckActes[value="'+ele.EDITORIALFORMBASE_ID+'"]').parents('li').find('.countTypeActes')[0].innerHTML = ele.COUNT_EDITORIALFORMBASE;
+                                    else if(ele.ISINDEX == '1')
+                                        $('.customCheckIndex[value="'+ele.EDITORIALFORMBASE_ID+'"]').parents('li').find('.countTypeIndex')[0].innerHTML = ele.COUNT_EDITORIALFORMBASE;
+                                });
+                            }
+                        }
+                        else
+                        {
+                            var tr = document.createElement('tr');
+                            $('#table_body').html('').append(tr);
+                            $(tr).addClass('row-results');
+
+                            var td = document.createElement('td');
+                            tr.appendChild(td);
+                            td.setAttribute('colspan', 10);
+                            if(pagination.originalResponse.error)
+                                td.innerHTML = pagination.originalResponse.error;
+                            else
+                                td.innerHTML = "Sorry, your search has yielded no results. Please retry or use the filters above";
+                            
+                            $(tr).on('click', function(j) { 
+                                $('#MODIFY_SEARCH').click();
+                            });
+                        }
+                    
+                        var paginationClone = $(".pagination > *").eq(0).clone(true);
+                        var paginationDest = $(".pagination").eq(1);
+                        paginationDest.empty();
+                        paginationClone.appendTo(paginationDest);
+
+                        $('.paginationjs-next,.paginationjs-prev').on('keypress', function(e) {
+                            if(e.originalEvent.key == 'Enter')
+                                this.click();
+                        });
+                    }
+                });
+
+                p.addHook('beforeSizeSelectorChange', function() {
+                    showSpinner();
+                });
+                p.addHook('beforePreviousOnClick', function() {
+                    showSpinner();
+                });
+                p.addHook('beforeNextOnClick', function() {
+                    showSpinner();
+                });
+                p.addHook('beforePageOnClick', function() {
+                    showSpinner();
+                });
+            });
+        }
+    }
+
+    function validateDates() 
+    {
+		let exactYear = $('#exactYear').val();
+        let endYear = $('#SHOW_PERIODE').val();
+        
+        let dateType = parseInt($('#CHOOSE_DATE_PERIODE').val());
+
+        let ok = true;
+
+        $('#exactYear').parent().next('.row').find('.invalid-feedback').first().find('strong').text('');
+        $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text('');
+        
+        if(extractText(exactYear) != '')
+        {
+            if(dateType == 0)
+            {
+                let rgxp = new RegExp(/^\d{1,2}[/.-]\d{1,2}[/.-]\d{1,4}$/);
+                if(!rgxp.test(exactYear))
+                {
+                    $('#exactYear').addClass('is-invalid');
+                    $('#exactYear').parent().next('.row').find('.invalid-feedback').first().find('strong').text(MUST_BE_NUMBER_LABEL);
+                }
+                else
+                    $('#exactYear').removeClass('is-invalid');
+            }
+            else
+            {
+                $('#exactYear').addClass('is-invalid');
+                $('#exactYear').parent().next('.row').find('.invalid-feedback').first().find('strong').text(MUST_BE_NUMBER_LABEL);
+            }
+        }
+        else
+            $('#exactYear').removeClass('is-invalid');
+        
+        if(extractText(endYear) != '')
+        {
+            $('#SHOW_PERIODE').addClass('is-invalid');
+            $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(MUST_BE_NUMBER_LABEL);
+        }
+        else
+            $('#SHOW_PERIODE').removeClass('is-invalid');
+
+        if(extractText(exactYear) != '' || extractText(endYear) != '')
+            ok = false;
+			
+        switch(dateType)
+        {					
+            // exact year
+            case 0:
+                break;
+            // between - periode
+            case 1:
+                if(exactYear != '' && endYear == '')
+                {
+                    $('#SHOW_PERIODE').addClass('is-invalid');
+                    $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(VALUE_MISSING_LABEL);
+
+                    ok = false;
+                }
+
+                
+                if(exactYear == '' && endYear != '')
+                {
+                    $('#exactYear').addClass('is-invalid');
+                    $('#exactYear').parent().next('.row').find('.invalid-feedback').first().find('strong').text(VALUE_MISSING_LABEL);
+
+                    ok = false;
+                }
+                
+                if(parseInt(exactYear) > parseInt(endYear))
+                {
+                    $('#SHOW_PERIODE').addClass('is-invalid'); 
+                    $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).find('strong').text(END_YEAR_MUST_BE_HIGHER_LABEL);
+                }
+                else if(ok)
+                    $('#SHOW_PERIODE').removeClass('is-invalid');
+                break;
+            // before
+            case 2:
+                break;
+            // after
+            case 3:
+                break;
+        }
+
+        if($('#exactYear').hasClass('is-invalid'))
+            $('#exactYear').parent().next('.row').find('.invalid-feedback').first().show();
+        else
+            $('#exactYear').parent().next('.row').find('.invalid-feedback').first().hide();
+    
+        if($('#SHOW_PERIODE').hasClass('is-invalid'))
+        {
+            $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).show();
+            $('#exactYear').parent().next('.row').find('.invalid-feedback').first().show();
+        }
+        else
+        {
+            $('#SHOW_PERIODE').parent().next('.row').find('.invalid-feedback').eq(1).hide();
+
+            if(!$('#exactYear').hasClass('is-invalid'))
+                $('#exactYear').parent().next('.row').find('.invalid-feedback').first().hide();
+        }
+
+        if($('#exactYear').parent().find('.is-invalid:not(:hidden)').length > 0)
+            $('#PERSON_FILTER_SUBMIT_A').attr('disabled', true);
+        else
+            $('#PERSON_FILTER_SUBMIT_A').attr('disabled', false);
+	}
+
+    function exportTable()
+    {
+        var table = document.getElementById("tableResults");
+        var rows = table.querySelectorAll('tr');
+        var csvContent = '\uFEFF';
+
+        for(var i = 0; i < rows.length-1; i++) 
+        {
+            var cells = rows[i].querySelectorAll('td, th');
+            for(var j = 0; j < cells.length-1; j++)
+            { 
+                var cellContent = cells[j].innerHTML.includes('<br>') ? cells[j].innerHTML.replace(/<br>/g, '\n') : cells[j].textContent;
+                var cellValue = cellContent.trim().replace(/"/g, '""');
+                if (cellValue.includes('\n')) {
+                    csvContent += '"' + cellValue + '";';
+                } else {
+                    csvContent += cellValue + ';';
+                }
+            }            
+            csvContent += '\n';
+        }
+
+        var blob = new Blob([decodeURIComponent(encodeURI(csvContent))], { type: 'text/csv;charset=utf-8;' });
+        if(navigator.msSaveBlob) // IE 10+
+            navigator.msSaveBlob(blob, "analyses.csv");
+        else
+        {
+            var link = document.createElement("a");
+            if(link.download !== undefined)
+            {
+                var url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", "analyses.csv");
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+    }
+
+    function showSpinner() 
+    {
+        $('.spinner-overlay').removeClass('d-none');
+    }
+
+    function hideSpinner() 
+    {
+        $('.spinner-overlay').addClass('d-none');
+    }
+
+    function copyUrlResult(e)
+    {
+        $.ajax({
+            type: "POST",
+            url: "/en/search/analyses/ajax.php",
+            data: {
+                method: 'getUrlResult'
+            },
+            success: function(result) {    
+                let urlResults = JSON.parse(result);
+                navigator.clipboard.writeText(urlResults);  
+
+                $(e.target).tooltip({
+                    trigger: 'manual',
+                    title: 'Copied !'
+                }).tooltip('show');
+                setTimeout(function() { $(e.target).tooltip('hide'); }, 2000);
+            }
+        });
+    }
+
+    function reportError(t)
+    {
+        if(t == 'act')        
+            postURLForm('https://agatha.arch.be/en/contact/', 'URL_RESULTS', "https://agatha.arch.be/en/data/acts/"+$('#ACT_TITLE').text(), true);
+        else if(t == 'project')        
+            postURLForm('https://agatha.arch.be/en/contact/', 'URL_RESULTS', "https://agatha.arch.be/en/data/projects/"+$('#PROJECT_ID').text(), true);
+        else if(t == 'results')
+            postURLForm('https://agatha.arch.be/en/contact/', 'URL_RESULTS', "sess", true);
+        else if(t == 'update')
+            postURLForm('https://agatha.arch.be/en/contact/', 'URL_RESULTS', location.href, true);
+        else
+            postURLForm('https://agatha.arch.be/en/contact/', '', "", true);
+    }
+</script><div class="modal fade" id="modal_cookieInfo" tabindex="-1" role="dialog" aria-labelledby="modalCookieInfo" aria-hidden="true">
+	<div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title" id="modalCookieInfo">Protection of personal data</h3>
+				<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body text-justify">
+				<h4>Protection of personal data</h4><br><p>We manage several websites: arch.be, agatha.arch.be, search.arch.be, archief-democratie.be, archive-demokratie.be, archives-democratie.be, cegesoma.be, dataverse.arch.be, expocongo.be, goaaal.arch.be, pauvresdenous.arch.be, 14-18-wallonie.be.</p><p>These websites may use functional cookies to improve your user experience. This enables us to save your preferences regarding</p><ul><li>Choice of language (FR / NL / DE / EN)</li><li>User profile (researcher, genealogist, civil servant, journalist, teacher, notary / land surveyor)</li></ul><p></p><p>We may use analytical cookies in order to collect data through Matomo Analytics and establish statistics that we publish in our annual reports and online. In this process, personal data are anonymised (IP address, location) and all collected information is deleted afterwards.</p><p>Mainly the following elements are analysed</p><ul><li>Number of unique visitors (browser-based)</li><li>Number of visitor sessions</li><li>Total number of pages visited</li></ul><p></p><p>For the development of new websites and features, we may also analyse the following</p><ul><li>Device, browser, screen resolution</li><li>Location (country, region or municipality) and time data (time and duration of visit)</li><li>Referring website</li></ul><p></p><p>No personal profiles are created and user data is not shared. You can adjust the settings for accepting and saving cookies in your web browser.</p>			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary form-control col" data-bs-dismiss="modal">Close</button>						
+			</div>
+		</div>
+	</div>
+</div><footer class="bg-light border-top py-4 mt-auto">
+    <div class="container">
+		 <div class="row py-3">
+		 <div class="col text-md-right">
+		<!-- START LOGOS -->
+			 <ul class="list-inline d-flex justify-content-center">
+             <li class="list-inline-item mx-4">
+		  <a href="https://www.arch.be/index.php?l=en" target="_blank" class="" aria-label="Front">
+			 <img class="brand" src="d_searchlist_1880_vingerhoedt_maria_en_files/logo_arch_sGeh.png" alt="Logo Archives de l'État">
+					  </a></li> 
+				 <li class="list-inline-item mx-4">
+		  <a href="https://www.belgium.be/en/" target="_blank" class="" aria-label="Front">
+			 <img class="brand" src="d_searchlist_1880_vingerhoedt_maria_en_files/logo_be_sGeh.png" alt="Logo Belgium">
+					  </a></li>
+				 <li class="list-inline-item mx-4">
+		<a href="https://www.belspo.be/belspo/index_en.stm" target="_blank" class="" aria-label="Front">
+			 <img class="brand" src="d_searchlist_1880_vingerhoedt_maria_en_files/logo_belspo_sGeh.png" alt="Logo Belspo">
+		  </a>
+				 </li>
+			 </ul>
+		<!-- END LOGOS -->    
+		 </div>
+		 </div>
+      <hr class="opacity-xs my-0">
+
+        <div class="row align-items-md-center mb-7">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <!-- Nav Link -->
+            <ul class="nav align-items-center justify-content-center justify-content-md-start">
+              <li class="nav-item">
+                <a class="nav-link px-0" href="https://www.arch.be/index.php?l=en&amp;m=practical-information&amp;r=data-protection" target="_blank">Data Protection</a>
+              </li>
+              <li class="nav-item opacity mx-3">/</li>
+              <li class="nav-item">
+                <a class="nav-link px-0" href="https://agatha.arch.be/en/help/">Help</a>
+              </li>
+              <li class="nav-item opacity mx-3">/</li>
+              <li class="nav-item">
+                <a class="nav-link px-0" href="https://agatha.arch.be/en/contact/">Contact</a>
+              </li>
+            </ul>
+            <!-- End Nav Link -->
+          </div>
+
+          <div class="col-md-6  mb-4 mb-md-0 text-md-right">
+            <ul class="nav align-items-center justify-content-center justify-content-md-end">
+              <!-- Social Networks -->
+              <li class="list-inline-item">
+                <a class="btn btn-xs btn-icon btn-soft-light text-primary" href="https://www.facebook.com/archives.etat/" target="_blank" aria-label="Facebook">
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </li>
+              <!-- End Social Networks -->
+
+              <!-- Language -->
+              <li class="list-inline-item"> <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">English&nbsp;<span class="caret"></span></a>
+					<div class="dropdown-menu dropdown-menu-right">
+						<a href="#" hreflang="fr" class="dropdown-item" onclick='event.preventDefault();changeLanguage("FRE", "analyses", "", false)'>Français</a>
+						<a href="#" hreflang="nl" class="dropdown-item" onclick='event.preventDefault();changeLanguage("DUT", "analyses", "", false)'>Nederlands</a>
+						<a href="#" hreflang="de" class="dropdown-item" onclick='event.preventDefault();changeLanguage("GER", "analyses", "", false)'>Deutsch</a>
+						<a href="#" hreflang="en" class="dropdown-item" onclick='event.preventDefault();changeLanguage("ENG", "analyses", "", false)'>English</a>
+					</div>
+				</li>
+              <!-- End Language -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="w-md-75 text-center mt-2">
+          <p class="grey-dark opacity-sm small">© State Archives of Belgium 2026. All rights reserved</p>
+        </div>
+        <!-- End Copyright -->
+    </div>
+  </footer>	
+<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge expires in two minutes" style="width: 100%; height: 100%;" name="c-efl0ulsp9xh2" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="d_searchlist_1880_vingerhoedt_maria_en_files/bframe_sGeh.htm"></iframe></div></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge expires in two minutes" style="width: 100%; height: 100%;" name="c-2sbyau6pq7qf" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="d_searchlist_1880_vingerhoedt_maria_en_files/bframe_002_sGeh.htm"></iframe></div></div><div class="modal-backdrop show"></div></body></html>

@@ -30,6 +30,7 @@ SOFTWARE.
 // Importing each of these site modules causes them to register their options
 // The order of these lines does not matter since the options screen sorts them
 // by label.
+import "../../agatha/core/agatha_options.mjs";
 import "../../ameranc/core/ameranc_options.mjs";
 import "../../ancestry/core/ancestry_options.mjs";
 import "../../archion/core/archion_options.mjs";

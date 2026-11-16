@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial of Bartholomeus Michiels (1621)''':\n\"State Archives of Belgium: AGATHA\"<br/>\nProject PARBEWVL, id: PARBEWVL_00342612<br/>\n[https://agatha.arch.be/fr/data/acts/PARBEWVL_00342612 AGATHA Record] (accessed 6 May 2021)<br/>\nBartholomeus Michiels, child of Jan Michiels, burial on 5 May 1621 in Brugge.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Bartholomeus, child of Jan Michiels, was buried on 5 May 1621 in Brugge.<ref>\n'''Burial of Bartholomeus Michiels (1621)''':\n\"State Archives of Belgium: AGATHA\"<br/>\nProject PARBEWVL, id: PARBEWVL_00342612<br/>\n[https://agatha.arch.be/fr/data/acts/PARBEWVL_00342612 AGATHA Record] (accessed 6 May 2021)<br/>\nBartholomeus Michiels, child of Jan Michiels, burial on 5 May 1621 in Brugge.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial of Bartholomeus Michiels (1621)''': \"State Archives of Belgium: AGATHA\"<br/>Project PARBEWVL, id: PARBEWVL_00342612<br/>[https://agatha.arch.be/fr/data/acts/PARBEWVL_00342612 AGATHA Record] (accessed 6 May 2021)<br/>Bartholomeus Michiels, child of Jan Michiels, burial on 5 May 1621 in Brugge.",
+    "type": "source"
+  }
+}

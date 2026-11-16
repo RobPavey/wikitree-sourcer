@@ -1,0 +1,15 @@
+{
+  "url": "https://agatha.arch.be/fr/data/acts/PARBEWVL_00342612",
+  "success": true,
+  "isRecord": true,
+  "recordData": {
+    "type d'acte": "Actes de sépultures",
+    "projet": "Registres paroissiaux - Actes de sépulture - Province de Flandre occidentale",
+    "lieu": "Brugge",
+    "paroisse": "St.Janshospitaal",
+    "description": "Begrafenissen",
+    "date de l'acte": "05/05/1621",
+    "défunt / défunte::prénom et nom": "Bartholomeus Michiels",
+    "père du défunt / de la défunte::prénom et nom": "Jan Michiels"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://agatha.arch.be/de/data/acts/PRHENEG_HENEGBAPT1_00032668",
+  "success": true,
+  "isRecord": true,
+  "recordData": {
+    "aktentyp": "Taufurkunden",
+    "projekt": "Kirchenbücher und Personenstand - Ath, Tournai und Ronse",
+    "ort": "Acren St Gereon",
+    "beschreibung": "Acte de baptême",
+    "datum der urkunde": "23/01/1774",
+    "täufling::vorname und name": "Charles Josephe Coppens",
+    "täufling::geburtsort": "Acren St Gereon",
+    "täufling::bemerkungen": "Né vers le matin",
+    "vater des täuflings::vorname und name": "Judo Coppens",
+    "mutter des täuflings::vorname und name": "Marie Catherine Dereyst",
+    "pate::vorname und name": "Jean-baptiste Coppens",
+    "patin::vorname und name": "Anne Marie Coppens"
+  }
+}

@@ -33,6 +33,7 @@ SOFTWARE.
 // The order of these lines does not matter, it affects the order that things like
 // dynamic content scripts are registered in but that is not important
 
+import "../../agatha/core/agatha_site_data.mjs";
 import "../../ameranc/core/ameranc_site_data.mjs";
 import "../../ancestry/core/ancestry_site_data.mjs";
 import "../../archion/core/archion_site_data.mjs";

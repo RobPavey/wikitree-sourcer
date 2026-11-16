@@ -122,6 +122,7 @@
     "*://*.wikipedia.org/*",
     "*://*.wikitree.com/*",
     "*://*.yadvashem.org/*",
+    "*://agatha.arch.be/*",
     "*://apps.bundesarchiv.de/gedenkbuch/*",
     "*://apps.ilsos.gov/isavital/*",
     "*://apps.wikitree.com/apps/*/cemetery-map/*",
