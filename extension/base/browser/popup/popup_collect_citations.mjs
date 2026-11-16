@@ -52,6 +52,8 @@ import { RT, Role } from "../../core/record_type.mjs";
 import { RC } from "../../core/record_collections.mjs";
 import { groupSourcesIntoFacts } from "../../core/group_sources_into_facts.mjs";
 import { buildNarrative } from "../../core/narrative_builder.mjs";
+import { buildHouseholdTable } from "../../core/table_builder.mjs";
+import { writeToClipboard } from "./popup_clipboard.mjs";
 
 function inferBestEventDateForCompare(gd) {
   let eventDate = "";
@@ -228,11 +230,6 @@ function getTitleForHoverText(sites, citationObj, gd) {
 
 function getAllCitationsFunction(data) {
   let citationObjs = data.citations;
-  let gd = data.generalizedData;
-
-  // each citation object already has a type
-  // for now treat them all as narrative/inline but eventually we will want to separate source
-  // ones out
 
   // separate the source citations from the inline or narratives ones.
   let inlineCitationObjs = [];
@@ -266,6 +263,38 @@ function getAllCitationsFunction(data) {
           needsNarrative = true;
         }
       }
+
+      // check if there is a table followed by a ref
+      if (fact.generalizedData.householdArray) {
+        const input = {
+          generalizedData: fact.generalizedData,
+          options: options,
+        };
+
+        const tableObject = buildHouseholdTable(input);
+        if (tableObject && tableObject.tableString) {
+          let householdTableString = tableObject.tableString;
+
+          // remove the existing household tables
+          let tableThenRefIndex = combinedRefs.indexOf("|}<ref>");
+          if (tableThenRefIndex != -1) {
+            let tableStartIndex = combinedRefs.indexOf("</ref>\n{|");
+            while (tableStartIndex != -1) {
+              let tableEndIndex = combinedRefs.indexOf("|}", tableStartIndex);
+              if (tableEndIndex == -1) {
+                break; // should not happen
+              }
+              tableStartIndex += "</ref>".length;
+              tableEndIndex += "|}".length;
+              combinedRefs = combinedRefs.substring(0, tableStartIndex) + combinedRefs.substring(tableEndIndex);
+              tableStartIndex = combinedRefs.indexOf("</ref>\n{|");
+            }
+
+            combinedRefs += "\n" + householdTableString;
+          }
+        }
+      }
+
       let citationString = combinedRefs;
       if (needsNarrative) {
         let input = {
@@ -400,7 +429,51 @@ async function saveCollectedCitationsPersonData(data, fields) {
 
   await stopCollectingCitations();
 
-  savePersonData(personData, getAllCitationsFunction);
+  await savePersonData(personData, getAllCitationsFunction);
+}
+
+async function buildAllCitationsForCollectedCitations(collectedCitations) {
+  await stopCollectingCitations();
+
+  // since collectedCitations was read from local storage we need to convert GDs into class
+  // objects
+  for (let citationObj of collectedCitations.citations) {
+    if (citationObj.generalizedData) {
+      citationObj.generalizedData = GeneralizedData.createFromPlainObject(citationObj.generalizedData);
+    }
+  }
+
+  // sort the citations by event date
+  sortCitationObjects(collectedCitations.citations);
+
+  let data = { citations: collectedCitations.citations };
+
+  getAllCitationsFunction(data);
+
+  let message = data.citations.length + " citations";
+  let message2 = "";
+  if (data.allCitationsString && data.allSeparateSourceCitationsString) {
+    message2 =
+      "\nThese are a mixture of inline citations and source type citations. They need to be separated after you paste them into the biography.";
+  } else if (data.allSeparateSourceCitationsString) {
+    message2 = "\nThese are source type citations and should be pasted after the Sources heading.";
+  } else {
+    message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
+    message2 += "\n\nNote that the narrative strings generated are just starting points for you to add detail.";
+  }
+
+  let allCitationsString = "";
+  if (data.allCitationsString) {
+    allCitationsString = data.allCitationsString;
+  }
+  if (data.allSeparateSourceCitationsString) {
+    if (allCitationsString) {
+      allCitationsString += "\n\n";
+    }
+    allCitationsString += data.allSeparateSourceCitationsString;
+  }
+
+  writeToClipboard(allCitationsString, message, false, message2);
 }
 
 async function setupSelectValuesSubmenu(backFunction, addActionFunction) {
@@ -1018,6 +1091,9 @@ async function setupCollectCitationsSubmenu(data, collectedCitations, backFuncti
   if (numCollectedCitations) {
     addMenuItem(menu, "Save Person Data Using Collected Data...", function (element) {
       setupSavePersonDataFromCollectedCitationsSubmenu(backToHereFunction);
+    });
+    addMenuItem(menu, "Build All Citations Using Collected Data", function (element) {
+      buildAllCitationsForCollectedCitations(collectedCitations);
     });
     addMenuItem(menu, "Search Using Collected Data...", function (element) {
       setupSearchFromCollectedCitationsSubmenu(backToHereFunction);

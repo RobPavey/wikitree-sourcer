@@ -959,6 +959,64 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
     return mergedSpouses;
   }
 
+  function mergeHouseholds(fields, array, household, priorFact) {
+    let fieldsA = fields;
+    let arrayA = array;
+    let fieldsB = household.fields;
+    let arrayB = household.array;
+
+    let mergedHousehold = { fields: [], array: [] };
+
+    // if one is missing a household then use the other
+    let hasHouseholdA = fieldsA && fieldsA.length && arrayA && arrayA.length;
+    let hasHouseholdB = fieldsB && fieldsB.length && arrayB && arrayB.length;
+
+    if (!hasHouseholdA) {
+      if (hasHouseholdB) {
+        mergedHousehold.fields = fieldsB;
+        mergedHousehold.array = arrayB;
+        return mergedHousehold;
+      } else {
+        return undefined;
+      }
+    } else if (!hasHouseholdB) {
+      mergedHousehold.fields = fieldsA;
+      mergedHousehold.array = arrayA;
+      return mergedHousehold;
+    }
+
+    // if they have a different number of people then don't merge
+    if (arrayA.length != arrayB.length) {
+      return "noMatch";
+    }
+
+    // if the fields are different then, creat a combined set of fields
+    let mergedFields = fieldsA;
+    if (fieldsA.length != fieldsB.length) {
+      const combineUnique = (arr1, arr2) => [...new Set([...arr1, ...arr2])];
+      mergedFields = combineUnique(fieldsA, fieldsB);
+    }
+
+    // set the result to hasHouseholdA to start
+    mergedHousehold.fields = mergedFields;
+    mergedHousehold.array = arrayA;
+
+    // now go through the cell values and try to merge them
+    for (let rowIndex = 0; rowIndex < arrayA.length; rowIndex++) {
+      for (let colIndex = 0; colIndex < mergedFields.length; colIndex++) {
+        let field = mergedFields[colIndex];
+        let rowA = arrayA[rowIndex];
+        let rowB = arrayB[rowIndex];
+        let cellA = rowA[field];
+        let cellB = rowB[field];
+
+        if (!cellA && cellB) {
+          mergedHousehold.array[rowIndex][field] = cellB;
+        }
+      }
+    }
+  }
+
   let merged = false;
 
   let gd = source.generalizedData;
@@ -974,6 +1032,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
   let mothersMaidenName = gd.mothersMaidenName;
   let parents = gd.parents;
   let spouses = gd.spouses;
+  let household = { fields: gd.householdArrayFields, array: gd.householdArray };
   let birthDateObj = gd.birthDate;
   let deathDateObj = gd.deathDate;
   let registrationDistrict = gd.registrationDistrict;
@@ -1051,6 +1110,16 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
 
       let mergedSpouses = mergeSpouses(mergedGd.spouses, spouses, priorFact);
       if (mergedSpouses == "nomatch") {
+        continue;
+      }
+
+      let mergedHousehold = mergeHouseholds(
+        mergedGd.householdArrayFields,
+        mergedGd.householdArray,
+        household,
+        priorFact
+      );
+      if (mergedHousehold == "nomatch") {
         continue;
       }
 
@@ -1135,6 +1204,10 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
       }
       if (mergedSpouses) {
         mergedGd.spouses = mergedSpouses;
+      }
+      if (mergedHousehold) {
+        mergedGd.householdArrayFields = mergedHousehold.fields;
+        mergedGd.householdArray = mergedHousehold.array;
       }
       mergedGd.mothersMaidenName = mergedMmn;
       mergedGd.birthDate = mergedBirthDateObj;
