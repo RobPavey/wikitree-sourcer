@@ -57,6 +57,7 @@ import { getCollectedCitations } from "/base/browser/common/collected_citations.
 import { isFirefox } from "/base/browser/common/browser_check.mjs";
 
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
+import { addCollectCitationsMenuItem } from "/base/browser/popup/popup_collect_citations.mjs";
 
 import {
   addStandardMenuEnd,
@@ -1528,6 +1529,8 @@ async function addBuildAllCitationsMenuItem(menu, data, backFunction) {
       }
     );
   }
+
+  await addCollectCitationsMenuItem(menu, data, backFunction);
 }
 
 function addBuildAllCitationsSubmenuMenuItem(menu, data, text, citationType) {

@@ -53,6 +53,7 @@ import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 
 import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
 import { getCollectedCitations } from "/base/browser/common/collected_citations.mjs";
+import { addCollectCitationsMenuItem } from "/base/browser/popup/popup_collect_citations.mjs";
 
 import {
   clearCitation,
@@ -696,6 +697,8 @@ async function addBuildAllCitationsMenuItem(menu, data, backFunction) {
       }
     );
   }
+
+  await addCollectCitationsMenuItem(menu, data, backFunction);
 }
 
 function addBuildAllCitationsSubmenuMenuItem(menu, data, text, citationType) {
