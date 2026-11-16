@@ -27,6 +27,7 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { NodaEdReader } from "./noda_ed_reader.mjs";
+import { addViewerSourceReference } from "./noda_viewer_metadata.mjs";
 
 function buildNodaUrl(ed, builder) {
   return ed.url;
@@ -39,6 +40,10 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder) {
+  if (ed.newViewer && ed.viewerMetadata) {
+    addViewerSourceReference(ed, builder);
+    return;
+  }
   let edReader = new NodaEdReader(ed);
   edReader.addSourceReferenceToCitationBuilder(builder);
 }
@@ -81,6 +86,10 @@ function buildRecordLink(ed, gd, builder) {
       }
     }
   } else if (ed.pageType == "image") {
+    if (ed.newViewer) {
+      builder.recordLinkOrTemplate = buildLinkText(ed.imagePageUrl || ed.url, permanentId, "Image");
+      return;
+    }
     var nodaUrl = buildNodaUrl(ed, builder);
 
     if (nodaUrl) {

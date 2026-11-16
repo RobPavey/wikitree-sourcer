@@ -1,0 +1,348 @@
+{
+  "url": "https://nye.digitalarkivet.no/source/1953/parish/04cc523f-bf62-49e2-8fa4-bd50460dbb4f",
+  "manifest": {
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "type": "Manifest",
+    "id": "https://nye.digitalarkivet.no/api/media-file/image/presentation/manifest/1953.json",
+    "label": {
+      "no": [
+        "Klokkerbok for Voss prestegjeld, Voss sokn 1886-1899 (1235P)"
+      ],
+      "en": [
+        "Church book from Voss parish, Voss local parish 1886-1899 (1235P)"
+      ]
+    },
+    "metadata": [
+      {
+        "label": {
+          "no": [
+            "Bevaringsinstitusjon"
+          ],
+          "nn": [
+            "Bevaringsinstitusjon"
+          ],
+          "en": [
+            "Conservation institution"
+          ]
+        },
+        "value": {
+          "no": [
+            "Nasjonalarkivet (Bergen)"
+          ],
+          "nn": [
+            "Nasjonalarkivet (Bergen)"
+          ],
+          "en": [
+            "The National Archives of Norway (Bergen)"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Arkiv"
+          ],
+          "nn": [
+            "Arkiv"
+          ],
+          "en": [
+            "Archive"
+          ]
+        },
+        "value": {
+          "no": [
+            "SAB-A-79001: Voss sokneprestembete"
+          ],
+          "nn": [
+            "SAB-A-79001: Voss sokneprestembete"
+          ],
+          "en": [
+            "SAB-A-79001: Voss sokneprestembete"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Arkivreferanse"
+          ],
+          "nn": [
+            "Arkivreferanse"
+          ],
+          "en": [
+            "Archive reference"
+          ]
+        },
+        "value": {
+          "no": [
+            "<a href='https://www.arkivportalen.no/entity/2fc0884a-789c-46ad-b29b-81fea51e9195' class='underline'>AV/SAB-A-79001/H/Hab</a>"
+          ],
+          "nn": [
+            "<a href='https://www.arkivportalen.no/entity/2fc0884a-789c-46ad-b29b-81fea51e9195' class='underline'>AV/SAB-A-79001/H/Hab</a>"
+          ],
+          "en": [
+            "<a href='https://www.arkivportalen.no/entity/2fc0884a-789c-46ad-b29b-81fea51e9195' class='underline'>AV/SAB-A-79001/H/Hab</a>"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Arkivserie(r)"
+          ],
+          "nn": [
+            "Arkivserie(r)"
+          ],
+          "en": [
+            "Archive serie(s)"
+          ]
+        },
+        "value": {
+          "no": [
+            "H: Kyrkjelege handlingar"
+          ],
+          "nn": [
+            "H: Kyrkjelege handlingar"
+          ],
+          "en": [
+            "H: Kyrkjelege handlingar"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Arkivstykke/Arkivmappe"
+          ],
+          "nn": [
+            "Arkivstykke/Arkivmappe"
+          ],
+          "en": [
+            "Archive unit"
+          ]
+        },
+        "value": {
+          "no": [
+            "Hab: Klokkarbøker"
+          ],
+          "nn": [
+            "Hab: Klokkarbøker"
+          ],
+          "en": [
+            "Hab: Klokkarbøker"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Tidsrom"
+          ],
+          "nn": [
+            "Tidsrom"
+          ],
+          "en": [
+            "Time period"
+          ]
+        },
+        "value": {
+          "no": [
+            "1886–1899"
+          ],
+          "nn": [
+            "1886–1899"
+          ],
+          "en": [
+            "1886–1899"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Protokollnummer"
+          ],
+          "nn": [
+            "Protokollnummer"
+          ],
+          "en": [
+            "Protokollnumber"
+          ]
+        },
+        "value": {
+          "no": [
+            "C 1"
+          ],
+          "nn": [
+            "C 1"
+          ],
+          "en": [
+            "C 1"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Antall bildefiler i kilden"
+          ],
+          "nn": [
+            "Antall bildefiler i kilden"
+          ],
+          "en": [
+            "Number of image files in the source"
+          ]
+        },
+        "value": {
+          "no": [
+            "196"
+          ],
+          "nn": [
+            "196"
+          ],
+          "en": [
+            "196"
+          ]
+        }
+      }
+    ],
+    "summary": [],
+    "provider": [
+      {
+        "id": "https://www.nasjonalarkivet.no/besok-informasjon/lesesaler-og-bibliotek/",
+        "type": "Agent",
+        "label": {
+          "no": [
+            "Nasjonalarkivet (Bergen)"
+          ],
+          "en": [
+            "The National Archives of Norway, Bergen"
+          ]
+        }
+      }
+    ],
+    "items": [
+      {
+        "type": "Canvas",
+        "id": "https://nye.digitalarkivet.no/api/media-file/image/presentation/canvas/04cc523f-bf62-49e2-8fa4-bd50460dbb4f.json",
+        "label": {
+          "no": [
+            ""
+          ]
+        },
+        "summary": {
+          "no": [
+            ""
+          ]
+        },
+        "height": 3296,
+        "width": 4256,
+        "items": [
+          {
+            "type": "AnnotationPage",
+            "id": "https://nye.digitalarkivet.no/api/media-file/image/presentation/annotation-page/04cc523f-bf62-49e2-8fa4-bd50460dbb4f.json",
+            "items": [
+              {
+                "type": "Annotation",
+                "id": "https://nye.digitalarkivet.no/api/media-file/image/presentation/annotation/04cc523f-bf62-49e2-8fa4-bd50460dbb4f.json",
+                "target": "https://nye.digitalarkivet.no/api/media-file/image/presentation/canvas/04cc523f-bf62-49e2-8fa4-bd50460dbb4f.json",
+                "motivation": "painting",
+                "metadata": [
+                  {
+                    "label": {
+                      "no": [
+                        "Filnavn"
+                      ],
+                      "nn": [
+                        "Filnavn"
+                      ],
+                      "en": [
+                        "Filename"
+                      ]
+                    },
+                    "value": {
+                      "no": [
+                        "kb20050822020030.jp2"
+                      ],
+                      "nn": [
+                        "kb20050822020030.jp2"
+                      ],
+                      "en": [
+                        "kb20050822020030.jp2"
+                      ]
+                    }
+                  },
+                  {
+                    "label": {
+                      "no": [
+                        "Dimensjoner pixler"
+                      ],
+                      "nn": [
+                        "Dimensjoner pixler"
+                      ],
+                      "en": [
+                        "Dimensions in pixels"
+                      ]
+                    },
+                    "value": {
+                      "no": [
+                        "4256 x 3296"
+                      ],
+                      "nn": [
+                        "4256 x 3296"
+                      ],
+                      "en": [
+                        "4256 x 3296"
+                      ]
+                    }
+                  }
+                ],
+                "body": {
+                  "id": "https://nye.digitalarkivet.no/api/media-file/image/04cc523f-bf62-49e2-8fa4-bd50460dbb4f/full/max/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 3296,
+                  "width": 4256,
+                  "service": [
+                    {
+                      "id": "https://nye.digitalarkivet.no/api/media-file/image/04cc523f-bf62-49e2-8fa4-bd50460dbb4f",
+                      "type": "ImageService3",
+                      "profile": "level1"
+                    }
+                  ],
+                  "sharpen": 1
+                },
+                "isRestricted": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "fileInfo": {
+    "urnId": "kb20050822020030",
+    "uuid": "04cc523f-bf62-49e2-8fa4-bd50460dbb4f",
+    "info": "Voss sokneprestembete, AV/SAB-A-79001/H/Hab: Klokkarbøker, s. 29"
+  },
+  "pagination": {
+    "04cc523f-bf62-49e2-8fa4-bd50460dbb4f": {
+      "page": "29",
+      "filter": [
+        {
+          "subset_id": "2402155",
+          "label": "Fødte og døpte",
+          "field": "list_type",
+          "value": "dp"
+        },
+        {
+          "subset_id": "2402155",
+          "label": "1888",
+          "field": "start_year",
+          "value": "1888"
+        }
+      ],
+      "isRestricted": false
+    }
+  }
+}
