@@ -40,8 +40,8 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
-import { checkIfCollectingCitations } from "/base/browser/common/collected_citations.mjs";
-import { addCollectCitationsMenuItem } from "/base/browser/popup/popup_collect_citations.mjs";
+import { checkIfCollectingCitations, getCollectedCitations } from "/base/browser/common/collected_citations.mjs";
+import { setupSavePersonDataFromCollectedCitationsWithCallbackSubmenu } from "/base/browser/popup/popup_collect_citations.mjs";
 
 import {
   addStandardMenuEnd,
@@ -2389,6 +2389,38 @@ async function addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction)
   }
 }
 
+async function addSetFieldsFromCollectionMenuItem(menu, data, tabId, backFunction) {
+  let collectedCitations = await getCollectedCitations();
+
+  let numCollectedCitations = collectedCitations?.citations?.length ?? 0;
+  let menuText = "Set Fields from Collected Citations";
+  let subtitleText = `There are ${numCollectedCitations} collected citations`;
+
+  async function setFields() {
+    let personData = await getLatestPersonData();
+    if (!personData) {
+      return; // should never happen
+    }
+
+    if (personData.generalizedData) {
+      let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
+      personData.generalizedData = gd;
+      setFieldsFromPersonData(data, personData, tabId, null, backFunction);
+    }
+  }
+
+  const actionText = "Set Fields and Stop Collecting Citations";
+
+  addMenuItemWithSubtitle(
+    menu,
+    menuText,
+    function (element) {
+      setupSavePersonDataFromCollectedCitationsWithCallbackSubmenu(backFunction, actionText, setFields);
+    },
+    subtitleText
+  );
+}
+
 async function addMergeEditFromPersonDataMenuItem(menu, data, tabId, backFunction) {
   let personData = await getLatestPersonData();
   if (!personData) {
@@ -2405,7 +2437,7 @@ async function addMergeEditFromPersonDataMenuItem(menu, data, tabId, backFunctio
   if (personData.generalizedData) {
     let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
     personData.generalizedData = gd;
-    let menuText = "Merge Edit from Person Data for:";
+    let menuText = "Merge/Edit from Person Data for:";
     let subtitleText = getPersonDataSubtitleText(gd, timeText);
 
     addMenuItemWithSubtitle(
@@ -2441,7 +2473,7 @@ async function addMergeEditFromCitationObjectMenuItem(menu, data, tabId, backFun
 
   if (citationObject && citationObject.generalizedData) {
     let gd = GeneralizedData.createFromPlainObject(citationObject.generalizedData);
-    let menuText = "Merge Edit from Citation Data for:";
+    let menuText = "Merge/Edit from Citation Data for:";
     let subtitleText = getCitationObjectSubtitleText(gd, timeText);
 
     addMenuItemWithSubtitle(
@@ -2458,6 +2490,38 @@ async function addMergeEditFromCitationObjectMenuItem(menu, data, tabId, backFun
   }
 
   return false;
+}
+
+async function addMergeEditFromCollectionMenuItem(menu, data, tabId, backFunction) {
+  let collectedCitations = await getCollectedCitations();
+
+  let numCollectedCitations = collectedCitations?.citations?.length ?? 0;
+  let menuText = "Merge/Edit from Collected Citations";
+  let subtitleText = `There are ${numCollectedCitations} collected citations`;
+
+  async function doMergeEdit() {
+    let personData = await getLatestPersonData();
+    if (!personData) {
+      return; // should never happen
+    }
+
+    if (personData.generalizedData) {
+      let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
+      personData.generalizedData = gd;
+      mergeEditFromPersonData(data, personData, null, tabId, backFunction);
+    }
+  }
+
+  const actionText = "Merge/Edit and Stop Collecting Citations";
+
+  addMenuItemWithSubtitle(
+    menu,
+    menuText,
+    function (element) {
+      setupSavePersonDataFromCollectedCitationsWithCallbackSubmenu(backFunction, actionText, doMergeEdit);
+    },
+    subtitleText
+  );
 }
 
 async function addMergeEditMenuItem(menu, data, tabId, backFunction) {
@@ -2615,14 +2679,19 @@ async function setupMergeEditSubmenu(data, tabId, backFunction) {
     setupMergeEditSubmenu(data, tabId, backFunction);
   };
 
-  const item1Added = await addMergeEditFromPersonDataMenuItem(menu, data, tabId, toHereBackFunction);
-  const item2Added = await addMergeEditFromCitationObjectMenuItem(menu, data, tabId, toHereBackFunction);
+  let collectingCitations = await checkIfCollectingCitations();
+  if (collectingCitations) {
+    await addMergeEditFromCollectionMenuItem(menu, data, tabId, backFunction);
+  } else {
+    const item1Added = await addMergeEditFromPersonDataMenuItem(menu, data, tabId, toHereBackFunction);
+    const item2Added = await addMergeEditFromCitationObjectMenuItem(menu, data, tabId, toHereBackFunction);
 
-  if (!item1Added && !item2Added) {
-    let message = "No external data available.";
-    message += " To get data from a citation use 'Build citation...'.";
-    message += " To get data from a profile use 'Save Person Data'.";
-    addItalicMessageMenuItem(menu, message);
+    if (!item1Added && !item2Added) {
+      let message = "No external data available.";
+      message += " To get data from a citation use 'Build citation...'.";
+      message += " To get data from a profile use 'Save Person Data'.";
+      addItalicMessageMenuItem(menu, message);
+    }
   }
 
   endMainMenu(menu);
@@ -3202,12 +3271,12 @@ async function buildMenu(data, tabId) {
       let collectingCitations = await checkIfCollectingCitations();
       if (collectingCitations) {
         addMenuDivider(menu);
-        addItalicMessageMenuItem(menu, "You are currently collecting citations", "colorRed");
-        await addCollectCitationsMenuItem(menu, data, backFunction);
+        await addSetFieldsFromCollectionMenuItem(menu, data, tabId, backFunction);
+      } else {
+        addMenuDivider(menu);
+        await addSetFieldsFromPersonDataMenuItem(menu, data, tabId, backFunction);
+        await addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction);
       }
-      addMenuDivider(menu);
-      await addSetFieldsFromPersonDataMenuItem(menu, data, tabId, backFunction);
-      await addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction);
       addShowAdditionalFieldsMenuItem(menu, tabId);
     }
   } else if (

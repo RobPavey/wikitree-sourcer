@@ -1044,6 +1044,17 @@ async function setupSavePersonDataFromCollectedCitationsSubmenu(backFunction) {
   setupSelectValuesSubmenu(backFunction, addCollectedCitationsSavePersonDataMenuItem);
 }
 
+async function setupSavePersonDataFromCollectedCitationsWithCallbackSubmenu(backFunction, actionText, callback) {
+  function addActionMenuItem(menu, fields, data) {
+    addButtonMenuItem(menu, actionText, async function (element) {
+      await saveCollectedCitationsPersonData(data, fields);
+      await callback();
+    });
+  }
+
+  setupSelectValuesSubmenu(backFunction, addActionMenuItem);
+}
+
 async function setupSearchUsingCollectedCitationsSubmenu(data, fields, backFunction) {
   let backToHereFunction = function () {
     setupSearchUsingCollectedCitationsSubmenu(data, fields, backFunction);
@@ -1152,4 +1163,4 @@ async function addCollectCitationsMenuItem(menu, data, backFunction) {
   }
 }
 
-export { addCollectCitationsMenuItem };
+export { addCollectCitationsMenuItem, setupSavePersonDataFromCollectedCitationsWithCallbackSubmenu };
