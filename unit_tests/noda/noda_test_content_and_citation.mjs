@@ -31,6 +31,16 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    // Issue #479: Jonettha and Ane Maria have fractional ages.
+    caseName: "census_1835_ole_jonassen",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01069455000001",
+  },
+  {
+    // Synthetic age variants based on the issue #479 household layout.
+    caseName: "census_1835_fractional_ages_synthetic",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01069455000001",
+  },
+  {
     caseName: "cb_bap_1888_knut",
     url: "https://www.digitalarkivet.no/en/view/255/pd00000017246548",
     optionVariants: [

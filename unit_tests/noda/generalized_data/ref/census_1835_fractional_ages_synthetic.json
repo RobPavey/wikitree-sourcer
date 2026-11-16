@@ -1,0 +1,141 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Ole Jonassen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1835"
+  },
+  "eventPlace": {
+    "placeString": "Frosta prestegjeld, Nord-Trøndelag, Norway",
+    "parish": "Frosta prestegjeld",
+    "county": "Nord-Trøndelag",
+    "country": "Norway",
+    "streetAddress": "Lillelein",
+    "prepositionHint": "at"
+  },
+  "ageAtEvent": "47",
+  "relationshipToHead": "head",
+  "occupation": "Gaardm.",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "occupation",
+    "age",
+    "birthDate"
+  ],
+  "householdArray": [
+    {
+      "name": "Synthetic Person A",
+      "relationship": "head",
+      "occupation": "Gaardm.",
+      "age": "20 1/2",
+      "isSelected": true,
+      "gender": "male"
+    },
+    {
+      "name": "Synthetic Person B",
+      "occupation": "Gaardm.",
+      "age": "2 1/4"
+    },
+    {
+      "name": "Synthetic Person C",
+      "occupation": "Gaardm.",
+      "age": "4 3/4"
+    },
+    {
+      "name": "Synthetic Person D",
+      "occupation": "Gaardm.",
+      "age": "1/2"
+    },
+    {
+      "name": "Synthetic Person E",
+      "occupation": "Gaardm.",
+      "age": "1/4"
+    },
+    {
+      "name": "Synthetic Person F",
+      "occupation": "Gaardm.",
+      "age": "3/4"
+    },
+    {
+      "name": "Synthetic Person G",
+      "occupation": "Gaardm.",
+      "age": "20 ½"
+    },
+    {
+      "name": "Synthetic Person H",
+      "occupation": "Gaardm.",
+      "age": "2 ¼"
+    },
+    {
+      "name": "Synthetic Person I",
+      "occupation": "Gaardm.",
+      "age": "4 ¾"
+    },
+    {
+      "name": "Synthetic Person J",
+      "occupation": "Gaardm.",
+      "age": "½"
+    },
+    {
+      "name": "Synthetic Person K",
+      "occupation": "Gaardm.",
+      "age": "¼"
+    },
+    {
+      "name": "Synthetic Person L",
+      "occupation": "Gaardm.",
+      "age": "¾"
+    },
+    {
+      "name": "Synthetic Person M",
+      "occupation": "Gaardm.",
+      "age": "20 1/2"
+    },
+    {
+      "name": "Synthetic Person N",
+      "occupation": "Gaardm.",
+      "age": "2 ¼"
+    },
+    {
+      "name": "Synthetic Person O",
+      "occupation": "Gaardm.",
+      "age": "20 1/2"
+    },
+    {
+      "name": "Synthetic Person P",
+      "occupation": "Gaardm.",
+      "age": "47"
+    },
+    {
+      "name": "Synthetic Person Q",
+      "occupation": "Gaardm.",
+      "birthDate": "1835"
+    },
+    {
+      "name": "Synthetic Person R",
+      "occupation": "Gaardm.",
+      "birthDate": "2 Jan 1835"
+    },
+    {
+      "name": "Synthetic Person S",
+      "occupation": "Gaardm."
+    },
+    {
+      "name": "Synthetic Person T",
+      "occupation": "Gaardm."
+    },
+    {
+      "name": "Synthetic Person U",
+      "occupation": "Gaardm."
+    }
+  ],
+  "collectionData": {
+    "id": "jt_10"
+  },
+  "hasValidData": true
+}

@@ -47,11 +47,13 @@
     },
     {
       "name": "Jørgen Zachariassen",
-      "occupation": "Handelsbetjent"
+      "occupation": "Handelsbetjent",
+      "age": "20 1/4"
     },
     {
       "name": "Mariken Bomhoff",
-      "occupation": "Huusjomfru"
+      "occupation": "Huusjomfru",
+      "age": "20 1/4"
     },
     {
       "name": "Kirstine Catarine Plov",
@@ -65,7 +67,8 @@
     },
     {
       "name": "Halvor Olsen",
-      "occupation": "Gaardskarl"
+      "occupation": "Gaardskarl",
+      "age": "20 1/4"
     },
     {
       "name": "Abigael Hansdatter",
