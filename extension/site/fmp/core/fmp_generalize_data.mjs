@@ -445,7 +445,10 @@ function getPlaceStringFromPlaceObj(placeObj, recordType) {
     }
   }
 
-  if (isValidPlaceValue(placeObj.place) && placeObj.place != placeObj.residence) {
+  if (
+    isValidPlaceValue(placeObj.place) &&
+    !(isResidenceOrStreetAddressWanted && placeObj.place == placeObj.residence)
+  ) {
     addString(placeObj.place);
   }
 
