@@ -29,6 +29,16 @@ import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
+// The standard variant covers WikiTree with references after the title.
+const attributionVariants = [
+  { variantName: "plainText", optionOverrides: { citation_general_target: "plain" } },
+  { variantName: "referenceAtEnd", optionOverrides: { citation_general_referencePosition: "atEnd" } },
+  {
+    variantName: "plainTextReferenceAtEnd",
+    optionOverrides: { citation_general_target: "plain", citation_general_referencePosition: "atEnd" },
+  },
+];
+
 const regressionData = [
   {
     // Issue #479: Jonettha and Ane Maria have fractional ages.
@@ -44,6 +54,7 @@ const regressionData = [
     caseName: "cb_bap_1888_knut",
     url: "https://www.digitalarkivet.no/en/view/255/pd00000017246548",
     optionVariants: [
+      ...attributionVariants,
       {
         variantName: "linksWithPermanentId",
         thisTypeOnly: "inline",
@@ -108,6 +119,7 @@ const regressionData = [
     caseName: "census_1865_carl_motzfeldt",
     url: "https://www.digitalarkivet.no/en/census/person/pf01038310006925",
     optionVariants: [
+      ...attributionVariants,
       {
         variantName: "describeHousehold",
         thisTypeOnly: "narrative",
@@ -221,6 +233,7 @@ const regressionData = [
   {
     caseName: "xx_image_cb_bap_1794_voss",
     url: "https://media.digitalarkivet.no/en/view/11769/132",
+    optionVariants: attributionVariants,
   },
   {
     caseName: "xx_image_cb_bap_1888_knut",
