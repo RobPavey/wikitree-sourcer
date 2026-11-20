@@ -277,6 +277,30 @@ function extractData(document, url) {
   }
   result.success = false;
 
+  // The new viewer renders asynchronously; identify the image here and load its
+  // public source/page metadata in the popup rather than scraping transient UI.
+  let address;
+  try {
+    address = new URL(url);
+  } catch {
+    return result;
+  }
+  if (address.hostname === "nye.digitalarkivet.no") {
+    const match = /^\/source\/([1-9]\d*)\/parish\/([a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12})\/?$/i.exec(
+      address.pathname
+    );
+    if (address.origin === "https://nye.digitalarkivet.no" && match) {
+      result.success = true;
+      result.newViewer = true;
+      result.pageType = "image";
+      result.sourceId = match[1];
+      result.imageUuid = match[2].toLowerCase();
+    } else {
+      result.overrideFailureMessage = "Open an individual parish image in Digitalarkivet to build its citation.";
+    }
+    return result;
+  }
+
   let lang = document.documentElement.lang;
   if (lang) {
     result.lang = lang;

@@ -1,0 +1,74 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\"<br/>\nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55<br/>\n[https://goto.digitalarkivet.no/kb20060621010324 Digitalarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\"<br/>\nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55<br/>\n[https://goto.digitalarkivet.no/kb20060621010324 Digitalarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': \"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\"<br/>Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55<br/>[https://goto.digitalarkivet.no/kb20060621010324 Digitalarkivet Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "plain_inline": {
+    "citation": "Record: \"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\", \nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55, \n[https://goto.digitalarkivet.no/kb20060621010324 Digitalarkivet Image] (accessed 6 May 2021).\n",
+    "type": "inline"
+  },
+  "plain_narrative": {
+    "citation": "This person was in a record.",
+    "type": "narrative"
+  },
+  "plain_source": {
+    "citation": "Record: \"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\", Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55, [https://goto.digitalarkivet.no/kb20060621010324 Digitalarkivet Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "referenceAtEnd_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\"<br/>\n[https://goto.digitalarkivet.no/kb20060621010324 Digitalarkivet Image] (accessed 6 May 2021)<br/>\nciting Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55.\n</ref>",
+    "type": "inline"
+  },
+  "referenceAtEnd_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\"<br/>\n[https://goto.digitalarkivet.no/kb20060621010324 Digitalarkivet Image] (accessed 6 May 2021)<br/>\nciting Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55.\n</ref>",
+    "type": "narrative"
+  },
+  "referenceAtEnd_source": {
+    "citation": "* '''Record''': \"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\"<br/>[https://goto.digitalarkivet.no/kb20060621010324 Digitalarkivet Image] (accessed 6 May 2021)<br/>citing Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55.",
+    "type": "source"
+  },
+  "plainReferenceAtEnd_inline": {
+    "citation": "Record: \"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\", \n[https://goto.digitalarkivet.no/kb20060621010324 Digitalarkivet Image] (accessed 6 May 2021); \nciting Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55.\n",
+    "type": "inline"
+  },
+  "plainReferenceAtEnd_narrative": {
+    "citation": "This person was in a record.",
+    "type": "narrative"
+  },
+  "plainReferenceAtEnd_source": {
+    "citation": "Record: \"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\", [https://goto.digitalarkivet.no/kb20060621010324 Digitalarkivet Image] (accessed 6 May 2021); citing Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55.",
+    "type": "source"
+  },
+  "permanentId_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\"<br/>\nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55<br/>\nDigitalarkivet Image: [https://goto.digitalarkivet.no/kb20060621010324 kb20060621010324] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "permanentId_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\"<br/>\nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55<br/>\nDigitalarkivet Image: [https://goto.digitalarkivet.no/kb20060621010324 kb20060621010324] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "permanentId_source": {
+    "citation": "* '''Record''': \"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\"<br/>Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55<br/>Digitalarkivet Image: [https://goto.digitalarkivet.no/kb20060621010324 kb20060621010324] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "visible_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\"<br/>\nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55<br/>\nDigitalarkivet Image: https://goto.digitalarkivet.no/kb20060621010324 (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "visible_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\"<br/>\nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55<br/>\nDigitalarkivet Image: https://goto.digitalarkivet.no/kb20060621010324 (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "visible_source": {
+    "citation": "* '''Record''': \"Church book from Voss parish, Voss local parish 1887-1909 (1235P)\"<br/>Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 22; Contents: Burials, 1899; Page: 55<br/>Digitalarkivet Image: https://goto.digitalarkivet.no/kb20060621010324 (accessed 6 May 2021).",
+    "type": "source"
+  }
+}

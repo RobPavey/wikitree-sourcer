@@ -1,0 +1,382 @@
+{
+  "url": "https://nye.digitalarkivet.no/source/15957/parish/ba87cd66-2949-40cf-833e-564866bc2dbd",
+  "manifest": {
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "type": "Manifest",
+    "id": "https://nye.digitalarkivet.no/api/media-file/image/presentation/manifest/15957.json",
+    "label": {
+      "no": [
+        "Ministerialbok for Volda prestegjeld 1787-1816 (1519P)"
+      ],
+      "en": [
+        "Church book from Volda parish 1787-1816 (1519P)"
+      ]
+    },
+    "metadata": [
+      {
+        "label": {
+          "no": [
+            "Bevaringsinstitusjon"
+          ],
+          "nn": [
+            "Bevaringsinstitusjon"
+          ],
+          "en": [
+            "Conservation institution"
+          ]
+        },
+        "value": {
+          "no": [
+            "Nasjonalarkivet (Trondheim)"
+          ],
+          "nn": [
+            "Nasjonalarkivet (Trondheim)"
+          ],
+          "en": [
+            "The National Archives of Norway (Trondheim)"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Arkiv"
+          ],
+          "nn": [
+            "Arkiv"
+          ],
+          "en": [
+            "Archive"
+          ]
+        },
+        "value": {
+          "no": [
+            "SAT-A-1454: Ministerialprotokoller, klokkerbøker og fødselsregistre - Møre og Romsdal"
+          ],
+          "nn": [
+            "SAT-A-1454: Ministerialprotokoller, klokkerbøker og fødselsregistre - Møre og Romsdal"
+          ],
+          "en": [
+            "SAT-A-1454: Ministerialprotokoller, klokkerbøker og fødselsregistre - Møre og Romsdal"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Arkivreferanse"
+          ],
+          "nn": [
+            "Arkivreferanse"
+          ],
+          "en": [
+            "Archive reference"
+          ]
+        },
+        "value": {
+          "no": [
+            "<a href='https://www.arkivportalen.no/entity/345bb33f-4d6f-4b81-b710-96306e976609' class='underline'>AV/SAT-A-1454/511/L0137</a>"
+          ],
+          "nn": [
+            "<a href='https://www.arkivportalen.no/entity/345bb33f-4d6f-4b81-b710-96306e976609' class='underline'>AV/SAT-A-1454/511/L0137</a>"
+          ],
+          "en": [
+            "<a href='https://www.arkivportalen.no/entity/345bb33f-4d6f-4b81-b710-96306e976609' class='underline'>AV/SAT-A-1454/511/L0137</a>"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Arkivserie(r)"
+          ],
+          "nn": [
+            "Arkivserie(r)"
+          ],
+          "en": [
+            "Archive serie(s)"
+          ]
+        },
+        "value": {
+          "no": [
+            "511: Volda"
+          ],
+          "nn": [
+            "511: Volda"
+          ],
+          "en": [
+            "511: Volda"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Arkivstykke/Arkivmappe"
+          ],
+          "nn": [
+            "Arkivstykke/Arkivmappe"
+          ],
+          "en": [
+            "Archive unit"
+          ]
+        },
+        "value": {
+          "no": [
+            "L0137: Ministerialprotokoll, Volda prestegjeld"
+          ],
+          "nn": [
+            "L0137: Ministerialprotokoll, Volda prestegjeld"
+          ],
+          "en": [
+            "L0137: Ministerialprotokoll, Volda prestegjeld"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Tidsrom"
+          ],
+          "nn": [
+            "Tidsrom"
+          ],
+          "en": [
+            "Time period"
+          ]
+        },
+        "value": {
+          "no": [
+            "1787–1816"
+          ],
+          "nn": [
+            "1787–1816"
+          ],
+          "en": [
+            "1787–1816"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Protokollnummer"
+          ],
+          "nn": [
+            "Protokollnummer"
+          ],
+          "en": [
+            "Protokollnumber"
+          ]
+        },
+        "value": {
+          "no": [
+            "511A04"
+          ],
+          "nn": [
+            "511A04"
+          ],
+          "en": [
+            "511A04"
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Merknad"
+          ],
+          "nn": [
+            "Merknad"
+          ],
+          "en": [
+            "Note"
+          ]
+        },
+        "value": {
+          "no": [
+            "Annen liste, fol. 180-194: Inneholder dagsregister, antall kommunikanter og introduserte for åra 1822-1832. \r\nAnnen liste, fol. 195: Statistikk år 1832-1838.\r\nAnnen liste, uten sidetall: Tiendeliste. \r\nAnnen liste, siste side: Liste over soldater i \"Woldens Compagnie\" som er blitt nektet attester."
+          ],
+          "nn": [
+            "Annen liste, fol. 180-194: Inneholder dagsregister, antall kommunikanter og introduserte for åra 1822-1832. \r\nAnnen liste, fol. 195: Statistikk år 1832-1838.\r\nAnnen liste, uten sidetall: Tiendeliste. \r\nAnnen liste, siste side: Liste over soldater i \"Woldens Compagnie\" som er blitt nektet attester."
+          ],
+          "en": [
+            "Annen liste, fol. 180-194: Inneholder dagsregister, antall kommunikanter og introduserte for åra 1822-1832. \r\nAnnen liste, fol. 195: Statistikk år 1832-1838.\r\nAnnen liste, uten sidetall: Tiendeliste. \r\nAnnen liste, siste side: Liste over soldater i \"Woldens Compagnie\" som er blitt nektet attester."
+          ]
+        }
+      },
+      {
+        "label": {
+          "no": [
+            "Antall bildefiler i kilden"
+          ],
+          "nn": [
+            "Antall bildefiler i kilden"
+          ],
+          "en": [
+            "Number of image files in the source"
+          ]
+        },
+        "value": {
+          "no": [
+            "210"
+          ],
+          "nn": [
+            "210"
+          ],
+          "en": [
+            "210"
+          ]
+        }
+      }
+    ],
+    "summary": {
+      "no": [
+        "Annen liste, fol. 180-194: Inneholder dagsregister, antall kommunikanter og introduserte for åra 1822-1832. \r\nAnnen liste, fol. 195: Statistikk år 1832-1838.\r\nAnnen liste, uten sidetall: Tiendeliste. \r\nAnnen liste, siste side: Liste over soldater i \"Woldens Compagnie\" som er blitt nektet attester."
+      ],
+      "nn": [
+        "Annen liste, fol. 180-194: Inneholder dagsregister, antall kommunikanter og introduserte for åra 1822-1832. \r\nAnnen liste, fol. 195: Statistikk år 1832-1838.\r\nAnnen liste, uten sidetall: Tiendeliste. \r\nAnnen liste, siste side: Liste over soldater i \"Woldens Compagnie\" som er blitt nektet attester."
+      ],
+      "en": [
+        "Annen liste, fol. 180-194: Inneholder dagsregister, antall kommunikanter og introduserte for åra 1822-1832. \r\nAnnen liste, fol. 195: Statistikk år 1832-1838.\r\nAnnen liste, uten sidetall: Tiendeliste. \r\nAnnen liste, siste side: Liste over soldater i \"Woldens Compagnie\" som er blitt nektet attester."
+      ]
+    },
+    "provider": [
+      {
+        "id": "https://www.nasjonalarkivet.no/besok-informasjon/lesesaler-og-bibliotek/",
+        "type": "Agent",
+        "label": {
+          "no": [
+            "Nasjonalarkivet (Trondheim)"
+          ],
+          "en": [
+            "The National Archives of Norway, Trondheim"
+          ]
+        }
+      }
+    ],
+    "items": [
+      {
+        "type": "Canvas",
+        "id": "https://nye.digitalarkivet.no/api/media-file/image/presentation/canvas/ba87cd66-2949-40cf-833e-564866bc2dbd.json",
+        "label": {
+          "no": [
+            ""
+          ]
+        },
+        "summary": {
+          "no": [
+            ""
+          ]
+        },
+        "height": 3616,
+        "width": 4560,
+        "items": [
+          {
+            "type": "AnnotationPage",
+            "id": "https://nye.digitalarkivet.no/api/media-file/image/presentation/annotation-page/ba87cd66-2949-40cf-833e-564866bc2dbd.json",
+            "items": [
+              {
+                "type": "Annotation",
+                "id": "https://nye.digitalarkivet.no/api/media-file/image/presentation/annotation/ba87cd66-2949-40cf-833e-564866bc2dbd.json",
+                "target": "https://nye.digitalarkivet.no/api/media-file/image/presentation/canvas/ba87cd66-2949-40cf-833e-564866bc2dbd.json",
+                "motivation": "painting",
+                "metadata": [
+                  {
+                    "label": {
+                      "no": [
+                        "Filnavn"
+                      ],
+                      "nn": [
+                        "Filnavn"
+                      ],
+                      "en": [
+                        "Filename"
+                      ]
+                    },
+                    "value": {
+                      "no": [
+                        "kb20070829660260.jp2"
+                      ],
+                      "nn": [
+                        "kb20070829660260.jp2"
+                      ],
+                      "en": [
+                        "kb20070829660260.jp2"
+                      ]
+                    }
+                  },
+                  {
+                    "label": {
+                      "no": [
+                        "Dimensjoner pixler"
+                      ],
+                      "nn": [
+                        "Dimensjoner pixler"
+                      ],
+                      "en": [
+                        "Dimensions in pixels"
+                      ]
+                    },
+                    "value": {
+                      "no": [
+                        "4560 x 3616"
+                      ],
+                      "nn": [
+                        "4560 x 3616"
+                      ],
+                      "en": [
+                        "4560 x 3616"
+                      ]
+                    }
+                  }
+                ],
+                "body": {
+                  "id": "https://nye.digitalarkivet.no/api/media-file/image/ba87cd66-2949-40cf-833e-564866bc2dbd/full/max/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 3616,
+                  "width": 4560,
+                  "service": [
+                    {
+                      "id": "https://nye.digitalarkivet.no/api/media-file/image/ba87cd66-2949-40cf-833e-564866bc2dbd",
+                      "type": "ImageService3",
+                      "profile": "level1"
+                    }
+                  ],
+                  "sharpen": 1
+                },
+                "isRestricted": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "fileInfo": {
+    "urnId": "kb20070829660260",
+    "uuid": "ba87cd66-2949-40cf-833e-564866bc2dbd",
+    "info": "Ministerialprotokoller, klokkerbøker og fødselsregistre - Møre og Romsdal, AV/SAT-A-1454/511/L0137: Ministerialprotokoll, Volda prestegjeld, 1787-1816, s. 41"
+  },
+  "pagination": {
+    "ba87cd66-2949-40cf-833e-564866bc2dbd": {
+      "page": "41",
+      "filter": [
+        {
+          "subset_id": "7282774",
+          "label": "Kronologisk liste",
+          "field": "list_type",
+          "value": "kr"
+        },
+        {
+          "subset_id": "7282774",
+          "label": "1792",
+          "field": "start_year",
+          "value": "1792"
+        }
+      ],
+      "isRestricted": false
+    }
+  }
+}
