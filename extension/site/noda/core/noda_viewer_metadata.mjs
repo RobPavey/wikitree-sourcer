@@ -161,10 +161,16 @@ async function assertViewerSelection(selection, getCurrentSelection) {
     throw new Error("The Digitalarkivet image changed. Reopen Sourcer to cite the current image.");
 }
 
+function viewerRepositoryOwner(institution) {
+  // A named branch of the provider supplies both provider and repository credit.
+  return /^The National Archives of Norway(?: \([^()]+\))?$/i.test(institution || "") ? institution : "";
+}
+
 function addViewerSourceReference(ed, builder) {
   const metadata = ed.viewerMetadata;
   const reference = metadata.archiveReference || metadata.archiveName || ed.fileTitle;
-  builder.addSourceReferenceField("Repository", metadata.institution);
+  if (!viewerRepositoryOwner(metadata.institution) || metadata.institution !== builder.websiteCreatorOwner)
+    builder.addSourceReferenceField("Repository", metadata.institution);
   builder.addSourceReferenceText(reference);
   const includes = (text, value) =>
     text.toLowerCase().replace(/[–—]/g, "-").includes(value.toLowerCase().replace(/[–—]/g, "-"));
@@ -185,4 +191,5 @@ export {
   loadViewerMetadata,
   assertViewerSelection,
   addViewerSourceReference,
+  viewerRepositoryOwner,
 };

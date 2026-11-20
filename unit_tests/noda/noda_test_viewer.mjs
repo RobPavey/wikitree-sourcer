@@ -101,6 +101,38 @@ async function runTests(testManager) {
       assert.equal(gd.birthDate, undefined);
       assert.equal(gd.deathDate, undefined);
     },
+    credits_provider_and_repository_without_repeating_the_same_institution() {
+      const provider = "The National Archives of Norway";
+      for (const institution of [provider, provider + " (Bergen)", "Bergen City Archives", ""]) {
+        const ed = record();
+        ed.viewerMetadata.institution = institution;
+        const gd = generalizeData({ extractedData: ed });
+        for (const target of ["wikitree", "plain"]) {
+          for (const position of ["afterSourceTitle", "atEnd"]) {
+            const result = buildCitation({
+              extractedData: ed,
+              generalizedData: gd,
+              type: "source",
+              options: {
+                ...testManager.options,
+                citation_general_target: target,
+                citation_general_referencePosition: position,
+              },
+              runDate: new Date("6 May 2021"),
+            });
+            assert.equal(result.citation.split(provider).length - 1, 1);
+            if (institution === "Bergen City Archives") {
+              assert.ok(result.sourceReference.includes("Repository: " + institution));
+            } else {
+              assert.ok(!result.sourceReference.includes("Repository:"));
+              assert.ok(result.citation.includes(institution || provider));
+            }
+            assert.ok(result.sourceReference.includes("AV/SAB-A-79001/H/Haa"));
+            assert.ok(result.sourceReference.includes("Page: 55"));
+          }
+        }
+      }
+    },
     rejects_metadata_for_another_source_or_image() {
       const data = fixture();
       data.fileInfo.uuid = fixture("voss_1794").fileInfo.uuid;
