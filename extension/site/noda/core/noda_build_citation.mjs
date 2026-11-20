@@ -27,7 +27,7 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { NodaEdReader } from "./noda_ed_reader.mjs";
-import { addViewerSourceReference } from "./noda_viewer_metadata.mjs";
+import { addViewerSourceReference, viewerRepositoryOwner } from "./noda_viewer_metadata.mjs";
 
 function buildNodaUrl(ed, builder) {
   return ed.url;
@@ -112,7 +112,8 @@ function buildRecordLink(ed, gd, builder) {
 }
 
 function buildCoreCitation(ed, gd, builder) {
-  builder.websiteCreatorOwner = "The National Archives of Norway";
+  builder.websiteCreatorOwner =
+    viewerRepositoryOwner(ed.viewerMetadata?.institution) || "The National Archives of Norway";
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
