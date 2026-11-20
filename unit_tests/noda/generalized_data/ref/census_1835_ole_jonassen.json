@@ -1,0 +1,83 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Ole Jonassen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1835"
+  },
+  "eventPlace": {
+    "placeString": "Frosta prestegjeld, Nord-Trøndelag, Norway",
+    "parish": "Frosta prestegjeld",
+    "county": "Nord-Trøndelag",
+    "country": "Norway",
+    "streetAddress": "Lillelein",
+    "prepositionHint": "at"
+  },
+  "ageAtEvent": "47",
+  "relationshipToHead": "head",
+  "occupation": "Gaardm.",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "occupation",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Ole Jonassen",
+      "relationship": "head",
+      "occupation": "Gaardm.",
+      "age": "47",
+      "isSelected": true,
+      "gender": "male"
+    },
+    {
+      "name": "Ane Johnsdr",
+      "occupation": "Huustru",
+      "age": "45"
+    },
+    {
+      "name": "Jonas Magnus Olsen*",
+      "occupation": "Søn",
+      "age": "10"
+    },
+    {
+      "name": "Johan Magnus Olsen*",
+      "occupation": "Søn",
+      "age": "3"
+    },
+    {
+      "name": "Christian",
+      "occupation": "Dreng",
+      "age": "28"
+    },
+    {
+      "name": "Johan Petter",
+      "occupation": "Dreng",
+      "age": "20"
+    },
+    {
+      "name": "Jonettha Olsdr*",
+      "occupation": "Datter",
+      "age": "20 1/2"
+    },
+    {
+      "name": "Olava",
+      "occupation": "Tjenestep.",
+      "age": "24"
+    },
+    {
+      "name": "Ane Maria",
+      "occupation": "Tjenestep.",
+      "age": "9 1/2"
+    }
+  ],
+  "collectionData": {
+    "id": "jt_10"
+  },
+  "hasValidData": true
+}

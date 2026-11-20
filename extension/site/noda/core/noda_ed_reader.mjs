@@ -2382,7 +2382,10 @@ class NodaEdReader extends ExtractedDataReader {
       setMemberField(householdMember, "occupation", occupation);
 
       let ageBorn = this.getPersonDataValue(person, "ageBorn");
-      if (ageBorn.length == 10) {
+      // Fractional ages must be recognized before the birth date/year length checks.
+      if (/^(?:\d+\s+)?(?:1\/2|1\/4|3\/4|[½¼¾])$/.test(ageBorn.trim())) {
+        setMemberField(householdMember, "age", ageBorn);
+      } else if (ageBorn.length == 10) {
         // full birth date
         let dateObj = this.makeDateObjFromFullDate(ageBorn);
         if (dateObj) {

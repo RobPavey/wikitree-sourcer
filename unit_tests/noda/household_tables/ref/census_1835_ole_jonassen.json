@@ -1,0 +1,8 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Occupation || Age\n|-\n| '''Ole Jonassen''' || '''Head''' || '''Gaardm.''' || '''47'''\n|-\n| Ane Johnsdr ||  || Huustru || 45\n|-\n| Jonas Magnus Olsen* ||  || Søn || 10\n|-\n| Johan Magnus Olsen* ||  || Søn || 3\n|-\n| Christian ||  || Dreng || 28\n|-\n| Johan Petter ||  || Dreng || 20\n|-\n| Jonettha Olsdr* ||  || Datter || 20 1/2\n|-\n| Olava ||  || Tjenestep. || 24\n|-\n| Ane Maria ||  || Tjenestep. || 9 1/2\n|}"
+  },
+  "plainText": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Occupation || Age\n|-\n| '''Ole Jonassen''' || '''Head''' || '''Gaardm.''' || '''47'''\n|-\n| Ane Johnsdr ||  || Huustru || 45\n|-\n| Jonas Magnus Olsen* ||  || Søn || 10\n|-\n| Johan Magnus Olsen* ||  || Søn || 3\n|-\n| Christian ||  || Dreng || 28\n|-\n| Johan Petter ||  || Dreng || 20\n|-\n| Jonettha Olsdr* ||  || Datter || 20 1/2\n|-\n| Olava ||  || Tjenestep. || 24\n|-\n| Ane Maria ||  || Tjenestep. || 9 1/2\n|}"
+  }
+}

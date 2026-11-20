@@ -1,0 +1,242 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01069455000001",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Census 1835 for Frosta prestegjeld",
+    "Census districts summary",
+    "001 Frosten",
+    "001* Lillelein",
+    "001 Ole Jonassen"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 001 Frosten",
+      "collectionNameParts": [
+        "Census district",
+        "001 Frosten"
+      ]
+    },
+    {
+      "collectionHeading": "Rural residence: 001* Lillelein",
+      "collectionNameParts": [
+        "Rural residence",
+        "001* Lillelein"
+      ]
+    }
+  ],
+  "heading": "Person: 001 Ole Jonassen",
+  "headingSpanParts": [
+    "Person:",
+    "001"
+  ],
+  "headingTextParts": [
+    "Ole Jonassen"
+  ],
+  "imageLink": "https://media.digitalarkivet.no/db60103165000032",
+  "recordData": {
+    "Household no.": {
+      "textString": "1"
+    },
+    "Person no.": {
+      "textString": "001"
+    },
+    "Occupation": {
+      "textString": "Gaardm."
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Age": {
+      "textString": "47"
+    },
+    "Date of birth": {
+      "textString": "1788 (calculated)"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "current": true,
+          "personLabel": "001",
+          "personNameParts": [
+            "Ole Jonassen"
+          ],
+          "personHeading": "001 Ole Jonassen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "47"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "002",
+          "personNameParts": [
+            "Ane Johnsdr"
+          ],
+          "personHeading": "002 Ane Johnsdr",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "45"
+          },
+          "Occupation": {
+            "textString": "Huustru"
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Jonas Magnus Olsen*"
+          ],
+          "personHeading": "003 Jonas Magnus Olsen*",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "10"
+          },
+          "Occupation": {
+            "textString": "Søn"
+          }
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Johan Magnus Olsen*"
+          ],
+          "personHeading": "004 Johan Magnus Olsen*",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "3"
+          },
+          "Occupation": {
+            "textString": "Søn"
+          }
+        },
+        {
+          "personLabel": "005",
+          "personNameParts": [
+            "Christian"
+          ],
+          "personHeading": "005 Christian",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "28"
+          },
+          "Occupation": {
+            "textString": "Dreng"
+          }
+        },
+        {
+          "personLabel": "006",
+          "personNameParts": [
+            "Johan Petter"
+          ],
+          "personHeading": "006 Johan Petter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "20"
+          },
+          "Occupation": {
+            "textString": "Dreng"
+          }
+        },
+        {
+          "personLabel": "007",
+          "personNameParts": [
+            "Jonettha Olsdr*"
+          ],
+          "personHeading": "007 Jonettha Olsdr*",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "20 1/2"
+          },
+          "Occupation": {
+            "textString": "Datter"
+          }
+        },
+        {
+          "personLabel": "008",
+          "personNameParts": [
+            "Olava"
+          ],
+          "personHeading": "008 Olava",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "24"
+          },
+          "Occupation": {
+            "textString": "Tjenestep."
+          }
+        },
+        {
+          "personLabel": "009",
+          "personNameParts": [
+            "Ane Maria"
+          ],
+          "personHeading": "009 Ane Maria",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "9 1/2"
+          },
+          "Occupation": {
+            "textString": "Tjenestep."
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01069455000001",
+  "sourceInformation": "Census 1835 for Frosta prestegjeld",
+  "sourceData": {
+    "County": {
+      "textString": "Nord-Trøndelag"
+    },
+    "Municipality (1947)": {
+      "textString": "Frosta, Åsen"
+    },
+    "Geographic area": {
+      "textString": "Frosta parish Frosta local parish Åsen local parish",
+      "textParts": [
+        "Frosta parish",
+        "Frosta local parish",
+        "Åsen local parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1835"
+    },
+    "End year": {
+      "textString": "1835"
+    },
+    "Løpenr/Bnr": {
+      "textString": "1"
+    }
+  }
+}

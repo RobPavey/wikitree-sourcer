@@ -1,0 +1,434 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01069455000001",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Census 1835 for Frosta prestegjeld",
+    "Census districts summary",
+    "001 Frosten",
+    "001* Lillelein",
+    "001 Ole Jonassen"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 001 Frosten",
+      "collectionNameParts": [
+        "Census district",
+        "001 Frosten"
+      ]
+    },
+    {
+      "collectionHeading": "Rural residence: 001* Lillelein",
+      "collectionNameParts": [
+        "Rural residence",
+        "001* Lillelein"
+      ]
+    }
+  ],
+  "heading": "Person: 001 Ole Jonassen",
+  "headingSpanParts": [
+    "Person:",
+    "001"
+  ],
+  "headingTextParts": [
+    "Ole Jonassen"
+  ],
+  "imageLink": "https://media.digitalarkivet.no/db60103165000032",
+  "recordData": {
+    "Household no.": {
+      "textString": "1"
+    },
+    "Person no.": {
+      "textString": "001"
+    },
+    "Occupation": {
+      "textString": "Gaardm."
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Age": {
+      "textString": "47"
+    },
+    "Date of birth": {
+      "textString": "1788 (calculated)"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "current": true,
+          "personLabel": "001",
+          "personNameParts": [
+            "Synthetic Person A"
+          ],
+          "personHeading": "001 Synthetic Person A",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "20 1/2"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "002",
+          "personNameParts": [
+            "Synthetic Person B"
+          ],
+          "personHeading": "002 Synthetic Person B",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "2 1/4"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Synthetic Person C"
+          ],
+          "personHeading": "003 Synthetic Person C",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "4 3/4"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Synthetic Person D"
+          ],
+          "personHeading": "004 Synthetic Person D",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1/2"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "005",
+          "personNameParts": [
+            "Synthetic Person E"
+          ],
+          "personHeading": "005 Synthetic Person E",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1/4"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "006",
+          "personNameParts": [
+            "Synthetic Person F"
+          ],
+          "personHeading": "006 Synthetic Person F",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "3/4"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "007",
+          "personNameParts": [
+            "Synthetic Person G"
+          ],
+          "personHeading": "007 Synthetic Person G",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "20 ½"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "008",
+          "personNameParts": [
+            "Synthetic Person H"
+          ],
+          "personHeading": "008 Synthetic Person H",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "2 ¼"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "009",
+          "personNameParts": [
+            "Synthetic Person I"
+          ],
+          "personHeading": "009 Synthetic Person I",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "4 ¾"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "010",
+          "personNameParts": [
+            "Synthetic Person J"
+          ],
+          "personHeading": "010 Synthetic Person J",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "½"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "011",
+          "personNameParts": [
+            "Synthetic Person K"
+          ],
+          "personHeading": "011 Synthetic Person K",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "¼"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "012",
+          "personNameParts": [
+            "Synthetic Person L"
+          ],
+          "personHeading": "012 Synthetic Person L",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "¾"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "013",
+          "personNameParts": [
+            "Synthetic Person M"
+          ],
+          "personHeading": "013 Synthetic Person M",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "20 1/2"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "014",
+          "personNameParts": [
+            "Synthetic Person N"
+          ],
+          "personHeading": "014 Synthetic Person N",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "2 ¼"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "015",
+          "personNameParts": [
+            "Synthetic Person O"
+          ],
+          "personHeading": "015 Synthetic Person O",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "20 1/2"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "016",
+          "personNameParts": [
+            "Synthetic Person P"
+          ],
+          "personHeading": "016 Synthetic Person P",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "47"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "017",
+          "personNameParts": [
+            "Synthetic Person Q"
+          ],
+          "personHeading": "017 Synthetic Person Q",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1835"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "018",
+          "personNameParts": [
+            "Synthetic Person R"
+          ],
+          "personHeading": "018 Synthetic Person R",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1835-01-02"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "019",
+          "personNameParts": [
+            "Synthetic Person S"
+          ],
+          "personHeading": "019 Synthetic Person S",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": ""
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "020",
+          "personNameParts": [
+            "Synthetic Person T"
+          ],
+          "personHeading": "020 Synthetic Person T",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "about 20 1/2"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        },
+        {
+          "personLabel": "021",
+          "personNameParts": [
+            "Synthetic Person U"
+          ],
+          "personHeading": "021 Synthetic Person U",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "20 1/2 years"
+          },
+          "Occupation": {
+            "textString": "Gaardm."
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01069455000001",
+  "sourceInformation": "Census 1835 for Frosta prestegjeld",
+  "sourceData": {
+    "County": {
+      "textString": "Nord-Trøndelag"
+    },
+    "Municipality (1947)": {
+      "textString": "Frosta, Åsen"
+    },
+    "Geographic area": {
+      "textString": "Frosta parish Frosta local parish Åsen local parish",
+      "textParts": [
+        "Frosta parish",
+        "Frosta local parish",
+        "Åsen local parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1835"
+    },
+    "End year": {
+      "textString": "1835"
+    },
+    "Løpenr/Bnr": {
+      "textString": "1"
+    }
+  }
+}
