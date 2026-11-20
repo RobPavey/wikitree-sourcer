@@ -26,7 +26,21 @@ import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
   siteName: "eggsagrvs",
-  matches: ["*://graves.eggsa.org/*", "*://*.eggsa.org/*"],
+  // Only the graves sub-domains ("*.x" also matches "x" and "www.x"). Do NOT use *://*.eggsa.org/* as that also matches www.eggsa.org,
+  // which is the eggsabdm site, and both content scripts would then be injected.
+  matches: [
+    "*://*.graves.eggsa.org/*",
+    "*://*.graveseastcape.eggsa.org/*",
+    "*://*.gravesfreestate.eggsa.org/*",
+    "*://*.gravesgauteng.eggsa.org/*",
+    "*://*.natalgraves.eggsa.org/*",
+    "*://*.graveslimpopo.eggsa.org/*",
+    "*://*.gravesmpumalanga.eggsa.org/*",
+    "*://*.gravesnortherncape.eggsa.org/*",
+    "*://*.gravesnorthwest.eggsa.org/*",
+    "*://*.graveswcape.eggsa.org/*",
+    "*://*.gravesworld.eggsa.org/*",
+  ],
   runAt: "document_end",
   repositoryName: "eGGSA Graves",
   usPhoneNumber: "",
