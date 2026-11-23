@@ -1,18 +1,18 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nRepository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>\n[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nThe National Archives of Norway (Trondheim), AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>\n[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nRepository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>\n[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nThe National Archives of Norway (Trondheim), AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>\n[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Church book from Volda parish 1787-1816 (1519P)\"<br/>Repository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021).",
+    "citation": "* '''Record''': \"Church book from Volda parish 1787-1816 (1519P)\"<br/>The National Archives of Norway (Trondheim), AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021).",
     "type": "source"
   },
   "plain_inline": {
-    "citation": "Record: \"Church book from Volda parish 1787-1816 (1519P)\", \nRepository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41, \n[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021).\n",
+    "citation": "Record: \"Church book from Volda parish 1787-1816 (1519P)\", \nThe National Archives of Norway (Trondheim), AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41, \n[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021).\n",
     "type": "inline"
   },
   "plain_narrative": {
@@ -20,23 +20,23 @@
     "type": "narrative"
   },
   "plain_source": {
-    "citation": "Record: \"Church book from Volda parish 1787-1816 (1519P)\", Repository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41, [https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021).",
+    "citation": "Record: \"Church book from Volda parish 1787-1816 (1519P)\", The National Archives of Norway (Trondheim), AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41, [https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021).",
     "type": "source"
   },
   "referenceAtEnd_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\n[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021)<br/>\nciting Repository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41.\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nThe National Archives of Norway (Trondheim)<br/>\n[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021)<br/>\nciting AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41.\n</ref>",
     "type": "inline"
   },
   "referenceAtEnd_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\n[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021)<br/>\nciting Repository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41.\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nThe National Archives of Norway (Trondheim)<br/>\n[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021)<br/>\nciting AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41.\n</ref>",
     "type": "narrative"
   },
   "referenceAtEnd_source": {
-    "citation": "* '''Record''': \"Church book from Volda parish 1787-1816 (1519P)\"<br/>[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021)<br/>citing Repository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41.",
+    "citation": "* '''Record''': \"Church book from Volda parish 1787-1816 (1519P)\"<br/>The National Archives of Norway (Trondheim)<br/>[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021)<br/>citing AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41.",
     "type": "source"
   },
   "plainReferenceAtEnd_inline": {
-    "citation": "Record: \"Church book from Volda parish 1787-1816 (1519P)\", \n[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021); \nciting Repository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41.\n",
+    "citation": "Record: \"Church book from Volda parish 1787-1816 (1519P)\", \nThe National Archives of Norway (Trondheim), \n[https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021); \nciting AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41.\n",
     "type": "inline"
   },
   "plainReferenceAtEnd_narrative": {
@@ -44,31 +44,31 @@
     "type": "narrative"
   },
   "plainReferenceAtEnd_source": {
-    "citation": "Record: \"Church book from Volda parish 1787-1816 (1519P)\", [https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021); citing Repository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41.",
+    "citation": "Record: \"Church book from Volda parish 1787-1816 (1519P)\", The National Archives of Norway (Trondheim), [https://goto.digitalarkivet.no/kb20070829660260 Digitalarkivet Image] (accessed 6 May 2021); citing AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41.",
     "type": "source"
   },
   "permanentId_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nRepository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>\nDigitalarkivet Image: [https://goto.digitalarkivet.no/kb20070829660260 kb20070829660260] (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nThe National Archives of Norway (Trondheim), AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>\nDigitalarkivet Image: [https://goto.digitalarkivet.no/kb20070829660260 kb20070829660260] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "permanentId_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nRepository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>\nDigitalarkivet Image: [https://goto.digitalarkivet.no/kb20070829660260 kb20070829660260] (accessed 6 May 2021).\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nThe National Archives of Norway (Trondheim), AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>\nDigitalarkivet Image: [https://goto.digitalarkivet.no/kb20070829660260 kb20070829660260] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "permanentId_source": {
-    "citation": "* '''Record''': \"Church book from Volda parish 1787-1816 (1519P)\"<br/>Repository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>Digitalarkivet Image: [https://goto.digitalarkivet.no/kb20070829660260 kb20070829660260] (accessed 6 May 2021).",
+    "citation": "* '''Record''': \"Church book from Volda parish 1787-1816 (1519P)\"<br/>The National Archives of Norway (Trondheim), AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>Digitalarkivet Image: [https://goto.digitalarkivet.no/kb20070829660260 kb20070829660260] (accessed 6 May 2021).",
     "type": "source"
   },
   "visible_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nRepository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>\nDigitalarkivet Image: https://goto.digitalarkivet.no/kb20070829660260 (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nThe National Archives of Norway (Trondheim), AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>\nDigitalarkivet Image: https://goto.digitalarkivet.no/kb20070829660260 (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "visible_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nRepository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>\nDigitalarkivet Image: https://goto.digitalarkivet.no/kb20070829660260 (accessed 6 May 2021).\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Volda parish 1787-1816 (1519P)\"<br/>\nThe National Archives of Norway (Trondheim), AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>\nDigitalarkivet Image: https://goto.digitalarkivet.no/kb20070829660260 (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "visible_source": {
-    "citation": "* '''Record''': \"Church book from Volda parish 1787-1816 (1519P)\"<br/>Repository: The National Archives of Norway (Trondheim); AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>Digitalarkivet Image: https://goto.digitalarkivet.no/kb20070829660260 (accessed 6 May 2021).",
+    "citation": "* '''Record''': \"Church book from Volda parish 1787-1816 (1519P)\"<br/>The National Archives of Norway (Trondheim), AV/SAT-A-1454/511/L0137; Protocol: 511A04; Contents: Chronological list, 1792; Page: 41<br/>Digitalarkivet Image: https://goto.digitalarkivet.no/kb20070829660260 (accessed 6 May 2021).",
     "type": "source"
   }
 }

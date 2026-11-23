@@ -1,18 +1,18 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>\n[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nThe National Archives of Norway (Bergen), AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>\n[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>\n[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nThe National Archives of Norway (Bergen), AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>\n[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Church book from Voss parish 1780-1810 (1235P)\"<br/>Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).",
+    "citation": "* '''Record''': \"Church book from Voss parish 1780-1810 (1235P)\"<br/>The National Archives of Norway (Bergen), AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).",
     "type": "source"
   },
   "plain_inline": {
-    "citation": "Record: \"Church book from Voss parish 1780-1810 (1235P)\", \nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131, \n[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).\n",
+    "citation": "Record: \"Church book from Voss parish 1780-1810 (1235P)\", \nThe National Archives of Norway (Bergen), AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131, \n[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).\n",
     "type": "inline"
   },
   "plain_narrative": {
@@ -20,23 +20,23 @@
     "type": "narrative"
   },
   "plain_source": {
-    "citation": "Record: \"Church book from Voss parish 1780-1810 (1235P)\", Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131, [https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).",
+    "citation": "Record: \"Church book from Voss parish 1780-1810 (1235P)\", The National Archives of Norway (Bergen), AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131, [https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021).",
     "type": "source"
   },
   "referenceAtEnd_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\n[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021)<br/>\nciting Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131.\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nThe National Archives of Norway (Bergen)<br/>\n[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021)<br/>\nciting AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131.\n</ref>",
     "type": "inline"
   },
   "referenceAtEnd_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\n[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021)<br/>\nciting Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131.\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nThe National Archives of Norway (Bergen)<br/>\n[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021)<br/>\nciting AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131.\n</ref>",
     "type": "narrative"
   },
   "referenceAtEnd_source": {
-    "citation": "* '''Record''': \"Church book from Voss parish 1780-1810 (1235P)\"<br/>[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021)<br/>citing Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131.",
+    "citation": "* '''Record''': \"Church book from Voss parish 1780-1810 (1235P)\"<br/>The National Archives of Norway (Bergen)<br/>[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021)<br/>citing AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131.",
     "type": "source"
   },
   "plainReferenceAtEnd_inline": {
-    "citation": "Record: \"Church book from Voss parish 1780-1810 (1235P)\", \n[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021); \nciting Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131.\n",
+    "citation": "Record: \"Church book from Voss parish 1780-1810 (1235P)\", \nThe National Archives of Norway (Bergen), \n[https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021); \nciting AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131.\n",
     "type": "inline"
   },
   "plainReferenceAtEnd_narrative": {
@@ -44,31 +44,31 @@
     "type": "narrative"
   },
   "plainReferenceAtEnd_source": {
-    "citation": "Record: \"Church book from Voss parish 1780-1810 (1235P)\", [https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021); citing Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131.",
+    "citation": "Record: \"Church book from Voss parish 1780-1810 (1235P)\", The National Archives of Norway (Bergen), [https://goto.digitalarkivet.no/kb20070524630257 Digitalarkivet Image] (accessed 6 May 2021); citing AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131.",
     "type": "source"
   },
   "permanentId_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>\nDigitalarkivet Image: [https://goto.digitalarkivet.no/kb20070524630257 kb20070524630257] (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nThe National Archives of Norway (Bergen), AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>\nDigitalarkivet Image: [https://goto.digitalarkivet.no/kb20070524630257 kb20070524630257] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "permanentId_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>\nDigitalarkivet Image: [https://goto.digitalarkivet.no/kb20070524630257 kb20070524630257] (accessed 6 May 2021).\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nThe National Archives of Norway (Bergen), AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>\nDigitalarkivet Image: [https://goto.digitalarkivet.no/kb20070524630257 kb20070524630257] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "permanentId_source": {
-    "citation": "* '''Record''': \"Church book from Voss parish 1780-1810 (1235P)\"<br/>Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>Digitalarkivet Image: [https://goto.digitalarkivet.no/kb20070524630257 kb20070524630257] (accessed 6 May 2021).",
+    "citation": "* '''Record''': \"Church book from Voss parish 1780-1810 (1235P)\"<br/>The National Archives of Norway (Bergen), AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>Digitalarkivet Image: [https://goto.digitalarkivet.no/kb20070524630257 kb20070524630257] (accessed 6 May 2021).",
     "type": "source"
   },
   "visible_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>\nDigitalarkivet Image: https://goto.digitalarkivet.no/kb20070524630257 (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nThe National Archives of Norway (Bergen), AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>\nDigitalarkivet Image: https://goto.digitalarkivet.no/kb20070524630257 (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "visible_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nRepository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>\nDigitalarkivet Image: https://goto.digitalarkivet.no/kb20070524630257 (accessed 6 May 2021).\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Church book from Voss parish 1780-1810 (1235P)\"<br/>\nThe National Archives of Norway (Bergen), AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>\nDigitalarkivet Image: https://goto.digitalarkivet.no/kb20070524630257 (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "visible_source": {
-    "citation": "* '''Record''': \"Church book from Voss parish 1780-1810 (1235P)\"<br/>Repository: The National Archives of Norway (Bergen); AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>Digitalarkivet Image: https://goto.digitalarkivet.no/kb20070524630257 (accessed 6 May 2021).",
+    "citation": "* '''Record''': \"Church book from Voss parish 1780-1810 (1235P)\"<br/>The National Archives of Norway (Bergen), AV/SAB-A-79001/H/Haa; Protocol: A 9; Contents: Births and baptisms, 1794; Page: 131<br/>Digitalarkivet Image: https://goto.digitalarkivet.no/kb20070524630257 (accessed 6 May 2021).",
     "type": "source"
   }
 }
