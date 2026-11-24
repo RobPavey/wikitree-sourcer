@@ -845,6 +845,48 @@ async function setupSelectValuesSubmenu(backFunction, addActionFunction) {
       }
     }
 
+    function chooseMostFrequentValue(field) {
+      // pick the most used one
+      // if there is only one option choose that
+      if (field.options.length == 1) {
+        field.defaultValue = 0;
+        return;
+      }
+
+      // build a list of unique values and for each record the count of uses
+
+      let uniqueValues = {};
+      for (let index = 0; index < field.options.length; index++) {
+        let option = field.options[index];
+        let value = option.text;
+        if (!uniqueValues[value]) {
+          uniqueValues[value] = { value: value, count: 1, index: index };
+        } else {
+          uniqueValues[value].count++;
+        }
+      }
+
+      let bestValue = null;
+      let bestCount = 0;
+      // chose the name with the most occurences
+      for (let uniqueValueKey of Object.keys(uniqueValues)) {
+        let uniqueValue = uniqueValues[uniqueValueKey];
+        if (uniqueValue.count > bestCount) {
+          bestValue = uniqueValue;
+          bestCount = bestValue.count;
+        }
+      }
+
+      if (bestValue) {
+        field.defaultValue = bestValue.index;
+      }
+    }
+
+    function chooseBestGender(field) {
+      // there could be the occasional record with incorrect gender - so pick the most used one
+      chooseMostFrequentValue(field);
+    }
+
     function chooseBestOption(field) {
       if (field.type == "lnab") {
         chooseBestLnab(field);
@@ -854,6 +896,9 @@ async function setupSelectValuesSubmenu(backFunction, addActionFunction) {
         return;
       } else if (field.type == "forenames") {
         chooseBestForenames(field);
+        return;
+      } else if (field.type == "gender") {
+        chooseBestGender(field);
         return;
       }
 
@@ -948,7 +993,7 @@ async function setupSelectValuesSubmenu(backFunction, addActionFunction) {
       birthLocation: { id: "birthLocationSelector", label: "Birth Location", type: "string" },
       deathDate: { id: "deathDateSelector", label: "Death Date", type: "date" },
       deathLocation: { id: "deathLocationSelector", label: "Death Location", type: "string" },
-      sex: { id: "sexSelector", label: "Sex at Birth", type: "string" },
+      sex: { id: "sexSelector", label: "Sex at Birth", type: "gender" },
     };
 
     for (let field of Object.values(fields)) {
